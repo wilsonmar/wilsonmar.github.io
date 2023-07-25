@@ -3,10 +3,10 @@ layout: post
 date: "2023-07-23"
 file: "security-certs"
 title: "Security Certifications"
-excerpt: "There are several (overlapping) ones. Collect them all!"
+excerpt: "There are several (overlapping) ones."
 tags: [security,certs]
 image:
-# cyber-security-hero-1900x500-22924.jpb/.png 
+# security-certs-1905x908.png
   feature: https://user-images.githubusercontent.com/300046/103753295-19cf4680-4fc8-11eb-9c7a-d23d3c5c2d79.jpg
   credit: Paul Jerimy
   creditlink: https://pauljerimy.com/security-certification-roadmap
@@ -21,8 +21,11 @@ For security professionals, there are several expensive overlapping certificatio
 
 {% include whatever.html %}
 
-This map is from <a target="_blank" href="https://pauljerimy.com/category/book-reviews/">security techo thriller book reviewer</a> Paul Jerimy at <a target="_blank" href="https://pauljerimy.com/security-certification-roadmap/">https://pauljerimy.com/security-certification-roadmap:
-<img width="1613" alt="security-cert-landscape" src="https://user-images.githubusercontent.com/300046/101941672-91ff4380-3ba5-11eb-8b16-1368f9ce1349.png"><br /><em>Click for full screen image.</em></a>
+This map is from <a target="_blank" href="https://pauljerimy.com/category/book-reviews/">security techo thriller book reviewer</a> Paul Jerimy at<br /><a target="_blank" href="https://pauljerimy.com/security-certification-roadmap/">https://pauljerimy.com/security-certification-roadmap:
+<img width="1613" alt="security-cert-landscape" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690304615/security-certs-1905x908_lsmbyg.png"><br /><em>Click for full screen image.</em></a>
+
+<a target="_blank" href="https://docs.google.com/spreadsheets/d/1Bk35IoIglqcPtcMLQUX4CLwaXgh8rdvw4UrbHqGJlE8/edit#gid=1478534077">spreadsheet</a>
+by Dean Bushmiller
 
 
 ## CCSK (Cloud Security Alliance Certificate of Security Knowledge)
@@ -1257,6 +1260,36 @@ Python Django,
 Ruby on Rails,
 
 
+## Networking (Firewall) certs
+
+Network software vendors have affordable certifications:
+
+* https://www.paloaltonetworks.com/services/education/certification#pccsa	$100 Palo Alto Networks Certified Cybersecurity Associate	(PCCSA)
+* https://www.paloaltonetworks.com/services/education/certification#pcnsa	$140 Palo Alto Networks Certified Network Security Administrator (PCNSA)
+* https://www.paloaltonetworks.com/services/education/certification#pcnse	$400 Palo Alto Networks Certified Network Security Engineer	(PCNSE)
+
+* https://view.ceros.com/f5/certification-roadmap/p/9?heightOverride=740	$135 F5 Big-IP Certified Solution Expert - Security (F5 CSE Sec)
+* https://view.ceros.com/f5/certification-roadmap/p/9?heightOverride=740	$135 F5 Big-IP Certified Technical Specialist - Access Policy Manager (F5 CTS APM)
+* https://view.ceros.com/f5/certification-roadmap/p/9?heightOverride=740	$135 F5 Big-IP Certified Technical Specialist - Domain Name Services	(F5 CTS DNS)
+
+* https://www.juniper.net/us/en/training/certification/certification-tracks/junos-security-track/?tab=jnciasec	$200 Juniper Networks Certified Internet Associate Security	(JNCIA Sec)
+* https://www.juniper.net/us/en/training/certification/certification-tracks/junos-security-track/?tab=jncip-sec	$400 Juniper Networks Certified Internet Professional Security	(JNCIP Sec)
+* https://www.juniper.net/us/en/training/certification/certification-tracks/junos-security-track/?tab=jncisec	$300 Juniper Networks Certified Internet Specialist Security (JNCIS Sec)
+
+* https://training-certifications.checkpoint.com/#/courses/Check%20Point%20Certified%20Admin%20(CCSA)%20R80.x	$250 Checkpoint Certified Security Administrator (CCSA)
+* https://training-certifications.checkpoint.com/#/courses/Check%20Point%20Certified%20Expert%20(CCSE)%20R80.x	$250 Checkpoint Certified Security Expert	(CCSE)
+* https://training-certifications.checkpoint.com/#/courses/Check%20Point%20Certified%20Master%20(CCSM)%20R80.x	$350 Checkpoint Certified Security Master	(CCSM)
+
+* https://training.fortinet.com/local/staticpage/view.php?page=nse_4	$400 NSE 4 - FortiNET Network Security Professional (NSE 4)
+https://training.fortinet.com/local/staticpage/view.php?page=nse_7	$400 NSE 7 - FortiNET Network Security Architect (NSE 7)
+https://training.fortinet.com/local/staticpage/view.php?page=nse_8	$2,000 NSE 8 - Fortinet Network Security Expert	(NSE 8)
+
+* https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert/ccie-security.html	$2,050 Cisco Certified Implementation Expert - Security (CCIE Sec)
+
+* https://www.splunk.com/en_us/training/certification-track/splunk-es-certified-admin.html	$4,625 Splunk Enterprise Security Certified Administrator	(Splunk ECSA)
+
+<hr />
+
 ## References
 
 On Udemy: <a target="_blank" href="https://mckinsey.udemy.com/course/secure-product-lifecycle-101/">McK</a> <a target="_blank" href="https://www.udemy.com/course/secure-product-lifecycle-101/">
@@ -1271,11 +1304,11 @@ Podcast: Evan Francen's Unsecurity
 
 <a target="_blank" href="https://www.youtube.com/watch?v=P9wz0Sted_I">
 TOP 5 Cyber Security Projects to go on Your Resume!</a> by Josh Madakor
+   * Simple REST API
    * SIEM in Azure Sentinel
    * Active Directory environment
    * File Integrity Monitor
    * Vulnerability Management Lab
-   * simple REST API
 
 
 ## More on Security #
