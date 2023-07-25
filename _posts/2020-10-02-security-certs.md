@@ -1225,7 +1225,7 @@ SAP Certified Technology Professional - System Security Architect</a> is the mos
    * Secure SAP System Management - >12%
    * SAP Netweaver Application Server Security - >12%
    * Authorization, Security and Scenarios in SAP HANA8% - 12%
-   * Security in SAP Gateway and SAP Fiori System Landscape - &LT;8%
+   * Security in SAP Gateway and SAP Fiori System Landscape - &LT; 8%
 
    * https://myerp-training.com/sap-security-certification/
    * <a target="_blank" href="https://www.credly.com/org/sap/badge/sap-certified-technology-professional-sap-system-security-architect">After passing, post your cert on Credly</a>
