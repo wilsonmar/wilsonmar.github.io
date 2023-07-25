@@ -269,6 +269,19 @@ Like the <a target="_blank" href="https://wilsonmar.github.io/caiq">CAIQ</a>, it
    20. Vulnerability Management
    <br /><br />
 
+<hr />
+
+<a name="CRR"></a>
+
+## CRR (Cyber Resilience Review)
+
+The CRR is a lightweight assessment method created by the U.S. Department of Homeland Security (DHS) for evaluating the cybersecurity and service continuity practices of critical infrastructure owners and operators in cybersecurity, operations, physical security, and business continuity. It's also used by the governments of Japan, Israel, and Italy, among others.
+
+The CRR assessment consists of 299 questions over 10 domains, typically delivered in a 12 - 16 hour workshop led by a qualified facilitator over two consecutive days. <a target="_blank" href="https://www.certifiedinfosec.com/event-calendar/find-events/iso-27001-information-security/584-certified-nist-cybersecurity-framework-li-training-plus-nist-csf-cyber-resilience-review-assessment-hands-on-workshop-live-in-atlanta-11">This workshop</a> yields a 176-page analysis and report.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=7H5uSOm55Lw" title="at the RSA Conf 2023">CSF v2.0 intro</a> for release Winter 2024.
+
+
 <a name="HITRUST"></a>
 
 ## HITRUST Common Security Framework
@@ -281,6 +294,12 @@ Through a validated assessment performed by the <a href="#HITRUST">Health Inform
 
 
 <hr />
+
+<a name="iso22301"></a>
+
+## ISO 22301
+
+Business Continuity
 
 <a name="iso27002"></a>
 

@@ -69,7 +69,7 @@ Domain 3: Legal Issues, Contracts and Electronic Discovery
   - Regional Considerations (California)
 * Contracts and Provider Selection
   - Contracts
-  - Due Diligence
+  - Due Diligence (is the practice of Due Care)
   - Third-Party Audits and Attestations (SOC, ISO)
 * Electronic Discovery
   - Data Custody
@@ -157,6 +157,35 @@ Domain 14: Related Technologies
 <br /><br />
 
 
+## Certified Infosec NIST CSF
+
+While it develops a new Cybersecurity Certification Exam, ISACA's <a target="_blank" href="https://www.isaca.org/credentialing/csx-p">4-hour CSX-P (Cybersecurity Practitioner) exam</a>, derived from the <a target="_blank" href="https://www.nist.gov/cyberframework">NIST Cyber Framework</a> was sunsetted on 30 April 2023. 
+
+For $674.95 plus $100 annual membership and $399.95 for the required 3-day on-line class or $3,995  on-site class, get the <a target="_blank" href="https://www.certifiedinfosec.com/services/certification-programs/iso-27001-information-security/nist-cyber-security-framework-lead-implementer
+">"NIST Cybersecurity Framework Lead Implementer" certification</a> by answering 75% of 65 questions in 70 minutes. Test content, training, and proctoring are all provided by a single profit-making organization: Certified Information Security (https://www.certifiedinfosec.com), founded by <a target="_blank" href="https://www.linkedin.com/in/allenkeele/">Allen Keele</a>.
+
+Domains covered by the test:
+1. Framework Core Functions of the NIST CSF
+   * Identify threats and vulnerabilities
+   * Protect systems from outside threats
+   * Detect threats and system vulnerabilities
+   * Respond to and mitigate cyber incidents
+   * Recover from incidents and disasters
+2. Framework Implementation Tiers (Cybersecurity Risk Management)
+3. Framework Profiles
+4. Converging NIST CSF into an ISO 27001 Information Security Management System (ISMS).
+<br /><br />
+
+<a target="_blank" href="https://learning.oreilly.com/live-events/nist-cybersecurity-framework-lead-implementer-crash-superreview-by-allen-keele/0636920071391/0636920092266/?utm_medium=email&utm_source=platform+b2c&utm_campaign=engagement&utm_content=lot+recording">Crash SuperReview on OReilly.com</a> covers 2 of the 3 day class.
+
+https://learning.oreilly.com/library/view/cybersecurity-career-master/9781801073561/
+Cybersecurity Career Master Plan 
+
+https://learning.oreilly.com/videos/nist-cybersecurity-framework/9781787782396/
+NIST Cybersecurity Framework - A pocket guide 
+
+<hr />
+
 ## ISC2.org
 
 ISC2.org (a non-profit), publishes a Code of Ethics at <a target="_blank" href="https://www.isc2.org/ethics">https://www.isc2.org/ethics</a>
@@ -180,8 +209,9 @@ $199
 
 CGRC Content maps to the NIST SP 800-37 RMF (Risk Management Framework)
 <a target="_blank" href="https://nira.com/nist-csf-categories/">categories</a>:
-   * "Left of boom": Identify, Protect, 
-   * Detect, Respond, Recover.
+   * "Left of boom": Identify, Protect
+   * "Right of boom": Detect, Respond, Recover
+   <br /><br />
 
 CGRC is taken from a broad spectrum of vendor-neutral topics in the CGRC Common Body of Knowledge (CBK®) over <a target="_blank" href="https://www.isc2.org/-/media/ISC2/Certifications/Exam-Outlines/2021/CAP-Exam-Outline.ashx">7 domains</a>:
    1. Information Security Risk Management Program 
@@ -519,7 +549,7 @@ Bragging:
 
 * CRISC (Certified in Risk and Information Systems Control)</a>
 
-* <a target="_blank" href="https://www.isaca.org/credentialing/cism">CISM (Certified Information Security Manager)</a> <a target="_blank" href="[2020-10-02-security-certs.md](https://learning.oreilly.com/live-events/cism-crash-superreview-by-allen-keele/0636920055226/0636920086120/)">VIDEO: CISM Crash SuperReview</a> by <a target="_blank" href="https://www.linkedin.com/in/allenkeele/">Allen Keele</a> of a 40-hour class at certifiedinfosec.com
+* <a target="_blank" href="https://www.isaca.org/credentialing/cism">CISM (Certified Information Security Manager)</a> <a target="_blank" href="[2020-10-02-security-certs.md](https://learning.oreilly.com/live-events/cism-crash-superreview-by-allen-keele/0636920055226/)">VIDEO: Crash SuperReview</a> by <a target="_blank" href="https://www.linkedin.com/in/allenkeele/">Allen Keele</a> of a 40-hour class at certifiedinfosec.com
 
    * 17% Information Security Governance
    Organizational Culture<br />
@@ -530,17 +560,24 @@ Bragging:
    * 30% Incident Management
    <br /><br />
 
+   <a target="_blank" href="https://learning.oreilly.com/videos/the-pearson-complete/9780137923854/">Pearson Complete Course for CISM Certification</a> by Sari Greene
+
 * ISO 31000 Internal Controls Risk Analyst (CICRA) <a target="_blank" href="https://learning.oreilly.com/live-events/certified-iso-31000-internal-controls-risk-analyst-cicra-crash-superreview-by-allen-keele/0636920071393/0636920086127/">VIDEO: Crash SuperReview</a> by Allen Keele
 
 * Certified ISO 22301 Business Continuity Manager
+* Certified ISO 22301 Business Continuity Strategist (CBCS)
 
-* Certified ISO 27001 Lead Implementer, Internal Controls Architect and Lead Auditor (LI/CICA/CLA)
+* Certified ISO 37301 Certified Compliance Professional (CCP)
 
-* <a target="_blank" href="https://www.isaca.org/credentialing/cgeit">CGEIT (Certified in the Governance of Enterprise IT)</a>
+   https://www.certifiedinfosec.com/258-44-3-108.html
+
+* Certified ISO 27001 Lead Implementer, Internal Controls Architect, Lead Auditor (LI/CICA/CLA)
+
+   https://www.certifiedinfosec.com/258-35-3-86.html
+
+* <a target="_blank" href="https://www.isaca.org/credentialing/cgeit">Certified in the Governance of Enterprise IT (CGEIT)</a>
 
 * <a target="_blank" href="https://www.isaca.org/credentialing/certified-data-privacy-solutions-engineer">CDPSE (Certified Data Privacy Solutions Engineer)</a> covers privacy governance, privacy architecture, data lifecycle
-
-* <a target="_blank" href="https://www.isaca.org/credentialing/csx-p">CSX-P (Cybersecurity Practitioner)</a>, derived from the <a target="_blank" href="https://www.nist.gov/cyberframework">NIST Cyber framework</a> is 4 hours. ISACA has sunset this on 30 April 2023 while it develops a new Cybersecurity Certification Exam.
 
 Exec Order 14028 update of 13366
 
@@ -716,16 +753,23 @@ Among <a target="_blank" href="https://learning.oreilly.com/certifications/guide
 
 <a name="PenTest"></a>
 
-### PenTest+
+### CompTIA PenTest+
 
 https://www.whizlabs.com/comptia-pentest/
 
 
-### CASP+
+### CompTIA CASP+
+
+CASP+ satisfies <a target="_blank" href="https://public.cyber.mil/cw/cwmp/dod-approved-8570-baseline-certifications/">Baseline Certification for DoD IAT (Information Assurance Technical) Level III</a>, IAM (Information Assurance Management) Level II, and IASAE (Information Assurance Security Architecture and Engineering) level I and II jobs.
+
+First pass CompTIA Network+ and Security+ certifications.
 
 <a target="_blank" href="https://www.comptia.org/certifications/comptia-advanced-security-practitioner">
-CASP+ (CompTIA Advanced Security Practioner) exam CAS-003</a> is for practitioners — not managers — at the advanced skill level of cybersecurity -- implementing solutions policies and frameworks. 
-For $396 for COMPTia members or $466 USD (or $799 with retake and $849 with Labs), you'll have 165 minutes to answer 90 multiple-choice and "hands-on, performance-based" questions, for pass/fail grading. The domains:
+CompTIA CASP+ (CompTIA Advanced Security Practioner) exam CAS-004</a> is for practitioners — not managers — at the advanced skill level of cybersecurity -- implementing solutions policies and frameworks. 
+
+<a target="_blank" href="https://www.comptia.org/testing/testing-options/about-comptia-performance-exams/performance-based-questions-explained">Performance-based questions (PBQs)</a> test a candidate’s ability to solve problems in a simulated environment that approximates a virtual environment with a firewall, network diagram, terminal window, or operating system.
+
+At $396 for CompTIA members or $466 USD (or $799 with retake and $849 with Labs), you'll have 165 minutes (2.5 hours) to answer 90 multiple-choice and <strong>"hands-on, performance-based"</strong> questions, for pass/fail grading. The domains:
 
    1. 19% Risk Management  
    2. 25% Enterprise Security Architecture  
@@ -734,37 +778,6 @@ For $396 for COMPTia members or $466 USD (or $799 with retake and $849 with Labs
    5. 13% Research, Development, and Collaboration 
    <br /><br />
 
-<a target="_blank" href="https://www.comptia.org/testing/testing-options/about-comptia-performance-exams/performance-based-questions-explained">Performance-based questions (PBQs)</a> test a candidate’s ability to solve problems in a simulated environment that approximates a virtual environment with a firewall, network diagram, terminal window, or operating system.
-<a target="_blank" href="https://quizlet.com/it/513316332/casp-cas-003-performance-based-questions-flash-cards/">12 Flash cards</a>
-Sample
-
-* To check config on RedHat 5.5:
-
-   <pre><strong>chkconfig --test</strong></pre>
-
-* Services to disable on DNS:
-
-   http, mysqld, lopd, bluetooth, wpa supplicant
-
-* To stop service:
-
-   <pre><strong>service httpd stop</strong></pre>
-
-CASP+ satisfies <a target="_blank" href="https://public.cyber.mil/cw/cwmp/dod-approved-8570-baseline-certifications/">Baseline Certification for DoD IAT (Information Assurance Technical) Level III</a>, IAM (Information Assurance Management) Level II, and IASAE (Information Assurance Security Architecture and Engineering) level I and II jobs.
-
-<a target="_blank" href="https://learning.oreilly.com/library/view/casp-practice-tests/9781119683728/">CASP+ Practice Tests</a>
-by Nadean H. Tanner (at Puppet, Metasploit)
-
-   * <a target="_blank" href="https://exploit-exercises.com/">Exploit-Exercises.com</a> provides virtual machines, documentation, and challenges covering a wide range of security issues.
-   * <a target="_blank" href="https://www.hacking-lab.com/index.html">hacking-lab.com/index.html</a> provides capture-the-flag (CTF) exercises in a variety of fields.
-   * <a target="_blank" href="https://www.owasp.org/index.php/OWASP_Hacking_Lab">www.owasp.org/index.php/OWASP_Hacking_Lab</a>
-   OWASP Hacking Lab provides excellent web application–focused exercises.
-   * <a target="_blank" href="https://www.pentesterlab.com/exercises/">PentesterLab</a> provides subscription-based access to penetration testing exercises
-   <br /><br />
-
-O'Reilly <a target="_blank" href="https://learning.oreilly.com/live-events/casp-cas-004-exam-crash-course/0636920080448/0636920087073/">Live Video Crash Course</a> by Dean Bushmiller.
- 
-<a target="_blank" href="https://learning.oreilly.com/learning-paths/learning-path-comptia/9780135945025/">video 18+ hours</a> released Jan. 2018 by Michael J. Shannon:
 
 1. Risk Management
 
@@ -813,6 +826,36 @@ O'Reilly <a target="_blank" href="https://learning.oreilly.com/live-events/casp-
    18: Implementing Security Activities Across the Technology Life Cycle
 
    19: Interacting Across Diverse Business Units
+
+
+PROTIP: <a target="_blank" href="https://quizlet.com/it/513316332/casp-cas-003-performance-based-questions-flash-cards/">12 Flash cards</a>
+Sample:
+
+* To check config on RedHat 5.5:
+
+   <pre><strong>chkconfig --test</strong></pre>
+
+* Services to disable on DNS:
+
+   http, mysqld, lopd, bluetooth, wpa supplicant
+
+* To stop service:
+
+   <pre><strong>service httpd stop</strong></pre>
+
+<a target="_blank" href="https://learning.oreilly.com/library/view/casp-practice-tests/9781119683728/">CASP+ Practice Tests</a>
+by Nadean H. Tanner (at Puppet, Metasploit)
+
+   * <a target="_blank" href="https://exploit-exercises.com/">Exploit-Exercises.com</a> provides virtual machines, documentation, and challenges covering a wide range of security issues.
+   * <a target="_blank" href="https://www.hacking-lab.com/index.html">hacking-lab.com/index.html</a> provides capture-the-flag (CTF) exercises in a variety of fields.
+   * <a target="_blank" href="https://www.owasp.org/index.php/OWASP_Hacking_Lab">www.owasp.org/index.php/OWASP_Hacking_Lab</a>
+   OWASP Hacking Lab provides excellent web application–focused exercises.
+   * <a target="_blank" href="https://www.pentesterlab.com/exercises/">PentesterLab</a> provides subscription-based access to penetration testing exercises
+   <br /><br />
+
+O'Reilly <a target="_blank" href="https://learning.oreilly.com/live-events/casp-cas-004-exam-crash-course/0636920080448/0636920087073/">Live Video Crash Course</a> by Dean Bushmiller of expandingsecurity.com. Refrence: https://github.com/deanbushmiller/O-CASPv3/wiki from https://github.com/deanbushmiller/O-CASPv3
+
+<a target="_blank" href="https://learning.oreilly.com/learning-paths/learning-path-comptia/9780135945025/">video 18+ hours</a> released Jan. 2018 by Michael J. Shannon:
 
 
 Kelly Handerhan's Cybrary videos
