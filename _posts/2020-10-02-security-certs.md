@@ -1264,29 +1264,29 @@ Ruby on Rails,
 
 Network software vendors have affordable certifications:
 
-* https://www.paloaltonetworks.com/services/education/certification#pccsa	$100 Palo Alto Networks Certified Cybersecurity Associate	(PCCSA)
-* https://www.paloaltonetworks.com/services/education/certification#pcnsa	$140 Palo Alto Networks Certified Network Security Administrator (PCNSA)
-* https://www.paloaltonetworks.com/services/education/certification#pcnse	$400 Palo Alto Networks Certified Network Security Engineer	(PCNSE)
+* <a target="_blank" href="https://www.paloaltonetworks.com/services/education/certification#pccsa">	$100 Palo Alto Networks Certified Cybersecurity Associate (PCCSA)</a>
+* <a target="_blank" href="https://www.paloaltonetworks.com/services/education/certification#pcnsa">	$140 Palo Alto Networks Certified Network Security Administrator (PCNSA)</a>
+* <a target="_blank" href="https://www.paloaltonetworks.com/services/education/certification#pcnse">	$400 Palo Alto Networks Certified Network Security Engineer	(PCNSE)</a>
 
-* https://view.ceros.com/f5/certification-roadmap/p/9?heightOverride=740	$135 F5 Big-IP Certified Solution Expert - Security (F5 CSE Sec)
-* https://view.ceros.com/f5/certification-roadmap/p/9?heightOverride=740	$135 F5 Big-IP Certified Technical Specialist - Access Policy Manager (F5 CTS APM)
-* https://view.ceros.com/f5/certification-roadmap/p/9?heightOverride=740	$135 F5 Big-IP Certified Technical Specialist - Domain Name Services	(F5 CTS DNS)
+* <a target="_blank" href="https://view.ceros.com/f5/certification-roadmap/p/9?heightOverride=740">	$135 F5 Big-IP Certified Solution Expert - Security (F5 CSE Sec)</a>
+* <a target="_blank" href="https://view.ceros.com/f5/certification-roadmap/p/9?heightOverride=740">	$135 F5 Big-IP Certified Technical Specialist - Access Policy Manager (F5 CTS APM)</a>
+* <a target="_blank" href="https://view.ceros.com/f5/certification-roadmap/p/9?heightOverride=740">	$135 F5 Big-IP Certified Technical Specialist - Domain Name Services	(F5 CTS DNS)</a>
 
-* https://www.juniper.net/us/en/training/certification/certification-tracks/junos-security-track/?tab=jnciasec	$200 Juniper Networks Certified Internet Associate Security	(JNCIA Sec)
-* https://www.juniper.net/us/en/training/certification/certification-tracks/junos-security-track/?tab=jncip-sec	$400 Juniper Networks Certified Internet Professional Security	(JNCIP Sec)
-* https://www.juniper.net/us/en/training/certification/certification-tracks/junos-security-track/?tab=jncisec	$300 Juniper Networks Certified Internet Specialist Security (JNCIS Sec)
+* <a target="_blank" href="https://www.juniper.net/us/en/training/certification/certification-tracks/junos-security-track/?tab=jnciasec">$200 Juniper Networks Certified Internet Associate Security	(JNCIA Sec)</a>
+* <a target="_blank" href="https://www.juniper.net/us/en/training/certification/certification-tracks/junos-security-track/?tab=jncip-sec">$400 Juniper Networks Certified Internet Professional Security	(JNCIP Sec)</a>
+* <a target="_blank" href="https://www.juniper.net/us/en/training/certification/certification-tracks/junos-security-track/?tab=jncisec">$300 Juniper Networks Certified Internet Specialist Security (JNCIS Sec)</a>
 
-* https://training-certifications.checkpoint.com/#/courses/Check%20Point%20Certified%20Admin%20(CCSA)%20R80.x	$250 Checkpoint Certified Security Administrator (CCSA)
-* https://training-certifications.checkpoint.com/#/courses/Check%20Point%20Certified%20Expert%20(CCSE)%20R80.x	$250 Checkpoint Certified Security Expert	(CCSE)
-* https://training-certifications.checkpoint.com/#/courses/Check%20Point%20Certified%20Master%20(CCSM)%20R80.x	$350 Checkpoint Certified Security Master	(CCSM)
+* <a target="_blank" href="https://training-certifications.checkpoint.com/#/courses/Check%20Point%20Certified%20Admin%20(CCSA)%20R80.x">$250 Checkpoint Certified Security Administrator (CCSA)</a>
+* <a target="_blank" href="https://training-certifications.checkpoint.com/#/courses/Check%20Point%20Certified%20Expert%20(CCSE)%20R80.x">$250 Checkpoint Certified Security Expert (CCSE)</a>
+* <a target="_blank" href="https://training-certifications.checkpoint.com/#/courses/Check%20Point%20Certified%20Master%20(CCSM)%20R80.x">$350 Checkpoint Certified Security Master (CCSM)</a>
 
-* https://training.fortinet.com/local/staticpage/view.php?page=nse_4	$400 NSE 4 - FortiNET Network Security Professional (NSE 4)
-https://training.fortinet.com/local/staticpage/view.php?page=nse_7	$400 NSE 7 - FortiNET Network Security Architect (NSE 7)
-https://training.fortinet.com/local/staticpage/view.php?page=nse_8	$2,000 NSE 8 - Fortinet Network Security Expert	(NSE 8)
+* <a target="_blank" href="https://training.fortinet.com/local/staticpage/view.php?page=nse_4">$400 NSE 4 - FortiNET Network Security Professional (NSE 4)</a>
+* <a target="_blank" href="https://training.fortinet.com/local/staticpage/view.php?page=nse_7">$400 NSE 7 - FortiNET Network Security Architect (NSE 7)</a>
+* <a target="_blank" href="https://training.fortinet.com/local/staticpage/view.php?page=nse_8">$2,000 NSE 8 - Fortinet Network Security Expert	(NSE 8)</a>
 
-* https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert/ccie-security.html	$2,050 Cisco Certified Implementation Expert - Security (CCIE Sec)
+* <a target="_blank" href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert/ccie-security.html">$2,050 Cisco Certified Implementation Expert - Security (CCIE Sec)</a>
 
-* https://www.splunk.com/en_us/training/certification-track/splunk-es-certified-admin.html	$4,625 Splunk Enterprise Security Certified Administrator	(Splunk ECSA)
+* <a target="_blank" href="https://www.splunk.com/en_us/training/certification-track/splunk-es-certified-admin.html">$4,625 Splunk Enterprise Security Certified Administrator (Splunk ECSA)</a>
 
 <hr />
 
@@ -1309,6 +1309,10 @@ TOP 5 Cyber Security Projects to go on Your Resume!</a> by Josh Madakor
    * Active Directory environment
    * File Integrity Monitor
    * Vulnerability Management Lab
+   <br /><br />
+
+Azure Service Operator (ASO)
+Fabrikam Fabric Store
 
 
 ## More on Security #
