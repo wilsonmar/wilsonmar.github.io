@@ -163,9 +163,9 @@ This is a deep-dive hands-on tutorial with commentary along the way, covering ba
 
 <a name="USGov"></a>
 
-### Microsoft Azure Government
+## Microsoft Azure Government environments
 
-   There are separate <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/government/">Azure fed/state/local gov</a> isolated "soverign" DoD Level 5 clouds on US soil operated by US citizens. It has its own Marketplace of apps:
+Microsoft runs separate/isolated <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/government/">Azure fed/state/local gov</a> "soverign DoD Level 5" cloud hardware on US soil operated by US citizens. It has its own Marketplace of apps.
    
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure">endpoints</a> for Speech Studio Speech translation :
    * Virginia: https://usgovvirginia.s2s.speech.azure.us
@@ -200,10 +200,77 @@ PROTIP: Setup <strong>different browser profiles</strong> on the same browser, a
 1. Do the above for each browser (Google Chrome, Microsoft Edge, Firefox, etc.).
 
 
-## CMPs from CSBs
+## Guidance by Job Role/Position
+
+Before we dive in technically, know that Microsoft offers guidance for each job level:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"><img alt="azure-guides-1158x439.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"></a>
+
+Each CSP (GCP, AWS, Azure, etc.) offers a Cloud Adoption Framework (CAF).
+
+
+<a name="MCSB"></a>
+
+### MCSB Best-practice Frameworks for Azure
+
+In <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview">2021</a>, Microsoft published its prescriptive best-practice framework in its MCSB (<strong>Microsoft Cybersecurity Security Benchmarks</strong>), v1 as of 3/21/23. Like the CIS (Center for Internet Security) Benchmarks (see https://www.cisecurity.org/cis-benchmarks/),
+the MCSB aims to improve the security of cloud-centric workloads, data, and services on Azure, perhaps in multi-cloud environment. 
+
+Controls:
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-posture-vulnerability-management?source=recommendations">MCSB - Posture and Vulnerability Management</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-incident-response?source=recommendations">MCSB - Incident Response</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-logging-threat-detection?source=recommendations">MCSB - Logging and threat detection</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-endpoint-security?source=recommendations">MCSB - Endpoint security</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-incident-response?source=recommendations">MCSB - Azure Security Benchmark v3 - Incident Response</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-privileged-access?source=recommendations">MCSB - Privileged Access</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-asset-management?source=recommendations">MCSB - Asset Management</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-backup-recovery?source=recommendations">MCSB - Backup and recovery</a>
+   <br /><br />
+
+It's based on input from a set of holistic Microsoft and industry security guidance:
+
+* <strong>Cloud Adoption Framework (CSF)</strong>: Guidance on security, including strategy, roles and responsibilities, Azure Top 10 Security Best Practices, and reference implementation.
+
+* <strong>Well-Architected Frameworks</strong>: Guidance on securing your workloads on Azure.
+
+* The Chief Information Security Officer (CISO) Workshop: Program guidance and reference strategies to accelerate security modernization using Zero Trust principles.
+
+* Other industry and cloud service providers security best practice standards and framework: Examples include the Amazon Web Services (AWS) Well-Architected Framework, Center for Internet Security (CIS) Controls, National Institute of Standards and Technology (NIST), and Payment Card Industry Data Security Standard (PCI-DSS).
+
+In December 2021 Microsoft published at https://aka.ms/MCRA the Microsoft Cybersecurity Reference Architectures.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=6iYxNm3TOiI&list=PLtVMyW0H7aiOQwZSsn2d-tg2z729ce1BZ">VIDEO</a>: "MCRA Intro"
+by Mark Simos, Microsoft Chief Security Advisor.
+
+
+
+### Job Roles
+
+Microsoft aligned these generic "job roles" with <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Azure certification exams</a>:
+
+   * (Azure) Administrator
+   * (Azure) Developer
+   * (Azure) Solution Architect
+
+   * Data Engineer
+   * AI Engineer
+   * Business Analyst
+   * Business User
+   <br /><br />
+
+   PROTIP: Generic job positions ("roles") are different than the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a> (AAD).
+
+   MY OPINION: I think job roles should be multi-select checkboxes.
+   This segregation also adds to duplicating material.
+
+
+
+### CMPs from CSBs
 
 Not a lot of people <a target="_blank" href="https://www.infoworld.com/article/2903436/make-sense-of-cloud-service-brokers.html">talk about this</a>, but a Cloud Management Platform (CMP) from a CSB (Cloud Service Broker such as AppDirect, Ensim, Gravitant, Jamcracker, Parallels, Ostrato, ServiceNow, BMC, etc.) is necessary for enterprises to provide provisioning governance, self-service, usage chargeback, and policy enforcement across multiple cloud vendors. 
 
+
+<hr />
 
 ## Hands-on time
 
@@ -283,26 +350,6 @@ The clock is ticking!
 
 
 <hr />
-
-## Job Positions (roles)
-
-Microsoft aligned these generic "job roles" with <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Azure certification exams</a>:
-
-   * (Azure) Administrator
-   * (Azure) Developer
-   * (Azure) Solution Architect
-
-   * Data Engineer
-   * AI Engineer
-   * Business Analyst
-   * Business User
-   <br /><br />
-
-   PROTIP: Generic job positions ("roles") are different than the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a> (AAD).
-
-   MY OPINION: I think job roles should be multi-select checkboxes.
-   This segregation also adds to duplicating material.
-
 
 <hr />
 
@@ -826,56 +873,7 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
     READ: <a target="_blank" href="https://medium.com/microsoftazure/how-to-perform-role-assignments-on-azure-resources-from-an-azure-devops-pipeline-c9f4dc10d0a4">Role Assignments on Azure Resources from Azure Pipelines</a>
 
 
-### ARM tokens
-
-<a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course/categories/4743678/posts/8980102#">VIDEO</a>:
-
-1. A user (or service principal) acquires a token for Azure Resource Manager (ARM).  
-2. The token includes the user's group memberships (including transitive group memberships).
-3. The user makes a REST API call to Azure Resource Manager with the token attached.
-4. ARM retrieves all the role assignments and deny assignments that apply to the resource upon which the action is being taken.
-5. ARM narrows the role assignments that apply to this user or their group and determines what roles the user ahs for this resource.
-6. ARM determines if the action in the API call is included in the roles the user has for this resource.
-7. If the user doesn't have a role with the action at the requested scope, access is not granted. Otherwise, ARM checks if ta deny assignment applies.
-8. If a deny assignment applies, access is blocked. Otherwise access is granted.
-
 <hr />
-
-<a name="MCSB"></a>
-
-## Best-practice Frameworks for Azure
-
-In <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview">2021</a>, Microsoft published its prescriptive best-practice framework in its MCSB (<strong>Microsoft Cybersecurity Security Benchmarks</strong>), v1 as of 3/21/23. Like the CIS (Center for Internet Security) Benchmarks (see https://www.cisecurity.org/cis-benchmarks/),
-the MCSB aims to improve the security of cloud-centric workloads, data, and services on Azure, perhaps in multi-cloud environment. 
-
-Controls:
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-posture-vulnerability-management?source=recommendations">MCSB - Posture and Vulnerability Management</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-incident-response?source=recommendations">MCSB - Incident Response</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-logging-threat-detection?source=recommendations">MCSB - Logging and threat detection</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-endpoint-security?source=recommendations">MCSB - Endpoint security</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-incident-response?source=recommendations">MCSB - Azure Security Benchmark v3 - Incident Response</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-privileged-access?source=recommendations">MCSB - Privileged Access</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-asset-management?source=recommendations">MCSB - Asset Management</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-backup-recovery?source=recommendations">MCSB - Backup and recovery</a>
-   <br /><br />
-
-It's based on input from a set of holistic Microsoft and industry security guidance:
-
-* <strong>Cloud Adoption Framework (CSF)</strong>: Guidance on security, including strategy, roles and responsibilities, Azure Top 10 Security Best Practices, and reference implementation.
-
-* <strong>Well-Architected Frameworks</strong>: Guidance on securing your workloads on Azure.
-
-* The Chief Information Security Officer (CISO) Workshop: Program guidance and reference strategies to accelerate security modernization using Zero Trust principles.
-
-* Other industry and cloud service providers security best practice standards and framework: Examples include the Amazon Web Services (AWS) Well-Architected Framework, Center for Internet Security (CIS) Controls, National Institute of Standards and Technology (NIST), and Payment Card Industry Data Security Standard (PCI-DSS).
-
-   * 
-
-In December 2021 Microsoft published at https://aka.ms/MCRA the Microsoft Cybersecurity Reference Architectures.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=6iYxNm3TOiI&list=PLtVMyW0H7aiOQwZSsn2d-tg2z729ce1BZ">VIDEO</a>: "MCRA Intro"
-by Mark Simos, Microsoft Chief Security Advisor.
-
 
 ## MS Defender for Cloud
 
@@ -2880,6 +2878,21 @@ http://www.frankysnotes.com/2020/04/how-i-build-budget-friendly-url.html
 https://medium.com/marcus-tee-anytime/create-your-own-url-shortener-host-in-azure-almost-free-for-cloud-infrastructure-a74c9cc29720
 
 https://levelup.gitconnected.com/build-a-custom-url-shortener-using-azure-functions-and-cosmos-db-c20e59261375
+
+
+
+### ARM tokens
+
+<a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course/categories/4743678/posts/8980102#">VIDEO</a>:
+
+1. A user (or service principal) acquires a token for Azure Resource Manager (ARM).  
+2. The token includes the user's group memberships (including transitive group memberships).
+3. The user makes a REST API call to Azure Resource Manager with the token attached.
+4. ARM retrieves all the role assignments and deny assignments that apply to the resource upon which the action is being taken.
+5. ARM narrows the role assignments that apply to this user or their group and determines what roles the user ahs for this resource.
+6. ARM determines if the action in the API call is included in the roles the user has for this resource.
+7. If the user doesn't have a role with the action at the requested scope, access is not granted. Otherwise, ARM checks if ta deny assignment applies.
+8. If a deny assignment applies, access is blocked. Otherwise access is granted.
 
 
 ## More about Azure #

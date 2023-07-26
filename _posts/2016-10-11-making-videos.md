@@ -541,7 +541,7 @@ macOS does not provide the most precise way of arranging windows quickly (with a
 
 So enterprising solutions have appeared:
 
-$10 Moom (by ManyTricks.com)
+$10 Moom (by ManyTricks.com) https://manytricks.com/moom/
    * Available on the Apple App Store
    * https://www.youtube.com/watch?v=HLVFuAUnJdc
    * https://www.youtube.com/watch?v=MmeO6yGHQsM 
