@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-21"
+date: "2023-07-25"
 file: "making-videos"
 title: "Making videos"
 excerpt: "Tediously using Camtasia, Audacity, OBS, and automating animated PowerPoint on a Mac"
@@ -25,10 +25,10 @@ I'm looking for a more efficient way to make videos to explain concepts.
 
 Here are the video editing software I've heard about:
 
-* $259 Camtasia is what I'm using to edit videos. It has both Windows and Mac editions. As with anything, it has <a href="#Camtasia">annoyances</a>.
+* $259 Camtasia is what I've been using to edit videos. It has both Windows and Mac editions. As with anything, it has <a href="#Camtasia">annoyances</a>.
 
 * <a target="_blank" href="https://www.apple.com/final-cut-pro/">
-Apple's $300 Final Cut Pro X</a> (FCPX) is what many 360 degree equirectangular VR videographers use to make experiences on HTC Vive VR headsets. Intuitive yet powerful. Great if you have the latest iMac Pro with the 5K monitor, multiple camera inputs. Also lots of 3rd-party plug-ins. It's the upgrade to the $70 iMovie.
+Apple's $300 Final Cut Pro X</a> (FCPX) is what many 360 degree equirectangular VR videographers use to make experiences captured by HTC Vive VR headsets. Intuitive yet powerful. Great if you have the latest iMac Pro with the <a href="#5K">5K</a> monitor and multiple camera inputs. Also lots of 3rd-party plug-ins. It's the upgrade to the $70 iMovie.
 
 * $129 <a target="_blank" href="https://www.telestream.net/screenflow/">Screenflow</a>
 
@@ -292,6 +292,8 @@ References:
 
     Ultra HD television is recorded using professional DCI 4K cameras in 4096x2160 (4,000 pixels, 8.8 megapixels, aspect ratio 17:9) for digital cinema.
 
+    <a name="5K"></a>
+
     "5K" on Mac Retina is 5120x2880. 
     
     "8K" is 7680x4320.
@@ -528,19 +530,36 @@ Combine it with the free-while-in-beta Blu-ray ripper app MakeMKV -- can let you
 
    The audio occasionally stuttered on the menu screens as the disc loaded new information, but the movies themselves played back smoothly.
 
+## Video Editing control box
+
+https://www.tourboxtech.com/en/
+
+
+## Arrange windows on macOS
+
+macOS does not provide the most precise way of arranging windows quickly (with a keystroke), especially on large external monitors.
+
+So enterprising solutions have appeared:
+
+$10 Moom (by ManyTricks.com)
+   * Available on the Apple App Store
+   * https://www.youtube.com/watch?v=HLVFuAUnJdc
+   * https://www.youtube.com/watch?v=MmeO6yGHQsM 
+
 
 ## More Resources
 
-<a target="_blank" href="https://www.bmyers.com/">bmyers.com</a> (Bill Myers) is the king of monitization, and has a $10/month subscription to watch his short tutorials.
+<a target="_blank" href="https://www.bmyers.com/">bmyers.com</a> (Bill Myers) is the king of monetization, and has a $10/month subscription to watch his short tutorials.
 
 <a target="_blank" href="http://www.davidfrosdick.com/">davidfrosdick.com</a>
 
 <a target="_blank" href="https://www.macintoshtipz.com/">macintoshtipz.com</a>
 
-https://www.youtube.com/watch?v=pSexUljveYE
+<a target="_blank" href="https://www.youtube.com/watch?v=pSexUljveYE">VIDEO</a>:
 Talking head in circle with shadow in Camtasia 2020 | Camtasia Circular Video Tutorial
 
-https://www.youtube.com/watch?v=mzUIeq1PX7o
+<a target="_blank" href="https://www.youtube.com/watch?v=mzUIeq1PX7o">VIDEO</a>:
 Put a video on a Powerpoint slide deck - Add your personal touch as a presenter
 
 https://realpython.com/how-to-make-programming-videos/
+

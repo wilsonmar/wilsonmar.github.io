@@ -161,23 +161,6 @@ This is a deep-dive hands-on tutorial with commentary along the way, covering ba
 </table>
 
 
-## PROTIP: Browser Profiles
-
-PROTIP: Setup and use different <strong>browser profiles</strong>, one for each account (email). Why? 
-Azure saves the account you're on in the browser "cookie" so that when you return you'll see the last account used. 
-
-However, if you switch among different accounts on the same browser, that's a hassle.
-
-1. To create a different profile for each Azure account, at the upper-right corner, click your avatar picture :
-
-   * <a href="#MSAccount">Learn account</a> using your personal email (such as at gmail.com).
-   * Account using your Visual Studio benefit (using your work email)
-   * Work account to do your job as an Administrator.
-   <br /><br />
-
-Do this for each browser (Google Chrome, Microsoft Edge, Firefox, etc.).
-
-
 <a name="USGov"></a>
 
 ### Microsoft Azure Government
@@ -195,6 +178,26 @@ References:
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure">DOC: Compare Global vs. Gov</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=6UDePj5newo&list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7&index=10">VIDEO: Terraform Provider Azure.gov</a> for standardized templates across clouds.
    * <a target="_blank" href="https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/">Pulumi</a> enables programmatic access (by a Python program) to Azure.
+
+
+<a name="Profiles"></a>
+
+## PROTIP: Use Browser Profiles
+
+Websites (including Azure) stores your browser history, what account you logged in, etc. in "cookies" associated with your browser account.
+
+That's how you get returned to the last account used when you go back to a website.
+
+PROTIP: Setup <strong>different browser profiles</strong> on the same browser, associated with different profile avatars and colors: <strong>one for each account (email)</strong>.
+
+1. Click your browser's avatar picture at the upper-right corner:
+
+   * The <a href="#MSAccount">Learn account</a> using your personal email (such as at gmail.com).
+   * The account associated with your Visual Studio benefit (using your work email)
+   * Each of your work accounts (to do your job as an Administrator).
+   <br /><br />
+
+1. Do the above for each browser (Google Chrome, Microsoft Edge, Firefox, etc.).
 
 
 ## CMPs from CSBs
@@ -823,17 +826,17 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
     READ: <a target="_blank" href="https://medium.com/microsoftazure/how-to-perform-role-assignments-on-azure-resources-from-an-azure-devops-pipeline-c9f4dc10d0a4">Role Assignments on Azure Resources from Azure Pipelines</a>
 
 
-### Summary
+### ARM tokens
 
 <a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course/categories/4743678/posts/8980102#">VIDEO</a>:
 
-1. A user (or service principal) acquires a token for Azure Resource Manager.
+1. A user (or service principal) acquires a token for Azure Resource Manager (ARM).  
 2. The token includes the user's group memberships (including transitive group memberships).
 3. The user makes a REST API call to Azure Resource Manager with the token attached.
-4. Azure Resource Manager retrieves all the role assignments and deny assignments that apply to the resource upon which the action is being taken.
-5. Azure Resource Manager narrows the role assignments that apply to this user or their group and determines what roles the user ahs for this resource.
-6. Azure Resource Manager determines if the action in the API call is included in the roles the user has for this resource.
-7. If the user doesn't have a role with the action at the requested scope, access is not granted. Otherwise, Azure Resource Manager checks if ta deny assignment applies.
+4. ARM retrieves all the role assignments and deny assignments that apply to the resource upon which the action is being taken.
+5. ARM narrows the role assignments that apply to this user or their group and determines what roles the user ahs for this resource.
+6. ARM determines if the action in the API call is included in the roles the user has for this resource.
+7. If the user doesn't have a role with the action at the requested scope, access is not granted. Otherwise, ARM checks if ta deny assignment applies.
 8. If a deny assignment applies, access is blocked. Otherwise access is granted.
 
 <hr />
@@ -845,6 +848,7 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 In <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview">2021</a>, Microsoft published its prescriptive best-practice framework in its MCSB (<strong>Microsoft Cybersecurity Security Benchmarks</strong>), v1 as of 3/21/23. Like the CIS (Center for Internet Security) Benchmarks (see https://www.cisecurity.org/cis-benchmarks/),
 the MCSB aims to improve the security of cloud-centric workloads, data, and services on Azure, perhaps in multi-cloud environment. 
 
+Controls:
    * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-posture-vulnerability-management?source=recommendations">MCSB - Posture and Vulnerability Management</a>
    * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-incident-response?source=recommendations">MCSB - Incident Response</a>
    * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-logging-threat-detection?source=recommendations">MCSB - Logging and threat detection</a>
@@ -875,7 +879,16 @@ by Mark Simos, Microsoft Chief Security Advisor.
 
 ## MS Defender for Cloud
 
-<a target="_blank" href="https://learn.microsoft.com/en-us/azure/defender-for-cloud/update-regulatory-compliance-packages">Microsoft Defender for Cloud</a>. Successor of Azure Security Benchmark v3.)
+For an <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/">additional charge</a> (to each server, container, database, storage, app service)
+Microsoft (Azure) Defender for Cloud:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"><img alt="azure-defender-1492x1042.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"></a>
+
+NOTE: Microsoft also offers "Defender"
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/defender-for-cloud/update-regulatory-compliance-packages">regulatory compliance packages</a>. 
+
+Successor of Azure Security Benchmark v3.)
 
 
 
