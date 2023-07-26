@@ -20,6 +20,30 @@ This is a deep-dive hands-on tutorial with commentary along the way, covering ba
 
 {% include whatever.html %}
 
+<a name="USGov"></a>
+
+## Microsoft Azure Government environments
+
+Microsoft runs separate/isolated <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/government/">Azure fed/state/local gov</a> "sovereign DoD Level 5" cloud hardware on US soil operated by US citizens. 
+
+1. Specify the target cloud environment:
+
+   <pre><strong>az cloud show --name AzureUSGovernment</strong></pre>
+
+   AzureUSGovernment has its own Marketplace of apps.
+
+1. Know that <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure">each service has different host names</a> for US government work. For example, Speech Studio Speech translation has these API endpoints:
+   * Virginia: https://usgovvirginia.s2s.speech.azure.us
+   * Arizona: https://usgovarizona.s2s.speech.azure.us
+   <br /><br />
+
+References:
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-welcome">What is gov?</a> 
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure">DOC: Compare Global vs. Gov</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=6UDePj5newo&list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7&index=10">VIDEO: Terraform Provider Azure.gov</a> for standardized templates across clouds.
+   * <a target="_blank" href="https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/">Pulumi</a> enables programmatic access (by a Python program) to Azure.
+
+
 <a name="URLs"></a>
 
 ## URLs for Microsoft and Azure
@@ -161,30 +185,12 @@ This is a deep-dive hands-on tutorial with commentary along the way, covering ba
 </table>
 
 
-<a name="USGov"></a>
-
-## Microsoft Azure Government environments
-
-Microsoft runs separate/isolated <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/government/">Azure fed/state/local gov</a> "soverign DoD Level 5" cloud hardware on US soil operated by US citizens. It has its own Marketplace of apps.
-   
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure">endpoints</a> for Speech Studio Speech translation :
-   * Virginia: https://usgovvirginia.s2s.speech.azure.us
-   * Arizona: https://usgovarizona.s2s.speech.azure.us
-   <br /><br />
-
-References:
-   * https://azure.microsoft.com/en-us/explore/global-infrastructure/government/
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-welcome">What is gov?</a> 
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure">DOC: Compare Global vs. Gov</a>
-   * <a target="_blank" href="https://www.youtube.com/watch?v=6UDePj5newo&list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7&index=10">VIDEO: Terraform Provider Azure.gov</a> for standardized templates across clouds.
-   * <a target="_blank" href="https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/">Pulumi</a> enables programmatic access (by a Python program) to Azure.
-
 
 <a name="Profiles"></a>
 
-## PROTIP: Use Browser Profiles
+## Setup & Use Browser Profiles
 
-Websites (including Azure) stores your browser history, what account you logged in, etc. in "cookies" associated with your browser account.
+Websites (including Azure) store your browser history, what account you logged in, etc. locally in "cookies" associated with your browser account.
 
 That's how you get returned to the last account used when you go back to a website.
 
@@ -200,13 +206,24 @@ PROTIP: Setup <strong>different browser profiles</strong> on the same browser, a
 1. Do the above for each browser (Google Chrome, Microsoft Edge, Firefox, etc.).
 
 
+<a name="MCRA"></a>
+
 ## Guidance by Job Role/Position
 
-Before we dive in technically, know that Microsoft offers guidance for each job level:
+<a target="_blank" href="https://www.youtube.com/watch?v=6iYxNm3TOiI&list=PLtVMyW0H7aiOQwZSsn2d-tg2z729ce1BZ" title="MCRA Intro by Mark Simos, Microsoft Chief Security Advisor">VIDEO</a>: Microsoft's overarching <a target="_blank" href="https://aka.ms/MCRA/">Cybersecurity Reference Architecture (MCRA)</a> presents several perspectives.
+
+Efforts by <strong>job level</strong>:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"><img alt="azure-guides-1158x439.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"></a>
 
-Each CSP (GCP, AWS, Azure, etc.) offers a Cloud Adoption Framework (CAF).
+<a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop-videos">Videos</a> in <a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop?source=recommendations">Microsoft's CISO Workshop</a> covers what <strong>concerns each organizational function/team</strong>:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"><img alt="azure-security-roles-1883x903.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"></a>
+
+Each CSP (GCP, AWS, Azure, etc.) offers different but similar <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/">Cloud Adoption Framework (CAF)</a>
+and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-architected/security/overview">Well-Architected Framework</a>.
+
+https://aka.ms/SecurityRoles
 
 
 <a name="MCSB"></a>
@@ -215,6 +232,8 @@ Each CSP (GCP, AWS, Azure, etc.) offers a Cloud Adoption Framework (CAF).
 
 In <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview">2021</a>, Microsoft published its prescriptive best-practice framework in its MCSB (<strong>Microsoft Cybersecurity Security Benchmarks</strong>), v1 as of 3/21/23. Like the CIS (Center for Internet Security) Benchmarks (see https://www.cisecurity.org/cis-benchmarks/),
 the MCSB aims to improve the security of cloud-centric workloads, data, and services on Azure, perhaps in multi-cloud environment. 
+
+There is a <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/">"baseline" for each Azure service</a>
 
 Controls:
    * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-posture-vulnerability-management?source=recommendations">MCSB - Posture and Vulnerability Management</a>
@@ -229,18 +248,15 @@ Controls:
 
 It's based on input from a set of holistic Microsoft and industry security guidance:
 
-* <strong>Cloud Adoption Framework (CSF)</strong>: Guidance on security, including strategy, roles and responsibilities, Azure Top 10 Security Best Practices, and reference implementation.
+* <strong>Cloud Adoption Framework (CSF)</strong>: Guidance on security, including strategy, roles and responsibilities, 
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/security-top-10">Azure Top Security Best Practices</a> (What, Why, Who, How activities) by People, Process, Technology, and Architecture. 
 
 * <strong>Well-Architected Frameworks</strong>: Guidance on securing your workloads on Azure.
 
 * The Chief Information Security Officer (CISO) Workshop: Program guidance and reference strategies to accelerate security modernization using Zero Trust principles.
 
 * Other industry and cloud service providers security best practice standards and framework: Examples include the Amazon Web Services (AWS) Well-Architected Framework, Center for Internet Security (CIS) Controls, National Institute of Standards and Technology (NIST), and Payment Card Industry Data Security Standard (PCI-DSS).
-
-In December 2021 Microsoft published at https://aka.ms/MCRA the Microsoft Cybersecurity Reference Architectures.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=6iYxNm3TOiI&list=PLtVMyW0H7aiOQwZSsn2d-tg2z729ce1BZ">VIDEO</a>: "MCRA Intro"
-by Mark Simos, Microsoft Chief Security Advisor.
 
 
 
@@ -294,7 +310,7 @@ Not a lot of people <a target="_blank" href="https://www.infoworld.com/article/2
 
    ### Azure first-timer deals
 
-2. Get a "Microsoft Learn"</a> account for $200 of credits to spend in 30 days and also a year of <a href="#FreeSvcs">free services</a>. See <a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">docs.microsoft.com/en-us/learn/azure/</a> 
+2. Get a "Microsoft Learn" account for $200 of credits to spend in 30 days and also a year of <a href="#FreeSvcs">free services</a>. See <a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">docs.microsoft.com/en-us/learn/azure/</a> 
 
    After that instead of "Pay-As-You-Go",
 
@@ -875,10 +891,17 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 
 <hr />
 
-## MS Defender for Cloud
+## MS Defenders
 
-For an <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/">additional charge</a> (to each server, container, database, storage, app service)
-Microsoft (Azure) Defender for Cloud:
+Microsoft offers a "Defender" product for each type of product:
+
+   * MS Defender for Office 365
+   * MS Defender for Endpoint
+   * MS Defender for Identity
+   * MS Defender for Cloud
+   <br /><br />
+
+REMEMBER: Use of Defender involves <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/">additional charges</a> (to each server, container, database, storage, app service).
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"><img alt="azure-defender-1492x1042.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"></a>
 
