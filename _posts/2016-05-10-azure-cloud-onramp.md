@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-07-25"
+date: "2023-07-26"
 file: "azure-cloud-onramp"
 title: "Azure Cloud Onramp"
 excerpt: "Azure URLs, Subscriptions, Support plans, Tenants, Directories, ARM portal Keyboard Shortcuts, CLI Bash & PowerShell scripting"
@@ -208,7 +208,7 @@ PROTIP: Setup <strong>different browser profiles</strong> on the same browser, a
 
 <a name="MCRA"></a>
 
-## Guidance by Job Role/Position
+## Guidance by Organizational Level
 
 <a target="_blank" href="https://www.youtube.com/watch?v=6iYxNm3TOiI&list=PLtVMyW0H7aiOQwZSsn2d-tg2z729ce1BZ" title="MCRA Intro by Mark Simos, Microsoft Chief Security Advisor">VIDEO</a>: Microsoft's overarching <a target="_blank" href="https://aka.ms/MCRA/">Cybersecurity Reference Architecture (MCRA)</a> presents several perspectives.
 
@@ -216,14 +216,12 @@ Efforts by <strong>job level</strong>:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"><img alt="azure-guides-1158x439.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"></a>
 
-<a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop-videos">Videos</a> in <a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop?source=recommendations">Microsoft's CISO Workshop</a> covers what <strong>concerns each organizational function/team</strong>:
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"><img alt="azure-security-roles-1883x903.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"></a>
-
 Each CSP (GCP, AWS, Azure, etc.) offers different but similar <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/">Cloud Adoption Framework (CAF)</a>
 and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-architected/security/overview">Well-Architected Framework</a>.
 
-https://aka.ms/SecurityRoles
+s<a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop-videos">Videos</a> in <a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop">Microsoft's CISO Workshop</a> covers how the <a target="_blank" href="https://aka.ms/SecurityRoles">concerns</a> of each organizational role type/team</a> relate with others:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"><img alt="azure-security-roles-1883x903.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"></a>
 
 
 <a name="MCSB"></a>
@@ -235,26 +233,41 @@ the MCSB aims to improve the security of cloud-centric workloads, data, and serv
 
 There is a <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/">"baseline" for each Azure service</a>
 
-Controls:
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-posture-vulnerability-management?source=recommendations">MCSB - Posture and Vulnerability Management</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-incident-response?source=recommendations">MCSB - Incident Response</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-logging-threat-detection?source=recommendations">MCSB - Logging and threat detection</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-endpoint-security?source=recommendations">MCSB - Endpoint security</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-incident-response?source=recommendations">MCSB - Azure Security Benchmark v3 - Incident Response</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-privileged-access?source=recommendations">MCSB - Privileged Access</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-asset-management?source=recommendations">MCSB - Asset Management</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-backup-recovery?source=recommendations">MCSB - Backup and recovery</a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"><img alt="az-defenders-3360x1602.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"></a>
+
+
+<a name="SecureScore"></a>
+
+### Secure Score Posture Categories
+
+Within M365 Defender is the <a target="_blank" href="https://learn.microsoft.com/en-us/microsoft-365/security/defender/microsoft-secure-score?view=o365-worldwide#how-it-works">Microsoft Secure Score</a> survey app. It's used to define a security posture score (over time) based on whether specific actions have occurred or not. It contains a breakdown based on Microsoft's <strong>categories for a Security Posture</strong>:
+
+   * Identity
+   * Data
+   * Device
+   * Apps
+   * Infrastructure
    <br /><br />
+
+
+
+Controls:
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-posture-vulnerability-management">Posture and Vulnerability Management</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-incident-response">Incident Response</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-logging-threat-detection">Logging and threat detection</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-endpoint-security">Endpoint security</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-incident-response">Azure Security Benchmark v3 - Incident Response</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-privileged-access">Privileged Access</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-asset-management">Asset Management</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-backup-recovery">Backup and recovery</a>
+   <br /><br />
+
 
 It's based on input from a set of holistic Microsoft and industry security guidance:
 
 * <strong>Cloud Adoption Framework (CSF)</strong>: Guidance on security, including strategy, roles and responsibilities, 
 
 * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/security-top-10">Azure Top Security Best Practices</a> (What, Why, Who, How activities) by People, Process, Technology, and Architecture. 
-
-* <strong>Well-Architected Frameworks</strong>: Guidance on securing your workloads on Azure.
-
-* The Chief Information Security Officer (CISO) Workshop: Program guidance and reference strategies to accelerate security modernization using Zero Trust principles.
 
 * Other industry and cloud service providers security best practice standards and framework: Examples include the Amazon Web Services (AWS) Well-Architected Framework, Center for Internet Security (CIS) Controls, National Institute of Standards and Technology (NIST), and Payment Card Industry Data Security Standard (PCI-DSS).
 
@@ -2916,6 +2929,8 @@ https://levelup.gitconnected.com/build-a-custom-url-shortener-using-azure-functi
 6. ARM determines if the action in the API call is included in the roles the user has for this resource.
 7. If the user doesn't have a role with the action at the requested scope, access is not granted. Otherwise, ARM checks if ta deny assignment applies.
 8. If a deny assignment applies, access is blocked. Otherwise access is granted.
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/microsoft-365/security/defender/investigate-incidents?view=o365-worldwide#attack-story">Attack Story</a>
 
 
 ## More about Azure #
