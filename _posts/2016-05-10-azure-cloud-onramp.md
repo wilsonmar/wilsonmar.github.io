@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-05-25"
+date: "2023-07-25"
 file: "azure-cloud-onramp"
 title: "Azure Cloud Onramp"
 excerpt: "Azure URLs, Subscriptions, Support plans, Tenants, Directories, ARM portal Keyboard Shortcuts, CLI Bash & PowerShell scripting"
@@ -58,9 +58,9 @@ This is a deep-dive hands-on tutorial with commentary along the way, covering ba
    <a target="_blank" href="https://serviceshub.microsoft.com">serviceshub.microsoft.com</a>
    </td><td>-
    </td></tr>
-<tr valign="top"><td> User Self-Service password reset</td><td align="right">
+<tr valign="top"><td> User Self-Service</td><td align="right">
    <a target="_blank" href="https://myapps.microsoft.com">myapps.microsoft.com</a>
-   </td><td>-
+   </td><td>password reset
    </td></tr>
 <tr valign="top"><td> All Admin Centers </td><td>
    <a target="_blank" href="https://admin.microsoft.com/AdminPortal/Home#/alladmincenters"><u><strong>
@@ -79,11 +79,11 @@ This is a deep-dive hands-on tutorial with commentary along the way, covering ba
    </td></tr>
 <tr valign="top"><td> Cloud Shell </td><td align="right">
    <a target="_blank" href="https://shell.azure.com/">
-   shell.azure.com</a>
+   <strong>shell.azure.com</strong></a>
    </td><td> CLI
    </td></tr>
 <tr valign="top"><td> Azure Enterprise Portal </td><td align="right">
-   <a target="_blank" href="https://ea.azure.com">ea.azure.com</a>
+   <a target="_blank" href="https://ea.azure.com"><strong>ea.azure.com</strong></a>
    </td><td> Define departments
    </td></tr>
 <tr valign="top"><td> <a href="#AAD">Azure AD</a> </td><td align="right">
@@ -182,25 +182,24 @@ Do this for each browser (Google Chrome, Microsoft Edge, Firefox, etc.).
 
 ### Microsoft Azure Government
 
-   There is a separate <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/government/">Azure fed/state/local gov</a> is an isolated "soverign" DoD Level 5 cloud on US soil operated by US citizens. It has its own Marketplace of apps. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-welcome">What is gov?</a> 
-
-   https://azure.microsoft.com/en-us/explore/global-infrastructure/government/
-
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure">DOC: Compare Global vs. Gov</a>
-
-   For example, <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure">endpoints</a> for Speech Studio Speech translation :
+   There are separate <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/government/">Azure fed/state/local gov</a> isolated "soverign" DoD Level 5 clouds on US soil operated by US citizens. It has its own Marketplace of apps:
+   
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure">endpoints</a> for Speech Studio Speech translation :
    * Virginia: https://usgovvirginia.s2s.speech.azure.us
    * Arizona: https://usgovarizona.s2s.speech.azure.us
    <br /><br />
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=6UDePj5newo&list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7&index=10">VIDEO: Terraform Provider Azure.gov</a> for standardized templates across clouds.
+References:
+   * https://azure.microsoft.com/en-us/explore/global-infrastructure/government/
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-welcome">What is gov?</a> 
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure">DOC: Compare Global vs. Gov</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=6UDePj5newo&list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7&index=10">VIDEO: Terraform Provider Azure.gov</a> for standardized templates across clouds.
+   * <a target="_blank" href="https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/">Pulumi</a> enables programmatic access (by a Python program) to Azure.
 
-   <a target="_blank" href="https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/">Pulumi</a> enables programmatic access (by a Python program) to Azure.
 
+## CMPs from CSBs
 
-## CSBs and CMP
-
-Not a lot of people <a target="_blank" href="https://www.infoworld.com/article/2903436/make-sense-of-cloud-service-brokers.html">talk about this</a>, but a Cloud Management Platform (CMP) from a CSB (Cloud Service Broker such as AppDirect, Ensim, Gravitant, Jamcracker, Parallels, Ostrato, ServiceNow, BMC, etc.) is necessary for enterprises to provide provisioning governance, self-service, usage chargeback, and policy enforcement (multi-cloud). 
+Not a lot of people <a target="_blank" href="https://www.infoworld.com/article/2903436/make-sense-of-cloud-service-brokers.html">talk about this</a>, but a Cloud Management Platform (CMP) from a CSB (Cloud Service Broker such as AppDirect, Ensim, Gravitant, Jamcracker, Parallels, Ostrato, ServiceNow, BMC, etc.) is necessary for enterprises to provide provisioning governance, self-service, usage chargeback, and policy enforcement across multiple cloud vendors. 
 
 
 ## Hands-on time
@@ -775,23 +774,23 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 
 ### Management Group Policies
 
-1. Navigate to the "Policy" blade.
-2. Definitions
+1.  Navigate to the "Policy" blade.
+2.  Definitions
 
-   In Azure, policies are for evaluating compliance among Resources and their properties, not to control access to resources.
+    In Azure, policies are for evaluating compliance among Resources and their properties, not to control access to resources.
 
-   <a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course/categories/4743678/posts/8980104">VIDEO</a>:
-   Policies can be assigned to <strong>scopes</strong> to limit what can be assigned to management levels and change what has been assigned:
+    <a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course/categories/4743678/posts/8980104">VIDEO</a>:
+    Policies can be assigned to <strong>scopes</strong> to limit what can be assigned to management levels and change what has been assigned:
 
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/governance/policy/concepts/effects">Policy effects</a> include Append, Audit, Deny, Modify, etc. Also: Enforce OPA (Open Policy Agent) Constraint and Enforce Rego Policy.
+    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/governance/policy/concepts/effects">Policy effects</a> include Append, Audit, Deny, Modify, etc. Also: Enforce OPA (Open Policy Agent) Constraint and Enforce Rego Policy.
 
-3. Select a category from Categories dropdown.
+3.  Select a category from Categories dropdown.
 
-   For example: Require a tag and its value on resources
+    For example: Require a tag and its value on resources
 
-   REMEMBER: Tags do not cascade via inheritance like permissions unless a policy allows that.
+    REMEMBER: Tags do not cascade via inheritance like permissions unless a policy allows that.
 
-   To do remediation, define a Managed Identity.
+    To do remediation, define a Managed Identity.
 
 
 
@@ -810,14 +809,14 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 
     REMEMBER: Actions are also called "Operations" at different Scopes.
 
-15. See "Your role"? (avoid using "Global Admin")
+1.  See "Your role"? (avoid using "Global Admin")
 
-16. <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=32m23s">VIDEO</a>:
+1.  <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=32m23s">VIDEO</a>:
     Click "+ Add" to create a new Tenant.
 
     PROTIP: Tenant Type "Azure Active Directory" by itself is actually "B2B" = Business to (2) Business. "B2C" means Business to (2) Consumers, or connection to External Identities on LinkedIn, Google, Facebook, etc.
 
-17. Cancel out by searching for AAD again.
+1.  Cancel out by searching for AAD again.
 
     Various roles can be can be defined for a tenant - LIMIT: Up to 2,000 roles per individual tenant.
 
@@ -836,6 +835,49 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 6. Azure Resource Manager determines if the action in the API call is included in the roles the user has for this resource.
 7. If the user doesn't have a role with the action at the requested scope, access is not granted. Otherwise, Azure Resource Manager checks if ta deny assignment applies.
 8. If a deny assignment applies, access is blocked. Otherwise access is granted.
+
+<hr />
+
+<a name="MCSB"></a>
+
+## Best-practice Frameworks for Azure
+
+In <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview">2021</a>, Microsoft published its prescriptive best-practice framework in its MCSB (<strong>Microsoft Cybersecurity Security Benchmarks</strong>), v1 as of 3/21/23. Like the CIS (Center for Internet Security) Benchmarks (see https://www.cisecurity.org/cis-benchmarks/),
+the MCSB aims to improve the security of cloud-centric workloads, data, and services on Azure, perhaps in multi-cloud environment. 
+
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-posture-vulnerability-management?source=recommendations">MCSB - Posture and Vulnerability Management</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-incident-response?source=recommendations">MCSB - Incident Response</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-logging-threat-detection?source=recommendations">MCSB - Logging and threat detection</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-endpoint-security?source=recommendations">MCSB - Endpoint security</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-incident-response?source=recommendations">MCSB - Azure Security Benchmark v3 - Incident Response</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-privileged-access?source=recommendations">MCSB - Privileged Access</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-asset-management?source=recommendations">MCSB - Asset Management</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-backup-recovery?source=recommendations">MCSB - Backup and recovery</a>
+   <br /><br />
+
+It's based on input from a set of holistic Microsoft and industry security guidance:
+
+* <strong>Cloud Adoption Framework (CSF)</strong>: Guidance on security, including strategy, roles and responsibilities, Azure Top 10 Security Best Practices, and reference implementation.
+
+* <strong>Well-Architected Frameworks</strong>: Guidance on securing your workloads on Azure.
+
+* The Chief Information Security Officer (CISO) Workshop: Program guidance and reference strategies to accelerate security modernization using Zero Trust principles.
+
+* Other industry and cloud service providers security best practice standards and framework: Examples include the Amazon Web Services (AWS) Well-Architected Framework, Center for Internet Security (CIS) Controls, National Institute of Standards and Technology (NIST), and Payment Card Industry Data Security Standard (PCI-DSS).
+
+   * 
+
+In December 2021 Microsoft published at https://aka.ms/MCRA the Microsoft Cybersecurity Reference Architectures.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=6iYxNm3TOiI&list=PLtVMyW0H7aiOQwZSsn2d-tg2z729ce1BZ">VIDEO</a>: "MCRA Intro"
+by Mark Simos, Microsoft Chief Security Advisor.
+
+
+## MS Defender for Cloud
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/defender-for-cloud/update-regulatory-compliance-packages">Microsoft Defender for Cloud</a>. Successor of Azure Security Benchmark v3.)
+
+
 
 <hr />
 

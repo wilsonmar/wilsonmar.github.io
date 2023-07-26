@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-01-12"
+date: "2023-07-25"
 file: "azure-certifications"
 title: "Azure (Microsoft's cloud) certifications"
 excerpt: "Microsoft provides free hands-on (gamified) tutorials and free time"
@@ -145,7 +145,7 @@ If your company has a deal with Microsoft:
 
    CAUTION: The Skillpipe.com provided with registration may not be created to align with the live course's lab.
 
-https://aka.ms/edge4biz
+   https://aka.ms/edge4biz
 
    ### Join live class
 
@@ -252,7 +252,7 @@ https://aka.ms/edge4biz
 ### Cloud Academy
 
 PROTIP: I think <a target="_blank" href="https://cloudacademy.com/">CloudAcademy.com</a>
-provides the most thorough approach to exam prep. They have pre-defined set of 
+provides a thorough approach to prepare for exams. They have pre-defined set of 
 <a target="_blank" href="https://cloudacademy.com/library/azure/labs/">hands-on labs</a>, each about 1-2 hours long.
 
 CloudAcademy also has 
@@ -814,9 +814,9 @@ References:
 
 ### SC-100 Microsoft Cybersecurity Architect 
 
+<a target="_blank" href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWVbXN">PDF</a>:
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/sc-100">
-SC-100</a> takes 60 minutes to answer 50 single-line mulitple-choice questions about features (not configuration).
-Includes M365 Defender and Compliance Center, so
+SC-100</a> takes 2 hours to answer 70% of 48 single-line mulitple-choice questions about features (not configuration). Questions include M365 Defender and Compliance Center, so
 <a target="_blank" href="https://learn.microsoft.com/en-us/certifications/cybersecurity-architect-expert/">first earn</a> ONE of <a href="#SC-200">SC-200</a>, <a href="#SC-300">SC-300</a>, <a href="#AZ-500">AZ-500</a>, or <a href="#MS-500">MS-500</a>.
 
 The Microsoft cybersecurity architect has subject matter expertise in designing and evolving the cybersecurity strategy to protect an organization's mission and business processes across all aspects of the enterprise architecture. The cybersecurity architect designs a Zero Trust strategy and architecture, including security strategies for data, applications, access management, identity, and infrastructure. The cybersecurity architect also evaluates Governance Risk Compliance (GRC) technical strategies and security operations strategies.
@@ -835,8 +835,8 @@ strategies (10–15%)
 <br /><br />
 
 https://github.com/MicrosoftLearning/SC-100-Microsoft-Cybersecurity-Architect has these hands-on labs:
-\0. Case study introduction (Tailwind Traders)
-1. Build overall security strategy (MCRA for MFA)
+1. Case study introduction (Tailwind Traders)
+1. Build overall security strategy (<a target="_blank" href="https://learn.microsoft.com/en-us/security/cybersecurity-reference-architecture/mcra">MCRA</a> for MFA)
 1. Design security operations strategy
 1. Design identity security strategy
   
@@ -855,7 +855,7 @@ https://github.com/MicrosoftLearning/SC-100-Microsoft-Cybersecurity-Architect ha
 <br /><br />
 
 
-References
+References:
    * Secure Access Service Edge (SASE)
    * <a target="_blank" href="https://wilsonmar.github.io/azure-cloud/#CAF">Cloud Adoption Framework (CAF)</a>
    * <a target="_blank" href="https://dodcio.defense.gov/Portals/0/Documents/Library/(U)ZT_RA_v2.0(U)_Sep22.pdf">Department of Defense (DoD) Zero Trust Reference Architecture Version 2.0 July 2022</a>
@@ -1424,6 +1424,12 @@ Cost control in Azure</a>
 
 <a target="_blank" href="https://aka.ms/ESIStudyGuides">aka.ms/ESIStudyGuides</a>
 
+https://www.whizlabs.com/blog/top-microsoft-azure-bloggers/
+
+<a target="_blank" href="https://www.youtube.com/watch?v=6iYxNm3TOiI&list=PLtVMyW0H7aiOQwZSsn2d-tg2z729ce1BZ">VIDEO</a>: "MCRA Intro"
+by Mark Simos, Microsoft Chief Security Advisor.
+
+https://aka.ms/MCRA
 
 ## More about Azure #
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-07-23"
+date: "2023-07-25"
 file: "security-certs"
 title: "Security Certifications"
 excerpt: "There are several (overlapping) ones."
@@ -37,8 +37,7 @@ QUESTION: The CSA <a target="_blank" href="https://github.com/cloudsecurityallia
 <a target="_blank" href="https://www.whizlabs.com/learn/course/ccsk-pt/">
 Whizlabs has sample tests</a> but questionable quality with too many double negative questions and answers.
 
-The CCSK is an <strong>open-book, online exam</strong>, completed in 90 minutes. Purchasing the exam costs $395 (free to veterans) for two test attempts, which you will have 2 years to use. The minimum passing score is 80% 
-of the 60 multiple-choice vendor-neutral questions selected randomly from the CCSK question pool in v4 of the exam available December 1, 2017:
+The CCSK is an <strong>open-book, online exam</strong>, completed in 90 minutes. Purchasing the exam costs $395 (free to veterans) for two test attempts, which you will have 2 years to use. The minimum passing score is 80% of the 60 multiple-choice vendor-neutral questions selected randomly from the CCSK question pool in v4 of the exam available December 1, 2017:
 
    * 6% are based on the <a target="_blank" href="http://www.enisa.europa.eu/act/rm/files/deliverables/cloud-computing-riskassessment">2009 Cloud Computing report</a> from the <a target="_blank" href="http://www.enisa.europa.eu/">ENISA (European Network and Information Security Agency)</a>
 
@@ -264,7 +263,7 @@ CGRC is taken from a broad spectrum of vendor-neutral topics in the CGRC Common 
 <img align="right" alt="CISSP-logo- Square-131x131" width="131" height="131" src="https://user-images.githubusercontent.com/300046/116986846-8531d800-ac8b-11eb-83af-651083c07bb3.png">
 Even at <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$749 USD</a>, the <a target="_blank" href="https://www.isc2.org/Certifications/CISSP">Certified Information Systems Security Professional exam</a> (pronouced "sis pee") is a sought-after technical certification in cybersecurity leaders as the "gold standard" of vendor-neutral cybersecurity certifications. Earning it proves you understand cybersecurity from a management viewpoint -— a requirement if your organization is subject to PCI, GDPR, HIPAA, SOX, ISO 27001, or other regulations. 
 
-The first version of the Common Body of Knowledge (CBK) was finalized in 1992 and the CISSP credential was launched in 1994.
+The first version of the CISSP Common Body of Knowledge (CBK) was finalized in 1992 and the CISSP credential was launched in 1994.
 Since it's an internationally recognized, there are questions about cybersecurity regulations in Canada, UK, EU, etc.
 
 Rather than the previous 250 questions over 6 hourse, the CISSP exam is now <strong>adaptive</strong>, asking 100-150 questions, depending on whether answers are correct. 
@@ -275,7 +274,35 @@ This also means you won't be able to go back and change answers in previous ques
 
 There is a 5 year experience requirement, attested by other professionals after you pass the exam.
 
-You need to pass at least 70% on <em>each</em> of the eight CISSP domains. 
+The CISSP has 3 different <strong>concentrations</strong>:
+
+* ISSAP = Architecture
+   1. Architect for Governance, Compliance and Risk Management
+   2. Security Architecture Modeling
+   3. Infrastructure Security Architecture
+   4. Identity and Access Management (IAM) Architecture
+   5. Architect for Application Security
+   6. Security Operations Architecture
+   <br /><br />
+   
+* ISSEP = Engineering
+   1. Systems Security Engineering Foundations
+   2. Risk Management
+   3. Security Planning and Design
+   4. Systems Implementation, Verification and Validation
+   5. Secure Operations, Change Management and Disposal
+   <br /><br />
+
+* ISSMP = Management
+   1. Leadership and Business Management
+   2. Systems Lifecycle Management
+   3. Risk Management
+   4. Threat Intelligence and Incident Management
+   5. Contingency Management
+   6. Law, Ethics, and Security Compliance Management
+   <br /><br />
+
+You need to pass at least 70% on <em>each</em> CISSP domain. 
 
 ### CISSP Domains
 
@@ -487,11 +514,8 @@ YouTube videos with content index (and ads) by Rob Richa, with <a target="_blank
 Bootcamp: <a target="_blank" href="https://www.youtube.com/watch?v=pgEn1h_too0&list=PLETKkWHNA3qgWGW54totIqfHpAwQT574b&index=12">13 day 2 hours each from April 13, 2020 FRSecure CISSP Mentor Program (12th year) streaming by <a target="_blank" href="https://twitter.com/evanfrancen?lang=en">@evanfrancen</a>. S2me.io
 
 <a target="_blank" href="https://www.youtube.com/watch?v=_nyZhYnCNLA&list=PL7XJSuT7Dq_XPK_qmYMqfiBjbtHJRWigD">8-hour VIDEO CISSP Exam Cram from Pete Zerger's Inside Cloud and Security (2022 edition)</a>
-   
 
-<a target="_blank" href="https://www.youtube.com/watch?v=kFZWMZIy5LM&list=PL7XJSuT7Dq_X0AupQwU8YOGV3TsoPAcD0">12-hour VIDEO CCSP Exam Cram from Pete Zerger's Inside Cloud and Security (2022 edition)</a>
-
-posted by SANS Blue Team Ops:
+Posted by SANS Blue Team Ops:
    * <a target="_blank" href="https://www.youtube.com/watch?v=bopYRxAyTU8">CISSP Cram Session</a> Jun 28, 2020. Slides at <a target="_blank" href="https://www.EricConrad.com/">EricConrad.com</a>, author of <a target="_blank" href="https://mtg414.com/">MGT414.com</a>: SANS Training Program for CISSP® Certification, as well as the <a target="_blank" href="https://www.amazon.com/CISSP-Study-Guide-Third-Conrad/dp/0128024372">CISSP® Study Guide (Syngress)</a>.
    * <a target="_blank" href="https://www.youtube.com/watch?v=5nqqL1rjIY4">Test-Taking Tactics</a>
 
@@ -510,30 +534,42 @@ Suggestions:
 
 ### CCSP
 
-<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CCSP">CCSP (Certified Cloud Security Professional)</a>. Get 70% of 125 questions correct in 3 hours. Whew. The domains, 17% each, 
+<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CCSP">CCSP (Certified Cloud Security Professional)</a>. The Aug 2022 upgrade went to 150 questions in <strong>4 hours</strong> (from 3). 
+Results are Pass/Fail, but you must score at least 70% in EACH separate domain:
 
-   * Cloud Concepts, Architecture and Design
-   * Cloud Data Security
-   * Cloud Platform & Infrastructure Security
-   * Cloud Application Security
-   * Cloud Security Operations
-   * Legal, Risk and Compliance
+   * 17% Cloud Concepts, Architecture and Design
+   * 19% Cloud Data Security
+   * 17% Cloud Platform & Infrastructure Security
+   * 17% Cloud Application Security
+   * 17% Cloud Security Operations
+   * 13% Legal, Risk and Compliance
    <br /><br />
 
 <a target="_blank" href="https://www.isc2.org/-/media/ISC2/Certifications/Exam-Outlines/CCSP-Exam-Outline.ashx">This PDF</a> has the details.
 
 <a target="_blank" href="https://ccsp.alukos.com/">ccsp.alukos.com</a> is a GitBook-formatted listing with glossary of terms, laws by country, standards by each body, frameworks.
 
+   * BOOK: (ISC)2 CCSP Certified Cloud Security Professional Official Study Guide & Practice Tests Bundle by Mike Chapple and David Seidl | Nov 1, 2022
 
-Prep courses:
-
-> I think ISC2 is being too clever with their questions, past the point of making the test as much about knowing the twisted mind of the test maker rather than understanding the underlying material. I wich that ISC2 test writers see "Advanced" level of "knowledge" as higher order thinking (such as evaluation) rather than teasing out twisted meaning of words in tests.
-
+On YouTube:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=kFZWMZIy5LM&list=PL7XJSuT7Dq_X0AupQwU8YOGV3TsoPAcD0">12-hour VIDEO CCSP Exam Cram from Pete Zerger's Inside Cloud and Security (2022 edition)</a>
    * YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=dCPRZoKntX0&list=PL0hT6hgexlYy_gE_y09ORyupgfVOHM_TN">CCSP Exam Cram series</a> by Prabh Nair
-
    * <a target="_blank" href="https://www.linkedin.com/learning/ccsp-cert-prep-4-cloud-application-security-audio-review/">LinkedIn audio review</a> with practice questions. By Mike Chapple. I recommend this because it has quizzes and shows use of apps such as WebGoat.
-
    * <a target="_blank" href="https://app.pluralsight.com/paths/skills/ccspr-certified-cloud-security-professional">Pluralsight CCSP</a> by Lyron H. Andrews CISSP/CCSP/SSCP/CISM/CCSK
+   <br /><br />
+
+If you have an OReilly.com subscription:
+   * <a target="_blank" href="https://www.oreilly.com/library/view/certified-cloud-security/9780138170622/">Live Lessons Video Course</a>
+   * <a target="_blank" href="https://learning.oreilly.com/live-events/ccsp-certified-cloud-security-professional-crash-course/0636920066432/0636920091590/">Video Crash Course</a> by Shannon. "Get the CISSP first".
+   * <a target="_blank" href="https://learning.oreilly.com/videos/certified-cloud-security/9780138170622/">LiveLessons May 2023</a> (11 hours) by Shannon
+
+   * <a target="_blank" href="https://learning.oreilly.com/videos/isc-2-ccsp-certified/9781663711137/9781663711137-a00001/">Audio book</a> by Ben Malisow 
+   * <a target="_blank" href="https://learning.oreilly.com/library/view/isc-2-ccsp-certified/9781119603498/">Practice tests 2nd Edition</a> by Ben Malisow
+   <br /><br />
+
+
+> I think ISC2 is too clever with their questions, past the point of making the test as much about knowing the twisted mind of the test maker rather than understanding the underlying material. I wich that ISC2 test writers see "Advanced" level of "knowledge" as higher order thinking (such as evaluation) rather than teasing out twisted meaning of words in tests.
+
 
 Bragging:
 
@@ -1286,7 +1322,7 @@ Network software vendors have affordable certifications:
 
 * <a target="_blank" href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert/ccie-security.html">$2,050 Cisco Certified Implementation Expert - Security (CCIE Sec)</a>
 
-* <a target="_blank" href="https://www.splunk.com/en_us/training/certification-track/splunk-es-certified-admin.html">$4,625 Splunk Enterprise Security Certified Administrator (Splunk ECSA)</a>
+* <a target="_blank" href="https://www.splunk.com/en_us/training/certification-track/splunk-es-certified-admin.html">$130 Splunk Enterprise Security Certified Administrator (Splunk ECSA)</a> - 61 questions in 60 minutes
 
 <hr />
 
@@ -1298,7 +1334,7 @@ References SAMM 2.0, OWASP Top 10.
 
 * Data-Driven Security (Pearson) by Jacobs and Rudis
 
-* <a target="_blank" href="https://www.beyond20.com/blog/best-cyber-security-certification-path-for-a-great-career/">
+* <a target="_blank" href="https://www.beyond20.com/blog/best-cyber-security-certification-path-for-a-great-career/">Best Cert paths</a>
 
 Podcast: Evan Francen's Unsecurity
 
