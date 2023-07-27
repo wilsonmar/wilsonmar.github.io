@@ -16,13 +16,317 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This is a deep-dive hands-on tutorial with commentary along the way, covering basic terminology and how to get an account into Azure, set MFA, use Active Directory. Search for what to "REMEMBER" to pass Microsoft's AZ-900 and AZ-104 exams.
+There is a massive amount of information about Azure, at various levels of detail.
+
+PROTIP: Below is my attempt at helping you approach Azure practically, logically, and thus efficiently for each audience. This is a deep-dive hands-on tutorial with commentary along the way.
+All on one page. Outline:
+
+1. <a href="#URLs">Azure URLs</a>
+1. <a href="#Portal">portal.azure.com GUI</a>
+1. <a href="#GetAccounts">Get Azure accounts</a>
+1. <a href="#Subscriptions">Subscriptions</a>
+
+1. <a href="#automation-programmatically">Automation</a>
+
+1. <a href="#IAM">IAM (Azure AD)</a>, groups, federation
+
+
+Search for what to "REMEMBER" to pass <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Microsoft's Azure professional certification exams</a>.
 
 {% include whatever.html %}
 
+
+<a name="Occupations"></a>
+
+## Audience by Occupation
+
+Microsoft has defined these generic occupational roles with <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Azure certification exams</a>:
+
+   * (Azure) Administrator
+   * (Azure) Developer
+   * (Azure) Solution Architect
+
+   * Data Engineer
+   * AI Engineer
+
+   * Business Analyst
+   * Business User
+   <br /><br />
+
+   PROTIP: Generic job positions ("roles") are different than the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a> (AAD).
+
+   MY OPINION: I think job roles should be multi-select checkboxes.
+   This segregation also adds to duplicating material.
+
+To enable them to do their job safely, securely, and efficiently, below is what their management should do.
+
+
+<a name="MCRA"></a>
+
+## Efforts by Organizational Level
+
+<a target="_blank" href="https://www.youtube.com/watch?v=6iYxNm3TOiI&list=PLtVMyW0H7aiOQwZSsn2d-tg2z729ce1BZ" title="MCRA Intro by Mark Simos, Microsoft Chief Security Advisor">VIDEO</a>: Microsoft's overarching <a target="_blank" href="https://aka.ms/MCRA/">Cybersecurity Reference Architecture (MCRA)</a> contains an overwhelming number of diagrams.
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"><img alt="azure-guides-1158x439.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"></a>
+
+
+### Securing Digital Transformation
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/security-top-10">Azure Top Security Best Practices</a> (What, Why, Who, How activities) by People, Process, Technology, and Architecture. 
+
+* Zero Trust
+
+Each Cloud Service Provider (GCP, AWS, Azure, etc.) presents different but similar <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/">Cloud Adoption Framework (CAF)</a>
+and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-architected/security/overview">Well-Architected Framework</a>.
+
+
+### Security Roles
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop-videos">Videos</a> in <a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop">Microsoft's CISO Workshop</a> covers how the <a target="_blank" href="https://aka.ms/SecurityRoles">concerns</a> of each organizational role type/team relate with others, from Plan (Governance) to Build to Run (Operations) stages:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"><img alt="azure-security-roles-1883x903.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"></a>
+
+   * Board (of corporate directors)
+   * Management (Business Model and Vision)
+   * Security Leadership
+   * PMO (Program Management Office)
+
+Information Risk Management<br />
+Technical Risk Management functions:
+
+   * Compliance Management
+   * Security Architecture
+   * Posture Management
+   * Incident Management by Security Operations Center (SOC)
+
+Departments:
+
+   * IT Operations
+   * OT Operations
+   * Threat Intelligence
+
+Others: ???
+   * Policy and standards
+   * Security operations
+   * Security architecture
+   * Security compliance management
+   * People security
+   * Application security and DevSecOps
+   * Data security
+   * Infrastructure and endpoint security
+   * Identity and key management
+   * Threat intelligence
+   * Posture management
+   * Incident preparation
+
+
+<a name="MCSB"></a>
+
+### Security Baselines
+
+A <strong>security baseline</strong> is a snapshot in time of a system's current configuration (defining specific OS-level settings, installed apps, app configurations, users, etc.). Baselines are created as the basis for determining what settings were changed (and when).
+
+
+<a name="SecControls"></a>
+
+### Security Controls in Benchmarks
+
+Several organizations have defined for the industry specific <strong>"controls"</strong> (<strong>improvement actions</strong>):
+   * <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks">CIS (Center for Internet Security) Controls v8 Benchmarks</a>
+   * NIST SP 800-53 RC4
+   * PCI-DSS v3.2.1
+   <br /><br />
+
+A <strong>benchmark</strong> is an individual check (evaluation) of a system's setting, such as the patch level of an application installed, to determine whether best practices (security controls) are employed (which in turn should reduce the attack surface of the system).
+
+In <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview">2021</a>, Microsoft published its prescriptive best-practice framework in its MCSB (<strong>Microsoft Cybersecurity Security Benchmarks</strong>), latest version 3 as of March 30, 2023.
+the MCSB aims to improve the security of cloud-centric workloads, data, and services on Azure, perhaps in multi-cloud environments. 
+
+Microsoft grouped its definition of security controls under <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview
+">12 Control Domains</a>. Codes (in parentheses) for each control domain are used as a prefix to name specific controls:
+
+1. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-network-security">Network security (NS)</a>
+   * NS-1: Establish network segmentation boundaries
+   * NS-2: Secure cloud native services with network controls
+   * NS-3: Deploy firewall at the edge of enterprise network
+   * NS-4: Deploy intrusion detection/intrusion prevention systems (IDS/IPS)
+   * NS-5: Deploy DDOS protection
+   * NS-6: Deploy web application firewall
+   * NS-7: Simplify network security configuration
+   * NS-8: Detect and disable insecure services and protocols
+   * NS-9: Connect on-premises or cloud network privately
+   * NS-10: Ensure Domain Name System (DNS) security
+
+2. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-identity-management">Identity Management (IM)</a>
+   * IM-1: Use centralized identity and authentication system
+   * IM-2: Protect identity and authentication systems
+   * IM-3: Manage application identities securely and automatically
+   * IM-4: Authenticate server and services
+   * IM-5: Use single sign-on (SSO) for application access
+   * IM-6: Use strong authentication controls
+   * IM-7: Restrict resource access based on conditions
+   * IM-8: Restrict the exposure of credentials and secrets
+   * IM-9: Secure user access to existing applications
+
+3. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-privileged-access">Privileged Access (PA)</a>
+   * PA-1: Separate and limit highly privileged/administrative users
+   * PA-2: Avoid standing access for user accounts and permissions
+   * PA-3: Manage lifecycle of identities and entitlements
+   * PA-4: Review and reconcile user access regularly
+   * PA-5: Set up emergency access
+   * PA-6: Use privileged access workstations
+   * PA-7: Follow just enough administration (least privilege) principle
+   * PA-8 Determine access process for cloud provider support
+
+4. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-data-protection">Data Protection (DP)</a>
+   * DP-1: Discover, classify, and label sensitive data
+   * DP-2: Monitor anomalies and threats targeting sensitive data
+   * DP-3: Encrypt sensitive data in transit
+   * DP-4: Enable data at rest encryption by default
+   * DP-5: Use customer-managed key option in data at rest encryption when required
+   * DP-6: Use a secure key management process
+   * DP-7: Use a secure certificate management process
+   * DP-8: Ensure security of key and certificate repository
+
+5. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-asset-management">Asset Management (AM)</a>
+   * AM-1: Track asset inventory and their risks
+   * AM-2: Use only approved services
+   * AM-3: Ensure security of asset lifecycle management
+   * AM-4: Limit access to asset management
+   * AM-5: Use only approved applications in virtual machine
+
+6. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-logging-threat-detection">Logging and Threat Detection (LT)</a>
+   * LT-1: Enable threat detection capabilities
+   * LT-2: Enable threat detection for identity and access management
+   * LT-3: Enable logging for security investigation
+   * LT-4: Enable network logging for security investigation
+   * LT-5: Centralize security log management and analysis
+   * LT-6: Configure log storage retention
+   * LT-7: Use approved time synchronization sources
+
+7. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-incident-response">Incident Response (IR)</a>
+   * IR-1: Preparation - update incident response plan and handling process
+   * IR-2: Preparation - setup incident notification
+   * IR-3: Detection and analysis - create incidents based on high-quality alerts
+   * IR-4: Detection and analysis - investigate an incident
+   * IR-5: Detection and analysis - prioritize incidents
+   * IR-6: Containment, eradication and recovery - automate the incident handling
+   * IR-7: Post-incident activity - conduct lessons learned and retain evidence
+
+8. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-posture-vulnerability-management">Posture and Vulnerability Management (PV)</a>
+   * PV-1: Define and establish secure configurations
+   * PV-2: Audit and enforce secure configurations
+   * PV-3: Define and establish secure configurations for compute resources
+   * PV-4: Audit and enforce secure configurations for compute resources
+   * PV-5: Perform vulnerability assessments
+   * PV-6: Rapidly and automatically remediate vulnerabilities
+   * PV-7: Conduct regular red team operations
+
+9. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-endpoint-security">Endpoint Security (ES)</a>
+   * ES-1: Use Endpoint Detection and Response (EDR)
+   * ES-2: Use modern anti-malware software
+   * ES-3: Ensure anti-malware software and signatures are updated
+
+10. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-backup-recovery">Backup and Recovery (BR)</a>
+   * BR-1: Ensure regular automated backups
+   * BR-2: Protect backup and recovery data
+   * BR-3: Monitor backups
+   * BR-4: Regularly test backup
+
+11. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-devops-security">DevOps Security (DS)</a>
+   * DS-1: Conduct threat modeling
+   * DS-2: Ensure software supply chain security
+   * DS-3: Secure DevOps infrastructure
+   * DS-4: Integrate static application security testing into DevOps pipeline
+   * DS-5: Integrate dynamic application security testing into DevOps pipeline
+   * DS-6: Enforce security of workload throughout DevOps lifecycle
+   * DS-7: Enable logging and monitoring in DevOps
+
+12. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-governance-strategy">Governance and Strategy (GS)</a>
+   * GS-1: Align organization roles, responsibilities and accountabilities
+   * GS-2: Define and implement enterprise segmentation/separation of duties strategy
+   * GS-3: Define and implement data protection strategy
+   * GS-4: Define and implement network security strategy
+   * GS-5: Define and implement security posture management strategy
+   * GS-6: Define and implement identity and privileged access strategy
+   * GS-7: Define and implement logging, threat detection and incident response strategy
+   * GS-8: Define and implement backup and recovery strategy
+   * GS-9: Define and implement endpoint security strategy
+   * GS-10: Define and implement DevOps security strategy
+   * GS-11: Define and implement multi-cloud security strategy
+
+Download details about each control above are in Microsoft's Excel spreadsheet file at<br />
+<a target="_blank" href="https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Security%20Benchmark/3.0">azure-security-benchmark-v3.0.xlsx</a>.
+
+REMEMBER: Use of Defender involves <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/">additional charges</a> (to each server, container, database, storage, app service).
+
+
+<a name="Defenders"></a>
+
+### MS Defender offerings
+
+Microsoft summarizes the "kill chain" of exploits and defenses against them in this diagram: 
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"><img alt="az-defenders-3360x1602.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"></a>
+
+Microsoft has a "Defender" offering for each type of product:
+
+   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-office-365">MS Defender for Office 365</a>
+   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/endpoint-security/microsoft-defender-endpoint">MS Defender for Endpoint</a>
+   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-for-identity">MS Defender for Identity</a>
+   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-devops#">MS Defender for DevOps</a>
+   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-cloud">MS Defender for Cloud</a>
+   <br /><br />
+
+"Sentinel" is the brand name for Microsoft's offerings in SIEM and SOAR.
+
+### Regulatory Compliance
+
+Progress toward implementing security controls can be illustrated using this:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"><img alt="azure-defender-1492x1042.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"></a>
+
+Notice the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/defender-for-cloud/update-regulatory-compliance-packages">regulatory compliance standards</a>:
+
+   * ISO 27001
+   * PCI DSS (Payment Card Industry Data Security Standard) v3.2.1
+   * SOC TSP
+   * HIPAA HITRUST
+   * NIST SP 800 S3 R4
+   * SWIFT CSP CSCF v2020
+   * Azure CIS 1.10
+   * ISO 27001-2013
+   * CMMC Level 3
+   * AWS Foundational Security Best Practices
+   <br /><br />
+
+
+<a name="SecureScore"></a>
+
+### Secure Score Posture Action Categories
+
+Within M365 Defender is the <a target="_blank" href="https://learn.microsoft.com/en-us/microsoft-365/security/defender/microsoft-secure-score?view=o365-worldwide#how-it-works">Microsoft Secure Score</a> survey app. It's used to define a security posture score (over time) based on whether specific actions have occurred or not. 
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690416862/azure-sec-score-2090x1370_dn2xe9.png"><img alt="azure-sec-score-2090x1370.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690416862/azure-sec-score-2090x1370_dn2xe9.png"></a>
+
+A breakdown of actions based on Microsoft's <strong>categories for a Security Posture</strong>:
+
+   * Identity
+   * Data
+   * Device
+   * Apps
+   * <a href="#Infrastructure">Infrastructure</a>
+   <br /><br />
+
+<em>We need to begin with Infrastructure.</em>
+
+<hr />
+
+## Infrastructure
+
 <a name="USGov"></a>
 
-## Microsoft Azure Government environments
+### Azure Government environments
 
 Microsoft runs separate/isolated <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/government/">Azure fed/state/local gov</a> "sovereign DoD Level 5" cloud hardware on US soil operated by US citizens. 
 
@@ -46,7 +350,7 @@ References:
 
 <a name="URLs"></a>
 
-## URLs for Microsoft and Azure
+### URLs for Microsoft and Azure
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Usage </th><th> URL (bookmark these) </th><th> Notes </th></tr>
@@ -185,6 +489,19 @@ References:
 </table>
 
 
+### URL Shortener
+
+https://channel9.msdn.com/Shows/Azure-Friday/AzUrlShortener-An-open-source-budget-friendly-URL-shortener
+by Frank Boucher who created a one-click deploy your own.
+http://www.frankysnotes.com/2020/04/how-i-build-budget-friendly-url.html
+
+https://medium.com/marcus-tee-anytime/create-your-own-url-shortener-host-in-azure-almost-free-for-cloud-infrastructure-a74c9cc29720
+
+https://levelup.gitconnected.com/build-a-custom-url-shortener-using-azure-functions-and-cosmos-db-c20e59261375
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/microsoft-365/security/defender/investigate-incidents?view=o365-worldwide#attack-story">Attack Story</a>
+
+
 
 <a name="Profiles"></a>
 
@@ -206,297 +523,17 @@ PROTIP: Setup <strong>different browser profiles</strong> on the same browser, a
 1. Do the above for each browser (Google Chrome, Microsoft Edge, Firefox, etc.).
 
 
-<a name="MCRA"></a>
 
-## Guidance by Organizational Level
-
-<a target="_blank" href="https://www.youtube.com/watch?v=6iYxNm3TOiI&list=PLtVMyW0H7aiOQwZSsn2d-tg2z729ce1BZ" title="MCRA Intro by Mark Simos, Microsoft Chief Security Advisor">VIDEO</a>: Microsoft's overarching <a target="_blank" href="https://aka.ms/MCRA/">Cybersecurity Reference Architecture (MCRA)</a> presents several perspectives.
-
-Efforts by <strong>organization level</strong>:
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"><img alt="azure-guides-1158x439.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"></a>
-
-Each CSP (GCP, AWS, Azure, etc.) offers different but similar <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/">Cloud Adoption Framework (CAF)</a>
-and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-architected/security/overview">Well-Architected Framework</a>.
-
-
-### Security Roles
-
-<a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop-videos">Videos</a> in <a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop">Microsoft's CISO Workshop</a> covers how the <a target="_blank" href="https://aka.ms/SecurityRoles">concerns</a> of each organizational role type/team relate with others, from Plan (Governance) to Build to Run (Operations) stages:
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"><img alt="azure-security-roles-1883x903.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"></a>
-
-   * Board
-   * Management (Business Model and Vision)
-   * Security Leadership
-   * PMO (Program Management Office)
-
-Information Risk Management<br />
-Technical Risk Management functions:
-
-   * Compliance Management
-   * Security Architecture
-   * Posture Management
-   * Incident Management by Security Operations Center (SOC)
-
-Departments:
-
-   * IT Operations
-   * OT Operations
-   * Threat Intelligence
-
-Others:
-   * Policy and standards
-   * Security operations
-   * Security architecture
-   * Security compliance management
-   * People security
-   * Application security and DevSecOps
-   * Data security
-   * Infrastructure and endpoint security
-   * Identity and key management
-   * Threat intelligence
-   * Posture management
-   * Incident preparation
-
-
-<a name="MCSB"></a>
-
-### Security Baselines
-
-A <strong>security baseline</strong> is a snapshot in time of a system's current configuration (defining specific OS-level settings, installed apps, app configurations, users, etc.). Baselines are created as the basis for determining what settings were changed (and when).
-
-
-<a name="SecControls"></a>
-
-### Security Controls Benchmarks
-
-Several organizations have defined for the industry specific <strong>"controls"</strong> (<strong>improvement actions</strong>):
-   * <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks">CIS (Center for Internet Security) Controls v8 Benchmarks</a>
-   * NIST SP 800-53 RC4
-   * PCI-DSS v3.2.1
-   <br /><br />
-
-A <strong>benchmark</strong> is an individual check (evaluation) of a system's setting, such as the patch level of an application installed, to determine whether best practices (security controls) are employed (which in turn should reduce the attack surface of the system).
-
-In <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview">2021</a>, Microsoft published its prescriptive best-practice framework in its MCSB (<strong>Microsoft Cybersecurity Security Benchmarks</strong>), latest version 3 as of March 30, 2023.
-the MCSB aims to improve the security of cloud-centric workloads, data, and services on Azure, perhaps in multi-cloud environments. 
-
-Microsoft grouped its definition of security controls under <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview
-">12 Control Domains</a>. Codes (in parentheses) for each control domain are used as a prefix to name specific controls:
-
-1. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-network-security">Network security (NS)</a>
-   * NS-1: Establish network segmentation boundaries
-   * NS-2: Secure cloud native services with network controls
-   * NS-3: Deploy firewall at the edge of enterprise network
-   * NS-4: Deploy intrusion detection/intrusion prevention systems (IDS/IPS)
-   * NS-5: Deploy DDOS protection
-   * NS-6: Deploy web application firewall
-   * NS-7: Simplify network security configuration
-   * NS-8: Detect and disable insecure services and protocols
-   * NS-9: Connect on-premises or cloud network privately
-   * NS-10: Ensure Domain Name System (DNS) security
-
-2. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-identity-management">Identity Management (IM)</a>
-   * IM-1: Use centralized identity and authentication system
-   * IM-2: Protect identity and authentication systems
-   * IM-3: Manage application identities securely and automatically
-   * IM-4: Authenticate server and services
-   * IM-5: Use single sign-on (SSO) for application access
-   * IM-6: Use strong authentication controls
-   * IM-7: Restrict resource access based on conditions
-   * IM-8: Restrict the exposure of credentials and secrets
-   * IM-9: Secure user access to existing applications
-
-3. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-privileged-access">Privileged Access (PA)</a>
-   * PA-1: Separate and limit highly privileged/administrative users
-   * PA-2: Avoid standing access for user accounts and permissions
-   * PA-3: Manage lifecycle of identities and entitlements
-   * PA-4: Review and reconcile user access regularly
-   * PA-5: Set up emergency access
-   * PA-6: Use privileged access workstations
-   * PA-7: Follow just enough administration (least privilege) principle
-   * PA-8 Determine access process for cloud provider support
-
-4. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-data-protection">Data Protection (DP)</a>
-   * DP-1: Discover, classify, and label sensitive data
-   * DP-2: Monitor anomalies and threats targeting sensitive data
-   * DP-3: Encrypt sensitive data in transit
-   * DP-4: Enable data at rest encryption by default
-   * DP-5: Use customer-managed key option in data at rest encryption when required
-   * DP-6: Use a secure key management process
-   * DP-7: Use a secure certificate management process
-   * DP-8: Ensure security of key and certificate repository
-
-5. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-asset-management">Asset Management (AM)</a>
-   * AM-1: Track asset inventory and their risks
-   * AM-2: Use only approved services
-   * AM-3: Ensure security of asset lifecycle management
-   * AM-4: Limit access to asset management
-   * AM-5: Use only approved applications in virtual machine
-
-6. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-logging-threat-detection">Logging and Threat Detection (LT)</a>
-   * LT-1: Enable threat detection capabilities
-   * LT-2: Enable threat detection for identity and access management
-   * LT-3: Enable logging for security investigation
-   * LT-4: Enable network logging for security investigation
-   * LT-5: Centralize security log management and analysis
-   * LT-6: Configure log storage retention
-   * LT-7: Use approved time synchronization sources
-
-7. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-incident-response">Incident Response (IR)</a>
-   * IR-1: Preparation - update incident response plan and handling process
-   * IR-2: Preparation - setup incident notification
-   * IR-3: Detection and analysis - create incidents based on high-quality alerts
-   * IR-4: Detection and analysis - investigate an incident
-   * IR-5: Detection and analysis - prioritize incidents
-   * IR-6: Containment, eradication and recovery - automate the incident handling
-   * IR-7: Post-incident activity - conduct lessons learned and retain evidence
-
-8. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-posture-vulnerability-management">Posture and Vulnerability Management (PV)</a>
-   * PV-1: Define and establish secure configurations
-   * PV-2: Audit and enforce secure configurations
-   * PV-3: Define and establish secure configurations for compute resources
-   * PV-4: Audit and enforce secure configurations for compute resources
-   * PV-5: Perform vulnerability assessments
-   * PV-6: Rapidly and automatically remediate vulnerabilities
-   * PV-7: Conduct regular red team operations
-
-9. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-endpoint-security">Endpoint Security (ES)</a>
-   * ES-1: Use Endpoint Detection and Response (EDR)
-   * ES-2: Use modern anti-malware software
-   * ES-3: Ensure anti-malware software and signatures are updated
-
-10. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-backup-recovery">Backup and Recovery (BR)</a>
-   * BR-1: Ensure regular automated backups
-   * BR-2: Protect backup and recovery data
-   * BR-3: Monitor backups
-   * BR-4: Regularly test backup
-
-11. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-devops-security">DevOps Security (DS)</a>
-   * DS-1: Conduct threat modeling
-   * DS-2: Ensure software supply chain security
-   * DS-3: Secure DevOps infrastructure
-   * DS-4: Integrate static application security testing into DevOps pipeline
-   * DS-5: Integrate dynamic application security testing into DevOps pipeline
-   * DS-6: Enforce security of workload throughout DevOps lifecycle
-   * DS-7: Enable logging and monitoring in DevOps
-
-12. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-governance-strategy">Governance and Strategy (GS)</a>
-   * GS-1: Align organization roles, responsibilities and accountabilities
-   * GS-2: Define and implement enterprise segmentation/separation of duties strategy
-   * GS-3: Define and implement data protection strategy
-   * GS-4: Define and implement network security strategy
-   * GS-5: Define and implement security posture management strategy
-   * GS-6: Define and implement identity and privileged access strategy
-   * GS-7: Define and implement logging, threat detection and incident response strategy
-   * GS-8: Define and implement backup and recovery strategy
-   * GS-9: Define and implement endpoint security strategy
-   * GS-10: Define and implement DevOps security strategy
-   * GS-11: Define and implement multi-cloud security strategy
-
-Download details for each control above in Microsoft's Excel spreadsheet<br />
-file azure-security-benchmark-v3.0.xlsx at:<br />
-https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Security%20Benchmark/3.0
-
-REMEMBER: Use of Defender involves <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/">additional charges</a> (to each server, container, database, storage, app service).
-
-
-<a name="Defenders"></a>
-
-### MS Defender offerings
-
-Microsoft summarizes the "kill chain" of exploits and defenses against them in this diagram: 
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"><img alt="az-defenders-3360x1602.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"></a>
-
-Microsoft has a "Defender" offering for each type of product:
-
-   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-office-365">MS Defender for Office 365</a>
-   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/endpoint-security/microsoft-defender-endpoint">MS Defender for Endpoint</a>
-   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-for-identity">MS Defender for Identity</a>
-   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-devops#">MS Defender for DevOps</a>
-   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-cloud">MS Defender for Cloud</a>
-   <br /><br />
-
-"Sentinel" is the brand name for Microsoft's offerings in SIEM and SOAR.
-
-### Regulatory Compliance
-
-Progress toward implementing security controls can be illustrated using this:
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"><img alt="azure-defender-1492x1042.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"></a>
-
-Notice the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/defender-for-cloud/update-regulatory-compliance-packages">regulatory compliance standards</a>:
-
-   * ISO 27001
-   * PCI DSS (Payment Card Industry Data Security Standard) v3.2.1
-   * SOC TSP
-   * HIPAA HITRUST
-   * NIST SP 800 S3 R4
-   * SWIFT CSP CSCF v2020
-   * Azure CIS 1.10
-   * ISO 27001-2013
-   * CMMC Level 3
-   * AWS Foundational Security Best Practices
-   <br /><br />
-
-
-<a name="SecureScore"></a>
-
-### Secure Score Posture Action Categories
-
-Within M365 Defender is the <a target="_blank" href="https://learn.microsoft.com/en-us/microsoft-365/security/defender/microsoft-secure-score?view=o365-worldwide#how-it-works">Microsoft Secure Score</a> survey app. It's used to define a security posture score (over time) based on whether specific actions have occurred or not. 
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690416862/azure-sec-score-2090x1370_dn2xe9.png"><img alt="azure-sec-score-2090x1370.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690416862/azure-sec-score-2090x1370_dn2xe9.png"></a>
-
-A breakdown of actions based on Microsoft's <strong>categories for a Security Posture</strong>:
-
-   * Identity
-   * Data
-   * Device
-   * Apps
-   * Infrastructure
-   <br /><br />
-
-
-<a name="Occupations"></a>
-
-### Occupations
-
-Microsoft aligned these generic "job roles" with <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Azure certification exams</a>:
-
-   * (Azure) Administrator
-   * (Azure) Developer
-   * (Azure) Solution Architect
-
-   * Data Engineer
-   * AI Engineer
-
-   * Business Analyst
-   * Business User
-   <br /><br />
-
-   PROTIP: Generic job positions ("roles") are different than the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a> (AAD).
-
-   MY OPINION: I think job roles should be multi-select checkboxes.
-   This segregation also adds to duplicating material.
-
-
-
-* <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/security-top-10">Azure Top Security Best Practices</a> (What, Why, Who, How activities) by People, Process, Technology, and Architecture. 
-
-
-
-
-### CMPs from CSBs
+### Multi-Cloud 
 
 Not a lot of people <a target="_blank" href="https://www.infoworld.com/article/2903436/make-sense-of-cloud-service-brokers.html">talk about this</a>, but a Cloud Management Platform (CMP) from a CSB (Cloud Service Broker such as AppDirect, Ensim, Gravitant, Jamcracker, Parallels, Ostrato, ServiceNow, BMC, etc.) is necessary for enterprises to provide provisioning governance, self-service, usage chargeback, and policy enforcement across multiple cloud vendors. 
 
 
 <hr />
 
-## Hands-on time
+<a name="GetAccounts"></a>
+
+## Get Azure Accounts
 
 1. Some "Exercises" in Microsoft Learn provide FREE "MICROSOFT LEARN SANDBOX" temporary "Concierge" subscription access one or two hours at a time. Search within:
 
@@ -555,9 +592,11 @@ https://azure.microsoft.com/en-us/free/free-account-faq</a> lists the services w
 The clock is ticking!
 
 
-<a name="O365Trial"></a>
+<a name="Subscriptions"></a>
 
-## Office 365 Trial
+## Subscriptions
+
+### Office 365 Trial Subscription
 
 1. Sign up for Office 365 Trial at 
 
@@ -575,11 +614,315 @@ The clock is ticking!
 
 <hr />
 
+<a name="MSAccount"></a>
+
+## Microsoft Azure account setup
+
+   * <a target="_blank" href="https://www.youtube.com/playlist?list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7">YouTube playlist on Azure</a> by Zach Kramer and Steve Michelotti
+   <br /><br />
+
+1. PROTIP: Avoid using an email that you use for your own banking, shopping, social media, etc. For continuity with a real cloud, you'll need an email address that you can share and transfer to other people. That's so at a company, you will need to give someone else the password so that if you're ever go on vacation or get "run over a bus", your organization can continue.
+
+   In you're in an enterprise company, get an email adddress from a corporate assets administrator. A different (service) account is often created for each department of responsibility.
+
+   PROTIP: In the name include the month and year in the account name (such as johndoe1901@hotmail.com) for 2019-01 (January). Many <strong>create several email accounts</strong> because each Azure subscription includes a $200 credit to spend on any service for the <strong>first 30 days</strong>, free access to <a target="_blank" href="https://azure.microsoft.com/en-us/free/free-account-faq/">Azure products for 12 months</a>. 
+
+   Azure provide access to more than 25 products that are always free. 
+
+
+   ### Azure Active Directory (AAD)
+
+   When someone signs up for a Microsoft cloud service subscription (such as Microsoft Azure, Office 365, Microsoft Intune, etc.), a dedicated instance of <strong>Azure AD (Active Directory)</strong> is created automatically. 
+
+   READ: <a target="_blank" href="https://microsoftlearning.github.io/AZ-900T0x-MicrosoftAzureFundamentals/Instructions/Walkthroughs/19-Use%20the%20Azure%20Pricing%20Calculator.html"><img width="20" alt="pricing" src="https://code.benco.io/icon-collection/azure-patterns/calculator-pricing-details.svg"></a> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/active-directory/">Azure Active Directory pricing</a>. 
+
+   Premium P1 features include Password Protection (custom banned password). Dynamic groups requires a Premium P1 license.
+
+   Premium P2 includes all P1 features, plus really cool <strong>"Identity Protection"</strong> with these policies Assignment to all users:
+
+   Additionally, Microsoft 365 subscribers have an additional Azure AD licensing options:
+   * Free 500,000 object limit, includes MFA for O365 services
+   * $1/mo. Basic for group-base access management with SLAs
+   * $6/mo. P1 for conditional access based on device/location & MFA for on-prem. services
+   * $9/mo. P2 for Identity Protection, Access reviews, Privileged Identity Management
+   <br /><br />
+
+   * Multi-factor authentication registration policy to Require MFA
+
+   * User risk remediation policy to require password change, with review of number of users impacted
+
+   * Sign-in remediation policy to automate analysis of signals from each sign-in, both real-time and offline, and calculates a risk score based on the probability that the sign-in wasn't performed by the user. Administrators can decide based on this risk score signal to enforce organizational requirements. Administrators can choose to block access, allow access, or allow access but require multi-factor authentication. If risk is detected, users can perform multi-factor authentication to self-remediate and close the risky sign-in event to prevent unnecessary noise for administrators.
+
+   * Investigate risks using data in the portal.
+
+   * Export risk detection data to third-party utilities for further analysis.
+
+   ### Risk Events
+
+   Risk level and risk detail fields are hidden to those with just the Azure AD Premium P1 edition.
+
+   Advanced detections (such as unfamiliar sign-in properties) are not covered by your license, and will appear under the name Sign-in with additional risk detected. 
+
+
+   Devices are managed on Azure AD
+
+   Users on another Azure AD (B2B) or public IDP (B2C)
+
+
+   ### Enterprise discount
+
+   Available to Enterprise customers only: <a target="_blank" href="https://cloudacademy.com/course/understanding-azure-pricing-and-support/planning-and-management/">15% Discounts on Public Prices</a>
+
+
+   <a name="Tenants"></a>
+
+   ### AD Tenants
+
+   The Azure SaaS service separates different customers into different <strong>tenants</strong> (like tenants in an apartment building). Each tenant is a dedicated, isolated instance of the Azure Active Directory service, owned and managed by an organization. 
+
+   "Isolated" = ISE
+
+   Azure AD supports auth protocols: OAuth, OpenID, SAML, WS-Federation.
+
+2. For birthdate, make up an adult year: 2023 - 22 = 2001
+
+   PROTIP: Write it down for account recovery, such as in a 1Password entry.
+   Also write down the date you created the account.
+
+3. You'll need a phone number for multi-factor Authentication.
+
+   PROTIP: Give Googgle Voice the cell number that you've been giving out to people.
+   Then get a new phone number from your cell carrier (Verizon, ATT, etc.).
+   In Google Voice have that new number ring when someone calls you at your original number.
+   Give that new number only to Microsoft.
+   This enables you to transfer that new number to someone else without making your friends wonder where you went.
+
+   PROTIP: It's best security that for 3FA you use someone else's phone.
+   But as my wife will tell you this can get annoying if you work while she's sleeping with her phone next to her.
+
+4. Get a debit or credit card number.
+
+   BIG PROTIP: Avoid using a personal credit card which can keep charging your card without your approval of specific charges.
+   Amazon and Microsoft do not provide anyone you can actually talk to about charges.
+   And cancelling your credit card will negatively affect your credit scrore, which results in you paying higher interest rates.
+
+   So get a <strong>pre-paid debit card</strong> to pay for cloud usage.
+   Such cards only lets you spend the money you load onto the card. 
+   <a target="_blank" href="https://www.bluebird.com/">Bluebird</a> VISA card (by American Express) 
+   takes no overdraft fee and no purchase fee.
+   Add money (recharge) free at Walmart customer service counters or via a connected checking account.
+
+   Unlike Movo, Bluebird does not have a $4.95 inactivity fee after three months without activity.
+
+5. Create a separate card sub-account for each cloud account.
+
+
+   <a name="SignUp"></a>
+
+   ### Sign Up for Azure
+
+5. Sign up for Azure:
+
+   <a target="_blank" href="
+   https://signup.live.com/signup"><strong>
+   https://signup.live.com/signup</strong></a>
+
+6. PROTIP: After defining <strong>5 users</strong>, you are forced to sign-up for and pay for a subscription with your credit card.
+
+   PROTIP: Use address with a zip code that's not associated with your home address, and used only for banking.
+
+   Multiple subscriptions can be created under a single Azure account (Dev, Test, Staging, Production, Logging,  Demo, Training, DR, etc.). This is particularly useful for businesses because:
+
+   DEFINITION: A Subscription is your "bank account" / credit card.
+
+   PROTIP: access control and billing occur at the subscription level, not the account level.
+
+   PROTIP: Each Subscription can only trust a single AAD directory.
+
+   Transfer ownership of a subscription, such as to a central accounting department.
+
+   Add additional subscriptions when you may exceed limits within a subscription: # VNets.
+
+
+   ### MS Authenticator app
+
+7. Install the <strong>Microsoft Authenticator app</strong> on you smartphone and setup Two-factor authentication to approve access using your phone.
+
+8. Get a unique profile image and <a target="_blank" href="https://account.microsoft.com/profile/edit-picture?fref=home.banner.profile">add picture</a>.
+
+
+<a name="MobileApps"></a>
+
+### Mobile Apps
+
+1. Setup password on your device.
+
+1. https://azure.microsoft.com/en-us/features/azure-portal/mobile-app/
+
+1. Open the store on your phone and search for "Microsoft Azure":
+
+   On the Apple App Store: https://apps.apple.com/us/app/microsoft-azure/id1219013620?ls=1
+
+   On the Google Play Store: https://play.google.com/store/apps/details?id=com.microsoft.azure
+
+1. Login. <a target="_blank" href="https://www.youtube.com/watch?v=W7lXaQOQhFs">VIDEO</a>
+
+1. Setup MFA
+
+Microsoft has its "Intune" offering to manage endpoints (mobile and laptops).
+
+
+
 <hr />
+
+<a name="Portal"></a>
+
+## portal.azure.com GUI
+
+1. On initial (first time) new Subscription entry pop-up: Azure Advisor
+
+   ### Azure Advisor
+
+   On initial entry into portal, Azure greets you with a pop-up about Azure Advisor.
+
+   <a target="_blank" href="https://azure.microsoft.com/en-us/services/advisor/"><img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-patterns/advisor-blue.svg">
+   Azure Advisor</a> provides <strong>recommendations</strong> by categories of the "Well-Architected Framework" (but not "monitoring"):
+   * Cost
+   * Security
+   * Reliability
+   * Operational excellence
+   * Performance
+   <br /><br />
+
+
+   <a name="Dashboard"></a>
+
+   ### Dashboard
+
+0. For <a href="#Dashboard">Dashboard</a>, hold down G and press <strong>D</strong>.
+
+   In the left menu, where is the menu item for Users (the one most often used by Administrators)?
+
+1. PROTIP: Click Dashboard to configure it with Users at the upper-left.
+1. Get rid of an item by clicking the "..." to "Remove from dashboard" or New Dashboard.
+1. To rearrange location, click the "..." on any item and select "Customize".
+1. Click "Edit" from the command bar to search for Users, Add.
+1. Click "Save" at the top.
+
+
+   <a name="LicenseTypes"></a>
+
+   ### License types of Subscriptions
+
+   BTW, billing is associated with <strong>Management Subscriptions</strong> with names such as "Pay-as-you-go..."
+
+
+
+   ### Support Plans (with Pricing)
+
+   <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=672143e9-2e2c-49d6-b5f4-6558d88f66e1">VIDEO "Microsoft Azure Pricing and Support Options"</a>
+
+   Submit a support ticket at: <a target="_blank" href="https://portal.azure.com/#create/Microsoft.Support">https://portal.azure.com/#create/Microsoft.Support</a> (email support@microsoftsupport.com)
+
+   <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview">Support options</a>:
+
+   * Basic: Billing and Subscription support only. "Self-help" technical support.
+   
+   * Developer <strong>$29/mo.</strong> for 8-hour response to non-Prod. env. issues.
+   
+   * Standard <strong>$100/mo.</strong> for 4-hour response to Sev B issues for "Business Critical" when you file a business-critical issue with technical support, the earliest you can expect a response from technical support? Within 1 hour
+   
+   * Professional Direct <strong>$1000/mo.</strong> which adds a ProDirect Delivery Manager who provides architectural guidance, onboarding services, seminars.
+
+   * Premier for "substantial dependence" with a TAM (Technical Account Manager).
+
+   Getting 403 ActiveDirectoryMenuBlade accessing AAD on Portal
+
+0. Right-click on the "Help + Support" box on the Dashboard and select "unpin"
+   because you now know you can reach it (in two places).
+
+
+
+   <a name="Social"></a>
+
+   ### Social Support Forums about Azure
+
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/support/community/">Azure.microsoft Community Forum</a>
+
+   * <a target="_blank" href="https://social.msdn.microsoft.com/Forums/azure/en-US/home">MSDN</a>
+
+   <a target="_blank" href="https://medium.com/microsoftazure">
+   https://medium.com/microsoftazure</a>
+
+   <em>Filtered for Most Votes on Accepted answers:</em>
+
+   * <a target="_blank" href="https://stackoverflow.com/questions/tagged/azure?sort=MostVotes&filters=NoAcceptedAnswer&edited=true">StackOverflow</a>
+
+   * <a target="_blank" href="https://serverfault.com/questions/tagged/azure">Serverfault</a>
+
+   * <a target="_blank" href="https://channel9.msdn.com/Shows/Tuesdays-With-Corey/">Tuesdays with Corey</a> (Sanders, VP of Azure Compute, now Corporate VP of Microsoft Solutions, about Azure on Microsoft's Channel9 video site). <a target="_blank" href="https://twitter.com/search?f=realtime&q=%23AzureTwC&src=typd">#AzureTwC</a>
+   
+
+
+   ### Help + Support
+
+0. There are 3 places you can reach "Help + Support":
+
+   Click the question mark icon at the upper-right corner.
+
+   ![azure help upper right 220x267](https://cloud.githubusercontent.com/assets/300046/25567655/c2642352-2dc0-11e7-9e6d-ef60c659a152.png)
+
+   Support options are also listed behind the smiley face icon.
+
+   There is also a "Help + Support" box on the Dashboard.
+
+   Alternately, scroll down to click <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview">Help + Support</a> (the person icon in blue).
+
+0. Microsoft calls their business-level oriented collection of implementation guidance <a target="_blank" href="https://www.youtube.com/watch?v=9VJYVITjckw">VIDEO</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/microsoft-cloud-adoption-framework-for-azure/">MS_LEARN</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/">Microsoft Cloud Adoption Framework for Azure"</a>.
+
+   Additional sites:
+
+   https://microsoft.github.io/AzureTipsAndTricks/blog/tip1.html
+
+   ### Categories to get support
+
+   In order to route your support to a specific team, here is a comprehensive list:
+
+   * Azure Active Directory
+   * Microsoft Azure Stack
+   * Azure Stack Edge
+   * Blockchain [discontinued]
+   * <strong>Compute</strong>
+   * Databases
+   * Developer Tools
+   * Enterprise Integration [Arc]
+   * Intelligence & Analytics [AI & Machine Learning]
+   * Internet of Things
+   * Microsoft Graph
+   * Mixed Reality [Hololens, Mesh]
+   * Monitoring & Management
+   * <strong>Networking</strong>
+   * Security
+   * <strong>Storage</strong>
+   * Web & Mobile [Edge browser]
+   <br /><br />
+
+
+   ### Lock Box for Support
+
+   For Microsoft people to access a customer's unencrypted data, they are supposed to look into the "Lock Box" where a customer put files they want Microsoft to see.
+
+
+
+<hr />
+
+<a name="IAM"></a>
+
+## IAM 
 
 <a name="Arch"></a>
 
-## Access AuthA & AuthN Subscriptions
+### AuthA & AuthN 
 
 <a target="_blank" href="#Arch">This pdf</a> is how Azure's various enterprise authentication and authorization mechanisms relate to each other: 
 
@@ -595,9 +938,7 @@ G. VM templates<br />
 H. Sandbox subscription<br />
 I. Azure DevOps (vs. GitHub Actions)
 
-<hr />
-
-## It can be confusing
+### Azure AD
 
 <a target="_blank" href="https://www.youtube.com/watch?v=dBAflZZE6Gw&t=24s" title="Active Directory vs Azure AD vs Azure AD DS | MCSA | AZ-104">VIDEO</a>: <a target="_blank" href="https://www.youtube.com/watch?v=-a_-Seh27s4&">VIDEO Glossary</a>.
 
@@ -667,7 +1008,7 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
 
 <a name="PortalSearch"></a>
 
-## Portal Search AAD
+### Portal Search AAD
 
 1.  <a target="_blank" href="https://portal.azure.com">portal.azure.com</a>
 
@@ -837,6 +1178,13 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
 2.  The user would see a Subscription with role "Specified access".
 3.  User should Deactivate after using rather than letting the clock run out.
 
+    Policy Definition options: ???
+    * Allowed VM SKU's
+    * Locations
+    * Allowed Resource Type
+    * Allowed Storage Account SKUs
+    <br /><br />
+
     <a name="ConditionalAccess"></a>
 
     ### Conditional Access Policy
@@ -923,7 +1271,7 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 
    <pre><strong>az role definition list -o table --query [].roleName</strong></pre>
 
-   For a count of 260:
+   For a count (260 at time of writing):
 
    <pre><strong>az role definition list --query [].roleName | wc -l</strong></pre>
 
@@ -1169,7 +1517,8 @@ However, PowerShell Remoting is not always a viable option.
 Where you have Azure-hosted VMs but cannot open a public WinRM port, <a target="_blank" href="https://azure.microsoft.com/en-us/blog/managing-on-premises-systems-with-azure-automation/">
 This post</a> presents a PowerShell extension runbook for on-premises VMs by utilizing the Azure VM Agent’s Custom Script Extension. 
 
-## Python
+
+### Python
 
 https://learn.microsoft.com/en-us/azure/developer/python/?view=azure-python
 
@@ -1189,7 +1538,7 @@ Editors:
 
 <a name="Blueprints"></a>
 
-## Azure Blueprints
+### Azure Blueprints
 
    Blueprints orchestrates deployment of artifacts as policy.
 
@@ -1212,7 +1561,7 @@ Editors:
 
 <a name="CloudAcademyLab"></a>
 
-## Portal Hands-on GUI Lab thru CloudAcademy 
+## Hands-on GUI Labs
 
 PROTIP: It makes more sense to look at a live example populated with several resources, in context, which is what a CloudAcademy lab provides.
 
@@ -1263,165 +1612,14 @@ PROTIP: It makes more sense to look at a live example populated with several res
 1. In the pop-up Finder, navigate to a container folder (such as "Projects"), create a folder, and save the RDP file.
 1. Switch to Finder and navigate to your RDP file.
 
+### ASG (Application Security Groups)
+
+ASGs are wrapped by a NSG (Network Security Group) which route traffic.
+   * Admins can RDP.
+   * Users cannot RDP.
+
+
 <hr />
-
-<a name="MSAccount"></a>
-
-### Microsoft Azure account setup
-
-   * <a target="_blank" href="https://www.youtube.com/playlist?list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7">YouTube playlist on Azure</a> by Zach Kramer and Steve Michelotti
-   <br /><br />
-
-1. PROTIP: Avoid using an email that you use for your own banking, shopping, social media, etc. For continuity with a real cloud, you'll need an email address that you can share and transfer to other people. That's so at a company, you will need to give someone else the password so that if you're ever go on vacation or get "run over a bus", your organization can continue.
-
-   In you're in an enterprise company, get an email adddress from a corporate assets administrator. A different (service) account is often created for each department of responsibility.
-
-   PROTIP: In the name include the month and year in the account name (such as johndoe1901@hotmail.com) for 2019-01 (January). Many <strong>create several email accounts</strong> because each Azure subscription includes a $200 credit to spend on any service for the <strong>first 30 days</strong>, free access to <a target="_blank" href="https://azure.microsoft.com/en-us/free/free-account-faq/">Azure products for 12 months</a>. 
-
-   Azure provide access to more than 25 products that are always free. 
-
-
-   ### Azure Active Directory (AAD)
-
-   When someone signs up for a Microsoft cloud service subscription (such as Microsoft Azure, Office 365, Microsoft Intune, etc.), a dedicated instance of <strong>Azure AD (Active Directory)</strong> is created automatically. 
-
-   READ: <a target="_blank" href="https://microsoftlearning.github.io/AZ-900T0x-MicrosoftAzureFundamentals/Instructions/Walkthroughs/19-Use%20the%20Azure%20Pricing%20Calculator.html"><img width="20" alt="pricing" src="https://code.benco.io/icon-collection/azure-patterns/calculator-pricing-details.svg"></a> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/active-directory/">Azure Active Directory pricing</a>. 
-
-   Premium P1 features include Password Protection (custom banned password). Dynamic groups requires a Premium P1 license.
-
-   Premium P2 includes all P1 features, plus really cool <strong>"Identity Protection"</strong> with these policies Assignment to all users:
-
-   Additionally, Microsoft 365 subscribers have an additional Azure AD licensing options:
-   * Free 500,000 object limit, includes MFA for O365 services
-   * $1/mo. Basic for group-base access management with SLAs
-   * $6/mo. P1 for conditional access based on device/location & MFA for on-prem. services
-   * $9/mo. P2 for Identity Protection, Access reviews, Privileged Identity Management
-   <br /><br />
-
-   * Multi-factor authentication registration policy to Require MFA
-
-   * User risk remediation policy to require password change, with review of number of users impacted
-
-   * Sign-in remediation policy to automate analysis of signals from each sign-in, both real-time and offline, and calculates a risk score based on the probability that the sign-in wasn't performed by the user. Administrators can decide based on this risk score signal to enforce organizational requirements. Administrators can choose to block access, allow access, or allow access but require multi-factor authentication. If risk is detected, users can perform multi-factor authentication to self-remediate and close the risky sign-in event to prevent unnecessary noise for administrators.
-
-   * Investigate risks using data in the portal.
-
-   * Export risk detection data to third-party utilities for further analysis.
-
-   ### Risk Events
-
-   Risk level and risk detail fields are hidden to those with just the Azure AD Premium P1 edition.
-
-   Advanced detections (such as unfamiliar sign-in properties) are not covered by your license, and will appear under the name Sign-in with additional risk detected. 
-
-
-   Devices are managed on Azure AD
-
-   Users on another Azure AD (B2B) or public IDP (B2C)
-
-
-   ### Enterprise discount
-
-   Available to Enterprise customers only: <a target="_blank" href="https://cloudacademy.com/course/understanding-azure-pricing-and-support/planning-and-management/">15% Discounts on Public Prices</a>
-
-
-   <a name="Tenants"></a>
-
-   ### AD Tenants
-
-   The Azure SaaS service separates different customers into different <strong>tenants</strong> (like tenants in an apartment building). Each tenant is a dedicated, isolated instance of the Azure Active Directory service, owned and managed by an organization. 
-
-   "Isolated" = ISE
-
-   Azure AD supports auth protocols: OAuth, OpenID, SAML, WS-Federation.
-
-2. For birthdate, make up an adult year: 2023 - 22 = 2001
-
-   PROTIP: Write it down for account recovery, such as in a 1Password entry.
-   Also write down the date you created the account.
-
-3. You'll need a phone number for multi-factor Authentication.
-
-   PROTIP: Give Googgle Voice the cell number that you've been giving out to people.
-   Then get a new phone number from your cell carrier (Verizon, ATT, etc.).
-   In Google Voice have that new number ring when someone calls you at your original number.
-   Give that new number only to Microsoft.
-   This enables you to transfer that new number to someone else without making your friends wonder where you went.
-
-   PROTIP: It's best security that for 3FA you use someone else's phone.
-   But as my wife will tell you this can get annoying if you work while she's sleeping with her phone next to her.
-
-4. Get a debit or credit card number.
-
-   BIG PROTIP: Avoid using a personal credit card which can keep charging your card without your approval of specific charges.
-   Amazon and Microsoft do not provide anyone you can actually talk to about charges.
-   And cancelling your credit card will negatively affect your credit scrore, which results in you paying higher interest rates.
-
-   So get a <strong>pre-paid debit card</strong> to pay for cloud usage.
-   Such cards only lets you spend the money you load onto the card. 
-   <a target="_blank" href="https://www.bluebird.com/">Bluebird</a> VISA card (by American Express) 
-   takes no overdraft fee and no purchase fee.
-   Add money (recharge) free at Walmart customer service counters or via a connected checking account.
-
-   Unlike Movo, Bluebird does not have a $4.95 inactivity fee after three months without activity.
-
-5. Create a separate card sub-account for each cloud account.
-
-
-   <a name="SignUp"></a>
-
-   ### Sign Up for Azure
-
-5. Sign up for Azure:
-
-   <a target="_blank" href="
-   https://signup.live.com/signup"><strong>
-   https://signup.live.com/signup</strong></a>
-
-6. PROTIP: After defining <strong>5 users</strong>, you are forced to sign-up for and pay for a subscription with your credit card.
-
-   PROTIP: Use address with a zip code that's not associated with your home address, and used only for banking.
-
-   Multiple subscriptions can be created under a single Azure account (Dev, Test, Staging, Production, Logging,  Demo, Training, DR, etc.). This is particularly useful for businesses because:
-
-   DEFINITION: A Subscription is your "bank account" / credit card.
-
-   PROTIP: access control and billing occur at the subscription level, not the account level.
-
-   PROTIP: Each Subscription can only trust a single AAD directory.
-
-   Transfer ownership of a subscription, such as to a central accounting department.
-
-   Add additional subscriptions when you may exceed limits within a subscription: # VNets.
-
-
-   ### MS Authenticator app
-
-7. Install the <strong>Microsoft Authenticator app</strong> on you smartphone and setup Two-factor authentication to approve access using your phone.
-
-8. Get a unique profile image and <a target="_blank" href="https://account.microsoft.com/profile/edit-picture?fref=home.banner.profile">add picture</a>.
-
-
-<a name="MobileApps"></a>
-
-### Mobile Apps
-
-1. Setup password on your device.
-
-1. https://azure.microsoft.com/en-us/features/azure-portal/mobile-app/
-
-1. Open the store on your phone and search for "Microsoft Azure":
-
-   On the Apple App Store: https://apps.apple.com/us/app/microsoft-azure/id1219013620?ls=1
-
-   On the Google Play Store: https://play.google.com/store/apps/details?id=com.microsoft.azure
-
-1. Login. <a target="_blank" href="https://www.youtube.com/watch?v=W7lXaQOQhFs">VIDEO</a>
-
-1. Setup MFA
-
-Microsoft has Intune to manage endpoints (mobile and laptops).
-
 
 <a name="ASM"></a>
 
@@ -1455,148 +1653,6 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 6. ARM determines if the action in the API call is included in the roles the user has for this resource.
 7. If the user doesn't have a role with the action at the requested scope, access is not granted. Otherwise, ARM checks if ta deny assignment applies.
 8. If a deny assignment applies, access is blocked. Otherwise access is granted.
-
-
-<hr />
-
-<a name="Portal"></a>
-
-## Portal.azure.com GUI
-
-
-1. On initial (first time) new Subscription entry pop-up: Azure Advisor
-
-   ### Azure Advisor
-
-   On initial entry into portal, Azure greets you with a pop-up about Azure Advisor.
-
-   <a target="_blank" href="https://azure.microsoft.com/en-us/services/advisor/"><img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-patterns/advisor-blue.svg">
-   Azure Advisor</a> provides <strong>recommendations</strong> by categories of the "Well-Architected Framework" (but not "monitoring"):
-   * Cost
-   * Security
-   * Reliability
-   * Operational excellence
-   * Performance
-   <br /><br />
-
-
-   <a name="Dashboard"></a>
-
-   ### Dashboard
-
-0. For <a href="#Dashboard">Dashboard</a>, hold down G and press <strong>D</strong>.
-
-   In the left menu, where is the menu item for Users (the one most often used by Administrators)?
-
-1. PROTIP: Click Dashboard to configure it with Users at the upper-left.
-1. Get rid of an item by clicking the "..." to "Remove from dashboard" or New Dashboard.
-1. To rearrange location, click the "..." on any item and select "Customize".
-1. Click "Edit" from the command bar to search for Users, Add.
-1. Click "Save" at the top.
-
-
-   <a name="LicenseTypes"></a>
-
-   ### License types of Subscriptions
-
-   BTW, billing is associated with <strong>Management Subscriptions</strong> with names such as "Pay-as-you-go..."
-
-
-
-   ### Support Plans (with Pricing)
-
-   <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=672143e9-2e2c-49d6-b5f4-6558d88f66e1">VIDEO "Microsoft Azure Pricing and Support Options"</a>
-
-   Submit a support ticket at: <a target="_blank" href="https://portal.azure.com/#create/Microsoft.Support">https://portal.azure.com/#create/Microsoft.Support</a> (email support@microsoftsupport.com)
-
-   <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview">Support options</a>:
-
-   * Basic: Billing and Subscription support only. "Self-help" technical support.
-   
-   * Developer <strong>$29/mo.</strong> for 8-hour response to non-Prod. env. issues.
-   
-   * Standard <strong>$100/mo.</strong> for 4-hour response to Sev B issues for "Business Critical" when you file a business-critical issue with technical support, the earliest you can expect a response from technical support? Within 1 hour
-   
-   * Professional Direct <strong>$1000/mo.</strong> which adds a ProDirect Delivery Manager who provides architectural guidance, onboarding services, seminars.
-
-   * Premier for "substantial dependence" with a TAM (Technical Account Manager).
-
-   Getting 403 ActiveDirectoryMenuBlade accessing AAD on Portal
-
-0. Right-click on the "Help + Support" box on the Dashboard and select "unpin"
-   because you now know you can reach it (in two places).
-
-
-
-   <a name="Social"></a>
-
-   ### Social Support Forums about Azure
-
-   * <a target="_blank" href="https://azure.microsoft.com/en-us/support/community/">Azure.microsoft Community Forum</a>
-
-   * <a target="_blank" href="https://social.msdn.microsoft.com/Forums/azure/en-US/home">MSDN</a>
-
-   <a target="_blank" href="https://medium.com/microsoftazure">
-   https://medium.com/microsoftazure</a>
-
-   <em>Filtered for Most Votes on Accepted answers:</em>
-
-   * <a target="_blank" href="https://stackoverflow.com/questions/tagged/azure?sort=MostVotes&filters=NoAcceptedAnswer&edited=true">StackOverflow</a>
-
-   * <a target="_blank" href="https://serverfault.com/questions/tagged/azure">Serverfault</a>
-
-   * <a target="_blank" href="https://channel9.msdn.com/Shows/Tuesdays-With-Corey/">Tuesdays with Corey</a> (Sanders, VP of Azure Compute, now Corporate VP of Microsoft Solutions, about Azure on Microsoft's Channel9 video site). <a target="_blank" href="https://twitter.com/search?f=realtime&q=%23AzureTwC&src=typd">#AzureTwC</a>
-   
-
-
-   ### Help + Support
-
-0. There are 3 places you can reach "Help + Support":
-
-   Click the question mark icon at the upper-right corner.
-
-   ![azure help upper right 220x267](https://cloud.githubusercontent.com/assets/300046/25567655/c2642352-2dc0-11e7-9e6d-ef60c659a152.png)
-
-   Support options are also listed behind the smiley face icon.
-
-   There is also a "Help + Support" box on the Dashboard.
-
-   Alternately, scroll down to click <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview">Help + Support</a> (the person icon in blue).
-
-0. Microsoft calls their business-level oriented collection of implementation guidance <a target="_blank" href="https://www.youtube.com/watch?v=9VJYVITjckw">VIDEO</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/microsoft-cloud-adoption-framework-for-azure/">MS_LEARN</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/">Microsoft Cloud Adoption Framework for Azure"</a>.
-
-   Additional sites:
-
-   https://microsoft.github.io/AzureTipsAndTricks/blog/tip1.html
-
-   ### Categories to get support
-
-   In order to route your support to a specific team, here is a comprehensive list:
-
-   * Azure Active Directory
-   * Microsoft Azure Stack
-   * Azure Stack Edge
-   * Blockchain [discontinued]
-   * <strong>Compute</strong>
-   * Databases
-   * Developer Tools
-   * Enterprise Integration [Arc]
-   * Intelligence & Analytics [AI & Machine Learning]
-   * Internet of Things
-   * Microsoft Graph
-   * Mixed Reality [Hololens, Mesh]
-   * Monitoring & Management
-   * <strong>Networking</strong>
-   * Security
-   * <strong>Storage</strong>
-   * Web & Mobile [Edge browser]
-   <br /><br />
-
-
-   ### Lock Box for Support
-
-   For Microsoft people to access a customer's unencrypted data, they are supposed to look into the "Lock Box" where a customer put files they want Microsoft to see.
-
 
 
 <hr />
@@ -2989,67 +3045,7 @@ Azure Role-Based Access Control (RBAC)
 Azure AD Roles
 
 
-
 <hr />
-
-## Resources : Videos
-
-<a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-big-picture">
-   Microsoft Azure: The Big Picture</a> 1h 50m Mar 10, 2016
-   by Matt Milner
-   makes use of VS 2010, which is rather obsolete now.
-
-1. Install in VSCode <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools">Azure Resource Manager Tools</a> for Template language support for Azure Resource Manager JSON files.
-
-
-
-## Live events to meet people
-
-WARNING: <a target="_blank" href="https://azure.microsoft.com/en-us/resources/videos/azure-friday-get-ready-for-global-azure-bootcamp-2019/">
-The "Global Azure Bootcamp April 27, 2019" experience website 
-<a target="_blank" href="https://global.azurebootcamp.net/">
-global.azurebootcamp.net</a> has converted to Vue and Google stuff.
-
-
-## Podcasts:
- 
-   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/azure-friday-hd-channel-9/id739501868">Azure Friday</a> with <a target="_blank" href="https://azure.microsoft.com/en-us/resources/videos/azure-friday/">videos</a> by Scott Hanselman
-
-   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/microsoft-azure-cloud-cover-show-hd-channel-9/id417256457">Microsoft Azure Cloud Cover Show</a>
-
-   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/the-azure-podcast/id728193635">The Azure Podcast</a> by Sujit D'Mello
-
-   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/channel-9/id73802611">Channel 9</a> for all things Microsoft.
-
-   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/azure-tuesdays-with-corey/id1023243001">Azure Tuesdays with Corey</a> by Rick Claus
-
-   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/azure-ninjas/id1305172229">Azure Ninjas</a> (Microsoft Global Black Belts)
-
-
-## Policy
-
-Policy Definition options:
-   * Allowed VM SKU's
-   * Locations
-   * Allowed Resource Type
-   * Allowed Storage Account SKUs
-   <br /><br />
-
-
-## ASG (Application Security Group)
-
-ASGs are wrapped by a NSG (Network Security Group) which route traffic.
-   * Admins can RDP.
-   * Users cannot RDP.
-
-
-## Delete Subscription, Directory, Tenant
-
-<pre><strong>az group delete --name $MY_RG</strong></pre>
-
-https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/cancel-azure-subscription
-
-https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/directory-delete-howto
 
 
 ## Azure Futures Roadmap
@@ -3065,7 +3061,7 @@ PROTIP: The minimum prior notification will Microsoft give before ending support
 * <a target="_blank" href="https://www.youtube.com/watch?v=9RtzSIrRijg&list=RDCMUCp8lLM2JP_1pv6E0NQ38pqw&index=1">Azure This Week</a> by Lars Klint and <a target="_blank" href="https://www.youtube.com/channel/UCbjgKwnWnGG7sKCPTRgrFcw" title="Gwyn Pena-Siguenza">GPS</a> at <a target="_blank" href="https://www.acloudguru.com/">ACloudGuru.com</a>.
 
 
-### Product Feature
+### Product Features
 
    "Public preview" means the feature is available for all Azure customers for beta testing.
 
@@ -3076,7 +3072,57 @@ PROTIP: The minimum prior notification will Microsoft give before ending support
 provides clickable "heatmap" status, timeline, a quiz, etc.
 
 
-## References
+<hr />
+
+<a name="Resources"></a>
+
+## Resources 
+
+### Videos
+
+<a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-big-picture">
+   Microsoft Azure: The Big Picture</a> 1h 50m Mar 10, 2016
+   by Matt Milner
+   makes use of VS 2010, which is rather obsolete now.
+
+1. Install in VSCode <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools">Azure Resource Manager Tools</a> for Template language support for Azure Resource Manager JSON files.
+
+
+### Live events to meet people
+
+WARNING: <a target="_blank" href="https://azure.microsoft.com/en-us/resources/videos/azure-friday-get-ready-for-global-azure-bootcamp-2019/">
+The "Global Azure Bootcamp April 27, 2019" experience website 
+<a target="_blank" href="https://global.azurebootcamp.net/">
+global.azurebootcamp.net</a> has converted to Vue and Google stuff.
+
+
+### Podcasts
+ 
+   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/azure-friday-hd-channel-9/id739501868">Azure Friday</a> with <a target="_blank" href="https://azure.microsoft.com/en-us/resources/videos/azure-friday/">videos</a> by Scott Hanselman
+
+   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/microsoft-azure-cloud-cover-show-hd-channel-9/id417256457">Microsoft Azure Cloud Cover Show</a>
+
+   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/the-azure-podcast/id728193635">The Azure Podcast</a> by Sujit D'Mello
+
+   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/channel-9/id73802611">Channel 9</a> for all things Microsoft.
+
+   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/azure-tuesdays-with-corey/id1023243001">Azure Tuesdays with Corey</a> by Rick Claus
+
+   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/azure-ninjas/id1305172229">Azure Ninjas</a> (Microsoft Global Black Belts)
+
+
+
+
+## Delete Subscription, Directory, Tenant
+
+<pre><strong>az group delete --name $MY_RG</strong></pre>
+
+https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/cancel-azure-subscription
+
+https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/directory-delete-howto
+
+
+### Miscellaneous
 
 https://olohmann.github.io/azure-hands-on-labs/labs/07_iac/iac.html
 
@@ -3090,20 +3136,6 @@ http://www.frankysnotes.com/2019/05/how-to-make-your-deployment-successful.html
 https://azurefabric.com/azure-monitor-for-paas-services-where-is-the-ai-and-how-do-i-arm-it/
 blog https://azidentity.azurewebsites.net/archive
 
-
-### URL Shortener
-
-https://channel9.msdn.com/Shows/Azure-Friday/AzUrlShortener-An-open-source-budget-friendly-URL-shortener
-by Frank Boucher who created a one-click deploy your own.
-http://www.frankysnotes.com/2020/04/how-i-build-budget-friendly-url.html
-
-https://medium.com/marcus-tee-anytime/create-your-own-url-shortener-host-in-azure-almost-free-for-cloud-infrastructure-a74c9cc29720
-
-https://levelup.gitconnected.com/build-a-custom-url-shortener-using-azure-functions-and-cosmos-db-c20e59261375
-
-
-
-<a target="_blank" href="https://learn.microsoft.com/en-us/microsoft-365/security/defender/investigate-incidents?view=o365-worldwide#attack-story">Attack Story</a>
 
 
 ## More about Azure #
