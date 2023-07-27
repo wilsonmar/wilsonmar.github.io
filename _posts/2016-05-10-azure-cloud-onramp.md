@@ -259,6 +259,7 @@ Others:
    * Posture management
    * Incident preparation
 
+
 <a name="MCSB"></a>
 
 ### Security Baselines
@@ -266,13 +267,20 @@ Others:
 A <strong>security baseline</strong> is a snapshot in time of a system's current configuration (defining specific OS-level settings, installed apps, app configurations, users, etc.). Baselines are created as the basis for determining what settings were changed (and when).
 
 
-### Security Controls
+<a name="SecControls"></a>
+
+### Security Controls Benchmarks
 
 Several organizations have defined for the industry specific <strong>"controls"</strong> (<strong>improvement actions</strong>):
-   * <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks">CIS Control v8 Benchmarks</a>
+   * <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks">CIS (Center for Internet Security) Controls v8 Benchmarks</a>
    * NIST SP 800-53 RC4
    * PCI-DSS v3.2.1
    <br /><br />
+
+A <strong>benchmark</strong> is an individual check (evaluation) of a system's setting, such as the patch level of an application installed, to determine whether best practices (security controls) are employed (which in turn should reduce the attack surface of the system).
+
+In <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview">2021</a>, Microsoft published its prescriptive best-practice framework in its MCSB (<strong>Microsoft Cybersecurity Security Benchmarks</strong>), latest version 3 as of March 30, 2023.
+the MCSB aims to improve the security of cloud-centric workloads, data, and services on Azure, perhaps in multi-cloud environments. 
 
 Microsoft grouped its definition of security controls under <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview
 ">12 Control Domains</a>. Codes (in parentheses) for each control domain are used as a prefix to name specific controls:
@@ -391,30 +399,14 @@ Download details for each control above in Microsoft's Excel spreadsheet<br />
 file azure-security-benchmark-v3.0.xlsx at:<br />
 https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Security%20Benchmark/3.0
 
-
-### Security Benchmarks
-
-A <strong>benchmark</strong> is an individual check (evaluation) of a system's setting, such as the patch level of an application installed, to determine whether best practices (security controls) are employed (which in turn should reduce the attack surface of the system).
-
-In <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview">2021</a>, Microsoft published its prescriptive best-practice framework in its MCSB (<strong>Microsoft Cybersecurity Security Benchmarks</strong>), v1 as of 3/21/23. Like the CIS (Center for Internet Security) Benchmarks (see https://www.cisecurity.org/cis-benchmarks/),
-the MCSB aims to improve the security of cloud-centric workloads, data, and services on Azure, perhaps in multi-cloud environments. 
-
-Individual "Benchmarks" (latest version 3 as of March 30, 2023):
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-posture-vulnerability-management">Posture and Vulnerability Management</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-incident-response">Incident Response</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-logging-threat-detection">Logging and threat detection</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-endpoint-security">Endpoint security</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-privileged-access">Privileged Access</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-asset-management">Asset Management</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-backup-recovery">Backup and recovery</a>
-   <br /><br />
-
 REMEMBER: Use of Defender involves <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/">additional charges</a> (to each server, container, database, storage, app service).
 
 
 <a name="Defenders"></a>
 
-### MS Defenders
+### MS Defender offerings
+
+Microsoft summarizes the "kill chain" of exploits and defenses against them in this diagram: 
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"><img alt="az-defenders-3360x1602.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"></a>
 
@@ -427,34 +419,27 @@ Microsoft has a "Defender" offering for each type of product:
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-cloud">MS Defender for Cloud</a>
    <br /><br />
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"><img alt="azure-defender-1492x1042.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"></a>
-
-<a target="_blank" href="https://learn.microsoft.com/en-us/azure/defender-for-cloud/update-regulatory-compliance-packages">regulatory compliance packages</a>. 
-
-Successor of Azure Security Benchmark v3.)
-
 "Sentinel" is the brand name for Microsoft's offerings in SIEM and SOAR.
 
-<a name="Occupations"></a>
+### Regulatory Compliance
 
-### Occupations
+Progress toward implementing security controls can be illustrated using this:
 
-Microsoft aligned these generic "job roles" with <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Azure certification exams</a>:
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"><img alt="azure-defender-1492x1042.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"></a>
 
-   * (Azure) Administrator
-   * (Azure) Developer
-   * (Azure) Solution Architect
+Notice the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/defender-for-cloud/update-regulatory-compliance-packages">regulatory compliance standards</a>:
 
-   * Data Engineer
-   * AI Engineer
-   * Business Analyst
-   * Business User
+   * ISO 27001
+   * PCI DSS (Payment Card Industry Data Security Standard) v3.2.1
+   * SOC TSP
+   * HIPAA HITRUST
+   * NIST SP 800 S3 R4
+   * SWIFT CSP CSCF v2020
+   * Azure CIS 1.10
+   * ISO 27001-2013
+   * CMMC Level 3
+   * AWS Foundational Security Best Practices
    <br /><br />
-
-   PROTIP: Generic job positions ("roles") are different than the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a> (AAD).
-
-   MY OPINION: I think job roles should be multi-select checkboxes.
-   This segregation also adds to duplicating material.
 
 
 <a name="SecureScore"></a>
@@ -475,11 +460,31 @@ A breakdown of actions based on Microsoft's <strong>categories for a Security Po
    <br /><br />
 
 
+<a name="Occupations"></a>
+
+### Occupations
+
+Microsoft aligned these generic "job roles" with <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Azure certification exams</a>:
+
+   * (Azure) Administrator
+   * (Azure) Developer
+   * (Azure) Solution Architect
+
+   * Data Engineer
+   * AI Engineer
+
+   * Business Analyst
+   * Business User
+   <br /><br />
+
+   PROTIP: Generic job positions ("roles") are different than the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a> (AAD).
+
+   MY OPINION: I think job roles should be multi-select checkboxes.
+   This segregation also adds to duplicating material.
+
+
 
 * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/security-top-10">Azure Top Security Best Practices</a> (What, Why, Who, How activities) by People, Process, Technology, and Architecture. 
-
-Other industry and cloud service providers security best practice standards and framework: 
-Payment Card Industry Data Security Standard (PCI-DSS).
 
 
 
