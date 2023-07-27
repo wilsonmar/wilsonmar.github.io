@@ -222,14 +222,29 @@ and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-archit
 
 ### Security Roles
 
-<a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop-videos">Videos</a> in <a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop">Microsoft's CISO Workshop</a> covers how the <a target="_blank" href="https://aka.ms/SecurityRoles">concerns</a> of each organizational role type/team</a> relate with others:
+<a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop-videos">Videos</a> in <a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop">Microsoft's CISO Workshop</a> covers how the <a target="_blank" href="https://aka.ms/SecurityRoles">concerns</a> of each organizational role type/team relate with others, from Plan (Governance) to Build to Run (Operations) stages:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"><img alt="azure-security-roles-1883x903.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"></a>
 
-From Plan (Governance) to Build to Run (Operations):
    * Board
    * Management (Business Model and Vision)
+   * Security Leadership
+   * PMO (Program Management Office)
 
+Organizational Functions:
+
+   * Compliance Management
+   * Security Architecture
+   * Posture Management
+   * Incident Management by Security Operations Center (SOC)
+
+Departments:
+
+   * IT Operations
+   * OT Operations
+   * Threat Intelligence
+
+Others:
    * Policy and standards
    * Security operations
    * Security architecture
@@ -242,8 +257,6 @@ From Plan (Governance) to Build to Run (Operations):
    * Threat intelligence
    * Posture management
    * Incident preparation
-
-   * SOC (Security Operations Center)
 
 <a name="MCSB"></a>
 
@@ -261,12 +274,13 @@ There is a <a target="_blank" href="https://learn.microsoft.com/en-us/security/b
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"><img alt="az-defenders-3360x1602.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"></a>
 
-Microsoft offers a "Defender" product for each type of product:
+Microsoft has a "Defender" offering for each type of product:
 
-   * MS Defender for Office 365
-   * MS Defender for Endpoint
-   * MS Defender for Identity
-   * MS Defender for Cloud
+   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-office-365">MS Defender for Office 365</a>
+   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/endpoint-security/microsoft-defender-endpoint">MS Defender for Endpoint</a>
+   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-for-identity">MS Defender for Identity</a>
+   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-devops#">MS Defender for DevOps</a>
+   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-cloud">MS Defender for Cloud</a>
    <br /><br />
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"><img alt="azure-defender-1492x1042.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"></a>
@@ -293,7 +307,7 @@ REMEMBER: Use of Defender involves <a target="_blank" href="https://azure.micros
 
 <a name="Occupations"></a>
 
-## Occupations
+### Occupations
 
 Microsoft aligned these generic "job roles" with <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Azure certification exams</a>:
 
@@ -706,19 +720,19 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
 ## Admin Users & Groups
 
 
-    <a name="GlobalAdmin"></a>
+<a name="GlobalAdmin"></a>
 
-    ### Global Admin Account
+### Global Admin Account
 
-    <strong>Global Administrators</strong>, aka Company Administrators, in Azure AD have access to <strong>all services</strong> that use AAD identities (Microsoft 365 security center, Intune, Microsoft 365 compliance center, Exchange Online, SharePoint Online, Skype for Business Online, etc.).
+   <strong>Global Administrators</strong>, aka Company Administrators, in Azure AD have access to <strong>all services</strong> that use AAD identities (Microsoft 365 security center, Intune, Microsoft 365 compliance center, Exchange Online, SharePoint Online, Skype for Business Online, etc.).
 
-    REMEMBER: Global Admins get access to Azure resources only after being granted User Access Admin role.
+   REMEMBER: Global Admins get access to Azure resources only after being granted User Access Admin role.
 
-    PROTIP: Don't use the Global Admin account regularly. Set an Activity Alert when it is used. Have no MFA on it. Have 2-5 global admins. <a target="_blank" href="https://www.youtube.com/watch?v=vZ9uQtO7mSU&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=2">VIDEO</a> 
+   PROTIP: Don't use the Global Admin account regularly. Set an Activity Alert when it is used. Have no MFA on it. Have 2-5 global admins. <a target="_blank" href="https://www.youtube.com/watch?v=vZ9uQtO7mSU&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=2">VIDEO</a> 
 
-    PROTIP: Global Admin privileges are needed to enable <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">AD PIM (Privileged Identity Management)</a> for a directory.
+   PROTIP: Global Admin privileges are needed to enable <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">AD PIM (Privileged Identity Management)</a> for a directory.
 
-    So it's important to assign other more specific roles. 
+   So it's important to assign other more specific roles. 
 
 
 REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=1h26m26s">VIDEO</a>: There is no spanning between AAD and AD RBAC roles:
@@ -1292,6 +1306,20 @@ Also, instead of 2 racks, ARM resources can span 3 racks of computers.
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/111055690-eda3cc00-8435-11eb-9563-aa0fb3154d40.png"><img alt="az-arm-interfaces-599x315.png" width="599" src="https://user-images.githubusercontent.com/300046/111055690-eda3cc00-8435-11eb-9563-aa0fb3154d40.png"></a>
 
 ARM handles Authentication for access to back-end Web App, Data Store, Virtual Machines, etc. 
+
+
+### ARM tokens
+
+<a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course/categories/4743678/posts/8980102#">VIDEO</a>:
+
+1. A user (or service principal) acquires a token for Azure Resource Manager (ARM).  
+2. The token includes the user's group memberships (including transitive group memberships).
+3. The user makes a REST API call to Azure Resource Manager with the token attached.
+4. ARM retrieves all the role assignments and deny assignments that apply to the resource upon which the action is being taken.
+5. ARM narrows the role assignments that apply to this user or their group and determines what roles the user ahs for this resource.
+6. ARM determines if the action in the API call is included in the roles the user has for this resource.
+7. If the user doesn't have a role with the action at the requested scope, access is not granted. Otherwise, ARM checks if ta deny assignment applies.
+8. If a deny assignment applies, access is blocked. Otherwise access is granted.
 
 
 <hr />
@@ -2939,19 +2967,6 @@ https://medium.com/marcus-tee-anytime/create-your-own-url-shortener-host-in-azur
 https://levelup.gitconnected.com/build-a-custom-url-shortener-using-azure-functions-and-cosmos-db-c20e59261375
 
 
-
-### ARM tokens
-
-<a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course/categories/4743678/posts/8980102#">VIDEO</a>:
-
-1. A user (or service principal) acquires a token for Azure Resource Manager (ARM).  
-2. The token includes the user's group memberships (including transitive group memberships).
-3. The user makes a REST API call to Azure Resource Manager with the token attached.
-4. ARM retrieves all the role assignments and deny assignments that apply to the resource upon which the action is being taken.
-5. ARM narrows the role assignments that apply to this user or their group and determines what roles the user ahs for this resource.
-6. ARM determines if the action in the API call is included in the roles the user has for this resource.
-7. If the user doesn't have a role with the action at the requested scope, access is not granted. Otherwise, ARM checks if ta deny assignment applies.
-8. If a deny assignment applies, access is blocked. Otherwise access is granted.
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/microsoft-365/security/defender/investigate-incidents?view=o365-worldwide#attack-story">Attack Story</a>
 
