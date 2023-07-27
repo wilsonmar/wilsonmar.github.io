@@ -21,6 +21,9 @@ There is a massive amount of information about Azure, at various levels of detai
 PROTIP: Below is my attempt at helping you approach Azure practically, logically, and thus efficiently for each audience. This is a deep-dive hands-on tutorial with commentary along the way.
 All on one page. Outline:
 
+1. <a href="#Occupations">Audience Occupations</a>
+1. <a href="#Transformations">Digital Transformation?</a>
+
 1. <a href="#URLs">Azure URLs</a>
 1. <a href="#Portal">portal.azure.com GUI</a>
 1. <a href="#GetAccounts">Get Azure accounts</a>
@@ -31,6 +34,10 @@ All on one page. Outline:
 1. <a href="#IAM">IAM (Azure AD)</a>, groups, federation
 
 
+1. <a href="#Futures">Futures Roadmap</a>
+1. <a href="#Resources">Resources</a>
+1. <a href="#More">More about Azure</a>
+
 Search for what to "REMEMBER" to pass <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Microsoft's Azure professional certification exams</a>.
 
 {% include whatever.html %}
@@ -40,7 +47,7 @@ Search for what to "REMEMBER" to pass <a target="_blank" href="https://wilsonmar
 
 ## Audience by Occupation
 
-Microsoft has defined these generic occupational roles with <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Azure certification exams</a>:
+Microsoft has defined their <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Azure certification exams</a> based on these generic occupational roles:
 
    * (Azure) Administrator
    * (Azure) Developer
@@ -60,64 +67,87 @@ Microsoft has defined these generic occupational roles with <a target="_blank" h
 
 To enable them to do their job safely, securely, and efficiently, below is what their management should do.
 
+<hr />
 
-<a name="MCRA"></a>
+<a name="Transformation"></a>
 
-## Efforts by Organizational Level
+## Secure Digital Transformation?
 
-<a target="_blank" href="https://www.youtube.com/watch?v=6iYxNm3TOiI&list=PLtVMyW0H7aiOQwZSsn2d-tg2z729ce1BZ" title="MCRA Intro by Mark Simos, Microsoft Chief Security Advisor">VIDEO</a>: Microsoft's overarching <a target="_blank" href="https://aka.ms/MCRA/">Cybersecurity Reference Architecture (MCRA)</a> contains an overwhelming number of diagrams.
+NOTE: Many land on this as part of their organization's effort to transition to make use of the public cloud.
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"><img alt="azure-guides-1158x439.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"></a>
-
-
-### Securing Digital Transformation
-
+<a target="_blank" href="https://techcommunity.microsoft.com/t5/video-hub/top-10-best-practices-for-azure-security/ba-p/1698837">VIDEO</a>:
 <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/security-top-10">Azure Top Security Best Practices</a> (What, Why, Who, How activities) by People, Process, Technology, and Architecture. 
+
+1. People: Educate teams about the cloud security journey
+2. People: Educate teams on cloud security technology
+
+3. Process: Assign accountability for cloud security decisions
+4. Process: Update incident response processes for cloud
+5. Process: Establish security posture management
+
+6. Technology: Require passwordless or multifactor authentication
+7. Technology: Integrate native firewall and network security
+8. Technology: Integrate native threat detection
+
+9. Architecture: Standardize on a single directory and identity
+10. Architecture: Use identity-based access control instead of keys
+11. Architecture: Establish a single unified security strategy
 
 * Zero Trust
 
 Each Cloud Service Provider (GCP, AWS, Azure, etc.) presents different but similar <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/">Cloud Adoption Framework (CAF)</a>
 and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-architected/security/overview">Well-Architected Framework</a>.
 
+<a name="MCRA"></a>
 
-### Security Roles
+### Efforts by Organizational Level
 
-<a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop-videos">Videos</a> in <a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop">Microsoft's CISO Workshop</a> covers how the <a target="_blank" href="https://aka.ms/SecurityRoles">concerns</a> of each organizational role type/team relate with others, from Plan (Governance) to Build to Run (Operations) stages:
+<a target="_blank" href="https://www.youtube.com/watch?v=6iYxNm3TOiI&list=PLtVMyW0H7aiOQwZSsn2d-tg2z729ce1BZ" title="MCRA Intro by Mark Simos, Microsoft Chief Security Advisor">VIDEO</a>: Microsoft's overarching <a target="_blank" href="https://aka.ms/MCRA/">Cybersecurity Reference Architecture (MCRA)</a> contains an overwhelming number of diagrams in the PowerPoint ??? file covered by <a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop-videos">videos</a> in <a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop">Microsoft's CISO Workshop</a>.
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"><img alt="azure-guides-1158x439.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"></a>
+
+
+### Security Roles (Concerns/Responsibilities/Departments)
+
+how the <a target="_blank" href="https://aka.ms/SecurityRoles">concerns</a> of each organizational role type/team relate with others, from Plan (Governance) to Build to Run (Operations) stages:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"><img alt="azure-security-roles-1883x903.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"></a>
 
+QUESTION: Who cover these at your organization?
+
    * Board (of corporate directors)
    * Management (Business Model and Vision)
-   * Security Leadership
+
+Security Leadership:
    * PMO (Program Management Office)
+   * Leadership and Culture
+   * Risk Management
+   * Policy & Standards
 
-Information Risk Management<br />
-Technical Risk Management functions:
+Compliance Management:
+   * Privacy & Compliance Requirements
+   * Compliance Reporting
+   * Technical Policy Monitoring
 
-   * Compliance Management
-   * Security Architecture
-   * Posture Management
-   * Incident Management by Security Operations Center (SOC)
+Security Architecture:
+   * Requirements Translation
+   * Architecture & Risk Assessments
+   * Technical Policy Authoring
 
-Departments:
-
-   * IT Operations
+Security Posture Management: Monitor & Remediate Risk
+   * User Education & Awareness, Insider Risk
+   * Dev Education & Awareness, App Security, Data Security
+   * Identity & Key Management: Admin. Security, Identity System Security
+   * IT Operations: Infra & Endpoint: Deploy tools, Mitigate Vulnerabilities
    * OT Operations
-   * Threat Intelligence
+   
+Security Operations Center (SOC):
+   * Incident Preparation: Risk Scenarios, Practice Exercises
+   * Incident Management: Incident Response, Threat Hunting
 
-Others: ???
-   * Policy and standards
-   * Security operations
-   * Security architecture
-   * Security compliance management
-   * People security
-   * Application security and DevSecOps
-   * Data security
-   * Infrastructure and endpoint security
-   * Identity and key management
-   * Threat intelligence
-   * Posture management
-   * Incident preparation
+Other Departments:
+
+   * Threat Intelligence
 
 
 <a name="MCSB"></a>
@@ -3047,8 +3077,9 @@ Azure AD Roles
 
 <hr />
 
+<a name="Futures"></a>
 
-## Azure Futures Roadmap
+## Futures Roadmap
 
 PROTIP: The minimum prior notification will Microsoft give before ending support for products governed by the Modern Lifecycle Policy is 12 months.
 
@@ -3136,7 +3167,9 @@ http://www.frankysnotes.com/2019/05/how-to-make-your-deployment-successful.html
 https://azurefabric.com/azure-monitor-for-paas-services-where-is-the-ai-and-how-do-i-arm-it/
 blog https://azidentity.azurewebsites.net/archive
 
+<hr />
 
+<a name="More"></a>
 
 ## More about Azure #
 
