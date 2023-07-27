@@ -231,7 +231,8 @@ and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-archit
    * Security Leadership
    * PMO (Program Management Office)
 
-Organizational Functions:
+Information Risk Management<br />
+Technical Risk Management functions:
 
    * Compliance Management
    * Security Architecture
@@ -260,12 +261,146 @@ Others:
 
 <a name="MCSB"></a>
 
-### MCSB Best-practice Frameworks for Azure
+### Security Baselines
+
+A <strong>security baseline</strong> is a snapshot in time of a system's current configuration (defining specific OS-level settings, installed apps, app configurations, users, etc.). Baselines are created as the basis for determining what settings were changed (and when).
+
+### Security Controls
+
+Microsoft defined security controls grouped under <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview
+">Control Domains</a>. Codes (in parentheses) for each control domain are used as a prefix to name specific controls (<strong>improvement actions</strong>):
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-network-security">Network security (NS)</a>
+   * NS-1: Establish network segmentation boundaries
+   * NS-2: Secure cloud native services with network controls
+   * NS-3: Deploy firewall at the edge of enterprise network
+   * NS-4: Deploy intrusion detection/intrusion prevention systems (IDS/IPS)
+   * NS-5: Deploy DDOS protection
+   * NS-6: Deploy web application firewall
+   * NS-7: Simplify network security configuration
+   * NS-8: Detect and disable insecure services and protocols
+   * NS-9: Connect on-premises or cloud network privately
+   * NS-10: Ensure Domain Name System (DNS) security
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-identity-management">Identity Management (IM)</a>
+   * IM-1: Use centralized identity and authentication system
+   * IM-2: Protect identity and authentication systems
+   * IM-3: Manage application identities securely and automatically
+   * IM-4: Authenticate server and services
+   * IM-5: Use single sign-on (SSO) for application access
+   * IM-6: Use strong authentication controls
+   * IM-7: Restrict resource access based on conditions
+   * IM-8: Restrict the exposure of credentials and secrets
+   * IM-9: Secure user access to existing applications
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-privileged-access">Privileged Access (PA)</a>
+   * PA-1: Separate and limit highly privileged/administrative users
+   * PA-2: Avoid standing access for user accounts and permissions
+   * PA-3: Manage lifecycle of identities and entitlements
+   * PA-4: Review and reconcile user access regularly
+   * PA-5: Set up emergency access
+   * PA-6: Use privileged access workstations
+   * PA-7: Follow just enough administration (least privilege) principle
+   * PA-8 Determine access process for cloud provider support
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-data-protection">Data Protection (DP)</a>
+   * DP-1: Discover, classify, and label sensitive data
+   * DP-2: Monitor anomalies and threats targeting sensitive data
+   * DP-3: Encrypt sensitive data in transit
+   * DP-4: Enable data at rest encryption by default
+   * DP-5: Use customer-managed key option in data at rest encryption when required
+   * DP-6: Use a secure key management process
+   * DP-7: Use a secure certificate management process
+   * DP-8: Ensure security of key and certificate repository
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-asset-management">Asset Management (AM)</a>
+   * AM-1: Track asset inventory and their risks
+   * AM-2: Use only approved services
+   * AM-3: Ensure security of asset lifecycle management
+   * AM-4: Limit access to asset management
+   * AM-5: Use only approved applications in virtual machine
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-logging-threat-detection">Logging and Threat Detection (LT)</a>
+   * LT-1: Enable threat detection capabilities
+   * LT-2: Enable threat detection for identity and access management
+   * LT-3: Enable logging for security investigation
+   * LT-4: Enable network logging for security investigation
+   * LT-5: Centralize security log management and analysis
+   * LT-6: Configure log storage retention
+   * LT-7: Use approved time synchronization sources
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-incident-response">Incident Response (IR)</a>
+   * IR-1: Preparation - update incident response plan and handling process
+   * IR-2: Preparation - setup incident notification
+   * IR-3: Detection and analysis - create incidents based on high-quality alerts
+   * IR-4: Detection and analysis - investigate an incident
+   * IR-5: Detection and analysis - prioritize incidents
+   * IR-6: Containment, eradication and recovery - automate the incident handling
+   * IR-7: Post-incident activity - conduct lessons learned and retain evidence
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-posture-vulnerability-management">Posture and Vulnerability Management (PV)</a>
+   * PV-1: Define and establish secure configurations
+   * PV-2: Audit and enforce secure configurations
+   * PV-3: Define and establish secure configurations for compute resources
+   * PV-4: Audit and enforce secure configurations for compute resources
+   * PV-5: Perform vulnerability assessments
+   * PV-6: Rapidly and automatically remediate vulnerabilities
+   * PV-7: Conduct regular red team operations
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-endpoint-security">Endpoint Security (ES)</a>
+   * ES-1: Use Endpoint Detection and Response (EDR)
+   * ES-2: Use modern anti-malware software
+   * ES-3: Ensure anti-malware software and signatures are updated
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-backup-recovery">Backup and Recovery (BR)</a>
+   * BR-1: Ensure regular automated backups
+   * BR-2: Protect backup and recovery data
+   * BR-3: Monitor backups
+   * BR-4: Regularly test backup
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-devops-security">DevOps Security (DS)</a>
+   * DS-1: Conduct threat modeling
+   * DS-2: Ensure software supply chain security
+   * DS-3: Secure DevOps infrastructure
+   * DS-4: Integrate static application security testing into DevOps pipeline
+   * DS-5: Integrate dynamic application security testing into DevOps pipeline
+   * DS-6: Enforce security of workload throughout DevOps lifecycle
+   * DS-7: Enable logging and monitoring in DevOps
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-governance-strategy">Governance and Strategy (GS)</a>
+   * GS-1: Align organization roles, responsibilities and accountabilities
+   * GS-2: Define and implement enterprise segmentation/separation of duties strategy
+   * GS-3: Define and implement data protection strategy
+   * GS-4: Define and implement network security strategy
+   * GS-5: Define and implement security posture management strategy
+   * GS-6: Define and implement identity and privileged access strategy
+   * GS-7: Define and implement logging, threat detection and incident response strategy
+   * GS-8: Define and implement backup and recovery strategy
+   * GS-9: Define and implement endpoint security strategy
+   * GS-10: Define and implement DevOps security strategy
+   * GS-11: Define and implement multi-cloud security strategy
+<br /><br />
+
+
+
+
+### Security Benchmarks
+
+A <strong>benchmark</strong> is an individual check (evaluation) of a system's setting, such as the patch level of an application installed, to determine whether best practices (security controls) are employed (which in turn should reduce the attack surface of the system).
+
+
+ A <strong>benchmark</strong> is an individual check (evaluation) of a system's setting, such as the patch level of an application installed, to determine whether best practices are employed (which in turn should reduce the attack surface of the system).
+
 
 In <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview">2021</a>, Microsoft published its prescriptive best-practice framework in its MCSB (<strong>Microsoft Cybersecurity Security Benchmarks</strong>), v1 as of 3/21/23. Like the CIS (Center for Internet Security) Benchmarks (see https://www.cisecurity.org/cis-benchmarks/),
-the MCSB aims to improve the security of cloud-centric workloads, data, and services on Azure, perhaps in multi-cloud environment. 
+the MCSB aims to improve the security of cloud-centric workloads, data, and services on Azure, perhaps in multi-cloud environments. 
 
 There is a <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/">"baseline" for each Azure service</a>
+
+
+https://github.com/MicrosoftDocs/SecurityBenchmarks
+
+
 
 
 <a name="Defenders"></a>
