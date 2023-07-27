@@ -276,19 +276,19 @@ Microsoft grouped its definition of security controls under <a target="_blank" h
    * DS-7: Enable logging and monitoring in DevOps
 
 12. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-governance-strategy">Governance and Strategy (GS)</a>
-   * GS-1: Align organization roles, responsibilities and accountabilities
-   * GS-2: Define and implement enterprise segmentation/separation of duties strategy
-   * GS-3: Define and implement data protection strategy
-   * GS-4: Define and implement network security strategy
-   * GS-5: Define and implement security posture management strategy
-   * GS-6: Define and implement identity and privileged access strategy
-   * GS-7: Define and implement logging, threat detection and incident response strategy
-   * GS-8: Define and implement backup and recovery strategy
-   * GS-9: Define and implement endpoint security strategy
+   * GS-01: Align organization roles, responsibilities and accountabilities
+   * GS-02: Define and implement enterprise segmentation/separation of duties strategy
+   * GS-03: Define and implement data protection strategy
+   * GS-04: Define and implement network security strategy
+   * GS-05: Define and implement security posture management strategy
+   * GS-06: Define and implement identity and privileged access strategy
+   * GS-07: Define and implement logging, threat detection and incident response strategy
+   * GS-08: Define and implement backup and recovery strategy
+   * GS-09: Define and implement endpoint security strategy
    * GS-10: Define and implement DevOps security strategy
    * GS-11: Define and implement multi-cloud security strategy
 
-Download details about each control above are in Microsoft's Excel spreadsheet file at<br />
+Additional details about each control (above) are in Microsoft's Excel spreadsheet file for download at<br />
 <a target="_blank" href="https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Security%20Benchmark/3.0">azure-security-benchmark-v3.0.xlsx</a>.
 
 REMEMBER: Use of Defender involves <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/">additional charges</a> (to each server, container, database, storage, app service).
