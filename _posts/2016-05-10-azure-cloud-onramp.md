@@ -212,7 +212,7 @@ PROTIP: Setup <strong>different browser profiles</strong> on the same browser, a
 
 <a target="_blank" href="https://www.youtube.com/watch?v=6iYxNm3TOiI&list=PLtVMyW0H7aiOQwZSsn2d-tg2z729ce1BZ" title="MCRA Intro by Mark Simos, Microsoft Chief Security Advisor">VIDEO</a>: Microsoft's overarching <a target="_blank" href="https://aka.ms/MCRA/">Cybersecurity Reference Architecture (MCRA)</a> presents several perspectives.
 
-Efforts by <strong>job level</strong>:
+Efforts by <strong>organization level</strong>:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"><img alt="azure-guides-1158x439.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"></a>
 
@@ -269,8 +269,6 @@ Microsoft offers a "Defender" product for each type of product:
    * MS Defender for Cloud
    <br /><br />
 
-REMEMBER: Use of Defender involves <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/">additional charges</a> (to each server, container, database, storage, app service).
-
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"><img alt="azure-defender-1492x1042.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"></a>
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/azure/defender-for-cloud/update-regulatory-compliance-packages">regulatory compliance packages</a>. 
@@ -279,8 +277,7 @@ Successor of Azure Security Benchmark v3.)
 
 "Sentinel" is the brand name for Microsoft's offerings in SIEM and SOAR.
 
-
-Controls:
+Individual "Benchmarks":
    * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-posture-vulnerability-management">Posture and Vulnerability Management</a>
    * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-incident-response">Incident Response</a>
    * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-logging-threat-detection">Logging and threat detection</a>
@@ -291,33 +288,12 @@ Controls:
    * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-backup-recovery">Backup and recovery</a>
    <br /><br />
 
-
-<a name="SecureScore"></a>
-
-### Secure Score Posture Categories
-
-Within M365 Defender is the <a target="_blank" href="https://learn.microsoft.com/en-us/microsoft-365/security/defender/microsoft-secure-score?view=o365-worldwide#how-it-works">Microsoft Secure Score</a> survey app. It's used to define a security posture score (over time) based on whether specific actions have occurred or not. It contains a breakdown based on Microsoft's <strong>categories for a Security Posture</strong>:
-
-   * Identity
-   * Data
-   * Device
-   * Apps
-   * Infrastructure
-   <br /><br />
+REMEMBER: Use of Defender involves <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/">additional charges</a> (to each server, container, database, storage, app service).
 
 
+<a name="Occupations"></a>
 
-It's based on input from a set of holistic Microsoft and industry security guidance:
-
-* <strong>Cloud Adoption Framework (CSF)</strong>: Guidance on security, including strategy, roles and responsibilities, 
-
-* <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/security-top-10">Azure Top Security Best Practices</a> (What, Why, Who, How activities) by People, Process, Technology, and Architecture. 
-
-* Other industry and cloud service providers security best practice standards and framework: Examples include the Amazon Web Services (AWS) Well-Architected Framework, Center for Internet Security (CIS) Controls, National Institute of Standards and Technology (NIST), and Payment Card Industry Data Security Standard (PCI-DSS).
-
-
-
-### Job Roles
+## Occupations
 
 Microsoft aligned these generic "job roles" with <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Azure certification exams</a>:
 
@@ -335,6 +311,32 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
    MY OPINION: I think job roles should be multi-select checkboxes.
    This segregation also adds to duplicating material.
+
+
+<a name="SecureScore"></a>
+
+### Secure Score Posture Action Categories
+
+Within M365 Defender is the <a target="_blank" href="https://learn.microsoft.com/en-us/microsoft-365/security/defender/microsoft-secure-score?view=o365-worldwide#how-it-works">Microsoft Secure Score</a> survey app. It's used to define a security posture score (over time) based on whether specific actions have occurred or not. 
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690416862/azure-sec-score-2090x1370_dn2xe9.png"><img alt="azure-sec-score-2090x1370.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690416862/azure-sec-score-2090x1370_dn2xe9.png"></a>
+
+A breakdown of actions based on Microsoft's <strong>categories for a Security Posture</strong>:
+
+   * Identity
+   * Data
+   * Device
+   * Apps
+   * Infrastructure
+   <br /><br />
+
+
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/security-top-10">Azure Top Security Best Practices</a> (What, Why, Who, How activities) by People, Process, Technology, and Architecture. 
+
+Other industry and cloud service providers security best practice standards and framework: 
+Payment Card Industry Data Security Standard (PCI-DSS).
+
 
 
 
