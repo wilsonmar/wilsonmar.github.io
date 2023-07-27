@@ -1058,7 +1058,11 @@ Editors:
    * https://github.com/timothywarner/az500/tree/master/blueprints
    * https://github.com/terraform-providers/terraform-provider-azurerm
 
-   TODO: Blueprints handle deny.
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/blueprints/samples/azure-security-benchmark-foundation/">This sample Blueprint</a> This deploys several Azure services to provide a secure, monitored, enterprise-ready foundation:<br />
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690479433/azure-subscription-arch-1154x999_us8vps.png"><img alt="azure-subscription-arch-1154x999.png" width="1154" height="999" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690479433/azure-subscription-arch-1154x999_us8vps.png"></a>
+
+
+TODO: Blueprints handle deny.
 
 
 <hr />
@@ -1490,10 +1494,6 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 
    Access is granted by creating a role assignment.<br />
    Access is revoked by removing a role assignment.
-
-From <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/blueprints/samples/azure-security-benchmark-foundation/">this</a>:<br />
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690479433/azure-subscription-arch-1154x999_us8vps.png"><img alt="azure-subscription-arch-1154x999.png" width="1154" height="999" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690479433/azure-subscription-arch-1154x999_us8vps.png"></a>
-
 
 ### Resource Providers, Actions, Operations, Permissions, Scopes, Groups, Policies
 
