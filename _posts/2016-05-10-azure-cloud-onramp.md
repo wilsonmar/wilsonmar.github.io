@@ -219,10 +219,31 @@ Efforts by <strong>job level</strong>:
 Each CSP (GCP, AWS, Azure, etc.) offers different but similar <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/">Cloud Adoption Framework (CAF)</a>
 and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-architected/security/overview">Well-Architected Framework</a>.
 
-s<a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop-videos">Videos</a> in <a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop">Microsoft's CISO Workshop</a> covers how the <a target="_blank" href="https://aka.ms/SecurityRoles">concerns</a> of each organizational role type/team</a> relate with others:
+
+### Security Roles
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop-videos">Videos</a> in <a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop">Microsoft's CISO Workshop</a> covers how the <a target="_blank" href="https://aka.ms/SecurityRoles">concerns</a> of each organizational role type/team</a> relate with others:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"><img alt="azure-security-roles-1883x903.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"></a>
 
+From Plan (Governance) to Build to Run (Operations):
+   * Board
+   * Management (Business Model and Vision)
+
+   * Policy and standards
+   * Security operations
+   * Security architecture
+   * Security compliance management
+   * People security
+   * Application security and DevSecOps
+   * Data security
+   * Infrastructure and endpoint security
+   * Identity and key management
+   * Threat intelligence
+   * Posture management
+   * Incident preparation
+
+   * SOC (Security Operations Center)
 
 <a name="MCSB"></a>
 
@@ -233,7 +254,42 @@ the MCSB aims to improve the security of cloud-centric workloads, data, and serv
 
 There is a <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/">"baseline" for each Azure service</a>
 
+
+<a name="Defenders"></a>
+
+### MS Defenders
+
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"><img alt="az-defenders-3360x1602.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"></a>
+
+Microsoft offers a "Defender" product for each type of product:
+
+   * MS Defender for Office 365
+   * MS Defender for Endpoint
+   * MS Defender for Identity
+   * MS Defender for Cloud
+   <br /><br />
+
+REMEMBER: Use of Defender involves <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/">additional charges</a> (to each server, container, database, storage, app service).
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"><img alt="azure-defender-1492x1042.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"></a>
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/defender-for-cloud/update-regulatory-compliance-packages">regulatory compliance packages</a>. 
+
+Successor of Azure Security Benchmark v3.)
+
+"Sentinel" is the brand name for Microsoft's offerings in SIEM and SOAR.
+
+
+Controls:
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-posture-vulnerability-management">Posture and Vulnerability Management</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-incident-response">Incident Response</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-logging-threat-detection">Logging and threat detection</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-endpoint-security">Endpoint security</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-incident-response">Azure Security Benchmark v3 - Incident Response</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-privileged-access">Privileged Access</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-asset-management">Asset Management</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-backup-recovery">Backup and recovery</a>
+   <br /><br />
 
 
 <a name="SecureScore"></a>
@@ -249,18 +305,6 @@ Within M365 Defender is the <a target="_blank" href="https://learn.microsoft.com
    * Infrastructure
    <br /><br />
 
-
-
-Controls:
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-posture-vulnerability-management">Posture and Vulnerability Management</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-incident-response">Incident Response</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-logging-threat-detection">Logging and threat detection</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-endpoint-security">Endpoint security</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-incident-response">Azure Security Benchmark v3 - Incident Response</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-privileged-access">Privileged Access</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-asset-management">Asset Management</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-backup-recovery">Backup and recovery</a>
-   <br /><br />
 
 
 It's based on input from a set of holistic Microsoft and industry security guidance:
@@ -900,29 +944,6 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
     Various roles can be can be defined for a tenant - LIMIT: Up to 2,000 roles per individual tenant.
 
     READ: <a target="_blank" href="https://medium.com/microsoftazure/how-to-perform-role-assignments-on-azure-resources-from-an-azure-devops-pipeline-c9f4dc10d0a4">Role Assignments on Azure Resources from Azure Pipelines</a>
-
-
-<hr />
-
-## MS Defenders
-
-Microsoft offers a "Defender" product for each type of product:
-
-   * MS Defender for Office 365
-   * MS Defender for Endpoint
-   * MS Defender for Identity
-   * MS Defender for Cloud
-   <br /><br />
-
-REMEMBER: Use of Defender involves <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/">additional charges</a> (to each server, container, database, storage, app service).
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"><img alt="azure-defender-1492x1042.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"></a>
-
-NOTE: Microsoft also offers "Defender"
-
-<a target="_blank" href="https://learn.microsoft.com/en-us/azure/defender-for-cloud/update-regulatory-compliance-packages">regulatory compliance packages</a>. 
-
-Successor of Azure Security Benchmark v3.)
 
 
 
