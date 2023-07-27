@@ -21,18 +21,19 @@ There is a massive amount of information about Azure, at various levels of detai
 PROTIP: Below is my attempt at helping you approach Azure practically, logically, and thus efficiently for each audience. This is a deep-dive hands-on tutorial with commentary along the way.
 All on one page. Outline:
 
-1. <a href="#Occupations">Audience Occupations</a>
-1. <a href="#Transformations">Digital Transformation?</a>
+1. <a href="#Occupations">Occupations for certs</a>
+1. <a href="#Transformation">Digital Transformation?</a>
 
 1. <a href="#URLs">Azure URLs</a>
 1. <a href="#Portal">portal.azure.com GUI</a>
 1. <a href="#GetAccounts">Get Azure accounts</a>
 1. <a href="#Subscriptions">Subscriptions</a>
+1. Support
 
 1. <a href="#automation-programmatically">Automation</a>
 
+1. IAM
 1. <a href="#IAM">IAM (Azure AD)</a>, groups, federation
-
 
 1. <a href="#Futures">Futures Roadmap</a>
 1. <a href="#Resources">Resources</a>
@@ -148,6 +149,8 @@ Security Operations Center (SOC):
 Other Departments:
 
    * Threat Intelligence
+
+PROTIP: Define abbreviations for each above.
 
 
 <a name="MCSB"></a>
@@ -946,6 +949,120 @@ Microsoft has its "Intune" offering to manage endpoints (mobile and laptops).
 
 <hr />
 
+<a name="Automation"></a>
+
+## Automation programmatically
+
+Microsoft provides several mechanisms to automate away manual toil.
+
+   * Bash shell scripts running in CLI
+   * PowerShell scripts running in CLI
+   * API calls from custom programming languages C#, Go, Java, JavaScript, PHP, PowerShell, Python running in CLI
+
+   * API calls from custom programming running within a container
+
+   * Power apps
+   * Azure Power Automation
+   * (Serverless) Functions
+   <br /><br />
+
+
+
+<hr />
+
+## My Azure-quickly
+
+My repo <a target="_blank" href=" 
+https://github.com/wilsonmar/azure-quickly">
+https://github.com/wilsonmar/azure-quickly</a>
+contains automation scripts to invoke instead of manually operating the Azure Portal, so that you can save money by deleting Resource Groups because you can get resources back with just a few commands. Scripts also enable you to stand up resources in different regions/locations. Most scripts in the repo are Bash shell scripts that run natively on MacOS and thus familiar to most developers. PowerShell scripts are used in cases where they are the only solution. 
+
+There are many ways to automate the creation of resources within Azure:
+   1. <a href="#VM_GUI">Portal GUI Cloud Shell</a>
+   1. <a href="#VM_template">JSON ARM Template</a> with parameter files
+   1. <a href="#VM_CLI">CLI</a> Bash scripts (az commands)
+   1. <a href="#VM_PS">Powershell</a> ps1 scripts calling Az modules
+   1. PowerShell DSC (Desired State Configuration) automation
+   1. <a href="#VM_PS_JSON">Powershell</a> running ARM template JSON files
+   1. <a href="#VM_Docker">Docker</a> containers
+   1. <a href="#VM_Docker">Terraform</a> HCL *.tf files with templating features and advanced logic features)
+   1. Helm charts referencing DockerHub or Azure Container Registry (ACR) images
+   1. REST API (used <a target="_blank" href="https://azidentity.azurewebsites.net/post/2020/12/15/key-vault-with-the-use-of-vbscript-classic-asp">within a VBScript</a>, curl, C# .NET, Java, Python, NodeJs, etc.
+   1. REST API calls in program generated from Swagger/OpenAPI JSON
+   1. <a target="_blank" href="https://wilsonmar.github.io/pulumi/">Pulumi Python/C#/Nodejs/Typescript code</a>
+   1. Microsoft Bicep (new)
+   <br /><br />
+
+Utility script code enable the scripts to run from Linux and Git Shell on Windows laptops. 
+
+The scripts are also useful for learning Azure. 
+
+
+### Cloud Shell
+
+Bash CLI or PowerShell.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=x2aIVYxim-A&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=6" title="by Dana Epps Oct 3, 2019">VIDEO</a>: Cloud Shell
+
+
+### Azure Power Automation
+
+   * [Azure Automation](https://www.youtube.com/watch?v=9Jv3ThPqVco&list=RDCMUCuB24cID6NnypDWSLe4gfqA&start_radio=1&rv=9Jv3ThPqVco)
+   * [Power Automate Add Azure AD users and managers](https://www.youtube.com/watch?v=hrNm4kLeAnY)
+   * [Automation of Creating Users with Microsoft Power Automate and Graph API by Nick Romanek](https://www.youtube.com/watch?v=hrNm4kLeAnY)
+   * Employee on-boarding process using Microsoft Forms and Flow https://www.youtube.com/watch?v=vYnvQgKSWcg
+   <br /><br />
+
+Although deprecated by the <a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/automation-hybrid-runbook-worker/">Hybrid Runbook Worker feature</a>,
+<a target="_blank" href="https://azure.microsoft.com/en-us/blog/managing-on-premises-systems-with-azure-automation/">
+<strong>Azure Automation</strong></a> securely reaches inside VMs in private networks and on-premises to execute PowerShell scripts/commands. It makes use of Windows PowerShell Remoting feature.
+
+However, PowerShell Remoting is not always a viable option.
+Where you have Azure-hosted VMs but cannot open a public WinRM port, <a target="_blank" href="https://azure.microsoft.com/en-us/blog/managing-on-premises-systems-with-azure-automation/">
+This post</a> presents a PowerShell extension runbook for on-premises VMs by utilizing the Azure VM Agent’s Custom Script Extension. 
+
+
+### Python
+
+https://learn.microsoft.com/en-us/azure/developer/python/?view=azure-python
+
+   * API calls such as [Create User](https://learn.microsoft.com/en-us/graph/api/user-post-users?view=graph-rest-1.0&tabs=http) from custom programming languages C#, Go, Java, JavaScript, PHP, PowerShell BUT NOT Python
+
+Editors:
+* Visual Studio for Mac does not support Python.
+* Visual Studio 2022 users: install PTVS (Python Tools for Visual Studio)
+* Visual Studio Code users: https://code.visualstudio.com/docs/languages/python
+
+   * https://code.visualstudio.com/docs/python/python-tutorial
+   * [On macOS, make sure the location of your VS Code installation is included in your PATH environment variable.](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) in your .bash_profile:
+
+   <pre>export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"</pre>
+
+<hr />
+
+<a name="Blueprints"></a>
+
+### Azure Blueprints
+
+   Blueprints orchestrates deployment of artifacts as policy.
+
+   Blueprints makes use of:
+   * Role assignments
+   * Policy assignments
+   * ARM templates
+   * Resource groups
+   <br /><br />
+
+   It's like HashiCorp's Terraform, which completely controls and maintains changes.
+
+   * https://github.com/timothywarner/az500/tree/master/blueprints
+   * https://github.com/terraform-providers/terraform-provider-azurerm
+
+   TODO: Blueprints handle deny.
+
+
+<hr />
+
 <a name="IAM"></a>
 
 ## IAM 
@@ -1032,6 +1149,14 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
    * Synchronization to ensure on-prem and cloud data matches
    * Health monitoring in a central location
    <br /><br />
+
+### AD App Proxy instead of VPN
+
+<a target="_blank" href="https://www.youtube.com/watch?v=HqsqTttYJVY&list=PLtVMyW0H7aiOQwZSsn2d-tg2z729ce1BZ&index=7">VIDEO</a>:
+Traditional VPN enable users to access all ports on the entire network.
+
+Apps configured to use AD App Proxy would limit user access to only the app configured,
+using what's called "explicit user and device trust validation".
 
 
 <hr />
@@ -1366,7 +1491,11 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
    Access is granted by creating a role assignment.<br />
    Access is revoked by removing a role assignment.
 
-## Resource Providers, Actions, Operations, Permissions, Scopes, Groups, Policies
+From <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/blueprints/samples/azure-security-benchmark-foundation/">this</a>:<br />
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690479433/azure-subscription-arch-1154x999_us8vps.png"><img alt="azure-subscription-arch-1154x999.png" width="1154" height="999" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690479433/azure-subscription-arch-1154x999_us8vps.png"></a>
+
+
+### Resource Providers, Actions, Operations, Permissions, Scopes, Groups, Policies
 
    <a name="Providers"></a>
 
@@ -1474,117 +1603,6 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 
     READ: <a target="_blank" href="https://medium.com/microsoftazure/how-to-perform-role-assignments-on-azure-resources-from-an-azure-devops-pipeline-c9f4dc10d0a4">Role Assignments on Azure Resources from Azure Pipelines</a>
 
-
-
-<hr />
-
-## My Azure-quickly
-
-My repo <a target="_blank" href=" 
-https://github.com/wilsonmar/azure-quickly">
-https://github.com/wilsonmar/azure-quickly</a>
-contains automation scripts to invoke instead of manually operating the Azure Portal, so that you can save money by deleting Resource Groups because you can get resources back with just a few commands. Scripts also enable you to stand up resources in different regions/locations. Most scripts in the repo are Bash shell scripts that run natively on MacOS and thus familiar to most developers. PowerShell scripts are used in cases where they are the only solution. 
-
-There are many ways to automate the creation of resources within Azure:
-   1. <a href="#VM_GUI">Portal GUI Cloud Shell</a>
-   1. <a href="#VM_template">JSON ARM Template</a> with parameter files
-   1. <a href="#VM_CLI">CLI</a> Bash scripts (az commands)
-   1. <a href="#VM_PS">Powershell</a> ps1 scripts calling Az modules
-   1. PowerShell DSC (Desired State Configuration) automation
-   1. <a href="#VM_PS_JSON">Powershell</a> running ARM template JSON files
-   1. <a href="#VM_Docker">Docker</a> containers
-   1. <a href="#VM_Docker">Terraform</a> HCL *.tf files with templating features and advanced logic features)
-   1. Helm charts referencing DockerHub or Azure Container Registry (ACR) images
-   1. REST API (used <a target="_blank" href="https://azidentity.azurewebsites.net/post/2020/12/15/key-vault-with-the-use-of-vbscript-classic-asp">within a VBScript</a>, curl, C# .NET, Java, Python, NodeJs, etc.
-   1. REST API calls in program generated from Swagger/OpenAPI JSON
-   1. <a target="_blank" href="https://wilsonmar.github.io/pulumi/">Pulumi Python/C#/Nodejs/Typescript code</a>
-   1. Microsoft Bicep (new)
-   <br /><br />
-
-Utility script code enable the scripts to run from Linux and Git Shell on Windows laptops. 
-
-The scripts are also useful for learning Azure. 
-
-
-### Cloud Shell
-
-Bash CLI or PowerShell.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=x2aIVYxim-A&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=6" title="by Dana Epps Oct 3, 2019">VIDEO</a>: Cloud Shell
-
-<hr />
-
-<a name="Automation"></a>
-
-## Automation programmatically
-
-Microsoft provides several mechanisms to automate away manual toil.
-
-   * Bash shell scripts running in CLI
-   * PowerShell scripts running in CLI
-   * API calls from custom programming languages C#, Go, Java, JavaScript, PHP, PowerShell, Python running in CLI
-
-   * API calls from custom programming running within a container
-
-   * Power apps
-   * Azure Power Automation
-   * (Serverless) Functions
-   <br /><br />
-
-### Azure Power Automation
-
-   * [Azure Automation](https://www.youtube.com/watch?v=9Jv3ThPqVco&list=RDCMUCuB24cID6NnypDWSLe4gfqA&start_radio=1&rv=9Jv3ThPqVco)
-   * [Power Automate Add Azure AD users and managers](https://www.youtube.com/watch?v=hrNm4kLeAnY)
-   * [Automation of Creating Users with Microsoft Power Automate and Graph API by Nick Romanek](https://www.youtube.com/watch?v=hrNm4kLeAnY)
-   * Employee on-boarding process using Microsoft Forms and Flow https://www.youtube.com/watch?v=vYnvQgKSWcg
-   <br /><br />
-
-Although deprecated by the <a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/automation-hybrid-runbook-worker/">Hybrid Runbook Worker feature</a>,
-<a target="_blank" href="https://azure.microsoft.com/en-us/blog/managing-on-premises-systems-with-azure-automation/">
-<strong>Azure Automation</strong></a> securely reaches inside VMs in private networks and on-premises to execute PowerShell scripts/commands. It makes use of Windows PowerShell Remoting feature.
-
-However, PowerShell Remoting is not always a viable option.
-Where you have Azure-hosted VMs but cannot open a public WinRM port, <a target="_blank" href="https://azure.microsoft.com/en-us/blog/managing-on-premises-systems-with-azure-automation/">
-This post</a> presents a PowerShell extension runbook for on-premises VMs by utilizing the Azure VM Agent’s Custom Script Extension. 
-
-
-### Python
-
-https://learn.microsoft.com/en-us/azure/developer/python/?view=azure-python
-
-   * API calls such as [Create User](https://learn.microsoft.com/en-us/graph/api/user-post-users?view=graph-rest-1.0&tabs=http) from custom programming languages C#, Go, Java, JavaScript, PHP, PowerShell BUT NOT Python
-
-Editors:
-* Visual Studio for Mac does not support Python.
-* Visual Studio 2022 users: install PTVS (Python Tools for Visual Studio)
-* Visual Studio Code users: https://code.visualstudio.com/docs/languages/python
-
-   * https://code.visualstudio.com/docs/python/python-tutorial
-   * [On macOS, make sure the location of your VS Code installation is included in your PATH environment variable.](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) in your .bash_profile:
-
-   <pre>export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"</pre>
-
-<hr />
-
-<a name="Blueprints"></a>
-
-### Azure Blueprints
-
-   Blueprints orchestrates deployment of artifacts as policy.
-
-   Blueprints makes use of:
-   * Role assignments
-   * Policy assignments
-   * ARM templates
-   * Resource groups
-   <br /><br />
-
-   It's like HashiCorp's Terraform, which completely controls and maintains changes.
-
-   * https://github.com/timothywarner/az500/tree/master/blueprints
-   * https://github.com/terraform-providers/terraform-provider-azurerm
-
-   TODO: Blueprints handle deny.
 
 
 <hr />
