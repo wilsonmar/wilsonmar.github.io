@@ -265,12 +265,19 @@ Others:
 
 A <strong>security baseline</strong> is a snapshot in time of a system's current configuration (defining specific OS-level settings, installed apps, app configurations, users, etc.). Baselines are created as the basis for determining what settings were changed (and when).
 
+
 ### Security Controls
 
-Microsoft defined security controls grouped under <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview
-">Control Domains</a>. Codes (in parentheses) for each control domain are used as a prefix to name specific controls (<strong>improvement actions</strong>):
+Several organizations have defined for the industry specific <strong>"controls"</strong> (<strong>improvement actions</strong>):
+   * <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks">CIS Control v8 Benchmarks</a>
+   * NIST SP 800-53 RC4
+   * PCI-DSS v3.2.1
+   <br /><br />
 
-* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-network-security">Network security (NS)</a>
+Microsoft grouped its definition of security controls under <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview
+">12 Control Domains</a>. Codes (in parentheses) for each control domain are used as a prefix to name specific controls:
+
+1. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-network-security">Network security (NS)</a>
    * NS-1: Establish network segmentation boundaries
    * NS-2: Secure cloud native services with network controls
    * NS-3: Deploy firewall at the edge of enterprise network
@@ -282,7 +289,7 @@ Microsoft defined security controls grouped under <a target="_blank" href="https
    * NS-9: Connect on-premises or cloud network privately
    * NS-10: Ensure Domain Name System (DNS) security
 
-* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-identity-management">Identity Management (IM)</a>
+2. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-identity-management">Identity Management (IM)</a>
    * IM-1: Use centralized identity and authentication system
    * IM-2: Protect identity and authentication systems
    * IM-3: Manage application identities securely and automatically
@@ -293,7 +300,7 @@ Microsoft defined security controls grouped under <a target="_blank" href="https
    * IM-8: Restrict the exposure of credentials and secrets
    * IM-9: Secure user access to existing applications
 
-* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-privileged-access">Privileged Access (PA)</a>
+3. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-privileged-access">Privileged Access (PA)</a>
    * PA-1: Separate and limit highly privileged/administrative users
    * PA-2: Avoid standing access for user accounts and permissions
    * PA-3: Manage lifecycle of identities and entitlements
@@ -303,7 +310,7 @@ Microsoft defined security controls grouped under <a target="_blank" href="https
    * PA-7: Follow just enough administration (least privilege) principle
    * PA-8 Determine access process for cloud provider support
 
-* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-data-protection">Data Protection (DP)</a>
+4. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-data-protection">Data Protection (DP)</a>
    * DP-1: Discover, classify, and label sensitive data
    * DP-2: Monitor anomalies and threats targeting sensitive data
    * DP-3: Encrypt sensitive data in transit
@@ -313,14 +320,14 @@ Microsoft defined security controls grouped under <a target="_blank" href="https
    * DP-7: Use a secure certificate management process
    * DP-8: Ensure security of key and certificate repository
 
-* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-asset-management">Asset Management (AM)</a>
+5. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-asset-management">Asset Management (AM)</a>
    * AM-1: Track asset inventory and their risks
    * AM-2: Use only approved services
    * AM-3: Ensure security of asset lifecycle management
    * AM-4: Limit access to asset management
    * AM-5: Use only approved applications in virtual machine
 
-* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-logging-threat-detection">Logging and Threat Detection (LT)</a>
+6. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-logging-threat-detection">Logging and Threat Detection (LT)</a>
    * LT-1: Enable threat detection capabilities
    * LT-2: Enable threat detection for identity and access management
    * LT-3: Enable logging for security investigation
@@ -329,7 +336,7 @@ Microsoft defined security controls grouped under <a target="_blank" href="https
    * LT-6: Configure log storage retention
    * LT-7: Use approved time synchronization sources
 
-* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-incident-response">Incident Response (IR)</a>
+7. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-incident-response">Incident Response (IR)</a>
    * IR-1: Preparation - update incident response plan and handling process
    * IR-2: Preparation - setup incident notification
    * IR-3: Detection and analysis - create incidents based on high-quality alerts
@@ -338,7 +345,7 @@ Microsoft defined security controls grouped under <a target="_blank" href="https
    * IR-6: Containment, eradication and recovery - automate the incident handling
    * IR-7: Post-incident activity - conduct lessons learned and retain evidence
 
-* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-posture-vulnerability-management">Posture and Vulnerability Management (PV)</a>
+8. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-posture-vulnerability-management">Posture and Vulnerability Management (PV)</a>
    * PV-1: Define and establish secure configurations
    * PV-2: Audit and enforce secure configurations
    * PV-3: Define and establish secure configurations for compute resources
@@ -347,18 +354,18 @@ Microsoft defined security controls grouped under <a target="_blank" href="https
    * PV-6: Rapidly and automatically remediate vulnerabilities
    * PV-7: Conduct regular red team operations
 
-* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-endpoint-security">Endpoint Security (ES)</a>
+9. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-endpoint-security">Endpoint Security (ES)</a>
    * ES-1: Use Endpoint Detection and Response (EDR)
    * ES-2: Use modern anti-malware software
    * ES-3: Ensure anti-malware software and signatures are updated
 
-* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-backup-recovery">Backup and Recovery (BR)</a>
+10. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-backup-recovery">Backup and Recovery (BR)</a>
    * BR-1: Ensure regular automated backups
    * BR-2: Protect backup and recovery data
    * BR-3: Monitor backups
    * BR-4: Regularly test backup
 
-* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-devops-security">DevOps Security (DS)</a>
+11. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-devops-security">DevOps Security (DS)</a>
    * DS-1: Conduct threat modeling
    * DS-2: Ensure software supply chain security
    * DS-3: Secure DevOps infrastructure
@@ -367,7 +374,7 @@ Microsoft defined security controls grouped under <a target="_blank" href="https
    * DS-6: Enforce security of workload throughout DevOps lifecycle
    * DS-7: Enable logging and monitoring in DevOps
 
-* <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-governance-strategy">Governance and Strategy (GS)</a>
+12. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-governance-strategy">Governance and Strategy (GS)</a>
    * GS-1: Align organization roles, responsibilities and accountabilities
    * GS-2: Define and implement enterprise segmentation/separation of duties strategy
    * GS-3: Define and implement data protection strategy
@@ -379,28 +386,30 @@ Microsoft defined security controls grouped under <a target="_blank" href="https
    * GS-9: Define and implement endpoint security strategy
    * GS-10: Define and implement DevOps security strategy
    * GS-11: Define and implement multi-cloud security strategy
-<br /><br />
 
-
+Download details for each control above in Microsoft's Excel spreadsheet<br />
+file azure-security-benchmark-v3.0.xlsx at:<br />
+https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Security%20Benchmark/3.0
 
 
 ### Security Benchmarks
 
 A <strong>benchmark</strong> is an individual check (evaluation) of a system's setting, such as the patch level of an application installed, to determine whether best practices (security controls) are employed (which in turn should reduce the attack surface of the system).
 
-
- A <strong>benchmark</strong> is an individual check (evaluation) of a system's setting, such as the patch level of an application installed, to determine whether best practices are employed (which in turn should reduce the attack surface of the system).
-
-
 In <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview">2021</a>, Microsoft published its prescriptive best-practice framework in its MCSB (<strong>Microsoft Cybersecurity Security Benchmarks</strong>), v1 as of 3/21/23. Like the CIS (Center for Internet Security) Benchmarks (see https://www.cisecurity.org/cis-benchmarks/),
 the MCSB aims to improve the security of cloud-centric workloads, data, and services on Azure, perhaps in multi-cloud environments. 
 
-There is a <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/">"baseline" for each Azure service</a>
+Individual "Benchmarks" (latest version 3 as of March 30, 2023):
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-posture-vulnerability-management">Posture and Vulnerability Management</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-incident-response">Incident Response</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-logging-threat-detection">Logging and threat detection</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-endpoint-security">Endpoint security</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-privileged-access">Privileged Access</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-asset-management">Asset Management</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-backup-recovery">Backup and recovery</a>
+   <br /><br />
 
-
-https://github.com/MicrosoftDocs/SecurityBenchmarks
-
-
+REMEMBER: Use of Defender involves <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/">additional charges</a> (to each server, container, database, storage, app service).
 
 
 <a name="Defenders"></a>
@@ -425,20 +434,6 @@ Microsoft has a "Defender" offering for each type of product:
 Successor of Azure Security Benchmark v3.)
 
 "Sentinel" is the brand name for Microsoft's offerings in SIEM and SOAR.
-
-Individual "Benchmarks":
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-posture-vulnerability-management">Posture and Vulnerability Management</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-incident-response">Incident Response</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-logging-threat-detection">Logging and threat detection</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-endpoint-security">Endpoint security</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/security-controls-v3-incident-response">Azure Security Benchmark v3 - Incident Response</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-privileged-access">Privileged Access</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-asset-management">Asset Management</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-backup-recovery">Backup and recovery</a>
-   <br /><br />
-
-REMEMBER: Use of Defender involves <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/">additional charges</a> (to each server, container, database, storage, app service).
-
 
 <a name="Occupations"></a>
 
