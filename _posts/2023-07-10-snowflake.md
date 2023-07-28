@@ -94,6 +94,7 @@ What will you use Snowflake for?
 
 Snowflake is HIPAA, PCI DSS, SOC 1 and SOC 2 Type 2 compliant, and FedRAMP Authorized.
 
+
 ## Competitors
 
 "Snowflake Cloud Data Warehouse" competes in a crowded field of cloud-based databases from its cloud vendors:
@@ -132,6 +133,9 @@ References:
 
 ## Architecture
 
+   * https://docs.snowflake.com/user-guide/intro-key-concepts
+   <br /><br />
+
 Snowflake's cloud-native architecture consists of three independently scalable layers across storage, compute, and cloud services:
 
    * The storage layer ingests massive amounts and varieties of structured and semi-structured data to create a unified data record. 
@@ -153,6 +157,7 @@ Snowflake's cloud-native architecture consists of three independently scalable l
 
 SnowGrid?
 
+Snowsight
 
 <a name="Company"></a>
 
@@ -187,6 +192,8 @@ On the board since April, 2023 is <a target="_blank" href="https://www.linkedin.
 
 The stock peaked on September 2021 at $350, but on July 27, 2023, was at $170/share, for a market value of $55.4B with 4.61 Debt-to-Equity.
 In 2023, its $1.31B Gross Income and $2.15B Expenses yielded a <strong>-$796.71M Loss</strong> for -38.57% Net Margin and -$2.67 EPS and -15.17% ROE based. Although declining, a 73.97% Income Growth was reported.
+
+Snowflake reported having 7,828 total customers, including 330 customers with trailing 12-month product revenue greater than $1 million, and remaining performance obligations of $3.7 billion, representing 38% year-over-year growth.
 
 The company's <a target="_blank" href="https://www.snowflake.com/en/company/overview/about-snowflake/snowflakes-growth-story/">Growth Story</a>
 aims for "$10B in revenue by FY2029", partly through acquisitions of Polidea, Pragmatists, Streamlit, Myst.ai.
@@ -226,20 +233,55 @@ https://snowflake.useclarus.com/
 
 https://www.snowflake.com/certifications/ 
 
-(Shortened recertification exam COF-R02 to maintain status are offered at a reduced price.)
+(Shortened $88 recertification exam COF-R02 to maintain status are offered at a reduced price.)
 
-<strong>$175 SnowPro Core Certification</strong> COF-C02 -- the Foundational level certification and demonstrates an individual’s knowledge to apply core expertise implementing and migrating to Snowflake.
+<strong>$175 SnowPro Core Certification</strong> COF-C02 -- the Foundational level -- 75% of 100 questions in 110 minutes:
+
+   * Snowflake Data Cloud Features & Architecture: 25% of the exam
+   * Account Access and Security: 20%
+   * Performance Concepts: 15%
+   * Data Loading and Unloading: 10%
+   * Data Transformations: 20%
+   * Data Protection and Data Sharing: 10%
 
 <strong>$375 SnowPro Advanced Certifications</strong> (and recerts) are for each of five roles:
 
-* ARA-C01 (ARA-R01) - Architect
+* ARA-C01 (ARA-R01) - Architect - 65 English questions in 115 minutes:
+   * Accounts and Security: 25%
+   * Snowflake Architecture: 30%
+   * Data Engineering: 25%
+   * Performance Optimization: 20%
+    
 * DEA-C01 (DEA-R01) - Data Engineer
+   * Data Movement: 28%
+   * Performance Optimization: 22%
+   * Storage and Data Protection: 10%
+   * Security: 10%
+   * Data Transformation: 30%
+
 * DSA-C01 (DSA-R01) - Data Scientist
+   * Data Science Concepts: 10%
+   * Data Pipelining: 15%
+   * Data Preparation and Feature Engineering: 30%
+   * Model Development: 30%
+   * Model Deployment: 15%
+
 * ADA-C01 (ADA-R01) - Administrator
+   * Snowflake Security, RBAC, & User Administration: 30%
+   * Account Management & Data Governance: 25%
+   * Performance Monitoring & Tuning: 20%
+   * Data Sharing, Data Exchange & Snowflake Marketplace: 10%
+   * Disaster Recovery, Backup & Data Replication: 15%
+
 * DAA-C01 (DAA-R01) - Data Analyst
-<br /><br />
+   * Data Ingestion and Data Preparation: 17%
+   * Data Transformation and Data Modeling: 22%
+   * Data Analysis: 32%
+   * Data Presentation and Data Visualization: 29%
 
 As of this writing, practice exams are available only for Core, Architect, and Data Engineer.
+
+https://www.chaosgenius.io/blog/snowflake-certifications/
 
 
 ## Video Training
