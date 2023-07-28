@@ -45,7 +45,19 @@ This is a deep-dive hands-on approach to learning and using the Snowflake cloud 
 
     <a target="_blank" href="https://www.snowflake.com">https://www.snowflake.com</a>
 
-    NOTE: Snowflake is HIPAA, PCI DSS, SOC 1 and SOC 2 Type 2 compliant, and FedRAMP Authorized.
+    The fundamental value-add by Snowflake is that it provides a GUI and <a href="#Languages">programmatic interfaces</a> to its <a target="_blank" href="https://www.wikiwand.com/en/Cloud_database">cloud-based database</a> "Data-as-a-Service" (DaaS) on hardware and networks provided by public cloud service providers (CSPs AWS, Azure, GCP):
+
+    * on Amazon S3 since 2014
+    * on <a target="_blank" href="https://wilsonmar.github.io/azure">Microsoft Azure</a> since 2018
+    * on <a target="_blank" href="https://wilsonmar.github.io/gcp">Google Cloud Platform (GCP)</a> since 2019
+    * on Salesforce?
+    <br /><br />
+
+1.  View a demo to see its GUI for yourself:
+
+    https://www.snowflake.com/live-demo
+
+    PROTIP: Through acquisitions and internal R&D, Snowflake has quickly incorporated AI in its offerings (Generative AI using LLMs).
 
 1.  Snowflake offers 30-day trials, so many simply sign up using a different email each month. They use <a href="#Automation">automation</a> to populate each new account.
 
@@ -54,14 +66,6 @@ This is a deep-dive hands-on approach to learning and using the Snowflake cloud 
 2.  Create an account to begin a 30-day trial use:
 
     <a target="_blank" href="https://signup.snowflake.com/">https://signup.snowflake.com</a>
-
-    Snowflake provides a GUI and <a href="#Languages">programmatic interfaces</a> to its <a target="_blank" href="https://www.wikiwand.com/en/Cloud_database">cloud-based database</a> "Data-as-a-Service" (DaaS) on hardware and networks provided by public cloud service providers (CSPs AWS, Azure, GCP):
-
-    * on Amazon S3 since 2014
-    * on <a target="_blank" href="https://wilsonmar.github.io/azure">Microsoft Azure</a> since 2018
-    * on <a target="_blank" href="https://wilsonmar.github.io/gcp">Google Cloud Platform (GCP)</a> since 2019
-    * on Salesforce?
-    <br /><br />
 
     Snowflake can operate like Oracle, MySQL, Postgres, Teradata, or other traditional database. <strong>Connectors</strong> enable the interchange of data between Snowflake and Microsoft's Power Platform, Qlik, etc.
 
@@ -127,6 +131,8 @@ This is a deep-dive hands-on approach to learning and using the Snowflake cloud 
     ETL (Extract, Transform, Load) approach in which transformation takes place on an intermediate server before it is loaded into the target.
     Transformations before load often makes data unusable for purposes not originally designed.
 
+    Snowflake Professional Services have a "Data Cloud Deployment Framework (DCDF)".
+
 
     <a name="References"></a>
 
@@ -168,13 +174,34 @@ Other cloud databases:
 
 Snowflake was ranked first on the Forbes Cloud 100 in 2019.
 
-1. View a demo to see its GUI for yourself:
-
-   https://www.snowflake.com/live-demo
-
    <a target="_blank" href="https://www.snowflake.com/webinar/product-demo/applying-architectural-patterns-to-solve-business-questions-2023-01-11/?utm_cta=website-pro-serv-featured-dcdf-series">VIDEO: Applying Architectural Patterns to Solve Business Questions</a> by <a target="_blank" href="https://www.linkedin.com/in/greg-sitzman/">Greg Sitzman</a>, Principal Solutions Architect and <a target="_blank" href="https://www.linkedin.com/in/melinda-webster-2732b010/">Melinda Webster</a>
 
-Data Cloud Deployment Framework (DCDF)
+1. Menu items:
+
+   <pre>Worksheets
+Dashboards
+Data
+   * Databases
+   * Private Sharing
+   * Provider Studio
+Marketplace
+Activity
+   * Query History
+   * Copy History
+   * Task History
+Admin
+   * Usage
+   * Warehouses
+   * Resource Monitors
+   * Users & Roles
+   * Security
+   * Billing & Terms
+   * Contacts
+   * Accounts
+   * Partner Connect
+Help & Support
+    </pre>
+
 
 
 Seattle Data Guy answers<a target="_blank" href="https://www.youtube.com/watch?v=njttWa08pwo">"Why Everyone Cares about Snowflake"</a> by saying Snowflake "has the most clout" despite market share of 12-13%.
@@ -240,7 +267,11 @@ lists 5,884 employees in 2023.
 https://www.linkedin.com/company/snowflake-computing/<br />
 lists 7,230 employees and 664,151 followers (on July 23, 2023)
 
-After 6 years as CEO of Service Now, <a target="_blank" href="https://www.youtube.com/watch?v=oiWwyt3HVT0">VIDEO</a>: <a target="_blank" href="https://www.linkedin.com/in/frankslootman/">Frank Slootman</a> has been CTO since April 2019. Slootman lives in Bozeman, Montana, so also headquarters the company in a <a target="_blank" href="https://www.google.com/maps/@45.6781075,-111.0343117,3a,75y,249.16h,90t/data=!3m8!1e1!3m6!1shqeOJEDOeqj6fMP60OM0pA!2e0!5s20190601T000000!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DhqeOJEDOeqj6fMP60OM0pA%26cb_client%3Dsearch.gws-prod.gps%26w%3D360%26h%3D120%26yaw%3D249.15569%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu">one-story building</a> at <a target="_blank" href="https://goo.gl/maps/qDGBR4f6R9aK68n37">106 East Babcock Street, Bozeman, Montana</a>. +1 844.766-9355
+After 6 years as CEO of Service Now, <a target="_blank" href="https://www.linkedin.com/in/frankslootman/">Frank Slootman</a> has been CTO since April 2019. 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=oiWwyt3HVT0">VIDEO</a>: "Leadership is not a popularity contest".
+   <br /><br />
+
+Slootman lives in Bozeman, Montana, so also headquarters the company in a <a target="_blank" href="https://www.google.com/maps/@45.6781075,-111.0343117,3a,75y,249.16h,90t/data=!3m8!1e1!3m6!1shqeOJEDOeqj6fMP60OM0pA!2e0!5s20190601T000000!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DhqeOJEDOeqj6fMP60OM0pA%26cb_client%3Dsearch.gws-prod.gps%26w%3D360%26h%3D120%26yaw%3D249.15569%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu">one-story building</a> at <a target="_blank" href="https://goo.gl/maps/qDGBR4f6R9aK68n37">106 East Babcock Street, Bozeman, Montana</a>. +1 844.766-9355
 
 <a target="_blank" href="https://www.glassdoor.com/Reviews/Snowflake-Reviews-E928471.htm">On Glassdoor</a>, Slootman received from employees a 90% rating, with a high 4.0 rating and 75% of employees saying they would recommend to a friend.
 
@@ -436,7 +467,59 @@ PROTIP: Snowflake has not announced support for No-SQL (Document and <a target="
 
 ## Video Tutorials
 
-OReilly.com [Kermit]
+### On Coursera.com
+
+By UAE resident <a target="_blank" href="https://www.linkedin.com/in/mohamedtouiti/">Mohamed Touiti</a>, Snowflake Sales Engineer since 2021.
+
+1. <a target="_blank" href="https://www.coursera.org/projects/snowflake-for-beginners-make-your-first-snowsight-dashboard">2-hour Snowflake for Beginners: Make your First Snowsight Dashboard</a> 
+
+1. <a target="_blank" href="https://www.coursera.org/projects/data-cleaning-in-snowflake-techniques-to-clean-messy-data">2-hour Data Cleaning in Snowflake: Techniques to Clean Messy Data</a>
+
+1. <a target="_blank" href="https://www.coursera.org/projects/data-management-with-databricks-big-data-with-delta-lakes">2-hour Data Management with Databricks: Big Data with Delta Lakes</a> (Guided Project)
+
+### On Pluralsight.com:
+
+Path: <a target="_blank" href="https://app.pluralsight.com/paths/skill/snowflake-for-data-analyst">Path: Snowflake for Data Analyst</a>
+
+Beginner:
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/snowflake-architecture-overview-getting-started"> Snowflake Architecture and Overview: Getting Started</a> by Alejandro Romero
+1h 16m Dec 23, 2021
+
+* <a target="_blank" href="https://app.pluralsight.com/player?course=moving-data-snowflake">1h 22m Moving Data with Snowflake</a>
+Nov 21, 2021
+by Mohit Batra
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/querying-data-snowflake
+1h 56m Querying Data with Snowflake</a> Feb 13, 2023
+by Mohit Batra
+
+Intermediate:
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/setting-up-cloud-databases-tables-snowflake">57m Setting up Cloud Databases and Tables with Snowflake</a> Apr 28, 2022
+by <a target="_blank" href="https://www.linkedin.com/in/thomaslleblanc/">Thomas LeBlanc</a> (@TheSmilingDBA, Thomas-LeBlanc.com)
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/query-caching-performance-features-snowflake">35m Query Caching Performance Features with Snowflake</a> Dec 6, 2021
+by <a target="_blank" href="https://www.linkedin.com/in/hirerushabh/">Rushabh Doshi</a> in Redmond. 
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/performing-data-analytic-tasks-snowflake">1h 29m Performing Data Analytic Tasks with Snowflake</a> Oct 4, 2021
+by Warner Chaves
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/sql-extensibility-features-snowflake">1h 2m SQL Extensibility Features with Snowflake 5</a> Oct 3, 2021
+by <a target="_blank" href="https://www.linkedin.com/in/pinaldave/">Pinal Dave</a> in India. 
+
+Advanced:
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/working-semi-structured-data-snowflake">1h 37m Working with Semi-structured Data with Snowflake</a>
+by <a target="_blank" href="https://www.linkedin.com/in/warnerchaves/">Warner Chaves</a> (Datascape podcast, @warchav, createdatapros.com)
+Nov 17, 2021
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/visualizing-data-snowflake">1h 2m Visualizing Data via Snowflake</a>
+by <a target="_blank" href="https://www.linkedin.com/in/alejandro-romero-mba-86a6993/">Alejandro Romero</a> (@aromero77) at U of Utah and Elastic
+Mar 1, 2022
+
+### On OReilly.com
+
 
 
 <a name="YouTube"></a>
