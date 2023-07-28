@@ -108,13 +108,14 @@ and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-archit
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"><img alt="azure-guides-1158x439.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"></a>
 
 
-### Security Roles (Concerns/Responsibilities/Departments)
+### Security Roles Coverage
 
 how the <a target="_blank" href="https://aka.ms/SecurityRoles">concerns</a> of each organizational role type/team relate with others, from Plan (Governance) to Build to Run (Operations) stages:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"><img alt="azure-security-roles-1883x903.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"></a>
 
-QUESTION: Who cover these at your organization?
+PROTIP: Who covers each of these concerns where you work?
+Not having an individual/department designated for each responsibility below is often the reason why it doesn't get done and thus creates vulnerabilities not addressed.
 
    * Board (of corporate directors)
    * Management (Business Model and Vision)
@@ -151,6 +152,11 @@ Other Departments:
    * Threat Intelligence
 
 PROTIP: Define abbreviations for each above.
+
+
+### Out-sourcing
+
+Not a lot of people <a target="_blank" href="https://www.infoworld.com/article/2903436/make-sense-of-cloud-service-brokers.html">talk about this</a>, but a Cloud Management Platform (CMP) from a CSB (Cloud Service Broker such as AppDirect, Ensim, Gravitant, Jamcracker, Parallels, Ostrato, ServiceNow, BMC, etc.) is used by enterprises to provide provisioning governance, self-service, usage chargeback, and policy enforcement across multiple cloud vendors. 
 
 
 <a name="MCSB"></a>
@@ -305,6 +311,7 @@ Microsoft summarizes the "kill chain" of exploits and defenses against them in t
 Microsoft has a "Defender" offering for each type of product:
 
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-office-365">MS Defender for Office 365</a>
+   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/endpoint-security/microsoft-defender-iot">MS Defender for IoT (& OT)</a>
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/endpoint-security/microsoft-defender-endpoint">MS Defender for Endpoint</a>
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-for-identity">MS Defender for Identity</a>
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-devops#">MS Defender for DevOps</a>
@@ -554,12 +561,6 @@ PROTIP: Setup <strong>different browser profiles</strong> on the same browser, a
    <br /><br />
 
 1. Do the above for each browser (Google Chrome, Microsoft Edge, Firefox, etc.).
-
-
-
-### Multi-Cloud 
-
-Not a lot of people <a target="_blank" href="https://www.infoworld.com/article/2903436/make-sense-of-cloud-service-brokers.html">talk about this</a>, but a Cloud Management Platform (CMP) from a CSB (Cloud Service Broker such as AppDirect, Ensim, Gravitant, Jamcracker, Parallels, Ostrato, ServiceNow, BMC, etc.) is necessary for enterprises to provide provisioning governance, self-service, usage chargeback, and policy enforcement across multiple cloud vendors. 
 
 
 <hr />
@@ -1058,7 +1059,7 @@ Editors:
    * https://github.com/timothywarner/az500/tree/master/blueprints
    * https://github.com/terraform-providers/terraform-provider-azurerm
 
-<a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/blueprints/samples/azure-security-benchmark-foundation/">This sample Blueprint</a> This deploys several Azure services to provide a secure, monitored, enterprise-ready foundation:<br />
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/blueprints/samples/azure-security-benchmark-foundation/">This sample Blueprint</a> deploys several Azure services to provide a secure, monitored, enterprise-ready foundation:<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690479433/azure-subscription-arch-1154x999_us8vps.png"><img alt="azure-subscription-arch-1154x999.png" width="1154" height="999" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690479433/azure-subscription-arch-1154x999_us8vps.png"></a>
 
 
