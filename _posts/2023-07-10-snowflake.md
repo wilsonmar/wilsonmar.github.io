@@ -57,6 +57,22 @@ This is a deep-dive hands-on approach to learning and using the Snowflake cloud 
 
     https://www.snowflake.com/live-demo
 
+    ### Workloads
+
+1.  Pull down the list of Workloads:
+
+    * Data Cloud
+    * Applications
+    * Collaboration
+    * Marketplace
+    * Data Lakes
+    * Data Warehouse
+    <br /><br />
+
+1.  Select EMEA ON-demand demo, 
+
+    https://www.snowflake.com/en/resources/video/data-lake-live-demo-emea/
+
     PROTIP: Through acquisitions and internal R&D, Snowflake has quickly incorporated AI in its offerings (Generative AI using LLMs).
 
 1.  Snowflake offers 30-day trials, so many simply sign up using a different email each month. They use <a href="#Automation">automation</a> to populate each new account.
@@ -119,19 +135,28 @@ This is a deep-dive hands-on approach to learning and using the Snowflake cloud 
 
     Snowflake's "Data Marketplace" platform supports a range of use cases, including data warehousing, data lakes, data engineering, data science, data application development, and data sharing. 
 
+    ### AI yi
+    
+    * <a target="_blank" href="https://www.youtube.com/watch?v=SwTYQXqQ3N4">VIDEO</a>: DICOM Image Analysis With Snowpark (to detect Pneumonia in Xrays using Machine Learning).
+    <br /><br />
+    
     ### What's EDW, ELT, etc?
     
     A Data Lake integrates several Enterprise Data Warehouses (EDWs).
 
     A Data Mart makes data searchable.
 
+    ### Snowpike ELT
+    
     ELT (Extract, Load, Transform) are the steps to load "raw data" directly from a source server into a target data warehouse. Business rules and data integrity checks occur in the data warehouse after data is loaded.
     
     The larger capacity possible (perhaps for a short time) on cloud vendors enables innovation from the traditional<br />
     ETL (Extract, Transform, Load) approach in which transformation takes place on an intermediate server before it is loaded into the target.
-    Transformations before load often makes data unusable for purposes not originally designed.
+    Transformations before load often render data unusable for purposes not originally designed.
 
     Snowflake Professional Services have a "Data Cloud Deployment Framework (DCDF)".
+
+    Snowflake's ability to <strong>steam</strong> data makes for faster ingestion than traditional batch approaches.
 
 
     <a name="References"></a>
@@ -140,7 +165,6 @@ This is a deep-dive hands-on approach to learning and using the Snowflake cloud 
     
     https://www.snowflake.com/en/why-snowflake/customers/
 
-    * <a target="_blank" href="https://www.youtube.com/watch?v=SwTYQXqQ3N4">VIDEO</a>: DICOM Image Analysis With Snowpark (to detect Pneumonia in Xrays using Machine Learning).
 
 5.  The activate email sent to you contains a unique URL to the GUI dashboard associated with your account, such as:
 
@@ -169,6 +193,9 @@ Other cloud databases:
    * SkySQL MariaDB
    * Xeround Cloud Database* – MySQL front-end (*service no longer available)[32]
    * YugabyteDB
+   <br /><br />
+
+Like other cloud vendors, Snowflake provides Authentication, Access Control, Infrastructure, and Optimization.
 
 ### Snowflake's Advantages
 
@@ -214,6 +241,8 @@ Snowflake is <strong>fast</strong>: "A complex query takes more than 6 hours in 
 
 References:
    * <a target="_blank" href="https://www.youtube.com/watch?v=VLtq0eeHc14">VIDEO: Databricks v. Snowflake</a>
+   * <a target="_blank" href="https://www.coursera.org/projects/data-management-with-databricks-big-data-with-delta-lakes">2-hour Data Management with Databricks: Big Data with Delta Lakes</a> (Guided Project)
+
    * <a target="_blank" href="https://www.youtube.com/watch?v=CUu35E9TViE">Should you switch to Snowflake</a>
 
 
@@ -407,11 +436,41 @@ https://usergroups.snowflake.com/chapters/
 
 ## Automation
 
-* CLI
+* CLI (snowsql client-side command utility)
 * DML (Data Markup Language) to create SQL database schemas
 * Python/Go/Java/Scala client-side programs
 * Java/Scala/NodeJs server-side programs
 
+### Install SnowSQL GUI jcD4me$23azurecertified
+CLI
+
+1.  On macOS
+
+    <pre><strong>brew install --cask snowflake-snowsql</strong></pre>
+
+    <pre>==> Downloading https://sfc-repo.snowflakecomputing.com/snowsql/bootstrap/1.2/da
+######################################################################### 100.0%
+==> Installing Cask snowflake-snowsql
+==> Running installer for snowflake-snowsql; your password may be necessary.
+Package installers may write to any location; options such as `--appdir` are ignored.
+Password: ____
+installer: Package name is Snowflake SnowSQL
+installer: Installing at base path /
+installer: The install was successful.
+🍺  snowflake-snowsql was successfully installed!
+    </pre>
+
+1.  Configure your alias definition file</a> to contain:
+
+    <pre>alias snow='open -a "/Applications/SnowSQL.app"'</pre>
+
+1.  After sourcing, the above would enable you to invoke the SnowSQL app from a Terminal.
+
+1.  Open a new Terminal or Finder window navigate to the folder:
+
+    <pre><strong>$HOME/.snowsql</strong></pre>
+
+    On Windows: %USERPROFILE%\.snowsql\
 
 <a name="Languages"></a>
 
@@ -469,13 +528,30 @@ PROTIP: Snowflake has not announced support for No-SQL (Document and <a target="
 
 ### On Coursera.com
 
+By <a target="_blank" href="https://www.linkedin.com/in/nikolai-schuler/">Nikolai Schuler</a> residing in Bulgaria:
+
+   * <a target="_blank" href="https://www.coursera.org/learn/snowflake/home/week/1">Snowflake - Introduction Course</a>
+   * <a target="_blank" href="https://www.coursera.org/learn/snowflake-course/home/week/1">Snowflake - Intermediate Course</a>
+
 By UAE resident <a target="_blank" href="https://www.linkedin.com/in/mohamedtouiti/">Mohamed Touiti</a>, Snowflake Sales Engineer since 2021.
 
 1. <a target="_blank" href="https://www.coursera.org/projects/snowflake-for-beginners-make-your-first-snowsight-dashboard">2-hour Snowflake for Beginners: Make your First Snowsight Dashboard</a> 
 
 1. <a target="_blank" href="https://www.coursera.org/projects/data-cleaning-in-snowflake-techniques-to-clean-messy-data">2-hour Data Cleaning in Snowflake: Techniques to Clean Messy Data</a>
 
-1. <a target="_blank" href="https://www.coursera.org/projects/data-management-with-databricks-big-data-with-delta-lakes">2-hour Data Management with Databricks: Big Data with Delta Lakes</a> (Guided Project)
+By Google:
+
+* <a target="_blank" href="https://www.coursera.org/learn/bigquery-fundamentals-for-snowflake-professionals">Course BigQuery Fundamentals for Snowflake Professionals</a> provides quizzes and labs:
+
+   * <a target="_blank" href="https://storage.googleapis.com/cloud-training/cls-html5-courses/T-BQSF-I/M1/index.html#/">BigQuery Architecture and Resource Provisioning</a>
+   * <a target="_blank" href="https://storage.googleapis.com/cloud-training/cls-html5-courses/T-BQSF-I/M2/index.html#/">BigQuery Data Definition Model</a>
+   * <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/29587268?parent=lti_session">1 hr 30m LAB: Monitoring BigQuery Workloads</a>
+   * <a target="_blank" href="https://storage.googleapis.com/cloud-training/cls-html5-courses/T-BQSF-I/M3/index.html">BigQuery and Google Cloud IAM</a>
+   * <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/29587358?parent=lti_session">LAB: Securing and Sharing BigQuery Datasets and Tables</a>
+   * <a target="_blank" href="https://storage.googleapis.com/cloud-training/cls-html5-courses/T-BQSF-I/M4/index.html#/">BigQuery Data Ingestion</a>
+   * <a target="_blank" href="https://storage.googleapis.com/cloud-training/cls-html5-courses/T-BQSF-I/M5/index.html#/">BigQuery Schema Design and Optimization</a>
+   * <a target="_blank" href="https://storage.googleapis.com/cloud-training/cls-html5-courses/T-BQSF-I/M6/index.html#/">SQL in BigQuery</a>
+
 
 ### On Pluralsight.com:
 
@@ -483,16 +559,18 @@ Path: <a target="_blank" href="https://app.pluralsight.com/paths/skill/snowflake
 
 Beginner:
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/snowflake-architecture-overview-getting-started"> Snowflake Architecture and Overview: Getting Started</a> by Alejandro Romero
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/snowflake-architecture-overview-getting-started"> Snowflake Architecture and Overview: Getting Started</a> by Alejandro Romero (@aromero77)
 1h 16m Dec 23, 2021
+
+By <a target="_blank" href="https://www.linkedin.com/in/mohitbatra/">Mohit Batra</a> (CrystalTalks) residing in Hyderabad:
 
 * <a target="_blank" href="https://app.pluralsight.com/player?course=moving-data-snowflake">1h 22m Moving Data with Snowflake</a>
 Nov 21, 2021
-by Mohit Batra
+ 
+    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690565375/snowflake-ingest-1360x737_hin8ft.png"><img alt="snowflake-ingest-1360x737.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690565375/snowflake-ingest-1360x737_hin8ft.png"></a> 
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/querying-data-snowflake
-1h 56m Querying Data with Snowflake</a> Feb 13, 2023
-by Mohit Batra
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/querying-data-snowflake">1h 56m Querying Data with Snowflake</a> Feb 13, 2023
+
 
 Intermediate:
 
