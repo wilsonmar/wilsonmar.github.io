@@ -12,6 +12,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+This is a deep-dive hands-on approach to learning and using the Snowflake cloud database.
 
 {% include whatever.html %}
 
@@ -40,65 +41,112 @@ comments: true
 
 ## Snowflake's Value-Add
 
-Snowflake offers a <a target="_blank" href="https://www.wikiwand.com/en/Cloud_database">cloud-based database</a> "Data-as-a-Service" (DaaS) GUI and <a href="#Languages">programmatic interfaces</a> that enable corporate users to store and analyze <strong>SQL-based</strong> data on hardware and networks provided by public cloud service providers (CSPs AWS, Azure, GCP):
-   * on Amazon S3 since 2014
-   * on <a target="_blank" href="https://wilsonmar.github.io/azure">Microsoft Azure</a> since 2018
-   * on <a target="_blank" href="https://wilsonmar.github.io/gcp">Google Cloud Platform (GCP)</a> since 2019
-   * on Salesforce?
-   <br /><br />
+1.  Snowflake's corporate landing page is:
 
-<table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Theater </th><th> Azure </th><th> AWS </th><th> GCP </th></tr>
-<tr valign="top"><td> Canada </td><td> Canada (Central)
-   </td><td> Canada Central (Toronto) 
-   </td><td> -
-   </td></tr>
-<tr valign="top"><td> USA </td><td> US East (North Virginia, Ohio)<br />US West (Oregon)
-   </td><td> East US 2 (Virginia)<br />Centrl US (Iowa)<br />South Central US (Texas)<br />West  US 2 (Washington) 
-   </td><td> US East 4 (N. Virginia)<br />US Central (Iowa)
-   </td></tr>
-<tr valign="top"><td> South America </td><td> Sao Paulo
-   </td><td> -
-   </td><td> -
-   </td></tr>
-<tr valign="top"><td> EU 
-   </td><td> North Europe (Ireland)<br />UK South (London)<br />West Europe (Netherlands)<br />Switzerland North (Zurich)
-   </td><td> Europe West (London)<br />Europe West (Netherlands)
-   </td></tr>
-<tr valign="top"><td> EMEA </td><td> (Ireland, London, Paris, Frankfurt, Stockholm)
-   </td><td> UAE North (Dubai)
-   </td><td> -
-   </td></tr>
-<tr valign="top"><td> Asia </td><td> Asia Pacific (Tokyo, Seoul, Osaka, Mumbai, Singapore, Jakarta, Sydney)
-   </td><td> Japan East (Tokyo)<br />Central India (Pune)<br />Southeast Asia (Singapore)<br />Australia East (New South Wales)
-   </td><td> -
-   </td></tr>
-</table>
+    <a target="_blank" href="https://www.snowflake.com">https://www.snowflake.com</a>
 
-PROTIP: Instead of leaving data in a single CSP, Snowflake provides the basis for <strong>multi-cloud</strong> operation, without CSP vendor lock-in.
+    NOTE: Snowflake is HIPAA, PCI DSS, SOC 1 and SOC 2 Type 2 compliant, and FedRAMP Authorized.
 
-This separation from a single cloud or on-prem. data center unifies teams around governed data.
+1.  Snowflake offers 30-day trials, so many simply sign up using a different email each month. They use <a href="#Automation">automation</a> to populate each new account.
 
-Snowflake's "cloud data warehousing" software includes its Data Cloud, an ecosystem where Snowflake customers, partners, data providers, and data consumers can break down data silos and derive value from rapidly growing data sets in secure, governed, and compliant ways. 
+    PROTIP: Create a different browser profile associated with each account.
 
-Snowflake's "Data Marketplace" platform supports a range of use cases, including data warehousing, data lakes, data engineering, data science, data application development, and data sharing. 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=SwTYQXqQ3N4">VIDEO</a>: DICOM Image Analysis With Snowpark (to detect Pneumonia in Xrays using Machine Learning).
+2.  Create an account to begin a 30-day trial use:
 
-What will you use Snowflake for?
-   * Build an application or data product for customers
-   * Develop machine learning model or another data science initiative
-   * Run analytics or connect to visualization provider
-   * Migrate an existing data warehouse
-   * Create a data lake, data mesh, or federated data source
-   * Other
+    <a target="_blank" href="https://signup.snowflake.com/">https://signup.snowflake.com</a>
 
-Snowflake is HIPAA, PCI DSS, SOC 1 and SOC 2 Type 2 compliant, and FedRAMP Authorized.
+    Snowflake provides a GUI and <a href="#Languages">programmatic interfaces</a> to its <a target="_blank" href="https://www.wikiwand.com/en/Cloud_database">cloud-based database</a> "Data-as-a-Service" (DaaS) on hardware and networks provided by public cloud service providers (CSPs AWS, Azure, GCP):
+
+    * on Amazon S3 since 2014
+    * on <a target="_blank" href="https://wilsonmar.github.io/azure">Microsoft Azure</a> since 2018
+    * on <a target="_blank" href="https://wilsonmar.github.io/gcp">Google Cloud Platform (GCP)</a> since 2019
+    * on Salesforce?
+    <br /><br />
+
+    Snowflake can operate like Oracle, MySQL, Postgres, Teradata, or other traditional database. <strong>Connectors</strong> enable the interchange of data between Snowflake and Microsoft's Power Platform, Qlik, etc.
+
+    PROTIP: To meet data sovereignty laws in the EU, Singapore, etc., Snowflake customers are limited to using specific CSP data center regions. These regions are what Snowflake makes available:
+
+    <table border="1" cellpadding="4" cellspacing="0">
+    <tr><th> Theater </th><th> Azure </th><th> AWS </th><th> GCP </th></tr>
+    <tr valign="top"><td> Canada </td><td> Canada (Central)
+        </td><td> Canada Central (Toronto) 
+        </td><td> -
+        </td></tr>
+    <tr valign="top"><td> USA </td><td> US East (North Virginia, Ohio)<br />US West (Oregon)
+        </td><td> East US 2 (Virginia)<br />Centrl US (Iowa)<br />South Central US (Texas)<br />West  US 2 (Washington) 
+        </td><td> US East 4 (N. Virginia)<br />US Central (Iowa)
+        </td></tr>
+    <tr valign="top"><td> South America </td><td> Sao Paulo
+        </td><td> -
+        </td><td> -
+        </td></tr>
+    <tr valign="top"><td> EU 
+        </td><td> North Europe (Ireland)<br />UK South (London)<br />West Europe (Netherlands)<br />Switzerland North (Zurich)
+        </td><td> Europe West (London)<br />Europe West (Netherlands)
+        </td></tr>
+    <tr valign="top"><td> EMEA </td><td> (Ireland, London, Paris, Frankfurt, Stockholm)
+        </td><td> UAE North (Dubai)
+        </td><td> -
+        </td></tr>
+    <tr valign="top"><td> Asia </td><td> Asia Pacific (Tokyo, Seoul, Osaka, Mumbai, Singapore, Jakarta, Sydney)
+        </td><td> Japan East (Tokyo)<br />Central India (Pune)<br />Southeast Asia (Singapore)<br />Australia East (New South Wales)
+        </td><td> -
+        </td></tr>
+    </table>
+
+    PROTIP: Instead of leaving data in a single CSP (such as AWS), Snowflake provides the basis for <strong>multi-cloud</strong> operation, to avoid CSP vendor lock-in.
+
+    Because data is valuable, a lot of barriers have been put around Oracle databases in on-prem data centers. This creates "data silos" which limits creative uses. But cloud-based databases can be accessed anywhere in the world, so can be used more creatively. Clouds can be used to enable teamwork around governed data.
+
+
+    <a name="UseCases"></a>
+    
+    ### Use cases
+
+4.  One step during sign-up is "what will you use Snowflake for?"
+
+    * Build an application or data product for customers
+    * Develop <strong>machine-learning</strong> model or another data science initiative
+    * Run analytics or connect to the visualization provider
+    * Migrate an existing data warehouse
+    * Create a data lake, data mesh, or federated data source
+    * Other
+
+    Snowflake's "Data Marketplace" platform supports a range of use cases, including data warehousing, data lakes, data engineering, data science, data application development, and data sharing. 
+
+    ### What's EDW, ELT, etc?
+    
+    A Data Lake integrates several Enterprise Data Warehouses (EDWs).
+
+    A Data Mart makes data searchable.
+
+    ELT (Extract, Load, Transform) are the steps to load "raw data" directly from a source server into a target data warehouse. Business rules and data integrity checks occur in the data warehouse after data is loaded.
+    
+    The larger capacity possible (perhaps for a short time) on cloud vendors enables innovation from the traditional<br />
+    ETL (Extract, Transform, Load) approach in which transformation takes place on an intermediate server before it is loaded into the target.
+    Transformations before load often makes data unusable for purposes not originally designed.
+
+
+    <a name="References"></a>
+
+    ### Customer references
+    
+    https://www.snowflake.com/en/why-snowflake/customers/
+
+    * <a target="_blank" href="https://www.youtube.com/watch?v=SwTYQXqQ3N4">VIDEO</a>: DICOM Image Analysis With Snowpark (to detect Pneumonia in Xrays using Machine Learning).
+
+5.  The activate email sent to you contains a unique URL to the GUI dashboard associated with your account, such as:
+
+    <tt>https://<em>abc-123</em>.snowflakecomputing.com/console/login</tt>
+
+6.  Save the URL in a Browser Bookmark.
 
 
 ## Competitors
 
-"Snowflake Cloud Data Warehouse" competes in a crowded field of cloud-based databases from its cloud vendors:
-   * Amazon Aurora, MySQL based service
+Snowflake's "Cloud Data Warehouse" competes in a crowded field of cloud-based databases from its cloud vendors:
+   * Amazon Aurora, MySQL-based service
    * Amazon Relational Database Service
    * Microsoft Azure SQL Database (MS SQL)[30]
    * <a target="_blank" href="https://cloud.google.com/products/databases">Google Cloud SQL</a>
@@ -116,11 +164,24 @@ Other cloud databases:
    * Xeround Cloud Database* – MySQL front-end (*service no longer available)[32]
    * YugabyteDB
 
-However, Snowflake was ranked first on the Forbes Cloud 100 in 2019.
+### Snowflake's Advantages
+
+Snowflake was ranked first on the Forbes Cloud 100 in 2019.
+
+1. View a demo to see its GUI for yourself:
+
+   https://www.snowflake.com/live-demo
+
+   <a target="_blank" href="https://www.snowflake.com/webinar/product-demo/applying-architectural-patterns-to-solve-business-questions-2023-01-11/?utm_cta=website-pro-serv-featured-dcdf-series">VIDEO: Applying Architectural Patterns to Solve Business Questions</a> by <a target="_blank" href="https://www.linkedin.com/in/greg-sitzman/">Greg Sitzman</a>, Principal Solutions Architect and <a target="_blank" href="https://www.linkedin.com/in/melinda-webster-2732b010/">Melinda Webster</a>
+
+Data Cloud Deployment Framework (DCDF)
+
 
 Seattle Data Guy answers<a target="_blank" href="https://www.youtube.com/watch?v=njttWa08pwo">"Why Everyone Cares about Snowflake"</a> by saying Snowflake "has the most clout" despite market share of 12-13%.
 
 PROTIP: Snowflake is acknowledged as user-friendly, easy scaling up/down with flexible "pay-as-you-go" pricing.
+
+Snowflake also has powerful and convenient data management features.
 
 Snowflake is <strong>fast</strong>: "A complex query takes more than 6 hours in MySQL, 2 hours in Oracle, and just 10 minutes in snowflake."
 
@@ -159,6 +220,7 @@ SnowGrid?
 
 Snowsight
 
+
 <a name="Company"></a>
 
 ## Snowflake the company
@@ -168,7 +230,9 @@ Snowflake Inc. was founded in 2012 by ex-Oracle founders:
 * <a target="_blank" href="https://www.linkedin.com/in/thierry-cruanes-3927363/">Thierry Cruanes</a> of San Mateo
 * <a target="_blank" href="https://www.linkedin.com/in/marcinzukowski/">Marcin Żukowski</a>
 
-They live in San Mateo, where <a target="_blank" href="https://www.glassdoor.com/Jobs/Snowflake-Jobs-E928471.htm?filter.countryId=1">jobs</a> are located (not remote).
+They live in the "Silicon Valley" (San Mateo, California) where <a target="_blank" href="https://www.glassdoor.com/Jobs/Snowflake-Jobs-E928471.htm?filter.countryId=1">jobs</a> are located (not remote) on Concar Drive.
+
+Snowflake is a <a target="_blank" href="https://www.smdailyjournal.com/news/local/snowflake-moves-its-hq-out-of-san-mateo/article_becaabc6-c02e-11eb-ba32-db54937cfeaf.html">Delaware corporation</a>.
 
 That's according to https://www.wikiwand.com/en/Snowflake_Inc. which<br />
 lists 5,884 employees in 2023.
@@ -180,11 +244,13 @@ After 6 years as CEO of Service Now, <a target="_blank" href="https://www.youtub
 
 <a target="_blank" href="https://www.glassdoor.com/Reviews/Snowflake-Reviews-E928471.htm">On Glassdoor</a>, Slootman received from employees a 90% rating, with a high 4.0 rating and 75% of employees saying they would recommend to a friend.
 
-The company mascot is a ____ called "___".
+The company mascot is a white bear called "___".
 
 People who work in the company Snowflake are called "___".
 
 Snowflake IPO'd (during the pandemic) on September 2020 as NYSE ticker <a target="_blank" href="https://www.barrons.com/market-data/stocks/snow">SNOW</a>, raising $3.4 billion, one of the largest software IPOs in history.
+
+Salesforce, a Bay Area cloud company, and Warren Buffett’s Berkshire Hathaway each bought $250 million in Snowflake stock in private placements following the IPO.
 
 SNOW is a component of the Russell 1000 index.
 
@@ -207,14 +273,10 @@ On June 27, 2023, a partnership with NVIDIA was announced.
 
 ## Host Names (URLs)
 
-* https://www.snowflake.com is Snowflake's marketing page
-
 * https://www.snowflake.net
 
 * https://www.youtube.com/@snowflakedevelopers - 5k subscribers
    led by <a target="_blank" href="https://www.linkedin.com/in/chanin-nantasenamat/">Chanin Nantasenamat</a>, <a target="_blank" href="https://www.glassdoor.com/Reviews/Streamlit-Reviews-E4916073.htm">Streamlit</a> Sr. Dev Advocate living in Thailand.
-
-* https://www.snowflake.com/live-demo
 
 * https://.../  is Snowflake's URL shortener
    
@@ -308,6 +370,16 @@ https://community.snowflake.com/s/login/
 
 https://usergroups.snowflake.com/chapters/
 
+<hr />
+
+<a name="Automation"></a>
+
+## Automation
+
+* CLI
+* DML (Data Markup Language) to create SQL database schemas
+* Python/Go/Java/Scala client-side programs
+* Java/Scala/NodeJs server-side programs
 
 
 <a name="Languages"></a>
