@@ -64,7 +64,7 @@ And expensive disk space required that some data be <strong>thrown away</strong>
 <a target="_blank" href="https://www.youtube.com/watch?v=b8q5VJo0ZAk">
 VIDEO</a>: A "Data Lakehouse" is designed to capture <strong>raw data</strong> (structured, semi-structured, unstructured) for integration with several Enterprise Data Warehouses, for <strong>"data science" AI/ML</strong> data processing.
 
-    PROTIP: Through acquisitions and internal R&D, Snowflake has quickly incorporated AI (Artificial Intelligence) in its offerings (Generative AI using LLMs).
+PROTIP: Through acquisitions and internal R&D, Snowflake has quickly incorporated AI (Artificial Intelligence) in its offerings (Generative AI using LLMs).
 
 "Data Lakehouses" provide an <strong>intelligent metadata layer</strong> that acts as a sort of middleman between unstructured data and data users.
 
@@ -73,16 +73,16 @@ Snowflake is that middleman. Snowflake's offers a <strong>cloud-native</strong> 
    * on Amazon S3 storage since 2014
    * on <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">Microsoft Azure Blob Storage</a> (Data Lake Gen2) since 2018
    * on <a target="_blank" href="https://wilsonmar.github.io/gcp">Google Cloud Platform (GCP)</a> since 2019
-   * QUESTION: From Salesforce? SAP?
+   * QUESTION: Apache Iceberg? Salesforce? SAP?
    <br /><br />
 
 1.  View a demo to see its GUI for yourself:
 
+    https://www.snowflake.com/en/resources/video/data-lake-live-demo-emea/
+
     <a target="_blank" href="https://www.snowflake.com/live-demo"><strong>https://www.snowflake.com/live-demo</strong></a>
 
 1.  If you don't want to wait for a live session, select EMEA ON-demand demo:
-
-    https://www.snowflake.com/en/resources/video/data-lake-live-demo-emea/
 
     Use of public clouds enables Snowflake to overcome limitations of limited memory and CPU.
 
@@ -90,16 +90,49 @@ Snowflake is that middleman. Snowflake's offers a <strong>cloud-native</strong> 
 
     Snowflake's GUI and database design also enables its data warehouse to be updated. Thus:
 
-    <strong>no- Lake + Data Warehouse = Data Lakehouse</strong>
+    <strong>Data Lake + Data Warehouse = Data Lakehouse</strong>
 
-    Salesforce, a Bay Area cloud company, and Warren Buffett’s Berkshire Hathaway each bought $250 million in Snowflake stock in private placements following the IPO.  <a target="_blank" href="https://www.youtube.com/watch?v=H6j3FgX5uo4">VIDEO</a>: How Snowflake Broke Warren Buffet's Lifelong Rule.
+    Salesforce, also a SaaS company in San Franciso, and Warren Buffett’s Berkshire Hathaway each bought $250 million in Snowflake stock in private placements following the IPO.  <a target="_blank" href="https://www.youtube.com/watch?v=H6j3FgX5uo4">VIDEO</a>: How Snowflake Broke Warren Buffet's Lifelong Rule of not investing in tech.
 
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690666736/snowflake-uses-1344x286_spxwoc.png"><img alt="snowflake-uses-1344x286.png" src=""></a>
 
-## Competition: Databricks
+## Cloud Data Lakehouses 
 
-Snowflake competes with another Data Lakehouse: Databricks.
+Cloud Data Lakehouses include: 
+
+   * Snowflake
+   * AWS Redshift (first in market share)
+   * Google BigQuery
+   * Databricks Delta Lake
+   * Azure Synapse
+   <br /><br />
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690658713/snowflake-to-lakehouse-3010x1282_vqguzu.png"><img alt="snowflake-to-lakehouse-3010x1282.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690658713/snowflake-to-lakehouse-3010x1282_vqguzu.png"></a>
+
+In <a target="_blank" href="https://www.youtube.com/watch?v=VLtq0eeHc14">VIDEO: Databricks v. Snowflake</a>, Seattle Data Guy notes how Databricks starting off in Berkely using Jupyter Notebooks.
+
+
+<a name="Scaling"></a>
+
+### Scaling
+
+Snowflake can be set to <strong>autoscale</strong> across their "t-shirt sizes" of credit usage per hour:
+
+   * 1 = X-Small
+   * 2 = Small
+   * 4 = Medium
+   * 8 = Large
+   * 16 = X-Large
+   * 32 = 2X-Large
+   * 64 = 3X-Large
+   * 128 = 4X-Large
+   * 256 = 5X-Large
+   * 512 = 6X-Large
+
+   References:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=FxpRL0m9BcA">What's the difference?</a>
+   * <a target="_blank" href="https://www.coursera.org/projects/data-management-with-databricks-big-data-with-delta-lakes">2-hour Data Management with Databricks: Big Data with Delta Lakes</a> (Guided Project)
+   * https://www.fivetran.com/blog/warehouse-benchmark concludes that performance is similar among Cloud Data Warehouses.
 
 1.  Snowflake's corporate landing page is at:
 
@@ -125,7 +158,7 @@ Snowflake competes with another Data Lakehouse: Databricks.
        * <a target="_blank" href="https://www.youtube.com/watch?v=slrqd4NSgpY">VIDEO</a>
        <br /><br />
 
-    ## Sign-up 
+    ## Sign-up for a live account
 
 1.  Snowflake offers 30-day trials, so many simply sign up using a different email each month. They use <a href="#Automation">automation</a> to populate each new account.
 
@@ -171,10 +204,26 @@ Snowflake competes with another Data Lakehouse: Databricks.
 
     Because data is valuable, a lot of barriers have been put around Oracle databases in on-prem data centers. This creates "data silos" which limits creative uses. But cloud-based databases can be accessed anywhere in the world, so can be used more creatively. Clouds can be used to enable teamwork around governed data.
 
+1.  ??? Turn off after use.
 
-    <a name="UseCases"></a>
+1.  Setup an alert when charges reach a threshold.
+
+1.  Set a way to turn off usage automatically.
+
+    ### Decoupled compute & storage
+
+    PROTIP: Unlike traditional databases (and database machines such as Terradata) which run continuously and racking up charge, you don't pay for compute charges unless you're running jobs because Snowflake has <strong>decoupled compute from storage</strong>. 
     
-    ### Use cases
+    This decoupling also means that you're free to amass data without having to buy larger machines.
+
+
+
+
+<hr />
+
+<a name="UseCases"></a>
+    
+## Use cases
 
 4.  One step during sign-up is "what will you use Snowflake for?"
 
@@ -290,9 +339,10 @@ Other SaaS data competitors:
 
 Like other cloud vendors, Snowflake provides Authentication, Access Control, Infrastructure, and Optimization.
 
-    * https://poplindata.com/data-warehouses/2021-database-showdown-bigquery-vs-redshift-vs-snowflake/
-    * https://medium.com/2359media/redshift-vs-bigquery-vs-snowflake-a-comparison-of-the-most-popular-data-warehouse-for-data-driven-cb1c10ac8555
-
+   Reference:
+   * https://poplindata.com/data-warehouses/2021-database-showdown-bigquery-vs-redshift-vs-snowflake/
+   * https://medium.com/2359media/redshift-vs-bigquery-vs-snowflake-a-comparison-of-the-most-popular-data-warehouse-for-data-driven-cb1c10ac8555
+   <br /><br />
 
 
 ## Concerns
@@ -343,8 +393,9 @@ Snowflake also has powerful and convenient data management features.
 Snowflake is <strong>fast</strong>: "A complex query takes more than 6 hours in MySQL, 2 hours in Oracle, and just 10 minutes in snowflake."
 
 References:
-   * <a target="_blank" href="https://www.youtube.com/watch?v=VLtq0eeHc14">VIDEO: Databricks v. Snowflake</a>
-   * <a target="_blank" href="https://www.coursera.org/projects/data-management-with-databricks-big-data-with-delta-lakes">2-hour Data Management with Databricks: Big Data with Delta Lakes</a> (Guided Project)
+
+   * https://seekingalpha.com/article/4429909-data-warehouse-wars-snowflake-vs-google-bigquery
+   
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=CUu35E9TViE">Should you switch to Snowflake</a>
 
@@ -819,6 +870,18 @@ Python-centric repos on SnowflakeDB on GitHub:
 
 ## Video Tutorials
 
+
+### On LinkedIn.com Learning:
+
+By <a target="_blank" href="https://www.linkedin.com/in/lynnlangit/">Lynn Langit</a>:
+
+<a target="_blank" href="https://www.linkedin.com/learning/learning-snowflakedb/">Learning SnowflakeDB</a>
+
+references her <a target="_blank" href="https://github.com/lynnlangit/learn-snowflakedb">https://github.com/lynnlangit/learn-snowflakedb</a>
+
+PROTIP: I think this is the course on Snowflake that's presented most logically.
+
+
 ### On Coursera.com
 
 By <a target="_blank" href="https://www.linkedin.com/in/nikolai-schuler/">Nikolai Schuler</a> residing in Bulgaria:
@@ -892,25 +955,12 @@ Mar 1, 2022
 ### On OReilly.com
 
 
-### On LinkedIn.com Learning:
-
-By <a target="_blank" href="https://www.linkedin.com/in/lynnlangit/">Lynn Langit</a>:
-
-<a target="_blank" href="https://www.linkedin.com/learning/learning-snowflakedb/">Learning SnowflakeDB</a>
-
-references her <a target="_blank" href="https://github.com/lynnlangit/learn-snowflakedb">https://github.com/lynnlangit/learn-snowflakedb</a>
-
-PROTIP: I think this is the course on Snowflake that's presented most logically.
-
-
 ### on Udemy.com
 
 <a target="_blank" href="https://www.youtube.com/watch?v=dxrEHqMFUWI">VIDEO: Snowflake Architecture - Learn How Snowflake Stores Table data</a>
 Aug 17, 2019
+by the anonymous <a target="_blank" href="https://www.scholarnest.com/">@scholarnest</a> who has paid courses about Kafka on https://www.learningjournal.guru/courses/
 
-https://www.learningjournal.guru/courses/
-https://www.scholarnest.com/ 
-Kafka
 
 <a name="YouTube"></a>
 
