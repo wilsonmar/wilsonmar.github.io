@@ -16,7 +16,10 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This is a deep-dive hands-on approach to learning and using the Snowflake cloud database.
+The scene is in snow because Snowflake founders are fond of snow.
+
+The photo at the top shows a large lake house because this article is a deep-dive hands-on approach to learning and using Snowflake, which provides what the IT (Information Technology) world calls a "Data Lakehouse". 
+That analogy takes some explanation.
 
 {% include whatever.html %}
 
@@ -44,63 +47,66 @@ This is a deep-dive hands-on approach to learning and using the Snowflake cloud 
 
 ## Snowflake's Value-Add
 
-The photo at the top shows a real "Data Lake House" which is what Snowflake provides in the IT (Information Technology) world.
-
-That analogy takes some explanation.
-
 In the 1980s, IBM defined the SQL (Structured Query Language) to run on their corporate mainframes. Memory and disk space were expensive and required months to obtain. To ensure that servers don't crash due to lack of space or not enough CPU, corporations hired DBAs (DataBase Administrators) as a protective bureaucracy around databases, blocking application development teams. Frustrating.
 
 So Oracle and Microsoft made SQL run on early Personal Computers as well.
 Open-source alternatives MySQL, MariaDB, and PostgreSQL enabled the growth of database-backed websites on the internet.
 
-In the 90's, SQL-based databases were at the heart of "Big Data" made big by Hadoop and Apache Spark software. They enabled the expansion of "Enterprise Data Warehouses" (EDWs) designed for Analytical Processing (OLAP) by summarizing data refreshed from source systems. It typically has a rigid schema.
+In the 90's, SQL-based databases were at the heart of "Big Data" made big by Hadoop and Apache Spark software. They enabled the expansion of "Enterprise Data Warehouses" (EDWs) designed for Analytical Processing (OLAP) by summarizing data refreshed from source systems. 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=wHG0ljN3plg">VIDEO</a>: A "Data Lake" is a centralized collection of different data warehouses. 
 
 A "Data Mart" makes data searchable.
 
-Still, expensive disk space required that some data be thrown away as batch-mode "ETL" programs load data into databases.
+Memory limitations resulted in <strong>data update</strong> features in OLTP (Onine Table Processing) databases from being supported in data warehouses providing "write-once, read-many" Analytics Processing (OLAP).
+And expensive disk space required that some data be <strong>thrown away</strong> as batch-mode "ETL" programs that load data into databases that have a rigid schema. Data warehouses also typically didn't support semi-structured or unstructured data types.
 
-A "Data Lake" is designed to capture <strong>raw data</strong> (structured, semi-structured, unstructured) for integration with several Enterprise Data Warehouses, for "data science" AI/ML processing.
-    
-The term "Data Lakehouses" refer to an <strong>intelligent metadata layer</strong> that acts as a sort of middleman between unstructured data and data users.
+<a target="_blank" href="https://www.youtube.com/watch?v=b8q5VJo0ZAk">
+VIDEO</a>: A "Data Lakehouse" is designed to capture <strong>raw data</strong> (structured, semi-structured, unstructured) for integration with several Enterprise Data Warehouses, for <strong>"data science" AI/ML</strong> data processing.
 
-Snowflake is that middleman. Snowflake's offers a <strong>cloud-native</strong> database -- designed from the ground up to be a "Serverless" <a target="_blank" href="https://www.wikiwand.com/en/Cloud_database">cloud-based database</a> "Data-as-a-Service" (DaaS) on hardware and networks provided by public cloud service providers (CSPs AWS, Azure, GCP):
+    PROTIP: Through acquisitions and internal R&D, Snowflake has quickly incorporated AI (Artificial Intelligence) in its offerings (Generative AI using LLMs).
 
-    * on Amazon S3 storage since 2014
-    * on <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">Microsoft Azure Blob Storage</a> (Data Lake Gen2) since 2018
-    * on <a target="_blank" href="https://wilsonmar.github.io/gcp">Google Cloud Platform (GCP)</a> since 2019
-    * QUESTION: From Salesforce? SAP?
-    <br /><br />
+"Data Lakehouses" provide an <strong>intelligent metadata layer</strong> that acts as a sort of middleman between unstructured data and data users.
 
-1.  Snowflake's corporate landing page is at:
+Snowflake is that middleman. Snowflake's offers a <strong>cloud-native</strong> database -- designed from the ground up to be a "Serverless" <a target="_blank" href="https://www.wikiwand.com/en/Cloud_database">cloud-based database</a> <a target="_blank" href="https://seekingalpha.com/article/4429909-data-warehouse-wars-snowflake-vs-google-bigquery">Data-Warehouse-as-a-Service" (DWaaS)</a> on hardware and networks provided by public cloud service providers (CSPs AWS, Azure, GCP):
 
-    <a target="_blank" href="https://www.snowflake.com"><strong>https://www.snowflake.com</strong></a>
-
-??? is that it provides a GUI and <a href="#Languages">programmatic interfaces</a> to its
+   * on Amazon S3 storage since 2014
+   * on <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">Microsoft Azure Blob Storage</a> (Data Lake Gen2) since 2018
+   * on <a target="_blank" href="https://wilsonmar.github.io/gcp">Google Cloud Platform (GCP)</a> since 2019
+   * QUESTION: From Salesforce? SAP?
+   <br /><br />
 
 1.  View a demo to see its GUI for yourself:
 
     <a target="_blank" href="https://www.snowflake.com/live-demo"><strong>https://www.snowflake.com/live-demo</strong></a>
 
-    Points made in the video:
-    * ???
+1.  If you don't want to wait for a live session, select EMEA ON-demand demo:
 
-    ### Workloads
+    https://www.snowflake.com/en/resources/video/data-lake-live-demo-emea/
 
-    SQL provides
+    Use of public clouds enables Snowflake to overcome limitations of limited memory and CPU.
 
-1.  Pull down the list of Workloads:
+    PROTIP: By also putting an easy-to-use GUI in front use of public clouds, developers can now create databases, bypassing the DBA bureaucracy necessary before.
 
-    * Data Cloud
-    * Applications
-    * Collaboration
-    * Marketplace
-    * Data Lakes
-    * Data Warehouse
-    <br /><br />
+    Snowflake's GUI and database design also enables its data warehouse to be updated. Thus:
+
+    <strong>no- Lake + Data Warehouse = Data Lakehouse</strong>
+
+    Salesforce, a Bay Area cloud company, and Warren Buffett’s Berkshire Hathaway each bought $250 million in Snowflake stock in private placements following the IPO.  <a target="_blank" href="https://www.youtube.com/watch?v=H6j3FgX5uo4">VIDEO</a>: How Snowflake Broke Warren Buffet's Lifelong Rule.
+
+
+## Competition: Databricks
+
+Snowflake competes with another Data Lakehouse: Databricks.
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690658713/snowflake-to-lakehouse-3010x1282_vqguzu.png"><img alt="snowflake-to-lakehouse-3010x1282.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690658713/snowflake-to-lakehouse-3010x1282_vqguzu.png"></a>
+
+1.  Snowflake's corporate landing page is at:
+
+    <a target="_blank" href="https://www.snowflake.com"><strong>https://www.snowflake.com</strong></a>
+
 
     ### Snowflake's Data Lake House NOT open-sourced
-
-    SQL databases 
 
     Snowflake uses a <strong>columnar store (C-store)</strong> with a unique and proprietary SQL engine.
     A "columnar" database is structured to efficiently read specific fields across various rows,
@@ -119,11 +125,7 @@ Snowflake is that middleman. Snowflake's offers a <strong>cloud-native</strong> 
        * <a target="_blank" href="https://www.youtube.com/watch?v=slrqd4NSgpY">VIDEO</a>
        <br /><br />
 
-1.  Select EMEA ON-demand demo, 
-
-    https://www.snowflake.com/en/resources/video/data-lake-live-demo-emea/
-
-    PROTIP: Through acquisitions and internal R&D, Snowflake has quickly incorporated AI (Artificial Intelligence) in its offerings (Generative AI using LLMs).
+    ## Sign-up 
 
 1.  Snowflake offers 30-day trials, so many simply sign up using a different email each month. They use <a href="#Automation">automation</a> to populate each new account.
 
@@ -182,8 +184,22 @@ Snowflake is that middleman. Snowflake's offers a <strong>cloud-native</strong> 
     * Migrate an existing data warehouse
     * Create a data lake, data mesh, or federated data source
     * Other
+    <br /><br />
 
     Snowflake's "Data Marketplace" platform supports a range of use cases, including data warehousing, data lakes, data engineering, data science, data application development, and data sharing. 
+
+
+    ### Workloads
+
+1.  Pull down the list of Workloads:
+
+    * Data Cloud
+    * Applications
+    * Collaboration
+    * Marketplace
+    * Data Lakes
+    * Data Warehouse
+    <br /><br />
 
     <a name="AIML"></a>
 
@@ -192,6 +208,14 @@ Snowflake is that middleman. Snowflake's offers a <strong>cloud-native</strong> 
     * <a target="_blank" href="https://www.youtube.com/watch?v=SwTYQXqQ3N4">VIDEO</a>: DICOM Image Analysis With Snowpark (to detect Pneumonia in Xrays using Machine Learning).
     <br /><br />
     
+5.  The activate email sent to you contains a unique URL to the GUI dashboard associated with your account, such as:
+
+    <tt>https://<em>abc-123</em>.snowflakecomputing.com/console/login</tt>
+
+6.  Save the URL in a Browser Bookmark.
+
+
+    <a name="Snowpipe"></a>
 
     ### Snowpipe continuous streaming load
 
@@ -229,14 +253,6 @@ Snowflake is that middleman. Snowflake's offers a <strong>cloud-native</strong> 
     
     https://www.snowflake.com/en/why-snowflake/customers/
 
-
-5.  The activate email sent to you contains a unique URL to the GUI dashboard associated with your account, such as:
-
-    <tt>https://<em>abc-123</em>.snowflakecomputing.com/console/login</tt>
-
-6.  Save the URL in a Browser Bookmark.
-
-
 <a name="Competition"></a>
 
 ## Snowflake's Competition
@@ -249,6 +265,11 @@ Snowflake's "Cloud Data Warehouse" competes in a crowded field of cloud-based da
 
 <a target="_blank" href="https://www.simplilearn.com/cloud-databases-across-the-globe-article">One trainer</a> notes that
 > "Snowflake is easy to use, flexible, scalable, and highly suitable to the data-driven businesses of today. However, this cloud database cannot be deployed across all available cloud platforms and so is not very popular in use." 
+
+Snowflake's <a href="#Languages">programmatic interfaces</a> enable its data to be accessed from even competitors:
+   * Tableau analytics dashboard (owned by SAP)
+   * Google BigQuery
+   <br /><br />
 
 Other cloud databases:
    * Clustrix Database as a Service[25]
@@ -264,23 +285,22 @@ Other cloud databases:
 Other SaaS data competitors:
    * Airtable
    * Splunk
-   * Tableau (for creating analytics dashboards)
    * Notion (notebooks)
    <br /><br />
 
 Like other cloud vendors, Snowflake provides Authentication, Access Control, Infrastructure, and Optimization.
 
-* https://poplindata.com/data-warehouses/2021-database-showdown-bigquery-vs-redshift-vs-snowflake/
-* https://medium.com/2359media/redshift-vs-bigquery-vs-snowflake-a-comparison-of-the-most-popular-data-warehouse-for-data-driven-cb1c10ac8555
+    * https://poplindata.com/data-warehouses/2021-database-showdown-bigquery-vs-redshift-vs-snowflake/
+    * https://medium.com/2359media/redshift-vs-bigquery-vs-snowflake-a-comparison-of-the-most-popular-data-warehouse-for-data-driven-cb1c10ac8555
 
-### concerns
 
-The SQL used is ANSI standards, so proprietary features from Oracle and Microsoft T-SQL are not available in Snowflake.
+
+## Concerns
+
+Snowflake users write SQL according to ANSI standards, so proprietary features from Oracle and Microsoft T-SQL are not available in Snowflake.
 
 Snowflake <strong>does not support Foreign Keys</strong>.
 
-
-### Snowflake's Advantages
 
    <a target="_blank" href="https://www.snowflake.com/webinar/product-demo/applying-architectural-patterns-to-solve-business-questions-2023-01-11/?utm_cta=website-pro-serv-featured-dcdf-series">VIDEO: Applying Architectural Patterns to Solve Business Questions</a> by <a target="_blank" href="https://www.linkedin.com/in/greg-sitzman/">Greg Sitzman</a>, Principal Solutions Architect and <a target="_blank" href="https://www.linkedin.com/in/melinda-webster-2732b010/">Melinda Webster</a>
 
@@ -442,13 +462,11 @@ Snowflake was ranked at the top of the <a target="_blank" href="https://www.forb
 
 Snowflake IPO'd (during the pandemic) on September 2020 as NYSE ticker <a target="_blank" href="https://www.barrons.com/market-data/stocks/snow">SNOW</a>, raising $3.4 billion, one of the <a target="_blank" href="https://www.youtube.com/watch?v=ryWCD00nLvQ">largest software IPOs in history</a>.
 
-Salesforce, a Bay Area cloud company, and Warren Buffett’s Berkshire Hathaway each bought $250 million in Snowflake stock in private placements following the IPO.  <a target="_blank" href="https://www.youtube.com/watch?v=H6j3FgX5uo4">VIDEO</a>: How Snowflake Broke Warren Buffet's Lifelong Rule.
-
 SNOW is a component of the Russell 1000 index.
 
 On the board since April, 2023 is <a target="_blank" href="https://www.linkedin.com/in/markmclaughlin4/">Mark McLaughlin</a>, retired Chairman of Qualcomm, Palo Alto, Verisign.
 
-The stock peaked on September 2021 at $350, but on July 27, 2023, was at $170/share, for a market value of $55.4B with 4.61 Debt-to-Equity.
+SNOW stock peaked on September 2021 at $429. But on July 27, 2023, was at $170/share, for a market value of $55.4B with 4.61 Debt-to-Equity.
 In 2023, its $1.31B Gross Income and $2.15B Expenses yielded a <strong>-$796.71M Loss</strong> for -38.57% Net Margin and -$2.67 EPS and -15.17% ROE based. Although declining, a 73.97% Income Growth was reported.
 
 Snowflake reported having 7,828 total customers, including 330 customers with trailing 12-month product revenue greater than $1 million, and remaining performance obligations of $3.7 billion, representing 38% year-over-year growth.
@@ -793,7 +811,7 @@ Python-centric repos on SnowflakeDB on GitHub:
 
 ## Futures
 
-PROTIP: Snowflake has not announced support for No-SQL (Document and <a target="_blank" href="https://wilsonmar.github.io/graph-databases/">modern Graph</a> database structures.
+<a target="_blank" href="https://wilsonmar.github.io/graph-databases/">modern Graph</a> database structures.
 
 
 
@@ -878,9 +896,11 @@ Mar 1, 2022
 
 By <a target="_blank" href="https://www.linkedin.com/in/lynnlangit/">Lynn Langit</a>:
 
-<a target="_blank" href="https://www.linkedin.com/learning/learning-snowflakedb/driving-maximum-results-with-a-flexible-data-cloud">Learning SnowflakeDB</a>
+<a target="_blank" href="https://www.linkedin.com/learning/learning-snowflakedb/">Learning SnowflakeDB</a>
 
 references her <a target="_blank" href="https://github.com/lynnlangit/learn-snowflakedb">https://github.com/lynnlangit/learn-snowflakedb</a>
+
+PROTIP: I think this is the course on Snowflake that's presented most logically.
 
 
 ### on Udemy.com
@@ -914,6 +934,8 @@ Datalytyx
 Snowflake Real Time Project Flow || What is Snowflake || Snowflake Features</a>
 by Praveen Kumar Bommisetty
 
+<a target="_blank" href="https://www.youtube.com/watch?v=b8q5VJo0ZAk">
+What is a Data Lakehouse</a> by <a target="_blank" href="https://www.linkedin.com/in/shreyapal/">Shreya Pal</a>
 
 
 
