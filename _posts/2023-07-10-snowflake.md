@@ -1,11 +1,15 @@
 ---
 layout: post
-date: "2023-07-10"
+date: "2023-07-28"
 file: "snowflake"
-title: "Snowflake (SQL database)"
-excerpt: "How to quickly learn and use the Snowflake cloud SQL database offered on AWS, Azure, GCP clouds"
+title: "Snowflake (SQL Data Warehouse)"
+excerpt: "How to quickly learn and use the cloud-native Snowflake SQL database's AI features on top of AWS, Azure, GCP clouds"
 tags: [cloud, database]
 image:
+# splunk-lakehouse-1900x500.png
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1690608436/splunk-lakehouse-1900x500_bk8lc2.png
+  credit: Lodge at Whitefish Lake, Montana
+  creditlink: https://lodgeatwhitefishlake.com/location
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -17,9 +21,9 @@ This is a deep-dive hands-on approach to learning and using the Snowflake cloud 
 {% include whatever.html %}
 
 1. <a href="#ValueAdd">Value Add</a>
-1. <a href="#Competitors">Competitors</a>
+1. <a href="#Competition">Competition</a>
 1. <a href="#Architecture">Architecture</a>
-1. <a href="#Company">The Snowflake Company</a>
+1. <a href="#Company">Snowflake the Company</a>
 
 1. <a href="#URLs">Host Names (URLs)</a>
 1. <a href="#Support">Support</a>
@@ -41,17 +45,24 @@ This is a deep-dive hands-on approach to learning and using the Snowflake cloud 
 
 ## Snowflake's Value-Add
 
-1.  Snowflake's corporate landing page is:
+1.  Snowflake's corporate landing page is at:
 
     <a target="_blank" href="https://www.snowflake.com">https://www.snowflake.com</a>
 
-    The fundamental value-add by Snowflake is that it provides a GUI and <a href="#Languages">programmatic interfaces</a> to its <a target="_blank" href="https://www.wikiwand.com/en/Cloud_database">cloud-based database</a> "Data-as-a-Service" (DaaS) on hardware and networks provided by public cloud service providers (CSPs AWS, Azure, GCP):
+    Traditional databases (Oracle, MS-SQL, MySQL, and PostgreSQL) grew up in on-prem data centers when memory and disk space were expensive and required months to obtain. Traditional databases also had a lot of protective bureaucracy around them, forcing dev teams to wait for DBA attention.
+    
+    Snowflake is <strong>cloud-native</strong> -- designed from the ground up to be a "Serverless" <a target="_blank" href="https://www.wikiwand.com/en/Cloud_database">cloud-based database</a> "Data-as-a-Service" (DaaS) on hardware and networks provided by public cloud service providers (CSPs AWS, Azure, GCP):
 
-    * on Amazon S3 since 2014
-    * on <a target="_blank" href="https://wilsonmar.github.io/azure">Microsoft Azure</a> since 2018
+    * on Amazon S3 storage since 2014
+    * on <a target="_blank" href="https://wilsonmar.github.io/azure">Microsoft Azure Blob Storage</a> (Data Lake Gen2) since 2018
     * on <a target="_blank" href="https://wilsonmar.github.io/gcp">Google Cloud Platform (GCP)</a> since 2019
-    * on Salesforce?
     <br /><br />
+
+    QUESTION: From Salesforce? SAP?
+
+    is that it provides a GUI and <a href="#Languages">programmatic interfaces</a> to its
+
+??? is that it provides a GUI and <a href="#Languages">programmatic interfaces</a> to its
 
 1.  View a demo to see its GUI for yourself:
 
@@ -69,11 +80,25 @@ This is a deep-dive hands-on approach to learning and using the Snowflake cloud 
     * Data Warehouse
     <br /><br />
 
+    ### Lakehouse NOT open sourced
+    References:
+       * https://www.youtube.com/watch?v=-bSkREem8dM
+       * https://www.youtube.com/watch?v=Enu-EH7RHHM
+       * <a target="_blank" href="https://www.youtube.com/watch?v=slrqd4NSgpY">VIDEO</a>
+       <br /><br />
+    
+    Snowflake uses a <strong>columnar database</strong> with a unique and proprietary SQL engine that 
+    combines traditional "Data Lake" and "Data Warehouse" into a <strong>Data Lake House</strong> --
+    a structure that's useful for <a href="#AIML">AI/ML (Machine Learning)</a> as well as traditional analytics.
+
+    A "columnar" database is structured to efficiently read specific fields across various rows,
+    but without doing the I/O to read the entire row just to get to those fields.
+
 1.  Select EMEA ON-demand demo, 
 
     https://www.snowflake.com/en/resources/video/data-lake-live-demo-emea/
 
-    PROTIP: Through acquisitions and internal R&D, Snowflake has quickly incorporated AI in its offerings (Generative AI using LLMs).
+    PROTIP: Through acquisitions and internal R&D, Snowflake has quickly incorporated AI (Artificial Intelligence) in its offerings (Generative AI using LLMs).
 
 1.  Snowflake offers 30-day trials, so many simply sign up using a different email each month. They use <a href="#Automation">automation</a> to populate each new account.
 
@@ -135,7 +160,9 @@ This is a deep-dive hands-on approach to learning and using the Snowflake cloud 
 
     Snowflake's "Data Marketplace" platform supports a range of use cases, including data warehousing, data lakes, data engineering, data science, data application development, and data sharing. 
 
-    ### AI yi
+    <a name="AIML"></a>
+
+    ### AI/ML use cases
     
     * <a target="_blank" href="https://www.youtube.com/watch?v=SwTYQXqQ3N4">VIDEO</a>: DICOM Image Analysis With Snowpark (to detect Pneumonia in Xrays using Machine Learning).
     <br /><br />
@@ -146,7 +173,27 @@ This is a deep-dive hands-on approach to learning and using the Snowflake cloud 
 
     A Data Mart makes data searchable.
 
-    ### Snowpike ELT
+
+    ### Snowpipe continuous streaming load
+
+    Snowflake's ability to <strong>steam</strong> data makes for faster ingestion than traditional batch approaches.
+
+    <a target="_blank" href="https://www.coursera.org/learn/snowflake-course/lecture/1mxez/create-notification-queue">NOTE</a>:
+
+    This is used by IoT.
+
+    Snowflake's "Snowpipe" "continuosly" (every few seconds) checks whether there is a file in specified folders within Azure or other cloud. When a file is found, an event notification is sent to Queue Storage.
+
+    * On AWS, use S3 event notifications or SQS notifications
+    * On Azure, use Storage Queue and Event Grid
+    * On GCP, use Pub/Sub for GCS buckets
+    <br /><br />
+
+    A "Serverless" load process performs load into a Snowflake DB.
+
+    Load files are held for 14 days, by default.
+
+    ### Snowpipe ELT
     
     ELT (Extract, Load, Transform) are the steps to load "raw data" directly from a source server into a target data warehouse. Business rules and data integrity checks occur in the data warehouse after data is loaded.
     
@@ -155,8 +202,6 @@ This is a deep-dive hands-on approach to learning and using the Snowflake cloud 
     Transformations before load often render data unusable for purposes not originally designed.
 
     Snowflake Professional Services have a "Data Cloud Deployment Framework (DCDF)".
-
-    Snowflake's ability to <strong>steam</strong> data makes for faster ingestion than traditional batch approaches.
 
 
     <a name="References"></a>
@@ -173,7 +218,9 @@ This is a deep-dive hands-on approach to learning and using the Snowflake cloud 
 6.  Save the URL in a Browser Bookmark.
 
 
-## Competitors
+<a name="Competition"></a>
+
+## Snowflake's Competition
 
 Snowflake's "Cloud Data Warehouse" competes in a crowded field of cloud-based databases from its cloud vendors:
    * Amazon Aurora, MySQL-based service
@@ -195,11 +242,16 @@ Other cloud databases:
    * YugabyteDB
    <br /><br />
 
+Other SaaS data competitors:
+   * Airtable
+   * Splunk
+   * Tableau (for creating analytics dashboards)
+   * Notion (notebooks)
+   <br /><br />
+
 Like other cloud vendors, Snowflake provides Authentication, Access Control, Infrastructure, and Optimization.
 
 ### Snowflake's Advantages
-
-Snowflake was ranked first on the Forbes Cloud 100 in 2019.
 
    <a target="_blank" href="https://www.snowflake.com/webinar/product-demo/applying-architectural-patterns-to-solve-business-questions-2023-01-11/?utm_cta=website-pro-serv-featured-dcdf-series">VIDEO: Applying Architectural Patterns to Solve Business Questions</a> by <a target="_blank" href="https://www.linkedin.com/in/greg-sitzman/">Greg Sitzman</a>, Principal Solutions Architect and <a target="_blank" href="https://www.linkedin.com/in/melinda-webster-2732b010/">Melinda Webster</a>
 
@@ -248,7 +300,7 @@ References:
 
 <a name="Architecture"></a>
 
-## Architecture
+## Architectural Innovations
 
    * https://docs.snowflake.com/user-guide/intro-key-concepts
    <br /><br />
@@ -266,16 +318,63 @@ Snowflake's cloud-native architecture consists of three independently scalable l
 
 "What makes Snowflake different is its <strong>multi-cluster shared architecture</strong>" --<a target="_blank" href="https://www.youtube.com/watch?v=C8_os0-ti48">VIDEO: What is Snowflake</a> (by a non-user)
 
+Unique:
+
    * Metadata
    * Zero Copy Cloning
    * Time Travel
+   * Zero Copy Cloning + Time Travel
    * Data Sharing
    <br /><br />
 
+Dynamic Data Masking & External Tokenization
+
 SnowGrid?
 
-Snowsight
+SnowSight
 
+SnowPipe
+
+Automatic register new files with auto-refresh of partitions
+
+
+<hr />
+
+### File formats
+
+Snowflake can encode in UTF8, UTF16.
+
+Snowflake can intelligent ingest many types of string data formats:
+   * CSV text delimited by commas or tabs
+   * JSON
+   * XML
+
+   <a target="_blank" href="https://www.upsolver.com/blog/the-file-format-fundamentals-of-big-data">Serialization file formats of Big Data</a>:
+   
+   * Apache Avro (row-based, self-describing) introduced 2009 for Hadoop, with dynamic data definitions in  JSON and data in binary that's uncompressed, Snappy, deflate, bzip2, or xz. Supports complex data structures (arrays, enums, maps, and unions).
+   
+   * ORC (Optimized Row Columnar) file introduced in 2013 for Hadoop Hive as the successor to RCFile (Record Columnar File) formats. Supports Hive ACID transactions. Support complex data types (DateTime, decimal, struct, list, map, and union). Stores "row collections" across a cluster as a single NameNode file. It achieves higher throughput through parallel processing using parallel reads "predicate pushdown" that checks a query or condition against file metadata to see whether rows can be skipped insteaad of read. Splits files without scanning for markers.
+   
+   * Apache Parquet Columnar File Format introduced 2013. See<br />https://parquet.apache.org/ - is language agnostics (supporing Java, C++, Python). Support fast data processing for complex nested data structures (such as log files and event streams at scale) with flexible encoding schemes to handle columns containing different data types. Its columnar compression saves on cloud storage space, with compression schemes specified on a per-column basis. That makes Parquet "future-proof". Parquet supports automatic schema merging for schema evolution, so you can start with a simple schema and gradually add more columns as needed.    
+   
+   Like ORC, Parquet files are splittable as they store file footer metadata containing information on block boundaries for the file. Systems access this block boundary information to determine whether to skip or read only specific parts (blocks) of the file – allowing for more efficient reads – or to more easily submit different blocks for parallel processing.    
+
+   Parquet supports many query engines (including Amazon Athena, Amazon Redshift Spectrum, Qubole, Google BigQuery, Microsoft Azure Data Explorer and Apache Drill). 
+
+   Thus, Parquet files are often most appropriate for "write-once, read-many" analytics (OLAP) use cases, typically when traditional OLTP databases are the source. Used with Spark.
+
+References:
+   * https://bryteflow.com/how-to-choose-between-parquet-orc-and-avro/
+   <br /><br />
+
+New table formats emerging to support substantial increases in the volume and velocity of (particularly, streaming) data:
+   * Apache Iceberg
+   * Apache Hudi
+   * Databricks Delta Lake
+   <br /><br />
+
+
+<hr />
 
 <a name="Company"></a>
 
@@ -286,7 +385,7 @@ Snowflake Inc. was founded in 2012 by ex-Oracle founders:
 * <a target="_blank" href="https://www.linkedin.com/in/thierry-cruanes-3927363/">Thierry Cruanes</a> of San Mateo
 * <a target="_blank" href="https://www.linkedin.com/in/marcinzukowski/">Marcin Żukowski</a>
 
-They live in the "Silicon Valley" (San Mateo, California) where <a target="_blank" href="https://www.glassdoor.com/Jobs/Snowflake-Jobs-E928471.htm?filter.countryId=1">jobs</a> are located (not remote) on Concar Drive.
+Snowflakes lists "Silicon Valley" <a target="_blank" href="https://www.glassdoor.com/Jobs/Snowflake-Jobs-E928471.htm?filter.countryId=1">jobs</a> at (not remote) <a target="_blank" href="https://goo.gl/maps/6dYXAdA9n3bRKXTw8">450 Concar Drive, San Mateo, California 94402</a>.+1 844.766-9355.
 
 Snowflake is a <a target="_blank" href="https://www.smdailyjournal.com/news/local/snowflake-moves-its-hq-out-of-san-mateo/article_becaabc6-c02e-11eb-ba32-db54937cfeaf.html">Delaware corporation</a>.
 
@@ -306,11 +405,13 @@ Slootman lives in Bozeman, Montana, so also headquarters the company in a <a tar
 
 The company mascot is a white bear called "___".
 
-People who work in the company Snowflake are called "___".
+People who work in the company Snowflake are called "Snowflakes".
 
-Snowflake IPO'd (during the pandemic) on September 2020 as NYSE ticker <a target="_blank" href="https://www.barrons.com/market-data/stocks/snow">SNOW</a>, raising $3.4 billion, one of the largest software IPOs in history.
+Snowflake was ranked at the top of the <a target="_blank" href="https://www.forbes.com/lists/cloud100/">Forbes Cloud 100</a> list of private companies in 2019. It fell off that list when Snowflake went public.
 
-Salesforce, a Bay Area cloud company, and Warren Buffett’s Berkshire Hathaway each bought $250 million in Snowflake stock in private placements following the IPO.
+Snowflake IPO'd (during the pandemic) on September 2020 as NYSE ticker <a target="_blank" href="https://www.barrons.com/market-data/stocks/snow">SNOW</a>, raising $3.4 billion, one of the <a target="_blank" href="https://www.youtube.com/watch?v=ryWCD00nLvQ">largest software IPOs in history</a>.
+
+Salesforce, a Bay Area cloud company, and Warren Buffett’s Berkshire Hathaway each bought $250 million in Snowflake stock in private placements following the IPO.  <a target="_blank" href="https://www.youtube.com/watch?v=H6j3FgX5uo4">VIDEO</a>: How Snowflake Broke Warren Buffet's Lifelong Rule.
 
 SNOW is a component of the Russell 1000 index.
 
@@ -403,7 +504,8 @@ https://www.snowflake.com/certifications/
 
 As of this writing, practice exams are available only for Core, Architect, and Data Engineer.
 
-https://www.chaosgenius.io/blog/snowflake-certifications/
+References:
+   * https://www.chaosgenius.io/blog/snowflake-certifications/
 
 
 ## Video Training
@@ -441,8 +543,9 @@ https://usergroups.snowflake.com/chapters/
 * Python/Go/Java/Scala client-side programs
 * Java/Scala/NodeJs server-side programs
 
-### Install SnowSQL GUI jcD4me$23azurecertified
-CLI
+### Install SnowSQL CLI
+
+DBeaver
 
 1.  On macOS
 
@@ -460,17 +563,158 @@ installer: The install was successful.
 🍺  snowflake-snowsql was successfully installed!
     </pre>
 
-1.  Configure your alias definition file</a> to contain:
+    PROTIP: Even though there is a "SnowSQL.app" installed, it is accessed only by the CLI. 
 
-    <pre>alias snow='open -a "/Applications/SnowSQL.app"'</pre>
+1.  The first time you invoke the app, click "OK" to the warning.
 
-1.  After sourcing, the above would enable you to invoke the SnowSQL app from a Terminal.
+1.  Verify: 
+
+    <pre><strong>snowsql --version
+Version: 1.2.27
+    </strong></pre>
+
+1.  Run <tt>snowsql</tt> by itself to get a long (and wide) menu of options:
+
+    <pre>Usage: snowsql [OPTIONS]
+&nbsp;
+Options:
+  -a, --accountname TEXT          Name assigned to your Snowflake account. If
+                                  you are not on us-west-2 or AWS deployement,
+                                  append the region and platform to the end,
+                                  e.g., <account>.<region> or
+                                  <account>.<region>.<platform>Honors
+                                  $SNOWSQL_ACCOUNT.
+&nbsp;
+  -u, --username TEXT             Username to connect to Snowflake. Honors
+                                  $SNOWSQL_USER.
+&nbsp;
+  -d, --dbname TEXT               Database to use. Honors $SNOWSQL_DATABASE.
+  -s, --schemaname TEXT           Schema in the database to use. Honors
+                                  $SNOWSQL_SCHEMA.
+&nbsp;
+  -r, --rolename TEXT             Role name to use. Honors $SNOWSQL_ROLE.
+  -w, --warehouse TEXT            Warehouse to use. Honors $SNOWSQL_WAREHOUSE.
+  -h, --host TEXT                 Host address for the connection. Honors
+                                  $SNOWSQL_HOST.
+&nbsp;
+  -p, --port INTEGER              Port number for the connection. Honors
+                                  $SNOWSQL_PORT.
+&nbsp;
+  --region TEXT                   (DEPRECATED) Append the region or any sub
+                                  domains before snowflakecomputing.com to the
+                                  end of accountname parameter after a dot.
+                                  e.g., accountname=<account>.<region>
+&nbsp;
+  -m, --mfa-passcode TEXT         Token to use for multi-factor authentication
+                                  (MFA)
+&nbsp;
+  --mfa-passcode-in-password      Appends the MFA passcode to the end of the
+                                  password.
+&nbsp;
+  --abort-detached-query          Aborts a query if the connection between the
+                                  client and server is lost. By default, it
+                                  won't abort even if the connection is lost.
+&nbsp;
+  --probe-connection              Test connectivity to Snowflake. This option
+                                  is mainly used to print out the TLS/SSL
+                                  certificate chain.
+&nbsp;
+  --proxy-host TEXT               Proxy server hostname. Honors
+                                  $SNOWSQL_PROXY_HOST.
+&nbsp;
+  --proxy-port INTEGER            Proxy server port number. Honors
+                                  $SNOWSQL_PROXY_PORT.
+&nbsp;
+  --proxy-user TEXT               Proxy server username. Honors
+                                  $SNOWSQL_PROXY_USER. Set $SNOWSQL_PROXY_PWD
+                                  for the proxy server password.
+&nbsp;
+  --authenticator TEXT            Authenticator: 'snowflake',
+                                  'externalbrowser' (to use any IdP and a web
+                                  browser), 'oauth', or
+                                  https://<your_okta_account_name>.okta.com
+                                  (to use Okta natively).
+&nbsp;
+  -v, --version                   Shows the current SnowSQL version, or uses a
+                                  specific version if provided as a value.
+&nbsp;
+  --noup                          Disables auto-upgrade for this run. If no
+                                  version is specified for -v, the latest
+                                  version in ~/.snowsql/ is used.
+&nbsp;
+  -D, --variable TEXT             Sets a variable to be referred by &<var>. -D
+                                  tablename=CENUSTRACKONE or --variable
+                                  db_key=$DB_KEY
+&nbsp;
+  -o, --option TEXT               Set SnowSQL options. See the options
+                                  reference in the Snowflake documentation.
+&nbsp;
+  -f, --filename FILE             File to execute.
+  -q, --query TEXT                Query to execute.
+  --config FILE                   Path and name of the SnowSQL configuration
+                                  file. By default, ~/.snowsql/config.
+&nbsp;
+  -P, --prompt                    Forces a password prompt. By default,
+                                  $SNOWSQL_PWD is used to set the password.
+&nbsp;
+  -M, --mfa-prompt                Forces a prompt for the second token for
+                                  MFA.
+&nbsp;
+  -c, --connection TEXT           Named set of connection parameters to use.
+  --single-transaction            Connects with autocommit disabled. Wraps
+                                  BEGIN/COMMIT around statements to execute
+                                  them as a single transaction, ensuring all
+                                  commands complete successfully or no change
+                                  is applied.
+&nbsp;
+  --private-key-path PATH         Path to private key file in PEM format used
+                                  for key pair authentication. Private key
+                                  file is required to be encrypted and
+                                  passphrase is required to be specified in
+                                  environment variable
+                                  $SNOWSQL_PRIVATE_KEY_PASSPHRASE
+&nbsp;
+  -U, --upgrade                   Force upgrade of SnowSQL to the latest
+                                  version.
+&nbsp;
+  -K, --client-session-keep-alive
+                                  Keep the session active indefinitely, even
+                                  if there is no activity from the user..
+&nbsp;
+  --disable-request-pooling       Disable request pooling. This can help speed
+                                  up connection failover
+&nbsp;
+  --token TEXT                    The token to be used with oauth
+                                  authentication method
+&nbsp;
+  --query_tag TEXT                Tags to be applied to the queries run
+  --generate-jwt                  Generate a jwt token, which will be printed
+                                  out and displayed. Requires values for user,
+                                  account, and private-key-path.
+&nbsp;
+  -?, --help                      Show this message and exit.
+    </pre>
+
+    ### snowsql variables
+
+    <pre>$SNOWSQL_ACCOUNT
+$SNOWSQL_USER
+$SNOWSQL_PWD
+$SNOWSQL_SCHEMA
+$SNOWSQL_HOST
+$SNOWSQL_PORT
+$SNOWSQL_PRIVATE_KEY_PASSPHRASE
+     </pre>
+
+1.  Configure
 
 1.  Open a new Terminal or Finder window navigate to the folder:
 
     <pre><strong>$HOME/.snowsql</strong></pre>
 
     On Windows: %USERPROFILE%\.snowsql\
+
+
 
 <a name="Languages"></a>
 
@@ -490,7 +734,7 @@ Python-centric repos on SnowflakeDB on GitHub:
    * https://github.com/snowflakedb/snowflake-sqlalchemy - 191
    * https://github.com/snowflakedb/libsnowflakeclient - 15
    * https://github.com/snowflakedb/snowpark-python - 174
-   * https://github.com/snowflakedb/SnowAlert - 163
+   * https://github.com/snowflakedb/SnowAlert - 163 Security Analytics Using The Snowflake Data Warehouse
 
 ### C/C++
    * https://github.com/snowflakedb/libsnowflakeclient - 16
@@ -559,8 +803,8 @@ Path: <a target="_blank" href="https://app.pluralsight.com/paths/skill/snowflake
 
 Beginner:
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/snowflake-architecture-overview-getting-started"> Snowflake Architecture and Overview: Getting Started</a> by Alejandro Romero (@aromero77)
-1h 16m Dec 23, 2021
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/snowflake-architecture-overview-getting-started">1h 16m Snowflake Architecture and Overview: Getting Started</a> Dec 23, 2021
+by Alejandro Romero (@aromero77)
 
 By <a target="_blank" href="https://www.linkedin.com/in/mohitbatra/">Mohit Batra</a> (CrystalTalks) residing in Hyderabad:
 
@@ -599,6 +843,23 @@ Mar 1, 2022
 ### On OReilly.com
 
 
+### On LinkedIn.com Learning:
+
+By <a target="_blank" href="https://www.linkedin.com/in/lynnlangit/">Lynn Langit</a>:
+
+<a target="_blank" href="https://www.linkedin.com/learning/learning-snowflakedb/driving-maximum-results-with-a-flexible-data-cloud">Learning SnowflakeDB</a>
+
+references her <a target="_blank" href="https://github.com/lynnlangit/learn-snowflakedb">https://github.com/lynnlangit/learn-snowflakedb</a>
+
+
+### on Udemy.com
+
+<a target="_blank" href="https://www.youtube.com/watch?v=dxrEHqMFUWI">VIDEO: Snowflake Architecture - Learn How Snowflake Stores Table data</a>
+Aug 17, 2019
+
+https://www.learningjournal.guru/courses/
+https://www.scholarnest.com/ 
+Kafka
 
 <a name="YouTube"></a>
 
@@ -609,6 +870,11 @@ What is Snowflake? 8 Minute Demo</a> by <a target="_blank" href="https://www.lin
 
 <a target="_blank" href="https://www.youtube.com/watch?v=C8_os0-ti48">
 
+<a target="_blank" href="https://www.youtube.com/watch?v=5ugxQi3b16k">
+Understanding Snowflake Data Platform for Beginners</a> by Peter Morton
+
+<a target="_blank" href="https://www.youtube.com/watch?v=-54Xf1G7A2A">Why is Snowflake so popular? Data warehouse vs. data lake. // What you should know about software</a>
+
 
 <hr />
 
@@ -616,7 +882,6 @@ What is Snowflake? 8 Minute Demo</a> by <a target="_blank" href="https://www.lin
 
 ### Resources
 
-Plur
 
 <hr />
 
