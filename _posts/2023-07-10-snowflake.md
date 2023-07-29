@@ -2,8 +2,8 @@
 layout: post
 date: "2023-07-28"
 file: "snowflake"
-title: "Snowflake (SQL Data Warehouse)"
-excerpt: "How to quickly learn and use the cloud-native Snowflake SQL database's AI features on top of AWS, Azure, GCP clouds"
+title: "Snowflake (SQL Data Lakehouse)"
+excerpt: "How to quickly learn and use the cloud-native Snowflake SQL database's AI/ML features on top of AWS, Azure, GCP clouds"
 tags: [cloud, database]
 image:
 # splunk-lakehouse-1900x500.png
@@ -38,37 +38,55 @@ This is a deep-dive hands-on approach to learning and using the Snowflake cloud 
 1. <a href="#Resources">Resources</a>
 1. <a href="#More">More about databases</a>
 
-
 <hr />
 
 <a name="ValueAdd"></a>
 
 ## Snowflake's Value-Add
 
-1.  Snowflake's corporate landing page is at:
+The photo at the top shows a real "Data Lake House" which is what Snowflake provides in the IT (Information Technology) world.
 
-    <a target="_blank" href="https://www.snowflake.com">https://www.snowflake.com</a>
+That analogy takes some explanation.
 
-    Traditional databases (Oracle, MS-SQL, MySQL, and PostgreSQL) grew up in on-prem data centers when memory and disk space were expensive and required months to obtain. Traditional databases also had a lot of protective bureaucracy around them, forcing dev teams to wait for DBA attention.
+In the 1980s, IBM defined the SQL (Structured Query Language) to run on their corporate mainframes. Memory and disk space were expensive and required months to obtain. To ensure that servers don't crash due to lack of space or not enough CPU, corporations hired DBAs (DataBase Administrators) as a protective bureaucracy around databases, blocking application development teams. Frustrating.
+
+So Oracle and Microsoft made SQL run on early Personal Computers as well.
+Open-source alternatives MySQL, MariaDB, and PostgreSQL enabled the growth of database-backed websites on the internet.
+
+In the 90's, SQL-based databases were at the heart of "Big Data" made big by Hadoop and Apache Spark software. They enabled the expansion of "Enterprise Data Warehouses" (EDWs) designed for Analytical Processing (OLAP) by summarizing data refreshed from source systems. It typically has a rigid schema.
+
+A "Data Mart" makes data searchable.
+
+Still, expensive disk space required that some data be thrown away as batch-mode "ETL" programs load data into databases.
+
+A "Data Lake" is designed to capture <strong>raw data</strong> (structured, semi-structured, unstructured) for integration with several Enterprise Data Warehouses, for "data science" AI/ML processing.
     
-    Snowflake is <strong>cloud-native</strong> -- designed from the ground up to be a "Serverless" <a target="_blank" href="https://www.wikiwand.com/en/Cloud_database">cloud-based database</a> "Data-as-a-Service" (DaaS) on hardware and networks provided by public cloud service providers (CSPs AWS, Azure, GCP):
+The term "Data Lakehouses" refer to an <strong>intelligent metadata layer</strong> that acts as a sort of middleman between unstructured data and data users.
+
+Snowflake is that middleman. Snowflake's offers a <strong>cloud-native</strong> database -- designed from the ground up to be a "Serverless" <a target="_blank" href="https://www.wikiwand.com/en/Cloud_database">cloud-based database</a> "Data-as-a-Service" (DaaS) on hardware and networks provided by public cloud service providers (CSPs AWS, Azure, GCP):
 
     * on Amazon S3 storage since 2014
-    * on <a target="_blank" href="https://wilsonmar.github.io/azure">Microsoft Azure Blob Storage</a> (Data Lake Gen2) since 2018
+    * on <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">Microsoft Azure Blob Storage</a> (Data Lake Gen2) since 2018
     * on <a target="_blank" href="https://wilsonmar.github.io/gcp">Google Cloud Platform (GCP)</a> since 2019
+    * QUESTION: From Salesforce? SAP?
     <br /><br />
 
-    QUESTION: From Salesforce? SAP?
+1.  Snowflake's corporate landing page is at:
 
-    is that it provides a GUI and <a href="#Languages">programmatic interfaces</a> to its
+    <a target="_blank" href="https://www.snowflake.com"><strong>https://www.snowflake.com</strong></a>
 
 ??? is that it provides a GUI and <a href="#Languages">programmatic interfaces</a> to its
 
 1.  View a demo to see its GUI for yourself:
 
-    https://www.snowflake.com/live-demo
+    <a target="_blank" href="https://www.snowflake.com/live-demo"><strong>https://www.snowflake.com/live-demo</strong></a>
+
+    Points made in the video:
+    * ???
 
     ### Workloads
+
+    SQL provides
 
 1.  Pull down the list of Workloads:
 
@@ -80,19 +98,26 @@ This is a deep-dive hands-on approach to learning and using the Snowflake cloud 
     * Data Warehouse
     <br /><br />
 
-    ### Lakehouse NOT open sourced
-    References:
-       * https://www.youtube.com/watch?v=-bSkREem8dM
-       * https://www.youtube.com/watch?v=Enu-EH7RHHM
-       * <a target="_blank" href="https://www.youtube.com/watch?v=slrqd4NSgpY">VIDEO</a>
-       <br /><br />
-    
-    Snowflake uses a <strong>columnar database</strong> with a unique and proprietary SQL engine that 
-    combines traditional "Data Lake" and "Data Warehouse" into a <strong>Data Lake House</strong> --
-    a structure that's useful for <a href="#AIML">AI/ML (Machine Learning)</a> as well as traditional analytics.
+    ### Snowflake's Data Lake House NOT open-sourced
 
+    SQL databases 
+
+    Snowflake uses a <strong>columnar store (C-store)</strong> with a unique and proprietary SQL engine.
     A "columnar" database is structured to efficiently read specific fields across various rows,
     but without doing the I/O to read the entire row just to get to those fields.
+
+    Snowflake combines traditional "Data Lake" and "Data Warehouse" into a <strong>Data Lake House</strong> --
+    a structure that's useful for <a href="#AIML">AI/ML (Machine Learning)</a> as well as traditional analytics.
+
+    References:
+       * https://www.youtube.com/watch?v=Muyq3qtHzzo&list=PL7_h0bRfL52pOai_ih3HSu2WCgPXmNHzH by Bryan Cafferky
+       * https://www.youtube.com/watch?v=FAnR4R5JMM8 by Pragmatic Works
+       * https://www.youtube.com/watch?v=-bSkREem8dM by Alex the Analyst
+       * https://www.youtube.com/watch?v=FxpRL0m9BcA by Seattle Data Guy
+       * https://www.youtube.com/watch?v=cnCIoNDaGvg by Bernard Marr
+       * https://www.youtube.com/watch?v=WgIbvkyY4mI
+       * <a target="_blank" href="https://www.youtube.com/watch?v=slrqd4NSgpY">VIDEO</a>
+       <br /><br />
 
 1.  Select EMEA ON-demand demo, 
 
@@ -167,12 +192,6 @@ This is a deep-dive hands-on approach to learning and using the Snowflake cloud 
     * <a target="_blank" href="https://www.youtube.com/watch?v=SwTYQXqQ3N4">VIDEO</a>: DICOM Image Analysis With Snowpark (to detect Pneumonia in Xrays using Machine Learning).
     <br /><br />
     
-    ### What's EDW, ELT, etc?
-    
-    A Data Lake integrates several Enterprise Data Warehouses (EDWs).
-
-    A Data Mart makes data searchable.
-
 
     ### Snowpipe continuous streaming load
 
@@ -251,9 +270,21 @@ Other SaaS data competitors:
 
 Like other cloud vendors, Snowflake provides Authentication, Access Control, Infrastructure, and Optimization.
 
+* https://poplindata.com/data-warehouses/2021-database-showdown-bigquery-vs-redshift-vs-snowflake/
+* https://medium.com/2359media/redshift-vs-bigquery-vs-snowflake-a-comparison-of-the-most-popular-data-warehouse-for-data-driven-cb1c10ac8555
+
+### concerns
+
+The SQL used is ANSI standards, so proprietary features from Oracle and Microsoft T-SQL are not available in Snowflake.
+
+Snowflake <strong>does not support Foreign Keys</strong>.
+
+
 ### Snowflake's Advantages
 
    <a target="_blank" href="https://www.snowflake.com/webinar/product-demo/applying-architectural-patterns-to-solve-business-questions-2023-01-11/?utm_cta=website-pro-serv-featured-dcdf-series">VIDEO: Applying Architectural Patterns to Solve Business Questions</a> by <a target="_blank" href="https://www.linkedin.com/in/greg-sitzman/">Greg Sitzman</a>, Principal Solutions Architect and <a target="_blank" href="https://www.linkedin.com/in/melinda-webster-2732b010/">Melinda Webster</a>
+
+
 
 1. Menu items:
 
@@ -863,7 +894,7 @@ Kafka
 
 <a name="YouTube"></a>
 
-## YouTube Rock Stars
+### on YouTube
 
 <a target="_blank" href="https://www.youtube.com/watch?v=9PBvVeCQi0w">
 What is Snowflake? 8 Minute Demo</a> by <a target="_blank" href="https://www.linkedin.com/in/peter-mebane/">Peter Mebane</a>
@@ -874,6 +905,16 @@ What is Snowflake? 8 Minute Demo</a> by <a target="_blank" href="https://www.lin
 Understanding Snowflake Data Platform for Beginners</a> by Peter Morton
 
 <a target="_blank" href="https://www.youtube.com/watch?v=-54Xf1G7A2A">Why is Snowflake so popular? Data warehouse vs. data lake. // What you should know about software</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=xCCkHZf1-aIz">
+Zero to Snowflake in 58 minutes</a> by
+Datalytyx
+
+<a target="_blank" href="https://www.youtube.com/watch?v=RrwwxuJbyWo">
+Snowflake Real Time Project Flow || What is Snowflake || Snowflake Features</a>
+by Praveen Kumar Bommisetty
+
+
 
 
 <hr />
