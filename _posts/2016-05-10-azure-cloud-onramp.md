@@ -68,48 +68,6 @@ Microsoft has defined their <a target="_blank" href="https://wilsonmar.github.io
 
 To enable them to do their job safely, securely, and efficiently, below is what their management should do.
 
-<hr />
-
-<a name="Transformation"></a>
-
-## Secure Digital Transformation?
-
-NOTE: Many land on this as part of their organization's effort to transition to make use of the public cloud.
-
-<a target="_blank" href="https://techcommunity.microsoft.com/t5/video-hub/top-10-best-practices-for-azure-security/ba-p/1698837">VIDEO</a>:
-<a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/security-top-10">Azure Top Security Best Practices</a> identifies these <strong>lifecycle stages</strong> [23]:
-
-1. Sponsorship and Delegation
-2. Governance
-3. Readiness and Security Awareness
-4. Policy Enforcement
-5. Continuous Monitoring
-<br /><br />
-
-Here are the major <strong>Objectives</strong> (What, Why, Who, How activities):
-
-1. People: Educate teams about the cloud security journey
-2. People: Educate teams on cloud security technology
-
-3. Process: Assign accountability for cloud security decisions
-4. Process: Update incident response processes for cloud
-5. Process: Establish security posture management
-
-6. Technology: Require passwordless or multifactor authentication
-7. Technology: Integrate native firewall and network security
-8. Technology: Integrate native threat detection
-
-9. Architecture: Standardize on a single directory and identity
-10. Architecture: Use identity-based access control instead of keys
-11. Architecture: Establish a single unified security strategy
-<br /><br />
-
-There is also "Zero Trust" (aka.ms/zerotrust, aka.ms/ztbizplan, aka.ms/ztguide)
-   * <strong>Verify identity</strong>, location, context explicitly (detect anomalies)
-   * Use <strong>least-privilege</strong> (JIT, Just Enough) access with adaptive policies
-   * <strong>Assume breach</strong> (segment access, encrypt, alert variation posture)
-   <br /><br />
-
 
 <a name="MCRA"></a>
 
@@ -167,6 +125,78 @@ Other Departments:
    * Threat Intelligence
 
 PROTIP: Define abbreviations for each above.
+
+
+<hr />
+
+<a name="Assumptions"></a>
+
+## Assumptions
+
+PROTIP: Many don't take security "seriously" because they haven't fully grasped these realities: <a target="_blank" href="https://learn.microsoft.com/en-us/security/zero-trust/ten-laws-of-security#10-laws-of-cybersecurity-risk">"Laws of Cybersecurity Risk"</a>:
+
+1. <strong>Security success is ruining the attacker ROI</strong> - Security can’t achieve an absolutely secure state so deter them by disrupting and degrading their Return on Investment (ROI). Increase the attacker’s cost and decreasing the attacker’s return for your most important assets.
+
+2. <strong>Not keeping up is falling behind</strong> – Security is a continuous journey, you must keep moving forward because it will continually get cheaper and cheaper for attackers to successfully take control of your assets. You must continually update your security patches, security strategies, threat awareness, inventory, security tooling, security hygiene, security monitoring, permission models, platform coverage, and anything else that changes over time.
+
+3. <strong>Productivity always wins</strong> – If security isn’t easy for users, they'll work around it to get their job done. Always make sure solutions are secure and usable.
+
+4. <strong>Attackers don't care</strong> - Attackers will use any available method to get into your environment and increase access to your assets including compromising a networked printer, a fish tank thermometer, a cloud service, a PC, a Server, a Mac, a mobile device, influence or trick a user, exploit a configuration mistake or insecure operational process, or just ask for passwords in a phishing email. Your job is to understand and take away the easiest and cheapest options as well as the most useful ones (for example, anything that leads to administrative privileges across many systems).
+
+5. <strong>Ruthless Prioritization is a survival skill</strong> – Nobody has enough time and resources to eliminate all risks to all resources. Always start with what is most important to your organization, most interesting to attackers, and continuously update this prioritization.
+
+6. <strong>Cybersecurity is a team sport</strong> – Nobody can do it all, so always focus on the things that only you (or your organization) can do to protect your organization's mission. For things that others can do better or cheaper, have them do it (security vendors, cloud providers, community).
+
+7. <strong>Your network isn’t as trustworthy as you think it is</strong> - A security strategy that relies on passwords and trusting any intranet device is only marginally better than no security strategy at all. Attackers easily evade these defenses so the trust level of each device, user, and application must be proven and validated continuously starting with a level of zero trust.
+
+8. <strong>Isolated networks aren’t automatically secure</strong> - While air-gapped networks can offer strong security when maintained correctly, successful examples are extremely rare because each node must be completely isolated from outside risk. If security is critical enough to place resources on an isolated network, you should invest in mitigations to address potential connectivity via methods such as USB media (for example, required for patches), bridges to intranet network, and external devices (for example, vendor laptops on a production line), and insider threats that could circumvent all technical controls.
+
+9. <strong>Encryption alone isn’t a data protection solution</strong> - Encryption protects against out of band attacks (on network packets, files, storage, etc.), but data is only as secure as the decryption key (key strength + protections from theft/copying) and other authorized means of access.
+
+10. <strong>Technology doesn't solve people and process problems</strong> - While machine learning, artificial intelligence, and other technologies offer amazing leaps forward in security (when applied correctly), cybersecurity is a human challenge and will never be solved by technology alone.
+
+
+<hr />
+
+<a name="Transformation"></a>
+
+## What Do They Want?
+
+NOTE: Many land on this as part of their organization's effort to transition to make use of the public cloud.
+
+<a target="_blank" href="https://techcommunity.microsoft.com/t5/video-hub/top-10-best-practices-for-azure-security/ba-p/1698837">VIDEO</a>:
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/security-top-10">Azure Top Security Best Practices</a> identifies these <strong>lifecycle stages</strong> [23]:
+
+   1. Sponsorship and Delegation
+   2. Governance
+   3. Readiness and Security Awareness
+   4. Policy Enforcement
+   5. Continuous Monitoring
+   <br /><br />
+
+Major <strong>Objectives</strong> (What, Why, Who, How activities):
+
+1. People: Educate teams about the cloud security journey
+2. People: Educate teams on cloud security technology
+
+3. Process: Assign accountability for cloud security decisions
+4. Process: Update incident response processes for cloud
+5. Process: Establish security posture management
+
+6. Technology: Require passwordless or multifactor authentication
+7. Technology: Integrate native firewall and network security
+8. Technology: Integrate native threat detection
+
+9. Architecture: Standardize on a single directory and identity
+10. Architecture: Use identity-based access control instead of keys
+11. Architecture: Establish a single unified security strategy
+<br /><br />
+
+There is also "Zero Trust" (aka.ms/zerotrust, aka.ms/ztbizplan, aka.ms/ztguide)
+   * <strong>Verify identity</strong>, location, context explicitly (detect anomalies)
+   * Use <strong>least-privilege</strong> (JIT, Just Enough) access with adaptive policies
+   * <strong>Assume breach</strong> (segment access, encrypt, alert variation posture)
+   <br /><br />
 
 
 ### Out-sourcing
