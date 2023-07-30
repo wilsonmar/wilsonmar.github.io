@@ -757,9 +757,10 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
 <br /><br />
 
 Tim Warner tends to jump around a bit, so his material is great for review:
-* TechTrainerTim.com
-* <a target="_blank" href="https://learning.oreilly.com/live-events/-/0636920360612/">Live Crash Course Jan 23 & 24, 2023</a> (previously April 26 & 27, 2021)
+   * TechTrainerTim.com
+   * <a target="_blank" href="https://learning.oreilly.com/live-events/-/0636920360612/">Live Crash Course Jan 23 & 24, 2023</a> (previously April 26 & 27, 2021)
    * https://github.com/timothywarner/az500
+   <br /><br />
 
 * <a target="_blank" href="https://learning.oreilly.com/library/view/-/9780138041038/">15 pages: AZ-500 Microsoft Azure Security Technologies Guided Cert Prep Sep. 2022</a>
 
@@ -808,8 +809,9 @@ Sample tests:
 References:
    * https://www.thomasmaurer.ch/2020/05/az-500-study-guide-microsoft-azure-security-technologies-2021/
    * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/367">Linux Academy Microsoft Azure Security Technologies</a> by Tia Williams
-   * aka.ms/az500labs
+   * aka.ms/az500labs = 
    https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies
+   * https://www.youtube.com/watch?v=uw-lwS_4pvU by <a target="_blank" href="https://www.linkedin.com/in/dnatwick/">Dwayne Natwick</a>, <a target="_blank" href="https://captainhyperscaler.com/">captainhyperscaler.com</a> & <a target="_blank" href="https://bit.ly/dwayne-learning-hub-form">Learn Room</a>)
 
    <br /><br />
 
