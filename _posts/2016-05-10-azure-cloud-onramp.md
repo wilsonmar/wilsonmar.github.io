@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-07-26"
+date: "2023-07-29"
 file: "azure-cloud-onramp"
 title: "Azure Cloud Onramp"
 excerpt: "Azure URLs, Subscriptions, Support plans, Tenants, Directories, ARM portal Keyboard Shortcuts, CLI Bash & PowerShell scripting"
@@ -48,7 +48,7 @@ Search for what to "REMEMBER" to pass <a target="_blank" href="https://wilsonmar
 
 ## Audience by Occupation
 
-Microsoft has defined their <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Azure certification exams</a> based on these generic occupational roles:
+Microsoft has defined their <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Azure certification exams</a> based on these generic occupations:
 
    * (Azure) Administrator
    * (Azure) Developer
@@ -61,7 +61,7 @@ Microsoft has defined their <a target="_blank" href="https://wilsonmar.github.io
    * Business User
    <br /><br />
 
-   PROTIP: Generic job positions ("roles") are different than the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a> (AAD).
+   PROTIP: Generic job positions ("roles") are different from the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a> (AAD).
 
    MY OPINION: I think job roles should be multi-select checkboxes.
    This segregation also adds to duplicating material.
@@ -77,7 +77,16 @@ To enable them to do their job safely, securely, and efficiently, below is what 
 NOTE: Many land on this as part of their organization's effort to transition to make use of the public cloud.
 
 <a target="_blank" href="https://techcommunity.microsoft.com/t5/video-hub/top-10-best-practices-for-azure-security/ba-p/1698837">VIDEO</a>:
-<a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/security-top-10">Azure Top Security Best Practices</a> (What, Why, Who, How activities) by People, Process, Technology, and Architecture. 
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/security-top-10">Azure Top Security Best Practices</a> identifies these <strong>lifecycle stages</strong> [23]:
+
+1. Sponsorship and Delegation
+2. Governance
+3. Readiness and Security Awareness
+4. Policy Enforcement
+5. Continuous Monitoring
+<br /><br />
+
+Here are the major <strong>Objectives</strong> (What, Why, Who, How activities):
 
 1. People: Educate teams about the cloud security journey
 2. People: Educate teams on cloud security technology
@@ -93,11 +102,14 @@ NOTE: Many land on this as part of their organization's effort to transition to 
 9. Architecture: Standardize on a single directory and identity
 10. Architecture: Use identity-based access control instead of keys
 11. Architecture: Establish a single unified security strategy
+<br /><br />
 
-* Zero Trust
+There is also "Zero Trust" (aka.ms/zerotrust, aka.ms/ztbizplan, aka.ms/ztguide)
+   * <strong>Verify identity</strong>, location, context explicitly (detect anomalies)
+   * Use <strong>least-privilege</strong> (JIT, Just Enough) access with adaptive policies
+   * <strong>Assume breach</strong> (segment access, encrypt, alert variation posture)
+   <br /><br />
 
-Each Cloud Service Provider (GCP, AWS, Azure, etc.) presents different but similar <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/">Cloud Adoption Framework (CAF)</a>
-and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-architected/security/overview">Well-Architected Framework</a>.
 
 <a name="MCRA"></a>
 
@@ -106,6 +118,9 @@ and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-archit
 <a target="_blank" href="https://www.youtube.com/watch?v=6iYxNm3TOiI&list=PLtVMyW0H7aiOQwZSsn2d-tg2z729ce1BZ" title="MCRA Intro by Mark Simos, Microsoft Chief Security Advisor">VIDEO</a>: Microsoft's overarching <a target="_blank" href="https://aka.ms/MCRA/">Cybersecurity Reference Architecture (MCRA)</a> contains an overwhelming number of diagrams in the PowerPoint ??? file covered by <a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop-videos">videos</a> in <a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop">Microsoft's CISO Workshop</a>.
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"><img alt="azure-guides-1158x439.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"></a>
+
+Each Cloud Service Provider (GCP, AWS, Azure, etc.) presents different, but similar, <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/">Cloud Adoption Framework (CAF)</a>
+and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-architected/security/overview">Well-Architected Framework</a>.
 
 
 ### Security Roles Coverage
@@ -315,10 +330,18 @@ Microsoft has a "Defender" offering for each type of product:
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/endpoint-security/microsoft-defender-endpoint">MS Defender for Endpoint</a>
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-for-identity">MS Defender for Identity</a>
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-devops#">MS Defender for DevOps</a>
-   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-cloud">MS Defender for Cloud</a>
+   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-cloud">MS Defender for Cloud</a> <a target="_blank" href="https://azure.microsoft.com/en-us/products/defender-for-cloud/">Product</a>
    <br /><br />
 
-"Sentinel" is the brand name for Microsoft's offerings in SIEM and SOAR.
+- Azure Security Center: https://github.com/Azure/Azure-Security-Center reroutes to
+- GitHub community: https://github.com/Azure/Microsoft-Defender-for-Cloud
+- Azure Defender: https://aka.ms/AzureDefenderForSQL​
+- Become an Azure Security Center Ninja: https://aka.ms/ascninja​
+- ASC in the Filed Show: https://aka.ms/ascinthefield​
+- ASC Labs: https://aka.ms/asclabs
+- https://learn.microsoft.com/en-us/security/zero-trust/ten-laws-of-security#10-laws-of-cybersecurity-risk
+
+"Sentinel" is Microsoft's brand name for offerings in <a target="_blank" href="https://wilsonmar.github.io/siem-soar/">SIEM and SOAR</a>.
 
 ### Regulatory Compliance
 
@@ -344,6 +367,10 @@ Notice the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/defe
 <a name="SecureScore"></a>
 
 ### Secure Score Posture Action Categories
+
+   References:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=jcrVqFd5KN4&list=RDCMUCGTUbqE3SJiLgtvWjIkSQuQ&start_radio=1&rv=jcrVqFd5KN4&t=5m">How to improve your Secure Score</a>
+   <br /><br />
 
 Within M365 Defender is the <a target="_blank" href="https://learn.microsoft.com/en-us/microsoft-365/security/defender/microsoft-secure-score?view=o365-worldwide#how-it-works">Microsoft Secure Score</a> survey app. It's used to define a security posture score (over time) based on whether specific actions have occurred or not. 
 

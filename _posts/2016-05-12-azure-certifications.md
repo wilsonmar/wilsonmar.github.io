@@ -1,8 +1,8 @@
 ---
 layout: post
-date: "2023-07-25"
+date: "2023-07-30"
 file: "azure-certifications"
-title: "Azure (Microsoft's cloud) certifications"
+title: "Azure (Microsoft cloud) certifications"
 excerpt: "Microsoft provides free hands-on (gamified) tutorials and free time"
 tags: [cloud]
 image:
@@ -598,6 +598,7 @@ Domains:
 * Manage security operations (15-20%)
 
 Videos:
+   * <a target="_blank" href="https://www.coursera.org/learn/microsoft-sc-900-exam-preparation-and-practice?specialization=microsoft-cybersecurity-analyst">Coursera Dec 11, 2023</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=Bz-8jM3jg-8&list=RDCMUCpIn7ox7j7bH_OFj7tYouOQ&start_radio=1&t=5297">2hr John Savill</a>draws a <a target="_blank" href="https://github.com/johnthebrit/RandomStuff/blob/master/SC-900ReviewWhiteboard.svg">massive whiteboard</a> as massive as his muscles. One in a massive series with <a target="_blank" href="https://github.com/johnthebrit/AzureMasterClass">pdfs in GitHub</a>.
 
 
@@ -607,35 +608,39 @@ Videos:
 
 Taking this one <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/sc-200">SC-200 exam</a> makes you a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/security-operations-analyst/">Microsoft Security Operations Analyst</a>.
 
-This exam measures your ability to mitigate threats using Microsoft 365 Defender, Azure Defender, and Azure Sentinel.
+This exam measures your ability to mitigate threats using Microsoft 365 Defender, Azure Defender, and Azure Sentinel SIEM/SOAR.
 
 <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst">Class SC-200T00</a> has these hands-on labs:
 
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_01_Lab1_Ex1_Explore_M365_Defender.md"> Module 1 - Lab 1 - Exercise 1 - Explore Microsoft 365 Defender </a>
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_02_Lab1_Ex1_Deploy_Defender_Endpoint.md"> Module 2 - Lab 1 - Exercise 1 - Deploy Microsoft Defender for Endpoint </a>
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_02_Lab1_Ex2_Mitigate_Attacks.md"> Module 2 - Lab 1 - Exercise 2 - Mitigate Attacks with Microsoft Defender for Endpoint </a>
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_03_Lab1_Ex1_Enable_Defender.md"> Module 3 - Lab 1 - Exercise 1 - Enable Microsoft Defender for Cloud </a>
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_03_Lab1_Ex2_Azure_Defender.md"> Module 3 - Lab 1 - Exercise 2 - Mitigate threats using Microsoft Defender for Cloud </a>
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_04_Lab1_Ex1_KQL.md"> https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_04_Lab1_Ex1_KQL.md </a>
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_05_Lab1_Ex1_Deploy_Sentinel.md"> Module 5 - Lab 1 - Exercise 1 - Configure your Microsoft Sentinel environment </a>
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_06_Lab1_Ex1_Connect_Services.md"> Module 6 - Lab 1 - Exercise 1 - Connect data to Microsoft Sentinel using data connectors </a>
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_06_Lab1_Ex2_Connect_Windows.md"> Module 6 - Lab 1 - Exercise 2 - Connect Windows devices to Microsoft Sentinel using data connectors </a>
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_06_Lab1_Ex3_Connect_Linux.md"> Module 6 - Lab 1 - Exercise 3 - Connect Linux hosts to Microsoft Sentinel using data connectors </a>
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_06_Lab1_Ex4_Connect_Threat_Intel.md"> Module 6 - Lab 1 - Exercise 4 - Connect Threat intelligence to Microsoft Sentinel using data connectors </a>
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex1_Security_Rule.md"> Module 7 - Lab 1 - Exercise 1 - Activate a Microsoft Security rule </a>
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex2_Playbook.md"> Module 7 - Lab 1 - Exercise 2 - Create a Playbook </a>
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex3_Scheduled_Query.md"> Module 7 - Lab 1 - Exercise 3 - Create a Scheduled Query </a>
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex4_Attacks.md"> Module 7 - Lab 1 - Exercise 4 - Understand Detection Modeling </a> (Attacks)
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex5_Perform_Attacks.md"> Module 7 - Lab 1 - Exercise 5 - Conduct attacks </a>
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex6_Detections.md"> Module 7 - Lab 1 - Exercise 6 - Create Detections </a>
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex7_Investigate.md"> Module 7 - Lab 1 - Exercise 8 - Create workbooks </a>
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex8_Workbooks.md"> Module 7 - Lab 1 - Exercise 8 - Create workbooks </a>
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_08_Lab1_Ex1_Hunting.md"> Module 8 - Lab 1 - Exercise 1 - Perform Threat Hunting in Microsoft Sentinel </a>
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_08_Lab1_Ex2_Notebooks.md"> Module 8 - Lab 1 - Exercise 2 - Threat Hunting using Notebooks with Microsoft Sentinel </a>
+1. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_01_Lab1_Ex1_Explore_M365_Defender.md"> Module 1 - Lab 1 - Exercise 1 - Explore Microsoft 365 Defender </a>
+2. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_02_Lab1_Ex1_Deploy_Defender_Endpoint.md"> Module 2 - Lab 1 - Exercise 1 - Deploy Microsoft Defender for Endpoint </a>
+3. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_02_Lab1_Ex2_Mitigate_Attacks.md"> Module 2 - Lab 1 - Exercise 2 - Mitigate Attacks with Microsoft Defender for Endpoint </a>
+4. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_03_Lab1_Ex1_Enable_Defender.md"> Module 3 - Lab 1 - Exercise 1 - Enable Microsoft Defender for Cloud</a>
+5. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_03_Lab1_Ex2_Azure_Defender.md"> Module 3 - Lab 1 - Exercise 2 - Mitigate threats using Microsoft Defender for Cloud </a>
+6. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_04_Lab1_Ex1_KQL.md"> Learning Path 4 - Lab 1 - Exercise 1 - Create queries for Microsoft Sentinel using Kusto Query Language (KQL)</a>
+7. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_05_Lab1_Ex1_Deploy_Sentinel.md"> Module 5 - Lab 1 - Exercise 1 - Configure your Microsoft Sentinel environment </a>
+8. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_06_Lab1_Ex1_Connect_Services.md"> Module 6 - Lab 1 - Exercise 1 - Connect data to Microsoft Sentinel using data connectors </a>
+9. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_06_Lab1_Ex2_Connect_Windows.md"> Module 6 - Lab 1 - Exercise 2 - Connect Windows devices to Microsoft Sentinel using data connectors </a>
+10. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_06_Lab1_Ex3_Connect_Linux.md"> Module 6 - Lab 1 - Exercise 3 - Connect Linux hosts to Microsoft Sentinel using data connectors </a>
+11. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex8_Workbooks.md"> Module 7 - Lab 1 - Exercise 8 - Create workbooks </a>
+12. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_06_Lab1_Ex4_Connect_Threat_Intel.md"> Module 6 - Lab 1 - Exercise 4 - Connect Threat intelligence to Microsoft Sentinel using data connectors </a> 
+13. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex1_Security_Rule.md"> Module 7 - Lab 1 - Exercise 1 - [Modify] Activate a Microsoft Security rule </a>
+14. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex2_Playbook.md"> Module 7 - Lab 1 - Exercise 2 - Create a Playbook </a>
+15. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex3_Scheduled_Query.md"> Module 7 - Lab 1 - Exercise 3 - Create a Scheduled Query </a>
+16. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex4_Attacks.md"> Module 7 - Lab 1 - Exercise 4 - Understand Detection Modeling </a> (Attacks)
+17. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex5_Perform_Attacks.md"> Module 7 - Lab 1 - Exercise 5 - Conduct [perform simulated] attacks </a>
+18. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex6_Detections.md"> Module 7 - Lab 1 - Exercise 6 - Create Detections </a>
+19. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex7_Investigate.md"> Module 7 - Lab 1 - Exercise 8 - Investigate Incidents</a>
+20. Create ASIM parsers
+   * https://learn.microsoft.com/en-us/azure/sentinel/normalization-about-schemas
+   * https://learn.microsoft.com/en-us/azure/sentinel/normalization
+   * https://aka.ms/SecurityCommunity
+21. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_08_Lab1_Ex1_Hunting.md"> Module 8 - Lab 1 - Exercise 1 - Perform Threat Hunting in Microsoft Sentinel </a>
+22. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_08_Lab1_Ex2_Notebooks.md"> Module 8 - Lab 1 - Exercise 2 - Hunt Threats using Notebooks with Microsoft Sentinel </a>
 
-https://www.whizlabs.com/learn/course/microsoft-azure-sc-200/
-
-https://www.whizlabs.com/microsoft-security-operations-analyst-sc-200/
+Exam prep:
+   * https://www.whizlabs.com/learn/course/microsoft-azure-sc-200/
+   * https://www.whizlabs.com/microsoft-security-operations-analyst-sc-200/
 
 
 
@@ -1426,10 +1431,6 @@ Cost control in Azure</a>
 
 https://www.whizlabs.com/blog/top-microsoft-azure-bloggers/
 
-<a target="_blank" href="https://www.youtube.com/watch?v=6iYxNm3TOiI&list=PLtVMyW0H7aiOQwZSsn2d-tg2z729ce1BZ">VIDEO</a>: "MCRA Intro"
-by Mark Simos, Microsoft Chief Security Advisor.
-
-https://aka.ms/MCRA
 
 ## More about Azure #
 

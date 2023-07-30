@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-07-28"
+date: "2023-07-29"
 file: "snowflake"
 title: "Snowflake (SQL Data Lakehouse)"
 excerpt: "How to quickly learn and use the cloud-native Snowflake SQL database's AI/ML features on top of AWS, Azure, GCP clouds"
@@ -50,15 +50,16 @@ That analogy takes some explanation.
 In the 1980s, IBM defined the SQL (Structured Query Language) to run on their corporate mainframes. Memory and disk space were expensive and required months to obtain. To ensure that servers don't crash due to lack of space or not enough CPU, corporations hired DBAs (DataBase Administrators) as a protective bureaucracy around databases, blocking application development teams. Frustrating.
 
 So Oracle and Microsoft made SQL run on early Personal Computers as well.
-Open-source alternatives MySQL, MariaDB, and PostgreSQL enabled the growth of database-backed websites on the internet.
+MS-SQL and open-source alternatives MySQL, MariaDB, and PostgreSQL enabled the growth of database-backed websites on the internet.
 
-In the 90's, SQL-based databases were at the heart of "Big Data" made big by Hadoop and Apache Spark software. They enabled the expansion of "Enterprise Data Warehouses" (EDWs) designed for Analytical Processing (OLAP) by summarizing data refreshed from source systems. 
+In the 90's, SQL-based relational databases were at the heart of "Big Data" made big by Hadoop and Apache Spark software. They enabled the expansion of "Enterprise Data Warehouses" (EDWs) designed for Analytical Processing (OLAP) by summarizing data refreshed from source systems. 
 
 <a target="_blank" href="https://www.youtube.com/watch?v=wHG0ljN3plg">VIDEO</a>: A "Data Lake" is a centralized collection of different data warehouses. 
 
 A "Data Mart" makes data searchable.
 
-Memory limitations resulted in <strong>data update</strong> features in OLTP (Onine Table Processing) databases from being supported in data warehouses providing "write-once, read-many" Analytics Processing (OLAP).
+Memory limitations had resulted in OLTP (Online Transactional Processing) <strong>data update</strong> features being removed from data warehouses providing "write-once, read-many" Analytics Processing (OLAP) containing historical (denormalized) summary data.
+
 And expensive disk space required that some data be <strong>thrown away</strong> as batch-mode "ETL" programs that load data into databases that have a rigid schema. Data warehouses also typically didn't support semi-structured or unstructured data types.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=b8q5VJo0ZAk">
@@ -76,6 +77,7 @@ Snowflake is that middleman. Snowflake's offers a <strong>cloud-native</strong> 
    * QUESTION: Apache Iceberg? Salesforce? SAP?
    <br /><br />
 
+   
 1.  View a demo to see its GUI for yourself:
 
     https://www.snowflake.com/en/resources/video/data-lake-live-demo-emea/
@@ -131,7 +133,6 @@ Snowflake can be set to <strong>autoscale</strong> across their "t-shirt sizes" 
 
    References:
    * <a target="_blank" href="https://www.youtube.com/watch?v=FxpRL0m9BcA">What's the difference?</a>
-   * <a target="_blank" href="https://www.coursera.org/projects/data-management-with-databricks-big-data-with-delta-lakes">2-hour Data Management with Databricks: Big Data with Delta Lakes</a> (Guided Project)
    * https://www.fivetran.com/blog/warehouse-benchmark concludes that performance is similar among Cloud Data Warehouses.
 
 1.  Snowflake's corporate landing page is at:
@@ -148,6 +149,8 @@ Snowflake can be set to <strong>autoscale</strong> across their "t-shirt sizes" 
     Snowflake combines traditional "Data Lake" and "Data Warehouse" into a <strong>Data Lake House</strong> --
     a structure that's useful for <a href="#AIML">AI/ML (Machine Learning)</a> as well as traditional analytics.
 
+    Snowflake can operate like Oracle, MySQL, Postgres, Teradata, or other traditional database. <strong>Connectors</strong> enable the interchange of data between Snowflake and Microsoft's Power Platform, Qlik, etc.
+
     References:
        * https://www.youtube.com/watch?v=Muyq3qtHzzo&list=PL7_h0bRfL52pOai_ih3HSu2WCgPXmNHzH by Bryan Cafferky
        * https://www.youtube.com/watch?v=FAnR4R5JMM8 by Pragmatic Works
@@ -158,9 +161,17 @@ Snowflake can be set to <strong>autoscale</strong> across their "t-shirt sizes" 
        * <a target="_blank" href="https://www.youtube.com/watch?v=slrqd4NSgpY">VIDEO</a>
        <br /><br />
 
-    ## Sign-up for a live account
+## Sign-up for a live account
 
-1.  Snowflake offers 30-day trials, so many simply sign up using a different email each month. They use <a href="#Automation">automation</a> to populate each new account.
+1.  Enroll in the "Badge 1: Data Warehousing Workshop" at
+
+    https://learn.snowflake.com/courses/course-v1:snowflake+ESS_DWW_101+2021/about
+
+
+
+1.  Snowflake offers 30-day trials, so many simply sign up using a different name each month (such as <tt>JOHNDOE_231230</tt> for the end date.
+
+    They use <a href="#Automation">automation</a> to populate each new account.
 
     PROTIP: Create a different browser profile associated with each account.
 
@@ -168,7 +179,24 @@ Snowflake can be set to <strong>autoscale</strong> across their "t-shirt sizes" 
 
     <a target="_blank" href="https://signup.snowflake.com/">https://signup.snowflake.com</a>
 
-    Snowflake can operate like Oracle, MySQL, Postgres, Teradata, or other traditional database. <strong>Connectors</strong> enable the interchange of data between Snowflake and Microsoft's Power Platform, Qlik, etc.
+    ### 6 Predefined Roles
+    
+    ACCOUNTADMIN is the default role for new Trial Accounts.
+
+    In productive use, switch to SYSADMIN because it has less permissions, for a small "blast radius" in case of account compromise.
+    
+    The Snowflake has an ORGADMIN predefined role used to generate new accounts and tie multiple Snowflake accounts together.
+
+    PUBLIC, SECURITYADMIN, USERADMIN
+
+    There is an inheritance
+
+
+    <a name="Region"></a>
+
+    ### CSP Region choice
+
+    Snowflake cannot select all regions of each CSP.
 
     PROTIP: To meet data sovereignty laws in the EU, Singapore, etc., Snowflake customers are limited to using specific CSP data center regions. These regions are what Snowflake makes available:
 
@@ -210,11 +238,18 @@ Snowflake can be set to <strong>autoscale</strong> across their "t-shirt sizes" 
 
 1.  Set a way to turn off usage automatically.
 
-    ### Decoupled compute & storage
 
-    PROTIP: Unlike traditional databases (and database machines such as Terradata) which run continuously and racking up charge, you don't pay for compute charges unless you're running jobs because Snowflake has <strong>decoupled compute from storage</strong>. 
+
+
+### Decoupled compute & storage
+
+    PROTIP: Unlike traditional databases (and "monolithic" database machines such as Terradata) which run continuously and racking up charge, Snowflake customers don't pay for compute charges unless jobs are being run. This is because Snowflake has <strong>decoupled compute from storage</strong>. 
     
     This decoupling also means that you're free to amass data without having to buy larger machines.
+
+Snowflake's customers don't see its proprietary compute layer running on commodity virtual machines (AWS, GCP or Azure). It's rumored to have intelligent predicate pushdown + smart caching. Hybrid columnar system inspired by C-Store, MonetDB among others.
+
+ Snowflake's data is stored in a hybrid columnar format (PAX) with aggressive metadata caching. Snowflake's proprietary columnar object store format runs <strong>in-memory / SSD</strong>.  
 
 
 
@@ -354,11 +389,9 @@ Snowflake <strong>does not support Foreign Keys</strong>.
 
    <a target="_blank" href="https://www.snowflake.com/webinar/product-demo/applying-architectural-patterns-to-solve-business-questions-2023-01-11/?utm_cta=website-pro-serv-featured-dcdf-series">VIDEO: Applying Architectural Patterns to Solve Business Questions</a> by <a target="_blank" href="https://www.linkedin.com/in/greg-sitzman/">Greg Sitzman</a>, Principal Solutions Architect and <a target="_blank" href="https://www.linkedin.com/in/melinda-webster-2732b010/">Melinda Webster</a>
 
-
-
 1. Menu items:
 
-   <pre>Worksheets
+   <pre>Worksheets (for running SQL commands)
 Dashboards
 Data
    * Databases
@@ -373,7 +406,7 @@ Admin
    * Usage
    * Warehouses
    * Resource Monitors
-   * Users & Roles
+   * Users & <a href="#Roles">Roles</a>
    * Security
    * Billing & Terms
    * Contacts
@@ -475,6 +508,11 @@ New table formats emerging to support substantial increases in the volume and ve
    * Databricks Delta Lake
    <br /><br />
 
+Delta Lake tables store DAGs (Directed Acyclic Graphs) that store ACID transactions like Git commits do. That enables <strong>Time Travel</strong> -- the ability to return the database to any point in the past.
+
+   * <a target="_blank" href="https://www.coursera.org/projects/data-management-with-databricks-big-data-with-delta-lakes">2-hour Data Management with Databricks: Big Data with Delta Lakes</a> (Guided Project)
+   
+
 
 <hr />
 
@@ -482,8 +520,9 @@ New table formats emerging to support substantial increases in the volume and ve
 
 ## Snowflake the company
 
-Snowflake Inc. was founded in 2012 by ex-Oracle founders:
-* <a target="_blank" href="https://www.linkedin.com/in/benoit-dageville-3011845/">Benoît Dageville</a> President of Product, living San Francisco after 16 years at Oracle, 
+Snowflake Inc. was founded in 2012 by French founders:
+<a target="_blank" href="https://www.youtube.com/watch?v=Y05ZNHwvfsg">VIDEO</a>:
+* <a target="_blank" href="https://www.linkedin.com/in/benoit-dageville-3011845/">Benoît Dageville</a> President of Product, living in San Francisco after 16 years at Oracle, 
 * <a target="_blank" href="https://www.linkedin.com/in/thierry-cruanes-3927363/">Thierry Cruanes</a> of San Mateo
 * <a target="_blank" href="https://www.linkedin.com/in/marcinzukowski/">Marcin Żukowski</a>
 
@@ -547,62 +586,68 @@ On June 27, 2023, a partnership with NVIDIA was announced.
 
 * https://github.com/snowflakedb contains open-source repos by the company (858 followers on July 27, 2023)
 
+<hr />
+
 <a name="Certifications"></a>
 
-### Certifications
+### SnowPro Certifications
 
 Snowflake's certification exams are delivered through Pearson Vue (844.914-0562) through Snowflake's Certification Portal at<br />
 https://snowflake.useclarus.com/
 
 https://www.snowflake.com/certifications/ 
 
-(Shortened $88 recertification exam COF-R02 to maintain status are offered at a reduced price.)
+(Shortened $88 recertification exam COF-R02 to maintain status is offered at a reduced price.)
 
-<strong>$175 SnowPro Core Certification</strong> COF-C02 -- the Foundational level -- 75% of 100 questions in 110 minutes:
+<img align="right" width="150" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690741638/snowflake-core-cert_psr1nb.png">
+<strong>$175 SnowPro Core Certification</strong> COF-C02 -- the Foundational level -- 75% of 100 questions in 110 minutes (recerts have 60 questions in 85 minutes):
 
-   * Snowflake Data Cloud Features & Architecture: 25% of the exam
+   * Snowflake Data Cloud Features & Architecture: 25%
    * Account Access and Security: 20%
    * Performance Concepts: 15%
+
    * Data Loading and Unloading: 10%
    * Data Transformations: 20%
    * Data Protection and Data Sharing: 10%
 
-<strong>$375 SnowPro Advanced Certifications</strong> (and recerts) are for each of five roles:
+<strong>$375 SnowPro Advanced Certifications</strong> (and recerts) are for each of five occupations:
 
-* ARA-C01 (ARA-R01) - Architect - 65 English questions in 115 minutes:
-   * Accounts and Security: 25%
-   * Snowflake Architecture: 30%
-   * Data Engineering: 25%
-   * Performance Optimization: 20%
-    
-* DEA-C01 (DEA-R01) - Data Engineer
-   * Data Movement: 28%
-   * Performance Optimization: 22%
-   * Storage and Data Protection: 10%
-   * Security: 10%
-   * Data Transformation: 30%
-
-* DSA-C01 (DSA-R01) - Data Scientist
-   * Data Science Concepts: 10%
-   * Data Pipelining: 15%
-   * Data Preparation and Feature Engineering: 30%
-   * Model Development: 30%
-   * Model Deployment: 15%
-
-* ADA-C01 (ADA-R01) - Administrator
+1. ADA-C01 (ADA-R01) - Administrator
    * Snowflake Security, RBAC, & User Administration: 30%
    * Account Management & Data Governance: 25%
    * Performance Monitoring & Tuning: 20%
    * Data Sharing, Data Exchange & Snowflake Marketplace: 10%
    * Disaster Recovery, Backup & Data Replication: 15%
 
-* DAA-C01 (DAA-R01) - Data Analyst
+2. DEA-C01 (DEA-R01) - Data Engineer
+   * Data Movement: 28%
+   * Performance Optimization: 22%
+   * Storage and Data Protection: 10%
+   * Security: 10%
+   * Data Transformation: 30%
+
+3. DAA-C01 (DAA-R01) - Data Analyst
    * Data Ingestion and Data Preparation: 17%
    * Data Transformation and Data Modeling: 22%
    * Data Analysis: 32%
    * Data Presentation and Data Visualization: 29%
 
+4. ARA-C01 (ARA-R01) - Architect - 65 English questions in 115 minutes:
+   * Accounts and Security: 25%
+   * Snowflake Architecture: 30%
+   * Data Engineering: 25%
+   * Performance Optimization: 20%
+    
+5. DSA-C01 (DSA-R01) - Data Scientist
+   * Data Science Concepts: 10%
+   * Data Pipelining: 15%
+   * Data Preparation and Feature Engineering: 30%
+   * Model Development: 30%
+   * Model Deployment: 15%
+
 As of this writing, practice exams are available only for Core, Architect, and Data Engineer.
+
+After passing one expert exam, <a target="_blank" href="https://learn.snowflake.com/courses/course-v1:snowflake+CERT-SME+A/">SnowPro SME</a> to work on exams.
 
 References:
    * https://www.chaosgenius.io/blog/snowflake-certifications/
@@ -632,11 +677,16 @@ https://community.snowflake.com/s/login/
 
 https://usergroups.snowflake.com/chapters/
 
+
 <hr />
 
 <a name="Automation"></a>
 
 ## Automation
+
+REMEMBER: Snowflake is purely a SaaS product. Unlike other vendors, its "Enterprise" offering does not mean where customers install servers and upgrade versions.
+
+Snowflake does have a client-side CLI to install:
 
 * CLI (snowsql client-side command utility)
 * DML (Data Markup Language) to create SQL database schemas
@@ -870,16 +920,62 @@ Python-centric repos on SnowflakeDB on GitHub:
 
 ## Video Tutorials
 
+### On Snowflake University
+
+Snowflake provides 4 "Badge" video tutorials for free.
+
+1. Signup for a trial account <a target="_blank" href="https://signup.snowflake.com/?utm_cta=website-learn-snowflake-university_dww">here</a>.
+1. Select AWS, Canada (Central) region in Badge 3.
+
+1. Copy and submit your LOCATOR number.
+
+3. To complete the workshop you will run scripts that are autograded by DORA, the grading robot.
+
+Badge 1: Data Warehousing Workshop (DWW)
+    Lesson 2: Identity and Access
+    Lesson 3: Data Containers
+    Lesson 4: Tables, Data Types, and Loading Data
+    Lesson 5: Worksheets & Warehouses
+    Lesson 6: File Formats & the Load Wizard
+    Lesson 7: Meet DORA!
+    Lesson 8: Staging Data
+    Lesson 9: Data Storage Structures
+    Lesson 10: Intro to Semi-Structured Data
+    Lesson 11: Nested Semi-Structured Data
+
+   * Benefits of a Cloud-based Database
+   * Account Editions, Regions & Clouds
+   * Snowflake Identity, Access, Users, & Roles
+   * Databases, Ownership and Context
+   * Worksheets and Warehouses
+   * Loading Tables Using SQL Insert Statements
+   * File Formats, Stages, and Copy Into Loading
+   * Semi-Structured Data including XML and JSON
+   * Querying Nested Semi-Structured Data
+
+Badge 2: Data Application Builders Workshop
+
+   Almost like a full-stack developer bootcamp, this course covers a wide array of technologies that will help you build applications that use Snowflake as a back end. Including: Streamlit (Python), SnowSQL, REST APIs, and much more.
+
+Badge 3: Sharing, Marketplace, & Exchanges Workshop
+
+
+
+Badge 4: Data Lake Workshop
+   * Get an Enterprise Edition.
+
+
+Badge 5: Data Engineering Workshop (DNGW)
+
+
 
 ### On LinkedIn.com Learning:
 
-By <a target="_blank" href="https://www.linkedin.com/in/lynnlangit/">Lynn Langit</a>:
+By <a target="_blank" href="https://www.linkedin.com/in/lynnlangit/">Lynn Langit</a> who has worked on various clouds, Analytics, and Snowflake in production, presents a rich yet succinct tutorial:
 
-<a target="_blank" href="https://www.linkedin.com/learning/learning-snowflakedb/">Learning SnowflakeDB</a>
+<a target="_blank" href="https://www.linkedin.com/learning/learning-snowflakedb/">1h 41m Learning SnowflakeDB</a> 3/25/2022
 
-references her <a target="_blank" href="https://github.com/lynnlangit/learn-snowflakedb">https://github.com/lynnlangit/learn-snowflakedb</a>
-
-PROTIP: I think this is the course on Snowflake that's presented most logically.
+It references her <a target="_blank" href="https://github.com/lynnlangit/learn-snowflakedb">https://github.com/lynnlangit/learn-snowflakedb</a>
 
 
 ### On Coursera.com
@@ -995,6 +1091,8 @@ What is a Data Lakehouse</a> by <a target="_blank" href="https://www.linkedin.co
 
 ### Resources
 
+https://www.snowflake.com/summit/
+June 3-6, 2024 in San Francisco Moscone Center
 
 <hr />
 
