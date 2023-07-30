@@ -727,7 +727,11 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
 <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/">Hands-on labs</a> 
 <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies">on GitHub</a>:
 
-   <ul>Group 1: Manage identity and access (30-35%)
+   <ul><strong>Group 1: Manage identity and access (30-35%)</strong>
+   * Manage Azure AD Identities
+   * Manage Azure AD Secure Access
+   * Manage Application Access
+   * Manage Access Control
    </ul>
 
 1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_01_RBAC.md">Role-Based Access Control (RBAC)</a>
@@ -753,7 +757,15 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
    3. Create an Access Review and review PIM auditing features.
    <br /><br />
 
-   Group 2: Implement platform protection (15-20%)
+   <ul>Group 2: Implement platform protection (15-20%)
+    * Implement Azure Firewall [Network] Security (+)
+    * Implement Network Load Balancer Security (+)
+    * Implement Storage and Application Security (+)  
+    * Implement Virtual Network Security
+   
+    * Configure Advanced Security for Compute
+    * Configure Data Encryption (+)
+   </ul>
 
 6. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_06_ImplementDirectorySynchronization.md">Implement Directory Synchronization </a>
    1. Deploy an Azure VM hosting an Active Directory domain controller
@@ -767,6 +779,10 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
    <br /><br />
 
    Group 3: Manage security operations (25-30%)
+   * Configure Centralized Policy Management
+   * Configure and Manage Threat Protection
+   * Configure and Manage Security Monitoring Solutions
+   <br /><br />
 
 8. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_08_AzureFirewall.md">Azure Firewall </a>
    1. Deploy and test an Azure Firewall
@@ -787,6 +803,10 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
     <br /><br />
 
     Group 4: Secure data and applications (25-30%)
+    * Configure Security for Storage
+    * Configure Security for Data
+    * Configure and Manage Azure Key Vault
+    <br /><br />
 
 11. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_11_SecuringAzureSQLDatabase.MD">Securing Azure SQL Database </a>
 12. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_12_SecuringAzureStorage.MD">Service Endpoints and Securing Storage </a>
@@ -796,6 +816,8 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
 
 14. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_14_Microsoft%20Defender%20for%20Cloud.md">Microsoft Defender for Cloud </a>
 15. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_15_Microsoft%20Sentinel.md">Microsoft Sentinel</a> (SIEM/SOAR)
+
+
 <br /><br />
 
 Tim Warner tends to jump around a bit, so his material is great for review:
@@ -803,38 +825,20 @@ Tim Warner tends to jump around a bit, so his material is great for review:
    * <a target="_blank" href="https://learning.oreilly.com/live-events/-/0636920360612/">Live Crash Course Jan 23 & 24, 2023</a> (previously April 26 & 27, 2021)
    * https://github.com/timothywarner/az500
    <br /><br />
-
+* https://www.youtube.com/watch?v=231p_-M1kqM
 * <a target="_blank" href="https://learning.oreilly.com/library/view/-/9780138041038/">15 pages: AZ-500 Microsoft Azure Security Technologies Guided Cert Prep Sep. 2022</a>
 
     <ul>Section 1: Manage Identity and Access:</ul>
 
-    1. Manage Azure AD Identities
-    2. Manage Azure AD Secure Access
-    3. Manage Application Access
-    4. Manage Access Control
     
        Section 2: Implement Platform Protection:
 
-    5. Implement Azure Firewall [Network] Security (+)
-    6. Implement Network Load Balancer Security (+)
-    7. Implement Storage and Application Security (+)  
-    8. Implement Virtual Network Security
-   
-    9. Configure Advanced Security for Compute
-    10. Configure Data Encryption (+)
 
         Section 3: Manage security operations:
 
-    11. Configure Centralized Policy Management
-    12. Configure and Manage Threat Protection
-    13. Configure and Manage Security Monitoring Solutions
     
         Section 4: Secure data and applications:
 
-    14. Configure Security for Storage
-    15. Configure Security for Data
-    16. Configure and Manage Azure Key Vault
-   <br /><br />
 
 Others on OReilly:
    * <a target="_blank" href="https://learning.oreilly.com/live-events/microsoft-azure-security-technologies-az-500-bootcamp/0636920080783/">Microsoft Azure Security Technologies (AZ-500) Bootcamp</a> by Reza Salehi
