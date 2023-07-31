@@ -727,12 +727,12 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
 <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/">Hands-on labs</a> 
 <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies">on GitHub</a>:
 
-   Group 1: Manage identity and access (30-35%)
+   <ul>Group 1: Manage identity and access (30-35%)
    * Manage Azure AD Identities
    * Manage Azure AD Secure Access
    * Manage Application Access
    * Manage Access Control
-   <br /><br />
+   </ul>
 
 1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_01_RBAC.md">Role-Based Access Control (RBAC)</a>
    1. Create the Senior Admins group with the user account Joseph Price as its member (the Azure portal).
@@ -1466,6 +1466,8 @@ Cost control in Azure</a>
 <a target="_blank" href="https://aka.ms/ESIStudyGuides">aka.ms/ESIStudyGuides</a>
 
 https://www.whizlabs.com/blog/top-microsoft-azure-bloggers/
+
+Microsoft Digital Defense Report (MDDR) https://aka.ms/MDDR  
 
 
 ## More about Azure #
