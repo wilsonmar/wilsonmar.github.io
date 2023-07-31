@@ -66,7 +66,19 @@ Microsoft has defined their <a target="_blank" href="https://wilsonmar.github.io
    MY OPINION: I think job roles should be multi-select checkboxes.
    This segregation also adds to duplicating material.
 
+## Top-down mandates
+
 To enable them to do their job safely, securely, and efficiently, below is what their management should do.
+
+<a target="_blank" href="https://techcommunity.microsoft.com/t5/video-hub/top-10-best-practices-for-azure-security/ba-p/1698837">VIDEO</a>:
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/security-top-10">Azure Top Security Best Practices</a> identifies these <strong>lifecycle stages</strong> [23]:
+
+   1. Sponsorship and Delegation
+   2. Governance
+   3. Readiness and Security Awareness
+   4. Policy Enforcement
+   5. Continuous Monitoring
+   <br /><br />
 
 
 <a name="MCRA"></a>
@@ -81,9 +93,9 @@ Each Cloud Service Provider (GCP, AWS, Azure, etc.) presents different, but simi
 and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-architected/security/overview">Well-Architected Framework</a>.
 
 
-### Security Roles Coverage
+### Security Jobs To Be Done
 
-how the <a target="_blank" href="https://aka.ms/SecurityRoles">concerns</a> of each organizational role type/team relate with others, from Plan (Governance) to Build to Run (Operations) stages:
+How the <a target="_blank" href="https://aka.ms/SecurityRoles">concerns</a> of each organizational role type/team relate with others, from Plan (Governance) to Build to Run (Operations) stages:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"><img alt="azure-security-roles-1883x903.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"></a>
 
@@ -131,7 +143,7 @@ PROTIP: Define abbreviations for each above.
 
 <a name="Assumptions"></a>
 
-## Myths and Assumptions
+## Mindsets and Assumptions (Awareness)
 
 PROTIP: Many don't take security "seriously" because they haven't fully grasped these realities: <a target="_blank" href="https://learn.microsoft.com/en-us/security/zero-trust/ten-laws-of-security#10-laws-of-cybersecurity-risk">"Laws of Cybersecurity Risk"</a> and Security:
 
@@ -177,15 +189,6 @@ PROTIP: Many don't take security "seriously" because they haven't fully grasped 
 
 NOTE: Many land on this as part of their organization's effort to transition to make use of the public cloud.
 
-<a target="_blank" href="https://techcommunity.microsoft.com/t5/video-hub/top-10-best-practices-for-azure-security/ba-p/1698837">VIDEO</a>:
-<a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/security-top-10">Azure Top Security Best Practices</a> identifies these <strong>lifecycle stages</strong> [23]:
-
-   1. Sponsorship and Delegation
-   2. Governance
-   3. Readiness and Security Awareness
-   4. Policy Enforcement
-   5. Continuous Monitoring
-   <br /><br />
 
 Major <strong>Objectives</strong> (What, Why, Who, How activities):
 
@@ -3291,6 +3294,9 @@ http://www.frankysnotes.com/2019/05/how-to-make-your-deployment-successful.html
 
 https://azurefabric.com/azure-monitor-for-paas-services-where-is-the-ai-and-how-do-i-arm-it/
 blog https://azidentity.azurewebsites.net/archive
+
+https://www.linkedin.com/events/introtoarm-biceptemplates7091472660878028800/about/
+by Brian Gorman
 
 <hr />
 

@@ -727,12 +727,12 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
 <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/">Hands-on labs</a> 
 <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies">on GitHub</a>:
 
-   <ul><strong>Group 1: Manage identity and access (30-35%)</strong>
+   Group 1: Manage identity and access (30-35%)
    * Manage Azure AD Identities
    * Manage Azure AD Secure Access
    * Manage Application Access
    * Manage Access Control
-   </ul>
+   <br /><br />
 
 1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_01_RBAC.md">Role-Based Access Control (RBAC)</a>
    1. Create the Senior Admins group with the user account Joseph Price as its member (the Azure portal).
@@ -757,15 +757,15 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
    3. Create an Access Review and review PIM auditing features.
    <br /><br />
 
-   <ul>Group 2: Implement platform protection (15-20%)
-    * Implement Azure Firewall [Network] Security (+)
-    * Implement Network Load Balancer Security (+)
-    * Implement Storage and Application Security (+)  
-    * Implement Virtual Network Security
+   Group 2: Implement platform protection (15-20%)
+   * Implement Azure Firewall [Network] Security (+)
+   * Implement Network Load Balancer Security (+)
+   * Implement Storage and Application Security (+)  
+   * Implement Virtual Network Security
    
-    * Configure Advanced Security for Compute
-    * Configure Data Encryption (+)
-   </ul>
+   * Configure Advanced Security for Compute
+   * Configure Data Encryption (+)
+   <br /><br />
 
 6. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_06_ImplementDirectorySynchronization.md">Implement Directory Synchronization </a>
    1. Deploy an Azure VM hosting an Active Directory domain controller

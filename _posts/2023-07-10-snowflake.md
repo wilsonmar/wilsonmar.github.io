@@ -96,7 +96,7 @@ Snowflake is that middleman. Snowflake's offers a <strong>cloud-native</strong> 
 
     Salesforce, also a SaaS company in San Franciso, and Warren Buffett’s Berkshire Hathaway each bought $250 million in Snowflake stock in private placements following the IPO.  <a target="_blank" href="https://www.youtube.com/watch?v=H6j3FgX5uo4">VIDEO</a>: How Snowflake Broke Warren Buffet's Lifelong Rule of not investing in tech.
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690666736/snowflake-uses-1344x286_spxwoc.png"><img alt="snowflake-uses-1344x286.png" src=""></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690666736/snowflake-uses-1344x286_spxwoc.png"><img alt="snowflake-uses-1344x286.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690666736/snowflake-uses-1344x286_spxwoc.png"></a>
 
 ## Cloud Data Lakehouses 
 
@@ -599,12 +599,13 @@ On June 27, 2023, a partnership with NVIDIA was announced.
 Snowflake's certification exams are delivered through Pearson Vue (844.914-0562) through Snowflake's Certification Portal at<br />
 https://snowflake.useclarus.com/
 
-https://www.snowflake.com/certifications/ 
+<a target="_blank" href="https://www.snowflake.com/certifications/">https://www.snowflake.com/certifications</a>
 
 (Shortened $88 recertification exam COF-R02 to maintain status)
 
 <img align="right" width="150" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690741638/snowflake-core-cert_psr1nb.png">
-<strong>$175 SnowPro Core Certification</strong> COF-C02 -- the Foundational level -- 75% of 100 questions in 110 minutes (recerts have 60 questions in 85 minutes):
+<strong>$175 SnowPro Core Certification</strong> COF-C02 
+- 75% of 100 questions in 110 minutes (recerts have 60 questions in 85 minutes):
 
    * Snowflake Data Cloud Features & Architecture: 25%
    * Account Access and Security: 20%
@@ -614,7 +615,8 @@ https://www.snowflake.com/certifications/
    * Data Transformations: 20%
    * Data Protection and Data Sharing: 10%
 
-<strong>$375 for each of five SnowPro Advanced Certifications</strong> and recerts:
+<strong>$375 for each of five SnowPro Advanced Certifications</strong> and recerts 
+- 75% of 65 questions in 115 minutes :
 
 1. <a target="_blank" href="https://learn.snowflake.com/en/certifications/snowpro-advanced-administrator/">ADA-C01 (ADA-R01) - Advanced Administrator</a>
    * Snowflake Security, RBAC, & User Administration: 30%
@@ -636,7 +638,7 @@ https://www.snowflake.com/certifications/
    * Data Analysis: 32%
    * Data Presentation and Data Visualization: 29%
 
-4. <a target="_blank" href="https://learn.snowflake.com/en/certifications/snowpro-advanced-architect/">ARA-C01 (ARA-R01) - Advanced Architect</a> - 65 English questions in 115 minutes:
+4. <a target="_blank" href="https://learn.snowflake.com/en/certifications/snowpro-advanced-architect/">ARA-C01 (ARA-R01) - Advanced Architect</a>:
    * Accounts and Security: 25%
    * Snowflake Architecture: 30%
    * Data Engineering: 25%
