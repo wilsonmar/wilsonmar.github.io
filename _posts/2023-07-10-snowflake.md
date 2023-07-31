@@ -511,11 +511,11 @@ New table formats emerging to support substantial increases in the volume and ve
    * Databricks Delta Lake
    <br /><br />
 
-Delta Lake tables store DAGs (Directed Acyclic Graphs) that store ACID transactions like Git commits do. That enables <strong>Time Travel</strong> -- the ability to return the database to any point in the past.
+Delta Lake tables store DAGs (Directed Acyclic Graphs) which store ACID transactions like Git commits do. That enables <strong>Time Travel</strong> -- the ability to return the database to any point in the past.
 
    * <a target="_blank" href="https://www.coursera.org/projects/data-management-with-databricks-big-data-with-delta-lakes">2-hour Data Management with Databricks: Big Data with Delta Lakes</a> (Guided Project)
    
-
+https://aws.amazon.com/resources/analyst-reports/forrester-wave-data-warehouse-2021/
 
 <hr />
 
@@ -559,7 +559,7 @@ SNOW is a component of the Russell 1000 index.
 
 On the board since April, 2023 is <a target="_blank" href="https://www.linkedin.com/in/markmclaughlin4/">Mark McLaughlin</a>, retired Chairman of Qualcomm, Palo Alto, Verisign.
 
-SNOW stock peaked on September 2021 at $429. But on July 27, 2023, was at $170/share, for a market value of $55.4B with 4.61 Debt-to-Equity.
+SNOW stock peaked on December 2020 at $429. But on July 27, 2023, was at $170/share, for a market value of $55.4B with 4.61 Debt-to-Equity.
 In 2023, its $1.31B Gross Income and $2.15B Expenses yielded a <strong>-$796.71M Loss</strong> for -38.57% Net Margin and -$2.67 EPS and -15.17% ROE based. Although declining, a 73.97% Income Growth was reported for 2023,
 which is still impressive for any company.
 
@@ -616,33 +616,33 @@ https://www.snowflake.com/certifications/
 
 <strong>$375 for each of five SnowPro Advanced Certifications</strong> and recerts:
 
-1. ADA-C01 (ADA-R01) - Administrator
+1. <a target="_blank" href="https://learn.snowflake.com/en/certifications/snowpro-advanced-administrator/">ADA-C01 (ADA-R01) - Advanced Administrator</a>
    * Snowflake Security, RBAC, & User Administration: 30%
    * Account Management & Data Governance: 25%
    * Performance Monitoring & Tuning: 20%
    * Data Sharing, Data Exchange & Snowflake Marketplace: 10%
    * Disaster Recovery, Backup & Data Replication: 15%
 
-2. DEA-C01 (DEA-R01) - Data Engineer
+2. <a target="_blank" href="https://learn.snowflake.com/en/certifications/snowpro-advanced-dataengineer/">DEA-C01 (DEA-R01) - Advanced Data Engineer</a>
    * Data Movement: 28%
    * Performance Optimization: 22%
    * Storage and Data Protection: 10%
    * Security: 10%
    * Data Transformation: 30%
 
-3. DAA-C01 (DAA-R01) - Data Analyst
+3. <a target="_blank" href="https://learn.snowflake.com/en/certifications/snowpro-advanced-dataanalyst/">DAA-C01 (DAA-R01) - Advanced Data Analyst</a>
    * Data Ingestion and Data Preparation: 17%
    * Data Transformation and Data Modeling: 22%
    * Data Analysis: 32%
    * Data Presentation and Data Visualization: 29%
 
-4. ARA-C01 (ARA-R01) - Architect - 65 English questions in 115 minutes:
+4. <a target="_blank" href="https://learn.snowflake.com/en/certifications/snowpro-advanced-architect/">ARA-C01 (ARA-R01) - Advanced Architect</a> - 65 English questions in 115 minutes:
    * Accounts and Security: 25%
    * Snowflake Architecture: 30%
    * Data Engineering: 25%
    * Performance Optimization: 20%
     
-5. DSA-C01 (DSA-R01) - Data Scientist
+5. <a target="_blank" href="https://learn.snowflake.com/en/certifications/snowpro-advanced-datascientist/">DSA-C01 (DSA-R01) - Advanced Data Scientist</a>
    * Data Science Concepts: 10%
    * Data Pipelining: 15%
    * Data Preparation and Feature Engineering: 30%
