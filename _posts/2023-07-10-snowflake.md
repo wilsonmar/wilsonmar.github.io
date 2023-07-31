@@ -106,7 +106,7 @@ Cloud Data Lakehouses include:
    * AWS Redshift (first in market share)
    * Google BigQuery
    * Databricks Delta Lake
-   * Azure Synapse
+   * Azure Synapse (based on Spark)
    <br /><br />
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690658713/snowflake-to-lakehouse-3010x1282_vqguzu.png"><img alt="snowflake-to-lakehouse-3010x1282.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690658713/snowflake-to-lakehouse-3010x1282_vqguzu.png"></a>
@@ -384,8 +384,11 @@ Like other cloud vendors, Snowflake provides Authentication, Access Control, Inf
 
 Snowflake users write SQL according to ANSI standards, so proprietary features from Oracle and Microsoft T-SQL are not available in Snowflake.
 
-Snowflake <strong>does not support Foreign Keys</strong>.
+Snowflake is adding custom features to SQL, such as the very useful MATCH_RECOGNIZE (March 2021).
 
+Snowflake support geospatial data using native type GEOGRAPHY (like BigQuery).
+
+Snowflake <strong>does not support Foreign Keys</strong>.
 
    <a target="_blank" href="https://www.snowflake.com/webinar/product-demo/applying-architectural-patterns-to-solve-business-questions-2023-01-11/?utm_cta=website-pro-serv-featured-dcdf-series">VIDEO: Applying Architectural Patterns to Solve Business Questions</a> by <a target="_blank" href="https://www.linkedin.com/in/greg-sitzman/">Greg Sitzman</a>, Principal Solutions Architect and <a target="_blank" href="https://www.linkedin.com/in/melinda-webster-2732b010/">Melinda Webster</a>
 
@@ -557,7 +560,8 @@ SNOW is a component of the Russell 1000 index.
 On the board since April, 2023 is <a target="_blank" href="https://www.linkedin.com/in/markmclaughlin4/">Mark McLaughlin</a>, retired Chairman of Qualcomm, Palo Alto, Verisign.
 
 SNOW stock peaked on September 2021 at $429. But on July 27, 2023, was at $170/share, for a market value of $55.4B with 4.61 Debt-to-Equity.
-In 2023, its $1.31B Gross Income and $2.15B Expenses yielded a <strong>-$796.71M Loss</strong> for -38.57% Net Margin and -$2.67 EPS and -15.17% ROE based. Although declining, a 73.97% Income Growth was reported.
+In 2023, its $1.31B Gross Income and $2.15B Expenses yielded a <strong>-$796.71M Loss</strong> for -38.57% Net Margin and -$2.67 EPS and -15.17% ROE based. Although declining, a 73.97% Income Growth was reported for 2023,
+which is still impressive for any company.
 
 Snowflake reported having 7,828 total customers, including 330 customers with trailing 12-month product revenue greater than $1 million, and remaining performance obligations of $3.7 billion, representing 38% year-over-year growth.
 
@@ -597,7 +601,7 @@ https://snowflake.useclarus.com/
 
 https://www.snowflake.com/certifications/ 
 
-(Shortened $88 recertification exam COF-R02 to maintain status is offered at a reduced price.)
+(Shortened $88 recertification exam COF-R02 to maintain status)
 
 <img align="right" width="150" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690741638/snowflake-core-cert_psr1nb.png">
 <strong>$175 SnowPro Core Certification</strong> COF-C02 -- the Foundational level -- 75% of 100 questions in 110 minutes (recerts have 60 questions in 85 minutes):
@@ -610,7 +614,7 @@ https://www.snowflake.com/certifications/
    * Data Transformations: 20%
    * Data Protection and Data Sharing: 10%
 
-<strong>$375 SnowPro Advanced Certifications</strong> (and recerts) are for each of five occupations:
+<strong>$375 for each of five SnowPro Advanced Certifications</strong> and recerts:
 
 1. ADA-C01 (ADA-R01) - Administrator
    * Snowflake Security, RBAC, & User Administration: 30%

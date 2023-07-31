@@ -1017,6 +1017,42 @@ Microsoft has its "Intune" offering to manage endpoints (mobile and laptops).
    For Microsoft people to access a customer's unencrypted data, they are supposed to look into the "Lock Box" where a customer put files they want Microsoft to see.
 
 
+## Learning Hubs
+
+<a target="_blank" href="https://bit.ly/dwayne-learning-hub-form">Learn Room sign-up</a>:
+
+* AI for Everyone - <a target="_blank" href="https://www.linkedin.com/in/arafattehsin/">Arafat Tehsin</a>
+* Analytics with <a target="_blank" href="https://www.linkedin.com/in/indirapolavarapu">Indira Polavarapu</a>
+* Azure AD from A to Z - <a target="_blank" href="https://www.linkedin.com/in/ericmwoodruff/">Eric Woodruff</a> (ex-AWS)
+* Azure Centric Learning - <a target="_blank" href="https://www.linkedin.com/in/mdnoga/">Marcos Nogueira</a>
+* Azure Cloud Commanders - <a target="_blank" href="https://www.linkedin.com/in/ljmurray/">Luke Murray</a>
+* Azure Developer for AI, Data, and Cloud - Beginner to Expert - <a target="_blank" href="">Usama Wahab Khan</a>
+* Azure DevOps and .NET - Rodrigo Kono</a>
+* Azure Fundamentals and Developer Technologies - blgorman (<a target="_blank" href="https://www.linkedin.com/in/brianlgorman/">Brian Gorman</a>)
+* Azure Infrastructure by MTTs Learning Room
+* Azure Knowledge Base with Kazeem
+* BizApps Pinoy - Drizzle
+* Certifications' Training - Estelle
+* Cloud Data Platform Learners - <a target="_blank" href="https://www.linkedin.com/in/armando-lacerda-ba4a6432/">Armando Lacerda</a>
+* Compliance Learning Room - <a target="_blank" href="https://www.linkedin.com/in/raphael-k%C3%B6llner/">Raphael Koellner</a>
+* Cybersecurity From Beginner to Expert - <a target="_blank" href="https://www.linkedin.com/in/mdnoga/">Dwayne Natwick</a>
+* Design & build with Jeeva and Dharani: D365 CE, Power Platform & DevOps
+* GMDynamics365 - <a target="_blank" href="https://www.linkedin.com/in/goloknath-mishra-7133ba104/">Goloknath Mishra</a>
+* Internet of Things, Digital Twins, and AI with <a target="_blank" href="https://www.linkedin.com/in/jorgeasmaia/">Jorge Maia</a>
+* MB-Dynamics 365 and PL-Power Platform - <a target="_blank" href="https://www.linkedin.com/in/juliansharp/">Julian Sharp</a>
+* MCT Community Pakistan - Usman and Gulnaz
+* Microsoft Azure "Zero to Hero" - <a target="_blank" href="https://www.linkedin.com/in/h-sadeghpour/">Hamid Sadeghpour Saleh</a>
+* Microsoft Dynamics 365 FO & SCM - <a target="_blank" href="https://www.linkedin.com/in/ffareed/">Faisal Fareed</a>
+* MSIsGreat - <a target="_blank" href="https://www.linkedin.com/in/vignesh-senthamil-selvan/">Senthamil Selvan V</a>
+* M365 Learning Lounge with Nanddeep, Siddharth, and Smita
+* M365 Modern Work 
+* Power BI – <a target="_blank" href="https://www.linkedin.com/in/aghonaim/">Ashraf Ghonaim</a>, Learning Expert
+* Power Platform and Dynamics 365 with Nadeeja
+* Power Platform Hub - <a target="_blank" href="https://www.linkedin.com/in/hanielcroitoru/">Haniel Croitoru</a>
+* Power Platform with Rishona
+* Swamy The Learner (<a target="_blank" href="https://www.linkedin.com/in/viswanatha-swamy-b57326128/">Viswanatha Swamy</a>)
+* <a target="_blank" href="https://www.linkedin.com/in/tiagocosta/">Tiago Costa</a> - Your Azure Expert
+
 
 <hr />
 

@@ -824,21 +824,9 @@ Tim Warner tends to jump around a bit, so his material is great for review:
    * TechTrainerTim.com
    * <a target="_blank" href="https://learning.oreilly.com/live-events/-/0636920360612/">Live Crash Course Jan 23 & 24, 2023</a> (previously April 26 & 27, 2021)
    * https://github.com/timothywarner/az500
+   * https://www.youtube.com/watch?v=231p_-M1kqM
+   * <a target="_blank" href="https://learning.oreilly.com/library/view/-/9780138041038/">15 pages: AZ-500 Microsoft Azure Security Technologies Guided Cert Prep Sep. 2022</a>
    <br /><br />
-* https://www.youtube.com/watch?v=231p_-M1kqM
-* <a target="_blank" href="https://learning.oreilly.com/library/view/-/9780138041038/">15 pages: AZ-500 Microsoft Azure Security Technologies Guided Cert Prep Sep. 2022</a>
-
-    <ul>Section 1: Manage Identity and Access:</ul>
-
-    
-       Section 2: Implement Platform Protection:
-
-
-        Section 3: Manage security operations:
-
-    
-        Section 4: Secure data and applications:
-
 
 Others on OReilly:
    * <a target="_blank" href="https://learning.oreilly.com/live-events/microsoft-azure-security-technologies-az-500-bootcamp/0636920080783/">Microsoft Azure Security Technologies (AZ-500) Bootcamp</a> by Reza Salehi
@@ -857,7 +845,7 @@ References:
    * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/367">Linux Academy Microsoft Azure Security Technologies</a> by Tia Williams
    * aka.ms/az500labs = 
    https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies
-   * https://www.youtube.com/watch?v=uw-lwS_4pvU by <a target="_blank" href="https://www.linkedin.com/in/dnatwick/">Dwayne Natwick</a>, <a target="_blank" href="https://captainhyperscaler.com/">captainhyperscaler.com</a> & <a target="_blank" href="https://bit.ly/dwayne-learning-hub-form">Learn Room</a>)
+   * https://www.youtube.com/watch?v=uw-lwS_4pvU by <a target="_blank" href="https://www.linkedin.com/in/dnatwick/">Dwayne Natwick</a>, <a target="_blank" href="https://captainhyperscaler.com/">captainhyperscaler.com</a>)
 
    <br /><br />
 
