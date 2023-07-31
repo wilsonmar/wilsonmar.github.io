@@ -44,9 +44,13 @@ Search for what to "REMEMBER" to pass <a target="_blank" href="https://wilsonmar
 {% include whatever.html %}
 
 
+## Who Does What
+
+There are <a href="#Occupations">technical occupations</a> and management roles</a>:
+
 <a name="Occupations"></a>
 
-## Audience by Occupation
+### Technical Occupations
 
 Microsoft has defined their <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Azure certification exams</a> based on these generic occupations:
 
@@ -64,11 +68,14 @@ Microsoft has defined their <a target="_blank" href="https://wilsonmar.github.io
    PROTIP: Generic job positions ("roles") are different from the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a> (AAD).
 
    MY OPINION: I think job roles should be multi-select checkboxes.
-   This segregation also adds to duplicating material.
+   This segregation also adds to duplicating material for each.
 
-## Top-down mandates
 
-To enable them to do their job safely, securely, and efficiently, below is what their management should do.
+<a name="Strategies"></a>
+
+### Top-down strategy
+
+To enable IT people to do their job safely, securely, and efficiently, below is what their management should do.
 
 <a target="_blank" href="https://techcommunity.microsoft.com/t5/video-hub/top-10-best-practices-for-azure-security/ba-p/1698837">VIDEO</a>:
 <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/security-top-10">Azure Top Security Best Practices</a> identifies these <strong>lifecycle stages</strong> [23]:

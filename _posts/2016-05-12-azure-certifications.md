@@ -722,16 +722,16 @@ https://www.whizlabs.com/learn/course/microsoft-azure-sc-400/
 ### AZ-500 Security certification
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/shows/exam-readiness-zone/preparing-for-az-500-manage-identity-and-access-1-of-4" title="by Ken Lawson">VIDEO</a>:
-To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certifications/azure-security-engineer/">Microsoft Certified: Azure Security Engineer Associate</a>, <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-500">read modules</a> and pass Microsoft Azure Security Technologies</a> domains:
+To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certifications/azure-security-engineer/">Microsoft Certified: Azure Security Engineer Associate</a>, <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-500">read modules</a> and pass Microsoft Azure Security Technologies domains:
 
 <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/">Hands-on labs</a> 
 <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies">on GitHub</a>:
 
    <ul>Group 1: Manage identity and access (30-35%)
-   * Manage Azure AD Identities
-   * Manage Azure AD Secure Access
-   * Manage Application Access
-   * Manage Access Control
+   <li> Manage Azure AD Identities</li>
+   <li> Manage Azure AD Secure Access</li>
+   <li> Manage Application Access</li>
+   <li> Manage Access Control</li>
    </ul>
 
 1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_01_RBAC.md">Role-Based Access Control (RBAC)</a>
