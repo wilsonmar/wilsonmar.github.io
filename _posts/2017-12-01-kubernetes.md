@@ -3420,12 +3420,11 @@ The <strong>Sidecar</strong> pattern
 * Replication controller
 <br /><br />
 
-Because Deployments provide a helpful "front end" to ReplicaSets, training focuses on Deployments.
-
+<hr />
 
 <a name="Deployments"></a>
 
-### Deployments
+## Deployments
 
    * <a target="_blank" href="https://kubernetesbyexample.com//deployments/">kubernetesbyexample.com: Deployments</a>
 
@@ -3510,6 +3509,8 @@ These Kubernetes Deployment strategy offers a unique approach and benefit to man
    <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/rs-128.png?raw=true">
 
 Deployments let you create, update, roll back, and scale Pods, using <strong>ReplicaSets</strong>.
+
+Much training focuses on Deployments because Deployments provide a helpful "front end" to ReplicaSets.
 
 Deployments manage their own ReplicaSets to achieve the declarative goals you prescribe, so you will most commonly work with Deployment objects.
 

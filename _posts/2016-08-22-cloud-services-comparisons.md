@@ -376,31 +376,32 @@ Amazon's own <a target="_blank" href="http://ec2-reachability.amazonaws.com/">ec
 <a target="_blank" href="https://ping.varunagw.com/aws.htm">https://ping.varunagw.com/aws.htm</a> provides green, yellow, red colors with Mean, Median, Min, and Max statistics based several measures of the speed to each EC2 region.
 
 
-### Microsoft Azure networking
+<hr />
+
+<a name="AzureNetworks"></a>
+
+### Microsoft Azure networks
 
 At time of writing, Microsoft has over 60 regions around the world on <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/geographies/">their map</a>:
 
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/109421738-cfe65980-7995-11eb-9a04-1b385f2ed631.png">
-   <img alt="az-map-2021-1440x741.png" width="1440" src="https://user-images.githubusercontent.com/300046/109421738-cfe65980-7995-11eb-9a04-1b385f2ed631.png"></a>
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/109421738-cfe65980-7995-11eb-9a04-1b385f2ed631.png"><img alt="az-map-2021-1440x741.png" width="1440" src="https://user-images.githubusercontent.com/300046/109421738-cfe65980-7995-11eb-9a04-1b385f2ed631.png"></a>
 
 There is also an <a target="_blank" href="https://build5nines.com/map-azure-regions/">
 interactive map showing a point for each region's Longitude and Latitude</a> with city name.
-
    
-<a target="_blank" href="http://www.azurespeed.com/">http://www.<strong>azurespeed.com</strong></a> measures current ping speed to various regions on Microsoft's Azure cloud. To stop collection, click "uncheck all" or individual regions of interest:
+<a target="_blank" href="http://www.azurespeed.com/">http://www.<strong>azurespeed.com</strong></a> measures current ping speeds between regions on Microsoft's Azure cloud. To stop collection, click "uncheck all" or individual regions of interest:
 
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/40890517-a7bc4b02-6734-11e8-9c1f-88e6a686de0d.jpg">
-   <img alt="cloud-service-azure-checks-603x261-56530" width="603" src="https://user-images.githubusercontent.com/300046/40890517-a7bc4b02-6734-11e8-9c1f-88e6a686de0d.jpg"></a>
+   <a target="_blank" href="https://build5nines.com/map-azure-regions/"><img alt="cloud-service-azure-checks-603x261-56530" width="603" src="https://user-images.githubusercontent.com/300046/40890517-a7bc4b02-6734-11e8-9c1f-88e6a686de0d.jpg">https://build5nines.com/map-azure-regions/</a>
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/networking/azure-network-latency">https://docs.microsoft.com/en-us/azure/networking/azure-network-latency</a> displays Microsoft's own analysis of <strong>ping speeds between its regions</strong> (using data from the <a target="_blank" href="https://www.thousandeyes.com/">thousandeyes.com</a> network analytics company):
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/109372837-e773f400-7868-11eb-8804-1d306f22fba2.png">
+To display Microsoft's own analysis of <strong>ping speeds between its regions</strong> (using data from the <a target="_blank" href="https://www.thousandeyes.com/">thousandeyes.com</a> (Cisco) network analytics company, view:<br /><a target="_blank" href="https://docs.microsoft.com/en-us/azure/networking/azure-network-latency">https://docs.microsoft.com/en-us/azure/networking/azure-network-latency<br />
    <img alt="azure-network-latency-2020-12-2761x1756.png" width="2761" src="https://user-images.githubusercontent.com/300046/109372837-e773f400-7868-11eb-8804-1d306f22fba2.png"></a>
 
-PROTIP: The slowest connection is 400 ms round-trip between Cape Town (South Africa West) and Australia East.
+PROTIP: In the above, the slowest is 400 ms round-trip between Cape Town (South Africa West) and Australia East.
 
+One big advantage of Azure over AWS is that AWS requires users to do their own backups and restores.
+But Microsoft does its own complete backups of all data in each zone, and when there is an outage, they take care of restoring it to a new zone. Where backups go is not public information, but it is likely that they are in a different zone in the same region, or in a different region. 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions">
-Cross-region pairs</a> for replication in Azure business continuity and disaster recovery
+These cross-region pairs</a> are used for replication in Azure business continuity and disaster recovery.
 
 
 ## Outage tracking #

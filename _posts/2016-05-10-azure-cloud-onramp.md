@@ -48,13 +48,25 @@ Search for what to "REMEMBER" to pass <a target="_blank" href="https://wilsonmar
 
 There are <a href="#Occupations">technical occupations</a> and management roles</a>:
 
+### Owners vs. Admins
+
+In security, there is a distinction between "data owners" and "data custodians" (who manage the data).
+An inventory needs to be maintained about who has type of access to what data, for escalations and approvals.
+   * The Business Managers who own apps and the data they contain.
+   * The IT Managers who manage the infrastructure (servers, storage, network, etc.) on which the apps run.
+   * The Administrators who manage the apps and the data they contain.
+   <br /><br />
+
+In Azure, there is a distinction between "subscription owners" and "subscription administrators" (who manage the subscription).
+
+
 <a name="Occupations"></a>
 
 ### Technical Occupations
 
 Microsoft has defined their <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Azure certification exams</a> based on these generic occupations:
 
-   * (Azure) Administrator
+   * (Azure) Administrator (of IAM, etc.)
    * (Azure) Developer
    * (Azure) Solution Architect
 
@@ -62,10 +74,10 @@ Microsoft has defined their <a target="_blank" href="https://wilsonmar.github.io
    * AI Engineer
 
    * Business Analyst
-   * Business User
+   * Business User 
    <br /><br />
 
-   PROTIP: Generic job positions ("roles") are different from the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a> (AAD/Entra).
+   PROTIP: The above is different from the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a> (AAD/Entra).
 
    MY OPINION: I think job roles should be multi-select checkboxes.
    This segregation also adds to duplicating material for each.
@@ -133,14 +145,13 @@ Security Posture Management: Monitor & Remediate Risk
    * Dev Education & Awareness, App Security, Data Security
    * Identity & Key Management: Admin. Security, Identity System Security
    * IT Operations: Infra & Endpoint: Deploy tools, Mitigate Vulnerabilities
-   * OT Operations
+   * OT (IoT) Operations
    
 Security Operations Center (SOC):
    * Incident Preparation: Risk Scenarios, Practice Exercises
    * Incident Management: Incident Response, Threat Hunting
 
 Other Departments:
-
    * Threat Intelligence
 
 PROTIP: Define abbreviations for each above.
@@ -762,9 +773,9 @@ The clock is ticking!
 
    Microsoft 365 subscribers have additional AAD/Entra licensing options:
    * Free 500,000 object limit, includes MFA for O365 services
-   * $1/mo. Basic for group-base access management with SLAs
-   * $6/mo. P1 for conditional access based on device/location & MFA for on-prem. services
-   * $9/mo. P2 for Identity Protection, Access reviews, Privileged Identity Management
+   * + $1/mo./user Basic for group-base access management with SLAs
+   * + $6/mo./user P1 for conditional access based on device/location & MFA for on-prem. services
+   * + $9/mo./user P2 for Identity Protection, Access reviews, Privileged Identity Management
    <br /><br />
 
    * Multi-factor authentication registration policy to Require MFA
@@ -864,8 +875,71 @@ The clock is ticking!
 
 1. Setup MFA
 
-Microsoft has its "Intune" offering to manage endpoints (mobile and laptops).
+Microsoft has its "Intune" offering to manage mobile and laptop devices and their endpoint.
+BTW: Intune is a separate MDM (Mobile Device Management) product from Azure AD.
 
+
+<hr />
+
+<a name="PickRegions"></a>
+
+## Pick Region(s)
+
+You'll be soon asked to specify a region. Pick the region closest to you.
+
+   At time of writing, Microsoft has over 60 regions around the world on <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/geographies/">their map</a>:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/109421738-cfe65980-7995-11eb-9a04-1b385f2ed631.png"><img alt="az-map-2021-1440x741.png" width="1440" src="https://user-images.githubusercontent.com/300046/109421738-cfe65980-7995-11eb-9a04-1b385f2ed631.png"></a>
+
+1. Select a Geograph (country) from
+
+   https://azure.microsoft.com/en-us/explore/global-infrastructure/geographies/#geographies
+
+1. There is also an <a target="_blank" href="https://build5nines.com/map-azure-regions/">
+interactive map showing a point for each region's Longitude and Latitude</a> with city name.
+   
+   <a target="_blank" href="http://www.azurespeed.com/">http://www.<strong>azurespeed.com</strong></a> measures current ping speeds between regions on Microsoft's Azure cloud. To stop collection, click "uncheck all" or individual regions of interest:
+
+   <a target="_blank" href="https://build5nines.com/map-azure-regions/"><img alt="cloud-service-azure-checks-603x261-56530" width="603" src="https://user-images.githubusercontent.com/300046/40890517-a7bc4b02-6734-11e8-9c1f-88e6a686de0d.jpg">https://build5nines.com/map-azure-regions/</a>
+
+1. There are differences in cost between regions. For example, the US East region is cheaper than the US West region.
+
+1.  To display Microsoft's own analysis of <strong>ping speeds between its regions</strong> (using data from the <a target="_blank" href="https://www.thousandeyes.com/">thousandeyes.com</a> (Cisco) network analytics company, view:<br /><a target="_blank" href="https://docs.microsoft.com/en-us/azure/networking/azure-network-latency">https://docs.microsoft.com/en-us/azure/networking/azure-network-latency<br /><img alt="azure-network-latency-2020-12-2761x1756.png" width="2761" src="https://user-images.githubusercontent.com/300046/109372837-e773f400-7868-11eb-8804-1d306f22fba2.png"></a>
+
+   PROTIP: In the above, the slowest is 400 ms round-trip between Cape Town (South Africa West) and Australia East.
+
+   NOTE: One big advantage of Azure over AWS is that AWS requires users to do their own backups and restores.
+   But Microsoft does its own complete backups of all data in each zone, and when there is an outage, they take care of restoring it to a new zone. Where backups go is not public information, but it is likely that they are in a different zone in the same region, or in a different region. 
+
+1.  <a target="_blank" href="https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions">These cross-region pairs</a> are used for replication in Azure business continuity and disaster recovery.
+
+<a name="Naming"></a>
+
+## Naming conventions
+
+Advice from Microsoft: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">Naming conventions</a>:
+
+PROTIP: Define abbreviations, then enforce their use. Abbreviations are needed to keep names short.
+Define abbreviations in different human languages if you haven an international crew.
+Abbreviations can serve as a way to inform policies, such as locking of production servers.
+
+   1. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations">rg, vm</a> = Resource asset type. 
+   2. fin, mktg, product, it, corp = Business unit - organizational element that owns the subscription or workload the resource belongs to. 
+   3. navigator, emissions, sharepoint, hadoop = Application or service name of the application, workload, or service that the resource is a part of.
+   4. shared, central, client = Subscription type - the purpose of the subscription that contains the resource. 
+   5. prod, dev, qa, stage, test = Deployment environment - The stage of the development lifecycle for the workload that the resource supports.
+   6. westus, eastus2, westeu = Location/Region - The Azure region where the resource is deployed.
+   <br /><br />
+
+
+<a name="ResourceGroups"></a>
+
+### Resource Groups
+
+   Before any resource can be provisioned, you need a resource group for it to be placed in, for provisioning, monitoring, maintenance.
+   Each resource must be in a resource group. 
+
+   Resource groups can be created by using any of the following methods:
 
 
 <hr />
@@ -1055,6 +1129,47 @@ PROTIP: Below I've added LinkedIn links to each Learn Room instructor.
 
 <hr />
 
+<a name="Naming"></a>
+
+## Naming conventions
+
+PROTIP: Decide on naming conventions and abbreviations BEFORE you create any resources.
+Abbreviations are needed to keep names short.
+This is both to avoid re-dos and to help with less stressful collaboration and communication,
+especially if you have an international crew with different human languages and cultures.
+
+PROTIP: Some abbreviations can inform policies, such as locking of production servers.
+
+Based on <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">Advice from Microsoft about naming conventions</a>:
+
+   * shared, central, client = <strong>Subscription type</strong> - the purpose of the subscription that contains the resource. 
+
+   * fin, mktg, product, it, corp = <strong>Business unit</strong> - organizational element that owns the subscription or workload the resource belongs to. 
+
+   * westus, eastus2, westeu = <strong>Location/Region</strong> - The Azure region where the resource is deployed.
+
+   * prod, dev, qa, stage, test = <strong>Deployment environment</strong> - The stage of the development lifecycle for the workload that the resource supports.
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations">rg, vm</a> = <strong>Resource asset type</strong>. 
+
+   * navigator, emissions, sharepoint, hadoop = <strong>name of the application, workload, or service</strong> that the resource is a part of.
+
+PROTIP: Keep the sequence of the abbreviations consistent, so that you can easily find the resource in the portal.
+
+
+<a name="ResourceGroups"></a>
+
+### Resource Groups
+
+   Before any resource can be provisioned, you need a resource group for it to be placed in, for provisioning, monitoring, maintenance.
+   Each resource must be in a resource group. 
+
+   Resource groups can be created by using any of the following methods:
+
+
+
+<hr />
+
 <a name="Automation"></a>
 
 ## Automation programmatically
@@ -1081,7 +1196,7 @@ There are many ways to automate the creation of resources within Azure:
    1. Helm charts referencing DockerHub or Azure Container Registry (ACR) images
 
    * From Microsoft (Security) Defender Incident Playbook <a target="_blank" href="https://www.youtube.com/watch?v=eLCrGe4-Zzc&22m">VIDEO</a>
-   * Azure Power Automation
+   * <a href="#AZPowerAutomate">Azure Power Automate</a>
    * Microsoft Power apps
    * From Visual Studio or Visual Studio Code
    <br /><br />
@@ -1090,7 +1205,7 @@ There are many ways to automate the creation of resources within Azure:
 
 <hr />
 
-## My Azure-quickly
+## My Azure-quickly repo on GitHub
 
 My repo <a target="_blank" href=" 
 https://github.com/wilsonmar/azure-quickly">
@@ -1107,14 +1222,30 @@ Utility script code enable the scripts to run from Linux and Git Shell on Window
 The scripts are also useful for learning Azure. 
 
 
-### Cloud Shell
+<hr />
 
-Bash CLI or PowerShell.
+## Cloud Shell (CLI & PowerShell)
 
-<a target="_blank" href="https://www.youtube.com/watch?v=x2aIVYxim-A&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=6" title="by Dana Epps Oct 3, 2019">VIDEO</a>: Cloud Shell
+   Resources:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=x2aIVYxim-A&t=2m56m&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=6" title="Forced to learn a new shell and vi editor by Dana Epps Oct 3, 2019">VIDEO</a>: Cloud Shell
+   <br /><br />
+
+https://github.com/wilsonmar/azure-quickly/blob/main/az-info.sh
+is similar to the aws-info.sh script in my <a target="_blank" href="">aws-quickly</a> repo.
+
+Here I list both CLI and PowerShell commands to get information:
+   * List Azure accounts
+   * List resources
+   <br /><br />
+
+TODO: I'm also working on a PowerShell version of the script.
 
 
-### Azure Power Automation
+<hr />
+
+<a name="AZPowerAutomate"></a>
+
+### Azure Power Automate
 
    * [Azure Automation](https://www.youtube.com/watch?v=9Jv3ThPqVco&list=RDCMUCuB24cID6NnypDWSLe4gfqA&start_radio=1&rv=9Jv3ThPqVco)
    * [Power Automate Add Azure AD users and managers](https://www.youtube.com/watch?v=hrNm4kLeAnY)
@@ -1396,6 +1527,9 @@ using what's called "explicit user and device trust validation".
 
 14. Click "Create".
 
+    Alternately, Powershell commands to create a group: <a target="_blank" href="https://www.youtube.com/watch?v=p6WZejkXAa4">VIDEO</a>
+
+    <pre>Create-AzureADGroup -DisplayName "Tampa Users" -MailEnabled $false -SecurityEnabled $true -MailNickName "TampaUsers" -Description "Users in Tampa"</pre>
 
     <hr />
 
@@ -1405,7 +1539,7 @@ using what's called "explicit user and device trust validation".
 
     Each license has its own options.
 
-    License defaults to "Azure AD Free" to begin.
+    The license defaults to "Azure AD Free" to begin.
 
     P1 provides Conditional Access.
 
@@ -1926,34 +2060,6 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 <hr />
 
 
-<a name="Naming"></a>
-
-## Naming conventions
-
-Advice from Microsoft: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">Naming conventions</a>:
-
-PROTIP: Define abbreviations, then enforce their use. Abbreviations are needed to keep names short.
-Define abbreviations in different human languages if you haven an international crew.
-Abbreviations can serve as a way to inform policies, such as locking of production servers.
-
-   1. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations">rg, vm</a> = Resource asset type. 
-   2. fin, mktg, product, it, corp = Business unit - organizational element that owns the subscription or workload the resource belongs to. 
-   3. navigator, emissions, sharepoint, hadoop = Application or service name of the application, workload, or service that the resource is a part of.
-   4. shared, central, client = Subscription type - the purpose of the subscription that contains the resource. 
-   5. prod, dev, qa, stage, test = Deployment environment - The stage of the development lifecycle for the workload that the resource supports.
-   6. westus, eastus2, westeu = Location/Region - The Azure region where the resource is deployed.
-   <br /><br />
-
-
-<a name="ResourceGroups"></a>
-
-### Resource Groups
-
-   Before any resource can be provisioned, you need a resource group for it to be placed in, for provisioning, monitoring, maintenance.
-   Each resource must be in a resource group. 
-
-   Resource groups can be created by using any of the following methods:
-
 ### Automation options
 
    * <a href="#Portal">Azure portal GUI</a>
@@ -2006,15 +2112,13 @@ References on naming conventions:
 
    ![az-shell-choice-536x232](https://user-images.githubusercontent.com/300046/115872851-82b7be80-a3ff-11eb-8d7b-012dab3ac544.png)
 
-1. Click "Bash" (since we're using CLI scripts).
+1. Click "Bash" (since we're using CLI scripts). Or "PowerShell".
 
    If this is the first time, you'll see "You have no storage mounted":
 
    ![az-shell-no-starge-550x247](https://user-images.githubusercontent.com/300046/115875601-9e709400-a402-11eb-9d22-d9d906f3f766.png)
 
-1. Click "Create storage" to have Azure assign its own names. 
-
-   Optionally, click "Show advanced settings" if you want to specify the Resource Group name for the storage account:
+1. PROTIP: Instead of clicking "Create storage" (which will cause Azure to assign its own names), <strong>click "Show advanced settings"</strong> to specify the Resource Group name for your storage account:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/115131861-7e7f4180-9fb8-11eb-94f2-bbc1cb3d498b.png"><img width="709" alt="az-onboard-shell-storage-1418x328" src="https://user-images.githubusercontent.com/300046/115131861-7e7f4180-9fb8-11eb-94f2-bbc1cb3d498b.png"></a>
 

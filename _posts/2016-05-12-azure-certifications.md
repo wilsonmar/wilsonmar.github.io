@@ -720,6 +720,7 @@ https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_01_Lab1_Ex3_Sensitive_Information_Types.md"> Lab 1 - Exercise 3 - Manage Sensitive Information Types </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_01_Lab1_Ex4_Trainable_Classifiers.md"> Lab 1 - Exercise 4 - Manage Trainable Classifiers </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_01_Lab1_Ex5_Sensitivity_Labels.md"> Lab 1 - Exercise 5 - Manage Sensitivity Labels </a>
+
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_02_Lab1_Ex1_DLP_policies.md"> Lab 2 - Exercise 1 - Manage DLP Policies </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_02_Lab1_Ex2_Endpoint DLP.md"> Lab 2 - Exercise 2 - Manage Endpoint DLP </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_02_Lab1_Ex3_DLP_reports.md"> Lab 2 - Exercise 3 - Manage DLP reports </a>
