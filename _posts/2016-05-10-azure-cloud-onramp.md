@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-07-29"
+date: "2023-08-02"
 file: "azure-cloud-onramp"
 title: "Azure Cloud Onramp"
 excerpt: "Azure URLs, Subscriptions, Support plans, Tenants, Directories, ARM portal Keyboard Shortcuts, CLI Bash & PowerShell scripting"
@@ -65,7 +65,7 @@ Microsoft has defined their <a target="_blank" href="https://wilsonmar.github.io
    * Business User
    <br /><br />
 
-   PROTIP: Generic job positions ("roles") are different from the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a> (AAD).
+   PROTIP: Generic job positions ("roles") are different from the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a> (AAD/Entra).
 
    MY OPINION: I think job roles should be multi-select checkboxes.
    This segregation also adds to duplicating material for each.
@@ -78,7 +78,7 @@ Microsoft has defined their <a target="_blank" href="https://wilsonmar.github.io
 To enable IT people to do their job safely, securely, and efficiently, below is what their management should do.
 
 <a target="_blank" href="https://techcommunity.microsoft.com/t5/video-hub/top-10-best-practices-for-azure-security/ba-p/1698837">VIDEO</a>:
-<a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/security-top-10">Azure Top Security Best Practices</a> identifies these <strong>lifecycle stages</strong> [23]:
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/security-top-10">Azure Top Security Best Practices</a> identifies these <strong>lifecycle stages</strong>:
 
    1. Sponsorship and Delegation
    2. Governance
@@ -92,7 +92,7 @@ To enable IT people to do their job safely, securely, and efficiently, below is 
 
 ### Efforts by Organizational Level
 
-<a target="_blank" href="https://www.youtube.com/watch?v=6iYxNm3TOiI&list=PLtVMyW0H7aiOQwZSsn2d-tg2z729ce1BZ" title="MCRA Intro by Mark Simos, Microsoft Chief Security Advisor">VIDEO</a>: Microsoft's overarching <a target="_blank" href="https://aka.ms/MCRA/">Cybersecurity Reference Architecture (MCRA)</a> contains an overwhelming number of diagrams in the PowerPoint ??? file covered by <a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop-videos">videos</a> in <a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop">Microsoft's CISO Workshop</a>.
+<a target="_blank" href="https://www.youtube.com/watch?v=6iYxNm3TOiI&list=PLtVMyW0H7aiOQwZSsn2d-tg2z729ce1BZ" title="MCRA Intro by Mark Simos, Microsoft Chief Security Advisor">VIDEO</a>: Microsoft's overarching <a target="_blank" href="https://aka.ms/MCRA/">Cybersecurity Reference Architecture (MCRA)</a> contains an overwhelming number of diagrams in the <a target="_blank" href="https://github.com/MicrosoftDocs/security/blob/main/Downloads/microsoft-cybersecurity-reference-architectures.pptx?raw=true">PowerPoint file</a> covered by <a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop-videos">videos</a> in <a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop">Microsoft's CISO Workshop</a>.
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"><img alt="azure-guides-1158x439.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"></a>
 
@@ -168,7 +168,7 @@ PROTIP: Many don't take security "seriously" because they haven't fully grasped 
 
 6. <strong>Cybersecurity is a team sport</strong> – Nobody can do it all, so always focus on the things that only you (or your organization) can do to protect your organization's mission. For things that others can do better or cheaper, have them do it (security vendors, cloud providers, community).
 
-7. <strong>Your network isn’t as trustworthy as you think it is</strong> - A security strategy that relies on passwords and trusting any intranet device is only marginally better than no security strategy at all. Attackers easily evade these defenses so the trust level of each device, user, and application must be proven and validated continuously starting with a level of zero trust.
+7. <strong>Your network isn’t as trustworthy as you think it is</strong> - A security strategy that relies on passwords and trusting any intranet device is only marginally better than no security strategy at all. Attackers easily evade these defenses so the trust level of each device, user, and application must be proven and validated continuously starting with a level of <strong>Zero Trust</strong>.
    * If a bad actor has unrestricted physical access to your computer, it's not your computer anymore.
    * If a bad actor can persuade you to run their program on your computer, it's not solely your computer anymore.
    * If a bad actor can alter the operating system on your computer, it's not your computer anymore.
@@ -688,7 +688,7 @@ PROTIP: Setup <strong>different browser profiles</strong> on the same browser, a
 ### First year free services
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/free/free-account-faq/">
-https://azure.microsoft.com/en-us/free/free-account-faq</a> lists the services which Microsoft makes free for the first year:
+https://azure.microsoft.com/en-us/free/free-account-faq</a> lists services which Microsoft offers free for the first year:
 
    * Compute: 750 hours of B1S Linux VMs
    * Compute: 750 hours of B1S Windows VMs
@@ -698,7 +698,7 @@ https://azure.microsoft.com/en-us/free/free-account-faq</a> lists the services w
    * Storage Blobs: 5 GB
    * Cosmo DB up to 5 GB 400 request units
    * Network bandwidth: 15 GB outbound data transfer
-   * AI & Machine Learning services
+   * AI & Machine Learning services?
    <br /><br />
 
    TODO: HANDS-ON: Make use of them without spending any money of your own!
@@ -718,9 +718,9 @@ The clock is ticking!
 
 1. Click the "Free trial" link and go through the verification steps.
 
-   You get assigned a @onmicrosoft.com domain and individual account.
+   IMPORTANT: You are assigned an <tt>@onmicrosoft.com</strong> domain and individual account.
 
-1. To view time remaining, see 
+1. To view the time remaining within the free period, see 
    
    <a target="_blank" href="https://admin.microsoft.com/adminportal/home?#/subscriptions">
    https://admin.microsoft.com/adminportal/home?#/subscriptions</a>
@@ -735,7 +735,7 @@ The clock is ticking!
    * <a target="_blank" href="https://www.youtube.com/playlist?list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7">YouTube playlist on Azure</a> by Zach Kramer and Steve Michelotti
    <br /><br />
 
-1. PROTIP: Avoid using an email that you use for your own banking, shopping, social media, etc. For continuity with a real cloud, you'll need an email address that you can share and transfer to other people. That's so at a company, you will need to give someone else the password so that if you're ever go on vacation or get "run over a bus", your organization can continue.
+1. PROTIP: Avoid using an email that you use for your own banking, shopping, social media, etc. For continuity with a real cloud, you'll need an email address that you can share and transfer to other people. That's so at a company, you will need to give someone else the password so that if you're ever go on vacation (or get run over or thrown under a bus), your organization can continue.
 
    In you're in an enterprise company, get an email adddress from a corporate assets administrator. A different (service) account is often created for each department of responsibility.
 
@@ -744,17 +744,23 @@ The clock is ticking!
    Azure provide access to more than 25 products that are always free. 
 
 
-   ### Azure Active Directory (AAD)
+   ### Entra = Azure Active Directory
+
+   Azure Active Directory (AAD) was rebranding in 2023 to <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/new-name">Microsoft Entra ID</a>.
 
    When someone signs up for a Microsoft cloud service subscription (such as Microsoft Azure, Office 365, Microsoft Intune, etc.), a dedicated instance of <strong>Azure AD (Active Directory)</strong> is created automatically. 
 
    READ: <a target="_blank" href="https://microsoftlearning.github.io/AZ-900T0x-MicrosoftAzureFundamentals/Instructions/Walkthroughs/19-Use%20the%20Azure%20Pricing%20Calculator.html"><img width="20" alt="pricing" src="https://code.benco.io/icon-collection/azure-patterns/calculator-pricing-details.svg"></a> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/active-directory/">Azure Active Directory pricing</a>. 
 
-   Premium P1 features include Password Protection (custom banned password). Dynamic groups requires a Premium P1 license.
+   <strong>Premium P1</strong> features include Password Protection (custom banned password). Dynamic groups require a Premium P1 license.
 
-   Premium P2 includes all P1 features, plus really cool <strong>"Identity Protection"</strong> with these policies Assignment to all users:
+   * Risk level and risk detail fields are hidden to those with just the Azure AD Premium P1 edition.
+   * Advanced detections (such as unfamiliar sign-in properties) not covered by license appear under the name Sign-in with additional risk detected. 
+   <br /><br />
 
-   Additionally, Microsoft 365 subscribers have an additional Azure AD licensing options:
+   <strong>Premium P2</strong> includes all P1 features, plus really cool <strong>"Identity Protection"</strong> with policies Assignment to all users.
+
+   Microsoft 365 subscribers have additional AAD/Entra licensing options:
    * Free 500,000 object limit, includes MFA for O365 services
    * $1/mo. Basic for group-base access management with SLAs
    * $6/mo. P1 for conditional access based on device/location & MFA for on-prem. services
@@ -771,16 +777,7 @@ The clock is ticking!
 
    * Export risk detection data to third-party utilities for further analysis.
 
-   ### Risk Events
-
-   Risk level and risk detail fields are hidden to those with just the Azure AD Premium P1 edition.
-
-   Advanced detections (such as unfamiliar sign-in properties) are not covered by your license, and will appear under the name Sign-in with additional risk detected. 
-
-
-   Devices are managed on Azure AD
-
-   Users on another Azure AD (B2B) or public IDP (B2C)
+   Users on another Azure AD (B2B) or public IDP (B2C).
 
 
    ### Enterprise discount
@@ -792,7 +789,7 @@ The clock is ticking!
 
    ### AD Tenants
 
-   The Azure SaaS service separates different customers into different <strong>tenants</strong> (like tenants in an apartment building). Each tenant is a dedicated, isolated instance of the Azure Active Directory service, owned and managed by an organization. 
+   The Azure SaaS service separates different customers into different <strong>tenants</strong> (like tenants in an apartment building). Each tenant is a dedicated, isolated instance of the AAD/Entra service, owned and managed by an organization. 
 
    "Isolated" = ISE
 
@@ -801,34 +798,18 @@ The clock is ticking!
 2. For birthdate, make up an adult year: 2023 - 22 = 2001
 
    PROTIP: Write it down for account recovery, such as in a 1Password entry.
-   Also write down the date you created the account.
+   Also write down the date you created the account in a calendar entry when you'll switch accounts.
 
 3. You'll need a phone number for multi-factor Authentication.
 
-   PROTIP: Give Googgle Voice the cell number that you've been giving out to people.
-   Then get a new phone number from your cell carrier (Verizon, ATT, etc.).
-   In Google Voice have that new number ring when someone calls you at your original number.
-   Give that new number only to Microsoft.
-   This enables you to transfer that new number to someone else without making your friends wonder where you went.
+   PROTIP: Microsoft does not accept VOIP number such as those from Googgle Voice.
+   They require a cell number from a cell carrier (Verizon, ATT, etc.).
 
-   PROTIP: It's best security that for 3FA you use someone else's phone.
-   But as my wife will tell you this can get annoying if you work while she's sleeping with her phone next to her.
+4. Provide credit card number.
 
-4. Get a debit or credit card number.
-
-   BIG PROTIP: Avoid using a personal credit card which can keep charging your card without your approval of specific charges.
-   Amazon and Microsoft do not provide anyone you can actually talk to about charges.
-   And cancelling your credit card will negatively affect your credit scrore, which results in you paying higher interest rates.
-
-   So get a <strong>pre-paid debit card</strong> to pay for cloud usage.
-   Such cards only lets you spend the money you load onto the card. 
-   <a target="_blank" href="https://www.bluebird.com/">Bluebird</a> VISA card (by American Express) 
-   takes no overdraft fee and no purchase fee.
-   Add money (recharge) free at Walmart customer service counters or via a connected checking account.
-
-   Unlike Movo, Bluebird does not have a $4.95 inactivity fee after three months without activity.
-
-5. Create a separate card sub-account for each cloud account.
+   BIG PROTIP: Microsoft no longer accepts debit cards such as from Walmart <a target="_blank" href="https://www.bluebird.com/">Bluebird</a> VISA card (by American Express).
+   
+5. PROTIP: Create a separate card sub-account for each cloud account.
 
 
    <a name="SignUp"></a>
@@ -851,7 +832,7 @@ The clock is ticking!
 
    PROTIP: access control and billing occur at the subscription level, not the account level.
 
-   PROTIP: Each Subscription can only trust a single AAD directory.
+   PROTIP: Each Subscription can only trust a single AAD/Entra directory.
 
    Transfer ownership of a subscription, such as to a central accounting department.
 
@@ -893,11 +874,12 @@ Microsoft has its "Intune" offering to manage endpoints (mobile and laptops).
 
 ## portal.azure.com GUI
 
-1. On initial (first time) new Subscription entry pop-up: Azure Advisor
+1. Use your default internet browser (Apple Safari, Microsoft Edge, Google Chrome).
+1. On the initial (first time) new Subscription entry pop-up: Azure Advisor
 
    ### Azure Advisor
 
-   On initial entry into portal, Azure greets you with a pop-up about Azure Advisor.
+   On initial entry into the portal, Azure greets you with a pop-up about Azure Advisor.
 
    <a target="_blank" href="https://azure.microsoft.com/en-us/services/advisor/"><img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-patterns/advisor-blue.svg">
    Azure Advisor</a> provides <strong>recommendations</strong> by categories of the "Well-Architected Framework" (but not "monitoring"):
@@ -950,7 +932,7 @@ Microsoft has its "Intune" offering to manage endpoints (mobile and laptops).
 
    * Premier for "substantial dependence" with a TAM (Technical Account Manager).
 
-   Getting 403 ActiveDirectoryMenuBlade accessing AAD on Portal
+   Getting 403 ActiveDirectoryMenuBlade accessing AAD/Entra on Portal
 
 0. Right-click on the "Help + Support" box on the Dashboard and select "unpin"
    because you now know you can reach it (in two places).
@@ -998,11 +980,12 @@ Microsoft has its "Intune" offering to manage endpoints (mobile and laptops).
 
    https://microsoft.github.io/AzureTipsAndTricks/blog/tip1.html
 
+
    ### Categories to get support
 
    In order to route your support to a specific team, here is a comprehensive list:
 
-   * Azure Active Directory
+   * Azure Active Directory (AAD/Entra)
    * Microsoft Azure Stack
    * Azure Stack Edge
    * Blockchain [discontinued]
@@ -1029,35 +1012,41 @@ Microsoft has its "Intune" offering to manage endpoints (mobile and laptops).
 
 ## Learning Hubs
 
-<a target="_blank" href="https://bit.ly/dwayne-learning-hub-form">Learn Room sign-up</a>:
+<a target="_blank" href="https://bit.ly/dwayne-learning-hub-form">Learn Room sign-up form</a>:
 
-* AI for Everyone - <a target="_blank" href="https://www.linkedin.com/in/arafattehsin/">Arafat Tehsin</a>
+PROTIP: Below I've added LinkedIn links to each Learn Room instructor.
+
+* AI for Everyone - <a target="_blank" href="https://www.linkedin.com/in/arafattehsin/">Arafat Tehsin</a> (https://arafattehsin.com/blog)
 * Analytics with <a target="_blank" href="https://www.linkedin.com/in/indirapolavarapu">Indira Polavarapu</a>
 * Azure AD from A to Z - <a target="_blank" href="https://www.linkedin.com/in/ericmwoodruff/">Eric Woodruff</a> (ex-AWS)
 * Azure Centric Learning - <a target="_blank" href="https://www.linkedin.com/in/mdnoga/">Marcos Nogueira</a>
 * Azure Cloud Commanders - <a target="_blank" href="https://www.linkedin.com/in/ljmurray/">Luke Murray</a>
 * Azure Developer for AI, Data, and Cloud - Beginner to Expert - <a target="_blank" href="">Usama Wahab Khan</a>
-* Azure DevOps and .NET - Rodrigo Kono</a>
+* Azure DevOps and .NET - <a target="_blank" href="https://www.linkedin.com/in/rodrigokono/">Rodrigo Kono</a> in Brazil
 * Azure Fundamentals and Developer Technologies - blgorman (<a target="_blank" href="https://www.linkedin.com/in/brianlgorman/">Brian Gorman</a>)
 * Azure Infrastructure by MTTs Learning Room
 * Azure Knowledge Base with Kazeem
-* BizApps Pinoy - Drizzle
+
+* BizApps Pinoy - <a target="_blank" href="https://www.linkedin.com/company/bizappspinoycommunity/">on Linkedin</a> - "for Filipinos" by <a target="_blank" href="https://www.linkedin.com/in/doher-drizzle-pablo-79348338/">Doher Drizzle Pablo</a>
 * Certifications' Training - Estelle
 * Cloud Data Platform Learners - <a target="_blank" href="https://www.linkedin.com/in/armando-lacerda-ba4a6432/">Armando Lacerda</a>
 * Compliance Learning Room - <a target="_blank" href="https://www.linkedin.com/in/raphael-k%C3%B6llner/">Raphael Koellner</a>
 * Cybersecurity From Beginner to Expert - <a target="_blank" href="https://www.linkedin.com/in/mdnoga/">Dwayne Natwick</a>
+
 * Design & build with Jeeva and Dharani: D365 CE, Power Platform & DevOps
 * GMDynamics365 - <a target="_blank" href="https://www.linkedin.com/in/goloknath-mishra-7133ba104/">Goloknath Mishra</a>
 * Internet of Things, Digital Twins, and AI with <a target="_blank" href="https://www.linkedin.com/in/jorgeasmaia/">Jorge Maia</a>
 * MB-Dynamics 365 and PL-Power Platform - <a target="_blank" href="https://www.linkedin.com/in/juliansharp/">Julian Sharp</a>
 * MCT Community Pakistan - Usman and Gulnaz
 * Microsoft Azure "Zero to Hero" - <a target="_blank" href="https://www.linkedin.com/in/h-sadeghpour/">Hamid Sadeghpour Saleh</a>
+
 * Microsoft Dynamics 365 FO & SCM - <a target="_blank" href="https://www.linkedin.com/in/ffareed/">Faisal Fareed</a>
 * MSIsGreat - <a target="_blank" href="https://www.linkedin.com/in/vignesh-senthamil-selvan/">Senthamil Selvan V</a>
 * M365 Learning Lounge with Nanddeep, Siddharth, and Smita
 * M365 Modern Work 
+
 * Power BI – <a target="_blank" href="https://www.linkedin.com/in/aghonaim/">Ashraf Ghonaim</a>, Learning Expert
-* Power Platform and Dynamics 365 with Nadeeja
+* Power Platform and Dynamics 365 with <a target="_blank" href="https://www.linkedin.com/in/nadeeja/?originalSubdomain=au">Nadeeja (Bomiriya)</a> in Melbourne
 * Power Platform Hub - <a target="_blank" href="https://www.linkedin.com/in/hanielcroitoru/">Haniel Croitoru</a>
 * Power Platform with Rishona
 * Swamy The Learner (<a target="_blank" href="https://www.linkedin.com/in/viswanatha-swamy-b57326128/">Viswanatha Swamy</a>)
@@ -1070,20 +1059,34 @@ Microsoft has its "Intune" offering to manage endpoints (mobile and laptops).
 
 ## Automation programmatically
 
-Microsoft provides several mechanisms to automate away manual toil.
+There are many ways to automate the creation of resources within Azure:
 
-   * Bash shell scripts running in CLI
-   * PowerShell scripts running in CLI
-   * API calls from custom programming languages C#, Go, Java, JavaScript, PHP, PowerShell, Python running in CLI
+   1. <a href="#VM_GUI">Portal GUI Cloud Shell</a>
+   1. <a href="#VM_template">JSON ARM Template</a> with parameter files
+   1. <a href="#VM_CLI">CLI</a> Bash scripts (az commands)
 
-   * API calls from custom programming running within a container
+   1. <a href="#VM_PS">Powershell</a> ps1 scripts calling Az modules
+   1. PowerShell DSC (Desired State Configuration) automation
+   1. <a href="#VM_PS_JSON">Powershell</a> running ARM template JSON files
 
-   * Power apps
-   * Azure Power Automation
+   1. Microsoft Bicep (new in 2022)
+   1. <a href="#VM_Docker">Terraform</a> HCL *.tf files with templating features and advanced logic features)
+   1. <a target="_blank" href="https://wilsonmar.github.io/pulumi/">Pulumi Python/C#/Nodejs/Typescript code</a>
+
+   1. REST API (used <a target="_blank" href="https://azidentity.azurewebsites.net/post/2020/12/15/key-vault-with-the-use-of-vbscript-classic-asp">within a VBScript</a>, curl, C# .NET, Java, Python, NodeJs, etc.
+   1. REST API calls in program generated from Swagger/OpenAPI JSON
    * (Serverless) Functions
+
+   1. <a href="#VM_Docker">Docker</a> containers
+   1. Helm charts referencing DockerHub or Azure Container Registry (ACR) images
+
+   * From Microsoft (Security) Defender Incident Playbook <a target="_blank" href="https://www.youtube.com/watch?v=eLCrGe4-Zzc&22m">VIDEO</a>
+   * Azure Power Automation
+   * Microsoft Power apps
+   * From Visual Studio or Visual Studio Code
    <br /><br />
 
-
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-powershell/">PowerShell scripts</a> running in CLI
 
 <hr />
 
@@ -1092,23 +1095,12 @@ Microsoft provides several mechanisms to automate away manual toil.
 My repo <a target="_blank" href=" 
 https://github.com/wilsonmar/azure-quickly">
 https://github.com/wilsonmar/azure-quickly</a>
-contains automation scripts to invoke instead of manually operating the Azure Portal, so that you can save money by deleting Resource Groups because you can get resources back with just a few commands. Scripts also enable you to stand up resources in different regions/locations. Most scripts in the repo are Bash shell scripts that run natively on MacOS and thus familiar to most developers. PowerShell scripts are used in cases where they are the only solution. 
+contains automation scripts to invoke instead of manually operating the Azure Portal, so that you can save money by deleting Resource Groups because you can get resources back with just a few commands. 
 
-There are many ways to automate the creation of resources within Azure:
-   1. <a href="#VM_GUI">Portal GUI Cloud Shell</a>
-   1. <a href="#VM_template">JSON ARM Template</a> with parameter files
-   1. <a href="#VM_CLI">CLI</a> Bash scripts (az commands)
-   1. <a href="#VM_PS">Powershell</a> ps1 scripts calling Az modules
-   1. PowerShell DSC (Desired State Configuration) automation
-   1. <a href="#VM_PS_JSON">Powershell</a> running ARM template JSON files
-   1. <a href="#VM_Docker">Docker</a> containers
-   1. <a href="#VM_Docker">Terraform</a> HCL *.tf files with templating features and advanced logic features)
-   1. Helm charts referencing DockerHub or Azure Container Registry (ACR) images
-   1. REST API (used <a target="_blank" href="https://azidentity.azurewebsites.net/post/2020/12/15/key-vault-with-the-use-of-vbscript-classic-asp">within a VBScript</a>, curl, C# .NET, Java, Python, NodeJs, etc.
-   1. REST API calls in program generated from Swagger/OpenAPI JSON
-   1. <a target="_blank" href="https://wilsonmar.github.io/pulumi/">Pulumi Python/C#/Nodejs/Typescript code</a>
-   1. Microsoft Bicep (new)
-   <br /><br />
+Automation also enable you to stand up resources in different regions/locations the same way. 
+
+Most scripts in the repo are Bash shell scripts that run natively on MacOS and thus familiar to most developers. 
+PowerShell scripts are used in cases where they are the only solution, are more efficient, or covered in a tutorial.
 
 Utility script code enable the scripts to run from Linux and Git Shell on Windows laptops. 
 
@@ -1212,9 +1204,9 @@ I. Azure DevOps (vs. GitHub Actions)
 
 <a href="#AD">AD = Active Directory</a><br />
 vs.<br />
-<a href="#AAD">AAD = Azure AD = Azure Active Directory</a><br />
+<a href="#AAD">AAD = Azure AD = Azure Active Directory = Entra</a><br />
 vs.<br />
-AADC = Azure AD Connect<br />
+AADC = Azure AD Connect = Entra Connect<br />
 vs.<br />
 ADDS = Active Directory DS = Domain Services
 
@@ -1242,14 +1234,15 @@ It uses the AD Admin Center GUI.
 
 <a name="AAD"></a>
 
-### AAD = Azure Active Directory
+### Entra = AAD = Azure Active Directory
 
-Azure Active Directory (AAD) registers Users and Groups, plus apps and devices. 
-AAD is a SaaS service, unlike "Active Directory" running on Windows servers in on-prem data centers. So AAD is also called an "Identity as a Service" (IDaaS). 
+Entra/Azure Active Directory (AAD) registers Users and Groups, plus apps and devices. 
+AAD/Entra is a SaaS service, unlike "Active Directory" running on Windows servers in on-prem data centers. 
+So AAD/Entra is also called an "Identity as a Service" (IDaaS). 
 
-   * Since Azure Microsoft Office 365 is SaaS, users are enrolled into AAD.
+   * Since Azure Microsoft Office 365 is SaaS, users are enrolled into AAD/Entra.
 
-   * Because it's SaSS, it’s also possible to use Azure AD for federation SSO (Single Sign On) - to manage third-party software applications (outside Microsoft), such as CRMs like Salesforce, SAP, etc.
+   * Because it's SaSS, it’s also possible to use AAD/Entra for Federation SSO (Single Sign On) to manage third-party software applications (outside Microsoft), such as CRMs like Salesforce, SAP, etc.
 
 <a name="Domains"></a>
 
@@ -1261,10 +1254,10 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
 
    A Domain Controller (DC) is a server that authenticates user identities and authorizes their access to resources.
 
-### AAD Connect
+### AAD/Entra Connect
 
 <strong>Azure AD Connect</strong> is a Windows service that synchronizes on-prem AD user metadata with the SaaS AAD. Key features of AAD Connect:
-   * Password hash sych with AAD
+   * Password hash sych with AAD/Entra
    * Pass-through authentication which allows users to use the same password on-prem. and in the cloud.
    * Federation integration with AD FS for certificate renewal
    * Synchronization to ensure on-prem and cloud data matches
@@ -1284,7 +1277,7 @@ using what's called "explicit user and device trust validation".
 
 <a name="PortalSearch"></a>
 
-### Portal Search AAD
+### Portal Search AAD/Entra
 
 1.  <a target="_blank" href="https://portal.azure.com">portal.azure.com</a>
 
@@ -1292,7 +1285,7 @@ using what's called "explicit user and device trust validation".
 
     <a name="AAD"></a>
 
-3.  Type <strong>AAD</strong> for the Services related to that name.
+3.  Type <strong>AAD</strong> Entra for the Services related to that name.
 
 4.  Click for the blade called <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview">Azure Active Directory</a> .
 
@@ -1300,7 +1293,7 @@ using what's called "explicit user and device trust validation".
 
     <a name="Tenants"></a>
 
-    ### Tenants in AAD
+    ### Tenants in AAD/Entra
 
 5.  Highlight and copy the value of the Name field, such as "<em>something</em>.onmicrosoft.com".
 
@@ -1336,13 +1329,13 @@ using what's called "explicit user and device trust validation".
 
     Notice the Directory ID GUID is the same as the Tenant ID GUID.
 
-    DEFINITION: A Directory (as in AAD) is where your Tenant metadata is stored.
+    DEFINITION: A Directory (as in AAD/Entra) is where your Tenant metadata is stored.
 
     Everything you do in Azure must be under some Tenant.
 
     Each tenant is independent of all other tenants.
 
-    A tenant represents an organization in AAD.
+    A tenant represents an organization in AAD/Wntra.
    
     
     ### Users, Groups, Apps
@@ -1416,12 +1409,11 @@ using what's called "explicit user and device trust validation".
     P1 provides Conditional Access.
 
     "EMS (Enterprise Mobility + Security E5)" includes:
-    * AAD is the cloud-based IAM service to control access to internal and external applications
-    * Microsoft Intune is used for MDM (Mobile Device Management) but also PCs to remote reset and wipe. compliance status
+    * AAD/Entra - the cloud-based IAM service to control access to internal and external applications
+    * Microsoft Intune for MDM (Mobile Device Management) but also PCs to remote reset and wipe. compliance status
     * Azure Info Protection protects documents tagged to not be shared
     * Microsoft Cloud App Security
-    * Microsoft Advanced Thereat Analytics (ATA) is an on-prem. platform to protect against targeted cyber attacks along the "Cyber Kill Chain" attack process (Domain Dominance) by parsing network traffic to create a behavioral profile about user activities.
-    * Azure Advanced Threat Protection is a cloud-based triage tool which displays incidents on a timeline 
+    * Microsoft Advanced Threat Analytics (ATA) is an on-prem. platform to protect against targeted cyber attacks along the "Cyber Kill Chain" attack process (Domain Dominance) by parsing network traffic to create a behavioral profile about user activities.  It is a cloud-based triage tool that displays incidents on a timeline.
     <br /><br />
 
     "Microsoft 365 E5 Developer (without Windows and Audio Conferencing)"
@@ -1483,7 +1475,7 @@ using what's called "explicit user and device trust validation".
 
 ### Global Admin Account
 
-   <strong>Global Administrators</strong>, aka Company Administrators, in Azure AD have access to <strong>all services</strong> that use AAD identities (Microsoft 365 security center, Intune, Microsoft 365 compliance center, Exchange Online, SharePoint Online, Skype for Business Online, etc.).
+   <strong>Global Administrators</strong>, aka Company Administrators, in Azure AD have access to <strong>all services</strong> that use AAD/Entra identities (Microsoft 365 security center, Intune, Microsoft 365 compliance center, Exchange Online, SharePoint Online, Skype for Business Online, etc.).
 
    REMEMBER: Global Admins get access to Azure resources only after being granted User Access Admin role.
 
@@ -1494,7 +1486,7 @@ using what's called "explicit user and device trust validation".
    So it's important to assign other more specific roles. 
 
 
-REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=1h26m26s">VIDEO</a>: There is no spanning between AAD and AD RBAC roles:
+REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=1h26m26s">VIDEO</a>: There is no spanning between AAD/Entra and AD RBAC roles:
 
 <img width="1920" height="534" alt="az-roles-vs-aad-roles-1920x534" src="https://user-images.githubusercontent.com/300046/118071390-e7ae6680-b364-11eb-8e73-673e3f5d593e.png">
 
@@ -1596,7 +1588,7 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 
    REMEMBER: There are four ways to assign resource rights to a user:
    * Direct assignment of user to resources.
-   * Group assignment - all AAD group members access rights through user association with a group
+   * Group assignment - all AAD/Entra group members access rights through user association with a group
    * Rule-based assignment - when a resource owner creates a group and uses a rule to define which users are assigned to a specific resource, attaching a role definition to a user, group, <a href="#SvcPrin">service principal</a>, or managed identity at a particular scope.
    * External authority assignment - such as on-prem. directory of SaaS app.
    <br /><br />
@@ -1695,13 +1687,13 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 
     <a name="Devices"></a>
 
-    ### Devices on AAD
+    ### Devices on AAD/Entra
 
     A "Registered" device is personally owned and signed in with a personal Microsoft or local account. It can access mobile and Windows 10 but not Windows Servers.
 
     A "Joined" device exists only in the cloud to access Windows 10 and Windows Server 2019 VMs.
 
-    A "Hybrid" AAD joined device can access on-prem Windows 7, 8.1, 10 and Server 2008 or newer.
+    A "Hybrid" AAD/Entra joined device can access on-prem Windows 7, 8.1, 10 and Server 2008 or newer.
 
     ### Role Assignments
 
@@ -1714,7 +1706,7 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 
     PROTIP: Tenant Type "Azure Active Directory" by itself is actually "B2B" = Business to (2) Business. "B2C" means Business to (2) Consumers, or connection to External Identities on LinkedIn, Google, Facebook, etc.
 
-1.  Cancel out by searching for AAD again.
+1.  Cancel out by searching for AAD/Entra again.
 
     Various roles can be can be defined for a tenant - LIMIT: Up to 2,000 roles per individual tenant.
 
@@ -3199,7 +3191,7 @@ tfenv install latest
 
 <a name="AADC"></a>
 
-## Azure AD Connect
+## AAD/Entra Connect
 
 Azure AD Join
 
@@ -3304,6 +3296,17 @@ blog https://azidentity.azurewebsites.net/archive
 
 https://www.linkedin.com/events/introtoarm-biceptemplates7091472660878028800/about/
 by Brian Gorman
+
+<a target="_blank" href="https://azure.microsoft.com/en-us/get-started/on-demand/">
+"Get Started" videos by <a target="_blank" href="https://www.linkedin.com/in/ericdboyd/">Eric Boyd</a> responsiveX
+
+<a target="_blank" href="https://www.microsoft.com/en-us/security/business/privacy/microsoft-priva-risk-management">
+Microsoft Preva Privacy Risk Management</a>
+
+https://www.microsoft.com/en-us/security/business/microsoft-purview
+https://learn.microsoft.com/en-us/purview/purview
+Microsoft Purview data protection and governance
+for "Unified Data Governance"
 
 <hr />
 

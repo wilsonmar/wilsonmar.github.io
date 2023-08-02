@@ -80,3 +80,8 @@ There are several aspects:
 ## Best Places to Work
 
 https://www.computerworld.com/article/3681081/best-places-to-work-in-it-2023.html
+
+https://www.upwork.com/full-time/
+
+
+

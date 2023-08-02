@@ -370,10 +370,9 @@ Static Web Apps are fast because HTML is already rendered and sitting close to u
 
 ## Azure Functions
 
-Azure Functions is a hosting service that handles putting code onto a VM and executing it.
+Azure Functions is a hosting service that puts code onto a VM and executes it.
 
-Function apps do just one thing well, so scaling can be precise and dynamic.
-A simplified programming model.
+Function apps have a simplified programming model -- do just one thing well so scaling can be precise and dynamic.
 
 Function apps are <strong>event driven</strong>, triggered by data operations, timers, and webhooks. 
 
@@ -381,7 +380,7 @@ LIMIT: 5-minute function runtime, 10 minute max.
 
 Advantages of Serverless:
    * No infrastructure management (OS, VNnet, storage)
-   * Integrated Security (AAD, Facebook)
+   * Integrated Security (AAD/Entra, Facebook)
    * Dynamic scalability without hassle (based on workload)
    * Faster time to market
    * More efficient use of resources

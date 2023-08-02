@@ -744,7 +744,7 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
 2. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_02_AzurePolicy.md">Azure Policy </a>
 3. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_03_AzureLocks.md">Resource Manager Locks </a>
 
-4. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_04_MFAConditionalAccessandAADIdentityProtection.md">MFA, Conditional Access (and AAD Identity Protection)</a>
+4. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_04_MFAConditionalAccessandAADIdentityProtection.md">MFA, Conditional Access (and AAD/Entra Identity Protection)</a>
    1. Deploy an Azure VM by using an Azure Resource Manager template
    2. Implement Azure MFA
    3. Implement Azure AD Conditional Access Policies
@@ -818,7 +818,12 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
 15. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_15_Microsoft%20Sentinel.md">Microsoft Sentinel</a> (SIEM/SOAR)
 
 
-<br /><br />
+Prep for AZ-500:
+
+<a target="_blank" href="https://cloudacademy.com/learning-paths/az-500-exam-preparation-microsoft-azure-security-technologies-650/">
+CloudAcademy.com learning path</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=6vISzj-z8k4&list=PLlVtbbG169nHw9T1L_CiLxC-DTwKu-BZG">Study Cram</a> by John Savill
 
 Tim Warner tends to jump around a bit, so his material is great for review:
    * TechTrainerTim.com

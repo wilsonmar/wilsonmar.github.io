@@ -338,8 +338,8 @@ John Brown of TritiumConsulting.com
 AMong <a target="_blank" href="http://vsalmvm.azurewebsites.net/almvm-faq/">Visual Studio ALM virtual machines</a> VHD
 avaialble 10 days at a time.
 
-Azure Active Directory (AAD) Authentication Plug-in for SonarQube
-The AAD OAuth2 provider for SonarQube, created by Hosam Kamel and Jean-Marc Prieur (product owner), enables AAD users to automatically be sign up and authenticated on a SonarQube server.
+Azure Active Directory (AAD/Entra) Authentication Plug-in for SonarQube
+The AAD/Entra OAuth2 provider for SonarQube, created by Hosam Kamel and Jean-Marc Prieur (product owner), enables AAD users to automatically be sign up and authenticated on a SonarQube server.
 
 ## TailSpin
 

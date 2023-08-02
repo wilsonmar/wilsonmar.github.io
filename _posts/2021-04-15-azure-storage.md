@@ -686,7 +686,7 @@ They will maintain their data but the data are only usable when a disk is attach
 <table border="1" cellpadding="4" cellspacing="0">
 <tr align="center"><th align="left">Storage Type
    </th><th><a href="#SAS">Shared Access signatures</a>
-   </th><th>AAD
+   </th><th>AAD/Entra
    </th><th>AD (preview)
    </th><th>Anon. public read
    </th></tr>
@@ -700,8 +700,8 @@ They will maintain their data but the data are only usable when a disk is attach
 
 <tr valign="top" align="center"><td align="left">SMB <a href="#Files">Azure Files</a>
    </td><td> -
-   </td><td> Supported with <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory-domain-services/overview">AAD Domain Svcs</a>
-   </td><td> Supported, creds sync'd to AAD
+   </td><td> Supported with <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory-domain-services/overview">AAD/Entra Domain Svcs</a>
+   </td><td> Supported, creds sync'd to AAD/Entra
    </td><td>-
    </td></tr>
 
@@ -736,9 +736,9 @@ REMEMBER:
 
    * <a href="#SAS">SAS</a> does not support SMB Azure files authorization.
 
-   * AAD does not support authorization of REST accessed Azure Files (use OAuth0 by API Management).
+   * AAD/Entra does not support authorization of REST-accessed Azure Files (use OAuth0 by API Management).
 
-   * AAD does not support authorization of Azure Tables.
+   * AAD/Entra does not support authorization of Azure Tables.
 
 <hr />
 
@@ -1730,9 +1730,14 @@ To bring your own key, be at the server's TDE section, "Use your own key". Selec
 
 <hr />
 
+<a name="Synapse"></a>
+
 ## Azure Synapse
 
-Synapse is Azure's next generation of database technology which combines retrieval and analytics functionality in one comprehensive product.
+Synapse is Azure's next generation of database technology.
+It combines retrieval and analytics functionality in one comprehensive product.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=lLrjaVdBuM0">VIDEO</a> by Pragmatic Works.
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/40576">
 Microsoft Cloud Workshop: Azure Synapse Analytics and AI (whiteboard design session)</a>
@@ -1799,6 +1804,7 @@ READ: Azure Quickstart Templates: Cloud Storage Easier</a>
 <a target="_blank" href="https://www.youtube.com/watch?v=-3k0hhngt7o&list=RDCMUC0m-80FnNY2Qb7obvTL_2fA&index=20">How to automatically manage Azure Blobs lifecycles | Azure Tips and Tricks</a>
 
 https://towardsdatascience.com/datastore-choices-sql-vs-nosql-database-ebec24d56106
+
 
 
 ## More about Azure #

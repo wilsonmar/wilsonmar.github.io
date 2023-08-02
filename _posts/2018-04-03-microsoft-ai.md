@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2021-05-31"
+date: "2023-08-01"
 file: "microsoft-ai"
 title: "Microsoft AI (Azure Cognitive Services)"
 excerpt: "Notes for before and after getting AI-900, AI-100, AI-102 certified, as we automate AI workflows in the Azure PaaS cloud"
@@ -32,13 +32,13 @@ Microsoft has published different lists for what services constitute its "Cognit
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations">Microsoft has</a> three service "Providers":
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Asset type </th><th> Resource provider namespace/Entity </th><th> Abbreviation </th></tr>
+<tr><th> Asset type </th><th> Resource provider namespace/Entity </th><th> Abbre- viation </th></tr>
 <tr valign="top"><td> <a href="#Cognitive_Services">Azure Cognitive Services</a> </td><td> <a href="#Cognitive_Services"> Microsoft.CognitiveServices/accounts</a> </td><td> cog- </td></tr>
 <tr valign="top"><td> <a target="_blank" href="https://wilsonmar.github.io/azure-machine-learning/">Azure Machine Learning workspace</a> </td><td>   Microsoft.MachineLearningServices/workspaces </td><td> mlw- </td></tr>
 <tr valign="top"><td> Azure Cognitive Search </td><td> Microsoft.Search/searchServices </td><td> srch- </td></tr>
 </table>
 
-* <a href="#Search"><strong>Search</strong></a> (the "Bing" brand) has recently been separated out from the "Cognitive Services" to its own at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/">https://docs.microsoft.com/en-us/azure/search</a>, although it's used in "Conversational AI" using an "agent" (Azure Bot Service) to participate in (natural) conversations. BTW: <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microsoft-cortana-features-strategy-report">in 2019</a> Cortana decoupled from Windows 10 search.
+* <a href="#Search"><strong>Search</strong></a> (the "Bing" brand, before OpenAI) was separated out from the "Cognitive Services" to its own at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/">https://docs.microsoft.com/en-us/azure/search</a>, although it's used in "Conversational AI" using an "agent" (Azure Bot Service) to participate in (natural) conversations. BTW: <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microsoft-cortana-features-strategy-report">in 2019</a> Cortana decoupled from Windows 10 search.
 
    Since October 31st, 2020, <a target="_blank" href="https://blogs.bing.com/search-quality-insights/october-2020/Bing-Search-APIS-are-Transitioning">Bing Search APIs</a> transitioned from Azure Cognitive Services Platform to <a target="_blank" href="https://aka.ms/bingapigetstarteddoc">Azure Marketplace</a>. The Bing Search v7 API subscription covers several Bing Search services (Bing Image Search, Bing News Search, Bing Video Search, Bing Visual Search, and Bing Web Search),
 
@@ -526,7 +526,7 @@ Ravi's links</a> still refer to AI-100
 
 ### AI-100 Azure AI Engineer Associate
 
-You have until June 30, 2021 to take this because Microsft is retiring the AI-100 exam in favor of <a href="#AI-102">AI-102 exam</a> (avilable in $99 beta since Feb 2021). <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/ai-100">AI-100 exam, as defined at Microsoft's LEARN</a> has free written tutorials on each of the exam's domains:
+On June 30, 2021 Microsft retired the AI-100 exam in favor of <a href="#AI-102">AI-102 exam</a> (avilable in $99 beta since Feb 2021). <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/ai-100">AI-100 exam, as defined at Microsoft's LEARN</a> has free written tutorials on each of the exam's domains:
 
    * Analyze solution requirements (25-30%)
    * Design AI solutions (40-45%)
@@ -1856,7 +1856,7 @@ Media Services & Storage Account:
 
    NOTE: Video Indexer is under Media Services rather than Cognitive Services.
 
-1. Click the provider to login: AAD account, Personal Microsoft account, Google.
+1. Click the provider to login: AAD (Entra) account, Personal Microsoft account, Google.
 
    PROTIP: Avoid using Google due to the permissions you're asked to give:
 
@@ -2561,6 +2561,21 @@ Thoughtworks publishes their <a target="_blank" href="https://www.thoughtworks.c
 https://assets.thoughtworks.com/assets/technology-radar-vol-24-en.pdf">PDF: Volume 24 of their publication</a> advised a "hold" for Azure Machine Learning.
 
 > "We’ve observed before that the cloud providers push more and more services onto the market. We’ve also documented our concerns that sometimes the services are made available when they’re not quite ready for prime time. Unfortunately, in our experience, Azure Machine Learning falls into the latter category. One of several recent entrants in the field of bounded low-code platforms, Azure ML promises more convenience for data scientists. Ultimately, however, it doesn’t live up to its promise; in fact, it still feels easier for our data scientists to work in Python. Despite significant efforts, we struggled to make it scale and lack of adequate documentation proved to be another issue which is why we moved it to the Hold ring."
+
+## Additionally...
+
+In July and August Microsoft Reactor ran a 
+<a target="_blank" href="https://www.microsoft.com/en-US/cloudskillschallenge/ai/registration/2023/">"Skills Challenge"</a>
+to reward a badge for those who complete an AI tutorial.
+
+https://learn.microsoft.com/en-us/training/challenges 
+   * AI Builder
+   * Machine Learning
+   * MLOps
+   * Cognitive 
+
+https://www.youtube.com/watch?v=ss-kyogPRNo
+by Carlotta
 
 
 ## More
