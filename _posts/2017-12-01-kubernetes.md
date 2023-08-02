@@ -3424,65 +3424,57 @@ Because Deployments provide a helpful "front end" to ReplicaSets, training focus
 
 <a name="Deployments"></a>
 
-## Deployments
-
-Deployments let you create, update, roll back, and scale Pods, using <strong>ReplicaSets</strong>.
+## Deployment strategies
 
 These Kubernetes Deployment strategy offers a unique approach and benefit to manage updates:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690989872/k8s-deploys-800x1185_j777rk.jpg"><img alt="" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690989872/k8s-deploys-800x1185_j777rk.jpg"></a>
-<em>by</em> <a target="_blank" href="https://www.linkedin.com/in/govardhana-miriyala-kannaiah/"><em>Govardhana Miriyala Kannaiah</em></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690989872/k8s-deploys-800x1185_j777rk.jpg"><img alt="k8s-deploys-800x1185.jpeg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690989872/k8s-deploys-800x1185_j777rk.jpg"></a><br /><a target="_blank" href="https://www.linkedin.com/in/govardhana-miriyala-kannaiah/"><em>by Govardhana Miriyala Kannaiah</em></a>
 
-𝟭. 𝗥𝗲𝗰𝗿𝗲𝗮𝘁𝗲:
+1. Recreate:
 
-   All existing instances are terminated at once, and new instances with the updated version are created
+   All existing instances are terminated and discarded immediately. 
+   Updated instances version are created anew.
 
-   𝘋𝘰𝘸𝘯𝘵𝘪𝘮𝘦: Yes
-
+   CAUTION: This is the default strategy, and it involves downtime.
+   
    𝘜𝘴𝘦 𝘤𝘢𝘴𝘦: Non-critical applications or during initial development stages
 
-𝟮. 𝗥𝗼𝗹𝗹𝗶𝗻𝗴 𝗨𝗽𝗱𝗮𝘁𝗲:
+2. <a href="#RollingUpdates">Rolling Update</a>:
 
    Application instances are updated one by one, ensuring high availability during the process
 
-   𝘋𝘰𝘸𝘯𝘵𝘪𝘮𝘦: No
-
    𝘜𝘴𝘦 𝘤𝘢𝘴𝘦: Periodic releases
 
-𝟯. 𝗦𝗵𝗮𝗱𝗼𝘄:
+3. Shadow:
    
-   A copy of the live traffic is redirected to the new version for testing without affecting production users
+   A copy of the live traffic is redirected to the new version for testing without affecting production users.
 
-   This is the most complex deployment strategy and involves establishing mock services to interact with the new version of the deployment
-
-   𝘋𝘰𝘸𝘯𝘵𝘪𝘮𝘦: No
+   This is the most complex deployment strategy and involves establishing mock services to interact with the new version of the deployment.
 
    𝘜𝘴𝘦 𝘤𝘢𝘴𝘦: Validating new version performance and behavior in a real environment
 
-𝟰. 𝗖𝗮𝗻𝗮𝗿𝘆:
+4. Canary:
 
    The new version is released to a subset of users or servers for testing before broader deployment
 
-   𝘋𝘰𝘸𝘯𝘵𝘪𝘮𝘦: No
-
    𝘜𝘴𝘦 𝘤𝘢𝘴𝘦: Impact validation on a subset of users
 
-𝟱. 𝗕𝗹𝘂𝗲-𝗚𝗿𝗲𝗲𝗻:
+5. Blue/Green:
    
-   - Two identical environments are maintained: one with the current version (blue) and the other with the updated version (green)
-   - Traffic starts with blue, then switches to the prepared green environment for the updated version
-
-   𝘋𝘰𝘸𝘯𝘵𝘪𝘮𝘦: No
+   Two identical environments are created to run simultaneously: 
+   one with the current version (blue) and the other with the updated version (green).
+   
+   Traffic starts with blue, then switches to the prepared green environment for the updated version.
 
    𝘜𝘴𝘦 𝘤𝘢𝘴𝘦: High-stake updates
 
-𝟲. 𝗔/𝗕 𝗧𝗲𝘀𝘁𝗶𝗻𝗴:
+6. A/B Testing:
 
-   Multiple versions are concurrently tested on different users to compare performance or user experience
+   Multiple versions are concurrently tested on different users to compare performance or user experience.
 
    𝘋𝘰𝘸𝘯𝘵𝘪𝘮𝘦: Not directly applicable
    
-   𝘜𝘴𝘦 𝘤𝘢𝘴𝘦: Optimizing user experience
+   𝘜𝘴𝘦 𝘤𝘢𝘴𝘦: Comparing and optimizing user experience during development
 
 
 <a name="Replication"></a>
@@ -3492,6 +3484,8 @@ These Kubernetes Deployment strategy offers a unique approach and benefit to man
 
    <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/rs-128.png?raw=true">
 
+Deployments let you create, update, roll back, and scale Pods, using <strong>ReplicaSets</strong>.
+
 Deployments manage their own ReplicaSets to achieve the declarative goals you prescribe, so you will most commonly work with Deployment objects.
 
 A ReplicaSet controller ensures that a population of Pods, all identical to one another, are running at the same time. 
@@ -3500,8 +3494,18 @@ So it enables Load Balancing across several machines for more capacity, redunanc
    ReplicaSets enable deployment of several pods, and check their status as a single unit (replicas).
    ReplicaSets monitor the number of pods and create pods to match the number of replicas for the label type requested in the yaml.
 
-The sample ReplicaSet.yml file:
-   PROTIP: The spec: template: is copied from a pod definition yaml, then indented.
+   Deployments let you do declarative updates to ReplicaSets and Pods. 
+
+   <pre>kubectl run <em>deployment-name</em> \
+   --image <em>[IMAGE]:[TAB]</em> \
+   --replicas 3 \
+   --labels <em>[KEY]=[VALUE]</em> \
+   --port 8080 \
+   --generator deployment/apps.va \
+   --save-config
+   </pre>
+
+A sample ReplicaSet.yml template: is copied from a pod definition yaml, then indented.
 
    <pre>apiVersion: v1
 kind: ReplicaSet
@@ -3533,17 +3537,6 @@ selector:
 
    PROTIP: <a target="_blank" href="https://wilsonmar.github.io/text-editors#ViIndent">Indent paste using vi</a>
 
-   Deployments let you do declarative updates to ReplicaSets and Pods. 
-
-   <pre>kubectl run <em>deployment-name</em> \
-   --image <em>[IMAGE]:[TAB]</em> \
-   --replicas 3 \
-   --labels <em>[KEY]=[VALUE]</em> \
-   --port 8080 \
-   --generator deployment/apps.va \
-   --save-config
-   </pre>
-
 1. PROTIP: Remember the ".apps" when listing replicasets:
 
    <pre><strong>k get replicasets.apps</strong></pre>
@@ -3556,7 +3549,7 @@ selector:
 
    * Edit the file, then<br />k replace -f replicaset-def.yaml
 
-   REMEMBER: several formats don't modify the file:
+     REMEMBER: several formats don't modify the file:
 
    * k scale --relicas=6 -f replicaset-def.yaml
 
@@ -3566,6 +3559,7 @@ selector:
 
 Practice test with quiz about pod commands: https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039431
 
+<a name="RollingUpdates"></a>
 
 ### Rolling Updates
 
@@ -3632,7 +3626,7 @@ To ensure each Pod maintains the latest state in local storage,
    
 <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/sts-128.png?raw=true">
    * <a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&t=2h58m38s">VIDEO</a>: <a target="_blank" href="https://kubernetesbyexample.com//statefulset/">kubernetesbyexample.com</a>.
-   <br /><br .>
+   <br /><br />
 
 Use of a StatefulSet is preferred over a Deployment to deploy applications that maintain <strong>local state</strong>, with traffic sent to a <strong>specific pod</strong>.
 
@@ -3891,7 +3885,8 @@ data:
 ### Kind: Job
 
 <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/job-128.png?raw=true">
-Batch (background) jobs</a> are "one off" supervisor processes that run once and immediately completed.
+
+Batch (background) jobs are "one off" supervisor processes that run once and are immediately completed.
 
 1. To execute a CronJob based on a repeating schedule:
    
