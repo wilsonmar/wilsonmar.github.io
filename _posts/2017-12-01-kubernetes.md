@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-12"
+date: "2023-08-02"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 excerpt: "Get certified in how to orchestrate containers, especially in clouds, including OpenShift"
@@ -3422,15 +3422,75 @@ The <strong>Sidecar</strong> pattern
 
 Because Deployments provide a helpful "front end" to ReplicaSets, training focuses on Deployments.
 
-<a name="Replication"></a>
-<a name="ReplicaSets"></a>
 <a name="Deployments"></a>
 
-## Deploy Replicas for Replication, Rolling Updates
-
-   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/rs-128.png?raw=true">
+## Deployments
 
 Deployments let you create, update, roll back, and scale Pods, using <strong>ReplicaSets</strong>.
+
+These Kubernetes Deployment strategy offers a unique approach and benefit to manage updates:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690989872/k8s-deploys-800x1185_j777rk.jpg"><img alt="" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690989872/k8s-deploys-800x1185_j777rk.jpg"></a>
+<em>by</em> <a target="_blank" href="https://www.linkedin.com/in/govardhana-miriyala-kannaiah/"><em>Govardhana Miriyala Kannaiah</em></a>
+
+𝟭. 𝗥𝗲𝗰𝗿𝗲𝗮𝘁𝗲:
+
+   All existing instances are terminated at once, and new instances with the updated version are created
+
+   𝘋𝘰𝘸𝘯𝘵𝘪𝘮𝘦: Yes
+
+   𝘜𝘴𝘦 𝘤𝘢𝘴𝘦: Non-critical applications or during initial development stages
+
+𝟮. 𝗥𝗼𝗹𝗹𝗶𝗻𝗴 𝗨𝗽𝗱𝗮𝘁𝗲:
+
+   Application instances are updated one by one, ensuring high availability during the process
+
+   𝘋𝘰𝘸𝘯𝘵𝘪𝘮𝘦: No
+
+   𝘜𝘴𝘦 𝘤𝘢𝘴𝘦: Periodic releases
+
+𝟯. 𝗦𝗵𝗮𝗱𝗼𝘄:
+   
+   A copy of the live traffic is redirected to the new version for testing without affecting production users
+
+   This is the most complex deployment strategy and involves establishing mock services to interact with the new version of the deployment
+
+   𝘋𝘰𝘸𝘯𝘵𝘪𝘮𝘦: No
+
+   𝘜𝘴𝘦 𝘤𝘢𝘴𝘦: Validating new version performance and behavior in a real environment
+
+𝟰. 𝗖𝗮𝗻𝗮𝗿𝘆:
+
+   The new version is released to a subset of users or servers for testing before broader deployment
+
+   𝘋𝘰𝘸𝘯𝘵𝘪𝘮𝘦: No
+
+   𝘜𝘴𝘦 𝘤𝘢𝘴𝘦: Impact validation on a subset of users
+
+𝟱. 𝗕𝗹𝘂𝗲-𝗚𝗿𝗲𝗲𝗻:
+   
+   - Two identical environments are maintained: one with the current version (blue) and the other with the updated version (green)
+   - Traffic starts with blue, then switches to the prepared green environment for the updated version
+
+   𝘋𝘰𝘸𝘯𝘵𝘪𝘮𝘦: No
+
+   𝘜𝘴𝘦 𝘤𝘢𝘴𝘦: High-stake updates
+
+𝟲. 𝗔/𝗕 𝗧𝗲𝘀𝘁𝗶𝗻𝗴:
+
+   Multiple versions are concurrently tested on different users to compare performance or user experience
+
+   𝘋𝘰𝘸𝘯𝘵𝘪𝘮𝘦: Not directly applicable
+   
+   𝘜𝘴𝘦 𝘤𝘢𝘴𝘦: Optimizing user experience
+
+
+<a name="Replication"></a>
+<a name="ReplicaSets"></a>
+
+### Deploy Replicas for Replication, Rolling Updates
+
+   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/rs-128.png?raw=true">
 
 Deployments manage their own ReplicaSets to achieve the declarative goals you prescribe, so you will most commonly work with Deployment objects.
 
