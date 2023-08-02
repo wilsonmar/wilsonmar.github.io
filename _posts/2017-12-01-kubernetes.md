@@ -3422,9 +3422,34 @@ The <strong>Sidecar</strong> pattern
 
 Because Deployments provide a helpful "front end" to ReplicaSets, training focuses on Deployments.
 
+
 <a name="Deployments"></a>
 
-## Deployment strategies
+### Deployments
+
+   * <a target="_blank" href="https://kubernetesbyexample.com//deployments/">kubernetesbyexample.com: Deployments</a>
+
+A Deployment is an API object that manages a replicated application, typically by running Pods with no local state.
+
+   * auth.yaml
+   * frontend.yaml
+   * hello-green.yaml
+   * hello-canary.yaml
+   * hello.yaml
+
+1. Create a yaml file from a command to deploy 3 replica pods:
+
+   <pre><strong>kubectl create deployment nginx-lab8 --image=nginx --replicas=3 --dry-run=client -o yaml > lab8.yaml
+   </strong></pre>
+
+1. To delete a deployment:
+
+   <pre>kubectl delete deployments.app pod mydep ???</pre>
+
+
+<a name="DeploymentStragies"></a>
+
+### Deployment strategies
 
 These Kubernetes Deployment strategy offers a unique approach and benefit to manage updates:
 
@@ -4299,7 +4324,6 @@ is described in <a target="_blank" href="https://linuxacademy.com/cp/modules/vie
 Linux Academy's CKA course</a> of 5:34:43 hours of videos by Chad Miller (<a target="_blank" href="https://twitter.com/OpenChad/">@OpenChad</a>). 
 
 * <a target="_blank" href="https://training.linuxfoundation.org/training/kubernetes-fundamentals/">Kubernetes Fundamentals</a> $299 video course offered on EdX.com from LinuxFoundation.
-![k8s-arch-xteam-793x573]()
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/132930586-4634a11c-7aa1-4667-ab24-b019144a2265.png"><img alt="k8s-arch-xteam-793x573" width="793" height="573" src="https://user-images.githubusercontent.com/300046/132930586-4634a11c-7aa1-4667-ab24-b019144a2265.png"></a>
 Source: <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-architecture/">X-Team</a>
@@ -4321,30 +4345,6 @@ kube-ps1.sh creates a shell pod envbin.
 https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/
 
    <pre>k create cronjob my-job --image=busybox --schedule="*/1 * * * *" --logger hello</pre>
-
-
-<a name="Deployments"></a>
-
-### Deployments
-
-   * <a target="_blank" href="https://kubernetesbyexample.com//deployments/">kubernetesbyexample.com: Deployments</a>
-
-A Deployment is an API object that manages a replicated application, typically by running Pods with no local state.
-
-   * auth.yaml
-   * frontend.yaml
-   * hello-green.yaml
-   * hello-canary.yaml
-   * hello.yaml
-
-1. Create a yaml file from a command to deploy 3 replica pods:
-
-   <pre><strong>kubectl create deployment nginx-lab8 --image=nginx --replicas=3 --dry-run=client -o yaml > lab8.yaml
-   </strong></pre>
-
-1. To delete a deployment:
-
-   <pre>kubectl delete deployments.app pod mydep ???</pre>
 
 
 <hr />
