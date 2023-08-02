@@ -904,14 +904,24 @@ interactive map showing a point for each region's Longitude and Latitude</a> wit
 
 1. There are differences in cost between regions. For example, the US East region is cheaper than the US West region.
 
-1.  To display Microsoft's own analysis of <strong>ping speeds between its regions</strong> (using data from the <a target="_blank" href="https://www.thousandeyes.com/">thousandeyes.com</a> (Cisco) network analytics company, view:<br /><a target="_blank" href="https://docs.microsoft.com/en-us/azure/networking/azure-network-latency">https://docs.microsoft.com/en-us/azure/networking/azure-network-latency<br /><img alt="azure-network-latency-2020-12-2761x1756.png" width="2761" src="https://user-images.githubusercontent.com/300046/109372837-e773f400-7868-11eb-8804-1d306f22fba2.png"></a>
+1. To display Microsoft's own analysis of <strong>ping speeds between its regions</strong> (using data from the <a target="_blank" href="https://www.thousandeyes.com/">thousandeyes.com</a> (Cisco) network analytics company, view:<br /><a target="_blank" href="https://docs.microsoft.com/en-us/azure/networking/azure-network-latency">https://docs.microsoft.com/en-us/azure/networking/azure-network-latency<br /><br /><img alt="azure-network-latency-2020-12-2761x1756.png" width="2761" src="https://user-images.githubusercontent.com/300046/109372837-e773f400-7868-11eb-8804-1d306f22fba2.png"></a>
 
    PROTIP: In the above, the slowest is 400 ms round-trip between Cape Town (South Africa West) and Australia East.
 
    NOTE: One big advantage of Azure over AWS is that AWS requires users to do their own backups and restores.
    But Microsoft does its own complete backups of all data in each zone, and when there is an outage, they take care of restoring it to a new zone. Where backups go is not public information, but it is likely that they are in a different zone in the same region, or in a different region. 
 
-1.  <a target="_blank" href="https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions">These cross-region pairs</a> are used for replication in Azure business continuity and disaster recovery.
+1. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions">These cross-region pairs</a> are used for replication in Azure business continuity and disaster recovery. For example:
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr><th> Geography </th><th> Region pair A </th><th> Region Pair B </th></tr>
+   <tr valign="top"><td> North America	<td></td> East US<td></td> West US </td></tr>
+   <tr valign="top"><td> North America	<td></td> East US 2<td></td> Central US </td></tr>
+   <tr valign="top"><td> North America	<td></td> North Central US<td></td> South Central US </td></tr>
+   <tr valign="top"><td> North America	<td></td> West US 2<td></td> West Central US </td></tr>
+   <tr valign="top"><td> North America	<td></td> West US 3<td></td> East US </td></tr>
+   <tr valign="top"><td> Europe <td></td> North Europe (Ireland)<td></td> West Europe (Netherlands) </td></tr>
+   </table>
 
 <a name="Naming"></a>
 
@@ -1227,6 +1237,7 @@ The scripts are also useful for learning Azure.
 ## Cloud Shell (CLI & PowerShell)
 
    Resources:
+   * https://ss64.com/ps/ (A-Z index of PowerShell commands)
    * <a target="_blank" href="https://www.youtube.com/watch?v=x2aIVYxim-A&t=2m56m&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=6" title="Forced to learn a new shell and vi editor by Dana Epps Oct 3, 2019">VIDEO</a>: Cloud Shell
    <br /><br />
 
@@ -1234,12 +1245,19 @@ https://github.com/wilsonmar/azure-quickly/blob/main/az-info.sh
 is similar to the aws-info.sh script in my <a target="_blank" href="">aws-quickly</a> repo.
 
 Here I list both CLI and PowerShell commands to get information:
-   * List Azure accounts
+   * List Azure accounts, groups membership, role permissions
    * List resources
+   * List storage accounts
+   * List compute instances
+   * List databases
+   * etc.
    <br /><br />
 
 TODO: I'm also working on a PowerShell version of the script.
 
+Before executing any script,
+
+   <pre><strong>Set-ExecutionPolicy RemoteSigned</strong></pre>
 
 <hr />
 
