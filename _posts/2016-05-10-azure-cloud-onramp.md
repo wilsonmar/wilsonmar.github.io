@@ -1231,7 +1231,7 @@ https://github.com/wilsonmar/azure-quickly">
 https://github.com/wilsonmar/azure-quickly</a>
 contains automation scripts to invoke instead of manually operating the Azure Portal, so that you can save money by deleting Resource Groups because you can get resources back with just a few commands. 
 
-Automation also enable you to stand up resources in different regions/locations the same way. 
+Automation also enables you to stand up resources in different regions/locations the same way. 
 
 Most scripts in the repo are Bash shell scripts that run natively on MacOS and thus familiar to most developers. 
 PowerShell scripts are used in cases where they are the only solution, are more efficient, or covered in a tutorial.
@@ -1250,8 +1250,53 @@ The scripts are also useful for learning Azure.
    * <a target="_blank" href="https://www.youtube.com/watch?v=x2aIVYxim-A&t=2m56m&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=6" title="Forced to learn a new shell and vi editor by Dana Epps Oct 3, 2019">VIDEO</a>: Cloud Shell
    <br /><br />
 
-https://github.com/wilsonmar/azure-quickly/blob/main/az-info.sh
-is similar to the aws-info.sh script in my <a target="_blank" href="">aws-quickly</a> repo.
+PROTIP: Azure CLI commands can be issued from within PowerShell (.ps1) script files. 
+See ListUserAndPermissions.ps1 
+
+1. If you're executing from a local machine, first login to Azure:
+
+   <pre><strong>az login</strong></pre>
+
+   PROTIP: If you have multiple Azure accounts, you can specify which one to use by adding the --tenant parameter to the login command.
+
+   <pre>[
+  {
+    "cloudName": "AzureCloud",
+    "homeTenantId": "3902...
+   </pre>
+
+1. Close the browser window.
+
+1. Create a folder, substituting your own project name:
+
+   <pre>mkdir proj1; cd proj1
+   </pre>
+
+1. Download
+
+   <pre><strong>git clone http://github.com/wilsonmar/mac-setup;cd mac-setup;chmod +x az-info.sh
+   </strong></pre>
+
+1. To avoid <a target="_blank" href="https://stackoverflow.com/questions/16853624/git-discovery-across-filesystem-not-set"?error</a> "Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set)."
+
+   <pre><strong>export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
+   git remote add origin https://github.com/wilsonmar/mac-setup
+   git fetch
+   </strong></pre>
+
+1. Change permissions to enable execution by the specific script:
+
+   <pre><strong>chmod +x az-info.sh
+   </strong></pre>
+
+   CAUTION: Avoid granting permissions for all scripts in a folder to limit "blast radius".
+
+1. Run the script file from GitHub:
+   
+   <pre>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/mac-setup/master/az-info.sh)"
+   </pre>
+
+   That script is similar to the aws-info.sh script in my <a target="_blank" href="">aws-quickly</a> repo.
 
 Here I list both CLI and PowerShell commands to get information:
    * List Azure accounts, groups membership, role permissions
@@ -1264,9 +1309,15 @@ Here I list both CLI and PowerShell commands to get information:
 
 TODO: I'm also working on a PowerShell version of the script.
 
+
+<a name="VM_PS"></a>
+
 Before executing any script,
 
    <pre><strong>Set-ExecutionPolicy RemoteSigned</strong></pre>
+
+https://wilsonmar.github.io/azure-cloud-powershell/
+
 
 <hr />
 
