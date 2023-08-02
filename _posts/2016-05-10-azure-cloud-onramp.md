@@ -157,6 +157,33 @@ Other Departments:
 PROTIP: Define abbreviations for each above.
 
 
+<a name="Naming"></a>
+
+## Naming Abbreviations
+
+PROTIP: Abbreviations are needed to keep names short.
+Define abbreviations in different human languages if you haven an international crew.
+Abbreviations can serve as a way to inform policies, such as locking of production servers.
+
+Advice from Microsoft: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">Naming conventions</a>:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691007768/az-onramp-resc-naming-853180_vvyf9m.png">alt="az-onramp-resc-naming-853180.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691007768/az-onramp-resc-naming-853180_vvyf9m.png"></a>
+
+   1. fin, mktg, prd, it, sec, corp = <strong>Business / organizational element</strong> that owns the subscription or workload the resource belongs to. 
+
+   1. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations">rg, vm</a> = <strong>Resource type</strong>. 
+   
+   1. navigator, emissions, sharepoint, hadoop = <strong>Workload</strong (Application or service name that the resource is a part of.
+   
+   1. prod, dev, qa, stage, test = <strong>Environment</strong> - The stage of the development lifecycle for the workload that the resource supports.
+   
+   1. westus, eastus2, westeu = <strong>Region</strong> - The Azure region where the resource is deployed.
+
+   1. shared, central, client = <strong>Subscription type</strong> - the purpose of the subscription that contains the resource. 
+   
+   1. 001, 002, etc. <strong>Instance</strong> - A number or other identifier that distinguishes the resource from other resources of the same type in the same resource group and region.
+
+
 <hr />
 
 <a name="Assumptions"></a>
@@ -887,13 +914,13 @@ BTW: Intune is a separate MDM (Mobile Device Management) product from Azure AD.
 
 You'll be soon asked to specify a region. Pick the region closest to you.
 
+1. Select a Geograph (country), then a Region from Microsoft's list at:
+
+   https://azure.microsoft.com/en-us/explore/global-infrastructure/geographies/#geographies
+
    At time of writing, Microsoft has over 60 regions around the world on <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/geographies/">their map</a>:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/109421738-cfe65980-7995-11eb-9a04-1b385f2ed631.png"><img alt="az-map-2021-1440x741.png" width="1440" src="https://user-images.githubusercontent.com/300046/109421738-cfe65980-7995-11eb-9a04-1b385f2ed631.png"></a>
-
-1. Select a Geograph (country) from
-
-   https://azure.microsoft.com/en-us/explore/global-infrastructure/geographies/#geographies
 
 1. There is also an <a target="_blank" href="https://build5nines.com/map-azure-regions/">
 interactive map showing a point for each region's Longitude and Latitude</a> with city name.
@@ -922,25 +949,7 @@ interactive map showing a point for each region's Longitude and Latitude</a> wit
    <tr valign="top"><td> North America	<td></td> West US 3<td></td> East US </td></tr>
    <tr valign="top"><td> Europe <td></td> North Europe (Ireland)<td></td> West Europe (Netherlands) </td></tr>
    </table>
-
-<a name="Naming"></a>
-
-## Naming conventions
-
-Advice from Microsoft: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">Naming conventions</a>:
-
-PROTIP: Define abbreviations, then enforce their use. Abbreviations are needed to keep names short.
-Define abbreviations in different human languages if you haven an international crew.
-Abbreviations can serve as a way to inform policies, such as locking of production servers.
-
-   1. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations">rg, vm</a> = Resource asset type. 
-   2. fin, mktg, product, it, corp = Business unit - organizational element that owns the subscription or workload the resource belongs to. 
-   3. navigator, emissions, sharepoint, hadoop = Application or service name of the application, workload, or service that the resource is a part of.
-   4. shared, central, client = Subscription type - the purpose of the subscription that contains the resource. 
-   5. prod, dev, qa, stage, test = Deployment environment - The stage of the development lifecycle for the workload that the resource supports.
-   6. westus, eastus2, westeu = Location/Region - The Azure region where the resource is deployed.
    <br /><br />
-
 
 <a name="ResourceGroups"></a>
 
