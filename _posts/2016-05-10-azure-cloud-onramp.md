@@ -1198,11 +1198,11 @@ G. VM templates<br />
 H. Sandbox subscription<br />
 I. Azure DevOps (vs. GitHub Actions)
 
-### Azure AD
+### Azure AD (AAD = Entra)
 
 <a target="_blank" href="https://www.youtube.com/watch?v=dBAflZZE6Gw&t=24s" title="Active Directory vs Azure AD vs Azure AD DS | MCSA | AZ-104">VIDEO</a>: <a target="_blank" href="https://www.youtube.com/watch?v=-a_-Seh27s4&">VIDEO Glossary</a>.
 
-<a href="#AD">AD = Active Directory</a><br />
+<a href="#AD">AD = Active Directory</a> (on-prem Windows server)<br />
 vs.<br />
 <a href="#AAD">AAD = Azure AD = Azure Active Directory = Entra</a><br />
 vs.<br />
@@ -1211,13 +1211,13 @@ vs.<br />
 ADDS = Active Directory DS = Domain Services
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th> - </th><th> on-prem. AD </th><th> Azure AD </th></tr>
+<tr><th> - </th><th> on-prem. AD </th><th> AAD/Entra </th></tr>
 <tr valign="top"><td> Runs on: </td><td> 
    Windows server </td><td> SaaS cloud </td></tr>
 <tr valign="top"><td> Structure: </td><td> 
    Org. Unit </td><td> Admin. Unit </td></tr>
 <tr valign="top"><td> Authentication: </td><td> 
-   LDAP, Kerberos </td><td> - </td></tr>
+   LDAP, Kerberos, NTLM </td><td> Federated </td></tr>
 </table>
 
 
@@ -1242,7 +1242,7 @@ So AAD/Entra is also called an "Identity as a Service" (IDaaS).
 
    * Since Azure Microsoft Office 365 is SaaS, users are enrolled into AAD/Entra.
 
-   * Because it's SaSS, it’s also possible to use AAD/Entra for Federation SSO (Single Sign On) to manage third-party software applications (outside Microsoft), such as CRMs like Salesforce, SAP, etc.
+   * Because it's SaSS, it’s also possible to use AAD/Entra for Federation SSO (Single Sign On) to manage third-party software applications (outside Microsoft), such as CRMs like Salesforce, SAP, Concur, etc.
 
 <a name="Domains"></a>
 
@@ -1307,6 +1307,7 @@ using what's called "explicit user and device trust validation".
 9.  Remember the last few characters of the GUID returned.
 10. Switch back to the browser Portal tab.
 
+
     <a name="TenantSwitch"></a>
 
     ### Tenant Switching
@@ -1317,7 +1318,7 @@ using what's called "explicit user and device trust validation".
 
     Within PowerShell, define the default Tenant (if you need to sign into more than one Tenant):
 
-    <pre><strong>Set-AzureRmContext
+    <pre><strong><a target="_blank" href="https://learn.microsoft.com/en-us/powershell/module/servicemanagement/azurerm.profile/set-azurermcontext?view=azuresmps-4.0.0">Set-AzureRmContext</a>
     </strong></pre>
 
 
@@ -1340,8 +1341,7 @@ using what's called "explicit user and device trust validation".
     
     ### Users, Groups, Apps
 
-    At the right is a count of Users, Groups, Applications, Devices managed under that Tenant.
-
+    At the right is a count of Users, Groups, Applications, and Devices managed under that Tenant.
     (From Tim Warner)
     <img alt="az-aad-concepts-1194x954.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1674198812/az-aad-concepts-1194x954_mivxuk.jpg">
 
@@ -1349,9 +1349,10 @@ using what's called "explicit user and device trust validation".
 
     <a name="EntApps"></a>
 
-    Microsoft has created integrations with Enterprise Applications such as Dropbox, Google Docs, AWS, Concur, etc.
+    Microsoft has created integrations with Enterprise SaaS applications such as 
+    Dropbox, Google Docs, AWS, Salesforce, SAP, Concur, etc.
 
-    "External Identity" are Guest users with a credential federated from another Identity Store (Facebook, Google Gmail, GitHub, etc.) or a new SAML/WS-Fed IdP.
+    "<strong>External Identity</strong>" are Guest users with a credential federated from another Identity Store (Facebook, Google Gmail, GitHub, etc.) or a new SAML/WS-Fed IdP.
 
     After an IdP is defined, define User flows (see AD B2C).
 
@@ -1359,7 +1360,7 @@ using what's called "explicit user and device trust validation".
     <img alt="az-aad-groups-751x987.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1674201184/az-aad-groups-751x987_fasfn0.jpg">
 
     
-    "Managed Identities" are also called "Service Accounts" used for authenticating automation services. Such accounts are assigned a GUID instead of email addresses for human users.
+    "<strong>Managed Identities</strong>" are also called "Service Accounts" used for authenticating automation services. Such accounts are assigned a GUID instead of email addresses for human users.
 
     ### Invitation from Federation
 
@@ -3307,6 +3308,10 @@ https://www.microsoft.com/en-us/security/business/microsoft-purview
 https://learn.microsoft.com/en-us/purview/purview
 Microsoft Purview data protection and governance
 for "Unified Data Governance"
+
+https://www.youtube.com/watch?v=m1VWSWlrJa8
+https://www.aGuideToCloud.com
+
 
 <hr />
 

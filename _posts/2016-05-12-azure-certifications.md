@@ -321,7 +321,7 @@ Azure Subscription Service Limits</a>
 
 <hr />
 
-<a name="#AZ-900"></a>
+<a name="AZ-900"></a>
 
 ## AZ-900 Azure Fundamentals
 
@@ -354,6 +354,7 @@ includes time on servers (one hour at a time).
 
 <a target="_blank" href="https://quizlet.com/416573542/az-900-flash-cards/">Quizlet flash cards</a>
 
+<a target="_blank" href="https://www.aguidetocloud.com/full-courses/az900fullcourse">7-hour AGuideToCloud video class by Susanth Sutheesh</a>
 
 
 <a name="AZ-103"></a>
@@ -463,6 +464,8 @@ by Tim Warner with <a target="_blank" href="https://www.kaplanlearn.com/educatio
 
 * XaaS has <a target="_blank" href="https://www.udemy.com/course/microsoft-azure-administrator-practice-tests/">6 tests at Udemy</a>, each with 52 questions (312 total). Does it sync with <a target="_blank" href="https://www.udemy.com/course/microsoft-azure-administrator-training-bootcamp/">Bootcamp</a> also from XaaS?
 
+* <a target="_blank" href="https://www.aguidetocloud.com/full-courses/az104fullcourse">10-hour AGuideToCloud video class by Susanth Sutheesh</a>
+
 <hr />
 
 <a name="Sec_Certs"></a>
@@ -500,6 +503,13 @@ https://github.com/zaalion/oreilly-azure-app-security
 
 https://github.com/MicrosoftLearning/MS-030-Office365Administrator
 
+
+<a name="MS-700"></a>
+
+## MS-700 Microsoft Teams Administrator
+
+<a target="_blank" href="https://www.aguidetocloud.com/full-courses/ms700fullcourse">4-hour AGuideToCloud video class by Susanth Sutheesh</a>
+
 <hr />
 
 <a name="Power_Platform"></a>
@@ -526,6 +536,8 @@ As with other fundamentals certifications, it's $99 for
    * <a target="_blank" href="https://www.whizlabs.com/blog/pl-900-exam-preparation-guide/">WhizLabs</a>
    <br /><br />
 
+* <a target="_blank" href="https://www.aguidetocloud.com/full-courses/pl900fullcourse">2-hour AGuideToCloud video class by Susanth Sutheesh</a>
+
 $165 for more advanced certs:
 
 <a name="PL-200"></a>
@@ -545,6 +557,9 @@ $165 for more advanced certs:
    * https://learn.microsoft.com/en-us/certifications/exams/pl-600 Power Platform Solution Architect Expert
 
 <a target="_blank" href="https://ravikirans.com/category/azure-certification/">Ravikiran</a> specializes in sample exams for the above.
+
+<a target="_blank" href="https://www.aguidetocloud.com/full-courses/az400fullcourse">5-hour AGuideToCloud video class by Susanth Sutheesh</a>
+
 
 <hr />
 
@@ -571,6 +586,7 @@ Video classes:
 
 https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions
 
+<a target="_blank" href="https://www.aguidetocloud.com/full-courses/az400fullcourse">5-hour AGuideToCloud video class by Susanth Sutheesh</a>
 
 <hr />
 
@@ -601,6 +617,7 @@ Videos:
    * <a target="_blank" href="https://www.coursera.org/learn/microsoft-sc-900-exam-preparation-and-practice?specialization=microsoft-cybersecurity-analyst">Coursera Dec 11, 2023</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=Bz-8jM3jg-8&list=RDCMUCpIn7ox7j7bH_OFj7tYouOQ&start_radio=1&t=5297">2hr John Savill</a>draws a <a target="_blank" href="https://github.com/johnthebrit/RandomStuff/blob/master/SC-900ReviewWhiteboard.svg">massive whiteboard</a> as massive as his muscles. One in a massive series with <a target="_blank" href="https://github.com/johnthebrit/AzureMasterClass">pdfs in GitHub</a>.
 
+   * <a target="_blank" href="https://www.aguidetocloud.com/full-courses/sc900fullcourse">4-hour AGuideToCloud video class by Susanth Sutheesh</a>
 
 <a name="SC-200"></a>
 
@@ -852,6 +869,7 @@ References:
    https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies
    * https://www.youtube.com/watch?v=uw-lwS_4pvU by <a target="_blank" href="https://www.linkedin.com/in/dnatwick/">Dwayne Natwick</a>, <a target="_blank" href="https://captainhyperscaler.com/">captainhyperscaler.com</a>)
 
+<a target="_blank" href="https://www.aguidetocloud.com/full-courses/az500fullcourse">7-hour AGuideToCloud video class by Susanth Sutheesh</a>
    <br /><br />
 
 <hr />
@@ -956,6 +974,7 @@ https://vladtalkstech.com/ms-900-study-guide-microsoft-365-fundamentals
 
 https://www.whizlabs.com/learn/course/microsoft-azure-ms-900/
 
+<a target="_blank" href="https://www.aguidetocloud.com/full-courses/ms900fullcourse">4-hour AGuideToCloud video class by Susanth Sutheesh</a>
 
 <hr />
 
@@ -1038,6 +1057,8 @@ Lab 02: Implement task processing logic by using Azure Functions </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_11.md"> Lab 11: Monitor services that are deployed to Azure </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_12.md"> Lab 12: Enhance a web application by using the Azure Content Delivery Network </a>
 <br /></br />
+
+<a target="_blank" href="https://www.aguidetocloud.com/full-courses/az204fullcourse">5-hour AGuideToCloud video class by Susanth Sutheesh</a>
 
 Questions:
    * https://www.whizlabs.com/learn/course/microsoft-azure-az-204/
@@ -1238,6 +1259,25 @@ Others courses on AZ-304:
 Exam prep:
    * https://www.whizlabs.com/learn/course/microsoft-azure-az-304/
 
+<hr />
+
+Routing to separate pages for AI Engineer:
+
+<a name="AI-900"></a>
+## AI-900
+<a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-900">AI-900 AI Fundamentals</a>
+
+<a name="AI-102"></a>
+## AI-102 (formerly AI-100)
+<a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-100">AI-100 Azure AI Engineer Associate</a>
+<a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-102">AI-102 Azure AI Engineer</a><br />
+
+<a name="DP-100"></a>
+## DP-100 Data Scientist Associate
+
+<a href="#DP-100">DP-100 Azure Data Scientist Associate</a>
+
+
 
 <hr />
 
@@ -1274,6 +1314,9 @@ Sample exams:
 
 BTW Left out of the ESI list is Azure Databricks, a cloud-scale platform for data analytics and machine learning. Microsoft's live class DP-090 "Implementing a Machine Learning Solution with Microsoft Azure Databricks" shows how to use Azure Databricks to explore, prepare, and model data; and integrate Databricks machine learning processes with Azure Machine Learning.
 
+<a target="_blank" href="https://www.aguidetocloud.com/full-courses/dp900fullcourse">3-hour AGuideToCloud video class by Susanth Sutheesh</a>
+
+<a target="_blank" href="https://www.aguidetocloud.com/full-courses/dp900fullcourse">3-hour AGuideToCloud video class by Susanth Sutheesh</a>
 
 <a name="DP-100"></a>
 
