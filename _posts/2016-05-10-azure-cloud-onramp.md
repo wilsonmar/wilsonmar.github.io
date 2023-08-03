@@ -1582,7 +1582,7 @@ using what's called "explicit user and device trust validation".
 
 8.  Paste the name and click "Find my tenant ID" to see the "Directory ID" (GUID), for example:
 
-    <tt>6babcaad-604b-40ac-a9d7-9fd97c0b779f</tt>
+    <tt>6babcaad-1234-5678-789a-9fd97c0b779f</tt>
 
 9.  Click "Copy to clipboard".
 10. Remember the last few characters of the GUID returned.
