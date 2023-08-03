@@ -1250,9 +1250,6 @@ The scripts are also useful for learning Azure.
    * <a target="_blank" href="https://www.youtube.com/watch?v=x2aIVYxim-A&t=2m56m&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=6" title="Forced to learn a new shell and vi editor by Dana Epps Oct 3, 2019">VIDEO</a>: Cloud Shell
    <br /><br />
 
-PROTIP: Azure CLI commands can be issued from within PowerShell (.ps1) script files. 
-See ListUserAndPermissions.ps1 
-
 1. If you're executing from a local machine, first login to Azure:
 
    <pre><strong>az login</strong></pre>
@@ -1277,11 +1274,17 @@ See ListUserAndPermissions.ps1
    <pre><strong>git clone http://github.com/wilsonmar/mac-setup;cd mac-setup;chmod +x az-info.sh
    </strong></pre>
 
+1. Set permissions:
+
+   <pre><strong>chmod +x az-info.sh
+   </strong></pre>
+
 1. To avoid <a target="_blank" href="https://stackoverflow.com/questions/16853624/git-discovery-across-filesystem-not-set"?error</a> "Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set)."
 
    <pre><strong>export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
    git remote add origin https://github.com/wilsonmar/mac-setup
    git fetch
+   git pull origin master
    </strong></pre>
 
 1. Change permissions to enable execution by the specific script:
@@ -1298,6 +1301,21 @@ See ListUserAndPermissions.ps1
 
    That script is similar to the aws-info.sh script in my <a target="_blank" href="">aws-quickly</a> repo.
 
+   TODO: I'm also working on a PowerShell version of the script.
+
+1. Install modules needed, Per https://wilsonmar.github.io/powershell-install-coding
+
+   <pre><strong>pwsh; Install-Module azuread</strong></pre>
+
+   <pre>Untrusted repository
+You are installing the modules from an untrusted repository. If you trust this repository, change its InstallationPolicy value by running the 
+Set-PSRepository cmdlet. Are you sure you want to install the modules from 'PSGallery'?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): Y
+   </pre>
+
+   PROTIP: Azure CLI commands can be issued from within PowerShell (.ps1) script files. 
+   See ListUserAndPermissions.ps1 
+
 Here I list both CLI and PowerShell commands to get information:
    * List Azure accounts, groups membership, role permissions
    * List resources
@@ -1307,7 +1325,6 @@ Here I list both CLI and PowerShell commands to get information:
    * etc.
    <br /><br />
 
-TODO: I'm also working on a PowerShell version of the script.
 
 
 <a name="VM_PS"></a>
@@ -1421,12 +1438,11 @@ ADDS = Active Directory DS = Domain Services
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> - </th><th> on-prem. AD </th><th> AAD/Entra </th></tr>
-<tr valign="top"><td> Runs on: </td><td> 
-   Windows server </td><td> SaaS cloud </td></tr>
-<tr valign="top"><td> Structure: </td><td> 
-   Org. Unit </td><td> Admin. Unit </td></tr>
-<tr valign="top"><td> Authentication: </td><td> 
-   LDAP, Kerberos, NTLM </td><td> Federated </td></tr>
+<tr valign="top"><td> Runs on: </td><td> Windows server </td><td> Internet </td></tr>
+<tr valign="top"><td> Use by:   </td><td> Windows </td><td> Internet: Office 365, Azure services & apps, 3rd-party SaaS </td></tr>
+<tr valign="top"><td> Protocols: </td><td> RPC </td><td> REST API </td></tr>
+<tr valign="top"><td> Structure: </td><td> Forests, domains, Org. Unit </td><td> Tenents </td></tr>
+<tr valign="top"><td> Authentication: </td><td> Kerberos, NTLM, LDAP </td><td> SAML, OAuth, Open-ID, WS-Federation </td></tr>
 </table>
 
 

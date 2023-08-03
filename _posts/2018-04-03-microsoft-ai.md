@@ -466,6 +466,9 @@ Practice tests:
 * https://www.examtopics.com/exams/microsoft/ai-900/
 * https://www.whizlabs.com/learn/course/designing-and-implementing-an-azure-ai-solution/
 
+<a target="_blank" href="https://www.aguidetocloud.com/full-courses/ai900fullcourse">2-hour AGuideToCloud video class by Susanth Sutheesh</a>
+
+
 <a name="AI-102"></a>
 
 ### AI-102

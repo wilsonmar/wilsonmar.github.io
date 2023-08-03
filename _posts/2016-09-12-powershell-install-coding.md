@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-09-25"
+date: "2023-08-02"
 file: "powershell-install-coding"
 title: "PowerShell Install Coding"
 excerpt: "Make PowerShell your superpower on Windows and Macs, for fun and profit"
@@ -149,23 +149,28 @@ says needed as a pre-requisite is
 
 1. Alternately, use Homebrew:
 
-   <tt><strong>brew install --cask powershell
+   <tt><strong>brew install powershell
    </strong></tt>
 
-   <pre>==> Downloading https://github.com/PowerShell/PowerShell/releases/download/v7
-==> Downloading from https://github-releases.githubusercontent.com/49609581/9
-...
+   <pre>==> Caveats
+To use Homebrew in PowerShell, set:
+  Add-Content -Path $PROFILE.CurrentUserAllHosts -Value '$(/usr/local/bin/brew shellenv) | Invoke-Expression'
+&nbsp;
+==> Downloading https://github.com/PowerShell/PowerShell/releases/download/v7.3.
+==> Downloading from https://objects.githubusercontent.com/github-production-rel
+######################################################################### 100.0%
+All formula dependencies satisfied.
 ==> Installing Cask powershell
 ==> Running installer for powershell; your password may be necessary.
 Package installers may write to any location; options such as `--appdir` are ignored.
-Password:
+Password: ____
    </pre>
 
 1. ATTENTION: Enter your laptop password when prompted.
 
    Response:
 
-   <pre>installer: Package name is PowerShell - 7.1.3
+   <pre>installer: Package name is PowerShell - 7.3.6
 installer: Installing at base path /
 installer: The install was successful.
 🍺  powershell was successfully installed!
@@ -175,7 +180,7 @@ installer: The install was successful.
 
 0. An example of command parameters within double-quotes:
 
-   <pre><strong>pwsh -c "write-host Hello world"
+   <pre><strong>po
    </strong></pre>
 
    "Hello World" would be the response.
@@ -211,11 +216,7 @@ Mode                 LastWriteTime         Length Name
 
    The response:
 
-   <pre>PowerShell 7.1.3
-Copyright (c) Microsoft Corporation.
-&nbsp;
-https://aka.ms/powershell
-Type 'help' to get help.
+   <pre>PowerShell 7.3.6
 PS /Users/...> 
    </pre>
 
@@ -225,9 +226,9 @@ PS /Users/...>
 
    Sometimes the response also has:
 
-   <pre>A new PowerShell stable release is available: v7.1.3 
+   <pre>A new PowerShell stable release is available: v7.3.6
    Upgrade now, or check out the release page at:       
-     https://aka.ms/PowerShell-Release?tag=v7.1.3       
+     https://aka.ms/PowerShell-Release?tag=v7.3.7
    </pre>
    
 
@@ -237,7 +238,7 @@ PS /Users/...>
 
    <pre><strong>dir env:</strong></pre>
 
-   Alternately:
+   Alternately, to  sort by name:
 
    <pre>gci env:* | sort-object name</pre>
 
@@ -247,23 +248,22 @@ PS /Users/...>
 
    Notice there are "LOGNAME" and "USER" variables.
 
-1. The content of system environment variable $USER can be identified quickest using a command on both Linux and Windows:
+1. The content of system environment variabluname $USER can be identified quickest using a command on both Linux and Windows:
 
-   <pre><strong>whoami</strong></pre>
+   <pre><strong>uname</strong></pre>
 
    
 1. To display just the value of the <strong>$HOME</strong> variable which defines path where the "cd" command navigates to:
 
    <pre><strong>Get-Variable HOME -valueOnly</strong></pre>
 
-   On MacOS and Linux:
+   On MacOS and Linux, for example
 
-   <pre>/Users/<em>$USER</em></pre>
+   <pre>/Users/<em>johndoe</em></pre>
 
    On Windows:
 
-   <pre>C:\Users\<em>$USER</em></pre>
-
+   <pre>C:\Users\<em>johndoe</em></pre>
 
 
    ### Customize command prompt
