@@ -1441,7 +1441,7 @@ ADDS = Active Directory DS = Domain Services
 <tr valign="top"><td> Runs on: </td><td> Windows server </td><td> Internet </td></tr>
 <tr valign="top"><td> Use by:   </td><td> Windows </td><td> Internet: Office 365, Azure services & apps, 3rd-party SaaS </td></tr>
 <tr valign="top"><td> Protocols: </td><td> RPC </td><td> REST API </td></tr>
-<tr valign="top"><td> Structure: </td><td> Forests, domains, Org. Unit </td><td> Tenents </td></tr>
+<tr valign="top"><td> Structure: </td><td> Forests, <a href="#Domains">domains</a>, Org. Unit </td><td> Tenents </td></tr>
 <tr valign="top"><td> Authentication: </td><td> Kerberos, NTLM, LDAP </td><td> SAML, OAuth, Open-ID, WS-Federation </td></tr>
 </table>
 
@@ -1457,6 +1457,17 @@ run on Windows servers in on-prem data centers.
 This older <strong>on-prem</strong> AD provides "domain services" that include domain joins, group policies, LDAP, Kerberos / NTLM authentication. 
 It uses the AD Admin Center GUI.
 
+<a name="Domains"></a>
+
+### AD Domains
+
+DEFINITION: A domain is an area of a network organized by a <strong>single authentication database</strong>.
+
+DEFINITION: An Active Directory Domain is a logical grouping of AD objects on a network.
+
+DEFINITION: A Domain Controller (DC) is a server that authenticates user identities and authorizes their access to resources.
+
+
 <a name="AAD"></a>
 
 ### Entra = AAD = Azure Active Directory
@@ -1469,15 +1480,8 @@ So AAD/Entra is also called an "Identity as a Service" (IDaaS).
 
    * Because it's SaSS, it’s also possible to use AAD/Entra for Federation SSO (Single Sign On) to manage third-party software applications (outside Microsoft), such as CRMs like Salesforce, SAP, Concur, etc.
 
-<a name="Domains"></a>
 
-### Domains
-
-   A domain is an area of a network organized by a single authentication database.
-
-   An Active Directory Domain is a logical grouping of AD objects on a network.
-
-   A Domain Controller (DC) is a server that authenticates user identities and authorizes their access to resources.
+<a name="AAD-Connect"></a>
 
 ### AAD/Entra Connect
 
@@ -3510,6 +3514,8 @@ for "Unified Data Governance"
 https://www.youtube.com/watch?v=m1VWSWlrJa8
 https://www.aGuideToCloud.com
 
+Trainer Tim Warner (at timw.info) has been, over the years, been updating his <a target="_blank" href="https://github.com/timothywarner/frankenstein/blob/main/diagrams/tim-frankenstein-networking.png">"Frankenstein" diagram</a> that connects together as many Azure services as he can cram in:<br />
+<a target="_blank" href="https://github.com/timothywarner/frankenstein/blob/main/diagrams/tim-frankenstein-networking.png?raw=true"><img alt="Frankenstein" src="https://github.com/timothywarner/frankenstein/blob/main/diagrams/tim-frankenstein-networking.png?raw=true"></a>
 
 <hr />
 
