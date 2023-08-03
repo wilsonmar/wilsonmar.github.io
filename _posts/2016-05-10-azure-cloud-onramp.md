@@ -790,13 +790,54 @@ The clock is ticking!
 
    READ: <a target="_blank" href="https://microsoftlearning.github.io/AZ-900T0x-MicrosoftAzureFundamentals/Instructions/Walkthroughs/19-Use%20the%20Azure%20Pricing%20Calculator.html"><img width="20" alt="pricing" src="https://code.benco.io/icon-collection/azure-patterns/calculator-pricing-details.svg"></a> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/active-directory/">Azure Active Directory pricing</a>. 
 
+   https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing
+
    <strong>Premium P1</strong> features include Password Protection (custom banned password). Dynamic groups require a Premium P1 license.
+      * Group assignment to applications
+      * Advanced group management (dynamic groups, naming policies, expiration, default classification)
 
-   * Risk level and risk detail fields are hidden to those with just the Azure AD Premium P1 edition.
-   * Advanced detections (such as unfamiliar sign-in properties) not covered by license appear under the name Sign-in with additional risk detected. 
-   <br /><br />
+      * Cloud app discovery (Microsoft Defender for Cloud Apps)
+      * Application proxy for on-premises, header-based, and integrated Windows authentication
+      * Service level agreements (SLAs)
 
-   <strong>Premium P2</strong> includes all P1 features, plus really cool <strong>"Identity Protection"</strong> with policies Assignment to all users.
+      * Microsoft identity manager user client access license (CAL)
+      * Cross-tenant user synchronization
+      * Advanced security and usage reports
+
+      * Automated user provisioning to on-premises apps
+      * Automated group provisioning to apps
+
+      * Self-service password reset (SSPR)
+      * Terms of use attestation
+      * Basic access certifications and reviews
+      * Basic entitlement management
+      * Entitlement management – separation of duties
+
+      * Risk level and risk detail fields are hidden to those with just the Azure AD Premium P1 edition.
+      * Advanced detections (such as unfamiliar sign-in properties) not covered by license appear under the name Sign-in with additional risk detected. 
+      * Privileged identity management (PIM)
+      <br /><br />
+
+   <strong>Premium P2</strong> includes all P1 features plus really cool <strong>"Identity Protection"</strong> with policies Assignment to all users.
+      * Risk-based Conditional Access (sign-in risk, user risk)
+      * Machine learning assisted access certifications and reviews
+      * Authentication context (step-up authentication)
+      * Device and application filters for Conditional Access
+      * Token protection
+      * Vulnerabilities and risky accounts
+      * Risk events investigation, security information and event management (SIEM) connectivity
+      * Self-service entitlement management (My Access)
+      * Entitlement management with Verified ID
+      * Lifecycle workflows
+      * Identity governance dashboard
+      <br /><br />
+
+   The new <strong>$7/person Microsoft Entra ID Governace</strong> offering adds:
+      * Identity governance dashboard
+      * Entitlement management with Verified ID
+      * Lifecycle workflows
+      * <strong>Machine learning assisted</strong> access certifications and reviews
+      <br /><br />
 
    Microsoft 365 subscribers have additional AAD/Entra licensing options:
    * Free 500,000 object limit, includes MFA for O365 services
@@ -1441,7 +1482,7 @@ ADDS = Active Directory DS = Domain Services
 <tr valign="top"><td> Runs on: </td><td> Windows server </td><td> Internet </td></tr>
 <tr valign="top"><td> Use by:   </td><td> Windows </td><td> Internet: Office 365, Azure services & apps, 3rd-party SaaS </td></tr>
 <tr valign="top"><td> Protocols: </td><td> RPC </td><td> REST API </td></tr>
-<tr valign="top"><td> Structure: </td><td> Forests, <a href="#Domains">domains</a>, Org. Unit </td><td> Tenents </td></tr>
+<tr valign="top"><td> Structure: </td><td> Forests, <a href="#Domains">domains</a>, Org. Unit </td><td> <a href="#Tenants">Tenents</a> </td></tr>
 <tr valign="top"><td> Authentication: </td><td> Kerberos, NTLM, LDAP </td><td> SAML, OAuth, Open-ID, WS-Federation </td></tr>
 </table>
 
@@ -1457,15 +1498,21 @@ run on Windows servers in on-prem data centers.
 This older <strong>on-prem</strong> AD provides "domain services" that include domain joins, group policies, LDAP, Kerberos / NTLM authentication. 
 It uses the AD Admin Center GUI.
 
+
 <a name="Domains"></a>
 
-### AD Domains
+### Domains
 
 DEFINITION: A domain is an area of a network organized by a <strong>single authentication database</strong>.
 
-DEFINITION: An Active Directory Domain is a logical grouping of AD objects on a network.
+DEFINITION: An "Active Directory Domain" is a logical grouping of AD objects on a network.
 
-DEFINITION: A Domain Controller (DC) is a server that authenticates user identities and authorizes their access to resources.
+DEFINITION: An Active Directory Domain Controller (DC) is a (Windows) server that authenticates user identities and authorizes their access to resources.
+
+An Azure Domain is not the same as a domain (DNS) name. 
+
+At <a target="_blank" href="https://portal.azure.com/#settings/directory">https://portal.azure.com/#settings/directory</a>,
+the "Domain" text is a combination of the root account email address text in front of ".onmicrosoft.com". For example, <tt>johndoe@whatever.com</tt> becomes Domain <tt>johndoewhatever.onmicrosoft.com</tt> (without the TLD such as ".com").
 
 
 <a name="AAD"></a>
@@ -1520,6 +1567,7 @@ using what's called "explicit user and device trust validation".
 
     https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview
 
+
     <a name="Tenants"></a>
 
     ### Tenants in AAD/Entra
@@ -1528,13 +1576,17 @@ using what's called "explicit user and device trust validation".
 
 6.  Notice the "Tenant ID" GUID below it.
 
-7.  Open another browser tab (temporarily) to find the Tenant ID based on DNS domain (web host) name such as "contoso.com" or "something.onmicrosoft.com":
+7.  Open another browser tab (temporarily) to find the Tenant ID based on DNS host/domain (web host) name such as "contoso.com" or "something.onmicrosoft.com":
 
     <a target="_blank" href="https://www.whatismytenantid.com/">https://www.whatismytenantid.com</a>
 
-8.  Paste the name and click "Find my tenant ID".
-9.  Remember the last few characters of the GUID returned.
-10. Switch back to the browser Portal tab.
+8.  Paste the name and click "Find my tenant ID" to see the "Directory ID" (GUID), for example:
+
+    <tt>6babcaad-604b-40ac-a9d7-9fd97c0b779f</tt>
+
+9.  Click "Copy to clipboard".
+10. Remember the last few characters of the GUID returned.
+11. Switch back to the browser Portal tab.
 
 
     <a name="TenantSwitch"></a>
@@ -1717,6 +1769,16 @@ using what's called "explicit user and device trust validation".
    PROTIP: Global Admin privileges are needed to enable <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">AD PIM (Privileged Identity Management)</a> for a directory.
 
    So it's important to assign other more specific roles. 
+
+### MFA
+
+MFA (Multi-Factor Authentication) is a P1 or P2 feature.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=m1VWSWlrJa8&t=26m10s">VIDEO</a>:
+It's at https://account.activedirectory.windowsazure.com/UserManagement/MultifactorVerification.aspx reached from
+   1. Service: Azure Active Directory (Entra)
+   1. Manage: Users on the left menu.
+   1. 
 
 
 REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=1h26m26s">VIDEO</a>: There is no spanning between AAD/Entra and AD RBAC roles:
