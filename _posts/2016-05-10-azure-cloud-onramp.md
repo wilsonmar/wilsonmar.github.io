@@ -167,7 +167,7 @@ Abbreviations can serve as a way to inform policies, such as locking of producti
 
 Advice from Microsoft: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">Naming conventions</a>:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691185898/az-resc-naming-3254x1322_vxg0ni.png"><img alt="az-resc-naming-3254x1322.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691185898/az-resc-naming-3254x1322_vxg0ni.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691185898/az-resc-naming-3254x1322_vxg0ni.png"><img alt="az-resc-naming-3254x1322.png" width="650" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691185898/az-resc-naming-3254x1322_vxg0ni.png"></a>
 
    1. fin, mktg, prd, it, sec, corp = <strong>Business division: organizational element</strong> that owns the subscription or workload the resource belongs to. 
 
