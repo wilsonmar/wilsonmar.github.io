@@ -122,7 +122,7 @@ PROTIP: Who covers each of these concerns where you work?
 Not having an individual/department designated for each responsibility below is often the reason why it doesn't get done and thus creates vulnerabilities not addressed.
 
    * Board (of corporate directors)
-   * Management (Business Model and Vision)
+   * Management (Business Model, Vision, Strategies, Objectives, Policies, Budget: Staffing, Tools, Training)
 
 Security Leadership:
    * PMO (Program Management Office)
@@ -167,20 +167,20 @@ Abbreviations can serve as a way to inform policies, such as locking of producti
 
 Advice from Microsoft: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">Naming conventions</a>:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691007768/az-onramp-resc-naming-853180_vvyf9m.png"><img alt="az-onramp-resc-naming-853180.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691007768/az-onramp-resc-naming-853180_vvyf9m.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691185898/az-resc-naming-3254x1322_vxg0ni.png"><img alt="az-resc-naming-3254x1322.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691185898/az-resc-naming-3254x1322_vxg0ni.png"></a>
 
-   1. fin, mktg, prd, it, sec, corp = <strong>Business / organizational element</strong> that owns the subscription or workload the resource belongs to. 
+   1. fin, mktg, prd, it, sec, corp = <strong>Business division: organizational element</strong> that owns the subscription or workload the resource belongs to. 
 
+   1. shared, central, client = <strong>Subscription type</strong> - the purpose of the subscription that contains the resource. 
+   
    1. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations">rg, vm</a> = <strong>Resource type</strong>. 
    
-   1. navigator, emissions, sharepoint, hadoop = <strong>Workload</strong (Application or service name that the resource is a part of.
+   1. navigator, emissions, sharepoint, hadoop = <strong>Workload</strong> (Application or service name that the resource is a part of.
    
    1. prod, dev, qa, stage, test = <strong>Environment</strong> - The stage of the development lifecycle for the workload that the resource supports.
    
    1. westus, eastus2, westeu = <strong>Region</strong> - The Azure region where the resource is deployed.
 
-   1. shared, central, client = <strong>Subscription type</strong> - the purpose of the subscription that contains the resource. 
-   
    1. 001, 002, etc. <strong>Instance</strong> - A number or other identifier that distinguishes the resource from other resources of the same type in the same resource group and region.
 
 
@@ -421,10 +421,8 @@ Microsoft has a "Defender" offering for each type of product:
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/endpoint-security/microsoft-defender-endpoint">MS Defender for Endpoint</a>
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-for-identity">MS Defender for Identity</a>
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-devops#">MS Defender for DevOps</a>
-   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-cloud">MS Defender for Cloud</a> <a target="_blank" href="https://azure.microsoft.com/en-us/products/defender-for-cloud/">Product</a> [<a target="_blank" href="https://www.youtube.com/watch?v=lGYVMjgn5tY">Intro video</a>]
+   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-cloud">MS Defender for Cloud</a> <a target="_blank" href="https://azure.microsoft.com/en-us/products/defender-for-cloud/">Product</a> [<a target="_blank" href="https://www.youtube.com/watch?v=lGYVMjgn5tY">Intro video</a> Security Seolutions, Work Automation triggers]
    <br /><br />
-
-* Workflow automation
 
 - Azure Security Center: https://github.com/Azure/Azure-Security-Center reroutes to
 - GitHub community: https://github.com/Azure/Microsoft-Defender-for-Cloud
@@ -786,9 +784,11 @@ The clock is ticking!
 
    ### Entra = Azure Active Directory
 
-   Azure Active Directory (AAD) was rebranding in 2023 to <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/new-name">Microsoft Entra ID</a>.
+   In 2023, Microsoft rebranded "Azure Active Directory (AAD)" to <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/new-name">Microsoft Entra ID</a>. [<a target="_blank" href="https://www.youtube.com/watch?v=ThT3n2Yass4">VIDEO</a>]
 
-   When someone signs up for a Microsoft cloud service subscription (such as Microsoft Azure, Office 365, Microsoft Intune, etc.), a dedicated instance of <strong>Azure AD (Active Directory)</strong> is created automatically. 
+   > The word "entra" means "entrance" (enter in) in Italian. It's a nod to the fact that Microsoft Entra ID is the gateway to Microsoft 365 and Azure services.
+
+   When someone signs up for a Microsoft cloud service subscription (such as Microsoft Azure, Office 365, Microsoft Intune, etc.), a dedicated instance of <strong>Entra (Azure AD)</strong> is created automatically. 
 
    READ: <a target="_blank" href="https://microsoftlearning.github.io/AZ-900T0x-MicrosoftAzureFundamentals/Instructions/Walkthroughs/19-Use%20the%20Azure%20Pricing%20Calculator.html"><img width="20" alt="pricing" src="https://code.benco.io/icon-collection/azure-patterns/calculator-pricing-details.svg"></a> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/active-directory/">Azure Active Directory pricing</a>. 
 
@@ -985,12 +985,12 @@ interactive map showing a point for each region's Longitude and Latitude</a> wit
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr><th> Geography </th><th> Region pair A </th><th> Region Pair B </th></tr>
-   <tr valign="top"><td> North America	<td></td> East US<td></td> West US </td></tr>
-   <tr valign="top"><td> North America	<td></td> East US 2<td></td> Central US </td></tr>
-   <tr valign="top"><td> North America	<td></td> North Central US<td></td> South Central US </td></tr>
-   <tr valign="top"><td> North America	<td></td> West US 2<td></td> West Central US </td></tr>
-   <tr valign="top"><td> North America	<td></td> West US 3<td></td> East US </td></tr>
-   <tr valign="top"><td> Europe <td></td> North Europe (Ireland)<td></td> West Europe (Netherlands) </td></tr>
+   <tr valign="top"><td> North America	</td><td> East US<td></td> West US </td></tr>
+   <tr valign="top"><td> North America	</td><td> East US 2<td></td> Central US </td></tr>
+   <tr valign="top"><td> North America	</td><td> North Central US<td></td> South Central US </td></tr>
+   <tr valign="top"><td> North America	</td><td> West US 2<td></td> West Central US </td></tr>
+   <tr valign="top"><td> North America	</td><td> West US 3<td></td> East US </td></tr>
+   <tr valign="top"><td> Europe </td><td> North Europe (Ireland)<td></td> West Europe (Netherlands) </td></tr>
    </table>
    <br /><br />
 
