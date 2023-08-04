@@ -421,8 +421,10 @@ Microsoft has a "Defender" offering for each type of product:
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/endpoint-security/microsoft-defender-endpoint">MS Defender for Endpoint</a>
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-for-identity">MS Defender for Identity</a>
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-devops#">MS Defender for DevOps</a>
-   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-cloud">MS Defender for Cloud</a> <a target="_blank" href="https://azure.microsoft.com/en-us/products/defender-for-cloud/">Product</a>
+   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-cloud">MS Defender for Cloud</a> <a target="_blank" href="https://azure.microsoft.com/en-us/products/defender-for-cloud/">Product</a> [<a target="_blank" href="https://www.youtube.com/watch?v=lGYVMjgn5tY">Intro video</a>]
    <br /><br />
+
+* Workflow automation
 
 - Azure Security Center: https://github.com/Azure/Azure-Security-Center reroutes to
 - GitHub community: https://github.com/Azure/Microsoft-Defender-for-Cloud
