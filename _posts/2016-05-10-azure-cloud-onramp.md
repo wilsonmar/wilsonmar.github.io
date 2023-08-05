@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-08-02"
+date: "2023-08-05"
 file: "azure-cloud-onramp"
 title: "Azure Cloud Onramp"
 excerpt: "Azure URLs, Subscriptions, Support plans, Tenants, Directories, ARM portal Keyboard Shortcuts, CLI Bash & PowerShell scripting"
@@ -62,7 +62,7 @@ In Azure, there is a distinction between "subscription owners" and "subscription
 
 <a name="Occupations"></a>
 
-### Technical Occupations
+### Technical Occupation Groups
 
 Microsoft has defined their <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Azure certification exams</a> based on these generic occupations:
 
@@ -74,13 +74,15 @@ Microsoft has defined their <a target="_blank" href="https://wilsonmar.github.io
    * AI Engineer
 
    * Business Analyst
-   * Business User 
+   * Business User (Dynamics, Salesforce, etc.)
    <br /><br />
 
-   PROTIP: The above is different from the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a> (AAD/Entra).
+PROTIP: This grouping is different from the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a> (AAD/Entra).
 
    MY OPINION: I think job roles should be multi-select checkboxes.
    This segregation also adds to duplicating material for each.
+
+   QUESTION: How can these occupational roles be added among properties for individual users? 
 
 
 <a name="Strategies"></a>
@@ -106,7 +108,7 @@ To enable IT people to do their job safely, securely, and efficiently, below is 
 
 <a target="_blank" href="https://www.youtube.com/watch?v=6iYxNm3TOiI&list=PLtVMyW0H7aiOQwZSsn2d-tg2z729ce1BZ" title="MCRA Intro by Mark Simos, Microsoft Chief Security Advisor">VIDEO</a>: Microsoft's overarching <a target="_blank" href="https://aka.ms/MCRA/">Cybersecurity Reference Architecture (MCRA)</a> contains an overwhelming number of diagrams in the <a target="_blank" href="https://github.com/MicrosoftDocs/security/blob/main/Downloads/microsoft-cybersecurity-reference-architectures.pptx?raw=true">PowerPoint file</a> covered by <a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop-videos">videos</a> in <a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/the-ciso-workshop">Microsoft's CISO Workshop</a>.
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"><img alt="azure-guides-1158x439.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"><img alt="azure-guides-1158x439.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690387881/azure-guides-1158x439_zyhcb2.png"><br /><em>Click image for full page</em></a>
 
 Each Cloud Service Provider (GCP, AWS, Azure, etc.) presents different, but similar, <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/secure/">Cloud Adoption Framework (CAF)</a>
 and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-architected/security/overview">Well-Architected Framework</a>.
@@ -116,7 +118,7 @@ and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-archit
 
 How the <a target="_blank" href="https://aka.ms/SecurityRoles">concerns</a> of each organizational role type/team relate with others, from Plan (Governance) to Build to Run (Operations) stages:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"><img alt="azure-security-roles-1883x903.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"><img alt="azure-security-roles-1883x903.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690410983/azure-security-roles-1883x903_j2yehb.png"><br /><em>Click image for full page</em></a>
 
 PROTIP: Who covers each of these concerns where you work?
 Not having an individual/department designated for each responsibility below is often the reason why it doesn't get done and thus creates vulnerabilities not addressed.
@@ -165,23 +167,33 @@ PROTIP: Abbreviations are needed to keep names short.
 Define abbreviations in different human languages if you haven an international crew.
 Abbreviations can serve as a way to inform policies, such as locking of production servers.
 
-Advice from Microsoft: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">Naming conventions</a>:
+Based on <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">Microsoft's advice on naming conventions</a>:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691185898/az-resc-naming-3254x1322_vxg0ni.png"><img alt="az-resc-naming-3254x1322.png" width="650" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691185898/az-resc-naming-3254x1322_vxg0ni.png"></a>
+Use in theis order:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691185898/az-resc-naming-3254x1322_vxg0ni.png"><img alt="az-resc-naming-3254x1322.png" width="650" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691185898/az-resc-naming-3254x1322_vxg0ni.png"><br /><em>Click image for full page</em></a>
 
    1. fin, mktg, prd, it, sec, corp = <strong>Business division: organizational element</strong> that owns the subscription or workload the resource belongs to. 
 
    1. shared, central, client = <strong>Subscription type</strong> - the purpose of the subscription that contains the resource. 
    
-   1. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations">rg, vm</a> = <strong>Resource type</strong>. 
+   1. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations">rg, vm, etc. = <strong>Resource type</strong></a> for each Microsoft service. 
    
    1. navigator, emissions, sharepoint, hadoop = <strong>Workload</strong> (Application or service name that the resource is a part of.
    
    1. prod, dev, qa, stage, test = <strong>Environment</strong> - The stage of the development lifecycle for the workload that the resource supports.
    
-   1. westus, eastus2, westeu = <strong>Region</strong> - The Azure region where the resource is deployed.
+   1. westus, eastus2, westeu = <strong>Region</strong> - The Azure region where the resource is deployed. <a href="#PickRegions">Pick a  region</a>
 
    1. 001, 002, etc. <strong>Instance</strong> - A number or other identifier that distinguishes the resource from other resources of the same type in the same resource group and region.
+
+   * Additional fields are city, country, state, etc.
+
+These should be adopted in Terraform, Bicep, and other IoC.
+
+PROTIP: Stable names make for less rework and mistakes with Dynamic group membership rules used to automatically assign permissions to resources. Example:
+
+   <ul><pre>(user.department -eq "it") and (user.city -eq "Manhattan") and (resource.type -eq "Microsoft.Compute/virtualMachines")</pre></ul>
 
 
 <hr />
@@ -412,7 +424,7 @@ REMEMBER: Use of Defender involves <a target="_blank" href="https://azure.micros
 
 Microsoft summarizes the "kill chain" of exploits and defenses against them in this diagram: 
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"><img alt="az-defenders-3360x1602.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"><img alt="az-defenders-3360x1602.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"><br /><em>Click image for full page</em></a>
 
 Microsoft has a "Defender" offering for each type of product:
 
@@ -438,7 +450,7 @@ Microsoft has a "Defender" offering for each type of product:
 
 Progress toward implementing security controls can be illustrated using this:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"><img alt="azure-defender-1492x1042.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"><img alt="azure-defender-1492x1042.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"><br /><em>Click image for full page</em></a>
 
 Notice the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/defender-for-cloud/update-regulatory-compliance-packages">regulatory compliance standards</a>:
 
@@ -465,7 +477,7 @@ Notice the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/defe
 
 Within M365 Defender is the <a target="_blank" href="https://learn.microsoft.com/en-us/microsoft-365/security/defender/microsoft-secure-score?view=o365-worldwide#how-it-works">Microsoft Secure Score</a> survey app. It's used to define a security posture score (over time) based on whether specific actions have occurred or not. 
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690416862/azure-sec-score-2090x1370_dn2xe9.png"><img alt="azure-sec-score-2090x1370.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690416862/azure-sec-score-2090x1370_dn2xe9.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690416862/azure-sec-score-2090x1370_dn2xe9.png"><img alt="azure-sec-score-2090x1370.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690416862/azure-sec-score-2090x1370_dn2xe9.png"><br /><em>Click image for full page</em></a>
 
 A breakdown of actions based on Microsoft's <strong>categories for a Security Posture</strong>:
 
@@ -794,7 +806,16 @@ The clock is ticking!
 
    https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing
 
-   <strong>Premium P1</strong> features include Password Protection (custom banned password). Dynamic groups require a Premium P1 license.
+   Microsoft 365 subscribers have additional AAD/Entra licensing options:
+   * Azure AD Free has a 500,000 object limit, which includes MFA for O365 services
+   * + $1/mo./user Basic for group-base access management with SLAs
+   * + $6/mo./user P1 for conditional access based on device/location & MFA for on-prem. services
+   * + $9/mo./user P2 for Identity Protection, Access reviews, Privileged Identity Management
+   * Azure AD External Identities (B2B/B2C) are licensed separately -> Microsoft Entra External ID
+   <br /><br />
+
+   <strong>Premium P1</strong> (included in Microsoft 365 E3) features include Password Protection (custom banned password). Dynamic groups require a Premium P1 license.
+      * <strong>Conditional access</strong>
       * Group assignment to applications
       * Advanced group management (dynamic groups, naming policies, expiration, default classification)
 
@@ -820,7 +841,8 @@ The clock is ticking!
       * Privileged identity management (PIM)
       <br /><br />
 
-   <strong>Premium P2</strong> includes all P1 features plus really cool <strong>"Identity Protection"</strong> with policies Assignment to all users.
+   <strong>Premium P2</strong> (included in Microsoft 365 E5) includes all P1 features plus really cool <strong>"Identity Protection"</strong> with policies Assignment to all users.
+      * Identity governance/protection dashboard
       * Risk-based Conditional Access (sign-in risk, user risk)
       * Machine learning assisted access certifications and reviews
       * Authentication context (step-up authentication)
@@ -831,7 +853,6 @@ The clock is ticking!
       * Self-service entitlement management (My Access)
       * Entitlement management with Verified ID
       * Lifecycle workflows
-      * Identity governance dashboard
       <br /><br />
 
    The new <strong>$7/person Microsoft Entra ID Governace</strong> offering adds:
@@ -840,13 +861,6 @@ The clock is ticking!
       * Lifecycle workflows
       * <strong>Machine learning assisted</strong> access certifications and reviews
       <br /><br />
-
-   Microsoft 365 subscribers have additional AAD/Entra licensing options:
-   * Free 500,000 object limit, includes MFA for O365 services
-   * + $1/mo./user Basic for group-base access management with SLAs
-   * + $6/mo./user P1 for conditional access based on device/location & MFA for on-prem. services
-   * + $9/mo./user P2 for Identity Protection, Access reviews, Privileged Identity Management
-   <br /><br />
 
    * Multi-factor authentication registration policy to Require MFA
 
@@ -963,7 +977,7 @@ You'll be soon asked to specify a region. Pick the region closest to you.
 
    At time of writing, Microsoft has over 60 regions around the world on <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/geographies/">their map</a>:
 
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/109421738-cfe65980-7995-11eb-9a04-1b385f2ed631.png"><img alt="az-map-2021-1440x741.png" width="1440" src="https://user-images.githubusercontent.com/300046/109421738-cfe65980-7995-11eb-9a04-1b385f2ed631.png"></a>
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/109421738-cfe65980-7995-11eb-9a04-1b385f2ed631.png"><img alt="az-map-2021-1440x741.png" width="1440" src="https://user-images.githubusercontent.com/300046/109421738-cfe65980-7995-11eb-9a04-1b385f2ed631.png"><br /><em>Click image for full page</em></a>
 
 1. There is also an <a target="_blank" href="https://build5nines.com/map-azure-regions/">
 interactive map showing a point for each region's Longitude and Latitude</a> with city name.
@@ -993,6 +1007,9 @@ interactive map showing a point for each region's Longitude and Latitude</a> wit
    <tr valign="top"><td> Europe </td><td> North Europe (Ireland)<td></td> West Europe (Netherlands) </td></tr>
    </table>
    <br /><br />
+
+NOTE: Microsoft Frontdoor enables you to use a single global IP address for your application. Microsoft automatically routes traffic to the region closest to the user. This is similar to AWS CloudFront.
+
 
 <a name="ResourceGroups"></a>
 
@@ -1422,7 +1439,7 @@ Editors:
 
 ### Azure Blueprints
 
-   Blueprints orchestrates deployment of artifacts as policy.
+   Blueprints orchestrate deployment of resources/artifacts as policy.
 
    Blueprints makes use of:
    * Role assignments
