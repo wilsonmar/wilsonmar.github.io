@@ -71,7 +71,7 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
        * <a target="_blank" href="https://wilsonmar.github.io/azure-iot#AZ-220" title="My hands-on tutorial on Azure IoT">AZ-220 Azure IoT Developer Specialty</a> 
    </td></tr>
 
-<tr valign="top"><td> Security Engineer</td><td>
+<tr valign="top"><td> <a href="#Sec_Certs">Security Certifications</a></td><td>
    * <a href="#SC-900">SC-900 Security, Compliance, and Identity Fundamentals</a><br />
    * <a href="#SC-200">SC-200 Security Operations Analyst Associate</a><br />
    * <a href="#SC-300">SC-300 Identity and Access Administrator Associate</a><br />
@@ -319,6 +319,7 @@ is where you start exams and get certificate pdfs (suitable for framing) and bad
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits">
 Azure Subscription Service Limits</a>
 
+
 <hr />
 
 <a name="AZ-900"></a>
@@ -466,15 +467,8 @@ by Tim Warner with <a target="_blank" href="https://www.kaplanlearn.com/educatio
 
 * <a target="_blank" href="https://www.aguidetocloud.com/full-courses/az104fullcourse">10-hour AGuideToCloud video class by Susanth Sutheesh</a>
 
+
 <hr />
-
-<a name="Sec_Certs"></a>
-
-## Security Certifications
-
-<a target="_blank" href="https://www.youtube.com/watch?v=6znaiD9B8mw">
-Ask the Experts: New Microsoft Security Compliance, Identity Training and Certification Portfolio</a> from Ignite March 2021
-
 
 <a name="MS-500"></a>
 
@@ -590,13 +584,15 @@ https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevO
 
 <hr />
 
-## Azure Security certifications
+<a name="Sec_Certs"></a>
 
-https://techcommunity.microsoft.com/t5/security-compliance-identity/security-community-webinars/ba-p/927888
+## Security Certifications
 
-https://techcommunity.microsoft.com/t5/security-compliance-identity/security-community-webinars/ba-p/927888
+PROTIP: See <a target="_blank" href="https://wilsonmar.github.io/security-certifications">my blog on security certifications at<br />https://wilsonmar.github.io/security-certs</a>
 
-See <a target="_blank" href="https://wilsonmar.github.io/security-certifications">my blog on security certifications at<br />https://wilsonmar.github.io/security-certs</a>
+   * https://techcommunity.microsoft.com/t5/security-compliance-identity/security-community-webinars/ba-p/927888
+   * https://techcommunity.microsoft.com/t5/security-compliance-identity/security-community-webinars/ba-p/927888
+   * <a target="_blank" href="https://www.youtube.com/watch?v=6znaiD9B8mw">Ask the Experts: New Microsoft Security Compliance, Identity Training and Certification Portfolio</a> from Ignite March 2021
 
 
 <a name="SC-900"></a>
@@ -618,6 +614,7 @@ Videos:
    * <a target="_blank" href="https://www.youtube.com/watch?v=Bz-8jM3jg-8&list=RDCMUCpIn7ox7j7bH_OFj7tYouOQ&start_radio=1&t=5297">2hr John Savill</a>draws a <a target="_blank" href="https://github.com/johnthebrit/RandomStuff/blob/master/SC-900ReviewWhiteboard.svg">massive whiteboard</a> as massive as his muscles. One in a massive series with <a target="_blank" href="https://github.com/johnthebrit/AzureMasterClass">pdfs in GitHub</a>.
 
    * <a target="_blank" href="https://www.aguidetocloud.com/full-courses/sc900fullcourse">4-hour AGuideToCloud video class by Susanth Sutheesh</a>
+
 
 <a name="SC-200"></a>
 

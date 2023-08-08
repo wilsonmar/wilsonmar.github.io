@@ -5330,6 +5330,16 @@ https://github.com/bananalab/terraform-live-template
 In his <a target="_blank" href="https://learning.oreilly.com/live-events/learn-infrastructure-as-code-with-terraform/0636920077731/">Learn Infrastructure as Code with Terraform</a> 
 on Feb 13...
 
+https://www.youtube.com/watch?v=V53AHWun17s
+Learn Terraform with Azure by Building a Dev Environment – Full Course for Beginners
+by freecodecamp
+
+https://learning.oreilly.com/live-events/hashicorp-certified-terraform-associate-certification-crash-course/0636920072267/0636920091198/
+Aug 8-9, 2023
+by Benjamin Muschko
+
+
+
 ## More on DevOps #
 
 This is one of a series on DevOps:

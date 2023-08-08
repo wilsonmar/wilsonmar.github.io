@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2018-07-14"
+file: "salesforce-ohana"
 title: "Salesforce Ohana"
 excerpt: "Offices, Financials, Social media, Communities, Events, Dreamforce, Dreamoji, Store"
 tags: [salesforce]
-date: "2018-07-14"
-file: "salesforce-ohana"
 image:
 # feature: ![salesforce-mascots-1900x500-99991.jpg
   feature: https://user-images.githubusercontent.com/300046/55675061-26b28980-587a-11e9-8084-e7bad7c3249a.jpg
@@ -19,7 +19,7 @@ comments: true
 This page presents steps and information for those new to Salesforce to get "plugged in" quickly and fully.
 
 "Ohana" is the Hawaiian word for "family". Salesforces uses the <a target="_blank" href="https://twitter.com/hashtag/salesforceohana">Twitter hash tag #SalesforceOhana</a>
-to describe the inclusive culture it's desirable to foster. Thus the Hawaiian (Polynesian) decorations and musician at events.
+to describe the inclusive culture it desires to foster. Thus the Hawaiian (Polynesian) decorations and musicians at events.
 
 PROTIP: The Hawaiian word "Aloha" (meaning both hello and goodbye), has been applied to the feature of Salesforce that, rather than failing installation, allows installation of a package even though it has reached its maximum number of Custom Objects.
 
@@ -36,9 +36,9 @@ In other words, Salesforce literally "towers above" <a target="_blank" href="htt
 <a target="_blank" href="https://www.youtube.com/watch?v=DqOWyL5S1UE&t=6s">Click this picture to see a video of the lobby's amazing wall-to-wall video wall:<br />
 <img alt="salelsforce-tower-lobby-299x156-60483.jpg" src="https://user-images.githubusercontent.com/300046/45239024-0d743b00-b2a1-11e8-94ef-dc5c9a0073b4.png"></a>
 
-Designed by <a target="_blank" href="http://pcparch.com/">Pelli, Clarke, Pelli Architects</a>, the top 6 stories is lit by 11,000 LEDs programmed by <a target="_blank" href="http://www.jimcampbell.tv/portfolio/public_art/salesforce_tower/">artist Jim Campbell</a>. 
+Designed by <a target="_blank" href="http://pcparch.com/">Pelli, Clarke, Pelli Architects</a>, the top 6 stories are lit by 11,000 LEDs programmed by <a target="_blank" href="http://www.jimcampbell.tv/portfolio/public_art/salesforce_tower/">artist Jim Campbell</a>. 
 
-The tower is built on top of former landfill in an earthquake-prone area.
+The tower is built on top of a former landfill in an earthquake-prone area.
 And it's certified LEED Platinum -- the highest rating in the US. 
 It's on Mission between Freemont and 1st (South of the Montgomery BART station), a part of a whole downtown $6 billion re-development that includes the 5-acre Salesforce Park above the Transbay Transit Center public transportation hub. 
 
@@ -51,7 +51,7 @@ BTW Benoiff has been working with the city and other businesses to get all 6,500
 
 ## Financials
 
-Salesforce has not been profitable historically, but its market value (stock price x shares) is among the fastest growing companies.
+Salesforce has not been profitable historically, but its market value (stock price x shares) is among the fastest-growing companies.
 The company has seen a consistent growth rate of 35% year-over-year, unrivaled in the stock market:
 
 <a target="_blank" href="https://www.nasdaq.com/symbol/crm/stock-chart?intraday=off&timeframe=10y&charttype=mountain&splits=off&earnings=off&movingaverage=None&lowerstudy=volume&comparison=off&index=&drilldown=off&sDefault=true">
@@ -251,7 +251,7 @@ Einstein Analytics</a>
 
 The "NO SOFTWARE" mascot, called <strong>Sassy</strong> (<a target="_blank" href="https://twitter.com/TooSaaSy">@TooSaaSy</a>, <a target="_blank" href="https://twitter.com/hashtag/WhereIsSaaSy?src=hash">#WhereIsSasSy</a>), is the original mascot for Salesforce. The company's main number is still 800.NO-SOFTWARE.
 
-Astro, created by Rochelle Truong in 2015, is the racoon in a spacesuit.
+Astro, created by Rochelle Truong in 2015, is the raccoon in a spacesuit.
 
 The goat is called <strong>Cloudy</strong>.
 
@@ -274,7 +274,7 @@ On your iOS device, search for <a target="_blank" href="https://itunes.apple.com
 
 ![salesforce-dreamoji-iphone-screen-648x618-32360.jpg](https://user-images.githubusercontent.com/300046/55632739-23cf7000-5778-11e9-9f2c-38ab1c295932.jpg)
 
-After it loads, in you iPhone Settings app, General, Keyboard, Keyboards, select "Dreamoji", enable "Allow Full Access".
+After it loads, in you iPhone Settings app, General, Keyboard, Keyboards, select "Dreamoji", and enable "Allow Full Access".
 
 ![salesforce-dreamoji-iphone-648-1404-57477.jpg](https://user-images.githubusercontent.com/300046/55632526-bcb1bb80-5777-11e9-81d7-9f72002f268f.jpg)
 
@@ -287,7 +287,7 @@ On your Android, see <a target="_blank" href="https://t.co/UzK0VF7e9G">https://t
 ## Store
 
 <a target="_blank" href="https://salesforcestore.com/"><img align="right" alt="sf-keychain-150x150-6434.jpg" src="https://user-images.githubusercontent.com/300046/43412209-ba197162-93e9-11e8-8028-193144aeb840.jpg"></a>
-Miss being at a Salesforce event? Buy the branded clothing, office supplies, electronics, all 129+ products for sale at 
+Miss being at a Salesforce event? Buy the branded clothing, office supplies, electronics, and all 129+ products for sale at:
 
    <a target="_blank" href="https://salesforcestore.com/">https://salesforcestore.com</a>
 

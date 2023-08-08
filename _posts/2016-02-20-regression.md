@@ -205,6 +205,7 @@ by Amy Gallo
 
 https://www.wikiwand.com/en/Linear_regression
 
+https://medium.com/@satyarepala/understanding-linear-and-polynomial-regression-a-comprehensive-guide-b01c48e22ad6
 
 ## Resources
 

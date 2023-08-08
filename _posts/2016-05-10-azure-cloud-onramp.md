@@ -1,9 +1,9 @@
----
+   ---
 layout: post
 date: "2023-08-05"
 file: "azure-cloud-onramp"
 title: "Azure Cloud Onramp"
-excerpt: "Azure URLs, Subscriptions, Support plans, Tenants, Directories, ARM portal Keyboard Shortcuts, CLI Bash & PowerShell scripting"
+excerpt: "Azure GUI, CLI Bash & PowerShell for security URLs, Subscriptions, Support plans, Tenants, Directories, ARM portal Keyboard Shortcuts - AZ-104, AZ-500"
 tags: [cloud, azure]
 image:
 # az-logo-2021-1900x500.png
@@ -181,7 +181,7 @@ Use in theis order:
    
    1. navigator, emissions, sharepoint, hadoop = <strong>Workload</strong> (Application or service name that the resource is a part of.
    
-   1. prod, dev, qa, stage, test = <strong>Environment</strong> - The stage of the development lifecycle for the workload that the resource supports.
+   1. prod, dev, qa, stage, test = <strong>Environment</strong> - The stage of the development lifecycle for the workload that the resource supports. [<a href="#EnvDifferences">Differences</a>]
    
    1. westus, eastus2, westeu = <strong>Region</strong> - The Azure region where the resource is deployed. <a href="#PickRegions">Pick a  region</a>
 
@@ -189,7 +189,7 @@ Use in theis order:
 
    * Additional fields are city, country, state, etc.
 
-These should be adopted in Terraform, Bicep, and other IoC.
+These should be adopted in Terraform, <a href="#Bicep"><Bicep</a>, and other IoC.
 
 PROTIP: Stable names make for less rework and mistakes with Dynamic group membership rules used to automatically assign permissions to resources. Example:
 
@@ -452,6 +452,8 @@ Progress toward implementing security controls can be illustrated using this:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"><img alt="azure-defender-1492x1042.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690385105/azure-defender-1492x1042_lt9imh.png"><br /><em>Click image for full page</em></a>
 
+QUESTION: Interface to organize/track work in <a target="_blank" href="https://wilsonmar.github.io/jira/">Jira</a> or <a target="_blank" href="https://wilsonmar.github.io/azure-devops/#Tasks">Azure DevOps Tasks</a>?
+
 Notice the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/defender-for-cloud/update-regulatory-compliance-packages">regulatory compliance standards</a>:
 
    * ISO 27001
@@ -516,6 +518,17 @@ References:
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure">DOC: Compare Global vs. Gov</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=6UDePj5newo&list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7&index=10">VIDEO: Terraform Provider Azure.gov</a> for standardized templates across clouds.
    * <a target="_blank" href="https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/">Pulumi</a> enables programmatic access (by a Python program) to Azure.
+
+
+<a name="EnvDifferences"></a>
+
+### Environment Differences
+
+In Prod, Key Vault secrets are locked from deletion for 90 days.<br />
+In Dev, Key Vault values are locked from deletion..<br />
+
+In Dev, devs can access the Azure Portal interactively to create resources during CI/CD IaC pipeline construction.<br />
+In Prod, resources are deployed only by CI/CD pipelines and devs cannot access the Azure Portal interactively.<br />
 
 
 <a name="URLs"></a>
@@ -812,6 +825,12 @@ The clock is ticking!
    * + $6/mo./user P1 for conditional access based on device/location & MFA for on-prem. services
    * + $9/mo./user P2 for Identity Protection, Access reviews, Privileged Identity Management
    * Azure AD External Identities (B2B/B2C) are licensed separately -> Microsoft Entra External ID
+   <br /><br />
+
+   DOTHIS: Recommend how each user can setup MFA. These options are available:
+   * Number of MFA denials to trigger account lockout (from 1 to 99)
+   * Minutes until account lockout counter is reset (from 1 to 1440)
+   * Minutes until account is automatically unlocked (from 1 to 9999)
    <br /><br />
 
    <strong>Premium P1</strong> (included in Microsoft 365 E3) features include Password Protection (custom banned password). Dynamic groups require a Premium P1 license.
@@ -1263,7 +1282,7 @@ There are many ways to automate the creation of resources within Azure:
    1. PowerShell DSC (Desired State Configuration) automation
    1. <a href="#VM_PS_JSON">Powershell</a> running ARM template JSON files
 
-   1. Microsoft Bicep (new in 2022)
+   1. Microsoft <a href="#Bicep">Bicep</a> (new in 2021)
    1. <a href="#VM_Docker">Terraform</a> HCL *.tf files with templating features and advanced logic features)
    1. <a target="_blank" href="https://wilsonmar.github.io/pulumi/">Pulumi Python/C#/Nodejs/Typescript code</a>
 
@@ -3435,31 +3454,36 @@ A parent template can launch nested templates.
 
 ## Azure Bicep > Terraform
 
-<a target="_blank" href="https://www.youtube.com/watch?v=_yvb6NVx61Y" title="Understanding and Using Project BICEP - The NEW Azure Deployment Technology by John Savill Mar 9, 2021">VIDEO</a>:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=VDCAJIGqHZU">Azure Friday</a> by Scott Anselman
+   * <a target="_blank" href="https://www.youtube.com/watch?v=22VG-3fEOjU">Deploy Bicep files by using Github Actions</a> by <a target="_blank" href="https://www.linkedin.com/in/jaygordon0042/">Jay Gordon</a>. Create an AKS cluster with secrets from Azure Key Vault.
+   *  <a target="_blank" href="https://www.youtube.com/watch?v=_yvb6NVx61Y" title="Understanding and Using Project BICEP - The NEW Azure Deployment Technology by John Savill Mar 9, 2021">VIDEO</a>:
+   * <a target="_blank" href="https://github.com/Azure/bicep">https://github.com/Azure/bicep</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=7SwR_LeXqK0" title="Jan 11, 2023">VIDEO: Bicep vs Terraform. which one should I use?</a> by <a target="_blank" href="https://www.linkedin.com/in/jonathan-d-aloia/">Jonathan D'Aloia at Adatis London</a>
+   * <a target="_blank" href="https://jackwesleyroper.medium.com/azure-bicep-pros-cons-c8121fbfe5db">BLOG:  Pros & Cons</a>
+   <br /><br />
 
-Azure Bicep files contain a custom Domain Specific Language (DSL) designed to be easier to read than ARM JSON templates.
+1. View sample:
 
-<a target="_blank" href="https://github.com/Azure/bicep">https://github.com/Azure/bicep</a>
+   https://github.com/Azure/bicep/tree/main/docs/examples
 
-RESOURCE: <a target="_blank" href="https://github.com/Azure/azure-quickstart-templates/">This</a> contains Azure Resource Manager templates contributed by the community.
+   * Bicep files are designed to be easier to read than ARM JSON templates.
+   * Bicep files are declarative, containing Domain Specific Language (DSL), like Terraform HCL.
+   * Bicep is a transpiler, not a compiler. Bicep build transpiles Bicep files to ARM templates main.json files.
 
-https://github.com/Azure/bicep/tree/main/docs/examples
+   * Unlike Terraform, Bicep has no state file, so it <strong>doesn't alter and delete resources</strong> based on changes in the file (which can be dangerous).
+   * Unlike Terraform, Bicep currently does not have additional providers such as for Databricks, Snowflake, etc.
+   * As of March 2021, Bicep is not yet integrated into the Portal.
+   <br /><br />
 
-Tooling in Visual Studio Code <strong>transpiles</strong> Bicep files to ARM templates.
+1. More examples: <a target="_blank" href="https://github.com/Azure/azure-quickstart-templates/">This</a> contains Azure Resource Manager templates contributed by the community.
 
-QUESTION: What about templating? Pulumi?
-Bicep files are like Terraform declarative files.
-But instead of state files like Terraform, Azure itself manages state.
+1. Install in VSCode the Bicep extension: <a target="_blank" href="https://www.youtube.com/watch?v=VDCAJIGqHZU" title="Azure Friday with Scott Hanselman">VIDEO</a>
 
-As of March 2021, Bicep is not yet integrated into the Portal.
+1. Install the Bicep CLI. <a target="_blank" href="https://www.youtube.com/watch?v=F1zzrnXQwKU">VIDEO</a>
 
-1. Install the Bicep CLI.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=F1zzrnXQwKU">VIDEO</a>
 
-<a target="_blank" href="https://jackwesleyroper.medium.com/azure-bicep-pros-cons-c8121fbfe5db">
-BLOG:  Pros & Cons</a>
-
+<hr />
 
 <a name="Terraform"></a>
 

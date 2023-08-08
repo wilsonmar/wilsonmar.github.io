@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-06-17"
+date: "2023-08-06"
 file: "python-install"
 title: "Python Install (Conda Anaconda Miniconda Pip) on MacOS"
 excerpt: "Confusion and errors from too many alternatives and options"
@@ -17,8 +17,7 @@ comments: true
 {% include _toc.html %}
 
 This tutorial describes the different options to install and
-<a href="#Uninstall">uninstall</a> Python within various
-package managers (which helps you find and install Python packages).
+<a href="#Uninstall">uninstall</a> Python and Python packages within various package managers.
 
 Here I'm taking a "deep dive" approach because I haven't seen one on the internet.
 
@@ -2217,6 +2216,8 @@ https://blog.xoxzo.com/en/2020/05/09/making-sense-python-environment/
 <a target="_blank" href="https://codered.eccouncil.org/courseVideo/black-hat-python-for-pentesters/">
 VIDEO COURSE: EC-Council's CodeRed "Black Hat Python: Python For Pentesters"</a>
 by Cody Jackson
+
+<a target="_blank" href="https://www.youtube.com/watch?v=22VG-3fEOjU">Deploy Bicep files by using Github Actions</a>
 
 
 ## More on Python

@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-07-08"
+date: "2023-08-07"
 file: "cyber-security"
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
@@ -3298,6 +3298,16 @@ AKA Application Security Manager. Can be configured as a reverse proxy that acce
 ## CISO-targeted
 
 https://www.pulseconferences.com/
+
+<hr />
+
+## Masters Degrees
+
+* <a target="_blank" href="">Western Governors University</a> Masters in Cybersecurity online
+
+* <a target="_blank" href="https://www.sans.edu/academics/degrees/msise">SANS Technology Institute</a> Master of Science in Information Security Engineering (MSISE) 
+
+* Coursera online:<a target="_blank" href="https://www.coursera.org/degrees/msc-cyber-security-london">University of London</a> MSc in Cyber Security
 
 
 ## Resources
