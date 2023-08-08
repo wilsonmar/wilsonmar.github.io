@@ -2217,7 +2217,6 @@ https://blog.xoxzo.com/en/2020/05/09/making-sense-python-environment/
 VIDEO COURSE: EC-Council's CodeRed "Black Hat Python: Python For Pentesters"</a>
 by Cody Jackson
 
-<a target="_blank" href="https://www.youtube.com/watch?v=22VG-3fEOjU">Deploy Bicep files by using Github Actions</a>
 
 
 ## More on Python
