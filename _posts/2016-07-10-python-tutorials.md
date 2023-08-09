@@ -27,6 +27,7 @@ is the official tutorial.
 
 <a target="_blank" href="https://docs.python.org/3/library/index.html">https://docs.python.org/3/library/index.html</a> is the official documentation.
 
+
 ## Mind maps
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/76685523-223e3700-65da-11ea-8177-925d3041ef99.png"><img alt="PythonFundamentalsCourse-MindMap-1.png" width="1066" height="719" src="https://user-images.githubusercontent.com/300046/76685523-223e3700-65da-11ea-8177-925d3041ef99.png"></a>
@@ -53,6 +54,34 @@ from <a target="_blank" href="http://www.seleniumframework.com/python-course/">h
 7. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=8h32m32s">Regular Expressions</a>
 8. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=10h37m35s">Object-Oriented Programming</a>
 9. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=13h29m7s">Et Cetera</a>: sets to filter out duplicates.
+
+
+## Coursera.com University Courses
+
+https://www.coursera.org/learn/python-data-processing
+Nanjing University
+Data Processing Using Python
+
+https://www.coursera.org/learn/3d-modeling-rhinoscript
+University of Michigan
+Design Computing: 3D Modeling in Rhinoceros with Python/Rhinoscript
+
+https://www.coursera.org/learn/problem-solving-programming-video-games
+University of Alberta
+Problem Solving, Python Programming, and Video Games
+
+https://www.coursera.org/learn/python-statistics-financial-analysis
+Python and Statistics for Financial Analysis
+Instructor: Xuhu Wan of Hong Kong
+
+https://www.coursera.org/learn/bioinformatics
+University of California San Diego
+Biology Meets Programming: Bioinformatics for Beginners - Python
+
+
+
+
+<hr />
 
 ## Free Tutorials about Python
 
@@ -213,9 +242,9 @@ MIT's Introduction to Computer Science using Python course 600.1.X</a> Aug 10, 2
    <br /><br />
 
 
+<hr />
 
-
-## Paid Tutorials on Python
+## Paid Tutorials about Python
 
 <a target="_blank" href="https://learnpythonthehardway.org/book/">Learn Python the Hard Way</a> is $29 from ZED.
 
@@ -471,6 +500,8 @@ Since 2016, at Swagger 3.0, "OpenAPI" refers to the API specification defined & 
 SmartBear's licensed tools include SwaggerHub, Inspector.
 
 SmartBear's free tools include SwaggerUI, Swagger Editor, Swagger Codegen.
+
+
 
 
 <hr />
