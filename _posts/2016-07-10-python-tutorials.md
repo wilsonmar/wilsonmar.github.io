@@ -52,9 +52,12 @@ from <a target="_blank" href="http://www.seleniumframework.com/python-course/">h
 5. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=6h9m15s">Unit Tests</a>
 6. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=7h0m22s">File I/O</a>
 7. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=8h32m32s">Regular Expressions</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/regex/">My notes on Regex</a>
 8. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=10h37m35s">Object-Oriented Programming</a>
 9. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=13h29m7s">Et Cetera</a>: sets to filter out duplicates.
 
+
+<hr />
 
 ## Coursera.com University Courses
 
@@ -78,7 +81,18 @@ https://www.coursera.org/learn/bioinformatics
 University of California San Diego
 Biology Meets Programming: Bioinformatics for Beginners - Python
 
+<hr />
 
+## Edx.org University Courses
+
+Each video course on edx.org are $149 if you want assignments graded and long-term access (otherwise FREE). 
+
+<a target="_blank" href="https://www.edx.org/learn/statistics/stanford-university-statistical-learning">"Statistical Learning" video course on edX.org</a> by <a target="_blank" href="https://online.stanford.edu/courses/sohs-ystatslearning-statistical-learning">Stanford University</a>
+professors <a target="_blank" href="https://www.linkedin.com/in/trevor-hastie-a6a4735/">Trevor Hastie</a> and <a target="_blank" href="https://www.linkedin.com/in/rob-tibshirani-0143391/">Rob Tibshirani</a> and they are hilarious as a pair who have worked together for 30 years.
+
+   * Talk to them on the forum at <a target="_blank" href="https://stats.stackexchange.com/questions/tagged/isl">stats.stackexchange.com</a>
+   * For a 613-page pdf that accompanies the class, click on <a target="_blank" href="https://hastie.su.domains/ISLP/ISLP_website.pdf">the link</a> on their website: <a target="_blank" href="https://www.statlearning.com/">https://www.statlearning.com</a> 
+   <br /><br />
 
 
 <hr />
@@ -131,6 +145,7 @@ May 2019 <a target="_blank" href="https://www.py4e.com/">Python for Everybody (p
 
 AWS has Boto3 library.
 https://www.youtube.com/watch?v=SmilJDG4B_8
+
 
 ## Azure
 
