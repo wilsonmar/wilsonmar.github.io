@@ -125,43 +125,43 @@ Also: Cross-Site Request Forgery (CSRF)
 
 <a target="_blank" href="https://owasp.org/www-project-api-security/">API security has its own OWASP Top 10</a>:
 
-1. API1:2019 Broken Object Level Authorization
+1. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/">API1:2019 Broken Object Level Authorization</a>
 
     APIs tend to expose endpoints that handle object identifiers, creating a wide attack surface Level Access Control issue. Object level authorization checks should be considered in every function that accesses a data source using an input from the user.
 
-2. API2:2019 Broken User Authentication
+2. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa2-broken-authentication/">API2:2019 Broken User Authentication</a>
 
     Authentication mechanisms are often implemented incorrectly, allowing attackers to compromise authentication tokens or to exploit implementation flaws to assume other user’s identities temporarily or permanently. Compromising system’s ability to identify the client/user, compromises API security overall.
 
-3. API3:2019 Excessive Data Exposure
+3. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa3-broken-object-property-level-authorization/">API3:2019 Excessive Data Exposure</a>
 
     Looking forward to generic implementations, developers tend to expose all object properties without considering their individual sensitivity, relying on clients to perform the data filtering before displaying it to the user.
 
-4. API4:2019 Lack of Resources & Rate Limiting
+4. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa4-unrestricted-resource-consumption/">API4:2019 Lack of Resources & Rate Limiting</a>
 
     Quite often, APIs do not impose any restrictions on the size or number of resources that can be requested by the client/user. Not only can this impact the API server performance, leading to Denial of Service (DoS), but also leaves the door open to authentication flaws such as brute force.
 
-5. API5:2019 Broken Function Level Authorization
+5. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa5-broken-function-level-authorization/">API5:2019 Broken Function Level Authorization</a>
 
     Complex access control policies with different hierarchies, groups, and roles, and an unclear separation between administrative and regular functions, tend to lead to authorization flaws. By exploiting these issues, attackers gain access to other users’ resources and/or administrative functions.
 
-6. API6:2019 Mass Assignment
+6. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa6-unrestricted-access-to-sensitive-business-flows/">API6:2019 Mass Assignment</a>
 
     Binding client provided data (e.g., JSON) to data models, without proper properties filtering based on a whitelist, usually lead to Mass Assignment. Either guessing objects properties, exploring other API endpoints, reading the documentation, or providing additional object properties in request payloads, allows attackers to modify object properties they are not supposed to.
 
-7. API7:2019 Security Misconfiguration
+7. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa7-server-side-request-forgery/">API7:2019 Security Misconfiguration</a>
 
     Security misconfiguration is commonly a result of unsecure default configurations, incomplete or ad-hoc configurations, open cloud storage, misconfigured HTTP headers, unnecessary HTTP methods, permissive Cross-Origin resource sharing (CORS), and verbose error messages containing sensitive information.
 
-8. API8:2019 Injection
+8. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa8-security-misconfiguration/">API8:2019 Injection</a>
 
     Injection flaws, such as SQL, NoSQL, Command Injection, etc., occur when untrusted data is sent to an interpreter as part of a command or query. The attacker’s malicious data can trick the interpreter into executing unintended commands or accessing data without proper authorization.
 
-9. API9:2019 Improper Assets Management
+9. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa9-improper-inventory-management/">API9:2019 Improper Assets Management</a>
 
     APIs tend to expose more endpoints than traditional web applications, making proper and updated documentation highly important. Proper hosts and deployed API versions inventory also play an important role to mitigate issues such as deprecated API versions and exposed debug endpoints.
 
-10. API10:2019 Insufficient Logging & Monitoring
+10. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xaa-unsafe-consumption-of-apis/">API10:2019 Insufficient Logging & Monitoring</a>
 
     Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows attackers to further attack systems, maintain persistence, pivot to more systems to tamper with, extract, or destroy data. Most breach studies demonstrate the time to detect a breach is over 200 days, typically detected by external parties rather than internal processes or monitoring.
 
