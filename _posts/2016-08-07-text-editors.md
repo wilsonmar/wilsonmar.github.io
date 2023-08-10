@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-02-01"
+date: "2023-08-09"
 file: "text-editors"
 title: "Text Editors (on the Mac)"
 excerpt: "nano, pico, vim, subl, code, Eclipse, IntelliJ, Visual Studio, Cloud9, etc."
@@ -37,8 +37,8 @@ Below is a list of text editors grouped by licensing term:
    * <a target="_blank" href="http://www.annedawson.net/Python_Editor_IDLE.htm">
    Python IDLE Editor</a>
 
+   * <a href="#Neovim">Neovim</a>
    * <a href="#MacVim">MacVim</a> for Mac
-   * <a target="_blank" href="https://neovim.io/">NeoVim</a> (<a target="_blank" href="https://neovim.io/doc/user/">nvim command</a>) supports Vimscript engine with Lua.
 
 ## Free IDEs :
 
@@ -60,7 +60,7 @@ Free to start, then pop-ups asking for money:
 
 ## Licensed IDEs :
 
-   * IntelliJ for Java, WebStorm and PhpStorm, $200 PyCharm for Python. All from JetBrains
+   * <a href="#JetBrains">From JetBrains</a>: <a target="_blank" href="https://wilsonmar.github.io/intellij/">IntelliJ for Java</a>, $200 PyCharm for Python, WebStorm and PhpStorm for JavaScript, etc.
    * <a href="#VisualStudioForMac">Visual Studio 2019 for Mac from Microsoft</a>, ported from Visual Studio (for Windows), for developing <a target="_blank" href="https://wilsonmar.github.io/xamarion/">Xamarin</a>, MAUI, and Unity (3D) apps in the C# language
    * $49.99 <a target="_blank" href="https://www.barebones.com/products/bbedit/">BBEdit</a> has a 30-day evaluation period.
    * <a target="_blank" href="https://www.activestate.com/products/komodo-ide/">multi-platform Komodo IDE</a> since 2018 is "free" as is part of an ActiveState Platform subscription. Its plug-ins are based on Mozilla add-ons such as a DOM Inspector.
@@ -488,6 +488,21 @@ The newer vim and gvim, the graphical (XWindows) vim, adds many productivity fea
 
 Nevertheless, some still use "old-school" vi because Vim ignores control characters in headers and formatting, which can break scripts - especially files from Windows computers. Using vi provides full control of the exact contents of files being edited.
 
+<a name="Neovim"></a>
+
+### Neovim
+ 
+<a target="_blank" href="https://neovim.io/">NeoVim<.io</a> 
+
+<a target="_blank" href="https://neovim.io/doc/user/">nvim command</a>) supports Vimscript engine with Lua programming language.
+
+GitHub/Microsoft's <a target="_blank" href="https://wilsonmar.github.io/copilots/">Copilots</a> has support for Neovim.
+See https://docs.github.com/en/copilot/getting-started-with-github-copilot?tool=neovim#about-github-copilot-and-neovim
+   <br /><br />
+
+
+### For all vi-based editors
+
 *nix operating sytems end each line with a line-feed (LF) character.
 Windows end each line with a carriage-return and line-feed character.
 
@@ -498,7 +513,7 @@ and <tt>:set ff=dos</tt> to convert to Windows.
 
    See <a target="_blank" href="https://www.vimawesome.com/">vimawesome.com</a>
 
-### Customizations
+### Vim Customizations
 
 1. To set your default editor to vim, add
 
@@ -1065,12 +1080,15 @@ https://help.github.com/articles/associating-text-editors-with-git/
 
 
 
+<hr />
 
-<a id="IntelliJ"></a>
+<a id="JetBrains"></a>
 
-## IntelliJ 
+## From JetBrains
 
-Advantage of using the intelliJ IDE:
+> See <a href="https://wilsonmar.github.io/intellij/">my notes installing and using the IntelliJ IDE from JetBrains</a>.
+
+Advantage of using JerBrains IDEs:
 
    * Simple keystrokes wraps statements in a try-catch or if-else block.
    * It generates getter and setter methods for object attributes.

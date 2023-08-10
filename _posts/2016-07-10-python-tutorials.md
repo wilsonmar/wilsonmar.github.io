@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-05"
+date: "2023-08-08"
 file: "python-tutorials"
 title: "Python Tutorials"
 excerpt: "Who will teach you to code in python"
@@ -105,6 +105,8 @@ Data-Flair</a> offers <a target="_blank" href="https://data-flair.training/blogs
 Microsoft LEARN: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/intro-to-python/">1 hr text Introduction to Python</a>
 
 <a target="_blank" href="https://www.fullstackpython.com/">Full Stack Python</a> is an open source book that explains technical concepts in plain language. Every layer is about code written in Python: Development Environments, Data, Web Development, Deployment, DevOps.
+
+<a target="_blank" href="https://www.linkedin.com/learning/paths/become-a-python-developer">Become a Python Developer</a>
 
 <a target="_blank" href="https://pyneng.readthedocs.io/en/latest/">Python Networking Engineering on ReadTheDocs</a>
 by <a target="_blank" href="https://www.linkedin.com/in/nsamoylenko/">Natasha Samoylenko (in Ukraine)</a>

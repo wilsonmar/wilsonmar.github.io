@@ -16,17 +16,21 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+{% include whatever.html %}
+
 ## LinkedIn Certifications
 
-LinkedIn offers <a target="_blank" href="https://www.linkedin.com/help/linkedin/answer/a511367">Python certificate exam</a> 
-as one of <a target="_blank" href="https://www.linkedin.com/help/linkedin/answer/a507734">several free certifications</a>
+LinkedIn offer <a target="_blank" href="https://www.linkedin.com/help/linkedin/answer/a507734">several free certifications</a>
 based on 30-minute 20-question multiple-choice questions. Retest every 6 months if you don't pass. Good forever.
+<a target="_blank" href="https://www.wikiwand.com/en/First_officer_(aviation)">Wikiwand</a>
 
-The unique thing about LinkedIn certifications is that they are form the basis for <strong>more legitimate</strong> way to tag individuals with skills employers and their recruiters search for.
+The unique thing about LinkedIn certifications is that they are form the basis for <strong>more legitimate way to tag individuals</strong> with skills employers and their recruiters search for. So it's worth the time to take them if you want to be found based on your demonstrated skills.
 
-https://github.com/Ebazhanov/linkedin-skill-assessments-quizzes/blob/main/python/python-quiz.md
+LinkedIn offers <a target="_blank" href="https://www.linkedin.com/help/linkedin/answer/a511367">Python certificate exam</a>.
+A sample: https://github.com/Ebazhanov/linkedin-skill-assessments-quizzes/blob/main/python/python-quiz.md
+PROTIP: The questions are not the same each time you take the test, so you can take it multiple times to get a higher score.
 
-<a target="_blank" href="https://www.linkedin.com/learning/paths/become-a-python-developer">Become a Python Developer</a>
+
 
 <hr />
 

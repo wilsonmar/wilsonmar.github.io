@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-08-01"
+date: "2023-08-08"
 file: "microsoft-ai"
 title: "Microsoft AI (Azure Cognitive Services)"
 excerpt: "Notes for before and after getting AI-900, AI-100, AI-102 certified, as we automate AI workflows in the Azure PaaS cloud"
@@ -45,6 +45,47 @@ Microsoft has published different lists for what services constitute its "Cognit
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/iot-edge/">Azure IoT (Edge) Services</a> are separate. 
 
 * https://www.computerworld.com/article/3252218/cortana-explained-why-microsofts-virtual-assistant-is-wired-for-business.html 
+
+
+<a name="OpenAI"></a>
+
+## Azure OpenAI
+
+   References:
+   * https://azure.microsoft.com/en-us/services/openai/
+   * https://learn.microsoft.com/en-us/training/paths/get-started-with-artificial-intelligence-on-azure/
+   * https://wilsonmar.github.io/genai for definition of terms and tutorials about Generative AI, which produce new content based on what is described in the input. The OpenAI models are a collection of generative AI models that can produce language, code, and images.
+   * https://azure.microsoft.com/pricing/details/cognitive-services/openai-service
+   <br /><br />
+
+In 2019 Microsoft invested $1 billion in the company as time on Azure cloud and to develop a large-scale AI supercomputer built exclusively for OpenAI's research in Azure. Azure (with RBAC capabilities) power all of OpenAI's workloads. OpenAI is a San Francisco-based artificial intelligence research laboratory. OpenAI was founded by Elon Musk, Sam Altman, Greg Brockman, and Ilya Sutskever in December 2015 (to compete with Google's DeepMind acquisition). 
+For that, in 2023, OpenAI exclusively licensed (closed-source) GPT-3 to Microsoft for their products and services.
+OpenAI's mission is to artificial general intelligence (AGI). 
+In 2022, OpenAI made available their GPT-3.5 foundation model for free trial, offering several categories of capabilities
+
+   * ChatGPT: Generating natural language: summarizing complex text for different reading levels, suggesting alternative wording for sentences, etc.
+   * Generating code: translating code from one programming language into another, identifying and troubleshooting bugs in code, etc.
+   * Generating images from text prompts, based on OpenAI's DALL-E model. 
+   <br /><br />
+
+OpenAI put a paywall behind its more advanced GPT-4 models.
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/explore-azure-openai/3-describe-azure-openai">NOTE</a>:
+Microsoft leverages OpenAI in ALL products and services (including Microsoft Teams):<br />
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691674882/microsoft-ai-portfolio-1725x989_mqivy5.png"><img alt="microsoft-ai-portfolio-1725x989.png" width="1725" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691674882/microsoft-ai-portfolio-1725x989_mqivy5.png"></a><br /><em>Click picture for full-page view from <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/explore-azure-openai/3-describe-azure-openai">here</a></em>
+
+Azure's AI services are categorized into three groupings: 
+   * Applied AI Services
+   * Cognitive Services (the pillars of vision, speech, language, decision, plus the Azure OpenAI Service)
+   * Azure's Machine Learning (ML) platform
+   <br /><br />
+
+OpenAI is a "separate" service from Azure Cognitive Services because
+now "traditional" Azure Cognitive Services focuses on making predictions based textual and discrete data where
+OpenAI added to ML "attention" algorithms working on binary data (voice, images, and video) to enable it to perform "Generative AI" which produces new content based on what is described in the input.
+
+
+https://aka.ms/oaiapply
 
 
 <a name="Competitors"></a>

@@ -1,6 +1,6 @@
-   ---
+---
 layout: post
-date: "2023-08-05"
+date: "2023-08-08"
 file: "azure-cloud-onramp"
 title: "Azure Cloud Onramp"
 excerpt: "Azure GUI, CLI Bash & PowerShell for security URLs, Subscriptions, Support plans, Tenants, Directories, ARM portal Keyboard Shortcuts - AZ-104, AZ-500"
