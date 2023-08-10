@@ -2,7 +2,7 @@
 layout: post
 date: "2023-08-08"
 file: "microsoft-ai"
-title: "Microsoft AI (Azure Cognitive Services)"
+title: "Microsoft AI (Azure OpenAI and Cognitive Services)"
 excerpt: "Notes for before and after getting AI-900, AI-100, AI-102 certified, as we automate AI workflows in the Azure PaaS cloud"
 tags: [microsoft, azure, machine learning, AI]
 image:
@@ -47,6 +47,14 @@ Microsoft has published different lists for what services constitute its "Cognit
 * https://www.computerworld.com/article/3252218/cortana-explained-why-microsofts-virtual-assistant-is-wired-for-business.html 
 
 
+## Industry Ratings
+
+In <a target="_blank" href="https://assets.thoughtworks.com/assets/technology-radar-vol-24-en.pdf">PDF: 2021 Volume 24</a>, among their "opininated" recommendations of what IT technologies their clients should Adopt, Trial, Assess, or Hold, <a target="_blank" href="https://www.thoughtworks.com/radar/">Thoughtworks' "Technology Radar"</a> advised a "hold" for Azure Machine Learning: 
+
+> "We’ve observed before that the cloud providers push more and more services onto the market. We’ve also documented our concerns that sometimes the services are made available when they’re not quite ready for prime time. Unfortunately, in our experience, Azure Machine Learning falls into the latter category. One of several recent entrants in the field of bounded low-code platforms, Azure ML promises more convenience for data scientists. Ultimately, however, it doesn’t live up to its promise; in fact, it still feels easier for our data scientists to work in Python. Despite significant efforts, we struggled to make it scale and lack of adequate documentation proved to be another issue which is why we moved it to the Hold ring."
+
+In <a target="_blank" href="https://www.thoughtworks.com/content/dam/thoughtworks/documents/radar/2023/04/tr_technology_radar_vol_28_en.pdf">PDF: 2023 Volume 28</a>, Azure Machine Learning fell of their Radar, but Meta's "PyTorch" was added to the "Adopt" ring to Languages and Frameworks.
+
 <a name="OpenAI"></a>
 
 ## Azure OpenAI
@@ -68,15 +76,13 @@ In 2022, OpenAI made available their GPT-3.5 foundation model for free trial, of
    * Generating images from text prompts, based on OpenAI's DALL-E model. 
    <br /><br />
 
-OpenAI put a paywall behind its more advanced GPT-4 models.
-
 <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/explore-azure-openai/3-describe-azure-openai">NOTE</a>:
 Microsoft leverages OpenAI in ALL products and services (including Microsoft Teams):<br />
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691674882/microsoft-ai-portfolio-1725x989_mqivy5.png"><img alt="microsoft-ai-portfolio-1725x989.png" width="1725" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691674882/microsoft-ai-portfolio-1725x989_mqivy5.png"></a><br /><em>Click picture for full-page view from <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/explore-azure-openai/3-describe-azure-openai">here</a></em>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691674882/microsoft-ai-portfolio-1725x989_mqivy5.png"><img alt="microsoft-ai-portfolio-1725x989.png" width="1725" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691674882/microsoft-ai-portfolio-1725x989_mqivy5.png"></a><br /><em>Click picture for full-page view</em>.
 
-Azure's AI services are categorized into three groupings: 
+In the <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/explore-azure-openai/3-describe-azure-openai">Microsoft AI Portfolio diagram</a> above, Azure's AI services are categorized into three groups: 
    * Applied AI Services
-   * Cognitive Services (the pillars of vision, speech, language, decision, plus the Azure OpenAI Service)
+   * Cognitive Services (the pillars of services: <a href="#vision-services">vision</a>, <a href="#speech-services">speech</a>, <a href="#nlp-natural-language-processing-services">language</a>, decision, plus the Azure OpenAI Service)
    * Azure's Machine Learning (ML) platform
    <br /><br />
 
@@ -84,8 +90,35 @@ OpenAI is a "separate" service from Azure Cognitive Services because
 now "traditional" Azure Cognitive Services focuses on making predictions based textual and discrete data where
 OpenAI added to ML "attention" algorithms working on binary data (voice, images, and video) to enable it to perform "Generative AI" which produces new content based on what is described in the input.
 
+1.  Assuming that you have a Azure account and subscription at the Azure portal https://portal.azure.com
+1.  Consider pricing at https://azure.microsoft.com/pricing/details/cognitive-services/openai-service
 
-https://aka.ms/oaiapply
+    OpenAI put a paywall behind its more advanced GPT-4 models, 
+
+    Billing is based on 1,000 "tokens" increments, with the first 100,000 tokens per month free. Beyond that:
+    
+    "Standard" use of the older/more limited gpt-3.5-turbo model is then $0.002 per 1,000 tokens.
+
+    Charges for the GPT-4 model has two dimensions: process stage and the size of the foundational model used :
+
+    * The &nbsp; "8K context" has &nbsp; 13 billion parameters.
+    * The "32K context" has 175 billion parameters.
+
+    * Prompt
+    * Completions
+    <br /><br />
+    
+    Images generated using DALL-E are $2 per 100 images.
+
+   available for free for the first 100,000 tokens per month, then $0.004 per 1,000 tokens.
+    Doing the math, 
+
+
+1.  Apply for access to Asure OpenAI for your Region and Currency:
+
+    https://aka.ms/oaiapply
+
+
 
 
 <a name="Competitors"></a>
@@ -2320,7 +2353,7 @@ is only for C#.
    Select the option to Try a demo of an example end-user experience.
    Use the web chat interface to interact with the bot.
 
-<a target="_blank" href=""https://docs.microsoft.com/en-us/learn/modules/create-bot-with-bot-framework-composer/">MS LEARN</a>: Create a Bot with the Bot Framework Composer
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-bot-with-bot-framework-composer/">MS LEARN</a>: Create a Bot with the Bot Framework Composer
 
 1. Run the Python Jupyter notebook
 
@@ -2332,7 +2365,7 @@ is only for C#.
 1. Sign in using the Microsoft account associated with your Azure subscription.
 
 
-## PROTIP: Use NVM to install Node
+PROTIP: Use NVM to install Node
 
 https://github.com/Microsoft/botbuilder-tools#install-cli-tools
 says to install Node.js version 10.14.1 or higher
@@ -2345,7 +2378,9 @@ Since the current version is now 16, we cannot use the command suggested in the 
    <ul><pre>npm i -g @microsoft/botframework-cli</pre></ul>
 
 
-## bf is the bot framework CLI command
+### Bot Framework
+
+1. bf is the bot framework CLI command
 
    <pre>One-stop-shop CLI to manage your bot’s resources. BF CLI and AZ CLI together cover your end-to-end bot development workflow needs.
 &nbsp;
@@ -2576,8 +2611,7 @@ In April 2018 Microsoft reorganized into two divisions that offers AI:
    * Microsft's "computing fabric" offerings, led by <a target="_blank" href="https://www.linkedin.com/in/guthriescott/">Scott Guthrie</a>, makes AI services available for those building customizable machine learning with speech, language, vision, and knowledge services. Tools offered include Cognitive Services and Bot Framework, deep-learning tools like Azure Machine Learning, Visual Studio Code Tools for AI, and Cognitive Toolkit.
 
 
-At Build 2018, Microsoft announced <a target="_blank" href="https://www.microsoft.com/en-us/research/publication/serving-dnns-real-time-datacenter-scale-project-brainwave/">Project Brainwave</a> to run Google's Tensorflow AI code and Facebook's Caffe2, and Microsoft's <a target="_blank" href="
-https://docs.microsoft.com/en-us/cognitive-toolkit/index">"Cognitive Toolkit" (CNTK)</a>.
+At Build 2018, Microsoft announced <a target="_blank" href="https://www.microsoft.com/en-us/research/publication/serving-dnns-real-time-datacenter-scale-project-brainwave/">Project Brainwave</a> to run Google's Tensorflow AI code and Facebook's Caffe2, plus Microsoft's own <a target="_blank" href="https://docs.microsoft.com/en-us/cognitive-toolkit/index">"Cognitive Toolkit" (CNTK)</a>.
    * <a target="_blank" href="https://docs.microsoft.com/en-us/cognitive-toolkit/brainscript-basic-concepts">BrainScript</a> uses a dynamically typed C-like syntax to express neural networks in a way that looks like math formulas. Brainscript has a <a target="_blank" href="https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-and-Python-Performance-Profiler">Performance Profiler</a>.
 
    * Hyper-parameters are a separate module (alongside Network and reader) to perform SGD (stochastic-gradient descent).
@@ -2592,19 +2626,12 @@ Microsoft has advanced hardware:
    "Each FPGA operates in-line between the server’s network interface card (NIC) and the top-of-rack (TOR) switch, enabling in-situ processing of network packets and point-to-point connectivity between hundreds of thousands of FPGAs at low latency (two microseconds per switch hop, one-way)."
    </ul>
 
-https://www.amazon.com/Microsoft-Conversational-Platform-Developers-End-ebook/dp/B08WRNS6Q7/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=1614171789&sr=8-1
-Apress by https://bisser.io/about/
-   Stephan Bisser
-https://github.com/orgs/BotBuilderCommunity/dashboard
+<a target="_blank" href="https://www.amazon.com/Microsoft-Conversational-Platform-Developers-End-ebook/dp/B08WRNS6Q7/">Microsoft Conversational AI Platform for Developers</a> is a 2021 book published by Apress by <a target="_blank" href="https://bisser.io/about/">Stephan Bisser</a> of 
+<a target="_blank" href="https://www.siili.com/">Siili Solutions</a> in Finland. The book covers Microsoft's Bot Framework, LUIS, QnA Maker, and Azure Cognitive Services. https://github.com/orgs/BotBuilderCommunity/dashboard
 
 
-https://azure.microsoft.com/en-us/services/virtual-machines/data-science-virtual-machines/?WT.mc_id=hackwithazure-hackathon-cxa
+https://azure.microsoft.com/en-us/services/virtual-machines/data-science-virtual-machines/
 
-
-Thoughtworks publishes their <a target="_blank" href="https://www.thoughtworks.com/radar">"Technology Radar"</a> recommending what IT technologies their consultantcy clients should Adopt, Trial, Assess, or Hold. <a target="_blank" href="
-https://assets.thoughtworks.com/assets/technology-radar-vol-24-en.pdf">PDF: Volume 24 of their publication</a> advised a "hold" for Azure Machine Learning.
-
-> "We’ve observed before that the cloud providers push more and more services onto the market. We’ve also documented our concerns that sometimes the services are made available when they’re not quite ready for prime time. Unfortunately, in our experience, Azure Machine Learning falls into the latter category. One of several recent entrants in the field of bounded low-code platforms, Azure ML promises more convenience for data scientists. Ultimately, however, it doesn’t live up to its promise; in fact, it still feels easier for our data scientists to work in Python. Despite significant efforts, we struggled to make it scale and lack of adequate documentation proved to be another issue which is why we moved it to the Hold ring."
 
 ## Additionally...
 
