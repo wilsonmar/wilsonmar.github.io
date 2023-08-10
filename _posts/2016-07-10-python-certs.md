@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-22"
+date: "2023-08-08"
 file: "python-certs"
 title: "Python Certs"
 excerpt: "The topics for learning the Python language thoroughly, for professional status"
@@ -16,7 +16,21 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-## Certifications in Python 
+## LinkedIn Certifications
+
+LinkedIn offers <a target="_blank" href="https://www.linkedin.com/help/linkedin/answer/a511367">Python certificate exam</a> 
+as one of <a target="_blank" href="https://www.linkedin.com/help/linkedin/answer/a507734">several free certifications</a>
+based on 30-minute 20-question multiple-choice questions. Retest every 6 months if you don't pass. Good forever.
+
+The unique thing about LinkedIn certifications is that they are form the basis for <strong>more legitimate</strong> way to tag individuals with skills employers and their recruiters search for.
+
+https://github.com/Ebazhanov/linkedin-skill-assessments-quizzes/blob/main/python/python-quiz.md
+
+<a target="_blank" href="https://www.linkedin.com/learning/paths/become-a-python-developer">Become a Python Developer</a>
+
+<hr />
+
+## Python Institute
 
 <a target="_blank" href="https://www.PythonInstitute.org">PythonInstitute.org</a> has several certification exams taken online at <a target="_blank" href="https://ums.edube.org/store/">ums.edube.org/store</a> or in-person at a Pearson VUE center.
 
