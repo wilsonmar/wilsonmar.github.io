@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2023-07-21"
+file: "azure-machine-learning"
 title: "Azure Machine Learning"
 excerpt: "Notes for before and after getting AI-900, AI-102, and DP-100 certified, as we automate ML workflows in the Azure PaaS cloud"
 tags: [microsoft, azure, machine learning, AI]
-date: "2023-07-21"
-file: "azure-machine-learning"
 image:
 # feature: pic green matrix hallway 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14623876/07afd066-0593-11e6-933a-2e596511ac67.jpg
@@ -16,12 +16,53 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This article presents my notes toward a guided tour to introduce use of Microsoft's <strong>Machine Learning</strong> offerings running on the Azure cloud.
+This article presents my notes toward a guided tour to introduce use of <strong>Azure Machine Learning</strong> offerings running on Microsoft's  Azure cloud.
 
 {% include whatever.html %}
 
-TL;DR look for "PROTIP:" in this article highlight the author's hard-won experience.You likely won't find such information anywhere else.
-My contribution to the world (to you) is a less overwhelming <a href="#LearningSequence">learning sequence</a>, one that starts with the <strong>least complex</strong> of technologies used, then more complex ones.
+I have other article on AI (Artificial Intelligence) at:
+   * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai/">https://wilsonmar.github.io/microsoft-ai</a> 
+   * <a target="_blank" href="https://wilsonmar.github.io/genai/">https://wilsonmar.github.io/genai</a> (Generative AI)
+   * <a target="_blank" href="https://wilsonmar.github.io/mlops/">https://wilsonmar.github.io/mlops</a> (Machine Learning Ops)
+   <br /><br />
+
+{% include whatever.html %}
+
+
+## Industry Ratings
+
+In <a target="_blank" href="https://assets.thoughtworks.com/assets/technology-radar-vol-24-en.pdf">PDF: 2021 Volume 24</a>, among their "opininated" recommendations of what IT technologies their clients should Adopt, Trial, Assess, or Hold, <a target="_blank" href="https://www.thoughtworks.com/radar/">Thoughtworks' "Technology Radar"</a> advised a "hold" for Azure Machine Learning, with this scathing comment:
+
+> "We’ve observed before that the cloud providers push more and more services onto the market. We’ve also documented our concerns that sometimes the services are made available when they’re not quite ready for prime time. Unfortunately, in our experience, <strong>Azure Machine Learning</strong> falls into the latter category. One of several recent entrants in the field of bounded low-code platforms, Azure ML promises more convenience for data scientists. Ultimately, however, it doesn’t live up to its promise; in fact, it still feels <strong>easier for our data scientists to work in Python</strong>. Despite significant efforts, we struggled to make it scale and lack of adequate documentation proved to be another issue which is why we moved it to the Hold ring."
+
+In <a target="_blank" href="https://www.thoughtworks.com/content/dam/thoughtworks/documents/radar/2023/04/tr_technology_radar_vol_28_en.pdf">PDF: 2023 Volume 28</a>, Azure Machine Learning fell of their Radar completely, but Facebook/Meta's "PyTorch" was added to the "Adopt" ring to Languages and Frameworks.
+
+Undeterred:
+
+## Setup
+
+1. In the console, search for "Azure Machine Learning".
+1. Select the Azure subscription to use.
+1. Specify a Resource group (or create a new one).
+1. Workplace details:
+   * Workspace name: (unique name)
+   * Region: (select from dropdown)
+   * Storage account: (select from dropdown)
+   * Key vault: (select from dropdown)
+   * Application Insights: (select from dropdown)
+   * Container registry: (select from dropdown)
+   <br /><br />
+   Networking:
+   * Connectivity method: (select from dropdown)
+   Advanced:
+   * Identity type: (select from dropdown)
+   * Encryption type: (select from dropdown)
+   * Enable HBI flag
+   <br /><br />
+1. In the workspace created above:
+1. TODO: Set Access Control (IAM)
+1. Launch studio.
+
 
 
 <a name="SampleMLCode"></a>
@@ -346,9 +387,9 @@ git clone <a target="_blank" href="https://github.com/microsoftdocs/ml-basics">h
    There are other *.ipynb (Python Notebook) files described in <a target="_blank" href="https://microsoftlearning.github.io/mslearn-dp100/">this webite</a> primarily by Graeme Malcolm presents (no C#, R, Julia here) which call the Azure Machine Learning Python SDK in the <a target="_blank" href="https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core?view=azure-ml-py">azureml-core package in PyPi</a> [<a target="_blank" href="https://www.wheelodex.org/projects/azureml-core/rdepends/">used by</a>]. However, links below are to <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100">github.com/MicrosoftLearning/mslearn-dp100</a> by Microsoft's Graeme Malcolm. It contains iPython Notebook code rather than instructions for setting up the ML Workspace.
 
 
-
-
    AI-100 and AI-102 both touch on Machine Learning as well.
+
+<hr />
 
 <a name="DP-100"></a>
 
@@ -1046,14 +1087,6 @@ MS LEARN HANDS-ON LAB: <a target="_blank" href="
 https://docs.microsoft.com/en-us/learn/paths/create-no-code-predictive-models-azure-machine-learning/">Create no-code predictive models with Azure Machine Learning</a>
 
 Supervised: Regression & Classification
-
-<hr />
-
-## Continuous Deployment
-
-MLOps is powered by Azure DevOps
-
-
 
 <hr />
 

@@ -249,9 +249,9 @@ Snowflake can be set to <strong>autoscale</strong> across their "t-shirt sizes" 
 
 Snowflake's customers don't see its proprietary compute layer running on commodity virtual machines (AWS, GCP or Azure). It's rumored to have intelligent predicate pushdown + smart caching. Hybrid columnar system inspired by C-Store, MonetDB among others.
 
- Snowflake's data is stored in a hybrid columnar format (PAX) with aggressive metadata caching. Snowflake's proprietary columnar object store format runs <strong>in-memory / SSD</strong>.  
+Snowflake's data is stored in a hybrid columnar format (PAX) with aggressive metadata caching. Snowflake's proprietary columnar object store format runs <strong>in-memory / SSD</strong>.  
 
-
+https://www.dremio.com/open-source/nessie/
 
 
 <hr />

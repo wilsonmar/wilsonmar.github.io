@@ -619,6 +619,12 @@ In Prod, resources are deployed only by CI/CD pipelines and devs cannot access t
    <strong><em>{acct}</em>.trafficmanager.net</strong>
    </td><td><a target="_blank" href="https://wilsonmar.github.io/azure-networking/">more</a>
    </td></tr>
+   
+<tr valign="top"><td> Azure AI Studio </td><td align="right">
+   <a target="_blank" href="https://oai.azure.com/portal/">
+   https://oai.azure.com/portal</a>
+   </td><td> <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">AI tutorial</a>
+   </td></tr>
 <tr valign="top"><td> Machine Learning studio </td><td align="right">
    <a target="_blank" href="https://ml.azure.com/">
    ml.azure.com</a>

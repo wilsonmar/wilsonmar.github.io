@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-11-19"
+date: "2023-08-09"
 file: "docker-setup"
 title: "Docker setup"
 excerpt: "Get bits working in lightweight containers"
@@ -16,8 +16,13 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-The object of this tutorial is a succinct yet deep <strong>step-by-step</strong> instructions to setup of Docker on <a href="#Mac">MacOS</a>, CentOS Linux, and <a href="#Docker4Windows">Windows</a>.
+This is among several articles about Docker:
 
+{% include docker_links.html %}
+
+The objective of this tutorial is a succinct yet deep <strong>step-by-step</strong> instructions to setup of Docker on <a href="#Mac">MacOS</a>, CentOS Linux, and <a href="#Docker4Windows">Windows</a>.
+
+{% include docker_links.html %}
 
 ## VMs on MacOS vs. Docker #
 
@@ -143,10 +148,6 @@ During PyCon on Friday, March 15, 2013. Solomon Hykes, the founder of Docker, ga
 
 ## Alternatives to Docker
 
-<a target="_blank" href="http://www.boycottdocker.org/">boycottdocker.org</a> raises some technical concerns about Docker.
-
-Alternatives to Docker:
-
 * <a target="_blank" href="https://coreos.com/">CoreOS</a> developed <a target="_blank" href="https://github.com/appc/spec/">appc</a> with a <strong>rkt</strong> (pronounced "rocket") implementation in their <a target="_blank" href="https://www.opencontainers.org/">Open Containers Initiative</a> (OCI). The <a target="_blank" href="https://github.com/opencontainers/runc/">runC</a> OS for spawning and running containers is built using Go v1.6+. CoreOS offers a <a target="_blank" href="https://coreos.com/why">Container Linux distribution</a>, an upstream variant of Red Hat Enterprise Linux from <a target="_blank" href="https://
 projectatomic.io/">projectatomic.io</a>
 Atomic Host collection of distributions.
@@ -165,7 +166,7 @@ RHEL Enterprise Linux 8 Beta</a> introduces a new <strong>Container Tools</stron
 
 ## Linux installer boots #
 
-PROTIP: Docker was initially developed to run under different flavors of GNU/Linux, not FreeBSD.
+PROTIP: Docker was initially developed to run under different flavors of GNU/Linux (not FreeBSD nor Windows):
 
    * Ubuntu
    * <a href="#Docker4Centos">CentOS</a>
@@ -192,19 +193,55 @@ Docker Enterprise uses Docker certified infrastructure tooling, using <strong>Te
 
 ## Setup Shell Script
 
-The contribution of this article is a shell script that automates the install of Wordpress by following the manual steps described below:
+The contribution of this article is a shell script that automates the install of Docker and other stuff on macOS:
 
    <ul>
-   <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/blob/master/Docker/docker-setup.sh">https://github.com/wilsonmar/DevSecOps/blob/master/Docker/docker-setup.sh</a>
+   <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/mac-setup.zsh">https://github.com/wilsonmar/mac-setup/blob/master/mac-setup.zsh/a>
    </ul>
 
-The "boilerplate" sections at the top of the script is based on <a target="_blank" href="https://wilsonmar.github.io/bash-coding">my bash coding tutorial</a>.
+Techniques used in the Bash shell script are described in <a target="_blank" href="https://wilsonmar.github.io/bash-coding">my bash coding tutorial</a>.
 
-The script has the following:
+1.  The script does the following if "-k" is specified when calling the script:
 
-1. To remove all:
-   sudo docker container prune
-1. sudo docker rm 
+    <pre>if [ "${USE_DOCKER}" = true ]; then   # -k</pre>
+
+1.  It senses if the Docker executable is available. If not, it installs it.
+
+    <pre>if ! command -v docker ; then
+            brew install docker  
+    </pre>
+
+1.  It senses if the Docker app is running. If not, it invokes it:
+
+    <pre># on mac: open "$HOME/Applications/Docker.app"  
+    # On Linux:
+       sudo systemctl start docker
+       sudo service docker start
+    </pre>
+
+1.  There is a "Remove_Dangling_Docker function.
+
+    Separate scripts to run specific apps contain these additional steps.
+    There is a run-time parameter for each step below:
+
+1.  Code (for CONSUL, EGPLANT, etc.) is run when USE_DOCKER is true:
+
+1.  Docker images are created from Dockerfiles if specified.
+
+1.  Docker images are pulled from DockerHub or Jira Artifactory.
+
+1.  List of Docker images and processes are listed.
+
+1.  Apps in Docker containers are invoked if parameter is specified.
+
+1.  Metrics from run is displayed if parameter is specified.
+
+1.  Docker containers are stopped if parameter is specified.
+
+1.  Docker app is stopped if parameter is specified.
+
+
+<hr />
 
 ### GPG SecureApt
 
@@ -262,10 +299,16 @@ https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
 ## Install Docker on MacOS #
 
-   PROTIP: The version of Linux that comes with Mac isn't completely compatible with Linux.
-   So an extra layer is needed to emulate a Docker host.
+PROTIP: Docker for Mac is a Mac native application, not a virtual machine running in VirtualBox. It uses the Mac's native virtualization system, <a target="_blank" href="https://en.wikipedia.org/wiki/Hypervisor">Hypervisor</a>, which is faster than VirtualBox.
+
+Before Docker for Mac, Docker Toolbox was used. Docker Toolbox is now deprecated.
+
+   PROTIP: The version of Linux that comes with Mac (based on Debian) isn't completely compatible with Linux.
+   So an extra layer was needed to emulate a Docker host.
    That’s <a target="_blank" href="https://github.com/boot2docker/osx-installer/releases/tag/v1.6.0">
-   Boot2Docker</a>.
+   Boot2Docker</a>, which is a lightweight Linux distribution made specifically to run Docker containers.
+
+   Boot2Docker is now deprecated: https://github.com/boot2docker/boot2docker
 
 0. If you've previously installed Boot2Docker or Docker for Mac, uninstall it by deleting it within your Applications folder.
 
@@ -455,7 +498,7 @@ https://community.chocolatey.org/packages/docker-desktop
    <a target="_blank" href="https://medium.com/devopslinks/how-to-build-a-serverless-ci-cd-pipeline-on-aws-907be91c2e48">*</a>
 
 
-### Install local Windows 10 #
+### Install local Windows 10/11 #
 
 CAUTION: A 64-bit Windows machine is necessary to run Docker. Not 32-bit.
 
@@ -1732,7 +1775,6 @@ repositoryjp/centos           Docker Image for CentOS.                        0 
    </pre>
 
 
-
    #### Quay.io private Dockerfiles
 
    <a target="_blank" href="https://github.com/codemy/dockerfile">
@@ -2682,6 +2724,26 @@ See <a target="_blank" href="http://autopilotpattern.io/">http://autopilotpatter
    `remoteHost` is the IP address of the Docker instance.
 
    `myContainer` is the Docker Container ID listed by `docker ps`
+
+<hr />
+
+## Securing Docker #
+
+<a target="_blank" href="https://learning.oreilly.com/live-events/container-security-fundamentals/0636920083045/0636920096661/">
+OReilly video course: Container Security Fundamentals Aug 8-9, 2023</a>
+by <a target="_blank" href="">Raju Gandhi</a> references
+https://github.com/looselytyped/container-security-fundamentals/blob/master/README.md
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691733162/sec-terms-773x340_zwlmrz.png"><img alt="sec-terms-773x340.png" width="773" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691733162/sec-terms-773x340_zwlmrz.png"></a>
+
+* cgroups are like dials where you can set limits on memory, CPU, etc.
+
+
+
+<hr />
+
+## References
+
 
 <hr />
 

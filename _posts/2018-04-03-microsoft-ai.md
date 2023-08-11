@@ -47,14 +47,6 @@ Microsoft has published different lists for what services constitute its "Cognit
 * https://www.computerworld.com/article/3252218/cortana-explained-why-microsofts-virtual-assistant-is-wired-for-business.html 
 
 
-## Industry Ratings
-
-In <a target="_blank" href="https://assets.thoughtworks.com/assets/technology-radar-vol-24-en.pdf">PDF: 2021 Volume 24</a>, among their "opininated" recommendations of what IT technologies their clients should Adopt, Trial, Assess, or Hold, <a target="_blank" href="https://www.thoughtworks.com/radar/">Thoughtworks' "Technology Radar"</a> advised a "hold" for Azure Machine Learning: 
-
-> "We’ve observed before that the cloud providers push more and more services onto the market. We’ve also documented our concerns that sometimes the services are made available when they’re not quite ready for prime time. Unfortunately, in our experience, Azure Machine Learning falls into the latter category. One of several recent entrants in the field of bounded low-code platforms, Azure ML promises more convenience for data scientists. Ultimately, however, it doesn’t live up to its promise; in fact, it still feels easier for our data scientists to work in Python. Despite significant efforts, we struggled to make it scale and lack of adequate documentation proved to be another issue which is why we moved it to the Hold ring."
-
-In <a target="_blank" href="https://www.thoughtworks.com/content/dam/thoughtworks/documents/radar/2023/04/tr_technology_radar_vol_28_en.pdf">PDF: 2023 Volume 28</a>, Azure Machine Learning fell of their Radar, but Meta's "PyTorch" was added to the "Adopt" ring to Languages and Frameworks.
-
 <a name="OpenAI"></a>
 
 ## Azure OpenAI
@@ -471,10 +463,9 @@ Previous exam 774 is now been retired. It was based on <a target="_blank" href="
 which reflected "All Microsoft all the time" using proprietary "pickle" (pkl) model files.
 <a target="_blank" href="https://www.coursera.org/learn/predictive-modelling-azure-machine-learning-studio/home/welcome">Classes referencing it</a> are now obsolete.
 
-<a target="_blank" href="https://microsoftlearning.github.io/dp-090-databricks-ml/">LAB</a> references <a target="_blank" href="https://github.com/MicrosoftLearning/dp-090-databricks-ml">DP-090</a> goes into implementing a Machine Learning Solution with Databricks
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-203">DP-203 Data Engineering on Microsoft Azure</a> goes into how to use machine learning in Azure Synapse Analytics.
 
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-203">DP-203 Data Engineering on Microsoft Azure</a> goes into how to use machine learning in Synapse Analytics.
+<a target="_blank" href="https://microsoftlearning.github.io/dp-090-databricks-ml/">LAB</a> references <a target="_blank" href="https://github.com/MicrosoftLearning/dp-090-databricks-ml">DP-090</a> goes into implementing a Machine Learning Solution with Databricks.
 
 <a target="_blank" href="https://www.coursera.org/learn/developing-ai-applications-azure">
 Coursera video course: Developing AI Applications on Azure</a> 
@@ -547,7 +538,9 @@ Practice tests:
 
 ### AI-102
 
-The AI-102 is intended for <strong>software developers</strong> wanting to build AI-infused applications. 
+AI-102 is intended for <strong>software developers</strong> wanting to build AI-infused applications. 
+
+AI-102 focuses on the use of <strong>pre-packaged</strong> services for AI development, not on the development of custom models using Azure Machine Learning, which is covered by <a target="_blank" href="https://wilsonmar.github.io/azure-machine-learning/#DP-100">exam DP-100</a>.
 
 First setup development environments:
    * Visual Studio Code and add-ons for C#, Python, 
@@ -565,33 +558,20 @@ First setup development environments:
 
 PROTIP: Unlike the AI-100 (which uses Python Notebooks), <a target="_blank" href="https://microsoftlearning.github.io/AI-102-AIEngineer/">hands-on exercises</a> in Microsoft's <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/ai-102t00">5-day live course AI-102T00: Designing and Implementing a Microsoft Azure AI Solution</a> (with cloud time) consists of C# and Python programs at <a target="_blank" href="https://github.com/MicrosoftLearning/AI-102-AIEngineer">https://github.com/MicrosoftLearning/AI-102-AIEngineer</a> (by <a target="_blank" href="https://www.linkedin.com/in/graemesplace/">Graeme Malcolm</a>). 
 
-Modules in the course, shown at <a target="_blank" href="https://microsoftlearning.github.io/AI-102-AIEngineer/">https://microsoftlearning.github.io/AI-102-AIEngineer/</a>
-
-Module 1: Introduction to AI on Azure
-
-Module 2: Developing AI Apps with Cognitive Services
-
-Module 3: Getting Started with Natural Language Processing
-
-Module 4: Building Speech-Enabled Applications
-
-Module 5: Creating Language Understanding Solutions
-
-Module 6: Building a QnA Solution
-
-Module 7: Conversational AI and the Azure Bot Service
-
-Module 8: Getting Started with Computer Vision
-
-Module 9: Developing Custom Vision Solutions
-
-Module 10: Detecting, Analyzing, and Recognizing Faces
-
-Module 11: Reading Text in Images and Documents
-
-Module 12: Creating a <a href="#KnowledgeMining">Knowledge Mining</a> Solution
-
-The above course and AI-102 focuses on the use of <strong>pre-packaged</strong> services for AI development, not on the development of custom models using Azure Machine Learning, which is covered by <a href="#DP-100">DP-100 (below)</a>.
+Modules in the course, shown at <a target="_blank" href="https://microsoftlearning.github.io/AI-102-AIEngineer/">https://microsoftlearning.github.io/AI-102-AIEngineer/</a>. Modules:
+   1. Introduction to AI on Azure
+   2. Developing AI Apps with Cognitive Services
+   3. Getting Started with Natural Language Processing
+   4. Building Speech-Enabled Applications
+   5. Creating Language Understanding Solutions
+   6. Building a QnA Solution
+   7. Conversational AI and the Azure Bot Service
+   8. Getting Started with Computer Vision
+   9. Developing Custom Vision Solutions
+   10. Detecting, Analyzing, and Recognizing Faces
+   11. Reading Text in Images and Documents
+   12. Creating a <a href="#KnowledgeMining">Knowledge Mining</a> Solution
+   <br /><br />
 
 Resources:
    * <a target="_blank" href="https://cloudacademy.com/quiz/38235/">Preview 45 min. Exam: Designing and Implementing an Azure AI Solution (AI-102)</a>
