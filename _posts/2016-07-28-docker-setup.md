@@ -232,6 +232,8 @@ Techniques used in the Bash shell script are described in <a target="_blank" hre
 
 1.  List of Docker images and processes are listed.
 
+    <pre> docker image ls -digests</pre>
+
 1.  Apps in Docker containers are invoked if parameter is specified.
 
 1.  Metrics from run is displayed if parameter is specified.
@@ -2738,7 +2740,59 @@ https://github.com/looselytyped/container-security-fundamentals/blob/master/READ
 
 * cgroups are like dials where you can set limits on memory, CPU, etc.
 
+* Use a secure parent image from CIS or NIST.
+* Pin down the exact tag (or even better the digest to reference the image).
 
+   <pre>FROM alpine:3.17   # will get security fixes
+   # Alternatively, more secure but you won't get any patches or fixes:
+   FROM alpine@sha256:69665d02cb32192e52e07644d76bc6f25abeb5410edc1c7a81a10ba3f0efb90a
+   </pre>
+
+   Images that use the v2 or later format have a contentaddressable identifier called a digest. As long as the input
+   used to generate the image is unchanged, the digest value is predictable.
+   https://docs.docker.com/engine/reference/commandline/images/#digests
+
+* Inspect ancestor images for anything that can be inherited
+
+* Don't put secrets or sensitive information in env
+* Rather than copying secrets into images, exclude secrets in <tt>.dockerignore</tt>
+
+   <pre>.git
+# Ignore vscode files
+.vscode/
+.vagrant/
+revealing-secrets.tar
+revealing-secrets/
+   </pre>
+
+* Store secrets in files on a temporary volume (tmpfs)
+
+* Multi-stage allow for smaller images, makes builds faster
+keeps secrets safe
+allows for different builds to aid debugging/development
+
+* lint using Hadolint
+* Scan image for vulnerabilities using Trivy. In trivy-secret.yaml file:
+
+   <pre>enable-builtin-rules:
+  - aws-access-key-id
+  - aws-account-id
+  - aws-secret-access-key
+   </pre>
+
+
+* multi-stage Dockerfiles
+* Be cognizant of what the host directories available to the container (via -v)
+* Only mount the docker socket under special circumstances
+
+* Use dedicated & immutable hosts to run your containers (IaC)
+* Consider smaller OS (eg RancherOS) for the host machine
+* Install as little as you can get away with on the host
+* Design immutable containers
+* Consider using read-only filesystem within containers
+
+* Reduce permissions with seccomp, apparmor, selinuz
+Kata containers
 
 <hr />
 

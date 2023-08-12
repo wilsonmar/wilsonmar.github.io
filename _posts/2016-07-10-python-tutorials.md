@@ -442,7 +442,12 @@ includes a practice exam.
 
 * <a target="_blank" href="http://mitxcsjourney.blogspot.com/">Blog with tutorials - created by a TA of the EdX community
 
-* <a target="_blank" href="http://shop.oreilly.com/product/0636920032519.do">Fluent Python</a> book  published by O'Reilly August 2015. By Luciano Ramalho.
+## OReilly.com
+
+* <a target="_blank" href="https://learning.oreilly.com/library/view/python-for-geeks/9781801070119/">Packt BOOK: Python for Geeks</a> October 2021 references
+<a target="_blank" href="https://github.com/PacktPublishing/Python-for-Geeks">https://github.com/PacktPublishing/Python-for-Geeks</a> 
+
+* <a target="_blank" href="http://shop.oreilly.com/product/0636920032519.do">BOOK: Fluent Python</a> August 2015. By Luciano Ramalho.
 
 
 ## Challenges 

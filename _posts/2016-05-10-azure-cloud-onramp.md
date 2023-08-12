@@ -3466,11 +3466,32 @@ A parent template can launch nested templates.
    * <a target="_blank" href="https://github.com/Azure/bicep">https://github.com/Azure/bicep</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=7SwR_LeXqK0" title="Jan 11, 2023">VIDEO: Bicep vs Terraform. which one should I use?</a> by <a target="_blank" href="https://www.linkedin.com/in/jonathan-d-aloia/">Jonathan D'Aloia at Adatis London</a>
    * <a target="_blank" href="https://jackwesleyroper.medium.com/azure-bicep-pros-cons-c8121fbfe5db">BLOG:  Pros & Cons</a>
+   * <a target="_blanl" href="https://www.youtube.com/watch?v=wevlRsVxsUw&t=4m20s">Bicep Advanced Deployments - Part 1</a> by Kevin Oliver
    <br /><br />
 
-1. View sample:
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691879500/az-bicep-1204x518_mr3f9o.png><img alt="az-bicep-1204x518.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691879500/az-bicep-1204x518_mr3f9o.png"></a>
 
-   https://github.com/Azure/bicep/tree/main/docs/examples
+In its <strong>docs and learn</strong> training about <strong>Azure cloud</strong>, Microsoft has traditionally taught  us to use its <strong>portal GUI</strong> to create <strong>resources</strong>. But, under the covers, an <strong>Azure API</strong> is the one making actual calls to various <strong>services</strong> to create, modify, and delete resources.
+Microsoft's docs also talk about <strong>commands</strong> issued from <strong>az CLI and PowerShell</strong> terminals. These commands are also making calls to the same <strong>Azure API</strong> to create, modify, and delete resources. Commands are also used to manage <strong>secrets</strong> such as passwords and API keys.
+
+Other security mechanisms include encryption, verifying identity, and strong authentication. To detect threats and intrusions, send logs to a central <strong>SIEM/SOAR</strong> (___) system (such as Splunk), inside or outside Azure. When anomalies are found, raise alerts by escalating emails, text message, Slack, SMS, or other media.
+
+When these security mechanisms are not created when resources are created, it can be just a matter of minutes before bots discover vulnerabilites and hack your system. 
+So Microsoft created the <strong>ARM</strong> (Azure Resource Manager) to create resources with security controls based on JSON files processed together. This works like Terraform and Ansible, which are  also "Infrastructure as Code" solutions, with <strong>parameter</strong> files so that different environments can be created from the same files.
+
+This approach is called <strong>"Declarative IaC</strong>, where ARM service compares <strong>state</strong> and make changes and <strong>deletions</strong> as necessary to achieve the desired state specified.
+
+Such logic is needed in the alternative approach, called Imperative or <strong>Programmatic IaC</strong>, where application programming code written in Python, Go, C#, etc. call the Azure <strong>SDK</strong> (Sofware Development Kit). One such program is <strong>Pulumi</strong>. Although more complex and thus difficult to maintain and debug, programming code has the flexibility to do anything, such as sending  logs to a SIEM/SOAR system.
+
+For better developer experience (DX), in 2021 Microsoft created the <strong>Bicep DSL</strong> (Domain Specific Language) read by a <strong>Transpiler</strong> that creates ARM json and parameters files. But the Bicep DSL code is also validated based on Azure API and <strong>OpenAPI (Swagger)</strong> files.
+
+Pulling Bicep code from <strong>GitHub</strong> enables versioning, and coodination with <strong>Jira</strong> or other product management tools. Highlighting of Bicep code is automated by <strong>add-ons</strong> Microsoft has created for various <strong>IDE</strong> text editors such as VSCode. "Integration" means the IDE can invoke the transpiler to create ARM json files with parameters. 
+
+Perhaps the most important security feature is use of <strong>Policy as Code</strong> that can identify vulnerabilities in resources created by Bicep and ARM json. Issues found would stop the CI/CD pipelines, with alerts to the developer. This is called <strong>Shift Left</strong> because it is done before the resources are created.
+
+Lastly, <strong>graphic diagrams</strong> can be generated from either the resources created or, better yet, from Bicep or ARM json for better visualization to speed understanding and troubleshooting.
+
+In summary:
 
    * Bicep files are designed to be easier to read than ARM JSON templates.
    * Bicep files are declarative, containing Domain Specific Language (DSL), like Terraform HCL.
@@ -3481,7 +3502,18 @@ A parent template can launch nested templates.
    * As of March 2021, Bicep is not yet integrated into the Portal.
    <br /><br />
 
-1. More examples: <a target="_blank" href="https://github.com/Azure/azure-quickstart-templates/">This</a> contains Azure Resource Manager templates contributed by the community.
+<hr />
+
+
+1. View sample Bicep code:
+
+   https://github.com/Azure/bicep/tree/main/docs/examples
+   
+   More examples: <a target="_blank" href="https://github.com/Azure/azure-quickstart-templates/">This</a> contains Azure Resource Manager templates contributed by the community.
+
+   https://github.com/PacktPublishing/Infrastructure-as-Code-with-Azure-Bicep is provided with 
+   <a target="_blank" href="https://learning.oreilly.com/library/view/azure-infrastructure-as/9781617299421/" title="August 2022">BOOK: Azure Infrastructure as Code</a>
+   by <a target="_blank" href="https://www.linkedin.com/in/eduard-keilholz/">Eduard Keilholz</a>, <a target="_blank" href="https://www.linkedin.com/in/erwinstaal/">Erwin Staal</a>, <a target="_blank" href="https://www.linkedin.com/in/henrybeen/">Henry Been</a>
 
 1. Install in VSCode the Bicep extension: <a target="_blank" href="https://www.youtube.com/watch?v=VDCAJIGqHZU" title="Azure Friday with Scott Hanselman">VIDEO</a>
 
