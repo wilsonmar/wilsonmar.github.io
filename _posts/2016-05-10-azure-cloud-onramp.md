@@ -2163,8 +2163,8 @@ Instead, to use PowerShell, use the <tt>New-AzResourceGroupDeployment</tt> cmdle
 <pre>Connect-AzAccount
 Set-AzContext -Subscription "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 New-AzResourceGroupDeployment 
-    -ResourceGroupName <resource-group-name> 
-    -TemplateFile <path-to-template>
+    -ResourceGroupName $resource-group-name
+    -TemplateFile $path-to-template
 </pre>
 
 ### ARM tokens
@@ -3587,6 +3587,9 @@ Bicep automatically detects dependencies between resources. This process removes
 Break down complex template deployments into smaller module files and reference them in a main template. 
 This makes for easier management, greater reusability (easier sharing).
 
+https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep
+
+
 ### ARM to create storage account
 
 <a target="_blank" href="https://www.youtube.com/watch?v=MP60ND7Upn4&t=38m53s">VIDEO: The imperative approach to 
@@ -3619,7 +3622,7 @@ param pnamePrefix string = 'storage'
 var storageAccountName = '${namePrefix}${uniqueString(resourceGroup().id)}'
 var storageAccountSku = 'Standard_RAGRS'  // for replication or 'Standard_LRS'
 &nbsp;
-resource storageAccount 'Microsoft.Storage/storageAccounts@2023-06-01' = {
+resource storageAccount 'Microsoft.Storage/storageAccounts@22-09-01' = {
   name: 'stg${uniqueString(resourceGroup().id)}'
   location: location
   kind: 'StorageV2'
@@ -3634,11 +3637,35 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-06-01' = {
 output storageAccountId string = storageAccount.id
 </pre>
 
+"2022-09-01" is the API version.
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/2-what-bicep">Example</a>: To create an appServicePlan and appServiceApp:
+
+<pre>resource appServicePlan 'Microsoft.Web/serverFarms@2022-03-01' = {
+  name: 'toy-product-launch-plan'
+  location: 'eastus'
+  sku: {
+    name: 'F1'
+  }
+}
+resource appServiceApp 'Microsoft.Web/sites@2022-03-01' = {
+  name: 'toy-product-launch-1'
+  location: 'westus3'
+  properties: {
+    serverFarmId: appServicePlan.id
+    httpsOnly: true
+  }
+}
+</pre>
+
+
 <a name="Transpile"></a>
 
 To transpile a Bicep template to a corresponding JSON template using CLI commands:
 
 <ul><pre><strong>bicep build main.bicep</strong></pre></ul>
+
+The result:
 
 <pre>{
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
@@ -3688,6 +3715,13 @@ To transpile a Bicep template to a corresponding JSON template using CLI command
   }
 }
 </pre>
+
+
+<a name="Sandbox"></a>
+
+### Microsoft Learn Sandbox
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/4-exercise-define-resources-bicep-template?pivots=powershell">For Azure CLI or PowerShell</a>
 
 
 <a name="Playground"></a>
