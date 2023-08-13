@@ -2140,6 +2140,32 @@ Also, instead of 2 racks on ASM, ARM resources can span 3 racks of computers.
 
 ARM handles Authentication for access to back-end Web App, Data Store, Virtual Machines, etc. 
 
+The <tt>az deployment</tt> CLI command is used to deploy ARM templates. 
+
+<pre>#!/usr/bin/env bash
+az login
+az account set --subscription $subscription-name-or-id
+az deployment group create \
+    –-subscription $subscription-name-or-id
+    --resource-group $resource-group-name
+    --template-file $path-to-arm-template.json
+</pre>
+
+After this command, pass in parameters to complete the command. Specify the type of deployment scope using one of four keywords: 
+   * group for resource group deployments
+   * sub for subscription deployments
+   * mg for management group deployments   
+   * tenant for tenant deployments
+   <br /><br />
+
+Instead, to use PowerShell, use the <tt>New-AzResourceGroupDeployment</tt> cmdlet:
+
+<pre>Connect-AzAccount
+Set-AzContext -Subscription "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+New-AzResourceGroupDeployment 
+    -ResourceGroupName <resource-group-name> 
+    -TemplateFile <path-to-template>
+</pre>
 
 ### ARM tokens
 
@@ -3470,9 +3496,9 @@ Azure Bicep > ARM > Terraform
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691890796/az-bicep-1197x539_rfswrd.png"><img alt="az-bicep-1197x539.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691890796/az-bicep-1197x539_rfswrd.png"><em>Click image for full screen.</em></a> <a target="_blank" href="https://7451111251303.gumroad.com/l/bpczq"><em>from a PowerPoint file</em>.</a>
 
-This diagram summarizes content from several <a href="#BicepDocs">docs and learn</a>.
+This diagram summarizes content in several <a href="#BicepDocs">docs and learn</a>.
 
-For a specific subscription within Microsoft's <strong>Azure cloud</strong>, the <a href="#Portal">Azure portal GUI</a> can be used to create <strong>resources</strong> interactively. 
+For a specific subscription within a Management Group (deployment scope) in Microsoft's <strong>Azure cloud</strong>, the <a href="#Portal">Azure portal GUI</a> can be used to create <strong>resources</strong> interactively. 
 
 Behind the scenes, an <strong>Azure API</strong> calls various <strong>services</strong> to create, modify, and delete resources.
 
@@ -3481,7 +3507,7 @@ Microsoft's docs also talk about <strong>commands</strong> issued from <strong>a
 Other security mechanisms include encryption, verifying identity, and strong authentication. To detect threats and intrusions, send logs to a central <strong>SIEM/SOAR</strong> system, such as Sentinel inside Azure or Splunk outside Azure. When anomalies are found, raise alerts by escalating emails, text messages, Slack, SMS, or other media.
 
 When these security mechanisms are not created along with resources when created, it can be just a matter of minutes before bots discover vulnerabilities and hack your system. 
-So Microsoft created the <a href="#ARM">ARM</a> (Azure Resource Manager) to create resources with tags and security controls based on JSON files processed together in a CI/CD (Continuous Integration/Continuous Deployment) pipeline run by GitHub Actions (or Azure DevOps).
+So Microsoft created the <a href="#ARM">ARM</a> (Azure Resource Manager) to create resources with tags and security controls based on JSON files processed together in a CI/CD (Continuous Integration/Continuous Deployment) pipeline run by GitHub Actions (or Azure DevOps). Several files can be linked together at deployment.
 
 ARM works like Terraform and Ansible (from Red Hat), which have accompanying <strong>parameter</strong> files to enable different environments to be created from the same JSON-format files.
 
@@ -3511,6 +3537,9 @@ Current status: As of this writing (August 12, 2023):
 
 ### Bicep Docs and Videos
 
+The menu of Microsoft's documentation on Bicep is at:<br />
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/">https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/</a>
+
 <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/fundamentals-bicep/">3hr 18min Microsoft Learn: Fundamentals of Bicep</a>:
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/introduction-to-infrastructure-as-code-using-bicep/?WT.mc_id=learnlive-20220308A">Part 1 - 30min Microsoft Learn Module: Introduction to infrastructure as code using Bicep</a>
@@ -3535,52 +3564,145 @@ Part 3: Advanced Bicep
    * <a target="_blank" href="https://www.youtube.com/watch?v=7SwR_LeXqK0" title="Jan 11, 2023">VIDEO: Bicep vs Terraform. which one should I use?</a> by <a target="_blank" href="https://www.linkedin.com/in/jonathan-d-aloia/">Jonathan D'Aloia at Adatis London</a>
    * <a target="_blank" href="https://jackwesleyroper.medium.com/azure-bicep-pros-cons-c8121fbfe5db">BLOG:  Pros & Cons</a>
    * <a target="_blanl" href="https://www.youtube.com/watch?v=wevlRsVxsUw&t=4m20s">Bicep Advanced Deployments - Part 1</a> by Kevin Oliver
+   * <a target="_blank" href="https://www.youtube.com/watch?v=wevlRsVxsUw&t=4m20s">Bicep Advanced Deployments - Part 2</a> by Kevin Oliver
    <br /><br />
 
-<a name="BicepFile"></a>
 
-### Bicep File
+<a name="BicepDX"></a>
+
+### Better developer experience (DX)
+
+Creating a JSON ARM template requires complicated expressions, and the final result might be verbose.
+
+But Bicep was designed to provide a syntax that's easier to understand, better support for modularity and reusable code, and improved type safety. 
+
+Reference parameters and variables directly, without using complicated functions. 
+
+String interpolation is used in place of concatenation to combine values for names and other items. 
+
+Reference properties of a resource directly by using its symbolic name instead of complex reference statements.
+
+Bicep automatically detects dependencies between resources. This process removes some of the work involved in template authoring.
+
+Break down complex template deployments into smaller module files and reference them in a main template. 
+This makes for easier management, greater reusability (easier sharing).
+
+### ARM to create storage account
 
 <a target="_blank" href="https://www.youtube.com/watch?v=MP60ND7Upn4&t=38m53s">VIDEO: The imperative approach to 
 create a storage account using CLI commands:
 
 <pre>#!/usr/bin/env bash
+az login
 az group param location string = resourceGroup().location \
    --location eastus
 &nbsp;
 az storage account create --name storagelearnlive \
    --resource-group storage-resource-group \
+   --location eastus \
    --sku Standard_LRS \
    --kind StorageV2 \
    --access-tier Hot \
    --https-only true
 </pre>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=MP60ND7Upn4&t=43m26s">VIDEO first look at Bicep file</a>
+<a name="BicepFile"></a>
+
+### Bicep File to create storage account
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/introduction-to-infrastructure-as-code-using-bicep/4-what-bicep">Enhanced version</a> of <a target="_blank" href="https://www.youtube.com/watch?v=MP60ND7Upn4&t=43m26s">VIDEO first look at Bicep file</a>
 creating a storage account:
 
 <pre>param location string = resourceGroup().location
+param pnamePrefix string = 'storage'
 &nbsp;
-resource storageAccount 'Microsoft.Storage/storageAccounts@2021-06-01' = {
+var storageAccountName = '${namePrefix}${uniqueString(resourceGroup().id)}'
+var storageAccountSku = 'Standard_RAGRS'  // for replication or 'Standard_LRS'
+&nbsp;
+resource storageAccount 'Microsoft.Storage/storageAccounts@2023-06-01' = {
   name: 'stg${uniqueString(resourceGroup().id)}'
   location: location
   kind: 'StorageV2'
   sku: {
-    name: 'Standard_LRS'
+    name: storageAccountSku
   }
   properties: {
     accessTier: 'Hot'
+    supportsHttpsTrafficOnly: true
+  }
+}
+output storageAccountId string = storageAccount.id
+</pre>
+
+<a name="Transpile"></a>
+
+To transpile a Bicep template to a corresponding JSON template using CLI commands:
+
+<ul><pre><strong>bicep build main.bicep</strong></pre></ul>
+
+<pre>{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.14.6.61914",
+      "templateHash": "1685474528138924530"
+    }
+  },
+  "parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]"
+    },
+    "namePrefix": {
+      "type": "string",
+      "defaultValue": "storage"
+    }
+  },
+  "variables": {
+    "storageAccountName": "[format('{0}{1}', parameters('namePrefix'), uniqueString(resourceGroup().id))]",
+    "storageAccountSku": "Standard_RAGRS"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2023-06-01",
+      "name": "[format('stg{0}', uniqueString(resourceGroup().id))]",
+      "location": "[parameters('location')]",
+      "kind": "StorageV2",
+      "sku": {
+        "name": "[variables('storageAccountSku')]"
+      },
+      "properties": {
+        "accessTier": "Hot",
+        "supportsHttpsTrafficOnly": true
+      }
+    }
+  ],
+  "outputs": {
+    "storageAccountId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Storage/storageAccounts', format('stg{0}', uniqueString(resourceGroup().id)))]"
+    }
   }
 }
 </pre>
 
 
+<a name="Playground"></a>
 
+### Playground
 
+Alternately, transpile by copying and pasting into the Bicep Playground:
 
-<a name="BicepDX"></a>
+<a target="_blank" href="https://bicepdemo.z22.web.core.windows.net/">https://bicepdemo.z22.web.core.windows.net</a>
 
-### Better developer experience (DX)
+Click the <strong>Sample Template</strong> button to see a list of sample Bicep and JSON files side-by-side.
+
+### Decompile
+
+Click "Decompile" from the ARM JSON template to a Bicep.
 
 <hr />
 
@@ -3596,7 +3718,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-06-01' = {
    <a target="_blank" href="https://www.manning.com/books/azure-infrastructure-as-code">Manning</a>
    <a target="_blank" href="https://learning.oreilly.com/library/view/azure-infrastructure-as/9781617299421/" title="August 2022">BOOK: "Azure Infrastructure as Code"</a>
    by <a target="_blank" href="https://www.linkedin.com/in/eduard-keilholz/">Eduard Keilholz</a>, <a target="_blank" href="https://www.linkedin.com/in/erwinstaal/">Erwin Staal</a>, <a target="_blank" href="https://www.linkedin.com/in/henrybeen/">Henry Been</a>
-
+https://learning.oreilly.com/library/view/azure-infrastructure-as/9781617299421/OEBPS/Text/04.htm#heading_id_5
 1. Install in VSCode the Bicep extension: <a target="_blank" href="https://www.youtube.com/watch?v=VDCAJIGqHZU" title="Azure Friday with Scott Hanselman">VIDEO</a>
 
 1. Install the Bicep CLI. <a target="_blank" href="https://www.youtube.com/watch?v=F1zzrnXQwKU">VIDEO</a>
