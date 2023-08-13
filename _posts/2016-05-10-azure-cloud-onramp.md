@@ -164,12 +164,12 @@ PROTIP: Define abbreviations for each above.
 ## Naming Abbreviations
 
 PROTIP: Abbreviations are needed to keep names short.
-Define abbreviations in different human languages if you haven an international crew.
+Define abbreviations in different human languages if you have an international crew.
 Abbreviations can serve as a way to inform policies, such as locking of production servers.
 
 Based on <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">Microsoft's advice on naming conventions</a>:
 
-Use in theis order:
+Use in this order:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691185898/az-resc-naming-3254x1322_vxg0ni.png"><img alt="az-resc-naming-3254x1322.png" width="650" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691185898/az-resc-naming-3254x1322_vxg0ni.png"><br /><em>Click image for full page</em></a>
 
@@ -428,10 +428,10 @@ Microsoft summarizes the "kill chain" of exploits and defenses against them in t
 
 Microsoft has a "Defender" offering for each type of product:
 
+   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-for-identity">MS Defender for Identity</a>
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-office-365">MS Defender for Office 365</a>
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/endpoint-security/microsoft-defender-iot">MS Defender for IoT (& OT)</a>
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/endpoint-security/microsoft-defender-endpoint">MS Defender for Endpoint</a>
-   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-for-identity">MS Defender for Identity</a>
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-devops#">MS Defender for DevOps</a>
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-cloud">MS Defender for Cloud</a> <a target="_blank" href="https://azure.microsoft.com/en-us/products/defender-for-cloud/">Product</a> [<a target="_blank" href="https://www.youtube.com/watch?v=lGYVMjgn5tY">Intro video</a> Security Seolutions, Work Automation triggers]
    <br /><br />
@@ -869,7 +869,7 @@ The clock is ticking!
    <strong>Premium P2</strong> (included in Microsoft 365 E5) includes all P1 features plus really cool <strong>"Identity Protection"</strong> with policies Assignment to all users.
       * Identity governance/protection dashboard
       * Risk-based Conditional Access (sign-in risk, user risk)
-      * Machine learning assisted access certifications and reviews
+      * Machine-learning assisted access certifications and reviews
       * Authentication context (step-up authentication)
       * Device and application filters for Conditional Access
       * Token protection
@@ -1288,7 +1288,7 @@ There are many ways to automate the creation of resources within Azure:
    1. PowerShell DSC (Desired State Configuration) automation
    1. <a href="#VM_PS_JSON">Powershell</a> running ARM template JSON files
 
-   1. Microsoft <a href="#Bicep">Bicep</a> (new in 2021)
+   1. Microsoft <a href="#Bicep">Bicep</a> (new from 2021)
    1. <a href="#VM_Docker">Terraform</a> HCL *.tf files with templating features and advanced logic features)
    1. <a target="_blank" href="https://wilsonmar.github.io/pulumi/">Pulumi Python/C#/Nodejs/Typescript code</a>
 
@@ -2121,16 +2121,20 @@ ASGs are wrapped by a NSG (Network Security Group) which route traffic.
 
 ### ARM obsoletes ASM
 
-On July 1, 2019, Microsoft fully transitioned from the "classic" (older) Azure Service Management (ASM) when <a target="_blank" href="https://docs.microsoft.com/en-us/azure/multi-factor-authentication/multi-factor-authentication-faq">Multi-factor authentication (through the PhoneFactor Web (PFWeb) portal), API Management, BizTalk, and Managed Cache became available to the Azure Resource Manager (ARM).
-
 ASM had "Cloud Services" and "Affinity Groups"
 which is structured with Resource Groups (logical containers)
 providing a single-resource point-of-view [i.e. manage a single resource at a time].
 
+<a name="ARM"></a>
+
+### ARM
+
+On July 1, 2019, Microsoft fully transitioned from the "classic" (older) Azure Service Management (ASM) when <a target="_blank" href="https://docs.microsoft.com/en-us/azure/multi-factor-authentication/multi-factor-authentication-faq">Multi-factor authentication (through the PhoneFactor Web (PFWeb) portal), API Management, BizTalk, and Managed Cache became available to the Azure Resource Manager (ARM).
+
 ARM includes <strong>parallelization</strong> when creating resources for faster deployment of complex, interdependent solutions. 
 ARM also includes granular access control, and the ability to tag resources with metadata.
 
-Also, instead of 2 racks, ARM resources can span 3 racks of computers.
+Also, instead of 2 racks on ASM, ARM resources can span 3 racks of computers.
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/111055690-eda3cc00-8435-11eb-9563-aa0fb3154d40.png"><img alt="az-arm-interfaces-599x315.png" width="599" src="https://user-images.githubusercontent.com/300046/111055690-eda3cc00-8435-11eb-9563-aa0fb3154d40.png"></a>
 
@@ -2157,7 +2161,9 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
 ## ARM Portal GUI Dashboard Tour #
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-overview">DOC</a>:
+   References:
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-overview">DOC</a>:
+   <br /><br />
 
 0. At <a target="_blank" href="https://portal.azure.com/">
    https://portal.azure.com</a>
@@ -3462,23 +3468,30 @@ A parent template can launch nested templates.
 
 Azure Bicep > ARM > Terraform
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691879500/az-bicep-1204x518_mr3f9o.png"><img alt="az-bicep-1204x518.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691879500/az-bicep-1204x518_mr3f9o.png"><em>Click diagram for full screen image</em></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691890796/az-bicep-1197x539_rfswrd.png"><img alt="az-bicep-1197x539.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691890796/az-bicep-1197x539_rfswrd.png"><em>Click image for full screen.</em><a target="_blank" href="https://7451111251303.gumroad.com/l/rafpex"><em>Buy the PowerPoint</em></a>
 
-In its <strong>docs and learn</strong> training about <strong>Azure cloud</strong>, Microsoft has traditionally taught  us to use its <strong>portal GUI</strong> to create <strong>resources</strong>. But, under the covers, an <strong>Azure API</strong> is the one making actual calls to various <strong>services</strong> to create, modify, and delete resources.
-Microsoft's docs also talk about <strong>commands</strong> issued from <strong>az CLI and PowerShell</strong> terminals. These commands are also making calls to the same <strong>Azure API</strong> to create, modify, and delete resources. Commands are also used to manage <strong>secrets</strong> such as passwords and API keys.
+This diagram summarizes content from several <strong>docs and learn</strong>.
 
-Other security mechanisms include encryption, verifying identity, and strong authentication. To detect threats and intrusions, send logs to a central <strong>SIEM/SOAR</strong> (___) system (such as Splunk), inside or outside Azure. When anomalies are found, raise alerts by escalating emails, text message, Slack, SMS, or other media.
+On Microsoft's <strong>Azure cloud</strong>, the <a href="#Portal">Azure portal GUI</a> can be used to create <strong>resources</strong> interactively. 
 
-When these security mechanisms are not created when resources are created, it can be just a matter of minutes before bots discover vulnerabilities and hack your system. 
-So Microsoft created the <strong>ARM</strong> (Azure Resource Manager) to create resources with security controls based on JSON files processed together. This works like Terraform and Ansible, which are  also "Infrastructure as Code" solutions, with <strong>parameter</strong> files so that different environments can be created from the same files.
+Behind the scenes, an <strong>Azure API</strong> calls various <strong>services</strong> to create, modify, and delete resources.
 
-This approach is called <strong>"Declarative IaC</strong>, where ARM service compares <strong>state</strong> and make changes and <strong>deletions</strong> as necessary to achieve the desired state specified.
+Microsoft's docs also talk about <strong>commands</strong> issued from <strong>az CLI and PowerShell</strong> terminals. These commands are also making calls to the same <strong>Azure API</strong> to create, modify, and delete resources. Additional commands can access services (such as Azure Key Vault) to manage <strong>secrets</strong> such as passwords and API keys.
 
-Such logic is needed in the alternative approach, called Imperative or <strong>Programmatic IaC</strong>, where application programming code written in Python, Go, C#, etc. call the Azure <strong>SDK</strong> (Sofware Development Kit). One such program is <strong>Pulumi</strong>. Although more complex and thus difficult to maintain and debug, programming code has the flexibility to do anything, such as sending  logs to a SIEM/SOAR system.
+Other security mechanisms include encryption, verifying identity, and strong authentication. To detect threats and intrusions, send logs to a central <strong>SIEM/SOAR</strong> system, such as Sentinel inside Azure or Splunk outside Azure. When anomalies are found, raise alerts by escalating emails, text messages, Slack, SMS, or other media.
+
+When these security mechanisms are not created along with resources when created, it can be just a matter of minutes before bots discover vulnerabilities and hack your system. 
+So Microsoft created the <a href="#ARM">ARM</a> (Azure Resource Manager) to create resources with tags and security controls based on JSON files processed together in a CI/CD (Continuous Integration/Continuous Deployment) pipeline run by GitHub Actions (or Azure DevOps).
+
+ARM works like Terraform and Ansible, which have accompanying <strong>parameter</strong> files to enable different environments to be created from the same json files.
+
+This approach, called <strong>"Declarative IaC</strong>, (Infrastructure as Code) is where the ARM service compares <strong>state</strong> and makes changes and <strong>deletions</strong> as necessary to achieve the desired state specified. Such "idempotent" logic achieves the same result each time the file is deployed. Duplicates are not created. 
+
+The alternative approach, called Imperative or <strong>Programmatic IaC</strong>, is where application programming code written in Python, Go, C#, etc. call the Azure <strong>SDK</strong> (Sofware Development Kit). One such program is <strong>Pulumi</strong>. Although more complex and thus difficult to maintain and debug, programming code has the flexibility to do anything, such as sending logs to a <strong>SIEM/SOAR</strong> system.
 
 For <a href="#BicepDX">better developer experience (DX)</a>, in 2021 Microsoft created the <strong>Bicep DSL</strong> (Domain Specific Language) read by a <strong>Transpiler</strong> that creates ARM json and parameters files. But the Bicep DSL code is also validated based on Azure API and <strong>OpenAPI (Swagger)</strong> files.
 
-Pulling Bicep code from <strong>GitHub</strong> enables versioning, and coodination with <strong>Jira</strong> or other product management tools. Highlighting of Bicep code is automated by <strong>add-ons</strong> Microsoft has created for various <strong>IDE</strong> text editors such as VSCode. "Integration" means the IDE can invoke the transpiler to create ARM json files with parameters. 
+Pulling Bicep code from <strong>GitHub</strong> enables versioning, and coodination with <strong>Jira</strong> or other product management tools. Highlighting of Bicep code is automated by ARM and Bicep <strong>add-ons</strong> Microsoft has created for VSCode and other popular <strong>IDE</strong> text editors. Added "Integrations" enable the IDE to invoke the Bicep Transpiler to create ARM json files with parameters. 
 
 Perhaps the most important security feature is use of <strong>Policy as Code</strong> that can identify vulnerabilities in resources created by Bicep and ARM json. Issues found would stop the CI/CD pipelines, with alerts to the developer. This is called <strong>Shift Left</strong> because it is done before the resources are created.
 
