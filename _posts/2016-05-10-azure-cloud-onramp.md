@@ -185,9 +185,9 @@ Use in this order:
    
    1. westus, eastus2, westeu = <strong>Region</strong> - The Azure region where the resource is deployed. <a href="#PickRegions">Pick a  region</a>
 
-   1. 001, 002, etc. <strong>Instance</strong> - A number or other identifier that distinguishes the resource from other resources of the same type in the same resource group and region.
+   1. 001, 002, etc. <strong>Instance</strong> - A number or other identifier that distinguishes the resource from other resources of the same type in the same <a href="#ResourceGroups">resource group</a> and region.
 
-   * Additional fields are city, country, state, etc.
+   * Additional fields are geographies: city, country, state, etc.
 
 These should be adopted in Terraform, <a href="#Bicep"><Bicep</a>, and other IoC.
 
@@ -234,7 +234,7 @@ PROTIP: Many don't take security "seriously" because they haven't fully grasped 
    * Weak passwords trump strong security.
    <br /><br />
 
-10. <strong>Technology doesn't solve people and process problems</strong> - While machine learning, artificial intelligence, and other technologies offer amazing leaps forward in security (when applied correctly), cybersecurity is a human challenge and will never be solved by technology alone.
+11. <strong>Technology doesn't solve people and process problems</strong> - While machine learning, artificial intelligence, and other technologies offer amazing leaps forward in security (when applied correctly), cybersecurity is a human challenge and will never be solved by technology alone.
    * Technology isn't a panacea.
    * A computer is only as secure as the administrator is trustworthy.
 
@@ -261,7 +261,7 @@ Major <strong>Objectives</strong> (What, Why, Who, How activities):
 8. Technology: Integrate native threat detection
 
 9. Architecture: Standardize on a single directory and identity
-10. Architecture: Use identity-based access control instead of keys
+11. Architecture: Use identity-based access control instead of keys
 11. Architecture: Establish a single unified security strategy
 <br /><br />
 
@@ -384,7 +384,7 @@ Microsoft grouped its definition of security controls under <a target="_blank" h
    * ES-2: Use modern anti-malware software
    * ES-3: Ensure anti-malware software and signatures are updated
 
-10. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-backup-recovery">Backup and Recovery (BR)</a>
+11. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-backup-recovery">Backup and Recovery (BR)</a>
    * BR-1: Ensure regular automated backups
    * BR-2: Protect backup and recovery data
    * BR-3: Monitor backups
@@ -1036,16 +1036,6 @@ interactive map showing a point for each region's Longitude and Latitude</a> wit
 NOTE: Microsoft Frontdoor enables you to use a single global IP address for your application. Microsoft automatically routes traffic to the region closest to the user. This is similar to AWS CloudFront.
 
 
-<a name="ResourceGroups"></a>
-
-### Resource Groups
-
-   Before any resource can be provisioned, you need a resource group for it to be placed in, for provisioning, monitoring, maintenance.
-   Each resource must be in a resource group. 
-
-   Resource groups can be created by using any of the following methods:
-
-
 <hr />
 
 <a name="Portal"></a>
@@ -1073,7 +1063,7 @@ NOTE: Microsoft Frontdoor enables you to use a single global IP address for your
 
    ### Dashboard
 
-0. For <a href="#Dashboard">Dashboard</a>, hold down G and press <strong>D</strong>.
+1. For <a href="#Dashboard">Dashboard</a>, hold down G and press <strong>D</strong>.
 
    In the left menu, where is the menu item for Users (the one most often used by Administrators)?
 
@@ -1112,7 +1102,7 @@ NOTE: Microsoft Frontdoor enables you to use a single global IP address for your
 
    Getting 403 ActiveDirectoryMenuBlade accessing AAD/Entra on Portal
 
-0. Right-click on the "Help + Support" box on the Dashboard and select "unpin"
+1. Right-click on the "Help + Support" box on the Dashboard and select "unpin"
    because you now know you can reach it (in two places).
 
 
@@ -1140,7 +1130,7 @@ NOTE: Microsoft Frontdoor enables you to use a single global IP address for your
 
    ### Help + Support
 
-0. There are 3 places you can reach "Help + Support":
+1. There are 3 places you can reach "Help + Support":
 
    Click the question mark icon at the upper-right corner.
 
@@ -1152,7 +1142,7 @@ NOTE: Microsoft Frontdoor enables you to use a single global IP address for your
 
    Alternately, scroll down to click <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview">Help + Support</a> (the person icon in blue).
 
-0. Microsoft calls their business-level oriented collection of implementation guidance <a target="_blank" href="https://www.youtube.com/watch?v=9VJYVITjckw">VIDEO</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/microsoft-cloud-adoption-framework-for-azure/">MS_LEARN</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/">Microsoft Cloud Adoption Framework for Azure"</a>.
+1. Microsoft calls their business-level oriented collection of implementation guidance <a target="_blank" href="https://www.youtube.com/watch?v=9VJYVITjckw">VIDEO</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/microsoft-cloud-adoption-framework-for-azure/">MS_LEARN</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/">Microsoft Cloud Adoption Framework for Azure"</a>.
 
    Additional sites:
 
@@ -1261,16 +1251,6 @@ Based on <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-a
 PROTIP: Keep the sequence of the abbreviations consistent, so that you can easily find the resource in the portal.
 
 
-<a name="ResourceGroups"></a>
-
-### Resource Groups
-
-   Before any resource can be provisioned, you need a resource group for it to be placed in, for provisioning, monitoring, maintenance.
-   Each resource must be in a resource group. 
-
-   Resource groups can be created by using any of the following methods:
-
-
 
 <hr />
 
@@ -1328,7 +1308,9 @@ The scripts are also useful for learning Azure.
 
 <hr />
 
-## Cloud Shell (CLI & PowerShell)
+<a name="CloudShell"></a>
+
+### Cloud Shell (CLI & PowerShell)
 
    Resources:
    * https://ss64.com/ps/ (A-Z index of PowerShell commands)
@@ -1629,7 +1611,7 @@ using what's called "explicit user and device trust validation".
     <tt>6babcaad-1234-5678-789a-9fd97c0b779f</tt>
 
 9.  Click "Copy to clipboard".
-10. Remember the last few characters of the GUID returned.
+11. Remember the last few characters of the GUID returned.
 11. Switch back to the browser Portal tab.
 
 
@@ -1791,13 +1773,9 @@ using what's called "explicit user and device trust validation".
     Those under this require use of MFA.
 
 
-
-
-<hr />
-
 <a name="AdminUsers"></a>
 
-## Admin Users & Groups
+### Admin Users & Groups
 
 
 <a name="GlobalAdmin"></a>
@@ -1890,7 +1868,7 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 
 <a name="CustomRoles"></a>
 
-## Custom Roles
+### Custom Roles
 
    Examples of Custom-defined roles are:
    * Reader Support Tickets
@@ -2022,8 +2000,6 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
     To do remediation, define a Managed Identity.
 
 
-
-
     <a name="Devices"></a>
 
     ### Devices on AAD/Entra
@@ -2052,62 +2028,6 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
     READ: <a target="_blank" href="https://medium.com/microsoftazure/how-to-perform-role-assignments-on-azure-resources-from-an-azure-devops-pipeline-c9f4dc10d0a4">Role Assignments on Azure Resources from Azure Pipelines</a>
 
 
-
-<hr />
-
-<a name="CloudAcademyLab"></a>
-
-## Hands-on GUI Labs
-
-PROTIP: It makes more sense to look at a live example populated with several resources, in context, which is what a CloudAcademy lab provides.
-
-1. <a target="_blank" href="https://cloudacademy.com/library/azure/">cloudacademy.com/library/azure</a> has defined several labs.
-1. Search for "Azure".
-1. Select a lab for your learning sequence:
-   * <a target="_blank" href="https://cloudacademy.com/lab/start-your-first-azure-virtual-machine-windows/connecting-to-the-virtual-machine-rdp/?context_id=524&context_resource=lp">"Start Your First Azure Virtual Machine (Windows)"</a>
-
-   PROTIP: Below are my <strong>alternative enhanced</strong> instructions (which works for macOS):
-
-1. Click the green "Start Lab".
-1. PROTIP: <strong>Right-click on "Open Environment"</strong> to select <strong>Open Link in New Window</strong>.
-1. Click and hold on the top of the Window to adjust an overlap.
-1. If there is another lab account (such as "student-1551-576984@labscloudacademy.onmicrosoft.com"), click the three dots to remove it.
-1. Click "Use another account".
-1. Switch between the two windows using <strong>command+`</strong> (` on the upper-left of macOS keyboards).
-1. In the CloudAcademy screen, click "Copy" icon for Username.
-1. In the Azure Signin, paste the email (such as "student-1551-576984@labscloudacademy.onmicrosoft.com"). Click Next.
-1. In the CloudAcademy screen, click "Copy" icon for Password.
-1. In Azure Signin, click on the Password screen and paste (such as "Ca1_iyvB75Wl"). Click "Sign in".
-
-1. Click the Username account for the lab.
-1. Click "Maybe later" for tour for the Azure landing page (Dashboard).
-
-
-   ### Create Resource in Command Line
-
-1. <img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/general-1-All-Resources.svg">Click the "All Resources" icon for a list.
-
-1. Switch back to the CloudAcademy screen, scroll to bottom to click "Next Step".
-1. Click "Resource Group" under the Navigate label.
-
-   <img alt="Resource Group" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-patterns/azure-resource-group-blue.svg">
-
-   PROTIP: Up to 980 resource groups can be created under a Subscription.
-
-1. Click the "cal-xxx-yy" presented.
-
-1. PROTIP: The app for macOS suggested is no longer available in the store. Use one noted in <a target="_blank" href="https://wilsonmar.github.io/rdp/">my tutorial on RDP</a>.
-
-1. <img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/general-17-Home.svg">Click the Azure Portal "Home" (accordion) menu in the upper-left corner.
-
-1. Select "Virtual machines" in the left menu.
-
-1. Click the running VM name in the list for the "Overview" blade.
-
-1. Click "Connect", then "RDP". Click "Download RPD File". 
-1. In the pop-up Finder, navigate to a container folder (such as "Projects"), create a folder, and save the RDP file.
-1. Switch to Finder and navigate to your RDP file.
-
 ### ASG (Application Security Groups)
 
 ASGs are wrapped by a NSG (Network Security Group) which route traffic.
@@ -2117,73 +2037,30 @@ ASGs are wrapped by a NSG (Network Security Group) which route traffic.
 
 <hr />
 
-<a name="ASM"></a>
+<a name="Resources"></a>
 
-### ARM obsoletes ASM
+## Resources
+
+
+<a name="ResourceGroups"></a>
+
+### Resource Groups
+
+   Before any resource can be provisioned, create  a resource group for it to be placed in -- for provisioning, monitoring, maintenance.
+   Each resource must be in a resource group. 
+
+
+### From ASM to ARM
+
+On July 1, 2019, Microsoft fully transitioned from the "classic" (older) Azure Service Management (ASM) when <a target="_blank" href="https://docs.microsoft.com/en-us/azure/multi-factor-authentication/multi-factor-authentication-faq">Multi-factor authentication (through the PhoneFactor Web (PFWeb) portal), API Management, BizTalk, and Managed Cache became available to the Azure Resource Manager (ARM).
 
 ASM had "Cloud Services" and "Affinity Groups"
 which is structured with Resource Groups (logical containers)
 providing a single-resource point-of-view [i.e. manage a single resource at a time].
 
-<a name="ARM"></a>
-
-### ARM
-
-On July 1, 2019, Microsoft fully transitioned from the "classic" (older) Azure Service Management (ASM) when <a target="_blank" href="https://docs.microsoft.com/en-us/azure/multi-factor-authentication/multi-factor-authentication-faq">Multi-factor authentication (through the PhoneFactor Web (PFWeb) portal), API Management, BizTalk, and Managed Cache became available to the Azure Resource Manager (ARM).
-
-ARM includes <strong>parallelization</strong> when creating resources for faster deployment of complex, interdependent solutions. 
-ARM also includes granular access control, and the ability to tag resources with metadata.
-
 Also, instead of 2 racks on ASM, ARM resources can span 3 racks of computers.
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/111055690-eda3cc00-8435-11eb-9563-aa0fb3154d40.png"><img alt="az-arm-interfaces-599x315.png" width="599" src="https://user-images.githubusercontent.com/300046/111055690-eda3cc00-8435-11eb-9563-aa0fb3154d40.png"></a>
-
-ARM handles Authentication for access to back-end Web App, Data Store, Virtual Machines, etc. 
-
-The <tt>az deployment</tt> CLI command is used to deploy ARM templates. 
-
-<pre>#!/usr/bin/env bash
-az login
-az account set --subscription $subscription-name-or-id
-az deployment group create \
-    –-subscription $subscription-name-or-id
-    --resource-group $resource-group-name
-    --template-file $path-to-arm-template.json
-</pre>
-
-After this command, pass in parameters to complete the command. Specify the type of deployment scope using one of four keywords: 
-   * group for resource group deployments
-   * sub for subscription deployments
-   * mg for management group deployments   
-   * tenant for tenant deployments
-   <br /><br />
-
-Instead, to use PowerShell, use the <tt>New-AzResourceGroupDeployment</tt> cmdlet:
-
-<pre>Connect-AzAccount
-Set-AzContext -Subscription "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-New-AzResourceGroupDeployment 
-    -ResourceGroupName $resource-group-name
-    -TemplateFile $path-to-template
-</pre>
-
-### ARM tokens
-
-<a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course/categories/4743678/posts/8980102#">VIDEO</a>:
-
-1. A user (or service principal) acquires a token for Azure Resource Manager (ARM).  
-2. The token includes the user's group memberships (including transitive group memberships).
-3. The user makes a REST API call to Azure Resource Manager with the token attached.
-4. ARM retrieves all the role assignments and deny assignments that apply to the resource upon which the action is being taken.
-5. ARM narrows the role assignments that apply to this user or their group and determines what roles the user ahs for this resource.
-6. ARM determines if the action in the API call is included in the roles the user has for this resource.
-7. If the user doesn't have a role with the action at the requested scope, access is not granted. Otherwise, ARM checks if ta deny assignment applies.
-8. If a deny assignment applies, access is blocked. Otherwise access is granted.
-
-
-<hr />
-
-<a name="ARM-Menu"></a>
+<a name="ARM"></a>
 
 ## ARM Portal GUI Dashboard Tour #
 
@@ -2191,12 +2068,12 @@ New-AzResourceGroupDeployment
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-overview">DOC</a>:
    <br /><br />
 
-0. At <a target="_blank" href="https://portal.azure.com/">
+1. At <a target="_blank" href="https://portal.azure.com/">
    https://portal.azure.com</a>
 
-0. Click the "wheel" icon at the top for Portal Settings:
+1. Click the "wheel" icon at the top for Portal Settings:
    
-0. PROTIP: If you wear glasses on video calls, reduce glare by clicking "Black" for the dark theme. You may not like the putrid yellow font associated with High Contrast:
+1. PROTIP: If you wear glasses on video calls, reduce glare by clicking "Black" for the dark theme. You may not like the putrid yellow font associated with High Contrast:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/111880191-8c1cb980-896f-11eb-9c8b-86d556a46843.png"><img width="1165" alt="azure-portal-dark-2330x1246" src="https://user-images.githubusercontent.com/300046/111880191-8c1cb980-896f-11eb-9c8b-86d556a46843.png"></a>
 
@@ -2213,17 +2090,18 @@ New-AzResourceGroupDeployment
 
    ### Dock hamburger menu
 
-0. Click the "hamburger" (home) icon at the upper-left corner for English descriptions of each icon on the left edge.
+1. Click the "hamburger" (home) icon at the upper-left corner for English descriptions of each icon on the left edge.
 
-0. Click the "<" icon at top of the separator to collapse ("dock") or expand the text of services listed on the left menu.
+1. Click the "<" icon at top of the separator to collapse ("dock") or expand the text of services listed on the left menu.
 
    PROTIP: To set its expansion state permanently, click the ‘settings cog’ icon in the top right of portal and click the ‘Choose your default mode for the portal menu’ option. Setting that to docked or undocked.
+
 
    <a name="Keyboard_Shortcuts"></a>
    
    ### Left Dock Keyboard Shortcuts
 
-0. PROTIP: To keep things simple, I arrange the FAVORITES menu item alphabetically.
+1. PROTIP: To keep things simple, I arrange the FAVORITES menu item alphabetically.
 
    1. App Services
    2. Advisor
@@ -2234,33 +2112,33 @@ New-AzResourceGroupDeployment
    7. Monitor
    8. Security Center
    9. Storage Accounts
-   10. (0) Virtual Machines
+   11. (0) Virtual Machines
    <br /><br />
 
-0. ??? Click the <img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/command-1094-Favorite.svg">star icon so it is gold to enable the service to show on the menu or unselect to remove the service from the bar.
+1. ??? Click the <img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/command-1094-Favorite.svg">star icon so it is gold to enable the service to show on the menu or unselect to remove the service from the bar.
 
    <img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/general-17-Home.svg">Home
 
-0. Drag and drop the Categories in a stable sequence and position you can mouse to quickly:
+1. Drag and drop the Categories in a stable sequence and position you can mouse to quickly:
 
    Example: I drag the "Billing" icon to the top because I manage the money involved.
 
    <a target="_blank" href="https://www.youtube.com/watch?v=A0uXwdLDzf4">VIDEO</a> 
    PROTIP: If you memorize the number of your menu, you'll never need to mouse to the "hamberger" menu again, avoid being distracted by menu text, and recover screen real estate.
 
-0. Hold down G and press a number to view one of the first 10 menu items.
+1. Hold down G and press a number to view one of the first 10 menu items.
 
    <a target="_blank" href="https://www.youtube.com/watch?v=ha2ESFCcERQ&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=15" title="Dec 5, 2019">VIDEO</a>: Many find themselves more productive when they don't have to reach for the mouse. Keeping hands on the keyboard reduces a distraction. Thus, it's impressive wizardry during demos.
 
-0. Click the "?" at the top of the page to click <u>Keyboard shortcuts</u>. 
+1. Click the "?" at the top of the page to click <u>Keyboard shortcuts</u>. 
 
    In there and in <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-keyboard-shortcuts">DOCS</a>, "G+." means <strong>while holding down the G key</strong>, press the period key, which puts the focus on the ">>" icon so you can press Enter to expand or contract the left menu. Press Tab to cycle down the menu.
 
-   PROTIP: You an use the G key as if it's like the Command/Ctrl key because you're not filling out a form. If you see G appear in a form fill field (such as the browser URL), backspace to clear the field, then press Tab off the form fields and try again.
+   PROTIP: You can use the G key as if it's like the Command/Ctrl key because you're not filling out a form. If you see G appear in a form fill field (such as the browser URL), backspace to clear the field, then press Tab off the form fields and try again.
 
-0. Press Esc to escape from the help window.
+1. Press Esc to escape from the help window.
 
-0. A reminder of the G key is always present at the top of every Azure screen:<br />
+1. A reminder of the G key is always present at the top of every Azure screen:<br />
    "Search resources, services, and docs (G+/)", which means hold down G and press / to search.
 
    PROTIP: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/project/navigation/keyboard-shortcuts?view=azure-devops">Azure DevOps uses more G keys (and M keys as well)</a>.
@@ -2271,9 +2149,9 @@ New-AzResourceGroupDeployment
 
    ### All Services
 
-0. For <a target="_blank" href="https://portal.azure.com/#allservices"><img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/general-17-Home.svg">All services</a>, hold down G and press <strong>B</strong>.
+1. For <a target="_blank" href="https://portal.azure.com/#allservices"><img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/general-17-Home.svg">All services</a>, hold down G and press <strong>B</strong>.
 
-0. Click "All" for a complete of all services Azure has to offer, arranged within the category order on the left menu.
+1. Click "All" for a complete of all services Azure has to offer, arranged within the category order on the left menu.
 
    PROTIP: This gives you an idea of how vast the Azure offering is, and the product names certification aspirants should know.
 
@@ -2282,21 +2160,73 @@ New-AzResourceGroupDeployment
 
    ### Full screen toggle
 
-0. To toggle a window to take up the <strong>whole screen</strong> on Windows PCs: press F11 or Alt+Enter or Windows key + up-arrow. On macOS: hold down command on the right, control on the left, then F (control+command+F). Repeat the keys to un-maximize. This is equivalent to clicking the green "maximize" icon on the upper-left of each app window or double-clicking on the app's title bar. 
+1. To toggle a window to take up the <strong>whole screen</strong> on Windows PCs: press F11 or Alt+Enter or Windows key + up-arrow. On macOS: hold down the command on the right, control on the left, then F (control+command+F). Repeat the keys to un-maximize. This is equivalent to clicking the green "maximize" icon on the upper-left of each app window or double-clicking on the app's title bar. 
 
    CAUTION: Any window maximized will not be brought up by the keyboard shortcut which cycles through various windows within the app (command+` on macOS; Alt+Tab on Windows PCs). To see the maximized window, you have to cursor near the top edge until the app's menu appears, then pull down the browser's Window menu.
 
    QUESTION: How to toggle full screen in Azure like on Netflix, which removes menus, breadcrumbs, and command bar? Alt+Space+X on Windows.
 
-0. Switch among windows command+` (at the upper-left corner of the keyboard).
-0. To find text on the page, press command+F.
+1. Switch among windows command+` (at the upper-left corner of the keyboard).
+1. To find text on the page, press command+F.
 
 
+### ARM tokens
+
+<a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course/categories/4743678/posts/8980102#">VIDEO</a>:
+
+1. A user (or service principal) acquires a token for Azure Resource Manager (ARM).  
+2. The token includes the user's group memberships (including transitive group memberships).
+3. The user makes a REST API call to Azure Resource Manager with the token attached.
+4. ARM retrieves all the role assignments and deny assignments that apply to the resource upon which the action is being taken.
+5. ARM narrows the role assignments that apply to this user or their group and determines what roles the user ahs for this resource.
+6. ARM determines if the action in the API call is included in the roles the user has for this resource.
+7. If the user doesn't have a role with the action at the requested scope, access is not granted. Otherwise, ARM checks if ta deny assignment applies.
+8. If a deny assignment applies, access is blocked. Otherwise access is granted.
+
+<a name="ARM-CLI"></a>
+
+ARM includes <strong>parallelization</strong> when creating resources for faster deployment of complex, interdependent solutions. 
+ARM also includes granular access control, and the ability to tag resources with metadata.
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/111055690-eda3cc00-8435-11eb-9563-aa0fb3154d40.png"><img alt="az-arm-interfaces-599x315.png" width="599" src="https://user-images.githubusercontent.com/300046/111055690-eda3cc00-8435-11eb-9563-aa0fb3154d40.png"></a>
+
+ARM handles Authentication for access to back-end Web App, Data Store, Virtual Machines, etc. 
+
+REMEMBER: The <tt>az deployment</tt> CLI command is used to deploy ARM templates. 
+
+<pre>#!/usr/bin/env bash
+az login
+az account set --subscription $subscription-name-or-id
+az deployment group create \
+    –-subscription $subscription-name-or-id
+    --resource-group $resource-group-name
+    --template-file $path-to-arm-template.json
+</pre>
+
+After this command, pass in the parameters to complete the command. Specify the type of deployment scope using one of four keywords: 
+   * group for resource group deployments
+   * sub for subscription deployments
+   * mg for management group deployments   
+   * tenant for tenant deployments
+   <br /><br />
+
+Instead, to use PowerShell, use the <tt>New-AzResourceGroupDeployment</tt> cmdlet:
+
+<pre>Connect-AzAccount
+Set-AzContext -Subscription "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+New-AzResourceGroupDeployment 
+    -ResourceGroupName $resource-group-name
+    -TemplateFile $path-to-template
+</pre>
 
 <hr />
 
 
-### Automation options
+<hr />
+
+<a name="Automation"></a>
+
+## Create Resources: Automation options
 
    * <a href="#Portal">Azure portal GUI</a>
    * Azure Bash CLI (az commands)
@@ -2314,7 +2244,7 @@ New-AzResourceGroupDeployment
 
    A Resource Group name can be a single character. It can begin with a number.
 
-   PROTIP: In production, design Resource Groups for work groups to have the permissions they need. For example, core infrastructure such as Networking. The destination of logs and metrics should be viewed and managed using a whole differen account than accounts used to create the data.
+   PROTIP: In production, design Resource Groups for work groups to have the permissions they need. For example, core infrastructure such as Networking. The destination of logs and metrics should be viewed and managed using a whole different account than accounts used to create the data.
 
 1. After you get CLI setup, list resource groups created:
 
@@ -2768,7 +2698,7 @@ az group create --name "${MY_RG}" \
 
    A resource be associated with up to 50 tags.
 
-0. Click "Create" after "Validation passed".
+1. Click "Create" after "Validation passed".
 
 
    ### Lock RG to prevent deletion
@@ -2823,7 +2753,7 @@ az group create --name "${MY_RG}" \
    
    ## Policy creation
 
-0. Select the <strong>Policy</strong> service.   
+1. Select the <strong>Policy</strong> service.   
 
    Policies are rules stating which resources can be deployed to which locations
    * Microsoft provides a number of built-in policies
@@ -2834,22 +2764,22 @@ az group create --name "${MY_RG}" \
    
    PROTIP: All resources in a resource group should share the same lifecycle.
 
-0. In the left menu select the <strong>Definitions</strong> pane under the Authoring section.
+1. In the left menu select the <strong>Definitions</strong> pane under the Authoring section.
 
    You should see a list of built-in policies that you can use. 
 
-0. Click G+ for focusing on "+ Policy" to press Enter to create a custom policy in the New policy definition dialog.
+1. Click G+ for focusing on "+ Policy" to press Enter to create a custom policy in the New policy definition dialog.
 
-0. Set the Definition location, click the blue .... and select the Subscription for the policy to be stored in, which should be the same subscription as our resource group. Click Select.
+1. Set the Definition location, click the blue .... and select the Subscription for the policy to be stored in, which should be the same subscription as our resource group. Click Select.
 
-0. Back on the New Policy definition dialog, type Name value of Enforce tag on resource.
+1. Back on the New Policy definition dialog, type Name value of Enforce tag on resource.
 
-0. For the Description, enter This policy enforces the existence of a tag on a resource.
+1. For the Description, enter This policy enforces the existence of a tag on a resource.
 
-0. For <strong>Category</strong> select Use existing and then select the General category.
+1. For <strong>Category</strong> select Use existing and then select the General category.
 
-0. For the POLICY RULE, select all text in the box (command+A), then delete it.
-0. Copy and paste the following into the box:
+1. For the POLICY RULE, select all text in the box (command+A), then delete it.
+1. Copy and paste the following into the box:
 
    <pre>{
   "mode": "Indexed",
@@ -2874,7 +2804,7 @@ az group create --name "${MY_RG}" \
 }
    </pre>
 
-0. Click "Save".
+1. Click "Save".
 
    Uses for policy:
 
@@ -2912,13 +2842,13 @@ az group create --name "${MY_RG}" \
 
    DEFINITION: Each Azure resource is an <strong>instance</strong> of a service you have <strong>already provisioned</strong>.
 
-0. For a New Resource, hold down G and press <strong>N</strong> to select a new resource from Azure's <strong>Marketplace</strong> of services.
+1. For a New Resource, hold down G and press <strong>N</strong> to select a new resource from Azure's <strong>Marketplace</strong> of services.
 
    NOTE: This is also reached by clicking "+ Create a resource" or Home icon then "+ Create a resource".
 
    ### Favorites
 
-0. Within the Marketplace of services/resources, clicking the star icon labeled "Favorites" adds the item to the <a href="#Dashboard">Dashboard (described in a section below)</a>.
+1. Within the Marketplace of services/resources, clicking the star icon labeled "Favorites" adds the item to the <a href="#Dashboard">Dashboard (described in a section below)</a>.
 
    ### New Web App
    
@@ -2933,12 +2863,12 @@ az group create --name "${MY_RG}" \
 
    "Static web apps" serve the same (static) HTML and CSS files to all users pre-generated when saved (pushed) to GitHub. This means that users don't have to wait for them to be generated.
    
-0. In another browser tab, sign into GitHub and create a repository containing Nuxt.js or other template to generate HTML and CSS files.
+1. In another browser tab, sign into GitHub and create a repository containing Nuxt.js or other template to generate HTML and CSS files.
 
-0. Scroll down the "Azure Marketplace" menu to click "Web".
-0. Click "Static Web App (preview)".
-0. Select the Resource Group created already.
-0. Type a Name that follows your Naming Convensions. For example, "msftlearn-core-infra-rg-dev" consists of 
+1. Scroll down the "Azure Marketplace" menu to click "Web".
+1. Click "Static Web App (preview)".
+1. Select the Resource Group created already.
+1. Type a Name that follows your Naming Convensions. For example, "msftlearn-core-infra-rg-dev" consists of 
    * "msftlearn" for the types of resources 
    * "hr" for Human Resources, "fin" for finance, etc.
    * "core-infra" for what is contained within,
@@ -2946,25 +2876,25 @@ az group create --name "${MY_RG}" \
    * "rg" for the type of resource it is (resource group)
    <br /><br />
 
-0. PROTIP: WARNING: Select a Region that's the same as your Resource Group or you'll incur inter-region network charges.
-0. For Deployment details: Source, select "GitHub" the default.
-0. Click "Sign in with Github" for a pop-up screen to enter the email address you used to create the GitHub account you want to associate.
-0. Type the code shown on your mobile 2FA (Authentication) mobile app to <strong>Verify</strong>.
-0. Click "Grant" each additional organization/account.
-0. Click "Authorize ..." to dismiss the pop-up.
+1. PROTIP: WARNING: Select a Region that's the same as your Resource Group or you'll incur inter-region network charges.
+1. For Deployment details: Source, select "GitHub" the default.
+1. Click "Sign in with Github" for a pop-up screen to enter the email address you used to create the GitHub account you want to associate.
+1. Type the code shown on your mobile 2FA (Authentication) mobile app to <strong>Verify</strong>.
+1. Click "Grant" each additional organization/account.
+1. Click "Authorize ..." to dismiss the pop-up.
 
-0. You should get an email with subject:
+1. You should get an email with subject:
 
    <pre>[GitHub] A third-party OAuth application has been added to your account</pre>
 
-0. Select the Organization, Repository, Branch created in the step above.
+1. Select the Organization, Repository, Branch created in the step above.
 
 
    <a name="AllResources"></a>
 
    ### All Resources
    
-0. Drag and drop <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseAll">All resources</a> in the menu to the bottom of the list because you can reach it without a mouse by holding down G and pressing <strong>A</strong>. 
+1. Drag and drop <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseAll">All resources</a> in the menu to the bottom of the list because you can reach it without a mouse by holding down G and pressing <strong>A</strong>. 
 
    That brings up a list of all resources you have already brought to life.
 
