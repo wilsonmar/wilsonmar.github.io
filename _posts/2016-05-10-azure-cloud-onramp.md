@@ -3468,7 +3468,7 @@ A parent template can launch nested templates.
 
 Azure Bicep > ARM > Terraform
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691890796/az-bicep-1197x539_rfswrd.png"><img alt="az-bicep-1197x539.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691890796/az-bicep-1197x539_rfswrd.png"><em>Click image for full screen.</em><a target="_blank" href="https://7451111251303.gumroad.com/l/rafpex"><em>Buy the PowerPoint</em></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691890796/az-bicep-1197x539_rfswrd.png"><img alt="az-bicep-1197x539.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691890796/az-bicep-1197x539_rfswrd.png"><em>Click image for full screen.</em></a> <a target="_blank" href="https://7451111251303.gumroad.com/l/bpczq"><em>Buy the PowerPoint</em></a>
 
 This diagram summarizes content from several <strong>docs and learn</strong>.
 
