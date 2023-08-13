@@ -2046,8 +2046,8 @@ ASGs are wrapped by a NSG (Network Security Group) which route traffic.
 
 ### Resource Groups
 
-   Before any resource can be provisioned, create  a resource group for it to be placed in -- for provisioning, monitoring, maintenance.
-   Each resource must be in a resource group. 
+Each resource must be in a resource group. 
+So before provisioning any resource, create a resource group for it to be placed in -- for provisioning, monitoring, maintenance.
 
 
 ### From ASM to ARM

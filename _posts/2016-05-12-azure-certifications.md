@@ -34,8 +34,9 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
    </td></tr>
 
 <tr valign="top"><td> <a href="#SolutionArchitect">Solution Architect Expert</a></td><td>
-      * <a href="#AZ-303">AZ-303</a> Azure Solutions Architect Expert: Technologies<br />
-        * <a href="#AZ-304">AZ-304</a> Azure Solutions Architect Expert: Design<br />
+        * <a href="#AZ-305">AZ-305</a> Azure Solutions Architect<br />
+        * <a href="#AZ-303">AZ-303</a> Azure Solutions Architect Expert: Technologies (retired)<br />
+        * <a href="#AZ-304">AZ-304</a> Azure Solutions Architect Expert: Design (retired)<br />
         * AZ-600 Stack Hub Operator Associate<br />
         * AZ-120 Azure for SAP Workloads Specialty
    </td></tr>
@@ -1173,16 +1174,42 @@ Anthony James at LinuxAcademy:
 
 <hr />
 
+<a name="AZ-305"></a>
+
+### AZ-305 Azure Solutions Architect Expert
+
+Pre-requisite is AZ-104.
+
+This $165 exam takes 120 minutes to answer 40-60 business case scenario (case study) questions.
+Valid for 1 year.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-305">
+Microsft's AZ-305 exam/learnings page</a> includes textual tutorials and hands-on labs for each silll:
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-identity-governance-monitor-solutions/">Design identity, governance, and monitoring solutions</a> (25-30%)
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-business-continuity-solutions/">Design business continuity solutions</a> (10-15%)
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-data-storage-solutions/">Design data storage solutions</a> (25-30%)
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-infranstructure-solutions/">Design infrastructure solutions</a> (25-30%)
+   <br /><br />
+
+https://aka.ms/AZ305-StudyGuide
+
+<a target="_blank" href="https://learning.oreilly.com/live-events/exam-az-305-designing-microsoft-azure-infrastructure-solutions-crash-course/Exam title="6 hour Aug. 10, 2023">AZ-305: Designing Microsoft Azure Infrastructure Solutions Crash Course</a>
+by Tim Warner references<br /><a target="_blank" href="https://github.com/timothywarner/az305/">https://github.com/timothywarner/az305</a>
+
+
+
 <a name="AZ-304"></a>
 
 ### AZ-304 Azure Architect Design
+
+This exam was retired.
 
 Passing this and the more hands-on AZ-303 makes you a "Microsoft Certified Azure Solutions Architect Expert".
 
 <a target="_blank" href="
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-304">
 Microsft's AZ-304 exam page</a> includes textual tutorials and hands-on labs.
-The exam is 120 minutes to answer 40-60 business case scenario (case-studies) questions.
+The exam is 120 minutes to answer 40-60 business case scenario (case study) questions.
    * Design monitoring (10-15%)
    * Design identity and security (25-30%)
    * Design data storage (15-20%)
