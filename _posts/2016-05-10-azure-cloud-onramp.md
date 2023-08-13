@@ -3472,7 +3472,7 @@ Azure Bicep > ARM > Terraform
 
 This diagram summarizes content from several <a href="#BicepDocs">docs and learn</a>.
 
-On Microsoft's <strong>Azure cloud</strong>, the <a href="#Portal">Azure portal GUI</a> can be used to create <strong>resources</strong> interactively. 
+For a specific subscription within Microsoft's <strong>Azure cloud</strong>, the <a href="#Portal">Azure portal GUI</a> can be used to create <strong>resources</strong> interactively. 
 
 Behind the scenes, an <strong>Azure API</strong> calls various <strong>services</strong> to create, modify, and delete resources.
 
@@ -3489,15 +3489,15 @@ This approach, called <strong>"Declarative IaC</strong>, (Infrastructure as Code
 
 The alternative approach, called Imperative or <strong>Programmatic IaC</strong>, is where application programming code written in Python, Go, C#, etc. call the Azure <strong>SDK</strong> (Sofware Development Kit). One such program is <strong>Pulumi</strong>. Such programs need to create resources in the proper sequence, check whether resources have already been created, recognize errors, etc. Although more complex and thus difficult to maintain and debug, programming code has the flexibility to do anything, such as sending logs to a <strong>SIEM/SOAR</strong> system.
 
-For <a href="#BicepDX">better developer experience (DX)</a>, in 2021 Microsoft created the <strong>Bicep DSL</strong> (Domain Specific Language) read by a <strong>Transpiler</strong> that creates ARM json and parameters files. But the Bicep DSL code is also validated based on Azure API and <strong>OpenAPI (Swagger)</strong> files.
+For <a href="#BicepDX">better developer experience (DX)</a>, in 2021 Microsoft created the <strong>Bicep DSL</strong> (Domain Specific Language) read by a <strong>Transpiler</strong> that creates ARM JSON and parameters files. But the Bicep DSL code is also validated based on Azure API and <strong>OpenAPI (Swagger)</strong> files.
 
-Note that, unlike Terraform, Bicep has no state file, so it <strong>doesn't alter and delete resources</strong> based on changes in the Bicep file. Instead, Bicep creates ARM json files that are processed by the ARM service to create, modify, and delete resources. 
+Note that, unlike Terraform, Bicep has no state file, so it <strong>doesn't alter and delete resources</strong> based on changes in the Bicep file. Instead, Bicep creates ARM JSON files that are processed by the ARM service to create, modify, and delete resources. 
 
-Pulling Bicep code from <strong>GitHub</strong> enables versioning, and coordination with <strong>Jira</strong> or other product management tools. Highlighting of Bicep code is automated by ARM and Bicep <strong>add-ons</strong> Microsoft has created for VSCode and other popular <strong>IDE</strong> text editors. Added "Integrations" enable the IDE to invoke the Bicep <strong>Transpiler</strong> to create ARM JSON files with parameters. 
+Pulling Bicep code from <strong>GitHub</strong> enables versioning, and coordination with <strong>Jira</strong> or other product management tools. Highlighting and linting of Bicep code is automated by ARM and Bicep <strong>add-ons</strong> Microsoft has created for VSCode and other popular <strong>IDE</strong> text editors. Added "Integrations" enable the IDE to invoke the Bicep <strong>Transpiler</strong> to create ARM JSON files with parameters. 
 
-Perhaps the most important security feature is the use of <strong>Policy as Code</strong> that can identify vulnerabilities in resources created by Bicep and ARM json. Issues found would stop the CI/CD pipelines, with alerts to the developer. This is called <strong>Shift Left</strong> because it is done before the resources are created.
+Perhaps the most important security feature is the use of <strong>Policy as Code</strong> that can identify vulnerabilities in resources created by Bicep and ARM JSON. Issues found would stop the CI/CD pipelines, with alerts to the developer. This is called <strong>Shift Left</strong> because it is done before the resources are created.
 
-Lastly, <strong>graphic diagrams</strong> can be generated from either the resources created or, better yet, from Bicep or ARM json for better visualization to speed understanding and troubleshooting.
+Lastly, <strong>graphic diagrams</strong> can be generated from either the resources created or, better yet, from Bicep or ARM JSON for better visualization to speed understanding and troubleshooting.
 
 Current status: As of this writing (August 12, 2023):
 
@@ -3513,15 +3513,17 @@ Current status: As of this writing (August 12, 2023):
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/fundamentals-bicep/">3hr 18min Microsoft Learn: Fundamentals of Bicep</a>:
 
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/introduction-to-infrastructure-as-code-using-bicep/?WT.mc_id=learnlive-20220308A">Part 1 - 30min Microsoft Learn Module: Introduction to infrastructure as code using Bicep</a>
+<a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/introduction-to-infrastructure-as-code-using-bicep/?WT.mc_id=learnlive-20220308A">Part 1 - 30min Microsoft Learn Module: Introduction to infrastructure as code using Bicep</a>
 
-   <ul>Deploy Azure resources by using Bicep and:<br />Option 1: Azure Pipelines<br />
+   <ul><a target="_blank" href="https://www.youtube.com/watch?v=MP60ND7Upn4&t=43m26s">First look at Bicep file</a>
+   
+   Deploy Azure resources by using Bicep and:<br />Option 1: Azure Pipelines<br />
    Option 2: GitHub Actions
    </ul>
 
-   * Part 2: Intermediate Bicep
+Part 2: Intermediate Bicep
 
-   * Part 3: Advanced Bicep
+Part 3: Advanced Bicep
 
 
    * <a target="_blank" href="https://aka.ms/learnlive-20220308A">Microsoft Learn Module on Bicep</a> is the basis for<br /><a target="_blank" href="https://learn.microsoft.com/en-us/events/learn-events/learnlive-iac-and-bicep/">15-episodes</a> on YouTube:
@@ -3534,6 +3536,47 @@ Current status: As of this writing (August 12, 2023):
    * <a target="_blank" href="https://jackwesleyroper.medium.com/azure-bicep-pros-cons-c8121fbfe5db">BLOG:  Pros & Cons</a>
    * <a target="_blanl" href="https://www.youtube.com/watch?v=wevlRsVxsUw&t=4m20s">Bicep Advanced Deployments - Part 1</a> by Kevin Oliver
    <br /><br />
+
+<a name="BicepFile"></a>
+
+### Bicep File
+
+<a target="_blank" href="https://www.youtube.com/watch?v=MP60ND7Upn4&t=38m53s">VIDEO: The imperative approach to 
+create a storage account using CLI commands:
+
+<pre>#!/usr/bin/env bash
+az group param location string = resourceGroup().location \
+   --location eastus
+&nbsp;
+az storage account create --name storagelearnlive \
+   --resource-group storage-resource-group \
+   --sku Standard_LRS \
+   --kind StorageV2 \
+   --access-tier Hot \
+   --https-only true
+</pre>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=MP60ND7Upn4&t=43m26s">VIDEO first look at Bicep file</a>
+creating a storage account:
+
+<pre>param location string = resourceGroup().location
+&nbsp;
+resource storageAccount 'Microsoft.Storage/storageAccounts@2021-06-01' = {
+  name: 'stg${uniqueString(resourceGroup().id)}'
+  location: location
+  kind: 'StorageV2'
+  sku: {
+    name: 'Standard_LRS'
+  }
+  properties: {
+    accessTier: 'Hot'
+  }
+}
+</pre>
+
+
+
+
 
 <a name="BicepDX"></a>
 
