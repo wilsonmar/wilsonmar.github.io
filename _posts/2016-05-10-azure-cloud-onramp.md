@@ -3468,9 +3468,9 @@ A parent template can launch nested templates.
 
 Azure Bicep > ARM > Terraform
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691890796/az-bicep-1197x539_rfswrd.png"><img alt="az-bicep-1197x539.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691890796/az-bicep-1197x539_rfswrd.png"><em>Click image for full screen.</em></a> <a target="_blank" href="https://7451111251303.gumroad.com/l/bpczq"><em>Buy the PowerPoint</em></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691890796/az-bicep-1197x539_rfswrd.png"><img alt="az-bicep-1197x539.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691890796/az-bicep-1197x539_rfswrd.png"><em>Click image for full screen.</em></a> <a target="_blank" href="https://7451111251303.gumroad.com/l/bpczq"><em>from a PowerPoint file</em>.</a>
 
-This diagram summarizes content from several <strong>docs and learn</strong>.
+This diagram summarizes content from several <a href="#BicepDocs">docs and learn</a>.
 
 On Microsoft's <strong>Azure cloud</strong>, the <a href="#Portal">Azure portal GUI</a> can be used to create <strong>resources</strong> interactively. 
 
@@ -3483,34 +3483,36 @@ Other security mechanisms include encryption, verifying identity, and strong aut
 When these security mechanisms are not created along with resources when created, it can be just a matter of minutes before bots discover vulnerabilities and hack your system. 
 So Microsoft created the <a href="#ARM">ARM</a> (Azure Resource Manager) to create resources with tags and security controls based on JSON files processed together in a CI/CD (Continuous Integration/Continuous Deployment) pipeline run by GitHub Actions (or Azure DevOps).
 
-ARM works like Terraform and Ansible, which have accompanying <strong>parameter</strong> files to enable different environments to be created from the same json files.
+ARM works like Terraform and Ansible (from Red Hat), which have accompanying <strong>parameter</strong> files to enable different environments to be created from the same JSON-format files.
 
 This approach, called <strong>"Declarative IaC</strong>, (Infrastructure as Code) is where the ARM service compares <strong>state</strong> and makes changes and <strong>deletions</strong> as necessary to achieve the desired state specified. Such "idempotent" logic achieves the same result each time the file is deployed. Duplicates are not created. 
 
-The alternative approach, called Imperative or <strong>Programmatic IaC</strong>, is where application programming code written in Python, Go, C#, etc. call the Azure <strong>SDK</strong> (Sofware Development Kit). One such program is <strong>Pulumi</strong>. Although more complex and thus difficult to maintain and debug, programming code has the flexibility to do anything, such as sending logs to a <strong>SIEM/SOAR</strong> system.
+The alternative approach, called Imperative or <strong>Programmatic IaC</strong>, is where application programming code written in Python, Go, C#, etc. call the Azure <strong>SDK</strong> (Sofware Development Kit). One such program is <strong>Pulumi</strong>. Such programs need to create resources in the proper sequence, check whether resources have already been created, recognize errors, etc. Although more complex and thus difficult to maintain and debug, programming code has the flexibility to do anything, such as sending logs to a <strong>SIEM/SOAR</strong> system.
 
 For <a href="#BicepDX">better developer experience (DX)</a>, in 2021 Microsoft created the <strong>Bicep DSL</strong> (Domain Specific Language) read by a <strong>Transpiler</strong> that creates ARM json and parameters files. But the Bicep DSL code is also validated based on Azure API and <strong>OpenAPI (Swagger)</strong> files.
 
-Pulling Bicep code from <strong>GitHub</strong> enables versioning, and coodination with <strong>Jira</strong> or other product management tools. Highlighting of Bicep code is automated by ARM and Bicep <strong>add-ons</strong> Microsoft has created for VSCode and other popular <strong>IDE</strong> text editors. Added "Integrations" enable the IDE to invoke the Bicep Transpiler to create ARM json files with parameters. 
+Note that, unlike Terraform, Bicep has no state file, so it <strong>doesn't alter and delete resources</strong> based on changes in the Bicep file. Instead, Bicep creates ARM json files that are processed by the ARM service to create, modify, and delete resources. 
 
-Perhaps the most important security feature is use of <strong>Policy as Code</strong> that can identify vulnerabilities in resources created by Bicep and ARM json. Issues found would stop the CI/CD pipelines, with alerts to the developer. This is called <strong>Shift Left</strong> because it is done before the resources are created.
+Pulling Bicep code from <strong>GitHub</strong> enables versioning, and coordination with <strong>Jira</strong> or other product management tools. Highlighting of Bicep code is automated by ARM and Bicep <strong>add-ons</strong> Microsoft has created for VSCode and other popular <strong>IDE</strong> text editors. Added "Integrations" enable the IDE to invoke the Bicep <strong>Transpiler</strong> to create ARM JSON files with parameters. 
+
+Perhaps the most important security feature is the use of <strong>Policy as Code</strong> that can identify vulnerabilities in resources created by Bicep and ARM json. Issues found would stop the CI/CD pipelines, with alerts to the developer. This is called <strong>Shift Left</strong> because it is done before the resources are created.
 
 Lastly, <strong>graphic diagrams</strong> can be generated from either the resources created or, better yet, from Bicep or ARM json for better visualization to speed understanding and troubleshooting.
 
 Current status: As of this writing (August 12, 2023):
 
-   * Unlike Terraform, Bicep currently does not have additional providers such as for Databricks, Snowflake, etc.
+   * Unlike Terraform, Bicep currently does not have additional providers for 3rd-party offerings such as Databricks, Snowflake, etc.
+
    * Bicep is not yet integrated into the Azure Portal.
    <br /><br />
 
-   * Bicep files are designed to be easier to read than ARM JSON templates.
-   * Bicep files are declarative, containing Domain Specific Language (DSL), like Terraform HCL.
-   * Bicep is a transpiler, not a compiler. Bicep build transpiles Bicep files to ARM templates main.json files.
 
-   * Unlike Terraform, Bicep has no state file, so it <strong>doesn't alter and delete resources</strong> based on changes in the file (which can be dangerous).
-   <br /><br />
+<a name="BicepDocs"></a>
+
+### Bicep Docs and Videos
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/fundamentals-bicep/">3hr 18min Microsoft Learn: Fundamentals of Bicep</a>:
+
    * <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/introduction-to-infrastructure-as-code-using-bicep/?WT.mc_id=learnlive-20220308A">Part 1 - 30min Microsoft Learn Module: Introduction to infrastructure as code using Bicep</a>
 
    <ul>Deploy Azure resources by using Bicep and:<br />Option 1: Azure Pipelines<br />
