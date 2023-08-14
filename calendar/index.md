@@ -183,11 +183,11 @@ Quit Outlook - command+Q
 
 The author pane at the left of this theme was updated to add Calendar under the email link.
 
-0. First, I searched for the Calendar icon in FontAwesome (it's "fa-calendar" at http://fontawesome.io/icon/calendar/).
+1. First, I searched for the Calendar icon in FontAwesome (it's "fa-calendar" at http://fontawesome.io/icon/calendar/).
 
-0. Next, had to encode "@" to "%40" in the URL, based on http://shopify.github.io/liquid/filters/replace/.
+1. Next, had to encode "@" to "%40" in the URL, based on http://shopify.github.io/liquid/filters/replace/.
 
-0. Finally, this was pasted into the <strong>_author-bio.html</strong> file within the <strong>_includes</strong> folder:
+1. Finally, this was pasted into the <strong>_author-bio.html</strong> file within the <strong>_includes</strong> folder:
 
    <pre><code>
    &#123;% if author.email %}<a href="https://www.google.com/calendar/embed?src=<br>
@@ -205,37 +205,37 @@ If you have Outlook, just click on the file.
 
 If you use Google Calendar, import the .ics file:
 
-0. If a ZIP file, unzip it and import each .ics file individually.
+1. If a ZIP file, unzip it and import each .ics file individually.
 
-0. Open <a target="_blank" href="https://calendar.google.com/">Google Calendar</a>.
+1. Open <a target="_blank" href="https://calendar.google.com/">Google Calendar</a>.
 
    Note: You can only import from a computer, not a phone or tablet.
 
-0. Click click the Settings gear button at the top right.
+1. Click click the Settings gear button at the top right.
 
-0. Select Settings.
+1. Select Settings.
 
-0. Click to open the blue <u>Calendars</u> tab.
+1. Click to open the blue <u>Calendars</u> tab.
 
-0. Scroll down to click the blue <u>Import calendars</u> tab.
+1. Scroll down to click the blue <u>Import calendars</u> tab.
 
-0. Click <strong>Choose File</strong> to open a dialog.
+1. Click <strong>Choose File</strong> to open a dialog.
 
-0. Select the Downloads folder.
+1. Select the Downloads folder.
 
-0. Sort by the Date Modified if you don't see the .ics file.
+1. Sort by the Date Modified if you don't see the .ics file.
 
-0. Click to select the .ics file, then Open.
+1. Click to select the .ics file, then Open.
 
-0. Choose which calendar to add the imported events to. By default, events will be imported into your primary calendar.
+1. Choose which calendar to add the imported events to. By default, events will be imported into your primary calendar.
 
-0. Click Import.
+1. Click Import.
 
-0. Click Close the dialog.
+1. Click Close the dialog.
 
-0. Click the browser's back button (or press Alt+left arrow) to return to the calendar.
+1. Click the browser's back button (or press Alt+left arrow) to return to the calendar.
 
-0. Switch to the Finder or File Explorer and <strong>delete the .ics file</strong> (Move to Trash on Macs).
+1. Switch to the Finder or File Explorer and <strong>delete the .ics file</strong> (Move to Trash on Macs).
 
 NOTE: This is a modification of 
 <a target="_blank" href="https://support.google.com/calendar/answer/37118?hl=en">
