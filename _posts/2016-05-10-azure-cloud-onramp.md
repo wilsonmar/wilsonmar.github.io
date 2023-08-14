@@ -163,9 +163,11 @@ PROTIP: Define abbreviations for each above.
 
 ## Naming Abbreviations
 
-PROTIP: Abbreviations are needed to keep names short.
-Define abbreviations in different human languages if you have an international crew.
+REMEMBER: <strong>Resource names are limited to 64 characters.</strong>
+
+PROTIP: Abbreviations are needed to keep names short. 
 Abbreviations can serve as a way to inform policies, such as locking of production servers.
+Define abbreviations in different human languages if you have an international crew.
 
 Based on <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">Microsoft's advice on naming conventions</a>:
 
@@ -181,7 +183,7 @@ Use in this order:
    
    1. navigator, emissions, sharepoint, hadoop = <strong>Workload</strong> (Application or service name that the resource is a part of.
    
-   1. prod, dev, qa, stage, test = <strong>Environment</strong> - The stage of the development lifecycle for the workload that the resource supports. [<a href="#EnvDifferences">Differences</a>]
+   1. prd (production), dev, tst, qa1, stg (staging) = <strong>Environment</strong> for each phase in the lifecycle of the workload toward productive use. [<a href="#EnvDifferences">Differences</a>]
    
    1. westus, eastus2, westeu = <strong>Region</strong> - The Azure region where the resource is deployed. <a href="#PickRegions">Pick a  region</a>
 
@@ -2219,7 +2221,9 @@ New-AzResourceGroupDeployment
     -TemplateFile $path-to-template
 </pre>
 
-<hr />
+Verify the deployment:
+
+   az deployment group list --output table
 
 
 <hr />
@@ -3520,7 +3524,7 @@ This makes for easier management, greater reusability (easier sharing).
 https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep
 
 
-### ARM to create storage account
+### CLI to create storage account
 
 <a target="_blank" href="https://www.youtube.com/watch?v=MP60ND7Upn4&t=38m53s">VIDEO: The imperative approach to 
 create a storage account using CLI commands:
@@ -3539,29 +3543,50 @@ az storage account create --name storagelearnlive \
    --https-only true
 </pre>
 
+
 <a name="BicepFile"></a>
 
 ### Bicep File to create storage account
 
-<a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/introduction-to-infrastructure-as-code-using-bicep/4-what-bicep">Enhanced version</a> of <a target="_blank" href="https://www.youtube.com/watch?v=MP60ND7Upn4&t=43m26s">VIDEO first look at Bicep file</a>
-creating a storage account:
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/quickstart-create-deployment-stacks?tabs=azure-cli%2CCLI">For example</a>:
+a Bicep file to create a storage account and virtual network:
 
-<pre>param location string = resourceGroup().location
-param pnamePrefix string = 'storage'
+<pre>param resourceGroupLocation string = resourceGroup().location
+param storageAccountName string = 'store${uniqueString(resourceGroup().id)}'
+param vnetName string = 'vnet${uniqueString(resourceGroup().id)}'
 &nbsp;
-var storageAccountName = '${namePrefix}${uniqueString(resourceGroup().id)}'
-var storageAccountSku = 'Standard_RAGRS'  // for replication or 'Standard_LRS'
-&nbsp;
-resource storageAccount 'Microsoft.Storage/storageAccounts@22-09-01' = {
-  name: 'stg${uniqueString(resourceGroup().id)}'
-  location: location
+resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
+  name: storageAccountName
+  location: resourceGroupLocation
   kind: 'StorageV2'
   sku: {
-    name: storageAccountSku
+    name: 'Standard_LRS'
   }
+}
+&nbsp;
+resource virtualNetwork 'Microsoft.Network/virtualNetworks@2022-11-01' = {
+  name: vnetName
+  location: resourceGroupLocation
   properties: {
-    accessTier: 'Hot'
-    supportsHttpsTrafficOnly: true
+    addressSpace: {
+      addressPrefixes: [
+        '10.0.0.0/16'
+      ]
+    }
+    subnets: [
+      {
+        name: 'Subnet-1'
+        properties: {
+          addressPrefix: '10.0.0.0/24'
+        }
+      }
+      {
+        name: 'Subnet-2'
+        properties: {
+          addressPrefix: '10.0.1.0/24'
+        }
+      }
+    ]
   }
 }
 output storageAccountId string = storageAccount.id
@@ -3595,7 +3620,7 @@ To transpile a Bicep template to a corresponding JSON template using CLI command
 
 <ul><pre><strong>bicep build main.bicep</strong></pre></ul>
 
-The result:
+The result is an ARM JSON file:
 
 <pre>{
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
@@ -3646,6 +3671,79 @@ The result:
 }
 </pre>
 
+<a name="main.bicep"></a>
+
+### main.bicep
+
+In the <tt>main.bicep</tt> file, defining resources under <tt>Microsoft.Resources/deploymentStacks</tt>
+makes them "managedResources" -- managed by policies associated with that top-level stack. 
+
+See https://learn.microsoft.com/en-us/azure/templates/microsoft.resources/deployments?pivots=deployment-language-bicep
+
+The <tt>actionOnUnmanage</tt> behavior property of a stack can apply to the entire collection of resources under the stack - across all scopes (management groups, subscriptions, and resource groups).
+
+Indeed, this enables one command to manage all resources (across several scopes) as a single atomic unit.
+When the <tt>actionOnUnmanage</tt> property is set to <tt>Delete</tt>, all resources would be automatically deleted when the stack is deleted. That's convenience!
+
+Conversely, when <tt>actionOnUnmanage</tt> is set to <tt>Detach</tt> (the default), resources are disassociated from the deployment stack but not deleted. This has the effect of protecting resources from accidental deletion, and thus a key benefit of using deployment stacks. It provides guard rails.
+
+IMPORTANT: Deployment stacks entered public preview on July 1, 2023.
+
+For <a target="_blank" href=" https://techcommunity.microsoft.com/t5/azure-governance-and-management/arm-deployment-stacks-now-public-preview/ba-p/3871180">example</a>, to create a deployment stack at the "sub" (subscription) scope with deny setting of "DenyDelete" and actionOnUnmanage of "Detach":
+
+<ul><pre>az stack sub create \
+   --name "storageStack-DevEnv" \
+   --template-file "testStorageAccounts.bicep" \
+   --location "eastus" \
+   --deny-settings-mode "DenyDelete"
+</pre></ul>
+
+To verify:
+
+<ul><pre>az stack sub show --name "storageStack-DevEnv"</pre></ul>
+
+<pre>"actionOnUnmanage": {
+    "managementGroups": "detach",
+    "resourceGroups": "detach",
+    "resources": "detach"
+}
+</pre>
+
+
+### At the Resource Group level
+
+I've parametized the CLI script:
+
+<ul><pre>export THIS_LOCATION="eastus"
+export THIS_RESC_GROUP="demoRg"
+export THIS_STACK_NAME="demoStack"
+&nbsp;
+az group create \
+  --name "$THIS_RESC_GROUP" \
+  --location $THIS_LOCATION
+az stack group create \
+  --name $THIS_STACK_NAME \
+  --resource-group "$THIS_RESC_GROUP" \
+  --template-file './main.bicep' \
+  --deny-settings-mode 'none'
+az stack group show \
+  --resource-group "$THIS_RESC_GROUP" \
+  --name $THIS_STACK_NAME
+</pre></ul>
+
+Because the deployment stack is a native Azure resource, all typical Azure Resource Manager (ARM) operations can be performed on the resource, including:
+   * Azure role-based access control (RBAC) assignments
+   * Security recommendations surfaced by Microsoft Defender for Cloud
+   * Azure Policy assignments
+   <br /><br />
+
+References:
+   * https://github.com/Azure/deployment-stacks
+   * https://learn.microsoft.com/en-us/azure/templates/microsoft.resources/deployments?pivots=deployment-language-bicep
+   * https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deployment-stacks?tabs=azure-cli
+   * https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deployment-stacks?tabs=azure-powershell
+
+<hr />
 
 <a name="Sandbox"></a>
 
