@@ -1207,7 +1207,7 @@ Pluralsight:
 
 
 Practice tests:
-   * <a target="_blank" href="https://www.kaplanlearn.com/education/qbank/view/82916708?testId=261812555">CyberVista via Pluralsight</a>
+   * <a target="_blank" href="https://www.kaplanlearn.com/education/qbank/view/82916708?testId=261812555">CyberVista via Pluralsight 50 questions</a>
 
    * <a target="_blank" href="https://www.measureup.com/microsoft-practice-test-az-305-designing-microsoft-azure-infrastructure-solutions.html/">MeasureUp.com</a> has a $59.40/$99 
 

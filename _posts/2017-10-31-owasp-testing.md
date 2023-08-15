@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-07-01"
+date: "2023-08-15"
 file: "owasp-testing"
 title: "OWASP"
 excerpt: "Practice finding security vulnerabilities within ZAP or the Broken Web App by running SCA, SAST, DAST, IAST using open-source SonarQube, Sonatype, Synopsys and other tools"
@@ -500,6 +500,74 @@ Sonarqube</a>
 
 7. Tenable.io by Nessus
 
+
+## SARIF
+
+Static code analysis tool vendors have begun using the SARIF (Static Analysis Results Interchange Format) to publish results of their assessment of programming and style errors, non-compliance with legal requirements, and security vulnerabilities. The JSON-based format standard was published by industry group OASIS to provide a common output format to make it feasible for developers and teams to view, understand, interact with, and manage the results produced by several vendors.
+
+1.  The first version of the format was published in March 2020 as SARIF v2.1.0 to recognize Microsoft's previous efforts and pre-standard versions. Its 220 pages in <a target="_blank" href="https://docs.oasis-open.org/sarif/sarif/v2.1.0/sarif-v2.1.0.html">htm web page</a>. Source code in pdf, docx, htm for the document is at:
+
+    <ul>https://docs.oasis-open.org/sarif/sarif/v2.1.0/sarif-v2.1.0.html</ul>
+
+    <ul><a target="_blank" href="https://github.com/oasis-tcs/sarif-spec/tree/main/Documents/CommitteeSpecifications/2.1.0">https://github.com/oasis-tcs/sarif-spec/tree/main/Documents/CommitteeSpecifications/2.1.0</a></ul>
+    
+    <ul>https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=sarif</ul>
+
+1.  Tutorial:
+
+    <a target="_blank" href="https://github.com/microsoft/sarif-tutorials">https://github.com/microsoft/sarif-tutorials</a>
+
+1.  In Visual Studio Code, install the "Microsoft SARIF Viewer" from Microsoft Dev Labs. 
+
+1.  Clone the sample SARIF file from
+
+    <pre><a target="_blank" href="https://github.com/microsoft/sarif-tutorials/tree/main/samples">https://github.com/microsoft/sarif-tutorials</a>
+    </pre>
+
+1.  Load a sample SARIF file into the viewer within Microsoft Visual Studio Code. Examine details:
+
+    * The location of the flaw and code paths leading to it
+    * The rule violated
+    * The severity of the violation (severe to minor, "error," "warning", "note")
+    * Suggestions for remedying the problem
+    * When it's ok to ignore the result
+    <br /><br />
+
+1.  Load sample SARIF files into Microsoft.
+
+    Cartey and Keaton, OASIS SARIF TC co-chairs, said that "The next major version of SARIF will expand our ability to aggregate data and detect vulnerabilities in some exciting new ways."
+
+1.  Clone a folder containing workflow and sample known-bad Terraform file.
+
+1.  Generate SARIF <a target="_blank" href="https://www.youtube.com/watch?v=4MduRFoKpGY">Using the tfsec GitHub Action</a> from almost blank repo:
+
+    <pre>name: Run tfsec sarif report
+on:
+  push:
+    branches: [main, 'release/*']
+  pull_request:
+jobs:
+  tfsec:
+    name: tfsec sarif report
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@main
+      &nbsp;
+      - name: Run sarif report
+        uses: aquasecurity/tfsec-sarif-action@v0.1.0
+        with:
+          sarif_file: tfsec.sarif
+      &nbsp;
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          # Path to SARIF file relative to the root of the repository:
+          sarif_file: tfsec.sarif
+    </pre>
+
+    <pre><strong>git checout -b add-workflow
+    </strong></pre>
 
 ## Resources
 

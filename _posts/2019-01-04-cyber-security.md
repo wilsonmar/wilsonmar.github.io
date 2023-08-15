@@ -2859,9 +2859,7 @@ Shibboleth is a SAML standards-based open source software for web single sign-on
 
 OAuth2 is an auth framework that enables apps to obtain limited access to user account on an HTTP service.
 
-OIDC (OpenID Connect) version 1.0 is a authentication layer on top of OAuth 2.0,
-from the non-profit OpenID foundation.
-It allows users to be authenticated by co-operating sites known as Relying Parties (RP) providing SSO.
+On top of OAuth 2.0 OIDC (OpenID Connect) version 1.0 from the non-profit OpenID foundation adds an authentication identity layer. It allows users to be authenticated by co-operating sites known as Relying Parties (RP) providing SSO.
 It's decentralized in that a traditional central authority is NOT required for authentication.
 User Passwords are given only to an identify provider (IdP) to confirm, who then vouches for you to various web-based mobile JavScript clients.
 The spec. is extensible to add discovery of OpenID providers, encryption of identity data, session management, etc.
