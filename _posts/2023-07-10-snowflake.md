@@ -497,7 +497,7 @@ Snowflake can intelligent ingest many types of string data formats:
    
    Like ORC, Parquet files are splittable as they store file footer metadata containing information on block boundaries for the file. Systems access this block boundary information to determine whether to skip or read only specific parts (blocks) of the file – allowing for more efficient reads – or to more easily submit different blocks for parallel processing.    
 
-   Parquet supports many query engines (including Amazon Athena, Amazon Redshift Spectrum, Qubole, Google BigQuery, Microsoft Azure Data Explorer and Apache Drill). 
+   Parquet supports many query engines, including Amazon Athena for Serverless SQL, Amazon Redshift Spectrum, Qubole, Google BigQuery, Microsoft Azure Data Explorer and Apache Drill). AWS RDS for Aurura NoSQL databases (DynamoDB, MongoDB, and DocumentDB) use Parquet for data lake storage.
 
    Thus, Parquet files are often most appropriate for "write-once, read-many" analytics (OLAP) use cases, typically when traditional OLTP databases are the source. Used with Spark.
 
