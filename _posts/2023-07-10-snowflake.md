@@ -618,8 +618,12 @@ https://snowflake.useclarus.com/
    * Data Protection and Data Sharing: 10%
    <br /><br />
 
+Practice tests:
+   * 10-question $26.90 https://www.vmexam.com/exam-store/cof-c02-snowflake-snowpro-core-certifications
+   <br /><br />
 
-### Advanced Certification
+
+### Advanced Certifications
 
 <strong>$375 for each of five SnowPro Advanced Certifications</strong> and recerts 
 - 75% of 65 questions in 115 minutes :
