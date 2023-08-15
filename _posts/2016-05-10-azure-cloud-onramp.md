@@ -191,7 +191,11 @@ Use in this order:
 
    * Additional fields are geographies: city, country, state, etc.
 
-These should be adopted in Terraform, <a href="#Bicep"><Bicep</a>, and other IoC.
+These are used within <a href="#Bicep"><Bicep</a>, and other IoC. For example:
+
+   <pre>var vnetName= 'vnet-${env}-${region}-${instance}'
+   var subnetName = 'subnet-${env}-${region}-${instance}'
+   </pre>
 
 PROTIP: Stable names make for less rework and mistakes with Dynamic group membership rules used to automatically assign permissions to resources. Example:
 
@@ -3434,7 +3438,7 @@ This diagram summarizes content in several <a href="#BicepDocs">docs and learn</
 
 For a specific subscription within a Management Group (deployment scope) in Microsoft's <strong>Azure cloud</strong>, the <a href="#Portal">Azure portal GUI</a> can be used to create <strong>resources</strong> interactively. 
 
-Behind the scenes, an <strong>Azure API</strong> calls various <strong>services</strong> to create, modify, and delete resources.
+Behind the scenes, an <strong>Azure API</strong> calls the <strong>ARM services</strong> to create, modify, and delete resources.
 
 Microsoft's docs also talk about <strong>commands</strong> issued from <strong>az CLI and PowerShell</strong> terminals. These commands are also making calls to the same <strong>Azure API</strong> to create, modify, and delete resources. Additional commands can access services (such as Azure Key Vault) to manage <strong>secrets</strong> such as passwords and API keys.
 
@@ -3463,7 +3467,7 @@ Current status: As of this writing (August 12, 2023):
 
    * Unlike Terraform, Bicep currently does not have additional providers for 3rd-party offerings such as Databricks, Snowflake, etc.
 
-   * Bicep is not yet integrated into the Azure Portal.
+   * Bicep is not yet integrated into the Azure Portal, which has a "See in JSON" link for each resource.
    <br /><br />
 
 
@@ -3496,9 +3500,12 @@ Part 3: Advanced Bicep
    *  <a target="_blank" href="https://www.youtube.com/watch?v=_yvb6NVx61Y" title="Understanding and Using Project BICEP - The NEW Azure Deployment Technology by John Savill Mar 9, 2021">VIDEO</a>:
    * <a target="_blank" href="https://github.com/Azure/bicep">https://github.com/Azure/bicep</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=7SwR_LeXqK0" title="Jan 11, 2023">VIDEO: Bicep vs Terraform. which one should I use?</a> by <a target="_blank" href="https://www.linkedin.com/in/jonathan-d-aloia/">Jonathan D'Aloia at Adatis London</a>
+
    * <a target="_blank" href="https://jackwesleyroper.medium.com/azure-bicep-pros-cons-c8121fbfe5db">BLOG:  Pros & Cons</a>
    * <a target="_blanl" href="https://www.youtube.com/watch?v=wevlRsVxsUw&t=4m20s">Bicep Advanced Deployments - Part 1</a> by Kevin Oliver
    * <a target="_blank" href="https://www.youtube.com/watch?v=wevlRsVxsUw&t=4m20s">Bicep Advanced Deployments - Part 2</a> by Kevin Oliver
+
+   * <a target="_blank" href="https://adamtheautomator.com/azure-bicep/">BLOG: Getting Started with Azure Bicep (Step-by-Step)</a> by Nick Rimmer
    <br /><br />
 
 
@@ -3709,10 +3716,52 @@ To verify:
 }
 </pre>
 
+### PSRule Policy as Code
+
+<a target="_blank" href="https://www.youtube.com/watch?v=3697rG8tkOI&list=PLM4Db0UWu45Kv-QMpyEv9znqA2t0Xlcvk&t=11m9s">VIDEO</a>: PSRule Policy as Code runs are defined in <tt>.github/workflows/bicept-psrule.yml</tt>:
+
+<pre>name: Analyze
+on:
+  push:
+    branches: [main, 'release/*']
+  pull_request:
+    branches: [main, 'release/*']
+  schedule:
+    - cron: '24 22 * * 0' # At 10:24 PM, on Sunday each week
+  workflow_dispatch:
+&nbsp;
+permissions: {}
+&nbsp;
+jobs:
+  oss:
+    name: Analyze with PSRule
+    runs-on: ubuntu-latest
+    if: github.repository != 'Azure/PSRule.Rules.Azure-quickstart'
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Run PSRule analysis
+        uses: microsoft/ps-rule@main
+        uses: Microsoft/ps-rule@v2.0.0
+        with:
+          modules: PSRule.Rules.MSFT.OSS
+          prerelease: true
+          outputFormat: Sarif
+          outputPath: reports/ps-rule-results.sarif
+      - name: Upload results to security tab
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: reports/ps-rule-results.sarif
+</pre>
+
+The "schedule: - cron:" lines can be removed so you don't want runs recurring automatically. 
 
 ### At the Resource Group level
 
-I've parametized the CLI script:
+I've parameterized the CLI script:
 
 <ul><pre>export THIS_LOCATION="eastus"
 export THIS_RESC_GROUP="demoRg"
@@ -3742,6 +3791,10 @@ References:
    * https://learn.microsoft.com/en-us/azure/templates/microsoft.resources/deployments?pivots=deployment-language-bicep
    * https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deployment-stacks?tabs=azure-cli
    * https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deployment-stacks?tabs=azure-powershell
+
+   * <a target="_blank" href="https://www.voitanos.io/blog/how-to-create-azure-function-apps-with-bicep-step-by-step/">BLOG</a> and <a target="_blank" href="https://www.youtube.com/watch?v=tzgB3cSUdNM">VIDEO</a>: May 8, 2022 Streamline Your Deployment Process with Azure Bicep & Azure Functions by Andrew Connell using Bicep CLI version 0.6.1.
+
+   * <a target="_blank" href="https://www.voitanos.io/blog/how-to-cicd-iac-for-azure-function-apps-with-github-actions-step-by-step">BLOG</a> and <a target="_blank" href="https://www.youtube.com/watch?v=36R1pzPuLvs">VIDEO</a>: CI/CD for Azure Functions: Automating Deployment with Bicep and ARM  May 8, 2022  by Andrew Connell
 
 <hr />
 
@@ -3882,7 +3935,6 @@ global.azurebootcamp.net</a> has converted to Vue and Google stuff.
 
 
 
-
 ## Delete Subscription, Directory, Tenant
 
 <pre><strong>az group delete --name $MY_RG</strong></pre>
@@ -3892,7 +3944,7 @@ https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/cancel-azu
 https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/directory-delete-howto
 
 
-### Miscellaneous
+## Resources
 
 https://olohmann.github.io/azure-hands-on-labs/labs/07_iac/iac.html
 

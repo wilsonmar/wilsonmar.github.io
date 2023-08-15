@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-07-29"
+date: "2023-08-12"
 file: "snowflake"
 title: "Snowflake (SQL Data Lakehouse)"
 excerpt: "How to quickly learn and use the cloud-native Snowflake SQL database's AI/ML features on top of AWS, Azure, GCP clouds"
@@ -594,7 +594,7 @@ On June 27, 2023, a partnership with NVIDIA was announced.
 
 <a name="Certifications"></a>
 
-### SnowPro Certifications
+## SnowPro Certifications
 
 Snowflake's certification exams are delivered through Pearson Vue (844.914-0562) through Snowflake's Certification Portal at<br />
 https://snowflake.useclarus.com/
@@ -602,6 +602,8 @@ https://snowflake.useclarus.com/
 <a target="_blank" href="https://www.snowflake.com/certifications/">https://www.snowflake.com/certifications</a>
 
 (Shortened $88 recertification exam COF-R02 to maintain status)
+
+### Core Certification COF-C02
 
 <img align="right" width="150" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690741638/snowflake-core-cert_psr1nb.png">
 <strong>$175 SnowPro Core Certification</strong> COF-C02 
@@ -614,6 +616,10 @@ https://snowflake.useclarus.com/
    * Data Loading and Unloading: 10%
    * Data Transformations: 20%
    * Data Protection and Data Sharing: 10%
+   <br /><br />
+
+
+### Advanced Certification
 
 <strong>$375 for each of five SnowPro Advanced Certifications</strong> and recerts 
 - 75% of 65 questions in 115 minutes :

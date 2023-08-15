@@ -1178,23 +1178,38 @@ Anthony James at LinuxAcademy:
 
 ### AZ-305 Azure Solutions Architect Expert
 
-Pre-requisite is AZ-104.
+Pre-requisite is passing <a href="#AZ-104">AZ-104</a> before registering for this exam.
 
 This $165 exam takes 120 minutes to answer 40-60 business case scenario (case study) questions.
 Valid for 1 year.
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-305">
-Microsft's AZ-305 exam/learnings page</a> includes textual tutorials and hands-on labs for each silll:
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-identity-governance-monitor-solutions/">Design identity, governance, and monitoring solutions</a> (25-30%)
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-business-continuity-solutions/">Design business continuity solutions</a> (10-15%)
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-data-storage-solutions/">Design data storage solutions</a> (25-30%)
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-infranstructure-solutions/">Design infrastructure solutions</a> (25-30%)
-   <br /><br />
+Microsft's AZ-305 exam/learnings page</a> includes textual tutorials and hands-on labs for each silll measured:
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-identity-governance-monitor-solutions/">Design identity, governance, and monitoring solutions</a> (25-30%)
+ 
+* <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-business-continuity-solutions/">Design business continuity solutions</a> (10-15%)
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-data-storage-solutions/">Design data storage solutions</a> (25-30%)
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-infranstructure-solutions/">Design infrastructure solutions</a> (25-30%)
+<br /><br />
 
 https://aka.ms/AZ305-StudyGuide
 
 <a target="_blank" href="https://learning.oreilly.com/live-events/exam-az-305-designing-microsoft-azure-infrastructure-solutions-crash-course/Exam title="6 hour Aug. 10, 2023">AZ-305: Designing Microsoft Azure Infrastructure Solutions Crash Course</a>
 by Tim Warner references<br /><a target="_blank" href="https://github.com/timothywarner/az305/">https://github.com/timothywarner/az305</a>
+
+
+Pluralsight:
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/az-305-designing-microsoft-azure-infrastructure-solutions/table-of-contents">16h 37m by ACloudGuru</a>
+
+
+Practice tests:
+   * <a target="_blank" href="https://www.kaplanlearn.com/education/qbank/view/82916708?testId=261812555">CyberVista via Pluralsight</a>
+
+   * <a target="_blank" href="https://www.measureup.com/microsoft-practice-test-az-305-designing-microsoft-azure-infrastructure-solutions.html/">MeasureUp.com</a> has a $59.40/$99 
 
 
 
