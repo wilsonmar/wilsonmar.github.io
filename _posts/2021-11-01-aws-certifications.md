@@ -89,9 +89,9 @@ Associate exams has just "design".
 
 * <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-advnetworking-spec/AWS-Certified-Advanced-Networking-Specialty_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-advanced-networking-specialty/">$300, 170-minute <br />AWS Certified Advanced Networking - Specialty</a>
 
-* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-data-analytics-specialty/AWS-Certified-Data-Analytics-Specialty_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-data-analytics-specialty/">$300, 170-minute <br />AWS Certified Data Analytics - Specialty</a>
-
 * <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-database-specialty/AWS-Certified-Database-Specialty_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-advanced-networking-specialty/">$300 to answer 65 questions in 180-minute<br />AWS Certified Database - Specialty</a>
+
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-data-analytics-specialty/AWS-Certified-Data-Analytics-Specialty_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-data-analytics-specialty/">$300, 170-minute <br />AWS Certified Data Analytics - Specialty</a>
 
 * <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-ml/AWS-Certified-Machine-Learning-Specialty_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-machine-learning-specialty/">$300 to answer 65 questions in 180-minute <br />AWS Certified Machine Learning - Specialty</a>
 
