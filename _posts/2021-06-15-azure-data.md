@@ -1,9 +1,9 @@
 ---
 layout: post
+date: "2021-06-15"
 title: "AWS Data (within AWS's cloud)"
 excerpt: "Know SQL to pass DP-900, DP-100, DP-300"
 tags: [cloud, AWS]
-date: "2021-06-15"
 file: "AWS-data"
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/18188069/153fbcca-706c-11e6-983d-0783da57f75c.jpg
@@ -495,21 +495,12 @@ AWS Data Community</a> lists blogs, websites, videos, podcasts, and meetups.
 
 https://www.twitch.tv/425show
 
+<hr />
+
 ## Resources
 
-Amazon EMR is a managed Hadoop framework that provides a platform to run big data processing jobs at scale. 
-* Created in a private subnet within a VPC.
-* Each EMR cluster has master, core, and task nodes.
-* A EMR-managed Security Group for master, core/task, and manger? cluster in private subeta
-* and additional security groups to control network access via NAT serv through a gateway
-* Security groups can only be added on create.
-* Rules within a Security Group can be added, edited, and deleted after creation.
+## More #
 
+This is one of a series about cloud computing:
 
-* EMR clusters can be configured to use AWS Glue Data Catalog as the metastore for Apache Hive and Apache Spark.
-
-## More about AWS #
-
-This is one of a series about AWS cloud:
-
-{% include AWS_links.html %}
+{% include cloud_links.html %}
