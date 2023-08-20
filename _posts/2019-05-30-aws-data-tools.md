@@ -163,17 +163,19 @@ Click the video above for the step-by-step commentary below, with links to addit
 
 1.  <a target="_blank" href="https://docs.aws.amazon.com/quicksight/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-QuickSight.png"></a>We begin from the perspective of Data Analysts who use the <a href="#QuickSight">AWS QuickSight</a> visualization tool. <a href="https://wilsonmar.github.io/tableau/">Tableau (from Salesforce)</a> offers a competing solution.
 
+    For an additional monthly cost, rather than using a direct SQL query, data can be optionally be imported into a dataset that uses SPICE (Super-fast, Parallel, In-memory Calculation Engine) allocated for use by all users within each region to rapidly perform advanced calculations and serve data. Internally, SPICE uses a combination of columnar storage in-memory.
+    
 1.  QuickSight can access more data sources than shown on this diagram, such as text from <strong>GitHub</strong>, Twitter, Apache Spark data warehouses, and other APIs. 
 
     <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692453318/aws-quicksight-ins-1264x483_qwiewl.png"><img alt="aws-quicksight-ins-1264x483.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692453318/aws-quicksight-ins-1264x483_qwiewl.png"></a>
 
     <a name="S3"></a>
 
-2.  <a target="_blank" href="https://docs.aws.amazon.com/s3/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-S3.png"></a>QuickSight can create visualizations directly from <strong>S3</strong> Simple Store of files as objects, a capability that has been available since Amazon Web Services first appeared in 2006.
+2.  <a target="_blank" href="https://docs.aws.amazon.com/s3/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-S3.png"></a>QuickSight can create visualizations directly from <strong>S3</strong> (Simple Storage Service) of objects that can storage maany different types of files as objects, a capability that has been available since Amazon Web Services first appeared in 2006.
 
     <a name="EC2"></a>
 
-3.  <a target="_blank" href="https://docs.aws.amazon.com/ec2/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EC2.png"></a>The first generation of Amazon's capabilities in the cloud was to enable <strong>EC2 (Elastic Compute Cloud)</strong> Virtual Machines to run applications in the cloud.
+3.  <a target="_blank" href="https://docs.aws.amazon.com/ec2/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EC2.png"></a>The first generation of Amazon's capabilities in the cloud was to enable <strong>EC2 (Elastic Compute Cloud)</strong> Virtual Machines to run applications in the cloud within images containing full operating systems.
 
 4.  Earlier, applications were programmed in the Java programming language which uses <strong>JDBC/ODBC</strong> protocols to interact with Relational database software <strong>Oracle and Microsoft SQL</strong> popular in enterprise data centers at the time.
 
@@ -201,8 +203,6 @@ Click the video above for the step-by-step commentary below, with links to addit
 
 9.  Instead of reaching DynamoDB directly, AWS has created <strong>DAX (DynamoDB Accelerator) agents</strong> installed on client servers to reach an in-memory cache in front of DynamoDB, like Redis.
 
-    For an additional monthly cost, rather than using a direct SQL query, data can be optionally be imported into a dataset that uses SPICE (Super-fast, Parallel, In-memory Calculation Engine) allocated for use by all users within each region to rapidly perform advanced calculations and serve data. Internally, SPICE uses a combination of columnar storage in-memory.
-    
     <a name="Flow_Redshift"></a>
 
 10. <a href="#Redshift"><img align="right" alt="Analytics_AmazonRedshift.png" width="100" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png">Amazon Redshift Spectrum</a> is used to create a "data lake" that enables warehouse data, such as joining with data from S3 objects in queries. But one has to configure and launch underlying compute infrastructure. 
@@ -221,7 +221,7 @@ Click the video above for the step-by-step commentary below, with links to addit
 
 1.  <a target="_blank" href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html">Amazon Kinesis Data Firehose</a> is a code-free  AWS-managed service to <strong>deliver</strong> continuous streams of data (including video) to S3 buckets, other Amazon services, or any other HTTP endpoint destination (with or without transformation before send) -- without writing application code.
 
-    <a target="_blank" href="https://aws.amazon.com/kinesis/">Amazon Kinesis</a><img align="right" alt="Analytics_AmazonKenesis.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"></a><a target="_blank" href="https://docs.aws.amazon.com/streams/latest/dev/introduction.html">Kinesis Data Streams</a> is a web service to collect, process, and analyze -- in real-time -- continuous streams of audio, video (and other data) from video cameras and social media platforms. This is done for fraud detection, trademark enforcement, customer engagement, and other monitoring.
+    <a target="_blank" href="https://aws.amazon.com/kinesis/">Amazon Kinesis</a><img align="right" alt="Analytics_AmazonKenesis.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"><a target="_blank" href="https://docs.aws.amazon.com/streams/latest/dev/introduction.html">Kinesis Data Streams</a> is a web service to collect, process, and analyze -- in real-time -- continuous streams of audio, video (and other data) from video cameras and social media platforms. This is done for fraud detection, trademark enforcement, customer engagement, and other monitoring.
 
 1.  Because Athena web service is always ready to query data, it is used for infrequent or ad hoc data analysis such as any type of log data exported into S3, such as Application Load Balancer, Amazon CloudWatch app logs, AWS CloudTrail, Amazon CloudFront, etc.
 
@@ -231,7 +231,9 @@ Click the video above for the step-by-step commentary below, with links to addit
 
 1.  Kinesis IoT ???
 
-1.  <strong>Kinesis Data Streams</strong> is used to process <strong>Social Media streams</strong> for sentiment and engagement because
+1.  <strong>Kinesis Data Streams</strong> is used to process <strong>Social Media streams</strong> for sentiment and engagement 
+
+    Kinesis Data Analytics runs standard SQL queries on incoming data stream. Once data is available in a target data source, it kicks off a AWS Glue ETL job to do further transform data and prepare it for additional analytics and reporting.
 
     <a name="Flow_LakeFormation"></a>
 
@@ -278,7 +280,8 @@ Among the 200+ services that make up AWS, these cloud have the most with process
    * https://medium.com/codex/amazon-redshift-vs-athena-vs-glue-comparison-6ecfb8e92349
    <br /><br />
 
-https://www.linkedin.com/pulse/aws-glue-vs-datapipeline-emr-dms-batch-kinesis-what-ramamurthy/
+   * https://www.linkedin.com/pulse/aws-glue-vs-datapipeline-emr-dms-batch-kinesis-what-ramamurthy/
+   * https://skyvia.com/etl-tools-comparison/aws-glue-vs-aws-data-pipeline
 
 <hr />
 
@@ -343,11 +346,19 @@ Kinesis Video Streams automatically provisions and elastically scales to million
 
 ## CloudWatch
 
+Amazon CloudWatch is a web service to monitor and manage various metrics, and configure alarm actions based on data from those metrics.
+
+Amazon CloudWatch Logs is a web service for monitoring and troubleshooting your systems and applications from your existing system, application, and custom log files. You can send your existing log files to CloudWatch Logs and monitor these logs in near-real time.
+
 https://github.com/terraform-aws-modules/terraform-aws-cloudwatch
 
 ## CloudFront
 
 https://github.com/terraform-aws-modules/terraform-aws-cloudfront
+
+## CloudTrail
+
+AWS CloudTrail is a web service that records AWS API calls for your account and delivers log files to you. The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, the request parameters, and the response elements that the AWS service returns.
 
 
 <a name="Glue"></a>
@@ -426,6 +437,8 @@ PROTIP: <a target="_blank" href="https://docs.aws.amazon.com/quicksight/latest/u
 [<a href="#Flow_QuickSight">Return to flow diagram</a>]
 
 ## AWS Batch
+
+AWS Batch computing processes jobs without manual interaction.
 
 https://github.com/terraform-aws-modules/terraform-aws-batch
 
@@ -517,6 +530,7 @@ https://github.com/terraform-aws-modules/terraform-aws-lambda
 ## EventBridge
 
 https://github.com/terraform-aws-modules/terraform-aws-eventbridge
+
 
 ## EKS
 
