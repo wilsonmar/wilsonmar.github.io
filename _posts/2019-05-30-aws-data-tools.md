@@ -1,8 +1,8 @@
 ---
 layout: post
-date: "2023-08-18"
-file: "aws-data"
-title: "AWS Data"
+date: "2023-08-19"
+file: "aws-data-tools"
+title: "AWS Data Tools"
 excerpt: "AWS data processing tools: Databases, Big Data, Data Warehouse, Data Lakehouse"
 tags: [AWS, database, cloud, automation]
 image:
@@ -105,6 +105,7 @@ Storage and Data Management:
    * Amazon Elasticsearch Service
    <br /><br />
 
+
 <a name="Processing"></a>
 
 ### Processing
@@ -149,56 +150,110 @@ Security:
    * HSM
    * Amazon Inspector
    <br /><br />
-   
 
 
-## AWS Integrations
+## AWS Data Tools: Interactions
 
-Amazon created <a target="_blank" href="https://aws.amazon.com/architecture/icons/">new official "flat" icons</a> to illustrate the relationship among Amazon's data tool offerings.
+Here we use <a target="_blank" href="https://aws.amazon.com/architecture/icons/">Amazon's new official "flat" icons</a> to illustrate AWS services and resources:
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692511066/aws-data-tools-1920x1080_rims9j.png"><img alt="aws-data-tools-1920x1080.png" width="1366" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692511066/aws-data-tools-1920x1080_rims9j.png"><br /><em>Click for video</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy my animated pptx</em></a>.
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692424424/aws-data-tools-1366x768_mcq2f7.png"><img alt="Analytics_AWSaws-data-tools-1366x768.png" width="1366" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692424424/aws-data-tools-1366x768_mcq2f7.png"><br /><em>Click for full screen image</em></a> of <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>pptx</em></a>
-
-Click the (busy) video for the step-by-step commentary below, with links to additional commentary below:
+Click the video above for the step-by-step commentary below, with links to additional commentary:
 
 <a name="Flow_QuickSight"></a>
 
-1.  We begin at the right, from the perspective of Data Analysts who use the <a href="#QuickSight">AWS QuickSight</a> visualization tool. <a href="https://wilsonmar.github.io/tableau/">Tableau (from Salesforce)</a> offers a competing solution.
-    
-1.  QuickSight can access more data sources than shown on this diagram, such as text from GitHub, Twitter, and Apache Spark data warehouses. 
+1.  We begin from the perspective of Data Analysts who use the <a href="#QuickSight">AWS QuickSight</a> visualization tool. <a href="https://wilsonmar.github.io/tableau/">Tableau (from Salesforce)</a> offers a competing solution.
+
+1.  QuickSight can access more data sources than shown on this diagram, such as text from <strong>GitHub</strong>, Twitter, Apache Spark data warehouses, and other APIs. 
 
     <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692453318/aws-quicksight-ins-1264x483_qwiewl.png"><img alt="aws-quicksight-ins-1264x483.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692453318/aws-quicksight-ins-1264x483_qwiewl.png"></a>
 
-    This presentation focuses on cloud data processing products offered in the AWS cloud:
+    <a name="S3"></a>
 
-    <a name="Flow_DynamoDB"></a>
+2.  QuickSight can create visualizations directly from <strong>S3</strong> Simple Store of files as objects, a capability that has been available since Amazon Web Services first appeared in 2006.
 
-1.  <a href="#DynamoDB">Amazon DynamoDB</a> are relational databases AWS manages in its cloud to answer SQL queries from apps in EC2 servers and Lambda Functions. DynamoDB has various versions for compatibility for traditional SQL queries from DynamoDB
+    <a name="EC2"></a>
 
-    <a name="Flow_RDS"></a>
+3.  The first generation of Amazon's capabilities in the cloud was to enable <strong>EC2 Virtual Machines</strong> to run applications in the cloud.
 
-1.  <a href="#RDS">Relational Database Service</a>
+4.  Earlier, applications were programmed in the Java programming language which uses <strong>JDBC/ODBC</strong> protocols to interact with Relational database software <strong>Oracle and Microsoft SQL</strong> popular in enterprise data centers at the time.
+
+5.  Over time, various programs in <strong>AWS Lambda (serverless)</strong> functions use the same protocol. 
+
+    This enables <strong>dynamic triggers</strong> to update relational databases.
+
+    The earliest approach to bring SQL to the cloud is what's called "lift and Shift" of database operations.
+
+    <a name="RDS"/></a>
+
+6.  <a target="_blank" href="https://aws.amazon.com/rds/"><img align="right" alt="Database_AmazonRDS.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-RDS.png"></a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html">Amazon RDS (Relational Database Service)</a> is a web service that makes it easier to <strong>set up</strong>, operate, and scale a relational database in the AWS Cloud, easier than if they were on-prem. But with RDS, AWS takes care of the hardware and operating system patching across several regions. But customer admins still upgrade database software. 
+
+    <a name="Aurora"></a>
+
+7.  <a target="_blank" href="https://aws.amazon.com/rds/aurora/"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Aurora.png"></a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">Amazon Aurora</a> brings to RDS SQL query compatibility with MySQL and PostgreSQL open-source relational database software.
+
+    RDS now has compatibility with other databases as well.
+
+    <a name="DynamoDB"></a>
+
+8.  <a target="_blank" href="https://aws.amazon.com/dynamodb/"><img align="right" alt="Database_AmazonDynamoDB.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-DynamoDB.png"></a><a target="_blank" href="https://aws.amazon.com/dynamodb/resources/">AWS DynamoDB</a> is a <strong>key-value store in the AWS-managed cloud</strong> for workloads such as session stores or shopping carts. 
+
+    DynamoDB adds replication (streams) of table activity across geographic regions. Within each region, it provides fault tolerance in automatic synchronous replication across 3 data centers. Being a cloud service, it automatically allocates storage in partitions and imposes no limit to data storage.
+
+9.  Instead of reaching DynamoDB directly, AWS has created <strong>DAX (DynamoDB Accelerator) agents</strong> installed on client servers to reach an in-memory cache in front of DynamoDB, like Redis.
+
+    For an additional monthly cost, rather than using a direct SQL query, data can be optionally be imported into a dataset that uses SPICE (Super-fast, Parallel, In-memory Calculation Engine) allocated for use by all users within each region to rapidly perform advanced calculations and serve data. Internally, SPICE uses a combination of columnar storage in-memory.
+    
+    <a name="Flow_Redshift"></a>
+
+10. <a href="#Redshift">Amazon Redshift Spectrum</a> is used to create a "data lake" that enables warehouse data, such as joining with data from S3 objects in queries. But one has to configure and launch underlying compute infrastructure.
+
+    Port number 5439 is the default port for the Redshift data source
 
     <a name="Flow_Athena"></a>
 
-1.  <a href="#Athena">Amazon Athena</a> is an AWS-managed SaaS offering built on Apache Spark Presto data structures stored in S3 without setting up servers. 
+11. <img align="right" alt="Analytics_AmazonAthena.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Athena.png">Amazon Athena is an AWS-managed SaaS offering. Athena's console GUI offers a simplified Jupyter Python Notebook developer experience that supports ODBC/JDBC drivers (like Amazon DynamoDB) as well as REST API calls. 
 
-    <a name="Flow_Redshift"></a>
+    What's new about Athena is that its Apache Spark <strong>Presto data structures</strong> are stored into S3 <strong>without setting up EC2 servers</strong> (unlike Redshift and EMR). So Athena users only pay for data scanned ($5 per terabyte in most regions). 
 
-1.  <a href="#Redshift">Amazon Redshift Spectrum</a> is a "data lake" that enables warehouse data to be queried in combination with data from S3 objects.
+12. Also, Athena can access the results of traditional <strong>EMR (Elastice Map Reduce)</strong> jobs stored in S3 buckets. So Athena an benefit from EMR's direct, lower-level access to Spark Hadoop environments, which provides for great flexibility in using tools beyond Spark.
+
+12. Because Athena web service is always ready to query data, it is used for infrequent or ad hoc data analysis such as any type of log data exported into S3, such as Application Load Balancer, Amazon CloudWatch app logs, AWS CloudTrail, Amazon CloudFront, etc.
+
+13. <a target="_blank" href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html">Amazon Kinesis Data Firehose</a> is a code-free  AWS-managed service to <strong>deliver</strong> continuous streams of data (including video) to S3 buckets, other Amazon services, or any other HTTP endpoint destination (with or without transformation before send) -- without writing application code.
+
+    <a target="_blank" href="https://aws.amazon.com/kinesis/">Amazon Kinesis</a><img align="right" alt="Analytics_AmazonKenesis.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"></a><a target="_blank" href="https://docs.aws.amazon.com/streams/latest/dev/introduction.html">Kinesis Data Streams</a> is a web service to collect, process, and analyze -- in real-time -- continuous streams of audio, video (and other data) from video cameras and social media platforms. This is done for fraud detection, trademark enforcement, customer engagement, and other monitoring.
+
+1.  Athena can also access data defined in <strong>AWS Glue Catalogs</strong> because AWS Glue has a similar architecture to Athena.
+
+1.  Glue Crawler ...
+
+1.  Glue ETL Jobs
+
+1.  <a target="_blank" href="https://aws.amazon.com/kinesis/">Amazon Kinesis</a><img align="right" alt="Analytics_AmazonKenesis.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"></a><a target="_blank" href="https://docs.aws.amazon.com/streams/latest/dev/introduction.html">Kinesis Data Streams</a> is a web service to collect, process, and analyze -- in real-time -- streams of video and other continuous feeds of data being served up by YouTube, Vimeo, Facebook, and other social media platforms. This is done for fraud detection, trademark enforcement, customer engagement, and other monitoring.
+
+    ??? aggregation of data followed by loading the aggregate data into a data warehouse or map-reduce cluster.
+
+1.  Kinesis IoT ???
+
+1.  <strong>Kinesis Data Streams</strong> is used to process <strong>Social Media streams</strong> for sentiment and engagement because
 
     <a name="Flow_LakeFormation"></a>
 
 1.  <a href="#LakeFormation">Lake Formation</a> provides a central way to manage fine-grained permissions to data across AWS data services.
 
-1.  Macie is a Machine Learning app managed by AWS to detect data breaches.
+1.  Perhaps ensure that <strong>KMS (Key Management Service</strong> is used appropriate?
+
+1.  Amazon has investest heavily in its <strong>SageMaker</strong> ML (Machine Learning) Modeling tool for AI (Artificial Intelligence).
+
+    Amazon has leveraged its AI capabilities by embedding Machine Learning skills its its offerings.
+
+1.  <strong>Macie</strong> uses Machine Learning to analyze keywords in the content of data to detect whether critical data is being leaked.
 
 1.  <a target="_blank" href="https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html">Amazon Inspector</a> detects vulnerabilities running in apps running within EC2 servers and in Lambda Functions.
 
-
-
 ### Recap
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692424424/aws-data-tools-1366x768_mcq2f7.png"><img alt="Analytics_AWSaws-data-tools-1366x768.png" width="1366" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692424424/aws-data-tools-1366x768_mcq2f7.png"><br /><em>Click for full screen image</em></a> of <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>pptx</em></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692511066/aws-data-tools-1920x1080_rims9j.png"><img alt="aws-data-tools-1920x1080.png" width="1366" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692511066/aws-data-tools-1920x1080_rims9j.png"><br /><em>Click for full screen image</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy my animated pptx</em></a>.
 
 <hr />
 
@@ -227,22 +282,9 @@ Among the 200+ services that make up AWS, these cloud have the most with process
    * https://medium.com/codex/amazon-redshift-vs-athena-vs-glue-comparison-6ecfb8e92349
    <br /><br />
 
+https://www.linkedin.com/pulse/aws-glue-vs-datapipeline-emr-dms-batch-kinesis-what-ramamurthy/
 
 <hr />
-
-## RDS
-
-<img align="right" alt="Database_AmazonRDS.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-RDS.png">
-RDS (Relational Database Service) is a cloud service for processing SQL for OLTP (Online Transaction Processing).
-
-
-## Aurora
-
-<a target="_blank" href="https://aws.amazon.com/rds/aurora/"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Aurora.png"></a>
-<a target="_blank" href="https://docs.aws.amazon.com/rds/index.html">
-Amazon Aurora</a> is part of Amazon RDS for compatibility with traditional MySQL/PostgreSQL SQL-language transactional (OLTP) rows of data records rather than aggregated (OLAP) data from multiple sources (in data warehouses).
-
-
 
 ## Redshift
 
@@ -262,7 +304,6 @@ Redshift’s internal components include a leader node and multiple compute node
 
 ## Kinesis
 
-<img align="right" alt="Analytics_AmazonKenesis.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png">
 Kinesis, is a real-time data streaming service used for collecting, processing, and analyzing real-time data. 
 It's not for long-term storage.
 It's more suitable for streaming data processing rather than interactive analytics.
@@ -287,19 +328,6 @@ Kinesis Video Streams automatically provisions and elastically scales to million
 
 
 ## Athena
-
-<img align="right" alt="Analytics_AmazonAthena.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Athena.png">
-Athena is an AWS-managed SaaS offering built on Apache Spark Presto data structures stored in S3 without setting up servers. 
-Unlike Redshift and EMR, Athena is "serverless" in that users don't have to explicitly configure and launch underlying compute infrastructure. Only pay for data scanned ($5 per terabyte in most regions).
-
-And the service is always ready to query data.
-So Athena is often used for infrequent or ad hoc data analysis such as log data stored in S3 for services such as Application Load Balancer, Amazon CloudFront, AWS CloudTrail, Amazon Kinesis Data Firehose and any type of log data exported into S3. 
-
-Apache Spark applications developed with Python or Athena notebook APIs can be developed with the simplified Jupyter Notebook experience in the Amazon Athena console.
-
-Athena can access data defined in AWS Glue catalogs, it also supports Amazon DynamoDB, ODBC/JDBC drivers and Redshift.
-
-QuickSight can access data in Athena.
 
 [<a href="#Flow_Athena">Return to flow diagram</a>]
 
@@ -328,14 +356,6 @@ Query cataloged data using Amazon Athena, Amazon EMR, and Amazon Redshift Spectr
 
 ## DynamoDB
 
-<a target="_blank" href="https://aws.amazon.com/dynamodb/"><img align="right" alt="Database_AmazonDynamoDB.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-DynamoDB.png"></a>
-<a target="_blank" href="https://aws.amazon.com/dynamodb/resources/">
-AWS DynamoDB</a> is a <strong>key-value store in the AWS-managed cloud</strong> for workloads such as session stores or shopping carts. 
-It replicates (streams) table activity across geographic regions.
-It a region, it provides fault tolerance in automatic synchronous replication across 3 data centers.
-
-Being a cloud service, it automatically allocates storage in partitions and imposes no limit to data storage.
-
 It's managed via a REST API.Its SELECT operations are like SQL but not exactly.<br />
 So it's for ports of apps from SQL relational databases that have joins.
 
@@ -362,7 +382,7 @@ Amazon SageMaker is an AWS-managed service used to build, train, and deploy ML (
 <a target="_blank" href="https://docs.aws.amazon.com/quicksight/latest/user/welcome.html">DOCS</a>
 Amazon QuickSight</a> is an AWS-managed SaaS interactive visual dashboard for displaying results from BI (Business Intelligence) <strong>ad hoc queries</strong>, not canned highly-formatted reports. 
 
-For an additional monthly cost, rather than using a direct SQL query, data can be imported into a dataset that uses SPICE (Super-fast, Parallel, In-memory Calculation Engine) allocated for use by all users within each region to rapidly perform advanced calculations and serve data. Internally, SPICE uses a combination of columnar storage in-memory.
+For an additional monthly cost, rather than using a direct SQL query, data can be optionally be imported into a dataset that uses SPICE (Super-fast, Parallel, In-memory Calculation Engine) allocated for use by all users within each region to rapidly perform advanced calculations and serve data. Internally, SPICE uses a combination of columnar storage in-memory.
 
 QuickSight enable decision-makers to explore and interpret data from a variety of sources. 
 
