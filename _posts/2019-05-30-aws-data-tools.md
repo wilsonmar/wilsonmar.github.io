@@ -161,7 +161,7 @@ Click the video above for the step-by-step commentary below, with links to addit
 
 <a name="Flow_QuickSight"></a>
 
-1.  We begin from the perspective of Data Analysts who use the <a href="#QuickSight">AWS QuickSight</a> visualization tool. <a href="https://wilsonmar.github.io/tableau/">Tableau (from Salesforce)</a> offers a competing solution.
+1.  <a target="_blank" href="https://docs.aws.amazon.com/quicksight/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-QuickSight.png"></a>We begin from the perspective of Data Analysts who use the <a href="#QuickSight">AWS QuickSight</a> visualization tool. <a href="https://wilsonmar.github.io/tableau/">Tableau (from Salesforce)</a> offers a competing solution.
 
 1.  QuickSight can access more data sources than shown on this diagram, such as text from <strong>GitHub</strong>, Twitter, Apache Spark data warehouses, and other APIs. 
 
@@ -169,21 +169,21 @@ Click the video above for the step-by-step commentary below, with links to addit
 
     <a name="S3"></a>
 
-2.  QuickSight can create visualizations directly from <strong>S3</strong> Simple Store of files as objects, a capability that has been available since Amazon Web Services first appeared in 2006.
+2.  <a target="_blank" href="https://docs.aws.amazon.com/s3/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-S3.png"></a>QuickSight can create visualizations directly from <strong>S3</strong> Simple Store of files as objects, a capability that has been available since Amazon Web Services first appeared in 2006.
 
     <a name="EC2"></a>
 
-3.  The first generation of Amazon's capabilities in the cloud was to enable <strong>EC2 Virtual Machines</strong> to run applications in the cloud.
+3.  <a target="_blank" href="https://docs.aws.amazon.com/ec2/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EC2.png"></a>The first generation of Amazon's capabilities in the cloud was to enable <strong>EC2 (Elastic Compute Cloud)</strong> Virtual Machines to run applications in the cloud.
 
 4.  Earlier, applications were programmed in the Java programming language which uses <strong>JDBC/ODBC</strong> protocols to interact with Relational database software <strong>Oracle and Microsoft SQL</strong> popular in enterprise data centers at the time.
 
-5.  Over time, various programs in <strong>AWS Lambda (serverless)</strong> functions use the same protocol. 
+5.  <img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390289/aws-icons/AWS-Lambda.png">Over time, various programs in <strong>AWS Lambda (serverless)</strong> functions are able to reach databases using ODBC and other protocols. 
 
     This enables <strong>dynamic triggers</strong> to update relational databases.
 
     The earliest approach to bring SQL to the cloud is what's called "lift and Shift" of database operations.
 
-    <a name="RDS"/></a>
+    <a name="RDS"></a>
 
 6.  <a target="_blank" href="https://aws.amazon.com/rds/"><img align="right" alt="Database_AmazonRDS.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-RDS.png"></a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html">Amazon RDS (Relational Database Service)</a> is a web service that makes it easier to <strong>set up</strong>, operate, and scale a relational database in the AWS Cloud, easier than if they were on-prem. But with RDS, AWS takes care of the hardware and operating system patching across several regions. But customer admins still upgrade database software. 
 
@@ -205,29 +205,25 @@ Click the video above for the step-by-step commentary below, with links to addit
     
     <a name="Flow_Redshift"></a>
 
-10. <a href="#Redshift">Amazon Redshift Spectrum</a> is used to create a "data lake" that enables warehouse data, such as joining with data from S3 objects in queries. But one has to configure and launch underlying compute infrastructure.
+10. <a href="#Redshift"><img align="right" alt="Analytics_AmazonRedshift.png" width="100" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png">Amazon Redshift Spectrum</a> is used to create a "data lake" that enables warehouse data, such as joining with data from S3 objects in queries. But one has to configure and launch underlying compute infrastructure. 
 
-    Port number 5439 is the default port for the Redshift data source
-
-    <a name="Flow_Athena"></a>
-
-11. <img align="right" alt="Analytics_AmazonAthena.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Athena.png">Amazon Athena is an AWS-managed SaaS offering. Athena's console GUI offers a simplified Jupyter Python Notebook developer experience that supports ODBC/JDBC drivers (like Amazon DynamoDB) as well as REST API calls. 
+11. <a target="_blank" href="https://docs.aws.amazon.com/athena/index.html"><img align="right" alt="Analytics_AmazonAthena.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Athena.png">Amazon Athena</a> is an AWS-managed SaaS offering. Athena's console GUI offers a simplified Jupyter Python Notebook developer experience that supports ODBC/JDBC drivers (like Amazon DynamoDB) as well as REST API calls. 
 
     What's new about Athena is that its Apache Spark <strong>Presto data structures</strong> are stored into S3 <strong>without setting up EC2 servers</strong> (unlike Redshift and EMR). So Athena users only pay for data scanned ($5 per terabyte in most regions). 
 
-12. Also, Athena can access the results of traditional <strong>EMR (Elastice Map Reduce)</strong> jobs stored in S3 buckets. So Athena an benefit from EMR's direct, lower-level access to Spark Hadoop environments, which provides for great flexibility in using tools beyond Spark.
-
-12. Because Athena web service is always ready to query data, it is used for infrequent or ad hoc data analysis such as any type of log data exported into S3, such as Application Load Balancer, Amazon CloudWatch app logs, AWS CloudTrail, Amazon CloudFront, etc.
-
-13. <a target="_blank" href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html">Amazon Kinesis Data Firehose</a> is a code-free  AWS-managed service to <strong>deliver</strong> continuous streams of data (including video) to S3 buckets, other Amazon services, or any other HTTP endpoint destination (with or without transformation before send) -- without writing application code.
-
-    <a target="_blank" href="https://aws.amazon.com/kinesis/">Amazon Kinesis</a><img align="right" alt="Analytics_AmazonKenesis.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"></a><a target="_blank" href="https://docs.aws.amazon.com/streams/latest/dev/introduction.html">Kinesis Data Streams</a> is a web service to collect, process, and analyze -- in real-time -- continuous streams of audio, video (and other data) from video cameras and social media platforms. This is done for fraud detection, trademark enforcement, customer engagement, and other monitoring.
+12. <img align="right" alt="Analytics_AmazonEMR.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EMR.png">Also, Athena can access the results of traditional <strong>EMR (Elastic Map Reduce)</strong> jobs stored in S3 buckets. So Athena can benefit from EMR's direct, lower-level access to Spark Hadoop environments, which provides for great flexibility in using tools beyond Spark.
 
 1.  Athena can also access data defined in <strong>AWS Glue Catalogs</strong> because AWS Glue has a similar architecture to Athena.
 
 1.  Glue Crawler ...
 
 1.  Glue ETL Jobs
+
+1.  <a target="_blank" href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html">Amazon Kinesis Data Firehose</a> is a code-free  AWS-managed service to <strong>deliver</strong> continuous streams of data (including video) to S3 buckets, other Amazon services, or any other HTTP endpoint destination (with or without transformation before send) -- without writing application code.
+
+    <a target="_blank" href="https://aws.amazon.com/kinesis/">Amazon Kinesis</a><img align="right" alt="Analytics_AmazonKenesis.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"></a><a target="_blank" href="https://docs.aws.amazon.com/streams/latest/dev/introduction.html">Kinesis Data Streams</a> is a web service to collect, process, and analyze -- in real-time -- continuous streams of audio, video (and other data) from video cameras and social media platforms. This is done for fraud detection, trademark enforcement, customer engagement, and other monitoring.
+
+1.  Because Athena web service is always ready to query data, it is used for infrequent or ad hoc data analysis such as any type of log data exported into S3, such as Application Load Balancer, Amazon CloudWatch app logs, AWS CloudTrail, Amazon CloudFront, etc.
 
 1.  <a target="_blank" href="https://aws.amazon.com/kinesis/">Amazon Kinesis</a><img align="right" alt="Analytics_AmazonKenesis.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"></a><a target="_blank" href="https://docs.aws.amazon.com/streams/latest/dev/introduction.html">Kinesis Data Streams</a> is a web service to collect, process, and analyze -- in real-time -- streams of video and other continuous feeds of data being served up by YouTube, Vimeo, Facebook, and other social media platforms. This is done for fraud detection, trademark enforcement, customer engagement, and other monitoring.
 
@@ -241,7 +237,7 @@ Click the video above for the step-by-step commentary below, with links to addit
 
 1.  <a href="#LakeFormation">Lake Formation</a> provides a central way to manage fine-grained permissions to data across AWS data services.
 
-1.  Perhaps ensure that <strong>KMS (Key Management Service</strong> is used appropriate?
+1.  Perhaps ensure that <a href="#KMS">KMS (Key Management Service</a> is used appropriate?
 
 1.  Amazon has investest heavily in its <strong>SageMaker</strong> ML (Machine Learning) Modeling tool for AI (Artificial Intelligence).
 
@@ -286,6 +282,19 @@ https://www.linkedin.com/pulse/aws-glue-vs-datapipeline-emr-dms-batch-kinesis-wh
 
 <hr />
 
+## RDS
+
+https://github.com/terraform-aws-modules/terraform-aws-rds
+
+## Aurora
+
+https://github.com/terraform-aws-modules/terraform-aws-rds-aurora
+
+## S3
+
+https://github.com/terraform-aws-modules/terraform-aws-s3-bucket
+
+
 ## Redshift
 
 <img align="right" alt="Analytics_AmazonRedshift.png" width="100" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true">
@@ -300,6 +309,12 @@ Redshift uses machine learning and parallel processing of queries of <strong>col
 Redshift mirros data across a cluster, and automatically detects and replaces any failed node in its cluster. Failed nodes are read-only until replaced. An API is used to change number, type of nodes.
 
 Redshift’s internal components include a leader node and multiple compute nodes that provide parallel data access in the same format as queries. The leader node has a single SQL endpoint. As queries are sent to the SQL endpoint, <strong>jobs are started in parallel</strong> on the compute nodes by the leader node to execute the query and return the results to the leader node. The leader gives the user results after combining results from all compute nodes.
+
+Port number 5439 is the default port for the Redshift data source
+
+https://github.com/terraform-aws-modules/terraform-aws-redshift
+
+[<a href="#Flow_Redshift">Return to flow diagram</a>]
 
 
 ## Kinesis
@@ -326,10 +341,13 @@ Kinesis Video Streams automatically provisions and elastically scales to million
 
 [<a href="#Flow_DynamoDB">Return to flow diagram</a>]
 
+## CloudWatch
 
-## Athena
+https://github.com/terraform-aws-modules/terraform-aws-cloudwatch
 
-[<a href="#Flow_Athena">Return to flow diagram</a>]
+## CloudFront
+
+https://github.com/terraform-aws-modules/terraform-aws-cloudfront
 
 
 <a name="Glue"></a>
@@ -369,7 +387,7 @@ DAX (DynamoDB Acellerator)</a> provides a cluster of cloud-based caching nodes t
 
 ## SageMaker
 
-Amazon SageMaker is an AWS-managed service used to build, train, and deploy ML (Macyine Learning) models. It has automatic  Application Auto Scaling. Billing by the second, broken down by on-demand ML instances, ML storage, and fees for data processing in hosting instances. It has no maintenance windows or scheduled downtimes since its replication configured across three facilities in each AWS region to provide fault tolerance in the event of a server failure or Availability Zone outage.
+Amazon SageMaker is an AWS-managed service used to build, train, and deploy ML (Machine Learning) models. It has automatic Application Auto Scaling. Billing by the second, broken down by on-demand ML instances, ML storage, and fees for data processing in hosting instances. It has no maintenance windows or scheduled downtimes since its replication configured across three facilities in each AWS region to provide fault tolerance in the event of a server failure or Availability Zone outage.
 
 [<a href="#Flow_SageMaker">Return to flow diagram</a>]
 
@@ -407,6 +425,9 @@ PROTIP: <a target="_blank" href="https://docs.aws.amazon.com/quicksight/latest/u
 
 [<a href="#Flow_QuickSight">Return to flow diagram</a>]
 
+## AWS Batch
+
+https://github.com/terraform-aws-modules/terraform-aws-batch
 
 ## EMR
 
@@ -444,7 +465,7 @@ EMR v1.4.0 can use HDFS transparent encryption.
 EMRFS on S3 for encryption at rest.
 Amazon Certificate Manager is used, not AWS Certificate Manager Private Certificate Authority (ACM PCA).
 
-AWS Secrets Manager provides key rotation, audit, and access control.
+https://github.com/terraform-aws-modules/terraform-aws-emr
 
 [<a href="#Flow_EMR">Return to flow diagram</a>]
 
@@ -474,6 +495,36 @@ using services by Lake Formation include:
 [<a href="#Flow_LakeFormation">Return to flow diagram</a>]
 
 
+## KMS
+
+https://github.com/terraform-aws-modules/terraform-aws-kms
+
+
+## Secrets Manager
+
+AWS Secrets Manager provides key rotation, audit, and access control.
+
+https://github.com/terraform-aws-modules/terraform-aws-secrets-manager
+
+## EC2
+
+https://github.com/terraform-aws-modules/terraform-aws-ec2-instance
+
+## Lambda
+
+https://github.com/terraform-aws-modules/terraform-aws-lambda
+
+## EventBridge
+
+https://github.com/terraform-aws-modules/terraform-aws-eventbridge
+
+## EKS
+
+https://github.com/terraform-aws-modules/terraform-aws-eks
+
+## DMS (Database Migration Service)
+
+https://github.com/terraform-aws-modules/terraform-aws-dms
 
 <hr />
 
