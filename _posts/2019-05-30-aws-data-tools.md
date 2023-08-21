@@ -156,7 +156,7 @@ Security:
 
 <a target="_blank" href="https://aws.amazon.com/architecture/icons/">Amazon's new official "flat" icons</a> are used here to illustrate AWS cloud technologies evolving from "Lift and Shift" to Serverless to Low-Code to Machine Learning.
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692511066/aws-data-tools-1920x1080_rims9j.png"><img alt="aws-data-tools-1920x1080.png" width="1366" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692511066/aws-data-tools-1920x1080_rims9j.png"><br /><em>Click for video</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy my animated pptx</em></a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692592884/aws-icons/aws-data-tools-1920x1080.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692592884/aws-icons/aws-data-tools-1920x1080.png"><br /><em>Click for video</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy my animated pptx</em></a>.
 
 <strike>Click the video above for the step-by-step commentary below, with links to additional commentary:</strike>
 
@@ -217,6 +217,14 @@ Security:
 
 13. <a href="#EMR"><img align="right" alt="Analytics_AmazonEMR.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EMR.png"></a>Also, Athena can access the results of traditional <strong>EMR (Elastic MapReduce)</strong> jobs stored in S3 buckets. So Athena can benefit from EMR's direct, lower-level access to Spark Hadoop internals. For example: Data scientists can use EMR to run machine learning TensorFlow jobs. Analysts can run SQL queries on Presto. Engineers can utilise EMR’s integration with streaming applications such as Kinesis or Spark… 
 
+    ### Streams
+
+    To build real-time data pipelines for receiving streams of data (such as <a target="_blank" href="https://aws.amazon.com/solutions/case-studies/new-relic-case-study/">logs</a>, there is a <a target="_blank" href="https://aws.amazon.com/msk/what-is-kafka/">open-source Apache Kafka</a>.
+
+    But AWS has several additional technologies to make the creation and absorption of data streams easier and cheaper.
+
+1.  <a target="_blank" href="https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-Timestream.png>Amazon MSK (Managed Stream for Kafka)</a> is a serverless web app that runs Kafka.
+
 14.  ??? AWS Glue is a serverless data integration service that makes it easy to discover properties (schema), transform, prepare, and combine data for analytics, app and API development, and machine learning.
 
     <a target="_blank" href="https://aws.amazon.com/emr/serverless/">Amazon EMR serverless</a> was released in November 2021 for petabyte-scale analytics processing.
@@ -230,14 +238,6 @@ Security:
 1.  Glue Crawler ...
 
 1.  Glue ETL Jobs
-
-    ### Streams
-
-    To build real-time data pipelines for receiving streams of data (such as <a target="_blank" href="https://aws.amazon.com/solutions/case-studies/new-relic-case-study/">logs</a>, there is a <a target="_blank" href="https://aws.amazon.com/msk/what-is-kafka/">open-source Apache Kafka</a>.
-
-    But AWS has several additional technologies to make the creation and absorption of data streams easier and cheaper.
-
-1.  <a target="_blank" href="https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-Timestream.png>Amazon MSK (Managed Stream for Kafka)</a> is a serverless web app that runs Kafka.
 
 1.  <a target="_blank" href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html">Amazon Kinesis Data Firehose</a> is a code-free  AWS-managed service to <strong>deliver</strong> continuous streams of data (including video) to S3 buckets, other Amazon services, or any other HTTP endpoint destination (with or without transformation before send) -- without writing application code.
 
@@ -272,7 +272,7 @@ Security:
 
 ### Recap
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692511066/aws-data-tools-1920x1080_rims9j.png"><img alt="aws-data-tools-1920x1080.png" width="1366" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692511066/aws-data-tools-1920x1080_rims9j.png"><br /><em>Click for full screen image</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy my animated pptx</em></a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692592884/aws-icons/aws-data-tools-1920x1080.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692592884/aws-icons/aws-data-tools-1920x1080.png"><br /><em>Click for video</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy my animated pptx</em></a>.
 
 <hr />
 
@@ -308,7 +308,7 @@ Among the 200+ services that make up AWS, these cloud have the most with process
 
 ## AWS Data Exchange
 
-<a target="_blank" href="https://aws.amazon.com/data-exchange/">Amazon Data Exchange</a> provides <a target="_blank" href="https://aws.amazon.com/marketplace/search/results?ref_=adx_hp_ben_wdtap&trk=adx_hp_ben_wdtap&category=d5a43d97-558f-4be7-8543-cce265fe6d9d&FULFILLMENT_OPTION_TYPE=DATA_EXCHANGE&filters=FULFILLMENT_OPTION_TYPE">data products among Amazon's marketplace</a> to purchase data from various sources "3rd-party" to Amazon. 
+<a target="_blank" href="https://aws.amazon.com/data-exchange/">Amazon Data Exchange</a> provides <a target="_blank" href="https://aws.amazon.com/marketplace/search/results?ref_=adx_hp_ben_wdtap&trk=adx_hp_ben_wdtap&category=d5a43d97-558f-4be7-8543-cce265fe6d9d&FULFILLMENT_OPTION_TYPE=DATA_EXCHANGE&filters=FULFILLMENT_OPTION_TYPE">data products among Amazon's marketplace</a> to purchase data from various sources "3rd-party" to Amazon. Many datasets are free.
 
 ## RDS
 
