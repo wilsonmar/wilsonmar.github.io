@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/aws-data/">Here</a> are notes on how developers or administrators can <strong>managing data</strong> in the AWS cloud.
+<a target="_blank" href="https://wilsonmar.github.io/aws-data/">Here</a> are my notes reflecting what I've figured out so far about how developers and administrators can <strong>process data</strong> in the AWS cloud. I'm trying to present this in a logical sequence. But there are a lot of products that seem to do the same thing. 
 
 {% include whatever.html %}
 
@@ -31,6 +31,8 @@ Also see my notes on:
    * <a target="_blank" href="https://wilsonmar.github.io/azure-data/">Microsoft/Azure Data</a>
    * <a target="_blank" href="https://wilsonmar.github.io/tableau/">Tableau (a Salesforce company)</a>
    <br /><br />
+
+QUESTION: Where is Amazon on the transition from ELT to ETL to Streaming?
 
 Below is an alphabetical list of third-party databases cloud customers can install in AWS like (some like they used to do on-prem):
 
@@ -156,34 +158,39 @@ Security:
 
 <a target="_blank" href="https://aws.amazon.com/architecture/icons/">Amazon's new official "flat" icons</a> are used here to illustrate AWS cloud technologies evolving from "Lift and Shift" to Serverless to Low-Code to Machine Learning.
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692592884/aws-icons/aws-data-tools-1920x1080.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692592884/aws-icons/aws-data-tools-1920x1080.png"><br /><em>Click for video</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy my animated pptx</em></a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692639720/aws-data-tools-1920x1080_etix6l.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692639720/aws-data-tools-1920x1080_etix6l.png"><br /><em>Click for video</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy my animated pptx</em></a>.
 
 <strike>Click the video above for the step-by-step commentary below, with links to additional commentary:</strike>
 
-<a name="Flow_QuickSight"></a>
+    <a name="EC2"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/quicksight/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-QuickSight.png"></a>We begin from the perspective of Data Analysts who use the <a href="#QuickSight">AWS QuickSight</a> visualization tool. <a href="https://wilsonmar.github.io/tableau/">Tableau (from Salesforce)</a> offers a competing solution.
+1.  <a target="_blank" href="https://docs.aws.amazon.com/ec2/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EC2.png"></a>The first generation of Amazon's capabilities in the cloud was to enable <strong>EC2 (Elastic Compute Cloud)</strong> Virtual Machines to run applications in the cloud within images containing full operating systems.
 
-    For an additional monthly cost, rather than using a direct SQL query, data can be optionally be imported into a dataset that uses SPICE (Super-fast, Parallel, In-memory Calculation Engine) allocated for use by all users within each region to rapidly perform advanced calculations and serve data. Internally, SPICE uses a combination of columnar storage in-memory.
+1.  When the world began processing "Big Data" for "Business Intelligence" in the AWS cloud, they manually setup and tuned individual EC2 servers running <strong>Apache Spark</strong> accessing data stored in 
+
+1.  <a target="_blank" href="https://docs.aws.amazon.com/s3/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-S3.png"></a><strong>S3</strong> (Simple Storage Service) objects. S3 cloud storage has been available since Amazon Web Services first appeared. 
+
+    <a name="KMS"></a>
+
+1.  <a target="_blank" href="https://docs.aws.amazon.com/kms/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692639280/aws-icons/Amazon-KMS.png">KMS (Key Management Service)</a> creates cryptographic keys to encrypt and decrypts S3 objects. It is used by AWS Secrets Manager, which automates the rotation and retrieval of credentials, API keys, and other secrets.
+
+    <a name="Flow_QuickSight"></a>
+
+1.  <a target="_blank" href="https://docs.aws.amazon.com/quicksight/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-QuickSight.png"></a>From the perspective of Data Analysts who use the <a href="#QuickSight">AWS QuickSight</a> visualization tool. <a href="https://wilsonmar.github.io/tableau/">Tableau (from Salesforce)</a> offers a competing solution with fancier graphics.
+
+    For an additional monthly cost, rather than using a direct SQL query, data can be optionally be imported into a dataset that uses SPICE (Super-fast, Parallel, In-memory Calculation Engine) allocated for use by all users within each region to rapidly perform advanced calculations and serve data. Internally, SPICE uses columnar in-memory storage.
     
-1.  QuickSight can access more data sources than shown on this diagram, such as text from <strong>GitHub</strong>, Twitter, Apache Spark data warehouses, and other APIs. 
+1.  QuickSight can access more data sources than shown on this diagram, such as text from <strong>GitHub</strong>, Twitter, and other APIs. 
 
     <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692453318/aws-quicksight-ins-1264x483_qwiewl.png"><img alt="aws-quicksight-ins-1264x483.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692453318/aws-quicksight-ins-1264x483_qwiewl.png"></a>
 
     <a name="S3"></a>
 
-2.  <a target="_blank" href="https://docs.aws.amazon.com/s3/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-S3.png"></a>QuickSight can create visualizations directly from <strong>S3</strong> (Simple Storage Service) of objects that can storage many different types of files as objects, a capability that has been available since Amazon Web Services first appeared in 2006.
+1.  QuickSight can reach those legacy data warehouses. In fact, QuickSight can create visualizations directly from many different sources. 
 
-3.  <a target="_blank" href="https://docs.aws.amazon.com/kms/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-KMS.png">KMS (Key Management Service)</a> creates cryptographic keys to encrypt and decrypts S3 objects. It is used by AWS Secrets Manager, which automates the rotation and retrieval of credentials, API keys, and other secrets.
+1.  Earlier, applications were programmed in the Java programming language which uses <strong>JDBC/ODBC</strong> protocols to interact with Relational database software <strong>Oracle and Microsoft SQL</strong> popular in enterprise data centers at the time.
 
-
-    <a name="EC2"></a>
-
-4.  <a target="_blank" href="https://docs.aws.amazon.com/ec2/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EC2.png"></a>The first generation of Amazon's capabilities in the cloud was to enable <strong>EC2 (Elastic Compute Cloud)</strong> Virtual Machines to run applications in the cloud within images containing full operating systems.
-
-5.  Earlier, applications were programmed in the Java programming language which uses <strong>JDBC/ODBC</strong> protocols to interact with Relational database software <strong>Oracle and Microsoft SQL</strong> popular in enterprise data centers at the time.
-
-6.  <img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390289/aws-icons/AWS-Lambda.png">Over time, various programs in <strong>AWS Lambda (serverless)</strong> functions are able to reach databases using ODBC and other protocols. This enables <strong>dynamic triggers</strong> to send messages and perhaps update databases.
+8.  <img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390289/aws-icons/AWS-Lambda.png">Over time, various programs in <strong>AWS Lambda (serverless)</strong> functions are able to reach databases using ODBC and other protocols. This enables <strong>dynamic triggers</strong> to send messages and perhaps update databases.
 
     The earliest approach to bring SQL to the cloud is what's called "lift and Shift" of database operations.
 
@@ -191,11 +198,15 @@ Security:
 
     <a name="RDS"></a>
 
-7.  <a target="_blank" href="https://aws.amazon.com/rds/"><img align="right" alt="Database_AmazonRDS.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-RDS.png"></a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html">Amazon RDS (Relational Database Service)</a> is a web service that makes it easier to <strong>set up</strong>, operate, and scale a relational database in the AWS Cloud, easier than if they were on-prem. But with RDS, AWS takes care of the hardware and operating system patching across several regions. But customer admins still upgrade database software. 
+9.  <a target="_blank" href="https://aws.amazon.com/rds/"><img align="right" alt="Database_AmazonRDS.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-RDS.png"></a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html">Amazon RDS (Relational Database Service)</a> is a web service that makes it easier to <strong>set up</strong>, operate, and scale a relational database in the AWS Cloud, easier than if they were on-prem. But with RDS, AWS takes care of the hardware and operating system patching across several regions. But customer admins still upgrade database software. 
+
+    ??? "BI (Big Data). Spark Hadoop.
 
     <a name="Aurora"></a>
 
-8.  <a target="_blank" href="https://aws.amazon.com/rds/aurora/"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Aurora.png"></a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">Amazon Aurora</a> brings to RDS SQL query compatibility with MySQL and PostgreSQL open-source relational database software.
+8.  <a target="_blank" href="https://aws.amazon.com/rds/aurora/"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Aurora.png"></a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">Amazon Aurora</a> brings to RDS SQL query compatibility with open-source relational database software MySQL and PostgreSQL.
+
+    There are two Aurora serverless offerings...
 
     <a name="DynamoDB"></a>
 
@@ -217,6 +228,12 @@ Security:
 
 13. <a href="#EMR"><img align="right" alt="Analytics_AmazonEMR.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EMR.png"></a>Also, Athena can access the results of traditional <strong>EMR (Elastic MapReduce)</strong> jobs stored in S3 buckets. So Athena can benefit from EMR's direct, lower-level access to Spark Hadoop internals. For example: Data scientists can use EMR to run machine learning TensorFlow jobs. Analysts can run SQL queries on Presto. Engineers can utilise EMR’s integration with streaming applications such as Kinesis or Spark… 
 
+    <a target="_blank" href="https://aws.amazon.com/emr/serverless/">Amazon EMR serverless</a> was released in November 2021 for petabyte-scale analytics processing.
+
+    EMR costs around $14-16 per day while AWS Glue costs around $21 per day.
+    Although EMR requires customer operations attention to setup and scale versus Glue's serverless platform,
+    EMR provides quicker start times. EMR has a wider range of server sizes.    
+    
     ### Streams
 
     To build real-time data pipelines for receiving streams of data (such as <a target="_blank" href="https://aws.amazon.com/solutions/case-studies/new-relic-case-study/">logs</a>, there is a <a target="_blank" href="https://aws.amazon.com/msk/what-is-kafka/">open-source Apache Kafka</a>.
@@ -225,15 +242,15 @@ Security:
 
 1.  <a target="_blank" href="https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-Timestream.png>Amazon MSK (Managed Stream for Kafka)</a> is a serverless web app that runs Kafka.
 
-14.  ??? AWS Glue is a serverless data integration service that makes it easy to discover properties (schema), transform, prepare, and combine data for analytics, app and API development, and machine learning.
+14.  <strong>AWS Glue</strong> is a serverless data integration service that makes it easy to discover properties (schema), transform, prepare, and combine data for analytics, app and API development, and machine learning. Glue creates a <strong>centralized Data Catalog</strong> that forms the basis to visually create, run, and monitor pipelines for several workloads and types. 
 
-    <a target="_blank" href="https://aws.amazon.com/emr/serverless/">Amazon EMR serverless</a> was released in November 2021 for petabyte-scale analytics processing.
+15. Some Athena users have migrated from EMR to Glue for ETL processing because Athena can also access <strong>AWS Glue Catalogs</strong> also stored in a serverless architecture. 
 
-    EMR costs around $14-16 per day while AWS Glue costs around $21 per day.
-    Although EMR requires customer operations attention to setup and scale versus Glue's serverless platform,
-    EMR provides quicker start times. EMR has a wider range of server sizes.    
-    
-15. Some Athena users have migrated from EMR to Glue for ETL processing because Athena can also access <strong>AWS Glue Catalogs</strong> also in a serverless architecture. Glue creates a centralized Data Catalog which it can visually create, run, and monitor ETL (extract, transform, and load) and ELT pipelines for several workloads and types.
+    ### ETL vs ELT
+
+    ETL (Extract, Transform, Load) is the traditional approach to arranging data for storage and analytics. This approach emerged at a time when disk space was more expensive and took time to obtain. So the "Transform" part meant stripping out data not of immediate interest. 
+
+    ELT (Extract, Load, Transform) is a more modern approach that uses more storage because data is stored in an unredacted form for transformation later. This enables retrospect analysis of attributes not considered previously.
 
 1.  Glue Crawler ...
 
@@ -272,7 +289,7 @@ Security:
 
 ### Recap
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692592884/aws-icons/aws-data-tools-1920x1080.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692592884/aws-icons/aws-data-tools-1920x1080.png"><br /><em>Click for video</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy my animated pptx</em></a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692639720/aws-data-tools-1920x1080_etix6l.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692639720/aws-data-tools-1920x1080_etix6l.png"><br /><em>Click for video</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy my animated pptx</em></a>.
 
 <hr />
 
@@ -396,7 +413,7 @@ AWS CloudTrail is a web service that records AWS API calls for your account and 
 Amazon EMR (Elastic Map Reduce) is a PaaS service - setup on a collection of EC2 instances called nodes running 
 "Big Data" utilities Hadoop, Spark, and Presto running in the AWS cloud. 
 * EMR automates the launch of compute and storage nodes powered by Amazon EC2 instances.
-* Each EMR cluster has master, core, and task nodes.
+* Each EMR cluster has master, core, and task nodes. Each node is a EC2 (Elastic Compute Cloud) instance.
    * Master node manages the cluster, running software components to coordinate the distribution of data and tasks across other nodes for processing.
    * Core nodes have software components that run tasks and store data in the Hadoop Distributed File System (HDFS)
    * Task node is made up of software components that only run tasks and do not store data in HDFS.
@@ -454,6 +471,10 @@ Glue creates a centralized Data Catalog which it can visually create, run, and m
 Query cataloged data using Amazon Athena, Amazon EMR, and Amazon Redshift Spectrum.
 
 https://medium.com/@leahtarbuck/the-small-files-problem-in-aws-glue-49f68b6886a0
+
+Johnny Chivers:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=7Xstz6Qo-pM">AWS Glue ETL Vs EMR - Which one should I use?</a>
+
 
 [<a href="#Flow_Glue">Return to flow diagram</a>]
 
@@ -887,6 +908,8 @@ Labs:
    <br /><br />
 
    * <a target="_blank" href="https://www.coursera.org/specializations/exam-prep-das-c01-aws-certified-data-analytics-specialty">Coursera 5 course by Whizlabs</a> 5-7 hours each. No instructor name.
+
+   * https://aws.amazon.com/blogs/big-data/how-to-delete-user-data-in-an-aws-data-lake/
 
 <hr />
 
