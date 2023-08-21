@@ -26,11 +26,10 @@ In 2022 Gartner named AWS (Amazon Web Service), among all other cloud database v
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692377356/dbs-gartner-2022-570x592_gyy82c.png"><img alt="dbs-gartner-2022-570x592.png" width="570" height="592" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692377356/dbs-gartner-2022-570x592_gyy82c.png"></a>
 
-My notes on some of the other cloud database vendors are at these links:
-   * <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a>
+Some may argue that <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a> and Databricks for their "Delta Lake" (using Parquet-structured data) removes the separation between OLTP and OLAP is now leading the field.
+Also see my notes on:
    * <a target="_blank" href="https://wilsonmar.github.io/azure-data/">Microsoft/Azure Data</a>
    * <a target="_blank" href="https://wilsonmar.github.io/tableau/">Tableau (a Salesforce company)</a>
-   * Databricks for "Delta Lake" using Parquet-structured data on S3
    <br /><br />
 
 Below is an alphabetical list of third-party databases cloud customers can install in AWS like (some like they used to do on-prem):
@@ -101,7 +100,7 @@ One AWS certification conceptually organizes data tools in these categories:
 Storage and Data Management:
 
    * Simple Storage Service (S3)
-   * DynamoDB
+   * DynamoDB (cloud document database)
    * Amazon Elasticsearch Service
    <br /><br />
 
@@ -111,7 +110,8 @@ Storage and Data Management:
 ### Processing
 
    * AWS Lambda
-   * AWS Glue - cost-effective solution which requires no operational overhead. bookmarks, DynamicFrame functions, job metrics, and etc. Troubleshooting Glue Jobs: what should you do if Glue throws an error.
+   * AWS Glue - serverless bookmarks, DynamicFrame functions, job metrics, and etc. 
+   Troubleshooting Glue Jobs: what should you do if Glue throws an error.
    * Amazon EMR
    * Elastic MapReduce, including Apache Spark, Hive, HBase, Presto, Zeppelin, Splunk, and Flume
 
@@ -152,12 +152,13 @@ Security:
    <br /><br />
 
 
-## AWS Data Tools: Interactions
+## Evolution in AWS Data Tools
 
-Here we use <a target="_blank" href="https://aws.amazon.com/architecture/icons/">Amazon's new official "flat" icons</a> to illustrate AWS services and resources:
+<a target="_blank" href="https://aws.amazon.com/architecture/icons/">Amazon's new official "flat" icons</a> are used here to illustrate AWS cloud technologies evolving from "Lift and Shift" to Serverless to Low-Code to Machine Learning.
+
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692511066/aws-data-tools-1920x1080_rims9j.png"><img alt="aws-data-tools-1920x1080.png" width="1366" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692511066/aws-data-tools-1920x1080_rims9j.png"><br /><em>Click for video</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy my animated pptx</em></a>.
 
-Click the video above for the step-by-step commentary below, with links to additional commentary:
+<strike>Click the video above for the step-by-step commentary below, with links to additional commentary:</strike>
 
 <a name="Flow_QuickSight"></a>
 
@@ -171,65 +172,87 @@ Click the video above for the step-by-step commentary below, with links to addit
 
     <a name="S3"></a>
 
-2.  <a target="_blank" href="https://docs.aws.amazon.com/s3/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-S3.png"></a>QuickSight can create visualizations directly from <strong>S3</strong> (Simple Storage Service) of objects that can storage maany different types of files as objects, a capability that has been available since Amazon Web Services first appeared in 2006.
+2.  <a target="_blank" href="https://docs.aws.amazon.com/s3/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-S3.png"></a>QuickSight can create visualizations directly from <strong>S3</strong> (Simple Storage Service) of objects that can storage many different types of files as objects, a capability that has been available since Amazon Web Services first appeared in 2006.
+
+3.  <a target="_blank" href="https://docs.aws.amazon.com/kms/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-KMS.png">KMS (Key Management Service)</a> creates cryptographic keys to encrypt and decrypts S3 objects. It is used by AWS Secrets Manager, which automates the rotation and retrieval of credentials, API keys, and other secrets.
+
 
     <a name="EC2"></a>
 
-3.  <a target="_blank" href="https://docs.aws.amazon.com/ec2/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EC2.png"></a>The first generation of Amazon's capabilities in the cloud was to enable <strong>EC2 (Elastic Compute Cloud)</strong> Virtual Machines to run applications in the cloud within images containing full operating systems.
+4.  <a target="_blank" href="https://docs.aws.amazon.com/ec2/index.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EC2.png"></a>The first generation of Amazon's capabilities in the cloud was to enable <strong>EC2 (Elastic Compute Cloud)</strong> Virtual Machines to run applications in the cloud within images containing full operating systems.
 
-4.  Earlier, applications were programmed in the Java programming language which uses <strong>JDBC/ODBC</strong> protocols to interact with Relational database software <strong>Oracle and Microsoft SQL</strong> popular in enterprise data centers at the time.
+5.  Earlier, applications were programmed in the Java programming language which uses <strong>JDBC/ODBC</strong> protocols to interact with Relational database software <strong>Oracle and Microsoft SQL</strong> popular in enterprise data centers at the time.
 
-5.  <img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390289/aws-icons/AWS-Lambda.png">Over time, various programs in <strong>AWS Lambda (serverless)</strong> functions are able to reach databases using ODBC and other protocols. 
-
-    This enables <strong>dynamic triggers</strong> to update relational databases.
+6.  <img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390289/aws-icons/AWS-Lambda.png">Over time, various programs in <strong>AWS Lambda (serverless)</strong> functions are able to reach databases using ODBC and other protocols. This enables <strong>dynamic triggers</strong> to send messages and perhaps update databases.
 
     The earliest approach to bring SQL to the cloud is what's called "lift and Shift" of database operations.
 
+    However, direct connections with databases from the public internet pose a vulnerability.
+
     <a name="RDS"></a>
 
-6.  <a target="_blank" href="https://aws.amazon.com/rds/"><img align="right" alt="Database_AmazonRDS.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-RDS.png"></a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html">Amazon RDS (Relational Database Service)</a> is a web service that makes it easier to <strong>set up</strong>, operate, and scale a relational database in the AWS Cloud, easier than if they were on-prem. But with RDS, AWS takes care of the hardware and operating system patching across several regions. But customer admins still upgrade database software. 
+7.  <a target="_blank" href="https://aws.amazon.com/rds/"><img align="right" alt="Database_AmazonRDS.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-RDS.png"></a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html">Amazon RDS (Relational Database Service)</a> is a web service that makes it easier to <strong>set up</strong>, operate, and scale a relational database in the AWS Cloud, easier than if they were on-prem. But with RDS, AWS takes care of the hardware and operating system patching across several regions. But customer admins still upgrade database software. 
 
     <a name="Aurora"></a>
 
-7.  <a target="_blank" href="https://aws.amazon.com/rds/aurora/"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Aurora.png"></a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">Amazon Aurora</a> brings to RDS SQL query compatibility with MySQL and PostgreSQL open-source relational database software.
-
-    RDS now has compatibility with other databases as well.
+8.  <a target="_blank" href="https://aws.amazon.com/rds/aurora/"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Aurora.png"></a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">Amazon Aurora</a> brings to RDS SQL query compatibility with MySQL and PostgreSQL open-source relational database software.
 
     <a name="DynamoDB"></a>
 
-8.  <a target="_blank" href="https://aws.amazon.com/dynamodb/"><img align="right" alt="Database_AmazonDynamoDB.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-DynamoDB.png"></a><a target="_blank" href="https://aws.amazon.com/dynamodb/resources/">AWS DynamoDB</a> is a <strong>key-value store in the AWS-managed cloud</strong> for workloads such as session stores or shopping carts. 
+9.  <a target="_blank" href="https://aws.amazon.com/dynamodb/"><img align="right" alt="Database_AmazonDynamoDB.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-DynamoDB.png"></a><a target="_blank" href="https://aws.amazon.com/dynamodb/resources/">AWS DynamoDB</a> is a <strong>key-value store</strong>. It's used for workloads such as session stores or shopping carts, taking place of MongoDB, Couchbase, and other document DBs in the AWS-managed cloud. Unlike SQL, DynamoDB has limited queries and doesn't have joins. Amazon also offers Firestore DocumentDB to get around MongoDB open-source licensing.
 
     DynamoDB adds replication (streams) of table activity across geographic regions. Within each region, it provides fault tolerance in automatic synchronous replication across 3 data centers. Being a cloud service, it automatically allocates storage in partitions and imposes no limit to data storage.
 
-9.  Instead of reaching DynamoDB directly, AWS has created <strong>DAX (DynamoDB Accelerator) agents</strong> installed on client servers to reach an in-memory cache in front of DynamoDB, like Redis.
+10. Instead of reaching DynamoDB directly, AWS has created <strong>DAX (DynamoDB Accelerator) agents</strong> installed on client servers to reach an in-memory cache in front of DynamoDB, like Redis.
+
+10. <a target="_blank" href="https://docs.aws.amazon.com/neptune/latest/userguide/intro.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Neptune.png">Amazon Neptune</a> is a <a target="_blank" href="https://wilsonmar.github.io/graph-databases/">graph database</a> web service managed online by AWS. Going GA on May 30, 2018, it supports popular graph models property graph and W3C's RDF, and their respective query languages Apache TinkerPop's Gremlin, openCypher, and SPARQL, including other AWS products.
 
     <a name="Flow_Redshift"></a>
 
-10. <a href="#Redshift"><img align="right" alt="Analytics_AmazonRedshift.png" width="100" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png">Amazon Redshift Spectrum</a> is used to create a "data lake" that enables warehouse data, such as joining with data from S3 objects in queries. But one has to configure and launch underlying compute infrastructure. 
+11. <a href="#Redshift"><img align="right" alt="Analytics_AmazonRedshift.png" width="100" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png">Amazon Redshift Spectrum</a> is used to create a "data lake" that enables warehouse data, such as joining with data from S3 objects in queries. But one has to configure and launch underlying compute infrastructure. 
 
-11. <a target="_blank" href="https://docs.aws.amazon.com/athena/index.html"><img align="right" alt="Analytics_AmazonAthena.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Athena.png">Amazon Athena</a> is an AWS-managed SaaS offering. Athena's console GUI offers a simplified Jupyter Python Notebook developer experience that supports ODBC/JDBC drivers (like Amazon DynamoDB) as well as REST API calls. 
+12. <a target="_blank" href="https://docs.aws.amazon.com/athena/index.html"><img align="right" alt="Analytics_AmazonAthena.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Athena.png">Amazon Athena</a> is an AWS-managed SaaS offering. Athena's console GUI offers a simplified Jupyter Python Notebook developer experience that supports ODBC/JDBC drivers (like Amazon DynamoDB) as well as REST API calls. 
 
     What's new about Athena is that its Apache Spark <strong>Presto data structures</strong> are stored into S3 <strong>without setting up EC2 servers</strong> (unlike Redshift and EMR). So Athena users only pay for data scanned ($5 per terabyte in most regions). 
 
-12. <img align="right" alt="Analytics_AmazonEMR.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EMR.png">Also, Athena can access the results of traditional <strong>EMR (Elastic Map Reduce)</strong> jobs stored in S3 buckets. So Athena can benefit from EMR's direct, lower-level access to Spark Hadoop environments, which provides for great flexibility in using tools beyond Spark.
+13. <a href="#EMR"><img align="right" alt="Analytics_AmazonEMR.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EMR.png"></a>Also, Athena can access the results of traditional <strong>EMR (Elastic MapReduce)</strong> jobs stored in S3 buckets. So Athena can benefit from EMR's direct, lower-level access to Spark Hadoop internals. For example: Data scientists can use EMR to run machine learning TensorFlow jobs. Analysts can run SQL queries on Presto. Engineers can utilise EMR’s integration with streaming applications such as Kinesis or Spark… 
 
-1.  Athena can also access data defined in <strong>AWS Glue Catalogs</strong> because AWS Glue has a similar architecture to Athena.
+14.  ??? AWS Glue is a serverless data integration service that makes it easy to discover properties (schema), transform, prepare, and combine data for analytics, app and API development, and machine learning.
+
+    <a target="_blank" href="https://aws.amazon.com/emr/serverless/">Amazon EMR serverless</a> was released in November 2021 for petabyte-scale analytics processing.
+
+    EMR costs around $14-16 per day while AWS Glue costs around $21 per day.
+    Although EMR requires customer operations attention to setup and scale versus Glue's serverless platform,
+    EMR provides quicker start times. EMR has a wider range of server sizes.    
+    
+15. Some Athena users have migrated from EMR to Glue for ETL processing because Athena can also access <strong>AWS Glue Catalogs</strong> also in a serverless architecture. Glue creates a centralized Data Catalog which it can visually create, run, and monitor ETL (extract, transform, and load) and ELT pipelines for several workloads and types.
 
 1.  Glue Crawler ...
 
 1.  Glue ETL Jobs
 
+    ### Streams
+
+    To build real-time data pipelines for receiving streams of data (such as <a target="_blank" href="https://aws.amazon.com/solutions/case-studies/new-relic-case-study/">logs</a>, there is a <a target="_blank" href="https://aws.amazon.com/msk/what-is-kafka/">open-source Apache Kafka</a>.
+
+    But AWS has several additional technologies to make the creation and absorption of data streams easier and cheaper.
+
+1.  <a target="_blank" href="https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-Timestream.png>Amazon MSK (Managed Stream for Kafka)</a> is a serverless web app that runs Kafka.
+
 1.  <a target="_blank" href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html">Amazon Kinesis Data Firehose</a> is a code-free  AWS-managed service to <strong>deliver</strong> continuous streams of data (including video) to S3 buckets, other Amazon services, or any other HTTP endpoint destination (with or without transformation before send) -- without writing application code.
 
     <a target="_blank" href="https://aws.amazon.com/kinesis/">Amazon Kinesis</a><img align="right" alt="Analytics_AmazonKenesis.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"><a target="_blank" href="https://docs.aws.amazon.com/streams/latest/dev/introduction.html">Kinesis Data Streams</a> is a web service to collect, process, and analyze -- in real-time -- continuous streams of audio, video (and other data) from video cameras and social media platforms. This is done for fraud detection, trademark enforcement, customer engagement, and other monitoring.
 
-1.  Because Athena web service is always ready to query data, it is used for infrequent or ad hoc data analysis such as any type of log data exported into S3, such as Application Load Balancer, Amazon CloudWatch app logs, AWS CloudTrail, Amazon CloudFront, etc.
+1.  <a target="_blank" href="https://docs.aws.amazon.com/timestream/latest/developerguide/what-is-timestream.html"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-Timestream.png>Amazon Timestream</a> is a Time Series database designed to store a large amount of sensor data for IoT and DevOps application monitoring. It keeps recent data in memory and automatically moves historical data to a cost-optimized storage tier. It integrates with AWS IoT Core, Amazon Kinesis, Amazon MSK, open-source Telegraf, Amazon QuickSight, SageMaker. 
+
+
+1.  As a serverless provider, the Athena web service is always ready to query data. So it is used for infrequent or ad hoc data analysis such as any type of log data exported into S3, such as Application Load Balancer, Amazon CloudWatch app logs, AWS CloudTrail, Amazon CloudFront, etc.
 
 1.  <a target="_blank" href="https://aws.amazon.com/kinesis/">Amazon Kinesis</a><img align="right" alt="Analytics_AmazonKenesis.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"></a><a target="_blank" href="https://docs.aws.amazon.com/streams/latest/dev/introduction.html">Kinesis Data Streams</a> is a web service to collect, process, and analyze -- in real-time -- streams of video and other continuous feeds of data being served up by YouTube, Vimeo, Facebook, and other social media platforms. This is done for fraud detection, trademark enforcement, customer engagement, and other monitoring.
 
     ??? aggregation of data followed by loading the aggregate data into a data warehouse or map-reduce cluster.
 
-1.  Kinesis IoT ???
+1.  Kinesis <strong>IoT Core</strong> provides a GUI to manage telemetry from robots.
 
 1.  <strong>Kinesis Data Streams</strong> is used to process <strong>Social Media streams</strong> for sentiment and engagement 
 
@@ -237,9 +260,7 @@ Click the video above for the step-by-step commentary below, with links to addit
 
     <a name="Flow_LakeFormation"></a>
 
-1.  <a href="#LakeFormation">Lake Formation</a> provides a central way to manage fine-grained permissions to data across AWS data services.
-
-1.  Perhaps ensure that <a href="#KMS">KMS (Key Management Service</a> is used appropriate?
+1.  <a href="#LakeFormation">Lake Formation</a> provides a central way to manage with <strong>fine-grained permissions to a lot of data across AWS data services</strong>.
 
 1.  Amazon has investest heavily in its <strong>SageMaker</strong> ML (Machine Learning) Modeling tool for AI (Artificial Intelligence).
 
@@ -285,7 +306,13 @@ Among the 200+ services that make up AWS, these cloud have the most with process
 
 <hr />
 
+## AWS Data Exchange
+
+<a target="_blank" href="https://aws.amazon.com/data-exchange/">Amazon Data Exchange</a> provides <a target="_blank" href="https://aws.amazon.com/marketplace/search/results?ref_=adx_hp_ben_wdtap&trk=adx_hp_ben_wdtap&category=d5a43d97-558f-4be7-8543-cce265fe6d9d&FULFILLMENT_OPTION_TYPE=DATA_EXCHANGE&filters=FULFILLMENT_OPTION_TYPE">data products among Amazon's marketplace</a> to purchase data from various sources "3rd-party" to Amazon. 
+
 ## RDS
+
+QUESTION: RDS now has compatibility with other databases as well?
 
 https://github.com/terraform-aws-modules/terraform-aws-rds
 
@@ -302,7 +329,8 @@ https://github.com/terraform-aws-modules/terraform-aws-s3-bucket
 
 <img align="right" alt="Analytics_AmazonRedshift.png" width="100" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true">
 <img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png">
-Redshift is an AWS-managed data warehouse, based on PostgreSQL with JDBC & ODBC drivers with SQL.
+Redshift is an AWS-managed data warehouse, based on open-source PostgreSQL with JDBC & ODBC drivers with SQL.
+It's intended to competed with Oracle.
 It's not for blob data.
 
 Redshift is designed for the fastest performance on the most complex BI SQL with multiple joins and subqueries. Amazon Redshift Spectrum is an optional service to query any kind of data (videos) stored in Amazon S3 buckets without first being loaded into the Redshift data warehouse. No additional charge for backup of provisioned storage and no data transfer charge for communication between Amazon S3 and Amazon Redshift. 
@@ -361,6 +389,51 @@ https://github.com/terraform-aws-modules/terraform-aws-cloudfront
 AWS CloudTrail is a web service that records AWS API calls for your account and delivers log files to you. The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, the request parameters, and the response elements that the AWS service returns.
 
 
+
+## EMR
+
+<img align="right" alt="Analytics_AmazonEMR.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EMR.png">
+Amazon EMR (Elastic Map Reduce) is a PaaS service - setup on a collection of EC2 instances called nodes running 
+"Big Data" utilities Hadoop, Spark, and Presto running in the AWS cloud. 
+* EMR automates the launch of compute and storage nodes powered by Amazon EC2 instances.
+* Each EMR cluster has master, core, and task nodes.
+   * Master node manages the cluster, running software components to coordinate the distribution of data and tasks across other nodes for processing.
+   * Core nodes have software components that run tasks and store data in the Hadoop Distributed File System (HDFS)
+   * Task node is made up of software components that only run tasks and do not store data in HDFS.
+   <br /><br />
+EMR can store data securely using customer encryption keys using an HDFS (Hadoop Distributed File System).
+EMR secures querying of data stored outside the cluster, such as in relational databases, S3, AWS Fargate K8s.
+EMR is often used for predictable data analysis tasks, typically on clusters maee available for extended periods of time. 
+But it also supports Reserved Instances and Savings Plans for EC2 clusters and Savings Plans for Fargate, which can help lower cost. Only pay for when cluster is up. 
+
+https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-supported-instance-types.html
+
+EMR is a managed Hadoop framework that provides a platform to run big data processing jobs at scale. 
+* Created in a private subnet within a VPC.
+* There's an EMR-managed Security Group for master, core/task, and manger? cluster in private subeta
+* Additional security groups to control network access via NAT serv through a gateway
+* Security groups can only be added on create.
+* Rules within a Security Group can be added, edited, and deleted after creation.
+
+* EMR can use ENI to connect directly with EC2, Athena, EMR, Kenesis Firehose, Streams, RedShift, SageMaker, and VPC Endpoints.
+* EMR clusters can be configured to use AWS Glue Data Catalog as the metastore for Apache Hive and Apache Spark.
+
+ENI	(Elastic Network Interface) connects with other AWS services.
+ENIs are virtual network interfaces that provide a primary private IP address, one or more secondary private IP addresses, and a MAC address to the nodes.
+
+An S3 Gateway Endpoint is used to provide a secure and private connection between the EMR cluster and the S3 bucket. It allows traffic to flow directly between the EMR cluster and the S3 bucket without leaving the Amazon network
+
+EMR v1.4.0 can use HDFS transparent encryption.
+
+EMRFS on S3 for encryption at rest.
+Amazon Certificate Manager is used, not AWS Certificate Manager Private Certificate Authority (ACM PCA).
+
+https://github.com/terraform-aws-modules/terraform-aws-emr
+
+[<a href="#Flow_EMR">Return to flow diagram</a>]
+
+
+
 <a name="Glue"></a>
 
 ## AWS Glue
@@ -370,7 +443,7 @@ AWS Glue is a serverless data integration service that runs on top of Apache Spa
 for users of analytics to find, prepare, move from 70+ data sources (SQL, not No-SQL).
 
 * Glue bulk imports Hive metastore into Glue Data Catalog
-* Glue provides job status to CloudWatch events triggering SNS notifications
+* Glue automatically provides job status to CloudWatch events triggering SNS notifications. With EMR you need to setup CloudWatch.
 * Glue doesn't handle heterogeneous ETL job types (which EMR does).
 * Glue doesn't handle streaming except for Spark Streaming.
 
@@ -379,6 +452,8 @@ For an hourly rate billed by the minute, Glue crawls through data and <strong>ge
 Glue creates a centralized Data Catalog which it can visually create, run, and monitor ETL (extract, transform, and load) and ELT pipelines for several workloads and types.
 
 Query cataloged data using Amazon Athena, Amazon EMR, and Amazon Redshift Spectrum.
+
+https://medium.com/@leahtarbuck/the-small-files-problem-in-aws-glue-49f68b6886a0
 
 [<a href="#Flow_Glue">Return to flow diagram</a>]
 
@@ -442,46 +517,6 @@ AWS Batch computing processes jobs without manual interaction.
 
 https://github.com/terraform-aws-modules/terraform-aws-batch
 
-## EMR
-
-<img align="right" alt="Analytics_AmazonEMR.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EMR.png">
-Amazon EMR (Elastic Map Reduce) is a PaaS service - setup on a collection of EC2 instances called nodes running 
-"Big Data" utilities Hadoop, Spark, and Presto running in the AWS cloud. 
-* EMR automates the launch of compute and storage nodes powered by Amazon EC2 instances.
-* Each EMR cluster has master, core, and task nodes.
-   * Master node manages the cluster, running software components to coordinate the distribution of data and tasks across other nodes for processing.
-   * Core nodes have software components that run tasks and store data in the Hadoop Distributed File System (HDFS)
-   * Task node is made up of software components that only run tasks and do not store data in HDFS.
-   <br /><br />
-EMR can store data securely using customer encryption keys using an HDFS (Hadoop Distributed File System).
-EMR secures querying of data stored outside the cluster, such as in relational databases, S3, AWS Fargate K8s.
-EMR is often used for predictable data analysis tasks, typically on clusters maee available for extended periods of time. 
-But it also supports Reserved Instances and Savings Plans for EC2 clusters and Savings Plans for Fargate, which can help lower cost. Only pay for when cluster is up. 
-
-EMR is a managed Hadoop framework that provides a platform to run big data processing jobs at scale. 
-* Created in a private subnet within a VPC.
-* There's an EMR-managed Security Group for master, core/task, and manger? cluster in private subeta
-* Additional security groups to control network access via NAT serv through a gateway
-* Security groups can only be added on create.
-* Rules within a Security Group can be added, edited, and deleted after creation.
-
-* EMR can use ENI to connect directly with EC2, Athena, EMR, Kenesis Firehose, Streams, RedShift, SageMaker, and VPC Endpoints.
-* EMR clusters can be configured to use AWS Glue Data Catalog as the metastore for Apache Hive and Apache Spark.
-
-ENI	(Elastic Network Interface) connects with other AWS services.
-ENIs are virtual network interfaces that provide a primary private IP address, one or more secondary private IP addresses, and a MAC address to the nodes.
-
-An S3 Gateway Endpoint is used to provide a secure and private connection between the EMR cluster and the S3 bucket. It allows traffic to flow directly between the EMR cluster and the S3 bucket without leaving the Amazon network
-
-EMR v1.4.0 can use HDFS transparent encryption.
-
-EMRFS on S3 for encryption at rest.
-Amazon Certificate Manager is used, not AWS Certificate Manager Private Certificate Authority (ACM PCA).
-
-https://github.com/terraform-aws-modules/terraform-aws-emr
-
-[<a href="#Flow_EMR">Return to flow diagram</a>]
-
 
 <a name="LakeFormation"></a>
 
@@ -504,6 +539,9 @@ using services by Lake Formation include:
    * Source crawl for content
    * ETL and data prep
    * Data catalog
+   <br /><br />
+
+QUESTION: Perhaps Lake Formation ensures that <a href="#KMS">KMS (Key Management Service</a> is used appropriate?
 
 [<a href="#Flow_LakeFormation">Return to flow diagram</a>]
 

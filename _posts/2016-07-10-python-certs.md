@@ -30,7 +30,7 @@ LinkedIn offers <a target="_blank" href="https://www.linkedin.com/help/linkedin/
 A sample: https://github.com/Ebazhanov/linkedin-skill-assessments-quizzes/blob/main/python/python-quiz.md
 PROTIP: The questions are not the same each time you take the test, so you can take it multiple times to get a higher score.
 
-
+   * <a target="_blank" href="https://www.youtube.com/watch?v=OTulxiJHp4o">VIDEO: Review one set of questions</a>
 
 <hr />
 
@@ -347,6 +347,10 @@ The <a target="_blank" href="https://pythoninstitute.org/certification/pcap-cert
       - db delete
 
    <br /><br />
+
+## Hackerank
+
+https://www.hackerrank.com/dashboard
 
 
 ## Retired Python certs
