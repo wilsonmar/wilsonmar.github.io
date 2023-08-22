@@ -191,8 +191,18 @@ The above diagram[1] shows the logical storage structure for a small graph fragm
 
 Each row represents a vertex, any adjacent vertices (edges), and property metadata about the vertices and edges. A <strong>row key</strong> is the unique identifier for each vertex. Each relationship between the vertex and another vertex and any properties that further define the relationship are stored as an edge or edge-property column. Both the column qualifier and column value store data that defines the edge, in accordance with Bigtable best practices. Each vertex property is stored as a separate column, again using both the column qualifier and the column value to define the property.
 
+### RDF Triplestore
+
 <a target="_blank" href="https://db-engines.com/en/system/Google+Cloud+Spanner%3BGraphDB%3BNeo4j">db-engine's popularity ranking</> says
 GraphDB is schema-free and OWL/RDFS-schema support; RDF shapes
+
+RDF stands for Resource Description Framework and is a standard for describing web resources and data interchange, developed and standardized with the World Wide Web Consortium (W3C). While there are many conventional tools for dealing with data and more specifically for dealing with the relationships between data, RDF is the easiest, most powerful and expressive standard design.
+
+RDF enables effective data integration from multiple sources, detaching data from its schema. This allows multiple schemas to be applied, interlinked, queried as one and modified without changing the data instances.
+
+RDF is a standard for data interchange used for representing highly interconnected data. Each RDF statement is a three-part structure consisting of resources where every resource is identified by a URI. Representing data in RDF allows information to be easily identified, disambiguated and interconnected by AI systems.
+
+   * https://www.ontotext.com/knowledgehub/fundamentals/what-is-rdf/
 
 References:
    * [1] https://connectsaurabhmishra.medium.com/how-google-cloud-deals-with-graph-databases-19790cd1d43e
