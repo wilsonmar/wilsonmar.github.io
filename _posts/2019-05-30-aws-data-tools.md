@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-08-19"
+date: "2023-08-20"
 file: "aws-data-tools"
 title: "AWS Data Tools"
 excerpt: "AWS data processing tools: Databases, Big Data, Data Warehouse, Data Lakehouse"
@@ -934,7 +934,12 @@ Labs:
 
 ## Social
 
+## References
 
+https://www.wikiwand.com/en/Timeline_of_Amazon_Web_Services
+
+https://www.youtube.com/watch?v=tykcCf-Zz1M
+Top AWS Services A Data Engineer Should Know
 
 ## More on Amazon #
 
