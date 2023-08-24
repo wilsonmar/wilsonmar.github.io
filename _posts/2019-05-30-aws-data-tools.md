@@ -175,7 +175,7 @@ Monitoring & Security:
 
 Here I use <a target="_blank" href="https://aws.amazon.com/architecture/icons/">Amazon's new official "flat" icons</a> to illustrate AWS cloud technologies evolving from "Lift and Shift" to Serverless to Low-Code to Machine Learning and <a target="_blank" href="https://wilsonmar.github.io/genai/">Generative Artificial Intelligence</a>.
 
-<a target="_blank" href="https://youtu.be/Hs3RQsqUX3s"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692858015/aws-data-tools-1920x1080_wdmft6.png"><br /><em>Click for full screen view</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
+<a target="_blank" href="https://www.youtube.com/watch?v=Hs3RQsqUX3s"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692858015/aws-data-tools-1920x1080_wdmft6.png"><br /><em>Click for gradual reveal video (no commentary yet)</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
 
 Because many companies have <strong>legacy</strong> tech, this diagram covers both traditional and new <strong>Producers</strong> and <strong>Consumer</strong> technologies.
 
