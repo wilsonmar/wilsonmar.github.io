@@ -37,24 +37,24 @@ and from Schema on write to Schema on Read?
 
 Below is an alphabetical list of third-party databases cloud customers can install in AWS like (some like they used to do on-prem):
 
-   * Cassandra
-   * Cockroach Labs
-   * Cloudera
-   * Couchbase (No-SQL)
+   * <a target="_blank" href="https://cassandra.apache.org/doc/latest/">Apache Cassandra (NoSQL)</a>
+   * <a target="_blank" href="https://github.com/cockroachdb/cockroach">Cockroach Labs (SQL)</a>
+   * <a target="_blank" href="https://www.wikiwand.com/en/Cloudera">Cloudera</a> (Hadoop lakehouse based on Apache Iceberg SQL)
+   * <a target="_blank" href="https://www.couchbase.com/">Couchbase (No-SQL)</a>
    * IBM
-   * InterSystems
-   * MarkLogic
-   * MariaDB
-   * MySQL
-   * MongoDB (No-SQL)
-   * Neo4j (graph database)
-   * Oracle
-   * PostgreSQL
-   * Redis
-   * SAP HANA
-   * SQL Server
-   * Teradata
-   * TigerGraph
+   * <a target="_blank" href="https://www.intersystems.com/">InterSystems</a>
+   * <a target="_blank" href="https://www.marklogic.com/">MarkLogic</a>
+   * <a target="_blank" href="https://mariadb.com/">MariaDB</a>
+   * <a target="_blank" href="https://www.mysql.com/">MySQL</a>
+   * <a target="_blank" href="https://www.mongodb.com/nosql-explained">MongoDB (No-SQL)</a>
+   * <a target="_blank" href="https://neo4j.com/">Neo4j (graph database)</a>
+   * <a target="_blank" href="https://www.oracle.com/database/">Oracle database</a>
+   * <a target="_blank" href="https://www.postgresql.org/">PostgreSQL.org</a>
+   * <a target="_blank" href="https://redis.io/">Redis</a>
+   * <a target="_blank" href="https://www.sap.com/products/technology-platform/hana.html">SAP HANA</a>
+   * <a target="_blank" href="https://www.microsoft.com/en-us/sql-server/?rtc=1">Microsoft SQL Server</a>
+   * <a target="_blank" href="https://www.teradata.com/">Teradata</a>
+   * <a target="_blank" href="https://www.tigergraph.com/">TigerGraph</a>
    <br /><br />
 
 (Listed separately are China-based offering)
@@ -78,23 +78,37 @@ The data analytics lifecycle<a target="_blank" href="https://www.coursera.org/le
 
 One AWS certification conceptually organizes data tools in these categories:
 
-   * <a href="#DataCollection">Data Collection</a>
+<a target="_blank" href="https://www.youtube.com/watch?v=tykcCf-Zz1M">VIDEO:<br /><img src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692778076/aws-icons/aws-data-tools-by-process.png"></a>
+
+   * <a href="#DataSources">Data Sources</a>
+   * <a href="#DataCollection">Data Injestion/Collection</a>
    * <a href="#StoragenDataMgmt">Storage and Data Management</a>
    * <a href="#Processing">Processing</a>
+   * <a href="#Analytics">Analytics</a>
    * <a href="#Analysis">Analysis</a>
+   <br /><br />
+
+<a name="DataSources"></a>
+
+### Data Sources
+
+   * Amazon RDS (Relational Database Service) and Aurora
+   * Amazon DynamoDB (NoSQL)
    <br /><br />
 
 <a name="DataCollection"></a>
 
-### Data Collection
+### Data Injection/Collection
 
-   * <a target="_blank" href="https://aws.amazon.com/kinesis/whitepaper/">AWS Kinesis</a> 4 capabilities, namely: Video Streams, Data Streams, Firehose, Data Analytics. Data API and Streams do not require a VPC to be setup to accept SQL commands. Integrates with EventBridge. Max 24 hr duration, 100 KB query size, 100 MB query result size. Auth using AWS Secretes Manager. <a target="_blank" href="https://aws.amazon.com/kinesis/data-analytics/faqs/">FAQs</a>. Commands: describe-statement, execute-statement, get-statement-result.  troubleshooting and scenario-based questions, like how would you solve a ProvisionedThroughPutExceeded error, when should you merge or split shard, what encryption options are available, and how the Kinesis service integrates with other services.
+   * <a target="_blank" href="https://aws.amazon.com/kinesis/whitepaper/">AWS Kinesis</a> 4 capabilities, namely: Video Streams, Data Streams, Firehose, Data Analytics. 
+   
+   Data API and Streams do not require a VPC to be setup to accept SQL commands. Integrates with EventBridge. Max 24 hr duration, 100 KB query size, 100 MB query result size. Auth using AWS Secretes Manager. <a target="_blank" href="https://aws.amazon.com/kinesis/data-analytics/faqs/">FAQs</a>. Commands: describe-statement, execute-statement, get-statement-result.  troubleshooting and scenario-based questions, like how would you solve a ProvisionedThroughPutExceeded error, when should you merge or split shard, what encryption options are available, and how the Kinesis service integrates with other services.
 
    * Database Migration Service (DMS)
    * Simple Queue Service (SQS)
    * Snowball
    * AWS Internet of Things (IOT)
-   * MSK
+   * MSK (Managed Stream for Kafka)
    * AWS Direct Connect
    <br /><br />
 
@@ -137,15 +151,17 @@ Storage and Data Management:
    * AWS Cognito
    <br /><br />
 
-Visualization/Analytics:
+
+<a name="Analytics"></a>
+
+### Analytics & Visualization
 
    * <a href="#Quicksight">Quicksight</a>
    * Other Visualization Tools (not a managed service): Salesforce Tableau, D3.js, HighCharts, and a custom chart as a solution, 
 
-   * Relational Database Service (RDS) and Aurora
    <br /><br />
 
-Security:
+Monitoring & Security:
 
    * IAM
    * Cloud HSM (Hardware Security Module)
@@ -155,29 +171,18 @@ Security:
    <br /><br />
 
 
-## Evolution in AWS Data Tools
+## Evolution in AWS Data Pipeline Tools
 
-<a target="_blank" href="https://aws.amazon.com/architecture/icons/">Amazon's new official "flat" icons</a> are used here to illustrate AWS cloud technologies evolving from "Lift and Shift" to Serverless to Low-Code to Machine Learning.
+<a target="_blank" href="https://aws.amazon.com/architecture/icons/">Amazon's new official "flat" icons</a> are used here to illustrate AWS cloud technologies evolving from "Lift and Shift" to Serverless to Low-Code to Machine Learning and <a target="_blank" href="https://wilsonmar.github.io/genai/">Generative Artificial Intelligence</a>.
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692639720/aws-data-tools-1920x1080_etix6l.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692639720/aws-data-tools-1920x1080_etix6l.png"><br /><em>Click for video</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy my animated pptx</em></a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692856984/aws-data-tools-1920x1080_zvwx48.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692856984/aws-data-tools-1920x1080_zvwx48.png"><br /><em>Click for video</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy my animated pptx</em></a>.
 
-<strike>Click the video above for the step-by-step commentary below, with links to additional commentary:</strike>
+Because many companies have <strong>legacy</strong> tech, this diagram covers both traditional and new <strong>Producers</strong> and <strong>Consumer</strong> technologies.
 
-<a name="EC2"></a>
+<a name="QuickSight"></a>
+<a name="Flow_QuickSight"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/ec2/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EC2.png"></a>The first generation of Amazon's capabilities in the cloud was to enable <strong>EC2 (Elastic Compute Cloud)</strong> Virtual Machines to run applications in the cloud within images containing full operating systems.
-
-1.  When the world began processing "Big Data" for "Business Intelligence" in the AWS cloud, they manually setup and tuned individual EC2 servers running <strong>Apache Spark</strong> accessing data stored in 
-
-1.  <a target="_blank" href="https://docs.aws.amazon.com/s3/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-S3.png"></a><strong>S3</strong> (Simple Storage Service) objects. S3 cloud storage has been available since Amazon Web Services first appeared. 
-
-    <a name="KMS"></a>
-
-1.  <a target="_blank" href="https://docs.aws.amazon.com/kms/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692639280/aws-icons/Amazon-KMS.png">KMS (Key Management Service)</a> creates cryptographic keys to encrypt and decrypts objects stored in S3. It is used by AWS Secrets Manager, which automates the rotation and retrieval of credentials, API keys, and other secrets.<br /><br />
-
-    <a name="Flow_QuickSight"></a>
-
-1.  <a target="_blank" href="https://docs.aws.amazon.com/quicksight/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-QuickSight.png"></a>From the perspective of Data Analysts who use the <a href="#QuickSight">AWS QuickSight</a> visualization tool. <a href="https://wilsonmar.github.io/tableau/">Tableau (from Salesforce)</a> offers a competing solution with fancier graphics.
+1.  <a target="_blank" href="https://docs.aws.amazon.com/quicksight/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-QuickSight.png"></a>Within the AWS cloud, Data Analysts use the <a href="#QuickSight">AWS QuickSight</a> visualization tool similar to how they use <a href="https://wilsonmar.github.io/tableau/">Tableau (from Salesforce)</a>, which offers a competing solution with fancier graphics.
 
     For an additional monthly cost, rather than using a direct SQL query, data can be optionally be imported into a dataset that uses SPICE (Super-fast, Parallel, In-memory Calculation Engine) allocated for use by all users within each region to rapidly perform advanced calculations and serve data. Internally, SPICE uses columnar in-memory storage.
     
@@ -187,93 +192,162 @@ Security:
 
     <a name="S3"></a>
 
-    
 1.  QuickSight can reach those legacy data warehouses. In fact, QuickSight can create visualizations directly from many different sources. 
 
+    <a name="EC2"></a>
 
+1.  <a target="_blank" href="https://docs.aws.amazon.com/ec2/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EC2.png">
+<strong>EC2 (Elastic Compute Cloud) servers</strong></a> running custom applications in Virtual Machines were the early generation. 
 
-1.  Earlier, applications were programmed in the Java programming language which uses <strong>JDBC/ODBC</strong> protocols to interact with Relational database software <strong>Oracle and Microsoft SQL</strong> popular in enterprise data centers at the time.
+    <a name="S3"></a>
+    
+1.  <a target="_blank" href="https://docs.aws.amazon.com/s3/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-S3.png"></a>Simple apps saved data objects in <strong>S3 (Simple Storage)</strong> in the AWS cloud. 
 
-1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390289/aws-icons/AWS-Lambda.png">Over time, AWS enabled various programs in <strong>AWS Lambda (serverless)</strong> functions are able to reach databases using ODBC and other protocols. This enables <strong>dynamic triggers</strong> to send messages and perhaps update databases.
+    S3 global cloud storage has been available since Amazon Web Services first appeared. 
 
-    The earliest approach to bring SQL to the cloud is what's called "lift and Shift" of database operations.
+    <a name="KMS"></a>
 
-    However, direct connections with databases from the public internet pose a vulnerability.
+1.  <a target="_blank" href="https://docs.aws.amazon.com/kms/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692639280/aws-icons/Amazon-KMS.png">KMS (Key Management Service)</a> creates cryptographic keys to encrypt and decrypts objects stored in S3. It is used by AWS Secrets Manager, which automates the rotation and retrieval of credentials, API keys, and other secrets.
+
+    <a name="Lambda"></a>
+
+1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390289/aws-icons/AWS-Lambda.png"></a>Over time, <strong>AWS Lambda</strong> enabled functions in various programming languages to be run "serverless" in the cloud without having to provision servers.
+
+    Lambda can send be triggered to send messages out (via EventBridge) to SMS on mobile phones as well as to other AWS services, such as S3, SQS, and Kinesis. 
+
+    <a name="Java"></a>
+    <a name="OLTP"></a>
+    <a name="SQL"></a>
+
+1.  Early programming languages (such as Java) store and retrieve data in <strong>Relational</strong> databases, which process <strong>SQL (Structured Query Language)</strong> to perform <strong>OLTP (Online Transaction Processing)</strong> of transactions (such as purchases and inventory updates). 
 
     <a name="RDS"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/rds/"><img align="right" alt="Database_AmazonRDS.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-RDS.png"></a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html">Amazon RDS (Relational Database Service)</a> is a web service that makes it easier to <strong>set up</strong>, operate, and scale a relational database in the AWS Cloud, easier than if they were on-prem. But with RDS, AWS takes care of the hardware and operating system patching across several regions. But customer admins still upgrade database software. 
+    Early databases also were installed inside EC2 servers, which required manual work to upgrade capacity, perhaps in more complex clusters.
 
-    <a name="Aurora"></a>
+1.  Early approaches to bring databases to the cloud is what's called <strong>"Lift and Shift"</strong> of database operations, but still retain manual install and upgrade of database software.
 
-1.  <a target="_blank" href="https://aws.amazon.com/rds/aurora/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Aurora.png"></a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">Amazon Aurora</a> brings to RDS SQL query compatibility with open-source relational database software MySQL and PostgreSQL. Conceptually, Aurora is a database engines within RDS. However, it operates differently than other RDS engines.
+1.  <a target="_blank" href="https://aws.amazon.com/rds/"><img align="right" alt="Database_AmazonRDS.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-RDS.png"></a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html">Amazon RDS (Relational Database Service)</a> is a web service that makes it easier to <strong>set up</strong>, operate, and <strong>scale</strong> a relational database in the AWS Cloud. 
 
-    In RDS, applications reference the CNAME of each database within RDS. RDS takes care of replication to a single secondary replica in the same region. But only the primary instance is updated. When RDS detects a need for failover, this multi-az instance approach switches DNS, which can take several minutes.
+    With RDS, AWS takes care of the hardware and operating system patching across several regions. 
+    
+    But customer admins still need to install and upgrade a flavor of database software such as <strong>Oracle and Microsoft SQL Server</strong>.
+
+    Applications reference each database in RDS using their DNS CNAME. RDS takes care of replication to a single secondary replica in the same region. But only the primary instance is updated. When RDS detects a need for failover, this multi-az instance approach switches DNS, which can take several minutes.
 
     The multi-az cluster approach replicates to two replicas. Replicas can be readers, to relieve such loads.
 
-    Aurora users can replicate to more than two replicas. Replicas can be read by a separate reader endpoint. Aurora's Backtrack features allow in-place rewind to a previous point in time.
+    <a name="Aurora"></a>
 
-    Unlike RDS local storage, Aurora uses cluster volumes that are shared. Aurora can detect SSD disk failures and repairs them. Replication occurs at the storage level. (Storage billed based on the "high watermark" level is being phased out).
+1.  <a target="_blank" href="https://aws.amazon.com/rds/aurora/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Aurora.png"></a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">Amazon Aurora</a> brings to RDS SQL query compatibility with open-source relational database software MySQL and PostgreSQL. Conceptually, Aurora is a flavor of database engine within RDS. 
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/neptune/latest/userguide/intro.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Neptune.png">Amazon Neptune</a> has a GUI that looks like RDS, but is serverless, fully managed implementation of open-source <a target="_blank" href="https://wilsonmar.github.io/graph-databases/">graph database</a> software. Since May 30, 2018, it runs with continuous backups to S3 within a VPC that's private by default. It's a for highly connected datasets where relationships between elements are as important as the data. Graph databases provide flexibility to address the most complex of data relationships -- used for mapping knowledge graphs, social networking, recommendations, fraud detection, life sciences, and network/IT operations. Neptune supports popular open-source W3C RDF (Resource Description Framework) and query languages Apache TinkerPop's Gremlin, openCypher, and SPARQL (but not licensed <a target="_blank" href="https://neo4j.com/">Neo4j</a>).
+    Internally, it operates somewhat differently than other RDS engines.
+    Aurora can replicate to more than two replicas, each read by a separate reader endpoint. 
+    Aurora's Backtrack features allow in-place rewind to a previous point in time.
+    Aurora's Multi-Master feature allows writes to be made to any replica, which are then replicated to other replicas.
 
+    Unlike RDS local storage, Aurora uses cluster volumes that are shared. Aurora can detect SSD disk failures and repair them automatically. 
+
+    Remember, Aurora is a relational database processing SQL queries.
 
     <a name="DynamoDB"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/dynamodb/"><img align="right" alt="Database_AmazonDynamoDB.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-DynamoDB.png"></a><a target="_blank" href="https://aws.amazon.com/dynamodb/resources/">AWS DynamoDB</a> is a <strong>key-value store</strong>. It's used for workloads such as session stores or shopping carts, taking place of MongoDB, Couchbase, and other document DBs in the AWS-managed cloud. Unlike SQL, DynamoDB has limited queries and doesn't have joins. Amazon also offers Firestore DocumentDB to get around MongoDB open-source licensing.
+1.  <a target="_blank" href="https://aws.amazon.com/dynamodb/"><img align="right" alt="Database_AmazonDynamoDB.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-DynamoDB.png"></a><a target="_blank" href="https://aws.amazon.com/dynamodb/resources/">AWS DynamoDB</a> is a <strong>key-value store</strong> call "No-SQL". It's used for workloads such as session stores or shopping carts, taking the place of MongoDB, Couchbase, and other document databases in the AWS-managed cloud. Unlike SQL, DynamoDB has less complex queries and doesn't have joins. Amazon also offers Firestore DocumentDB to get around MongoDB open-source licensing.
 
-    DynamoDB adds replication (streams) of table activity across geographic regions. Within each region, it provides fault tolerance in automatic synchronous replication across 3 data centers. Being a cloud service, it automatically allocates storage in partitions and imposes no limit to data storage.
+    Internally, DynamoDB adds replication (streams) of table activity across geographic regions. Within each region, it provides fault tolerance in automatic synchronous replication across 3 data centers. Being a cloud service, it automatically allocates storage in partitions and imposes no limit to data storage.
 
-1.  Instead of reaching DynamoDB directly, AWS has created <strong>DAX (DynamoDB Accelerator) agents</strong> installed on client servers to reach an in-memory cache in front of DynamoDB, like Redis.
+    <a name="DAX"></a>
+
+1.  Instead of reaching DynamoDB directly, an AWS <strong>DAX (DynamoDB Accelerator) agent</strong> can be installed on client servers to reach an in-memory cache in front of DynamoDB, like Redis.
+
+1.  <a target="_blank" href="https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-MSK.png">Amazon MSK (Managed Stream for Kafka)</a> is a serverless web app that runs a Kafka cache server.
+
+
+    <a name="GraphDBs"></a>
+
+    Apps being built today often make use of <a target="_blank" href="https://wilsonmar.github.io/graph-databases/">graph database</a> that have more flexibility than SQL to address the most complex of data relationships -- used for mapping knowledge graphs, social networking, recommendations, fraud detection, life sciences, and network/IT operations. 
+    
+    Datasets in Graph databases are highly connected, where relationships between elements are as important as the content data. 
+
+    <a name="Neptune"></a>
+    
+1.  <a target="_blank" href="https://docs.aws.amazon.com/neptune/latest/userguide/intro.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Neptune.png">Neptune</a>, Amazon's Graph database, has a GUI that looks like RDS, but is a fully serverless implementation of open-source software. It supports query languages Apache TinkerPop's Gremlin, openCypher, and SPARQL (but not licensed <a target="_blank" href="https://neo4j.com/">Neo4j</a>). 
+    
+    Since May 30, 2018, Neptune runs with continuous backups to S3 within a VPC that's private by default. 
+
+    <a name="BigData"></a>
+
+1.  When enterprises grew to need "Big Data" processing that aggregated data for "Business Intelligence" (BI) and "Data Warehousing" (DW), they used <strong>Apache Hadoop</strong> and <strong>Apache Spark</strong> to process data differently in servers managed by user administrators.
+    
+    <a name="MapReduce"></a>
+
+    They use <strong>"MapReduce"</strong> clusters to process data in parallel across many servers.
+
+1.  <a href="#EMR"><img align="right" alt="Analytics_AmazonEMR.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EMR.png"></a>Amazon provides both Elastic Map Reduce and, since November 2021, <a target="_blank" href="https://aws.amazon.com/emr/serverless/"><strong>Amazon EMR serverless</strong></a> to handle petabyte-scale analytics processing based on MapReduce and use of S3 buckets.
+
+    <a name="DataLake"></a>
+
+    As the amount of data grew, the concept of a <strong>Data Lake</strong> emerged to store data in its original form, without the need to transform it into a predefined schema.
+
+    This for OLAP (Analytical Processing) to be done on the fly, as needed.
+
+    OLAP uses columnar data structures such as "star schema" to hold summarized data in more rigid structure than OLTP. 
 
     <a name="Flow_Redshift"></a>
 
-1.  <a href="#Redshift"><img align="right" alt="Analytics_AmazonRedshift.png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png">Amazon Redshift Spectrum</a> is used to create a "data lake" of petbyte scale data warehouse for OLAP (Analytical Processing). OLAP uses columnar data structures such as "star schema" to hold summarized data in more rigid structure than OLTP. 
+1.  <a href="#Redshift"><img align="right" alt="Analytics_AmazonRedshift.png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png">Amazon Redshift Spectrum</a> is used to create a "data lake" of petbyte scale data warehouse for OLAP (Analytical Processing). 
 
     RedShift's "Federal Query" means it can join with data from S3 objects and other foreign data in queries. But one has to configure and launch underlying compute infrastructure since RedShift is not serverless and requires servers to be provisioned plus enhanced VPC.
 
     Redshift Spectrum means that it can query from S3 without loading data.
 
-    Incremental encrypted backups are automatic into S3 with every 8 hours, with retention for 1-35 days.
+    Incremental encrypted backups are automatic into S3 every 8 hours, with retention for 1-35 days.
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/athena/index.html"><img align="right" alt="Analytics_AmazonAthena.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Athena.png">Amazon Athena</a> is an AWS-managed SaaS offering. Athena's console GUI offers a simplified Jupyter Python Notebook developer experience that supports ODBC/JDBC drivers (like Amazon DynamoDB) as well as REST API calls. 
 
-    What's new about Athena is that its Apache Spark <strong>Presto data structures</strong> are stored into S3 <strong>without setting up EC2 servers</strong> (unlike Redshift and EMR). So Athena users only pay for data scanned ($5 per terabyte in most regions). 
+    <a name="Athena"></a>
 
-1.  <a href="#EMR"><img align="right" alt="Analytics_AmazonEMR.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EMR.png"></a>Also, Athena can access the results of traditional <strong>EMR (Elastic MapReduce)</strong> jobs stored in S3 buckets. So Athena can benefit from EMR's direct, lower-level access to Spark Hadoop internals. For example: Data scientists can use EMR to run machine learning TensorFlow jobs. Analysts can run SQL queries on Presto. Engineers can utilise EMR’s integration with streaming applications such as Kinesis or Spark… 
+1.  <a target="_blank" href="https://docs.aws.amazon.com/athena/index.html"><img align="right" alt="Analytics_AmazonAthena.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Athena.png">Amazon Athena</a> is an AWS-managed SaaS offering. Athena's console GUI offers a simplified <strong>Python Jupyter Notebook/strong> developer experience that supports ODBC/JDBC drivers (like Amazon DynamoDB) as well as REST API calls. Data scientists can use EMR to run machine learning TensorFlow jobs. 
 
-    <a target="_blank" href="https://aws.amazon.com/emr/serverless/">Amazon EMR serverless</a> was released in November 2021 for petabyte-scale analytics processing.
+    Athena can access the results of traditional <strong>EMR (Elastic MapReduce)</strong> jobs stored in S3 buckets. Athena can benefit from EMR's direct, lower-level access to Spark Hadoop internals. 
+    
+    Engineers can utilize EMR’s integration with streaming applications such as Kinesis or Spark… 
+    
+    <a name="ETLvsELT"></a>
+
+    Athena is advanced enough to perform from S3 buckets both legacy <strong>ETL (Extract, Transform, Load)</strong> processing AND modern <strong>ELT (Extract, Load, Transform)</strong> data structures stored into S3. 
+
+    * ETL (Extract, Transform, Load) is the traditional approach to arranging data for storage and analytics. This approach emerged at a time when disk space was more expensive and took time to obtain. ETL process removes data not needed in summaries in order to store less data. The resulting data (for OLAP) consists of a more rigid definition. Thus some call "schema on write".
+
+    * ELT (Extract, Load, Transform) is a more modern approach that uses more storage because data is stored in an unredacted form for transformation later, to enable retrospective analysis of attributes not considered previously. This some call "schema on read".
+
+
+    <a name="Presto"></a>
+
+    Alternately, Data Analysts can run SQL queries on <strong>Presto</strong> data structures using Athena.
+    <strong>without setting up EC2 servers</strong> (unlike Redshift and standard EMR). So Athena users only pay for data scanned ($5 per terabyte in most regions). 
+
+    
+    <a name="Glue"></a>
+
+1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390288/aws-icons/AWS-Glue.png">Many Athena users are migrating from EMR to use <strong>Amazon Glue ELT Jobs</strong> because Athena can run <strong>AWS Glue Crawler</strong> jobs which create <strong>AWS Glue Catalogs</strong> in S3. Glue Catalogs provide a central reference for metadata about data in many cloud services. 
 
     EMR costs around $14-16 per day while AWS Glue costs around $21 per day.
-    Although EMR requires customer operations attention to setup and scale versus Glue's serverless platform,
     EMR provides quicker start times. EMR has a wider range of server sizes.    
     
+
     ### Streams
 
     To build real-time data pipelines for receiving streams of data (such as <a target="_blank" href="https://aws.amazon.com/solutions/case-studies/new-relic-case-study/">logs</a>, there is a <a target="_blank" href="https://aws.amazon.com/msk/what-is-kafka/">open-source Apache Kafka</a>.
 
     But AWS has several additional technologies to make the creation and absorption of data streams easier and cheaper.
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-Timestream.png>Amazon MSK (Managed Stream for Kafka)</a> is a serverless web app that runs rgw Kafka cache server.
-
 1.  <strong>AWS Glue</strong> is a serverless data integration service that makes it easy to discover properties (schema), transform, prepare, and combine data for analytics, app and API development, and machine learning. Glue creates a <strong>centralized Data Catalog</strong> that forms the basis to visually create, run, and monitor pipelines for several workloads and types. 
 
-1.  Some Athena users have migrated from EMR to Glue for ETL processing because Athena can also access <strong>AWS Glue Catalogs</strong> also stored in a serverless architecture. 
-
-    ### ETL vs ELT
-
-    ETL (Extract, Transform, Load) is the traditional approach to arranging data for storage and analytics. This approach emerged at a time when disk space was more expensive and took time to obtain. So the "Transform" part meant stripping out data not of immediate interest. 
-
-    ELT (Extract, Load, Transform) is a more modern approach that uses more storage because data is stored in an unredacted form for transformation later. This enables retrospect analysis of attributes not considered previously.
-
-1.  Glue Crawler ...
-
-1.  Glue ETL Jobs
+    <a name="Kinesis"></a>
 
 1.  <a target="_blank" href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Firehose.png">Amazon Kinesis Data Firehose</a> is a <strong>serverless</strong> (AWS-managed) service to <strong>deliver</strong> (in near real-time) continuous streams of data (including video) to S3 buckets, other Amazon services, or any other HTTP endpoint destination (with or without transformation before send). <strong>"Low-code"</strong> Blueprints can be specified in Lambda to do some transformations on the fly.
 
-1.  <a target="_blank" href="https://aws.amazon.com/kinesis/">Amazon Kinesis</a><img align="right" alt="Analytics_AmazonKenesis.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"><a target="_blank" href="https://docs.aws.amazon.com/streams/latest/dev/introduction.html">Kinesis Data Streams</a> is a web service to collect, process, and analyze -- in real-time -- continuous streams of audio, video (and other data) from video cameras and social media platforms. This is done for fraud detection, trademark enforcement, customer engagement, and other monitoring.
+1.  <a target="_blank" href="https://aws.amazon.com/kinesis/">Amazon Kinesis</a><img align="right" alt="Analytics_AmazonKenesis.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"></a><a target="_blank" href="https://docs.aws.amazon.com/streams/latest/dev/introduction.html">Kinesis Data Streams</a> is a web service to collect, process, and analyze -- in real-time -- continuous streams of audio, video (and other data) from video cameras and social media platforms. This is done for fraud detection, trademark enforcement, customer engagement, and other monitoring.
 
     Unlike SQS, Kinesis can store 1 to 365 days of streams from multiple producers. Multiple consumers can read streams at different granularities.
 
@@ -292,8 +366,6 @@ Security:
 
 1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Streams.png>Amazon Kinesis Data Streams</a> is a web service to collect, process, and analyze -- in real-time -- streams of video and other continuous feeds of data being served up by YouTube, Vimeo, Facebook, and other social media platforms. This is done for fraud detection, trademark enforcement, customer engagement, and other monitoring.
 
-    ??? aggregation of data followed by loading the aggregate data into a data warehouse or map-reduce cluster.
-
 
 1.  Kinesis <strong>IoT Core</strong> provides a GUI to manage telemetry from robots.
 
@@ -309,9 +381,17 @@ Security:
 
     Amazon has leveraged its AI capabilities by embedding Machine Learning skills its its offerings.
 
-1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692756910/Amazon-API-Gateway_w7zvkp.png"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757207/aws-icons/Amazon-Macie.png"><strong>Amazon Macie</strong></a> is a web service that uses Machine Learning to analyze keywords in the content of data to detect whether critical data is being leaked.
+1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692756910/Amazon-API-Gateway_w7zvkp.png">Amazon API Gateway</a>
+
+1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757207/aws-icons/Amazon-Macie.png"><strong>Amazon Macie</strong></a> is a web service that uses Machine Learning to analyze keywords in the content of data to detect whether critical data is being leaked.
 
 1.  <a target="_blank" href="https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html">Amazon Inspector</a> detects vulnerabilities running in apps running within EC2 servers and in Lambda Functions.
+
+
+    <a name="API_Gateway"></a>
+
+    ??? are able to reach databases using ODBC and other protocols. This enables <strong>dynamic triggers</strong> to send messages and perhaps update databases.
+
 
 ### Recap
 
@@ -948,14 +1028,15 @@ Labs:
 
 <hr />
 
-## Social
-
 ## References
 
 https://www.wikiwand.com/en/Timeline_of_Amazon_Web_Services
 
 https://www.youtube.com/watch?v=tykcCf-Zz1M
 Top AWS Services A Data Engineer Should Know
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=VtzvF17ysbc">What is Data Pipeline</a>
+
 
 ## More on Amazon #
 
