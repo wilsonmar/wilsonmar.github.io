@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-08-20"
+date: "2023-08-22"
 file: "aws-data-tools"
 title: "AWS Data Tools"
 excerpt: "AWS data processing tools: Databases, Big Data, Data Warehouse, Data Lakehouse"
@@ -175,69 +175,110 @@ Monitoring & Security:
 
 Here I use <a target="_blank" href="https://aws.amazon.com/architecture/icons/">Amazon's new official "flat" icons</a> to illustrate AWS cloud technologies evolving from "Lift and Shift" to Serverless to Low-Code to Machine Learning and <a target="_blank" href="https://wilsonmar.github.io/genai/">Generative Artificial Intelligence</a>.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=Hs3RQsqUX3s"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692858015/aws-data-tools-1920x1080_wdmft6.png"><br /><em>Click for gradual reveal video (no commentary yet)</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
+<a name="Flow_Map"></a>
 
-Because many companies have <strong>legacy</strong> tech, this diagram covers both traditional and new <strong>Producers</strong> and <strong>Consumer</strong> technologies.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1693120356/aws-data-tools-1920x1080_ybtn95.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693120356/aws-data-tools-1920x1080_ybtn95.png"><br /><em>Click for gradual reveal video (no commentary yet)</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
 
-<a name="QuickSight"></a>
+<a name="Flow_Summary"></a>
+
+Although this "world map" is a busy diagram, it's still a subset of Amazon's over 200 plus services. 
+We begin with <strong>Visualizations</strong> because that's the human interface to data and thus the basis for judging value from the time and money spent on systems.
+
+There is a limit to how much analytics any person can absorb. So, increasingly, we become more dependent on <strong>alerts</strong> to know when to take action. Such intelligence feeds on metrics and logs from <strong>running applications</strong> such as CRM (Customer Relationship Management), ERP (Enterprise Resource Planning), and other core systems.
+
+<a name="Flow_MasterData"></a>
+
+<strong>Running applications</strong> programs generate and update <strong>master data</strong> -- a central "source of truth" about products, customers, and inventory positions. 
+
+Because many companies have <strong>legacy</strong> tech, here we cover both traditional and new approaches and technologies. Traditionally, "Big Data" filtered and aggregated data for "Business Intelligence" (BI) and "Data Warehousing" (DW) to make <strong>better decisions</strong>.
+
+The new approach to process <strong>external environmental inputs</strong> on the fly, as data streams in rather than in batches.
+We are also making more use of <strong>Machine Learning and Artificial Intelligcence</strong> to make predictions for us.
+
+<hr />
+
+<a name="Flow_Visualization"></a>
+
+Now let's dive into visualizations and analytics.
+
+Top-rated products in this category include <a href="https://wilsonmar.github.io/tableau/">Tableau (from Salesforce)</a> (at $2,000/month) and open-source Grafana.
+
 <a name="Flow_QuickSight"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/quicksight/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-QuickSight.png"></a>Within the AWS cloud, Data Analysts use the <a href="#QuickSight">AWS QuickSight</a> visualization tool similar to how they use <a href="https://wilsonmar.github.io/tableau/">Tableau (from Salesforce)</a>, which offers a competing solution with fancier graphics.
+1.  <a target="_blank" href="https://docs.aws.amazon.com/quicksight/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-QuickSight.png"></a>Within the AWS cloud, Data Analysts use the <a href="#QuickSight">AWS QuickSight</a>
 
-    For an additional monthly cost, rather than using a direct SQL query, data can be optionally be imported into a dataset that uses SPICE (Super-fast, Parallel, In-memory Calculation Engine) allocated for use by all users within each region to rapidly perform advanced calculations and serve data. Internally, SPICE uses columnar in-memory storage.
+    For an additional monthly cost, rather than using a direct SQL query, data can be optionally be imported by QuickSight using its <strong>SPICE</strong> (Super-fast, Parallel, In-memory Calculation Engine). This is a public pool columnar in-memory storage for use by all users within each region to rapidly perform advanced calculations and serve data.
     
-1.  QuickSight can access more data sources than shown on this diagram, such as text from <strong>GitHub</strong>, Twitter, and other APIs. 
+
+    <a name="Flow_BigData"></a>
+
+    Managers working within enterprises depend on "Big Data" to aggregate data for "Business Intelligence" (BI) and "Data Warehousing" (DW) to make <strong>better decisions</strong>.
+
+    Monitoring and Alerts based on trends is how the system asks for human review and intervention.
+
+    <a name="Flow_DataSources"></a>
+
+1.  QuickSight can access more data sources than shown on this diagram, such as text from <strong>GitHub</strong>, Twitter, and other APIs. QuickSight can create visualizations directly from many different sources. 
 
     <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692453318/aws-quicksight-ins-1264x483_qwiewl.png"><img alt="aws-quicksight-ins-1264x483.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692453318/aws-quicksight-ins-1264x483_qwiewl.png"></a>
 
-    <a name="S3"></a>
 
-1.  QuickSight can reach those legacy data warehouses. In fact, QuickSight can create visualizations directly from many different sources. 
+    ### Apps to master data
 
-    <a name="EC2"></a>
+    <a name="Flow_EC2"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/ec2/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EC2.png">
-<strong>EC2 (Elastic Compute Cloud) servers</strong></a> running custom applications in Virtual Machines were the early generation. 
+1.  <a target="_blank" href="https://docs.aws.amazon.com/ec2/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EC2.png"><strong>EC2 (Elastic Compute Cloud) servers</strong> in Virtual Machines (VMs) in the AWS cloud.
 
-    <a name="S3"></a>
+    More recently, applications are more scalable when run within 
+
+    <a name="Flow_EKS"></a>
+
+1.  <a target="_blank" href="https://docs.aws.amazon.com/EKS/latest/dev/Welcome.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-EKS.png"></a><strong>containers</strong> managed by ECS (Elastic Container Service) and <strong>EKS (Elastic Kubernetes Service)</strong> clusters in the AWS cloud.
+
+    <a name="Flow_Lambda"></a>
+
+1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390289/aws-icons/AWS-Lambda.png"></a>Over time, <strong>AWS Lambda</strong> enabled programs in various languages run "serverless" in the cloud without having to provision servers or containers.
+
+    <a name="Flow_Alerts"></a>
+
+    Lambda can send, optionally through <strong>EventBridge</strong> scheduling, <strong>alerts</strong> in the form of emails via <a target="_blank" href="https://aws.amazon.com/ses/">SES (Simple Email Service)</a>, SMS texts to mobile phones via <a target="_blank" href="https://aws.amazon.com/pinpoint/">AWS Pinpoint</a>, messages to other AWS services via <a target="_blank" href="https://aws.amazon.com/sns/">SNS (Simple Notification Service)</a>, and 3rd-party HTTP services such as Slack.
+
+    Lambda functions can be triggered to fire dynamically by events from other AWS services.
     
-1.  <a target="_blank" href="https://docs.aws.amazon.com/s3/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-S3.png"></a>Simple apps saved data objects in <strong>S3 (Simple Storage)</strong> in the AWS cloud. 
+    But Lambda functions are limited on how large and frequent each can be.
 
-    S3 global cloud storage has been available since Amazon Web Services first appeared. 
 
-    <a name="KMS"></a>
+    <a name="Flow_S3"></a>
+    
+1.  <a target="_blank" href="https://docs.aws.amazon.com/s3/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-S3.png"></a>Early applications and functions store data in the <strong>S3 (Simple Storage Storage)</strong> available globally in the AWS cloud. But the most modern of app technologies continue to make use of S3 objects for data storage.
+
+    <a name="Flow_KMS"></a>
 
 1.  <a target="_blank" href="https://docs.aws.amazon.com/kms/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692639280/aws-icons/Amazon-KMS.png">KMS (Key Management Service)</a> creates cryptographic keys to encrypt and decrypts objects stored in S3. It is used by AWS Secrets Manager, which automates the rotation and retrieval of credentials, API keys, and other secrets.
 
-    <a name="Lambda"></a>
+    <a name="Flow_Java"></a>
+    <a name="Flow_OLTP"></a>
+    <a name="Flow_SQL"></a>
 
-1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390289/aws-icons/AWS-Lambda.png"></a>Over time, <strong>AWS Lambda</strong> enabled functions in various programming languages to be run "serverless" in the cloud without having to provision servers.
+1.  Early apps used stored and retrieved data using <strong>relational</strong> <strong>SQL (Structured Query Language)</strong> to perform <strong>OLTP (Online Transaction Processing)</strong> of transactions (such as purchases and inventory) in <strong>relational</strong> databases. 
 
-    Lambda can send be triggered to send messages out (via EventBridge) to SMS on mobile phones as well as to other AWS services, such as S3, SQS, and Kinesis. 
-
-    <a name="Java"></a>
-    <a name="OLTP"></a>
-    <a name="SQL"></a>
-
-1.  Early programming languages (such as Java) store and retrieve data in <strong>Relational</strong> databases, which process <strong>SQL (Structured Query Language)</strong> to perform <strong>OLTP (Online Transaction Processing)</strong> of transactions (such as purchases and inventory updates). 
-
-    <a name="RDS"></a>
+    <a name="Flow_RDS"></a>
 
     Early databases also were installed inside EC2 servers, which required manual work to upgrade capacity, perhaps in more complex clusters.
 
-1.  Early approaches to bring databases to the cloud is what's called <strong>"Lift and Shift"</strong> of database operations, but still retain manual install and upgrade of database software.
+1.  Early approaches to bring databases to the cloud used what's called <strong>"Lift and Shift"</strong> in ...
 
 1.  <a target="_blank" href="https://aws.amazon.com/rds/"><img align="right" alt="Database_AmazonRDS.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-RDS.png"></a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html">Amazon RDS (Relational Database Service)</a> is a web service that makes it easier to <strong>set up</strong>, operate, and <strong>scale</strong> a relational database in the AWS Cloud. 
 
     With RDS, AWS takes care of the hardware and operating system patching across several regions. 
     
-    But customer admins still need to install and upgrade a flavor of database software such as <strong>Oracle and Microsoft SQL Server</strong>.
+1.  But customer admins still need to install and upgrade a flavor of database software such as <strong>Oracle and Microsoft SQL Server</strong>.
 
-    Applications reference each database in RDS using their DNS CNAME. RDS takes care of replication to a single secondary replica in the same region. But only the primary instance is updated. When RDS detects a need for failover, this multi-az instance approach switches DNS, which can take several minutes.
+    Internally, applications reference each database in RDS using their DNS CNAME. RDS takes care of replication to a single secondary replica in the same region. But only the primary instance is updated. When RDS detects a need for failover, this multi-az instance approach switches DNS, which can take several minutes.
 
-    The multi-az cluster approach replicates to two replicas. Replicas can be readers, to relieve such loads.
+    The multi-az cluster approach replicates to two replicas. Replicas can be readers, to relieve load on the one node which responds to write requests.
 
-    <a name="Aurora"></a>
+    <a name="Flow_Aurora"></a>
 
 1.  <a target="_blank" href="https://aws.amazon.com/rds/aurora/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Aurora.png"></a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">Amazon Aurora</a> brings to RDS SQL query compatibility with open-source relational database software MySQL and PostgreSQL. Conceptually, Aurora is a flavor of database engine within RDS. 
 
@@ -250,42 +291,59 @@ Because many companies have <strong>legacy</strong> tech, this diagram covers bo
 
     Remember, Aurora is a relational database processing SQL queries.
 
-    <a name="DynamoDB"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/dynamodb/"><img align="right" alt="Database_AmazonDynamoDB.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-DynamoDB.png"></a><a target="_blank" href="https://aws.amazon.com/dynamodb/resources/">AWS DynamoDB</a> is a <strong>key-value store</strong> call "No-SQL". It's used for workloads such as session stores or shopping carts, taking the place of MongoDB, Couchbase, and other document databases in the AWS-managed cloud. Unlike SQL, DynamoDB has less complex queries and doesn't have joins. Amazon also offers Firestore DocumentDB to get around MongoDB open-source licensing.
+    <a name="Flow_NoSQL"></a>
 
-    Internally, DynamoDB adds replication (streams) of table activity across geographic regions. Within each region, it provides fault tolerance in automatic synchronous replication across 3 data centers. Being a cloud service, it automatically allocates storage in partitions and imposes no limit to data storage.
+1.  AWS also manages two <strong>NoSQL</strong> databases accessible by QuickSight: <strong>DocumentDB</strong> (which manages flexible JSON data models like open-source MongoDB/Atlas for content management) and <strong>DynamoDB</strong> (which manages simple and thus fast key-value data models). 
 
-    <a name="DAX"></a>
+    Unlike SQL, NoSQL databases have less complex queries and no joins. 
+
+    <a name="Flow_DocumentDB"></a>
+
+1.  AWS automatically replicates six copies of DocumentDB data across 3 Availability Zones to offer an Availability SLA of <strong>99.99%</strong> ("4 nines") for DocumentDB. 
+
+    PROTIP: DocumentDB requires more manual scaling than DynamoDB. DocumentDB Firestore (for licensing) is has been modified from open-source MongoDB. The number of instances for the cluster and the instance sizes need to be specified, so admins need to keep an eye on usage and performance. And although encryption in transit is enabled by default, encryption at rest is not enabled by default, and can only be configured using the AWS Console. Once enabled, encryption cannot be disabled. 
+
+    <a name="Flow_DynamoDB"></a>
+
+1.  <a target="_blank" href="https://aws.amazon.com/dynamodb/"><img align="right" alt="Database_AmazonDynamoDB.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-DynamoDB.png"></a>The key-value store in <a target="_blank" href="https://aws.amazon.com/dynamodb/resources/"><strong>AWS DynamoDB</strong></a> is used for workloads such as session stores or shopping carts. 
+
+    AWS manages serverless DynamoDB to automatically scale up and down to meet demand. 
+
+    Internally, DynamoDB uses an array of SSDs to store <strong>petabytes</strong> of data in items of 400KB each. It can serve over 20 million requests per second without performance loss because it  replicates (streams) activity across geographic regions. Within each region.
+    
+    DynamoDB also provides fault tolerance with automatic synchronous replication across 3 AZs.
+    But DynamoDB also performs "continuous" backups to S3 automatically for "point-in-time" recovery up to 35 days back. All this enables AWS to commit to the highest Availability SLA of <strong>99.999%</strong> ("6 nines") for DynamoDB.
+
+    <a name="Flow_DAX"></a>
 
 1.  Instead of reaching DynamoDB directly, an AWS <strong>DAX (DynamoDB Accelerator) agent</strong> can be installed on client servers to reach an in-memory cache in front of DynamoDB, like Redis.
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-MSK.png">Amazon MSK (Managed Stream for Kafka)</a> is a serverless web app that runs a Kafka cache server.
 
-
-    <a name="GraphDBs"></a>
+    <a name="Flow_GraphDBs"></a>
 
     Apps being built today often make use of <a target="_blank" href="https://wilsonmar.github.io/graph-databases/">graph database</a> that have more flexibility than SQL to address the most complex of data relationships -- used for mapping knowledge graphs, social networking, recommendations, fraud detection, life sciences, and network/IT operations. 
     
     Datasets in Graph databases are highly connected, where relationships between elements are as important as the content data. 
 
-    <a name="Neptune"></a>
+    <a name="Flow_Neptune"></a>
     
 1.  <a target="_blank" href="https://docs.aws.amazon.com/neptune/latest/userguide/intro.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Neptune.png">Neptune</a>, Amazon's Graph database, has a GUI that looks like RDS, but is a fully serverless implementation of open-source software. It supports query languages Apache TinkerPop's Gremlin, openCypher, and SPARQL (but not licensed <a target="_blank" href="https://neo4j.com/">Neo4j</a>). 
-    
-    Since May 30, 2018, Neptune runs with continuous backups to S3 within a VPC that's private by default. 
 
-    <a name="BigData"></a>
+    Since May 30, 2018, Neptune has run with continuous backups to S3 within a VPC that's private by default. 
 
-1.  When enterprises grew to need "Big Data" processing that aggregated data for "Business Intelligence" (BI) and "Data Warehousing" (DW), they used <strong>Apache Hadoop</strong> and <strong>Apache Spark</strong> to process data differently in servers managed by user administrators.
-    
-    <a name="MapReduce"></a>
 
-    Hadoop uses <strong>"MapReduce"</strong> clusters to process data in parallel across many servers.
+    <a name="Flow_Spark"></a>
+
+1.  Even smaller enterprises need "Big Data" processing that aggregates data for "Business Intelligence" (BI) and "Data Warehousing" (DW). Flavors of <strong>Apache Spark</strong>, Hadoop, and Presto (for streaming) flavors have their own way of storing and processing data.
+
+    <a name="Flow_MapReduce"></a>
+
+    Hadoop uses <strong>"MapReduce"</strong> clusters to process data <strong>in parallel</strong> across many servers.
 
 1.  <a href="#EMR"><img align="right" alt="Analytics_AmazonEMR.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EMR.png"></a>Amazon provides both Elastic Map Reduce and, since November 2021, <a target="_blank" href="https://aws.amazon.com/emr/serverless/"><strong>Amazon EMR serverless</strong></a> to handle petabyte-scale analytics processing based on MapReduce and use of S3 buckets.
 
-    <a name="DataLake"></a>
+    <a name="Flow_DataLake"></a>
 
     Traditionally, OLAP was done using columnar data structures such as "star schema" to hold summarized data -- a more rigid structure than OLTP. 
 
@@ -295,22 +353,24 @@ Because many companies have <strong>legacy</strong> tech, this diagram covers bo
 
 1.  <a href="#Redshift"><img align="right" alt="Analytics_AmazonRedshift.png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png">Amazon Redshift Spectrum</a> is used to create a "data lake" of petbyte scale data warehouse for OLAP (Analytical Processing). 
 
-    RedShift's "Federal Query" means it can join with data from S3 objects and other foreign data in queries. But one has to configure and launch underlying compute infrastructure since RedShift is not serverless and requires servers to be provisioned plus enhanced VPC.
+    RedShift's "Federal Query" means it can join with data from S3 objects and other foreign data in queries. But one has to configure and launch underlying compute infrastructure since RedShift is not serverless and requires servers to be provisioned (with enhanced VPC).
 
     Redshift Spectrum means that it can query from S3 without loading data.
 
     Incremental encrypted backups are automatic into S3 every 8 hours, with retention for 1-35 days.
 
 
-    <a name="Athena"></a>
+    <a name="Flow_Athena"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/athena/index.html"><img align="right" alt="Analytics_AmazonAthena.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Athena.png">Amazon Athena</a> is an AWS-managed SaaS offering. Athena's console GUI offers a simplified <strong>Python Jupyter Notebook/strong> developer experience that supports ODBC/JDBC drivers (like Amazon DynamoDB) as well as REST API calls. Data scientists can use EMR to run machine learning TensorFlow jobs. 
+1.  <a target="_blank" href="https://docs.aws.amazon.com/athena/index.html"><img align="right" alt="Analytics_AmazonAthena.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Athena.png">Amazon Athena</a> is an AWS-managed SaaS offering. Athena's console GUI offers a simplified <strong>Python Jupyter Notebook/strong> developer experience that supports ODBC/JDBC drivers (like Amazon DynamoDB) as well as REST API calls. 
+
+    ??? Good for small data sets?
 
     Athena can access the results of traditional <strong>EMR (Elastic MapReduce)</strong> jobs stored in S3 buckets. Athena can benefit from EMR's direct, lower-level access to Spark Hadoop internals. 
     
     Engineers can utilize EMR’s integration with streaming applications such as Kinesis or Spark… 
     
-    <a name="ETLvsELT"></a>
+    <a name="Flow_ETLvsELT"></a>
 
     Athena is advanced enough to perform from S3 buckets both legacy <strong>ETL (Extract, Transform, Load)</strong> processing AND modern <strong>ELT (Extract, Load, Transform)</strong> data structures stored into S3. 
 
@@ -319,81 +379,111 @@ Because many companies have <strong>legacy</strong> tech, this diagram covers bo
     * ELT (Extract, Load, Transform) is a more modern approach that uses more storage because data is stored in an unredacted form for transformation later, to enable retrospective analysis of attributes not considered previously. This some call "schema on read".
 
 
-    <a name="Presto"></a>
+    <a name="Flow_Presto"></a>
 
     Alternately, Data Analysts can run SQL queries on <strong>Presto</strong> data structures using Athena.
     <strong>without setting up EC2 servers</strong> (unlike Redshift and standard EMR). So Athena users only pay for data scanned ($5 per terabyte in most regions). 
 
     
-    <a name="Glue"></a>
+    <a name="Flow_Glue"></a>
 
-1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390288/aws-icons/AWS-Glue.png">Many Athena users are migrating from EMR to use <strong>Amazon Glue ELT Jobs</strong> because Athena can run <strong>AWS Glue Crawler</strong> jobs which create <strong>AWS Glue Catalogs</strong> in S3. Glue Catalogs provide a central reference for metadata about data in many cloud services. 
+1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390288/aws-icons/AWS-Glue.png">Many Athena users are migrating from EMR to use <strong>Amazon Glue ELT Jobs</strong> because Glue is serverless and thus more scalable. 
 
-    EMR costs around $14-16 per day while AWS Glue costs around $21 per day.
-    EMR provides quicker start times. EMR has a wider range of server sizes.    
+    EMR provides quicker start times. 
+    EMR has a wider range of server sizes.    
     
+    EMR costs around $14-16 per day while AWS Glue costs around $21 per day.
+    But that difference is made up by avoiding hassles of setup and the cost of "always on" EMR clusters.
+
+    <strong>AWS Glue Crawler</strong> jobs scans S3 to create <strong>AWS Glue Catalogs</strong> housed in a Glue Schema Registry. The Glue Catalog for each region provides a central reference for metadata about all services. Catalog information includes location, ownership, schema, data types, and other properties changed over time, which can be used to create ETL jobs.
+    <a target="_blank" href="https://www.youtube.com/watch?v=yj98zViIgYI" title="how to use Glue to create a data lake.">VIDEO</a> <a target="_blank" href="https://www.youtube.com/playlist?list=PL5KTLzN85O4KdNBfGpD-QIabS3yvwI4qn">series</a> <a target="_blank" href="https://www.youtube.com/watch?v=8jlAoB1GmNs">4</a>
+    
+
+    <a name="Flow_MSK"></a>
+    <a name="Flow_Streams"></a>
 
     ### Streams
 
-    To build real-time data pipelines for receiving streams of data (such as <a target="_blank" href="https://aws.amazon.com/solutions/case-studies/new-relic-case-study/">logs</a>, there is a <a target="_blank" href="https://aws.amazon.com/msk/what-is-kafka/">open-source Apache Kafka</a>.
+    To collect and process events <strong>real-time</strong> in a stream of data (such as <a target="_blank" href="https://aws.amazon.com/solutions/case-studies/new-relic-case-study/">logs</a>, <a target="_blank" href="https://aws.amazon.com/msk/what-is-kafka/">open-source Apache Kafka</a> was created.
 
-    But AWS has several additional technologies to make the creation and absorption of data streams easier and cheaper.
+1.  <a target="_blank" href="https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-MSK.png">Amazon MSK (Managed Stream for Kafka)</a> is a serverless web app that runs a Kafka cache server.
 
-1.  <strong>AWS Glue</strong> is a serverless data integration service that makes it easy to discover properties (schema), transform, prepare, and combine data for analytics, app and API development, and machine learning. Glue creates a <strong>centralized Data Catalog</strong> that forms the basis to visually create, run, and monitor pipelines for several workloads and types. 
-
-    <a name="Kinesis"></a>
-
-1.  <a target="_blank" href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Firehose.png">Amazon Kinesis Data Firehose</a> is a <strong>serverless</strong> (AWS-managed) service to <strong>deliver</strong> (in near real-time) continuous streams of data (including video) to S3 buckets, other Amazon services, or any other HTTP endpoint destination (with or without transformation before send). <strong>"Low-code"</strong> Blueprints can be specified in Lambda to do some transformations on the fly.
-
-1.  <a target="_blank" href="https://aws.amazon.com/kinesis/">Amazon Kinesis</a><img align="right" alt="Analytics_AmazonKenesis.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"></a><a target="_blank" href="https://docs.aws.amazon.com/streams/latest/dev/introduction.html">Kinesis Data Streams</a> is a web service to collect, process, and analyze -- in real-time -- continuous streams of audio, video (and other data) from video cameras and social media platforms. This is done for fraud detection, trademark enforcement, customer engagement, and other monitoring.
-
-    Unlike SQS, Kinesis can store 1 to 365 days of streams from multiple producers. Multiple consumers can read streams at different granularities.
-
-1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Analytics.png">Amazon Kinesis Data Analytics</a> processes complex SQL commands on behalf of other Kinesis services. It can also reference data from S3 such as player scores for a leaderboard in an e-sports, election, or security app.
+    But AWS has several technologies to make the creation and absorption of data streams easier and cheaper. <a target="_blank" href="https://aws.amazon.com/kinesis/">Amazon Kinesis</a><img align="right" alt="Analytics_AmazonKenesis.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"></a> is a family of services that make it easy to collect, process, and analyze real-time, streaming data so you can get timely insights and react quickly to new information.
 
 
+    <a name="Flow_Kinesis_Data_Streams"></a>
 
-1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Video-Streams.png">Amazon Kinesis Video Streams</a> 
+1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Streams.png>Amazon Kinesis Data Streams</a> is a web service to collect, process, and analyze -- in real-time -- continuous streams of data. It's used for fraud detection, trademark enforcement -- monitoring of sentiment and engagement in social media (recommended posts on Twitter, Facebook, YouTube, Vimeo, and other social media platforms).
+ 
+    PROTIP: Kinesis Data Streams is NOT serverless. Payment is based on either provisioned or data shard hours used.
+
+    When setting up a Kinesis Data Stream, select the number of shards to provision. Each shard can ingest 1 MB/sec and 1,000 PUT/sec. Each shard can support up to 5 GET requests per second.
+
+    Each consumer can read streams at a different granularity.
+
+    Unlike SQS, Kinesis can store 1 to 365 days of streams from multiple producers. 
+    
+    <a name="Flow_Kinesis_Data_Firehose"></a>
+
+1.  <a target="_blank" href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Firehose.png">Amazon Kinesis Data Firehose</a> is a <strong>serverless</strong> (AWS-managed) service to <strong>deliver</strong> continuous streams of data (including video) to S3 buckets, other Amazon services, or any other HTTP endpoint destination (with or without transformation before send). 
+
+    Kinesis Firehose can perform <strong>transformations on the fly</strong> specified in <strong>"Low-code"</strong> Blueprints within Lambda to do some transformations. This is why its performance is called <strong>"near real-time"</strong> (of 60 seconds+) rather than real-time (200+ milliseconds).
+
+    PROTIP: Firehose can be configured to deliver data to S3 either immediately or in <strong>batches</strong> of 1 to 15 minutes.
 
 
+    <a name="Flow_Kinesis_Data_Analytics"></a>
+
+1.  <a target="_blank" href="https://aws.amazon.com/kinesis/data-analytics/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Analytics.png">Amazon Kinesis Data Analytics</a> processes complex SQL commands on behalf of other Kinesis services. It can also reference data from S3 such as player scores for a leaderboard in an e-sports, election, or security app.
+
+    Kinesis Data Analytics runs standard SQL queries on incoming data streams. Once data is available in a target data source, it kicks off a <strong>AWS Glue ETL job</strong> to do further transform data for additional analytics and reporting.
+
+
+    <a name="Flow_Kinesis_Video_Streams"></a>
+
+1.  <a target="_blank" href="https://aws.amazon.com/kinesis/video-streams/s"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Video-Streams.png">Amazon Kinesis Video Streams</a> 
+
+
+    <a name="Flow_Timeseries"></a>
 
 1.  <a target="_blank" href="https://docs.aws.amazon.com/timestream/latest/developerguide/what-is-timestream.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-Timestream.png>Amazon Timestream</a> is a Time Series database designed to store a large amount of sensor data for IoT and DevOps application monitoring. It keeps recent data in memory and automatically moves historical data to a cost-optimized storage tier. It integrates with AWS IoT Core, Amazon Kinesis, Amazon MSK, open-source Telegraf, Amazon QuickSight, SageMaker. 
 
 
 1.  As a serverless provider, the Athena web service is always ready to query data. So it is used for infrequent or ad hoc data analysis such as any type of log data exported into S3, such as Application Load Balancer, Amazon CloudWatch app logs, AWS CloudTrail, Amazon CloudFront, etc.
 
-1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Streams.png>Amazon Kinesis Data Streams</a> is a web service to collect, process, and analyze -- in real-time -- streams of video and other continuous feeds of data being served up by YouTube, Vimeo, Facebook, and other social media platforms. This is done for fraud detection, trademark enforcement, customer engagement, and other monitoring.
-
 
 1.  Kinesis <strong>IoT Core</strong> provides a GUI to manage telemetry from robots.
 
-1.  <strong>Kinesis Data Streams</strong> is used to process <strong>Social Media streams</strong> for sentiment and engagement 
-
-    Kinesis Data Analytics runs standard SQL queries on incoming data stream. Once data is available in a target data source, it kicks off a AWS Glue ETL job to do further transform data and prepare it for additional analytics and reporting.
 
     <a name="Flow_LakeFormation"></a>
 
 1.  <a href="#LakeFormation">Lake Formation</a> provides a central way to manage with <strong>fine-grained permissions to a lot of data across AWS data services</strong>.
 
+    <a name="Flow_SageMaker"></a>
+
 1.  Amazon has invested heavily in its <strong>SageMaker</strong> ML (Machine Learning) Modeling tool for AI (Artificial Intelligence).
 
     Amazon has leveraged its AI capabilities by embedding Machine Learning skills its its offerings.
 
+    <a name="Flow_API_Gateway"></a>
+
 1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692756910/Amazon-API-Gateway_w7zvkp.png">Amazon API Gateway</a>
-
-1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757207/aws-icons/Amazon-Macie.png"><strong>Amazon Macie</strong></a> is a web service that uses Machine Learning to analyze keywords in the content of data to detect whether critical data is being leaked.
-
-1.  <a target="_blank" href="https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html">Amazon Inspector</a> detects vulnerabilities running in apps running within EC2 servers and in Lambda Functions.
-
-
-    <a name="API_Gateway"></a>
 
     ??? are able to reach databases using ODBC and other protocols. This enables <strong>dynamic triggers</strong> to send messages and perhaps update databases.
 
 
+    <a name="Flow_Macie"></a>
+
+1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757207/aws-icons/Amazon-Macie.png"><strong>Amazon Macie</strong></a> is a web service that uses Machine Learning to analyze keywords in the content of data to detect whether critical data is being leaked.
+
+    <a name="Flow_Inspector"></a>
+
+1.  <a target="_blank" href="https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html">Amazon Inspector</a> detects vulnerabilities running in apps running within EC2 servers and in Lambda Functions.
+
+
 ### Recap
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692858015/aws-data-tools-1920x1080_wdmft6.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692858015/aws-data-tools-1920x1080_wdmft6.png"><br /><em>Click for full screen view</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1693120356/aws-data-tools-1920x1080_ybtn95.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693120356/aws-data-tools-1920x1080_ybtn95.png"><br /><em>Click for full screen view</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
 
 
 <hr />
@@ -434,19 +524,31 @@ Among the 200+ services that make up AWS, these cloud have the most with process
 
 <a target="_blank" href="https://aws.amazon.com/data-exchange/">Amazon Data Exchange</a> provides <a target="_blank" href="https://aws.amazon.com/marketplace/search/results?ref_=adx_hp_ben_wdtap&trk=adx_hp_ben_wdtap&category=d5a43d97-558f-4be7-8543-cce265fe6d9d&FULFILLMENT_OPTION_TYPE=DATA_EXCHANGE&filters=FULFILLMENT_OPTION_TYPE">data products among Amazon's marketplace</a> to purchase data from various sources "3rd-party" to Amazon. Many datasets are free.
 
+[<a href="#Flow_DataExchange">Return to flow diagram</a>]
+
 ## RDS
 
 QUESTION: RDS now has compatibility with other databases as well?
 
 https://github.com/terraform-aws-modules/terraform-aws-rds
 
+[<a href="#Flow_RDS">Return to flow diagram</a>]
+
+## API Gateway
+
+[<a href="#Flow_API_Gateway">Return to flow diagram</a>]
+
 ## Aurora
 
 https://github.com/terraform-aws-modules/terraform-aws-rds-aurora
 
+[<a href="#Flow_Aurora">Return to flow diagram</a>]
+
 ## S3
 
 https://github.com/terraform-aws-modules/terraform-aws-s3-bucket
+
+[<a href="#Flow_S3">Return to flow diagram</a>]
 
 
 ## Redshift
@@ -481,8 +583,13 @@ It's more suitable for streaming data processing rather than interactive analyti
    * Output KCL
    <br /><br />
 
-Kinesis Data Streams ingests continuous streams of data (to shards), replicated across three AZs in a Region.
-It uses a cursor in DynamoDB to restart failed apps at the exact position within the stream where failure occured.
+   * https://www.youtube.com/watch?v=ZW6wbUILlI0&t=41s
+   <br /><br />
+
+Kinesis Data Streams ingests continuous streams of data (to shards), replicated across three AZs in a Region. It uses a cursor in DynamoDB to restart failed apps at the exact position within the stream where failure occured.
+
+   * https://www.youtube.com/watch?v=vCRa3pymCzA
+   <br /><br />
 
 Kinesis Storm Sprout reads from a Kinesis stream into Apache Storm.
 
@@ -492,15 +599,17 @@ Kinesis Data Analytics provisions capacity in Kinesis Processing Units (KPU) for
 
 Kinesis Video Streams automatically provisions and elastically scales to millions of devices and scales down when devices are not transmitting.
 
+   * https://aws.amazon.com/kinesis/video-streams/pricing/
+   <br /><br />
+
 <img width="458" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692399384/aws-glue-s3-athena-quicksight-458x214_j2hlrj.png">
 
 
    * https://www.youtube.com/watch?v=_bRTlb9b59Y by "Be a Better Dev"
    * https://www.youtube.com/watch?v=b0ghP_WGYC8 by Enlear Academy
 
-Johnny Chivers has several videos:
+Johnny Chivers videos about Kinesis:
    * <a target="_blank" href="https://www.youtube.com/watch?v=_t3k6oX2mfc&t=47s">setup from a Mac referencing<br /><a target="_blank" href="https://github.com/johnny-chivers/kinesisZeroToHero/">https://github.com/johnny-chivers/kinesisZeroToHero</a> containing a CloudFormation yaml template.
-
 
 
 [<a href="#Flow_DynamoDB">Return to flow diagram</a>]
@@ -513,13 +622,20 @@ Amazon CloudWatch Logs is a web service for monitoring and troubleshooting your 
 
 https://github.com/terraform-aws-modules/terraform-aws-cloudwatch
 
+[<a href="#Flow_CloudWatch">Return to flow diagram</a>]
+
+
 ## CloudFront
 
 https://github.com/terraform-aws-modules/terraform-aws-cloudfront
 
+[<a href="#Flow_CloudFront">Return to flow diagram</a>]
+
 ## CloudTrail
 
 AWS CloudTrail is a web service that records AWS API calls for your account and delivers log files to you. The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, the request parameters, and the response elements that the AWS service returns.
+
+[<a href="#Flow_CloudTrail">Return to flow diagram</a>]
 
 
 
@@ -597,16 +713,29 @@ Johnny Chivers:
 
 ## DynamoDB
 
-It's managed via a REST API.Its SELECT operations are like SQL but not exactly.<br />
+It's managed via a REST API. Its SELECT operations are like SQL but not exactly.<br />
 So it's for ports of apps from SQL relational databases that have joins.
 
 Use S3 for storing blob data > 400 KB.
 
 <a target="_blank" href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.concepts.html">
-DAX (DynamoDB Acellerator)</a> provides a cluster of cloud-based caching nodes that receives DynamoDB traffic through a client added on EC2 servers. Frequently-referenced DynamoDB data are held in-memory within 3-10 nodes to deliver up to a 10 times performance improvement. One of the nodes serves as the primary node for the cluster. Additional nodes (if present) serve as read replicas. All this without requiring developers to manage cache invalidation, data population, or cluster management. 
+DAX (DynamoDB Accelerator)</a> provides a cluster of cloud-based caching nodes that receives DynamoDB traffic through a client added on EC2 servers. Frequently-referenced DynamoDB data are held in-memory within 3-10 nodes to deliver up to a 10 times performance improvement. One of the nodes serves as the primary node for the cluster. Additional nodes (if present) serve as read replicas. All this without requiring developers to manage cache invalidation, data population, or cluster management. 
+
+   * <a target="_blank" href="https://blog.aspiresys.com/cloud/mongodb-vs-dynamodb-vs-rds-choosing-best-nosql-database/">DynamoDB vs MongoDB vs RDS: Choosing the Best NoSQL Database</a>
+   <br /><br />
 
 [<a href="#Flow_DynamoDB">Return to flow diagram</a>]
 
+
+
+## DocumentDB
+
+Amazon DocumentDB is a fully managed NoSQL database built for managing JSON data models. It offers a fully scalable, low-latency service to manage mission-critical MongoDB workloads. It automatically replicates six copies of your data across 3 availability zones to offer a 99.99% availability. Additionally, it can serve millions of requests per second, enabling developers to build highly available (and low-latency) applications.
+
+   * https://dynobase.dev/dynamodb-vs-documentdb/
+   <br /><br />
+
+[<a href="#Flow_DocumentDB">Return to flow diagram</a>]
 
 ## SageMaker
 
@@ -625,7 +754,7 @@ Amazon QuickSight</a> is an AWS-managed SaaS interactive visual dashboard for di
 
 For an additional monthly cost, rather than using a direct SQL query, data can be optionally be imported into a dataset that uses SPICE (Super-fast, Parallel, In-memory Calculation Engine) allocated for use by all users within each region to rapidly perform advanced calculations and serve data. Internally, SPICE uses a combination of columnar storage in-memory.
 
-QuickSight enable decision-makers to explore and interpret data from a variety of sources. 
+QuickSight enables decision-makers to explore and interpret data from a variety of sources. 
 
 QuickSight offers these types of visualization:
    * KPI values for a single metric of a single area or function (such as Net Promoter Score)
@@ -648,12 +777,14 @@ PROTIP: <a target="_blank" href="https://docs.aws.amazon.com/quicksight/latest/u
 
 [<a href="#Flow_QuickSight">Return to flow diagram</a>]
 
+
 ## AWS Batch
 
 AWS Batch computing processes jobs without manual interaction.
 
 https://github.com/terraform-aws-modules/terraform-aws-batch
 
+[<a href="#Flow_Bash">Return to flow diagram</a>]
 
 <a name="LakeFormation"></a>
 
@@ -678,7 +809,7 @@ using services by Lake Formation include:
    * Data catalog
    <br /><br />
 
-QUESTION: Perhaps Lake Formation ensures that <a href="#KMS">KMS (Key Management Service</a> is used appropriate?
+QUESTION: Perhaps Lake Formation ensures that <a href="#KMS">KMS (Key Management Service</a> is used appropriatel?
 
 [<a href="#Flow_LakeFormation">Return to flow diagram</a>]
 
@@ -687,6 +818,7 @@ QUESTION: Perhaps Lake Formation ensures that <a href="#KMS">KMS (Key Management
 
 https://github.com/terraform-aws-modules/terraform-aws-kms
 
+[<a href="#Flow_KMS">Return to flow diagram</a>]
 
 ## Secrets Manager
 
@@ -694,26 +826,41 @@ AWS Secrets Manager provides key rotation, audit, and access control.
 
 https://github.com/terraform-aws-modules/terraform-aws-secrets-manager
 
+[<a href="#Flow_SecretsManager">Return to flow diagram</a>]
+
+
 ## EC2
 
 https://github.com/terraform-aws-modules/terraform-aws-ec2-instance
+
+[<a href="#Flow_EC2">Return to flow diagram</a>]
+
 
 ## Lambda
 
 https://github.com/terraform-aws-modules/terraform-aws-lambda
 
+[<a href="#Flow_Lambda">Return to flow diagram</a>]
+
 ## EventBridge
 
 https://github.com/terraform-aws-modules/terraform-aws-eventbridge
+
+[<a href="#Flow_EventBridge">Return to flow diagram</a>]
 
 
 ## EKS
 
 https://github.com/terraform-aws-modules/terraform-aws-eks
 
+[<a href="#Flow_EKS">Return to flow diagram</a>]
+
+
 ## DMS (Database Migration Service)
 
 https://github.com/terraform-aws-modules/terraform-aws-dms
+
+[<a href="#Flow_DMS">Return to flow diagram</a>]
 
 <hr />
 
@@ -1037,6 +1184,18 @@ https://www.youtube.com/watch?v=tykcCf-Zz1M
 Top AWS Services A Data Engineer Should Know
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=VtzvF17ysbc">What is Data Pipeline</a>
+    * https://www.youtube.com/watch?v=7Xstz6Qo-pM Glue vs EMR
+
+Coursera cources:
+
+Course: AWS: Data Collection Systems
+
+Course : AWS: Storage Systems and Data Management
+
+Course : AWS: Data Processing
+
+Course : AWS: Security in Data Analytics
+
 
 
 ## More on Amazon #
@@ -1044,4 +1203,6 @@ Top AWS Services A Data Engineer Should Know
 This is one of a series about Amazon:
 
 {% include aws_links.html %}
+
+    Data scientists can use EMR to run machine learning TensorFlow jobs. 
 
