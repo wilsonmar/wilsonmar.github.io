@@ -294,13 +294,11 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     <a name="Flow_NoSQL"></a>
 
-1.  AWS also manages two <strong>NoSQL</strong> databases accessible by QuickSight: <strong>DocumentDB</strong> (which manages flexible JSON data models like open-source MongoDB/Atlas for content management) and <strong>DynamoDB</strong> (which manages simple and thus fast key-value data models). 
+1.  AWS also manages two <strong>NoSQL</strong> databases accessible by QuickSight.
 
-    Unlike SQL, NoSQL databases have less complex queries and no joins. 
+    Unlike SQL, NoSQL databases have less complex queries and no joins like SQL. 
 
-    <a name="Flow_DocumentDB"></a>
-
-1.  AWS automatically replicates six copies of DocumentDB data across 3 Availability Zones to offer an Availability SLA of <strong>99.99%</strong> ("4 nines") for DocumentDB. 
+    AWS automatically replicates six copies of DocumentDB data across 3 Availability Zones to offer an Availability SLA of <strong>99.99%</strong> ("4 nines") for DocumentDB. 
 
     PROTIP: DocumentDB requires more manual scaling than DynamoDB. DocumentDB Firestore (for licensing) is has been modified from open-source MongoDB. The number of instances for the cluster and the instance sizes need to be specified, so admins need to keep an eye on usage and performance. And although encryption in transit is enabled by default, encryption at rest is not enabled by default, and can only be configured using the AWS Console. Once enabled, encryption cannot be disabled. 
 
@@ -309,6 +307,8 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 1.  <a target="_blank" href="https://aws.amazon.com/dynamodb/"><img align="right" alt="Database_AmazonDynamoDB.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-DynamoDB.png"></a>The key-value store in <a target="_blank" href="https://aws.amazon.com/dynamodb/resources/"><strong>AWS DynamoDB</strong></a> is used for workloads such as session stores or shopping carts. 
 
     AWS manages serverless DynamoDB to automatically scale up and down to meet demand. 
+
+    PROTIP: Remember that, like S3, DynamoDB has regional scope. Each DynamoDB table cannot be accessed from other regions but can be accessed from accross Availbility Zones within the same region.
 
     Internally, DynamoDB uses an array of SSDs to store <strong>petabytes</strong> of data in items of 400KB each. It can serve over 20 million requests per second without performance loss because it  replicates (streams) activity across geographic regions. Within each region.
     
@@ -408,7 +408,9 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
 1.  <a target="_blank" href="https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-MSK.png">Amazon MSK (Managed Stream for Kafka)</a> is a serverless web app that runs a Kafka cache server.
 
-    But AWS has several technologies to make the creation and absorption of data streams easier and cheaper. <a target="_blank" href="https://aws.amazon.com/kinesis/">Amazon Kinesis</a><img align="right" alt="Analytics_AmazonKenesis.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"></a> is a family of services that make it easy to collect, process, and analyze real-time, streaming data so you can get timely insights and react quickly to new information.
+    <a name="Flow_Kinesis"></a>
+
+    AWS has several offerings to make the creation and absorption of data streams easier and cheaper. <a target="_blank" href="https://aws.amazon.com/kinesis/">Amazon Kinesis</a><img align="right" alt="Analytics_AmazonKenesis.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"></a> is a family of services that make it easy to collect, process, and analyze real-time, streaming data so you can get timely insights and react quickly to new information.
 
 
     <a name="Flow_Kinesis_Data_Streams"></a>
