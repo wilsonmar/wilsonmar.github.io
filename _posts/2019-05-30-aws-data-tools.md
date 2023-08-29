@@ -176,7 +176,7 @@ Here I use <a target="_blank" href="https://aws.amazon.com/architecture/icons/">
 
 <a name="Flow_Map"></a>
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1693334848/aws-data-tools-1920x1080_c5fdj7.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693334848/aws-data-tools-1920x1080_c5fdj7.png><br /><em>Click for full-screen</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1693334848/aws-data-tools-1920x1080_c5fdj7.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693334848/aws-data-tools-1920x1080_c5fdj7.png"><br /><em>Click for full-screen</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
 
 <a name="Flow_Summary"></a>
 
@@ -520,7 +520,7 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
 ### Recap
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1693334848/aws-data-tools-1920x1080_c5fdj7.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693334848/aws-data-tools-1920x1080_c5fdj7.png><br /><em>Click for full-screen</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1693334848/aws-data-tools-1920x1080_c5fdj7.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693334848/aws-data-tools-1920x1080_c5fdj7.png"><br /><em>Click for full-screen</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
 
 
 <hr />
