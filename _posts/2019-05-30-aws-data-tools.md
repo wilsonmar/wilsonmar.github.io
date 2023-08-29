@@ -176,7 +176,7 @@ Here I use <a target="_blank" href="https://aws.amazon.com/architecture/icons/">
 
 <a name="Flow_Map"></a>
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1693334848/aws-data-tools-1920x1080_c5fdj7.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693334848/aws-data-tools-1920x1080_c5fdj7.png"><br /><em>Click for full-screen</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
+<a target="_blank" href="https://www.youtube.com/watch?v=ZlQV8UcogLM"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693334848/aws-data-tools-1920x1080_c5fdj7.png"><br /><em>Click image for step-by-step video (no audio yet)</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
 
 <a name="Flow_Summary"></a>
 
@@ -520,7 +520,7 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
 ### Recap
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1693334848/aws-data-tools-1920x1080_c5fdj7.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693334848/aws-data-tools-1920x1080_c5fdj7.png"><br /><em>Click for full-screen</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1693334848/aws-data-tools-1920x1080_c5fdj7.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693334848/aws-data-tools-1920x1080_c5fdj7.png"><br /><em>Click image for full-screen</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
 
 
 <hr />
@@ -750,6 +750,11 @@ Amazon Certificate Manager is used, not AWS Certificate Manager Private Certific
 
 https://www.youtube.com/watch?v=_90YaA8IJ4A
 Migrate to Amazon EMR - Apache Spark and Hive
+
+Data scientists can use EMR to run machine learning TensorFlow jobs. 
+
+https://www.youtube.com/watch?v=9Qq5K8e18Gw
+Migrate to Amazon EMR - Apache Spark and Hive - Cost Optimization
 
 https://github.com/terraform-aws-modules/terraform-aws-emr
 
@@ -1286,6 +1291,4 @@ https://www.educative.io/cloudlabs
 This is one of a series about Amazon:
 
 {% include aws_links.html %}
-
-    Data scientists can use EMR to run machine learning TensorFlow jobs. 
 
