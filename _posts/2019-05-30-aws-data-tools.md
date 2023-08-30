@@ -233,9 +233,9 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     <a name="Flow_EKS"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/EKS/latest/dev/Welcome.html"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/a1746b250a0ac37a8775140fc1b1bdca6774f822/Compute/Compute_AmazonECS.png?raw=true"><strong>containers</strong> managed by ECS (Elastic Container Service) and<br /><br /><br /><br />
+1.  <a target="_blank" href="https://docs.aws.amazon.com/EKS/latest/dev/Welcome.html"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/a1746b250a0ac37a8775140fc1b1bdca6774f822/Compute/Compute_AmazonECS.png?raw=true"><strong>containers</strong> managed by ECS (Elastic Container Service) and<br /><br />
 
-    <a target="_blank" href="https://docs.aws.amazon.com/EKS/latest/dev/Welcome.html"><img align="right" alt="new png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693383598/aws-icons/Amazon-EKS.png"><strong>EKS (Elastic Kubernetes Service)</strong> clusters in the AWS cloud.
+    <a target="_blank" href="https://docs.aws.amazon.com/EKS/latest/dev/Welcome.html"><img align="right" alt="new png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693383598/aws-icons/Amazon-EKS.png"><strong>EKS (Elastic Kubernetes Service)</strong> clusters in the AWS cloud.<br /><br />
 
     <a name="Flow_Lambda"></a>
 
@@ -413,13 +413,13 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
     
     Application Load Balancer<br />
     
-    <img alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AmazonCloudWatch.png?raw=true">Amazon CloudWatch logs<br />
+    <img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AmazonCloudWatch.png?raw=true">Amazon CloudWatch logs<br />
     
-    <img alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AWSCloudTrail.png?raw=true">AWS CloudTrail<br />
+    <img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AWSCloudTrail.png?raw=true">AWS CloudTrail<br />
     
-    <img alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AWSConfig.png?raw=true">Amazon Config,<br />
+    <img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AWSConfig.png?raw=true">Amazon Config,<br />
     
-    <img alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Networking%20&%20Content%20Delivery/NetworkingContentDelivery_AmazonVPC.png?raw=true">VPC logs,<br />
+    <img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Networking%20&%20Content%20Delivery/NetworkingContentDelivery_AmazonVPC.png?raw=true">VPC logs,<br />
     
     etc.
 
@@ -446,7 +446,7 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
     
     <a name="Flow_Glue"></a>
 
-1.  <img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AWSGlue.png?raw=true"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390288/aws-icons/AWS-Glue.png">Many Athena users are migrating from EMR to use <strong>Amazon Glue ELT Jobs</strong> because Glue is serverless and thus more scalable. 
+1.  Many Athena users are migrating from EMR to use <a target="_blank" href="https://aws.amazon.com/glue/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390288/aws-icons/AWS-Glue.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AWSGlue.png?raw=true"><strong>Amazon Glue ELT Jobs</strong></a> because Glue is serverless and thus easily scalable. 
 
     EMR provides quicker start times from a wider range of server sizes.    
     
@@ -502,13 +502,14 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
 1.  <a target="_blank" href="https://aws.amazon.com/kinesis/video-streams/s"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Video-Streams.png">Amazon Kinesis Video Streams</a> 
 
+    <br /><br />
 
     <a name="Flow_Timestream"></a>
 
 1.  <a target="_blank" href="https://docs.aws.amazon.com/timestream/latest/developerguide/what-is-timestream.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-Timestream.png">Amazon Timestream</a> is a Time Series database designed to store a large amount of sensor data for IoT and DevOps application monitoring. It keeps recent data in memory and automatically moves historical data to a cost-optimized storage tier. It integrates with AWS IoT Core, Amazon Kinesis, Amazon MSK, open-source Telegraf, Amazon QuickSight, SageMaker. 
 
 
-1.  Kinesis <strong>IoT Core</strong> provides a GUI to manage telemetry from robots.
+1.  Kinesis provides to <img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Internet%20Of%20Things/InternetOfThings_AWSIoT.png?raw=true"><strong>IoT Core</strong></a> a GUI to manage telemetry from robots.
 
 
     <a name="Flow_LakeFormation"></a>
