@@ -233,12 +233,13 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     <a name="Flow_EKS"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/EKS/latest/dev/Welcome.html"><img align="right" alt="new png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-EKS.png"></a><strong>containers</strong> managed by ECS (Elastic Container Service) and <strong>EKS (Elastic Kubernetes Service)</strong> clusters in the AWS cloud.
+1.  <a target="_blank" href="https://docs.aws.amazon.com/EKS/latest/dev/Welcome.html"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/a1746b250a0ac37a8775140fc1b1bdca6774f822/Compute/Compute_AmazonECS.png?raw=true"><strong>containers</strong> managed by ECS (Elastic Container Service) and<br />
+
+    <a target="_blank" href="https://docs.aws.amazon.com/EKS/latest/dev/Welcome.html"><img align="right" alt="new png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693383598/aws-icons/Amazon-EKS.png"><strong>EKS (Elastic Kubernetes Service)</strong> clusters in the AWS cloud.
 
     <a name="Flow_Lambda"></a>
 
-1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390289/aws-icons/AWS-Lambda.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Compute/Compute_AWSLambda.png?raw=true">
-Over time, <strong>AWS Lambda</strong> enabled programs in various languages run "serverless" in the cloud without having to provision servers or containers.
+1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390289/aws-icons/AWS-Lambda.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Compute/Compute_AWSLambda.png?raw=true">Over time, <strong>AWS Lambda</strong> enabled programs in various languages run "serverless" in the cloud without having to provision servers or containers.
 
     <a name="Flow_Alerts"></a>
 
@@ -382,7 +383,7 @@ Over time, <strong>AWS Lambda</strong> enabled programs in various languages run
 
     <a name="Flow_EMR"></a>
 
-1.  <a href="#EMR"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonEMR.png?raw=true"><img align="right" alt="Analytics_AmazonEMR.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EMR.png"></a>Amazon provides both Elastic Map Reduce and, since November 2021, <a target="_blank" href="https://aws.amazon.com/emr/serverless/"><strong>Amazon EMR serverless</strong></a> to handle petabyte-scale analytics processing based on MapReduce and use of S3 buckets.
+1.  <a href="#EMR"><img align="right" alt="Analytics_AmazonEMR.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EMR.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonEMR.png?raw=true"></a>Amazon provides both Elastic Map Reduce and, since November 2021, <a target="_blank" href="https://aws.amazon.com/emr/serverless/"><strong>Amazon EMR serverless</strong></a> to handle petabyte-scale analytics processing based on MapReduce and use of S3 buckets.
 
     <a name="Flow_DataLake"></a>
 
