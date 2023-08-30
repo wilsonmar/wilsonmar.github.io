@@ -204,7 +204,7 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
 <a name="Flow_QuickSight"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/quicksight/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-QuickSight.png"></a>Within the AWS cloud, Data Analysts use the <a href="#QuickSight">AWS QuickSight</a>
+1.  <a target="_blank" href="https://docs.aws.amazon.com/quicksight/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-QuickSight.png"><img align="right" alt="Analytics_AmazonAthena.png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonQuickSight.png?raw=true"></a>Within the AWS cloud, Data Analysts use the <a href="#QuickSight">AWS QuickSight</a>
 
     For an additional monthly cost, rather than using a direct SQL query, data can be optionally be imported by QuickSight using its <strong>SPICE</strong> (Super-fast, Parallel, In-memory Calculation Engine). This is a public pool columnar in-memory storage for use by all users within each region to rapidly perform advanced calculations and serve data.
     
@@ -226,21 +226,34 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     <a name="Flow_EC2"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/ec2/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EC2.png"><strong>EC2 (Elastic Compute Cloud) servers</strong> in Virtual Machines (VMs) in the AWS cloud.
+1.  <a target="_blank" href="https://docs.aws.amazon.com/ec2/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EC2.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Compute/Compute_AmazonEC2.png?raw=true">
+<strong>EC2 (Elastic Compute Cloud) servers</strong> in Virtual Machines (VMs) in the AWS cloud.
 
     More recently, applications are more scalable when run within 
 
     <a name="Flow_EKS"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/EKS/latest/dev/Welcome.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-EKS.png"></a><strong>containers</strong> managed by ECS (Elastic Container Service) and <strong>EKS (Elastic Kubernetes Service)</strong> clusters in the AWS cloud.
+1.  <a target="_blank" href="https://docs.aws.amazon.com/EKS/latest/dev/Welcome.html"><img align="right" alt="new png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-EKS.png"></a><strong>containers</strong> managed by ECS (Elastic Container Service) and <strong>EKS (Elastic Kubernetes Service)</strong> clusters in the AWS cloud.
 
     <a name="Flow_Lambda"></a>
 
-1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390289/aws-icons/AWS-Lambda.png"></a>Over time, <strong>AWS Lambda</strong> enabled programs in various languages run "serverless" in the cloud without having to provision servers or containers.
+1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390289/aws-icons/AWS-Lambda.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Compute/Compute_AWSLambda.png?raw=true">
+Over time, <strong>AWS Lambda</strong> enabled programs in various languages run "serverless" in the cloud without having to provision servers or containers.
 
     <a name="Flow_Alerts"></a>
 
-    Lambda can send, optionally through <strong>EventBridge</strong> scheduling, <strong>alerts</strong> in the form of emails via <a target="_blank" href="https://aws.amazon.com/ses/">SES (Simple Email Service)</a>, SMS texts to mobile phones via <a target="_blank" href="https://aws.amazon.com/pinpoint/">AWS Pinpoint</a>, messages to other AWS services via <a target="_blank" href="https://aws.amazon.com/sns/">SNS (Simple Notification Service)</a>, and 3rd-party HTTP services such as Slack.
+    Lambda can send, optionally through    
+    <img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonAthena.png?raw=true"><strong>EventBridge</strong> scheduling, 
+    
+    <img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Messaging/Messaging_AmazonSQS.png?raw=true">SQS (Simple Queue Service)</a> queues,<br />
+ 
+    <a target="_blank" href="https://aws.amazon.com/ses/"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Messaging/Messaging_AmazonSES.png?raw=true"><strong>alerts</strong> in the form of emails via <strong>SES (Simple Email Service)</strong></a>,<br />
+    
+    <a target="_blank" href="https://aws.amazon.com/pinpoint/"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Mobile%20Services/MobileServices_AmazonPinpoint.png?raw=true">SMS texts to mobile phones via AWS Pinpoint</a>,<br />
+    
+    <img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Messaging/Messaging_AmazonSNS.png?raw=true">messages to other AWS services via <strong>SNS (Simple Notification Service)</strong></a>,<br /> 
+    
+    and 3rd-party HTTP services such as Slack.
 
     Lambda functions can be triggered to fire dynamically by events from other AWS services.
     
@@ -249,7 +262,10 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     <a name="Flow_S3"></a>
     
-1.  <a target="_blank" href="https://docs.aws.amazon.com/s3/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-S3.png"></a>Early applications and functions store data in the <strong>S3 (Simple Storage Storage)</strong> available globally in the AWS cloud. But the most modern of app technologies continue to make use of S3 objects for data storage.
+1.  <a target="_blank" href="https://docs.aws.amazon.com/s3/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-S3.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Storage/Storage_AmazonS3.png?raw=true">
+</a>Early applications and functions store data in the <strong>S3 (Simple Storage Storage)</strong> available globally in the AWS cloud. But the most modern of app technologies continue to make use of S3 objects for data storage.
+
+    Snapshots can be taken of S3 objects and stored in S3 Glacier for long-term storage.
 
     <a name="Flow_KMS"></a>
 
@@ -267,7 +283,8 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
 1.  Early approaches to bring databases to the cloud used what's called <strong>"Lift and Shift"</strong> in ...
 
-1.  <a target="_blank" href="https://aws.amazon.com/rds/"><img align="right" alt="Database_AmazonRDS.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-RDS.png"></a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html">Amazon RDS (Relational Database Service)</a> is a web service that makes it easier to <strong>set up</strong>, operate, and <strong>scale</strong> a relational database in the AWS Cloud. 
+1.  <a target="_blank" href="https://aws.amazon.com/rds/"><img align="right" alt="Database_AmazonRDS.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-RDS.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Database/Database_AmazonRDS.png?raw=true">
+</a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html">Amazon RDS (Relational Database Service)</a> is a web service that makes it easier to <strong>set up</strong>, operate, and <strong>scale</strong> a relational database in the AWS Cloud. 
 
     With RDS, AWS takes care of the hardware and operating system patching across several regions. 
     
@@ -302,13 +319,13 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     <a name="Flow_DynamoDB"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/dynamodb/"><img align="right" alt="Database_AmazonDynamoDB.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-DynamoDB.png"></a>The key-value store in <a target="_blank" href="https://aws.amazon.com/dynamodb/resources/"><strong>AWS DynamoDB</strong></a> is used for workloads such as session stores or shopping carts. 
+1.  <a target="_blank" href="https://aws.amazon.com/dynamodb/"><img align="right" alt="Database_AmazonDynamoDB.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-DynamoDB.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Database/Database_AmazonDynamoDB.png?raw=true"></a> The key-value store in <a target="_blank" href="https://aws.amazon.com/dynamodb/resources/"><strong>AWS DynamoDB</strong></a> is used for workloads such as session stores or shopping carts. 
 
     AWS manages serverless DynamoDB to automatically scale up and down to meet demand. 
 
     DynamoDB now supports Transactions, On-Demand Capacity, and Global Tables.
 
-    PROTIP: Remember that, like S3, DynamoDB has regional scope. Each DynamoDB table cannot be accessed from other regions but can be accessed from accross Availbility Zones within the same region.
+    PROTIP: Remember that, like S3, DynamoDB has regional scope. Each DynamoDB table cannot be accessed from other regions but can be accessed from across Availbility Zones within the same region.
 
     Internally, DynamoDB uses an array of SSDs to store <strong>petabytes</strong> of data in items of 400KB each. It can serve over 20 million requests per second without performance loss because it  replicates (streams) activity across geographic regions. Within each region.
 
@@ -318,12 +335,12 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
    <a name="Flow_Keyspaces"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/keyspaces/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693261677/aws-icons/Amazon-Keyspaces.png"></a>Amazon Keyspaces</a> is a fully managed serverless database service to make it easier to scale open-source <a target="_blank" href="https://aws.amazon.com/keyspaces/what-is-cassandra/">Apache Cassandra databases</a> with minimal transition effort. Keyspaces is compatible with Cassandra Query Language API calls to its <strong>columnar</strong> database popular to store chat logs, IoT, and gamer profiles. Amazon provides encryption by default with continuous parallel backup for point-in-time recovery up to 35 days back. With replication across 3 AZs, AWS can guarantee 99.99% (4 nines) availability SLA.
+1.  <a target="_blank" href="https://aws.amazon.com/keyspaces/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693261677/aws-icons/Amazon-Keyspaces.png">Amazon Keyspaces</a> is a fully managed serverless database service to make it easier to scale open-source <a target="_blank" href="https://aws.amazon.com/keyspaces/what-is-cassandra/"><strong>Apache Cassandra databases</strong></a> with minimal transition effort. Keyspaces is compatible with Cassandra Query Language API calls to its <strong>columnar</strong> database popular to store chat logs, IoT, and gamer profiles. Amazon provides encryption by default with continuous parallel backup for point-in-time recovery up to 35 days back. With replication across 3 AZs, AWS can guarantee 99.99% (4 nines) availability SLA.
 
 
    <a name="Flow_DocumentDB"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/documentdb/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693246905/aws-icons/Amazon-DocumentDB.png"></a>Amazon DocumentDB</a> is a fully managed NoSQL database built for managing JSON data models. It offers a fully scalable, low-latency service to manage mission-critical MongoDB workloads. It automatically replicates six copies of your data across 3 availability zones to offer a 99.99% availability. Additionally, it can serve millions of requests per second, enabling developers to build highly available (and low-latency) applications.
+1.  <a target="_blank" href="https://aws.amazon.com/documentdb/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693246905/aws-icons/Amazon-DocumentDB.png">Amazon DocumentDB</a> is a fully managed NoSQL database built for managing JSON data models. It offers a fully scalable, low-latency service to manage mission-critical MongoDB workloads. It automatically replicates six copies of your data across 3 availability zones to offer a 99.99% availability. Additionally, it can serve millions of requests per second, enabling developers to build highly available (and low-latency) applications.
 
     AWS automatically replicates <strong>six copies of DocumentDB data across 3 Availability Zones</strong> to offer an Availability SLA of <strong>99.99%</strong> ("4 nines") for DocumentDB. 
     <a target="_blank" href="https://www.youtube.com/watch?v=crHwekf0gTA&" title="AWS Aurora VS DynamoDB">VIDEO</a>
@@ -334,7 +351,7 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     <a name="Flow_DAX"></a>
 
-1.  Instead of reaching DynamoDB directly, an AWS <strong>DAX (DynamoDB Accelerator) agent</strong> can be installed on client servers to reach an in-memory cache in front of DynamoDB, like Redis.
+1.  <img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Database/Database_AmazonDynamoDBAccelerator.png?raw=true">Instead of reaching DynamoDB directly, an AWS <strong>DAX (DynamoDB Accelerator) agent</strong> can be installed on client servers to reach an in-memory cache in front of DynamoDB, like Redis.
 
 
     <a name="Flow_GraphDBs"></a>
@@ -365,7 +382,7 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     <a name="Flow_EMR"></a>
 
-1.  <a href="#EMR"><img align="right" alt="Analytics_AmazonEMR.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EMR.png"></a>Amazon provides both Elastic Map Reduce and, since November 2021, <a target="_blank" href="https://aws.amazon.com/emr/serverless/"><strong>Amazon EMR serverless</strong></a> to handle petabyte-scale analytics processing based on MapReduce and use of S3 buckets.
+1.  <a href="#EMR"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonEMR.png?raw=true"><img align="right" alt="Analytics_AmazonEMR.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-EMR.png"></a>Amazon provides both Elastic Map Reduce and, since November 2021, <a target="_blank" href="https://aws.amazon.com/emr/serverless/"><strong>Amazon EMR serverless</strong></a> to handle petabyte-scale analytics processing based on MapReduce and use of S3 buckets.
 
     <a name="Flow_DataLake"></a>
 
@@ -375,7 +392,7 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     <a name="Flow_Redshift"></a>
 
-1.  <a href="#Redshift"><img align="right" alt="Analytics_AmazonRedshift.png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png">AWS Redshift</a> is a cloud-based  service  based on open-source PostgreSQL but intended to compete with Oracle. It is designed to create star schemas in "data lakes" of petabyte scale data warehouse for OLAP (Analytical Processing).
+1.  <a href="#Redshift"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true">AWS Redshift</a> is a cloud-based  service  based on open-source PostgreSQL but intended to compete with Oracle. It is designed to create star schemas in "data lakes" of petabyte scale data warehouse for OLAP (Analytical Processing).
 
     Neither Redshift nor Redshift Spectrum are "serverless" and require servers to be provisioned (with enhanced VPC).
 
@@ -383,16 +400,30 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     <a name="Flow_Redshift_Spectrum"></a>
 
-1.  <img align="right" alt="Analytics_AmazonRedshift.png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png">Amazon Redshift Spectrum</a> extends Redshift to query from S3 without loading data, like using Presto with Hadoop. RedShift Spectrum's "Federal Query" means it can perform SQL <strong>joins</strong> with S3 objects and other foreign data in queries.
+1.  <a target="_blank" href="https://docs.aws.amazon.com/redshift/latest/dg/c-getting-started-using-spectrum.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png"><img align="right" alt="Analytics_AmazonRedshift.png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true">Amazon Redshift Spectrum</a> extends Redshift to query from S3 without loading data, like using Presto with Hadoop. RedShift Spectrum's "Federal Query" means it can perform SQL <strong>joins</strong> with S3 objects and other foreign data in queries.
 
     https://ahana.io/answers/aws-redshift-vs-spectrum/
 
 
     <a name="Flow_Athena"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/athena/index.html"><img align="right" alt="Analytics_AmazonAthena.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Athena.png">Amazon Athena</a> is an AWS-managed SaaS offering. Athena's console GUI offers a simplified <strong>Python Jupyter Notebook/strong> developer experience that supports ODBC/JDBC drivers (like Amazon DynamoDB) as well as REST API calls. So it's good for small data sets.
+1.  <a target="_blank" href="https://docs.aws.amazon.com/athena/index.html"><img align="right" alt="Analytics_AmazonAthena.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Athena.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonAthena.png?raw=true">Amazon Athena</a> is an AWS-managed SaaS offering. Athena's console GUI offers a simplified <strong>Python Jupyter Notebook/strong> developer experience that supports ODBC/JDBC drivers (like Amazon DynamoDB) as well as REST API calls. So it's good for small data sets.
 
-    As a serverless provider, the Athena web service is always ready to query data. So it is used for infrequent or ad hoc data analysis such as any type of log data exported into S3, such as Application Load Balancer, Amazon CloudWatch app logs, AWS CloudTrail, Amazon CloudFront, etc.
+    As a serverless provider, the Athena web service is always ready to query data. So it is used for infrequent or ad hoc data analysis such as any type of log data exported into S3, such as 
+    
+    Application Load Balancer<br />
+    
+    <img alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AmazonCloudWatch.png?raw=true">Amazon CloudWatch logs<br />
+    
+    <img alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AWSCloudTrail.png?raw=true">AWS CloudTrail<br />
+    
+    Amazon CloudFront<br />
+    
+    VPC logs,
+    
+    <img alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AWSConfig.png?raw=true">Amazon Config<br />
+    
+    etc.
 
     Athena can access the results of traditional <strong>EMR (Elastic MapReduce)</strong> jobs stored in S3 buckets. Athena can benefit from EMR's direct, lower-level access to Spark Hadoop internals. 
     
@@ -417,7 +448,7 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
     
     <a name="Flow_Glue"></a>
 
-1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390288/aws-icons/AWS-Glue.png">Many Athena users are migrating from EMR to use <strong>Amazon Glue ELT Jobs</strong> because Glue is serverless and thus more scalable. 
+1.  <img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AWSGlue.png?raw=true"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390288/aws-icons/AWS-Glue.png">Many Athena users are migrating from EMR to use <strong>Amazon Glue ELT Jobs</strong> because Glue is serverless and thus more scalable. 
 
     EMR provides quicker start times from a wider range of server sizes.    
     
@@ -434,16 +465,16 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     To collect and process events <strong>real-time</strong> in a stream of data (such as <a target="_blank" href="https://aws.amazon.com/solutions/case-studies/new-relic-case-study/">logs</a>, <a target="_blank" href="https://aws.amazon.com/msk/what-is-kafka/">open-source Apache Kafka</a> was created.
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-MSK.png">Amazon MSK (Managed Stream for Kafka)</a> is a serverless web app that runs a Kafka cache server.
+1.  <a target="_blank" href="https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-MSK.png">Amazon MSK (Managed Stream for Kafka)</a> is a serverless web app that runs a Kafka cache server.
 
     <a name="Flow_Kinesis"></a>
 
-    AWS has several offerings to make the creation and absorption of data streams easier and cheaper. <a target="_blank" href="https://aws.amazon.com/kinesis/">Amazon Kinesis</a><img align="right" alt="Analytics_AmazonKenesis.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"></a> is a family of services that make it easy to collect, process, and analyze real-time, streaming data so you can get timely insights and react quickly to new information.
+    AWS has several offerings to make the creation and absorption of data streams easier and cheaper. <a target="_blank" href="https://aws.amazon.com/kinesis/"><img align="right" alt="Analytics_AmazonKenesis.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonKinesis.png?raw=true">Amazon Kinesis</a> is a family of services that make it easy to collect, process, and analyze real-time, streaming data to get timely insights and react quickly to new information.
 
 
     <a name="Flow_Kinesis_Data_Streams"></a>
 
-1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Streams.png>Amazon Kinesis Data Streams</a> is a web service to collect, process, and analyze -- in real-time -- continuous streams of data. It's used for fraud detection, trademark enforcement -- monitoring of sentiment and engagement in social media (recommended posts on Twitter, Facebook, YouTube, Vimeo, and other social media platforms).
+1.  <a target="_blank" href="https://aws.amazon.com/kinesis/data-streams/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Streams.png">Amazon Kinesis Data Streams</a> is a web service to collect, process, and analyze -- in real-time -- continuous streams of data. It's used for fraud detection, trademark enforcement -- monitoring of sentiment and engagement in social media (recommended posts on Twitter, Facebook, YouTube, Vimeo, and other social media platforms).
  
     PROTIP: Kinesis Data Streams is NOT serverless. Payment is based on either provisioned or data shard hours used.
 
@@ -495,7 +526,8 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     <a name="Flow_Rekognition"></a>
 
-1.  Because creating ML models are expensive to create, many now either use Amazon's pre-trained  service (such as Rekognition), buy (within SageMaker) custom models from <a target="_blank" href="https://aws.amazon.com/marketplace/solutions/machine-learning/pre-trained-models">Amazon's Machine Learning (ML) Marketplace</a>, or use a foundation model from Amazon's <a target="_blank" href="https://aws.amazon.com/bedrock/">Bedrock</a> partners for Generative AI work.
+1.  <img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/AI/AI_AmazonRekognition.png?raw=true">
+Because it's expensive to create ML models, many now either use Amazon's pre-trained  service (such as Rekognition), buy (within SageMaker) custom models from <a target="_blank" href="https://aws.amazon.com/marketplace/solutions/machine-learning/pre-trained-models">Amazon's Machine Learning (ML) Marketplace</a>, or use a foundation model from Amazon's <a target="_blank" href="https://aws.amazon.com/bedrock/">Bedrock</a> partners for Generative AI work.
    
     <a name="Flow_OpenSearch"></a>
 
@@ -506,16 +538,17 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     <a name="Flow_API_Gateway"></a>
 
-1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692756910/Amazon-API-Gateway_w7zvkp.png">Amazon API Gateway</a>
+1.  <a target="_blank" href="https://aws.amazon.com/api-gateway/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692756910/Amazon-API-Gateway_w7zvkp.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Application%20Services/ApplicationServices_AmazonAPIGateway.png?raw=true">Amazon API Gateway</a>
 
 
     <a name="Flow_Macie"></a>
 
-1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757207/aws-icons/Amazon-Macie.png"><strong>Amazon Macie</strong></a> is a web service that uses Machine Learning to analyze keywords in the content of data to detect whether critical data is being leaked.
+1.  <a target="_blank" href="https://aws.amazon.com/macie/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757207/aws-icons/Amazon-Macie.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Security%20Identity%20&%20Compliance/SecurityIdentityCompliance_AmazonMacie.png?raw=true"><strong>Amazon Macie</strong></a> is a web service that uses Machine Learning to analyze keywords in the content of data to detect whether critical data is being leaked.
+
 
     <a name="Flow_Inspector"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html">Amazon Inspector</a> detects vulnerabilities running in apps running within EC2 servers and in Lambda Functions.
+1.  <a target="_blank" href="https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Security%20Identity%20&%20Compliance/SecurityIdentityCompliance_AmazonInspector.png?raw=true">Amazon Inspector</a> detects vulnerabilities running in apps running within EC2 servers and in Lambda Functions.
 
 
 ### Recap
@@ -1118,7 +1151,7 @@ https://medium.com/@athlatif/how-to-prepare-for-aws-certified-data-analytics-spe
    1.2 Select a collection system that handles the frequency, volume, and source of data<br />
    - Describe and characterize the volume and flow characteristics of incoming data (streaming, transactional, batch)<br />
    - Match flow characteristics of data to potential solutions<br />
-   - Assess the tradeoffs between various ingestion services taking into account scalability, cost, fault tolerance, latency, etc.<br />
+   - Assess the tradeoffs between various ingestion services taking into account scalability, cost, fault tolerance, latency, etc. https://www.youtube.com/watch?v=8jPB3PLI7bA<br />
    - Explain the throughput capability of a variety of different types of data collection and identify bottlenecks<br />
    - Choose a collection solution that satisfies connectivity constraints of the source data system<br />
 
