@@ -506,9 +506,9 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 1.  <a target="_blank" href="https://aws.amazon.com/kinesis/video-streams/s"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Video-Streams.png">Amazon Kinesis Video Streams</a> 
 
 
-    <a name="Flow_Timeseries"></a>
+    <a name="Flow_Timestream"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/timestream/latest/developerguide/what-is-timestream.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-Timestream.png>Amazon Timestream</a> is a Time Series database designed to store a large amount of sensor data for IoT and DevOps application monitoring. It keeps recent data in memory and automatically moves historical data to a cost-optimized storage tier. It integrates with AWS IoT Core, Amazon Kinesis, Amazon MSK, open-source Telegraf, Amazon QuickSight, SageMaker. 
+1.  <a target="_blank" href="https://docs.aws.amazon.com/timestream/latest/developerguide/what-is-timestream.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-Timestream.png">Amazon Timestream</a> is a Time Series database designed to store a large amount of sensor data for IoT and DevOps application monitoring. It keeps recent data in memory and automatically moves historical data to a cost-optimized storage tier. It integrates with AWS IoT Core, Amazon Kinesis, Amazon MSK, open-source Telegraf, Amazon QuickSight, SageMaker. 
 
 
 1.  Kinesis <strong>IoT Core</strong> provides a GUI to manage telemetry from robots.
@@ -527,8 +527,15 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     <a name="Flow_Rekognition"></a>
 
-1.  <img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/AI/AI_AmazonRekognition.png?raw=true">
-Because it's expensive to create ML models, many now either use Amazon's pre-trained  service (such as Rekognition), buy (within SageMaker) custom models from <a target="_blank" href="https://aws.amazon.com/marketplace/solutions/machine-learning/pre-trained-models">Amazon's Machine Learning (ML) Marketplace</a>, or use a foundation model from Amazon's <a target="_blank" href="https://aws.amazon.com/bedrock/">Bedrock</a> partners for Generative AI work.
+1.  Because it's expensive to create ML models, many now either use Amazon's pre-trained service:
+
+    <img align="right" alt="classic png" width="30" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/AI/AI_AmazonRekognition.png?raw=true">Rekognition for images,<br />
+
+    <img align="right" alt="classic png" width="30" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/AI/AI_AmazonPolly.png?raw=true">Lex for text,<br />
+    
+    <img align="right" alt="classic png" width="30" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/AI/AI_AmazonPolly.png?raw=true">Polly for voice, or<br />
+    
+    buy (within SageMaker) custom models from <a target="_blank" href="https://aws.amazon.com/marketplace/solutions/machine-learning/pre-trained-models">Amazon's Machine Learning (ML) Marketplace</a>, or use a foundation model from Amazon's <a target="_blank" href="https://aws.amazon.com/bedrock/">Bedrock</a> partners for Generative AI work.
    
     <a name="Flow_OpenSearch"></a>
 
@@ -540,6 +547,8 @@ Because it's expensive to create ML models, many now either use Amazon's pre-tra
     <a name="Flow_API_Gateway"></a>
 
 1.  <a target="_blank" href="https://aws.amazon.com/api-gateway/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692756910/Amazon-API-Gateway_w7zvkp.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Application%20Services/ApplicationServices_AmazonAPIGateway.png?raw=true">Amazon API Gateway</a>
+
+    <br /><br />
 
 
     <a name="Flow_Macie"></a>
@@ -978,8 +987,8 @@ https://github.com/terraform-aws-modules/terraform-aws-dms
 
 ## Rekognition
 
-https://www.youtube.com/watch?v=FsXyfxLDDIs
-Build a Facial Recognition App on AWS from Scratch | Rekognition, Lambda, DynamoDB, API Gateway, S3
+<a target="_blank" href="https://www.youtube.com/watch?v=FsXyfxLDDIs">Hands-on:
+"Build a Facial Recognition App on AWS from Scratch | Rekognition, Lambda, DynamoDB, API Gateway, S3"
 
 
 <hr />
