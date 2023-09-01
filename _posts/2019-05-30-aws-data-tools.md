@@ -22,11 +22,11 @@ comments: true
 
 ## Competition in Cloud Databases
 
-In 2022 Gartner named AWS (Amazon Web Service), among all other cloud database vendors, the one with the best ability to execute and completeness of vision:
+In 2022 Gartner named AWS (Amazon Web Service), among all other cloud database vendors, the one with the best ability to execute with the most vision:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1692377356/dbs-gartner-2022-570x592_gyy82c.png"><img alt="dbs-gartner-2022-570x592.png" width="570" height="592" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692377356/dbs-gartner-2022-570x592_gyy82c.png"></a>
 
-Amazon has <a target="_blank" href="https://aws.amazon.com/products/databases/">over 15 database products</a> in its portfolio, providing a fully-managed "serverless" service for scaling each of the full gamut of open-source and licensed database technologies.
+Amazon has <a target="_blank" href="https://aws.amazon.com/products/databases/">over a dozen database products</a> in its portfolio, providing many fully-managed "serverless" services for scaling each of the full gamut of open-source and licensed database technologies.
 
 But some may argue that <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a> and Databricks for their "Delta Lake" (using Parquet-structured data) removes the separation between OLTP and OLAP is now leading the field.
 Also see my notes on:
@@ -99,11 +99,11 @@ One AWS certification conceptually organizes data tools in these categories:
 
 ### Data Injection/Collection
 
-    <a name="Flow_Kinesis"></a>
+<a name="Flow_Kinesis"></a>
 
-    AWS has several offerings to make the creation and absorption of data streams easier and cheaper. <a target="_blank" href="https://aws.amazon.com/kinesis/"><img align="right" alt="Analytics_AmazonKenesis.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonKinesis.png?raw=true">Amazon Kinesis</a> is a family of services that make it easy to collect, process, and analyze real-time, streaming data to get timely insights and react quickly to new information.
+AWS has several offerings to make the creation and absorption of data streams easier and cheaper. <a target="_blank" href="https://aws.amazon.com/kinesis/"><img align="right" alt="Analytics_AmazonKenesis.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonKinesis.png?raw=true">Amazon Kinesis</a> is a family of services that make it easy to collect, process, and analyze real-time, streaming data to get timely insights and react quickly to new information.
    
-   Data API and Streams do not require a VPC to be setup to accept SQL commands. Integrates with EventBridge. Max 24 hr duration, 100 KB query size, 100 MB query result size. Auth using AWS Secretes Manager. <a target="_blank" href="https://aws.amazon.com/kinesis/data-analytics/faqs/">FAQs</a>. Commands: describe-statement, execute-statement, get-statement-result.  troubleshooting and scenario-based questions, like how would you solve a ProvisionedThroughPutExceeded error, when should you merge or split shard, what encryption options are available, and how the Kinesis service integrates with other services.
+Data API and Streams do not require a VPC to be setup to accept SQL commands. Integrates with EventBridge. Max 24 hr duration, 100 KB query size, 100 MB query result size. Auth using AWS Secretes Manager. <a target="_blank" href="https://aws.amazon.com/kinesis/data-analytics/faqs/">FAQs</a>. Commands: describe-statement, execute-statement, get-statement-result.  troubleshooting and scenario-based questions, like how would you solve a ProvisionedThroughPutExceeded error, when should you merge or split shard, what encryption options are available, and how the Kinesis service integrates with other services.
 
    * Database Migration Service (DMS)
    * Simple Queue Service (SQS)
@@ -174,17 +174,21 @@ Monitoring & Security:
 
 ## Evolution in AWS Data Pipeline Tools
 
-Here I use <a target="_blank" href="https://aws.amazon.com/architecture/icons/">Amazon's new official "flat" icons</a> in my attempt at figuring out the interaction among the many AWS cloud technologies evolving from "Lift and Shift" to Serverless to Low-Code to Machine Learning and <a target="_blank" href="https://wilsonmar.github.io/genai/">Generative Artificial Intelligence</a>.
+In this "world map" I show how, on one busy page, how AWS data services relate to each other for different roles. Red text indicates services for governance.
+
+<a target="_blank" href="https://aws.amazon.com/architecture/icons/">Amazon's new official "flat" icons</a> in my attempt at figuring out the interaction among the many AWS cloud technologies evolving from "Lift and Shift" to Serverless to Low-Code to Machine Learning and <a target="_blank" href="https://wilsonmar.github.io/genai/">Generative Artificial Intelligence</a>.
 
 <a name="Flow_Map"></a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=0WacamUZsHs"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693470708/aws-data-tools-1920x1080_oth65e.png"><br /><em>Click image for video of gradual reveal step-by-step (no audio yet)</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
+<a target="_blank" href="https://www.youtube.com/watch?v=0WacamUZsHs"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693557492/aws-data-tools-1920x1080_dnqhei.png"><br /><em>Click image for video of gradual reveal step-by-step (no audio yet)</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
 
 <a name="Flow_Summary"></a>
 
 Although this "world map" is a busy diagram, it's still a subset of the 200 plus services Amazon's offers. Here we try to introduce AWS data tools in a deeper way than marketing generalizations.
 
-In the sequencing of topics here, I assume that you are already familiar with the <strong>A. Governance</strong> services needed to obtain permissions and secrets. Other services operate under these services.
+> Click on the flowchart for a full-screen view of the <strong>sequence</strong> how I would implement them, starting with foundational services:
+
+<strong>A. Governance</strong> services needed to obtain permissions and secrets. Other services operate under these services.
 
 <strong>B. Visualizations</strong> are the most important services because it's the human interface to data and thus the basis for obtaining and judging value from the time and money spent on systems.
 
@@ -330,18 +334,21 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     <a name="Flow_DynamoDB"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/dynamodb/"><img align="right" alt="Database_AmazonDynamoDB.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-DynamoDB.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Database/Database_AmazonDynamoDB.png?raw=true"></a> The key-value store in <a target="_blank" href="https://aws.amazon.com/dynamodb/resources/"><strong>AWS DynamoDB</strong></a> is used for workloads such as session stores or shopping carts. 
+1.  <a target="_blank" href="https://aws.amazon.com/dynamodb/"><img align="right" alt="Database_AmazonDynamoDB.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-DynamoDB.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Database/Database_AmazonDynamoDB.png?raw=true"></a> The key-value store in <a target="_blank" href="https://aws.amazon.com/dynamodb/resources/"><strong>AWS DynamoDB</strong></a> is a serverless service, so it automatically scale up and down to meet demand. So it's used for workloads such as session stores or shopping carts.
 
-    AWS manages serverless DynamoDB to automatically scale up and down to meet demand. 
+    Internally, DynamoDB uses an array of (fast) SSDs to store <strong>petabytes</strong> of data in <strong>items of 400KB each</strong>. 
+    DynamoDB is a fully managed service, so AWS takes care of the hardware and operating system patching. However, Admins need to allocate Read and Write capacity Usage (RCU & WCU) based on the number of anticipated 4K items read and 1K items written per second (RPS and WPS).
+    
+    Each item can have up to 256 attributes. Each attribute can be a scalar (string, number, binary, Boolean, or null) or a complex data type (list, map, or set).
+    
+    PROTIP: Remember that, like S3, DynamoDB has regional scope. Each DynamoDB table cannot be accessed from other regions but can be accessed from across Availability Zones within the same region. ???
+    It can serve over 20 million requests per second without performance loss because it replicates (streams) activity across geographic regions. Within each region.
 
-    DynamoDB now supports Transactions, On-Demand Capacity, and Global Tables.
-
-    PROTIP: Remember that, like S3, DynamoDB has regional scope. Each DynamoDB table cannot be accessed from other regions but can be accessed from across Availbility Zones within the same region.
-
-    Internally, DynamoDB uses an array of SSDs to store <strong>petabytes</strong> of data in items of 400KB each. It can serve over 20 million requests per second without performance loss because it  replicates (streams) activity across geographic regions. Within each region.
-
-    DynamoDB also provides fault tolerance with automatic synchronous replication across 3 AZs.
+    For fault tolerance, DynamoDB performs automatic synchronous replication across 3 AZs into <strong>Global Tables</strong>. Secondary indexes are also projected into indexes. The last write wins. Eventual consistency is the default (for performance), but strong consistency can be selected.
+    
     DynamoDB performs "continuous" backups to S3 automatically for "point-in-time" recovery up to 35 days back. All this enables AWS to commit to the highest Availability SLA of <strong>99.999%</strong> ("6 nines") for DynamoDB.
+    
+    DynamoDB now supports Transactions, On-Demand Capacity, and .
 
 
    <a name="Flow_DocumentDB"></a>
@@ -361,7 +368,9 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
    <a name="Flow_Keyspaces"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/keyspaces/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693261677/aws-icons/Amazon-Keyspaces.png">Amazon Keyspaces</a> is a fully managed serverless database service to make it easier to scale open-source <a target="_blank" href="https://aws.amazon.com/keyspaces/what-is-cassandra/"><strong>Apache Cassandra databases</strong></a> with minimal transition effort. Keyspaces is compatible with Cassandra Query Language API calls to its <strong>columnar</strong> database popular for storing chat logs, IoT, and gamer profiles. Amazon provides encryption by default with continuous parallel backup for point-in-time recovery up to 35 days back. With replication across 3 AZs, AWS can guarantee 99.99% (4 nines) availability SLA.
+1.  <a target="_blank" href="https://aws.amazon.com/keyspaces/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693261677/aws-icons/Amazon-Keyspaces.png">Amazon Keyspaces</a> is a fully managed serverless database service to make it easier to scale open-source <a target="_blank" href="https://aws.amazon.com/keyspaces/what-is-cassandra/"><strong>Apache Cassandra databases</strong></a> with minimal transition effort. Keyspaces is compatible with Cassandra Query Language API calls to its <strong>columnar</strong> database popular for storing chat logs, IoT, and gamer profiles. 
+
+    Keyspaces provides encryption by default with continuous parallel backup for point-in-time recovery up to 35 days back. With replication across 3 AZs, AWS can guarantee 99.99% (4 nines) availability SLA.
 
 
     <a name="Flow_GraphDBs"></a>
@@ -409,9 +418,14 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
 1.  <a href="#Redshift"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true">AWS Redshift</a> is a cloud-based (but not serverless) service based on open-source PostgreSQL. So customer effort is needed to provision servers (with enhanced VPC). 
 
+    Redshift is intended to compete with customer-managed Oracle instances, thus the reference to the red color used by Oracle. 
+    
+    Redshift stores data in columns rather than rows. This enables millisecond response as it enables parallel query execution, especially when dealing with large tables. 
+
+    It's used to create star schemas in "data lakes" of petabyte-scale data warehouse for OLAP (Analytical Processing).
+
     Redshift automates incremental encrypted backups into S3 every 8 hours, with retention for 1-35 days.
 
-    Redshift is intended to compete with customer-managed Oracle instances, to create star schemas in "data lakes" of petabyte-scale data warehouse for OLAP (Analytical Processing).
 
     <a name="Flow_Redshift_Spectrum"></a>
 
@@ -534,6 +548,23 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
 1.  <a target="_blank" href="https://docs.aws.amazon.com/timestream/latest/developerguide/what-is-timestream.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-Timestream.png">Amazon Timestream</a> is a Time Series database designed to store a large amount of sensor data for IoT and DevOps application monitoring. It keeps recent data in memory and automatically moves historical data to a cost-optimized storage tier. It integrates with AWS IoT Core, Amazon Kinesis, Amazon MSK, open-source Telegraf, Amazon QuickSight, SageMaker. 
 
+     Beacause <a target="_blank" href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Cloudwatch allows</a> only 15 months of data retention, those who need to retain data longer at lower granularity send CloudWatch logs to one or more cloud services: Elastic, Splunk, Sumo Logic, Datadog, etc.
+     
+     Timestream and CloudWatch are integrated to provide a <strong>single pane of glass</strong> for monitoring and analytics: Cloudwarch stream -> firehose -> data analytics -> Timestream.
+
+     <a target="_blank" href="https://www.workload.co/api/amazonaws-com-logs/integrations/amazonaws-com-timestream-query/">Workload.io</a>
+
+     https://docs.aws.amazon.com/timestream/latest/developerguide/what-is-timestream.html#what-is.use-cases Amazon TimeStream is a fast, scalable, and serverless time series database service for IoT and operational applications that makes it easy to store and analyze trillions of events per day up to 1,000 times faster and at as little as 1/10th the cost of relational databases.
+     
+     https://www.reddit.com/r/aws/comments/j9nm1z/timestream_cloudwatch_positioning_counters_and/
+
+     https://docs.aws.amazon.com/timestream/latest/developerguide/Kinesis.html
+
+     https://docs.aws.amazon.com/timestream/latest/developerguide/ApacheFlink.html
+
+     https://docs.aws.amazon.com/timestream/latest/developerguide/creating-alarms.html
+
+     <a name="Flow_IOT"></a>
 
 1.  Kinesis provides to <img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Internet%20Of%20Things/InternetOfThings_AWSIoT.png?raw=true"><strong>IoT Core</strong></a> a GUI to manage telemetry from robots.
 
@@ -589,7 +620,7 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
 ### Recap
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1693470708/aws-data-tools-1920x1080_oth65e.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693470708/aws-data-tools-1920x1080_oth65e.png"><br /><em>Click image for full-screen</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1693557492/aws-data-tools-1920x1080_dnqhei.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693557492/aws-data-tools-1920x1080_dnqhei.png"><br /><em>Click image for full-screen</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
 
 
 <hr />
@@ -670,9 +701,35 @@ Lab: Getting Started with Amazon Aurora Database Engine
 
 https://github.com/terraform-aws-modules/terraform-aws-rds-aurora
 
+Amazon Aurora PostgreSQL-Compatible Edition supports the pgvector extension to store embeddings from machine learning (ML) models in your database and to perform efficient <strong>similarity searches</strong>. Embeddings are numerical representations (vectors) created from generative AI that capture the semantic meaning of text or images input into a large language model (LLM). With pgvector, you can query embeddings in your Aurora PostgreSQL database to perform efficient semantic similarity searches of these data types, represented as vectors, combined with other tabular data in Aurora. This enables the use of generative AI and other AI/ML systems to build new content, enable hyper-personalization, create interactive experiences, and more. 
+
+### PyVector on Aurora
+
+https://repost.aws/questions/QUcSvXQXjlRFiiW9Heb5b7Eg/pgvector-for-aurora
+Discussion
+
+https://www.youtube.com/watch?v=vKsqr_JcZm4
+ Sep 18, 2023 by Steve Dillie, AWS Solutions Architect
+In this session, learn how you can start using the pgvector extension with your Aurora PostgreSQL database.
+
+https://pypi.org/project/pyvector/
+
+https://github.com/pgvector/pgvector
+by Andrew Kane
+
+https://github.com/topics/nearest-neighbor-search
+
+
 [<a href="#Flow_Aurora">Return to flow diagram</a>]
 
+
 ## S3
+
+Data in S3 is replicated across 3 AZs in a region.
+
+It offers 11 nines durability of storage.
+
+Cross-region replication is configurable for disaster recovery.
 
 https://github.com/terraform-aws-modules/terraform-aws-s3-bucket
 
@@ -702,7 +759,29 @@ CLOUDLAB: Getting Started with Amazon Redshift
 
 https://github.com/terraform-aws-modules/terraform-aws-redshift
 
+Redshift has 3 storage patterns:
+   * DC2
+   * DS2
+   * RA3
+   <br /><br />
+
 [<a href="#Flow_Redshift">Return to flow diagram</a>]
+
+
+## Elasticache
+
+Elasticache is a fully managed implemenation of Redis, Memcached.
+And it makes use of in-memory data store, so it boasts sub-millisecond response time and millions of requests per second -- at scale.
+
+It supports Redis data structures such as lists, maps, sets, sorted sets with range queries, bitmaps, hyperloglogs, and geospatial indexes with radius queries.
+So it supports real-time analytics from caching, session management, gaming, geospatial services, and queuing.
+
+## Timestream
+
+Timestream is a fully-managed <strong>time series</strong> database.
+
+
+
 
 
 ## Kinesis
@@ -770,9 +849,14 @@ AWS CloudTrail is a web service that records AWS API calls for your account and 
 
 ## DynamoDB
 
-https://www.educative.io/cloudlabs/working-with-nosql-databases-a-beginner-s-guide-to-aws-dynamodb
+https://github.com/topics/dynamodb?l=python
+
+LAB: https://www.educative.io/cloudlabs/working-with-nosql-databases-a-beginner-s-guide-to-aws-dynamodb
 Working with NoSQL Databases: A Beginner's Guide to AWS DynamoDB
 
+https://github.com/pynamodb/PynamoDB
+
+https://github.com/Remillardj/pyDBLoader
 
 ## Map Reduce
 
@@ -1343,13 +1427,14 @@ Top AWS Services A Data Engineer Should Know
 
 Coursera cources:
 
-Course: AWS: Data Collection Systems
+1. Data Collection Systems
 
-Course : AWS: Storage Systems and Data Management
+2. Storage Systems and Data Management
 
-Course : AWS: Data Processing
+3. Data Processing
 
-Course : AWS: Security in Data Analytics
+4. Security in Data Analytics
+
 
 ## Hands-on labs
 
