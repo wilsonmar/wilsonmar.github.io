@@ -382,25 +382,6 @@ print('{:02d}:{:02d}:{:02d}'.format(e // 3600, (e % 3600 // 60), e % 60))
 </pre>
 </ul>
 
-<hr />
-
-<a name="TimeComplexity"></a>
-
-### Time Complexity
-
-Time complexity analysis estimates how long it will take for an algorithm to complete its assigned job based on its structure.
-
-Use of Modulus would result in "O(n)" (linear) growth in time to run as the dataset grows. 
-
-Depth-first trees would have steeper (logarithmic) Time Complexity:
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/141355255-b2b990cf-46d9-415e-b21a-2c06a156c3eb.png">
-<img alt="python-coding-time-complexity-1222x945" src="https://user-images.githubusercontent.com/300046/141355255-b2b990cf-46d9-415e-b21a-2c06a156c3eb.png"></a>
-
-In <a target="_blank" href="https://bigocheatsheet.com/">https://bigocheatsheet.com</a>, in the list of Big O values for sorting, 
-
-<hr />
-
 
 ### timeit()
 
@@ -426,7 +407,7 @@ result = timeit.timeit(stmt='addition()', globals=globals(), number=n)
 print(f"Execution time is {result / n} seconds")
 </pre></ul>
 
-<pre>timeit.timeit(stmt='pass', setup='pass', timer=<default timer>, number=1000000, globals=None)
+<pre>timeit.timeit(stmt='pass', setup='pass', timer=&LT;default timer>, number=1000000, globals=None)
 </pre>
 
 <ul><pre># from timeit import default_timer as timer
@@ -449,9 +430,7 @@ t = time.process_time()
 elapsed_time = time.process_time() - t
 </pre>
 
-<tt><strong>time.monotonic()</strong></tt> is used for measurements on the order of hours/days, when you don't care about sub-second resolution. It has 81 ns resolution on Fedora 4.12. BTW "monotonic" = only goes forward.
-See https://docs.python.org/3/library/time.html#time.monotonic
-
+<tt><strong>time.monotonic()</strong></tt> is used for measurements on the order of hours/days, when you don't care about sub-second resolution. It has 81 ns resolution on Fedora 4.12. BTW "monotonic" = only goes forward. See https://docs.python.org/3/library/time.html#time.monotonic
 
 
 References:
@@ -465,6 +444,24 @@ References:
    * for wall-clock time (includes any sleep).
    <br /><br />
 
+
+
+<hr />
+
+<a name="TimeComplexity"></a>
+
+### Time Complexity
+
+Time complexity analysis estimates how long it will take for an algorithm to complete its assigned job based on its structure.
+
+Use of Modulus would result in "O(n)" (linear) growth in time to run as the dataset grows. 
+
+Depth-first trees would have steeper (logarithmic) Time Complexity:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/141355255-b2b990cf-46d9-415e-b21a-2c06a156c3eb.png">
+<img alt="python-coding-time-complexity-1222x945" src="https://user-images.githubusercontent.com/300046/141355255-b2b990cf-46d9-415e-b21a-2c06a156c3eb.png"></a>
+
+In <a target="_blank" href="https://bigocheatsheet.com/">https://bigocheatsheet.com</a>, in the list of Big O values for sorting, 
 
 
 <hr />
