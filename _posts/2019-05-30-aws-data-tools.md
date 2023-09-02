@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-08-22"
+date: "2023-09-02"
 file: "aws-data-tools"
 title: "AWS Data Tools"
 excerpt: "AWS data processing tools: Databases, Big Data, Data Warehouse, Data Lakehouse"
@@ -38,7 +38,7 @@ Below is an alphabetical list of third-party databases cloud customers can insta
 
    * <a target="_blank" href="https://cassandra.apache.org/doc/latest/">Apache Cassandra (NoSQL)</a>
    * <a target="_blank" href="https://github.com/cockroachdb/cockroach">Cockroach Labs (SQL)</a>
-   * <a target="_blank" href="https://www.wikiwand.com/en/Cloudera">Cloudera</a> (Hadoop lakehouse based on Apache Iceberg SQL)
+   * <a target="_blank" href="https://www.wikiwand.com/en/Cloudera">Cloudera</a> EDH (Enteprise Data Hub) - Hadoop lakehouse based on Apache Iceberg SQL
    * <a target="_blank" href="https://www.couchbase.com/">Couchbase (No-SQL)</a>
    * IBM
    * <a target="_blank" href="https://www.intersystems.com/">InterSystems</a>
@@ -47,12 +47,12 @@ Below is an alphabetical list of third-party databases cloud customers can insta
    * <a target="_blank" href="https://www.mysql.com/">MySQL</a>
    * <a target="_blank" href="https://www.mongodb.com/nosql-explained">MongoDB (No-SQL)</a>
    * <a target="_blank" href="https://neo4j.com/">Neo4j (graph database)</a>
-   * <a target="_blank" href="https://www.oracle.com/database/">Oracle database</a>
+   * <a target="_blank" href="https://www.oracle.com/database/">Oracle database</a> 12C
    * <a target="_blank" href="https://www.postgresql.org/">PostgreSQL.org</a>
    * <a target="_blank" href="https://redis.io/">Redis</a>
    * <a target="_blank" href="https://www.sap.com/products/technology-platform/hana.html">SAP HANA</a>
    * <a target="_blank" href="https://www.microsoft.com/en-us/sql-server/?rtc=1">Microsoft SQL Server</a>
-   * <a target="_blank" href="https://www.teradata.com/">Teradata</a>
+   * <a target="_blank" href="https://www.teradata.com/">Teradata</a> EDW (Enterprise Data Warehouse)
    * <a target="_blank" href="https://www.tigergraph.com/">TigerGraph</a>
    <br /><br />
 
@@ -86,6 +86,7 @@ One AWS certification conceptually organizes data tools in these categories:
    * <a href="#Analytics">Analytics</a>
    * <a href="#Analysis">Analysis</a>
    <br /><br />
+Each is detailed below:
 
 <a name="DataSources"></a>
 
@@ -99,11 +100,6 @@ One AWS certification conceptually organizes data tools in these categories:
 
 ### Data Injection/Collection
 
-<a name="Flow_Kinesis"></a>
-
-AWS has several offerings to make the creation and absorption of data streams easier and cheaper. <a target="_blank" href="https://aws.amazon.com/kinesis/"><img align="right" alt="Analytics_AmazonKenesis.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonKinesis.png?raw=true">Amazon Kinesis</a> is a family of services that make it easy to collect, process, and analyze real-time, streaming data to get timely insights and react quickly to new information.
-   
-Data API and Streams do not require a VPC to be setup to accept SQL commands. Integrates with EventBridge. Max 24 hr duration, 100 KB query size, 100 MB query result size. Auth using AWS Secretes Manager. <a target="_blank" href="https://aws.amazon.com/kinesis/data-analytics/faqs/">FAQs</a>. Commands: describe-statement, execute-statement, get-statement-result.  troubleshooting and scenario-based questions, like how would you solve a ProvisionedThroughPutExceeded error, when should you merge or split shard, what encryption options are available, and how the Kinesis service integrates with other services.
 
    * Database Migration Service (DMS)
    * Simple Queue Service (SQS)
@@ -282,6 +278,15 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     Snapshots can be taken of S3 objects and stored in S3 Glacier for long-term storage.
 
+    REMEMBER that S3 is a regional service, so objects cannot be accessed from other regions. But S3 can be accessed from across Availability Zones within the same region.
+
+    S3 is not a database, so it does not support SQL queries. But S3 can be queried using Athena, which is a serverless service that uses Presto and HiveQL to query data stored in S3.
+
+    Data stored in S3 can be accessed by other AWS services such as Athena, EMR, and Redshift Spectrum.
+
+    The format of data within S3 is proprietary to Amazon. <a target="_blank href="https://devblogs.microsoft.com/cse/2016/05/22/access-azure-blob-storage-from-your-apps-using-s3-api/">However</a>, <a target="_blank" href="https://flexify.io/how-to-run-amazon-s3-apps-on-azure/">Flexify.IO</a> and <a target="_blank" href="https://github.com/andrewgaul/s3proxy">S3Proxy</a> using <a target="_blank" href="https://en.wikipedia.org/wiki/Amazon_S3#S3_API_and_competing_services">API</a> were created to extend Azure Blob Storage to be compatible with S3. The <a target="_blank" href="https://minio.io/">Minio</a> server is an open-source Golang-based S3-compatible object store that can be installed on-premises or in the cloud to expose local storage as S3 object storage.
+
+
     <a name="Flow_KMS"></a>
 
 1.  <a target="_blank" href="https://docs.aws.amazon.com/kms/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692639280/aws-icons/Amazon-KMS.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Security%20Identity%20&%20Compliance/SecurityIdentityCompliance_AWSKMS.png?raw=true">KMS (Key Management Service)</a> creates cryptographic keys to encrypt and decrypts objects stored in S3. It is used by AWS Secrets Manager, which automates the rotation and retrieval of credentials, API keys, and other secrets.
@@ -412,13 +417,16 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     Traditionally, OLAP was done using rigid, pre-defined structures such as a "star schema" to hold summarized data separately from the source OLTP data. 
 
-    As the need for more ad hoc analysis grew, the need for a <strong>Data Lake</strong> emerged to store source data in its original form, without the need to transform it into a predefined schema.
+    As the need for more ad hoc analysis grew, the need for a <strong>Data Lake</strong> emerged to store source data in its original form, without the need to transform it into a predefined schema. This some call "schema on read".
+
+    <strong>AWS Glue ETL job</strong> creates a <strong>Crawler</strong> through S3 to use custom then built-in classifiers to build a Data Catalog of metadata. Glue can then be used to transform data into a schema for analysis. Glue can also be used to create ETL (Extract, Transform, Load) jobs to move data from one source to another.
+
 
     <a name="Flow_Redshift"></a>
 
 1.  <a href="#Redshift"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true">AWS Redshift</a> is a cloud-based (but not serverless) service based on open-source PostgreSQL. So customer effort is needed to provision servers (with enhanced VPC). 
 
-    Redshift is intended to compete with customer-managed Oracle instances, thus the reference to the red color used by Oracle. 
+    Redshift is intended to compete with customer-managed Oracle instances, thus the reference to the red color used by Oracle. Like Oracle, Redshift stores columnar data in a cluster of nodes on <strong>EFS block storage</strong> used by operating systems and EC2 instances (rather than in S3 objects).
     
     Redshift stores data in columns rather than rows. This enables millisecond response as it enables parallel query execution, especially when dealing with large tables. 
 
@@ -464,7 +472,7 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     * ETL (Extract, Transform, Load) is the traditional approach to arranging data for storage and analytics. This approach emerged at a time when disk space was more expensive and took time to obtain. ETL process removes data not needed in summaries in order to store less data. The resulting data (for OLAP) consists of a more rigid definition. Thus some call "schema on write".
 
-    * ELT (Extract, Load, Transform) is a more modern approach that uses more storage because data is stored in an unredacted form for transformation later, to enable retrospective analysis of attributes not considered previously. This some call "schema on read".
+    * ELT (Extract, Load, Transform) is a more modern approach that uses more storage because data is stored in an unredacted form for transformation later, to enable retrospective analysis of attributes not considered previously. 
 
 
     <a name="Flow_Presto"></a>
@@ -477,8 +485,8 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
 1.  Many Athena users are migrating from EMR to use <a target="_blank" href="https://aws.amazon.com/glue/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390288/aws-icons/AWS-Glue.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AWSGlue.png?raw=true"><strong>Amazon Glue ELT Jobs</strong></a> because Glue is serverless and thus easily scalable. 
 
-    EMR costs around $14-16 per day while AWS Glue costs around $21 per day.
-    But that difference is made up by avoiding hassles of setup and the cost of "always on" EMR clusters.
+    EMR costs around $14-16 per day while AWS Glue is around $21 per day.
+    But that difference is made up largely by avoiding the hassles of setup and the cost of "always on" EMR clusters.
 
     <strong>AWS Glue Crawler</strong> jobs scans S3 to create <a target="_blank" href="https://docs.aws.amazon.com/glue/latest/dg/populate-data-catalog.html">AWS Glue Catalogs</a> housed in a Glue Schema Registry. The Glue Catalog for each region provides a central reference for metadata about all services. Catalog information includes location, ownership, schema, data types, and other properties changed over time, which can be used to create ETL jobs. <a target="_blank" href="https://www.youtube.com/watch?v=yj98zViIgYI" title="how to use Glue to create a data lake">VIDEO</a> <a target="_blank" href="https://www.youtube.com/playlist?list=PL5KTLzN85O4KdNBfGpD-QIabS3yvwI4qn">series</a> <a target="_blank" href="https://www.youtube.com/watch?v=8jlAoB1GmNs">4</a>
     
@@ -759,11 +767,46 @@ CLOUDLAB: Getting Started with Amazon Redshift
 
 https://github.com/terraform-aws-modules/terraform-aws-redshift
 
-Redshift has 3 storage patterns:
-   * DC2
-   * DS2
-   * RA3
+Redshift stores in S3 snapshots for point-in-time backups.
+
+Redshift has 3 node types defining mix of CPU, memory, storage capacity, and drive type:
+
+   * DS2 - legacy, using HDD. not used much.
+   
+   * DC2 - Compute-intensive with <strong>local SSDs</strong> (for data warehouse) with compute together with storage. Launched in VPC. Has 2x the performance of DS2 and 1/2 the cost of DS2. Use for datasets under 1 TB (compressed), for best price and performance.
+
+   * RA3 - managed storage with SSDs and HDDs (for data lake) with 3x the performance of DC2 and 1/2 the cost of DS2. RA3 nodes can be scaled up to 128 nodes. Used to scale compute separate from storage.
    <br /><br />
+
+<a target="_blank" href="https://www.coursera.org/learn/storage-systems-and-data-management/lecture/BAWxr/redshift-storage-and-retrieval-patterns-lab">Redshift distribution modes</a>:
+
+   * Distribution KEY - distributes data into a slice based on key values in a column. Use for large tables that are joined to large tables.
+   * Distribution EVEN - distributes data evenly across all nodes using round-robin row-by-row distribution. Use for large tables.
+   * Distribution ALL - copies all data to all nodes. Use for small tables that are joined to large tables.
+
+RedShift automatically assign compresssion type: REMEMBER:
+   * Sort keys, BOOLEAN, REAL, DOUBLE get RAW compression
+   * SMALLINT, INTEGER, BIGINT, DECIMAL, DATE, TIMESTAMP get AZ64 compression
+   * CHAR, VARCHAR, and TEXT get LZO compression
+
+Example of a query:
+
+```sql
+create table ForeignKey_sample (
+   coll int NOT NULL [PRIMARY_KEY]
+   ,col2 data
+   ,col3 varchar(60)
+   ,foreign key (col1) references PrimaryKey_sample (col1)) distkey(col1)
+   compount sortkey(col1, col2);
+);
+```
+
+Redshift does not enforce unique primary and foreign key constraints even though it benefits from them. That's because each query predicate can use any subset of the columns in a table, and the query optimizer can use the knowledge of the table's constraints to optimize the query plan. EXPLAIN command shows the query plan.
+
+COPY command most efficient way to load data into Redshift, reading in parallel from multiple files and loading in parallel into multiple slices.
+
+Redshift Spectrum is an extension of Redshift that allows you to query data stored in S3 buckets directly without having to load it into Redshift first. It uses the same SQL syntax as Redshift. It's useful for infrequently accessed data.
+
 
 [<a href="#Flow_Redshift">Return to flow diagram</a>]
 
@@ -847,16 +890,7 @@ AWS CloudTrail is a web service that records AWS API calls for your account and 
 
 [<a href="#Flow_CloudTrail">Return to flow diagram</a>]
 
-## DynamoDB
 
-https://github.com/topics/dynamodb?l=python
-
-LAB: https://www.educative.io/cloudlabs/working-with-nosql-databases-a-beginner-s-guide-to-aws-dynamodb
-Working with NoSQL Databases: A Beginner's Guide to AWS DynamoDB
-
-https://github.com/pynamodb/PynamoDB
-
-https://github.com/Remillardj/pyDBLoader
 
 ## Map Reduce
 
@@ -944,6 +978,18 @@ Johnny Chivers:
 
 
 ## DynamoDB
+
+https://github.com/topics/dynamodb?l=python
+
+LAB: https://www.educative.io/cloudlabs/working-with-nosql-databases-a-beginner-s-guide-to-aws-dynamodb
+Working with NoSQL Databases: A Beginner's Guide to AWS DynamoDB
+
+https://github.com/pynamodb/PynamoDB
+
+https://github.com/Remillardj/pyDBLoader
+
+REMEMBER: Don't use interleaved sort keys for columns that are montonically increasing values such as date/time stamps.
+
 
 It's managed via a REST API. Its SELECT operations are like SQL but not exactly.<br />
 So it's for ports of apps from SQL relational databases that have joins.
@@ -1101,11 +1147,20 @@ https://github.com/terraform-aws-modules/terraform-aws-dms
 "Build a Facial Recognition App on AWS from Scratch | Rekognition, Lambda, DynamoDB, API Gateway, S3"
 
 
+<a name="Flow_Kinesis"></a>
+
+AWS has several offerings to make the creation and absorption of data streams easier and cheaper. <a target="_blank" href="https://aws.amazon.com/kinesis/"><img align="right" alt="Analytics_AmazonKenesis.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Kinesis.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonKinesis.png?raw=true">Amazon Kinesis</a> is a family of services that make it easy to collect, process, and analyze real-time, streaming data to get timely insights and react quickly to new information.
+   
+Data API and Streams do not require a VPC to be setup to accept SQL commands. Integrates with EventBridge. Max 24 hr duration, 100 KB query size, 100 MB query result size. Auth using AWS Secretes Manager. <a target="_blank" href="https://aws.amazon.com/kinesis/data-analytics/faqs/">FAQs</a>. Commands: describe-statement, execute-statement, get-statement-result.  troubleshooting and scenario-based questions, like how would you solve a ProvisionedThroughPutExceeded error, when should you merge or split shard, what encryption options are available, and how the Kinesis service integrates with other services.
+
+
+
+
 <hr />
 
 <a name="certs"></a>
 
-## AWS data certifications
+## AWS Data Engineer certifications
 
 Among <a target="_blank" href="https://aws.amazon.com/certification/exams/?nc2=sb_ce_exm">12 certifications</a> are 2 for data:
 

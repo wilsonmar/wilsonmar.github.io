@@ -382,6 +382,26 @@ print('{:02d}:{:02d}:{:02d}'.format(e // 3600, (e % 3600 // 60), e % 60))
 </pre>
 </ul>
 
+<hr />
+
+<a name="TimeComplexity"></a>
+
+### Time Complexity
+
+Time complexity analysis estimates how long it will take for an algorithm to complete its assigned job based on its structure.
+
+Use of Modulus would result in "O(n)" (linear) growth in time to run as the dataset grows. 
+
+Depth-first trees would have steeper (logarithmic) Time Complexity:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/141355255-b2b990cf-46d9-415e-b21a-2c06a156c3eb.png">
+<img alt="python-coding-time-complexity-1222x945" src="https://user-images.githubusercontent.com/300046/141355255-b2b990cf-46d9-415e-b21a-2c06a156c3eb.png"></a>
+
+In <a target="_blank" href="https://bigocheatsheet.com/">https://bigocheatsheet.com</a>, in the list of Big O values for sorting, 
+
+<hr />
+
+
 ### timeit()
 
 For more accurate wall-time capture, the timeit() functions disable the garbage collector.
@@ -393,22 +413,18 @@ provides a nice output format of <tt>0:00:01.946339</tt> for almost 2 seconds.
    * https://www.guru99.com/timeit-python-examples.html
    <br /><br />
 
-<pre>import timeit   # built-in
-&nbsp;
+<ul><pre>import timeit   # built-in
 # print addition of first 1 million numbers
 def addition():
     print('Addition:', sum(range(1000000)))
-&nbsp;
 # run same code 5 times to get measurable data
 n = 5
-&nbsp;
 # calculate total execution time
 result = timeit.timeit(stmt='addition()', globals=globals(), number=n)
-&nbsp;
 # calculate the execution time
 # get the average execution time
 print(f"Execution time is {result / n} seconds")
-</pre>
+</pre></ul>
 
 <pre>timeit.timeit(stmt='pass', setup='pass', timer=<default timer>, number=1000000, globals=None)
 </pre>
@@ -450,23 +466,8 @@ References:
    <br /><br />
 
 
+
 <hr />
-
-<a name="TimeComplexity"></a>
-
-### Time Complexity
-
-Time complexity analysis estimates how long it will take for an algorithm to complete its assigned job based on its structure.
-
-Use of Modulus would result in "O(n)" (linear) growth in time to run as the dataset grows. 
-
-Depth-first trees would have steeper (logarithmic) Time Complexity:
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/141355255-b2b990cf-46d9-415e-b21a-2c06a156c3eb.png">
-<img alt="python-coding-time-complexity-1222x945" src="https://user-images.githubusercontent.com/300046/141355255-b2b990cf-46d9-415e-b21a-2c06a156c3eb.png"></a>
-
-In <a target="_blank" href="https://bigocheatsheet.com/">https://bigocheatsheet.com</a>, in the list of Big O values for sorting, 
-
 
 <a name="Sorting"></a>
 
@@ -1613,6 +1614,32 @@ by Barron Stone and Olivia Chiu Stone Advanced
 ### Vectors instead of loops
 
 https://medium.com/codex/say-goodbye-to-loops-in-python-and-welcome-vectorization-e4df66615a52
+
+
+## ODBC
+
+Java programs used JDBC to create databases within Salesforce, Microsoft Dynamics 365, Zoho CRM, etc.
+
+To create and read/write such databases from within Python programs running under 32-bit and 64-bit Windows, macOS, Linux, use ODBC (Open Database Connect) API functions in:
+
+   * https://wiki.python.org/moin/ODBC
+   * https://www.progress.com/tutorials/odbc/connecting-to-odbc-databases-on-windows-from-python-using-turbodbc Turbodbc module for Windows
+   * Makes use of the Adventureworks sample SQL database Contoso Retail Data Warehouse run in Azure SQL Data Warehouse https://github.com/microsoft/sql-server-samples/tree/master/samples/databases/contoso-data-warehouse called instead of Visual Studio 2015 (or higher) with the latest SSDT installed
+   * wide-world-importers sample database?
+   <br /><br />
+
+Pyodbc by <a target="_blank" href="https://www.linkedin.com/in/michael-kleehammer-73014b1/">Michael Kleehammer</a>:
+
+   * https://github.com/mkleehammer/pyodbc/
+   * https://learn.microsoft.com/en-us/sql/connect/python/pyodbc/python-sql-driver-pyodbc?view=sql-server-ver16
+   * <a target="_blank" href="https://www.devart.com/odbc/python/">Devart ODBC Driver for Python (<strong>pyodbc</strong>)</a> library. See <a target="_blank" href="https://docs.devart.com/odbc/sqlserver/python.htm">docs</a>:
+
+   Functions:
+
+   * connect() to create a connection to the database
+   * cursor() to create a cursor from the connection
+   * execute() to execute a select statement
+   * fetchone() to retrieve rows from the query
 
 
 ## Referenes
