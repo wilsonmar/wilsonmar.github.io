@@ -1621,7 +1621,7 @@ To create and read/write such databases from within Python programs running unde
 
    * https://wiki.python.org/moin/ODBC
    * https://www.progress.com/tutorials/odbc/connecting-to-odbc-databases-on-windows-from-python-using-turbodbc Turbodbc module for Windows
-   * Makes use of the Adventureworks sample SQL database Contoso Retail Data Warehouse run in Azure SQL Data Warehouse https://github.com/microsoft/sql-server-samples/tree/master/samples/databases/contoso-data-warehouse called instead of Visual Studio 2015 (or higher) with the latest SSDT installed
+   * Makes use of the Adventureworks sample SQL database Contoso Retail Data Warehouse run in Azure SQL Data Warehouse https://github.com/microsoft/sql-server-samples/tree/master/samples/databases/contoso-data-warehouse called instead of Visual Studio 2015 (or higher) with the latest SSDT (SQL Server Data Tools) installed
    * wide-world-importers sample database?
    <br /><br />
 

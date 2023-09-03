@@ -192,6 +192,42 @@ There is a limit to how many charts any person (or even a whole team) can absorb
 
 Observability is most needed with <strong>E. Running applications</strong>, especially with <strong>legacy</strong> tech requiring more manual effort than the serverless tech we also cover here.
 
+<a name="Flow_Governance"></a>
+
+<a target="_blank" href="https://aws.amazon.com/guardduty/"><img align="right" width="25" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693711941/aws-icons/Amazon-GuardDuty.png">Amazon GuardDuty</a> is a threat detection service that continuously monitors AWS accounts, resources, and workloads to detect anomalies such as malicious and unauthorized activity, or potentially unauthorized deployments that indicate a possible account compromise. GuardDuty also detects potentially compromised instances or reconnaissance by attackers. It also mitigate threats early by initiating automated responses.
+
+<a target="_blank" href="https://aws.amazon.com/cognito/"><img align="right" width="25" scr="https://res.cloudinary.com/dcajqrroq/image/upload/v1693712052/aws-icons/Amazon-Cognito.png">Amazon Cognito</a> provides authentication, authorization, and user management for web and mobile apps. It enables users to sign in directly with a user name and password, or through a <strong>federated</strong> third party such as Facebook, Amazon, Google or Apple.
+
+    Amazon has created a <a target="_blank" href="https://aws.amazon.com/machine-learning/">Machine Learning (ML) Marketplace</a> to sell pre-trained models for use in apps.
+
+    <a name="Flow_Shield"></a>
+
+1.  <a target="_blank" href="https://aws.amazon.com/shield/"><img align="right" width="25" https://res.cloudinary.com/dcajqrroq/image/upload/v1693715513/aws-icons/Amazon-Shield.png">Amazon Shield</a> offers automatic DDoS protection. The "advanced" edition adds 24x7 access to the AWS DDoS Response Team (DRT) and protection against higher fees from AWS usage spikes during a DDoS attack.
+
+
+    <a name="Flow_API_Gateway"></a>
+
+1.  <a target="_blank" href="https://aws.amazon.com/api-gateway/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692756910/Amazon-API-Gateway_w7zvkp.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Application%20Services/ApplicationServices_AmazonAPIGateway.png?raw=true">Amazon API Gateway</a>
+
+
+    <a name="Flow_Macie"></a>
+
+1.  <a target="_blank" href="https://aws.amazon.com/macie/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757207/aws-icons/Amazon-Macie.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Security%20Identity%20&%20Compliance/SecurityIdentityCompliance_AmazonMacie.png?raw=true"><strong>Amazon Macie</strong></a> (macie2) is a web service that uses Machine Learning and pattern matching (aka managed and custom data identifiers in s3.tf) to analyze keywords in the content of data within S3. Notifications about anomalies found are sent to Slack through EventBridge and Lambda.
+
+    * https://dev.to/aws-builders/protect-s3-buckets-with-aws-macie-16gm
+    * https://registry.terraform.io/modules/tedilabs/security/aws/latest/submodules/macie-account
+    * https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/macie2_classification_export_configuration
+    * https://github.com/aws-samples/aws-macie-customization-terraform-samples
+    * https://shisho.dev/dojo/providers/aws/Macie/aws-macie2-account/
+    * https://github.com/cloudposse/terraform-aws-macie
+
+
+    <a name="Flow_Inspector"></a>
+
+1.  <a target="_blank" href="https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Security%20Identity%20&%20Compliance/SecurityIdentityCompliance_AmazonInspector.png?raw=true"><img align="right" width="26" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693712719/aws-icons/Amazon-Inspector.png">Amazon Inspector</a> detects vulnerabilities running in apps running within EC2 servers and in Lambda Functions.
+
+
+
 <a name="Flow_MasterData"></a>
 
 Apps generate and update <strong>F. Master data</strong> -- a central "source of truth" about products, customers, and inventory positions.
@@ -426,13 +462,17 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
 1.  <a href="#Redshift"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true">AWS Redshift</a> is a cloud-based (but not serverless) service based on open-source PostgreSQL. So customer effort is needed to provision servers (with enhanced VPC). 
 
-    Redshift is intended to compete with customer-managed Oracle instances, thus the reference to the red color used by Oracle. Like Oracle, Redshift stores columnar data in a cluster of nodes on <strong>EFS block storage</strong> used by operating systems and EC2 instances (rather than in S3 objects).
+    AWS introduced Redshift Serverless in AWS re: Invent 2021.
+
+    "Red" in the name is because it is seeks to migrate users <a target="_blank" href="https://hevodata.com/learn/redshift-vs-oracle/">from</a> the red logo of Oracle's "Autonomous Data Warehouse". Exadata, Like Oracle, Redshift stores columnar data in a cluster of nodes on <strong>EFS block storage</strong> used by operating systems and EC2 instances (rather than in S3 objects).
     
     Redshift stores data in columns rather than rows. This enables millisecond response as it enables parallel query execution, especially when dealing with large tables. 
 
     It's used to create star schemas in "data lakes" of petabyte-scale data warehouse for OLAP (Analytical Processing).
 
     Redshift automates incremental encrypted backups into S3 every 8 hours, with retention for 1-35 days.
+
+    Redshift has "Analyze" operation which updates stats of tables in leader node (a ledger about which data is stored among partitions within a node). It improves Query performance
 
 
     <a name="Flow_Redshift_Spectrum"></a>
@@ -487,6 +527,8 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     EMR costs around $14-16 per day while AWS Glue is around $21 per day.
     But that difference is made up largely by avoiding the hassles of setup and the cost of "always on" EMR clusters.
+
+    ETL jobs are Scala or Python based. Glue can be used to create ETL (Extract, Transform, Load) jobs to move data from one source to another. 
 
     <strong>AWS Glue Crawler</strong> jobs scans S3 to create <a target="_blank" href="https://docs.aws.amazon.com/glue/latest/dg/populate-data-catalog.html">AWS Glue Catalogs</a> housed in a Glue Schema Registry. The Glue Catalog for each region provides a central reference for metadata about all services. Catalog information includes location, ownership, schema, data types, and other properties changed over time, which can be used to create ETL jobs. <a target="_blank" href="https://www.youtube.com/watch?v=yj98zViIgYI" title="how to use Glue to create a data lake">VIDEO</a> <a target="_blank" href="https://www.youtube.com/playlist?list=PL5KTLzN85O4KdNBfGpD-QIabS3yvwI4qn">series</a> <a target="_blank" href="https://www.youtube.com/watch?v=8jlAoB1GmNs">4</a>
     
@@ -606,24 +648,7 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
 1.  Amazon OpenSearch Service is a service managed by AWS based on a fork of (older) Elasticsearch 7.10.2 & Kibana 7.10 not supported by Elastic. <a target="_blank" href="https://aws.amazon.com/blogs/database/the-role-of-vector-datastores-in-generative-ai-applications/">Amazon contends</a> that its <a target="_blank" href="https://aws.amazon.com/opensearch-service/serverless-vector-engine/">vector engines</a> can be used to add domain-specific embeddings as <strong>vector datastore</strong> to customize foundational Large Language Models used by <a target="_blank" href="https://wilsonmar.github.io/genai/">Generative Artificial Intelligence</a> apps.
 
-
-    Amazon has created a <a target="_blank" href="https://aws.amazon.com/machine-learning/">Machine Learning (ML) Marketplace</a> to sell pre-trained models for use in apps.
-
-    <a name="Flow_API_Gateway"></a>
-
-1.  <a target="_blank" href="https://aws.amazon.com/api-gateway/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692756910/Amazon-API-Gateway_w7zvkp.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Application%20Services/ApplicationServices_AmazonAPIGateway.png?raw=true">Amazon API Gateway</a>
-
     <br /><br />
-
-
-    <a name="Flow_Macie"></a>
-
-1.  <a target="_blank" href="https://aws.amazon.com/macie/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757207/aws-icons/Amazon-Macie.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Security%20Identity%20&%20Compliance/SecurityIdentityCompliance_AmazonMacie.png?raw=true"><strong>Amazon Macie</strong></a> is a web service that uses Machine Learning to analyze keywords in the content of data to detect whether critical data is being leaked.
-
-
-    <a name="Flow_Inspector"></a>
-
-1.  <a target="_blank" href="https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Security%20Identity%20&%20Compliance/SecurityIdentityCompliance_AmazonInspector.png?raw=true">Amazon Inspector</a> detects vulnerabilities running in apps running within EC2 servers and in Lambda Functions.
 
 
 ### Recap
@@ -749,7 +774,13 @@ https://github.com/terraform-aws-modules/terraform-aws-s3-bucket
 <img align="right" alt="Analytics_AmazonRedshift.png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true">
 <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png">
 Redshift is an AWS-managed data warehouse, based on open-source PostgreSQL with JDBC & ODBC drivers with SQL.
-It's intended to compete with Oracle.
+
+There are three variants of Redshift:
+   * Amazon Redshift Provisioned Clusters
+   * Redshift Spectrum
+   * Redshift Serverless
+   <br /><br />
+
 It's not for blob data.
 
 Redshift is designed for the fastest performance on the most complex BI SQL with multiple joins and subqueries. Amazon Redshift Spectrum is an optional service to query any kind of data (videos) stored in Amazon S3 buckets without first being loaded into the Redshift data warehouse. No additional charge for backup of provisioned storage and no data transfer charge for communication between Amazon S3 and Amazon Redshift. 
@@ -775,14 +806,15 @@ Redshift has 3 node types defining mix of CPU, memory, storage capacity, and dri
    
    * DC2 - Compute-intensive with <strong>local SSDs</strong> (for data warehouse) with compute together with storage. Launched in VPC. Has 2x the performance of DS2 and 1/2 the cost of DS2. Use for datasets under 1 TB (compressed), for best price and performance.
 
-   * RA3 - managed storage with SSDs and HDDs (for data lake) with 3x the performance of DC2 and 1/2 the cost of DS2. RA3 nodes can be scaled up to 128 nodes. Used to scale compute separate from storage.
+   * RA3 - managed storage with SSDs and HDDs (for data lake) with 3x the performance of DC2 and 1/2 the cost of DS2. RA3 nodes can be scaled up to 128 nodes. Used to scale compute separate from storage. Thus, the recommended type.
    <br /><br />
 
 <a target="_blank" href="https://www.coursera.org/learn/storage-systems-and-data-management/lecture/BAWxr/redshift-storage-and-retrieval-patterns-lab">Redshift distribution modes</a>:
 
    * Distribution KEY - distributes data into a slice based on key values in a column. Use for large tables that are joined to large tables.
-   * Distribution EVEN - distributes data evenly across all nodes using round-robin row-by-row distribution. Use for large tables.
-   * Distribution ALL - copies all data to all nodes. Use for small tables that are joined to large tables.
+   * Distribution EVEN - distributes data evenly across all nodes using round-robin row-by-row distribution. Use for large tables. Each slice contains about the same number of rows.
+   * Distribution ALL - copies all data (same # of rows) to all nodes. Use for small tables that are joined to large tables.
+   * Distribution AUTO - 
 
 RedShift automatically assign compresssion type: REMEMBER:
    * Sort keys, BOOLEAN, REAL, DOUBLE get RAW compression
@@ -832,7 +864,7 @@ Timestream is a fully-managed <strong>time series</strong> database.
 Kinesis, is a real-time data streaming service used for collecting, processing, and analyzing real-time data. 
 It's not for long-term storage.
 It's more suitable for streaming data processing rather than interactive analytics.
-   * Input KPL, agent, PUT API
+   * Input <a target="_blank" href="https://docs.aws.amazon.com/streams/latest/dev/developing-producers-with-kpl.html">KPL (Kinesis Producer Library)</a>, agent, PUT API
    * Output KCL
    <br /><br />
 
@@ -847,6 +879,7 @@ Kinesis Data Streams ingests continuous streams of data (to shards), replicated 
 Kinesis Storm Sprout reads from a Kinesis stream into Apache Storm.
 
 Kinesis Data Firehose can be adjusted via API calls for specified data rates (capacity).
+Duplicates can occur with Firehose.
 
 Kinesis Data Analytics provisions capacity in Kinesis Processing Units (KPU) for memory and corresponding computing and networking capacity. Kinesis Data Analytics supports two runtime environments: Apache Flink and AWS Glue.
 
@@ -944,6 +977,8 @@ https://www.youtube.com/watch?v=9Qq5K8e18Gw
 Migrate to Amazon EMR - Apache Spark and Hive - Cost Optimization
 
 https://github.com/terraform-aws-modules/terraform-aws-emr
+
+https://www.youtube.com/watch?v=ARzFq7DJpVQ
 
 [<a href="#Flow_EMR">Return to flow diagram</a>]
 
@@ -1160,7 +1195,7 @@ Data API and Streams do not require a VPC to be setup to accept SQL commands. In
 
 <a name="certs"></a>
 
-## AWS Data Engineer certifications
+## AWS Data Engineering certifications
 
 Among <a target="_blank" href="https://aws.amazon.com/certification/exams/?nc2=sb_ce_exm">12 certifications</a> are 2 for data:
 
@@ -1173,7 +1208,7 @@ Among <a target="_blank" href="https://aws.amazon.com/certification/exams/?nc2=s
 
 ## AWS Certified Database - Specialty
 
-<a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-database-specialty/AWS-Certified-Database-Specialty_Exam-Guide.pdf">PDF (DBS-C01)</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-database-specialty/">$300 to answer 65 questions in 180-minute<br />AWS Certified Database - Specialty</a> in these domains:
+<a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-database-specialty/AWS-Certified-Database-Specialty_Exam-Guide.pdf">PDF (DBS-C01)</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-database-specialty/">$300 to answer 75%+ of 65 questions in 180-minute<br />AWS Certified Database - Specialty</a> in these domains:
 
 ### 1. Workload-Specific Database Design 26%
 
@@ -1294,7 +1329,7 @@ Among <a target="_blank" href="https://aws.amazon.com/certification/exams/?nc2=s
 
 ## AWS Certified Data Analytics - Specialty
 
-<a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-data-analytics-specialty/AWS-Certified-Data-Analytics-Specialty_Exam-Guide.pdf">PDF (DAS-C01)</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-data-analytics-specialty/">$300, 75% or _ questions in <strong>190 minute</strong> <br />AWS Certified Data Analytics - Specialty</a>
+<a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-data-analytics-specialty/AWS-Certified-Data-Analytics-Specialty_Exam-Guide.pdf">PDF (DAS-C01)</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-data-analytics-specialty/">$300, 75%+ of 65 questions in <strong>180 minute</strong> <br />AWS Certified Data Analytics - Specialty</a>
 
    * https://docs.aws.amazon.com/whitepapers/latest/big-data-analytics-options/welcome.html
    * https://d1.awsstatic.com/whitepapers/Migration/migrating-applications-to-aws.pdf
