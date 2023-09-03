@@ -378,7 +378,7 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 1.  <a target="_blank" href="https://aws.amazon.com/dynamodb/"><img align="right" alt="Database_AmazonDynamoDB.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-DynamoDB.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Database/Database_AmazonDynamoDB.png?raw=true"></a> The key-value store in <a target="_blank" href="https://aws.amazon.com/dynamodb/resources/"><strong>AWS DynamoDB</strong></a> is a serverless service, so it automatically scale up and down to meet demand. So it's used for workloads such as session stores or shopping carts.
 
     Internally, DynamoDB uses an array of (fast) SSDs to store <strong>petabytes</strong> of data in <strong>items of 400KB each</strong>. 
-    DynamoDB is a fully managed service, so AWS takes care of the hardware and operating system patching. However, Admins need to allocate Read and Write capacity Usage (RCU & WCU) based on the number of anticipated 4K items read and 1K items written per second (RPS and WPS).
+    DynamoDB is a fully managed service, so AWS takes care of the hardware and operating system patching. However, Admins need to allocate Read and Write capacity Usage (RCU & WCU) based on the number of anticipated 4K items read and 1K items written per second (RPS and WPS). Use the DynamoDB Capacity Calculator to estimate the number of RCUs and WCUs needed for your workload.
     
     Each item can have up to 256 attributes. Each attribute can be a scalar (string, number, binary, Boolean, or null) or a complex data type (list, map, or set).
     
@@ -686,6 +686,7 @@ Among the 200+ services that make up AWS, these cloud have the most with process
    <br /><br />
 
    * https://www.linkedin.com/pulse/aws-glue-vs-datapipeline-emr-dms-batch-kinesis-what-ramamurthy/
+
    * https://skyvia.com/etl-tools-comparison/aws-glue-vs-aws-data-pipeline
 
 <hr />
