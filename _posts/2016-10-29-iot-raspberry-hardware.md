@@ -354,7 +354,7 @@ This is a list of physical hardware categorized by basics and optional.
    $68 for a 7-inch Touch-screen for Pi</a>
    powered by the GPIO or USB.
 
-   <a target=_blank" href="https://www.amazon.com/800x480-Resolution-iUniker-Raspberry-Display/dp/B01LX526QA/ref=wilsonslifenotes/">
+   <a target="_blank" href="https://www.amazon.com/800x480-Resolution-iUniker-Raspberry-Display/dp/B01LX526QA/ref=wilsonslifenotes/">
    $49.99 3.5 inch 800x480 TFT Display with case</a>
    for 60+ fps video at 900:1 contrast ratio vieweable at 160 degrees. 
    Uses 3V. See
