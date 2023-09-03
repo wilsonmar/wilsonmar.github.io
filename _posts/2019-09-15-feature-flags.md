@@ -56,7 +56,7 @@ Many systems already provide services for managing feature flags and reporting/a
 
 Jira has a "Feature Flags" tab:
 
-<a target="_blank" href=https://user-images.githubusercontent.com/300046/125816357-790f7657-ad40-4f2a-9a8b-26e8b859aa7c.png">
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/125816357-790f7657-ad40-4f2a-9a8b-26e8b859aa7c.png">
 <img alt="featureflags-in-jira-931x433.png" href="https://user-images.githubusercontent.com/300046/125816357-790f7657-ad40-4f2a-9a8b-26e8b859aa7c.png"></a>
 
 

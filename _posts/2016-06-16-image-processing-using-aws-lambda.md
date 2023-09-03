@@ -266,7 +266,7 @@ This blogger says</a>:
 > "If you have to SSH into your servers, then your automation has failed.
  This is both the most frightening and yet most useful thing I've learned."
 
-* <a target="_blank" href=https://news.ycombinator.com/item?id=7173361">
+* <a target="_blank" href="https://news.ycombinator.com/item?id=7173361">
 Discussion on this on Hacker News</a>.
 
 

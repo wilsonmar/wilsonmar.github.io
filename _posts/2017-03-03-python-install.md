@@ -1091,7 +1091,7 @@ omitting the name will place the files in the current directory instead.
  
  sudo pip install virtualenvwrapper
  
-	Open <a target="_blank" href=http://peak.telecommunity.com/dist/ez_setup.py">
+	Open <a target="_blank" href="http://peak.telecommunity.com/dist/ez_setup.py">
 	the ez_setup.py python script</a> which
 	bootstraps setuptools and easy_install for you - just run:
 	control-click on it to save it to your Downloads folder.

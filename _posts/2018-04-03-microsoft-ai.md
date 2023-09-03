@@ -2386,7 +2386,7 @@ COMMANDS
    </pre>
 
 References:
-   * <a target="_blank" href=https://www.microsoft.com/en-us/research/publication/responsible-bots/">Responsible Bots:</a>
+   * <a target="_blank" href="https://www.microsoft.com/en-us/research/publication/responsible-bots/">Responsible Bots:</a>
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/bot-service/bot-service-design-user-experience?view=azure-bot-service-4.0">Design the user experience</a>
    * <a target="_blank" href="https://docs.microsoft.com/en-us/composer/introduction">Intro to Composer</a>
 
