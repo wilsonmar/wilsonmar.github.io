@@ -192,7 +192,14 @@ There is a limit to how many charts any person (or even a whole team) can absorb
 
 Observability is most needed with <strong>E. Running applications</strong>, especially with <strong>legacy</strong> tech requiring more manual effort than the serverless tech we also cover here.
 
+
 <a name="Flow_Governance"></a>
+
+The "primary directive" for AWS usage is to <strong>secure access to data</strong> stored within three AWS core services: 
+   * EFS (Elastic File System) files and folders accessed as network drives by Windows and Linux servers within EC2 (Elastic Compute Cloud) servers
+   * EBS (Elastic Block Storage) volumes attached to EC2 servers running Windows and Linux servers
+   * S3 (Simple Storage Service) objects accessed from several Availability Zones within a single region and account
+   <br /><br />
 
 <a target="_blank" href="https://aws.amazon.com/guardduty/"><img align="right" width="25" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693711941/aws-icons/Amazon-GuardDuty.png">Amazon GuardDuty</a> is a threat detection service that continuously monitors AWS accounts, resources, and workloads to detect anomalies such as malicious and unauthorized activity, or potentially unauthorized deployments that indicate a possible account compromise. GuardDuty also detects potentially compromised instances or reconnaissance by attackers. It also mitigate threats early by initiating automated responses.
 
@@ -1032,8 +1039,7 @@ So it's for ports of apps from SQL relational databases that have joins.
 
 Use S3 for storing blob data > 400 KB.
 
-<a target="_blank" href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.concepts.html">
-DAX (DynamoDB Accelerator)</a> provides a cluster of cloud-based caching nodes that receives DynamoDB traffic through a client added on EC2 servers. Frequently-referenced DynamoDB data are held in-memory within 3-10 nodes to deliver up to a 10 times performance improvement. One of the nodes serves as the primary node for the cluster. Additional nodes (if present) serve as read replicas. All this without requiring developers to manage cache invalidation, data population, or cluster management. 
+<a target="_blank" href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.concepts.html">DAX (DynamoDB Accelerator)</a> provides a cluster of cloud-based caching nodes that receives DynamoDB traffic through a client added on EC2 servers. Frequently-referenced DynamoDB data are held in-memory within 3-10 nodes to deliver up to a 10 times performance improvement. One of the nodes serves as the primary node for the cluster. Additional nodes (if present) serve as read replicas. All this without requiring developers to manage cache invalidation, data population, or cluster management. 
 
    * <a target="_blank" href="https://blog.aspiresys.com/cloud/mongodb-vs-dynamodb-vs-rds-choosing-best-nosql-database/">DynamoDB vs MongoDB vs RDS: Choosing the Best NoSQL Database</a>
    <br /><br />
