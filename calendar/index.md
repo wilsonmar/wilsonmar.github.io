@@ -6,9 +6,9 @@ title: Please send me an appointment
 tags: [calendar, contact, Jekyll]
 comments: true
 image:
-  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1693906995/calendar-1580x301_hz7ebg.png
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1693920053/calendar-3160x546_p8uavv.png
   credit: Wilson Mar
-  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1680358479/instant-2206x426_ehe1zl.jpg
+  creditlink: https://docs.google.com/spreadsheets/d/1VXBvh6cGmvjiNlbu1GxfPB75bA0RPr5G/edit#gid=1492462677
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
