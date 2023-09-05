@@ -8,7 +8,7 @@ comments: true
 image:
   feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1693920053/calendar-3160x546_p8uavv.png
   credit: Wilson Mar
-  creditlink: https://docs.google.com/spreadsheets/d/1VXBvh6cGmvjiNlbu1GxfPB75bA0RPr5G/edit#gid=1492462677
+  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1693920053/calendar-3160x546_p8uavv.png
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
