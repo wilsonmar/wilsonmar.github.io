@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-07-07"
+date: "2023-09-05"
 file: "devsecops"
 title: "DevSecOps"
 excerpt: "How to get people to use products and processes that yield faster competitive speed AND improved Security Posture throughout a secure SDLC"
@@ -32,7 +32,7 @@ What is the adoption completion percentage for each process/tool at your organiz
     Secure Coding (<a target="_blank" href="https://wilsonmar.github.io/github-data-security/">secrets in source code</a>, <a target="_blank" href="https://wilsonmar.github.io/owasp-testing/">OWASP Top 10</a>, etc.)</td></tr>
 <tr valign="top"><td> 3. </td><td> DEVELOP:  </td><td align="right"> __% </td><td>
    Security as Code (<a target="_blank" href="https://wilsonmar.github.io/opa-rego/">OPA processing Rego policies</a>)</td></tr>
-<tr valign="top"><td> 4. </td><td> BUILD:  </td><td align="right"> __% </td><td>
+<tr valign="top"><td> 4. </td><td> <a href="#BUILD">BUILD</a>:  </td><td align="right"> __% </td><td>
    <a href="#SAST">SAST</a> within CI/CD <a target="_blank" href="https://wilsonmar.github.io/jenkins/">Jenkins</a> & SonarQube) pipelines</td></tr>
 <tr valign="top"><td> 5. </td><td> TEST:  </td><td align="right"> __% </td><td>
    <a href="#DAST">DAST</a> (and <a href="#IAST">IAST</a>) of each file type</td></tr>
@@ -118,6 +118,46 @@ Other offerings:
 
 
 <hr />
+
+<a name="BUILD"></a>
+
+## BUILD: What to look for:
+
+1. Exposure of secrets in source code (such as passwords, API keys, etc.) and in configuration files (such as database connection strings, etc.)
+
+1. Use of deprecated libraries (such as jQuery, etc.)
+
+1. Use of vulnerable libraries (such as OpenSSL, etc.)
+
+1. Use of vulnerable versions of libraries (such as OpenSSL, etc.)
+
+1. Use of vulnerable versions of frameworks (such as Spring, etc.)
+
+1. Use of vulnerable versions of operating systems (such as Windows, Linux, etc.)
+
+1. Use of vulnerable versions of containers (such as Docker, Kubernetes, etc.)
+
+1. Use of vulnerable versions of cloud services (such as AWS, Azure, etc.)
+
+1. Use of vulnerable versions of databases (such as MySQL, Oracle, etc.)
+
+1. Use of vulnerable versions of programming languages (such as Java, Python, etc.)
+
+1. Use of vulnerable versions of compilers (such as GCC, etc.)
+
+1. Use of vulnerable versions of build tools (such as Maven, Gradle, etc.)
+
+1. Use of vulnerable versions of web servers (such as Apache, Nginx, etc.)
+
+1. Use of vulnerable versions of application servers (such as Tomcat, etc.)
+
+1. See if password is among the 1,000 most common passwords (dictionary attack)
+
+1. See if login page detects a brute force attack (by trying all combinations of characters)
+
+1. Monitor logs for attack signatures (such as SQL injection, etc.)
+
+
 
 ## What are Scanners looking for?
 

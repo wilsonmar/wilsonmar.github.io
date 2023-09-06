@@ -221,6 +221,7 @@ The "primary directive" for AWS usage is to <strong>secure access to data</stron
 
 1.  <a target="_blank" href="https://aws.amazon.com/macie/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757207/aws-icons/Amazon-Macie.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Security%20Identity%20&%20Compliance/SecurityIdentityCompliance_AmazonMacie.png?raw=true"><strong>Amazon Macie</strong></a> (macie2) is a web service that uses Machine Learning and pattern matching (aka managed and custom data identifiers in s3.tf) to analyze keywords in the content of data within S3. Notifications about anomalies found are sent to Slack through EventBridge and Lambda.
 
+    * https://stackoverflow.com/questions/68346164/aws-macie-terraform-select-all-s3-buckets-in-account
     * https://dev.to/aws-builders/protect-s3-buckets-with-aws-macie-16gm
     * https://registry.terraform.io/modules/tedilabs/security/aws/latest/submodules/macie-account
     * https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/macie2_classification_export_configuration
@@ -1536,6 +1537,8 @@ Coursera cources:
 ## Hands-on labs
 
 https://www.educative.io/cloudlabs
+
+https://www.montclair.edu/newscenter/2022/10/31/study-finds-hate-speech-on-twitter-increased-following-elon-musk-takeover/
 
 ## More on Amazon #
 

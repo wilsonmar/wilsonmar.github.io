@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-08-02"
+date: "2023-09-05"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 excerpt: "Get certified in how to orchestrate containers, especially in clouds, including OpenShift"
@@ -7998,6 +7998,23 @@ https://medium.com/@rupeshthakur/logging-guide-in-kubernetes-4293e3748038
 https://blog.devops.dev/kubernetes-complete-reference-badbc2ed9834
 
 Cloud Native IT being responsible by GitOps, compared against who are responsible the Shared Responsiblity Model -- <a target="_blank" href="https://www.linkedin.com/in/lachlan-white/">Lachlan White (@LachieWhite7)</a>
+
+For $29/month, https://www.educative.io/path/devops-for-developers 
+is a 50-hour video course "DevOps for Developers" with quizzes and hands-on labs covering:
+   1. Network Fundamentals
+   2. Git and GitHub
+   3. Docker for Developers
+   4. Docker Compose for Developers
+   5. A Practical Guide to Kubernetes
+   6. Kubernetes Monitoring, Logging and Auto-Scaling
+   7. Jenkins X with Kubernetes
+   8. Kubernetes Chaos Engineering
+   9. Terraform: From Beginner to Master with Examples in AWS
+   10. Ansible
+   <br /><br />
+
+The course was created by <a target="_blank" href="https://www.linkedin.com/in/ian-miell-694496/">Ian Miell</a> (from Oxford) and <a target="_blank" href="https://www.linkedin.com/in/aweil/">Arnaud Weil</a> (from France).
+
 <hr />
 
 ## More on DevOps #
