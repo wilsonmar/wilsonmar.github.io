@@ -1196,7 +1196,9 @@ AWS has several offerings to make the creation and absorption of data streams ea
    
 Data API and Streams do not require a VPC to be setup to accept SQL commands. Integrates with EventBridge. Max 24 hr duration, 100 KB query size, 100 MB query result size. Auth using AWS Secretes Manager. <a target="_blank" href="https://aws.amazon.com/kinesis/data-analytics/faqs/">FAQs</a>. Commands: describe-statement, execute-statement, get-statement-result.  troubleshooting and scenario-based questions, like how would you solve a ProvisionedThroughPutExceeded error, when should you merge or split shard, what encryption options are available, and how the Kinesis service integrates with other services.
 
-
+https://medium.com/surfline-labs/intelligent-surf-cameras-fce6e7e3d03e
+describes an AI-powered surf camera at https://www.surfline.com/. 
+It uses Amazon Kinesis Video Streams, Amazon Rekognition, and Amazon SageMaker to detect surfers and provide them with real-time surfing conditions and information.
 
 
 <hr />
