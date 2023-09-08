@@ -39,7 +39,7 @@ https://github.com/dastergon/awesome-chaos-engineering
 
 Chaos Engineering is an <strong>investment</strong> in moving from a reactive to <strong>proactive</strong> approach to reliability engineering.
 
-Instead of waiting for an outage to "see what happens", 
+Instead of waiting for an outage to "see what happens" (at the worst possible time), 
 it involves conducting <strong>experiments</strong> to expose systemic weaknesses that do not become aberrant behaviors in production.
 
 
@@ -164,18 +164,42 @@ PROTIP: Summarized metric reports provide executives of an enterprise the <stron
 
 Steps in a Chaos Engineering effort:
 
-   1. Pitch executives to get buy-in (this involves an "elevator pitch", "business case", and "proof of concept")
-   2. Executive sponsor. If your leadership's attitude is to do the minimal and just recover when needed, this is not for you.
-   3. Team assembled 
-   4. Cloud accounts provisioned with budget and adequate permissions
-   5. Team trained
-   6. Systems are created (using IaC) and running in "steady state"
-   7. Install monitoring systems and procedures (currently in place) to produce "as is" baseline <a href="#Metrics">metrics (see below)</a>
-   9. Analyze baseline metrics with visual analytics to identify and demonstrate "weaknesses" as "opportunities"
-   10. Define plan of action (design experiments)
+   1. Define current organization structure (teams) and participant contacts
+   1. Define organizational goals and objectives (such as "reduce unplanned downtime by 20%")
+   1. Define metrics to measure results SLAs (Uptime, Availability, MTTD, and MTTR)
 
-   11. Implement plan of action (conduct experiments on <a href="#GameDay">Game Days</a>)
-   12. Analyze evolving metrics to determine if the plan of action is working, and adjust as necessary
+   1. Experiment designed (using Gremlin) with hypothesis of failure modes.
+   1. Scenarios how to setup the environment and inject failure (regular reliability tests)
+   1. Observability tools (Datadog, New Relic, etc.) installed after user training
+   1. Metrics to measure, 
+   1. <a targete="_blank" href="https://www.gremlin.com/docs/platform/health-checks/">Periodic health check</a> 
+   1. Alert levels (using Pager Duty)
+   1. Abort conditions, 
+   1. Define <a target="_blank" href="https://www.gremlin.com/blog/ensuring-runbooks-are-up-to-date/">runbooks</a> to define/standardize response to chaos
+   1. Sample reports to be generated.
+   
+   1. Pitch executives to get buy-in (this involves an "elevator pitch", "business case", and "proof of concept")
+   1. Executive sponsor. If your leadership's attitude is to do the minimal and just recover when needed, this is not for you
+   1. Budget and objectives approved by management
+
+   1. Chaos Engineering team leads (champions) commissioned
+   1. Periodic (weekly, monthly, quarterly, annually) reporting to management defined
+   1. Teams assembled 
+   1. Accounts with permissions provisioned with budget
+   1. Training conducted and learning verified (certifications)
+   1. Communication channels (Slack, email, etc.) established and tested
+
+   1. Team trained on how to use start/abort scenarios that inject failure (Gremlin)
+   1. Systems can be created repeatedly (using IaC) for running in stable "steady state"
+   1. Artificial load generation 
+   1. Install monitoring systems and procedures (currently in place) to produce "as is" baseline <a href="#Metrics">metrics (see below)</a>
+   1. Analyze baseline metrics with visual analytics to identify and demonstrate "weaknesses" as "opportunities"
+   1. Define plan of action (design experiments)
+
+   1. Implement plan of action (conduct experiments on <a href="#GameDay">Game Days</a>)
+   1. Analyze evolving metrics to determine if the plan of action is working, and adjust as necessary
+   1. Define lessons learned and updated best practices, scenarios, tools
+   1. Draft reports to management
    <br /><br />
 
 
@@ -185,11 +209,11 @@ Steps in a Chaos Engineering effort:
 
 Chaos engineering experiments follow an approach:
 
-1. Define ‘steady state’ as some measurable output of a system that indicates normal behavior.
+1. Define <strong>steady state</strong> as some measurable output of a system that indicates normal behavior.
 
-2. Hypothesize that this steady state will continue in both the control group and the experimental group.
+2. Hypothesize that this steady state will continue in both the control group and the experimental group. Ask how will the organization and systems respond to certain faults?
 
-4. Introduce variables that reflect real-world events like servers that crash, hard drives that malfunction, network connections that are severed, etc.
+4. Introduce variables that reflect <strong>real-world events</strong> like servers that crash, hard drives that malfunction, network connections that are severed, etc. Setup <strong>Observability tools</strong> to measure the impact of the variables on the steady state of the system.
 
 5. Try to disprove the hypothesis by looking for a difference in steady-state between the control group and the experimental group.
     
@@ -253,6 +277,8 @@ provides two attempts to answer 80% of 20 questions on https://gremlin.coassembl
    get a Slack invite.
 
 1. https://app.gremlin.com/login
+
+<a target="_blanK" href="https://gremlin.coassemble.com/#/course/132310/overview">Gremlin Enterprise Chaos Engineering Certification (GECEC) online course</a> is rated at 1 h 30m over 6 modules and includes a quiz with no time limit to pass 80% of 30 questions, given 3 attempts.
 
 
 <a name="CNCFLitmus"></a>

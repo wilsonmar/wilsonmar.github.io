@@ -53,7 +53,7 @@ The <strong>AWS Certified Security - Specialty</strong> certification SCS-C01 ho
    Practice exam: 40 USD.
 
 <a target="_blank" href="https://www.aws.training/SignIn?returnUrl=%2FCertification">
-   PROTIP</a>: The exam is difficult becuase you need to correctly answer <strong>at least 75%</strong> of 65 multiple-choice questions in <strong>over 3 hours without breaks</strong> (170 minutes). Many of the questions are long paragraphs and have multiple answers.
+   PROTIP</a>: The exam is difficult because you need to correctly answer <strong>at least 75%</strong> of 65 multiple-choice questions in <strong>over 3 hours without breaks</strong> (170 minutes). Many of the questions are long paragraphs and have multiple answers.
 
 Domain Topics for AWS Security   
 
@@ -724,13 +724,56 @@ read intro to AWS Security Processes</a>
 
 ## IAM Policies
 
-Types of IAM policies:
-   * AWS managed policies
-   * Customer (administrator) managed policies
-   * Inline policies
+1.  On the AWS console, Search "IAM" and click "IAM" from the search results for the IAM dashboard.
+
+1.  Click "Policies" under "Access management" from the left sidebar.
+
+1.  Click the "Create policy" button for the Create Policy page.
+
+1.  Click the "JSON" tab.
+
+1.  In a browser tab to the GitHub, get an applicable sample IAM Policy JSON to copy from:
+
+    https://github.com/wilsonmar/...json
+
+1.  In the editor window, paste the sample JSON IAM policy. 
+
+    ### IAM Policy JSON statements
+    
+    IAM Policy JSON statements can consist of these components:
+
+    * Effect: can either be Allow or Deny the associated actions.
+
+    * Action: lists actions to be allowed or denied.
+
+    * Resource: lists resources to perform specified actions.
+
+    * Condition: lists additional restrictions regarding when a policy can be in effect.
+
+    ### Types of IAM policies:
+    * AWS managed policies
+    * Customer (administrator) managed policies
+    * Inline policies
+    * S3 Bucket policies
    <br /><br />
 
-S3 Bucket policies
+1.  Click the "Next: Tags" button.
+
+1.  In many enterprises, "Add tags" is not optional to specify where to charge expenses. 
+
+1.  Click the "Next: Review" button.
+
+1.  Name the policy according to your enterprise naming conventions, then click the "Create policy" button.
+
+1.  PROTIP: It's better to select a pre-defined user group rather than creating a new one.
+
+1.  Attach the policy to define the required access to that group.
+
+
+
+
+
+
 
 
 https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS_Certified_Security_Specialty_Exam_Guide_v1.5.pdf

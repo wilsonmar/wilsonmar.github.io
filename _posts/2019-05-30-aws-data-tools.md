@@ -437,17 +437,26 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     Since May 30, 2018, Neptune has run with continuous backups to S3 within a VPC that's private by default. 
 
+    Neptune is a fully managed service, so AWS takes care of the hardware and operating system patching. However, Admins need to allocate Read and Write capacity Usage (RCU & WCU) based on the number of anticipated 4K items read and 1K items written per second (RPS and WPS). Use the DynamoDB Capacity Calculator to estimate the number of RCUs and WCUs needed for your workload.
 
 
-    <a name="Flow_Spark"></a>
+    ### Big Data
 
-1.  To address a way to process large amounts of data ("Big Data") across many machines, the Apache open-source Hadoop framework was created in 2006. Spark framework arrived in 2014 to add more in-memory compute performance with a more flexible API than Hadoop.
+    <a name="Flow_Hadoop"></a>
+
+1.  To address a way to process large amounts of data ("Big Data") across many machines, the Apache open-source Hadoop framework was created in 2006. It stores data across many machines using its distributed file system (HDFS). Hadoop used Yarn to manage resources. 
 
     <a name="Flow_MapReduce"></a>
 
-1.  Hadoop introduced the <strong>"MapReduce"</strong> approach developed by Google. Java and Python programs split each large dataset across a cluster for parallel analysis, fault tolerance, and scalability. The abstractions let the user focus on the high-level logic of the program while trusting that the framework will smoothly continue the processes under-the-hood.
+1.  To process and analyze data (in parallel), Hadoop used a <strong>"MapReduce"</strong> approach developed by Google. Java and Python programs split each large dataset across a cluster for parallel analysis, fault tolerance, and scalability. The abstractions let the user focus on high-level logic.
 
-    In 2008, Apache Hive was open-sourced by Facebook to make SQL-like queries available to simplify complex Java MapReduce jobs on data stored using HDFS (Hadoop Distributed File System) and Amazon S3.
+    Apache Hive was open-sourced in 2008 by Facebook to make SQL-like queries available to simplify complex Java MapReduce jobs on data stored using HDFS (Hadoop Distributed File System).
+
+    <a name="Flow_Spark"></a>
+
+    The Spark framework arrived in 2014 to add higher performance to Hadoop. Instead of batch MapReduce to process data in HDFS, Spark added real-time processing and in-memory compute with a more flexible API. Spark added use of local and Amazon S3 to store data and load data from HBase, Cassandra. In addition to Yarn, Spark supports Mesos, Kubernetes, streaming data, machine learning, and graph processing.
+
+    <a name="Flow_Presto"></a>
 
 1.  <a target="_blank" href="https://aws.amazon.com/big-data/what-is-presto/">AWS Presto (renamed Trino)</a> is based on what Facebook open-sourced in 2014: a <strong>SQL query engine</strong> to access any size of data where it is stored, without needing to move data into a separate analytics system. Its connectors enable query of data in HDFS, S3, MySQL, PostgreSQL, Cassandra, MongoDB, Kafka, and Teradata. Query execution runs in-memory within a Hadoop cluster in parallel, so it can be fast.
 
@@ -485,9 +494,7 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     <a name="Flow_Redshift_Spectrum"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/redshift/latest/dg/c-getting-started-using-spectrum.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png"><img align="right" alt="Analytics_AmazonRedshift.png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true">Amazon Redshift Spectrum</a> extends Redshift to query from S3 without loading data, like using Presto with Hadoop. RedShift Spectrum's "Federal Query" means it can perform SQL <strong>joins</strong> with S3 objects and other foreign data in queries.
-
-    https://ahana.io/answers/aws-redshift-vs-spectrum/
+1.  <a target="_blank" href="https://docs.aws.amazon.com/redshift/latest/dg/c-getting-started-using-spectrum.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png"><img align="right" alt="Analytics_AmazonRedshift.png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true">Amazon Redshift Spectrum</a> extends Redshift to query from S3 without loading data, like using <a href="#Flow_Presto">Presto</a> with Hadoop. <a target="_blank" href="https://ahana.io/answers/aws-redshift-vs-spectrum/">RedShift Spectrum</a> can perform SQL <strong>joins</strong> with S3 objects and other foreign data in queries.    
 
 
     <a name="Flow_Athena"></a>
