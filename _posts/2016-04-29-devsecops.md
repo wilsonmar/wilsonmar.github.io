@@ -155,6 +155,8 @@ Other offerings:
 
 1. See if login page detects a brute force attack (by trying all combinations of characters)
 
+   PostgreSQL has a <a target="_blank" href="https://www.postgresql.org/docs/9.1/auth-pg-hba-conf.html">pg_hba.conf</a> file that can be configured to limit the number of login attempts.
+
 1. Monitor logs for attack signatures (such as SQL injection, etc.)
 
 

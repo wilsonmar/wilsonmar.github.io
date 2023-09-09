@@ -120,13 +120,13 @@ The <strong>speed to detect and respond</strong> to anomalies is a key part of t
 
 A sample <strong>Acceptance Criteria</strong> statement for work on Chaos Engineering is "confidence in our production deployments" despite the complexity that they represent.
 
-Specific metrics to measure:
+Specific metrics to consider:
 
    * Availability (unplanned downtime per year/month/week/day/hour). Components of this include:
 
-      * Transaction throughput per hour/day/week/month/quarter/year
+   * Transaction throughput per hour/day/week/month/quarter/year
 
-      * Latency (response time to user requests) percentiles
+   * Latency (response time to user requests) percentiles
 
    * MTTD (Mean Time to Detect) - How long did it take for someone to realize there is a problem? The starting point is an event that may not be specifically logged, but inferred from other observations.
 
@@ -263,8 +263,15 @@ https://www.gremlin.com/docs/application-layer/authentication-configuration/
 
 * Gremlin, freemium product with a GUI and professional support. It supports a wide range of operating systems.
 
+### GECEC
+
+<a target="_blanK" href="https://gremlin.coassemble.com/#/course/132310/overview">Gremlin Enterprise Chaos Engineering Certification (GECEC) online course</a> is rated at 1 h 30m over 6 modules and includes a quiz with no time limit to pass 80% of 30 questions, given 3 attempts.
+
+
+### GCCEP
+
 <a target="_blank" href="https://www.gremlin.com/certification/">
-Gremlin Certified Chaos Engineering Practitioner  Exam (GCCEP)</a>
+Gremlin Certified Chaos Engineering Practitioner Exam (GCCEP)</a>
 https://github.com/certificate-study-guide
 provides two attempts to answer 80% of 20 questions on https://gremlin.coassemble.com/
 
@@ -278,7 +285,6 @@ provides two attempts to answer 80% of 20 questions on https://gremlin.coassembl
 
 1. https://app.gremlin.com/login
 
-<a target="_blanK" href="https://gremlin.coassemble.com/#/course/132310/overview">Gremlin Enterprise Chaos Engineering Certification (GECEC) online course</a> is rated at 1 h 30m over 6 modules and includes a quiz with no time limit to pass 80% of 30 questions, given 3 attempts.
 
 
 <a name="CNCFLitmus"></a>

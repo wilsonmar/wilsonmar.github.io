@@ -184,13 +184,20 @@ Although this "world map" is a busy diagram, it's still a subset of the 200 plus
 
 > Click on the flowchart for a full-screen view of the <strong>sequence</strong> how I would implement them, starting with foundational services:
 
-<strong>A. Governance</strong> services needed to obtain permissions and secrets. Other services operate under these services.
+Let's begin with a walk through of just the <strong>categories</strong> of services.
+Before our system interacts with <strong>end-users</strong> connecting through public networks, we need <strong>A. Governance</strong> services to define the permissions and secure the secrets all other services operate under.
 
-<strong>B. Visualizations</strong> are the most important services because it's the human interface to data and thus the basis for obtaining and judging value from the time and money spent on systems.
+We need metrics, logs, and transaction traces to be collected centrally to enable an <strong>B. Observability</strong> capability that increasingly leverages Machine Learning and Artificial Intelligence to make <strong>predictions</strong> for proactive rather than reactive processes.
 
-There is a limit to how many charts any person (or even a whole team) can absorb. So we are dependent on <strong>C. Alerts</strong> to know when to take action. Such intelligence are based upon metrics, logs, and traces -- collectively called <strong>D. Monitoring</strong> or "Observability" that increasingly make more use of <strong>Machine Learning and Artificial Intelligence </strong> to make predictions.
+Insights from observability are obtained using <strong>C. Visualizations</strong> presenting graphics.  Such analytics is the human interface to data and thus the basis for obtaining and judging value from the time and money spent on systems.
 
-Observability is most needed with <strong>E. Running applications</strong>, especially with <strong>legacy</strong> tech requiring more manual effort than the serverless tech we also cover here.
+But there is a limit to how many charts any one person (or even a whole team) can absorb. So we are dependent on <strong>D. Alerts</strong> to know when to take action. 
+
+We are also dependent on <strong>E. External Environment Inputs</strong> from outside our system, such as social media, weather, stock prices, etc.
+
+Observability is most needed with <strong>E. OLTP applications</strong>, especially with <strong>legacy</strong> tech requiring more manual effort than the serverless tech we also cover here.
+
+Before our system interacts with end-users in public networks, let's begin with <strong>A. Governance</strong> services needed to obtain permissions and secrets. Other services operate under these services.
 
 
 <a name="Flow_Governance"></a>
@@ -240,9 +247,12 @@ The "primary directive" for AWS usage is to <strong>secure access to data</stron
 
 Apps generate and update <strong>F. Master data</strong> -- a central "source of truth" about products, customers, and inventory positions.
 
-Enterprises built <strong>G. Big Data</strong> to filter and aggregate data for "Business Intelligence" (BI) and "Data Warehousing" (DW) to make <strong>better decisions</strong>.
+<strong>G. External environmental inputs</strong>.
 
-The new approach to process <strong>H. External environmental inputs</strong> as continuous data <strong>streams</strong>, in real-time rather than in batches. 
+Enterprises built <strong>H. Big Data</strong> to filter and aggregate data for "Business Intelligence" (BI) and "Data Warehousing" (DW) to make <strong>better decisions</strong>.
+
+Historically, due to limitations in disk space and CPU, data was processed in <strong>[batch]</strong> mode.
+We then enabled <strong>[event-driven]</strong> capabilities. Now, systems can process data in real-time, as data arrives in continuous <strong>[streams]</strong>.
 
 <hr />
 
@@ -450,11 +460,15 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
 1.  To process and analyze data (in parallel), Hadoop used a <strong>"MapReduce"</strong> approach developed by Google. Java and Python programs split each large dataset across a cluster for parallel analysis, fault tolerance, and scalability. The abstractions let the user focus on high-level logic.
 
-    Apache Hive was open-sourced in 2008 by Facebook to make SQL-like queries available to simplify complex Java MapReduce jobs on data stored using HDFS (Hadoop Distributed File System).
+    <a name="Flow_Hive"></a>
+
+    <a target="_blank" href="https://hive.apache.org/">Apache Hive</a> was open-sourced in 2008 by Facebook to make SQL-like queries available to simplify complex Java MapReduce jobs on data stored using HDFS (Hadoop Distributed File System).
 
     <a name="Flow_Spark"></a>
 
-    The Spark framework arrived in 2014 to add higher performance to Hadoop. Instead of batch MapReduce to process data in HDFS, Spark added real-time processing and in-memory compute with a more flexible API. Spark added use of local and Amazon S3 to store data and load data from HBase, Cassandra. In addition to Yarn, Spark supports Mesos, Kubernetes, streaming data, machine learning, and graph processing.
+    The Spark framework arrived in 2014 to add higher performance to Hadoop. Instead of batch MapReduce to process data in HDFS, Spark added real-time processing and in-memory compute with a more flexible API. Spark added use of local and Amazon S3 to store data and load data from HBase, Cassandra. In addition to Yarn, Spark supports Mesos, Kubernetes, machine learning, and graph processing.
+
+    ## Streaming data
 
     <a name="Flow_Presto"></a>
 

@@ -731,6 +731,13 @@ installer: The install was successful.
 
     PROTIP: Even though there is a "SnowSQL.app" installed, it is accessed only by the CLI. 
 
+    PROTIP: The installer creates in the root folder file <tt>~/.zprofile</tt> with this content:
+    
+    <pre>printf "%s\n" "Hello from .zprofile"
+# added by Snowflake SnowSQL installer v1.2
+export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
+    </pre>
+
 1.  The first time you invoke the app, click "OK" to the warning.
 
 1.  Verify: 
