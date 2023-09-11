@@ -176,57 +176,147 @@ In this "world map" I show how, on one busy page, how AWS data services relate t
 
 <a name="Flow_Map"></a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=0WacamUZsHs"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693557492/aws-data-tools-1920x1080_dnqhei.png"><br /><em>Click image for video of gradual reveal step-by-step (no audio yet)</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
+<a target="_blank" href="https://www.youtube.com/watch?v=0WacamUZsHs"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1694404152/aws-data-tools-1920x1080_zc8cmn.png"><br /><em>Click image for video of gradual reveal step-by-step (no audio yet)</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
 
 <a name="Flow_Summary"></a>
 
-Although this "world map" is a busy diagram, it's still a subset of the 200 plus services Amazon's offers. Here we try to introduce AWS data tools in a deeper way than marketing generalizations.
+This "world map" is a busy diagram I created to make into a jig saw puzzle. The number of services is overwhelming, but it's still a subset of the 200 plus services Amazon's offers. 
+Here we try to introduce AWS data tools in a deeper way than marketing generalizations.
 
 > Click on the flowchart for a full-screen view of the <strong>sequence</strong> how I would implement them, starting with foundational services:
 
 Let's begin with a walk through of just the <strong>categories</strong> of services.
-Before our system interacts with <strong>end-users</strong> connecting through public networks, we need <strong>A. Governance</strong> services to define the permissions and secure the secrets all other services operate under.
+Before our system interacts with <strong>end-users</strong> connecting through public networks, we need <strong>A. Governance</strong> services to ensure the security of all other services created.
 
-We need metrics, logs, and transaction traces to be collected centrally to enable an <strong>B. Observability</strong> capability that increasingly leverages Machine Learning and Artificial Intelligence to make <strong>predictions</strong> for proactive rather than reactive processes.
+We need metrics, logs, and transaction traces to be collected centrally to enable an <a href="#Flow_Observability">B. Observability</a> capability that increasingly leverages Machine Learning and Artificial Intelligence to make <strong>predictions</strong> for proactive rather than reactive processes.
 
 Insights from observability are obtained using <strong>C. Visualizations</strong> presenting graphics.  Such analytics is the human interface to data and thus the basis for obtaining and judging value from the time and money spent on systems.
 
 But there is a limit to how many charts any one person (or even a whole team) can absorb. So we are dependent on <strong>D. Alerts</strong> to know when to take action. 
 
-We are also dependent on <strong>E. External Environment Inputs</strong> from outside our system, such as social media, weather, stock prices, etc.
+We are also dependent on <strong>E. Environment Inputs</strong> such as social media, weather, stock prices, etc.
 
 Observability is most needed with <strong>E. OLTP applications</strong>, especially with <strong>legacy</strong> tech requiring more manual effort than the serverless tech we also cover here.
 
-Before our system interacts with end-users in public networks, let's begin with <strong>A. Governance</strong> services needed to obtain permissions and secrets. Other services operate under these services.
-
-
 <a name="Flow_Governance"></a>
 
-The "primary directive" for AWS usage is to <strong>secure access to data</strong> stored within three AWS core services: 
-   * EFS (Elastic File System) files and folders accessed as network drives by Windows and Linux servers within EC2 (Elastic Compute Cloud) servers
-   * EBS (Elastic Block Storage) volumes attached to EC2 servers running Windows and Linux servers
-   * S3 (Simple Storage Service) objects accessed from several Availability Zones within a single region and account
-   <br /><br />
+Now let's dive into the details of each of these categories, starting with Governance.
 
-<a target="_blank" href="https://aws.amazon.com/guardduty/"><img align="right" width="25" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693711941/aws-icons/Amazon-GuardDuty.png">Amazon GuardDuty</a> is a threat detection service that continuously monitors AWS accounts, resources, and workloads to detect anomalies such as malicious and unauthorized activity, or potentially unauthorized deployments that indicate a possible account compromise. GuardDuty also detects potentially compromised instances or reconnaissance by attackers. It also mitigate threats early by initiating automated responses.
+<a name="Flow_IAM"></a>
 
-<a target="_blank" href="https://aws.amazon.com/cognito/"><img align="right" width="25" scr="https://res.cloudinary.com/dcajqrroq/image/upload/v1693712052/aws-icons/Amazon-Cognito.png">Amazon Cognito</a> provides authentication, authorization, and user management for web and mobile apps. It enables users to sign in directly with a user name and password, or through a <strong>federated</strong> third party such as Facebook, Amazon, Google or Apple.
+1.  At the core of governance is the <strong>IAM (Identity and Access Management)</strong> Amazon service that controls access to all other services based on roles and attributes assigned to principals. 
 
-    Amazon has created a <a target="_blank" href="https://aws.amazon.com/machine-learning/">Machine Learning (ML) Marketplace</a> to sell pre-trained models for use in apps.
+    AUTOMATION is necessary within enterprises to create the many policy files that define fine-grained permissions to permit actions by each user, group, and role.
 
+    <a name="Flow_Cognito"></a>
+
+1.  <a target="_blank" href="https://aws.amazon.com/cognito/"><img align="right" width="25" scr="https://res.cloudinary.com/dcajqrroq/image/upload/v1693712052/aws-icons/Amazon-Cognito.png"><strong>Amazon Cognito</strong></a> provides federated identity management, especially needed for mobile and web apps, so users can sign in directly with a user name and password, or through a <strong>federated</strong> third party for a <strong>SSO (Single Sign-On)</strong> to conveniently authenticate through Apple, Google, Azure, and social media such as Facebook, Twitter/X, LinkedIn, etc. Alternatives to Cognito include Okta, Auth0, etc.
+
+    <a name="Flow_SOC"></a>
+
+    These are two of several services commonly managed by a central <strong>SOC (Security Operations Center)</strong> that leading enterprises and managed services providers have organized to maintain a platform for vigilance over all other services. The SOC is often an expansion of the NOC (Network Operations Center) that has been around for decades working with on-premises servers and networks.
+
+1.  Web services front-end software communicating with users on internet <strong>browsers</strong) (such as Safari, Google Chrome, and Microsoft Edge) need SSL/TLS certificates to encrypt communications. Those certificates are generated and obtained from the <strong>AWS Certificate Manager</a>.
+    
+    PROTIP: That is not the AWS Certificate Manager Private Certificate Authority (ACM PCA).
+
+zzz
     <a name="Flow_Shield"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/shield/"><img align="right" width="25" https://res.cloudinary.com/dcajqrroq/image/upload/v1693715513/aws-icons/Amazon-Shield.png">Amazon Shield</a> offers automatic DDoS protection. The "advanced" edition adds 24x7 access to the AWS DDoS Response Team (DRT) and protection against higher fees from AWS usage spikes during a DDoS attack.
+1.  <a target="_blank" href="https://aws.amazon.com/shield/"><img align="right" width="25" https://res.cloudinary.com/dcajqrroq/image/upload/v1693715513/aws-icons/Amazon-Shield.png">Because <strong>click streams</strong> by human users can be emulated by automated bots in <strong>DDoS (Distributed Denial of Service)</strong> attacks to overwhelm servers, Amazon offers its <a target="_blank" href="https://aws.amazon.com/shield/"><strong>Shield</strong></a> service. The "advanced" edition of Sheild adds 24x7 access to the AWS DDoS Response Team (DRT) and reduced fees from AWS usage spikes during attacks.
 
+    <a name="Flow_VPC"></a>
+
+1.  <a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html"><img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Networking%20&%20Content%20Delivery/NetworkingContentDelivery_AmazonVPC.png?raw=true"></a>Resources created within each Amazon account are created within a <strong>VPC (Virtual Private Cloud)</strong> segment.
+
+    <a name="Flow_SecurityGroup"></a>
+
+1.  <strong>Firewall rules</strong> to control access to resources within a VPC are defined in <strong>Security Groups</strong> which Amazon may create.
+
+    AUTOMATION is needed to automatically delete Security Groups when the resources they protect are deleted.
+
+    <a name="Flow_ELB"></a>
+
+1.  Traffic allowed in by VPC enters through an external <a target="_blank" href="https://aws.amazon.com/elasticloadbalancing/"><strong>ELB (Elastic Load Balancer)</strong></a> that distributes traffic among multiple EC2 servers running the same software. This is a form of <strong>HA (High Availability)</strong> to ensure that if one server fails, another server can take over. 
 
     <a name="Flow_API_Gateway"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/api-gateway/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692756910/Amazon-API-Gateway_w7zvkp.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Application%20Services/ApplicationServices_AmazonAPIGateway.png?raw=true">Amazon API Gateway</a>
+1.  <a target="_blank" href="https://aws.amazon.com/api-gateway/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692756910/Amazon-API-Gateway_w7zvkp.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Application%20Services/ApplicationServices_AmazonAPIGateway.png?raw=true"></a>The <strong>Amazon API Gateway</strong></a> service is used to throttle traffic based on tags that senders include in the header to identify themselves. 
+
+
+    <a name="Flow_CloudFront"></a>
+
+1.  Analysis of network latency has led some international enterprises to justify use of <strong>CloudFront</strong> to pre-load content to edge locations closer to users around the world. This is a form of <strong>CDN (Content Delivery Network)</strong> to reduce latency.
+
+
+
+    <a name="Flow_VPC_Logs"></a>
+
+1.  <img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Networking%20&%20Content%20Delivery/NetworkingContentDelivery_AmazonVPC.png?raw=true">VPC logs,<br />
+    
+1.  VPC emits a log about each file processed. VPC Logs are typically sent to <strong>CloudWatch</strong> and <strong>EventBridge</strong> for further processing.
+
+
+zzz    
+
+    <a name="Flow_Storage"></a>
+
+    ## Governance: Storage
+
+If there is a "Primary Directive" for AWS usage, it would be to <strong>secure access to data</strong> stored by three AWS core storage services:
+
+1.  <strong>EFS (Elastic File System)</strong> files and folders accessed as drives using the legacy Network File System by legacy Windows and Linux servers running within EC2 (Elastic Compute Cloud) servers;
+   
+1.  <strong>EBS (Elastic Block Storage)</strong> accessed as boot volumes by EC2 servers running Windows and Linux servers;
+   
+    <a name="Flow_S3"></a>
+    
+1.  <a target="_blank" href="https://docs.aws.amazon.com/s3/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-S3.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Storage/Storage_AmazonS3.png?raw=true"><strong>S3 (Simple Storage Service)</strong></a> <a target="_blank href="https://devblogs.microsoft.com/cse/2016/05/22/access-azure-blob-storage-from-your-apps-using-s3-api/">objects/blobs</a> of various (proprietary) formats accessed <strong>serverlessly</strong> as API calls from programs.
+
+    Unlike legacy storage, data in S3 have High Availability (HA). Although each S3 object cannot be accessed from multiple regions, S3 data is replicated to several Availability Zones within a single region. 
+
+    Snapshots can be taken of S3 objects and stored in <strong>S3 Glacier</strong> services for long-term storage. Use Amazon's <a target="_blank" href="https://aws.amazon.com/snowmobile/">Snowmobile</a> service to manually move petabytes of data at a time to AWS.
+
+    All this makes S3 the data storage of choice among database services (Athena, EMR, and Redshift Spectrum, etc.). Green dots are used to avoid too many lines connecting with S3.
+
+
+    PROTIP: The format of data within S3 is proprietary to Amazon. <a target="_blank" href="https://flexify.io/how-to-run-amazon-s3-apps-on-azure/">Flexify.IO</a> and <a target="_blank" href="https://github.com/andrewgaul/s3proxy">S3Proxy</a> using <a target="_blank" href="https://en.wikipedia.org/wiki/Amazon_S3#S3_API_and_competing_services">API</a> were created to extend Azure Blob Storage to be compatible with S3. The <a target="_blank" href="https://minio.io/">Minio</a> server is an open-source Golang-based S3-compatible object store that can be installed on-premises or in the cloud to expose local storage as S3 object storage.
+
+
+
+    <a name="Flow_KMS"></a>
+  
+1.  <a target="_blank" href="https://docs.aws.amazon.com/kms/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692639280/aws-icons/Amazon-KMS.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Security%20Identity%20&%20Compliance/SecurityIdentityCompliance_AWSKMS.png?raw=true">Authentication and encryption mechanisms are needed to protect data. In the diagram, a red circle represents use of <strong>KMS (Key Management Service)</strong> to create cryptographic keys used to <strong>encrypt and decrypt</strong> objects stored in S3. 
+
+    The Key Management Service is used by <strong>AWS Secrets Manager</strong> which automates the <strong>rotation</strong> and retrieval of credentials, API keys, and other secrets.
+
+    <a name="Flow_DevSecOps"></a>
+
+1.  Developers of apps use <strong>CI/CD</strong> to automate scanning and deploy code from versioned source code in <strong>GitHub</strong> repositories.
+
+    <a name="Flow_Inspector"></a>
+
+1.  <a target="_blank" href="https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Security%20Identity%20&%20Compliance/SecurityIdentityCompliance_AmazonInspector.png?raw=true"><img align="right" width="26" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693712719/aws-icons/Amazon-Inspector.png">Amazon Inspector</a> detects vulnerabilities running live in apps within EC2 servers and in Lambda Functions.
+
+
+
+
+    <a name="Flow_Guarduty"></a>
+
+1.  <a target="_blank" href="https://aws.amazon.com/guardduty/"><img align="right" width="25" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693711941/aws-icons/Amazon-GuardDuty.png">Amazon GuardDuty</a> is a threat detection service that continuously monitors AWS accounts, resources, and workloads to detect anomalies such as malicious and unauthorized activity, or potentially unauthorized deployments that indicate a possible account compromise. GuardDuty also detects potentially compromised instances or reconnaissance by attackers. 
+
+    Many of these responses are provided by AWS partners such as Splunk, CrowdStrike, Palo Alto Networks, etc. 
+    
+    Threats are mitigated by initiating <strong>automated and manual responses</strong> defined in "Playbooks" used to resolve incidents. 
+
+    AUTOMATION NEEDED: GuardDuty requires a Global Security Administrator to provide <a target="_blank" href="https://aws.amazon.com/blogs/security/how-to-manage-amazon-guardduty-security-findings-across-multiple-accounts/">a CSV file of AWS accounts</a> with matching email addresses. AWS emails to <a target="_blank" href="https://aws.amazon.com/premiumsupport/technology/aws-health-dashboard/">Personal AWS Health Dashboard</a>.
+
+    Findings are sent to <strong>CloudWatch</strong> and <strong>EventBridge</strong> for further processing.
 
 
     <a name="Flow_Macie"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/macie/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757207/aws-icons/Amazon-Macie.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Security%20Identity%20&%20Compliance/SecurityIdentityCompliance_AmazonMacie.png?raw=true"><strong>Amazon Macie</strong></a> (macie2) is a web service that uses Machine Learning and pattern matching (aka managed and custom data identifiers in s3.tf) to analyze keywords in the content of data within S3. Notifications about anomalies found are sent to Slack through EventBridge and Lambda.
+1.  <a target="_blank" href="https://aws.amazon.com/macie/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757207/aws-icons/Amazon-Macie.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Security%20Identity%20&%20Compliance/SecurityIdentityCompliance_AmazonMacie.png?raw=true">The <strong>Amazon Macie</strong></a> (macie2) web service uses Machine Learning and pattern matching (aka managed and custom data identifiers in s3.tf) to analyze keywords in the content of <strong>data within S3</strong>. Notifications about anomalies found are sent to Slack through EventBridge and Lambda.
 
     * https://stackoverflow.com/questions/68346164/aws-macie-terraform-select-all-s3-buckets-in-account
     * https://dev.to/aws-builders/protect-s3-buckets-with-aws-macie-16gm
@@ -237,13 +327,32 @@ The "primary directive" for AWS usage is to <strong>secure access to data</stron
     * https://github.com/cloudposse/terraform-aws-macie
 
 
-    <a name="Flow_Inspector"></a>
-
-1.  <a target="_blank" href="https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Security%20Identity%20&%20Compliance/SecurityIdentityCompliance_AmazonInspector.png?raw=true"><img align="right" width="26" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693712719/aws-icons/Amazon-Inspector.png">Amazon Inspector</a> detects vulnerabilities running in apps running within EC2 servers and in Lambda Functions.
 
 
+    Amazon has created a <a target="_blank" href="https://aws.amazon.com/machine-learning/">Machine Learning (ML) Marketplace</a> to sell pre-trained models for use in apps.
 
-<a name="Flow_MasterData"></a>
+
+
+
+
+    <a name="Flow_Observability"></a>
+
+    ## Observability
+
+1.   <a target="_blank" href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html"><img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AmazonCloudWatch.png?raw=true">Amazon <strong>CloudWatch logs</strong></a> 
+    
+    <a name="Flow_CloudTrail"></a>
+
+1.  <a target="_blank" href="https://linuxhint.com/a-comparison-between-cloudtrail-and-guardduty/"><img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AWSCloudTrail.png?raw=true"><strong>AWS CloudTrail</strong></a> sends to S3 recordings of changes made to <strong>resources</strong> in each account. It can also detect unused resources and analyze security issues.
+
+    <a name="Flow_Config"></a>
+    
+1.  <img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AWSConfig.png?raw=true">Amazon Config,<br />
+    
+
+
+
+    <a name="Flow_MasterData"></a>
 
 Apps generate and update <strong>F. Master data</strong> -- a central "source of truth" about products, customers, and inventory positions.
 
@@ -325,25 +434,6 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
     
     But Lambda functions are limited on how large and frequent each can be.
 
-
-    <a name="Flow_S3"></a>
-    
-1.  <a target="_blank" href="https://docs.aws.amazon.com/s3/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-S3.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Storage/Storage_AmazonS3.png?raw=true"></a>Early applications and functions store data in the <strong>S3 (Simple Storage Storage)</strong> available globally in the AWS cloud. But the most modern of app technologies continue to make use of S3 objects for data storage.
-
-    Snapshots can be taken of S3 objects and stored in S3 Glacier for long-term storage.
-
-    REMEMBER that S3 is a regional service, so objects cannot be accessed from other regions. But S3 can be accessed from across Availability Zones within the same region.
-
-    S3 is not a database, so it does not support SQL queries. But S3 can be queried using Athena, which is a serverless service that uses Presto and HiveQL to query data stored in S3.
-
-    Data stored in S3 can be accessed by other AWS services such as Athena, EMR, and Redshift Spectrum.
-
-    The format of data within S3 is proprietary to Amazon. <a target="_blank href="https://devblogs.microsoft.com/cse/2016/05/22/access-azure-blob-storage-from-your-apps-using-s3-api/">However</a>, <a target="_blank" href="https://flexify.io/how-to-run-amazon-s3-apps-on-azure/">Flexify.IO</a> and <a target="_blank" href="https://github.com/andrewgaul/s3proxy">S3Proxy</a> using <a target="_blank" href="https://en.wikipedia.org/wiki/Amazon_S3#S3_API_and_competing_services">API</a> were created to extend Azure Blob Storage to be compatible with S3. The <a target="_blank" href="https://minio.io/">Minio</a> server is an open-source Golang-based S3-compatible object store that can be installed on-premises or in the cloud to expose local storage as S3 object storage.
-
-
-    <a name="Flow_KMS"></a>
-
-1.  <a target="_blank" href="https://docs.aws.amazon.com/kms/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692639280/aws-icons/Amazon-KMS.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Security%20Identity%20&%20Compliance/SecurityIdentityCompliance_AWSKMS.png?raw=true">KMS (Key Management Service)</a> creates cryptographic keys to encrypt and decrypts objects stored in S3. It is used by AWS Secrets Manager, which automates the rotation and retrieval of credentials, API keys, and other secrets.
 
     <a name="Flow_Java"></a>
     <a name="Flow_OLTP"></a>
@@ -452,6 +542,11 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     ### Big Data
 
+    <a name="Flow_LakeFormation"></a>
+
+1.  <a target="_blank" href="https://aws.amazon.com/lake-formation/"><a href="#LakeFormation">Lake Formation</a> provides a way to centrally manage security settings and <strong>fine-grained permissions</strong> needed to permit access by AWS <strong>data lake services</strong> (Athena, Redshift, EMR).
+
+
     <a name="Flow_Hadoop"></a>
 
 1.  To address a way to process large amounts of data ("Big Data") across many machines, the Apache open-source Hadoop framework was created in 2006. It stores data across many machines using its distributed file system (HDFS). Hadoop used Yarn to manage resources. 
@@ -515,17 +610,9 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
 1.  <a target="_blank" href="https://docs.aws.amazon.com/athena/index.html"><img align="right" alt="Analytics_AmazonAthena.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Athena.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonAthena.png?raw=true">Amazon Athena</a> is an AWS-managed SaaS offering. Athena's console GUI offers a simplified <strong>Python Jupyter Notebook/strong> developer experience that supports ODBC/JDBC drivers (like Amazon DynamoDB) as well as REST API calls. So it's good for small data sets.
 
-    As a serverless provider, the Athena web service is always ready to query data. So it is used for infrequent or ad hoc data analysis such as any type of log data exported into S3, such as 
+    As a serverless provider, the Athena web service is always ready to query data. So it is used for infrequent or ad hoc data analysis such as any type of log data exported into S3, such as:
     
-    Application Load Balancer<br />
-    
-    <img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AmazonCloudWatch.png?raw=true">Amazon CloudWatch logs<br />
-    
-    <img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AWSCloudTrail.png?raw=true">AWS CloudTrail<br />
-    
-    <img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AWSConfig.png?raw=true">Amazon Config,<br />
-    
-    <img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Networking%20&%20Content%20Delivery/NetworkingContentDelivery_AmazonVPC.png?raw=true">VPC logs,<br />
+    * Application Load Balancer<br />
     
     etc.
 
@@ -574,7 +661,7 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     <a name="Flow_Kinesis_Data_Streams"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/kinesis/data-streams/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Streams.png">Amazon Kinesis Data Streams</a> is  NOT serverless. It's a messaging broker service to collect, process, and analyze -- in real-time -- continuous streams of data, writing messages to a "topic" from where it can be read or derived. It's used for monitoring of sentiment and engagement in social media (recommended posts on Twitter, Facebook, YouTube, Vimeo, and other social media platforms), fraud detection, and trademark enforcement.
+1.  <a target="_blank" href="https://aws.amazon.com/kinesis/data-streams/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Streams.png">Amazon Kinesis Data Streams</a> is  NOT serverless. It's a messaging broker service to collect, process, and analyze -- in real-time -- continuous streams of data, writing messages to a "topic" from where it can be read or derived. It's used for monitoring of fraud detection, trademark enforcement, and engagement/sentiment in social media platforms (Twitter/X, Instagram, Facebook, YouTube, LinkedIn, etc.), .
  
     When setting up a Kinesis Data Stream, select the <strong>number of shards</strong> to provision. Each shard can support up to 5 GET requests per second. Payment is based on shard hours used and PUT i/o processed. Each shard can ingest 1 MB/sec and 1,000 PUT/sec. 
 
@@ -647,12 +734,6 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
 1.  Kinesis provides to <img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Internet%20Of%20Things/InternetOfThings_AWSIoT.png?raw=true"><strong>IoT Core</strong></a> a GUI to manage telemetry from robots.
 
-
-    <a name="Flow_LakeFormation"></a>
-
-1.  <a href="#LakeFormation">Lake Formation</a> provides a central way to manage with <strong>fine-grained permissions to a lot of data across AWS data services</strong>.
-
-
     <a name="Flow_SageMaker"></a>
 
     To extract text and label images, recognize speaker in voice files, translate videos, and other AI-type capabilities, Amazon offers increasingly easier yet more sophisticated <strong>AI (Artificial Intelligence)</strong> services.
@@ -682,7 +763,7 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
 ### Recap
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1693557492/aws-data-tools-1920x1080_dnqhei.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693557492/aws-data-tools-1920x1080_dnqhei.png"><br /><em>Click image for full-screen</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1694404152/aws-data-tools-1920x1080_zc8cmn.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1694404152/aws-data-tools-1920x1080_zc8cmn.png"><br /><em>Click image for full-screen</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
 
 
 <hr />
@@ -996,7 +1077,6 @@ An S3 Gateway Endpoint is used to provide a secure and private connection betwee
 EMR v1.4.0 can use HDFS transparent encryption.
 
 EMRFS on S3 for encryption at rest.
-Amazon Certificate Manager is used, not AWS Certificate Manager Private Certificate Authority (ACM PCA).
 
 https://www.youtube.com/watch?v=_90YaA8IJ4A
 Migrate to Amazon EMR - Apache Spark and Hive
