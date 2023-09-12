@@ -562,7 +562,7 @@ Now let's dive into the details of each of these categories, starting with Gover
     IaC users can use Config to check for compliance to rules before deploying changes. ?
     
     PROTIP: All rules are run on every resource every time any resource is configured, so it can be pricy.
-    
+
 
     <a name="Flow_GuardDuty"></a>
 
@@ -989,7 +989,16 @@ https://github.com/topics/nearest-neighbor-search
 
 ## S3
 
+CONSOLE: https://s3.console.aws.amazon.com/s3/get-started?region=us-east-1
+
+S3 provides a static website endpoint to access the bucket’s object in the following structure:
+
+   * http://<em>bucket-name</em>.s3-website-<em>Region</em>.amazonaws.com
+   * http://<em>bucket-name</em>.s3-website.<em>Region</em>.amazonaws.com
+   <br /><br />
+
 Data in S3 is replicated across 3 AZs in a region.
+
 
 It offers 11 nines durability of storage.
 
