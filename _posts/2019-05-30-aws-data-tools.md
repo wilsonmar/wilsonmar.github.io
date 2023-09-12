@@ -577,6 +577,10 @@ Now let's dive into the details of each of these categories, starting with Gover
     Findings are sent to <strong>CloudWatch</strong> and <strong>EventBridge</strong> for further processing.
 
 
+    <a name="Flow_VPC_CloudWatch"></a>
+
+1.  <a target="_blank" href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html"><img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AmazonCloudWatch.png?raw=true">Amazon <strong>CloudWatch logs</strong></a> 
+    
 
     <a name="Flow_VPC_Logs"></a>
 
@@ -586,35 +590,29 @@ Now let's dive into the details of each of these categories, starting with Gover
 
 
 
-    <a name="Flow_Observability"></a>
-
-    ## Observability
-
-1.   <a target="_blank" href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html"><img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AmazonCloudWatch.png?raw=true">Amazon <strong>CloudWatch logs</strong></a> 
-    
-
-
-
     <a name="Flow_MasterData"></a>
 
-Apps generate and update <strong>F. Master data</strong> -- a central "source of truth" about products, customers, and inventory positions.
+    ## Master Data
 
-<strong>G. External environmental inputs</strong>.
+    Apps generate and update <strong>F. Master data</strong> -- a central "source of truth" about products, customers, and inventory positions.
 
-Enterprises built <strong>H. Big Data</strong> to filter and aggregate data for "Business Intelligence" (BI) and "Data Warehousing" (DW) to make <strong>better decisions</strong>.
+    <strong>G. External environmental inputs</strong>.
 
-Historically, due to limitations in disk space and CPU, data was processed in <strong>[batch]</strong> mode.
-We then enabled <strong>[event-driven]</strong> capabilities. Now, systems can process data in real-time, as data arrives in continuous <strong>[streams]</strong>.
+1.  Enterprises built <strong>H. Big Data</strong> to filter and aggregate data for "Business Intelligence" (BI) and "Data Warehousing" (DW) to make <strong>better decisions</strong>.
 
-<hr />
+    Historically, due to limitations in disk space and CPU, data was processed in <strong>[batch]</strong> mode.
+    We then enabled <strong>[event-driven]</strong> capabilities. Now, systems can process data in real-time, as data arrives in continuous <strong>[streams]</strong>.
 
-<a name="Flow_Visualization"></a>
 
-Now let's dive into visualizations and analytics.
+    <a name="Flow_Visualization"></a>
 
-Top-rated products in this category include <a href="https://wilsonmar.github.io/tableau/">Tableau (from Salesforce)</a> (at $2,000/month), Microsoft's PowerBI, and open-source Grafana.
+    ## Visualizations
+    
+    Now let's dive into visualizations and analytics.
 
-<a name="Flow_QuickSight"></a>
+    Top-rated products in this category include <a href="https://wilsonmar.github.io/tableau/">Tableau (from Salesforce)</a> (at $2,000/month), Microsoft's PowerBI, and open-source Grafana.
+
+    <a name="Flow_QuickSight"></a>
 
 1.  <a target="_blank" href="https://docs.aws.amazon.com/quicksight/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-QuickSight.png"><img align="right" alt="Analytics_AmazonAthena.png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonQuickSight.png?raw=true"></a>Within the AWS cloud, Data Analysts use the <a href="#QuickSight">AWS QuickSight</a>. It'
 
@@ -622,9 +620,7 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 
     Amazon provides a "QuickSight mobile" app on iPhone and Android.
     
-<a name="Flow_Alerts"></a>
-
-<a name="Flow_Apps"></a>
+    <a name="Flow_Apps"></a>
 
     <a name="Flow_BigData"></a>
 
@@ -725,7 +721,7 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
     DynamoDB now supports Transactions, On-Demand Capacity, and .
 
 
-   <a name="Flow_DocumentDB"></a>
+    <a name="Flow_DocumentDB"></a>
 
 1.  <a target="_blank" href="https://aws.amazon.com/documentdb/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693246905/aws-icons/Amazon-DocumentDB.png">Amazon DocumentDB</a> is a fully managed NoSQL database built for managing JSON data models. It offers a fully scalable, low-latency service to manage mission-critical MongoDB workloads. It automatically replicates six copies of your data across 3 availability zones to offer a 99.99% availability. Additionally, it can serve millions of requests per second, enabling developers to build highly available (and low-latency) applications.
 
@@ -740,7 +736,7 @@ Top-rated products in this category include <a href="https://wilsonmar.github.io
 1.  <img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Database/Database_AmazonDynamoDBAccelerator.png?raw=true">Instead of reaching DynamoDB directly, an AWS <strong>DAX (DynamoDB Accelerator) agent</strong> can be installed on client servers to reach an in-memory cache in front of DynamoDB, like Redis.
 
 
-   <a name="Flow_Keyspaces"></a>
+    <a name="Flow_Keyspaces"></a>
 
 1.  <a target="_blank" href="https://aws.amazon.com/keyspaces/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693261677/aws-icons/Amazon-Keyspaces.png">Amazon Keyspaces</a> is a fully managed serverless database service to make it easier to scale open-source <a target="_blank" href="https://aws.amazon.com/keyspaces/what-is-cassandra/"><strong>Apache Cassandra databases</strong></a> with minimal transition effort. Keyspaces is compatible with Cassandra Query Language API calls to its <strong>columnar</strong> database popular for storing chat logs, IoT, and gamer profiles. 
 
