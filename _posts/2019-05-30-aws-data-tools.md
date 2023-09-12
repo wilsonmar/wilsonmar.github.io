@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-09-02"
+date: "2023-09-12"
 file: "aws-data-tools"
 title: "AWS Data Tools"
 excerpt: "AWS data processing tools: Databases, Big Data, Data Warehouse, Data Lakehouse"
@@ -176,9 +176,9 @@ In this "world map" I show how, on one busy page, how AWS data services relate t
 
 <a name="Flow_Map"></a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=0WacamUZsHs"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1694404152/aws-data-tools-1920x1080_zc8cmn.png"><br /><em>Click image for video of gradual reveal step-by-step (no audio yet)</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1694404152/aws-data-tools-1920x1080_zc8cmn.png"><img alt="aws-data-tools-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1694404152/aws-data-tools-1920x1080_zc8cmn.png"><br /><em>Click here for a full-screen view</em></a> or <a target="_blank" href="https://7451111251303.gumroad.com/l/bparb"><em>buy the animated pptx</em></a>.
 
-> Click <a target="_blank" hrf="https://res.cloudinary.com/dcajqrroq/image/upload/v1694404152/aws-data-tools-1920x1080_zc8cmn.png">here for a full-screen view</a>.
+<em>(I'm working toward <a target="_blank" href="https://www.youtube.com/watch?v=0WacamUZsHs">video of gradual reveal step-by-step like this</a>)
 
 <a name="Flow_Summary"></a>
 
@@ -251,7 +251,7 @@ Now let's dive into the details of each of these categories, starting with Gover
    
     <a name="Flow_S3"></a>
     
-1.  <a target="_blank" href="https://docs.aws.amazon.com/s3/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-S3.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Storage/Storage_AmazonS3.png?raw=true"></a>Many services (both modern and legacy) store their files in  <strong>S3 (Simple Storage Service)</strong></a> as <a target="_blank href="https://devblogs.microsoft.com/cse/2016/05/22/access-azure-blob-storage-from-your-apps-using-s3-api/">objects/blobs</a> of various (proprietary) formats because they can be accessed <strong>serverlessly</strong> as API calls from programs.
+1.  <a target="_blank" href="https://docs.aws.amazon.com/s3/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-S3.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Storage/Storage_AmazonS3.png?raw=true"></a>Many services (both modern and legacy) store their files in  <strong>S3 (Simple Storage Service)</strong> as <a target="_blank href="https://devblogs.microsoft.com/cse/2016/05/22/access-azure-blob-storage-from-your-apps-using-s3-api/">objects/blobs</a> of various (proprietary) formats because they can be accessed <strong>serverlessly</strong> as API calls from programs.
 
     Unlike legacy storage, data in S3 have High Availability (HA). Although each S3 object cannot be accessed from multiple regions, S3 data is replicated to several Availability Zones within a single region. 
 
@@ -289,7 +289,7 @@ Now let's dive into the details of each of these categories, starting with Gover
 
     <a name="Flow_Secrets"></a>
 
-1.  Web services front-end software communicating with users on internet <strong>browsers</strong) (such as Safari, Google Chrome, and Microsoft Edge) need SSL/TLS certificates to encrypt communications. Those certificates are generated and obtained from the <strong>AWS Certificate Manager</a>.
+1.  Web services front-end software communicating with users on internet <strong>browsers</strong) (such as Safari, Google Chrome, and Microsoft Edge) need SSL/TLS certificates to encrypt communications. Those certificates are generated and obtained from the <a target="_blank" href="https://aws.amazon.com/certificate-manager/"><strong>AWS Certificate Manager</strong></a>.
     
     PROTIP: That is not the AWS Certificate Manager Private Certificate Authority (ACM PCA).
 
@@ -313,7 +313,7 @@ Now let's dive into the details of each of these categories, starting with Gover
 
     <a name="Flow_API_Gateway"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/api-gateway/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692756910/Amazon-API-Gateway_w7zvkp.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Application%20Services/ApplicationServices_AmazonAPIGateway.png?raw=true"></a>The <strong>Amazon API Gateway</strong></a> service is used to throttle traffic based on tags that senders include in the header to identify themselves. 
+1.  <a target="_blank" href="https://aws.amazon.com/api-gateway/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692756910/Amazon-API-Gateway_w7zvkp.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Application%20Services/ApplicationServices_AmazonAPIGateway.png?raw=true"></a>The <strong>Amazon API Gateway</strong> service is used to track and throttle traffic based on tags that senders include in the HTTP header.
 
     The API Gateway can feed REST API traffic to EC2 servers, ECS/EKS containers, or Lambda Functions.
 
@@ -461,7 +461,7 @@ Now let's dive into the details of each of these categories, starting with Gover
 
      <a name="Flow_IOT"></a>
 
-1.  Kinesis provides to <img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Internet%20Of%20Things/InternetOfThings_AWSIoT.png?raw=true"><strong>IoT Core</strong></a> a GUI to manage telemetry from robots.
+1.  <a target="_blank" href="https://aws.amazon.com/iot-core/">Kinesis provides to <img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Internet%20Of%20Things/InternetOfThings_AWSIoT.png?raw=true"><strong>IoT Core</strong></a> a GUI to manage telemetry from robots and other devices.
 
     <a name="Flow_SageMaker"></a>
 
@@ -550,7 +550,7 @@ Now let's dive into the details of each of these categories, starting with Gover
     <a target="_blank" href="https://www.opsramp.com/guides/aws-monitoring-tool/cloudtrail-vs-cloudwatch/">PROTIP</a>: Store CloudTrail logs for Security and Audit in a separate bucket than for Operations & Support.
    
     Configure Prod differently than in Test.
-    * Create a trail</a> to specify the S3 bucket to store logs.
+    * Create a trail to specify the S3 bucket to store logs.
     * Enable log file validation which checks whether Log files were modified or deleted after the CloudTrail agent delivered them to the S3 bucket.
     <br /><br />
    
@@ -578,21 +578,11 @@ Now let's dive into the details of each of these categories, starting with Gover
 
 
 
-
-zzz
-
-
-
     <a name="Flow_VPC_Logs"></a>
 
 1.  <img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Networking%20&%20Content%20Delivery/NetworkingContentDelivery_AmazonVPC.png?raw=true">VPC logs,<br />
     
 1.  VPC emits a log about each file processed. VPC Logs are typically sent to <strong>CloudWatch</strong> and <strong>EventBridge</strong> for further processing.
-
-
-zzz    
-
-
 
 
 
@@ -991,7 +981,7 @@ https://github.com/topics/nearest-neighbor-search
 
 CONSOLE: https://s3.console.aws.amazon.com/s3/get-started?region=us-east-1
 
-S3 provides a static website endpoint to access the bucket’s object in the following structure:
+The pattern of S3 bucket URL static website endpoint:
 
    * http://<em>bucket-name</em>.s3-website-<em>Region</em>.amazonaws.com
    * http://<em>bucket-name</em>.s3-website.<em>Region</em>.amazonaws.com
