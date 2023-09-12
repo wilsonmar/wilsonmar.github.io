@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-08-09"
+date: "2023-09-11"
 file: "text-editors"
 title: "Text Editors (on the Mac)"
 excerpt: "nano, pico, vim, subl, code, Eclipse, IntelliJ, Visual Studio, Cloud9, etc."
@@ -336,14 +336,18 @@ Extensions for developing on the Salesforce Platform
 * https://mrsauravsahu.medium.com/custom-vscode-profiles-migrating-settings-and-extensions-14a5f8f4da35
    VSCode Profiles
 
+* <a target="_blank" href="https://datadrenaline.medium.com/build-your-own-sql-fiddle-with-docker-vscode-88dfa54105fe">Medium article</a> by Dmitriy S: <a target="_blank" href="https://www.youtube.com/watch?v=-MzhW1892fE">Query from inside VScode</a> AdventureWorks PostgreSQL 5432:5432 database <a target="_blank" href="https://youtu.be/Hhbiup59NYE">in Docker Compose</a> with <a target="_blank" href="https://www.youtube.com/watch?v=TGda9qn6XF8">with authentication</a>, using code from https://github.com/dsynkov/pg-sql-docker-fiddle
+
 
 ### Tutorials on VSCode
 
-Perhaps the most intensive tutorial is <a target="_blank" href="https://realpython.com/courses/python-development-visual-studio-code-setup-guide/">the Setup Guid from RealPython</a>
+An intensive tutorial is <a target="_blank" href="https://realpython.com/courses/python-development-visual-studio-code-setup-guide/">the Setup Guid from RealPython</a>
 
 <a target="_blank" href="http://michaelcrump.net/using-github-with-visualstudio-code/">Using GitHub, by Michael Crump</a>
 
 <a target="_blank" href="https://code.visualstudio.com/docs/editor/versioncontrol">Version Control in VS Code</a>
+
+<a target="_blank" href="https://fireship.io/courses/vscode-tricks/vscode-100-seconds/">$10</a> by Jeff Delaney on YouTube as Fireship. Website also has Firebase and Angular labs.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=UcW1FHNvy8M">VIDEO: Supercharge Your JavaScript Debugging Workflow With VS Code</a>
 
