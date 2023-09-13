@@ -968,6 +968,9 @@ Amazon Aurora PostgreSQL-Compatible Edition supports the pgvector extension to s
 https://repost.aws/questions/QUcSvXQXjlRFiiW9Heb5b7Eg/pgvector-for-aurora
 Discussion
 
+https://aws.amazon.com/blogs/database/leverage-pgvector-and-amazon-aurora-postgresql-for-natural-language-processing-chatbots-and-sentiment-analysis/
+uses a combination of pgvector, open-source foundation models (flan-t5-xxl for text generation and all-mpnet-base-v2 for embeddings), LangChain packages for interfacing with its components and Streamlit for building the bot front end. 
+
 https://www.youtube.com/watch?v=vKsqr_JcZm4
  Sep 18, 2023 by Steve Dillie, AWS Solutions Architect
 In this session, learn how you can start using the pgvector extension with your Aurora PostgreSQL database.
@@ -1298,8 +1301,8 @@ https://github.com/terraform-aws-modules/terraform-aws-cloudfront
 
 [<a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_function">Terraform</a>]
 
-
 [<a href="#Flow_CloudFront">Return to flow diagram</a>]
+
 
 ## CloudTrail
 
@@ -1308,7 +1311,6 @@ AWS CloudTrail is a web service that records AWS API calls for your account and 
 [<a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudtrail">Terraform</a>]
 
 [<a href="#Flow_CloudTrail">Return to flow diagram</a>]
-
 
 
 ## Map Reduce
@@ -1902,7 +1904,7 @@ Top AWS Services A Data Engineer Should Know
    * <a target="_blank" href="https://www.youtube.com/watch?v=VtzvF17ysbc">What is Data Pipeline</a>
     * https://www.youtube.com/watch?v=7Xstz6Qo-pM Glue vs EMR
 
-Coursera cources:
+Coursera courses:
 
 1. Data Collection Systems
 
@@ -1914,6 +1916,8 @@ Coursera cources:
 
 
 ## Hands-on labs
+
+https://registry.terraform.io/namespaces/terraform-aws-modules
 
 https://www.educative.io/cloudlabs
 
