@@ -87,6 +87,19 @@ Since then, "Climate change" continues to shift to the East. So expect less rain
 Also impacted will be agriculture around Winnipeg (Manitoba, Canada), Fargo, Sioux Falls, Omaha, Lincoln, Wichita, Oklahoma City. 
 
 
+<a name="taxes"></a>
+
+## Taxes
+
+No sales tax is collected from residents within the states of Alaska, Delaware, Montana, New Hampshire, and Oregon.
+
+<a target="_blank" href="https://www.salestaxinstitute.com/sales_tax_faqs/out_of_state_retailer_collect_sales_tax">The Sales Tax Institute</a> notes: Residents from other states are often required by laws in their home state to pay out-of-state sales tax. Sellers in tax-free states still collect the sales tax for visitors and remit it to the buyer's home state if the vendor has a presence in the buyer's home state. Otherwise, out-of-state buyers are required to pay use tax themselves.
+
+Many don't pay the use tax to their home state even though there can be significant fines, on top of paying the tax, for not doing so.
+
+<a target="_blank" href="https://9to5mac.com/2023/07/24/sales-tax-holiday-apple-products/">Some states offer sales tax-free holidays</a> (for a limited time) to encourage spending on products that are considered to be of benefit to the state's economy. This typically occurs in August and early September for back-to-school supplies, books, computers, and clothing.
+
+
 <a name="freeways"></a>
 
 ## US interstate highways
