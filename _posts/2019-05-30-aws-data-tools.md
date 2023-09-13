@@ -138,7 +138,7 @@ Storage and Data Management:
 
 ### Analysis
 
-   * Amazon Kinesis Data Analytics
+   * Managed Apache Flink (formerly Amazon Kinesis Data Analytics)
    * Amazon ElasticSearch Service - Generally for log analysis, look for an ES solution along with Kibana
    * Amazon Athena
    * Amazon Redshift and Redshift Spectrum
@@ -386,6 +386,7 @@ Now let's dive into the details of each of these categories, starting with Gover
 
     <a name="Flow_MSK"></a>
     <a name="Flow_Streams"></a>
+    <a name="Flow_Kinesis"></a>
 
     ### Streams
 
@@ -396,15 +397,6 @@ Now let's dive into the details of each of these categories, starting with Gover
 
 1.  <a target="_blank" href="https://aws.amazon.com/kinesis/data-streams/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Streams.png">Amazon Kinesis Data Streams</a> is  NOT serverless. It's a messaging broker service to collect, process, and analyze -- in real-time -- continuous streams of data, writing messages to a "topic" from where it can be read or derived. It's used for monitoring of fraud detection, trademark enforcement, and engagement/sentiment in social media platforms (Twitter/X, Instagram, Facebook, YouTube, LinkedIn, etc.), .
  
-    When setting up a Kinesis Data Stream, select the <strong>number of shards</strong> to provision. Each shard can support up to 5 GET requests per second. Payment is based on shard hours used and PUT i/o processed. Each shard can ingest 1 MB/sec and 1,000 PUT/sec. 
-
-    Each consumer can read streams at a different granularity.
-
-    Kinesis can persist streams from 1 to 365 days. 
-
-    <a target="_blank" href="https://www.youtube.com/watch?v=kcBAKz0MPf8">VIDEO</a>: 
-    An alternative to Kinesis Data Streams is ... 
-
 
     <a name="Flow_MSK"></a>
 
@@ -432,9 +424,9 @@ Now let's dive into the details of each of these categories, starting with Gover
 
     <a name="Flow_Kinesis_Data_Analytics"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/kinesis/data-analytics/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Analytics.png">Amazon Kinesis Data Analytics</a> processes complex SQL commands on behalf of other Kinesis services. It can also reference data from S3 such as player scores for a leaderboard in an e-sports, election, or security app.
+1.  <a target="_blank" href="https://aws.amazon.com/kinesis/data-analytics/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Analytics.png">Managed Apache Flink</a> (formerly Amazon Kinesis Data Analytics) processes complex SQL queries on incoming data streams on behalf of other Kinesis services. It can also reference data from S3 such as player scores for a leaderboard in an e-sports, election, or security app.
 
-    Kinesis Data Analytics runs standard SQL queries on incoming data streams. Once data is available in a target data source, it kicks off a <strong>AWS Glue ETL job</strong> to do further transform data for additional analytics and reporting.
+    Once data is available in a target data source, it kicks off a <strong>AWS Glue ETL job</strong> to do further transform data for additional analytics and reporting.
 
 
     <br /><br />
@@ -619,6 +611,18 @@ Now let's dive into the details of each of these categories, starting with Gover
     For an additional monthly cost, rather than using a direct SQL query, data can be optionally be imported by QuickSight using its <strong>SPICE</strong> (Super-fast, Parallel, In-memory Calculation Engine). This is a public pool columnar in-memory storage for use by all users within each region to rapidly perform advanced calculations and serve data.
 
     Amazon provides a "QuickSight mobile" app on iPhone and Android.
+
+    ### Types of data analysis
+
+    * Descriptive (what happened) 
+    * Diagnostic (why did it happen) based on correlation and causation from drill-down
+    * Predictive (what is likely to happen)
+    * Prescriptive (do this) makes recommendations based on predictive analytics using data mining, statistics, modeling, machine learning, and artificial intelligence (AI) to make recommendations.
+    <br /><br />
+
+    <a target="_blank" href="https://www.linkedin.com/pulse/aws-grafana-opsramp/?trackingId=Uq5wW%2F%2FISsiwL%2B5FOHpkmw%3D%3D">Grafana SaaS AWS Integration</a> by OpsRamp
+
+
     
     <a name="Flow_Apps"></a>
 
@@ -1084,12 +1088,158 @@ Timestream is a fully-managed <strong>time series</strong> database.
 
 
 
+<a name="Kinesis"></a>
 
 ## Kinesis
 
-Kinesis, is a real-time data streaming service used for collecting, processing, and analyzing real-time data. 
-It's not for long-term storage.
-It's more suitable for streaming data processing rather than interactive analytics.
+Here's a hands-on, step-by-step tutorial on setting up a Kinesis stream to ingest logs
+(based on <a target="_blank" href="https://docs.aws.amazon.com/kinesis/">AWS docs</a> & <a target="_blank" href="https://www.educative.io/cloudlabs/building-a-logs-processing-pipeline-with-amazon-kinesis/g2G2QoYm816">this</a>)
+
+1.  Get an AWS account with enough permissions.
+1.  Go to the Kinesis service (click among recents or at the top of the Amazon Management Console, in the search bar, search for "Kinesis" - "Real time data streaming")
+
+    https://us-east-1.console.aws.amazon.com/kinesis/home?region=us-east-1#/home
+    https://us-east-1.console.aws.amazon.com/kinesis/home?region=us-east-1#/dashboard
+
+1.  On another monitor: 
+
+    https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kinesis_stream
+
+1.  Set Region (us-east-1).
+1.  Notice there the types of Kinesis services:
+
+    * Kinesis Data Streams - Collect streaming data with a data stream. This service allows for creating and managing real-time data streams from massive data sources. Kinesis Data Streams can handle large amounts of streaming data and can autonomously scale up or down as data volume varies.
+
+    * Kinesis Data Firehose - Process and deliver streaming data with data delivery stream.  This service captures, transforms, and loads streaming data into Amazon Web Services storage services such as S3, Redshift, and Elasticsearch. It can manage and send many data streams to AWS services.
+
+    * Managed Apache Flink - Formerly Kinesis Data Analytics - Analyze streaming data with data analytics application. This service delivers real-time analytics on streaming data using SQL queries in a fully managed environment, allowing instant data insights and action. It has a separate dashboard, such as:<br />
+    https://us-east-1.console.aws.amazon.com/flink/home?region=us-east-1#/dashboard
+
+1.  Select "Kinesis Data Streams", then "Create data stream" orange button section.
+
+    https://us-east-1.console.aws.amazon.com/kinesis/home?region=us-east-1#/streams/create
+
+    <pre>resource "aws_kinesis_stream" "test_stream" {
+  name             = "terraform-kinesis-test"
+  shard_count      = 1
+    </pre>
+
+1.  For "Data stream name", follow naming conventions:
+
+    <em>project</em>-<em>env</em>-<em>data-stream-type</em>-<em>name</em>-<em>sequence#</em>
+
+    <tt>woohoo1-test-vid-shoo-001</tt>
+
+    Data stream types: 
+    * vid = video
+    * logs
+    * etc.
+    <br /><br />
+
+1.  For "Capacity mode" as "Provisioned" (under the "Data stream capacity" section)
+
+    <pre>  stream_mode_details {
+    stream_mode = "PROVISIONED"
+  }</pre>
+
+    PROTIP: Start with Provisioned: Use provisioned mode when you can reliably estimate throughput requirements of your data stream. With provisioned mode, your data stream's capacity is fixed.
+
+    On-demand: Use this mode when your data stream's throughput requirements are unpredictable and variable. With on-demand mode, your data stream's capacity scales automatically. On-demand mode eliminates the requirement to manually provision and scale your data streams. With on-demand mode, your data streams automatically scale their write capacity 
+
+    <table border="1" cellpadding="4" cellspacing="0">
+    <tr><th> Capacity mode </th><th> Write capacity Maximum </th><th> Read capacity </th></tr>
+    <tr valign="top"><td> Provisioned </td><td> 1 MiB/second &<br /> 1,000 records/second 
+        </td><td> 2 MiB/second </td></tr>
+    <tr valign="top"><td> On-demand </td><td> 200 MiB/second &<br /> 1200,000 records/second 
+        </td><td> 400 MiB/second </td></tr>
+    </table>
+
+1.  Set <tt>shard_count</tt> = "Provisioned shards" to "1."
+
+    PROTIP: Each shard can support up to 5 GET requests per second. So track actual usage over time.
+
+    PROTIP: Payment is based on shard hours used and PUT i/o processed. 
+    Each shard can ingest 1 MB/sec and 1,000 PUT/sec. 
+
+    PROTIP: Adjust this number later, as needed.
+
+    Total data stream capacity: Shard capacity is determined by the number of provisioned shards. Each shard ingests up to 1 MiB/second and 1,000 records/second and emits up to 2 MiB/second. If writes and reads exceed capacity, the application will receive throttles.
+
+
+    <pre>  retention_period = 48
+    </pre>
+
+    Kinesis can keep stream data from a default of 1 to a max configurable of 365 days. 
+    Kinesis is not for long-term storage.
+    It is more suitable for streaming data processing rather than interactive analytics.
+
+1.  "Enable after creation" are:
+
+    * Server-side encryption (SSE) disabled
+    * Monitoring enhanced metrics disabled
+    * Tags disabled
+
+    <pre>
+  shard_level_metrics = [
+    "IncomingBytes",
+    "OutgoingBytes",
+  ]
+  tags = {
+    Environment = "test"
+  }
+}
+    </pre>
+
+1.  Click "Create data stream" to create the data stream.
+
+    ### IAM Roles
+
+    Two IAM roles are needed for the EC2 instance:
+
+
+
+1.  Go to the IAM service (In Amazon Management Console, search for “IAM” in the search bar, and click 
+
+1.  Click "Roles" in the left-hand menu.
+
+1.  Click "Create role."
+
+1.  Choose "AWS service" as the "Trusted entity type."
+
+1.  Select "EC2" from the "Use case" and click "Next."
+
+1.  Select the EC2RolePolicy policy and click "Next."
+
+1.  Enter ec2_producer_role as the "Role name."
+
+1.  Click "Create role."
+
+    Create an IAM role for the consumer Lambda function:
+
+1.  Click "Create role."
+
+1.  Choose "AWS service" as the "Trusted entity type."
+
+1.  Select "Lambda" from the "Use case" and click "Next."
+
+1.  Select AWSLambdaKinesisExecutionRole and LambdaRolePolicy policies and click "Next."
+
+1.  Enter lambda_consumer_role as the "Role name."
+
+1.  Click "Create role."
+
+    ### Analyze
+
+    How this real-time data streaming service used for collecting, processing, and analyzing real-time data. 
+
+    <img alt="aws-log-kinesis.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1694534707/aws-log-kinesis_yaadzr.png">
+
+
+    Each consumer can read streams at a different granularity.
+
+    <a target="_blank" href="https://www.youtube.com/watch?v=kcBAKz0MPf8">VIDEO</a>: 
+    Alternative to Kinesis Data Streams is ... 
+
    * Input <a target="_blank" href="https://docs.aws.amazon.com/streams/latest/dev/developing-producers-with-kpl.html">KPL (Kinesis Producer Library)</a>, agent, PUT API
    * Output KCL
    <br /><br />
@@ -1116,7 +1266,6 @@ Kinesis Video Streams automatically provisions and elastically scales to million
 
 <img width="458" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692399384/aws-glue-s3-athena-quicksight-458x214_j2hlrj.png">
 
-
    * https://www.youtube.com/watch?v=_bRTlb9b59Y by "Be a Better Dev"
    * https://www.youtube.com/watch?v=b0ghP_WGYC8 by Enlear Academy
 
@@ -1124,7 +1273,7 @@ Johnny Chivers videos about Kinesis:
    * <a target="_blank" href="https://www.youtube.com/watch?v=_t3k6oX2mfc&t=47s">setup from a Mac referencing<br /><a target="_blank" href="https://github.com/johnny-chivers/kinesisZeroToHero/">https://github.com/johnny-chivers/kinesisZeroToHero</a> containing a CloudFormation yaml template.
 
 
-[<a href="#Flow_DynamoDB">Return to flow diagram</a>]
+[<a href="#Flow_Kinesis">Return to flow diagram</a>]
 
 ## CloudWatch
 
@@ -1415,17 +1564,6 @@ Data API and Streams do not require a VPC to be setup to accept SQL commands. In
 https://medium.com/surfline-labs/intelligent-surf-cameras-fce6e7e3d03e
 describes an AI-powered surf camera at https://www.surfline.com/. 
 It uses Amazon Kinesis Video Streams, Amazon Rekognition, and Amazon SageMaker to detect surfers and provide them with real-time surfing conditions and information.
-
-
-## Types of data analysis
-
-* Descriptive (what happened) 
-* Diagnostic (why did it happen) based on correlation and causation from drill-down
-* Predictive (what is likely to happen)
-* Prescriptive (do this) makes recommendations based on predictive analytics using data mining, statistics, modeling, machine learning, and artificial intelligence (AI) to make recommendations.
-<br /><br />
-
-<a target="_blank" href="https://www.linkedin.com/pulse/aws-grafana-opsramp/?trackingId=Uq5wW%2F%2FISsiwL%2B5FOHpkmw%3D%3D">Grafana SaaS AWS Integration</a> by OpsRamp
 
 
 
