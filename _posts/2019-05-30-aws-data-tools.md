@@ -291,7 +291,9 @@ Now let's dive into the details of each of these categories, starting with Gover
 
 1.  Web services front-end software communicating with users on internet <strong>browsers</strong) (such as Safari, Google Chrome, and Microsoft Edge) need SSL/TLS certificates to encrypt communications. Those certificates are generated and obtained from the <a target="_blank" href="https://aws.amazon.com/certificate-manager/"><strong>AWS Certificate Manager</strong></a>.
     
-    PROTIP: That is not the AWS Certificate Manager Private Certificate Authority (ACM PCA).
+    PROTIP: That is not the AWS Certificate Manager Private Certificate Authority (ACM PCA). [<a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acmpca_certificate">Terraform</a>]
+
+    <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate">aws_acm_certificate</a>
 
     <a name="Flow_Shield"></a>
 
@@ -316,6 +318,8 @@ Now let's dive into the details of each of these categories, starting with Gover
 1.  <a target="_blank" href="https://aws.amazon.com/api-gateway/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692756910/Amazon-API-Gateway_w7zvkp.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Application%20Services/ApplicationServices_AmazonAPIGateway.png?raw=true"></a>The <strong>Amazon API Gateway</strong> service is used to track and throttle traffic based on tags that senders include in the HTTP header.
 
     The API Gateway can feed REST API traffic to EC2 servers, ECS/EKS containers, or Lambda Functions.
+    [<a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/apigatewayv2_api">Terraform</a>]
+
 
     <a name="Flow_Lambda"></a>
 
@@ -842,6 +846,8 @@ Now let's dive into the details of each of these categories, starting with Gover
     
     AWS provides for the transition from "Schema on write <a target="_blank" href="https://aws.amazon.com/blogs/big-data/build-a-schema-on-read-analytics-pipeline-using-amazon-athena/">to "Schema on Read" using Athena</a>.
 
+    [<a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/athena_database">Terraform</a>]
+
     <a name="Flow_ETLvsELT"></a>
 
     Athena is advanced enough to perform from S3 buckets both legacy <strong>ETL (Extract, Transform, Load)</strong> processing AND modern <strong>ELT (Extract, Load, Transform)</strong> data structures stored into S3. 
@@ -1290,11 +1296,16 @@ https://github.com/terraform-aws-modules/terraform-aws-cloudwatch
 
 https://github.com/terraform-aws-modules/terraform-aws-cloudfront
 
+[<a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_function">Terraform</a>]
+
+
 [<a href="#Flow_CloudFront">Return to flow diagram</a>]
 
 ## CloudTrail
 
 AWS CloudTrail is a web service that records AWS API calls for your account and delivers log files to you. The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, the request parameters, and the response elements that the AWS service returns.
+
+[<a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudtrail">Terraform</a>]
 
 [<a href="#Flow_CloudTrail">Return to flow diagram</a>]
 
