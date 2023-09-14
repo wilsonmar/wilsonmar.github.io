@@ -62,9 +62,11 @@ Global Adminstrators create sub-accounts for use when doing <strong>billing</str
 
    <a target="_blank" href="https://aws.amazon.com/">https://aws.amazon.com</a> 
 
+   ### Marketing Page
+
 1. Explore the menu items:
 
-   <a target="_blank" href=""><img alt="aws-marketing-1205x224.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1694649967/aws-marketing-1205x224_uaojtf.png"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1694649967/aws-marketing-1205x224_uaojtf.png"><img alt="aws-marketing-1205x224.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1694649967/aws-marketing-1205x224_uaojtf.png"></a>
 
 ### Root account
 
