@@ -41,7 +41,7 @@ SECURITY PROTIP: Many enterprises do not permit use of interactive CLI and Conso
 
 <a name="RootSetup"></a>
 
-## Root account sign-up
+## Unique emails for Root account
 
 You will typically need to <strong>several AWS accounts</strong>. Within an organization, it's common for a separate account to be created for each department and project as well as each user. This is to limit the blast radius when a user's credentials become compromised, a situation we need to prepare for.
 
@@ -50,53 +50,52 @@ WARNING: <strong>"Root account"</strong> credentials have unlimited access to AW
 Thus, the root account is used only for creating <strong>sub-accounts</strong> and for emergencies. 
 Global Adminstrators create sub-accounts for use when doing <strong>billing</strong> and other administrative tasks. 
 
-### Use Unique Browser Profile
+PROTIP: If you are creating a production account for an organization, create an email address which you <strong>use only for managing AWS</strong> and not for regular email use and certainly not for doing shopping on Amazon. 
+   
+The account which controls billing is called the <strong>root account</strong>, which as unlimited access to AWS resources and unlimited ability to rack up charges. By resources I mean: users, groups, roles, IAM Access Policies, API keys, etc. globally for all regions.
+
+Secure that email address with <strong>multi-factor authentication</strong> with Google or whoever hosts your email server. Also have a way for one person (or maximum two) you trust to be able to access the account in case you are not able to.
+
+
+### Unique Browser Profile for Each Email
 
 1. Install Google Chrome because it has detection of malicious conditions.
 1. You will have several gmail addresses, one for each AWS account you create.
 1. To avoid confusion between Google accounts, install the <a target="_blank" href="https://chrome.google.com/webstore/detail/multi-login-helper/nccllfnllopfpcbjdgjdlfmomnfgnnbk">Multi Login Helper</a> extension to create a new browser profile for each AWS account you create. 
 
    PROTIP: The Multi Login Helper extension is also useful for creating a new browser profile for each Google account you have.
-
-1. Use an internet browser to get on the <strong>public AWS marketing page</strong> at 
-
-   <a target="_blank" href="https://aws.amazon.com/">https://aws.amazon.com</a> 
+   
 
    ### Marketing Page
-
-1. Explore the menu items:
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1694649967/aws-marketing-1205x224_uaojtf.png"><img alt="aws-marketing-1205x224.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1694649967/aws-marketing-1205x224_uaojtf.png"></a>
-
-### Root account
 
 1. Use an internet browser to get on the <strong>AWS marketing page</strong> at 
 
    <a target="_blank" href="https://aws.amazon.com/">https://aws.amazon.com</a> 
 
-   PROTIP: To quickly switch back and forth between this tutorial and the AWS website, right-click on the link to "open in a new tab". Also, <strong>bookmark</strong> this page in your browser for quicker frequent access.
+1. Explore menu items:
 
-2. Get your credit card number ready.
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1694649967/aws-marketing-1205x224_uaojtf.png"><img alt="aws-marketing-1205x224.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1694649967/aws-marketing-1205x224_uaojtf.png"></a>
 
-   PROTIP: CAUTION: Once you give Amazon a credit card number, you cannot remove it. Amazon can continue to charge for it until the card expires in several years.
+   PROTIP: Right-click on each link to "open in a new tab". Also, <strong>bookmark</strong> this page in your browser for quicker frequent access. Quickly switch back and forth between this tutorial and other tabs by  pressing <strong>Command+`</strong> (backtick) to the left of the 1 key.
 
-   <a target="_blank" href="https://www.linkedin.com/pulse/how-use-aws-free-tips-teaching-college-wong-chun-yin-cyrus-%E9%BB%83%E4%BF%8A%E5%BD%A5-/">PROTIP</a>: You need a credit card to open an account. But to limit exposure, some people provide to AWS numbers from a <a target="_blank" href="https://usa.visa.com/pay-with-visa/cards/prepaid-cards.html">pre-paid reloadable Visa</a> gift <a target="_blank" href="https://aws.amazon.com/premiumsupport/knowledge-center/accepted-payment-methods/">(debit) card</a> <a target="_blank" href="https://usa.visa.com/pay-with-visa/find-card/get-prepaid-card">pre-paid online</a> (which has an expiration date and some have a monthly service fee). The <a target="_blank" href="https://www.drawpayvisa.com/">Drawpay card</a> provides a 1% refund on purchases and a mobile app to view balances. Others provide fee-Free cash withdrawal at over 25,000 MoneyPass ATMs.
+   ### Sign-up pages
 
-   <a target="_blank" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m4&clip=5&mode=live">*</a>
+1. PROTIP: There are several different sign-up pages: one for each country. 
 
-3. Click the yellow "Sign-Up" button if you don't already have an account.
+   * If you want to create a stand-alone account in the US:<br />https://portal.aws.amazon.com/billing/signup#/start/email
+   * If you're working with an AWS sales person assigned to a business:<br />https://aws.amazon.com/resources/create-account/
+   * If you're a student or educator:<br />https://aws.amazon.com/education/awseducate/
+   * If you're using a gov cloud:<br />https://aws.amazon.com/government-education/government/
+   <br /><br />
 
-4. PROTIP: If you are creating a production account for an organization, create an email address which you <strong>use only for managing AWS</strong> and not for regular email use and certainly not for doing shopping on Amazon. 
-   
-   The account which controls billing is called the <strong>root account</strong>, which as unlimited access to AWS resources and unlimited ability to rack up charges. By resources I mean: users, groups, roles, IAM Access Policies, API keys, etc. globally for all regions.
+1. Create a new 1Password entry to store the email, Account Name, password, Account ID, Secret info.
 
-   Secure that email address with <strong>multi-factor authentication</strong> with Google or whoever hosts your email server. Also have a way for one person (or maximum two) you trust to be able to access the account in case you are not able to.
-
-3. PROTIP: When providing answers to Security Challenge Questions, do not specify the real answer,
+1. For "AWS account name", examples are "master-billing" but the email works too.
+1. Switch to your email tab to click the link to verify your email address.
+1. PROTIP: When providing answers to Security Challenge Questions, do not specify the real answer,
    which someone stole or figured out through social engineering. Instead, <strong>answer with nonsense</strong>
 
 1. Write that secret information down in 1Password or a paper in your fire-proof vault.
-
 1. Write down your <strong>Account Id</strong> number (12 digits).
 
 5. Supply a strong password.
@@ -105,13 +104,25 @@ Global Adminstrators create sub-accounts for use when doing <strong>billing</str
 
    Because you only have to remember one master password, you can are free to change various passwords as often as you want with no fear of forgetting them.
 
-6. An example of a value for "AWS account name" is "master-billing".
-
 7. Click "Continue".
 
    If you have 1Password installed, you would be prompted to create a new account.
 
-8. Provide phone number, address, and credit card.
+1. Provide phone number.
+
+   PROTIP: If you provide a Google Voice virtual number, it would be less of a hassle in case you change the actual number of your phone assigned by your carrier. So in case you change phone vendors (from ATT to T-Mobile), you only need to change it in Google Voice.
+
+1. Provide address, which may be used to verify your credit card.
+
+   ### Credit card
+
+1. Get your credit card number ready.
+
+   PROTIP: CAUTION: Once you give Amazon a credit card number, you cannot remove it. Amazon can continue to charge for it until the card expires in several years.
+
+   <a target="_blank" href="https://www.linkedin.com/pulse/how-use-aws-free-tips-teaching-college-wong-chun-yin-cyrus-%E9%BB%83%E4%BF%8A%E5%BD%A5-/">PROTIP</a>: You need a credit card to open an account. But to limit exposure, some people provide to AWS numbers from a <a target="_blank" href="https://usa.visa.com/pay-with-visa/cards/prepaid-cards.html">pre-paid reloadable Visa</a> gift <a target="_blank" href="https://aws.amazon.com/premiumsupport/knowledge-center/accepted-payment-methods/">(debit) card</a> <a target="_blank" href="https://usa.visa.com/pay-with-visa/find-card/get-prepaid-card">pre-paid online</a> (which has an expiration date and some have a monthly service fee). The <a target="_blank" href="https://www.drawpayvisa.com/">Drawpay card</a> provides a 1% refund on purchases and a mobile app to view balances. Others provide fee-Free cash withdrawal at over 25,000 MoneyPass ATMs.
+
+   <a target="_blank" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m4&clip=5&mode=live">*</a>
 
    Students may want to create several accounts to take advantage of the free tier multiple times. However, uniquely different phone numbers, addresses, and credit cards are not needed for each identity.
 
@@ -271,8 +282,6 @@ Global Adminstrators create sub-accounts for use when doing <strong>billing</str
 
 <hr />
 
-
-
 <a name="MobileApps"></a>
 
 ## Mobile apps for smart phones
@@ -288,14 +297,10 @@ Global Adminstrators create sub-accounts for use when doing <strong>billing</str
 
 2. <strong>Add an identity</strong>: select Root/IAM account or Federation.
 3. Enable Face ID on iPhones.
-4. Provide email, CAPTCHA security, password, email verification code.
+4. Provide email, CAPTCHA security, password, email verification code. Success is seeing this:
 
-3. In the Store app, search for "<strong>Google Authenticator</strong>" and install it
-   for multi-factor authentication to strength security of your Amazon cloud account.
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1694653422/aws-mobile-iOS-1170x2532_ns4mgt.png"><img alt="aws-mobile-iOS-1170x2532.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1694653422/aws-mobile-iOS-1170x2532_ns4mgt.png"></a>
 
-   PROTIP: Many keep the Authenticator running on their smart phone.
-
-1. To avoid embedding an access key with the app (even in encrypted storage), use <a target="_blank" href="https://wilsonmar.github.io/cognito">Amazon Cognito</a> to manage user identity by authenticating users using Login with Amazon, Facebook, Google, or any OpenID Connect (OIDC)–compatible identity provider.<a target="_blank" href="https://aws.amazon.com/blogs/mobile/using-the-amazon-cognito-credentials-provider/">*</a>
 
    <a name="RootLockdown"></a>
 
