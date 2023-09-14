@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2023-09-13"
+file: "aws-onboarding"
 title: "AWS Onboarding"
 excerpt: "Tips and tricks to get account. Lock down root accounts. Install and use the AWS CLI, securely"
 tags: [AWS, EC2, cloud, on-boarding]
-date: "2021-07-21"
-file: "aws-onboarding"
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
@@ -21,77 +21,58 @@ This</a> is a hands-on tutorial to get new users setup to effectively access and
 
 Covered here are instructions on how to install and use AWS CLI automation, smart phone apps, and 3rd party tools used by pros.
 
+<hr />
 
-## GUI, CLI, API
+## Console GUI, CLI, API, Mobile
 
 There are several ways to interact with AWS:
 
-   * If you don't have an account, you first need to use the AWS <a href="#AWSConsole"><strong>GUI</strong> (Graphical User Interface), aka "AWS Management Console"</a>, using an internet browser such as Google Chrome, Apple Safari, etc.
+SECURITY PROTIP: Many enterprises do not permit use of interactive CLI and Console GUI in production and instead allow only automated API calls by IaC (such as CloudFormation and Terraform). This is to ensure version control and repeatability during testing.
 
-   * <a target="_blank" href="https://wilsonmar.github.io/aws-cli/"><strong>CLI</strong> (Command Line Interface)</a>> using the MacOS Terminal or PC Command program for "programmatic access" into the AWS cloud.
+   * If you don't have a root account, open an internet browser (such as Google Chrome, Apple Safari, Mozilla Firefox, etc.) and go to the AWS <a href="#AWSConsole"><strong>GUI</strong> (Graphical User Interface), aka "AWS Management Console"</a> to <a href="#RootSetup">create and configure</a>, then <a href="#RootLockDown">lock down</a> a Root Account</a>. Authentication is by user name and password plus MFA.
 
-   * Write a program that makes calls to AWS's <a href="#APIKeys">API (Application Programming Interface)</a>. This is the mechanism behind the scenes by <a href="#MobileApps">mobile apps</a>.
+   * <a target="_blank" href="https://wilsonmar.github.io/aws-cli/"><strong>CLI</strong> (Command Line Interface)</a> using the MacOS Terminal or Windows PC Command program for "programmatic access" into the AWS cloud. Authentication is by <a href="#APIKeys">API keys</a> (public and private) which are stored in a file on your laptop.
 
-   * On Mobile apps
+   * APIs called by custom programs calling AWS's <a href="#APIKeys">API (Application Programming Interface)</a>. This is the mechanism behind the scenes by <a href="#MobileApps">mobile apps</a>.
+
+   * On <a href="#MobileApps">AWS Console Mobile apps</a>
 
 <hr />
 
-
-<a name="MobileApps"></a>
-
-## Mobile apps for smart phones
-
-1. To get the <strong>AWS Console</strong> on your mobile phone:
-
-   <a target="_blank" href="http://www.amazon.com/AWS-Mobile-LLC-Console/dp/B00ATSN730">install on Google Android mobile phones</a>
-
-   On your iOS, open the Store app and search to get <a target="_blank" href="https://itunes.apple.com/us/app/aws-console/id580990573?mt=8">AWS Console</a>. It's from "AMZN Mobile LLC" which creates <a target="_blank" href="https://itunes.apple.com/us/developer/amzn-mobile-llc/id297606954?mt=8">all Amazon's apps</a>.
-
-   PROTIP: These apps got low review scores because the app only lets people read-only,
-   but not change anything. And the 2FA is clunky.
-
-3. In the Store app, search for "<strong>Google Authenticator</strong>" and install it
-   for multi-factor authentication to strength security of your Amazon cloud account.
-
-   PROTIP: Many keep the Authenticator running on their smart phone.
-
-1. To avoid embedding an access key with the app (even in encrypted storage), use <a target="_blank" href="https://wilsonmar.github.io/cognito">Amazon Cognito</a> to manage user identity by authenticating users using Login with Amazon, Facebook, Google, or any OpenID Connect (OIDC)–compatible identity provider.<a target="_blank" href="https://aws.amazon.com/blogs/mobile/using-the-amazon-cognito-credentials-provider/">*</a>
-
-
-<a name="AWS_Account"></a>
-
-## AWS accounts
-
-In enterprises, identify the Administrator who dispenses user accounts.
-
-If you're the Global Administrator, see my htts://wilsonmar.github.io/aws-iam
-
-The remainder of this is for users and super users.
-
-
-<a name="APIKeys"></a>
-
-## API Keys
-
-   API Keys are assigned to developers using the AWS CLI (Command Line Interface) for programmatic (by a program) rather than manual clicking and typing on a keyboard. 
-
-   API keys make use of pairs of public (access) key and private (secret) key which stand in for real users typing in passwords.
-
-## SSH Keys
-
-SSH keys (such as what Linux machines use) are used only with AWS CodeCommit to access their repositories.
-
-See <a href="#SecureCredential">steps and scripts to store your AWS credentials securely (below)</a>, not in clear text as described by AWS.
-
-
+<a name="RootSetup"></a>
 
 ## Root account sign-up
 
-   The account which controls billing is called the <strong>root account</strong>, which as unlimited access to AWS resources and unlimited ability to rack up charges. By resources I mean: users, groups, roles, IAM Access Policies, API keys, etc. globally for all regions.
+You will typically need to <strong>several AWS accounts</strong>. Within an organization, it's common for a separate account to be created for each department and project as well as each user. This is to limit the blast radius when a user's credentials become compromised, a situation we need to prepare for.
+
+WARNING: <strong>"Root account"</strong> credentials have unlimited access to AWS resources for the account and thus unlimited ability to rack up charges used controls <strong>billing</strong> is called . By resources I mean: users, groups, roles, IAM Access Policies, API keys, etc. globally for all regions.
+
+Thus, the root account is used only for creating <strong>sub-accounts</strong> and for emergencies. 
+Global Adminstrators create sub-accounts for use when doing <strong>billing</strong> and other administrative tasks. 
+
+### Use Unique Browser Profile
+
+1. Install Google Chrome because it has detection of malicious conditions.
+1. You will have several gmail addresses, one for each AWS account you create.
+1. To avoid confusion between Google accounts, install the <a target="_blank" href="https://chrome.google.com/webstore/detail/multi-login-helper/nccllfnllopfpcbjdgjdlfmomnfgnnbk">Multi Login Helper</a> extension to create a new browser profile for each AWS account you create. 
+
+   PROTIP: The Multi Login Helper extension is also useful for creating a new browser profile for each Google account you have.
+
+1. Use an internet browser to get on the <strong>public AWS marketing page</strong> at 
+
+   <a target="_blank" href="https://aws.amazon.com/">https://aws.amazon.com</a> 
+
+1. Explore the menu items:
+
+   <a target="_blank" href=""><img alt="aws-marketing-1205x224.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1694649967/aws-marketing-1205x224_uaojtf.png"></a>
+
+### Root account
 
 1. Use an internet browser to get on the <strong>AWS marketing page</strong> at 
 
    <a target="_blank" href="https://aws.amazon.com/">https://aws.amazon.com</a> 
+
+   PROTIP: To quickly switch back and forth between this tutorial and the AWS website, right-click on the link to "open in a new tab". Also, <strong>bookmark</strong> this page in your browser for quicker frequent access.
 
 2. Get your credit card number ready.
 
@@ -139,9 +120,6 @@ See <a href="#SecureCredential">steps and scripts to store your AWS credentials 
 1. For now, click "Free" to select a plan. A <a href="#ComparePlans">comparison on plans is discussed below</a>.
 
 1. Click "Free" to be prompted to sign-in with your new credentials.
-
-
-<hr />
 
    <a name="AccountId"></a>
 
@@ -266,7 +244,7 @@ See <a href="#SecureCredential">steps and scripts to store your AWS credentials 
 1. Scroll back up to click the "Pricing example" link on the right.
 1. Notice that if your spend is $2,000, Amazon bills you $60 for support, not $29.
 
-   <img alt="aws-onboarding-price-example-533x307-27004.jpg" width="533" src="https://user-images.githubusercontent.com/300046/40593326-2004f3f2-61e5-11e8-956f-c74bc35a161b.jpg"></a>
+   <img alt="aws-onboarding-price-example-533x307-27004.jpg" width="533" src="https://user-images.githubusercontent.com/300046/40593326-2004f3f2-61e5-11e8-956f-c74bc35a161b.jpg">
 
 1. Click the "Business" and "Enterprise" buttons in the pop-up to see sample volume pricing tiers.
 
@@ -291,35 +269,35 @@ See <a href="#SecureCredential">steps and scripts to store your AWS credentials 
 
 <hr />
 
-### Claim S3 Bucket names
-
-   The AWS Account Administrator has a fudiciary responsibility to secure 
-   Intellectual Property assets.
-
-   S3 Bucket names are universally unique among all AWS customers.
-   So just as there are domain name squatters who register and sit on .com host names
-   for sale at high prices to those who actually use the names,
-   the administrator of root accounts for an organization should
-   register your organization's brand names before others get them first.
-
-   To create a bucket for each host name registered on GoDaddy, Google Domains, etc.
-
-4. Click S3 from among services.
-5. Click the blue "Create bucket" button.
-6. Type in the host name (such as "wilsonmar.com") in the Bucket name field.
-7. Select your home Region.
-
-   PROTIP: Claiming a Bucket name in one region locks it up for all Regions.
-
-8. Click "Next".
-9. Click "Next".
-10. Click "Next" to manage users.
-11. Click "Create Bucket".
 
 
-<hr />
+<a name="MobileApps"></a>
 
-## Root account lockdown
+## Mobile apps for smart phones
+
+1. Get the <strong>AWS Console</strong> app on your mobile phone:
+
+   <a target="_blank" href="http://www.amazon.com/AWS-Mobile-LLC-Console/dp/B00ATSN730">On Google Android mobile phones</a>
+
+   On your iPhone, open the Store app and search to get <a target="_blank" href="https://itunes.apple.com/us/app/aws-console/id580990573?mt=8">AWS Console</a>. Make sure the publisher is <strong>AMZN Mobile LLC</strong>  which creates <a target="_blank" href="https://itunes.apple.com/us/developer/amzn-mobile-llc/id297606954?mt=8">all Amazon's apps</a>.
+
+   PROTIP: These apps got low review scores because the app only lets people read-only,
+   but not change anything. And the 2FA is clunky.
+
+2. <strong>Add an identity</strong>: select Root/IAM account or Federation.
+3. Enable Face ID on iPhones.
+4. Provide email, CAPTCHA security, password, email verification code.
+
+3. In the Store app, search for "<strong>Google Authenticator</strong>" and install it
+   for multi-factor authentication to strength security of your Amazon cloud account.
+
+   PROTIP: Many keep the Authenticator running on their smart phone.
+
+1. To avoid embedding an access key with the app (even in encrypted storage), use <a target="_blank" href="https://wilsonmar.github.io/cognito">Amazon Cognito</a> to manage user identity by authenticating users using Login with Amazon, Facebook, Google, or any OpenID Connect (OIDC)–compatible identity provider.<a target="_blank" href="https://aws.amazon.com/blogs/mobile/using-the-amazon-cognito-credentials-provider/">*</a>
+
+   <a name="RootLockdown"></a>
+
+   ### Root account lockdown
 
 1. On a browser in the AWS Management Console, select <a target="_blank" href="https://console.aws.amazon.com/iam/home">IAM</a> (for Identity Access Management) for the list <strong>Security Status</strong>
 
@@ -343,12 +321,13 @@ See <a href="#SecureCredential">steps and scripts to store your AWS credentials 
     ### Apply an IAM password policy 
 
 12. Click "Manage Password Policy" so AWS will ensure that "strong" passwords are used (and not easy to guess ones).
+
     AWS defaults are terrible:
 
-   ![aws-iam-weak-386x336-39852](https://user-images.githubusercontent.com/300046/38160240-8cbdb006-3477-11e8-914c-faea51864405.jpg)
+    ![aws-iam-weak-386x336-39852](https://user-images.githubusercontent.com/300046/38160240-8cbdb006-3477-11e8-914c-faea51864405.jpg)
 
-   Over time, as hackers have access to more powerful computers that can guess passwords quicker,
-   larger passwords are necessary to make it more difficult to crack.
+    Over time, as hackers have access to more powerful computers that can guess passwords quicker,
+    larger passwords are necessary to make it more difficult to crack.
 
 13. PROTIP: The <strong>largest Minimum password length AWS allows is 128 characters</strong>. But 1Password can generate up to only 64 characters. Practically, 22 characters is a reasonable minimum. Require at least one number (digits) and one non-alphanumeric symbol character.
 
@@ -526,6 +505,7 @@ See <a href="#SecureCredential">steps and scripts to store your AWS credentials 
 1. Sign out and sign in again to the AWS Console using the newly created admin sub-account.
 
 
+
    <a name="ProgrammaticAccess"></a>
 
    ### Programmatic Access
@@ -562,6 +542,44 @@ https://aws.amazon.com/code/token-vending-machine-for-identity-registration-samp
 
 But that requires tedious repeated manual effort.
 Securing temporary accounts with MFA adds to that toil.
+
+
+
+
+<hr />
+
+<a name="S3BucketNames"></a>
+
+### Claim S3 Bucket names
+
+   The AWS Account Administrator has a fudiciary responsibility to secure 
+   Intellectual Property assets.
+
+   S3 Bucket names are universally unique among all AWS customers.
+   So just as there are domain name squatters who register and sit on .com host names
+   for sale at high prices to those who actually use the names,
+   the administrator of root accounts for an organization should
+   register your organization's brand names before others get them first.
+
+   To create a bucket for each host name registered on GoDaddy, Google Domains, etc.
+
+4. Click S3 from among services.
+5. Click the blue "Create bucket" button.
+6. Type in the host name (such as "wilsonmar.com") in the Bucket name field.
+7. Select your home Region.
+
+   PROTIP: Claiming a Bucket name in one region locks it up for all Regions.
+
+8. Click "Next".
+9. Click "Next".
+10. Click "Next" to manage users.
+11. Click "Create Bucket".
+
+QUESTION: Terraform?
+
+<hr />
+
+<a name="AutoKeyRotation"></a>
 
 ## Automatic key rotation
 
@@ -672,7 +690,7 @@ Additionally, add conditions to the policy that further restrict access, such as
 
    <pre>
    aws iam create-user --user-name MyUser
- </pre>
+   </pre>
 
    The response is:
 
@@ -738,10 +756,10 @@ https://gist.github.com/mikepfeiffer/
    <pre>
    </pre>
 
-* https://aws.amazon.com/powershell  
-   AWS Powershell for Windows</a>
+* <a target="_blank" href="https://aws.amazon.com/powershell">AWS Powershell for Windows</a>
 
-   aws Get-AWSCredentials -ListProfiles
+   <pre>aws Get-AWSCredentials -ListProfiles
+   </pre>
 
 
 
@@ -865,9 +883,7 @@ Orion Papers</a> on Lucidchart
 https://scriptcrunch.com/aws-certification-iam-essentials-cheat-sheet/
 
 
-https://www.youtube.com/watch?v=e2A8K47Fj6s&index=4&list=PLZbbT5o_s2xoWPNdBbqi9eWnMJ5cDrr1M
-How to Configure the AWS CLI | Amazon Web Services | AWS</a> Nov 26, 2017
-by deeplizard
+<a target="_blank" href="https://www.youtube.com/watch?v=e2A8K47Fj6s&index=4&list=PLZbbT5o_s2xoWPNdBbqi9eWnMJ5cDrr1M">VIDEO: How to Configure the AWS CLI | Amazon Web Services | AWS</a> Nov 26, 2017 by deeplizard
 
 https://docs.aws.amazon.com/cli/latest/index.html
 AWS CLI Command Reference
