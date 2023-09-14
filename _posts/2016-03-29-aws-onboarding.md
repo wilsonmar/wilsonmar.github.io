@@ -112,11 +112,44 @@ Secure that email address with <strong>multi-factor authentication</strong> with
 
    PROTIP: If you provide a Google Voice virtual number, it would be less of a hassle in case you change the actual number of your phone assigned by your carrier. So in case you change phone vendors (from ATT to T-Mobile), you only need to change it in Google Voice.
 
-1. Provide address, which may be used to verify your credit card.
+   <a name="ComparePlans"></a>
+
+   ### Compare Support Plans
+
+1. Click <a target="_blank" href="https://console.aws.amazon.com/support/plans/home?#/">Amazon's Support Plan page here</a>.
+
+   The Basic account does not enable you to communicate with Amazon people who can answer technical questions.
+
+   The $29/month Developer Plan enables you to open an unlimited number of support cases
+   only via email, with a 12-hour response time if "system impaired". Otherwise, the SLA
+   is 24 hours.
+
+   The $100/month Business Plan enables you to have 24/7 chat, phone, as well as email access with AWS Support people on an unlimited number of support cases, with a 1-hour response time for "production down" issues, or 4-hour response for "production impaired" issues.
+
+   Amazon's <strong>Enterprise Plan</strong> for $15,000/month gets you 15 minute response on "business critical system down" issues. This plan also comes with an assigned TAM (Technical Account Manager).
+
+   These dollar amounts are minimums, not fixed prices.
+
+   https://aws.amazon.com/premiumsupport/programs/iem/
+   mentions "AWS Infrastructure Event Management (IEM) offers architecture and scaling guidance and operational support during the preparation and execution of planned events, such as shopping holidays, product launches, and migrations."
+
+1. Scroll down to mouse over the "$29" on the Pricing line at the bottom of the table.
+
+   ![aws-onboarding-pricing-179x101-7688](https://user-images.githubusercontent.com/300046/40592743-edf804f8-61df-11e8-82e4-d48308fe1c92.jpg)
+
+   PROTIP: Pricing for Developer support is the Greater of $29 or 3% of monthly AWS usage,
+   so you will pay more than $29 if you spend more than $966.67.
+
+1. Scroll back up to click the "Pricing example" link on the right.
+1. Notice that if your spend is $2,000, Amazon bills you $60 for support, not $29.
+
+   <img alt="aws-onboarding-price-example-533x307-27004.jpg" width="533" src="https://user-images.githubusercontent.com/300046/40593326-2004f3f2-61e5-11e8-956f-c74bc35a161b.jpg">
+
+1. Click the "Business" and "Enterprise" buttons in the pop-up to see sample volume pricing tiers.
 
    ### Credit card
 
-1. Get your credit card number ready.
+1. Provide address, which may be used to verify your credit card.
 
    PROTIP: CAUTION: Once you give Amazon a credit card number, you cannot remove it. Amazon can continue to charge for it until the card expires in several years.
 
@@ -209,97 +242,6 @@ Secure that email address with <strong>multi-factor authentication</strong> with
 
    <a target="_blank" href="https://aws.amazon.com/documentation/">
    https://aws.amazon.com/documentation</a>
-
-
-
-   ### Quick Access icons
-
-   Save time by quickly get to the most frequently used services by having their icons at the top (black) menu bar.
-
-1. Click the push-pin icon.
-1. One by one, drag the icon on the list and drop it on the top black menu to the left of the orange push pin. If you don't see the black menu, pause just under the browser URL for the browser to automatically scroll.
-
-   PROTIP: The services most often used are IAM, VPC, EC2, S3
-
-1. If you have good memory of what icons mean, change the Settings to "Icons only".
-
-   <img alt="aws-onboarding-icons-only-277x112-9365.jpg" src="https://user-images.githubusercontent.com/300046/40741420-c21d19b0-6408-11e8-9c8d-84c5afd9a8bd.jpg">
-
-
-   <a name="ComparePlans"></a>
-
-   ### Compare Support Plans
-
-1. Click <a target="_blank" href="https://console.aws.amazon.com/support/plans/home?#/">Amazon's Support Plan page here</a>.
-
-   The Basic account does not enable you to communicate with Amazon people who can answer technical questions.
-
-   The $29/month Developer Plan enables you to open an unlimited number of support cases
-   only via email, with a 12-hour response time if "system impaired". Otherwise, the SLA
-   is 24 hours.
-
-   The $100/month Business Plan enables you to have 24/7 chat, phone, as well as email access with AWS Support people on an unlimited number of support cases, with a 1-hour response time for "production down" issues, or 4-hour response for "production impaired" issues.
-
-   Amazon's <strong>Enterprise Plan</strong> for $15,000/month gets you 15 minute response on "business critical system down" issues. This plan also comes with an assigned TAM (Technical Account Manager).
-
-   These dollar amounts are minimums, not fixed prices.
-
-   https://aws.amazon.com/premiumsupport/programs/iem/
-   mentions "AWS Infrastructure Event Management (IEM) offers architecture and scaling guidance and operational support during the preparation and execution of planned events, such as shopping holidays, product launches, and migrations."
-
-1. Scroll down to mouse over the "$29" on the Pricing line at the bottom of the table.
-
-   ![aws-onboarding-pricing-179x101-7688](https://user-images.githubusercontent.com/300046/40592743-edf804f8-61df-11e8-82e4-d48308fe1c92.jpg)
-
-   PROTIP: Pricing for Developer support is the Greater of $29 or 3% of monthly AWS usage,
-   so you will pay more than $29 if you spend more than $966.67.
-
-1. Scroll back up to click the "Pricing example" link on the right.
-1. Notice that if your spend is $2,000, Amazon bills you $60 for support, not $29.
-
-   <img alt="aws-onboarding-price-example-533x307-27004.jpg" width="533" src="https://user-images.githubusercontent.com/300046/40593326-2004f3f2-61e5-11e8-956f-c74bc35a161b.jpg">
-
-1. Click the "Business" and "Enterprise" buttons in the pop-up to see sample volume pricing tiers.
-
-   ### Cases in Support Center
-
-1. To view support cases filed and their status, see:   
-
-   <a target="_blank" href="https://console.aws.amazon.com/support/home">
-   https://console.aws.amazon.com/support/home</a>
-
-   Policies for this are:
-
-   * AWSSupportAccess (Allows users to access the AWS Support Center)
-   * SupportUser (This policy grants permissions to troubleshoot and resolve issues in an AWS account. This policy also enables the user to contact AWS support to create and manage cases)
-   <br /><br />
-
-1. Scroll down to view videos on specific technical issues by Amazon people.
-
-   On the lower-right corner, there are links to
-   AWS Documentation, Getting Started Guides, Knowledge Center, Whitepapers, and AWS Forums.
-
-
-<hr />
-
-<a name="MobileApps"></a>
-
-## Mobile apps for smart phones
-
-1. Get the <strong>AWS Console</strong> app on your mobile phone:
-
-   <a target="_blank" href="http://www.amazon.com/AWS-Mobile-LLC-Console/dp/B00ATSN730">On Google Android mobile phones</a>
-
-   On your iPhone, open the Store app and search to get <a target="_blank" href="https://itunes.apple.com/us/app/aws-console/id580990573?mt=8">AWS Console</a>. Make sure the publisher is <strong>AMZN Mobile LLC</strong>  which creates <a target="_blank" href="https://itunes.apple.com/us/developer/amzn-mobile-llc/id297606954?mt=8">all Amazon's apps</a>.
-
-   PROTIP: These apps got low review scores because the app only lets people read-only,
-   but not change anything. And the 2FA is clunky.
-
-2. <strong>Add an identity</strong>: select Root/IAM account or Federation.
-3. Enable Face ID on iPhones.
-4. Provide email, CAPTCHA security, password, email verification code. Success is seeing this:
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1694653422/aws-mobile-iOS-1170x2532_ns4mgt.png"><img alt="aws-mobile-iOS-1170x2532.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1694653422/aws-mobile-iOS-1170x2532_ns4mgt.png"></a>
 
 
    <a name="RootLockdown"></a>
@@ -512,14 +454,72 @@ Secure that email address with <strong>multi-factor authentication</strong> with
 1. Sign out and sign in again to the AWS Console using the newly created admin sub-account.
 
 
+   ### Quick Access icons
 
-   <a name="ProgrammaticAccess"></a>
+   Save time by quickly get to the most frequently used services by having their icons at the top (black) menu bar.
 
-   ### Programmatic Access
+1. Click the push-pin icon.
+1. One by one, drag the icon on the list and drop it on the top black menu to the left of the orange push pin. If you don't see the black menu, pause just under the browser URL for the browser to automatically scroll.
 
-   Instead of doing what other clouds do (an <tt>aws login</tt> command which prompt for a user name and password), aws commands reference a specifically-named file at <tt>$HOME/.aws/credentials</tt> created by command <tt>aws configure</tt>.
+   PROTIP: The services most often used are IAM, VPC, EC2, S3
 
-   The <tt>aws configure</tt> command creates that file after prompting for access key identifiers (AKIDs) to an AWS account. Press Enter to accept the value previously defined:
+1. If you have good memory of what icons mean, change the Settings to "Icons only".
+
+   <img alt="aws-onboarding-icons-only-277x112-9365.jpg" src="https://user-images.githubusercontent.com/300046/40741420-c21d19b0-6408-11e8-9c8d-84c5afd9a8bd.jpg">
+
+
+<hr />
+
+### Cases in Support Center
+
+1. To view support cases filed and their status, see:   
+
+   <a target="_blank" href="https://console.aws.amazon.com/support/home">
+   https://console.aws.amazon.com/support/home</a>
+
+   Policies for this are:
+
+   * AWSSupportAccess (Allows users to access the AWS Support Center)
+   * SupportUser (This policy grants permissions to troubleshoot and resolve issues in an AWS account. This policy also enables the user to contact AWS support to create and manage cases)
+   <br /><br />
+
+1. Scroll down to view videos on specific technical issues by Amazon people.
+
+   On the lower-right corner, there are links to
+   AWS Documentation, Getting Started Guides, Knowledge Center, Whitepapers, and AWS Forums.
+
+
+<hr />
+
+<a name="MobileApps"></a>
+
+## Mobile apps for smart phones
+
+1. Get the <strong>AWS Console</strong> app on your mobile phone:
+
+   <a target="_blank" href="http://www.amazon.com/AWS-Mobile-LLC-Console/dp/B00ATSN730">On Google Android mobile phones</a>
+
+   On your iPhone, open the Store app and search to get <a target="_blank" href="https://itunes.apple.com/us/app/aws-console/id580990573?mt=8">AWS Console</a>. Make sure the publisher is <strong>AMZN Mobile LLC</strong>  which creates <a target="_blank" href="https://itunes.apple.com/us/developer/amzn-mobile-llc/id297606954?mt=8">all Amazon's apps</a>.
+
+   PROTIP: These apps got low review scores because the app only lets people read-only,
+   but not change anything. And the 2FA is clunky.
+
+2. <strong>Add an identity</strong>: select Root/IAM account or Federation.
+3. Enable Face ID on iPhones.
+4. Provide email, CAPTCHA security, password, email verification code. Success is seeing this:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1694653422/aws-mobile-iOS-1170x2532_ns4mgt.png"><img alt="aws-mobile-iOS-1170x2532.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1694653422/aws-mobile-iOS-1170x2532_ns4mgt.png"></a>
+
+
+<hr />
+
+<a name="ProgrammaticAccess"></a>
+
+## Programmatic Access
+
+Instead of doing what other clouds do (an <tt>aws login</tt> command which prompt for a user name and password), aws commands reference a specifically-named file at <tt>$HOME/.aws/credentials</tt> created by command <tt>aws configure</tt>.
+
+The <tt>aws configure</tt> command creates that file after prompting for access key identifiers (AKIDs) to an AWS account. Press Enter to accept the value previously defined:
 
    * AWS Access Key ID [****************L5ZQ]:
    * AWS Secret Access Key [****************+1MD]:

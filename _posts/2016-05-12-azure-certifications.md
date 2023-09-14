@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-07-30"
+date: "2023-09-13"
 file: "azure-certifications"
 title: "Azure (Microsoft cloud) certifications"
 excerpt: "Microsoft provides free hands-on (gamified) tutorials and free time"
@@ -139,8 +139,7 @@ If your company has a deal with Microsoft:
    * If you're in Mountain time, a class that starts at 9am Auckland time would be 3pm your time.
    <br /><br />
 
-
-   ### Skillpipe online class
+   ### Microsoft Skillpipe online class
 
 1. PROTIP: Allocate time on your personal calendar to go through the online Skillpipe class before attending the live class. You'll be less confused and stressed during the class, and enjoy it more.
 
@@ -250,11 +249,25 @@ If your company has a deal with Microsoft:
 1. Provide instruction feedback to <a target="_blank" href="https://aka.ms/MakeUsBetter">https://aka.ms/MakeUsBetter</a>
 
 
+### James Lee
+
+<a target="_blank" href="https://www.linkedin.com/in/james-lee-6551a314/">James Lee (from Brisbane, Australia)</a> has built a <a target="_blank" href="https://techstudyslack.com/">Tech Study Stack community</a>
+as he created videos on <a target="_blank" href="https://www.youtube.com/@cloudleeio">YouTube</a>
+and <a target="_blank" href="https://learn.cloudlee.io/p/az-104-microsoft-azure-administrator">Cloudlee.io</a>.
+
+He left ACloudGuru to join his fellow Australian behind the firewall at <a target="_blank" href="https://learn.cantrill.io/courses/enrolled/2155513">learn.cantrill.io</a>.
+
+   * Getting Started with Azure
+   * Getting Started with Microsoft DevOps
+   * Microsoft DevOps Engineer (AZ-400)
+   * Microsoft Azure Administrator (AZ-104)
+   * <a target="_blank" href="https://learn.cantrill.io/p/az-305-microsoft-azure-solutions-architect">AZ-305 Azure Solutions Architect</a>
+   <br /><br />
+
 ### Cloud Academy
 
 PROTIP: I think <a target="_blank" href="https://cloudacademy.com/">CloudAcademy.com</a>
-provides a thorough approach to prepare for exams. They have pre-defined set of 
-<a target="_blank" href="https://cloudacademy.com/library/azure/labs/">hands-on labs</a>, each about 1-2 hours long.
+provides a thorough approach to both pratical hands-on learning and prepare for exams. They have pre-defined set of <a target="_blank" href="https://cloudacademy.com/library/azure/labs/">hands-on labs</a>, each about 1-2 hours long.
 
 CloudAcademy also has 
 <a target="_blank" href="https://cloudacademy.com/library/azure/quizzes/">

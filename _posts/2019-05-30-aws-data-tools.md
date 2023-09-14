@@ -222,7 +222,7 @@ Now let's dive into the details of each of these categories, starting with Gover
 
     <a name="Flow_LakeFormation"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/lake-formation/"><a href="#LakeFormation">Lake Formation</a> provides a way to centrally manage security settings and <strong>fine-grained permissions</strong> needed to permit access by AWS <strong>data lake services</strong> (Athena, Redshift, EMR).
+1.  <a target="_blank" href="https://aws.amazon.com/lake-formation/"><a href="#LakeFormation"><strong>Lake Formation</strong></a> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslakeformation.html">lakeformation</a>) provides a way to centrally manage security settings and <strong>fine-grained permissions</strong> needed to permit access by AWS <strong>data lake services</strong> (Athena, Redshift, EMR).
 
 
     ## Compute
@@ -251,11 +251,11 @@ Now let's dive into the details of each of these categories, starting with Gover
    
     <a name="Flow_S3"></a>
     
-1.  <a target="_blank" href="https://docs.aws.amazon.com/s3/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-S3.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Storage/Storage_AmazonS3.png?raw=true"></a>Many services (both modern and legacy) store their files in  <strong>S3 (Simple Storage Service)</strong> as <a target="_blank href="https://devblogs.microsoft.com/cse/2016/05/22/access-azure-blob-storage-from-your-apps-using-s3-api/">objects/blobs</a> of various (proprietary) formats because they can be accessed <strong>serverlessly</strong> as API calls from programs.
+1.  <a target="_blank" href="https://docs.aws.amazon.com/s3/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-S3.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Storage/Storage_AmazonS3.png?raw=true"></a>Many services (both modern and legacy) store their files in  <strong>S3 (Simple Storage Service)</strong> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">S3</a>) as <a target="_blank href="https://devblogs.microsoft.com/cse/2016/05/22/access-azure-blob-storage-from-your-apps-using-s3-api/">objects/blobs</a> of various (proprietary) formats because they can be accessed <strong>serverlessly</strong> as API calls from programs.
 
     Unlike legacy storage, data in S3 have High Availability (HA). Although each S3 object cannot be accessed from multiple regions, S3 data is replicated to several Availability Zones within a single region. 
 
-    Snapshots can be taken of S3 objects and stored in <strong>S3 Glacier</strong> services for long-term storage. Use Amazon's <a target="_blank" href="https://aws.amazon.com/snowmobile/">Snowmobile</a> service to manually move petabytes of data at a time to AWS.
+    Snapshots can be taken of S3 objects and stored in <strong>S3 Glacier</strong> services (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3glacier.html">Glacier</a>) for long-term storage. Use Amazon's <a target="_blank" href="https://aws.amazon.com/snowmobile/">Snowmobile</a> service to manually move petabytes of data at a time to AWS.
 
     All this makes S3 the data storage of choice among database services (Athena, EMR, and Redshift Spectrum, etc.). Green dots are used to avoid too many lines connecting with S3.
 
@@ -266,7 +266,7 @@ Now let's dive into the details of each of these categories, starting with Gover
   
 1.  <a target="_blank" href="https://docs.aws.amazon.com/kms/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692639280/aws-icons/Amazon-KMS.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Security%20Identity%20&%20Compliance/SecurityIdentityCompliance_AWSKMS.png?raw=true"></a>To protect the confidentiality of S3 objects, authentication and encryption mechanisms are based on <strong>cryptographic keys</strong> generated using the Amazon <strong>KMS (Key Management Service)</strong>. 
 
-    The Key Management Service is used by <strong>AWS Secrets Manager</strong> which automates the <strong>rotation</strong> and retrieval of credentials, API keys, and other secrets.
+    The Key Management Service is used by <strong>AWS Secrets Manager</strong> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html">secretsmanager</a>) which automates the <strong>rotation</strong> and retrieval of credentials, API keys, and other secrets.
 
 
     <a name="Flow_DevSecOps"></a>
@@ -289,7 +289,7 @@ Now let's dive into the details of each of these categories, starting with Gover
 
     <a name="Flow_Secrets"></a>
 
-1.  Web services front-end software communicating with users on internet <strong>browsers</strong) (such as Safari, Google Chrome, and Microsoft Edge) need SSL/TLS certificates to encrypt communications. Those certificates are generated and obtained from the <a target="_blank" href="https://aws.amazon.com/certificate-manager/"><strong>AWS Certificate Manager</strong></a>.
+1.  Web services front-end software communicating with users on internet <strong>browsers</strong) (such as Safari, Google Chrome, and Microsoft Edge) need SSL/TLS certificates to encrypt communications. Those certificates are generated and obtained from the <a target="_blank" href="https://aws.amazon.com/certificate-manager/">AWS <strong>Certificate Manager</strong></a> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscertificatemanager.html">acm</a>).
     
     PROTIP: That is not the AWS Certificate Manager Private Certificate Authority (ACM PCA). [<a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acmpca_certificate">Terraform</a>]
 
@@ -297,7 +297,8 @@ Now let's dive into the details of each of these categories, starting with Gover
 
     <a name="Flow_Shield"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/shield/"><img align="right" width="25" https://res.cloudinary.com/dcajqrroq/image/upload/v1693715513/aws-icons/Amazon-Shield.png">Because <strong>click streams</strong> by human users can be emulated by automated bots in <strong>DDoS (Distributed Denial of Service)</strong> attacks to overwhelm servers, Amazon offers its <a target="_blank" href="https://aws.amazon.com/shield/"><strong>Shield</strong></a> service. The "advanced" edition of Sheild adds 24x7 access to the AWS DDoS Response Team (DRT) and reduced fees from AWS usage spikes during attacks.
+1.  <a target="_blank" href="https://aws.amazon.com/shield/"><img align="right" width="25" https://res.cloudinary.com/dcajqrroq/image/upload/v1693715513/aws-icons/Amazon-Shield.png">Because <strong>click streams</strong> by human users can be emulated by automated bots in <strong>DDoS (Distributed Denial of Service)</strong> attacks to overwhelm servers, Amazon offers its <a target="_blank" href="https://aws.amazon.com/shield/"><strong>Shield</strong></a> service (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsshield.html">shield</a>). The "advanced" edition of Sheild adds 24x7 access to the AWS DDoS Response Team (DRT) and reduced fees from AWS usage spikes during attacks.
+
 
     <a name="Flow_VPC"></a>
 
@@ -323,7 +324,7 @@ Now let's dive into the details of each of these categories, starting with Gover
 
     <a name="Flow_Lambda"></a>
 
-1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390289/aws-icons/AWS-Lambda.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Compute/Compute_AWSLambda.png?raw=true"><strong>AWS Lambda</strong> runs functions written in Python, Node.js, Java, .NET C#, Erlang, Haskell, and other language run-times in the cloud without having to provision servers or containers. Thus, "serverless" (someone else's computer hardware).
+1.  <img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390289/aws-icons/AWS-Lambda.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Compute/Compute_AWSLambda.png?raw=true">AWS  <strong>Lambda</strong> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awslambda.html">lambda</a>) runs functions written in Python, Node.js, Java, .NET C#, Erlang, Haskell, and other language run-times in the cloud without having to provision servers or containers. Thus, "serverless" (someone else's computer hardware).
 
      Lambda functions are versatile. It can read and write to/from S3, DynamoDB, and other services.
 
@@ -347,7 +348,7 @@ Now let's dive into the details of each of these categories, starting with Gover
     
     <a name="Flow_Macie"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/macie/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757207/aws-icons/Amazon-Macie.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Security%20Identity%20&%20Compliance/SecurityIdentityCompliance_AmazonMacie.png?raw=true">EventBridge can be set to invoke on a schedule, such as to run the Amazon <strong>Macie</strong></a> (macie2) web service to read data in S3 and apply Machine Learning models to identify keywords in the content. Notifications about potential leaks (anomalies) found are sent to EventBridge for further processing.
+1.  <a target="_blank" href="https://aws.amazon.com/macie/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757207/aws-icons/Amazon-Macie.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Security%20Identity%20&%20Compliance/SecurityIdentityCompliance_AmazonMacie.png?raw=true">EventBridge can be set to invoke on a schedule, such as to run the Amazon <strong>Macie</strong></a> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmacie.html">macie2</a>) web service to read data in S3 and apply Machine Learning models to identify keywords in the content. Notifications about potential leaks (anomalies) found are sent to EventBridge for further processing.
 
     and pattern matching (aka managed and custom data identifiers in s3.tf) 
 
@@ -369,17 +370,17 @@ Now let's dive into the details of each of these categories, starting with Gover
 
     <a name="Flow_Kinesis_Video_Streams"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/kinesis/video-streams/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Video-Streams.png"></a>First, to ingest videos into S3, Amazon's <strong>Kinesis Video Streams</strong> service is used. Being serverless, it scales without administrative effort.
+1.  <a target="_blank" href="https://aws.amazon.com/kinesis/video-streams/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Video-Streams.png"></a>First, to ingest videos into S3, Amazon's <strong>Kinesis Video Streams</strong> service (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkinesisvideostreams.html">kinesisvideo</a>) is used. Being serverless, it scales without administrative effort.
 
     <a name="Flow_Rekognition"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/rekognition/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Video-Streams.png"></a>Faces and objects in videos can be detected using Amazon's <strong>Rekognition</strong> service.
+1.  <a target="_blank" href="https://aws.amazon.com/rekognition/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Video-Streams.png"></a>Faces and objects in videos can be detected using Amazon's <strong>Rekognition</strong> service (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrekognition.html">Rekognition</a>).
 
 1.  Amazon's <strong>Textract</strong> service can be used to extract text from images.
 
     <a name="Flow_SageMaker"></a>
 
-1.  Instead of using models created by Amazon, custom models can be created using Amazon's <strong>SageMaker</strong> service running Tensorflow and other Machine Learning frameworks.
+1.  Instead of using models created by Amazon, custom models can be created using Amazon's <strong>SageMaker</strong> service (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html">SageMaker</a>) running Tensorflow and other Machine Learning frameworks.
 
     <a name="Flow_Embeddings"></a>
 
@@ -399,12 +400,12 @@ Now let's dive into the details of each of these categories, starting with Gover
 
     <a name="Flow_Kinesis_Data_Streams"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/kinesis/data-streams/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Streams.png">Amazon Kinesis Data Streams</a> is  NOT serverless. It's a messaging broker service to collect, process, and analyze -- in real-time -- continuous streams of data, writing messages to a "topic" from where it can be read or derived. It's used for monitoring of fraud detection, trademark enforcement, and engagement/sentiment in social media platforms (Twitter/X, Instagram, Facebook, YouTube, LinkedIn, etc.), .
+1.  <a target="_blank" href="https://aws.amazon.com/kinesis/data-streams/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Streams.png">Amazon <strong>Kinesis Data Streams</strong></a> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkinesisdatastreams.html">kinesis</a>) is  NOT serverless. It's a messaging broker service to collect, process, and analyze -- in real-time -- continuous streams of data, writing messages to a "topic" from where it can be read or derived. It's used for monitoring of fraud detection, trademark enforcement, and engagement/sentiment in social media platforms (Twitter/X, Instagram, Facebook, YouTube, LinkedIn, etc.), .
  
 
     <a name="Flow_MSK"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-MSK.png">Amazon MSK (Managed Stream for Kafka)</a> provides serverless APIs like <a target="_blank" href="https://aws.amazon.com/msk/what-is-kafka/">Apache Kafka</a> servers and their connectors, to transform data <strong>streams</strong> and tables.
+1.  <a target="_blank" href="https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-MSK.png">Amazon MSK (Managed Stream for Kafka)</a> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmanagedstreamingforapachekafka.html">kafka</a>) provides serverless APIs like <a target="_blank" href="https://aws.amazon.com/msk/what-is-kafka/">Apache Kafka</a> servers and their connectors, to transform data <strong>streams</strong> and tables.
 
     MSK usually costs more than Kinesis. 
     MSK can persist data forever. 
@@ -419,7 +420,7 @@ Now let's dive into the details of each of these categories, starting with Gover
 
     <a name="Flow_Kinesis_Data_Firehose"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Firehose.png">Amazon Kinesis Data Firehose</a> is a <strong>serverless</strong> (AWS-managed) service to <strong>deliver</strong> continuous streams of data (including video) to S3 buckets, other Amazon services, or any other HTTP endpoint destination (with or without transformation before send). 
+1.  <a target="_blank" href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Firehose.png">Amazon <strong>Kinesis Data Firehose</strong></a> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkinesisfirehose.html">firehose</a>) is a <strong>serverless</strong> (AWS-managed) service to <strong>deliver</strong> continuous streams of data (including video) to S3 buckets, other Amazon services, or any other HTTP endpoint destination (with or without transformation before send). 
 
     Kinesis Firehose can perform <strong>transformations on the fly</strong> specified in <strong>"Low-code"</strong> Blueprints within Lambda to do some transformations. This is why its performance is called <strong>"near real-time"</strong> (of 60 seconds+) rather than real-time (200+ milliseconds).
 
@@ -428,7 +429,7 @@ Now let's dive into the details of each of these categories, starting with Gover
 
     <a name="Flow_Kinesis_Data_Analytics"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/kinesis/data-analytics/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Analytics.png">Managed Apache Flink</a> (formerly Amazon Kinesis Data Analytics) processes complex SQL queries on incoming data streams on behalf of other Kinesis services. It can also reference data from S3 such as player scores for a leaderboard in an e-sports, election, or security app.
+1.  <a target="_blank" href="https://aws.amazon.com/kinesis/data-analytics/"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692757223/aws-icons/Amazon-Kinesis-Data-Analytics.png">Managed Apache Flink</a> (formerly Amazon Kinesis Data Analytics) (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkinesisanalyticsv2.html">kinesisanalytics</a> v2) processes complex SQL queries on incoming data streams on behalf of other Kinesis services. It can also reference data from S3 such as player scores for a leaderboard in an e-sports, election, or security app.
 
     Once data is available in a target data source, it kicks off a <strong>AWS Glue ETL job</strong> to do further transform data for additional analytics and reporting.
 
@@ -437,7 +438,7 @@ Now let's dive into the details of each of these categories, starting with Gover
 
     <a name="Flow_Timestream"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/timestream/latest/developerguide/what-is-timestream.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-Timestream.png">Amazon Timestream</a> is a Time Series database designed to store a large amount of sensor data for IoT and DevOps application monitoring. It keeps recent data in memory and automatically moves historical data to a cost-optimized storage tier. It integrates with AWS IoT Core, Amazon Kinesis, Amazon MSK, open-source Telegraf, Amazon QuickSight, SageMaker. 
+1.  <a target="_blank" href="https://docs.aws.amazon.com/timestream/latest/developerguide/what-is-timestream.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390286/aws-icons/Amazon-Timestream.png">Amazon <strong>Timestream</strong></a> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontimestream.html">timestream</a>) is a Time Series database designed to store a large amount of sensor data for IoT and DevOps application monitoring. It keeps recent data in memory and automatically moves historical data to a cost-optimized storage tier. It integrates with AWS IoT Core, Amazon Kinesis, Amazon MSK, open-source Telegraf, Amazon QuickSight, SageMaker. 
 
      Beacause <a target="_blank" href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Cloudwatch allows</a> only 15 months of data retention, those who need to retain data longer at lower granularity send CloudWatch logs to one or more cloud services: Elastic, Splunk, Sumo Logic, Datadog, etc.
      
@@ -477,11 +478,11 @@ Now let's dive into the details of each of these categories, starting with Gover
 
     <img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/AI/AI_AmazonPolly.png?raw=true">Polly for voice, or<br />
     
-    <img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/AI/AI_AmazonMachineLearning.png?raw=true">buy (within SageMaker) custom models from <a target="_blank" href="https://aws.amazon.com/marketplace/solutions/machine-learning/pre-trained-models">Amazon's Machine Learning (ML) Marketplace</a>, or use a foundation model from Amazon's <a target="_blank" href="https://aws.amazon.com/bedrock/">Bedrock</a> partners for Generative AI work.
+    <img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/AI/AI_AmazonMachineLearning.png?raw=true">buy (within SageMaker) custom models from <a target="_blank" href="https://aws.amazon.com/marketplace/solutions/machine-learning/pre-trained-models">Amazon's Machine Learning (ML) Marketplace</a>, or use a foundation model from Amazon's <a target="_blank" href="https://aws.amazon.com/bedrock/">Bedrock</a> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html">bedrock</a>) partners for Generative AI work.
    
     <a name="Flow_OpenSearch"></a>
 
-1.  Amazon OpenSearch Service is a service managed by AWS based on a fork of (older) Elasticsearch 7.10.2 & Kibana 7.10 not supported by Elastic. <a target="_blank" href="https://aws.amazon.com/blogs/database/the-role-of-vector-datastores-in-generative-ai-applications/">Amazon contends</a> that its <a target="_blank" href="https://aws.amazon.com/opensearch-service/serverless-vector-engine/">vector engines</a> can be used to add domain-specific embeddings as <strong>vector datastore</strong> to customize foundational Large Language Models used by <a target="_blank" href="https://wilsonmar.github.io/genai/">Generative Artificial Intelligence</a> apps.
+1.  Amazon <strong>OpenSearch Service</strong> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonopensearchservice.html">es</a>) is a service managed by AWS based on a fork of (older) Elasticsearch 7.10.2 & Kibana 7.10 not supported by Elastic. <a target="_blank" href="https://aws.amazon.com/blogs/database/the-role-of-vector-datastores-in-generative-ai-applications/">Amazon contends</a> that its <a target="_blank" href="https://aws.amazon.com/opensearch-service/serverless-vector-engine/">vector engines</a> can be used to add domain-specific embeddings as <strong>vector datastore</strong> to customize foundational Large Language Models used by <a target="_blank" href="https://wilsonmar.github.io/genai/">Generative Artificial Intelligence</a> apps.
 
 
     <a name="Flow_Observability"></a>
@@ -490,7 +491,7 @@ Now let's dive into the details of each of these categories, starting with Gover
 
     <a name="Flow_SecurityHub"></a>
 
-1.  <a target="_blank" href="https://aws.amazon.com/security-hub/"><img align="right" width="25" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693711941/aws-icons/Amazon-SecurityHub.png"><strong>Amazon Security Hub</strong></a> is enabled by default in all AWS accounts. It can be disabled, but not deleted. It provides a comprehensive view to centrally manage and mitigate security alerts. 
+1.  <a target="_blank" href="https://aws.amazon.com/security-hub/"><img align="right" width="25" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1693711941/aws-icons/Amazon-SecurityHub.png">Amazon <strong>Security Hub</strong></a> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecurityhub.html">securityhub</a>) is enabled by default in all AWS accounts. It can be disabled, but not deleted. It provides a comprehensive view to centrally manage and mitigate security alerts. 
 
     It generates its own findings from its own automated and continuous 
     
@@ -527,7 +528,7 @@ Now let's dive into the details of each of these categories, starting with Gover
     
     <a name="Flow_CloudTrail"></a>
 
-1.  <a target="_blank" href="https://linuxhint.com/a-comparison-between-cloudtrail-and-guardduty/"><img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AWSCloudTrail.png?raw=true"><strong>AWS CloudTrail</strong></a> logs to S3 a record of every <strong>action to resources</strong> in <a target="_blank" href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-a-trail-using-the-console-first-time.html">each separate account</a>. Each record allows for these questions to respond with corrective measures when security vulnerabilities are recognized.
+1.  <a target="_blank" href="https://linuxhint.com/a-comparison-between-cloudtrail-and-guardduty/"><img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AWSCloudTrail.png?raw=true">AWS <strong>CloudTrail</strong></a> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloudtrail.html">securityhub</a>) logs to S3 a record of every <strong>action to resources</strong> in <a target="_blank" href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-a-trail-using-the-console-first-time.html">each separate account</a> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloudtraildata.html">cloudtrail-data</a>). Each record allows for these questions to respond with corrective measures when security vulnerabilities are recognized.
 
     Log category types:
     * Management Events (configuration changes)
@@ -575,7 +576,7 @@ Now let's dive into the details of each of these categories, starting with Gover
 
     <a name="Flow_VPC_CloudWatch"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html"><img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AmazonCloudWatch.png?raw=true">Amazon <strong>CloudWatch logs</strong></a> 
+1.  <a target="_blank" href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html"><img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Management%20Tools/ManagementTools_AmazonCloudWatch.png?raw=true">Amazon <strong>CloudWatch logs</strong></a> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html">cloudwatch</a> <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchlogs.html">logs</a>) 
     
 
     <a name="Flow_VPC_Logs"></a>
@@ -610,7 +611,7 @@ Now let's dive into the details of each of these categories, starting with Gover
 
     <a name="Flow_QuickSight"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/quicksight/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-QuickSight.png"><img align="right" alt="Analytics_AmazonAthena.png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonQuickSight.png?raw=true"></a>Within the AWS cloud, Data Analysts use the <a href="#QuickSight">AWS QuickSight</a>. It'
+1.  <a target="_blank" href="https://docs.aws.amazon.com/quicksight/index.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-QuickSight.png"><img align="right" alt="Analytics_AmazonAthena.png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonQuickSight.png?raw=true"></a>Within the AWS cloud, Data Analysts use the <a href="#QuickSight">AWS QuickSight</a> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html">quicksight</a>).
 
     For an additional monthly cost, rather than using a direct SQL query, data can be optionally be imported by QuickSight using its <strong>SPICE</strong> (Super-fast, Parallel, In-memory Calculation Engine). This is a public pool columnar in-memory storage for use by all users within each region to rapidly perform advanced calculations and serve data.
 
@@ -653,7 +654,8 @@ Now let's dive into the details of each of these categories, starting with Gover
  
     <a target="_blank" href="https://aws.amazon.com/ses/"><img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Messaging/Messaging_AmazonSES.png?raw=true"><strong>alerts</strong> in the form of emails via <strong>SES (Simple Email Service)</strong></a>,<br />
     
-    <a target="_blank" href="https://aws.amazon.com/pinpoint/"><img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Mobile%20Services/MobileServices_AmazonPinpoint.png?raw=true">SMS texts to mobile phones via AWS Pinpoint</a>,<br />
+    <a target="_blank" href="https://aws.amazon.com/pinpoint/"><img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Mobile%20Services/MobileServices_AmazonPinpoint.png?raw=true"></a>SMS texts to mobile phones via AWS <strong>Pinpoint</strong> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonpinpoint.html"> mobiletargeting </a>) 
+
     
     <a target="_blank" href="https://aws.amazon.com/sns/"><img align="right" alt="classic png" width="25" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Messaging/Messaging_AmazonSNS.png?raw=true">messages to other AWS services via <strong>glue"</strong></a>,<br /> 
     
@@ -677,7 +679,7 @@ Now let's dive into the details of each of these categories, starting with Gover
 1.  Early approaches to bring databases to the cloud used what's called <strong>"Lift and Shift"</strong> in ...
 
 1.  <a target="_blank" href="https://aws.amazon.com/rds/"><img align="right" alt="Database_AmazonRDS.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-RDS.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Database/Database_AmazonRDS.png?raw=true">
-</a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html">Amazon RDS (Relational Database Service)</a> is a web service that makes it easier to <strong>set up</strong>, operate, and <strong>scale</strong> a relational database in the AWS Cloud. 
+</a><a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html">Amazon RDS (Relational Database Service)</a> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrds.html">rds</a>) supports a web data service (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonrdsdataapi.html">rds-data</a>) <strong>set up</strong>, operate, and <strong>scale</strong> a relational database in the AWS Cloud.
 
     With RDS, AWS takes care of the hardware and operating system patching across several regions. 
     
@@ -762,11 +764,44 @@ Now let's dive into the details of each of these categories, starting with Gover
 
     <a name="Flow_Neptune"></a>
     
-1.  <a target="_blank" href="https://docs.aws.amazon.com/neptune/latest/userguide/intro.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Neptune.png">Neptune</a>, Amazon's Graph database, has a GUI that looks like RDS, but is a fully serverless implementation of open-source software. It supports query languages Apache TinkerPop's Gremlin, openCypher, and SPARQL (but not licensed <a target="_blank" href="https://neo4j.com/">Neo4j</a>). 
+1.  <a target="_blank" href="https://docs.aws.amazon.com/neptune/latest/userguide/intro.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390284/aws-icons/Amazon-Neptune.png">Amazon <strong>Neptune</strong></a> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonneptune.html">neptune-db</a>) is a serverless implementation of open-source Graph database software. It supports two graph data models and query languages:
 
-    Since May 30, 2018, Neptune has run with continuous backups to S3 within a VPC that's private by default. 
+    * <strong>Apache TinkerPop</strong>'s vertices and edges (added with properties and labels) traversed using the <strong>Gremlin</strong> property graph traversal language openCypher
+    * W3C's RDF (Resource Description Language) triples and SPARQL declarative pattern matching query language
+    * Neptune does not support the popular but licensed <a target="_blank" href="https://neo4j.com/">Neo4j</a>.
+    <br /><br />
 
-    Neptune is a fully managed service, so AWS takes care of the hardware and operating system patching. However, Admins need to allocate Read and Write capacity Usage (RCU & WCU) based on the number of anticipated 4K items read and 1K items written per second (RPS and WPS). Use the DynamoDB Capacity Calculator to estimate the number of RCUs and WCUs needed for your workload.
+    Neptune has a GUI that looks like RDS. As a fully managed service, AWS takes care of the hardware and operating system patching. Storage can grow automatically to 64 TB in 10 GB segments. However, Admins need to allocate Read and Write capacity Usage (RCU & WCU) based on the number of anticipated 4K items read and 1K items written per second (RPS and WPS). Use the DynamoDB Capacity Calculator to estimate the number of RCUs and WCUs needed for your own workload. Maximum memory in a serverless instance is 256 GB   –   Setting MaxCapacity to 128 NCUs (the highest supported setting) allows a Neptune Serverless instance to scale to 256 GB of memory, which is equivalent to that of an R6g.8XL provisioned instance type.
+
+    <a target="_blank" href="https://www.slideshare.net/AmazonWebServices/onramp-to-graph-databases-and-amazon-neptune-dat335-aws-reinvent-2018">Announced</a> in 2017, Since May 30, 2018, data in Neptune is replicated 6 times across 3 AZs on S3 disks offering 11 nines of durability, within a VPC that's private by default. Replicas can support reads for performance. Failing database nodes are automatically detected and replaced. Its quorum system for read/write is latency tolerant. 
+
+    Nepture requires that each request be signed using AWS Signature v4 libraries for Gremlin and SPARQL clients.
+
+    * https://aws.amazon.com/neptune/getting-started/
+    * https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless.html#neptune-serverless-limitations
+    * <a target="_blank" href="https://docs.aws.amazon.com/neptune/latest/userguide/get-started-cfn-create.html">Neptune CloudFormation stack</a>
+    
+    * https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/neptune_cluster
+    <pre>resource "aws_neptune_cluster" "example" {
+  cluster_identifier                   = "neptune-cluster-development"
+  engine                               = "neptune"
+  engine_version                       = "1.2.0.1"
+  neptune_cluster_parameter_group_name = "default.neptune1.2"
+  skip_final_snapshot                  = true
+  apply_immediately                    = true
+  serverless_v2_scaling_configuration {}
+}
+resource "aws_neptune_cluster_instance" "example" {
+  cluster_identifier           = aws_neptune_cluster.example.cluster_identifier
+  instance_class               = "db.serverless"
+  neptune_parameter_group_name = "default.neptune1.2"
+}immediately                   = true
+}
+    </pre>
+
+    Neptune Graphs can be analyzed within Amazon SageMaker Jupyter Notebooks.
+
+    <br /><br />
 
 
     ### Big Data
@@ -810,9 +845,9 @@ Now let's dive into the details of each of these categories, starting with Gover
 
     <a name="Flow_Redshift"></a>
 
-1.  <a href="#Redshift"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true">AWS Redshift</a> is a cloud-based (but not serverless) service based on open-source PostgreSQL. So customer effort is needed to provision servers (with enhanced VPC). 
+1.  <a href="#Redshift"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true">AWS <strong>Redshift</strong></a> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonredshift.html">redshift</a>) is a cloud-based (but not serverless) service based on open-source PostgreSQL supporting an API (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonredshiftdataapi.html">redshift-data</a>). So customer effort is needed to provision servers (with enhanced VPC). 
 
-    AWS introduced Redshift Serverless in AWS re: Invent 2021.
+    AWS introduced Redshift Serverless (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonredshiftserverless.html">redshift-serverless</a>) during  AWS re: Invent 2021.
 
     "Red" in the name is because it is seeks to migrate users <a target="_blank" href="https://hevodata.com/learn/redshift-vs-oracle/">from</a> the red logo of Oracle's "Autonomous Data Warehouse". Exadata, Like Oracle, Redshift stores columnar data in a cluster of nodes on <strong>EFS block storage</strong> used by operating systems and EC2 instances (rather than in S3 objects).
     
@@ -827,12 +862,12 @@ Now let's dive into the details of each of these categories, starting with Gover
 
     <a name="Flow_Redshift_Spectrum"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/redshift/latest/dg/c-getting-started-using-spectrum.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png"><img align="right" alt="Analytics_AmazonRedshift.png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true">Amazon Redshift Spectrum</a> extends Redshift to query from S3 without loading data, like using <a href="#Flow_Presto">Presto</a> with Hadoop. <a target="_blank" href="https://ahana.io/answers/aws-redshift-vs-spectrum/">RedShift Spectrum</a> can perform SQL <strong>joins</strong> with S3 objects and other foreign data in queries.    
+1.  <a target="_blank" href="https://docs.aws.amazon.com/redshift/latest/dg/c-getting-started-using-spectrum.html"><img align="right" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390285/aws-icons/Amazon-Redshift.png"><img align="right" alt="Analytics_AmazonRedshift.png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonRedshift.png?raw=true">Amazon <strong>Redshift Spectrum</strong></a> extends Redshift to query from S3 without loading data, like using <a href="#Flow_Presto">Presto</a> with Hadoop. <a target="_blank" href="https://ahana.io/answers/aws-redshift-vs-spectrum/">RedShift Spectrum</a> can perform SQL <strong>joins</strong> with S3 objects and other foreign data in queries.    
 
 
     <a name="Flow_Athena"></a>
 
-1.  <a target="_blank" href="https://docs.aws.amazon.com/athena/index.html"><img align="right" alt="Analytics_AmazonAthena.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Athena.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonAthena.png?raw=true">Amazon Athena</a> is an AWS-managed SaaS offering. Athena's console GUI offers a simplified <strong>Python Jupyter Notebook/strong> developer experience that supports ODBC/JDBC drivers (like Amazon DynamoDB) as well as REST API calls. So it's good for small data sets.
+1.  <a target="_blank" href="https://docs.aws.amazon.com/athena/index.html"><img align="right" alt="Analytics_AmazonAthena.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1692390283/aws-icons/Amazon-Athena.png"><img align="right" alt="classic png" width="50" src="https://github.com/burib/aws-simple-icons-for-architecture-diagrams/blob/master/Analytics/Analytics_AmazonAthena.png?raw=true"><strong>Amazon Athena</strong></a> (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonathena.html">athena</a>) is an AWS-managed SaaS offering. Athena's console GUI offers a simplified <strong>Python Jupyter Notebook/strong> developer experience that supports ODBC/JDBC drivers (like Amazon DynamoDB) as well as REST API calls. So it's good for small data sets.
 
     As a serverless provider, the Athena web service is always ready to query data. So it is used for infrequent or ad hoc data analysis such as any type of log data exported into S3, such as:
     
