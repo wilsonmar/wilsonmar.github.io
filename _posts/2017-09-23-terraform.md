@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-12-16"
+date: "2023-09-14"
 file: "terraform"
 title: "Terraform"
 excerpt: "Immutable declarative versioned Infrastructure as Code (IaC) and Policy as Code provisioning into AWS, Azure, GCP, and other clouds using Terragoat, Bridgecrew, and Atlantis team versioning GitOps"
@@ -1409,6 +1409,104 @@ To get AWS certified, you’re going to need to know Cloud Formation.
 
 https://www.stratoscale.com/blog/data-center/choosing-the-right-provisioning-tool-terraform-vs-aws-cloudformation/
 
+PROTIP: TOOL: <a target="_blank" href="https://github.com/DontShaveTheYak/cf2tf">cf2tf</a> 
+is a Python module that converts CloudFormation templates to Terraform configuration files so you use <a target="_blank" href="https://console.aws.amazon.com/cloudformation">https://console.aws.amazon.com/cloudformation</a> less.
+It's by "shadycuz" Levi Blaney, author of the <a target="_blank" href="https://la-tech.co/">Hypermodern Cloudformation series</a>.
+
+1. Install Python with Conda or virtualenv (see my https://wilsonmar.github.io/python-install/)
+1. Create a folder to clone into (such as $HOME/Projects).
+1. Create virtual Python enviornment:
+   <pre><strong>conda activiate py310
+   python --version
+   </strong></pre>
+1. Clone the repo:
+   <pre><strong>git clone https://github.com/DontShaveTheYak/cf2tf --depth 1
+   cd ct2tf
+   </strong></pre>
+1. Install Python module locally:
+   <pre><strong>pip install cf2tf --upgrade
+   cf2tf my_template.yaml
+   </strong></pre>
+1. Download my_template.yaml CloudFormation files that creates an AWS resource stack:
+   * https://leaherb.com/aws-lambda-tutorial-101/ describes creating a Lambda function using CF YAML.
+   * https://reflectoring.io/getting-started-with-aws-cloudformation/ describes creating an ECS cluster running a Docker container using CF files from https://github.com/stratospheric-dev/stratospheric/tree/main/chapters/chapter-1/cloudformation
+   * https://www.youtube.com/watch?v=YXVCdGyHDSk shows how to create a table with DBQueryPolicy within a pre-defined DynamoDB from https://gist.github.com/awssimplified/f96437a5a3beed65bf4782eb7b69afa4
+1. Validate the template within AWS:
+   <pre><strong>aws cloudformation validate-template --template-body file://lambda_hello.yaml
+   </strong></pre>
+1. Make sure it really creates the stack and resource within AWS
+   <pre>aws cloudformation create-stack --stack-name hello-lambda-stack \
+  --template-body file://lambda_hello.yml \
+  --capabilities CAPABILITY_NAMED_IAM 
+   </pre>
+1. Run:
+   <pre><strong>cd /;cd ~/Projects/cf2tf
+   cf2tf lambda_hello.yaml >main.tf
+   </strong></pre>
+   The result I got:
+1. Refactoring CF code, as described at
+   https://medium.com/trackit/aws-cloudformation-to-terraform-translation-dacfc96e3994
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th>CloudFormation template.yaml</th><th>Terraform HCL</th></tr>
+<tr valign="top"><td><tt>Resources:
+  HelloLambdaRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: HelloLambdaRole
+      AssumeRolePolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+
+  HelloLambdaFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: HelloLambdaFunction
+      Role: !GetAtt HelloLambdaRole.Arn
+      Runtime: python3.7
+      Handler: index.my_handler
+      Code:
+        ZipFile: |
+          def my_handler(event, context):
+            message = 'Hello Lambda World!'
+            return message
+</tt></td><td><tt>resource "aws_iam_role" "hello_lambda_role" {
+  name = "HelloLambdaRole"
+  assume_role_policy = {
+    Statement = [
+      {
+        Effect = "Allow"
+        Principal = {
+          Service = "lambda.amazonaws.com"
+        }
+        Action = "sts:AssumeRole"
+      }
+    ]
+  }
+}
+
+resource "aws_lambda_function" "hello_lambda_function" {
+  function_name = "HelloLambdaFunction"
+  role = aws_iam_role.hello_lambda_role.arn
+  runtime = "python3.7"
+  handler = "index.my_handler"
+  code_signing_config_arn = {
+    ZipFile = "def my_handler(event, context):
+  message = 'Hello Lambda World!'
+  return message"
+  }
+}
+</tt></td></tr>
+</table>
+
+References:
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/GettingStarted.Walkthrough.html
+   * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html
+   * https://dev.to/johntellsall/convert-cloudformation-to-terraform-in-two-seconds-6mm using CoPilot
+   * https://stackoverflow.com/questions/64048258/how-to-convert-cloudformation-template-to-terraform-code
 
 <a name="Licensing"></a>
 

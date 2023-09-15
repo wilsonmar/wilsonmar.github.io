@@ -1896,6 +1896,12 @@ https://medium.com/@athlatif/how-to-prepare-for-aws-certified-data-analytics-spe
    - Understand and configure access and audit logging across data analytics services<br />
    - Implement appropriate controls to meet compliance requirements<br />
 
+### courses
+
+<a target="_blank" href="https://www.linkedin.com/learning/paths/<aprepare-for-the-aws-certified-data-analytics-specialty-das-c01-certification">
+On LinkedIn: Prepare for the AWS Certified Data Analytics - Speciality (DAS-CO1) Certification</a>
+by Noah Gift shows how things are done rather than on theory.
+
 <a target="_blank" href="https://www.pluralsight.com/paths/aws-certified-data-analytics-specialty">
 6 courses on Pluralsight</a> (by different authors):
 
@@ -1918,12 +1924,7 @@ Labs:
    * <a target="_blank" href="https://app.pluralsight.com/labs/detail/865661e0-a7d8-4167-8750-397e7d96696d">Access and Enforce Data Compliance Using AWS Config</a>
 
 
-## Classses
-
-   * https://www.linkedin.com/learning/paths/prepare-for-the-aws-certified-data-analytics-specialty-das-c01-certification 3h 41m by the prolific Noah Gift!
-   <br /><br />
-
-   * <a target="_blank" href="https://www.coursera.org/specializations/exam-prep-das-c01-aws-certified-data-analytics-specialty">Coursera 5 course by Whizlabs</a> 5-7 hours each. No instructor name.
+   * <a target="_blank" href="https://www.coursera.org/specializations/exam-prep-das-c01-aws-certified-data-analytics-specialty">Coursera 5 course by Whizlabs</a> 5-7 hours each. No instructor name. Provides mainly theory.
 
    * https://aws.amazon.com/blogs/big-data/how-to-delete-user-data-in-an-aws-data-lake/
 

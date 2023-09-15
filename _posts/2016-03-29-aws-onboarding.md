@@ -21,6 +21,27 @@ This</a> is a hands-on tutorial to get new users setup to effectively access and
 
 Covered here are instructions on how to install and use AWS CLI automation, smart phone apps, and 3rd party tools used by pros.
 
+<a name="KPI"></a>
+
+## KPI for Onboarding
+
+A1. What is the total max/average hours an end-user needs to spend between receiving instructions to being completely productive on AWS?
+
+B1. What is the total max/average hours of effort by Administrators to get an AWS account ready for use by an end-user?
+
+The above is a subset of:
+
+A. What is the total max/average hours an <strong>end-user</strong> needs to spend between receiving a laptop to being completely productive (create and file a Git PR)?
+
+B. What is the total max/average hours of effort by <strong>Administrators</strong> to get accounts and a laptop ready for receipt by a new employee?
+
+
+## Prep Steps
+
+Here are the steps to get ready to use AWS:
+
+
+
 <hr />
 
 ## Console GUI, CLI, API, Mobile
@@ -39,11 +60,28 @@ SECURITY PROTIP: Many enterprises do not permit use of interactive CLI and Conso
 
 <hr />
 
+<a name="EmailSystem"></a>
+
+## Auto-Generate Emails with Responders
+
+Global Administrators can reduce time and hassle that both they themselves and their end-users (internal customers) by doing ALL AWS account setup tasks rather than giving a long list of instructions for end-users to follow (as shown below), then providing support to those who won't or don't follow instructions. This is especially true for those who are "not technical". This means automation of email creation and also having automation impersonate each user's email for verification of AWS account, GitHub, etc.
+
+PROTIP: <strong>Use a separate email address for each AWS account</strong> you create.
+Global Administrators working with AWS need to have admin control of an email system to create email accounts and (automatically) read/answer sample user emails.
+
+   * Individual learners need to generate several email accounts to take advantage of "Free Tier" that only lasts a year each. AWS learners need to create their own account to not disturb corporate work.
+
+   * Corporate Global Administrators need to generate emails for each new employees who join. 
+
+Within an organization, it's common for a separate account to be created for each department and project as well as each user. This is to limit the blast radius when a user's credentials become compromised, a situation we need to prepare for.
+
+
+
 <a name="RootSetup"></a>
 
 ## Unique emails for Root account
 
-You will typically need to <strong>several AWS accounts</strong>. Within an organization, it's common for a separate account to be created for each department and project as well as each user. This is to limit the blast radius when a user's credentials become compromised, a situation we need to prepare for.
+An enterprise typically creates <strong>several AWS accounts</strong>. Within an organization, it's common for a separate account to be created for each department and project as well as each user. This is to limit the blast radius when a user's credentials become compromised, a situation we need to prepare for.
 
 WARNING: <strong>"Root account"</strong> credentials have unlimited access to AWS resources for the account and thus unlimited ability to rack up charges used controls <strong>billing</strong> is called . By resources I mean: users, groups, roles, IAM Access Policies, API keys, etc. globally for all regions.
 
@@ -276,7 +314,7 @@ Secure that email address with <strong>multi-factor authentication</strong> with
     ![aws-iam-weak-386x336-39852](https://user-images.githubusercontent.com/300046/38160240-8cbdb006-3477-11e8-914c-faea51864405.jpg)
 
     Over time, as hackers have access to more powerful computers that can guess passwords quicker,
-    larger passwords are necessary to make it more difficult to crack.
+    so larger passwords are necessary to make it more difficult to crack.
 
 13. PROTIP: The <strong>largest Minimum password length AWS allows is 128 characters</strong>. But 1Password can generate up to only 64 characters. Practically, 22 characters is a reasonable minimum. Require at least one number (digits) and one non-alphanumeric symbol character.
 
