@@ -1447,6 +1447,7 @@ It's by "shadycuz" Levi Blaney, author of the <a target="_blank" href="https://l
    </strong></pre>
    Compare input and output I got:
 
+<font size="5" face="Courier New" >
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th>CloudFormation template.yaml</th><th>Terraform HCL</th></tr>
 <tr valign="top"><td><pre>Resources:
@@ -1498,7 +1499,7 @@ resource "aws_lambda_function" "hello_lambda_function" {
   }
 }
 </pre></td></tr>
-</table>
+</table></font>
 
 References:
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/GettingStarted.Walkthrough.html
