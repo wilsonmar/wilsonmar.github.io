@@ -1387,7 +1387,7 @@ dagger.io
 
 <a name="CFN"></a>
 
-### Terraform vs. AWS Cloud Formation
+## Terraform vs. AWS Cloud Formation
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th> Feature </th><th> CloudFormation </th><th> Terraform </th></tr>
@@ -1396,10 +1396,10 @@ dagger.io
 <tr><td> Open Source contributions? </td><td> <a href="#OpenSourcing">No</a> </td><td> <a href="#OpenSourcing">Yes</a> (<a target="_blank" href="https://github.com/hashicorp/terraform/issues">GitHub issues</a>) </td></tr>
 <tr><td> <a href="#State">State management</a> </td><td><a href="#AWSStateMgmt">by AWS</a> </td><td> in Terraform & AWS S3 </td></tr>
 <tr><td> GUI </td><td> Free Console </td><td> <a href="#Licensing">licen$ed*</a> </td></tr>
-<tr><td> Configuration format </td><td> JSON </td><td> <a href="#HCL">HCL JSON</a> </td></tr>
+<tr><td> Configuration format </td><td> JSON & Template </td><td> <a href="#HCL">HCL JSON</a> </td></tr>
 <tr><td> <a href="#ExecControl">Execution control*</a> </td><td> No </td><td> Yes </td></tr>
 <tr><td> Iterations </td><td> No </td><td> Yes </td></tr>
-<tr><td> Manage already created resources </td><td> No </td><td> Yes (hard) </td></tr>
+<tr><td> Manage already created resources </td><td> No (Change Set?)</td><td> Yes (hard) </td></tr>
 <tr><td> Failure handling </td><td> Optional rollback </td><td> Fix &amp; retry </td></tr>
 <tr><td> Logical comparisons </td><td> No </td><td> Limited </td></tr>
 <tr><td> <a href="#Modules">Extensible Modules</a> </td><td> No </td><td> <a href="#Modules">Yes</a> </td></tr>
@@ -1407,15 +1407,15 @@ dagger.io
 
 To get AWS certified, you’re going to need to know Cloud Formation. 
 
-https://www.stratoscale.com/blog/data-center/choosing-the-right-provisioning-tool-terraform-vs-aws-cloudformation/
+### CF to TF Tool
 
 PROTIP: TOOL: <a target="_blank" href="https://github.com/DontShaveTheYak/cf2tf">cf2tf</a> 
 is a Python module that converts CloudFormation templates to Terraform configuration files so you use <a target="_blank" href="https://console.aws.amazon.com/cloudformation">https://console.aws.amazon.com/cloudformation</a> less.
-It's by "shadycuz" Levi Blaney, author of the <a target="_blank" href="https://la-tech.co/">Hypermodern Cloudformation series</a>.
+It's by "shadycuz" Levi Blaney, author of the <a target="_blank" href="https://la-tech.co/post/hypermodern-cloudformation/getting-started/">Hypermodern Cloudformation series</a>.
 
 1. Beware of the CF code refactoring that another has needed to do:
    https://medium.com/trackit/aws-cloudformation-to-terraform-translation-dacfc96e3994
-1. Install Python with Conda or virtualenv (see my https://wilsonmar.github.io/python-install/)
+1. Install Python with Conda or virtualenv (see my<br />https://wilsonmar.github.io/python-install/)
 1. Create a folder to clone into (such as $HOME/Projects).
 1. Create virtual Python enviornment:
    <pre><strong>conda activiate py310
@@ -1447,9 +1447,9 @@ It's by "shadycuz" Levi Blaney, author of the <a target="_blank" href="https://l
    </strong></pre>
    Compare input and output I got:
 
-<font size="5" face="Courier New" >
-<table border="1" cellpadding="4" cellspacing="0">
+<table width="100%" border="1" cellpadding="4" cellspacing="0">
 <tr><th>CloudFormation template.yaml</th><th>Terraform HCL</th></tr>
+<font size="5" face="Courier New">
 <tr valign="top"><td><pre>Resources:
   HelloLambdaRole:
     Type: AWS::IAM::Role
@@ -1506,6 +1506,8 @@ References:
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html
    * https://dev.to/johntellsall/convert-cloudformation-to-terraform-in-two-seconds-6mm using CoPilot
    * https://stackoverflow.com/questions/64048258/how-to-convert-cloudformation-template-to-terraform-code
+   * https://www.stratoscale.com/blog/data-center/choosing-the-right-provisioning-tool-terraform-vs-aws-cloudformation/
+
 
 <a name="Licensing"></a>
 
