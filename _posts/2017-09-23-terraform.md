@@ -1449,7 +1449,7 @@ It's by "shadycuz" Levi Blaney, author of the <a target="_blank" href="https://l
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th>CloudFormation template.yaml</th><th>Terraform HCL</th></tr>
-<tr valign="top"><td><tt>Resources:
+<tr valign="top"><td>Resources:
   HelloLambdaRole:
     Type: AWS::IAM::Role
     Properties:
@@ -1473,7 +1473,7 @@ It's by "shadycuz" Levi Blaney, author of the <a target="_blank" href="https://l
           def my_handler(event, context):
             message = 'Hello Lambda World!'
             return message
-</tt></td><td><tt>resource "aws_iam_role" "hello_lambda_role" {
+</td><td>resource "aws_iam_role" "hello_lambda_role" {
   name = "HelloLambdaRole"
   assume_role_policy = {
     Statement = [
@@ -1499,7 +1499,7 @@ resource "aws_lambda_function" "hello_lambda_function" {
   return message"
   }
 }
-</tt></td></tr>
+</td></tr>
 </table>
 
 References:
