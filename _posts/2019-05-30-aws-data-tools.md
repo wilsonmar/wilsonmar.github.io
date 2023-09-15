@@ -1959,6 +1959,9 @@ https://www.educative.io/cloudlabs
 
 https://www.montclair.edu/newscenter/2022/10/31/study-finds-hate-speech-on-twitter-increased-following-elon-musk-takeover/
 
+https://github.com/mydatastack/google-analytics-to-s3
+
+
 ## More on Amazon #
 
 This is one of a series about Amazon:

@@ -1407,6 +1407,10 @@ dagger.io
 
 To get AWS certified, you’re going to need to know Cloud Formation. 
 
+References:
+   * https://www.stratoscale.com/blog/data-center/choosing-the-right-provisioning-tool-terraform-vs-aws-cloudformation/
+
+
 ### CF to TF Tool
 
 PROTIP: TOOL: <a target="_blank" href="https://github.com/DontShaveTheYak/cf2tf">cf2tf</a> 
@@ -1431,12 +1435,13 @@ It's by "shadycuz" Levi Blaney, author of the <a target="_blank" href="https://l
    </strong></pre>
 1. Download my_template.yaml CloudFormation files that creates an AWS resource stack:
    * https://leaherb.com/aws-lambda-tutorial-101/ describes creating a Lambda function using CF YAML.
+   * https://github.com/smoya/cloudformation-hello-world/blob/master/hello_world_demo.json creates a EC2 with VPC, subnet, Route, Security Group, IG, ELB, AutoScaling, CloudWatch alarms
    * https://reflectoring.io/getting-started-with-aws-cloudformation/ describes creating an ECS cluster running a Docker container using CF files from https://github.com/stratospheric-dev/stratospheric/tree/main/chapters/chapter-1/cloudformation
    * https://www.youtube.com/watch?v=YXVCdGyHDSk shows how to create a table with DBQueryPolicy within a pre-defined DynamoDB from https://gist.github.com/awssimplified/f96437a5a3beed65bf4782eb7b69afa4
 1. Validate the template within AWS:
    <pre><strong>aws cloudformation validate-template --template-body file://lambda_hello.yaml
    </strong></pre>
-1. Make sure it really creates the stack and resource within AWS
+1. Make sure it really creates the stack and resource within AWS:
    <pre>aws cloudformation create-stack --stack-name hello-lambda-stack \
   --template-body file://lambda_hello.yml \
   --capabilities CAPABILITY_NAMED_IAM 
@@ -1445,7 +1450,7 @@ It's by "shadycuz" Levi Blaney, author of the <a target="_blank" href="https://l
    <pre><strong>cd /;cd ~/Projects/cf2tf
    cf2tf lambda_hello.yaml >main.tf
    </strong></pre>
-   Compare input and output I got:
+1. Compare input and output I got:
 
 <table width="100%" border="1" cellpadding="4" cellspacing="0">
 <tr><th>CloudFormation template.yaml</th><th>Terraform HCL</th></tr>
