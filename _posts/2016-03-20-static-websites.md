@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Static websites (Jekyll)"
-excerpt: "Version controlled simplicity"
-tags: [website, builder, simplicity, jekyll]
-date: "2016-03-20"
+date: "2023-09-15"
 file: "static-websites"
+title: "Static websites"
+excerpt: "Version controlled simplicity using Jekyll and GitHub Pages compared with AWS S3 and CloudFront."
+tags: [website, builder, simplicity, jekyll]
 image:
 # feature: pic white hand key ownership 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622160/3b59e1b2-0585-11e6-9157-cc003fc0f90b.jpg
@@ -280,6 +280,195 @@ The built site has a <strong>Edit this</strong> link to the GitHub repo file.
 
 
    * https://github.com/petehunt/react-howto
+
+<hr />
+
+<a name="S3CloudFront"></a>
+
+## AWS S3 and CloudFront
+
+References:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=mls8tiiI3uc">React App on AWS S3 with Static Hosting + Cloudfront</a> | <a target="_blank" href="https://www.youtube.com/watch?v=06VgLTqNvU8">Practical AWS Projects</a> #1 by Be a Better Dev.
+   <br /><br />
+
+Here we see how many steps it takes to host a static website in an AWS S3 bucket and AWS CloudFront CDN.
+
+a. Using Console GUI
+b. Using CloudFormation
+c. Using Terraform
+
+<hr />
+
+1.  The website can be a simple HTML file or a set of HTML, CSS, Js, png images built using React.js and Webpack.
+
+1.  Package up the website into a zip file:
+
+    <pre>npm run build</pre>
+
+    <a target="_blank" href="https://www.youtube.com/watch?v=mls8tiiI3uc&t=4m34s">VIDEO</a>: Create S3 bucket with globally unique Bucket Name that's without spaces and uppercase letters.
+
+1.  In S3
+
+    https://s3.console.aws.amazon.com/s3/get-started?region=us-east-1
+
+1.  Click Create bucket.
+
+1.  For Bucket name, type a unique DNS-compliant name for your new bucket.
+    For Bucket name, type example-bucket-name.
+    For Region, choose US East (N. Virginia).
+
+1.  Determine what region (geographic location) to use.
+    The default is US East (N. Virginia).
+    
+    REMEMBER: The region can't be changed after the bucket is created.
+   
+    http://<em>bucket-name</em>.s3-website-<em>Region</em>.amazonaws.com
+
+    REMEMBER: The bucket name cannot be changed after the bucket is created.
+
+    http://3329v32.s3-website-us-east-1.amazonaws.com
+
+1.  Skip "Choose bucket".
+1.  Leave ACLs disabled in play/test. In production, enable ACLs so Objects in this bucket can be owned by other AWS accounts. Access to this bucket and its objects can be specified using ACLs.
+1.  Uncheck "Block all public access".
+1.  Check "I acknowledge that the current settings might result in this bucket and the objects within becoming public."
+1.  Bucket Versioning: leave disable.
+1.  Pass on Tags.
+1.  Default encryption: Select SSE-KMS for play/test use.
+1.  Choose from your AWS KMS keys. Create a KMS key for https://us-east-1.console.aws.amazon.com/kms/home?region=us-east-1#/kms/keys/create
+    * Key type: Symmetric (single key, not Asymmetric)
+    * Key usage: Encrypt and decrypt (not Generate and verify MAC).
+    * Advanced options:
+    * KMS
+    * Regionality: Single-Region key
+    * Next
+    * Alias: use the bucket name from above (3329v32).
+1.  Bucket Key: disable
+1.  Advanced setting:
+1.  Object lock: Disable (only works in versioned buckets.
+
+1.  Go to the S3 buckets page, and click your bucket’s name.
+
+1.  Choose the “Properties” tab.
+
+1.  Scroll down to the “Static website hosting” section at the bottom of the page, and click the "Edit" button.
+
+1.  On the “Edit static website hosting” page, choose “Enable” under the “Static website hosting” section. It’ll open up additional properties.
+
+1.  Keep the hosting type “Host a static website” selected.
+
+1.  In the “Index document” text field, give the file name you want to configure as a default file. When someone accesses your bucket website endpoint, this file will load (we will add this file later on). Write index.html in the text field, and remember that the file name is case-sensitive.
+
+1.  Click the “Save changes” button.
+
+1.  In the “Properties” tab, go to the “Static website hosting” section.
+
+1.  Find a bucket website endpoint. Try to open it in the new tab of the browser, we’ll get a 403 Forbidden page because our bucket is not publically accessible for now.
+
+    ### Upload site contents (HTML, CSS, etc.)
+
+1.  In the S3 buckets page, open your bucket.
+
+1.  Currently, the bucket is empty. Click the orange button named “Upload”, which takes you to the “Upload” page.
+
+1.  In the “Files and folders” section, click the “Add files” button, and select the index.html file from your system.
+
+1.  Click the “Upload” button at the end of the page. It shows the “Upload: status” page. Once the file is uploaded, click the “Close” button to return to the bucket.
+
+    Set Error Document and Public Access
+
+1.  Replace "Bucket-Name" with your bucket name:
+
+    <pre>{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::Bucket-Name/*"
+            ]
+        }
+    ]
+}
+    </pre>
+
+    ### Create a CloudFront Distribution
+
+    Define CloudFront Error Page and Cache Invalidation
+
+1.  Open the bucket created for CloudFront.
+
+1.  On the “Objects” page, click the “Create folder” button.
+
+1.  Write errors in the “Folder name” field and click the “Create folder” button.
+
+1.  Upload the error.html file to the errors folder.
+
+1.  Once uploaded, go to the “Properties” of the error.html file.
+
+1.  Copy the value of “Key” under the “Object overview” section. It should be errors/error.html.
+
+1.  open the CloudFront distribution.
+
+1.  Click the “Error pages” tab and the “Create custom error response” button.
+
+1.  On the next page, choose “403: Forbidden” from the drop-down of the “HTTP error code” field.
+
+1.  For the “Error caching minimum TTL” field, keep the default value (10) unchanged. This value defines the minimum time to live for the cached error on the edge node. After this, CloudFront will reaccess the origin to check if the issue has been resolved and the requested object is available.
+
+1.  Choose “Yes” for the “Customize error response” option. It’ll expand further fields.
+
+1.  In the text field of the “Response page path,” enter / and paste the value of the “Key” copied from the properties of the error.html object. The value should look like /errors/error.html.
+
+1.  Click "Create custom error response".
+
+1.  Wait for 4–5 minutes for a successful deployment. After that, try to access the wrong object with your domain name Your-CloudFront-domain-name/sample, and it’ll show the content of the error.html page.
+
+    Cache invalidation
+
+    This feature allows us to tell CloudFront which files not to cache at the edge locations. Whenever an object specified in this configuration is accessed, CloudFront fetches the fresh copy from the origin. To create an invalidation, perform the following steps:
+
+1.  Go to the “Invalidations” tab of your distribution.
+
+1.  Click the “Create invalidation” button.
+
+1.  On the next page, give the path of the object you want to invalidate cache behavior. One path should be defined per line.
+
+1.  Give the object’s path carefully. Invalidation can not be canceled once it is started.
+
+    Clean Up
+
+    Delete all the resources no longer used: buckets, CloudFront OAC, and a distribution.
+
+1.  Navigate to the CloudFront distributions, select your distribution, and click the “Disable” button.
+
+1.  Click the “Disable” button in the pop-up box.
+
+1.  Once the timestamp is updated in the “Last modified” column, select the distribution again and click the “Delete” button.
+
+1.  Click the “Delete” button in the pop-up box.
+
+1.  Select “Origin access” from the left panel once the distribution is deleted.
+
+1.  Select the relevant OAC, click the “Delete” button, and click the “Delete” button in the pop-up box.
+
+1.  Navigate to the S3 “Buckets” page, select the first bucket from the list, and click the “Empty” button.
+
+1.  On the next page, type “permanently delete” in the text field, and click the “Empty” button. This process may take time, depending on the size of your bucket.
+
+1.  Once the bucket is empty, select it again and click the “Delete” button. Type your bucket name in the text field on the “Delete bucket” page.
+
+1.  Click the “Delete bucket” button to delete the bucket.
+
+1.  Repeat these steps for the second bucket.
+
+
+<hr />
 
 ## Footnotes #
 

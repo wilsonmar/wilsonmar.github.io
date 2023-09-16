@@ -1407,6 +1407,17 @@ dagger.io
 
 To get AWS certified, you’re going to need to know Cloud Formation. 
 
+<a name="Licensing"></a>
+
+### Licensing open source for GUI
+
+Although Terraform is "open source", the Terraform GUI requires a license.
+
+   <a target="_blank" href="https://www.hashicorp.com/products/terraform-old/">
+   Paid Pro and Premium licenses of Terraform</a>
+   add version control integration, MFA security, HA, and other enterprise features.
+
+
 References:
    * https://www.stratoscale.com/blog/data-center/choosing-the-right-provisioning-tool-terraform-vs-aws-cloudformation/
 
@@ -1419,6 +1430,8 @@ It's by "shadycuz" Levi Blaney, author of the <a target="_blank" href="https://l
 
 1. Beware of the CF code refactoring that another has needed to do:
    https://medium.com/trackit/aws-cloudformation-to-terraform-translation-dacfc96e3994
+1. Review issues that remain open for cf2tf:
+   https://github.com/DontShaveTheYak/cf2tf/issues
 1. Install Python with Conda or virtualenv (see my<br />https://wilsonmar.github.io/python-install/)
 1. Create a folder to clone into (such as $HOME/Projects).
 1. Create virtual Python enviornment:
@@ -1435,7 +1448,7 @@ It's by "shadycuz" Levi Blaney, author of the <a target="_blank" href="https://l
    </strong></pre>
 1. Download my_template.yaml CloudFormation files that creates an AWS resource stack:
    * lambda_hello.yaml from https://leaherb.com/aws-lambda-tutorial-101/ describes creating a Lambda function using CF YAML.
-   * ec2_stack1.yaml from https://github.com/smoya/cloudformation-hello-world/blob/master/hello_world_demo.json creates a EC2 with VPC, subnet, Route, Security Group, IG, ELB, AutoScaling, CloudWatch alarms
+   * ec2_stack1.yaml from https://github.com/smoya/cloudformation-hello-world/blob/master/hello_world_demo.json creates a Docker in ECR (Elastic Container Registry), RDS MySQL database, EC2 with VPC, subnet, Route, Security Group, IG, ELB, AutoScaling, CloudWatch alarms
    * https://reflectoring.io/getting-started-with-aws-cloudformation/ describes creating an ECS cluster running a Docker container using CF files from https://github.com/stratospheric-dev/stratospheric/tree/main/chapters/chapter-1/cloudformation
    * https://www.youtube.com/watch?v=YXVCdGyHDSk shows how to create a table with DBQueryPolicy within a pre-defined DynamoDB from https://gist.github.com/awssimplified/f96437a5a3beed65bf4782eb7b69afa4
 1. Validate the template within AWS:
@@ -1508,6 +1521,18 @@ resource "aws_lambda_function" "hello_lambda_function" {
 1. Try one with more resources:
    <pre><strong>cf2tf ~/Projects/cf2tf/ec2_stack1.yaml >main.tf
    </strong></pre>
+1. Make it work:
+   <pre><strong>terraform init
+   terraform plan
+   terraform apply
+   </strong></pre>
+1. Verify the stack was created:
+   <pre><strong>aws cloudformation describe-stacks --stack-name hello-lambda-stack
+   </strong></pre>
+1. Delete the resources so you don't get charged:
+   <pre><strong>terraform destroy
+   </strong></pre>
+1. Conform resource deletion using AWS GUI:
 
 References:
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/GettingStarted.Walkthrough.html
@@ -1515,17 +1540,6 @@ References:
    * https://dev.to/johntellsall/convert-cloudformation-to-terraform-in-two-seconds-6mm using CoPilot
    * https://stackoverflow.com/questions/64048258/how-to-convert-cloudformation-template-to-terraform-code
    * https://www.stratoscale.com/blog/data-center/choosing-the-right-provisioning-tool-terraform-vs-aws-cloudformation/
-
-
-<a name="Licensing"></a>
-
-### Licensing open source for GUI
-
-Although Terraform is "open source", the Terraform GUI requires a license.
-
-   <a target="_blank" href="https://www.hashicorp.com/products/terraform-old/">
-   Paid Pro and Premium licenses of Terraform</a>
-   add version control integration, MFA security, HA, and other enterprise features.
 
 
 <hr />

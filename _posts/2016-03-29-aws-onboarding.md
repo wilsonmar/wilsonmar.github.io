@@ -40,7 +40,9 @@ B. What is the total max/average hours of effort by <strong>Administrators</stro
 
 Here are the steps to get ready to use AWS:
 
-
+1. Obtain a DNS domain name for experimentation using AWS Route53.
+1. Automate generation of new email accounts (with hostname as a variable) using AWS SES (Simple Email Service).
+1. Emulate user action for AWS account verification within AWS SES.
 
 <hr />
 
@@ -114,7 +116,9 @@ Secure that email address with <strong>multi-factor authentication</strong> with
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1694649967/aws-marketing-1205x224_uaojtf.png"><img alt="aws-marketing-1205x224.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1694649967/aws-marketing-1205x224_uaojtf.png"></a>
 
-   PROTIP: Right-click on each link to "open in a new tab". Also, <strong>bookmark</strong> this page in your browser for quicker frequent access. Quickly switch back and forth between this tutorial and other tabs by  pressing <strong>Command+`</strong> (backtick) to the left of the 1 key.
+   PROTIP: Right-click on each link to "open in a new tab". Then quickly switch back and forth between this tutorial and other browser tabs by pressing <strong>Command+`</strong> (backtick at the left of the 1 key). However, tabs set to full-screen are not accessible this way but by pressing shift+command+/ to see the menu to select the tab you want to switch to.
+
+   Also, <strong>bookmark</strong> this page in your browser for quicker frequent access. 
 
    ### Sign-up pages
 
