@@ -43,6 +43,7 @@ Journeys Northward on <a href="#CattleDrives">Cattle Drives</a> in the 1880s.
 
 BTW, finding where each site is located resulted in a great geography and historical lesson for me.
 
+
 ## References (Websites)
 
 * <a target="_blank" href="https://www.hmdb.org/">hmdb.org  = Historical Marker Database</a>
@@ -50,6 +51,9 @@ BTW, finding where each site is located resulted in a great geography and histor
 * <a target="_blank" href="https://www.flixist.com/a-rundown-of-every-major-theater-chains-premium-screen-options/">Premium screens in the US</a> (Imax, <a target="_blank" href="https://www.sprocketschool.org/wiki/List_of_70mm_film_exhibitors">70mm</a>, etc.)
 * <a target="_blank" href="https://rs.locationshub.com/Home/Index?page=1">locationshub.com/#featured-filming-locations</a>
 * <a target="_blank" href="https://www.wikiwand.com/en/List_of_World_Heritage_Sites_in_the_United_States">24 UNESCO World Heritage Sites in the United State</a>
+* <a target="_blank" href="https://www.wikiwand.com/en/List_of_National_Historic_Landmarks_in_the_United_States">2,500 National Historic Landmarks in the United States</a>
+<br /><br />
+
 
 ## Extreme corners
 
@@ -58,7 +62,7 @@ BTW, finding where each site is located resulted in a great geography and histor
    * NorthWest: <a target="_blank" href="https://en.wikipedia.org/wiki/Blaine%2C_Washington">Blaine, Washington</a> (where the Peace Arch international monument straddles the border of US and Canada)
    * NorthEast: <a target="_blank" href="https://en.wikipedia.org/wiki/Madawaska%2C_Maine">Madawaska, Maine</a> (87% speak French at home in this most northeastern town in the contiguous United States, next to the province of Quebec, Canada)
    * SouthEast: <a target="_blank" href="https://en.wikipedia.org/wiki/Key_West">Key West, Florida</a> ("Home of the Sunset" where you can see the <a target="_blank" href="https://eclipsewise.com/lunar/LEprime/2001-2100/LE2029Jun26Tprime.html">total lunar eclipse on June 26, 2029</a> [<a target="_blank" href="https://en.wikipedia.org/wiki/June_2029_lunar_eclipse">Wikipedia</a>])
-   * SouthWest: <a target="_blank" href="https://en.wikipedia.org/wiki/San_Ysidro%2C_San_Diego">San Ysidro, California</a> (the busiest border crossing in Western Hemisphere)
+   * SouthWest: <a target="_blank" href="https://en.wikipedia.org/wiki/San_Ysidro%2C_San_Diego">San Ysidro, California</a> (the busiest border crossing in the Western Hemisphere)
    <br /><br />
 
 
@@ -73,31 +77,19 @@ BTW, finding where each site is located resulted in a great geography and histor
 
 To deter reckless driving among Extreme Road-trippers, the <a target="_blank" href="https://www.guinnessworldrecords.com/news/2015/8/60-years-on-the-categories-that-guinness-world-records-no-longer-monitors-393758">Guinness World Records discontinued listing speed records in 1996</a>. But that didn't stop the <a target="_blank" href="https://allfiftyclub.com/members/record-holders-fast-to-50/">All Fifty States Club</a> website. 
 
-## The Rain Shadow divide
 
-Notice the transition between yellow to green down the middle of the country?
+## The US Rain Shadow Divide
+
+> Notice the transition between <strong>yellow to green</strong> down the middle of the country?
 
 <a target="_blank" href="https://www.youtube.com/watch?v=ki-hoy-3ea8&t=7m50s">VIDEO</a>: 80% of Americans live East of the <strong>98th Meridian</strong>, as shown by a green straight line overlaid this map from <a target="_blank" href="https://blackmarble.gsfc.nasa.gov/">NASA's BlackMarble satellite images of the nigh sky worldwide</a>:<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1672456116/usa-frontier-1920x1080_a2urp2.jpg"><img alt="usa-frontier-1920x1800.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1672456116/usa-frontier-1920x1080_a2urp2.jpg"></a>
 
-That green line down the middle of America defines the extent wet storms reach from the East. West of that is the "Rain Shadow" of limited moisture from the Pacific West blocked by the tall Rocky Mountains (West of <a target="_blank" href="https://www.google.com/maps/place/Denver,+CO/@39.7584783,-113.8531857,5z/">Denver, Colorado</a>) 
+That green line down the middle of America defines the extent wet storms reach from the East. West of that is the "Rain Shadow" of limited moisture from the Pacific West blocked by the tall Rocky Mountains (West of <a target="_blank" href="https://www.google.com/maps/place/Denver,+CO/@39.7584783,-113.8531857,5z/">Denver, Colorado</a>).
 
 When geologist John Westly Powell identified this phenomenon across the "pairies" in 1890, that natural line was at the 100th Meridian (vs. 98th today).
 Since then, "Climate change" continues to shift to the East. So expect less rain from Winnapeg (Canada) to Forth Worth, Ausin, and San Antonio Texas.
 Also impacted will be agriculture around Winnipeg (Manitoba, Canada), Fargo, Sioux Falls, Omaha, Lincoln, Wichita, Oklahoma City. 
-
-
-<a name="taxes"></a>
-
-## Taxes
-
-No sales tax is collected from residents within the states of Alaska, Delaware, Montana, New Hampshire, and Oregon.
-
-<a target="_blank" href="https://www.salestaxinstitute.com/sales_tax_faqs/out_of_state_retailer_collect_sales_tax">The Sales Tax Institute</a> notes: Residents from other states are often required by laws in their home state to pay out-of-state sales tax. Sellers in tax-free states still collect the sales tax for visitors and remit it to the buyer's home state if the vendor has a presence in the buyer's home state. Otherwise, out-of-state buyers are required to pay use tax themselves.
-
-Many don't pay the use tax to their home state even though there can be significant fines, on top of paying the tax, for not doing so.
-
-<a target="_blank" href="https://9to5mac.com/2023/07/24/sales-tax-holiday-apple-products/">Some states offer sales tax-free holidays</a> (for a limited time) to encourage spending on products that are considered to be of benefit to the state's economy. This typically occurs in August and early September for back-to-school supplies, books, computers, and clothing.
 
 
 <a name="freeways"></a>
@@ -121,6 +113,19 @@ In 2023 Ford and GM ironed out an agreement to enable their electric cars to use
 A map of stations offering <strong>Ethanol-free</strong> premium gasoline (at higher prices) is at <a target="_blank" href="https://www.pure-gas.org/extensions/map.html">pure-gas.org/extensions/map.html</a>. My wife used it to figure out where I should stop along a route from Florida to Montana. It was difficult because we had to figure out where I was on the website's map. She also had to calculate how much further I could go with remaining gas. Somehow we managed to stay married after that.
 
 
+<a name="taxes"></a>
+
+## Taxes
+
+No sales tax is collected from residents within the states of Alaska, Delaware, Montana, New Hampshire, and Oregon.
+
+<a target="_blank" href="https://www.salestaxinstitute.com/sales_tax_faqs/out_of_state_retailer_collect_sales_tax">The Sales Tax Institute</a> notes: Residents from other states are often required by laws in their home state to pay out-of-state sales tax. Sellers in tax-free states still collect the sales tax for visitors and remit it to the buyer's home state if the vendor has a presence in the buyer's home state. Otherwise, out-of-state buyers are required to pay use tax themselves.
+
+Many don't pay the use tax to their home state even though there can be significant fines, on top of paying the tax, for not doing so.
+
+<a target="_blank" href="https://9to5mac.com/2023/07/24/sales-tax-holiday-apple-products/">Some states offer sales tax-free holidays</a> (for a limited time) to encourage spending on products that are considered to be of benefit to the state's economy. This typically occurs in August and early September for back-to-school supplies, books, computers, and clothing.
+
+
 ## National Parks
 
 America's greatest treasure is the <a target="_blank" href="https://www.wikiwand.com/en/National_Park_Service">63</a> <a target="_blank" href="https://www.nps.gov/index.htm">national parks managed by the U.S. National Park Service.
@@ -139,9 +144,10 @@ The <a target="_blank" href="https://www.amazon.com/US-National-Parks-Map-22-5/d
 <img alt="map us_landmarks_roadtrip_v01_683x396" width="683" height="396" src="https://cloud.githubusercontent.com/assets/300046/14229554/5531ac58-f8f3-11e5-8ce4-c01a5289358e.png"></a>
 
 The above route through major landmarks in the lower 48 states was optimized for least driving time across 6,813 miles, using Google Maps API driven by <a target="_blank" href="
-https://github.com/wilsonmar/Data-Analysis-and-Machine-Learning-Projects/blob/master/optimal-road-trip/Computing%20the%20optimal%20road%20trip%20across%20the%20U.S..ipynb">Machine Learning algorithms run in a Python Jupyter Notebook</a> as <a target="_blank" href="http://www.randalolson.com/2015/03/08/computing-the-optimal-road-trip-across-the-u-s/">described by Randal S. Olson</a>.
+https://github.com/wilsonmar/Data-Analysis-and-Machine-Learning-Projects/blob/master/optimal-road-trip/Computing%20the%20optimal%20road%20trip%20across%20the%20U.S..ipynb">Machine Learning algorithms run in a Python Jupyter Notebook</a> as <a target="_blank" href="http://www.randalolson.com/2015/03/08/computing-the-optimal-road-trip-across-the-u-s/">described by Randal S. Olson</a>. See <a target="_blank" href="https://www.upwork.com/resources/ai-road-trip">How to USE AI to Plan a Road Trip</a>.
 
 <a target="_blank" href="https://rvlife.com/national-park-camping-reservations/">CAUTION</a>: as COVID lockdowns relax, reservations are at all-time highs at <a target="_blank" href="https://www.recreation.gov/">recreation.gov/</a>, <a target="_blank" href="https://koa.com/">KOA</a>, <a target="_blank" href="https://www.reserveamerica.com/">ReserveAmerica.com</a>, and state camping sites.
+
 
 <a name="Mighty5"></a>
 
@@ -163,7 +169,7 @@ When the Civil War ended in 1865, The Confederacy included the 11 Southern state
 <img width="600" height="300" alt="map-us-states-civil-war-323x227-c64.jpg"
 src="https://cloud.githubusercontent.com/assets/300046/16953089/fc8c99ba-4d88-11e6-9845-7b4120243ea4.jpg">
 
-The 5 "Border States" were Maryland, Delaware, West Virginia, Kentucky, and Missouri, where "brother fought brother".
+The 5 "Border States" were Maryland, Delaware, West Virginia, Kentucky, and Missouri (where "brother fought brother").
 
 States in white (Oklahoma) did not fight for either side.
 Idaho <a target="_blank" href="https://www.wikiwand.com/en/Idaho_in_the_American_Civil_War">
@@ -189,8 +195,9 @@ The planned route of the courageous <a target="_blank" href="https://www.history
 
 The Woolworth lunch counter in downtown Greensboro, NC is now a <a target="_blank" href="https://www.sitinmovement.org/">museum</a>.
 
-The ride stopped on May 14 in Anniston, Alabama where the bus was burnt by segregationists. 
+The ride stopped on May 14 in Anniston, Alabama where their bus was burnt by segregationists. 
 
+<hr />
 
 <a name="ME"></a>
 
