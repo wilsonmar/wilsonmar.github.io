@@ -1128,13 +1128,15 @@ There are several secrets manager apps which provide both a CLI and GUI app on m
    * 1Password (paid app)
    * <a target="_blank" href="https://docs.ansible.com/ansible/latest/vault_guide/vault.html">Ansible Vault</a> from RedHat
    * <a target="_blank" href="https://bitwarden.com/help/cli/">BitWarden</a>
-   * <a target="_blank" href="https://www.gnupg.org/">gcrypt</a> is a <a target="_blank" href="https://www.gnupg.org/">GnuPG</a> extension to encrypt files in a Git repository.
-   * <a target="_blank" href="https://keybase.io/team/commandline">Keybase</a> [<a target="_blank" href="https://book.keybase.io/docs">docs</a>]
+   * <a target="_blank" href="https://www.gnupg.org/">gcrypt</a> is a <a target="_blank" href="https://www.gnupg.org/">GnuPG</a> extension to encrypt specific files in a Git repository.
+   * <a target="_blank" href="https://keybase.io/team/commandline">Keybase</a> encrypts the <strong>entire repo</strong>, but it does it in a convenient way [<a target="_blank" href="https://book.keybase.io/docs">docs</a>]
    * Keepass
    * LastPass
    * Dashlane
    * <a target="_blank" href="https://wilsonmar.github.io/hashicorp-vault">HashiCorp Vault</a> (closed source)
    <br /><br />
+
+<hr />
 
 ### Keybase
 
@@ -1265,20 +1267,16 @@ Or add it as a remote to an existing repo with:
   git remote add origin keybase://private/scoates/config
     </pre>
 
-https://delitescere.medium.com/combining-an-existing-git-repo-with-keybase-encrypted-git-2841609166f0
-
-<a target="_blank" href="https://www.youtube.com/watch?v=4V-7KnhcrbY">VIDEO</a>: https://github.com/pstadler/keybase-gpg-github
-
-https://www.youtube.com/watch?v=uN0nXdBQxMQ
-
-<a target="_blank" href="https://www.youtube.com/watch?v=ZR95aX8pg58">VIDEO</a>: Encrypted Git Repositories Using Keybase
-
-https://www.youtube.com/watch?v=KhROpuxHyH8
-
-https://www.garrickadenbuie.com/blog/signed-verified-git-commits-keybase-rstudio/
-
-https://www.alwaysrightinstitute.com/keybase-git/
-
+   References:
+   * https://delitescere.medium.com/combining-an-existing-git-repo-with-keybase-encrypted-git-2841609166f0
+   * <a target="_blank" href="https://www.youtube.com/watch?v=4V-7KnhcrbY">VIDEO</a>: https://github.com/pstadler/keybase-gpg-github
+   * https://www.youtube.com/watch?v=uN0nXdBQxMQ
+   * <a target="_blank" href="https://www.youtube.com/watch?v=ZR95aX8pg58">VIDEO</a>: Encrypted Git Repositories Using Keybase
+   * https://www.youtube.com/watch?v=KhROpuxHyH8
+   * https://www.garrickadenbuie.com/blog/signed-verified-git-commits-keybase-rstudio/
+   * https://www.alwaysrightinstitute.com/keybase-git/
+   * https://stephenreescarter.net/signing-git-commits-with-a-keybase-gpg-key/
+   * https://www.ahmadnassri.com/blog/github-gpg-keybase-pgp/ from 2015 when Keybase was new.
 
 
 ### gcrypt

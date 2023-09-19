@@ -6,17 +6,22 @@ title: Please send me an appointment
 tags: [calendar, contact, Jekyll]
 comments: true
 image:
-  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1693920053/calendar-3160x546_p8uavv.png
+# calendar-1574x338.png
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1695143778/calendar-1574x338_wznasx.png
   credit: Wilson Mar
-  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1693920053/calendar-3160x546_p8uavv.png
+  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1695143778/calendar-1574x338_wznasx.png
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
 
-To quickly identify when is 9am-5pm working times around the world I use the <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680358479/instant-2206x426_ehe1zl.jpg">graphic at the top of this page</a> (created from <a target="_blank" href="https://docs.google.com/spreadsheets/d/1VXBvh6cGmvjiNlbu1GxfPB75bA0RPr5G/edit?usp=share_link&ouid=115769195423285623664&rtpof=true&sd=true">my Excel sheet</a>, based on <a target="_blank" href="https://www.timeanddate.com/worldclock/meeting.html">timeanddate.com</a>). To toggle display of the list of topics at the upper-right corner, click "OVERVIEW".
+To quickly identify when is 9am-5pm working times around the world I use the <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680358479/instant-2206x426_ehe1zl.jpg">graphic at the top of this page</a> (created from <a target="_blank" href="https://docs.google.com/spreadsheets/d/1VXBvh6cGmvjiNlbu1GxfPB75bA0RPr5G/edit?usp=share_link&ouid=115769195423285623664&rtpof=true&sd=true">my Excel sheet</a>.
+
+Click "OVERVIEW" at the upper-right to toggle that menu to see the rest of the chart.
 
 WARNING: Adjustment is needed for Summer Time (Daylight Savings) in some countries.
+
+Based on <a target="_blank" href="https://www.timeanddate.com/worldclock/meeting.html">timeanddate.com</a> and <a target="_blank" href="https://www.worldtimebuddy.com/">WorldTimeBuddy</a>). 
 
 NOTE: I am usually up by 6 am Mountain (5 am Pacific Time, 7 am Central, 8 am Eastern).
 
