@@ -1938,20 +1938,12 @@ https://www.youtube.com/watch?v=tykcCf-Zz1M
 Top AWS Services A Data Engineer Should Know
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=VtzvF17ysbc">What is Data Pipeline</a>
-    * https://www.youtube.com/watch?v=7Xstz6Qo-pM Glue vs EMR
-
-Coursera courses:
-
-1. Data Collection Systems
-
-2. Storage Systems and Data Management
-
-3. Data Processing
-
-4. Security in Data Analytics
+   * https://www.youtube.com/watch?v=7Xstz6Qo-pM Glue vs EMR
 
 
 ## Hands-on labs
+
+https://cloudacademy.com/learning-paths/aws-certified-data-analytics-specialty-das-c01-certification-preparation-for-aws-1804/
 
 https://registry.terraform.io/namespaces/terraform-aws-modules
 
