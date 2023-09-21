@@ -1,6 +1,6 @@
 ---
 layout: page
-date: "2023-09-03"
+date: "2023-09-19"
 file: "calendar"
 title: Please send me an appointment
 tags: [calendar, contact, Jekyll]
@@ -21,11 +21,13 @@ Click "OVERVIEW" at the upper-right to toggle that menu to see the rest of the c
 
 WARNING: Adjustment is needed for Summer Time (Daylight Savings) in some countries.
 
-Based on <a target="_blank" href="https://www.timeanddate.com/worldclock/meeting.html">timeanddate.com</a> and <a target="_blank" href="https://www.worldtimebuddy.com/">WorldTimeBuddy</a>). 
+Based on <a target="_blank" href="https://www.timeanddate.com/worldclock/meeting.html">timeanddate.com</a> and <a target="_blank" href="https://www.worldtimebuddy.com/">WorldTimeBuddy</a>.
 
-NOTE: I am usually up by 6 am Mountain (5 am Pacific Time, 7 am Central, 8 am Eastern).
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1695260529/TimeZonesMap-2541x1578_utytfs.jpg"><img alt="TimeZonesMap-2541x1578.jpeg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1695260529/TimeZonesMap-2541x1578_utytfs.jpg"><br /><em>Click on map for full screen</em></a>
 
 ## Talk to me!
+
+NOTE: I am usually up by 6 am Mountain (5 am Pacific Time, 7 am Central, 8 am Eastern).
 
 1. Pick an open time using this as the basis for creating a meeting using your own calendar system:
 
