@@ -6,16 +6,16 @@ title: Please send me an appointment
 tags: [calendar, contact, Jekyll]
 comments: true
 image:
-# calendar-1574x338.png
-  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1695143778/calendar-1574x338_wznasx.png
+# calendar-1786x373.png
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1695324032/calendar-1786x373_esbzqj.png
   credit: Wilson Mar
-  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1695143778/calendar-1574x338_wznasx.png
+  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1695324032/calendar-1786x373_esbzqj.png
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
 
-To quickly identify when is 9am-5pm working times around the world I use the <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680358479/instant-2206x426_ehe1zl.jpg">graphic at the top of this page</a> (created from <a target="_blank" href="https://docs.google.com/spreadsheets/d/1VXBvh6cGmvjiNlbu1GxfPB75bA0RPr5G/edit?usp=share_link&ouid=115769195423285623664&rtpof=true&sd=true">my Excel sheet</a>.
+To quickly identify working times around the world, I created <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1695324032/calendar-1786x373_esbzqj.png">the graphic above</a> (from <a target="_blank" href="https://docs.google.com/spreadsheets/d/1VXBvh6cGmvjiNlbu1GxfPB75bA0RPr5G/edit?usp=share_link&ouid=115769195423285623664&rtpof=true&sd=true">my Excel sheet</a>).
 
 Click "OVERVIEW" at the upper-right to toggle that menu to see the rest of the chart.
 
