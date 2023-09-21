@@ -19,11 +19,12 @@ To quickly identify when is 9am-5pm working times around the world I use the <a 
 
 Click "OVERVIEW" at the upper-right to toggle that menu to see the rest of the chart.
 
-WARNING: Adjustment is needed for Summer Time (Daylight Savings) in some countries.
-
-Based on <a target="_blank" href="https://www.timeanddate.com/worldclock/meeting.html">timeanddate.com</a> and <a target="_blank" href="https://www.worldtimebuddy.com/">WorldTimeBuddy</a>.
+WARNING: Adjustment is needed for Summer Time (Daylight Savings) in many countries.
+Some countries (Greenland, China, etc.) use a single time zone that spans a large area.
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1695260529/TimeZonesMap-2541x1578_utytfs.jpg"><img alt="TimeZonesMap-2541x1578.jpeg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1695260529/TimeZonesMap-2541x1578_utytfs.jpg"><br /><em>Click on map for full screen</em></a>
+
+There are also <a target="_blank" href="https://www.timeanddate.com/worldclock/meeting.html">timeanddate.com</a> and <a target="_blank" href="https://www.worldtimebuddy.com/">WorldTimeBuddy</a>.
 
 ## Talk to me!
 
