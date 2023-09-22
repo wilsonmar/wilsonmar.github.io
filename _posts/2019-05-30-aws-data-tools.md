@@ -382,6 +382,10 @@ Now let's dive into the details of each of these categories, starting with Gover
 
 1.  Instead of using models created by Amazon, custom models can be created using Amazon's <strong>SageMaker</strong> service (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html">SageMaker</a>) running Tensorflow and other Machine Learning frameworks.
 
+    <a target="_blank" href="https://learning.oreilly.com/library/view/data-wrangling-on/9781801810906/B17801_04.xhtml#_idTextAnchor077">SageMaker Data Wrangler</a>, a web UI-based service that integrates with SageMaker Studio for data scientists building machine learning pipelines that build, train, and deploy machine learning models. It comes with pre-configured data transformations to impute missing data with means or medians, one-hot encoding, and time series-specific transformers that are required for preparing data for machine learning.
+
+    AWS also provides AWS Glue DataBrew.
+
     <a name="Flow_Embeddings"></a>
 
 1.  To take advantage of LLMs (Large Language Models), custom data can be integrated by reference to <strong>Embeddings</strong> (vectors) created by Amazon's <strong>Open Search</strong> service, which uses a "K-nearest neighbor" algorithm to find the closest match to a query.
@@ -1939,7 +1943,10 @@ Top AWS Services A Data Engineer Should Know
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=VtzvF17ysbc">What is Data Pipeline</a>
    * https://www.youtube.com/watch?v=7Xstz6Qo-pM Glue vs EMR
+   <br /><br />
 
+* <a target="_blank" href="https://learning.oreilly.com/library/view/data-wrangling-on/9781801810906/">Data Wrangling on AWS</a> by Navnit Shukla, Sankar M, Sam Palani
+on Packt Publishing July 2023
 
 ## Hands-on labs
 

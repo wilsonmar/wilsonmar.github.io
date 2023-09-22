@@ -563,3 +563,5 @@ Put a video on a Powerpoint slide deck - Add your personal touch as a presenter
 
 https://realpython.com/how-to-make-programming-videos/
 
+https://fireship.io/lessons/ffmpeg-useful-techniques/
+FFmeg = Fast Forward Motion picture Experts Group
