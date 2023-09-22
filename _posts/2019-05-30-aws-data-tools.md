@@ -382,7 +382,9 @@ Now let's dive into the details of each of these categories, starting with Gover
 
 1.  Instead of using models created by Amazon, custom models can be created using Amazon's <strong>SageMaker</strong> service (service prefix: <a target="_blank" href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html">SageMaker</a>) running Tensorflow and other Machine Learning frameworks.
 
-    <a target="_blank" href="https://learning.oreilly.com/library/view/data-wrangling-on/9781801810906/B17801_04.xhtml#_idTextAnchor077">SageMaker Data Wrangler</a>, a web UI-based service that integrates with SageMaker Studio for data scientists building machine learning pipelines that build, train, and deploy machine learning models. It comes with pre-configured data transformations to impute missing data with means or medians, one-hot encoding, and time series-specific transformers that are required for preparing data for machine learning.
+    <a target="_blank" href="https://learning.oreilly.com/library/view/data-wrangling-on/9781801810906/B17801_04.xhtml#_idTextAnchor077">SageMaker Data Wrangler</a>, a web UI-based service that integrates with SageMaker Studio for data scientists building machine learning pipelines that build, train, and deploy machine learning models. It comes with pre-configured data transformations to impute missing data with means or medians, one-hot encoding, and time series-specific transformers that are required for preparing data for machine learning. SageMaker Data Wrangler also provides a visual interface to create custom transformations using Python code. SageMaker Data Wrangler can be used to prepare data for training and inference with Amazon SageMaker, Amazon Redshift, Amazon Aurora, and Amazon Athena, as well as Snowflake.
+
+    The open-source version of Data Wrangler outside SageMaker Studio has now been renamed AWS SDK for Pandas.
 
     AWS also provides AWS Glue DataBrew.
 
