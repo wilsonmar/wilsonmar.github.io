@@ -329,7 +329,7 @@ Profile [py-ec2-1] initialized successfully.
 
 6. Create a new skill <strong>project</strong> from the built-in "Hello World" sample or from one of the supported open source templates by using the --template option. The newly created skill project folder will contain all necessary files to deploy it with minimal changes. For more information, see new command.
 
-   <pre><strong>ask new</strong</pre>
+   <pre><strong>ask new</strong></pre>
 
    See https://developer.amazon.com/docs/smapi/ask-cli-command-reference.html#new-command
 
