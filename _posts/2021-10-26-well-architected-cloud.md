@@ -411,7 +411,7 @@ Video tutorials on third-party subscription sites:
 
    * https://www.xtremelabs.io/xtremelabs-now-offers-aws-well-architected-labs/
    provides AWS user credentials that are managed and maintained by XtremeLabs.
-   * <a target="_blank" href="hhttps://www.linkedin.com/learning/paths/master-the-aws-well-architected-framework">On LinkedIn Learning: "Master the AWS Well-Architected Framework" series</a> by Mark Wilkins (in 2020)
+   * <a target="_blank" href="https://www.linkedin.com/learning/paths/master-the-aws-well-architected-framework">On LinkedIn Learning: "Master the AWS Well-Architected Framework" series</a> by Mark Wilkins (in 2020)
    * <a target="_blank" href="https://acloudguru.com/course/mastering-the-aws-well-architected-framework">On ACloudGuru: "Mastering the AWS Well-Architected Framework"</a> by <a target="_blank" href="https://www.linkedin.com/in/marknca/">Mark Nunnikhoven</a>
    <br /><br />
 

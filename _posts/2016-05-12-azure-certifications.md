@@ -396,10 +396,16 @@ https://docs.microsoft.com/en-us/learn/azure/
 
 <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/">https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator</a> are the labs used during Microsoft's live classes. Its source is at <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-104-MicrosoftAzureAdministrator">https://github.com/MicrosoftLearning/AZ-104-MicrosoftAzureAdministrator</a> 
 
-Manage Azure <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">identities and governance</a>:
+> Prerequisites for Azure administrators
+
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-administrator-prerequisites/">Microsoft's LEARNING PATH</a>
+
+> Manage Azure <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">identities and governance</a>:
 
    * https://wilsonmar.github.io/azure-cloud-onramp/
-   * <a target="_blank" href="hhttps://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Demos/01%20-%20Administer%20Identity.html">Demo 01: Administer Identity</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-manage-identities-governance/">Microsoft's LEARNING PATH</a>
+
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Demos/01%20-%20Administer%20Identity.html">Demo 01: Administer Identity</a>
    * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Azure_AD_Identities.html">Lab 01: Manage Azure Active Directory Identities</a>
    * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html">Lab 01: Manage Microsoft Entra ID Identities (rebranding test)</a>
 
@@ -419,21 +425,27 @@ Manage Azure <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-on
    * Lab 09a: Implement Web Apps
    * Lab 09b: Implement Azure Container Instances
 
-* Implement and manage <a target="_blank" href="https://wilsonmar.github.io/azure-storage/">storage</a>:
+> Implement and manage <a target="_blank" href="https://wilsonmar.github.io/azure-storage/">storage</a>:
 
    * https://wilsonmar.github.io/azure-storage/
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-administrator-prerequisites/">Microsoft's LEARNING PATH</a>
+
    * Demo 07: Administer Azure Storage
    * Lab 07: Manage Azure storage
    
-* Deploy and manage <a target="_blank" href="https://wilsonmar.github.io/azure-compute/">Azure compute</a> resources:
+> Deploy and manage <a target="_blank" href="https://wilsonmar.github.io/azure-compute/">Azure compute</a> resources:
 
    * https://wilsonmar.github.io/azure-compute/
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-manage-storage/">Microsoft's LEARNING PATH</a>
+
    * Demo 08: Administer Azure Virtual Machines
    * Lab 08: Manage Virtual Machines
 
    * Demo 09: Administer PaaS Compute Options
 
-* Configure and manage <a target="_blank" href="https://wilsonmar.github.io/azure-networking/">virtual networking</a>:
+> Configure and manage <a target="_blank" href="https://wilsonmar.github.io/azure-networking/">virtual networking</a>:
+
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-manage-compute-resources/">Microsoft's LEARNING PATH</a>
 
    * Demo 04: Administer Virtual Networking
    * Lab 04: Implement Virtual Networking
@@ -444,7 +456,9 @@ Manage Azure <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-on
    * Demo 06: Administer Network Traffic Management
    * Lab 06: Implement Traffic Management
 
-* <a target="_blank" href="https://wilsonmar.github.io/azure-monitoring/">Monitor</a> and back up Azure resources:
+> <a target="_blank" href="https://wilsonmar.github.io/azure-monitoring/">Monitor</a> and back up Azure resources:
+
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-manage-virtual-networks/">Microsoft's LEARNING PATH</a>
 
    * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Demos/10%20-%20Administer%20Data%20Protection.html">Demo 10: Administer Data Protection</a>
    * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_10-Implement_Data_Protection.html">Lab 10: Administer Data Protection</a>
@@ -467,6 +481,8 @@ A search of Microsoft Learn for "Administrator" and "Azure" <a target="_blank" h
 Video Lectures:
 
 1. <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg>11 hour VIDEO</a>: <a target="_blank" href="https://www.freecodecamp.org/news/azure-administrator-certification-az-104-pass-the-exam-with-this-free-11-hour-course/">course on FreeCodeCamp.org</a> <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg" title="May 3, 2021">on YouTube</a> by Andrew Brown offering his <a target="_blank" href="https://www.exampro.co/az-104">ExamPro</a>.
+
+   PROTIP: I got a YouTube subscription to download videos for watching offline, so I can listen while I drive through spotty cell coverage areas.
 
 1. DEFUNCT: <a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course">Tim Warner and Mike Pfeiffer's CloudSkills.io</a> after collecting $1,000 from students before shutting down in 2021.
 
@@ -1115,7 +1131,9 @@ Lab 02: Implement task processing logic by using Azure Functions </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_12.md"> Lab 12: Enhance a web application by using the Azure Content Delivery Network </a>
 <br /></br />
 
-<a target="_blank" href="https://www.aguidetocloud.com/full-courses/az204fullcourse">5-hour AGuideToCloud video class by Susanth Sutheesh</a>
+* <a target="_blank" href="https://www.aguidetocloud.com/full-courses/az204fullcourse">5-hour AGuideToCloud video class by Susanth Sutheesh</a>
+
+* https://www.coursera.org/professional-certificates/azure-developer-associate
 
 Questions:
    * https://www.whizlabs.com/learn/course/microsoft-azure-az-204/

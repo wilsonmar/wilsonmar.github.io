@@ -238,7 +238,7 @@ Guha Arumugam (<a target="_blank" href="https://twitter.com/SF_Guha">@SF_Guha</a
    * <a target="_blank" href="http://guhasdevforce.com/">guhasdevforce.com</a> since May 2016 
 
 Harshit Pandey, Principal Technical Architect at Intuitive Surgical, previously Technical Architect at Salesforce.com Developer Relations Team:
-   * <a target="_blank" href="hhttps://github.com/mailtoharshit/awesome-salesforce">https://github.com/mailtoharshit/awesome-salesforce</a> curated list of delightful Salesforce Platform Resources
+   * <a target="_blank" href="https://github.com/mailtoharshit/awesome-salesforce">https://github.com/mailtoharshit/awesome-salesforce</a> curated list of delightful Salesforce Platform Resources
    * <a target="_blank" href="http://www.oyecode.com/">Oyecode.com</a>
    * Built [Trailhead](https://developer.salesforce.com/trailhead) while he was at Salesforce
    * <a target="_blank" href="https://about.me/harshit.pandey">https://about.me/harshit.pandey</a>

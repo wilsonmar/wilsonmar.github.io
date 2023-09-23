@@ -454,7 +454,7 @@ Paid pre-designed websites :
    like <a target="_blank" href="http://webdesign.tutsplus.com/articles/a-web-designers-site-launch-checklist-including-portable-formats--webdesign-11107">
    this</a>.
 
-<a target="_blank" href="hhttps://jamstack.training/">https://jamstack.training</a>
+<a target="_blank" href="https://jamstack.training/">https://jamstack.training</a>
 Tamas Piros offers free
 
    * Introduction to the JAMstack - Learn the fundamentals of the JAMstack.

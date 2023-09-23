@@ -1984,7 +1984,7 @@ In addition to "museums", also included here are grand natural sights:
    * Amusement parks
    * State Fairs
    * <a target="_blank" href="https://www.tripadvisor.com/TravelersChoice">Tripadvisor Excellence award winners</a>
-   * Most scenic restaurants according to <a target="_blank" href="hhttps://www.opentable.com/lists/most-scenic-restaurants-2018">OpenTable</a>, Zagat, Michelin
+   * Most scenic restaurants according to <a target="_blank" href="https://www.opentable.com/lists/most-scenic-restaurants-2018">OpenTable</a>, Zagat, Michelin
 
 ## Technical Footnote #
 

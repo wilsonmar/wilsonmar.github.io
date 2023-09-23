@@ -333,7 +333,7 @@ Under ideal conditions, latency over networks are limited by speed of light trav
 
 To estimate distance between terrestial locations, use <a target="_blank" href="https://www.daftlogic.com/projects-google-maps-distance-calculator.htm">Distance Calculator website</a>
 
-TUTORIAL: Qwiklabs <a target="_blank" href="https://www.qwiklabs.com/focuses/1282">Network Performance Testing</a> tutorial provides step-by-step instructions for obtaining timings between regions. It sets up one network with five subnetworks in different regions and a VM in each subnetwork. Utilities ping, <a target="_blank" href="hhttps://en.wikipedia.org/wiki/Iperf">iperf</a>. 
+TUTORIAL: Qwiklabs <a target="_blank" href="https://www.qwiklabs.com/focuses/1282">Network Performance Testing</a> tutorial provides step-by-step instructions for obtaining timings between regions. It sets up one network with five subnetworks in different regions and a VM in each subnetwork. Utilities ping, <a target="_blank" href="https://en.wikipedia.org/wiki/Iperf">iperf</a>. 
 
 Alternately, the <a target="_blank" href="https://github.com/traviscross/mtr">open-sourced</a> Linux/Unix utility <a target="_blank" href="https://ss64.com/bash/mtr.html">mtr</a> (<a target="_blank" href="https://www.bitwizard.nl/mtr/">My Traceroute</a>, originally called Matt's traceroute) combines Ping and Traceroute functions<a target="_blank" href="https://support.8x8.com/us/support-services/support/Download_WinMTR_Ping_and_Traceroute_Tool">*</a> <a target="_blank" href="https://www.linode.com/docs/networking/diagnostics/diagnosing-network-issues-with-mtr/">brew install mtr</a> is available for macOS to <tt>sudo mtr</tt>.
 
