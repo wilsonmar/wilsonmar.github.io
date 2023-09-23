@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-09-13"
+date: "2023-09-22"
 file: "azure-certifications"
 title: "Azure (Microsoft cloud) certifications"
 excerpt: "Microsoft provides free hands-on (gamified) tutorials and free time"
@@ -392,19 +392,69 @@ https://github.com/MicrosoftLearning/AZ-103-MicrosoftAzureAdministrator
 
 Be designated a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-administrator/">Microsoft Certified: Azure Administrator Associate</a> by passing one test.
 
-Implement, monitor, and maintain Azure solutions including
-compute, storage, network, and security resources
+https://docs.microsoft.com/en-us/learn/azure/
 
-* Manage Azure identities and governance; 
-* implement and manage storage; 
-* deploy and manage Azure compute resources; 
-* configure and manage <a target="_blank" href="https://wilsonmar.github.io/azure-networking/">virtual networking</a>;
-* <a target="_blank" href="https://wilsonmar.github.io/azure-monitoring/">monitor</a> and back up Azure resources
+<a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/">https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator</a> are the labs used during Microsoft's live classes. Its source is at <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-104-MicrosoftAzureAdministrator">https://github.com/MicrosoftLearning/AZ-104-MicrosoftAzureAdministrator</a> 
+
+Manage Azure <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">identities and governance</a>:
+
+   * https://wilsonmar.github.io/azure-cloud-onramp/
+   * <a target="_blank" href="hhttps://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Demos/01%20-%20Administer%20Identity.html">Demo 01: Administer Identity</a>
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Azure_AD_Identities.html">Lab 01: Manage Azure Active Directory Identities</a>
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html">Lab 01: Manage Microsoft Entra ID Identities (rebranding test)</a>
+
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Demos/02%20-%20Administer%20Governance%20and%20Compliance.html">Demo 02: Administer Governance and Compliance</a>
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html">Lab 01: Manage Azure Active Directory Identities</a>
+
+   * Lab 02a: Manage Subscriptions and RBAC
+   * Lab 02a: Manage Subscriptions and RBAC (rebranding test)
+   * Lab 02b: Manage Governance via Azure Policy
+
+   * Demo 03: Administer Azure Resources
+   * Lab 03a: Manage Azure resources by Using the Azure Portal
+   * Lab 03b: Manage Azure resources by Using ARM Templates
+   * Lab 03c: Manage Azure resources by Using Azure PowerShell (optional)
+   * Lab 03d: Manage Azure resources by Using Azure CLI (optional)
+
+   * Lab 09a: Implement Web Apps
+   * Lab 09b: Implement Azure Container Instances
+
+* Implement and manage <a target="_blank" href="https://wilsonmar.github.io/azure-storage/">storage</a>:
+
+   * https://wilsonmar.github.io/azure-storage/
+   * Demo 07: Administer Azure Storage
+   * Lab 07: Manage Azure storage
+   
+* Deploy and manage <a target="_blank" href="https://wilsonmar.github.io/azure-compute/">Azure compute</a> resources:
+
+   * https://wilsonmar.github.io/azure-compute/
+   * Demo 08: Administer Azure Virtual Machines
+   * Lab 08: Manage Virtual Machines
+
+   * Demo 09: Administer PaaS Compute Options
+
+* Configure and manage <a target="_blank" href="https://wilsonmar.github.io/azure-networking/">virtual networking</a>:
+
+   * Demo 04: Administer Virtual Networking
+   * Lab 04: Implement Virtual Networking
+
+   * Demo 05: Administer Intersite Connectivity
+   * Lab 05: Implement Intersite Connectivity
+
+   * Demo 06: Administer Network Traffic Management
+   * Lab 06: Implement Traffic Management
+
+* <a target="_blank" href="https://wilsonmar.github.io/azure-monitoring/">Monitor</a> and back up Azure resources:
+
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Demos/10%20-%20Administer%20Data%20Protection.html">Demo 10: Administer Data Protection</a>
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_10-Implement_Data_Protection.html">Lab 10: Administer Data Protection</a>
+
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Demos/11%20-%20Administer%20Monitoring.html">Demo 11: Administer Monitoring</a>
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_11-Implement_Monitoring.html">Lab 11: Administer Monitoring</a>
+
 <br /><br />
 
-   * https://docs.microsoft.com/en-us/learn/azure/
 
-   * https://github.com/MicrosoftLearning/AZ-104-MicrosoftAzureAdministrator
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-administrator/?wt.mc_id=esi_lxp_webpage_wwl&tab=tab-learning-paths">Microsoft's tutorial</a> provides more managerial aspects (such as governance) than others.
 
@@ -416,9 +466,9 @@ A search of Microsoft Learn for "Administrator" and "Azure" <a target="_blank" h
 
 Video Lectures:
 
-1. <a target="_blank" href="https://www.freecodecamp.org/news/azure-administrator-certification-az-104-pass-the-exam-with-this-free-11-hour-course/">11 hour video course on FreeCodeCamp.org</a> <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg" title="May 3, 2021">on YouTube</a> by Andrew Brows of <a target="_blank" href="https://www.exampro.co/az-104">ExamPro</a>.
+1. <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg>11 hour VIDEO</a>: <a target="_blank" href="https://www.freecodecamp.org/news/azure-administrator-certification-az-104-pass-the-exam-with-this-free-11-hour-course/">course on FreeCodeCamp.org</a> <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg" title="May 3, 2021">on YouTube</a> by Andrew Brown offering his <a target="_blank" href="https://www.exampro.co/az-104">ExamPro</a>.
 
-1. <a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course">Tim Warner and Mike Pfeiffer's CloudSkills.io</a> 
+1. DEFUNCT: <a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course">Tim Warner and Mike Pfeiffer's CloudSkills.io</a> after collecting $1,000 from students before shutting down in 2021.
 
 1. Michael J. Shannon takes a deep dive on a lightboard in <a target="_blank" href="https://learning.oreilly.com/videos/exam-az-104-microsoft/9780136823483/9780136823483-A104_01_01_01">9+ hours of videos with transcript from OReilly</a> 
 
@@ -458,11 +508,6 @@ On ACloudGuru.com/LinuxAcademy.com:
 Chris Wahl (twitch.tv/wahlnetwork)
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=gyZdCzdkSY4" title="Oct 13, 2020">Beginners Tutorial to Terraform with Azure</a>
-
-CloudSkills:
-
-   * <a target="_blank" href="https://www.youtube.com/watch?v=d6EOEXxMZ8w">
-    Building Azure Infrastructure with Terraform</a>
 
 ### Flash cards:
 
@@ -584,7 +629,7 @@ was updated March 23, 2021
 
 Video classes:
 
-   * <a target="_blank" href="https://portal.cloudskills.io/products/microsoft-azure-devops-engineer-certification-az-400">By Mike Pfiffer at Cloudskills.io</a> has a "Path of least resistance" to earn your certificate: Whizlabs
+   * <a target="_blank" href="https://portal.cloudskills.io/products/microsoft-azure-devops-engineer-certification-az-400">By Mike Pfiffer at Cloudskills.io</a> has a "Path of least resistance" to earn your certificate: Whizlabs - shut down after collecting $1,000 per student for "lifetime" access.
 
    * <a target="_blank" href="https://www.udemy.com/course/azure100/learn/lecture/22182186#overview">Udemy video class</a> presents a more logical flow, not in the confusing exam objectives.
 

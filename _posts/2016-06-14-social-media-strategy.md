@@ -26,7 +26,9 @@ It's not enough just to have an account with some words and pictures.
 
 What is the purpose of social media?
 
-## <a name="Influence">Influence</a> #
+<a name="Influence"></a>
+
+## Influence #
 
 Influencers are "effective" to the extent they can <strong>get others to take action</strong> such as:
 

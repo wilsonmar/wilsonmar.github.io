@@ -123,7 +123,10 @@ can be from various <strong>shippers</strong> (origins):
 Brokers go to Lucene <strong>index</strong> accessed by the storage and search server
 which has a web interface.
 
-## <a name="Logstash_lifecycle"> Log Lifecycle Logstash</a>
+<a name="Logstash_lifecycle"></a>
+
+## Log Lifecycle Logstash
+
 The lifecycle of a log: Record, Transmit, Store, Delete.
 
 
@@ -278,7 +281,6 @@ Logstash can work in sync with other commercial products (can compete with it):
 
 ## Logstash Forwarder
 
-## <a name="LogstashForwarder"> Logstash Forwarder on Shippers</a>
 Configure for scale by using a Logstash Forwarder and RabbitMQ between a Logstash Producer and Logstash Consumer
 http://jakege.blogspot.in/2014/04/centralized-logging-system-based-on.html
 

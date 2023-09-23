@@ -18,7 +18,7 @@ comments: true
 
 ## Static is Cool Now #
 
-Here is why building a static site is now "cool" (popular, interesting, etc.).
+Here is why building a static site is "cool" (popular, interesting, etc.).
 
 When someone types in a URL on a web browser and
 lands on a website built using WordPress, Drupal, or
@@ -142,8 +142,9 @@ Surveys are:
 * <a target="_blank" href="http://blog.mgechev.com/2016/04/10/scalable-javascript-single-page-app-angular2-application-architecture/">
  Scalable Single-Page Application Architecture</a>
 
+<a name="ReactDriven"></a>
 
-## <a name="ReactDriven"> React-driven generation of SPA pages</a> #
+## React-driven generation of SPA pages #
 
 <a target="_blank" href="https://phenomic.io/">https://phenomic.io</a>,
    generates html from .md files containing yaml like Jekyll,
@@ -281,14 +282,14 @@ The built site has a <strong>Edit this</strong> link to the GitHub repo file.
 
    * https://github.com/petehunt/react-howto
 
+
 <hr />
 
 <a name="S3CloudFront"></a>
 
 ## AWS S3 and CloudFront
 
-References:
-   * <a target="_blank" href="https://www.youtube.com/watch?v=mls8tiiI3uc">React App on AWS S3 with Static Hosting + Cloudfront</a> | <a target="_blank" href="https://www.youtube.com/watch?v=06VgLTqNvU8">Practical AWS Projects</a> #1 by Be a Better Dev.
+This is based on video <a target="_blank" href="https://www.youtube.com/watch?v=mls8tiiI3uc">React App on AWS S3 with Static Hosting + Cloudfront</a> | <a target="_blank" href="https://www.youtube.com/watch?v=06VgLTqNvU8">Practical AWS Projects</a> #1 by Be a Better Dev.
    <br /><br />
 
 Here we see how many steps it takes to host a static website in an AWS S3 bucket and AWS CloudFront CDN.

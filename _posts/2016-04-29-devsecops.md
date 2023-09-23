@@ -279,6 +279,8 @@ Here are the various tools and processes a fully <strong>mature secure-minded or
    PROTIP: Common and disciplined application of coding standards requires a <strong>social contract</strong> as well as a technical one.
    The book [High Tech, High Touch](http://www.amazon.com/High-Tech-Touch-John-Naisbitt/dp/0767905415) popularized the concept (as I understand it) that more real personal physical attention is needed with heightened technology use.
 
+   The new darling in 2023 is <a target="_blank" href="https://www.graphine.dev/">Graphine.dev</a> which enables faster collaboration among developers through enabling smaller "stackable" changes in code. <a target="_blank" href="https://www.youtube.com/watch?v=sBcd9uopLOY">VIDEO</a> The company brings together the founders of GitHub, Docker, and Netlify and is backed by Andreessen Horowitz, Sequoia Capital, and Kleiner Perkins. 
+
 7. Build tools (Maven, Gradle, Scala Build Tool, NuGet, etc.) run within <strong>CI/CD pipelines</strong> (Jenkins, Travis CI, Circle CI, AppVeyor, GitHub Actions, etc.)
 
    https://www.synopsys.com/software-integrity/integrations.html
@@ -286,7 +288,8 @@ Here are the various tools and processes a fully <strong>mature secure-minded or
 8. Code linters and <a href="#Scanners">scanners</a> (for each type of file) in CI/CD that <strong>stops a branch from being deployed</strong> if that branch doesn't meet all the rules.
    
    * SonarQube, Perforce
-   * Terraform HCL IaC scanned using tfsec, Sonatype, etc.
+   * Terraform HCL IaC scanned using tfsec, Checkov, Sonatype, etc.
+   * IaC https://github.com/configu/docs
    * Python code scanned using PEP8, Bandit, etc.
    * Java [Qulice](http://www.qulice.com/) (quality police) combines several scanners to apply **over 900** rules on just Java code.
    * etc.
