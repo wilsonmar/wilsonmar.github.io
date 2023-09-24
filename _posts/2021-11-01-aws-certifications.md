@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-07-22"
+date: "2023-09-22"
 file: "aws-certifications"
 title: "AWS (Professional) Certifications"
 excerpt: "Tips and tricks to get certified: links to tutorials, videos, practice exams."
@@ -72,7 +72,10 @@ Not covered in exams:
 
 * <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-sysops-associate/AWS-Certified-SysOps-Administrator-Associate_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-sysops-admin-associate/">$150, 80-minute<br />AWS Certified SysOps Administrator - Associate</a> 
 
-* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-developer-associate/">$150, 80-minute <br />AWS Certified Developer - Associate</a>
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-developer-associate/">$150, 80-minute <br />AWS Certified Developer - Associate DVA-C01</a>
+
+   <a target="_blank" href="https://learning.oreilly.com/certifications/9780135954768/">Pearson Practice test at OReilly</a> has a "study mode" which allows you to provide answers after every question from across 4 complete exams.
+
 
 ### Professional level exams:
 

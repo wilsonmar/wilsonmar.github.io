@@ -1292,6 +1292,40 @@ https://www.youtube.com/watch?v=XdoTca3EQGU
 
 <hr />
 
+## MacOS TouchID
+
+Rather than typing in a password to <strong>authenticate sudo commands on CLI</strong>,
+it's more convenient to use the biometric <strong>TouchID hardware on Mac laptops</strong>.
+
+To enable that, add <tt>auth sufficient pam_tid.so</tt> to Apple's <tt>/etc/pam.d/sudo</tt> file:
+
+<ul><pre># sudo: auth account password session
+auth       sufficient     pam_tid.so
+auth       sufficient     pam_smartcard.so
+auth       required       pam_opendirectory.so
+account    required       pam_permit.so
+password   required       pam_deny.so
+session    required       pam_permit.so
+</pre></ul>
+
+However, each update of macOS replaces that file. So a <a target="_blank" href="https://github.com/tjluoma/sudo-via-touch-id">shell script</a> needs to be run after each OS update to add that line to the file and restart the computer. Its logic:
+
+   1. View file <tt>/etc/pam.d/sudo</tt> to see if the line is in there already
+   1. If yes, break out of the script. If no, add it to the file by:
+      1. Creating a temp file,
+      1. adding the line to the temp file
+      1. adding the rest of the original file to the temp file
+      1. setting the correct permissions of the temp file
+      1. setting the correct ownership of the temp file
+      1. replace the original file with the temp file (which requires sudo because… well, you’d hope so, right?)
+   <br /><br />
+
+Such logic should be placed among other commands to run after each OS update.
+Then you would only have one script to forget to run.
+Thus, I've incorporated it into my <a target="_blank" href="https://wilsonmar.github.io/mac-setup/">mac-setup.zsh script</a>.
+
+<hr />
+
 ## Resources #
 
 * http://stackoverflow.com/questions/1396617/committing-machine-specific-configuration-files/1397180#1397180

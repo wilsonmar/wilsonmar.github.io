@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-09-22"
+date: "2023-09-23"
 file: "azure-certifications"
 title: "Azure (Microsoft cloud) certifications"
 excerpt: "Microsoft provides free hands-on (gamified) tutorials and free time"
@@ -404,7 +404,7 @@ https://docs.microsoft.com/en-us/learn/azure/
 
    * https://wilsonmar.github.io/azure-cloud-onramp/
    * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-manage-identities-governance/">Microsoft's LEARNING PATH</a>
-
+   
    * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Demos/01%20-%20Administer%20Identity.html">Demo 01: Administer Identity</a>
    * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Azure_AD_Identities.html">Lab 01: Manage Azure Active Directory Identities</a>
    * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html">Lab 01: Manage Microsoft Entra ID Identities (rebranding test)</a>
@@ -425,27 +425,33 @@ https://docs.microsoft.com/en-us/learn/azure/
    * Lab 09a: Implement Web Apps
    * Lab 09b: Implement Azure Container Instances
 
+   * https://medium.com/marcus-tee-anytime/identity-and-access-management-iam-as-code-in-azure-with-terraform-f67634a1e54e
+
 > Implement and manage <a target="_blank" href="https://wilsonmar.github.io/azure-storage/">storage</a>:
 
    * https://wilsonmar.github.io/azure-storage/
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-administrator-prerequisites/">Microsoft's LEARNING PATH</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-manage-storage/">Microsoft's LEARNING PATH</a>
 
    * Demo 07: Administer Azure Storage
    * Lab 07: Manage Azure storage
    
+   * https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account.html
+
 > Deploy and manage <a target="_blank" href="https://wilsonmar.github.io/azure-compute/">Azure compute</a> resources:
 
    * https://wilsonmar.github.io/azure-compute/
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-manage-storage/">Microsoft's LEARNING PATH</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-manage-compute-resources/">Microsoft's LEARNING PATH</a>
 
    * Demo 08: Administer Azure Virtual Machines
    * Lab 08: Manage Virtual Machines
 
    * Demo 09: Administer PaaS Compute Options
 
+   * https://github.com/Azure/terraform-azurerm-compute
+
 > Configure and manage <a target="_blank" href="https://wilsonmar.github.io/azure-networking/">virtual networking</a>:
 
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-manage-compute-resources/">Microsoft's LEARNING PATH</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-manage-virtual-networks/">Microsoft's LEARNING PATH</a>
 
    * Demo 04: Administer Virtual Networking
    * Lab 04: Implement Virtual Networking
@@ -458,7 +464,7 @@ https://docs.microsoft.com/en-us/learn/azure/
 
 > <a target="_blank" href="https://wilsonmar.github.io/azure-monitoring/">Monitor</a> and back up Azure resources:
 
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-manage-virtual-networks/">Microsoft's LEARNING PATH</a>
+   * <em>NO Microsoft's LEARNING PATH)</em>
 
    * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Demos/10%20-%20Administer%20Data%20Protection.html">Demo 10: Administer Data Protection</a>
    * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_10-Implement_Data_Protection.html">Lab 10: Administer Data Protection</a>
@@ -1133,7 +1139,16 @@ Lab 02: Implement task processing logic by using Azure Functions </a>
 
 * <a target="_blank" href="https://www.aguidetocloud.com/full-courses/az204fullcourse">5-hour AGuideToCloud video class by Susanth Sutheesh</a>
 
-* https://www.coursera.org/professional-certificates/azure-developer-associate
+<a target="_blank" href="https://www.coursera.org/professional-certificates/azure-developer-associate">Coursera'w AZ-204 class</a>
+   1. 17 hr Create Serverless Applications
+   2. 10 hr Connect Your Services with Microsoft Azure Service Bus
+   3. 15 hr Data Storage in Microsoft Azure for Associate Developers
+   4. 08 hr Deploy a website with Azure Virtual Machines
+   5. 10 hr Manage Resources in Azure
+   6. 08 hr Deploy a website to Azure with Azure App Service
+   7. 09 hr Secure your Cloud Data
+   8. 07 hr Prepare for AZ-204: Developing Solutions for Microsoft Azure
+   <br /><br />
 
 Questions:
    * https://www.whizlabs.com/learn/course/microsoft-azure-az-204/
