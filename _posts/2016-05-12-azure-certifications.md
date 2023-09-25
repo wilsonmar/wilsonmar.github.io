@@ -480,7 +480,7 @@ https://docs.microsoft.com/en-us/learn/azure/
 
 <br /><br />
 
-<a target="_blank" href="https://github.com/madebygps/projects/tree/main/az-104">AZ-104 Projects by MadeByGPS</a>
+<a target="_blank" href="https://www.youtube.com/watch?v=Qd0YI9ZMHHs">VIDEO</a>: <a target="_blank" href="https://github.com/madebygps/projects/tree/main/az-104">AZ-104 Projects by MadeByGPS</a> <a target="_blank" href="https://www.linkedin.com/in/madebygps/">Gwyneth Peña-Siguenza</a>. She <a target="_blank" href="https://payhip.com/b/BgnjT">sells her diagram</a> for $10.
 
 <br /><br />
 
