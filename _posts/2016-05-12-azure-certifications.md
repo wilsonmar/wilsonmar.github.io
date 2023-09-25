@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-09-23"
+date: "2023-09-25"
 file: "azure-certifications"
 title: "Azure (Microsoft cloud) certifications"
 excerpt: "Microsoft provides free hands-on (gamified) tutorials and free time"
@@ -42,7 +42,7 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
    </td></tr>
 
 <tr valign="top"><td> <a href="#Networking">Networking</a></td><td>
-        * <a href="#AZ-700">AZ-700</a> Azure Network Engineer Associate
+        * <a href="#AZ-700">AZ-700 Azure Network Engineer Associate</a>
    </td></tr>
 
 <tr valign="top"><td> AI Engineer</td><td>
@@ -458,6 +458,8 @@ https://docs.microsoft.com/en-us/learn/azure/
    * Demo 09: Administer PaaS Compute Options
 
    * https://github.com/Azure/terraform-azurerm-compute
+
+> Create and manage <a target="_blank" href="https://wilsonmar.github.io/azure-networking/">virtual networking</a>:
 
 > Configure and manage <a target="_blank" href="https://wilsonmar.github.io/azure-networking/">virtual networking</a>:
 
@@ -1453,27 +1455,40 @@ Those who are lucky enough to take Microsoft's instructor-led class, it makes us
 <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/archive/master.zip">exercise files</a>
 and <a target="_blank" href="https://microsoftlearning.github.io/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/">this curriculum</a>:
 
-> Introduction to Azure Virtual Networks	
+> Introduction to Azure Virtual Networks
+
 * M01 - Unit 4 Design and implement a Virtual Network in Azure
 * M01 - Unit 6 Configure DNS settings in Azure
 * M01 - Unit 8 Connect two Azure Virtual Networks using global virtual network peering
-> Design and implement hybrid networking	
+
+> Design and implement hybrid networking
+
 * M02 - Unit 3 Create and configure a virtual network gateway
 * M02 - Unit 7 Create a Virtual WAN by using Azure Portal
+
 > Design and implement Azure ExpressRoute
+
 * M03 - Unit 4 Configure an ExpressRoute Gateway
 * M03 - Unit 5 Provision an ExpressRoute circuit
+
 > Load balancing non-HTTP(S) traffic in Azure
+
 * M04 - Unit 4 Create and configure an Azure load balancer
 * M04 - Unit 6 Create a Traffic Manager profile using the Azure portal
+
 > Load balancing HTTP(S) traffic in Azure
+
 * M05 - Unit 4 Deploy Azure Application Gateway
 * M05 - Unit 6 Create a Front Door for a highly available web application using the Azure portal
+
 > Design and implement network security
+
 * M06 - Unit 4 Configure DDoS Protection on a virtual network using the Azure portal
 * M06 - Unit 7 Deploy and configure Azure Firewall using the Azure portal
 * M06 - Unit 9 Secure your virtual hub using Azure Firewall Manager
+
 > Design and implement private access to Azure Services
+
 * M07 - Unit 5 Restrict network access to PaaS resources with virtual network service endpoints
 * M07 - Unit 6 Create an Azure private endpoint using Azure PowerShell
 > Design and implement network monitoring
