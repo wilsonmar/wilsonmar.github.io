@@ -398,12 +398,14 @@ https://docs.microsoft.com/en-us/learn/azure/
 
 > Prerequisites for Azure administrators
 
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-104">Study Guide for AZ-104</a>
    * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-administrator-prerequisites/">Microsoft's LEARNING PATH</a>
 
 > Manage Azure <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">identities and governance</a>:
 
    * https://wilsonmar.github.io/azure-cloud-onramp/
    * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-manage-identities-governance/">Microsoft's LEARNING PATH</a>
+   * <a target="_blank" href="https://github.com/madebygps/projects/blob/main/az-104/onboarder.md">Onboard Automator (Manage Azure identities and governance)</a> from MadeByGPS
    
    * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Demos/01%20-%20Administer%20Identity.html">Demo 01: Administer Identity</a>
    * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Azure_AD_Identities.html">Lab 01: Manage Azure Active Directory Identities</a>
@@ -431,6 +433,7 @@ https://docs.microsoft.com/en-us/learn/azure/
 
    * https://wilsonmar.github.io/azure-storage/
    * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-manage-storage/">Microsoft's LEARNING PATH</a>
+   * <a target="_blank" href="https://github.com/madebygps/projects/blob/main/az-104/sharesafely.md">ShareSafely - File Share Web App (Implement and manage storage)</a> from MadeByGPS
 
    * Demo 07: Administer Azure Storage
    * Lab 07: Manage Azure storage
@@ -441,6 +444,7 @@ https://docs.microsoft.com/en-us/learn/azure/
 
    * https://wilsonmar.github.io/azure-compute/
    * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-manage-compute-resources/">Microsoft's LEARNING PATH</a>
+   * <a target="_blank" href="https://github.com/madebygps/projects/blob/main/az-104/vmfleetcommander.md">VM Fleet Commander (Deploy and manage Azure compute resources)</a> from MadeByGPS
 
    * Demo 08: Administer Azure Virtual Machines
    * Lab 08: Manage Virtual Machines
@@ -452,6 +456,7 @@ https://docs.microsoft.com/en-us/learn/azure/
 > Configure and manage <a target="_blank" href="https://wilsonmar.github.io/azure-networking/">virtual networking</a>:
 
    * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-manage-virtual-networks/">Microsoft's LEARNING PATH</a>
+   * <a target="_blank" href="https://github.com/madebygps/projects/blob/main/az-104/netmazeexplorer.md">NetMaze Explorer (Implement and manage virtual networking)</a> from MadeByGPS
 
    * Demo 04: Administer Virtual Networking
    * Lab 04: Implement Virtual Networking
@@ -465,6 +470,7 @@ https://docs.microsoft.com/en-us/learn/azure/
 > <a target="_blank" href="https://wilsonmar.github.io/azure-monitoring/">Monitor</a> and back up Azure resources:
 
    * <em>NO Microsoft's LEARNING PATH)</em>
+   * <a target="_blank" href="https://github.com/madebygps/projects/blob/main/az-104/insightscape.md">InsightScape (Monitor and back up Azure resources)</a> from MadeByGPS
 
    * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Demos/10%20-%20Administer%20Data%20Protection.html">Demo 10: Administer Data Protection</a>
    * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_10-Implement_Data_Protection.html">Lab 10: Administer Data Protection</a>
@@ -474,6 +480,9 @@ https://docs.microsoft.com/en-us/learn/azure/
 
 <br /><br />
 
+<a target="_blank" href="https://github.com/madebygps/projects/tree/main/az-104">AZ-104 Projects by MadeByGPS</a>
+
+<br /><br />
 
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-administrator/?wt.mc_id=esi_lxp_webpage_wwl&tab=tab-learning-paths">Microsoft's tutorial</a> provides more managerial aspects (such as governance) than others.
