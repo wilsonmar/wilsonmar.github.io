@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2023-09-23"
+file: "azure-networking"
 title: "Azure networking"
 excerpt: "vNets, Peering, NSG, CDN, Scaling with Load Balancers, Gateways, Firewall, Front Door, Traffic Manager, DDoS"
 tags: [azure, cloud, networking]
-date: "2021-05-14"
-file: "azure-networking"
 image:
 # azure ms logo wait 1900x500-39kb.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/18188069/153fbcca-706c-11e6-983d-0783da57f75c.jpg
@@ -16,12 +16,12 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-STATUS: This is actively being edited currently.
+STATUS: This is currently actively being edited.
 
 {% include whatever.html %}
 
-Here are the notes on Networking I took while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure exams</a>, specifically the one 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-700">exam AZ-700 "Designing and Implementing Microsoft Azure Networking Solutions (beta)</a> for $165 to become a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-network-engineer-associate/">Azure Network Engineer</a>, available in July 2021. SKills:
+Here are the notes on Networking I took while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure certification exams</a>, specifically the  
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-700">exam AZ-700 "Designing and Implementing Microsoft Azure Networking Solutions</a> available in July 2021 to become a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-network-engineer-associate/">Azure Network Engineer</a>. SKills:
 
    * Design, Implement, and Manage Hybrid Networking (10% to 15%)
    * Design and Implement Core Networking Infrastructure (20% to 25%)
@@ -30,7 +30,21 @@ Here are the notes on Networking I took while studying for <a target="_blank" hr
    * Design and Implement Private Access to Azure Services (10% to 15%)
    <br /><br />
 
+https://github.com/ElYusubov/AWESOME-Azure-Bicep
+
+https://github.com/HoussemDellai/azure-bicep-course
+
 https://www.thomasmaurer.ch/2021/06/az-700-study-guide-microsoft-azure-networking-solutions
+
+
+## Planning
+
+PROTIP: Plan out your network typology ahead of time to define names of resources in a diagram such as this:
+
+<a target="_blank" href="https://learning.oreilly.com/attend/exam-az-303-microsoft-azure-architect-technologies-crash-course/0636920452881/0636920053523/">
+Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target="_blank" href="https://github.com/timothywarner/az303">GitHub repo</a> which includes a <a target="_blank" title="warner-azure-frankenstein-V2-793x629" href="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png">full diagram<br />
+<img alt="warner-azure-frankenstein-V2-793x629" width="793" height="629" src="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png"></a>
+
 
 
 ## Hands-on start here
@@ -49,19 +63,14 @@ This page assumes you've absorbed my <a target="_blank" href="https://wilsonmar.
    * Virtual networks (classic)
    <br /><br />
 
-PROTIP: Plan out your network typology ahead of time to define names of resources in a diagram such as this:
-
-<a target="_blank" href="https://learning.oreilly.com/attend/exam-az-303-microsoft-azure-architect-technologies-crash-course/0636920452881/0636920053523/">
-Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target="_blank" href="https://github.com/timothywarner/az303">GitHub repo</a> which includes a <a target="_blank" title="warner-azure-frankenstein-V2-793x629" href="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png">full diagram<br />
-<img alt="warner-azure-frankenstein-V2-793x629" width="793" height="629" src="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png"></a>
-
 
 ### Hub-and-spoke
 
 Use less code to define Hub-and-spoke by using <a target="_blank" href="https://github.com/lukeorellana/terraform-on-azure/blob/main/06-advanced-hcl/06-for-each-with-for/main.tf">for_each Terraform code</a> explained in <a target="_blank" href="https://www.udemy.com/course/terraform-on-azure-2021/learn/lecture/25583436#overview">chapter 37</a> of the <a target="_blank" href="https://www.udemy.com/course/terraform-on-azure-2021/">1.5 hr Udemy video course: Terraform on Azure 2021</a> by <a target="_blank" href="https://www.linkedin.com/in/luke-orellana/">Luke Orellana</a> under Mike Pfiffer's CloudSkills.io.
 
-
-
+https://github.com/nicolgit/hub-and-spoke-playground
+provides <strong>Deployment Stacks</strong>
+A collection of BICEP/ARM templates that deploys on Azure a hub & spoke net topology aligned with Microsoft Enterprise scale landing zone ref architecture to use as playground for test and study. As bonus many scenarios with step-by-step solutions for studying and learning are also available
 
 
 <a name="VirtualNetworks"></a>
@@ -124,9 +133,6 @@ Create a VNet with a name for specification when a VM is created later.
    </table>
 
 The first 3 addresses Azure takes for its own.
-
-
-
 
 Secure resources within subnets using Network Security Groups (NSGs).
 

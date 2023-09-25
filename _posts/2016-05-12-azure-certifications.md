@@ -398,6 +398,8 @@ Be designated a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/
 
 https://docs.microsoft.com/en-us/learn/azure/
 
+<a target="_blank" href="https://learning.oreilly.com/certifications/9780136808633/">Pearson Practice Test</a>
+
 <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/">https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator</a> are the labs used during Microsoft's live classes. Its source is at <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-104-MicrosoftAzureAdministrator">https://github.com/MicrosoftLearning/AZ-104-MicrosoftAzureAdministrator</a> 
 
 > Prerequisites for Azure administrators
