@@ -41,6 +41,10 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
         * AZ-120 Azure for SAP Workloads Specialty
    </td></tr>
 
+<tr valign="top"><td> <a href="#Networking">Networking</a></td><td>
+        * <a href="#AZ-700">AZ-700</a> Azure Network Engineer Associate
+   </td></tr>
+
 <tr valign="top"><td> AI Engineer</td><td>
    * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-900">AI-900 AI Fundamentals</a><br />
      * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-100">AI-100 Azure AI Engineer Associate</a><br />
@@ -1399,12 +1403,75 @@ Others courses on AZ-304:
 Exam prep:
    * https://www.whizlabs.com/learn/course/microsoft-azure-az-304/
 
+
+<hr />
+
+<a name="AZ-700"></a>
+
+## AZ-700
+
+https://learn.microsoft.com/en-us/credentials/certifications/exams/az-700/
+It's a 2-hour exam with 40-60 questions. Valid for 1-year, with free renewal every 2 years.
+
+Those who are lucky enough to take Microsoft's instructor-led class, it makes use of 
+<a target="_blank" href="https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/archive/master.zip">exercise files</a>
+and <a target="_blank" href="https://microsoftlearning.github.io/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/">this curriculum</a>:
+
+> Introduction to Azure Virtual Networks	
+* M01 - Unit 4 Design and implement a Virtual Network in Azure
+* M01 - Unit 6 Configure DNS settings in Azure
+* M01 - Unit 8 Connect two Azure Virtual Networks using global virtual network peering
+> Design and implement hybrid networking	
+* M02 - Unit 3 Create and configure a virtual network gateway
+* M02 - Unit 7 Create a Virtual WAN by using Azure Portal
+> Design and implement Azure ExpressRoute
+* M03 - Unit 4 Configure an ExpressRoute Gateway
+* M03 - Unit 5 Provision an ExpressRoute circuit
+> Load balancing non-HTTP(S) traffic in Azure
+* M04 - Unit 4 Create and configure an Azure load balancer
+* M04 - Unit 6 Create a Traffic Manager profile using the Azure portal
+> Load balancing HTTP(S) traffic in Azure
+* M05 - Unit 4 Deploy Azure Application Gateway
+* M05 - Unit 6 Create a Front Door for a highly available web application using the Azure portal
+> Design and implement network security
+* M06 - Unit 4 Configure DDoS Protection on a virtual network using the Azure portal
+* M06 - Unit 7 Deploy and configure Azure Firewall using the Azure portal
+* M06 - Unit 9 Secure your virtual hub using Azure Firewall Manager
+> Design and implement private access to Azure Services
+* M07 - Unit 5 Restrict network access to PaaS resources with virtual network service endpoints
+* M07 - Unit 6 Create an Azure private endpoint using Azure PowerShell
+> Design and implement network monitoring
+* M08 - Unit 3 Monitor a load balancer resource using Azure Monitor
+<br /><br />
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-architected/security/design-network-segmentation">Implement network segmentation patterns on Azure</a>
+
+My <a target="_blank" href="https://wilsonmar.github.io/azure-networking">https://wilsonmar.github.io/azure-networking</a>
+
+<a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_3_Lab.html">3. Migrating Hyper-V VMs to Azure by using Azure Migrate</a>
+
+
+<a target="_blank" href="https://learning.oreilly.com/live-events/azure-network-engineer-associate-az-700-bootcamp/0636920091389/0636920094752/">OReilly 2-day Bootcamp</a> has pdf of <a target="_blank" href="https://github.com/zaalion/oreilly-az-700/blob/master/AZ-700%20Bootcamp%20-%20RezaSalehi.pdf">slides</a> and <a target="_blank" href="https://github.com/zaalion/oreilly-az-700/blob/master/Q%26A/az-700-aug1-2-Q%26A.pdf">Q&A</a> at https://github.com/zaalion/oreilly-az-700 and pptx at https://github.com/zaalion/oreilly-az-500.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=nVZYDhB_M64">John Savill's</a> 1-hour YouTube.
+
+The class is by <a target="_blank" href="https://www.linkedin.com/in/rezasalehi2008">Reza Salehi</a>, author of "<a target="_blank" href="https://www.amazon.com/Azure-Cookbook-Recipies-Maintain-Solutions/dp/1098135792/">Azure Cookbook</a>" and "<a target="_blank" href="https://learning.oreilly.com/library/view/azure-cookbook/9781098135782/">Azure Networking Cookbook on OReilly</a>".
+
+https://www.pluralsight.com/cloud-guru/courses/az-700-microsoft-azure-network-engineer-associate
+
+https://cloudacademy.com/learning-paths/az-700-exam-preparation-designing-and-implementing-microsoft-azure-networking-solutions-4445/
+31 hours
+
+https://www.whizlabs.com/learn/course/microsoft-azure-az-700/
+
 <hr />
 
 Routing to separate pages for AI Engineer:
 
 <a name="AI-900"></a>
+
 ## AI-900
+
 <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-900">AI-900 AI Fundamentals</a>
 
 <a name="AI-102"></a>
