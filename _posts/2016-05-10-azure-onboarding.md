@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-09-23"
+date: "2023-09-26"
 file: "azure-onboarding"
 title: "Azure Onboarding"
 excerpt: "Know URLs, Subscriptions, Support plans, Tenants, Directories, ARM portal Keyboard Shortcuts to use Azure Portal GUI, CLI Bash, PowerShell to deploy Bicep in GitHub Actions to create resources securely - AZ-104, AZ-500"
@@ -19,7 +19,26 @@ comments: true
 There is a massive amount of information about Azure, at various levels of detail.
 
 PROTIP: Below is my attempt at helping you approach Azure practically, logically, and thus efficiently for each audience. This is a deep-dive hands-on tutorial with commentary along the way.
-All on one page. Outline:
+All on one page are these references:
+
+   * <a href="#URLs">All URLs for Azure I've found</a> 
+   * <a target="_blank" href="https://wilsonmar.github.io/acronymns/">Acronyms (three letters and otherwise)</a>
+   * <a href="#naming-abbreviations">Naming Conventions</a>
+   * <a href="#FreeSvcs">First year free services</a>
+   <br /><br />
+
+To be honest, I get more confused after viewing videos and documentation than before.
+
+So let me start with my attempt at explaining Azure technicals before <a href="#PeopleStuff">people stuff</a> further down.
+
+I am working on a step-by-step reveal video of this:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1695809691/az-onboarding-1399x902_b1wxa6.png"><img alt="az-onboarding-1399x902.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1695809691/az-onboarding-1399x902_b1wxa6.png"><em>Click on image for full screen</em></a>
+
+
+<a name="PeopleStuff"></a>
+
+## People stuff
 
 1. <a href="#Occupations">Occupations for certs</a>
 1. <a href="#Transformation">Digital Transformation?</a>
@@ -47,7 +66,7 @@ Search for what to "REMEMBER" to pass <a target="_blank" href="https://wilsonmar
 
 ## Who Does What
 
-There are <a href="#Occupations">technical occupations</a> and management roles</a>:
+There are <a href="#Occupations">technical occupations</a> and management roles:
 
 ### Owners vs. Admins
 
@@ -249,7 +268,7 @@ PROTIP: Many don't take security "seriously" because they haven't fully grasped 
 
 <a name="Transformation"></a>
 
-## What Do They Want?
+## What Does Security Want?
 
 NOTE: Many land on this as part of their organization's effort to transition to make use of the public cloud.
 
@@ -525,14 +544,65 @@ References:
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure">DOC: Compare Global vs. Gov</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=6UDePj5newo&list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7&index=10">VIDEO: Terraform Provider Azure.gov</a> for standardized templates across clouds.
    * <a target="_blank" href="https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/">Pulumi</a> enables programmatic access (by a Python program) to Azure.
+   <br /><br />
+
+<a target="_blank" href="https://www.youtube.com/playlist?list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7">YouTube playlist on Azure</a> by Steve Michelotti talking with experts from dev, over 3 years fromm 2020. Each is thorough. Much of their advice applies to commercial Azure as well. I list them after reversing the order of the playlist:
+
+1. Azure Friday | Azure Government
+1. Azure Government Security
+1. Real World Solutions on Azure Government with Machine Learning
+1. Mobile Apps Powered by Azure Government
+1. How to run containers with Kubernetes on Azure Government
+1. How to use Azure Monitor for Azure Government
+1. How to use GPUs by NVIDIA on Azure Government for Virtual Machines and AI
+1. Cloud Solution Provider Program for Azure Government
+1. What is Azure Government?
+1. How to get started with Azure Government Data Analytics
+1. How to get started with Azure Government Data Protection
+1. How to get started with Azure Government Iaas and PaaS
+1. How to access & get started with the Azure Government Portal
+1. How to publish your solutions to Azure Government Marketplace
+1. How to enable Central IT to become a Cloud broker
+1. How to use Machine Learning on Azure Government with HDInsight
+1. How to use containers for data science on Azure Government
+1. Learn about OpenShift on Azure Government
+1. Overview of Cosmos DB on Azure Government
+1. Overview of Service Health on Azure Government
+1. How to set up a secure environment on Azure Government- Part 1
+1. How to set up a secure environment on Azure Government - Part 2
+1. How to deploy the Azure Resource Manager template
+1. How to run the Azure Government PaaS sample
+1. How to run the Azure Government Functions sample
+1. Real-time data streaming with Event Hubs on Azure Government
+1. Build automated workflows with Logic Apps on Azure Government
+1. Learn about Serverless technology in Azure Government
+1. Overview of Managed Identities on Azure Government
+1. Overview of Azure Database for MySQL in Azure Government
+1. DoD Impact Level 5 Expansion on Azure Government
+1. Advanced Data Security with Azure SQL Database in Azure Government
+1. Microsoft Azure Government Secret
+1. Data Science Virtual Machine on Azure Government
+1. Migrate and Modernize with Kubernetes on Azure Government
+1. Bot Service and LUIS on Azure Government
+1. Azure blueprints and compliance on Azure Government
+1. Azure DevOps Server in Azure Government
+1. Cloud Shell in Azure Government
+1. Azure Stream Analytics in Azure Government
+1. Azure Maps in Azure Government
+1. QnA Maker in Azure Government
+1. What’s new in Azure Government
+<br /><br />
+
+
+
 
 
 <a name="EnvDifferences"></a>
 
-### Environment Differences
+### In Dev vs Prod
 
 In Prod, Key Vault secrets are locked from deletion for 90 days.<br />
-In Dev, Key Vault values are locked from deletion..<br />
+In Dev, Key Vault values can be deleted at the discretion of developers.<br />
 
 In Dev, devs can access the Azure Portal interactively to create resources during CI/CD IaC pipeline construction.<br />
 In Prod, resources are deployed only by CI/CD pipelines and devs cannot access the Azure Portal interactively.<br />
@@ -699,9 +769,15 @@ https://levelup.gitconnected.com/build-a-custom-url-shortener-using-azure-functi
 
 
 
-<a name="Profiles"></a>
+<hr />
 
-## Setup & Use Browser Profiles
+<a name="GetAccounts"></a>
+
+## Get Azure Accounts
+
+<a name="BrowserProfiles"></a>
+
+### Setup & Use Browser Profiles
 
 Websites (including Azure) store your browser history, what account you logged in, etc. locally in "cookies" associated with your browser account.
 
@@ -718,12 +794,7 @@ PROTIP: Setup <strong>different browser profiles</strong> on the same browser, a
 
 1. Do the above for each browser (Google Chrome, Microsoft Edge, Firefox, etc.).
 
-
-<hr />
-
-<a name="GetAccounts"></a>
-
-## Get Azure Accounts
+### Free Accounts
 
 1. Some "Exercises" in Microsoft Learn provide FREE "MICROSOFT LEARN SANDBOX" temporary "Concierge" subscription access one or two hours at a time. Search within:
 
@@ -807,9 +878,6 @@ The clock is ticking!
 <a name="MSAccount"></a>
 
 ## Microsoft Azure account setup
-
-   * <a target="_blank" href="https://www.youtube.com/playlist?list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7">YouTube playlist on Azure</a> by Zach Kramer and Steve Michelotti
-   <br /><br />
 
 1. PROTIP: Avoid using an email that you use for your own banking, shopping, social media, etc. For continuity with a real cloud, you'll need an email address that you can share and transfer to other people. That's so at a company, you will need to give someone else the password so that if you're ever go on vacation (or get run over or thrown under a bus), your organization can continue.
 
