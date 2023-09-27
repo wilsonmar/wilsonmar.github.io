@@ -31,10 +31,67 @@ To be honest, I get more confused after viewing videos and documentation than be
 
 So let me start with my attempt at explaining Azure technicals before <a href="#PeopleStuff">people stuff</a> further down.
 
-I am working on a step-by-step reveal video of this:
+While others focus on the various features, I am working on a step-by-step reveal video of this, which presents a sequence for how to securely setup a new enterprise to make full use of Azure technologies in the cloud:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1695809691/az-onboarding-1399x902_b1wxa6.png"><img alt="az-onboarding-1399x902.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1695809691/az-onboarding-1399x902_b1wxa6.png"><em>Click on image for full screen</em></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1695830221/az-onboarding-1590x860_nheuca.png"><img alt="az-onboarding-1590x860.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1695830221/az-onboarding-1590x860_nheuca.png"><em>Click on image for full screen</em></a> generated from my PowerPoint file.
 
+<strong>Azure Resource Manager</strong> is not a specific product or service, but a set of services that act as a gate-keeper to limit <strong>Actions</strong> (aka Operations) against Azure <strong>resources</strong> using RBAC (Role-based Access Control) relevant to <strong>Security Principals</strong>.
+
+Before we setup resources, which is 21 steps in, we have some enterprise setup to do:
+
+1.  PROTIP: If you're intending to setup an whole enterprise, before logging in, have a chart of your organization's job titles, their responsibilities, who reports to whom, with metadata about each person (such as their geographic location, emails, etc.). This background determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be setup.
+
+2.  Working at enterprise scale requires a <strong>custom program</strong> to quickly <strong>populate</strong> the information into Azure, both using samples in test and to prepare for productive use.
+
+    Identify the different administrators who will control which part of the system. For security, make a distinction between "data owners" and "data custodians" (who manage the data). An inventory needs to be maintained about who has type of access to what data, for escalations and approvals.
+
+3.  A Global Administrator sets up each <a href="#Subscriptions">subscription</a> (billing account).
+
+4.  Those licenses are paid for by a <strong>credit card</strong> or invoicing account setup through a Microsoft salesperson.
+
+5.  An Azure administrator creates each <strong>tenant</strong> to house a directory of users and resources created under each subscription.
+
+6.  <strong>Licensing</strong> is defined under a Tenant. Enterprises need a paid P1 or P2 license for each user to use Azure securely.
+
+7.  Automation needs to be chosen. <strong>ARM templates</strong> are now legacy. Its <strong>Bicep</strong> transpiler is gaining popularity. They are still needed to create some resources. But unlike them, <strong>Blueprints</strong> maintain versions of the relationship between what should be deployed and what was actually deployed. So it supports auditing of deployments over time. And, on its own, a Blueprint can be applied to several subscriptions at once. [<a target="_blank" href="https://www.youtube.com/watch?v=3rSCnAZPNfo">VIDEO</a>] Also, Azure Blueprints are stored in Azure Cosmos cloud DB, which is replicated globally to several regions for ultimate reliability. 
+
+8.  It would save a lot of time to have automation create (in JSON) <strong>Policy Definitions</strong> to enforce rules for each subscription.
+
+9.  <strong>Tags</strong> are also used to identify each resource for billing and management purposes.
+
+10. <strong>Management Groups</strong>
+
+11. <strong>Resource Groups</strong> are defined to group resources for billing and management purposes. Alternately,
+
+12. When defining Principals, <strong>Groups</strong> are defined to group users for billing and management purposes.
+
+13. Users
+
+14. MFA
+
+15. Devices
+
+16. <strong>Roles</strong> are defined to group users for billing and management purposes.
+
+17. Service Principals are defined for use by 
+
+18. API-calling applications to access resources.
+
+19. <strong>Azure-Managed Identities</strong> does away with secrets that developers may leave in code when accessing <strong>internal</strong> Azure resources. Instead of static user account keys and connection strings, <a target="_blank" href="https://www.youtube.com/watch?v=sA_mXKy_dKU">VIDEO</a>: the unique reference to blobs and such are associated with the caller's Managed Identity. When its <strong>ObjectID</strong> is given to the
+
+20. <strong>Key Vault</strong> service, it generates its managed identity (based on a Role) that's then encrypted into a <strong>URI</strong> used to retrieve secrets. Brilliant! [<a target="_blank" href="https://www.youtube.com/watch?v=pBcXgJ5hT1o">VIDEO of scripts</a>]
+
+21. Scopes 
+
+22. Resources are accessed not by Global Administrator roles but by User Access Admin roles.
+
+23. Use of some services need to be <strong>Registered</strong>. For example, use of Azure AD B2C needs to be registered to an Azure AD Tenant.
+
+24. <strong>Policies</strong> do not block access, but alert about compliance, shown in the <strong>Security Center</strong> dashboard to display security events and metrics across all subscriptions.
+
+25. Individual policies can be grouped under an <strong>Initiative</strong>.
+
+<hr />
 
 <a name="PeopleStuff"></a>
 
@@ -522,6 +579,21 @@ A breakdown of actions based on Microsoft's <strong>categories for a Security Po
 
 ## Infrastructure
 
+<a name="EnvDifferences"></a>
+
+### In Dev vs Prod
+
+In Prod, Key Vault secrets are locked from deletion for 90 days.<br />
+In Dev, Key Vault values can be deleted at the discretion of developers.<br />
+
+In Dev, devs can access the Azure Portal interactively to create resources during CI/CD IaC pipeline construction.<br />
+In Prod, resources are deployed only by CI/CD pipelines and devs cannot access the Azure Portal interactively.<br />
+
+Devs are limited by policies to a limit of two regions to avoid runaway costs.<br />
+Prod configurations usually cover several regions for redundancy and performance to end-customers.
+
+
+
 <a name="USGov"></a>
 
 ### Azure Government environments
@@ -593,20 +665,7 @@ References:
 1. What’s new in Azure Government
 <br /><br />
 
-
-
-
-
-<a name="EnvDifferences"></a>
-
-### In Dev vs Prod
-
-In Prod, Key Vault secrets are locked from deletion for 90 days.<br />
-In Dev, Key Vault values can be deleted at the discretion of developers.<br />
-
-In Dev, devs can access the Azure Portal interactively to create resources during CI/CD IaC pipeline construction.<br />
-In Prod, resources are deployed only by CI/CD pipelines and devs cannot access the Azure Portal interactively.<br />
-
+<hr />
 
 <a name="URLs"></a>
 
