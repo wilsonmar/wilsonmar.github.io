@@ -24,7 +24,7 @@ All on one page are these references:
    * <a href="#URLs">All URLs for Azure I've found</a> 
    * <a target="_blank" href="https://wilsonmar.github.io/acronymns/">Acronyms (three letters and otherwise)</a>
    * <a href="#naming-abbreviations">Naming Conventions</a>
-   * <a href="#FreeSvcs">First year free services</a>
+   * <a href="#FreeSvcs">First year free services on Azure</a>
    <br /><br />
 
 To be honest, I get more confused after viewing videos and documentation than before.
@@ -53,7 +53,7 @@ Before we setup resources, which is 22 steps in, we have some enterprise setup t
 
 6.  <strong>Licensing</strong> is defined under a Tenant. Enterprises need a paid P1 or P2 license for each user to use Azure securely.
 
-7.  Automation needs to be chosen. <strong>ARM templates</strong> are now legacy. Its <strong>Bicep</strong> transpiler is gaining popularity. They are still needed to create some resources. But unlike them, Azure <strong>Blueprints</strong> maintain versions of the relationship between what should be deployed and what was actually deployed. So it supports auditing of deployments over time. And, on its own, a Blueprint can be applied to several subscriptions at once. [<a target="_blank" href="https://www.youtube.com/watch?v=3rSCnAZPNfo">VIDEO</a>] Also, Azure Blueprints are stored in Azure Cosmos cloud DB, which is replicated globally to several regions for ultimate reliability. 
+7.  Automation needs to be chosen. Gaining popularity is the <strong>Bicep</strong> transpiler from YMSL into <strong>ARM templates</strong> JSON. <strong>GitHub Actions</strong> is being used to deploy Bicep scripts to create resources. (Azure has stopped development of its <a href="#Blueprints">"Blueprints"</a>) in favor of <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-specs?tabs=azure-powershell">Template Specs</a>).
 
 8.  It would save a lot of time to have automation create (in JSON) <strong>Policy Definitions</strong> to enforce rules for each subscription.
 
@@ -1580,25 +1580,43 @@ Editors:
 
 ### Azure Blueprints
 
-   Blueprints orchestrate deployment of resources/artifacts as policy.
+As of September 23, 2023, Azure has stopped development of its "Blueprints" which maintain versions of the relationship between what should be deployed and what was actually deployed. So it supports auditing of deployments over time. And, on its own, a Blueprint can be applied to several subscriptions at once. [<a target="_blank" href="https://www.youtube.com/watch?v=3rSCnAZPNfo">VIDEO</a>] Also, Azure Blueprints are stored in Azure Cosmos cloud DB, which is replicated globally to several regions for ultimate reliability. 
 
-   Blueprints makes use of:
+<a target="_blank" href="https://www.pluralsight.com/resources/blog/cloud/azure-blueprints-shelved">NEWS</a>: Microsoft announced that it is retiring Azure Blueprints on Sep 30, 2024. Microsoft recommends that customers use Azure Resource Manager (ARM) <strong>template specs</strong> and <strong>deployment stacks</strong> to manage their environments.
+
+Notice in sample Blueprints files that it's in JSON format:
+
+   * <a target="_blank" href="https://github.com/timothywarner/az500/tree/main/scripts/blueprints/basic-networking-blueprint">basic networking</a>
+
+Blueprints orchestrate deployment of resources/artifacts as policy.
+
+In the <strong>Artifacts</strong> folder, Blueprints <a target="_blank" href="https://itnext.io/iac-azure-blueprints-and-terraform-7349ecf8d61c">has these</a>:
+
    * Role assignments
    * Policy assignments
    * ARM templates
    * Resource groups
    <br /><br />
 
-   It's like HashiCorp's Terraform, which completely controls and maintains changes.
+Template Specs will be taking over for Blueprints?
 
-   * https://github.com/timothywarner/az500/tree/master/blueprints
+   * https://learn.microsoft.com/en-us/answers/questions/177308/index.html
+
+Blueprints the only mechanism for assigning deny permissions to Resource Groups.
+
+https://learn.microsoft.com/en-us/answers/questions/177308/index.html
+
+HashiCorp's Terraform, which completely controls and maintains changes.
+
    * https://github.com/terraform-providers/terraform-provider-azurerm
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/blueprints/samples/azure-security-benchmark-foundation/">This sample Blueprint</a> deploys several Azure services to provide a secure, monitored, enterprise-ready foundation:<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690479433/azure-subscription-arch-1154x999_us8vps.png"><img alt="azure-subscription-arch-1154x999.png" width="1154" height="999" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690479433/azure-subscription-arch-1154x999_us8vps.png"></a>
 
+An important design of Azure Blueprints within enterprises is that it allows for <strong>separation of duties</strong> between technical teams responsible for creating and maintaining the blueprint and those (in Operations) responsible for deploying it. This is similar to the separation of duties between developers and operations in DevOps favored for compliance. 
 
-TODO: Blueprints handle deny.
+<a target="_blank" href="https://myrestraining.com/blog/azure/azure-blueprints-terraform/">This</a>
+presents the analysis that Azure Blueprints is a top-down approach to infrastructure management, while Terraform is a bottom-up approach.
 
 
 <hr />
