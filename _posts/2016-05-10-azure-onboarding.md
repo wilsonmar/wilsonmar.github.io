@@ -31,15 +31,15 @@ To be honest, I get more confused after viewing videos and documentation than be
 
 So let me start with my attempt at explaining Azure technicals before <a href="#PeopleStuff">people stuff</a> further down.
 
-While others focus on the various features, I am working on a step-by-step reveal video of this, which presents a sequence for how to securely setup a new enterprise to make full use of Azure technologies in the cloud:
+While others confuse us with a focus on specific features, I am showing here step-by-step how to setup a <strong>new enterprise</strong> to make full use of Azure technologies in the cloud:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1695830221/az-onboarding-1590x860_nheuca.png"><img alt="az-onboarding-1590x860.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1695830221/az-onboarding-1590x860_nheuca.png"><em>Click on image for full screen</em></a> generated from my PowerPoint file.
+<a target="_blank" href="https://www.youtube.com/watch?v=Y-aOGSAPRkc"><img alt="az-onboarding-1590x860.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1695830221/az-onboarding-1590x860_nheuca.png"><em>Click for step-by-step 40-second YouTube video</em></a> generated from my PowerPoint file with animations.
 
 <strong>Azure Resource Manager</strong> is not a specific product or service, but a set of services that act as a gate-keeper to limit <strong>Actions</strong> (aka Operations) against Azure <strong>resources</strong> using RBAC (Role-based Access Control) relevant to <strong>Security Principals</strong>.
 
-Before we setup resources, which is 21 steps in, we have some enterprise setup to do:
+Before we setup resources, which is 22 steps in, we have some enterprise setup to do:
 
-1.  PROTIP: If you're intending to setup an whole enterprise, before logging in, have a chart of your organization's job titles, their responsibilities, who reports to whom, with metadata about each person (such as their geographic location, emails, etc.). This background determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be setup.
+1.  PROTIP: If you're intending to setup a whole enterprise, before logging in, have a chart of your organization's job titles, their responsibilities, who reports to whom, with metadata about each person (such as their geographic location, emails, etc.). This background determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be setup.
 
 2.  Working at enterprise scale requires a <strong>custom program</strong> to quickly <strong>populate</strong> the information into Azure, both using samples in test and to prepare for productive use.
 
@@ -53,7 +53,7 @@ Before we setup resources, which is 21 steps in, we have some enterprise setup t
 
 6.  <strong>Licensing</strong> is defined under a Tenant. Enterprises need a paid P1 or P2 license for each user to use Azure securely.
 
-7.  Automation needs to be chosen. <strong>ARM templates</strong> are now legacy. Its <strong>Bicep</strong> transpiler is gaining popularity. They are still needed to create some resources. But unlike them, <strong>Blueprints</strong> maintain versions of the relationship between what should be deployed and what was actually deployed. So it supports auditing of deployments over time. And, on its own, a Blueprint can be applied to several subscriptions at once. [<a target="_blank" href="https://www.youtube.com/watch?v=3rSCnAZPNfo">VIDEO</a>] Also, Azure Blueprints are stored in Azure Cosmos cloud DB, which is replicated globally to several regions for ultimate reliability. 
+7.  Automation needs to be chosen. <strong>ARM templates</strong> are now legacy. Its <strong>Bicep</strong> transpiler is gaining popularity. They are still needed to create some resources. But unlike them, Azure <strong>Blueprints</strong> maintain versions of the relationship between what should be deployed and what was actually deployed. So it supports auditing of deployments over time. And, on its own, a Blueprint can be applied to several subscriptions at once. [<a target="_blank" href="https://www.youtube.com/watch?v=3rSCnAZPNfo">VIDEO</a>] Also, Azure Blueprints are stored in Azure Cosmos cloud DB, which is replicated globally to several regions for ultimate reliability. 
 
 8.  It would save a lot of time to have automation create (in JSON) <strong>Policy Definitions</strong> to enforce rules for each subscription.
 
