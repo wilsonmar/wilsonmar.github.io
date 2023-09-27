@@ -1,8 +1,8 @@
 ---
 layout: post
-date: "2023-08-12"
-file: "azure-cloud-onramp"
-title: "Azure Cloud Onramp"
+date: "2023-09-23"
+file: "azure-onboarding"
+title: "Azure Onboarding"
 excerpt: "Know URLs, Subscriptions, Support plans, Tenants, Directories, ARM portal Keyboard Shortcuts to use Azure Portal GUI, CLI Bash, PowerShell to deploy Bicep in GitHub Actions to create resources securely - AZ-104, AZ-500"
 tags: [cloud, azure]
 image:
@@ -31,7 +31,8 @@ All on one page. Outline:
 1. Support
 
 1. <a href="#automation-programmatically">Automation</a>
-
+1. <a href="#Bicep">Bicep</a> and <a href="#GitHub">GitHub Actions</a>
+1. My data generator (departments, jobs, roles, groups, people, projects, etc.) 
 1. IAM
 1. <a href="#IAM">IAM (Azure AD)</a>, groups, federation
 
@@ -3187,7 +3188,7 @@ https://azure.microsoft.com/en-us/pricing/calculator/
    Since Azure provides a small amount of free time to all accounts each month under their <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-scale#consumption-plan">Consumption Plan</a>,
    you can do several runs each month without spending any cash. See their <a target="_blank" href="``https://azure.microsoft.com/en-us/pricing/details/functions/">Pricing</a>.
 
-   The "az-func" TRYOUT does all the following:
+   The RYOUT does the following:
 
    Account Password > Login > Tenant > Principal > APP_ID > Roles > Template > stop
 
@@ -3469,6 +3470,81 @@ Current status: As of this writing (August 12, 2023):
 
    * Bicep is not yet integrated into the Azure Portal, which has a "See in JSON" link for each resource.
    <br /><br />
+
+### Bicep PSRule
+
+PSRule at <a target="_blank" href="https://github.com/Azure/PSRule.Rules.Azure">https://github.com/Azure/PSRule.Rules.Azure</a> leverage <strong>270+ rules</strong> to validate Bicep code according to best practices and security requirements as defined in the Azure Well-Architected Framework.
+
+1.  <a target="_blank" href="https://www.youtube.com/watch?v=3697rG8tkOI&t=12m12s">VIDEO</a>: 
+
+    <a target="_blank" href="https://github.com/Azure/PSRule.Rules.Azure-quickstart">https://github.com/Azure/PSRule.Rules.Azure-quickstart</a> 
+
+1.  Click the green "Use this template" to "Create a new repository" under your own GitHub account and repo name.
+
+    I recommend a name such as "rnd-bicep-psrule-play-01" to describe the purpose of the repo, to end up with:
+
+    https://github.com/wilsonmar/rnd-bicep-psrule-play-01
+
+1.  Provide a Description such as "Playground for Bicep and PSRule".
+
+1.  Fix the .gitignore
+
+1.  Add a .gitattributes file to prevent CRLF line endings.
+
+1.  Click the green "Create repository from template" button.
+
+    ### CODEOWNERS
+
+1.  Change the CODEOWNERS file to point to your GitHub account, repo name, branch name, and owner accounts.
+
+    See https://help.github.com/articles/about-codeowners/
+
+1.  Customize the PULL_REQUEST_TEMPLATE.md file.
+
+    ### markdownlint
+
+1.  Configure .markdownlint.json at
+
+    https://github.com/wilsonmar/rnd-bicep-psrule-play-01/blob/main/.markdownlint.json
+
+    based on<br />
+    https://github.com/DavidAnson/vscode-markdownlint#configure
+
+    https://azure.github.io/PSRule-Rules-Azure/en/rules/module/
+
+    https://github.com/DavidAnson/markdownlint/blob/main/README.md
+
+    https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint
+
+    ### PSRule samples
+
+1.  <a target="_blank" href="https://www.youtube.com/watch?v=3697rG8tkOI&t=31m26s">In <tt>.ps-rule</tt> folder, review files Org_Rule.ps1 (PowerShell) and Org_Rule.md (Markdown).
+
+    Org.Rule.yaml defines the rule to require storage.
+
+    ### .devcontainer
+
+    ### ps-rule.yaml
+
+    https://aka.ms/ps-rule/options
+
+    https://aka.ms/ps-rule-azure/options
+
+1.  Schedule a future time when versions of requires: PSRule, etc.
+
+    ### .github/workflows/azure-analyze.yaml
+
+    ### .github/workflows/ms-analyze.yaml
+
+1.  It runs in GitHub Actions workflows (https://aka.ms/ps-rule-action), Azure Pipelines, and Visual Studio Code.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=L4CIDqnXLPk">VIDEO</a> by Bernie White, Microsoft MVP, on Azure Bicep. 
+and
+Azure Bicep - The future of ARM templates by <a target="_blank" href="https://www.linkedin.com/in/kevinoliver/">Kevin Oliver</a> at <a target="_blank" href="https://www.linkedin.com/company/azure-thursday/">Azure Thursday</a> on Aug 12, 2021.
+and
+<a target="_blank" href="https://www.youtube.com/watch?v=3697rG8tkOI&t=1108s">VIDEO</a>: PSRule for testing Azure Bicep code references 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=AMOj5-puoGI">VIDEO</a>: Azure Bicep Native Parameter Files
 
 
 <a name="BicepDocs"></a>

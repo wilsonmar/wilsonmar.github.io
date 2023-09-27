@@ -3,7 +3,7 @@ layout: post
 date: "2023-09-11"
 file: "text-editors"
 title: "Text Editors (on the Mac)"
-excerpt: "nano, pico, vim, subl, code, Eclipse, IntelliJ, Visual Studio, Cloud9, etc."
+excerpt: "nano, pico, vim, subl, VSCode, Eclipse, IntelliJ, Visual Studio, Cloud9, etc."
 tags: [apple, mac, setup]
 image:
 # feature: pic RichTextEditorToolBar 1900x500.jpg
@@ -42,7 +42,7 @@ Below is a list of text editors grouped by licensing term:
 
 ## Free IDEs :
 
-   * <a href="#Code">Visual Studio Code</a> (from Microsoft)
+   * <a href="#VSCode">Visual Studio Code</a> (from Microsoft)
    * <a href="#Eclipse">Eclipse</a> for Java
    * <a target="_blank" href="https://github.com/spyder-ide/spyder">Spyder</a> (for Python pyflakes and pylint code analysis)
    * <a target="_blank" href="https://www.jetbrains.com/go/">Gogland</a>, an IDE for Go from Jetbrains (makers of IntelliJ, PyCharm, etc.)
@@ -168,7 +168,7 @@ For Sublime, set the <tt>ensure_newline_at_eof_on_save</tt> option to true.
 For TextMate, you can install the Avian Missing Bundle and add TM_STRIP_WHITESPACE_ON_SAVE = true to your .tm_properties file.
 
 
-<a name="Code"></a>
+<a name="VSCode"></a>
 
 ## Visual Studio Code #
 
@@ -256,7 +256,6 @@ Its <a target="_blank" href="https://www.hanselman.com/blog/VisualStudioCodeRemo
  
    <a target="_blank" href="https://www.monodevelop.com/download/">https://www.monodevelop.com/download/</a>
 
-
    ### PowerShell extension for VSCode
 
    <a target="_blank" href="https://www.youtube.com/watch?v=LJNdK0QrIo8">
@@ -279,7 +278,7 @@ Its <a target="_blank" href="https://www.hanselman.com/blog/VisualStudioCodeRemo
    <tt>"git.confirmSync": false,</tt>
 
 
-   ### JavaScript Extension
+   ### JavaScript Extensions
 
 1. If you're working with JavaScript, install it from the Welcome screen, reached from Help, Welcome.
 
@@ -301,17 +300,35 @@ Its <a target="_blank" href="https://www.hanselman.com/blog/VisualStudioCodeRemo
 0. Select the full command that appears in the drop-down.
 
 
-### Other Extensions
+   ### Other Extensions
 
 Emmet to add smart auto-completion suggestions to html editing.
 comes with VSCode.
 
 "Live Server" to Launch a development local Server with live reload feature for static & dynamic pages. It automatically refreshes browser when changes are detected in files. 
 
-<a target="_blank" href="https://tutorialzine.com/2017/06/15-essential-plugins-for-visual-studio-code">
+https://github.com/42Crunch/vscode-openapi<br />
+https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi&ssr=false#review-details
+<tt>code --install-extension 42Crunch.vscode-openapi</tt> where<br />
+"42Crunch.vscode-openapi" is the extension ID from clicking the gear icon on the extension's page on VSCode.
+
+> <a target="_blank" href="https://tutorialzine.com/2017/06/15-essential-plugins-for-visual-studio-code">
 15 Essential Plugins for Visual Studio Code</a> June 27, 2017
 
-* https://marketplace.visualstudio.com/items?itemName=antfu.icons-carbon
+\# https://www.hashicorp.com/blog/announcing-the-terraform-visual-studio-code-extension-v2-0-0<br />
+code --install-extension ms-azuretools.vscode-docker<br />
+
+corresponds not with https://github.com/ms-azuretools/vscode-docker<br />
+but with https://github.com/microsoft/vscode-docker<br />
+
+code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools<br />
+code --install-extension ms-python.python<br />
+code --install-extension ms-vscode-remote.remote-containers<br />
+code --install-extension ms-vscode-remote.remote-ssh<br />
+code --install-extension ms-vscode-remote.remote-ssh-edit<br />
+code --install-extension ms-vscode-remote.remote-wsl<br />
+
+# https://marketplace.visualstudio.com/items?itemName=antfu.icons-carbon
 provides a cooler set of Product/logo icons for VSCode to display next to each file.
 
 * https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces

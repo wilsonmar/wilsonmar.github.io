@@ -1491,8 +1491,11 @@ and <a target="_blank" href="https://microsoftlearning.github.io/AZ-700-Designin
 
 * M07 - Unit 5 Restrict network access to PaaS resources with virtual network service endpoints
 * M07 - Unit 6 Create an Azure private endpoint using Azure PowerShell
+
 > Design and implement network monitoring
+
 * M08 - Unit 3 Monitor a load balancer resource using Azure Monitor
+
 <br /><br />
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-architected/security/design-network-segmentation">Implement network segmentation patterns on Azure</a>
