@@ -27,11 +27,9 @@ All on one page are these references:
    * <a href="#FreeSvcs">First year free services on Azure</a>
    <br /><br />
 
-To be honest, I get more confused after viewing videos and documentation than before.
+Let's dive in with the <strong>technical</strong> here, with <a href="#PeopleStuff">people stuff</a> further down.
 
-So let me start with my attempt at explaining Azure technicals before <a href="#PeopleStuff">people stuff</a> further down.
-
-While others confuse us with a focus on specific features, I am showing here step-by-step how to setup a <strong>new enterprise</strong> to make full use of Azure technologies in the cloud:
+<strong>Click the diagram for a video</a> -- step-by-step how to setup a <strong>new enterprise</strong> to setup Azure technologies in the cloud:
 
 <a target="_blank" href="https://www.youtube.com/watch?v=Y-aOGSAPRkc"><img alt="az-onboarding-1590x860.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1695830221/az-onboarding-1590x860_nheuca.png"><em>Click for step-by-step 40-second YouTube video</em></a> generated from my PowerPoint file with animations.
 
@@ -235,6 +233,8 @@ Other Departments:
 
 PROTIP: Define abbreviations for each above.
 
+
+<hr />
 
 <a name="Naming"></a>
 
@@ -618,9 +618,9 @@ References:
    * <a target="_blank" href="https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/">Pulumi</a> enables programmatic access (by a Python program) to Azure.
    <br /><br />
 
-<a target="_blank" href="https://www.youtube.com/playlist?list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7">YouTube playlist on Azure</a> by Steve Michelotti talking with experts from dev, over 3 years fromm 2020. Each is thorough. Much of their advice applies to commercial Azure as well. I list them after reversing the order of the playlist:
+<a target="_blank" href="https://www.youtube.com/playlist?list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7">YouTube playlist on Azure (https://aka.ms/AzureGovVideos)</a> by <a target="_blank" href="https://www.linkedin.com/in/stevemichelotti/">Steve Michelotti</a talking with experts from dev, from 2019+. Each is thorough. Much of their advice applies to commercial Azure as well. I list them after reversing the order of the playlist:
 
-1. Azure Friday | Azure Government
+1. Azure Friday - Azure Government
 1. Azure Government Security
 1. Real World Solutions on Azure Government with Machine Learning
 1. Mobile Apps Powered by Azure Government
@@ -648,7 +648,9 @@ References:
 1. Real-time data streaming with Event Hubs on Azure Government
 1. Build automated workflows with Logic Apps on Azure Government
 1. Learn about Serverless technology in Azure Government
-1. Overview of Managed Identities on Azure Government
+1. <a target="_blank" href="https://www.youtube.com/watch?v=Ydgz4QINGNI&list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7&index=15&t=9m54s">Overview of Managed Identities on Azure Government</a> No secrets rotation.
+   * t=9m59s setup using CLI for kv.GetSecretAsync from within VM code to retrieve from Key Vault
+   * t=13m23s setup using portal add Web App. Enable Managed Identity. Publish. In Key Vaults, add Access Policy to Web App.
 1. Overview of Azure Database for MySQL in Azure Government
 1. DoD Impact Level 5 Expansion on Azure Government
 1. Advanced Data Security with Azure SQL Database in Azure Government
