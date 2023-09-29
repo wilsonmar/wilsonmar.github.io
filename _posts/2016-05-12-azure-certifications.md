@@ -488,40 +488,6 @@ https://docs.microsoft.com/en-us/learn/azure/
 
 <br /><br />
 
-https://github.com/MicrosoftLearning/Lab-Demo-Recordings/blob/master/AZ-103.md
-non-audio version recording of hands-on labs used in the portfolio.
-
-\1 - <a target="_blank" href="https://wwliltcontent.blob.core.windows.net/moc/Exported/AZ-104/AZ104-Mod1.mp4">Manage Azure Active Directory Identities</a>
-
-\2 - <a target="_blank" href="https://wwlcontent.azureedge.net/moc/Exported/AZ-104\AZ104-Mod2a.mp4">Manage Subscriptions and RBAC</a>
-
-\2 - <a target="_blank" href="https://wwlcontent.azureedge.net/moc/Exported/AZ-104\AZ104-Mod2b.mp4">Manage Governance via Azure Policy</a>
-
-\3 - <a target="_blank" href="https://wwlcontent.azureedge.net/moc/Exported/AZ-104\AZ104-Mod3a.mp4">Manage Azure resources by Using the Azure Portal</a>
-
-\3 - <a target="_blank" href="https://wwlcontent.azureedge.net/moc/Exported/AZ-104\AZ104-Mod3b.mp4">Manage Azure resources by Using ARM Templates</a>
- 
-\4 - <a target="_blank" href="https://wwlcontent.azureedge.net/moc/Exported/AZ-104\AZ104-Mod4.mp4">Implement Virtual Networking</a>
-
-\5 - <a target="_blank" href="https://wwlcontent.azureedge.net/moc/Exported/AZ-104\AZ104-Mod5.mp4">Implement Intersite Connectivity</a>
-  
-\6 - <a target="_blank" href="https://wwlcontent.azureedge.net/moc/Exported/AZ-104\AZ104-Mod6.mp4">Implement Traffic Management</a>
-
-\7 - <a target="_blank" href="https://wwlcontent.azureedge.net/moc/Exported/AZ-104\AZ104-Mod7.mp4">Manage Azure Storage</a>
-
-\8 - <a target="_blank" href="https://wwlcontent.azureedge.net/moc/Exported/AZ-104\AZ104-Mod8.mp4">Manage Virtual Machines</a>
-
-\9 - <a target="_blank" href="https://wwlcontent.azureedge.net/moc/Exported/AZ-104\AZ104-Mod9a.mp4">Implement Web Apps</a>
-
-\9 - <a target="_blank" href="https://wwlcontent.azureedge.net/moc/Exported/AZ-104\AZ104-Mod9b.mp4">Implement Azure Container Instances</a>
-
-\9 - <a target="_blank" href="https://wwlcontent.azureedge.net/moc/Exported/AZ-104\AZ104-Mod9c.mp4">Implement Azure Kubernetes Service</a>
-
-\10 - <a target="_blank" href="https://wwlcontent.azureedge.net/moc/Exported/AZ-104\AZ104-Mod10.mp4">Implement Data Protection</a>
- 
-\11 - <a target="_blank" href="https://wwlcontent.azureedge.net/moc/Exported/AZ-104\AZ104-Mod11.mp4">Implement Monitoring</a>
-
-
 <a target="_blank" href="https://www.youtube.com/watch?v=Qd0YI9ZMHHs">VIDEO</a>: <a target="_blank" href="https://github.com/madebygps/projects/tree/main/az-104">AZ-104 Projects by MadeByGPS</a> <a target="_blank" href="https://www.linkedin.com/in/madebygps/">Gwyneth Peña-Siguenza</a>. She <a target="_blank" href="https://payhip.com/b/BgnjT">sells her diagram</a> for $10.
 
 <br /><br />
@@ -599,6 +565,7 @@ by Tim Warner with <a target="_blank" href="https://www.kaplanlearn.com/educatio
 
 * <a target="_blank" href="https://www.aguidetocloud.com/full-courses/az104fullcourse">10-hour AGuideToCloud video class by Susanth Sutheesh</a>
 
+* <a target="_blank" href="https://www.youtube.com/watch?v=QGZWqYIpOMw">VIDEO: 190-question Q&A in 5 hours</a> from The Tech BlackBoard by Vipin Vij.
 
 <hr />
 
