@@ -548,6 +548,15 @@ Chris Wahl (twitch.tv/wahlnetwork)
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=gyZdCzdkSY4" title="Oct 13, 2020">Beginners Tutorial to Terraform with Azure</a>
 
+Susanth Sutheesh
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=I1zvntPHNMk">Full course</a>
+
+ The Tech BlackBoard
+ 
+   * <a target="_blank" href="https://www.youtube.com/playlist?list=PL0AYtrUw-NRTX9NFza7kfTDlxYaKxooCk">5 hour Q&A</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=11XlNifbHfM">July 28, 2023 update</a>
+
 ### Flash cards:
 
    * <a target="_blank" href="https://quizlet.com/subject/az-104/">Quizlet flash cards</a>
@@ -566,6 +575,8 @@ by Tim Warner with <a target="_blank" href="https://www.kaplanlearn.com/educatio
 * <a target="_blank" href="https://www.aguidetocloud.com/full-courses/az104fullcourse">10-hour AGuideToCloud video class by Susanth Sutheesh</a>
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=QGZWqYIpOMw">VIDEO: 190-question Q&A in 5 hours</a> from The Tech BlackBoard by Vipin Vij.
+
+
 
 <hr />
 
