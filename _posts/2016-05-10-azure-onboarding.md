@@ -4162,12 +4162,13 @@ global.azurebootcamp.net</a> has converted to Vue and Google stuff.
 azcopy is a command-line utility designed for copying data to/from Microsoft Azure Blob, File, and Table storage, using simple commands designed for optimal performance. You can copy data between a file system and a storage account, or between storage accounts.
 
 1. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10">Install azcopy</a> on your local machine.
-1.  Authorizations:
+1.  Set Authorizations 
     * To download: "Storage Blob Data Reader".
     * To upload: "Storage Blob Data Contributor" & "Storage Blob Data Owner".
     <br /><br />
-1.  Login to Azure Portal to see the uploaded files.
+1.  Gain access via Active Directory or Shared Access Signature (SAS):
     <pre><strong>azcopy login</strong></pre>
+1.  Enter the code (for example) A1B2C3D4 to authenticate.
 1.  <a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-blobs-upload">Upload blobs from the command line</a> to Azure Blob storage.
 
 
