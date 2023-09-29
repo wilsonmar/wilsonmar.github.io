@@ -4172,6 +4172,15 @@ azcopy is a command-line utility designed for copying data to/from Microsoft Azu
 1.  <a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-blobs-upload">Upload blobs from the command line</a> to Azure Blob storage.
 
 
+## Azure Import/Export Service
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-import-export-service">Azure Import/Export Service</a> is used to transfer large amounts of data to and from Azure Blob storage and Azure Files by shipping disk drives to an Azure datacenter.
+
+Download command-line tool <tt>WAImportExport.exe</tt> to prepare disk drives and copy data on Windows only.
+
+Each order can be up to 5 SSD disk drives with 40TB total per order.
+
+
 ## Delete Subscription, Directory, Tenant
 
 <pre><strong>az group delete --name $MY_RG</strong></pre>
