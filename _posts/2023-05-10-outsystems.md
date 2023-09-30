@@ -7,7 +7,7 @@ excerpt: "Generate feature-rich web and mobile apps using low-code running withi
 tags: [cloud, azure, C#]
 image:
 # outsystems-1900x500.png
-  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1696043294/outsystems-1900x500_uhrpan.png
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1696048723/outsystems-1900x500_tmk6el.png
   credit: Outsystems
   creditlink: https://www.outsystems.com/evaluation-guide/development-and-management-tools/
 comments: true
@@ -18,14 +18,16 @@ comments: true
 
 ## Technical Architecture
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=XR4n9fq1wJM">VIDEO</a> Outsystems Demo (of version  9.1 Bali 2016) by <a target="_blank" href="https://www.linkedin.com/in/pedrovcmoliveira/">Pedro Oliveira</a>
-   <br /><br />
+<a target="_blank" href="https://www.linkedin.com/in/joaomiguelneves/">Joao Neves</a>, VP of Engineering at Outsystems, says that Outsystems is a "<strong>low-code</strong> platform for building enterprise-grade web and mobile apps that help you get the job done faster. It generates feature-rich web and mobile apps using low-code running within a full suite of enterprise-grade utilities and services."
+
+<a target="_blank" href="https://www.youtube.com/watch?v=XR4n9fq1wJM">VIDEO</a> Outsystems Demo (of version  9.1 Bali 2016) by <a target="_blank" href="https://www.linkedin.com/in/pedrovcmoliveira/">Pedro Oliveira</a>
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696043554/outsystems-arch-1152x720_okgood.jpg"><img alt="outsystems-arch-1152x720.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696043554/outsystems-arch-1152x720_okgood.jpg"></a>
 
-Outsystems is a low-code platform for building enterprise-grade web and mobile apps running as .NET DLLs on their private cloud or on-prem Windows servers. However, apps can be developed on Windows, Linux, and macOS laptops. 
+Outsystems runs web and mobile apps as .NET DLLs on Windows-based servers within their private cloud (as PaaS like Salesforce) or on-prem servers. 
 
-It can be used in PaaS or as a self-managed install on-premises or in a private cloud.
+However, apps can be developed on Windows, Linux, and macOS laptops. 
+
 
 ## Why it's a big deal
 
@@ -46,13 +48,10 @@ This also means that the IT workforce can be <strong>more diverse</strong> and c
 
 All the above enables faster development of new applications.
 
-<a target="_blank" href="https://www.linkedin.com/in/joaomiguelneves/">Joao Neves</a>, VP of Engineering at Outsystems, says that Outsystems is a "low-code platform for building enterprise-grade web and mobile apps that help you get the job done faster. It generates feature-rich web and mobile apps using low-code running within a full suite of enterprise-grade utilities and services."
-
-
 
 ## The Outsystems Company
 
-<a target="_blank" href="https://www.glassdoor.com/Reviews/OutSystems-Reviews-E642590.htm">79% of employees would recommend the company to a friend</a> -- very high among emplyers.
+<a target="_blank" href="https://www.glassdoor.com/Reviews/OutSystems-Reviews-E642590.htm">79% of employees would recommend the company to a friend</a> -- high among all employers.
 
 "One of the fastest-growing B2B software companies in the world,"
 
@@ -61,11 +60,8 @@ Among the Forbes top cloud computing employers four years in a row.
 Outsystems' website at <a target="_blank" href="https://www.outsystems.com/">outsystems.com</a>
 lists the company at 55 Thomson Place, 2nd Floor, Boston, MA 02210 Tel: +1 617 837 6840
 
-https://www.linkedin.com/company/outsystems/
-
-But many of Outsystems work in Lisbon, Portugal. 
-
-Bengaluru, Karnataka, India
+On https://www.linkedin.com/company/outsystems/
+Outsystems lists jobs in Lisbon, Portugal and Bengaluru, Karnataka, India
 
 The company was founded in 2001 by current CEO (Stanford graduate) <a target="_blank" href="https://www.linkedin.com/in/paulorosado/">Paulo Rosado</a>.
 https://www.outsystems.com/blog/posts/interaction-design-team/
@@ -112,7 +108,7 @@ Outsystems removes barrier to entry for learning, and creates a large community 
 
 <a target="_blank" href=https://www.youtube.com/watch?v=3ZE1Sw1gshY&list=PLxALhSwsaivzR0SyCo_LHhDvOARPtZPi6&index=2&t=2m37s">VIDEO</a>: Using a link in their own URL-shortener service, <a target="_blank" href="https://outsyste.ms/DecodedCC/">outsyste.ms/DecodedCC Personal Edition</a> is a free single-developer single application for less than 10 users, on ________.outsystemscloud.com.
 
-A 30-day trial edition is available for temporary access to production environment.
+A 30-day trial edition is available for temporary access to a production environment.
 
 
 ## Toolset
@@ -123,9 +119,9 @@ Outsystem's <a target="_blank" href="https://www.outsystems.com/evaluation-guide
 
 * <strong>Experience Builder</strong> is a drag-and-drop tool to create <strong>prototypes</strong> of the user experience (UX) of the application. A prototype is a mock-up of the application's UI, which can be used to gather feedback from end-users and stakeholders.
 
-* <strong>Service Studio</strong> is the drag-and-drop IDE for creating the application stack: the data model, application logic, UI, business process flows, integrations, and security policies. It offers AI-assisted development guides for developers to suggest next steps, auto-fill fields, and search for answers to "how-to" questions and other information -- within the IDE.
+* <strong>Service Studio</strong> is the drag-and-drop IDE for creating the application stack: the data model, application logic, UI, business process flows, integrations, and security policies. Its <a target="_blank" href="https://www.outsystems.com/glossary/artificial-intelligence-vs-machine-learning/">AIFusion</a> uses machine learning from all customers to suggest next steps, auto-fill fields, and search for answers to "how-to" questions and other information -- within the IDE.
 
-   The ServiceStudio.app <a target="_blank" href="https://www.outsystems.com/Portal/Trial_Portal">304 MB download</a> for macOS is not available via HomeBrew.
+   The <a target="_blank" href="https://www.outsystems.com/Portal/Trial_Portal">304 MB download</a> for macOS is not available via HomeBrew. So you'll have to manually drag the 755 MB ServiceStudio.app into your /Applications folder.
 
 * <strong>Workflow Builder</strong> is a drag-and-drop tool used by business experts, analysts, and process owners to define the business logic of their application and create <strong>business process flows</strong> which can be evolved in Service Studio.
 
@@ -133,7 +129,7 @@ Outsystem's <a target="_blank" href="https://www.outsystems.com/evaluation-guide
 
 * <strong>Integration Studio</strong> is used to create components that integrate with third-party systems and microservices. Developers use Visual Studio to code integration components with a standard .NET C# compiler. The generated DLLs are sent to the Platform Server.
 
-* <strong>LifeTime</strong> automates DevOps processes to enable a centralized management of authentication permissions and deploys within <strong>environments</strong> from development to QA and production —- on the cloud or on-premises. LifeTime does a dependency analysis across environments to be sure the deployment will not impact the applications running on the destination environment. 
+* <strong>LifeTime</strong> automates DevOps processes to enable a centralized management of authentication permissions and deploys within <strong>environments</strong> from development to QA and production —- on the cloud or on-premises. LifeTime performs dependency analysis across environments to ensure that deployments will not impact the applications running on the destination environment. 
 
    All applications built with OutSystems are automatically instrumented to collect runtime monitoring information. So, with LifeTime, it is possible to monitor the performance of apps and take action even before users notice an application is slow.
 
@@ -252,6 +248,25 @@ for transitioning to support Linux and Oracle on macOS laptops.
 Keep concepts with different lifecycles apart.
 
 
+## Logging
+
+Depending on the version:
+
+* Errors — errors that have occurred in the system or in the applications
+
+* General — several matters that take place in the system, such as removed items and slow queries that appears
+
+* Integrations — all incoming and outgoing API calls
+
+* Mobile Apps — all traffic to and from a mobile App is showed here
+
+* Environment Health — provides the status of the main functions of the platform
+
+* Security — specifies the security issues that have occurred
+
+* Service Actions — gives messages about the REST-based request within the platform
+
+
 ## Professional Certifications
 
 For $100-$200, Outsystems offers certifications for developers and architects.
@@ -285,6 +300,12 @@ $200, 120-minute exams:
 ## Naming Conventions
 
 * MTh = Mobile Theme
+
+<hr />
+
+## Alexa app
+
+
 
 <hr />
 
