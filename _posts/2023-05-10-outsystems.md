@@ -35,23 +35,49 @@ Its "low code" approach enables enterprises to <strong>hire less people</strong>
 not only because Outsystems generates a lot of the code 
 but also because back-end and operational features are already operational.
 
-With low-code dev, there is less arguing about which framework to use, what CI/CD to use,
-what monitoring, etc.
+### Dev processes
+
+This is like having a mature organization where people have settled in what to call things and how to do things a particular way. Because a lot of what is necessary is built-in, you <strong>waste time arguing</strong> about the <a target="_blank" href="https://success.outsystems.com/documentation/11/developing_an_application/">application lifeclyce</a>: what framework to use, <a target="_blank" href="https://learn.outsystems.com/training/journeys/devops-659/ci-cd-with-outsystems/o11/2436">what CI/CD</a> to use, naming conventions, what logging, metrics, KPIs, what is a higher priority, etc. Helpful automation bakes in for all users the terminology and methodology for going to production: 
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696067986/outsystems-phases-1724x880_p9lngu.png"><img alt="outsystems-phases-1724x880.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696067986/outsystems-phases-1724x880_p9lngu.png"></a>
+
+   * DoR = Definition of Ready
+   * DoD = Definition of Done
+   * Within each sprint: Shape -> Build -> Accept
+   * Changesets
+   * CRs = Change Requests.
+   <br /><br />
+
+Outsystems CI (Continuous Integration) process at some shops can take years to instill among developers:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696070702/outsystems-ci-1486x548_df7tvn.png"><img alt="outsystems-ci-1486x548.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696070702/outsystems-ci-1486x548_df7tvn.png"></a>
+
+   * DEV = Development environment (contains mocks)
+   * QUA = Quality Assurance environment
+   * REG = Regression Testing suite (running in the QUA environment)
+   * ACC = Acceptance Testing suite (running in the QUA environment)
+   * PRE = Pre-production environment
+   * PRD = Production environment
+   <br /><br />
+   
+Because the language and framework are the same in all shops, new developers can more quickly pick up where the last one left off 
 
 So Outsystem customers' IT workforce consists largely be those who can be <strong>near end-users</strong> and focus on the business logic and user experience. There is less need for IT management and specialist "Developer Platform builders".
 
-Outsystems customers don't have to find experts in evolving technologies such as AI and AI.
+Outsystems customers don't have to find experts in bleeding-edge technologies such as AI because Outsystems had the foresight to have already been innovating it.
 
 It's not just about programming skill sets, to include "citizen developers" who do not program full time.
 
 This also means that the IT workforce can be <strong>more diverse</strong> and closer to end-users.
+
+
 
 All the above enables faster development of new applications.
 
 https://itnext.io/management-of-the-outsystems-platform-useful-or-necessary-c13de3a6c413
 
 
-## The Outsystems Company
+## Outsystems The Company
 
 <a target="_blank" href="https://www.glassdoor.com/Reviews/OutSystems-Reviews-E642590.htm">79% of employees would recommend the company to a friend</a> -- high among all employers.
 
@@ -103,6 +129,19 @@ The company was a pioneer in transitioning to working in C# on macOS laptops and
 
 Their <a target="_blank" href="https://www.outsystems.com/community/jobs/?q=&c=&t=&l=&r=&w=&s=">Job Board</a> lists jobs worldwide.
 
+## Competition
+
+Here we compare the 2019 vs. 2023 ratings by Forrester.
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> 2019 </th><th> 2023 </th></tr>
+<tr valign="top"><td><a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696072129/outsystems-forrester-2019_ugm38x.png"><img alt="outsystems-forrester-2019.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696072129/outsystems-forrester-2019_ugm38x.png"></a>
+</td><td>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696072139/outsystems-forrester-2023_ixyqzf.png"><img alt="outsystems-forrester-2023.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696072139/outsystems-forrester-2023_ixyqzf.png"></a>
+</td></tr></tr></table>
+
+Salesforce is a PaaS like Outsystems, but Salesforce is more expensive and overly complex.
+
 
 ## Pricing
 
@@ -136,6 +175,8 @@ Outsystem's <a target="_blank" href="https://www.outsystems.com/evaluation-guide
 
 * <strong>Forge</strong> is the marketplace repository of reusable <a target="_blank" href="https://www.outsystems.com/evaluation-guide/how-is-software-in-the-forge-licensed/">BSD-licensed</a> open-source components that can be used in applications built with OutSystems. It is a marketplace of entire applications, components, connectors and templates created by OutSystems and its developer community.
 
+   PROTIP: Using other developers' components not only minimizes errors and testing efforts, but also saves time otherwise spent arguing about decisions incorporated in the example.
+
 * <strong>Integration Studio</strong> is used to create components that integrate with third-party systems and microservices. Developers use Visual Studio to code integration components with a standard .NET C# compiler. The generated DLLs are sent to the Platform Server.
 
 * <strong>Service Center</strong> provides an operational console to manage the Platform Server and the deployment of applications to different environments (Dev, QA, Prod). It is used to manage:
@@ -151,23 +192,24 @@ Outsystem's <a target="_blank" href="https://www.outsystems.com/evaluation-guide
 
 <hr />
 
-## Dev processes
-
-Outsystems makes use of their "Architecture Canvas" process.
-
-1. Shape
-1. Build
-1. Accept
-
-
 <a name="ServiceStudio"></a>
 
 ## Service Studio IDE
 
 The <a target="_blank" href="https://www.outsystems.com/Portal/Trial_Portal">304 MB download</a> for macOS is not available via HomeBrew. So you'll have to manually drag the 755 MB ServiceStudio.app into your /Applications folder.
 
+   * <a target="_blank" href="https://learn.outsystems.com/training/journeys/web-developer-662/service-studio-overview/o11/2347">VIDEO</a> Service Studio Overview
+   <br /><br />
 
-<a target="_blank" href="https://learn.outsystems.com/training/journeys/web-developer-662/service-studio-overview/o11/2347">VIDEO</a> Service Studio Overview
+The IDE requires constant connection to Outsystems' server.
+
+The IDE has 3 main areas, reachable by iconts at the upper-right:
+   * <strong>Logic</strong> is where you define the business logic of the application. It is where you create the data model, application logic, business process flows, integrations, and security policies.
+   * <strong>UI</strong> is where you define the user interface of the application. It is where you create the screens, flows, and themes.
+   * <strong>Data</strong> is where you define the data model of the application. It is where you create the entities, attributes, and relationships.
+
+
+
 
 
 ## Databases supported
@@ -305,6 +347,9 @@ $200, 120-minute exams:
 
 * OutSystems Certified Trainer
 
+## Versions
+
+* Outsystems 11 (2019) - https://www.outsystems.com/evaluation-guide/whats-new-in-outsystems-11/
 
 ## Naming Conventions
 
