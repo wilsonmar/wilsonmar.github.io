@@ -48,6 +48,8 @@ This also means that the IT workforce can be <strong>more diverse</strong> and c
 
 All the above enables faster development of new applications.
 
+https://itnext.io/management-of-the-outsystems-platform-useful-or-necessary-c13de3a6c413
+
 
 ## The Outsystems Company
 
@@ -83,6 +85,8 @@ The company was a pioneer in transitioning to working in C# on macOS laptops and
 
 ? 350 partners in 55 countries.
 
+   * https://indigo.pt/outsystems-low-code
+
 ? 350,000 community members.
 
 ? 1,000,000 downloads of its free version.
@@ -106,32 +110,33 @@ Outsystems charges $1,135/month for up to 3 apps in production.
 
 Outsystems removes barrier to entry for learning, and creates a large community of developers around the world.
 
-<a target="_blank" href=https://www.youtube.com/watch?v=3ZE1Sw1gshY&list=PLxALhSwsaivzR0SyCo_LHhDvOARPtZPi6&index=2&t=2m37s">VIDEO</a>: Using a link in their own URL-shortener service, <a target="_blank" href="https://outsyste.ms/DecodedCC/">outsyste.ms/DecodedCC Personal Edition</a> is a free single-developer single application for less than 10 users, on ________.outsystemscloud.com.
+<a target="_blank" href="https://www.youtube.com/watch?v=3ZE1Sw1gshY&list=PLxALhSwsaivzR0SyCo_LHhDvOARPtZPi6&index=2&t=2m37s">VIDEO</a>: Using a link in their own URL-shortener service, <a target="_blank" href="https://outsyste.ms/DecodedCC/">outsyste.ms/DecodedCC Personal Edition</a> is a free single-developer single application for less than 10 users, on ________.outsystemscloud.com.
 
 A 30-day trial edition is available for temporary access to a production environment.
 
 
 ## Toolset
 
+<a target="_blank" href="https://www.youtube.com/watch?v=B11E20BUVPE&list=RDCMUCB9wCEaf_7iKRCXTDbxRxlA&index=2">VIDEO</a>: 
 Outsystem's <a target="_blank" href="https://www.outsystems.com/evaluation-guide/development-and-management-tools/">tooling components</a>:
 
 * <strong>Platform Server</strong> is the server component that runs the application stack visible to end-users. It runs on Windows Server, Linux, or macOS. It is a .NET application that manages the application stack and provides services such as authentication, logging, monitoring, security, and user management. It also schedules tasks at specific times from a queue.
 
+   The Platform Server is managed by a web-based application "LifeTime".
+
+* <strong>LifeTime</strong> automates DevOps processes to enable a centralized management of authentication permissions and deploys within <strong>environments</strong> from development to QA and production —- on the cloud or on-premises. LifeTime performs dependency analysis across environments to ensure that deployments will not impact the applications running on the destination environment. 
+
+   All applications built with OutSystems are automatically instrumented to collect runtime monitoring information. So, with LifeTime, it is possible to monitor the performance of apps and take action even before users notice an application is slow.
+
 * <strong>Experience Builder</strong> is a drag-and-drop tool to create <strong>prototypes</strong> of the user experience (UX) of the application. A prototype is a mock-up of the application's UI, which can be used to gather feedback from end-users and stakeholders.
 
-* <strong>Service Studio</strong> is the drag-and-drop IDE for creating the application stack: the data model, application logic, UI, business process flows, integrations, and security policies. Its <a target="_blank" href="https://www.outsystems.com/glossary/artificial-intelligence-vs-machine-learning/">AIFusion</a> uses machine learning from all customers to suggest next steps, auto-fill fields, and search for answers to "how-to" questions and other information -- within the IDE.
-
-   The <a target="_blank" href="https://www.outsystems.com/Portal/Trial_Portal">304 MB download</a> for macOS is not available via HomeBrew. So you'll have to manually drag the 755 MB ServiceStudio.app into your /Applications folder.
+* <a href="#ServiceStudio"><strong>Service Studio</strong></a> is the drag-and-drop IDE for creating the application stack: the data model, application logic, UI, business process flows, integrations, and security policies. Its <a target="_blank" href="https://www.outsystems.com/glossary/artificial-intelligence-vs-machine-learning/">AIFusion</a> uses machine learning from all customers to suggest next steps, auto-fill fields, and search for answers to "how-to" questions and other information -- within the IDE.
 
 * <strong>Workflow Builder</strong> is a drag-and-drop tool used by business experts, analysts, and process owners to define the business logic of their application and create <strong>business process flows</strong> which can be evolved in Service Studio.
 
 * <strong>Forge</strong> is the marketplace repository of reusable <a target="_blank" href="https://www.outsystems.com/evaluation-guide/how-is-software-in-the-forge-licensed/">BSD-licensed</a> open-source components that can be used in applications built with OutSystems. It is a marketplace of entire applications, components, connectors and templates created by OutSystems and its developer community.
 
 * <strong>Integration Studio</strong> is used to create components that integrate with third-party systems and microservices. Developers use Visual Studio to code integration components with a standard .NET C# compiler. The generated DLLs are sent to the Platform Server.
-
-* <strong>LifeTime</strong> automates DevOps processes to enable a centralized management of authentication permissions and deploys within <strong>environments</strong> from development to QA and production —- on the cloud or on-premises. LifeTime performs dependency analysis across environments to ensure that deployments will not impact the applications running on the destination environment. 
-
-   All applications built with OutSystems are automatically instrumented to collect runtime monitoring information. So, with LifeTime, it is possible to monitor the performance of apps and take action even before users notice an application is slow.
 
 * <strong>Service Center</strong> provides an operational console to manage the Platform Server and the deployment of applications to different environments (Dev, QA, Prod). It is used to manage:
 
@@ -154,6 +159,15 @@ Outsystems makes use of their "Architecture Canvas" process.
 1. Build
 1. Accept
 
+
+<a name="ServiceStudio"></a>
+
+## Service Studio IDE
+
+The <a target="_blank" href="https://www.outsystems.com/Portal/Trial_Portal">304 MB download</a> for macOS is not available via HomeBrew. So you'll have to manually drag the 755 MB ServiceStudio.app into your /Applications folder.
+
+
+<a target="_blank" href="https://learn.outsystems.com/training/journeys/web-developer-662/service-studio-overview/o11/2347">VIDEO</a> Service Studio Overview
 
 
 ## Databases supported
@@ -227,17 +241,10 @@ for transitioning to support Linux and Oracle on macOS laptops.
 
 1.  Web and mobile application executables are generated and deployed by the Platform Server component.
 
-1.  The Platform Server is managed by a web-based application "LifeTime".
-
     The LifeTime too manages the deployment of applications to different environments (Dev, QA, Prod).
 
-1.  "Integration Studio" is used to integrate with other systems.
 
-    Integration Studio is a development tool to create components that allow the application integrates with an external databases or custom code.
-
-1.  "Service Center" is used to manage the Platform Server.
-
-
+   * https://www.slideshare.net/OutSystemsNeo/introduction-to-outsystems-architecture-aug-07-2021
 
 ## Architecture Canvas process
 
@@ -269,32 +276,34 @@ Depending on the version:
 
 ## Professional Certifications
 
-For $100-$200, Outsystems offers certifications for developers and architects.
+17 of them (OutSystems 11):
+
+https://learn.outsystems.com/training/decision/guided-paths
 
 $100, 90-minutes exams:
 
-* Front-end Developer Specialist (OutSystems 11)
-* Web Developer Specialist (OutSystems 11)
-* Mobile Developer Specialist (OutSystems 11) 60 minutes
-* Security Specialist (OutSystems 11)
+* Front-end Developer Specialist
+* Web Developer Specialist
+* Mobile Developer Specialist 60 minutes
+* Security Specialist
 
 $200, 120-minute exams:
 
 * Associate Developer (ODC)
-* Associate Reactive Developer (OutSystems 11)
+* Associate Reactive Developer
 
-* Architecture Specialist (OutSystems 11)
-* Professional Web Developer (OutSystems 11)
-* Professional Mobile Developer (OutSystems 11)
+* Architecture Specialist
 
-* Professional Platform Ops Engineer (OutSystems 11)
-* Professional DevOps Engineer (OutSystems 11)
+* Professional Web Developer
+* Professional Mobile Developer
+* Professional Platform Ops Engineer
+* Professional DevOps Engineer
 
-* Associate Traditional Web Developer (OutSystems 11)
-* Professional Traditional Web Developer (OutSystems 11)
+* Associate Traditional Web Developer
+* Professional Traditional Web Developer
+* Expert Traditional Web Developer
 
-* Expert Traditional Web Developer (OutSystems 11)
-* OutSystems Certified Trainer - OutSystems 11
+* OutSystems Certified Trainer
 
 
 ## Naming Conventions
