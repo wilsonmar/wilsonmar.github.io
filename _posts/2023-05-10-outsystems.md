@@ -159,7 +159,9 @@ A 30-day trial edition is available for temporary access to a production environ
 <a target="_blank" href="https://www.youtube.com/watch?v=B11E20BUVPE&list=RDCMUCB9wCEaf_7iKRCXTDbxRxlA&index=2">VIDEO</a>: 
 Outsystem's <a target="_blank" href="https://www.outsystems.com/evaluation-guide/development-and-management-tools/">tooling components</a>:
 
-* <strong>Platform Server</strong> is the server component that runs the application stack visible to end-users. It runs on Windows Server, Linux, or macOS. It is a .NET application that manages the application stack and provides services such as authentication, logging, monitoring, security, and user management. It also schedules tasks at specific times from a queue.
+* <strong>Platform Server</strong> is the server component that runs the application stack visible to end-users. It runs on Windows Server, Linux, or macOS. It is a .NET application that manages the application stack and provides services such as authentication, <a target="_blank" href="https://learn.outsystems.com/training/journeys/devops-659/monitoring-web-and-mobile-applications/o11/2457" title="by Pedro Coelho">monitoring</a> of logging and security, and user management. It also schedules tasks at specific times from a queue.
+
+   Each environment has its own Platform Server.
 
    The Platform Server is managed by a web-based application "LifeTime".
 
@@ -173,7 +175,7 @@ Outsystem's <a target="_blank" href="https://www.outsystems.com/evaluation-guide
 
 * <strong>Workflow Builder</strong> is a drag-and-drop tool used by business experts, analysts, and process owners to define the business logic of their application and create <strong>business process flows</strong> which can be evolved in Service Studio.
 
-* <strong>Forge</strong> is the marketplace repository of reusable <a target="_blank" href="https://www.outsystems.com/evaluation-guide/how-is-software-in-the-forge-licensed/">BSD-licensed</a> open-source components that can be used in applications built with OutSystems. It is a marketplace of entire applications, components, connectors and templates created by OutSystems and its developer community.
+* <a target="_blank" href="https://www.outsystems.com/forge/list?q=&t=&o=most-popular&tr=False&oss=False&c=%20&a=&v=&hd=False&tn=&scat=forge"><strong>Forge</strong></a> is the marketplace of reusable <a target="_blank" href="https://www.outsystems.com/evaluation-guide/how-is-software-in-the-forge-licensed/">BSD-licensed</a> open-source components that can be used in applications built with OutSystems. It is a marketplace of entire applications, components, connectors and templates created by OutSystems and its developer community.
 
    PROTIP: Using other developers' components not only minimizes errors and testing efforts, but also saves time otherwise spent arguing about decisions incorporated in the example.
 
@@ -277,7 +279,7 @@ for transitioning to support Linux and Oracle on macOS laptops.
     Platform Services include: Authentication, Logging, Monitoring, Security, and User Management.
     Scheduling of tasks at specific times from a queue.
 
-1.  Different environments are stood up without hassle. Each environment has its own Platform Server.
+1.  Different environments are stood up without hassle. 
 
     Mobile Application Build Service (MABS) is used to build mobile apps for iPhone and Android phones.
 
@@ -288,6 +290,7 @@ for transitioning to support Linux and Oracle on macOS laptops.
 
    * https://www.slideshare.net/OutSystemsNeo/introduction-to-outsystems-architecture-aug-07-2021
 
+
 ## Architecture Canvas process
 
 1. Organize
@@ -295,6 +298,8 @@ for transitioning to support Linux and Oracle on macOS laptops.
 3. Disclose
 
 Keep concepts with different lifecycles apart.
+
+pip install outsystems-pipeline
 
 
 ## Logging
@@ -349,7 +354,36 @@ $200, 120-minute exams:
 
 ## Versions
 
+* Outsystems 13 (2023) - https://www.outsystems.com/evaluation-guide/whats-new-in-outsystems-13/
+
+* Outsystems 12 (2021) - https://www.outsystems.com/evaluation-guide/whats-new-in-outsystems-12/
+
 * Outsystems 11 (2019) - https://www.outsystems.com/evaluation-guide/whats-new-in-outsystems-11/
+
+   * Microsoft .NET Framework 4.8 (supported since Platform Server 11 – Release Oct.2019 CP2) or Microsoft .NET Framework 4.7.2
+   * Microsoft Build Tools 2015
+   * .NET Core 3.1 Runtime & Hosting Bundle for Windows
+   <br /><br />
+
+* Outsystems 10 (2017) - https://www.outsystems.com/evaluation-guide/whats-new-in-outsystems-10/
+
+* Outsystems 9 (2016) - https://www.outsystems.com/evaluation-guide/whats-new-in-outsystems-9/
+
+* Outsystems 8 (2015) - https://www.outsystems.com/evaluation-guide/whats-new-in-outsystems-8/
+
+* Outsystems 7 (2014) - https://www.outsystems.com/evaluation-guide/whats-new-in-outsystems-7/
+
+* Outsystems 6 (2013) - https://www.outsystems.com/evaluation-guide/whats-new-in-outsystems-6/
+
+* Outsystems 5 (2012) - https://www.outsystems.com/evaluation-guide/whats-new-in-outsystems-5/
+
+* Outsystems 4 (2011) - https://www.outsystems.com/evaluation-guide/whats-new-in-outsystems-4/
+
+* Outsystems 3 (2010) - https://www.outsystems.com/evaluation-guide/whats-new-in-outsystems-3/
+
+* Outsystems 2 (2009) - https://www.outsystems.com/evaluation-guide/whats-new-in-outsystems-2/
+
+* Outsystems 1 (2008) - https://www.outsystems.com/evaluation-guide/whats-new-in-outsystems-1/
 
 ## Naming Conventions
 
