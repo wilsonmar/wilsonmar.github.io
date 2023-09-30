@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-09-26"
+date: "2023-09-27"
 file: "azure-onboarding"
 title: "Azure Onboarding"
 excerpt: "Know URLs, Subscriptions, Support plans, Tenants, Directories, ARM portal Keyboard Shortcuts to use Azure Portal GUI, CLI Bash, PowerShell to deploy Bicep in GitHub Actions to create resources securely - AZ-104, AZ-500"
@@ -22,7 +22,7 @@ PROTIP: Below is my attempt at helping you approach Azure practically, logically
 All on one page are these references:
 
    * <a href="#URLs">All URLs for Azure I've found</a> 
-   * <a target="_blank" href="https://wilsonmar.github.io/acronymns/">Acronyms (three letters and otherwise)</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/acronyms/">Acronyms (three letters and otherwise)</a>
    * <a href="#naming-abbreviations">Naming Conventions</a>
    * <a href="#FreeSvcs">First year free services on Azure</a>
    <br /><br />
