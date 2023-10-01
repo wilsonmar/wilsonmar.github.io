@@ -255,6 +255,16 @@ Outsystem's <a target="_blank" href="https://www.outsystems.com/evaluation-guide
 
 <hr />
 
+## Integration Builder
+
+Surface data from enterprise systems like SAP ERPs and Salesforce CRM, etc. for use accross OutSystems applications. 
+
+* <a target="_blank" href="https://success.outsystems.com/documentation/11/extensibility_and_integration/create_connectors_with_integration_builder/">Tutorial</a>
+
+* <a target="_blank" href="https://integrationbuilder.outsystems.com/Authentication/Login">https://integrationbuilder.outsystems.com/Authentication/Login</a>
+
+<hr />
+
 <a name="ServiceStudio"></a>
 
 ## Service Studio IDE
@@ -278,7 +288,7 @@ Outsystem's <a target="_blank" href="https://www.outsystems.com/evaluation-guide
 
     <img alt="outsystems-ide-235x62.png" width="235" height=62" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696147217/outsystems-ide-235x62_vvwluy.png">
 
-    The numbering is my usual order of creation:
+    This numbering is my usual order of creation:
 
     1. <a href="#Data"><strong>Data</strong></a> is where the <strong>data model</strong> of the application is defined: Entity Diagrams, Database Entitiels, In-memory Structures, Client Variables, Site Properties, Resources (images, documents, etc.), and Extensions (integrations with external systems).
 
@@ -287,6 +297,9 @@ Outsystem's <a target="_blank" href="https://www.outsystems.com/evaluation-guide
     3. <a href="#Logic"><strong>Logic</strong></a> is where business logic of the application is defined: Client Actions, Server Actions, Integrations to SOAP/APIs, Roles, Exceptions (Security policies)
 
     4. <a href="#Interface"><strong>Interface</strong></a> is where the user interface (UI) of the application is defined: UI Flows, Images, Themes (base look an feel), Scripts for client-side logic, and Styles for CSS.
+
+1.  PROTIP: Having several monitors plugged in helps with productivity.
+
 
 
 <hr />
@@ -298,17 +311,25 @@ Outsystem's <a target="_blank" href="https://www.outsystems.com/evaluation-guide
 Physical databases can be defined in the IDE.
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Outsystems Entity </th><th> Physical database </th></tr>
+<tr><th> Outsystems Entity </th><th> SQL database </th></tr>
 <tr valign="top"><td> Entity </td><td> Table </td></tr>
 <tr valign="top"><td> Attributes </td><td> Columns (Data Types) </td></tr>
 <tr valign="top"><td> Id </td><td> Primary Key </td></tr>
 <tr valign="top"><td> Reference Attribute </td><td> Foreign Key </td></tr>
 <tr valign="top"><td> Index </td><td> Index </td></tr>
 <tr valign="top"><td> Record or Instance </td><td> Row or Tuple </td></tr>
-</td></tr></table>
-<em>Click on image to enlarge</em>
+</table>
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696148883/outsystems-ide-451x100_zszwdm.png"><img alt="outsystems-ids-layers-451x100.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696148883/outsystems-ide-451x100_zszwdm.png"></a>
+A sample Entity Schema:<br />
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696152238/outsystems-entities-606x536_qttb0h.png"><img alt="outsystems-entities-606x536.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696152238/outsystems-entities-606x536_qttb0h.png"></a>
+
+Data types (such as Integer) are automatically inferred from Entity names entered (such as  "Id" or "Number").
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696148883/outsystems-ide-451x100_zszwdm.png"><img alt="outsystems-ids-layers-451x100.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696148883/outsystems-ide-451x100_zszwdm.png"><br /><em>Click on image to enlarge</em></a>
+
+Entity actions: Create, Get (Read), Update, Delete (not quite CRUD)
+
+<a target="_blank" href="https://learn.outsystems.com/training/journeys/mobile-developer-679/demo-how-to-create-a-static-entity/o11/416">Static Entities</a> are a predefined list of records (like an enumeration). Static means values cannot be changed. Attributes (such as color) can be added.
 
 
 ### Databases supported
@@ -316,6 +337,8 @@ Physical databases can be defined in the IDE.
 Each logical database connection is a separate "Extension" for which is a C#z DLL.
 
 Sample apps use Microsoft's "Northwind" database.
+
+<a target="_blank" href="https://learn.outsystems.com/training/journeys/mobile-developer-679/demo-how-to-bootstrap-entity-data-from-excel/o11/392">Entity Data</a> and <a target="_blank" href="https://learn.outsystems.com/training/journeys/mobile-developer-679/demo-how-to-bootstrap-entities-and-data-from-excel/o11/396">Entities and Data</a> can be <a target="_blank" href="https://learn.outsystems.com/training/journeys/mobile-developer-679/data-modeling-exercise/o11/432">bootstraped from an Excel spreadsheets</a>.
 
 Interaction with external databases (over the internet) uses SQL queries to a relational database.
 Outsystems enables connection to:
@@ -339,12 +362,14 @@ Outsystems enables connection to:
 
 ## Processes
 
-
 <hr />
 
 <a name="Logic"></a>
 
 ## Logic (Business Logic)
+
+In logic flows that run on screen, client, or server are individual "Actions".
+Only server actions can be called from other actions and have output parameters.
 
 <hr />
 
@@ -352,7 +377,7 @@ Outsystems enables connection to:
 
 ## Interface (UI)
 
-
+<a target="_blank" href="https://learn.outsystems.com/training/journeys/mobile-developer-679/using-widgets-exercise/o11/585">widgets</a> are the building blocks of the user interface (UI) of the application.
 
 
 ## APIs supported
