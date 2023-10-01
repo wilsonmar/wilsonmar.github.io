@@ -285,6 +285,8 @@ Surface data from enterprise systems like SAP ERPs and Salesforce CRM, etc. for 
 
 1.  At the upper-right of the IDE is a "tab" to reach each layer. Click on it for the <strong>"widgets"</strong> and toolbox associated with that layer:<br /><img alt="outsystems-ide-235x62.png" width="235" height=62" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696147217/outsystems-ide-235x62_vvwluy.png">
 
+    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696148883/outsystems-ide-451x100_zszwdm.png"><img alt="outsystems-ids-layers-451x100.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696148883/outsystems-ide-451x100_zszwdm.png"><br /><em>Click on image to enlarge</em></a>
+
     This numbering is my usual order of creation:
 
     1. <a href="#Data"><strong>Data</strong></a> is where the <strong>data model</strong> of the application is defined: Entity Diagrams, Database Entitiels, In-memory Structures, Client Variables, Site Properties, Resources (images, documents, etc.), and Extensions (integrations with external systems).
@@ -307,7 +309,7 @@ Surface data from enterprise systems like SAP ERPs and Salesforce CRM, etc. for 
 Physical databases can be defined in the IDE.
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Outsystems Entity </th><th> SQL database </th></tr>
+<tr align="left"><th> Outsystems Entity </th><th> SQL database </th></tr>
 <tr valign="top"><td> Entity </td><td> Table </td></tr>
 <tr valign="top"><td> Attributes </td><td> Columns (Data Types) </td></tr>
 <tr valign="top"><td> Id </td><td> Primary Key </td></tr>
@@ -320,8 +322,6 @@ A sample Entity Schema:<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696152238/outsystems-entities-606x536_qttb0h.png"><img alt="outsystems-entities-606x536.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696152238/outsystems-entities-606x536_qttb0h.png"></a>
 
 Data types (such as Integer) are automatically inferred from Entity names entered (such as  "Id" or "Number").
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696148883/outsystems-ide-451x100_zszwdm.png"><img alt="outsystems-ids-layers-451x100.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696148883/outsystems-ide-451x100_zszwdm.png"><br /><em>Click on image to enlarge</em></a>
 
 Entity actions: Create, Get (Read), Update, Delete (not quite CRUD)
 
@@ -369,16 +369,8 @@ Only server actions can be called from other actions and have output parameters.
 
 <a target="_blank" href="https://learn.outsystems.com/training/journeys/mobile-developer-679/defining-logic-exercise/o11/368">TUTORIAL</a> on how to create a logic flow.
 
-<hr />
 
-<a name="#Interface"></a>
-
-## Interface (UI)
-
-<a target="_blank" href="https://learn.outsystems.com/training/journeys/mobile-developer-679/using-widgets-exercise/o11/585">widgets</a> are the building blocks of the user interface (UI) of the application.
-
-
-## APIs supported
+### APIs supported
 
 Please confirm:
 
@@ -396,6 +388,17 @@ Please confirm:
 * XML API - have XML schema specification?
 * JSON API - have JSON schema specification?
 * CSV API - have CSV schema specification?
+
+
+<hr />
+
+<a name="#Interface"></a>
+
+## Interface (UI)
+
+<a target="_blank" href="https://learn.outsystems.com/training/journeys/mobile-developer-679/using-widgets-exercise/o11/585">widgets</a> are the building blocks of the user interface (UI) of the application.
+
+An <strong>aggregate</strong> is a visual element that fetches data from more than one entity - with a SQL query with sources, filters, and sorting.
 
 
 ## Internals
