@@ -274,10 +274,15 @@ These are used within <a href="#Bicep"><Bicep</a>, and other IoC. For example:
    var subnetName = 'subnet-${env}-${region}-${instance}'
    </pre>
 
-PROTIP: Stable names make for less rework and mistakes with Dynamic group membership rules used to automatically assign permissions to resources. Example:
+PROTIP: Stable names make for less rework and mistakes with <strong>Dynamic group membership rules</strong> used to automatically assign permissions to resources. Example:
 
    <ul><pre>(user.department -eq "it") and (user.city -eq "Manhattan") and (resource.type -eq "Microsoft.Compute/virtualMachines")</pre></ul>
 
+Bicep and ARM template module for keeping a consistent Azure resource naming convention:
+
+   * https://4bes.nl/2021/10/10/get-a-consistent-azure-naming-convention-with-bicep-modules/ using<br />https://github.com/Ba4bes/Bicep-NamingConvention
+   * https://github.com/nianton/azure-naming
+   * https://piusdannyongesa.medium.com/implementing-a-consistent-naming-convention-with-azure-bicep-2d7c8611b523
 
 <hr />
 
