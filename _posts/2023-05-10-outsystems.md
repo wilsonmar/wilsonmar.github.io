@@ -269,10 +269,9 @@ Surface data from enterprise systems like SAP ERPs and Salesforce CRM, etc. for 
 
 ## Service Studio IDE
 
-1.  The <a target="_blank" href="https://www.outsystems.com/Portal/Trial_Portal">304 MB download</a> for macOS is not available via HomeBrew. So you'll have to manually drag the 755 MB ServiceStudio.app into your /Applications folder.
+1.  The <a target="_blank" href="https://www.outsystems.com/Portal/Trial_Portal">304 MB download</a> for macOS is not available via HomeBrew. So you'll have to manually download, invoke, and drag the 755 MB ServiceStudio.app into your /Applications folder.
 
-    * <a target="_blank" href="https://learn.outsystems.com/training/journeys/web-developer-662/service-studio-overview/o11/2347">VIDEO</a> Service Studio Overview
-    <br /><br />
+    <a target="_blank" href="https://learn.outsystems.com/training/journeys/web-developer-662/service-studio-overview/o11/2347">VIDEO</a> REMEMBER: Dismiss the downloader in Finder.
 
     TODO: A Selenium script to open the IDE and click on the "Sign In" button?
 
@@ -284,9 +283,7 @@ Surface data from enterprise systems like SAP ERPs and Salesforce CRM, etc. for 
 
     <strong>WARNING: The IDE requires constant connection to Outsystems' server. It was not designed to work offline.</strong>
 
-1.  At the upper-right of the IDE is a "tab" to reach each layer. Click on it for the <strong>"widgets"</strong> and toolbox associated with that layer:
-
-    <img alt="outsystems-ide-235x62.png" width="235" height=62" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696147217/outsystems-ide-235x62_vvwluy.png">
+1.  At the upper-right of the IDE is a "tab" to reach each layer. Click on it for the <strong>"widgets"</strong> and toolbox associated with that layer:<br /><img alt="outsystems-ide-235x62.png" width="235" height=62" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696147217/outsystems-ide-235x62_vvwluy.png">
 
     This numbering is my usual order of creation:
 
@@ -296,10 +293,9 @@ Surface data from enterprise systems like SAP ERPs and Salesforce CRM, etc. for 
 
     3. <a href="#Logic"><strong>Logic</strong></a> is where business logic of the application is defined: Client Actions, Server Actions, Integrations to SOAP/APIs, Roles, Exceptions (Security policies)
 
-    4. <a href="#Interface"><strong>Interface</strong></a> is where the user interface (UI) of the application is defined: UI Flows, Images, Themes (base look an feel), Scripts for client-side logic, and Styles for CSS.
+    4. <a href="#Interface"><strong>Interface</strong></a> is where the user interface (UI) of the application is defined: UI Flows, Images, Themes (base look an feel), Scripts (<a target="_blank" href="https://learn.outsystems.com/training/journeys/mobile-developer-679/demo-how-to-use-javascript-in-logic/o11/344>JavaScript</a>) for client-side logic, and Styles for CSS.
 
 1.  PROTIP: Having several monitors plugged in helps with productivity.
-
 
 
 <hr />
@@ -370,6 +366,8 @@ Outsystems enables connection to:
 
 In logic flows that run on screen, client, or server are individual "Actions".
 Only server actions can be called from other actions and have output parameters.
+
+<a target="_blank" href="https://learn.outsystems.com/training/journeys/mobile-developer-679/defining-logic-exercise/o11/368">TUTORIAL</a> on how to create a logic flow.
 
 <hr />
 
