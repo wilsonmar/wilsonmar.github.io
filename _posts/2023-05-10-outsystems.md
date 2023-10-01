@@ -283,7 +283,7 @@ Surface data from enterprise systems like SAP ERPs and Salesforce CRM, etc. for 
 
     <strong>WARNING: The IDE requires constant connection to Outsystems' server. It was not designed to work offline.</strong>
 
-1.  At the upper-right of the IDE is a "tab" to reach each layer. Click on it for the <strong>"widgets"</strong> and toolbox associated with that layer:<br /><img alt="outsystems-ide-235x62.png" width="235" height=62" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696147217/outsystems-ide-235x62_vvwluy.png">
+1.  At the upper-right of the IDE is a "tab" to reach each layer. Click on it for the <strong>"widgets"</strong> and toolbox associated with that layer:
 
     <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696148883/outsystems-ide-451x100_zszwdm.png"><img alt="outsystems-ids-layers-451x100.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696148883/outsystems-ide-451x100_zszwdm.png"><br /><em>Click on image to enlarge</em></a>
 
@@ -398,7 +398,7 @@ Please confirm:
 
 <a target="_blank" href="https://learn.outsystems.com/training/journeys/mobile-developer-679/using-widgets-exercise/o11/585">widgets</a> are the building blocks of the user interface (UI) of the application.
 
-An <strong>aggregate</strong> is a visual element that fetches data from more than one entity - with a SQL query with sources, filters, and sorting.
+An <strong>aggregate</strong> is a visual element that fetches data from more than one entity - with a SQL query with filters, and sorting.
 
 
 ## Internals
