@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-05-10"
+date: "2023-10-01"
 file: "outsysstems"
 title: "Outsystems"
 excerpt: "Generate feature-rich web and mobile apps using low-code running within a full suite of enterprise-grade utilities and services"
@@ -343,6 +343,9 @@ Outsystems enables connection to:
    * Oracle
    * iDB2
    * MySQL
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=QSO4vIePxqs" title="from 2021">MongoDB</a>
+   * PostgreSQL?
    <br /><br />
 
    Outsystems does not support NoSQL databases such as MongoDB or Cassandra.

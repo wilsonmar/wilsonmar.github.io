@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-09-27"
+date: "2023-10-02"
 file: "azure-onboarding"
 title: "Azure Onboarding"
 excerpt: "Know URLs, Subscriptions, Support plans, Tenants, Directories, ARM portal Keyboard Shortcuts to use Azure Portal GUI, CLI Bash, PowerShell to deploy Bicep in GitHub Actions to create resources securely - AZ-104, AZ-500"
@@ -29,11 +29,9 @@ All on one page are these references:
 
 Let's dive in with the <strong>technical</strong> now, with <a href="#PeopleStuff">people stuff</a> further down.
 
-<strong>Click the diagram below</strong> for a step-by-step video about how to setup a whole enterprise with Azure technologies in the cloud:
+<a target="_blank" href="https://youtu.be/lwReERW_Pqo"><strong>Click here for a step-by-step 1-minute YouTube video</a> about how to setup a whole enterprise with Azure technologies in the cloud:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"><img alt="aws-onboarding-v009-1674x869.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"></a>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=Y-aOGSAPRkc"><img alt="az-onboarding-1590x860.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"><em>Click for step-by-step 1-minute YouTube video</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"><img alt="aws-onboarding-v009-1674x869.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
 
 The set of services to create and manage <strong>resources</strong> (such as network, storage, compute, etc.) in the Azure cloud is called the <strong>Azure Resource Manager</strong> (ARM for short). 
 
