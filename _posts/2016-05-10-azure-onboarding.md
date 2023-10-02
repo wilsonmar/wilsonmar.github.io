@@ -29,7 +29,7 @@ All on one page are these references:
 
 Let's dive in with the <strong>technical</strong> now, with <a href="#PeopleStuff">people stuff</a> further down.
 
-<a target="_blank" href="https://youtu.be/lwReERW_Pqo"><strong>Click here for a step-by-step 1-minute YouTube video</a> about how to setup a whole enterprise with Azure technologies in the cloud:
+<a target="_blank" href="https://youtu.be/lwReERW_Pqo"><img align="left" alt="youtube-1024x721.png" width="200" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696234162/youtube-1024x721_ful6ky.png"><strong>Click here for a step-by-step 1-minute YouTube video</strong></a> about how to setup a whole enterprise with Azure technologies in the cloud:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"><img alt="aws-onboarding-v009-1674x869.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
 
