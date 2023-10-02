@@ -59,7 +59,7 @@ This article explains the "guardrails" to prevent mistakes and abuse: <strong>RB
 
 7.  An early step in enterprise setup is to establish a <strong>Tenant</strong> directory to house each (organization) of users and resources created under each subscription.
 
-    <a target="_blank" href="https://redmondmag.com/articles/2023/07/11/microsoft-entra-new-products.aspx">In 2023</a> Microsoft renamed "Azure AD" (for Azure Active Directory) with <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/compare">Microsoft Entra ID</a> to reference its "Identity as a Service (IDaaS)" solution (like Okta) for apps across cloud and on-premises.
+    <a target="_blank" href="https://redmondmag.com/articles/2023/07/11/microsoft-entra-new-products.aspx">In 2023</a> Microsoft renamed from "Azure AD" (for Azure Active Directory) with <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/compare">Microsoft Entra ID</a> to reference its "Identity as a Service (IDaaS)" solution (like Okta) for apps across cloud and on-premises.
 
 8.  <strong>Licensing</strong> is defined under a Tenant. Enterprises need a paid P1 or P2 license for each user to use Azure securely.
 
@@ -95,7 +95,7 @@ This article explains the "guardrails" to prevent mistakes and abuse: <strong>RB
 
 21. <strong>Scopes</strong>
 
-22. Use of some services need to be <strong>Registered</strong>. For example, use of Azure AD B2C needs to be registered to an Azure AD Tenant.
+22. Use of some services need to be <strong>Registered</strong>. For example, use of Entra ID B2C needs to be registered to an Entra ID Tenant.
 
 23. <strong>Policy Definitions</strong> are JSON files that define rules for resources. They are used by 
 
@@ -130,7 +130,7 @@ The PowerPoint file used to create the above video and diagram is <a target="_bl
 1. <a href="#Bicep">Bicep</a> and <a href="#GitHub">GitHub Actions</a>
 1. My data generator (departments, jobs, roles, groups, people, projects, etc.) 
 1. IAM
-1. <a href="#IAM">IAM (Azure AD)</a>, groups, federation
+1. <a href="#IAM">IAM (Entra ID)</a>, groups, federation
 
 1. <a href="#Futures">Futures Roadmap</a>
 1. <a href="#Resources">Resources</a>
@@ -174,7 +174,7 @@ Microsoft has defined their <a target="_blank" href="https://wilsonmar.github.io
    * Business User (Dynamics, Salesforce, etc.)
    <br /><br />
 
-PROTIP: This grouping is different from the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Azure Active Directory</a> (AAD/Entra).
+PROTIP: This grouping is different from the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles">Administrator role permissions in Entra</a> (formerly Azure Active Directory).
 
    MY OPINION: I think job roles should be multi-select checkboxes.
    This segregation also adds to duplicating material for each.
@@ -762,8 +762,9 @@ References:
    <a target="_blank" href="https://ea.azure.com"><strong>ea.azure.com</strong></a>
    </td><td> Define departments
    </td></tr>
-<tr valign="top"><td> <a href="#AAD">Azure AD</a> </td><td align="right">
-   <a target="_blank" href="https://aad.portal.azure.com/">aad.portal.azure.com</a>
+<tr valign="top"><td> <a href="#AAD">Entra ID</a> </td><td align="right">
+   <a target="_blank" href="https://entra.portal.azure.com/">entra.portal.azure.com</a><br />
+   <strike>aad.portal.azure.com</strike>
    </td><td>-
    </td></tr>
 <tr valign="top"><td> Video Indexer </td><td align="right">
@@ -976,24 +977,24 @@ The clock is ticking!
    Azure provide access to more than 25 products that are always free. 
 
 
-   ### Entra = Azure Active Directory
+   ### Entra (Azure Active Directory)
 
-   In 2023, Microsoft rebranded "Azure Active Directory (AAD)" to <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/new-name">Microsoft Entra ID</a>. [<a target="_blank" href="https://www.youtube.com/watch?v=ThT3n2Yass4">VIDEO</a>]
+   In 2023, Microsoft rebranded "Azure Active Directory (AAD)" or "Azure AD" to <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/new-name">Microsoft Entra ID</a>. [<a target="_blank" href="https://www.youtube.com/watch?v=ThT3n2Yass4">VIDEO</a>]
 
    > The word "entra" means "entrance" (enter in) in Italian. It's a nod to the fact that Microsoft Entra ID is the gateway to Microsoft 365 and Azure services.
 
    When someone signs up for a Microsoft cloud service subscription (such as Microsoft Azure, Office 365, Microsoft Intune, etc.), a dedicated instance of <strong>Entra (Azure AD)</strong> is created automatically. 
 
-   READ: <a target="_blank" href="https://microsoftlearning.github.io/AZ-900T0x-MicrosoftAzureFundamentals/Instructions/Walkthroughs/19-Use%20the%20Azure%20Pricing%20Calculator.html"><img width="20" alt="pricing" src="https://code.benco.io/icon-collection/azure-patterns/calculator-pricing-details.svg"></a> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/active-directory/">Azure Active Directory pricing</a>. 
+   READ: <a target="_blank" href="https://microsoftlearning.github.io/AZ-900T0x-MicrosoftAzureFundamentals/Instructions/Walkthroughs/19-Use%20the%20Azure%20Pricing%20Calculator.html"><img width="20" alt="pricing" src="https://code.benco.io/icon-collection/azure-patterns/calculator-pricing-details.svg"></a> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/active-directory/">Entra pricing</a>. 
 
    https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing
 
    Microsoft 365 subscribers have additional AAD/Entra licensing options:
-   * Azure AD Free has a 500,000 object limit, which includes MFA for O365 services
+   * Entra ID Free has a 500,000 object limit, which includes MFA for O365 services
    * + $1/mo./user Basic for group-base access management with SLAs
    * + $6/mo./user P1 for conditional access based on device/location & MFA for on-prem. services
    * + $9/mo./user P2 for Identity Protection, Access reviews, Privileged Identity Management
-   * Azure AD External Identities (B2B/B2C) are licensed separately -> Microsoft Entra External ID
+   * Entra ID External Identities (B2B/B2C) are licensed separately -> Microsoft Entra External ID
    <br /><br />
 
    DOTHIS: Recommend how each user can setup MFA. These options are available:
@@ -1024,7 +1025,7 @@ The clock is ticking!
       * Basic entitlement management
       * Entitlement management – separation of duties
 
-      * Risk level and risk detail fields are hidden to those with just the Azure AD Premium P1 edition.
+      * Risk level and risk detail fields are hidden to those with just the Entra ID Premium P1 edition.
       * Advanced detections (such as unfamiliar sign-in properties) not covered by license appear under the name Sign-in with additional risk detected. 
       * Privileged identity management (PIM)
       <br /><br />
@@ -1060,7 +1061,7 @@ The clock is ticking!
 
    * Export risk detection data to third-party utilities for further analysis.
 
-   Users on another Azure AD (B2B) or public IDP (B2C).
+   Users on another Entra ID (B2B) or public IDP (B2C).
 
 
    ### Enterprise discount
@@ -1070,13 +1071,13 @@ The clock is ticking!
 
    <a name="Tenants"></a>
 
-   ### AD Tenants
+   ### Tenants
 
    The Azure SaaS service separates different customers into different <strong>tenants</strong> (like tenants in an apartment building). Each tenant is a dedicated, isolated instance of the AAD/Entra service, owned and managed by an organization. 
 
    "Isolated" = ISE
 
-   Azure AD supports auth protocols: OAuth, OpenID, SAML, WS-Federation.
+   Entra ID supports auth protocols: OAuth, OpenID, SAML, WS-Federation.
 
 2. For birthdate, make up an adult year: 2023 - 22 = 2001
 
@@ -1148,7 +1149,7 @@ The clock is ticking!
 1. Setup MFA
 
 Microsoft has its "Intune" offering to manage mobile and laptop devices and their endpoint.
-BTW: Intune is a separate MDM (Mobile Device Management) product from Azure AD.
+BTW: Intune is a separate MDM (Mobile Device Management) product from Entra ID.
 
 
 <hr />
@@ -1349,7 +1350,7 @@ PROTIP: Below I've added LinkedIn links to each Learn Room instructor.
 
 * AI for Everyone - <a target="_blank" href="https://www.linkedin.com/in/arafattehsin/">Arafat Tehsin</a> (https://arafattehsin.com/blog)
 * Analytics with <a target="_blank" href="https://www.linkedin.com/in/indirapolavarapu">Indira Polavarapu</a>
-* Azure AD from A to Z - <a target="_blank" href="https://www.linkedin.com/in/ericmwoodruff/">Eric Woodruff</a> (ex-AWS)
+* Entra ID from A to Z - <a target="_blank" href="https://www.linkedin.com/in/ericmwoodruff/">Eric Woodruff</a> (ex-AWS)
 * Azure Centric Learning - <a target="_blank" href="https://www.linkedin.com/in/mdnoga/">Marcos Nogueira</a>
 * Azure Cloud Commanders - <a target="_blank" href="https://www.linkedin.com/in/ljmurray/">Luke Murray</a>
 * Azure Developer for AI, Data, and Cloud - Beginner to Expert - <a target="_blank" href="">Usama Wahab Khan</a>
@@ -1389,6 +1390,8 @@ PROTIP: Below I've added LinkedIn links to each Learn Room instructor.
 <a name="Naming"></a>
 
 ## Naming conventions
+
+zzz
 
 PROTIP: Decide on naming conventions and abbreviations BEFORE you create any resources.
 Abbreviations are needed to keep names short.
@@ -1573,7 +1576,7 @@ https://wilsonmar.github.io/azure-cloud-powershell/
 ### Azure Power Automate
 
    * [Azure Automation](https://www.youtube.com/watch?v=9Jv3ThPqVco&list=RDCMUCuB24cID6NnypDWSLe4gfqA&start_radio=1&rv=9Jv3ThPqVco)
-   * [Power Automate Add Azure AD users and managers](https://www.youtube.com/watch?v=hrNm4kLeAnY)
+   * [Power Automate Add Entra ID users and managers](https://www.youtube.com/watch?v=hrNm4kLeAnY)
    * [Automation of Creating Users with Microsoft Power Automate and Graph API by Nick Romanek](https://www.youtube.com/watch?v=hrNm4kLeAnY)
    * Employee on-boarding process using Microsoft Forms and Flow https://www.youtube.com/watch?v=vYnvQgKSWcg
    <br /><br />
@@ -1647,6 +1650,52 @@ An important design of Azure Blueprints within enterprises is that it allows for
 <a target="_blank" href="https://myrestraining.com/blog/azure/azure-blueprints-terraform/">This</a>
 presents the analysis that Azure Blueprints is a top-down approach to infrastructure management, while Terraform is a bottom-up approach.
 
+<hr />
+
+<a name="Bicep"></a>
+
+My https://github.com/wilsonmar/DevSecOps/tree/main/azure/bicep repo contains Bicep files.
+
+<tt>.
+├── README.md
+├── account
+│   ├── cost
+│   ├── iam
+│   ├── organization
+│   ├── settings
+│   └── sso
+├── compute
+│   └── aks
+├── data
+│   ├── analysis
+│   ├── athena
+│   ├── glue
+│   ├── quicksight
+│   └── s3
+├── delivery
+│   └── ecr
+├── domain
+│   ├── certs
+│   ├── resolver
+│   └── zones
+├── messaging
+│   ├── eventbridge
+│   └── msk
+├── network
+│   ├── firewall
+│   ├── dx
+│   ├── lb
+│   ├── gateway
+│   └── vpc
+├── observability
+│   └── cloudwatch
+└── security
+│   └── keyvault
+├── cloudtrail
+├── config
+├── kms
+├── ssm
+</tt>
 
 <hr />
 
@@ -1662,7 +1711,7 @@ presents the analysis that Azure Blueprints is a top-down approach to infrastruc
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1674194496/az-ent-auth-arch-1365x1034_shnrvx.jpg"><img alt="az-ent-auth-arch-1365x1034.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1674194496/az-ent-auth-arch-1365x1034_shnrvx.jpg"></a>
 
-A. Enterprise enrollment (to Dept, Account to Azure Active Directory & on-prem. Active Directory)<br />
+A. Enterprise enrollment (to Dept, Account to Entra & on-prem. Active Directory)<br />
 B. Identity and access management<br />
 C. Management group and subscription organization<br />
 D. Management subscription (to on-premises systems)<br />
@@ -1672,7 +1721,7 @@ G. VM templates<br />
 H. Sandbox subscription<br />
 I. Azure DevOps (vs. GitHub Actions)
 
-### Azure AD (AAD = Entra)
+### Entra ID
 
 <a target="_blank" href="https://www.youtube.com/watch?v=dBAflZZE6Gw&t=24s" title="Active Directory vs Azure AD vs Azure AD DS | MCSA | AZ-104">VIDEO</a>: <a target="_blank" href="https://www.youtube.com/watch?v=-a_-Seh27s4&">VIDEO Glossary</a>.
 
@@ -1739,7 +1788,7 @@ So AAD/Entra is also called an "Identity as a Service" (IDaaS).
 
 ### AAD/Entra Connect
 
-<strong>Azure AD Connect</strong> is a Windows service that synchronizes on-prem AD user metadata with the SaaS AAD. Key features of AAD Connect:
+<strong>Entra Connect</strong> is a Windows service that synchronizes on-prem AD user metadata with the SaaS AAD. Key features of AAD Connect:
    * Password hash sych with AAD/Entra
    * Pass-through authentication which allows users to use the same password on-prem. and in the cloud.
    * Federation integration with AD FS for certificate renewal
@@ -1770,14 +1819,14 @@ using what's called "explicit user and device trust validation".
 
 3.  Type <strong>AAD</strong> Entra for the Services related to that name.
 
-4.  Click for the blade called <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview">Azure Active Directory</a> .
+4.  Click for the blade called <a target="_blank" href="https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview">Entra ID</a> .
 
     https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview
 
 
     <a name="Tenants"></a>
 
-    ### Tenants in AAD/Entra
+    ### Tenants in AAD/Entra ID
 
 5.  Highlight and copy the value of the Name field, such as "<em>something</em>.onmicrosoft.com".
 
@@ -1855,7 +1904,7 @@ using what's called "explicit user and device trust validation".
     (from Tim Warner)
     <img alt="az-federation-1950x1716.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1674268604/az-federation-1950x1716_nh17eb.jpg">
 
-    There are two types of Consent to Azure AD:
+    There are two types of Consent to Entra ID:
     a) Federation<br />
     b) Non-federated MSA (Microsoft Account from Skype, XBox)
 
@@ -1896,7 +1945,7 @@ using what's called "explicit user and device trust validation".
 
     Each license has its own options.
 
-    The license defaults to "Azure AD Free" to begin.
+    The license defaults to "Entra ID Free" to begin.
 
     P1 provides Conditional Access.
 
@@ -1916,14 +1965,14 @@ using what's called "explicit user and device trust validation".
 
     "Power Virtual Agents Viral Trial"
 
-    License "Azure AD Premium P2" for production enterprises. P2 provides "Identity Protection" and "Identity Governance" features. P2 is needed for MFA (Multi-Factor Authentication) and PIM.
+    License "Entra ID Premium P2" for production enterprises. P2 provides "Identity Protection" and "Identity Governance" features. P2 is needed for MFA (Multi-Factor Authentication) and PIM.
 
 
     <a name="PIM"></a>
 
     ### P2 PIM (Privileged Identity Management)
 
-    For those with a P2 license, <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">Azure AD Privileged Identity Management (PIM)</a> provides elevated access on a <strong>JIT (Just-in-Time)</strong> basis for a limited time. access. PIM provides audit logs to enable reviews of accesses. 
+    For those with a P2 license, <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">Entra ID Privileged Identity Management (PIM)</a> provides elevated access on a <strong>JIT (Just-in-Time)</strong> basis for a limited time. access. PIM provides audit logs to enable reviews of accesses. 
 
     Email is automatically sent when a role assignmnet is made outside of PIM. So do all access changes from the PIM UI, using "Privileged Authentication/Role Administrator" role assignments. Assignment can be permanent or based on time and date range.
 
@@ -1963,7 +2012,7 @@ using what's called "explicit user and device trust validation".
 
 ### Global Admin Account
 
-   <strong>Global Administrators</strong>, aka Company Administrators, in Azure AD have access to <strong>all services</strong> that use AAD/Entra identities (Microsoft 365 security center, Intune, Microsoft 365 compliance center, Exchange Online, SharePoint Online, Skype for Business Online, etc.).
+   <strong>Global Administrators</strong>, aka Company Administrators, in Entra ID have access to <strong>all services</strong> that use AAD/Entra identities (Microsoft 365 security center, Intune, Microsoft 365 compliance center, Exchange Online, SharePoint Online, Skype for Business Online, etc.).
 
    REMEMBER: Global Admins get access to Azure resources only after being granted User Access Admin role.
 
@@ -1979,7 +2028,7 @@ MFA (Multi-Factor Authentication) is a P1 or P2 feature.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=m1VWSWlrJa8&t=26m10s">VIDEO</a>:
 It's at https://account.activedirectory.windowsazure.com/UserManagement/MultifactorVerification.aspx reached from
-   1. Service: Azure Active Directory (Entra)
+   1. Service: (Entra  ID)
    1. Manage: Users on the left menu.
    1. 
 
@@ -2011,19 +2060,19 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 
    * B2C IEF Keyset Administrators can create and manage policy keys and secrets for token encryption, token signatures, and claim encryption/decryption.
 
-   * B2C IEF Policy Administrators can create, read, update, and delete all custom policies in Azure AD B2C and therefore have full control over the Identity Experience Framework in the relevant Azure AD B2C tenant.
+   * B2C IEF Policy Administrators can create, read, update, and delete all custom policies in Entra ID B2C and therefore have full control over the Identity Experience Framework in the relevant Entra ID B2C tenant.
 
    * Billing Administrators can makes purchases, manages subscriptions, manages support tickets, and monitors service health.
 
    * Cloud Application Administrators have the same permissions as the Application Administrator role, excluding the ability to manage application proxy.
 
-   * Cloud Device Administrators can enable, disable, and delete devices in Azure AD and read Windows 10 BitLocker keys (if present) in the Azure portal.
+   * Cloud Device Administrators can enable, disable, and delete devices in Entra IAD and read Windows 10 BitLocker keys (if present) in the Azure portal.
 
    * Compliance Administrators have permissions to manage compliance-related features in the Microsoft 365 compliance center, Microsoft 365 admin center, Azure, and Microsoft 365 Security & Compliance Center.
 
    * Compliance Data Administrators have permissions to track data in the Microsoft 365 compliance center, Microsoft 365 admin center, and Azure. Users can also track compliance data within the Exchange admin center,
 
-   * Conditional Access Administrators have the ability to manage Azure Active Directory Conditional Access settings
+   * Conditional Access Administrators have the ability to manage Entra ID Conditional Access settings
 
    * Exchange Administrators have global permissions within Microsoft Exchange Online, when the service is present.
 
@@ -2031,7 +2080,7 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 
    * Groups Administrators can create/manage groups and its settings like naming and expiration policies.
 
-   * Security Administrators have permissions to manage security-related features in the Microsoft 365 security center, Azure Active Directory Identity Protection, Azure Information Protection, and Microsoft 365 Security & Compliance Center.
+   * Security Administrators have permissions to manage security-related features in the Microsoft 365 security center, Entra Identity Protection, Azure Information Protection, and Microsoft 365 Security & Compliance Center.
 
    BTW, after you follow instructions below on setting up CLI, this Bash command lists all the pre-defined roles:
 
@@ -2093,7 +2142,7 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 
    <a name="SvcPrin"></a>
    
-   DEFINITION: Each Service Principal can request an Azure AD token to access Azure resources and assign users and groups.
+   DEFINITION: Each Service Principal can request an Entra ID token to access Azure resources and assign users and groups.
 
    <a name="RoleAssignment"></a>
 
@@ -2200,7 +2249,7 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 1.  <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=32m23s">VIDEO</a>:
     Click "+ Add" to create a new Tenant.
 
-    PROTIP: Tenant Type "Azure Active Directory" by itself is actually "B2B" = Business to (2) Business. "B2C" means Business to (2) Consumers, or connection to External Identities on LinkedIn, Google, Facebook, etc.
+    PROTIP: Tenant Type "Entra ID" by itself is actually "B2B" = Business to (2) Business. "B2C" means Business to (2) Consumers, or connection to External Identities on LinkedIn, Google, Facebook, etc.
 
 1.  Cancel out by searching for AAD/Entra again.
 
@@ -2286,7 +2335,7 @@ Also, instead of 2 racks on ASM, ARM resources can span 3 racks of computers.
 
    1. App Services
    2. Advisor
-   3. Azure Active Directory
+   3. Entra ID
    4. Cost Management + Billing
    5. Function App
    6. Load balancers
@@ -3114,7 +3163,7 @@ az group create --name "${MY_RG}" \
 
 
 
-### Install Azure AD Module
+### Install Entra ID Module
 
 1. In Windows, right-click run as Administrator.
 
@@ -3174,7 +3223,7 @@ Add Role Assignment Role
    * etc.
 
 Assign access to:
-   * Azure AD user, group, or service principal
+   * Entra ID user, group, or service principal
    * User assigned managed identity
    * System assigned managed identity
    * App Service
@@ -3571,22 +3620,22 @@ Microsoft's Cloud Adoption Framework enterprise-scale landing zone architecture 
 
 
 
-## Azure AD B2B (Business-to-Business) 
+## Entra ID B2B (Business-to-Business) 
 allows an organization to securely share company applications and company services with guest users from other orgs, while retaining control over company data. Auth policies protect corp. data. 
 
-1. Portal Menu > Azure Active Directory. Select yours.
+1. Portal Menu > Entra ID. Select yours.
 1. Users. +New guest user. Type email. Invite.
 1. Guest user clicks "Get Started" in emai;.
 <br /><br />
 
 
-## Azure AD B2C (Business to Consumer)
+## Entra ID B2C (Business to Consumer)
 enables customers can use a registered app with the Identity Experience Framework
 defines interacting with external multi-party Identity Providers (IdP's) such as Facebook.
 
 It makes use of SYN cookies and rate & connection limits defined by a Trust Framework policy.
 
-1. +Create a resource: Azure Active Directory B2C
+1. +Create a resource: Entra ID B2C
 1. Create.
 1. An additional B2C Tenant is created
 1. Create.
@@ -4108,13 +4157,13 @@ tfenv install latest
 
 ## AAD/Entra Connect
 
-Azure AD Join
+Entra ID Join
 
 Azure Policy
 
 Azure Role-Based Access Control (RBAC)
 
-Azure AD Roles
+Entra ID Roles
 
 
 <hr />

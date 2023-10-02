@@ -250,7 +250,7 @@ Outsystem's <a target="_blank" href="https://www.outsystems.com/evaluation-guide
    * Reverting to a previous version of the application
    <br /><br />
 
-* <strong>Architecture Dashboard</strong> provides an integrated, bird’s eye "heat map" view of <strong>technical debt</strong> across an organization’s entire portfolio of applications and the interdependencies between modules. It automatically classifies module, then performs code and runtime analysis and recommends solutions for improving the performance, security, architecture, and user experience of applications. It produces detailed reports on what best practices are being violated, their impact, and how to fix them. Its guided refactoring capability identifies opportunities for refactoring and code duplication.
+* <strong>Architecture Dashboard</strong> provides an integrated, bird’s eye "heat map" view of <a  target="_blank" href="https://www.youtube.com/watch?v=1MBpK_PxEnU">technical debt</a> across an organization’s entire portfolio of applications and the interdependencies between modules. It automatically classifies module, then performs code and runtime analysis and recommends solutions for improving the performance, security, architecture, and user experience of applications. It produces detailed reports on what best practices are being violated, their impact, and how to fix them. Its guided refactoring capability identifies opportunities for refactoring and code duplication.
 
 
 <hr />
