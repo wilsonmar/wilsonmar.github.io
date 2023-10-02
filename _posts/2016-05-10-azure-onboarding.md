@@ -109,7 +109,6 @@ Recap:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"><img alt="aws-onboarding-v009-1674x869.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"></a>
 
-The PowerPoint file used to create the above video and diagram is <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">here on GumRoad</a>.
 
 <hr />
 
@@ -1654,47 +1653,63 @@ presents the analysis that Azure Blueprints is a top-down approach to infrastruc
 
 <a name="Bicep"></a>
 
-My https://github.com/wilsonmar/DevSecOps/tree/main/azure/bicep repo contains Bicep files.
+
+## Azure Services
+
+Bicep files are stored in https://github.com/wilsonmar/DevSecOps/tree/main/azure/bicep 
 
 <tt>.
 ├── README.md
 ├── account
-│   ├── cost
-│   ├── iam
-│   ├── organization
-│   ├── settings
-│   └── sso
+│   ├── advisor (Manage Azure Advisor) - Extension
+│   ├── bicep (Manage Azure Bicep) - Extension
+│   ├── cloud (Manage registered Azure Clouds) - Core
+│   ├── consumption (Manage Azure Consumption) - Core
+│   ├── costmanagement (Manage cost an billing in Azure) - Extension
+│   ├── eventhubs (Manage Azure Event Hubs) - Core
+│   ├── extension (Manage and update Azure extensions) - Core
+│   ├── graph (Query the resources managed by Azure Resource Manager) - Core
+│   ├── identities (Manage Azure Managed Identities) - Core
+│   ├── login (Manage Azure subscriptions) - Core
+│   └── monitor (Manage the Azure Monitor Service) - Core
+│   └── <strong>resource</strong> (Manage Azure resources) - Core
+│   └── <strong>role</strong> (Manage user roles for access control with Entra ID and service principals) - Core
+├── ai
+│   ├── ml (Manage Azure Machine Learning) - Extension
+│   └── quantum (Manage Azure Quantum) - Extension
 ├── compute
-│   └── aks
+│   ├── aks (Azure Kubernetes Service) - Core & Extension
+│   ├── containerapp (Manage Azure Container Apps) - Extension
+│   ├── container (Manage Azure Container Instances) - Core & Extension
+│   ├── staticwebapp (Manage Azure Static Web Apps) - Extension
+│   ├── stream-analytics (Manage Azure Stream Analytics) - Core
+│   └── vm (Manage Linux or Windows virtual machines) - Core
 ├── data
-│   ├── analysis
-│   ├── athena
-│   ├── glue
-│   ├── quicksight
-│   └── s3
+│   ├── disk (Manage Azure Managed Disks) - Core
+│   ├── disk-access (Manage disk access resources) - Core
+│   ├── cosmosdb (Manage Azure Cosmos DB database accounts) - Core & Extension
+│   ├── backup (Manage Azure Backup) - Extension
+│   └── mariadb (Manage Azure Database for MariaDB servers) - Core
+│   └── mysq (Manage Azure Database for MySQL servers) - Core
+│   └── postgres (Manage Azure Database for PostgreSQL servers) - Core
+│   └── repos (Manage Azure Repos) - Extension
 ├── delivery
-│   └── ecr
+│   └── acr (Azure Container Registry) - Core
 ├── domain
 │   ├── certs
-│   ├── resolver
-│   └── zones
 ├── messaging
-│   ├── eventbridge
-│   └── msk
+│   └── service-bus (Manage Azure Service Bus namespaces, queues, topics, subscriptions, rules and geo-disaster recovery configuration alias) - Core
 ├── network
-│   ├── firewall
-│   ├── dx
-│   ├── lb
-│   ├── gateway
-│   └── vpc
+│   ├── cdn (Manage Azure Content Delivery Network) - Core
+│   ├── network (Manage Azure Network) - Core
 ├── observability
-│   └── cloudwatch
+│   └── tag (Manage Azure resource tags) - Core
 └── security
-│   └── keyvault
-├── cloudtrail
-├── config
-├── kms
-├── ssm
+│   ├── apim (Manage Azure API Management) - Extension
+│   ├── identity (Manage Azure Managed Identities) - Core
+│   ├── keyvault (Manage Azure Key Vault) - Core
+│   ├── policy (Manage Azure Policy) - Core
+│   └── security ( Security Center, now Microsoft Defender for Cloud) - Extension
 </tt>
 
 <hr />
