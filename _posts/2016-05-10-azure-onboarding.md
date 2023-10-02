@@ -27,47 +27,63 @@ All on one page are these references:
    * <a href="#FreeSvcs">First year free services on Azure</a>
    <br /><br />
 
-Let's dive in with the <strong>technical</strong> here, with <a href="#PeopleStuff">people stuff</a> further down.
+Let's dive in with the <strong>technical</strong> now, with <a href="#PeopleStuff">people stuff</a> further down.
 
-<strong>Click the diagram for a video</a> -- step-by-step how to setup a <strong>new enterprise</strong> to setup Azure technologies in the cloud:
+<strong>Click the diagram below</strong> for a step-by-step video about how to setup a whole enterprise with Azure technologies in the cloud:
 
-<a target="_blank" href="https://www.youtube.com/watch?v=Y-aOGSAPRkc"><img alt="az-onboarding-1590x860.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1695830221/az-onboarding-1590x860_nheuca.png"><em>Click for step-by-step 40-second YouTube video</em></a> generated from my PowerPoint file with animations.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"><img alt="aws-onboarding-v009-1674x869.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"></a>
 
-<strong>Azure Resource Manager</strong> is not a specific product or service, but a set of services that act as a gate-keeper to limit <strong>Actions</strong> (aka Operations) against Azure <strong>resources</strong> using RBAC (Role-based Access Control) relevant to <strong>Security Principals</strong>.
+<a target="_blank" href="https://www.youtube.com/watch?v=Y-aOGSAPRkc"><img alt="az-onboarding-1590x860.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"><em>Click for step-by-step 1-minute YouTube video</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
 
-Before we setup resources, which is 22 steps in, we have some enterprise setup to do:
+The set of services to create and manage <strong>resources</strong> (such as network, storage, compute, etc.) in the Azure cloud is called the <strong>Azure Resource Manager</strong> (ARM for short). 
 
-1.  PROTIP: If you're intending to setup a whole enterprise, before logging in, have a chart of your organization's job titles, their responsibilities, who reports to whom, with metadata about each person (such as their geographic location, emails, etc.). This background determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be setup.
+There is <strong>IaC (Infrastructure as Code)</strong> automation to setup a whole enterprise full of users and resources.
 
-2.  Working at enterprise scale requires a <strong>custom program</strong> to quickly <strong>populate</strong> the information into Azure, both using samples in test and to prepare for productive use.
+But resources are created on the <strong>26th</strong> steps into the setup process because we first need to establish a gate-keeper to limit <strong>Actions</strong> (aka Operations) (such as create, read, update, delete, etc.) against those resources.
 
-    Identify the different administrators who will control which part of the system. For security, make a distinction between "data owners" and "data custodians" (who manage the data). An inventory needs to be maintained about who has type of access to what data, for escalations and approvals.
+This article explains the "guardrails" to prevent mistakes and abuse: <strong>RBAC</strong> (Role-based Access Control), which is defined by: the <strong>profile</strong> defined for each <strong>A. Security Principals</strong> limited by <strong>B. Role Definitions</strong> and <strong>C. Scopes</strong> around resources.
 
-3.  A Global Administrator sets up each <a href="#Subscriptions">subscription</a> (billing account).
+1.  PROTIP: First we define who reports to whom in the people organization, their job titles, responsibilities, with metadata about each person (such as their geographic location, emails, etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be setup.
 
-4.  Those licenses are paid for by a <strong>credit card</strong> or invoicing account setup through a Microsoft salesperson.
+2.  Among people, <strong>Administrators</strong> are identified to be provided permissions to set up each 
 
-5.  An Azure administrator creates each <strong>tenant</strong> to house a directory of users and resources created under each subscription.
+3.  Azure <a href="#Subscriptions">Subscription</a> used for <strong>billing</strong>. So admins should have partners to work through financial workflows and oversight.
 
-6.  <strong>Licensing</strong> is defined under a Tenant. Enterprises need a paid P1 or P2 license for each user to use Azure securely.
+4.  Licenses are paid for by <strong>credit cards or invoices</strong> setup through a Microsoft salesperson.
 
-7.  Automation needs to be chosen. Gaining popularity is the <strong>Bicep</strong> transpiler from YMSL into <strong>ARM templates</strong> JSON. <strong>GitHub Actions</strong> is being used to deploy Bicep scripts to create resources. (Azure has stopped development of its <a href="#Blueprints">"Blueprints"</a>) in favor of <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-specs?tabs=azure-powershell">Template Specs</a>).
+5.  Working at enterprise scale requires a way to quickly <strong>populate</strong> information into Azure, both using samples in test and to prepare for productive use.
 
-8.  It would save a lot of time to have automation create (in JSON) <strong>Policy Definitions</strong> to enforce rules for each subscription.
+6.  There are several options for automating <strong>Bicep</strong> scripts to create resources. This is now favored over <strike>Terraform</strike>. Use of Bicep involves transpiling its YAML-formatted contents into the JSON format of <strong>ARM templates</strong>. Also, Microsoft has stopped development of its <a href="#Blueprints">"Blueprints"</a>) in favor of <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-specs?tabs=azure-powershell">Template Specs</a>).
 
-9.  <strong>Tags</strong> are also used to identify each resource for billing and management purposes.
+    It takes a lot of effort to configure scripts according to <strong>documentation</strong> for each service. So an important part of automation is to <strong>audit</strong> scripts. <strong>Policies</strong> aim to identify vulnerabilities and logic errors before resources are deployed and thus possibly exposed.
 
-10. <strong>Management Groups</strong>
+    A common policy is to ensure that <strong>Tags</strong> are included with every resource definition to track billing and was 
 
-11. <strong>Resource Groups</strong> are defined to group resources for billing and management purposes. Alternately,
+7.  An early step in enterprise setup is to establish a <strong>Tenant</strong> directory to house each (organization) of users and resources created under each subscription.
 
-12. When defining Principals, <strong>Groups</strong> are defined to group users for billing and management purposes.
+    <a target="_blank" href="https://redmondmag.com/articles/2023/07/11/microsoft-entra-new-products.aspx">In 2023</a> Microsoft renamed "Azure AD" (for Azure Active Directory) with <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/compare">Microsoft Entra ID</a> to reference its "Identity as a Service (IDaaS)" solution (like Okta) for apps across cloud and on-premises.
+
+8.  <strong>Licensing</strong> is defined under a Tenant. Enterprises need a paid P1 or P2 license for each user to use Azure securely.
+
+9.  <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/management-groups/overview"><strong>Management Groups</strong></a> have been used to automatically cascade permissions up to managers in the organization chart. However, analysis of break-ins has resulted in granting of temporary permissions based on <strong>groups doing tasks</strong>.
+
+    Microsoft does not allow Global Administrators to be used for production work. Instead, <strong>Conditional Access</strong> is used to grant permissions to users and groups.
+
+    Microsoft's "Security Service Edge (SSE)" solution facilitates applying Conditional access policies across organizational resources and apps.
+
+    The most secure systems now designate for each resource its "data owners" (who assign users) and "data custodians" (who manage the data). An inventory needs to be maintained about who has type of access to what data, for escalations and approvals.
+
+10. <strong>Resource Groups</strong> are defined to group resources for <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">high-resolution</a> billing and management. <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/concept-learn-about-groups">Entra</a>
+
+11. Tags are defined to group resources for billing and management purposes.
+
+12. When defining Principals, <strong>Groups</strong> are defined to group users.
 
 13. Users
 
-14. MFA
+14. MFA (Multi-Factor Authentication) is defined for each user, so automation is helpful here as well.
 
-15. Devices
+15. <strong>Devices</strong>
 
 16. <strong>Roles</strong> are defined to group users for billing and management purposes.
 
@@ -79,15 +95,23 @@ Before we setup resources, which is 22 steps in, we have some enterprise setup t
 
 20. <strong>Key Vault</strong> service, it generates its managed identity (based on a Role) that's then encrypted into a <strong>URI</strong> used to retrieve secrets. Brilliant! [<a target="_blank" href="https://www.youtube.com/watch?v=pBcXgJ5hT1o">VIDEO of scripts</a>]
 
-21. Scopes 
+21. <strong>Scopes</strong>
 
-22. Resources are accessed not by Global Administrator roles but by User Access Admin roles.
+22. Use of some services need to be <strong>Registered</strong>. For example, use of Azure AD B2C needs to be registered to an Azure AD Tenant.
 
-23. Use of some services need to be <strong>Registered</strong>. For example, use of Azure AD B2C needs to be registered to an Azure AD Tenant.
+23. <strong>Policy Definitions</strong> are JSON files that define rules for resources. They are used by 
 
-24. <strong>Policies</strong> do not block access, but alert about compliance, shown in the <strong>Security Center</strong> dashboard to display security events and metrics across all subscriptions.
+24. <strong>Policy Audits</strong>, which do not block access, but alert about compliance. Their alerts are among other security events and metrics across all subscriptions in the <strong>Security Center</strong> dashboard.
 
 25. Individual policies can be grouped under an <strong>Initiative</strong>.
+
+26. Now, finally, run that job to create resources.
+
+Recap:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"><img alt="aws-onboarding-v009-1674x869.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"></a>
+
+The PowerPoint file used to create the above video and diagram is <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">here on GumRoad</a>.
 
 <hr />
 

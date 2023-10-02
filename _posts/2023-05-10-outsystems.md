@@ -285,7 +285,7 @@ Surface data from enterprise systems like SAP ERPs and Salesforce CRM, etc. for 
 
 1.  At the upper-right of the IDE is a "tab" to reach each layer. Click on it for the <strong>"widgets"</strong> and toolbox associated with that layer:
 
-    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696148883/outsystems-ide-451x100_zszwdm.png"><img alt="outsystems-ids-layers-451x100.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696148883/outsystems-ide-451x100_zszwdm.png"><br /><em>Click on image to enlarge</em></a>
+    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696148883/outsystems-ide-451x100_zszwdm.png"><img alt="outsystems-ids-layers-451x100.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696148883/outsystems-ide-451x100_zszwdm.png"></a>
 
     This numbering is my usual order of creation:
 
@@ -295,7 +295,7 @@ Surface data from enterprise systems like SAP ERPs and Salesforce CRM, etc. for 
 
     3. <a href="#Logic"><strong>Logic</strong></a> is where business logic of the application is defined: Client Actions, Server Actions, Integrations to SOAP/APIs, Roles, Exceptions (Security policies)
 
-    4. <a href="#Interface"><strong>Interface</strong></a> is where the user interface (UI) of the application is defined: UI Flows, Images, Themes (base look an feel), Scripts (<a target="_blank" href="https://learn.outsystems.com/training/journeys/mobile-developer-679/demo-how-to-use-javascript-in-logic/o11/344>JavaScript</a>) for client-side logic, and Styles for CSS.
+    4. <a href="#Interface"><strong>Interface</strong></a> is where the user interface (UI) of the application is defined: UI Flows, Images, Themes (base look an feel), Scripts (<a target="_blank" href="https://learn.outsystems.com/training/journeys/mobile-developer-679/demo-how-to-use-javascript-in-logic/o11/344>JavaScript</a> and <a target="_blank" href="https://www.youtube.com/watch?v=JMWqFwnks4Q">external JavaScript</a>) for client-side logic, and Styles for CSS.
 
 1.  PROTIP: Having several monitors plugged in helps with productivity.
 
@@ -400,6 +400,7 @@ Please confirm:
 
 An <strong>aggregate</strong> is a visual element that fetches data from more than one entity - with a SQL query with filters, and sorting.
 
+<a target="_blank" href="https://learn.outsystems.com/training/journeys/mobile-developer-679/using-widgets-exercise/o11/585">Widgets</a>
 
 ## Internals
 
