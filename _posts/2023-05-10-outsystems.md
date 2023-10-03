@@ -299,6 +299,13 @@ Surface data from enterprise systems like SAP ERPs and Salesforce CRM, etc. for 
 
 1.  PROTIP: Having several monitors plugged in helps with productivity.
 
+1.  If you want to create iOS mobile apps, get a $100/year Apple Developer Program account 
+
+    <a target="_blank" href="https://developer.apple.com/programs/enroll/">https://developer.apple.com/programs/enroll/</a>
+
+    PROTIP: Use the Authy app for 2FA.
+
+1.  Sign-in at https://developer.apple.com/account
 
 <hr />
 

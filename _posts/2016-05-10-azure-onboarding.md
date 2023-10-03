@@ -3,7 +3,7 @@ layout: post
 date: "2023-10-02"
 file: "azure-onboarding"
 title: "Azure Onboarding"
-excerpt: "Know URLs, Subscriptions, Support plans, Tenants, Directories, ARM portal Keyboard Shortcuts to use Azure Portal GUI, CLI Bash, PowerShell to deploy Bicep in GitHub Actions to create resources securely - AZ-104, AZ-500"
+excerpt: "Deep automation to minimize the manual toil and build-in secure practices and mechanisms to build global enterprises need. Not just for AZ-104, AZ-500"
 tags: [cloud, azure]
 image:
 # az-logo-2021-1900x500.png
@@ -16,18 +16,17 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-There is a massive amount of information about Azure, at various levels of detail.
+There is a massive amount of information about Azure. YouTube videos and the <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">certification courses</a> they promote only scratch the surface of all that is needed to get an enterprise up and running.
 
-PROTIP: Below is my attempt at helping you approach Azure practically, logically, and thus efficiently for each audience. This is a deep-dive hands-on tutorial with commentary along the way.
-All on one page are these references:
+PROTIP: Here, all in one page, are <strong>hands-on</strong> steps to use the <strong>automation</strong> I created to build Azure for a whole global enterprise, with minimal manual toil that builds in secure practices and mechanisms without additional effort.
 
-   * <a href="#URLs">All URLs for Azure I've found</a> 
-   * <a target="_blank" href="https://wilsonmar.github.io/acronyms/">Acronyms (three letters and otherwise)</a>
-   * <a href="#naming-abbreviations">Naming Conventions</a>
-   * <a href="#FreeSvcs">First year free services on Azure</a>
+   * <strong>mac-setup.sh</strong> installs HomeBrew, Miniconda, Python, CLI, and GitHub repos on your mac, then makes runs simple and optionally cleans up after runs
+   * <strong>org-gen.py</strong> generates csv files containing sample values for an organization with a size of your choosing. (100, 1000, 10000, etc.). The data describes a hierarchy of departments, jobs, roles, groups, people, projects, etc. used as the basis for assigning Least-Privilege permissions to resources.
+   * <strong>org-chart.py</strong> generates an organization chart graphic from a csv spreadsheet file.
+   * <strong>az-info.sh</strong> displays the status of various resources in Azure
+   audience.
+   * <strong>az-onboarding.sh</strong> automates the creation of all described below:
    <br /><br />
-
-Let's dive in with the <strong>technical</strong> now, with <a href="#PeopleStuff">people stuff</a> further down.
 
 <a target="_blank" href="https://youtu.be/lwReERW_Pqo"><img align="left" alt="youtube-1024x721.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696234162/youtube-1024x721_ful6ky.png"><strong>Click here for a step-by-step 1-minute YouTube video</strong></a> about how to setup a whole enterprise with Azure technologies in the cloud:
 
@@ -41,7 +40,7 @@ But resources are created on the <strong>26th</strong> steps into the setup proc
 
 This article explains the "guardrails" to prevent mistakes and abuse: <strong>RBAC</strong> (Role-based Access Control), which is defined by: the <strong>profile</strong> defined for each <strong>A. Security Principals</strong> limited by <strong>B. Role Definitions</strong> and <strong>C. Scopes</strong> around resources.
 
-1.  PROTIP: First we define who reports to whom in the people organization, their job titles, responsibilities, with metadata about each person (such as their geographic location, emails, etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be setup.
+1.  <a href="#PeopleInfo">>>></a> First we define who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier (for SMS), etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be setup.
 
 2.  Among people, <strong>Administrators</strong> are identified to be provided permissions to set up each 
 
@@ -63,7 +62,9 @@ This article explains the "guardrails" to prevent mistakes and abuse: <strong>RB
 
 8.  <strong>Licensing</strong> is defined under a Tenant. Enterprises need a paid P1 or P2 license for each user to use Azure securely.
 
-9.  <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/management-groups/overview"><strong>Management Groups</strong></a> have been used to automatically cascade permissions up to managers in the organization chart. However, analysis of break-ins has resulted in granting of temporary permissions based on <strong>groups doing tasks</strong>.
+9.  <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/management-groups/overview"><strong>Management Groups</strong></a> are used to organize the many Subscriptions that enterprises are likely to have into a <strong>hierarchy</strong>. For <a target="_blank" href="https://docs.google.com/spreadsheets/d/1diCL35orX9cVEgti1eU7aaG_sgyDSPmbQjnXBamUnVc/edit?usp=sharing">example</a>, virtual machines (VMs) within one particular management group can be limited to being created in <strong>specific regions</strong> (soverignties). Policies for each management group applies to all nested management groups, subscriptions, and resources.
+
+    Azure docs mention that Subscriptions no longer valid are updated under the Management Group name "Decommissioned". The Subscription named "Decomissioned" is where resources are assigned when no longer used and available but should not yet be deleted.
 
     Microsoft does not allow Global Administrators to be used for production work. Instead, <strong>Conditional Access</strong> is used to grant permissions to users and groups.
 
@@ -71,6 +72,7 @@ This article explains the "guardrails" to prevent mistakes and abuse: <strong>RB
 
     The most secure systems now designate for each resource its "data owners" (who assign users) and "data custodians" (who manage the data). An inventory needs to be maintained about who has type of access to what data, for escalations and approvals.
 
+    
 10. <strong>Resource Groups</strong> are defined to group resources for <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">high-resolution</a> billing and management. <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/concept-learn-about-groups">Entra</a>
 
 11. Tags are defined to group resources for billing and management purposes.
@@ -112,16 +114,28 @@ Recap:
 
 <hr />
 
-<a name="PeopleStuff"></a>
+Let's dive in with the <strong>technical</strong> now, with <a href="#PeopleStuff">people stuff</a> further down.
 
-## People stuff
+   * <a href="#URLs">All URLs for Azure I've found</a> 
+   * <a target="_blank" href="https://wilsonmar.github.io/acronyms/">Acronyms (three letters and otherwise)</a>
+   * <a href="#naming-abbreviations">Naming Conventions</a>
+   * <a href="#FreeSvcs">First year free services on Azure</a>
+   <br /><br />
+
+<hr />
+
+<a name="PeopleInfo"></a>
+
+## 1. People Information
+
+
+PROTIP: Python program generates an organization chart graphic from a csv spreadsheet file.
 
 1. <a href="#Occupations">Occupations for certs</a>
 1. <a href="#Transformation">Digital Transformation?</a>
 
 1. <a href="#URLs">Azure URLs</a>
 1. <a href="#Portal">portal.azure.com GUI</a>
-1. <a href="#GetAccounts">Get Azure accounts</a>
 1. <a href="#Subscriptions">Subscriptions</a>
 1. Support
 
@@ -140,7 +154,7 @@ Search for what to "REMEMBER" to pass <a target="_blank" href="https://wilsonmar
 {% include whatever.html %}
 
 
-## Who Does What
+### Who Does What
 
 There are <a href="#Occupations">technical occupations</a> and management roles:
 
@@ -210,6 +224,27 @@ Each Cloud Service Provider (GCP, AWS, Azure, etc.) presents different, but simi
 and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-architected/security/overview">Well-Architected Framework</a>.
 
 
+<hr />
+
+<a name="AdminUsers"></a>
+
+## PHASE 02. Admins 
+
+<a name="GlobalAdmin"></a>
+
+### Global Admin Account
+
+   <strong>Global Administrators</strong>, aka Company Administrators, in Entra ID have access to <strong>all services</strong> that use AAD/Entra identities (Microsoft 365 security center, Intune, Microsoft 365 compliance center, Exchange Online, SharePoint Online, Skype for Business Online, etc.).
+
+   REMEMBER: Global Admins get access to Azure resources only after being granted User Access Admin role.
+
+   PROTIP: Don't use the Global Admin account regularly. Set an Activity Alert when it is used. Have no MFA on it. Have 2-5 global admins. <a target="_blank" href="https://www.youtube.com/watch?v=vZ9uQtO7mSU&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=2">VIDEO</a> 
+
+   PROTIP: Global Admin privileges are needed to enable <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">AD PIM (Privileged Identity Management)</a> for a directory.
+
+   So it's important to assign other more specific roles. 
+
+
 ### Security Jobs To Be Done
 
 How the <a target="_blank" href="https://aka.ms/SecurityRoles">concerns</a> of each organizational role type/team relate with others, from Plan (Governance) to Build to Run (Operations) stages:
@@ -259,7 +294,7 @@ PROTIP: Define abbreviations for each above.
 
 <a name="Naming"></a>
 
-## Naming Abbreviations
+### Naming Abbreviations
 
 REMEMBER: <strong>Resource names are limited to 64 characters.</strong>
 
@@ -309,7 +344,7 @@ Bicep and ARM template module for keeping a consistent Azure resource naming con
 
 <a name="Assumptions"></a>
 
-## Mindsets and Assumptions (Awareness)
+### Mindsets and Assumptions (Awareness)
 
 PROTIP: Many don't take security "seriously" because they haven't fully grasped these realities: <a target="_blank" href="https://learn.microsoft.com/en-us/security/zero-trust/ten-laws-of-security#10-laws-of-cybersecurity-risk">"Laws of Cybersecurity Risk"</a> and Security:
 
@@ -351,7 +386,7 @@ PROTIP: Many don't take security "seriously" because they haven't fully grasped 
 
 <a name="Transformation"></a>
 
-## What Does Security Want?
+### What Does Security Want?
 
 NOTE: Many land on this as part of their organization's effort to transition to make use of the public cloud.
 
@@ -554,6 +589,7 @@ Microsoft has a "Defender" offering for each type of product:
 - https://learn.microsoft.com/en-us/security/zero-trust/ten-laws-of-security#10-laws-of-cybersecurity-risk
 
 "Sentinel" is Microsoft's brand name for offerings in <a target="_blank" href="https://wilsonmar.github.io/siem-soar/">SIEM and SOAR</a>.
+
 
 ### Regulatory Compliance
 
@@ -859,9 +895,34 @@ https://levelup.gitconnected.com/build-a-custom-url-shortener-using-azure-functi
 
 <hr />
 
-<a name="GetAccounts"></a>
+<a name="Subscriptions"></a>
 
-## Get Azure Accounts
+## PHASE 03. Subscriptions
+
+<a target="_blank" href="https://www.youtube.com/watch?v=LMAC0IIYSJM&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=17">VIDEO KnowOps</a>
+
+At the <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade">Subscription pane</a>
+
+A <strong>Subscription</strong> is a billing boundary linked to an Azure account
+   AND A container for resource groups.
+
+There can be multiple Subscriptions per tenant (e.g. for depts.).
+   * Non-prod (for devs)
+   * Production (for operations)
+   * Multi-region
+   <br /><br />
+
+The 2000 role assignments limit per subscription is fixed and cannot be increased.
+
+Subscription types:
+   * Azure pass (e.g. with a course)
+   * MSDN (Developer Network)
+   * Azure trial
+   * Pay-as-you-go (most common)
+   * Enterprise (involves a minimum commitment)
+   <br /><br />
+
+
 
 <a name="BrowserProfiles"></a>
 
@@ -917,7 +978,6 @@ PROTIP: Setup <strong>different browser profiles</strong> on the same browser, a
    Visual Studio Subscriptions are, as of this writing, NOT offered in the Brazil South and Central India regions, as noted in <a target="_blank" href="https://azure.microsoft.com/en-us/regions/offers/">https://azure.microsoft.com/en-us/regions/offers/</a>.
 
    
-
 <a name="FreeSvcs"></a>
 
 ### First year free services
@@ -940,10 +1000,6 @@ https://azure.microsoft.com/en-us/free/free-account-faq</a> lists services which
 
 The clock is ticking!
 
-
-<a name="Subscriptions"></a>
-
-## Subscriptions
 
 ### Office 365 Trial Subscription
 
@@ -1068,9 +1124,9 @@ The clock is ticking!
    Available to Enterprise customers only: <a target="_blank" href="https://cloudacademy.com/course/understanding-azure-pricing-and-support/planning-and-management/">15% Discounts on Public Prices</a>
 
 
-   <a name="Tenants"></a>
+<a name="Tenants"></a>
 
-   ### Tenants
+## Phase 07. Tenants
 
    The Azure SaaS service separates different customers into different <strong>tenants</strong> (like tenants in an apartment building). Each tenant is a dedicated, isolated instance of the AAD/Entra service, owned and managed by an organization. 
 
@@ -1087,6 +1143,8 @@ The clock is ticking!
 
    PROTIP: Microsoft does not accept VOIP number such as those from Googgle Voice.
    They require a cell number from a cell carrier (Verizon, ATT, etc.).
+
+   ## Phase 04. Credit Cards
 
 4. Provide credit card number.
 
@@ -1122,16 +1180,22 @@ The clock is ticking!
    Add additional subscriptions when you may exceed limits within a subscription: # VNets.
 
 
-   ### MS Authenticator app
+<hr />
+
+<a name="Populate"></a>
+
+## Phase 05. Populate
+
+
+<hr />
+
+<a name="MobileApps"></a>
+
+## Phase 15. Devices - MS Authenticator app
 
 7. Install the <strong>Microsoft Authenticator app</strong> on you smartphone and setup Two-factor authentication to approve access using your phone.
 
 8. Get a unique profile image and <a target="_blank" href="https://account.microsoft.com/profile/edit-picture?fref=home.banner.profile">add picture</a>.
-
-
-<a name="MobileApps"></a>
-
-### Mobile Apps
 
 1. Setup password on your device.
 
@@ -1155,9 +1219,56 @@ BTW: Intune is a separate MDM (Mobile Device Management) product from Entra ID.
 
 <a name="PickRegions"></a>
 
-## Pick Region(s)
+### Phase 01. Pick Region(s)
 
-You'll be soon asked to specify a region. Pick the region closest to you.
+1. PROTIP: You'll be soon asked to specify a region. Pick the region closest to you.
+
+   By combining several sources, I compiled <a target="_blank" href="https://docs.google.com/spreadsheets/d/1diCL35orX9cVEgti1eU7aaG_sgyDSPmbQjnXBamUnVc/edit?usp=sharing">this private Google Sheet</a> of 53 regions:
+
+   * _Theater : a custom grouping (APJ, AMER, EMEA)
+   * _Geography : Africa, Asia Pacific, Canada, China, Europe, Middle East, South America, US
+   * _RegionName : the name of the region (e.g. "East US")
+   * _Sovereignty : the country where the region is located (e.g. "United States")
+   * _PhysicalLocation : the city where the region is located (e.g. "Chicago")
+   * _Latitude : where 0 is the equator (e.g. "41.881832")
+   * _Longitude : where 0 is the Prime Meridian (GMT) near London
+   * _AvailZones : if supported, the number of availability zones in the region (e.g. "3")
+   * _PairedRegion : the name of the paired region (e.g. "West US")
+   * _RestrictionStatus : "Enabled by default" or "Access Restricted"
+   <br /><br />   
+
+1. <a target="_blank" href="https://docs.microsoft.com/en-US/cli/azure/account#az_account_list_locations">This command</a> lists all 83 Azure regions, which includes some not available for customer use.
+
+   <pre>az account list-locations | wc -l</pre>
+
+   <pre>  {
+    "displayName": "Brazil Southeast",
+    "id": "/subscriptions/7a0bbbfc-a36d-4d73-bbaf-e381b82397c6/locations/brazilsoutheast",
+    "metadata": {
+      "geography": "Brazil",
+      "geographyGroup": "South America",
+      "latitude": "-22.90278",
+      "longitude": "-43.2075",
+      "pairedRegion": [
+        {
+          "id": "/subscriptions/7a0bbbfc-a36d-4d73-bbaf-e381b82397c6/locations/brazilsouth",
+          "name": "brazilsouth"
+        }
+      ],
+      "physicalLocation": "Rio",
+      "regionCategory": "Other",
+      "regionType": "Physical"
+    },
+    "name": "brazilsoutheast",
+    "regionalDisplayName": "(South America) Brazil Southeast",
+    "type": "Region"
+  }
+   </pre>
+
+1. CAUTION: This command lists only 83 Azure regions with no Latitude and Longitude, data all mixed up:
+
+   <pre>az account list-locations --output tsv >locations.csv</pre>
+
 
 1. Select a Geograph (country), then a Region from Microsoft's list at:
 
@@ -1196,8 +1307,10 @@ interactive map showing a point for each region's Longitude and Latitude</a> wit
    </table>
    <br /><br />
 
-NOTE: Microsoft Frontdoor enables you to use a single global IP address for your application. Microsoft automatically routes traffic to the region closest to the user. This is similar to AWS CloudFront.
+   NOTE: The Microsoft Frontdoor service enables you to use a single global IP address for your application. 
+   Microsoft automatically routes traffic to the region closest to the user. This is similar to AWS CloudFront.
 
+1. <a target="_blank" href="https://www.azurespeed.com/Information/AzureIpRanges">IP addresses of each region</a>
 
 <hr />
 
@@ -1289,7 +1402,6 @@ NOTE: Microsoft Frontdoor enables you to use a single global IP address for your
 
    * <a target="_blank" href="https://channel9.msdn.com/Shows/Tuesdays-With-Corey/">Tuesdays with Corey</a> (Sanders, VP of Azure Compute, now Corporate VP of Microsoft Solutions, about Azure on Microsoft's Channel9 video site). <a target="_blank" href="https://twitter.com/search?f=realtime&q=%23AzureTwC&src=typd">#AzureTwC</a>
    
-
 
    ### Help + Support
 
@@ -1388,9 +1500,7 @@ PROTIP: Below I've added LinkedIn links to each Learn Room instructor.
 
 <a name="Naming"></a>
 
-## Naming conventions
-
-zzz
+### Resource Naming conventions
 
 PROTIP: Decide on naming conventions and abbreviations BEFORE you create any resources.
 Abbreviations are needed to keep names short.
@@ -1416,12 +1526,15 @@ Based on <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-a
 PROTIP: Keep the sequence of the abbreviations consistent, so that you can easily find the resource in the portal.
 
 
-
 <hr />
+
+<a name="IaC"></a>
+
+## Phase 06. IaC (Infrastructure as Code)
 
 <a name="Automation"></a>
 
-## Automation programmatically
+### Automation programmatically
 
 There are many ways to automate the creation of resources within Azure:
 
@@ -1651,33 +1764,31 @@ presents the analysis that Azure Blueprints is a top-down approach to infrastruc
 
 <hr />
 
-<a name="Bicep"></a>
+<a name="Stacks"></a>
+
+## IaC Stacks
+
+https://www.youtube.com/watch?v=d1AE8qLwBYw
+
+https://github.com/johnthebrit/RandomStuff/blob/master/DeploymentStacks/demo.ps1
 
 
-## Azure Services
+### Azure Services
 
 Bicep files are stored in https://github.com/wilsonmar/DevSecOps/tree/main/azure/bicep 
 
 <tt>.
 ├── README.md
 ├── account
-│   ├── advisor (Manage Azure Advisor) - Extension
-│   ├── bicep (Manage Azure Bicep) - Extension
-│   ├── cloud (Manage registered Azure Clouds) - Core
-│   ├── consumption (Manage Azure Consumption) - Core
-│   ├── costmanagement (Manage cost an billing in Azure) - Extension
-│   ├── eventhubs (Manage Azure Event Hubs) - Core
-│   ├── extension (Manage and update Azure extensions) - Core
-│   ├── graph (Query the resources managed by Azure Resource Manager) - Core
 │   ├── identities (Manage Azure Managed Identities) - Core
 │   ├── login (Manage Azure subscriptions) - Core
-│   └── monitor (Manage the Azure Monitor Service) - Core
-│   └── <strong>resource</strong> (Manage Azure resources) - Core
-│   └── <strong>role</strong> (Manage user roles for access control with Entra ID and service principals) - Core
 ├── ai
+│   ├── find (Find Azure resources using AI robot) - Core
 │   ├── ml (Manage Azure Machine Learning) - Extension
 │   └── quantum (Manage Azure Quantum) - Extension
 ├── compute
+│   ├── acr (Azure Container Registry) - Core
+│   ├── acs (Azure Container Service) - Extension
 │   ├── aks (Azure Kubernetes Service) - Core & Extension
 │   ├── containerapp (Manage Azure Container Apps) - Extension
 │   ├── container (Manage Azure Container Instances) - Core & Extension
@@ -1689,27 +1800,37 @@ Bicep files are stored in https://github.com/wilsonmar/DevSecOps/tree/main/azure
 │   ├── disk-access (Manage disk access resources) - Core
 │   ├── cosmosdb (Manage Azure Cosmos DB database accounts) - Core & Extension
 │   ├── backup (Manage Azure Backup) - Extension
-│   └── mariadb (Manage Azure Database for MariaDB servers) - Core
-│   └── mysq (Manage Azure Database for MySQL servers) - Core
-│   └── postgres (Manage Azure Database for PostgreSQL servers) - Core
+│   ├── mariadb (Manage Azure Database for MariaDB servers) - Core
+│   ├── mysql (Manage Azure Database for MySQL servers) - Core
+│   ├── postgres (Manage Azure Database for PostgreSQL servers) - Core
 │   └── repos (Manage Azure Repos) - Extension
-├── delivery
-│   └── acr (Azure Container Registry) - Core
-├── domain
-│   ├── certs
-├── messaging
-│   └── service-bus (Manage Azure Service Bus namespaces, queues, topics, subscriptions, rules and geo-disaster recovery configuration alias) - Core
+├── deploy
+│   ├── advisor (Manage Azure Advisor) - Extension
+│   ├── consumption (Manage Azure Consumption) - Core
+│   ├── costmanagement (Manage cost an billing in Azure) - Extension
+│   ├── bicep (Manage Azure Bicep) - Extension
+│   ├── cloud (Manage registered Azure Clouds) - Core
+│   ├── extension (Manage and update Azure extensions) - Core
+│   ├── graph (Query the resources managed by Azure Resource Manager) - Core
+│   ├── <strong>resource</strong> (Manage Azure resources) - Core
+│   ├── <strong>role</strong> (Manage user roles for access control with Entra ID and service principals) - Core
+│   └── <stack>stack</strong> (Manage Azure Resource Manager template deployment) - Core
 ├── network
 │   ├── cdn (Manage Azure Content Delivery Network) - Core
+│   ├── eventhubs (Manage Azure Event Hubs) - Core
 │   ├── network (Manage Azure Network) - Core
+│   └── service-bus (Manage Azure Service Bus namespaces, queues, topics, subscriptions, rules and geo-disaster recovery configuration alias) - Core
 ├── observability
+│   ├── grafana (Manage Grafana resources) - Extension
+│   ├── logz (Manage Azure Log Analytics) - Extension
+│   ├── monitor (Manage the Azure Monitor Service) - Core
 │   └── tag (Manage Azure resource tags) - Core
 └── security
 │   ├── apim (Manage Azure API Management) - Extension
 │   ├── identity (Manage Azure Managed Identities) - Core
 │   ├── keyvault (Manage Azure Key Vault) - Core
 │   ├── policy (Manage Azure Policy) - Core
-│   └── security ( Security Center, now Microsoft Defender for Cloud) - Extension
+│   └── security (Microsoft Defender for Cloud, Security Center) - Extension
 </tt>
 
 <hr />
@@ -1735,6 +1856,7 @@ F. Landing zone subscription<br />
 G. VM templates<br />
 H. Sandbox subscription<br />
 I. Azure DevOps (vs. GitHub Actions)
+
 
 ### Entra ID
 
@@ -1768,22 +1890,6 @@ Active Directory stores credentials for (older)
 run on Windows servers in on-prem data centers.
 This older <strong>on-prem</strong> AD provides "domain services" that include domain joins, group policies, LDAP, Kerberos / NTLM authentication. 
 It uses the AD Admin Center GUI.
-
-
-<a name="Domains"></a>
-
-### Domains
-
-DEFINITION: A domain is an area of a network organized by a <strong>single authentication database</strong>.
-
-DEFINITION: An "Active Directory Domain" is a logical grouping of AD objects on a network.
-
-DEFINITION: An Active Directory Domain Controller (DC) is a (Windows) server that authenticates user identities and authorizes their access to resources.
-
-An Azure Domain is not the same as a domain (DNS) name. 
-
-At <a target="_blank" href="https://portal.azure.com/#settings/directory">https://portal.azure.com/#settings/directory</a>,
-the "Domain" text is a combination of the root account email address text in front of ".onmicrosoft.com". For example, <tt>johndoe@whatever.com</tt> becomes Domain <tt>johndoewhatever.onmicrosoft.com</tt> (without the TLD such as ".com").
 
 
 <a name="AAD"></a>
@@ -1820,7 +1926,21 @@ Apps configured to use AD App Proxy would limit user access to only the app conf
 using what's called "explicit user and device trust validation".
 
 
-<hr />
+<a name="Domains"></a>
+
+### Tenant Domains 
+
+DEFINITION: A domain is an area of a network organized by a <strong>single authentication database</strong>.
+
+DEFINITION: An "Active Directory Domain" is a logical grouping of AD objects on a network.
+
+DEFINITION: An Active Directory Domain Controller (DC) is a (Windows) server that authenticates user identities and authorizes their access to resources.
+
+An Azure Domain is not the same as a domain (DNS) web host names. 
+
+At <a target="_blank" href="https://portal.azure.com/#settings/directory">https://portal.azure.com/#settings/directory</a>,
+the "Domain" text is a combination of the root account email address text in front of ".onmicrosoft.com". For example, <tt>johndoe@whatever.com</tt> becomes Domain <tt>johndoewhatever.onmicrosoft.com</tt> (without the TLD such as ".com").
+
 
 <a name="PortalSearch"></a>
 
@@ -1832,7 +1952,7 @@ using what's called "explicit user and device trust validation".
 
     <a name="AAD"></a>
 
-3.  Type <strong>AAD</strong> Entra for the Services related to that name.
+3.  Type <strong>Entra</strong> for the Services related to that name.
 
 4.  Click for the blade called <a target="_blank" href="https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview">Entra ID</a> .
 
@@ -1841,7 +1961,7 @@ using what's called "explicit user and device trust validation".
 
     <a name="Tenants"></a>
 
-    ### Tenants in AAD/Entra ID
+    ### Tenants in Entra ID
 
 5.  Highlight and copy the value of the Name field, such as "<em>something</em>.onmicrosoft.com".
 
@@ -1888,7 +2008,7 @@ using what's called "explicit user and device trust validation".
 
     Each tenant is independent of all other tenants.
 
-    A tenant represents an organization in AAD/Wntra.
+    A tenant represents an organization in AAD/Entra.
    
     
     ### Users, Groups, Apps
@@ -1896,6 +2016,7 @@ using what's called "explicit user and device trust validation".
     At the right is a count of Users, Groups, Applications, and Devices managed under that Tenant.
     (From Tim Warner)
     <img alt="az-aad-concepts-1194x954.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1674198812/az-aad-concepts-1194x954_mivxuk.jpg">
+
 
     ### Federation
 
@@ -2017,25 +2138,7 @@ using what's called "explicit user and device trust validation".
 
     Those under this require use of MFA.
 
-
-<a name="AdminUsers"></a>
-
-### Admin Users & Groups
-
-
-<a name="GlobalAdmin"></a>
-
-### Global Admin Account
-
-   <strong>Global Administrators</strong>, aka Company Administrators, in Entra ID have access to <strong>all services</strong> that use AAD/Entra identities (Microsoft 365 security center, Intune, Microsoft 365 compliance center, Exchange Online, SharePoint Online, Skype for Business Online, etc.).
-
-   REMEMBER: Global Admins get access to Azure resources only after being granted User Access Admin role.
-
-   PROTIP: Don't use the Global Admin account regularly. Set an Activity Alert when it is used. Have no MFA on it. Have 2-5 global admins. <a target="_blank" href="https://www.youtube.com/watch?v=vZ9uQtO7mSU&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=2">VIDEO</a> 
-
-   PROTIP: Global Admin privileges are needed to enable <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">AD PIM (Privileged Identity Management)</a> for a directory.
-
-   So it's important to assign other more specific roles. 
+<hr />
 
 ### MFA
 
@@ -3267,33 +3370,6 @@ There is a limit of 100 Management certs per Azure subscription (administrator).
    * Pre-prod (Staging)
    * Prod
 
-
-<a name="Subscriptions"></a>
-
-## Subscriptions
-
-<a target="_blank" href="https://www.youtube.com/watch?v=LMAC0IIYSJM&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=17">VIDEO KnowOps</a>
-
-At the <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade">Subscription pane</a>
-
-A <strong>Subscription</strong> is a billing boundary linked to an Azure account
-   AND A container for resource groups.
-
-There can be multiple Subscriptions per tenant (e.g. for depts.).
-   * Non-prod (for devs)
-   * Production (for operations)
-   * Multi-region
-   <br /><br />
-
-The 2000 role assignments limit per subscription is fixed and cannot be increased.
-
-Subscription types:
-   * Azure pass (e.g. with a course)
-   * MSDN (Developer Network)
-   * Azure trial
-   * Pay-as-you-go (most common)
-   * Enterprise (involves a minimum commitment)
-   <br /><br />
 
 
 ## Management Group for RBAC
