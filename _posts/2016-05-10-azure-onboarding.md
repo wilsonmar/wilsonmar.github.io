@@ -28,7 +28,7 @@ PROTIP: Here, all in one page, are <strong>hands-on</strong> steps to use the <s
    * <strong>az-onboarding.sh</strong> automates the creation of all described below:
    <br /><br />
 
-<a target="_blank" href="https://youtu.be/lwReERW_Pqo"><img align="left" alt="youtube-1024x721.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696234162/youtube-1024x721_ful6ky.png"><strong>Click here for a step-by-step 1-minute YouTube video</strong></a> about how to setup a whole enterprise with Azure technologies in the cloud:
+<a target="_blank" href="https://youtu.be/lwReERW_Pqo"><img align="left" alt="youtube-1024x721.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696234162/youtube-1024x721_ful6ky.png"><strong>Click here for a step-by-step 1-minute YouTube video</strong></a> about the <strong>sequence of work</strong> to setup a whole enterprise with Azure technologies in the cloud:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"><img alt="aws-onboarding-v009-1674x869.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
 
@@ -40,7 +40,7 @@ But resources are created on the <strong>26th</strong> steps into the setup proc
 
 This article explains the "guardrails" to prevent mistakes and abuse: <strong>RBAC</strong> (Role-based Access Control), which is defined by: the <strong>profile</strong> defined for each <strong>A. Security Principals</strong> limited by <strong>B. Role Definitions</strong> and <strong>C. Scopes</strong> around resources.
 
-1.  <a href="#PeopleInfo">>>></a> First we define who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier (for SMS), etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be setup.
+1.  <a href="#PeopleInfo"><img alt="icon-info-2000x2000.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a> First we define who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier (for SMS), etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be set up.
 
 2.  Among people, <strong>Administrators</strong> are identified to be provided permissions to set up each 
 
@@ -62,9 +62,11 @@ This article explains the "guardrails" to prevent mistakes and abuse: <strong>RB
 
 8.  <strong>Licensing</strong> is defined under a Tenant. Enterprises need a paid P1 or P2 license for each user to use Azure securely.
 
-9.  <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/management-groups/overview"><strong>Management Groups</strong></a> are used to organize the many Subscriptions that enterprises are likely to have into a <strong>hierarchy</strong>. For <a target="_blank" href="https://docs.google.com/spreadsheets/d/1diCL35orX9cVEgti1eU7aaG_sgyDSPmbQjnXBamUnVc/edit?usp=sharing">example</a>, virtual machines (VMs) within one particular management group can be limited to being created in <strong>specific regions</strong> (soverignties). Policies for each management group applies to all nested management groups, subscriptions, and resources.
+9.  <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/management-groups/overview"><strong>Management Groups</strong></a> are used to organize the many Subscriptions that enterprises are likely to have into a <strong>hierarchy</strong>. For <a target="_blank" href="https://docs.google.com/spreadsheets/d/1diCL35orX9cVEgti1eU7aaG_sgyDSPmbQjnXBamUnVc/edit?usp=sharing">example</a>, virtual machines (VMs) within one particular management group can be limited to being created in <strong>specific regions</strong> (soverignties). Policies for each management group apply to all nested management groups, subscriptions, and resources.
 
     Azure docs mention that Subscriptions no longer valid can be placed under the Management Group name "Decommissioned". The Subscription named "Decomissioned" is where resources are assigned when no longer used and available but should not yet be deleted. This is a good practice to avoid accidental deletion of resources and enable central review before deletion (to fight ransoms).
+
+    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696346013/az-mgmtgrps-1772x941_uxyvoj.png"><img alt="az-mgmtgrps-1772x941.pn" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696346013/az-mgmtgrps-1772x941_uxyvoj.png"></a>
 
     Microsoft does not allow Global Administrators to be used for production work. Instead, <strong>Conditional Access</strong> is used to grant permissions to users and groups.
 
