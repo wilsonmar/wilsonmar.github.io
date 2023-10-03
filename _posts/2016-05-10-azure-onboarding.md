@@ -64,7 +64,7 @@ This article explains the "guardrails" to prevent mistakes and abuse: <strong>RB
 
 9.  <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/management-groups/overview"><strong>Management Groups</strong></a> are used to organize the many Subscriptions that enterprises are likely to have into a <strong>hierarchy</strong>. For <a target="_blank" href="https://docs.google.com/spreadsheets/d/1diCL35orX9cVEgti1eU7aaG_sgyDSPmbQjnXBamUnVc/edit?usp=sharing">example</a>, virtual machines (VMs) within one particular management group can be limited to being created in <strong>specific regions</strong> (soverignties). Policies for each management group applies to all nested management groups, subscriptions, and resources.
 
-    Azure docs mention that Subscriptions no longer valid are updated under the Management Group name "Decommissioned". The Subscription named "Decomissioned" is where resources are assigned when no longer used and available but should not yet be deleted.
+    Azure docs mention that Subscriptions no longer valid can be placed under the Management Group name "Decommissioned". The Subscription named "Decomissioned" is where resources are assigned when no longer used and available but should not yet be deleted. This is a good practice to avoid accidental deletion of resources and enable central review before deletion (to fight ransoms).
 
     Microsoft does not allow Global Administrators to be used for production work. Instead, <strong>Conditional Access</strong> is used to grant permissions to users and groups.
 
@@ -4290,6 +4290,8 @@ provides clickable "heatmap" status, timeline, a quiz, etc.
 <a name="Resources"></a>
 
 ## Resources 
+
+Each resource lives in one (and only one) Resource Group.
 
 ### Videos
 
