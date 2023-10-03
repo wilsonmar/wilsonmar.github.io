@@ -124,7 +124,7 @@ Alternatively, use a package manager. CAUTION: <a target="_blank" href="http://s
 
 ## Obsolete Python comes with MacOS #
 
-Ever since the Mavericks version of Mac OSX,
+Ever since the Mavericks version of macOS,
 Python 2 comes installed on MacOS machines.
 
 (Use the index at the right if you want to jump ahead)
@@ -433,7 +433,7 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 
 ## Don't Uninstall Default Python on macs #
 
-> The version of Python that comes with Mac OSX should not be removed 
+> The version of Python that comes with macOS should not be removed 
 because some Apple system software have hard-coded references to it.
 
 In this bad advice to harm yourself:

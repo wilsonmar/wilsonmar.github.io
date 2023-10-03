@@ -352,7 +352,7 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
    
    ### Manual Docker for Mac
 
-   <strong>Docker for Mac</strong> was added 2016 for installing Docker on Mac OSX.
+   <strong>Docker for Mac</strong> was added 2016 for installing Docker on macOS
    It uses the
    <a target="_blank" href="https://github.com/docker/HyperKit/">
    HyperKit VM</a>
@@ -1342,7 +1342,7 @@ On Linux:
     <pre><strong>sysctl -w vm.max_map_count=262144
     </strong></pre>
 
-OSX with Docker for Mac
+macOS with Docker for Mac
 
    The vm_max_map_count setting must be set within the xhyve virtual machine:
 

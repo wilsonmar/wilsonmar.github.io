@@ -115,7 +115,7 @@ This is a list of physical hardware categorized by basics and optional.
 
    Windows operating systems can format drives using NTFS rather than FAT32.
 
-   Natively Mac OSX does not know how to read NTFS drives.
+   Natively macOS does not know how to read NTFS drives.
 
 0. DVD blank disk (R+ or R-) to hold image so as to not use up 
    laptop hard disk space.

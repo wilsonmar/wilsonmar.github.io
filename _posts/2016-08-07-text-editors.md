@@ -1869,8 +1869,8 @@ This is one of several topics:
 {% include front-end_links.html %}
 
 
-## More on OSX #
+## More on macOS #
 
-This is one of a series on Mac OSX:
+This is one of a series on macOS:
 
 {% include mac_links.html %}

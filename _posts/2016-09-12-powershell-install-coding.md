@@ -799,7 +799,7 @@ https://github.com/MeshkDevs/InvokeTwitterAPIs
 
 ### Install a signing cert on Mac #
 
-To add the CA root certificate (either PEM or DER format) into the OSX global keychain:
+To add the CA root certificate (either PEM or DER format) into the macOS global keychain:
 
 0. Use Finder to navigate to your /System -> Library -> Keychains -> X509Anchors 
    to your own Library -> Keychains. 
