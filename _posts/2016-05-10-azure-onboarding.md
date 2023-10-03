@@ -40,15 +40,14 @@ But resources are created on the <strong>26th</strong> steps into the setup proc
 
 This article explains the "guardrails" to prevent mistakes and abuse: <strong>RBAC</strong> (Role-based Access Control), which is defined by: the <strong>profile</strong> defined for each <strong>A. Security Principals</strong> limited by <strong>B. Role Definitions</strong> and <strong>C. Scopes</strong> around resources.
 
-<img width="20" height="20" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png">
 
-1.  <a href="#PeopleInfo">x</a> First we define who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier (for SMS), etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be set up.
+1.  <a href="#PeopleInfo"><img align="right" width="40" height="40" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>First we define who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier (for SMS), etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be set up.
 
 2.  Among people, <strong>Administrators</strong> are identified to be provided permissions to set up each 
 
 3.  Azure <a href="#Subscriptions">Subscription</a> used for <strong>billing</strong>. So admins should have partners to work through financial workflows and oversight.
 
-4.  Licenses are paid for by <strong>credit cards or invoices</strong> setup through a Microsoft salesperson.
+4.  <a href="#Licenses">Licenses are paid</a> for by <strong>credit cards or invoices</strong> setup through a Microsoft salesperson.
 
 5.  Working at enterprise scale requires a way to quickly <strong>populate</strong> information into Azure, both using samples in test and to prepare for productive use.
 
