@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-10-02"
+date: "2023-10-04"
 file: "azure-quickly"
 title: "Azure Quickly"
 excerpt: "Use this automation to minimize manual toil and mistakes but build-in secure practices and mechanisms to build global enterprises need. Not just for AZ-104, AZ-500"
@@ -21,14 +21,18 @@ There is a massive amount of information about Azure. YouTube videos and the <a 
 PROTIP: Here, all in one page, are <strong>hands-on</strong> steps to use the <strong>automation</strong> I created to build Azure for a whole global enterprise, with minimal manual toil that builds in secure practices and mechanisms without additional effort.
 
    * <strong>mac-setup.sh</strong> installs HomeBrew, Miniconda, Python, CLI, and GitHub repos on your mac, then makes runs simple and optionally cleans up after runs
+
    * <strong>org-gen.py</strong> generates csv files containing sample values for an organization with a size of your choosing. (100, 1000, 10000, etc.). The data describes a hierarchy of departments, jobs, roles, groups, people, projects, etc. used as the basis for assigning Least-Privilege permissions to resources.
+
    * <strong>org-chart.py</strong> generates an organization chart graphic from a csv spreadsheet file.
+
    * <strong>az-info.sh</strong> displays the status of various resources in Azure
    audience.
+
    * <strong>az-onboarding.sh</strong> automates the creation of all described below:
    <br /><br />
 
-<a target="_blank" href="https://youtu.be/lwReERW_Pqo"><img align="left" alt="youtube-1024x721.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696234162/youtube-1024x721_ful6ky.png"><strong>Click here for a step-by-step 1-minute YouTube video</strong></a> about the <strong>sequence of work</strong> to setup a whole enterprise with Azure technologies in the cloud:
+<a target="_blank" href="https://youtu.be/lwReERW_Pqo"><img align="left" alt="youtube-1024x721.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696234162/youtube-1024x721_ful6ky.png"><strong>Click here for a step-by-step 1-minute YouTube video</strong></a> about the <strong>sequence of work</strong> to setup a whole enterprise with Azure technologies in the cloud:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"><img alt="aws-onboarding-v009-1674x869.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
 
@@ -41,17 +45,17 @@ But resources are created on the <strong>26th</strong> steps into the setup proc
 This article explains the "guardrails" to prevent mistakes and abuse: <strong>RBAC</strong> (Role-based Access Control), which is defined by: the <strong>profile</strong> defined for each <strong>A. Security Principals</strong> limited by <strong>B. Role Definitions</strong> and <strong>C. Scopes</strong> around resources.
 
 
-1.  <a href="#PeopleInfo"><img align="right" width="40" height="40" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>First we define who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier (for SMS), etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be set up.
+1.  <a href="#PeopleInfo"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>First we define who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier (for SMS), etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be set up.
 
-2.  Among people, <strong>Administrators</strong> are identified to be provided permissions to set up each 
+2.  <a href="#PeopleInfo"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Among people, <strong>Administrators</strong> are identified to be provided permissions to set up each 
 
-3.  Azure <a href="#Subscriptions">Subscription</a> used for <strong>billing</strong>. So admins should have partners to work through financial workflows and oversight.
+3.  <a href="#Subscriptions"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png">Azure Subscription</a> are used for <strong>billing</strong>. So admins should have partners to work through financial workflows and oversight.
 
-4.  <a href="#Licenses">Licenses are paid</a> for by <strong>credit cards or invoices</strong> setup through a Microsoft salesperson.
+4.  <a href="#Licenses"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Licenses are paid for by <strong>credit cards or invoices</strong> setup through a Microsoft salesperson.
 
-5.  Working at enterprise scale requires a way to quickly <strong>populate</strong> information into Azure, both using samples in test and to prepare for productive use.
+5.  <a href="#Populate"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Working at enterprise scale requires a way to quickly <strong>populate</strong> information into Azure, both using samples in test and to prepare for productive use.
 
-6.  There are several options for automating <strong>Bicep</strong> scripts to create resources. This is now favored over <strike>Terraform</strike>. Use of Bicep involves transpiling its YAML-formatted contents into the JSON format of <strong>ARM templates</strong>. Also, Microsoft has stopped development of its <a href="#Blueprints">"Blueprints"</a>) in favor of <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-specs?tabs=azure-powershell">Template Specs</a>).
+6.  <a href="#IaC"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>There are several options for automating <strong>Bicep</strong> scripts to create resources. This is now favored over <strike>Terraform</strike>. Use of Bicep involves transpiling its YAML-formatted contents into the JSON format of <strong>ARM templates</strong>. Also, Microsoft has stopped development of its <a href="#Blueprints">"Blueprints"</a>) in favor of <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-specs?tabs=azure-powershell">Template Specs</a>).
 
     It takes a lot of effort to configure scripts according to <strong>documentation</strong> for each service. So an important part of automation is to <strong>audit</strong> scripts. <strong>Policies</strong> aim to identify vulnerabilities and logic errors before resources are deployed and thus possibly exposed.
 
@@ -65,7 +69,7 @@ This article explains the "guardrails" to prevent mistakes and abuse: <strong>RB
 
 9.  <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/management-groups/overview"><strong>Management Groups</strong></a> are used to organize the many Subscriptions that enterprises are likely to have into a <strong>hierarchy</strong>. For <a target="_blank" href="https://docs.google.com/spreadsheets/d/1diCL35orX9cVEgti1eU7aaG_sgyDSPmbQjnXBamUnVc/edit?usp=sharing">example</a>, virtual machines (VMs) within one particular management group can be limited to being created in <strong>specific regions</strong> (soverignties). Policies for each management group apply to all nested management groups, subscriptions, and resources.
 
-    Azure docs mention that Subscriptions no longer valid can be placed under the Management Group name "Decommissioned". The Subscription named "Decomissioned" is where resources are assigned when no longer used and available but should not yet be deleted. This is a good practice to avoid accidental deletion of resources and enable central review before deletion (to fight ransoms).
+    Azure docs mention that Subscriptions no longer valid can be placed under the Management Group name "Decommissioned". The Subscription named "Decommissioned" is where resources are assigned when no longer used and available but should not yet be deleted. This is a good practice to avoid accidental deletion of resources and enable central review before deletion (to fight ransoms).
 
     <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696346013/az-mgmtgrps-1772x941_uxyvoj.png"><img alt="az-mgmtgrps-1772x941.pn" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696346013/az-mgmtgrps-1772x941_uxyvoj.png"></a>
 
@@ -76,6 +80,10 @@ This article explains the "guardrails" to prevent mistakes and abuse: <strong>RB
     The most secure systems now designate for each resource its "data owners" (who assign users) and "data custodians" (who manage the data). An inventory needs to be maintained about who has type of access to what data, for escalations and approvals.
 
     
+    <a name="ResourceGroups"></a>
+
+    ## Phase 10. Resource Groups
+
 10. <strong>Resource Groups</strong> are defined to group resources for <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">high-resolution</a> billing and management. <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/concept-learn-about-groups">Entra</a>
 
 11. Tags are defined to group resources for billing and management purposes.
@@ -246,6 +254,16 @@ and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-archit
    PROTIP: Global Admin privileges are needed to enable <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">AD PIM (Privileged Identity Management)</a> for a directory.
 
    So it's important to assign other more specific roles. 
+
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> _JobTitle </th><th> _AssetRole </th></tr>
+<tr valign="top"><td> Payroll Supervisor </td><td> Payroll metrics </td></tr>
+<tr valign="top"><td> Payroll Clerk </td><td> Process Payroll </td></tr>
+<tr valign="top"><td> HR Operations </td><td> Create Payroll Backups </td></tr>
+<tr valign="top"><td> Operations Clerk </td><td> Restore Payroll Backups </td></tr>
+<tr valign="top"><td> Archive Manager </td><td> Delete Payroll Backups </td></tr>
+</table>
 
 
 ### Security Jobs To Be Done
