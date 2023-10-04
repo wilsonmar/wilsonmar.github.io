@@ -249,7 +249,6 @@ Module 0. Lab 00: Validate lab environment
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M00_Validate_lab_environment.md">Lab: Validate Lab Enviornment</a>
 
-   * STAR: <a target="_blank" href="https://github.com/wilsonmar/azure-cloud-onramp/">github.com/wilsonmar/azure-cloud-onramp</a>
    * STAR: <a target="_blank" href="https://github.com/wilsonmar/azure-quickly/">github.com/wilsonmar/azure-quickly</a>
    * Visual Studio Code
 
@@ -502,7 +501,7 @@ Alternately, these steps are based on <a target="_blank" href="https://docs.micr
 
 1. Get signed up with Azure and Microsoft Learn accounts. Use of <br />
    <a target="_blank" href="https://aka.ms/aft-iot"><strong>https://aka.ms/aft-iot</strong></a> to Create your Azure free is described at<br />
-   <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">https://wilsonmar.github.io/azure-cloud-onramp</a> 
+   <a target="_blank" href="https://wilsonmar.github.io/azure-quickly/">https://wilsonmar.github.io/azure-quickly</a> 
 
    Create your organization with a personal Microsoft account or a work or school accountdocs.microsoft.com
 

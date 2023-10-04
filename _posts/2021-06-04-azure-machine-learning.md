@@ -168,7 +168,7 @@ The above can be setup by running a single command, but after you are setup to r
 
 1. First, get skill at using Azure Portal Poart and CLI Bash by following my deep but concise tutorial at 
 
-   <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">https://wilsonmar.github.io/azure-cloud-onramp</a>
+   <a target="_blank" href="https://wilsonmar.github.io/azure-onboarding/">https://wilsonmar.github.io/azure-onboarding</a>
 
    It covers creation of free Azure Subscription and Azure Storage accounts to hold files in a clouddrive folder.
 

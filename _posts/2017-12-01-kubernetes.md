@@ -1256,7 +1256,7 @@ Use my step-by-step instructions to get CLI installed and configured on your lap
 
    * For AWS CLI, see https://wilsonmar.github.io/aws-onboarding/
 
-   * For Azure CLI, see https://wilsonmar.github.io/azure-cloud-onramp/
+   * For Azure CLI, see https://wilsonmar.github.io/azure-onboarding/
 
    * For GCP CLI, see https://wilsonmar.github.io/gcp/
    <br /><br />

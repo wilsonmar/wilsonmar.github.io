@@ -72,7 +72,7 @@ PROTIP: Through acquisitions and internal R&D, Snowflake has quickly incorporate
 Snowflake is that middleman. Snowflake's offers a <strong>cloud-native</strong> database -- designed from the ground up to be a "Serverless" <a target="_blank" href="https://www.wikiwand.com/en/Cloud_database">cloud-based database</a> <a target="_blank" href="https://seekingalpha.com/article/4429909-data-warehouse-wars-snowflake-vs-google-bigquery">Data-Warehouse-as-a-Service" (DWaaS)</a> on hardware and networks provided by public cloud service providers (CSPs AWS, Azure, GCP):
 
    * on Amazon S3 storage since 2014
-   * on <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">Microsoft Azure Blob Storage</a> (Data Lake Gen2) since 2018
+   * on Microsoft Azure Blob Storage</a> (Data Lake Gen2) since 2018
    * on <a target="_blank" href="https://wilsonmar.github.io/gcp">Google Cloud Platform (GCP)</a> since 2019
    * QUESTION: Apache Iceberg? Salesforce? SAP?
    <br /><br />

@@ -19,7 +19,7 @@ comments: true
 This tutorial describes the install and coding of <strong>automation</strong> within the Azure cloud, using PowerShell, CLI, ARM templates in JSON, etc.
 
 This is one of a series about Azure on my blog:
-   * <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">Azure Onramp</a> (obtaining accounts)
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-onboarding/">Azure Onramp</a> (obtaining accounts)
    * Azure PowerShell install and coding
    * Azure CLI install and coding
    * Azure-specific Automation 

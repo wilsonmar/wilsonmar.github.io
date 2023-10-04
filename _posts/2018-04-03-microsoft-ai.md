@@ -331,7 +331,7 @@ IMPORTANT PROTIP: Microsoft allows its free "F0" tier to be applied to only a si
 
 This document assumes that you have done the following:
 
-1. <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">Get onboarded to a Microsoft Azure subscriptions</a> and learn Portal GUI menu keyboard shortcuts.
+1. <a target="_blank" href="https://wilsonmar.github.io/azure-onboarding/">Get onboarded to a Microsoft Azure subscriptions</a> and learn Portal GUI menu keyboard shortcuts.
 1. Setup a CLI scripting environment in shell.azure.com.
 1. Use CLI to <a href="#CognitiveServices">Create a Cognitive Service</a> to get keys to call the first REST API from among <a target="_blank" href="https://github.com/Azure-Samples/cognitive-services-REST-api-samples">sample calls</a> to <a target="_blank" href="https://docs.microsoft.com/en-us/rest/api/azure/">many REST APIs</a>: the <a href="#TextTranslation">Translator Text API</a>.
 1. Setup <strong>PowerShell scripts</strong>

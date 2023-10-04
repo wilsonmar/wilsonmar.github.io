@@ -1,9 +1,9 @@
 ---
 layout: post
 date: "2023-10-02"
-file: "azure-onboarding"
-title: "Azure Onboarding"
-excerpt: "Deep automation to minimize the manual toil and build-in secure practices and mechanisms to build global enterprises need. Not just for AZ-104, AZ-500"
+file: "azure-quickly"
+title: "Azure Quickly"
+excerpt: "Use this automation to minimize manual toil and mistakes but build-in secure practices and mechanisms to build global enterprises need. Not just for AZ-104, AZ-500"
 tags: [cloud, azure]
 image:
 # az-logo-2021-1900x500.png

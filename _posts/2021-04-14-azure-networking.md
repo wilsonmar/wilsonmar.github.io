@@ -49,7 +49,7 @@ Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target
 
 ## Hands-on start here
 
-This page assumes you've absorbed my <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">Azure cloud onramp</a> for skill at Portal GUI and CLI.
+This page assumes you've absorbed my <a target="_blank" href="https://wilsonmar.github.io/azure-onboarding/">Azure cloud onramp</a> for skill at Portal GUI and CLI.
 
 1. In the Portal GUI, G+\ to Search for "Net" and there appears:
 

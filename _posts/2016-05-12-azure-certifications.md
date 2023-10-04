@@ -407,9 +407,9 @@ https://docs.microsoft.com/en-us/learn/azure/
    * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-104">Study Guide for AZ-104</a>
    * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-administrator-prerequisites/">Microsoft's LEARNING PATH</a>
 
-> Manage Azure <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">identities and governance</a>:
+> Manage Azure <a target="_blank" href="https://wilsonmar.github.io/azure-onboarding/">identities and governance</a>:
 
-   * https://wilsonmar.github.io/azure-cloud-onramp/
+   * https://wilsonmar.github.io/azure-onboarding/
    * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-manage-identities-governance/">Microsoft's LEARNING PATH</a>
    * <a target="_blank" href="https://github.com/madebygps/projects/blob/main/az-104/onboarder.md">Onboard Automator (Manage Azure identities and governance)</a> from MadeByGPS
    

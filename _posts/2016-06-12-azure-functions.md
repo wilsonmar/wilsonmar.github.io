@@ -20,7 +20,7 @@ comments: true
 This tutorial aims to have you ending up with "Serverless" Azure Functions running in the 
 Microsoft Azure cloud.
 
-It's assumed that you're already familiar with my <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp">Azure cloud onramp</a> and
+It's assumed that you're already familiar with my <a target="_blank" href="https://wilsonmar.github.io/azure-quickly">Azure cloud onramp</a> and
 [the Serverless framework](/serverless/)
 
 If you need to customize the JobHost, then you're better off staying with an AppService WebJob.

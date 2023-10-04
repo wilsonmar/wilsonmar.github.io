@@ -241,7 +241,7 @@ handle Azure at the organizational level. Management groups, subscriptions, acce
 
 ## Microsoft Learning Account
 
-After <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp">getting a Learning account</a>:
+After <a target="_blank" href="https://wilsonmar.github.io/azure-onboarding">getting a Learning account</a>:
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/">Microsoft's Azure fundamentals class</a> provides a learning path of 12 modules prepares you to pass the <a target="_blank" href="https://www.microsoft.com/learning/exam-AZ-900.aspx">$99 for 50 questions over 60-minute AZ900 Microsoft Azure Fundamentals Exam</a> taken at a <a target="_blank" href="https://bit.ly/2B9iS9e">testing center</a> or at home with a video camera. (see <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/330?redirect_uri=https://app.linuxacademy.com/search?query=az-900">LinuxAcademy video course</a> released May 2019, include the <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/azurebookofbasics1.html">"Book of Basics" interactive diagrams</a> with tabs associated with major sections of the exam:
 
