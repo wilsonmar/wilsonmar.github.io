@@ -34,7 +34,7 @@ PROTIP: Here, all in one page, are <strong>hands-on</strong> steps to use the <s
 
 <a target="_blank" href="https://youtu.be/lwReERW_Pqo"><img align="left" alt="youtube-1024x721.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696234162/youtube-1024x721_ful6ky.png"><strong>Click here for a step-by-step 1-minute YouTube video</strong></a> about the <strong>sequence of work</strong> to setup a whole enterprise with Azure technologies in the cloud:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"><img alt="aws-onboarding-v009-1674x869.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696616233/azure-quickly-1714x855_steghb.png"><img alt="azure-quickly-1714x855.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696616233/azure-quickly-1714x855_steghb.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
 
 The set of services to create and manage <strong>resources</strong> (such as network, storage, compute, etc.) in the Azure cloud is called the <strong>Azure Resource Manager</strong> (ARM for short). 
 
@@ -42,22 +42,25 @@ There is <strong>IaC (Infrastructure as Code)</strong> automation to setup a who
 
 But resources are created on the <strong>26th</strong> phase into the setup process because we first need to establish a gate-keeper to limit <strong>Actions</strong> (aka Operations) (such as create, read, update, delete, etc.) against those resources.
 
-This article explains the "guardrails" to prevent mistakes and abuse: <strong>RBAC</strong> (Role-based Access Control), which is defined by: the <strong>profile</strong> defined for each <strong>A. Security Principals</strong> limited by <strong>B. Role Definitions</strong> and <strong>C. Scopes</strong> around resources.
+Then, on phase 27, end-user workstations (laptops) would be configured to access resources securely.
 
+This article explains the "guardrails" to minimize mistakes and abuse: <strong>RBAC</strong> (Role-based Access Control), which is defined by: the <strong>profile</strong> defined for each <strong>A. Security Principals</strong> limited by <strong>B. Role Definitions</strong> assigned from <strong>C. Scopes</strong> around resources.
 
 1.  <a href="#PeopleInfo"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>First we define who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier (for SMS), etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be set up.
 
-2.  <a href="#PeopleInfo"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>From people within the organization, <strong>Administrators</strong> are identified to be provided escalated permissions necessary to set up resources. This example designates the organization of specific administrators for a sample part of a global enterprise:
+2.  <a href="#Adinistrators"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>From people within the organization, <strong>System Administrators</strong> are given with escalated permissions with their responsibility for setup of workstations and permissions. This hierarchy describes a sample global enterprise:
 
     <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696346013/az-mgmtgrps-1772x941_uxyvoj.png"><img alt="az-mgmtgrps-1772x941.pn" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696346013/az-mgmtgrps-1772x941_uxyvoj.png"></a>
 
-    To ensure that it's intentional, the more secure enterprises restrict <strong>deletion actions</strong> to be performed only by the administrator above the administrator of a cell in the diagram. Each box in this diagram would have an <strong>Azure stack</strong> that define resources and permissions in each stack, which consists of:
+    The Administrator designated for each box in this diagram is responsible for the <strong>Azure stack</strong> of IaC (Infrastructure as Code) which define resources with permissions for each stack. Each stack consists of:
 
-       * Management groups
+       * Management Groups
        * Subscriptions
        * Resource Groups
        <br /><br />
 
+    To ensure that it's intentional, the more secure enterprises restrict <strong>deletion actions</strong> to be performed only by the administrator above the administrator of a cell in the diagram. 
+    
     Those without delete permissions can <strong>reassign</strong> obsolete resources to "Decommissioned". This is to avoid accidental deletion of resources and enable central review before deletion (to fight ransoms).
 
     Microsoft's "Security Service Edge (SSE)" solution facilitates applying Conditional access policies across organizational resources and apps.
@@ -66,7 +69,7 @@ This article explains the "guardrails" to prevent mistakes and abuse: <strong>RB
 
     REMEMBER: Azure itself does not allow Global Administrators to be used for production work. Instead, <strong>Conditional Access</strong> is used to grant permissions to users and groups.
 
-3.  <a href="#Subscriptions"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png">Azure Subscription</a> are used for <strong>billing</strong>. So admins should have partners to work through financial workflows and oversight.
+4.  <a href="#Subscriptions"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png">Azure Subscription</a> are used for <strong>billing</strong>. So admins should have partners to work through financial workflows and oversight.
 
 4.  <a href="#Licenses"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Licenses are paid for by <strong>credit cards or invoices</strong> setup through a Microsoft salesperson.
 
@@ -145,7 +148,7 @@ This article explains the "guardrails" to prevent mistakes and abuse: <strong>RB
 
 Recap:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"><img alt="aws-onboarding-v009-1674x869.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696232264/aws-onboarding-v009-1674x869_l3gymr.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696616233/azure-quickly-1714x855_steghb.png"><img alt="azure-quickly-1714x855.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696616233/azure-quickly-1714x855_steghb.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
 
 
 <hr />
