@@ -933,15 +933,15 @@ Steps to make this happen include:
 
 ## PROBLEM 9. Other processes can see environment variables in memory
 
-Among the "12 Factor App" <a target="_blank" href="https://12factor.net/">12factor.net</a>) which summarizes the basic design principles of modern web apps. In <a target="_blank" href="https://12factor.net/config">Factor 3: Config</a>:
+CAUTION: There is a security flaw in the "12 Factor App" <a target="_blank" href="https://12factor.net/">12factor.net</a>) which summarizes the basic design principles of modern web apps. In <a target="_blank" href="https://12factor.net/config">Factor 3: Config</a>:
+
+> The twelve-factor app stores config in environment variables (often shortened to env vars or env). Env vars are easy to change between deploys without changing any code; unlike config files, there is little chance of them being checked into the code repo accidentally; and unlike custom config files, or other config mechanisms such as Java System Properties, they are a language- and OS-agnostic standard.
 
 > Apps sometimes store config as constants in the code. This is a violation of twelve-factor, which requires strict separation of config from code. Config varies substantially across deploys, code does not.
 
 > A litmus test for whether an app has all config correctly factored out of the code is whether the codebase could be made open source at any moment, without compromising any credentials.
 
-> The twelve-factor app stores config in environment variables (often shortened to env vars or env). Env vars are easy to change between deploys without changing any code; unlike config files, there is little chance of them being checked into the code repo accidentally; and unlike custom config files, or other config mechanisms such as Java System Properties, they are a language- and OS-agnostic standard.
-
-Examples of code to retrieve an environment variable into the program:
+Examples of code to retrieve an environment variable "SECRET_PASS" into the program:
 
 ### Python coding
 
@@ -952,8 +952,6 @@ Examples of code to retrieve an environment variable into the program:
    PHP programs use `getenv('SECRET_PASS');`.
 
 ### C# coding
-
-   C# programs use:
 
    `System.Environment.GetEnvironmentVariable("SECRET_PASS", _ EnvironmentVariableTarget.Process)`
 
@@ -971,7 +969,7 @@ Examples of code to retrieve an environment variable into the program:
 
    See <a target="_blank" href="https://www.gatsbyjs.com/docs/conceptual/security-in-gatsby/">Security in Gatsby</a>
    
-1. Some GitHub contains sample values in a file
+Some GitHub contains sample values in a file
 
    CAUTION: The problem is that some simply save the .env file in the same folder, which is then subject to being pushed to a GitHub repository.
 
@@ -1102,22 +1100,22 @@ Anyone with the permissions at GitHub can read the contents.
 
 <a name="UseManagerApp"></a>
 
-## SOLUTION 9. Obtain secrets from a running secrets manager app</a>
+## SOLUTION 9. Obtain secrets from a running secrets manager app
 
-This part was added to this article on September 2023. Sorry for the delay.
+This part was added to this article on September 2023.
 
-A <strong>secrets manager</strong> running alongside your Terminal program is the subject of this section, and the one I recommend.
+A <strong>secrets manager</strong> running alongside your Terminal program is the subject of this section, and the one I recommend as the most secure.
 
-Installing and updating an additional program <strong>adds an additional dependency</strong> to manage. 
+The CONS: Installing and updating an additional program <strong>adds an additional dependency</strong> to manage. 
 That external program can become malware. 
 It can become a <strong>single point of failure</strong> to block you.
 
-But the upside is that professionals are working on it. 
+The PROS: People are working on it, looking out for new threats emerging.
 They are working to make it secure. 
 
 You are not.
    
-A separate program is a good solution for a team of developers who prefer not to become security experts.
+So a separate program is a good solution for a team of developers who prefer not to become security experts.
 
 Thus, I <strong>prefer paid apps</strong> which have a long history of regular updates (such as 1Password and Keybase). Not so strategic are open-source apps from a company that aims to make money from it somehow (such as the case of HashiCorp Vault limiting features in open source versions to entice users to pay enterprise fees for cloud editions).
 
@@ -1129,18 +1127,110 @@ There are several secrets manager apps which provide both a CLI and GUI app on m
    * <a target="_blank" href="https://docs.ansible.com/ansible/latest/vault_guide/vault.html">Ansible Vault</a> from RedHat
    * <a target="_blank" href="https://bitwarden.com/help/cli/">BitWarden</a>
    * <a target="_blank" href="https://www.gnupg.org/">gcrypt</a> is a <a target="_blank" href="https://www.gnupg.org/">GnuPG</a> extension to encrypt specific files in a Git repository.
-   * <a target="_blank" href="https://keybase.io/team/commandline">Keybase</a> encrypts the <strong>entire repo</strong>, but it does it in a convenient way [<a target="_blank" href="https://book.keybase.io/docs">docs</a>]
-   * Keepass
+   * <a href="#Keybase">Keybase (see below)</a> a free app funded by Zoom
+   * <a href="#KeepassXC">KeepassXC (see below)</a> an open-source app 
    * LastPass
    * Dashlane
    * <a target="_blank" href="https://wilsonmar.github.io/hashicorp-vault">HashiCorp Vault</a> (closed source)
    <br /><br />
 
+### Chezmoi CLI
+
+Within a CLI script, chezmoi retrieves secrets from several of the above.
+
+It has <a target="_blank" href="https://github.com/twpayne/chezmoi/issues">many issues</a>.
+
 <hr />
+
+### KeepassXC
+
+KeepassXC is a fork of Keepass2 and KeepassX which have not been updated since 2016.
+
+1. On macOS get the app and keepassc = keepassxc-cli:
+
+   <pre>brew install --cask KeepassXC
+   brew install keepassc</pre>
+
+   On Linux:
+   
+   <pre>sudo add-apt-repository ppa:phoerious/keepassxc
+   sudo apt-get update
+   sudo apt-get install keepassxc
+   </pre>
+
+   Notice the "kInstalling keepassc dependency: python@3.12
+
+1. Get the <tt>keepassc</tt> CLI command help:
+
+   <tt>keepassc -h</tt>
+
+   <pre>usage: keepassc [-h] [--asroot] [-d DATABASE] [-k KEYFILE] [-c] [-as ADDRESS_SERVER] [-ps PORT_SERVER] [-pa PORT_AGENT]
+                [-a] [-dc] [-s] [-e ENTRY] [-l]
+options:
+  -h, --help            show this help message and exit
+  --asroot              parse option to execute keepassc as root user
+  -d DATABASE, --database DATABASE
+                        Path to database file.
+  -k KEYFILE, --keyfile KEYFILE
+                        Path to keyfile.
+  -c, --curses          Use curses interface while using a remote connection.
+  -as ADDRESS_SERVER, --address_server ADDRESS_SERVER
+                        Server address (not required if using agent)
+  -ps PORT_SERVER, --port_server PORT_SERVER
+                        Server port (not required if using agent)
+  -pa PORT_AGENT, --port_agent PORT_AGENT
+                        Agent port
+  -a, --agent           Use agent for remote connection
+  -dc, --direct_conn    Connect directly to server
+  -s, --ssl             Use SSL/TLS
+  -e ENTRY, --entry ENTRY
+                        Print entry with parsed title You will see a password prompt; leave it blank if you only want to
+                        use a key-file Just type a part of the entry title lower-case, it's case-insensitive and will
+                        search for matching string parts WARNING: Your passwords will be displayed directly on your
+                        command line!
+  -l, --log_level       Set logging level for network use. Default is ERROR but for analyzing network flow INFO could be
+                        useful. Set it with keepassc [...] -l [...] to INFO
+   </pre>
+
+1.  Create a KeeppassXC databases (with extention <tt>.kdbx</tt>) in your $HOME folder by running KeepassXC.app  or keepassc :
+
+    <pre>Open existing database (1)
+Create new database (2)
+Connect to a remote database(3)
+Configuration (4)
+Quit (5)
+&nbsp;
+Type 'F1' for help inside the editor, file or database browser.
+Type 'F5' to return to the previous dialog at any time.
+    </pre>
+
+1.  Configure the database by setting keepassxc.database in the configuration file.
+
+1.  Run
+
+    You are prompted for the database password the first time keepassxc-cli is run, and the password is cached, in plain text, in memory until chezmoi terminates.
+
+1.  Get chezmoi to make use of KeepassXC:
+
+    The command used can by changed by setting the keepassxc.command configuration variable, and extra arguments can be added by setting keepassxc.args. 
+   
+    Also, you can disable the password prompt by setting keepassxc.prompt to false.
+
+    https://www.chezmoi.io/reference/templates/keepassxc-functions/
+
+    https://github.com/twpayne/chezmoi/issues/new/choose
+
+    <pre>username = {{ (keepassxc "example.com").UserName }}
+    password = {{ (keepassxc "example.com").Password }}
+    </pre>
+
+    Calling keepassxc multiple times with the same entry only invokes keepassxc-cli once.
 
 ### Keybase
 
-At time of this writing, Keybase is a free app <a target="_blank" href="https://www.wikiwand.com/en/Keybase">funded as a community service by the video communications company Zoom</a>, which is <a target="_blank" href="https://finance.yahoo.com/quote/ZM/cash-flow?p=ZM">profitable</a>.
+At time of this writing, Keybase is a free macOS app <a target="_blank" href="https://www.wikiwand.com/en/Keybase">funded as a community service by the video communications company Zoom</a>, which is <a target="_blank" href="https://finance.yahoo.com/quote/ZM/cash-flow?p=ZM">profitable</a>.
+
+<a target="_blank" href="https://keybase.io/team/commandline">https://keybase.io/team/commandline</a> encrypts the <strong>entire repo</strong>, but it does it in a convenient way [<a target="_blank" href="https://book.keybase.io/docs">docs</a>]
 
 Every account on Keybase has a public history. "Sigchains" let Keybase clients reconstruct the present without trusting Keybase's servers. And when you "follow" someone on Keybase, you sign a snapshot of your view of the claims in their sigchain.
 

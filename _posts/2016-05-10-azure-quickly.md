@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-10-04"
+date: "2023-10-06"
 file: "azure-quickly"
 title: "Azure Quickly"
 excerpt: "Use this automation to minimize manual toil and mistakes but build-in secure practices and mechanisms to build global enterprises need. Not just for AZ-104, AZ-500"
@@ -40,14 +40,31 @@ The set of services to create and manage <strong>resources</strong> (such as net
 
 There is <strong>IaC (Infrastructure as Code)</strong> automation to setup a whole enterprise full of users and resources.
 
-But resources are created on the <strong>26th</strong> steps into the setup process because we first need to establish a gate-keeper to limit <strong>Actions</strong> (aka Operations) (such as create, read, update, delete, etc.) against those resources.
+But resources are created on the <strong>26th</strong> phase into the setup process because we first need to establish a gate-keeper to limit <strong>Actions</strong> (aka Operations) (such as create, read, update, delete, etc.) against those resources.
 
 This article explains the "guardrails" to prevent mistakes and abuse: <strong>RBAC</strong> (Role-based Access Control), which is defined by: the <strong>profile</strong> defined for each <strong>A. Security Principals</strong> limited by <strong>B. Role Definitions</strong> and <strong>C. Scopes</strong> around resources.
 
 
 1.  <a href="#PeopleInfo"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>First we define who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier (for SMS), etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be set up.
 
-2.  <a href="#PeopleInfo"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Among people, <strong>Administrators</strong> are identified to be provided permissions to set up each 
+2.  <a href="#PeopleInfo"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>From people within the organization, <strong>Administrators</strong> are identified to be provided escalated permissions necessary to set up resources. This example designates the organization of specific administrators for a sample part of a global enterprise:
+
+    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696346013/az-mgmtgrps-1772x941_uxyvoj.png"><img alt="az-mgmtgrps-1772x941.pn" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696346013/az-mgmtgrps-1772x941_uxyvoj.png"></a>
+
+    To ensure that it's intentional, the more secure enterprises restrict <strong>deletion actions</strong> to be performed only by the administrator above the administrator of a cell in the diagram. Each box in this diagram would have an <strong>Azure stack</strong> that define resources and permissions in each stack, which consists of:
+
+       * Management groups
+       * Subscriptions
+       * Resource Groups
+       <br /><br />
+
+    Those without delete permissions can <strong>reassign</strong> obsolete resources to "Decommissioned". This is to avoid accidental deletion of resources and enable central review before deletion (to fight ransoms).
+
+    Microsoft's "Security Service Edge (SSE)" solution facilitates applying Conditional access policies across organizational resources and apps.
+
+    The most secure systems now designate for each resource its "data owners" (who assign users) and "data custodians" (who manage the data). An inventory needs to be maintained about who has type of access to what data, for escalations and approvals.
+
+    REMEMBER: Azure itself does not allow Global Administrators to be used for production work. Instead, <strong>Conditional Access</strong> is used to grant permissions to users and groups.
 
 3.  <a href="#Subscriptions"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png">Azure Subscription</a> are used for <strong>billing</strong>. So admins should have partners to work through financial workflows and oversight.
 
@@ -69,28 +86,13 @@ This article explains the "guardrails" to prevent mistakes and abuse: <strong>RB
 
 9.  <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/management-groups/overview"><strong>Management Groups</strong></a> are used to organize the many Subscriptions that enterprises are likely to have into a <strong>hierarchy</strong>. For <a target="_blank" href="https://docs.google.com/spreadsheets/d/1diCL35orX9cVEgti1eU7aaG_sgyDSPmbQjnXBamUnVc/edit?usp=sharing">example</a>, virtual machines (VMs) within one particular management group can be limited to being created in <strong>specific regions</strong> (soverignties). Policies for each management group apply to all nested management groups, subscriptions, and resources.
 
-    Azure docs mention that Subscriptions no longer valid can be placed under the Management Group name "Decommissioned". The Subscription named "Decommissioned" is where resources are assigned when no longer used and available but should not yet be deleted. This is a good practice to avoid accidental deletion of resources and enable central review before deletion (to fight ransoms).
+10. <a href="#ResourceGroups"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>Resource Groups</strong></a> are defined to group resources for <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">high-resolution</a> billing and management. <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/concept-learn-about-groups">Entra</a>
 
-    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696346013/az-mgmtgrps-1772x941_uxyvoj.png"><img alt="az-mgmtgrps-1772x941.pn" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696346013/az-mgmtgrps-1772x941_uxyvoj.png"></a>
-
-    Microsoft does not allow Global Administrators to be used for production work. Instead, <strong>Conditional Access</strong> is used to grant permissions to users and groups.
-
-    Microsoft's "Security Service Edge (SSE)" solution facilitates applying Conditional access policies across organizational resources and apps.
-
-    The most secure systems now designate for each resource its "data owners" (who assign users) and "data custodians" (who manage the data). An inventory needs to be maintained about who has type of access to what data, for escalations and approvals.
-
-    
-    <a name="ResourceGroups"></a>
-
-    ## Phase 10. Resource Groups
-
-10. <strong>Resource Groups</strong> are defined to group resources for <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">high-resolution</a> billing and management. <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/concept-learn-about-groups">Entra</a>
-
-11. Tags are defined to group resources for billing and management purposes.
+11. <strong>Tags</strong> for every resource are required by policy scans because tags are used to group resources for billing and management.
 
 12. When defining Principals, <strong>Groups</strong> are defined to group users.
 
-13. Users
+13. <a href="#EndUsers"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>End Users</strong></a> on Entra are usually provisioned by responding to requests from <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/app-provisioning/plan-cloud-hr-provision">external HR systems</a> such as Workday, SuccessFactors, Oracle Peoplesoft.
 
 14. MFA (Multi-Factor Authentication) is defined for each user, so automation is helpful here as well.
 
@@ -98,9 +100,32 @@ This article explains the "guardrails" to prevent mistakes and abuse: <strong>RB
 
 16. <strong>Roles</strong> are defined to group users for billing and management purposes.
 
+    Here we identify the <strong>assets</strong> 
+
+    <table border="1" cellpadding="4" cellspacing="0">
+    <tr><th> _JobTitle </th><th> _AssetRole </th></tr>
+    <tr valign="top"><td> Payroll Supervisor </td><td> Payroll metrics </td></tr>
+    <tr valign="top"><td> Payroll Clerk </td><td> Process Payroll </td></tr>
+    <tr valign="top"><td> HR Operations </td><td> Create Payroll Backups </td></tr>
+    <tr valign="top"><td> Operations Clerk </td><td> Restore Payroll Backups </td></tr>
+    <tr valign="top"><td> Archive Manager </td><td> Delete Payroll Backups </td></tr>
+    </table>
+
+
 17. Service Principals are defined for use by 
 
 18. API-calling applications to access resources.
+
+    <strong>Permanent active access</strong> permissions are dangerous to grant because they can be <strong>stolen</strong>. So <strong>Just-in-time</strong> temporary access is provided for ad hoc and limited periods of time after approval by a Privileged Role Administrator. The Administrator uses the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">PIM (Privileged Identity Management)</a> GUI and CLI.
+
+    Additional "activation", such as a multi-factor authentication (MFA) check, is requested if usage is needed outside the usual time of day, use from a specific IP address, and other criteria.
+
+    The objective is to <strong>minimize</strong> the number of users having 
+    Instead, <strong>Just-in-time</strong> access is provided for ad hoc and limited periods of time after approval by a Privileged Role Administrator. The Administrator uses the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">PIM (Privileged Identity Management)</a> GUI and CLI.
+
+    (with <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/governance/licensing-fundamentals">Entra ID Governance licensing</a>) provide users <strong>Just-in-time</strong> access for ad hoc and limited periods of time after approval by a Privileged Role Administrator. The Administrator uses the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">PIM (Privileged Identity Management)</a> GUI and CLI.
+    
+    and scheduled access, alerting, approval workflows for Microsoft Entra roles (including custom roles) and Azure Resource roles.
 
 19. <strong>Azure-Managed Identities</strong> does away with secrets that developers may leave in code when accessing <strong>internal</strong> Azure resources. Instead of static user account keys and connection strings, <a target="_blank" href="https://www.youtube.com/watch?v=sA_mXKy_dKU">VIDEO</a>: the unique reference to blobs and such are associated with the caller's Managed Identity. When its <strong>ObjectID</strong> is given to the
 
@@ -255,15 +280,6 @@ and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-archit
 
    So it's important to assign other more specific roles. 
 
-
-<table border="1" cellpadding="4" cellspacing="0">
-<tr><th> _JobTitle </th><th> _AssetRole </th></tr>
-<tr valign="top"><td> Payroll Supervisor </td><td> Payroll metrics </td></tr>
-<tr valign="top"><td> Payroll Clerk </td><td> Process Payroll </td></tr>
-<tr valign="top"><td> HR Operations </td><td> Create Payroll Backups </td></tr>
-<tr valign="top"><td> Operations Clerk </td><td> Restore Payroll Backups </td></tr>
-<tr valign="top"><td> Archive Manager </td><td> Delete Payroll Backups </td></tr>
-</table>
 
 
 ### Security Jobs To Be Done
@@ -1789,6 +1805,31 @@ presents the analysis that Azure Blueprints is a top-down approach to infrastruc
 
 ## IaC Stacks
 
+https://learn.microsoft.com/en-us/cli/azure/stack?view=azure-cli-latest
+A deployment stack is a native Azure resource type that enables you to perform operations on a resource collection as an atomic unit.
+
+Deployment stacks are defined in ARM as the type Microsoft.Resources/deploymentStacks.
+
+* az stack group create --name StackName \
+   --resource-group ResourceGroup \
+   --delete-all \
+   --template-spec TemplateSpecResourceIDWithVersion \
+   --description description \
+   --deny-settings-mode None
+* az stack group list
+
+* az stack sub create --name StackName \
+   --template-file simpleTemplate.json \
+   --location westus2 \
+   --description description \
+   --deny-settings-mode None
+* az stack sub list
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/governance/identity-governance-overview">Entra Identity Governance</a> 
+
+https://learn.microsoft.com/en-us/azure/active-directory/governance/create-lifecycle-workflow">
+Create a workflow in Microsoft Entra admin center</a>
+
 https://www.youtube.com/watch?v=d1AE8qLwBYw
 
 https://github.com/johnthebrit/RandomStuff/blob/master/DeploymentStacks/demo.ps1
@@ -2413,10 +2454,12 @@ ASGs are wrapped by a NSG (Network Security Group) which route traffic.
 
 <a name="ResourceGroups"></a>
 
-### Resource Groups
+## Phase 10. Resource Groups
+
+Each resource lives in one (and only one) Resource Group.
 
 Each resource must be in a resource group. 
-So before provisioning any resource, create a resource group for it to be placed in -- for provisioning, monitoring, maintenance.
+So before provisioning any resource, create a resource group for it to be placed in -- for provisioning, monitoring, and maintenance.
 
 
 ### From ASM to ARM
@@ -4307,12 +4350,6 @@ provides clickable "heatmap" status, timeline, a quiz, etc.
 
 
 <hr />
-
-<a name="Resources"></a>
-
-## Resources 
-
-Each resource lives in one (and only one) Resource Group.
 
 ### Videos
 

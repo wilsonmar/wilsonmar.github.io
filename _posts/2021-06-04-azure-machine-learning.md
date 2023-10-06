@@ -1,9 +1,9 @@
 ---
 layout: post
-date: "2023-07-21"
+date: "2023-10-06"
 file: "azure-machine-learning"
 title: "Azure Machine Learning"
-excerpt: "Notes for before and after getting AI-900, AI-102, and DP-100 certified, as we automate ML workflows in the Azure PaaS cloud"
+excerpt: "Automate ML workflows in the Azure PaaS cloud, so you can get certified in AI-900, AI-102, and DP-100"
 tags: [microsoft, azure, machine learning, AI]
 image:
 # feature: pic green matrix hallway 1900x500.jpg
@@ -20,7 +20,7 @@ This article presents my notes toward a guided tour to introduce use of <strong>
 
 {% include whatever.html %}
 
-I have other article on AI (Artificial Intelligence) at:
+My other articles about AI (Artificial Intelligence) at:
    * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai/">https://wilsonmar.github.io/microsoft-ai</a> 
    * <a target="_blank" href="https://wilsonmar.github.io/genai/">https://wilsonmar.github.io/genai</a> (Generative AI)
    * <a target="_blank" href="https://wilsonmar.github.io/mlops/">https://wilsonmar.github.io/mlops</a> (Machine Learning Ops)
@@ -37,31 +37,284 @@ In <a target="_blank" href="https://assets.thoughtworks.com/assets/technology-ra
 
 In <a target="_blank" href="https://www.thoughtworks.com/content/dam/thoughtworks/documents/radar/2023/04/tr_technology_radar_vol_28_en.pdf">PDF: 2023 Volume 28</a>, Azure Machine Learning fell of their Radar completely, but Facebook/Meta's "PyTorch" was added to the "Adopt" ring to Languages and Frameworks.
 
-Undeterred:
 
-## Setup
+<hr />
 
-1. In the console, search for "Azure Machine Learning".
+## Machine Learning Setup
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/train-models-azure-machine-learning-cli-v2/">
+LEARN: Train models in Azure Machine Learning with the CLI (v2)</a>
+
+When "Real time" is specified, a batch process won't do and an online endpoint is needed.
+
+There is also <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/run-component-based-pipelines-azure-machine-learning-cli-v2/">LEARN: Run (reusable) component-based pipelines in Azure Machine Learning with CLI (v2)</a>
+
+The below is adapted from <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/deploy-azure-machine-learning-model-managed-endpoint-cli-v2/?source=recommendations">LEARN: "Deploy an Azure Machine Learning model to a managed endpoint with CLI (v2)"</a> to create a managed <a target="_blank" href="https://learn.microsoft.com/en-us/azure/machine-learning/concept-endpoints">online endpoint</a> to make real-time predictions (inferencing).
+
+In the LABS: https://microsoftlearning.github.io/mslearn-aml-cli/
+it's about whether a customer will churn, so marketing sends out the most productive offers. 
+The predictions are defined in the "labels" sent back. 
+
+https://learn.microsoft.com/en-us/azure/machine-learning/how-to-deploy-managed-online-endpoints#understand-the-scoring-script
+
+
+
+<a name="MLPrep"></a>
+
+### Preparations for Machine Learning
+
+See <a target="_blank" href="https://wilsonmar.github.io/azure-quickly/">my instructions</a> about:
+1. Get an account and roles: 
+1. Install the CLI: <tt>az extension add -n ml -y</tt>
+1. Login the console:
 1. Select the Azure subscription to use.
-1. Specify a Resource group (or create a new one).
-1. Workplace details:
-   * Workspace name: (unique name)
+
+   <pre>az account set -s "${AZURE_SUBSCRIPTION_ID}"</pre>
+
+1. Select the Azure Region.
+
+   <pre>AZURE_REGION="eastus"
+   </pre>
+
+1. TODO: Create a Resource Group for the Principal profile with the appropriate Scope and Role for tasks below. 
+
+   <pre>AZURE_RESOURCE_GROUP="rg-myco-rnd-churn-dev-001"
+   # where "churn" is the project
+   az group create --name "${AZURE_RESOURCE_GROUP}" --location "${AZURE_REGION}"
+   az configure --defaults group="${AZURE_RESOURCE_GROUP}"
+   </pre>
+
+   This would be the basis for the YAML specified within the file at the end of <tt>ML_ENPOINT_FILEPATH</tt>:
+
+   <pre>$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineEndpoint.schema.json
+   name: mlflow-endpoint
+   traffic: 100
+   auth_mode: key
+   </pre>
+
+1. Define a Key vault.
+1. Configure a Container registry.
+1. Define naming conventions and best practices:
+
+   https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/ai-machine-learning-resource-organization
+
+1. After <a href="#MLPrep">Preparations for Machine Learning (above)</a>:
+
+   ### Create Workspace for ML
+
+1. On Console, bring up "Azure Machine Learning":
+
+   https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearningServices%2Fworkspaces
+
+1. Create a <strong>new workspace</strong>: 
+
+   See https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/ai-machine-learning-resource-organization
+
+   <pre>AZURE_ML_WORKSPACE="ws-myco-rnd-churn-dev-001"
+   az ml workspace create --name "${AZURE_ML_WORKSPACE}"
+   az configure --defaults workspace="${AZURE_ML_WORKSPACE}"
+   </pre>
+
+   Based on https://learn.microsoft.com/en-us/azure/machine-learning/reference-yaml-workspace?view=azureml-api-2&tabs=json
+
+   <pre>{
+  "application_insights": "/subscriptions/<subscription-GUID>/resourcegroups/churn-dev-rg/providers/microsoft.insights/components/amlchurninsightsGUID",
+  "description": "aml-churn-dev",
+  "discovery_url": "https://eastus.api.azureml.ms/discovery",
+  "friendly_name": "aml-churn-dev",
+  "hbi_workspace": false,
+  "key_vault": "/subscriptions/<subscription-GUID>/resourcegroups/churn-dev-rg/providers/microsoft.keyvault/vaults/amlchurnkeyvaultGUID",
+  "location": "eastus",
+  "mlflow_tracking_uri": "azureml://eastus.api.azureml.ms/mlflow/v1.0/subscriptions/<subscription-GUID>/resourceGroups/churn-dev-rg/providers/Microsoft.MachineLearningServices/workspaces/aml-churn-dev",
+  "name": "aml-churn-dev",
+  "storage_account": "/subscriptions/<subscription-GUID>/resourcegroups/churn-dev-rg/providers/microsoft.storage/storageaccounts/amlchurnstorageGUID",
+  "tags": {}
+  }
+   </pre>
+
+   Console GUI Basics:
+
+   * Subscription and Resource Group
+
+   Workspace details (specified in:
+   * <tt>ML_ENDPOINT_NAME</tt> = Workspace Name: (unique name according to your organization's Naming Conventions)
    * Region: (select from dropdown)
    * Storage account: (select from dropdown)
-   * Key vault: (select from dropdown)
+   * Key vault: (select one already defined)
    * Application Insights: (select from dropdown)
    * Container registry: (select from dropdown)
    <br /><br />
+
    Networking:
    * Connectivity method: (select from dropdown)
-   Advanced:
    * Identity type: (select from dropdown)
-   * Encryption type: (select from dropdown)
-   * Enable HBI flag
    <br /><br />
-1. In the workspace created above:
-1. TODO: Set Access Control (IAM)
-1. Launch studio.
+
+   Data encryption:
+   * Encryption type: (Microsoft-managed keys or Customer-managed keys at higher cost)
+   <br /><br />
+
+   Identity:
+   * Identity type: System assigned (not User assigned)
+   * Storage account access: Credential-based access (not Identity-based access)
+   * Data impact: HBI "High business impact workspace" unchecked.
+   <br /><br />
+
+   Tags:
+   * Billing to project, Management Group, 
+   <br /><br />
+
+   ### Create compute
+
+   https://learn.microsoft.com/en-us/training/modules/create-azure-machine-learning-resources-cli-v2/4-manage-workspace-assets
+
+   <pre>az ml compute create --name "testdev-vm" \
+      --size STANDARD_DS11_V2 \
+      --type ComputeInstance
+   </pre>
+
+   <pre>az ml compute create --name "aml-cluster" \
+      --size STANDARD_DS11_V2 \
+      --max-instances 2 \
+      --type AmlCompute
+   </pre>
+
+   ### Compute Environment
+
+   https://github.com/Azure/azureml-examples/tree/main/cli/assets/environment
+
+1. Define the "basic-env.yaml" file:
+
+   <pre>name: basic-env-ml
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+    - numpy
+    - pandas
+    - scikit-learn
+    - matplotlib
+    - azureml-mlflow
+   </pre>
+
+   Alternative dependencies include seaborn instead of matplotlib.
+
+   <pre>$schema: https://azuremlschemas.azureedge.net/latest/environment.schema.json
+name: basic-env-scikit
+version: 1
+image: mcr.microsoft.com/azureml/openmpi3.1.2-ubuntu18.04
+conda_file: file:conda-envs/basic-env-ml.yml
+   </pre>
+
+   <pre>az ml environment create --file basic-env.yml
+   az ml evironment list
+   </pre>
+
+   ### Create Endpoint for ML
+
+   <pre>./doit.sh -azml -v
+   </pre>
+
+   https://learnk8s.io/templating-yaml-with-code
+
+1. Customize for your situation:
+
+   <pre>ML_ENPOINT_FILEPATH="./mslearn-aml-cli/Allfiles/Labs/05/mlflow-endpoint/create-endpoint.yml"
+   </pre>
+
+   with contents such as:
+
+   <pre>$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineEndpoint.schema.json
+name: mlflow-endpoint
+traffic: 100
+auth_mode: key
+   </pre>
+
+   * name: must be unique in the Azure region.
+   * traffic: (Optional) Percentage of traffic from the endpoint to divert to each deployment. Sum of traffic values must be 100.
+   * auth_mode: Use key for key-based authentication. Use aml_token for Azure Machine Learning token-based authentication.
+   <br /><br />
+
+1. Using <a target="_blank" href="https://learn.microsoft.com/en-us/cli/azure/ml/online-endpoint">az ml CLI commands</a>:
+
+   <pre>az ml online-endpoint create --name "${ML_ENDPOINT_NAME}" \
+      -f "${ML_ENPOINT_FILEPATH}" ./mslearn-aml-cli/Allfiles/Labs/05/mlflow-endpoint/create-endpoint.yml
+   </pre>
+
+
+   ### Deploy ML Model
+
+   https://learn.microsoft.com/en-us/azure/machine-learning/how-to-deploy-managed-online-endpoints#understand-the-scoring-script
+
+   https://learn.microsoft.com/en-us/azure/machine-learning/how-to-deploy-mlflow-models-online-endpoints?tabs=endpoint%2Cstudio
+
+1. Customize for your situation:
+
+   <pre>ML_ENPOINT_FILEPATH="./mslearn-aml-cli/Allfiles/Labs/05/mlflow-endpoint/mlflow-deployment.yaml"
+   </pre>
+
+1. Using <a target="_blank" href="https://learn.microsoft.com/en-us/cli/azure/ml/online-endpoint">az ml CLI commands</a>:
+
+   <pre>az ml online-deployment create --name "${ML_DEPLOY_NAME}" \
+      --endpoint "${ML_ENPOINT_FILEPATH}"\
+      -f "${ML_DEPLOY_FILEPATH}" \
+      --all-traffic
+   </pre>
+
+   with contents such as:
+
+   <pre>$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
+name: mlflow-deployment
+endpoint_name: churn-endpoint
+model:
+  name: mlflow-sklearn-model
+  version: 1
+  local_path: model
+  model_format: mlflow
+instance_type: <a target="_blank" href="https://azureprice.net/vm/Standard_F2s_v2">Standard_F2s_v2</a>
+instance_count: 1
+   </pre>
+
+   * As for Model files stored on local path or registered model: <a target="_blank" href="https://docs.python.org/3/library/pickle.html"><strong>pickle (.pkl)</strong> file</a> which contains Python object serialization. 
+
+   * <tt>model_format: <a target="_blank" href="https://mlflow.org/docs/latest/models.html">mlflow</a> is an industry-standard format for packaging machine learning model files in different “flavors” for use in a variety of downstream tools (real-time serving through a REST API or batch inference on Apache Spark).
+   
+   * QUESTION: With a <strong>MLflow model</strong>, a registered model is loaded in the Azure Machine Learning workspace. So it isn't necessary to include in the deployment the environment and <strong>scoring script</strong> which loads the pre-trained model.
+
+   * Environment refers to all the packages (Python prerequites) needed.
+   * Instance type and scaling capacity
+   * instance_type: VM SKU that will host your deployment instance.
+   * instance_count: Number of instances in the deployment.
+   <br /><br />
+
+   REMEMBER: Although the underlying infrastructure of endpoints are "managed" by Azure, administrators do need to define (tune over time) the rate of requests each endpoint is expected to handle. This is tricky to adjust vertical versus horizontal scaling:
+
+   * instance_type is the Compute size (vertical scaling), which need to be adjusted over time as traffic increases or decreases. <a target="_blank" href="https://learn.microsoft.com/en-us/azure/virtual-machines/fsv2-series">About the Fsv2 series</a> with <a target="_blank" href="https://pcr.cloud-mercato.com/providers/azure/flavors/standard_f2s_v2">pricing  different across regions</a>
+   * instance_count is the number of compute instances (horizonal scaling).
+   <br /><br />
+
+   ### Monitoring
+
+1. TODO: Define monitoring and visualization to identify when to adjust:
+
+   ### Update endpoint
+
+   Multiple models (both green and blue) are deployed to an endpoint for blue/green deployments so transition to a new version of the model can be gradual percentage, without interrupting service for the client.
+
+1. Using <a target="_blank" href="https://learn.microsoft.com/en-us/cli/azure/ml/online-endpoint">az ml CLI commands</a>:
+
+   <pre>az ml online-endpoint update --name churn-endpoint --traffic "blue=0 green=100"
+   </pre>
+
+   ### Delete endpoint
+
+1. Using <a target="_blank" href="https://learn.microsoft.com/en-us/cli/azure/ml/online-endpoint">az ml CLI commands</a>:
+
+   <pre>az ml online-endpoint delete --name churn-endpoint --yes --no-wait
+   </pre>
+
 
 
 
@@ -1127,9 +1380,6 @@ Steps for data transformation:
    * Data split 
    * Run model
    <br /><br />
-
-https://docs.python.org/3/library/pickle.html
-pickle (.pkl) file format for Python object serializatin
 
 More Complexity makes for better Intelligibility
    * Linear regression

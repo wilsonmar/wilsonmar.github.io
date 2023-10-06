@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-22"
+date: "2023-10-05"
 file: "san-francisco"
 title: "San Francisco"
 excerpt: "Eat and geek your way through walking and riding historic trains in the City by the Bay, all in one day"
@@ -17,6 +17,8 @@ comments: true
 {% include _toc.html %}
 
 First of all, this is about doing the most touristy things. So don't say "frisco" instead of "San Franciso" if you don't want to see city natives roll their eyes.
+
+https://en.wikivoyage.org/wiki/San_Francisco
 
 <a name="LeftMyHeart"></a>
 
@@ -204,14 +206,29 @@ Click here to save it to the Google Maps app on your mobile phone!</a>
 
 1.  If you have time, until you take the BART back to the airport, walk across Market, South to <a target="_blank" href="https://goo.gl/maps/YpJNREPrbtrtFaEQA">San Francisco Museum of Modern Art</a> and other museums, plus shopping around Yerba Buena Gardens:
 
-     * <a target="_blank" href="https://goo.gl/maps/jzyooSm7tNsmLmVS7">Metron mall</a> which ayb big-box stores and IMax movie theaters
-     * <a target="_blank" href="https://goo.gl/maps/3YYYJ6nX87U5RqCSA">Trader Joe's</a>
+     * <a target="_blank" href="https://goo.gl/maps/jzyooSm7tNsmLmVS7">Metron mall</a>, parallel to Market one block South, has IMax movie theaters and big-box stores and restaurants.
+     * <a target="_blank" href="https://goo.gl/maps/3YYYJ6nX87U5RqCSA">Westfield mall</a> (parallel to Market one block North) has a food court in the basement. CLOSED in 2023.
+     * <a target="_blank" href="https://goo.gl/maps/3YYYJ6nX87U5RqCSA">Trader Joe's</a> CLOSED 2023
      * <a target="_blank" href="https://www.youtube.com/watch?v=H4qWXHuYqf8">VIDEO</a>: The Westfield mall, which had a basement food court, was closed in 2023.
      <br /><br /> 
 
 Across Market Street is where the Cable Car route ends at <a target="_blank" href="https://goo.gl/maps/wvmYXWiyFYn43jvq6">Powell station</a>. 
 
 Have a safe flight home!
+
+## SFO airport
+
+<a target="_blank" href="https://www.flysfo.com/passengers/ground-transportation/hotel-shuttles">At SFO, hotel shuttles</>
+
+There are several Marriott properties:
+
+   * San Mateo Marriott San Francisco Airport 650.952.333 (kitchen, 55” Smart HDTV, cook-to-order breakfast, free parking)
+   * Fairfield Inn & Suites	Millbrae	650.259.0400 shuttle goes til 1030pm
+
+   * Fairfield Inn & Suites	South San Francisco	650.822.8880 is South of SFO
+   * "Marriott-SFO Airport Waterfront", 1800 Old Bayshore Hwy, Burlingame, CA 94010, 650.692.9100 is South of SFO
+   * "Marriott Hotel", 780 Mission St, San Francisco, CA 94103-3113 is South of SFO
+   <br /><br />
 
 
 ## Have More Days?
