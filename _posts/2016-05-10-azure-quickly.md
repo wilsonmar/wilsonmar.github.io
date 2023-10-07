@@ -18,8 +18,7 @@ comments: true
 
 There is a massive amount of information about Azure. YouTube videos and the <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">certification courses</a> they promote only scratch the surface of all that is needed to get an enterprise up and running.
 
-PROTIP: Here, all in one page, are <strong>hands-on</strong> steps to use the <strong>automation</strong> I created to build Azure for a whole global enterprise, with minimal manual toil that builds in secure practices and mechanisms without additional effort.
-
+PROTIP: Here, all in one page, are <strong>hands-on</strong> steps to use the <a href="#Automation">automation</a> I created to build Azure for a whole global enterprise, to minimize manual toil and add secure practices and mechanisms within workflows.
 
 <a target="_blank" href="https://youtu.be/lwReERW_Pqo"><img align="left" alt="youtube-1024x721.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696234162/youtube-1024x721_ful6ky.png"><strong>Click here for a <strong>step-by-step</strong> 1-minute YouTube video</strong></a> (with no sound) about the <strong>sequence of work</strong> to setup a whole enterprise with Azure technologies in the cloud:
 
@@ -31,11 +30,11 @@ There is <strong>IaC (Infrastructure as Code)</strong> automation to setup a who
 
 But resources are created on the <strong>26th</strong> phase into the setup process because we first need to establish people and "gate-keepers" and technical "guardrails" to limit <strong>Actions</strong> (aka Operations) to minimize mistakes and abuse: <strong>RBAC</strong> (Role-based Access Control), which is defined by: the <strong>profile</strong> defined for each <strong>A. Security Principals</strong> limited by <strong>B. Role Definitions</strong> assigned from <strong>C. Scopes</strong> around resources.
 
-Then, on phase 27, end-user workstations (laptops) would be automatically configured to securely access resources.
+Then, on phase 27, end-user workstations (laptops) would be configured using automation to securely access resources.
 
 1.  <a href="#PeopleInfo"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>People information</strong></a> is defined: who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier for SMS, GitHub account, etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be set up.
 
-2.  <a href="#Administrators"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>System Administrators</strong></a> are identified from within the organization, and given <strong>escalated permissions</strong> to setup workstations and cloud service resources. associated with an <strong>Azure stack</strong> needed. Here is an example of stacks for a global enterprise:
+2.  <a href="#Administrators"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>System Administrators</strong></a> are identified from within the organization, and given <a href="#EscalatedPermissions">escalated permissions</a> to setup workstations and cloud service resources. associated with an <strong>Azure stack</strong> needed. Here is an example of stacks for a global enterprise:
 
     <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696661164/azure-org-1750x911_m7ylte.png"><img alt="azure-org-1750x911.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696661164/azure-org-1750x911_m7ylte.png"></a>
 
@@ -48,7 +47,7 @@ Then, on phase 27, end-user workstations (laptops) would be automatically config
 
     To ensure that it's intentional, the more secure enterprises restrict <strong>deletion actions</strong> to be performed only by the administrator above the administrator of a cell in the diagram. 
     
-    The work of the "MyCo" Administrator at the top is largely <strong>financial</strong> - aggregating billings for volume discount accounting with the cloud vendor.
+    The work of the "MyCo" Administrator at the top is largely <strong>financial</strong> - aggregating bills for <a href="#Enterprise+discounts">enterprise volume discount</a> reconciliation with the cloud vendor. This team would have the statistics to partner with technical people on cost minimization efforts.
 
     Inadvertant <strong>Deletion</strong> of data can be disastrous. So it helps to have a specialist centrally setup and manage mechanisms for that. For example, individual users who do not have delete permissions can <strong>reassign</strong> obsolete resources to "Decommissioned". This is to avoid accidental deletion of resources and enable central review before deletion.
 
@@ -150,6 +149,9 @@ Recap:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696662217/aure-onboarding-1716x867_xmm9zp.png"><img alt="aure-onboarding-1716x867.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696662217/aure-onboarding-1716x867_xmm9zp.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
 
+<hr />
+
+<a name="Automation"></a>
 
 ## Summary of Automation
 
@@ -180,8 +182,7 @@ Let's dive in with the <strong>technical</strong> now, with <a href="#PeopleStuf
 
 <a name="PeopleInfo"></a>
 
-## 1. People Information
-
+## PHASE 01. People Information
 
 PROTIP: Python program generates an organization chart graphic from a csv spreadsheet file.
 
@@ -302,6 +303,39 @@ and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-archit
    PROTIP: Global Admin privileges are needed to enable <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">AD PIM (Privileged Identity Management)</a> for a directory.
 
    So it's important to assign other more specific roles. 
+
+<a name="EscalatedPermissions"></a> 
+
+### User Access Admin Role permissions
+
+To work with <strong>Management Groups</strong>, in Azure RBAC the Global Administrator assigns him/herself the role "User Access Administrator" which has access to the root scope (/) with access to all Management Groups, Subscriptions, Resource Groups in the Tenant:
+
+<pre>az role assignment list --role "User Access Administrator" --scope "/"
+az rest --method post --url "/providers/Microsoft.Authorization/elevateAccess?api-version=2016-07-01"
+az account management-group entities list
+az account management-group list
+</pre>
+
+Alternately, in the Console GUI:
+1. Get to the Entra ID service (formerly Azure Active Directory), Properties:
+
+   https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Properties
+
+1. Click the slider "can manage access to all Azure subscriptions and management groups in this tenant" to "Yes".
+1. Save.
+1. Log out and in again.
+1. Get to your Subscription.
+
+   https://portal.azure.com/#view/Microsoft_Azure_Billing/SubscriptionsBlade
+
+1. Click "Access Control (IAM)", "View my access" to see "User Access Administrator" listed among Role Assignments.
+1. Get to "Management groups"
+
+   https://portal.azure.com/#view/Microsoft_Azure_ManagementGroups/ManagementGroupBrowseBlade/~/MGBrowse_overview
+   
+1. Click "Start using management groups".
+1. In Overview: your entities:
+
 
 
 
@@ -650,6 +684,38 @@ Microsoft has a "Defender" offering for each type of product:
 
 "Sentinel" is Microsoft's brand name for offerings in <a target="_blank" href="https://wilsonmar.github.io/siem-soar/">SIEM and SOAR</a>.
 
+<a target="_blank" href="https://learn.microsoft.com/en-us/cli/azure/security?view=azure-cli-latest">
+az security CLI commands</a> <tt>az security ...</tt>
+   * adaptive-application-controls
+   * adaptive_network_hardenings
+   * alert
+   * alert-suppressions-rule
+   * allowed-connections
+   * assessment
+   * atp (Advanced Threat Protection)
+   * auto-provisioning-setting
+   * automation
+   * contact
+   * discovered-security-solution
+   * external-security-solution
+   * iot-alerts
+   * iot-analytics
+   * iot-solution
+   * jit-policy
+   * location
+   * pricing
+   * <a href="#Regulatory+Compliance">regulatory-compliance</a>
+   * secure-score-control-definitions
+   * secure-score-controls, secure-scores
+   * security-solutions
+   * setting
+   * sub-assessment
+   * task
+   * topology
+   * va (Vulnerability Assessment)
+   * workspace-setting
+   <br /><br />
+
 
 ### Regulatory Compliance
 
@@ -698,8 +764,6 @@ A breakdown of actions based on Microsoft's <strong>categories for a Security Po
 <em>We need to begin with Infrastructure.</em>
 
 <hr />
-
-## Infrastructure
 
 <a name="EnvDifferences"></a>
 
@@ -1179,7 +1243,9 @@ The clock is ticking!
    Users on another Entra ID (B2B) or public IDP (B2C).
 
 
-   ### Enterprise discount
+   <a name="Enterprise+discounts"></a>
+
+   ### Enterprise discounts
 
    Available to Enterprise customers only: <a target="_blank" href="https://cloudacademy.com/course/understanding-azure-pricing-and-support/planning-and-management/">15% Discounts on Public Prices</a>
 
