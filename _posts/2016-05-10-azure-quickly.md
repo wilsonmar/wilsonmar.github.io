@@ -22,7 +22,7 @@ PROTIP: Here, all in one page, are <strong>hands-on</strong> steps to use the <a
 
 <a target="_blank" href="https://youtu.be/lwReERW_Pqo"><img align="left" alt="youtube-1024x721.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696234162/youtube-1024x721_ful6ky.png"><strong>Click here for a <strong>step-by-step</strong> 1-minute YouTube video</strong></a> (with no sound) about the <strong>sequence of work</strong> to setup a whole enterprise with Azure technologies in the cloud:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696662217/aure-onboarding-1716x867_xmm9zp.png"><img alt="aure-onboarding-1716x867.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696662217/aure-onboarding-1716x867_xmm9zp.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696669720/aure-onboarding-1719x864_pkkevu.png"><img alt="aure-onboarding-1716x867.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696669720/aure-onboarding-1719x864_pkkevu.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
 
 The set of services to create and manage <strong>resources</strong> (such as network, storage, compute, etc.) in the Azure cloud is called the <strong>Azure Resource Manager</strong> (ARM for short). 
 
@@ -147,7 +147,7 @@ Then, on phase 27, end-user workstations (laptops) would be configured using aut
 
 Recap:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696662217/aure-onboarding-1716x867_xmm9zp.png"><img alt="aure-onboarding-1716x867.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696662217/aure-onboarding-1716x867_xmm9zp.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696669720/aure-onboarding-1719x864_pkkevu.png"><img alt="aure-onboarding-1716x867.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696669720/aure-onboarding-1719x864_pkkevu.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
 
 <hr />
 
