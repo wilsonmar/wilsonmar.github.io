@@ -944,7 +944,8 @@ REMEMBER: Use of Defender involves <a target="_blank" href="https://azure.micros
 
 ### MS Defender offerings
 
-<img align="right" alt="Azure%20Defender.png" 30" src="https://github.com/David-Summers/Azure-Design/blob/master/PNG_Azure_All/Azure%20Defender.png">Microsoft has a "Defender" offering for each type of product:
+<img align="right" alt="Azure%20Defender.png" height="30" src="https://github.com/David-Summers/Azure-Design/blob/master/PNG_Azure_All/Azure%20Defender.png">
+Microsoft has a "Defender" offering for each type of product:
 
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-for-identity">MS Defender for Identity</a>
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-office-365">MS Defender for Office 365</a>
