@@ -20,43 +20,31 @@ There is a massive amount of information about Azure. YouTube videos and the <a 
 
 PROTIP: Here, all in one page, are <strong>hands-on</strong> steps to use the <strong>automation</strong> I created to build Azure for a whole global enterprise, with minimal manual toil that builds in secure practices and mechanisms without additional effort.
 
-   * <strong>mac-setup.sh</strong> installs everything needed on your mac with a single command. Then it makes runs simple to repeat and optionally cleans up after runs.
-
-   * <strong>org-gen.py</strong> generates csv files containing sample values for an organization with a size of your choosing. (100, 1000, 10000, etc.). The data describes a hierarchy of departments, jobs, roles, groups, people, projects, etc. used as the basis for assigning Least-Privilege permissions to resources.
-
-   * <strong>org-chart.py</strong> generates an organization chart graphic from a csv spreadsheet file.
-
-   * <strong>az-info.sh</strong> displays the status of various resources in Azure
-   audience.
-
-   * <strong>az-onboarding.sh</strong> automates the creation of all described below:
-   <br /><br />
 
 <a target="_blank" href="https://youtu.be/lwReERW_Pqo"><img align="left" alt="youtube-1024x721.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696234162/youtube-1024x721_ful6ky.png"><strong>Click here for a <strong>step-by-step</strong> 1-minute YouTube video</strong></a> (with no sound) about the <strong>sequence of work</strong> to setup a whole enterprise with Azure technologies in the cloud:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696616233/azure-quickly-1714x855_steghb.png"><img alt="azure-quickly-1714x855.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696616233/azure-quickly-1714x855_steghb.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696662217/aure-onboarding-1716x867_xmm9zp.png"><img alt="aure-onboarding-1716x867.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696662217/aure-onboarding-1716x867_xmm9zp.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
 
 The set of services to create and manage <strong>resources</strong> (such as network, storage, compute, etc.) in the Azure cloud is called the <strong>Azure Resource Manager</strong> (ARM for short). 
 
 There is <strong>IaC (Infrastructure as Code)</strong> automation to setup a whole enterprise full of users and resources.
 
-But resources are created on the <strong>26th</strong> phase into the setup process because we first need to establish a gate-keeper to limit <strong>Actions</strong> (aka Operations) (such as create, read, update, delete, etc.) against those resources.
+But resources are created on the <strong>26th</strong> phase into the setup process because we first need to establish people and "gate-keepers" and technical "guardrails" to limit <strong>Actions</strong> (aka Operations) to minimize mistakes and abuse: <strong>RBAC</strong> (Role-based Access Control), which is defined by: the <strong>profile</strong> defined for each <strong>A. Security Principals</strong> limited by <strong>B. Role Definitions</strong> assigned from <strong>C. Scopes</strong> around resources.
 
-Then, on phase 27, end-user workstations (laptops) would be configured to access resources securely.
+Then, on phase 27, end-user workstations (laptops) would be automatically configured to securely access resources.
 
-This article explains the "guardrails" to minimize mistakes and abuse: <strong>RBAC</strong> (Role-based Access Control), which is defined by: the <strong>profile</strong> defined for each <strong>A. Security Principals</strong> limited by <strong>B. Role Definitions</strong> assigned from <strong>C. Scopes</strong> around resources.
+1.  <a href="#PeopleInfo"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>People information</strong></a> is defined: who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier for SMS, GitHub account, etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be set up.
 
-1.  <a href="#PeopleInfo"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>First we define who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier (for SMS), etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be set up.
+2.  <a href="#Administrators"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>System Administrators</strong></a> are identified from within the organization, and given <strong>escalated permissions</strong> to setup workstations and cloud service resources. associated with an <strong>Azure stack</strong> needed. Here is an example of stacks for a global enterprise:
 
-2.  <a href="#Adinistrators"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>From people within the organization, <strong>System Administrators</strong> aka "data custodians" are given escalated permissions to setup workstations and cloud service resources associated with an <strong>Azure stack</strong> needed. Here is an example of stacks for a global enterprise:
-
-    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696644097/aws-quickly-1753x935_v7vvau.png"><img alt="aaws-quickly-1753x935.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696644097/aws-quickly-1753x935_v7vvau.png"></a>
-
-    Each stack also have a "data owner" who do what managers have always done: assign specific Users to join User Groups.
+    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696661164/azure-org-1750x911_m7ylte.png"><img alt="azure-org-1750x911.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696661164/azure-org-1750x911_m7ylte.png"></a>
 
     The hierarchy defines the path of <strong>escalation</strong> if alerts are not addressed on a timely manner.
 
     The hierarchy also defines which supervisor takes over if a subordinate is not available. 
+
+    aka "data custodians" 
+    Each stack also have, outside of this diagram, a "data owner" who do what managers have always done: assign specific Users to join User Groups.
 
     To ensure that it's intentional, the more secure enterprises restrict <strong>deletion actions</strong> to be performed only by the administrator above the administrator of a cell in the diagram. 
     
@@ -70,21 +58,18 @@ This article explains the "guardrails" to minimize mistakes and abuse: <strong>R
 
     Each box in the diagram represents a complete stack consisting of the <strong>permissions scope</strong> hierarchy:
 
-       * Management Groups
-       * Subscriptions
-       * Resource Groups
+       * Azure Management Groups
+       * Azure Subscriptions
+       * Azure Resource Groups
        <br /><br />
-
-    Microsoft's "Security Service Edge (SSE)" solution facilitates applying Conditional access policies across organizational resources and apps.
-
-    REMEMBER: Azure itself does not allow Global Administrators to be used for production work. Instead, <strong>Conditional Access</strong> is used to grant permissions to users and groups.
 
     ### Paired region backup
 
     Boxes within dotted lines represents the <strong>paired region</strong> where Azure automatically sends back up data so they can restore everything in case of disaster in any given region. This is a major differentiator for Azure versus AWS which makes each customer do their own backup and recovery. 
     
-3.  <a href="#Subscriptions"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png">Azure Subscription</a> are used for <strong>billing</strong>. So admins should have partners to work through financial workflows and oversight.
-3.  <a href="#Subscriptions"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png">Azure Subscription</a> are used for <strong>billing</strong>. So admins should have partners to work through financial workflows and oversight.
+3.  <a href="#Subscriptions"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>Azure Subscriptions</strong></a> are defined for <strong>billing</strong>. So admins should have partners to work through financial workflows and oversight.
+
+    The <a href="#FirstSubscription"><strong>first Azure Subscription</strong></a> 
 
 4.  <a href="#Licenses"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Licenses are paid for by <strong>credit cards or invoices</strong> setup through a Microsoft salesperson.
 
@@ -163,7 +148,22 @@ This article explains the "guardrails" to minimize mistakes and abuse: <strong>R
 
 Recap:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696616233/azure-quickly-1714x855_steghb.png"><img alt="azure-quickly-1714x855.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696616233/azure-quickly-1714x855_steghb.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696662217/aure-onboarding-1716x867_xmm9zp.png"><img alt="aure-onboarding-1716x867.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696662217/aure-onboarding-1716x867_xmm9zp.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
+
+
+## Summary of Automation
+
+   * <strong>mac-setup.sh</strong> for <strong>laptop setup</strong> -- installing everything needed on your mac with a single command. Then it makes runs simple to repeat and optionally cleans up after runs.
+
+   * <strong>org-gen.py</strong> generates csv files containing sample values for an organization with a size of your choosing. (100, 1000, 10000, etc.). The data describes a hierarchy of departments, jobs, roles, groups, people, projects, etc. used as the basis for assigning Least-Privilege permissions to resources.
+
+   * <strong>org-chart.py</strong> generates an organization chart graphic from a csv spreadsheet file.
+
+   * <strong>az-info.sh</strong> displays the status of various resources in Azure
+   audience.
+
+   * <strong>az-onboarding.sh</strong> automates the creation of all described below:
+   <br /><br />
 
 
 <hr />
@@ -208,11 +208,11 @@ Search for what to "REMEMBER" to pass <a target="_blank" href="https://wilsonmar
 {% include whatever.html %}
 
 
-### Who Does What
+<hr />
 
-There are <a href="#Occupations">technical occupations</a> and management roles:
+<a name="Administrators"></a>
 
-### Owners vs. Admins
+## Phase 02. Administrators and Data Owners
 
 In security, there is a distinction between "data owners" and "data custodians" (who manage the data).
 An inventory needs to be maintained about who has type of access to what data, for escalations and approvals.
@@ -223,6 +223,11 @@ An inventory needs to be maintained about who has type of access to what data, f
 
 In Azure, there is a distinction between "subscription owners" and "subscription administrators" (who manage the subscription).
 
+    Microsoft's "Security Service Edge (SSE)" solution facilitates applying Conditional access policies across organizational resources and apps.
+
+    REMEMBER: Azure itself does not allow Global Administrators to be used for production work. Instead, <strong>Conditional Access</strong> is used to grant permissions to users and groups.
+
+https://learn.microsoft.com/en-us/cli/azure/manage-azure-subscriptions-azure-cli
 
 <a name="Occupations"></a>
 
