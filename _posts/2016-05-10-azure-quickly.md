@@ -20,7 +20,7 @@ There is a massive amount of information about Azure. YouTube videos and the <a 
 
 PROTIP: Here, all in one page, are <strong>hands-on</strong> steps to use the <strong>automation</strong> I created to build Azure for a whole global enterprise, with minimal manual toil that builds in secure practices and mechanisms without additional effort.
 
-   * <strong>mac-setup.sh</strong> installs HomeBrew, Miniconda, Python, CLI, and GitHub repos on your mac, then makes runs simple and optionally cleans up after runs
+   * <strong>mac-setup.sh</strong> installs everything needed on your mac with a single command. Then it makes runs simple to repeat and optionally cleans up after runs.
 
    * <strong>org-gen.py</strong> generates csv files containing sample values for an organization with a size of your choosing. (100, 1000, 10000, etc.). The data describes a hierarchy of departments, jobs, roles, groups, people, projects, etc. used as the basis for assigning Least-Privilege permissions to resources.
 
@@ -32,7 +32,7 @@ PROTIP: Here, all in one page, are <strong>hands-on</strong> steps to use the <s
    * <strong>az-onboarding.sh</strong> automates the creation of all described below:
    <br /><br />
 
-<a target="_blank" href="https://youtu.be/lwReERW_Pqo"><img align="left" alt="youtube-1024x721.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696234162/youtube-1024x721_ful6ky.png"><strong>Click here for a step-by-step 1-minute YouTube video</strong></a> about the <strong>sequence of work</strong> to setup a whole enterprise with Azure technologies in the cloud:
+<a target="_blank" href="https://youtu.be/lwReERW_Pqo"><img align="left" alt="youtube-1024x721.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696234162/youtube-1024x721_ful6ky.png"><strong>Click here for a <strong>step-by-step</strong> 1-minute YouTube video</strong></a> (with no sound) about the <strong>sequence of work</strong> to setup a whole enterprise with Azure technologies in the cloud:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696616233/azure-quickly-1714x855_steghb.png"><img alt="azure-quickly-1714x855.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696616233/azure-quickly-1714x855_steghb.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
 
@@ -48,28 +48,43 @@ This article explains the "guardrails" to minimize mistakes and abuse: <strong>R
 
 1.  <a href="#PeopleInfo"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>First we define who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier (for SMS), etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be set up.
 
-2.  <a href="#Adinistrators"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>From people within the organization, <strong>System Administrators</strong> are given with escalated permissions with their responsibility for setup of workstations and permissions. This hierarchy describes a sample global enterprise:
+2.  <a href="#Adinistrators"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>From people within the organization, <strong>System Administrators</strong> aka "data custodians" are given escalated permissions to setup workstations and cloud service resources associated with an <strong>Azure stack</strong> needed. Here is an example of stacks for a global enterprise:
 
-    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696346013/az-mgmtgrps-1772x941_uxyvoj.png"><img alt="az-mgmtgrps-1772x941.pn" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696346013/az-mgmtgrps-1772x941_uxyvoj.png"></a>
+    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696644097/aws-quickly-1753x935_v7vvau.png"><img alt="aaws-quickly-1753x935.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696644097/aws-quickly-1753x935_v7vvau.png"></a>
 
-    The Administrator designated for each box in this diagram is responsible for the <strong>Azure stack</strong> of IaC (Infrastructure as Code) which define resources with permissions for each stack. Each stack consists of:
+    Each stack also have a "data owner" who do what managers have always done: assign specific Users to join User Groups.
+
+    The hierarchy defines the path of <strong>escalation</strong> if alerts are not addressed on a timely manner.
+
+    The hierarchy also defines which supervisor takes over if a subordinate is not available. 
+
+    To ensure that it's intentional, the more secure enterprises restrict <strong>deletion actions</strong> to be performed only by the administrator above the administrator of a cell in the diagram. 
+    
+    The work of the "MyCo" Administrator at the top is largely <strong>financial</strong> - aggregating billings for volume discount accounting with the cloud vendor.
+
+    Inadvertant <strong>Deletion</strong> of data can be disastrous. So it helps to have a specialist centrally setup and manage mechanisms for that. For example, individual users who do not have delete permissions can <strong>reassign</strong> obsolete resources to "Decommissioned". This is to avoid accidental deletion of resources and enable central review before deletion.
+
+    Most enterprises today have a central SOC (Security Operations Center) monitor and respond to incidents in Production enviornments ("PRD").
+
+    The Operations ("Ops") team builds complete Staging ("STG") environment to conduct systems capacity testing and chaos engineering once the QA team has tested individual components. Each of these teams can be from under different Vice Presidents, to serve as liasions to those other organizations.
+
+    Each box in the diagram represents a complete stack consisting of the <strong>permissions scope</strong> hierarchy:
 
        * Management Groups
        * Subscriptions
        * Resource Groups
        <br /><br />
 
-    To ensure that it's intentional, the more secure enterprises restrict <strong>deletion actions</strong> to be performed only by the administrator above the administrator of a cell in the diagram. 
-    
-    Those without delete permissions can <strong>reassign</strong> obsolete resources to "Decommissioned". This is to avoid accidental deletion of resources and enable central review before deletion (to fight ransoms).
-
     Microsoft's "Security Service Edge (SSE)" solution facilitates applying Conditional access policies across organizational resources and apps.
-
-    The most secure systems now designate for each resource its "data owners" (who assign users) and "data custodians" (who manage the data). An inventory needs to be maintained about who has type of access to what data, for escalations and approvals.
 
     REMEMBER: Azure itself does not allow Global Administrators to be used for production work. Instead, <strong>Conditional Access</strong> is used to grant permissions to users and groups.
 
-4.  <a href="#Subscriptions"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png">Azure Subscription</a> are used for <strong>billing</strong>. So admins should have partners to work through financial workflows and oversight.
+    ### Paired region backup
+
+    Boxes within dotted lines represents the <strong>paired region</strong> where Azure automatically sends back up data so they can restore everything in case of disaster in any given region. This is a major differentiator for Azure versus AWS which makes each customer do their own backup and recovery. 
+    
+3.  <a href="#Subscriptions"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png">Azure Subscription</a> are used for <strong>billing</strong>. So admins should have partners to work through financial workflows and oversight.
+3.  <a href="#Subscriptions"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png">Azure Subscription</a> are used for <strong>billing</strong>. So admins should have partners to work through financial workflows and oversight.
 
 4.  <a href="#Licenses"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Licenses are paid for by <strong>credit cards or invoices</strong> setup through a Microsoft salesperson.
 

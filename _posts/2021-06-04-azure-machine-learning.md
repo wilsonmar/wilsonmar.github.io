@@ -63,7 +63,10 @@ https://learn.microsoft.com/en-us/azure/machine-learning/how-to-deploy-managed-o
 
 ### Preparations for Machine Learning
 
+See https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/ai-machine-learning-mlops
+
 See <a target="_blank" href="https://wilsonmar.github.io/azure-quickly/">my instructions</a> about:
+
 1. Get an account and roles: 
 1. Install the CLI: <tt>az extension add -n ml -y</tt>
 1. Login the console:
