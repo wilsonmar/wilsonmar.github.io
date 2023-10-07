@@ -26,11 +26,13 @@ PROTIP: Here, all in one page, are <strong>hands-on</strong> steps to use the <a
 
 The set of services to create and manage <strong>resources</strong> (such as network, storage, compute, etc.) in the Azure cloud is called the <strong>Azure Resource Manager</strong> (ARM for short). 
 
-There is <strong>IaC (Infrastructure as Code)</strong> automation to setup a whole enterprise full of users and resources.
+1.  <a href="#Starter+Account"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png">We use the ARM Console GUI to get a <a href="#Starter+Account">Starter Azure Account</a> with <a href="#Global+Administrator">Global Administrator</a> permissions. We can then use the CLI and API programmatic interfaces.
 
-But resources are created on the <strong>26th</strong> phase into the setup process because we first need to establish people and "gate-keepers" and technical "guardrails" to limit <strong>Actions</strong> (aka Operations) to minimize mistakes and abuse: <strong>RBAC</strong> (Role-based Access Control), which is defined by: the <strong>profile</strong> defined for each <strong>A. Security Principals</strong> limited by <strong>B. Role Definitions</strong> assigned from <strong>C. Scopes</strong> around resources.
+    That's the first phase. To minimize mistakes and abuse at enterprise scale, Azure resources are NOT created until the <strong>26th</strong> phase into the setup process because we first need to establish people "gate-keepers" and technical "guardrails" to limit <strong>Actions</strong> (aka Operations) <strong>RBAC</strong> (Role-based Access Control), which is defined by: the <strong>profile</strong> defined for each <strong>A. Security Principals</strong> limited by <strong>B. Role Definitions</strong> assigned from <strong>C. Scopes</strong> around resources.
 
-Then, on phase 27, end-user workstations (laptops) would be configured using automation to securely access resources.
+    For the repeatability needed to setup a whole enterprise full of users and resources, we use <strong>IaC (Infrastructure as Code)</strong> automation.
+
+    On phase 27, end-user workstations (laptops) would be configured using automation to securely access resources.
 
 1.  <a href="#PeopleInfo"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>People information</strong></a> is defined: who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier for SMS, GitHub account, etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be set up.
 
@@ -178,11 +180,14 @@ Let's dive in with the <strong>technical</strong> now, with <a href="#PeopleStuf
    * <a href="#FreeSvcs">First year free services on Azure</a>
    <br /><br />
 
+qqq
+
+
 <hr />
 
 <a name="PeopleInfo"></a>
 
-## PHASE 01. People Information
+## PHASE 02. People Information
 
 PROTIP: Python program generates an organization chart graphic from a csv spreadsheet file.
 
@@ -213,7 +218,7 @@ Search for what to "REMEMBER" to pass <a target="_blank" href="https://wilsonmar
 
 <a name="Administrators"></a>
 
-## Phase 02. Administrators and Data Owners
+## PHASE 02. Administrators
 
 In security, there is a distinction between "data owners" and "data custodians" (who manage the data).
 An inventory needs to be maintained about who has type of access to what data, for escalations and approvals.
@@ -228,7 +233,9 @@ In Azure, there is a distinction between "subscription owners" and "subscription
 
     REMEMBER: Azure itself does not allow Global Administrators to be used for production work. Instead, <strong>Conditional Access</strong> is used to grant permissions to users and groups.
 
+<img align="right" alt="Azure%20CLI.png" width="30" src="https://raw.githubusercontent.com/David-Summers/Azure-Design/master/PNG_Azure_All/Azure%20CLI.png">
 https://learn.microsoft.com/en-us/cli/azure/manage-azure-subscriptions-azure-cli
+
 
 <a name="Occupations"></a>
 
@@ -286,57 +293,334 @@ and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-archit
 
 <hr />
 
-<a name="AdminUsers"></a>
+<a name="Starter+Account"></a>
 
-## PHASE 02. Admins 
+## PHASE 01. Starter Account
+
+This chapter explains Best Practics and efficiency Tips for all Users. 
+
+   * <a href="#BrowserProfiles">Setup & Use Browser Profiles</a>
+   * <a href="#Free+Subscriptions">Free Subscriptions</a>
+
+<hr />
+
+<a name="BrowserProfiles"></a>
+
+### Setup & Use Browser Profiles
+
+Websites (including Azure) store your browser history, what account you logged in, etc. locally in "cookies" associated with your browser account.
+
+That's how you get returned to the last account used when you go back to a website.
+
+PROTIP: Setup <strong>different browser profiles</strong> on the same browser, associated with different profile avatars and colors: <strong>one for each account (email)</strong>.
+
+1. Click your browser's avatar picture at the upper-right corner:
+
+   * The <a href="#MSAccount">Learn account</a> using your personal email (such as at gmail.com).
+   * The account associated with your Visual Studio benefit (using your work email)
+   * Each of your work accounts (to do your job as an Administrator).
+   <br /><br />
+
+1. Do the above for each browser (Google Chrome, Microsoft Edge, Firefox, etc.).
+
+
+### Free Subscriptions
+
+DEFINITION: A "Subscription" in Azure is the account for <strong>billing</strong> to payment options such as a credit card or invoice account setup with a Microsoft salesperson.
+
+* Some "Exercises" in Microsoft Learn provide FREE "MICROSOFT LEARN SANDBOX" temporary "Concierge" subscription access one or two hours at a time. 
+
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/create-windows-virtual-machine-in-azure/3-exercise-create-a-vm">Create Windows Virtual Machine</a>
+
+* <a target="_blank" href="https://azuredevopslabs.com/labs/devopsserver/handsonlabs/">azuredevopslabs.com/labs/devopsserver/handsonlabs</a> with code at <a target="_blank" href="https://github.com/Microsoft/azuredevopslabs/tree/master/labs/devopsserver/handsonlabs/">github.com/Microsoft/azuredevopslabs/tree/master/labs/devopsserver/handsonlabs</a>, which provides a quick and easy way to evaluate and test (currently only DevOps and Visual Studio) through virtual environments that do not require any complex setup or installation. You can use virtual labs online immediately for free :)
+
+* Search for others in Microsoft's LEARN website:
+
+   <a target="_blank" href="
+   https://learn.microsoft.com/en-us/training/">
+   https://learn.microsoft.com/en-us/training/</a>
+
+* Microsoft offers free student accounts at:
+
+   https://azure.microsoft.com/en-us/free/students/
+
+* CloudAcademy.com licenses include Lab time in some of their monthly subscriptions.
+
+   * <a href="#CloudAcademyLab">VM lab</a>
+   <br /><br />
+
+### Azure first-timer deals
+
+1. Get a "Microsoft Learn" account for $200 of credits to spend in 30 days and also a year of <a href="#FreeSvcs">free services</a>. See <a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">docs.microsoft.com/en-us/learn/azure/</a> 
+
+   After that instead of "Pay-As-You-Go",
+
+1. PROTIP: Obtain Azure credits as a benefit of a monthly license of Visual Studio (even though they don't intend on using the IDE). Azure Subscriptions (like Netflix, Disney+, etc.) are billed monthly.
+
+   * $50/month credits from a $39/mo Visual Studio Professional license
+   * $150/month credits from a $79/mo Visual Studio Enterprise license
+   <br /><br />
+
+   Visual Studio Subscriptions are, as of this writing, NOT offered in the Brazil South and Central India regions, as noted in <a target="_blank" href="https://azure.microsoft.com/en-us/regions/offers/">https://azure.microsoft.com/en-us/regions/offers/</a>.
+
+   
+<a name="FreeSvcs"></a>
+
+### First year free services
+
+<a target="_blank" href="https://azure.microsoft.com/en-us/free/free-account-faq/">
+https://azure.microsoft.com/en-us/free/free-account-faq</a> lists services which Microsoft offers free for the first year:
+
+   * Compute: 750 hours of B1S Linux VMs
+   * Compute: 750 hours of B1S Windows VMs
+   * Storage: Manage Disks 64 GB x 2
+   * Storage SQL: up to 250 GB
+   * Storage File: 5GB
+   * Storage Blobs: 5 GB
+   * Cosmo DB up to 5 GB 400 request units
+   * Network bandwidth: 15 GB outbound data transfer
+   * AI & Machine Learning services?
+   <br /><br />
+
+   TODO: HANDS-ON: Make use of them without spending any money of your own!
+
+
+### Office 365 Trial Subscription
+
+1. Sign up for Office 365 Trial at 
+
+   https://www.microsoft.com/en-us/microsoft-365/enterprise/office-365-e5?activetab=pivot:overviewtab
+   
+1. Click the "Try for free" link and go through the verification steps.
+
+   IMPORTANT: You are assigned an <tt>@onmicrosoft.com</strong> domain and individual account.
+
+1. To view the time remaining within the free period, use your "work account" at:
+   
+   <a target="_blank" href="https://admin.microsoft.com/adminportal/home?#/subscriptions">
+   https://admin.microsoft.com/adminportal/home?#/subscriptions</a>
+
+1. The administrator of the work account emails needs to configure DNS entry at the email server host: TXT name @, TXT value "MS=12234..." with TTL 3600.
+
+<hr />
+
+<a name="MSAccount"></a>
+
+### Microsoft Azure account setup
+
+1. PROTIP: Avoid using an email that you use for your own banking, shopping, social media, etc. For continuity with a real cloud, you'll need an email address that you can share and transfer to other people. That's so at a company, you will need to give someone else the password so that if you're ever go on vacation (or get run over or thrown under a bus), your organization can continue.
+
+   In you're in an enterprise company, get an email adddress from a corporate assets administrator. A different (service) account is often created for each department of responsibility.
+
+   PROTIP: In the name include the month and year in the account name (such as johndoe1901@hotmail.com) for 2019-01 (January). Many <strong>create several email accounts</strong> because each Azure subscription includes a $200 credit to spend on any service for the <strong>first 30 days</strong>, free access to <a target="_blank" href="https://azure.microsoft.com/en-us/free/free-account-faq/">Azure products for 12 months</a>. 
+
+   Azure provide access to more than 25 products that are always free. 
+
+
+   ### Entra (Azure Active Directory)
+
+   In 2023, Microsoft rebranded "Azure Active Directory (AAD)" or "Azure AD" to <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/new-name">Microsoft Entra ID</a>. [<a target="_blank" href="https://www.youtube.com/watch?v=ThT3n2Yass4">VIDEO</a>]
+
+   > The word "entra" means "entrance" (enter in) in Italian. It's a nod to the fact that Microsoft Entra ID is the gateway to Microsoft 365 and Azure services.
+
+   When someone signs up for a Microsoft cloud service subscription (such as Microsoft Azure, Office 365, Microsoft Intune, etc.), a dedicated instance of <strong>Entra (Azure AD)</strong> is created automatically. 
+
+   READ: <a target="_blank" href="https://microsoftlearning.github.io/AZ-900T0x-MicrosoftAzureFundamentals/Instructions/Walkthroughs/19-Use%20the%20Azure%20Pricing%20Calculator.html"><img width="20" alt="pricing" src="https://code.benco.io/icon-collection/azure-patterns/calculator-pricing-details.svg"></a> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/active-directory/">Entra pricing</a>. 
+
+   https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing
+
+   Microsoft 365 subscribers have additional AAD/Entra licensing options:
+   * Entra ID Free has a 500,000 object limit, which includes MFA for O365 services
+   * + $1/mo./user Basic for group-base access management with SLAs
+   * + $6/mo./user P1 for conditional access based on device/location & MFA for on-prem. services
+   * + $9/mo./user P2 for Identity Protection, Access reviews, Privileged Identity Management
+   * Entra ID External Identities (B2B/B2C) are licensed separately -> Microsoft Entra External ID
+   <br /><br />
+
+   DOTHIS: Recommend how each user can setup MFA. These options are available:
+   * Number of MFA denials to trigger account lockout (from 1 to 99)
+   * Minutes until account lockout counter is reset (from 1 to 1440)
+   * Minutes until account is automatically unlocked (from 1 to 9999)
+   <br /><br />
+
+   <strong>Premium P1</strong> (included in Microsoft 365 E3) features include Password Protection (custom banned password). Dynamic groups require a Premium P1 license.
+      * <strong>Conditional access</strong>
+      * Group assignment to applications
+      * Advanced group management (dynamic groups, naming policies, expiration, default classification)
+
+      * Cloud app discovery (Microsoft Defender for Cloud Apps)
+      * Application proxy for on-premises, header-based, and integrated Windows authentication
+      * Service level agreements (SLAs)
+
+      * Microsoft identity manager user client access license (CAL)
+      * Cross-tenant user synchronization
+      * Advanced security and usage reports
+
+      * Automated user provisioning to on-premises apps
+      * Automated group provisioning to apps
+
+      * Self-service password reset (SSPR)
+      * Terms of use attestation
+      * Basic access certifications and reviews
+      * Basic entitlement management
+      * Entitlement management – separation of duties
+
+      * Risk level and risk detail fields are hidden to those with just the Entra ID Premium P1 edition.
+      * Advanced detections (such as unfamiliar sign-in properties) not covered by license appear under the name Sign-in with additional risk detected. 
+      * Privileged identity management (PIM)
+      <br /><br />
+
+   <strong>Premium P2</strong> (included in Microsoft 365 E5) includes all P1 features plus really cool <strong>"Identity Protection"</strong> with policies Assignment to all users.
+      * Identity governance/protection dashboard
+      * Risk-based Conditional Access (sign-in risk, user risk)
+      * Machine-learning assisted access certifications and reviews
+      * Authentication context (step-up authentication)
+      * Device and application filters for Conditional Access
+      * Token protection
+      * Vulnerabilities and risky accounts
+      * Risk events investigation, security information and event management (SIEM) connectivity
+      * Self-service entitlement management (My Access)
+      * Entitlement management with Verified ID
+      * Lifecycle workflows
+      <br /><br />
+
+   The new <strong>$7/person Microsoft Entra ID Governace</strong> offering adds:
+      * Identity governance dashboard
+      * Entitlement management with Verified ID
+      * Lifecycle workflows
+      * <strong>Machine learning assisted</strong> access certifications and reviews
+      <br /><br />
+
+   * Multi-factor authentication registration policy to Require MFA
+
+   * User risk remediation policy to require password change, with review of number of users impacted
+
+   * Sign-in remediation policy to automate analysis of signals from each sign-in, both real-time and offline, and calculates a risk score based on the probability that the sign-in wasn't performed by the user. Administrators can decide based on this risk score signal to enforce organizational requirements. Administrators can choose to block access, allow access, or allow access but require multi-factor authentication. If risk is detected, users can perform multi-factor authentication to self-remediate and close the risky sign-in event to prevent unnecessary noise for administrators.
+
+   * Investigate risks using data in the portal.
+
+   * Export risk detection data to third-party utilities for further analysis.
+
+   Users on another Entra ID (B2B) or public IDP (B2C).
+
+
+   <a name="Enterprise+discounts"></a>
+
+   ### Enterprise discounts
+
+   Available to Enterprise customers only: <a target="_blank" href="https://cloudacademy.com/course/understanding-azure-pricing-and-support/planning-and-management/">15% Discounts on Public Prices</a>
+
+
+<a name="Tenants"></a>
+
+## Phase 07. Tenants
+
+   The Azure SaaS service separates different customers into different <strong>tenants</strong> (like tenants in an apartment building). Each tenant is a dedicated, isolated instance of the AAD/Entra service, owned and managed by an organization. 
+
+   "Isolated" = ISE
+
+   Entra ID supports auth protocols: OAuth, OpenID, SAML, WS-Federation.
+
+2. For birthdate, make up an adult year: 2023 - 22 = 2001
+
+   PROTIP: Write it down for account recovery, such as in a 1Password entry.
+   Also write down the date you created the account in a calendar entry when you'll switch accounts.
+
+3. You'll need a phone number for multi-factor Authentication.
+
+   PROTIP: Microsoft does not accept VOIP number such as those from Googgle Voice.
+   They require a cell number from a cell carrier (Verizon, ATT, etc.).
+
+   ## PHASE 04. Credit Cards
+
+4. Provide credit card number.
+
+   BIG PROTIP: Microsoft no longer accepts debit cards such as from Walmart <a target="_blank" href="https://www.bluebird.com/">Bluebird</a> VISA card (by American Express).
+   
+5. PROTIP: Create a separate card sub-account for each cloud account.
+
+
+   <a name="SignUp"></a>
+
+   ### Sign Up for Azure
+
+1. Sign up for Azure:
+
+   <a target="_blank" href="
+   https://signup.live.com/signup"><strong>
+   https://signup.live.com/signup</strong></a>
+
+1. PROTIP: After defining <strong>5 users</strong>, you are forced to sign-up for and pay for a subscription with your credit card.
+
+   PROTIP: Use address with a zip code that's not associated with your home address, and used only for banking.
+
+   Multiple subscriptions can be created under a single Azure account (Dev, Test, Staging, Production, Logging,  Demo, Training, DR, etc.). This is particularly useful for businesses because:
+
+   DEFINITION: A Subscription is your "bank account" / credit card.
+
+   PROTIP: access control and billing occur at the subscription level, not the account level.
+
+   PROTIP: Each Subscription can only trust a single AAD/Entra directory.
+
+   Transfer ownership of a subscription, such as to a central accounting department.
+
+   Add additional subscriptions when you may exceed limits within a subscription: # VNets.
+
+
 
 <a name="GlobalAdmin"></a>
 
-### Global Admin Account
+## PHASE 03. Global Administrator
 
-   <strong>Global Administrators</strong>, aka Company Administrators, in Entra ID have access to <strong>all services</strong> that use AAD/Entra identities (Microsoft 365 security center, Intune, Microsoft 365 compliance center, Exchange Online, SharePoint Online, Skype for Business Online, etc.).
+<strong>Global Administrators</strong> are aka "Company Administrators" in Entra ID because they have access to <strong>almody all services</strong> that impact AAD/Entra identities (Microsoft 365 security center, Intune, Microsoft 365 compliance center, Exchange Online, SharePoint Online, Skype for Business Online, etc.).
 
-   REMEMBER: Global Admins get access to Azure resources only after being granted User Access Admin role.
+<a target="_blank" href="https://www.youtube.com/watch?v=vZ9uQtO7mSU&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=2">VIDEO</a> To prevent being locked out of accounts, have no MFA on Global Admin accounts.
 
-   PROTIP: Don't use the Global Admin account regularly. Set an Activity Alert when it is used. Have no MFA on it. Have 2-5 global admins. <a target="_blank" href="https://www.youtube.com/watch?v=vZ9uQtO7mSU&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=2">VIDEO</a> 
+1. Set another account for regular work so the Global Admin account is not used regularly. 
+
+1. Set at least two other Global Admin users.
+
+1. Set an activity alert to replace them each when their account is made inactive or deleted (when they leave).
+
+1. Set an activity alert to the SOC and other Global Admins when a Global Admin account is used.
+
+1. Login to the Global Admin account 
 
    PROTIP: Global Admin privileges are needed to enable <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">AD PIM (Privileged Identity Management)</a> for a directory.
 
-   So it's important to assign other more specific roles. 
+   <a name="EscalatedPermissions"></a> 
 
-<a name="EscalatedPermissions"></a> 
+   ### Set User Access Admin permissions
 
-### User Access Admin Role permissions
+   REMEMBER: Global Admins get access to Azure resources only after being granted User Access Admin role.
 
-To work with <strong>Management Groups</strong>, in Azure RBAC the Global Administrator assigns him/herself the role "User Access Administrator" which has access to the root scope (/) with access to all Management Groups, Subscriptions, Resource Groups in the Tenant:
+   To work with <strong>Management Groups</strong>, in Azure RBAC the Global Administrator assigns him/herself the role "User Access Administrator" which has access to the root scope (/) with access to all Management Groups, Subscriptions, Resource Groups in the Tenant:
 
-<pre>az role assignment list --role "User Access Administrator" --scope "/"
-az rest --method post --url "/providers/Microsoft.Authorization/elevateAccess?api-version=2016-07-01"
-az account management-group entities list
-az account management-group list
-</pre>
+   <pre>az role assignment list --role "User Access Administrator" --scope "/"
+   az rest --method post --url "/providers/Microsoft.Authorization/elevateAccess?api-version=2016-07-01"
+   az account management-group entities list
+   az account management-group list
+   </pre>
 
-Alternately, in the Console GUI:
-1. Get to the Entra ID service (formerly Azure Active Directory), Properties:
-
-   https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Properties
-
-1. Click the slider "can manage access to all Azure subscriptions and management groups in this tenant" to "Yes".
-1. Save.
-1. Log out and in again.
-1. Get to your Subscription.
-
-   https://portal.azure.com/#view/Microsoft_Azure_Billing/SubscriptionsBlade
-
-1. Click "Access Control (IAM)", "View my access" to see "User Access Administrator" listed among Role Assignments.
-1. Get to "Management groups"
-
-   https://portal.azure.com/#view/Microsoft_Azure_ManagementGroups/ManagementGroupBrowseBlade/~/MGBrowse_overview
+   Alternately, in the Console GUI:
    
-1. Click "Start using management groups".
-1. In Overview: your entities:
+   1. Get to the Entra ID service (formerly Azure Active Directory), Properties:<br /><br />https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Properties
+
+   1. Click the slider "can manage access to all Azure subscriptions and management groups in this tenant" to "Yes".
+   1. Save.
+   1. Log out and in again.
+   1. Get to your Subscription: <br /><br />https://portal.azure.com/#view/Microsoft_Azure_Billing/SubscriptionsBlade
+
+   1. Click "Access Control (IAM)", "View my access" to see "User Access Administrator" listed among Role Assignments.
+   1. Get to "Management groups"<br /><br />https://portal.azure.com/#view/Microsoft_Azure_ManagementGroups/ManagementGroupBrowseBlade/~/MGBrowse_overview
+   
+   1. Click "Start using management groups".
+   1. In Overview: your entities:
 
 
+<a name="AdminUsers"></a>
+
+## PHASE 02. Admins 
 
 
 ### Security Jobs To Be Done
@@ -660,11 +944,7 @@ REMEMBER: Use of Defender involves <a target="_blank" href="https://azure.micros
 
 ### MS Defender offerings
 
-Microsoft summarizes the "kill chain" of exploits and defenses against them in this diagram: 
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"><img alt="az-defenders-3360x1602.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"><br /><em>Click image for full page</em></a>
-
-Microsoft has a "Defender" offering for each type of product:
+<img align="right" alt="Azure%20Defender.png" 30" src="https://github.com/David-Summers/Azure-Design/blob/master/PNG_Azure_All/Azure%20Defender.png">Microsoft has a "Defender" offering for each type of product:
 
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-for-identity">MS Defender for Identity</a>
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-office-365">MS Defender for Office 365</a>
@@ -674,13 +954,18 @@ Microsoft has a "Defender" offering for each type of product:
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-cloud">MS Defender for Cloud</a> <a target="_blank" href="https://azure.microsoft.com/en-us/products/defender-for-cloud/">Product</a> [<a target="_blank" href="https://www.youtube.com/watch?v=lGYVMjgn5tY">Intro video</a> Security Seolutions, Work Automation triggers]
    <br /><br />
 
-- Azure Security Center: https://github.com/Azure/Azure-Security-Center reroutes to
-- GitHub community: https://github.com/Azure/Microsoft-Defender-for-Cloud
-- Azure Defender: https://aka.ms/AzureDefenderForSQL​
-- Become an Azure Security Center Ninja: https://aka.ms/ascninja​
-- ASC in the Filed Show: https://aka.ms/ascinthefield​
-- ASC Labs: https://aka.ms/asclabs
-- https://learn.microsoft.com/en-us/security/zero-trust/ten-laws-of-security#10-laws-of-cybersecurity-risk
+One for each step in the "kill chain" of exploits and defenses: 
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"><img alt="az-defenders-3360x1602.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"><br /><em>Click image for full page</em></a>
+
+References:
+   - Azure Security Center: https://github.com/Azure/Azure-Security-Center reroutes to
+   - GitHub community: https://github.com/Azure/Microsoft-Defender-for-Cloud
+   - Azure Defender: https://aka.ms/AzureDefenderForSQL​
+   - Become an Azure Security Center Ninja: https://aka.ms/ascninja​
+   - ASC in the Filed Show: https://aka.ms/ascinthefield​
+   - ASC Labs: https://aka.ms/asclabs
+   - https://learn.microsoft.com/en-us/security/zero-trust/ten-laws-of-security#10-laws-of-cybersecurity-risk
 
 "Sentinel" is Microsoft's brand name for offerings in <a target="_blank" href="https://wilsonmar.github.io/siem-soar/">SIEM and SOAR</a>.
 
@@ -1047,263 +1332,6 @@ Subscription types:
    <br /><br />
 
 
-
-<a name="BrowserProfiles"></a>
-
-### Setup & Use Browser Profiles
-
-Websites (including Azure) store your browser history, what account you logged in, etc. locally in "cookies" associated with your browser account.
-
-That's how you get returned to the last account used when you go back to a website.
-
-PROTIP: Setup <strong>different browser profiles</strong> on the same browser, associated with different profile avatars and colors: <strong>one for each account (email)</strong>.
-
-1. Click your browser's avatar picture at the upper-right corner:
-
-   * The <a href="#MSAccount">Learn account</a> using your personal email (such as at gmail.com).
-   * The account associated with your Visual Studio benefit (using your work email)
-   * Each of your work accounts (to do your job as an Administrator).
-   <br /><br />
-
-1. Do the above for each browser (Google Chrome, Microsoft Edge, Firefox, etc.).
-
-### Free Accounts
-
-1. Some "Exercises" in Microsoft Learn provide FREE "MICROSOFT LEARN SANDBOX" temporary "Concierge" subscription access one or two hours at a time. Search within:
-
-   <a target="_blank" href="
-   https://docs.microsoft.com/en-us/learn/">
-   https://docs.microsoft.com/en-us/learn</a>
-
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/3-exercise-create-a-vm">Create Windows Virtual Machine</a>
-   <br /><br />
-
-1. Microsoft has https://azure.microsoft.com/en-us/free/students/
-
-1. Microsoft maintains <a target="_blank" href="https://azuredevopslabs.com/labs/devopsserver/handsonlabs/">azuredevopslabs.com/labs/devopsserver/handsonlabs</a> with code at <a target="_blank" href="https://github.com/Microsoft/azuredevopslabs/tree/master/labs/devopsserver/handsonlabs/">github.com/Microsoft/azuredevopslabs/tree/master/labs/devopsserver/handsonlabs</a>, which provides a quick and easy way to evaluate and test (currently only DevOps and Visual Studio) through virtual environments that do not require any complex setup or installation. You can use virtual labs online immediately for free :)
-
-1. CloudAcademy.com licenses include Lab time in some of their monthly subscriptions.
-
-   * <a href="#CloudAcademyLab">VM lab</a>
-   <br /><br />
-
-   ### Azure first-timer deals
-
-2. Get a "Microsoft Learn" account for $200 of credits to spend in 30 days and also a year of <a href="#FreeSvcs">free services</a>. See <a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">docs.microsoft.com/en-us/learn/azure/</a> 
-
-   After that instead of "Pay-As-You-Go",
-
-2. PROTIP: Obtain Azure credits as a benefit of a monthly license of Visual Studio (even though they don't intend on using the IDE). Azure Subscriptions (like Netflix, Disney+, etc.) are billed monthly.
-
-   * $50/month credits from a $39/mo Visual Studio Professional license
-   * $150/month credits from a $79/mo Visual Studio Enterprise license
-   <br /><br />
-
-   Visual Studio Subscriptions are, as of this writing, NOT offered in the Brazil South and Central India regions, as noted in <a target="_blank" href="https://azure.microsoft.com/en-us/regions/offers/">https://azure.microsoft.com/en-us/regions/offers/</a>.
-
-   
-<a name="FreeSvcs"></a>
-
-### First year free services
-
-<a target="_blank" href="https://azure.microsoft.com/en-us/free/free-account-faq/">
-https://azure.microsoft.com/en-us/free/free-account-faq</a> lists services which Microsoft offers free for the first year:
-
-   * Compute: 750 hours of B1S Linux VMs
-   * Compute: 750 hours of B1S Windows VMs
-   * Storage: Manage Disks 64 GB x 2
-   * Storage SQL: up to 250 GB
-   * Storage File: 5GB
-   * Storage Blobs: 5 GB
-   * Cosmo DB up to 5 GB 400 request units
-   * Network bandwidth: 15 GB outbound data transfer
-   * AI & Machine Learning services?
-   <br /><br />
-
-   TODO: HANDS-ON: Make use of them without spending any money of your own!
-
-The clock is ticking!
-
-
-### Office 365 Trial Subscription
-
-1. Sign up for Office 365 Trial at 
-
-   https://www.microsoft.com/en-us/microsoft-365/enterprise/office-365-e5?activetab=pivot:overviewtab
-
-1. Click the "Free trial" link and go through the verification steps.
-
-   IMPORTANT: You are assigned an <tt>@onmicrosoft.com</strong> domain and individual account.
-
-1. To view the time remaining within the free period, see 
-   
-   <a target="_blank" href="https://admin.microsoft.com/adminportal/home?#/subscriptions">
-   https://admin.microsoft.com/adminportal/home?#/subscriptions</a>
-
-
-<hr />
-
-<a name="MSAccount"></a>
-
-## Microsoft Azure account setup
-
-1. PROTIP: Avoid using an email that you use for your own banking, shopping, social media, etc. For continuity with a real cloud, you'll need an email address that you can share and transfer to other people. That's so at a company, you will need to give someone else the password so that if you're ever go on vacation (or get run over or thrown under a bus), your organization can continue.
-
-   In you're in an enterprise company, get an email adddress from a corporate assets administrator. A different (service) account is often created for each department of responsibility.
-
-   PROTIP: In the name include the month and year in the account name (such as johndoe1901@hotmail.com) for 2019-01 (January). Many <strong>create several email accounts</strong> because each Azure subscription includes a $200 credit to spend on any service for the <strong>first 30 days</strong>, free access to <a target="_blank" href="https://azure.microsoft.com/en-us/free/free-account-faq/">Azure products for 12 months</a>. 
-
-   Azure provide access to more than 25 products that are always free. 
-
-
-   ### Entra (Azure Active Directory)
-
-   In 2023, Microsoft rebranded "Azure Active Directory (AAD)" or "Azure AD" to <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/new-name">Microsoft Entra ID</a>. [<a target="_blank" href="https://www.youtube.com/watch?v=ThT3n2Yass4">VIDEO</a>]
-
-   > The word "entra" means "entrance" (enter in) in Italian. It's a nod to the fact that Microsoft Entra ID is the gateway to Microsoft 365 and Azure services.
-
-   When someone signs up for a Microsoft cloud service subscription (such as Microsoft Azure, Office 365, Microsoft Intune, etc.), a dedicated instance of <strong>Entra (Azure AD)</strong> is created automatically. 
-
-   READ: <a target="_blank" href="https://microsoftlearning.github.io/AZ-900T0x-MicrosoftAzureFundamentals/Instructions/Walkthroughs/19-Use%20the%20Azure%20Pricing%20Calculator.html"><img width="20" alt="pricing" src="https://code.benco.io/icon-collection/azure-patterns/calculator-pricing-details.svg"></a> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/active-directory/">Entra pricing</a>. 
-
-   https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing
-
-   Microsoft 365 subscribers have additional AAD/Entra licensing options:
-   * Entra ID Free has a 500,000 object limit, which includes MFA for O365 services
-   * + $1/mo./user Basic for group-base access management with SLAs
-   * + $6/mo./user P1 for conditional access based on device/location & MFA for on-prem. services
-   * + $9/mo./user P2 for Identity Protection, Access reviews, Privileged Identity Management
-   * Entra ID External Identities (B2B/B2C) are licensed separately -> Microsoft Entra External ID
-   <br /><br />
-
-   DOTHIS: Recommend how each user can setup MFA. These options are available:
-   * Number of MFA denials to trigger account lockout (from 1 to 99)
-   * Minutes until account lockout counter is reset (from 1 to 1440)
-   * Minutes until account is automatically unlocked (from 1 to 9999)
-   <br /><br />
-
-   <strong>Premium P1</strong> (included in Microsoft 365 E3) features include Password Protection (custom banned password). Dynamic groups require a Premium P1 license.
-      * <strong>Conditional access</strong>
-      * Group assignment to applications
-      * Advanced group management (dynamic groups, naming policies, expiration, default classification)
-
-      * Cloud app discovery (Microsoft Defender for Cloud Apps)
-      * Application proxy for on-premises, header-based, and integrated Windows authentication
-      * Service level agreements (SLAs)
-
-      * Microsoft identity manager user client access license (CAL)
-      * Cross-tenant user synchronization
-      * Advanced security and usage reports
-
-      * Automated user provisioning to on-premises apps
-      * Automated group provisioning to apps
-
-      * Self-service password reset (SSPR)
-      * Terms of use attestation
-      * Basic access certifications and reviews
-      * Basic entitlement management
-      * Entitlement management – separation of duties
-
-      * Risk level and risk detail fields are hidden to those with just the Entra ID Premium P1 edition.
-      * Advanced detections (such as unfamiliar sign-in properties) not covered by license appear under the name Sign-in with additional risk detected. 
-      * Privileged identity management (PIM)
-      <br /><br />
-
-   <strong>Premium P2</strong> (included in Microsoft 365 E5) includes all P1 features plus really cool <strong>"Identity Protection"</strong> with policies Assignment to all users.
-      * Identity governance/protection dashboard
-      * Risk-based Conditional Access (sign-in risk, user risk)
-      * Machine-learning assisted access certifications and reviews
-      * Authentication context (step-up authentication)
-      * Device and application filters for Conditional Access
-      * Token protection
-      * Vulnerabilities and risky accounts
-      * Risk events investigation, security information and event management (SIEM) connectivity
-      * Self-service entitlement management (My Access)
-      * Entitlement management with Verified ID
-      * Lifecycle workflows
-      <br /><br />
-
-   The new <strong>$7/person Microsoft Entra ID Governace</strong> offering adds:
-      * Identity governance dashboard
-      * Entitlement management with Verified ID
-      * Lifecycle workflows
-      * <strong>Machine learning assisted</strong> access certifications and reviews
-      <br /><br />
-
-   * Multi-factor authentication registration policy to Require MFA
-
-   * User risk remediation policy to require password change, with review of number of users impacted
-
-   * Sign-in remediation policy to automate analysis of signals from each sign-in, both real-time and offline, and calculates a risk score based on the probability that the sign-in wasn't performed by the user. Administrators can decide based on this risk score signal to enforce organizational requirements. Administrators can choose to block access, allow access, or allow access but require multi-factor authentication. If risk is detected, users can perform multi-factor authentication to self-remediate and close the risky sign-in event to prevent unnecessary noise for administrators.
-
-   * Investigate risks using data in the portal.
-
-   * Export risk detection data to third-party utilities for further analysis.
-
-   Users on another Entra ID (B2B) or public IDP (B2C).
-
-
-   <a name="Enterprise+discounts"></a>
-
-   ### Enterprise discounts
-
-   Available to Enterprise customers only: <a target="_blank" href="https://cloudacademy.com/course/understanding-azure-pricing-and-support/planning-and-management/">15% Discounts on Public Prices</a>
-
-
-<a name="Tenants"></a>
-
-## Phase 07. Tenants
-
-   The Azure SaaS service separates different customers into different <strong>tenants</strong> (like tenants in an apartment building). Each tenant is a dedicated, isolated instance of the AAD/Entra service, owned and managed by an organization. 
-
-   "Isolated" = ISE
-
-   Entra ID supports auth protocols: OAuth, OpenID, SAML, WS-Federation.
-
-2. For birthdate, make up an adult year: 2023 - 22 = 2001
-
-   PROTIP: Write it down for account recovery, such as in a 1Password entry.
-   Also write down the date you created the account in a calendar entry when you'll switch accounts.
-
-3. You'll need a phone number for multi-factor Authentication.
-
-   PROTIP: Microsoft does not accept VOIP number such as those from Googgle Voice.
-   They require a cell number from a cell carrier (Verizon, ATT, etc.).
-
-   ## Phase 04. Credit Cards
-
-4. Provide credit card number.
-
-   BIG PROTIP: Microsoft no longer accepts debit cards such as from Walmart <a target="_blank" href="https://www.bluebird.com/">Bluebird</a> VISA card (by American Express).
-   
-5. PROTIP: Create a separate card sub-account for each cloud account.
-
-
-   <a name="SignUp"></a>
-
-   ### Sign Up for Azure
-
-5. Sign up for Azure:
-
-   <a target="_blank" href="
-   https://signup.live.com/signup"><strong>
-   https://signup.live.com/signup</strong></a>
-
-6. PROTIP: After defining <strong>5 users</strong>, you are forced to sign-up for and pay for a subscription with your credit card.
-
-   PROTIP: Use address with a zip code that's not associated with your home address, and used only for banking.
-
-   Multiple subscriptions can be created under a single Azure account (Dev, Test, Staging, Production, Logging,  Demo, Training, DR, etc.). This is particularly useful for businesses because:
-
-   DEFINITION: A Subscription is your "bank account" / credit card.
-
-   PROTIP: access control and billing occur at the subscription level, not the account level.
-
-   PROTIP: Each Subscription can only trust a single AAD/Entra directory.
-
-   Transfer ownership of a subscription, such as to a central accounting department.
-
-   Add additional subscriptions when you may exceed limits within a subscription: # VNets.
 
 
 <hr />
