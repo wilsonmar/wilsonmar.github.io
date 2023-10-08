@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-10-06"
+date: "2023-10-07"
 file: "azure-quickly"
 title: "Azure Quickly"
 excerpt: "Use this automation to minimize manual toil and mistakes but build-in secure practices and mechanisms to build global enterprises need. Not just for AZ-104, AZ-500"
@@ -18,7 +18,7 @@ comments: true
 
 There is a massive amount of information about Azure. YouTube videos and the <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">certification courses</a> they promote only scratch the surface of all that is needed to get an enterprise up and running.
 
-PROTIP: Here, all in one page, are <strong>hands-on</strong> steps to use the <a href="#Automation">automation</a> I created to build Azure for a whole global enterprise, to minimize manual toil and add secure practices and mechanisms within workflows.
+PROTIP: Here, all in one page, are <strong>hands-on</strong> steps to introduce the <a href="#Automation">automation</a> created to build Azure for a whole global enterprise, to minimize manual toil and add secure practices and mechanisms within workflows.
 
 <a target="_blank" href="https://youtu.be/lwReERW_Pqo"><img align="left" alt="youtube-1024x721.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696234162/youtube-1024x721_ful6ky.png"><strong>Click here for a <strong>step-by-step</strong> 1-minute YouTube video</strong></a> (with no sound) about the <strong>sequence of work</strong> to setup a whole enterprise with Azure technologies in the cloud:
 
@@ -26,13 +26,13 @@ PROTIP: Here, all in one page, are <strong>hands-on</strong> steps to use the <a
 
 The set of services to create and manage <strong>resources</strong> (such as network, storage, compute, etc.) in the Azure cloud is called the <strong>Azure Resource Manager</strong> (ARM for short). 
 
-1.  <a href="#Starter+Account"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png">We use the ARM Console GUI to get a <a href="#Starter+Account">Starter Azure Account</a> with <a href="#Global+Administrator">Global Administrator</a> permissions. We can then use the CLI and API programmatic interfaces.
+1.  <a href="#Starter+Account"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Use the ARM Portal GUI</a> to get a <a href="#Starter+Account">Starter Azure Account</a> with <a href="#Global+Administrator">Global Administrator</a> permissions. We can then use the CLI and API programmatic interfaces.
 
     That's the first phase. To minimize mistakes and abuse at enterprise scale, Azure resources are NOT created until the <strong>26th</strong> phase into the setup process because we first need to establish people "gate-keepers" and technical "guardrails" to limit <strong>Actions</strong> (aka Operations) <strong>RBAC</strong> (Role-based Access Control), which is defined by: the <strong>profile</strong> defined for each <strong>A. Security Principals</strong> limited by <strong>B. Role Definitions</strong> assigned from <strong>C. Scopes</strong> around resources.
 
     For the repeatability needed to setup a whole enterprise full of users and resources, we use <strong>IaC (Infrastructure as Code)</strong> automation.
 
-    On phase 27, end-user workstations (laptops) would be configured using automation to securely access resources.
+    Finally, at phase 27, end-users have the permissions to have their workstations (laptops) configured automatically to access resources securely.
 
 1.  <a href="#PeopleInfo"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>People information</strong></a> is defined: who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier for SMS, GitHub account, etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be set up.
 
@@ -169,18 +169,323 @@ Recap:
    * <strong>az-onboarding.sh</strong> automates the creation of all described below:
    <br /><br />
 
+<hr />
+
+<a name="Starter+Account"></a>
+
+## PHASE 01. Starter Account
+
+This chapter explains Best Practices and efficiency Tips for all Users. 
+
+   * <a href="#BrowserProfiles">Setup & Use Browser Profiles</a>
+   * <a href="#Free+Subscriptions">Free Subscriptions</a>
+   * <a href="#SignUp">Azure sign up deals</a>
+
+   * <a href="#MSAccount">Email</a>
+   * <a href="#Entra">Entra (Azure Active Directory/Azure AD/AAD)</a>
+   * <a href="#P1vsP2">P1 vs P2 features</a>
+   * <a href="#MFA">Phone for MFA</a>
+   * <a href="#Office365">Office 365 SaaS Subscription</a>
+ 
+   * <a href="#Portal">portal.azure.com GUI</a>
+   * <a href="#FreeSvcs">First year free services on Azure</a>
+
+   * <a href="#Enterprise+discounts">Enterprise discounts</a>
+   * <a href="#URLs">All URLs for Azure I've found</a> 
+   * <a href="#naming-abbreviations">Naming Conventions</a>
+
+   * <a target="_blank" href="https://wilsonmar.github.io/acronyms/">Acronyms (three letters and otherwise)</a>
+   <br /><br />
+   
+<hr />
+
+<a name="BrowserProfiles"></a>
+
+### Setup & Use Browser Profiles
+
+Websites (including Azure) store your browser history, what account you logged in, etc. locally in "cookies" associated with your browser account.
+
+That's how you get returned to the last account used when you go back to a website.
+
+PROTIP: Setup <strong>different browser profiles</strong> on the same browser, associated with different profile avatars and colors: <strong>one for each account (email)</strong>.
+
+1. Click your browser's avatar picture at the upper-right corner:
+
+   * The <a href="#MSAccount">Learn account</a> using your personal email (such as at gmail.com).
+   * The account associated with your Visual Studio benefit (using your work email)
+   * Each of your work accounts (to do your job as an Administrator).
+   <br /><br />
+
+1. Do the above for each browser (Google Chrome, Microsoft Edge, Firefox, etc.).
+
+
+### Free Subscriptions
+
+DEFINITION: A "Subscription" in Azure is the account for <strong>billing</strong> to payment options such as a credit card or invoice account setup with a Microsoft salesperson.
+
+* Some "Exercises" in Microsoft Learn provide FREE "MICROSOFT LEARN SANDBOX" temporary "Concierge" subscription access one or two hours at a time. 
+
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/create-windows-virtual-machine-in-azure/3-exercise-create-a-vm">Create Windows Virtual Machine</a>
+   <br /><br />
+
+* <a target="_blank" href="https://azuredevopslabs.com/labs/devopsserver/handsonlabs/">azuredevopslabs.com/labs/devopsserver/handsonlabs</a> with code at <a target="_blank" href="https://github.com/Microsoft/azuredevopslabs/tree/master/labs/devopsserver/handsonlabs/">github.com/Microsoft/azuredevopslabs/tree/master/labs/devopsserver/handsonlabs</a>, which provides a quick and easy way to evaluate and test (currently only DevOps and Visual Studio) through virtual environments that do not require any complex setup or installation. You can use virtual labs online immediately for free :)
+
+* Search for others in Microsoft's LEARN website:
+
+   <a target="_blank" href="
+   https://learn.microsoft.com/en-us/training/">
+   https://learn.microsoft.com/en-us/training/</a>
+
+* Microsoft offers free student accounts at:
+
+   https://azure.microsoft.com/en-us/free/students/
+
+* CloudAcademy.com licenses include Lab time in some of their monthly subscriptions.
+
+   * <a href="#CloudAcademyLab">VM lab</a>
+   <br /><br />
+
+
+<a name="SignUp"></a>
+
+### Azure sign up deals
+
+* Get a "Microsoft Learn" account for $200 of credits to spend in 30 days and also a year of <a href="#FreeSvcs">free services</a>. See <a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">docs.microsoft.com/en-us/learn/azure/</a> 
+
+   After that instead of "Pay-As-You-Go",
+
+* PROTIP: Obtain Azure credits as a benefit of a monthly license of Visual Studio (even though they don't intend on using the IDE). Azure Subscriptions (like Netflix, Disney+, etc.) are billed monthly.
+
+   * $50/month credits from a $39/mo Visual Studio Professional license
+   * $150/month credits from a $79/mo Visual Studio Enterprise license
+   <br /><br />
+
+   Visual Studio Subscriptions are, as of this writing, NOT offered in the Brazil South and Central India regions, as noted in <a target="_blank" href="https://azure.microsoft.com/en-us/regions/offers/">https://azure.microsoft.com/en-us/regions/offers/</a>.
+
+* Normal sign up for Azure:
+
+   <a target="_blank" href="
+   https://signup.live.com/signup"><strong>
+   https://signup.live.com/signup</strong></a>
+
+   PROTIP: Use address with a zip code that's not associated with your home address, and used only for banking.
+
+
+### PHASE 04. Credit Cards
+
+   PROTIP: Microsoft does not force you to pay for a subscription with your credit card until after defining <strong>5 or more users</strong>.
+
+Provide credit card number.
+
+   PROTIP: Microsoft no longer accepts debit cards such as from Walmart <a target="_blank" href="https://www.bluebird.com/">Bluebird</a> VISA card (by American Express).
+   
+   PROTIP: Create a separate card sub-account for each cloud account.
+
+
+<a name="MSAccount"></a>
+
+### Email
+
+PROTIP: Avoid using an email that you use for your own banking, shopping, social media, etc. For continuity with a real cloud, you'll need an email address that you can share and transfer to other people. That's so at a company, you will need to give someone else the password so that if you're ever go on vacation (or get run over or thrown under a bus), your organization can continue.
+
+   In you're in an enterprise company, get an email adddress from a corporate assets administrator. A different (service) account is often created for each department of responsibility.
+
+   PROTIP: In the name include the month and year in the account name (such as johndoe1901@hotmail.com) for 2019-01 (January). Many <strong>create several email accounts</strong> because each Azure subscription includes a $200 credit to spend on any service for the <strong>first 30 days</strong>, free access to <a target="_blank" href="https://azure.microsoft.com/en-us/free/free-account-faq/">Azure products for 12 months</a>. 
+
+
+<a name="Entra"></a>
+
+### Entra (Azure Active Directory/Azure AD/AAD)
+
+   In 2023, Microsoft rebranded "Azure Active Directory (AAD)" or "Azure AD" to <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/new-name">Microsoft Entra ID</a>. [<a target="_blank" href="https://www.youtube.com/watch?v=ThT3n2Yass4">VIDEO</a>]
+
+   > The word "entra" means "entrance" (enter in) in Italian. It's a nod to the fact that Microsoft Entra ID is the gateway to Microsoft 365 and Azure services.
+
+   When someone signs up for a Microsoft cloud service subscription (such as Microsoft Azure, Office 365, Microsoft Intune, etc.), a dedicated instance of <strong>Entra (Azure AD)</strong> is created automatically. 
+
+   READ: <a target="_blank" href="https://microsoftlearning.github.io/AZ-900T0x-MicrosoftAzureFundamentals/Instructions/Walkthroughs/19-Use%20the%20Azure%20Pricing%20Calculator.html"><img width="20" alt="pricing" src="https://code.benco.io/icon-collection/azure-patterns/calculator-pricing-details.svg"></a> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/active-directory/">Entra pricing</a>. 
+
+   https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing
+
+
+   * Entra ID External Identities (B2B/B2C) are licensed separately -> Microsoft Entra External ID
+
+
+<a name="MFA"></a>
+
+### Phone for MFA
+
+   DOTHIS: Recommend how each user can setup MFA. These options are available:
+   * Number of MFA denials to trigger account lockout (from 1 to 99)
+   * Minutes until account lockout counter is reset (from 1 to 1440)
+   * Minutes until account is automatically unlocked (from 1 to 9999)
+   <br /><br />
+
+
+<a name="P1vsP2"></a>
+
+### P1 vs P2 features
+
+   <strong>Premium P1</strong> (included in Microsoft 365 E3) features include Password Protection (custom banned password). Dynamic groups require a Premium P1 license.
+
+      * <strong>Conditional access</strong>
+      * Group assignment to applications
+      * Advanced group management (dynamic groups, naming policies, expiration, default classification)
+
+      * Cloud app discovery (Microsoft Defender for Cloud Apps)
+      * Application proxy for on-premises, header-based, and integrated Windows authentication
+      * Service level agreements (SLAs)
+
+      * Microsoft identity manager user client access license (CAL)
+      * Cross-tenant user synchronization
+      * Advanced security and usage reports
+
+      * Automated user provisioning to on-premises apps
+      * Automated group provisioning to apps
+
+      * Self-service password reset (SSPR)
+      * Terms of use attestation
+      * Basic access certifications and reviews
+      * Basic entitlement management
+      * Entitlement management – separation of duties
+
+      * Risk level and risk detail fields are hidden to those with just the Entra ID Premium P1 edition.
+      * Advanced detections (such as unfamiliar sign-in properties) not covered by license appear under the name Sign-in with additional risk detected. 
+      * Privileged identity management (PIM)
+      <br /><br />
+
+   <strong>Premium P2</strong> (included in Microsoft 365 E5) includes all P1 features plus really cool <strong>"Identity Protection"</strong> with policies Assignment to all users.
+      * Identity governance/protection dashboard
+      * Risk-based Conditional Access (sign-in risk, user risk)
+      * Machine-learning assisted access certifications and reviews
+      * Authentication context (step-up authentication)
+      * Device and application filters for Conditional Access
+      * Token protection
+      * Vulnerabilities and risky accounts
+      * Risk events investigation, security information and event management (SIEM) connectivity
+      * Self-service entitlement management (My Access)
+      * Entitlement management with Verified ID
+      * Lifecycle workflows
+      <br /><br />
+
+   The new <strong>$7/person Microsoft Entra ID Governace</strong> offering adds:
+      * Identity governance dashboard
+      * Entitlement management with Verified ID
+      * Lifecycle workflows
+      * <strong>Machine learning assisted</strong> access certifications and reviews
+      <br /><br />
+
+   * Multi-factor authentication registration policy to Require MFA
+
+   * User risk remediation policy to require password change, with review of number of users impacted
+
+   * Sign-in remediation policy to automate analysis of signals from each sign-in, both real-time and offline, and calculates a risk score based on the probability that the sign-in wasn't performed by the user. Administrators can decide based on this risk score signal to enforce organizational requirements. Administrators can choose to block access, allow access, or allow access but require multi-factor authentication. If risk is detected, users can perform multi-factor authentication to self-remediate and close the risky sign-in event to prevent unnecessary noise for administrators.
+
+   * Investigate risks using data in the portal.
+
+   * Export risk detection data to third-party utilities for further analysis.
+
+   Users on another Entra ID (B2B) or public IDP (B2C).
+
+
+<a name="Office365"></a>
+
+### Office 365 SaaS Subscription
+
+   Microsoft 365 subscribers have additional AAD/Entra licensing options:
+   * Entra ID Free has a 500,000 object limit, which includes MFA for O365 services
+   * + $1/mo./user Basic for group-base access management with SLAs
+   * + $6/mo./user P1 for conditional access based on device/location & MFA for on-prem. services
+   * + $9/mo./user P2 for Identity Protection, Access reviews, Privileged Identity Management
+   <br /><br />
+
+1. Sign up for Office 365 Trial at 
+
+   https://www.microsoft.com/en-us/microsoft-365/enterprise/office-365-e5?activetab=pivot:overviewtab
+   
+1. Click the "Try for free" link and go through the verification steps.
+
+   IMPORTANT: You are assigned an <tt>@onmicrosoft.com</strong> domain and individual account.
+
+1. To view the time remaining within the free period, use your "work account" at:
+   
+   <a target="_blank" href="https://admin.microsoft.com/adminportal/home?#/subscriptions">
+   https://admin.microsoft.com/adminportal/home?#/subscriptions</a>
+
+1. The administrator of the work account emails needs to configure DNS entry at the email server host: TXT name @, TXT value "MS=12234..." with TTL 3600.
 
 <hr />
 
-Let's dive in with the <strong>technical</strong> now, with <a href="#PeopleStuff">people stuff</a> further down.
+<a name="Portal"></a>
 
-   * <a href="#URLs">All URLs for Azure I've found</a> 
-   * <a target="_blank" href="https://wilsonmar.github.io/acronyms/">Acronyms (three letters and otherwise)</a>
-   * <a href="#naming-abbreviations">Naming Conventions</a>
-   * <a href="#FreeSvcs">First year free services on Azure</a>
+### portal.azure.com GUI
+
+1. Use your default internet browser (Apple Safari, Microsoft Edge, Google Chrome).
+1. On the initial (first time) new Subscription entry pop-up: Azure Advisor
+
+   ### Azure Advisor
+
+   On initial entry into the portal, Azure greets you with a pop-up about Azure Advisor.
+
+   <a target="_blank" href="https://azure.microsoft.com/en-us/services/advisor/"><img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-patterns/advisor-blue.svg">
+   Azure Advisor</a> provides <strong>recommendations</strong> by categories of the <a target="_blank" href="https://wilsonmar.github.io/well-architected-cloud/">"Well-Architected (Cloud) Framework"</a>:
+   * Cost
+   * Security
+   * Reliability
+   * Operational excellence
+   * Performance
    <br /><br />
 
-qqq
+   (but not "monitoring")
+
+   <a name="Dashboard"></a>
+
+   ### Dashboard
+
+1. For <a href="#Dashboard">Dashboard</a>, hold down G and press <strong>D</strong>.
+
+   In the left menu, where is the menu item for Users (the one most often used by Administrators)?
+
+1. PROTIP: Click Dashboard to configure it with Users at the upper-left.
+1. Get rid of an item by clicking the "..." to "Remove from dashboard" or New Dashboard.
+1. To rearrange location, click the "..." on any item and select "Customize".
+1. Click "Edit" from the command bar to search for Users, Add.
+1. Click "Save" at the top.
+
+
+   <a name="LicenseTypes"></a>
+
+   ### License types of Subscriptions
+
+   BTW, billing is associated with <strong>Management Subscriptions</strong> with names such as "Pay-as-you-go..."
+
+
+<a name="Enterprise+discounts"></a>
+
+### Enterprise discounts
+
+   Available to Enterprise customers only: <a target="_blank" href="https://cloudacademy.com/course/understanding-azure-pricing-and-support/planning-and-management/">15% Discounts on Public Prices</a>
+
+
+<a name="FreeSvcs"></a>
+
+### First year free services
+
+<a target="_blank" href="https://azure.microsoft.com/en-us/free/free-account-faq/">
+https://azure.microsoft.com/en-us/free/free-account-faq</a> lists services which Microsoft offers free for the first year:
+
+   * Compute: 750 hours of B1S Linux VMs
+   * Compute: 750 hours of B1S Windows VMs
+   * Storage: Manage Disks 64 GB x 2
+   * Storage SQL: up to 250 GB
+   * Storage File: 5GB
+   * Storage Blobs: 5 GB
+   * Cosmo DB up to 5 GB 400 request units
+   * Network bandwidth: 15 GB outbound data transfer
+   * AI & Machine Learning services?
+   <br /><br />
+
+   TODO: HANDS-ON: Make use of them without spending any money of your own!
 
 
 <hr />
@@ -293,224 +598,6 @@ and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-archit
 
 <hr />
 
-<a name="Starter+Account"></a>
-
-## PHASE 01. Starter Account
-
-This chapter explains Best Practics and efficiency Tips for all Users. 
-
-   * <a href="#BrowserProfiles">Setup & Use Browser Profiles</a>
-   * <a href="#Free+Subscriptions">Free Subscriptions</a>
-
-<hr />
-
-<a name="BrowserProfiles"></a>
-
-### Setup & Use Browser Profiles
-
-Websites (including Azure) store your browser history, what account you logged in, etc. locally in "cookies" associated with your browser account.
-
-That's how you get returned to the last account used when you go back to a website.
-
-PROTIP: Setup <strong>different browser profiles</strong> on the same browser, associated with different profile avatars and colors: <strong>one for each account (email)</strong>.
-
-1. Click your browser's avatar picture at the upper-right corner:
-
-   * The <a href="#MSAccount">Learn account</a> using your personal email (such as at gmail.com).
-   * The account associated with your Visual Studio benefit (using your work email)
-   * Each of your work accounts (to do your job as an Administrator).
-   <br /><br />
-
-1. Do the above for each browser (Google Chrome, Microsoft Edge, Firefox, etc.).
-
-
-### Free Subscriptions
-
-DEFINITION: A "Subscription" in Azure is the account for <strong>billing</strong> to payment options such as a credit card or invoice account setup with a Microsoft salesperson.
-
-* Some "Exercises" in Microsoft Learn provide FREE "MICROSOFT LEARN SANDBOX" temporary "Concierge" subscription access one or two hours at a time. 
-
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/create-windows-virtual-machine-in-azure/3-exercise-create-a-vm">Create Windows Virtual Machine</a>
-
-* <a target="_blank" href="https://azuredevopslabs.com/labs/devopsserver/handsonlabs/">azuredevopslabs.com/labs/devopsserver/handsonlabs</a> with code at <a target="_blank" href="https://github.com/Microsoft/azuredevopslabs/tree/master/labs/devopsserver/handsonlabs/">github.com/Microsoft/azuredevopslabs/tree/master/labs/devopsserver/handsonlabs</a>, which provides a quick and easy way to evaluate and test (currently only DevOps and Visual Studio) through virtual environments that do not require any complex setup or installation. You can use virtual labs online immediately for free :)
-
-* Search for others in Microsoft's LEARN website:
-
-   <a target="_blank" href="
-   https://learn.microsoft.com/en-us/training/">
-   https://learn.microsoft.com/en-us/training/</a>
-
-* Microsoft offers free student accounts at:
-
-   https://azure.microsoft.com/en-us/free/students/
-
-* CloudAcademy.com licenses include Lab time in some of their monthly subscriptions.
-
-   * <a href="#CloudAcademyLab">VM lab</a>
-   <br /><br />
-
-### Azure first-timer deals
-
-1. Get a "Microsoft Learn" account for $200 of credits to spend in 30 days and also a year of <a href="#FreeSvcs">free services</a>. See <a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">docs.microsoft.com/en-us/learn/azure/</a> 
-
-   After that instead of "Pay-As-You-Go",
-
-1. PROTIP: Obtain Azure credits as a benefit of a monthly license of Visual Studio (even though they don't intend on using the IDE). Azure Subscriptions (like Netflix, Disney+, etc.) are billed monthly.
-
-   * $50/month credits from a $39/mo Visual Studio Professional license
-   * $150/month credits from a $79/mo Visual Studio Enterprise license
-   <br /><br />
-
-   Visual Studio Subscriptions are, as of this writing, NOT offered in the Brazil South and Central India regions, as noted in <a target="_blank" href="https://azure.microsoft.com/en-us/regions/offers/">https://azure.microsoft.com/en-us/regions/offers/</a>.
-
-   
-<a name="FreeSvcs"></a>
-
-### First year free services
-
-<a target="_blank" href="https://azure.microsoft.com/en-us/free/free-account-faq/">
-https://azure.microsoft.com/en-us/free/free-account-faq</a> lists services which Microsoft offers free for the first year:
-
-   * Compute: 750 hours of B1S Linux VMs
-   * Compute: 750 hours of B1S Windows VMs
-   * Storage: Manage Disks 64 GB x 2
-   * Storage SQL: up to 250 GB
-   * Storage File: 5GB
-   * Storage Blobs: 5 GB
-   * Cosmo DB up to 5 GB 400 request units
-   * Network bandwidth: 15 GB outbound data transfer
-   * AI & Machine Learning services?
-   <br /><br />
-
-   TODO: HANDS-ON: Make use of them without spending any money of your own!
-
-
-### Office 365 Trial Subscription
-
-1. Sign up for Office 365 Trial at 
-
-   https://www.microsoft.com/en-us/microsoft-365/enterprise/office-365-e5?activetab=pivot:overviewtab
-   
-1. Click the "Try for free" link and go through the verification steps.
-
-   IMPORTANT: You are assigned an <tt>@onmicrosoft.com</strong> domain and individual account.
-
-1. To view the time remaining within the free period, use your "work account" at:
-   
-   <a target="_blank" href="https://admin.microsoft.com/adminportal/home?#/subscriptions">
-   https://admin.microsoft.com/adminportal/home?#/subscriptions</a>
-
-1. The administrator of the work account emails needs to configure DNS entry at the email server host: TXT name @, TXT value "MS=12234..." with TTL 3600.
-
-<hr />
-
-<a name="MSAccount"></a>
-
-### Microsoft Azure account setup
-
-1. PROTIP: Avoid using an email that you use for your own banking, shopping, social media, etc. For continuity with a real cloud, you'll need an email address that you can share and transfer to other people. That's so at a company, you will need to give someone else the password so that if you're ever go on vacation (or get run over or thrown under a bus), your organization can continue.
-
-   In you're in an enterprise company, get an email adddress from a corporate assets administrator. A different (service) account is often created for each department of responsibility.
-
-   PROTIP: In the name include the month and year in the account name (such as johndoe1901@hotmail.com) for 2019-01 (January). Many <strong>create several email accounts</strong> because each Azure subscription includes a $200 credit to spend on any service for the <strong>first 30 days</strong>, free access to <a target="_blank" href="https://azure.microsoft.com/en-us/free/free-account-faq/">Azure products for 12 months</a>. 
-
-   Azure provide access to more than 25 products that are always free. 
-
-
-   ### Entra (Azure Active Directory)
-
-   In 2023, Microsoft rebranded "Azure Active Directory (AAD)" or "Azure AD" to <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/new-name">Microsoft Entra ID</a>. [<a target="_blank" href="https://www.youtube.com/watch?v=ThT3n2Yass4">VIDEO</a>]
-
-   > The word "entra" means "entrance" (enter in) in Italian. It's a nod to the fact that Microsoft Entra ID is the gateway to Microsoft 365 and Azure services.
-
-   When someone signs up for a Microsoft cloud service subscription (such as Microsoft Azure, Office 365, Microsoft Intune, etc.), a dedicated instance of <strong>Entra (Azure AD)</strong> is created automatically. 
-
-   READ: <a target="_blank" href="https://microsoftlearning.github.io/AZ-900T0x-MicrosoftAzureFundamentals/Instructions/Walkthroughs/19-Use%20the%20Azure%20Pricing%20Calculator.html"><img width="20" alt="pricing" src="https://code.benco.io/icon-collection/azure-patterns/calculator-pricing-details.svg"></a> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/active-directory/">Entra pricing</a>. 
-
-   https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing
-
-   Microsoft 365 subscribers have additional AAD/Entra licensing options:
-   * Entra ID Free has a 500,000 object limit, which includes MFA for O365 services
-   * + $1/mo./user Basic for group-base access management with SLAs
-   * + $6/mo./user P1 for conditional access based on device/location & MFA for on-prem. services
-   * + $9/mo./user P2 for Identity Protection, Access reviews, Privileged Identity Management
-   * Entra ID External Identities (B2B/B2C) are licensed separately -> Microsoft Entra External ID
-   <br /><br />
-
-   DOTHIS: Recommend how each user can setup MFA. These options are available:
-   * Number of MFA denials to trigger account lockout (from 1 to 99)
-   * Minutes until account lockout counter is reset (from 1 to 1440)
-   * Minutes until account is automatically unlocked (from 1 to 9999)
-   <br /><br />
-
-   <strong>Premium P1</strong> (included in Microsoft 365 E3) features include Password Protection (custom banned password). Dynamic groups require a Premium P1 license.
-      * <strong>Conditional access</strong>
-      * Group assignment to applications
-      * Advanced group management (dynamic groups, naming policies, expiration, default classification)
-
-      * Cloud app discovery (Microsoft Defender for Cloud Apps)
-      * Application proxy for on-premises, header-based, and integrated Windows authentication
-      * Service level agreements (SLAs)
-
-      * Microsoft identity manager user client access license (CAL)
-      * Cross-tenant user synchronization
-      * Advanced security and usage reports
-
-      * Automated user provisioning to on-premises apps
-      * Automated group provisioning to apps
-
-      * Self-service password reset (SSPR)
-      * Terms of use attestation
-      * Basic access certifications and reviews
-      * Basic entitlement management
-      * Entitlement management – separation of duties
-
-      * Risk level and risk detail fields are hidden to those with just the Entra ID Premium P1 edition.
-      * Advanced detections (such as unfamiliar sign-in properties) not covered by license appear under the name Sign-in with additional risk detected. 
-      * Privileged identity management (PIM)
-      <br /><br />
-
-   <strong>Premium P2</strong> (included in Microsoft 365 E5) includes all P1 features plus really cool <strong>"Identity Protection"</strong> with policies Assignment to all users.
-      * Identity governance/protection dashboard
-      * Risk-based Conditional Access (sign-in risk, user risk)
-      * Machine-learning assisted access certifications and reviews
-      * Authentication context (step-up authentication)
-      * Device and application filters for Conditional Access
-      * Token protection
-      * Vulnerabilities and risky accounts
-      * Risk events investigation, security information and event management (SIEM) connectivity
-      * Self-service entitlement management (My Access)
-      * Entitlement management with Verified ID
-      * Lifecycle workflows
-      <br /><br />
-
-   The new <strong>$7/person Microsoft Entra ID Governace</strong> offering adds:
-      * Identity governance dashboard
-      * Entitlement management with Verified ID
-      * Lifecycle workflows
-      * <strong>Machine learning assisted</strong> access certifications and reviews
-      <br /><br />
-
-   * Multi-factor authentication registration policy to Require MFA
-
-   * User risk remediation policy to require password change, with review of number of users impacted
-
-   * Sign-in remediation policy to automate analysis of signals from each sign-in, both real-time and offline, and calculates a risk score based on the probability that the sign-in wasn't performed by the user. Administrators can decide based on this risk score signal to enforce organizational requirements. Administrators can choose to block access, allow access, or allow access but require multi-factor authentication. If risk is detected, users can perform multi-factor authentication to self-remediate and close the risky sign-in event to prevent unnecessary noise for administrators.
-
-   * Investigate risks using data in the portal.
-
-   * Export risk detection data to third-party utilities for further analysis.
-
-   Users on another Entra ID (B2B) or public IDP (B2C).
-
-
-   <a name="Enterprise+discounts"></a>
-
-   ### Enterprise discounts
-
-   Available to Enterprise customers only: <a target="_blank" href="https://cloudacademy.com/course/understanding-azure-pricing-and-support/planning-and-management/">15% Discounts on Public Prices</a>
-
-
 <a name="Tenants"></a>
 
 ## Phase 07. Tenants
@@ -530,41 +617,6 @@ https://azure.microsoft.com/en-us/free/free-account-faq</a> lists services which
 
    PROTIP: Microsoft does not accept VOIP number such as those from Googgle Voice.
    They require a cell number from a cell carrier (Verizon, ATT, etc.).
-
-   ## PHASE 04. Credit Cards
-
-4. Provide credit card number.
-
-   BIG PROTIP: Microsoft no longer accepts debit cards such as from Walmart <a target="_blank" href="https://www.bluebird.com/">Bluebird</a> VISA card (by American Express).
-   
-5. PROTIP: Create a separate card sub-account for each cloud account.
-
-
-   <a name="SignUp"></a>
-
-   ### Sign Up for Azure
-
-1. Sign up for Azure:
-
-   <a target="_blank" href="
-   https://signup.live.com/signup"><strong>
-   https://signup.live.com/signup</strong></a>
-
-1. PROTIP: After defining <strong>5 users</strong>, you are forced to sign-up for and pay for a subscription with your credit card.
-
-   PROTIP: Use address with a zip code that's not associated with your home address, and used only for banking.
-
-   Multiple subscriptions can be created under a single Azure account (Dev, Test, Staging, Production, Logging,  Demo, Training, DR, etc.). This is particularly useful for businesses because:
-
-   DEFINITION: A Subscription is your "bank account" / credit card.
-
-   PROTIP: access control and billing occur at the subscription level, not the account level.
-
-   PROTIP: Each Subscription can only trust a single AAD/Entra directory.
-
-   Transfer ownership of a subscription, such as to a central accounting department.
-
-   Add additional subscriptions when you may exceed limits within a subscription: # VNets.
 
 
 
@@ -808,7 +860,9 @@ A <strong>security baseline</strong> is a snapshot in time of a system's current
 
 <a name="SecControls"></a>
 
-### Security Controls in Benchmarks
+### Azure Security Benchmarks (ASB)
+
+DEFINITION: A <strong>benchmark</strong> is an individual check (evaluation) of a system's setting, such as the patch level of an application installed, to determine whether best practices (security controls) are employed (which in turn should reduce the attack surface of the system).
 
 Several organizations have defined for the industry specific <strong>"controls"</strong> (<strong>improvement actions</strong>):
    * <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks">CIS (Center for Internet Security) Controls v8 Benchmarks</a>
@@ -816,13 +870,7 @@ Several organizations have defined for the industry specific <strong>"controls"<
    * PCI-DSS v3.2.1
    <br /><br />
 
-A <strong>benchmark</strong> is an individual check (evaluation) of a system's setting, such as the patch level of an application installed, to determine whether best practices (security controls) are employed (which in turn should reduce the attack surface of the system).
-
-In <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview">2021</a>, Microsoft published its prescriptive best-practice framework in its MCSB (<strong>Microsoft Cybersecurity Security Benchmarks</strong>), latest version 3 as of March 30, 2023.
-the MCSB aims to improve the security of cloud-centric workloads, data, and services on Azure, perhaps in multi-cloud environments. 
-
-Microsoft grouped its definition of security controls under <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview
-">12 Control Domains</a>. Codes (in parentheses) for each control domain are used as a prefix to name specific controls:
+With the aim of improving the security of cloud-centric workloads, data, and services on Azure, perhaps in multi-cloud environments, in <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview">2021</a> Microsoft published its prescriptive best-practice framework in its MCSB (<strong>Microsoft Cybersecurity Security Benchmarks</strong>). <a target="_blank" href="https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Security%20Benchmark/3.0">Version 3 as of March 30, 2023 is here as the  azure-security-benchmark-v3.0.xlsx Microsoft's Excel spreadsheet file for</a> <a target="_blank" href="https://github.com/MicrosoftDocs/SecurityBenchmarks/raw/master/Azure%20Security%20Benchmark/3.0/azure-security-benchmark-v3.0.xlsx">download</a>. It presents 85 Security Principles for each security control under <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview">12 Control Domains</a> corresponding to specific to each CIS, NIST, and PCI-DSS specification.
 
 1. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-network-security">Network security (NS)</a>
    * NS-1: Establish network segmentation boundaries
@@ -835,6 +883,7 @@ Microsoft grouped its definition of security controls under <a target="_blank" h
    * NS-8: Detect and disable insecure services and protocols
    * NS-9: Connect on-premises or cloud network privately
    * NS-10: Ensure Domain Name System (DNS) security
+   <br /><br />
 
 2. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-identity-management">Identity Management (IM)</a>
    * IM-1: Use centralized identity and authentication system
@@ -846,6 +895,7 @@ Microsoft grouped its definition of security controls under <a target="_blank" h
    * IM-7: Restrict resource access based on conditions
    * IM-8: Restrict the exposure of credentials and secrets
    * IM-9: Secure user access to existing applications
+   <br /><br />
 
 3. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-privileged-access">Privileged Access (PA)</a>
    * PA-1: Separate and limit highly privileged/administrative users
@@ -856,6 +906,7 @@ Microsoft grouped its definition of security controls under <a target="_blank" h
    * PA-6: Use privileged access workstations
    * PA-7: Follow just enough administration (least privilege) principle
    * PA-8 Determine access process for cloud provider support
+   <br /><br />
 
 4. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-data-protection">Data Protection (DP)</a>
    * DP-1: Discover, classify, and label sensitive data
@@ -866,6 +917,7 @@ Microsoft grouped its definition of security controls under <a target="_blank" h
    * DP-6: Use a secure key management process
    * DP-7: Use a secure certificate management process
    * DP-8: Ensure security of key and certificate repository
+   <br /><br />
 
 5. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-asset-management">Asset Management (AM)</a>
    * AM-1: Track asset inventory and their risks
@@ -873,6 +925,7 @@ Microsoft grouped its definition of security controls under <a target="_blank" h
    * AM-3: Ensure security of asset lifecycle management
    * AM-4: Limit access to asset management
    * AM-5: Use only approved applications in virtual machine
+   <br /><br />
 
 6. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-logging-threat-detection">Logging and Threat Detection (LT)</a>
    * LT-1: Enable threat detection capabilities
@@ -882,6 +935,7 @@ Microsoft grouped its definition of security controls under <a target="_blank" h
    * LT-5: Centralize security log management and analysis
    * LT-6: Configure log storage retention
    * LT-7: Use approved time synchronization sources
+   <br /><br />
 
 7. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-incident-response">Incident Response (IR)</a>
    * IR-1: Preparation - update incident response plan and handling process
@@ -891,6 +945,7 @@ Microsoft grouped its definition of security controls under <a target="_blank" h
    * IR-5: Detection and analysis - prioritize incidents
    * IR-6: Containment, eradication and recovery - automate the incident handling
    * IR-7: Post-incident activity - conduct lessons learned and retain evidence
+   <br /><br />
 
 8. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-posture-vulnerability-management">Posture and Vulnerability Management (PV)</a>
    * PV-1: Define and establish secure configurations
@@ -900,17 +955,20 @@ Microsoft grouped its definition of security controls under <a target="_blank" h
    * PV-5: Perform vulnerability assessments
    * PV-6: Rapidly and automatically remediate vulnerabilities
    * PV-7: Conduct regular red team operations
+   <br /><br />
 
 9. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-endpoint-security">Endpoint Security (ES)</a>
    * ES-1: Use Endpoint Detection and Response (EDR)
    * ES-2: Use modern anti-malware software
    * ES-3: Ensure anti-malware software and signatures are updated
+   <br /><br />
 
 11. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-backup-recovery">Backup and Recovery (BR)</a>
    * BR-1: Ensure regular automated backups
    * BR-2: Protect backup and recovery data
    * BR-3: Monitor backups
    * BR-4: Regularly test backup
+   <br /><br />
 
 11. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-devops-security">DevOps Security (DS)</a>
    * DS-1: Conduct threat modeling
@@ -920,6 +978,7 @@ Microsoft grouped its definition of security controls under <a target="_blank" h
    * DS-5: Integrate dynamic application security testing into DevOps pipeline
    * DS-6: Enforce security of workload throughout DevOps lifecycle
    * DS-7: Enable logging and monitoring in DevOps
+   <br /><br />
 
 12. <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/mcsb-governance-strategy">Governance and Strategy (GS)</a>
    * GS-01: Align organization roles, responsibilities and accountabilities
@@ -933,11 +992,13 @@ Microsoft grouped its definition of security controls under <a target="_blank" h
    * GS-09: Define and implement endpoint security strategy
    * GS-10: Define and implement DevOps security strategy
    * GS-11: Define and implement multi-cloud security strategy
+   <br /><br />
 
-Additional details about each control (above) are in Microsoft's Excel spreadsheet file for download at<br />
-<a target="_blank" href="https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Security%20Benchmark/3.0">azure-security-benchmark-v3.0.xlsx</a>.
+### The "Kill Chain"
 
-REMEMBER: Use of Defender involves <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/">additional charges</a> (to each server, container, database, storage, app service).
+Here are the internal risks and external threats (exploits) we need to be vigilent aginst: 
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"><img alt="az-defenders-3360x1602.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"><br /><em>Click image for full page</em></a>
 
 
 <a name="Defenders"></a>
@@ -949,15 +1010,11 @@ Microsoft has a "Defender" offering for each type of product:
 
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-for-identity">MS Defender for Identity</a>
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-office-365">MS Defender for Office 365</a>
-   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/endpoint-security/microsoft-defender-iot">MS Defender for IoT (& OT)</a>
+   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/endpoint-security/microsoft-defender-iot">MS Defender for IoT (& OT)</a> Internet of Things (and Operational Technologies)
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/endpoint-security/microsoft-defender-endpoint">MS Defender for Endpoint</a>
    * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-devops#">MS Defender for DevOps</a>
-   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-cloud">MS Defender for Cloud</a> <a target="_blank" href="https://azure.microsoft.com/en-us/products/defender-for-cloud/">Product</a> [<a target="_blank" href="https://www.youtube.com/watch?v=lGYVMjgn5tY">Intro video</a> Security Seolutions, Work Automation triggers]
+   * <a target="_blank" href="https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-cloud">MS Defender for Cloud</a> <a target="_blank" href="https://azure.microsoft.com/en-us/products/defender-for-cloud/">Product</a> [<a target="_blank" href="https://www.youtube.com/watch?v=lGYVMjgn5tY">Intro video</a> Security Solutions, Work Automation triggers]. <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/defender-for-cloud/">Pricing</a> (to each server, container, database, storage, app service).
    <br /><br />
-
-One for each step in the "kill chain" of exploits and defenses: 
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"><img alt="az-defenders-3360x1602.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690414718/az-defenders-3360x1602_nw8vql.png"><br /><em>Click image for full page</em></a>
 
 References:
    - Azure Security Center: https://github.com/Azure/Azure-Security-Center reroutes to
@@ -1309,7 +1366,8 @@ https://levelup.gitconnected.com/build-a-custom-url-shortener-using-azure-functi
 
 ## PHASE 03. Subscriptions
 
-<a target="_blank" href="https://www.youtube.com/watch?v=LMAC0IIYSJM&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=17">VIDEO KnowOps</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=LMAC0IIYSJM&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=17">VIDEO KnowOps</a>
+   <br /><br />
 
 At the <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade">Subscription pane</a>
 
@@ -1322,7 +1380,19 @@ There can be multiple Subscriptions per tenant (e.g. for depts.).
    * Multi-region
    <br /><br />
 
-The 2000 role assignments limit per subscription is fixed and cannot be increased.
+   Multiple subscriptions can be created under a single Azure account (Dev, Test, Staging, Production, Logging,  Demo, Training, DR, etc.). This is particularly useful for businesses because:
+
+   DEFINITION: A Subscription is your "bank account" / credit card.
+
+   PROTIP: access control and billing occur at the subscription level, not the account level.
+
+   PROTIP: Each Subscription can only trust a single AAD/Entra directory.
+
+   Transfer ownership of a subscription, such as to a central accounting department.
+
+   Add additional subscriptions when you may exceed limits within a subscription: # VNets.
+
+REMEMBER: The 2000 role assignments limit per subscription is fixed and cannot be increased.
 
 Subscription types:
    * Azure pass (e.g. with a course)
@@ -1331,8 +1401,6 @@ Subscription types:
    * Pay-as-you-go (most common)
    * Enterprise (involves a minimum commitment)
    <br /><br />
-
-
 
 
 <hr />
@@ -1468,49 +1536,6 @@ interactive map showing a point for each region's Longitude and Latitude</a> wit
 1. <a target="_blank" href="https://www.azurespeed.com/Information/AzureIpRanges">IP addresses of each region</a>
 
 <hr />
-
-<a name="Portal"></a>
-
-## portal.azure.com GUI
-
-1. Use your default internet browser (Apple Safari, Microsoft Edge, Google Chrome).
-1. On the initial (first time) new Subscription entry pop-up: Azure Advisor
-
-   ### Azure Advisor
-
-   On initial entry into the portal, Azure greets you with a pop-up about Azure Advisor.
-
-   <a target="_blank" href="https://azure.microsoft.com/en-us/services/advisor/"><img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-patterns/advisor-blue.svg">
-   Azure Advisor</a> provides <strong>recommendations</strong> by categories of the "Well-Architected Framework" (but not "monitoring"):
-   * Cost
-   * Security
-   * Reliability
-   * Operational excellence
-   * Performance
-   <br /><br />
-
-
-   <a name="Dashboard"></a>
-
-   ### Dashboard
-
-1. For <a href="#Dashboard">Dashboard</a>, hold down G and press <strong>D</strong>.
-
-   In the left menu, where is the menu item for Users (the one most often used by Administrators)?
-
-1. PROTIP: Click Dashboard to configure it with Users at the upper-left.
-1. Get rid of an item by clicking the "..." to "Remove from dashboard" or New Dashboard.
-1. To rearrange location, click the "..." on any item and select "Customize".
-1. Click "Edit" from the command bar to search for Users, Add.
-1. Click "Save" at the top.
-
-
-   <a name="LicenseTypes"></a>
-
-   ### License types of Subscriptions
-
-   BTW, billing is associated with <strong>Management Subscriptions</strong> with names such as "Pay-as-you-go..."
-
 
 
    ### Support Plans (with Pricing)
