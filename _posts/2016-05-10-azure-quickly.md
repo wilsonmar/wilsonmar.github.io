@@ -416,11 +416,21 @@ PROTIP: Avoid using an email that you use for your own banking, shopping, social
 
 <hr />
 
+<a name="ARM"></a>
+
 <a name="Portal"></a>
 
 ### portal.azure.com GUI
 
+   References:
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-overview">DOC</a>:
+   <br /><br />
+
 1. Use your default internet browser (Apple Safari, Microsoft Edge, Google Chrome).
+
+1. At <a target="_blank" href="https://portal.azure.com/">
+   https://portal.azure.com</a>
+
 1. On the initial (first time) new Subscription entry pop-up: Azure Advisor
 
    ### Azure Advisor
@@ -451,6 +461,107 @@ PROTIP: Avoid using an email that you use for your own banking, shopping, social
 1. To rearrange location, click the "..." on any item and select "Customize".
 1. Click "Edit" from the command bar to search for Users, Add.
 1. Click "Save" at the top.
+
+
+   ## Portal Settings
+
+1. Click the "wheel" icon at the top for Portal Settings:
+   
+1. PROTIP: If you wear glasses on video calls, reduce glare by clicking "Black" for the dark theme. You may not like the putrid yellow font associated with High Contrast:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/111880191-8c1cb980-896f-11eb-9c8b-86d556a46843.png"><img width="1165" alt="azure-portal-dark-2330x1246" src="https://user-images.githubusercontent.com/300046/111880191-8c1cb980-896f-11eb-9c8b-86d556a46843.png"></a>
+
+
+   ### GUI Navigation Hubs, Panes, Blades
+
+   DEFINITION: A <strong>Hub</strong> is a category for navigation within the left Azure Portal menu that is opened by clicking the upper-left accordion icon alt.
+
+   Panes that appear on the right are called "blades".
+   A <strong>Blade</strong> is a portion of the page that pops up as you navigate in the portal. (Note: A Blade is <strong>contextual</strong> and tied to your navigation. This will become more intuitive as you use the portal.) 
+
+   Opening a series of blades is called a <strong>journey</strong>.
+
+
+   ### Dock hamburger menu
+
+1. Click the "hamburger" (home) icon at the upper-left corner for English descriptions of each icon on the left edge.
+
+1. Click the "<" icon at top of the separator to collapse ("dock") or expand the text of services listed on the left menu.
+
+   PROTIP: To set its expansion state permanently, click the ‘settings cog’ icon in the top right of portal and click the ‘Choose your default mode for the portal menu’ option. Setting that to docked or undocked.
+
+
+   <a name="Keyboard_Shortcuts"></a>
+   
+   ### Left Dock Keyboard Shortcuts
+
+1. PROTIP: To keep things simple, I arrange the FAVORITES menu item alphabetically.
+
+   1. App Services
+   2. Advisor
+   3. Entra ID
+   4. Cost Management + Billing
+   5. Function App
+   6. Load balancers
+   7. Monitor
+   8. Security Center
+   9. Storage Accounts
+   11. (0) Virtual Machines
+   <br /><br />
+
+1. ??? Click the <img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/command-1094-Favorite.svg">star icon so it is gold to enable the service to show on the menu or unselect to remove the service from the bar.
+
+   <img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/general-17-Home.svg">Home
+
+1. Drag and drop the Categories in a stable sequence and position you can mouse to quickly:
+
+   Example: I drag the "Billing" icon to the top because I manage the money involved.
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=A0uXwdLDzf4">VIDEO</a> 
+   PROTIP: If you memorize the number of your menu, you'll never need to mouse to the "hamberger" menu again, avoid being distracted by menu text, and recover screen real estate.
+
+1. Hold down G and press a number to view one of the first 10 menu items.
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=ha2ESFCcERQ&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=15" title="Dec 5, 2019">VIDEO</a>: Many find themselves more productive when they don't have to reach for the mouse. Keeping hands on the keyboard reduces a distraction. Thus, it's impressive wizardry during demos.
+
+1. Click the "?" at the top of the page to click <u>Keyboard shortcuts</u>. 
+
+   In there and in <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-keyboard-shortcuts">DOCS</a>, "G+." means <strong>while holding down the G key</strong>, press the period key, which puts the focus on the ">>" icon so you can press Enter to expand or contract the left menu. Press Tab to cycle down the menu.
+
+   PROTIP: You can use the G key as if it's like the Command/Ctrl key because you're not filling out a form. If you see G appear in a form fill field (such as the browser URL), backspace to clear the field, then press Tab off the form fields and try again.
+
+1. Press Esc to escape from the help window.
+
+1. A reminder of the G key is always present at the top of every Azure screen:<br />
+   "Search resources, services, and docs (G+/)", which means hold down G and press / to search.
+
+   PROTIP: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/project/navigation/keyboard-shortcuts?view=azure-devops">Azure DevOps uses more G keys (and M keys as well)</a>.
+
+
+
+   <a name="AllServices"></a>
+
+   ### All Services
+
+1. For <a target="_blank" href="https://portal.azure.com/#allservices"><img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/general-17-Home.svg">All services</a>, hold down G and press <strong>B</strong>.
+
+1. Click "All" for a complete of all services Azure has to offer, arranged within the category order on the left menu.
+
+   PROTIP: This gives you an idea of how vast the Azure offering is, and the product names certification aspirants should know.
+
+
+   <a name="FullScreen"></a>
+
+   ### Full screen toggle
+
+1. To toggle a window to take up the <strong>whole screen</strong> on Windows PCs: press F11 or Alt+Enter or Windows key + up-arrow. On macOS: hold down the command on the right, control on the left, then F (control+command+F). Repeat the keys to un-maximize. This is equivalent to clicking the green "maximize" icon on the upper-left of each app window or double-clicking on the app's title bar. 
+
+   CAUTION: Any window maximized will not be brought up by the keyboard shortcut which cycles through various windows within the app (command+` on macOS; Alt+Tab on Windows PCs). To see the maximized window, you have to cursor near the top edge until the app's menu appears, then pull down the browser's Window menu.
+
+   QUESTION: How to toggle full screen in Azure like on Netflix, which removes menus, breadcrumbs, and command bar? Alt+Space+X on Windows.
+
+1. Switch among windows command+` (at the upper-left corner of the keyboard).
+1. To find text on the page, press command+F.
 
 
    <a name="LicenseTypes"></a>
@@ -2615,114 +2726,6 @@ providing a single-resource point-of-view [i.e. manage a single resource at a ti
 
 Also, instead of 2 racks on ASM, ARM resources can span 3 racks of computers.
 
-<a name="ARM"></a>
-
-## ARM Portal GUI Dashboard Tour #
-
-   References:
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-overview">DOC</a>:
-   <br /><br />
-
-1. At <a target="_blank" href="https://portal.azure.com/">
-   https://portal.azure.com</a>
-
-1. Click the "wheel" icon at the top for Portal Settings:
-   
-1. PROTIP: If you wear glasses on video calls, reduce glare by clicking "Black" for the dark theme. You may not like the putrid yellow font associated with High Contrast:
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/111880191-8c1cb980-896f-11eb-9c8b-86d556a46843.png"><img width="1165" alt="azure-portal-dark-2330x1246" src="https://user-images.githubusercontent.com/300046/111880191-8c1cb980-896f-11eb-9c8b-86d556a46843.png"></a>
-
-
-   ### GUI Navigation Hubs, Panes, Blades
-
-   DEFINITION: A <strong>Hub</strong> is a category for navigation within the left Azure Portal menu that is opened by clicking the upper-left accordion icon alt.
-
-   Panes that appear on the right are called "blades".
-   A <strong>Blade</strong> is a portion of the page that pops up as you navigate in the portal. (Note: A Blade is <strong>contextual</strong> and tied to your navigation. This will become more intuitive as you use the portal.) 
-
-   Opening a series of blades is called a <strong>journey</strong>.
-
-
-   ### Dock hamburger menu
-
-1. Click the "hamburger" (home) icon at the upper-left corner for English descriptions of each icon on the left edge.
-
-1. Click the "<" icon at top of the separator to collapse ("dock") or expand the text of services listed on the left menu.
-
-   PROTIP: To set its expansion state permanently, click the ‘settings cog’ icon in the top right of portal and click the ‘Choose your default mode for the portal menu’ option. Setting that to docked or undocked.
-
-
-   <a name="Keyboard_Shortcuts"></a>
-   
-   ### Left Dock Keyboard Shortcuts
-
-1. PROTIP: To keep things simple, I arrange the FAVORITES menu item alphabetically.
-
-   1. App Services
-   2. Advisor
-   3. Entra ID
-   4. Cost Management + Billing
-   5. Function App
-   6. Load balancers
-   7. Monitor
-   8. Security Center
-   9. Storage Accounts
-   11. (0) Virtual Machines
-   <br /><br />
-
-1. ??? Click the <img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/command-1094-Favorite.svg">star icon so it is gold to enable the service to show on the menu or unselect to remove the service from the bar.
-
-   <img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/general-17-Home.svg">Home
-
-1. Drag and drop the Categories in a stable sequence and position you can mouse to quickly:
-
-   Example: I drag the "Billing" icon to the top because I manage the money involved.
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=A0uXwdLDzf4">VIDEO</a> 
-   PROTIP: If you memorize the number of your menu, you'll never need to mouse to the "hamberger" menu again, avoid being distracted by menu text, and recover screen real estate.
-
-1. Hold down G and press a number to view one of the first 10 menu items.
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=ha2ESFCcERQ&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=15" title="Dec 5, 2019">VIDEO</a>: Many find themselves more productive when they don't have to reach for the mouse. Keeping hands on the keyboard reduces a distraction. Thus, it's impressive wizardry during demos.
-
-1. Click the "?" at the top of the page to click <u>Keyboard shortcuts</u>. 
-
-   In there and in <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-keyboard-shortcuts">DOCS</a>, "G+." means <strong>while holding down the G key</strong>, press the period key, which puts the focus on the ">>" icon so you can press Enter to expand or contract the left menu. Press Tab to cycle down the menu.
-
-   PROTIP: You can use the G key as if it's like the Command/Ctrl key because you're not filling out a form. If you see G appear in a form fill field (such as the browser URL), backspace to clear the field, then press Tab off the form fields and try again.
-
-1. Press Esc to escape from the help window.
-
-1. A reminder of the G key is always present at the top of every Azure screen:<br />
-   "Search resources, services, and docs (G+/)", which means hold down G and press / to search.
-
-   PROTIP: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/project/navigation/keyboard-shortcuts?view=azure-devops">Azure DevOps uses more G keys (and M keys as well)</a>.
-
-
-
-   <a name="AllServices"></a>
-
-   ### All Services
-
-1. For <a target="_blank" href="https://portal.azure.com/#allservices"><img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/general-17-Home.svg">All services</a>, hold down G and press <strong>B</strong>.
-
-1. Click "All" for a complete of all services Azure has to offer, arranged within the category order on the left menu.
-
-   PROTIP: This gives you an idea of how vast the Azure offering is, and the product names certification aspirants should know.
-
-
-   <a name="FullScreen"></a>
-
-   ### Full screen toggle
-
-1. To toggle a window to take up the <strong>whole screen</strong> on Windows PCs: press F11 or Alt+Enter or Windows key + up-arrow. On macOS: hold down the command on the right, control on the left, then F (control+command+F). Repeat the keys to un-maximize. This is equivalent to clicking the green "maximize" icon on the upper-left of each app window or double-clicking on the app's title bar. 
-
-   CAUTION: Any window maximized will not be brought up by the keyboard shortcut which cycles through various windows within the app (command+` on macOS; Alt+Tab on Windows PCs). To see the maximized window, you have to cursor near the top edge until the app's menu appears, then pull down the browser's Window menu.
-
-   QUESTION: How to toggle full screen in Azure like on Netflix, which removes menus, breadcrumbs, and command bar? Alt+Space+X on Windows.
-
-1. Switch among windows command+` (at the upper-left corner of the keyboard).
-1. To find text on the page, press command+F.
 
 
 ### ARM tokens
