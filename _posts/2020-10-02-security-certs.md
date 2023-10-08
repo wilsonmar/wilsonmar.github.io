@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-07-25"
+date: "2023-10-05"
 file: "security-certs"
 title: "Security Certifications"
 excerpt: "There are several (overlapping) ones."
@@ -642,17 +642,27 @@ https://medium.com/@adamgoss/certified-red-team-operator-crto-review-71ea4edef62
 
 Offensive Security is a for-profit company offering courses with labs and certifications:
 
-   * $495 OSCP (Certified Professional) is one of the most difficult to pass because it is part "hazing ritual" and part proctored via webcam. It is a 24-hour time-boxed test where you penetrate of as many machines as you can within a massive virtual environment (which includes Active Directory), using Kali Linux. That's followed by another 24-hour time frame to write (with screenshots) an exam report. You must also pass a background check. The PWK prep course is $1,295. <a target="_blank" href="https://medium.com/@anuragmewar/how-not-to-fail-oscp-on-your-first-attempt-ad-special-b0819523e3">More</a>
+They offer a $5,499/year bundle for unlimited labs and exam attempts.
 
-   * <a target="_blank" href="https://www.offensive-security.com/awe-osee/">OSEE (Offensive Security Exploitation Expert)</a> covers DEP, ASLR evasion, heap spraying, function pointer overwrites. OSEE holders must complete the Advanced Windows Exploitation (AWE) course by Offensive Security held in a live hands-on environment at a Black Hat conference in Las Vegas, NV.
-   
-   That plus pass a rigorous <strong>72-hour practical exam</strong> that includes preparing a comprehensive penetration test report. So this certificate indicates a level of expertise far beyond that of most penetration testers.
+   * PEN-300 Advanced Evasion Techniques and Breaching Defenses class to prep for OSEP
 
-   Topics include: 64-bit Exploitation, Debugging, DEP ByPass, Disarming EMET Mitigations, Exploit Development, Heap Spray, Kernel Driver Exploitation, Kernel Pool Exploitation, Memory Protection Bypass, NX/ASLR Bypass, ROP Chain, Sandbox Escape, Shellcode, WinDBG, Windows Kernel Exploitation.
+   * PEN-103 class to prep for KLCP exam
+
+   * PEN-210 class to prep for OSWP (Wireless Penetration) exam
+
+   * PEN-200 Kali Linux class to prep for $495 OSCP (Certified Professional) is one of the most difficult to pass because it is part "hazing ritual" and part proctored via webcam. It is a 24-hour time-boxed test where you penetrate of as many machines as you can within a massive virtual environment (which includes Active Directory), using Kali Linux. That's followed by another 24-hour time frame to write (with screenshots) an exam report. You must also pass a background check. The PWK prep course is $1,295. <a target="_blank" href="https://medium.com/@anuragmewar/how-not-to-fail-oscp-on-your-first-attempt-ad-special-b0819523e3">More</a>
+
+   * WEB-200 Kali Linus class for OSWA.
+
+   * <a target="_blank" href="https://www.offensive-security.com/awe-osee/">OSEE (Offensive Security Exploitation Expert)</a> covers DEP, ASLR evasion, heap spraying, function pointer overwrites. OSEE holders must complete the Advanced Windows Exploitation (AWE) course by Offensive Security held in a live hands-on environment at a Black Hat conference in Las Vegas, NV.<br /><br />That plus pass a rigorous <strong>72-hour practical exam</strong> that includes preparing a comprehensive penetration test report. So this certificate indicates a level of expertise far beyond that of most penetration testers.<br /><br />Topics tested include: 64-bit Exploitation, Debugging, DEP ByPass, Disarming EMET Mitigations, Exploit Development, Heap Spray, Kernel Driver Exploitation, Kernel Pool Exploitation, Memory Protection Bypass, NX/ASLR Bypass, ROP Chain, Sandbox Escape, Shellcode, WinDBG, Windows Kernel Exploitation.
     
-   * <a target="_blank" href="https://www.offensive-security.com/awae-oswe/">OSWE (OSWE Web Expert)</a> covers web security testing: XSS attacks, SQL injection, XML external entity injection, Weak random token generation, DOM XSS, Server side template injection, Command injection via websockets (black box material)
+   * Take their <a target="_blank" href="https://www.offsec.com/courses/web-300/">web-300</a> class to get <a target="_blank" href="https://www.offensive-security.com/awae-oswe/">OffSec Web Expert</a> designation. It covers web security testing: XSS attacks, SQL injection, XML external entity injection, Weak random token generation, DOM XSS, Server side template injection, Command injection via websockets (black box material)
 
-   * OSCE is being retired. It covered exploits used by attackers to breach security infrastructures
+   * SOC-200 Foundational Security Operations and Defensive Analysis class for OSDA.
+
+   * EXP-312 Advanced macOS Control Bypasses for OSMR.
+
+   * OSCE was retired. It covered exploits used by attackers to breach security infrastructures.
 
 ## SANS
 

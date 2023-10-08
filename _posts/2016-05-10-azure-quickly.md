@@ -26,7 +26,7 @@ PROTIP: Here, all in one page, are <strong>hands-on</strong> steps to introduce 
 
 The set of services to create and manage <strong>resources</strong> (such as network, storage, compute, etc.) in the Azure cloud is called the <strong>Azure Resource Manager</strong> (ARM for short). 
 
-1.  <a href="#Starter+Account"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Use the ARM Portal GUI</a> to get a <a href="#Starter+Account">Starter Azure Account</a> with <a href="#Global+Administrator">Global Administrator</a> permissions. We can then use the CLI and API programmatic interfaces.
+1.  The first person to create Azure resources is the <a href="#Global+Administrator">Global Administrator</a>, using the ARM Portal GUI to get a <a href="#Starter+Account">Starter Azure Account</a>. The Global Admin. is responsible for training other Admins in versioned CLI and API programmatic interfaces used in production.
 
     That's the first phase. To minimize mistakes and abuse at enterprise scale, Azure resources are NOT created until the <strong>26th</strong> phase into the setup process because we first need to establish people "gate-keepers" and technical "guardrails" to limit <strong>Actions</strong> (aka Operations) <strong>RBAC</strong> (Role-based Access Control), which is defined by: the <strong>profile</strong> defined for each <strong>A. Security Principals</strong> limited by <strong>B. Role Definitions</strong> assigned from <strong>C. Scopes</strong> around resources.
 
@@ -38,7 +38,7 @@ The set of services to create and manage <strong>resources</strong> (such as net
 
 2.  <a href="#Administrators"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>System Administrators</strong></a> are identified from within the organization, and given <a href="#EscalatedPermissions">escalated permissions</a> to setup workstations and cloud service resources. associated with an <strong>Azure stack</strong> needed. Here is an example of stacks for a global enterprise:
 
-    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696661164/azure-org-1750x911_m7ylte.png"><img alt="azure-org-1750x911.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696661164/azure-org-1750x911_m7ylte.png"></a>
+    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696752317/azure-org-1749x917_icwqfu.png><img alt="azure-org-1749x917.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696752317/azure-org-1749x917_icwqfu.png"></a>
 
     The hierarchy defines the path of <strong>escalation</strong> if alerts are not addressed on a timely manner.
 
@@ -179,7 +179,7 @@ This chapter explains Best Practices and efficiency Tips for all Users.
 
    * <a href="#BrowserProfiles">Setup & Use Browser Profiles</a>
    * <a href="#Free+Subscriptions">Free Subscriptions</a>
-   * <a href="#SignUp">Azure sign up deals</a>
+   * <a href="#SignUp">Subscription Offers (deals)</a>
 
    * <a href="#MSAccount">Email</a>
    * <a href="#Entra">Entra (Azure Active Directory/Azure AD/AAD)</a>
@@ -248,7 +248,7 @@ DEFINITION: A "Subscription" in Azure is the account for <strong>billing</strong
 
 <a name="SignUp"></a>
 
-### Azure sign up deals
+### Subscription Offers (deals)
 
 * Get a "Microsoft Learn" account for $200 of credits to spend in 30 days and also a year of <a href="#FreeSvcs">free services</a>. See <a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">docs.microsoft.com/en-us/learn/azure/</a> 
 
@@ -260,22 +260,23 @@ DEFINITION: A "Subscription" in Azure is the account for <strong>billing</strong
    * $150/month credits from a $79/mo Visual Studio Enterprise license
    <br /><br />
 
-   Visual Studio Subscriptions are, as of this writing, NOT offered in the Brazil South and Central India regions, as noted in <a target="_blank" href="https://azure.microsoft.com/en-us/regions/offers/">https://azure.microsoft.com/en-us/regions/offers/</a>.
+   PROTIP: Visual Studio Subscriptions are, as of this writing, NOT offered in the Brazil South and Central India regions, as noted in <a target="_blank" href="https://azure.microsoft.com/en-us/regions/offers/">https://azure.microsoft.com/en-us/regions/offers/</a>.
 
-* Normal sign up for Azure:
+* "BizSpark" is Microsoft's effort to encourage start-ups.
+
+* CSP (consultants) may charge less than Microsoft due to incentives provided.
+
+* "Enterprise Agreement Support" are billed using invoices.
+
+* Consumer sign up for Azure:
 
    <a target="_blank" href="
    https://signup.live.com/signup"><strong>
    https://signup.live.com/signup</strong></a>
 
-   PROTIP: Use address with a zip code that's not associated with your home address, and used only for banking.
+   SECURITY PROTIP: Use address with a zip code that's not associated with your home address, and not used for banking.
 
-
-### PHASE 04. Credit Cards
-
-   PROTIP: Microsoft does not force you to pay for a subscription with your credit card until after defining <strong>5 or more users</strong>.
-
-Provide credit card number.
+   PROTIP: Microsoft does not force consumers to pay for a subscription with a credit card until <strong>5 or more users</strong> or initial free vouchers are used up.
 
    PROTIP: Microsoft no longer accepts debit cards such as from Walmart <a target="_blank" href="https://www.bluebird.com/">Bluebird</a> VISA card (by American Express).
    
@@ -2659,7 +2660,7 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 
     For example: Require a tag and its value on resources
 
-    REMEMBER: Tags do not cascade via inheritance like permissions unless a policy allows that.
+    See the <a href="#Tags">Tags</a> section above.
 
     To do remediation, define a Managed Identity.
 
@@ -3217,19 +3218,67 @@ az group create --name "${MY_RG}" \
    TOOL: <a target="_blank" href="https://rapidapi.com/blog/how-to-use-geodb-cities-api/">Lookup nearest city given Longitude & Latitude</a> using the <a target="_blank" href="https://geodb-cities-api.wirefreethought.com/docs/api/get-city-details#/">GeoDB API</a>.
 
 
-   ### Tags
+
+<hr />
+
+<a name="Tags"></a>
+
+## PHASE 11. Tags
 
    PROTIP: Even while during individual development, take a few seconds to add tags in resource creation scripts to enable not just security, accounting, and logging processes, which may provide troubleshooting tools for developers from the beginning.
 
-   Each tag is a "name=value" pair such as <tt>Env=Dev</tt>, <tt>Sensitivity=White</tt>, <tt>Dept=Finance</tt>, <tt>Project=Advance1</tt>, <tt>Customer=Acme</tt>, etc. 
+* To create a Tag using CLI:
 
-1. To create a tag:
+   <pre>MY_TAG_NAME="$
+   DELETE_DATE="2023-12-31"
+   </pre>
 
-   <pre><strong>az resource tag --tags Department=Finance \
-    --name msftlearn-vnet1 \
+   <pre><strong>az resource tag \
+    --name "$MY_TAG_NAME" \
+    --resource-group "$MY_RG" \
     --resource-type "Microsoft.Network/virtualNetworks" \
-    --resource-group "$MY_RG" 
+    --tags Department=Finance DeleteDate="${DELETE_DATE}"
+   Env=TRG
+   Sovereignty=Germany
+   <a href="#Sensitivity">Sensitivity=HIGH</a>
+   Dept=Finance
+   Project=Advance1
+   Customer=A3C2132
+   Usage=Daily
    </strong></pre>
+
+   REMEMBER: Each tag is for a specfic region, Resource Type, Resource Group.
+
+   REMEMBER: Tags do not cascade via inheritance like permissions unless a policy allows that.
+   Child resources don’t inherit tags from group level.
+
+   NAMING CONVENTION: Tags are named with Title Case.
+   Each tag is a "name=value" pair such as 
+   </pre>
+
+   PROTIP: CAUTION: Customer name can be considered confidential, so mask its value with a synonym value in Tags.
+   The same goes for any sensitive value.
+
+   ### Sensitivity 
+
+   DEFINITION: "Sensitivity" refers to the security classification of data tagged.
+
+   PROTIP: The Sensitivity value should be the same SENSITIVITY CLASSIFICATION RANK as used in <a target="_blank" href="https://learn.microsoft.com/en-us/sql/t-sql/statements/add-sensitivity-classification-transact-sql?view=sql-server-ver16">classifying within MS-SQL</a>: NONE, LOW, MEDIUM, HIGH, CRITICAL
+
+   Classification values should also correspond to <a target="_blank" href="https://learn.microsoft.com/en-us/azure/information-protection/aip-classification-and-protection">Azure Information Protection (AIP)</a> which uses <a target="_blank" href="https://learn.microsoft.com/en-us/azure/information-protection/what-is-azure-rms">Azure Rights Management service (Azure RMS)</a> to protect data with uses encryption, identity, and authorization policies:
+
+   * Personal
+   * Public
+   * General
+   * Confidential
+   * Highly Confidential
+   <br /><br />
+
+* Using portal GUI:
+
+1. Get to "Tags" service:
+
+   https://portal.azure.com/#view/HubsExtension/TagsBlade
 
 1. Click "Review + create" if you are not using Tags or if the resource doesn't support tags.
 1. Click "Next: Tags" if you can specify one according to your Tag Naming Convention:
@@ -3245,8 +3294,6 @@ az group create --name "${MY_RG}" \
    * Billing
    <br /><br />
 
-   PROTIP: Child resources don’t inherit tags from group level.
-
    Each tag value is limited to 256 characters for all types of resources. 
    * Environment=Production or Staging or "NPT" (Non-Production/Test)
    * Department or Accounting / cost center Charge Code
@@ -3260,6 +3307,7 @@ az group create --name "${MY_RG}" \
 
 1. Click "Create" after "Validation passed".
 
+   
 
    ### Lock RG to prevent deletion
 
