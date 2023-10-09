@@ -91,7 +91,7 @@ With a paid P2 license for each user to use Azure securely. Most enterprises go 
 
     The hierarchy defines the path of <strong>escalation</strong> if alerts are not addressed on a timely manner.
 
-    The hierarchy also defines which supervisor takes over if a subordinate is not available. 
+    The hierarchy also defines which supervisor takes over if an Administrator is not available. 
 
     To ensure that it's intentional, the more secure enterprises restrict <strong>deletion actions</strong> to be performed only by the administrator above the administrator of a cell in the diagram. 
     
@@ -115,13 +115,14 @@ With a paid P2 license for each user to use Azure securely. Most enterprises go 
 
 15. <strong>IaC Policies</strong> aim to identify vulnerabilities and logic errors before resources are deployed and thus possibly exposed. 
 
-16. A common policy is to ensure that <a href="#Tags">Tags</a> are included with every resource definition to provide the basis for tracking, billing, disposal, and other aspects. 
+16. The most common policy check in IaC is to ensure that <a href="#Tags">Tags</a> are included with every resource so that  billing, disposal, and other aspects of every resource are defined.
  
     PROTIP: IaC Policies and Policy Definitions should ensure that each Resource in the DEV environment contain at least one Tag for billing. In Production, each Resource should be defined with several Tags.
 
     Automation can make it effortless to follow <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">naming conventions</a> by constructing Resource names from various elements.
 
-17. <strong>Policy Definitions</strong> are JSON files that define rules for resources.
+17. <strong>Policy Definitions</strong> are defined in JSON files that define rules for resources.
+
 
 18. <strong>Policy Audits</strong>, which do not block access, but alert about compliance. Their alerts are among other security events and metrics across all subscriptions in the <strong>Security Center</strong> dashboard.
 
@@ -135,7 +136,7 @@ With a paid P2 license for each user to use Azure securely. Most enterprises go 
 
 22. Service Principals are defined for use by ...
 
-23. API-calling applications to access resources.
+23. API-calling applications to access resources such as Storage or web apps.
 
     <strong>Permanent active access</strong> permissions are dangerous to grant because they can be <strong>stolen</strong>. So <strong>Just-in-time</strong> temporary access is provided for ad hoc and limited periods of time after approval by a Privileged Role Administrator. The Administrator uses the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">PIM (Privileged Identity Management)</a> GUI and CLI.
 
