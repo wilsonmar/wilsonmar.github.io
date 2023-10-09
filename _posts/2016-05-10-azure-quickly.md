@@ -22,7 +22,7 @@ PROTIP: Here, all in one page, are <strong>hands-on</strong> steps to introduce 
 
 <a target="_blank" href="https://youtu.be/lwReERW_Pqo"><img align="left" alt="youtube-1024x721.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696234162/youtube-1024x721_ful6ky.png"><strong>Click here for a <strong>step-by-step</strong> 1-minute YouTube video</strong></a> (with no sound) about the <strong>sequence of work</strong> to setup a whole enterprise with Azure technologies in the cloud:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696792593/azure-flow-1724x867_xshdpl.png"><img alt="azure-flow-1724x867.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696792593/azure-flow-1724x867_xshdpl.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696827619/azure-flow-1729x866_yxthbu.png"><img alt="azure-flow-1729x866.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696827619/azure-flow-1729x866_yxthbu.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
 
 The set of services to create and manage <strong>resources</strong> (such as network, storage, compute, etc.) in the Azure cloud is called the <strong>Azure Resource Manager</strong> (ARM for short). 
 
@@ -30,35 +30,64 @@ The set of services to create and manage <strong>resources</strong> (such as net
 
 2.  The first person tasked with creating Azure resources is the <a href="#Global+Administrator">Global Administrator</a> who uses the ARM Portal GUI to get a <a href="#Starter+Account">Starter Azure Account</a> with an initial <strong>Subscription</strong>. 
 
+    <a target="_blank" href="https://redmondmag.com/articles/2023/07/11/microsoft-entra-new-products.aspx">In 2023</a> Microsoft renamed from "Azure AD" (for Azure Active Directory) with <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/compare">Microsoft Entra ID</a> to reference its "Identity as a Service (IDaaS)" solution (like Okta) for apps across cloud and on-premises.
+    
 3.  Global Admins are responsible for creating versioned <strong>CLI</strong> automation, with training, to securely setup workstations (laptops) for ...
 
 4.  <strong>other System Administrators</strong> assigned from within the people organization.
 
-5.  Admins would work with <strong>Finance</strong> to work through financial workflows and oversight of the <strong>Payments</strong> for <strong>billings</strong> associated with each Subscription and <a href="#Licenses">licenses</a>. Bills are paid for by <strong>credit cards or invoices</strong> setup through a Microsoft salesperson or Cloud Service Provider.
+5.  Admins would work with <strong>Finance</strong> to work through financial workflows and oversight of the <strong>Payments</strong> for <strong>billings</strong> associated with each Subscription and <a href="#Licenses">licenses</a>. Bills are paid for by <strong>credit cards or invoices</strong> set through a Microsoft salesperson or Cloud Service Provider.
 
-    PROTIP: A firm decisions on what <strong>Licenses</strong> the enterprise will use minimize rework in automation and workflow documentation. Most enterprises go with the <a href="#P1vsP2">P2</a> for mobile MFA (Multi-Factor) verification, a crucial security feature.
+6.  PROTIP: A firm decision on what <strong>Licenses</strong> the enterprise will pay for can minimize rework in automation efforts and workflow documentation.  
 
-    Licenses are associated with the Entra ID <strong>Tenant</strong> directory Azure created with the initial Subscription.
+With a paid P2 license for each user to use Azure securely. Most enterprises go with the <a href="#P1vsP2">P2</a> for mobile MFA (Multi-Factor) verification, a crucial security feature.
 
-6.  <a href="#Administrators"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>System Administrators</strong></a> are the "gate-keepers" who define IaC (Infrastructure as Code) to setup technical "guardrails" that limit <strong>Actions</strong> operating on <strong>Resource</strong>. 
+7.  <a href="#EndUsers"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>End Users</strong></a> on Entra are usually provisioned by responding to requests from <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/app-provisioning/plan-cloud-hr-provision">external HR systems</a> such as Workday, SuccessFactors, Oracle Peoplesoft.
 
-    Azure provide a <strong>RBAC</strong> (Role-based Access Control) mechanism defined by: the <strong>profile</strong> defined for each <strong>A. Security Principals</strong> limited by <strong>B. Role Definitions</strong> assigned to <strong>C. Scopes</strong> around resources. 
+8.  When MFA (Multi-Factor Authentication) is available for each user, users can register their mobile <strong>Devices</strong> for <strong>identity verification</strong>.
+
+9.  <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/concept-learn-about-groups">Using groups</a> enables Administrators to assign a set of access permissions to all members of the group. 
+
+    P2 licenses enable users to automatically be joined to <strong>Security Groups</strong> dynamically, which saves manual time and effort in assigning Roles and Policies to each User.
+
+    <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-self-service-management">Users can individually request to join groups</a> to gain access. This would require individual approvals as well.
+
+    <a href="#Administrators"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>System Administrators</strong></a> are the "gate-keepers" who define IaC (Infrastructure as Code) to setup technical "guardrails" that limit <strong>Actions</strong> operating on <strong>Resource</strong>. 
+
+10. Azure provides a <strong>RBAC</strong> (Role-based Access Control) mechanism defined by: the <strong>profile</strong> defined for each <strong>A. Security Principals</strong> limited by <strong>B. Role Definitions</strong> assigned to <strong>C. Scopes</strong> around resources.
+
+    As for <strong>Role Definitions</strong>: A P2 license enables <strong>custom roles</strong> to be defined in addition to <strong>built-in</strong> roles that apply to <strong>Security Principals</strong>.
+
+    REMEMBER: Roles are about what users do: <strong>data owners</strong> assign users to groups. <strong>data users</strong> add and update data. <strong>data custodians</strong> move and protect data.
+
+    Roles relate to the <strong>task</strong> relevant to <strong>assets</strong>:
+
+    <table border="1" cellpadding="4" cellspacing="0">
+    <tr><th> _JobTitle </th><th> _AssetRole </th></tr>
+    <tr valign="top"><td> Payroll Supervisor </td><td> Payroll metrics </td></tr>
+    <tr valign="top"><td> Payroll Clerk </td><td> Process Payroll </td></tr>
+    <tr valign="top"><td> HR Operations </td><td> Create Payroll Backups </td></tr>
+    <tr valign="top"><td> Operations Clerk </td><td> Restore Payroll Backups </td></tr>
+    <tr valign="top"><td> Archive Manager </td><td> Delete Payroll Backups </td></tr>
+    </table>
+
+    <strong>Scopes assigned</strong> to specific Roles are about the attributes of resources.
 
     Each Scope is defined as a leaf of a <strong>hierarchy</strong> that consists of a Subscription under a <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/management-groups/overview"><strong>Management Group</strong></a> so each Administrator has their own group to manage.
 
-    Management Groups usually map to the people Organization.
+11. Management Groups usually map to the people Organization.
 
     PROTIP: Our automation includes using a spreadsheet to define the hierarchy, and loading that into Azure, for both samples in test and to prepare for productive use.
 
     The design begins from the top of the chart at the root of the Tenant Entra ID directory because that's where Scopes are stored.
 
-7.  PROTIP: Azure makes it such that a Global Admin make changes to Management Groups after signing into Entra to give themselves the "User Access Admin" role. 
+12. PROTIP: Azure makes it such that a Global Admin make changes to Management Groups after signing into Entra to give themselves the "User Access Admin" role. 
 
-    To minimize mistakes and abuse at enterprise scale, <strong>repeatability</strong> is needed to setup a whole enterprise full of users and resources. That's why <strong>IaC (Infrastructure as Code)</strong> automation is needed.
+    To minimize mistakes and abuse at enterprise scale, <strong>repeatability</strong> is needed to efficiently set up a whole enterprise full of users and resources. That's why <strong>IaC (Infrastructure as Code)</strong> automation is needed.
 
-8.  Automated creation of a set of Scopes for an entire system consisting of several resources is defined by an <strong>Azure Stack</strong> coded by an Administrator.
+13.  A set of files are in an <strong>Azure Stack</strong> folder. Each Stack creates a set of coordinated resources for a particular Scope. 
 
-    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696792519/azure-org-1758x916_sbaptk.png"><img alt="azure-org-1758x916.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696792519/azure-org-1758x916_sbaptk.png"></a>
+    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696792519/azure-org-1758x916_sbaptk.png"><img alt="azure-org-1758x916.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696792519/azure-org-1758x916_sbaptk.png"><br /><em>Click image for full screen</em></a>.
 
     The hierarchy defines the path of <strong>escalation</strong> if alerts are not addressed on a timely manner.
 
@@ -70,64 +99,43 @@ The set of services to create and manage <strong>resources</strong> (such as net
 
     Inadvertant <strong>Deletion</strong> of data can be disastrous. So it helps to have a specialist centrally setup and manage mechanisms for that. For example, individual users who do not have delete permissions can <strong>reassign</strong> obsolete resources to "Decommissioned". This is to avoid accidental deletion of resources and enable central review before deletion.
 
-    Most enterprises today have a central SOC (Security Operations Center) monitor and respond to incidents in Production enviornments ("PRD").
+    Most enterprises today have a central SOC (Security Operations Center) to monitor and quickly respond to incidents in Production environments ("PRD").
 
     The Operations ("Ops") team builds complete Staging ("STG") environment to conduct systems capacity testing and chaos engineering once the QA team has tested individual components. Each of these teams can be from under different Vice Presidents, to serve as liasions to those other organizations.
+
+    For <a target="_blank" href="https://docs.google.com/spreadsheets/d/1diCL35orX9cVEgti1eU7aaG_sgyDSPmbQjnXBamUnVc/edit?usp=sharing">example</a>, virtual machines (VMs) in a particular Management Group can be limited to being created in <strong>specific regions</strong> (soverignties). Policies for each management group apply to all nested management groups, subscriptions, and resources.
 
     ### Paired region backup
 
     Boxes within dotted lines represents the <strong>paired region</strong> where Azure automatically sends back up data so they can restore everything in case of disaster in any given region. This is a major differentiator for Azure versus AWS which makes each customer do their own backup and recovery. 
     
-9.  Use of automation enables iterations to be quicker because of the written confirmation produced. <a href="#IaC"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>There are several options for automating <strong>Bicep</strong> scripts to create resources. This is now favored over <strike>Terraform</strike>. Use of Bicep involves transpiling its YAML-formatted contents into the JSON format of <strong>ARM templates</strong>. Also, Microsoft has stopped development of its <a href="#Blueprints">"Blueprints"</a>) in favor of <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-specs?tabs=azure-powershell">Template Specs</a>).
+14.  Use of our automation enables iterations to be quicker because of the written confirmation produced. <a href="#IaC"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>There are several options for automating <strong>Bicep</strong> scripts to create resources. This is now favored over <strike>Terraform</strike>. Use of Bicep involves transpiling its YAML-formatted contents into the JSON format of <strong>ARM templates</strong>. Also, Microsoft has stopped development of its <a href="#Blueprints">"Blueprints"</a>) in favor of <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-specs?tabs=azure-powershell">Template Specs</a>).
 
-    Because it takes some effort to configure scripts according to <strong>documentation</strong> for each service, an important part of automation is to <strong>audit</strong> scripts. <strong>IaC Policies</strong> aim to identify vulnerabilities and logic errors before resources are deployed and thus possibly exposed.
+    Because it takes some effort to configure each resource according to <strong>documentation</strong> for each service, an important part of automation is to <strong>audit</strong> scripts. 
 
-10. A common policy is to ensure that <a href="#Tags">Tags</a> are included with every resource definition to provide the basis for tracking, billing, disposal, and other aspects. 
+15. <strong>IaC Policies</strong> aim to identify vulnerabilities and logic errors before resources are deployed and thus possibly exposed. 
 
-    Tags should be included whenever a Resource is defined within a <strong>Resource Group</strong> along with its Subscription for billing.
+16. A common policy is to ensure that <a href="#Tags">Tags</a> are included with every resource definition to provide the basis for tracking, billing, disposal, and other aspects. 
+ 
+    PROTIP: IaC Policies and Policy Definitions should ensure that each Resource in the DEV environment contain at least one Tag for billing. In Production, each Resource should be defined with several Tags.
 
-11. For <a target="_blank" href="https://docs.google.com/spreadsheets/d/1diCL35orX9cVEgti1eU7aaG_sgyDSPmbQjnXBamUnVc/edit?usp=sharing">example</a>, virtual machines (VMs) within one particular management group can be limited to being created in <strong>specific regions</strong> (soverignties). Policies for each management group apply to all nested management groups, subscriptions, and resources.
+    Automation can make it effortless to follow <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">naming conventions</a> by constructing Resource names from various elements.
 
-12. User Groups
+17. <strong>Policy Definitions</strong> are JSON files that define rules for resources.
 
-    P2 Dynamic
+18. <strong>Policy Audits</strong>, which do not block access, but alert about compliance. Their alerts are among other security events and metrics across all subscriptions in the <strong>Security Center</strong> dashboard.
 
-7.  An early step in enterprise setup is to establish a <strong>Tenant</strong> directory to house each (organization) of users and resources created under each subscription.
+19. Individual policies can be grouped under an <strong>Initiative</strong>.
 
-    <a target="_blank" href="https://redmondmag.com/articles/2023/07/11/microsoft-entra-new-products.aspx">In 2023</a> Microsoft renamed from "Azure AD" (for Azure Active Directory) with <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/compare">Microsoft Entra ID</a> to reference its "Identity as a Service (IDaaS)" solution (like Okta) for apps across cloud and on-premises.
 
-8.  <strong>Licenses</strong> are defined under a Tenant. Enterprises need a paid P1 or P2 license for each user to use Azure securely.
 
-10. <a href="#ResourceGroups"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>Resource Groups</strong></a> are defined to group resources for <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">high-resolution</a> billing and management. <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/concept-learn-about-groups">Entra</a>
+20. Commands to create each Resource require a <a href="#ResourceGroups"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>Resource Group</strong></a> to be specified. Since Resource Groups being created must specify a Subscription, Azure knows how to bill for each Resource.
 
-11. <a href="#Tags"><strong>Tags</strong></a> for every resource are required by policy scans because tags are used to group resources for billing and management.
+21. Use of some services need to be <strong>Registered</strong>. For example, use of Entra ID B2C needs to be registered to an Entra ID Tenant.
 
-    ???For <a target="_blank" href="https://docs.google.com/spreadsheets/d/1diCL35orX9cVEgti1eU7aaG_sgyDSPmbQjnXBamUnVc/edit?usp=sharing">example</a>, virtual machines (VMs) within one particular management group can be limited to being created in <strong>specific regions</strong> (soverignties). Policies for each management group apply to all nested management groups, subscriptions, and resources.
+22. Service Principals are defined for use by ...
 
-12. When defining Principals, <strong>Groups</strong> are defined to group users.
-
-13. <a href="#EndUsers"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>End Users</strong></a> on Entra are usually provisioned by responding to requests from <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/app-provisioning/plan-cloud-hr-provision">external HR systems</a> such as Workday, SuccessFactors, Oracle Peoplesoft.
-
-14. MFA (Multi-Factor Authentication) is defined for each user, so automation is helpful here as well.
-
-15. <strong>Devices</strong>
-
-16. <strong>Roles</strong> are defined to group users for billing and management purposes.
-
-    Here we identify the <strong>assets</strong> 
-
-    <table border="1" cellpadding="4" cellspacing="0">
-    <tr><th> _JobTitle </th><th> _AssetRole </th></tr>
-    <tr valign="top"><td> Payroll Supervisor </td><td> Payroll metrics </td></tr>
-    <tr valign="top"><td> Payroll Clerk </td><td> Process Payroll </td></tr>
-    <tr valign="top"><td> HR Operations </td><td> Create Payroll Backups </td></tr>
-    <tr valign="top"><td> Operations Clerk </td><td> Restore Payroll Backups </td></tr>
-    <tr valign="top"><td> Archive Manager </td><td> Delete Payroll Backups </td></tr>
-    </table>
-
-17. Service Principals are defined for use by 
-
-18. API-calling applications to access resources.
+23. API-calling applications to access resources.
 
     <strong>Permanent active access</strong> permissions are dangerous to grant because they can be <strong>stolen</strong>. So <strong>Just-in-time</strong> temporary access is provided for ad hoc and limited periods of time after approval by a Privileged Role Administrator. The Administrator uses the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">PIM (Privileged Identity Management)</a> GUI and CLI.
 
@@ -138,24 +146,14 @@ The set of services to create and manage <strong>resources</strong> (such as net
 
     (with <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/governance/licensing-fundamentals">Entra ID Governance licensing</a>) provide users <strong>Just-in-time</strong> access for ad hoc and limited periods of time after approval by a Privileged Role Administrator. The Administrator uses the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">PIM (Privileged Identity Management)</a> GUI and CLI.
     
-    and scheduled access, alerting, approval workflows for Microsoft Entra roles (including custom roles) and Azure Resource roles.
+24. <strong>Azure-Managed Identities</strong> eliminates the need for developers to leave secret credentials in their code to access <strong>internal</strong> Azure resources. Instead of static user account keys and connection strings, <a target="_blank" href="https://www.youtube.com/watch?v=sA_mXKy_dKU">VIDEO</a>: the unique reference to blobs and such are associated with the caller's Managed Identity. When its <strong>ObjectID</strong> is given to the
 
-19. <strong>Azure-Managed Identities</strong> does away with secrets that developers may leave in code when accessing <strong>internal</strong> Azure resources. Instead of static user account keys and connection strings, <a target="_blank" href="https://www.youtube.com/watch?v=sA_mXKy_dKU">VIDEO</a>: the unique reference to blobs and such are associated with the caller's Managed Identity. When its <strong>ObjectID</strong> is given to the
-
-20. <strong>Key Vault</strong> service, it generates its managed identity (based on a Role) that's then encrypted into a <strong>URI</strong> used to retrieve secrets. Brilliant! [<a target="_blank" href="https://www.youtube.com/watch?v=pBcXgJ5hT1o">VIDEO of scripts</a>]
-
-21. Use of some services need to be <strong>Registered</strong>. For example, use of Entra ID B2C needs to be registered to an Entra ID Tenant.
-
-22. <strong>Policy Definitions</strong> are JSON files that define rules for resources. They are used by 
-
-23. <strong>Policy Audits</strong>, which do not block access, but alert about compliance. Their alerts are among other security events and metrics across all subscriptions in the <strong>Security Center</strong> dashboard.
-
-24. Individual policies can be grouped under an <strong>Initiative</strong>.
+25. <strong>Key Vault</strong> service, it generates its managed identity (based on a Role) that's then encrypted into a <strong>URI</strong> used to retrieve secrets. Brilliant! [<a target="_blank" href="https://www.youtube.com/watch?v=pBcXgJ5hT1o">VIDEO of scripts</a>]
 
 
 Recap:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696792593/azure-flow-1724x867_xshdpl.png"><img alt="azure-flow-1724x867.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696792593/azure-flow-1724x867_xshdpl.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696827619/azure-flow-1729x866_yxthbu.png"><img alt="azure-flow-1729x866.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696827619/azure-flow-1729x866_yxthbu.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
 
 <hr />
 
@@ -167,7 +165,7 @@ Recap:
 
    * <strong>org-gen.py</strong> generates csv files containing sample values for an organization with a size of your choosing. (100, 1000, 10000, etc.). The data describes a hierarchy of departments, jobs, roles, groups, people, projects, etc. used as the basis for assigning Least-Privilege permissions to resources.
 
-   * <strong>org-chart.py</strong> generates an organization chart graphic from a csv spreadsheet file.
+   * <strong>org-chart.py</strong> generates an organization chart graphic from a <a target="_blank" href="https://docs.google.com/spreadsheets/d/1EuIGw_qY9TgrGxcpll2WBoYpJJotJh-vUcZpSngYmUs/edit?usp=sharing">csv spreadsheet file</a>.
 
    * <strong>az-info.sh</strong> displays the status of various resources in Azure
    audience.
