@@ -43,8 +43,23 @@ Major job sites
 
 * Jobvite
 
+* <a target="_blank" href="https://www.Dice.com/">Dice.com</a> is for tech jobs
+
+* <a target="_blank" href="https://www.CareerBuilder.com/">CareerBuilder.com</a> is for tech jobs
+
+* <a target="_blank" href="https://www.ZipRecruiter.com/">ZipRecruiter.com</a> is for tech jobs 
+
+* <a target="_blank" href="https://www.Monster.com/">Monster.com</a> is for tech jobs 
+
+* <a target="_blank" href="https://www.Craigslist.org/">Craigslist.org</a> is for tech jobs
+
+* <a target="_blank" href="https://www.USAJobs.gov/">USAJobs.gov</a> is for government jobs
+
+
 
 ## Remote work job sites
+
+* <a target="_blank" href="https://workingsolutions.com/">workingsolutions.com</a> is for remote jobs by people in US & Canada. They have 150,000 Whohoos, mostly in call center $15/hour jobs.
 
 * <a target="_blank" href="https://www.WeWorkRemotely.com/">WeWorkRemotely.com</a>
 
