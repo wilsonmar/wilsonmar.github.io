@@ -4523,6 +4523,167 @@ Azure Role-Based Access Control (RBAC)
 
 Entra ID Roles
 
+<hr />
+
+<a name="Azure+Policy"></a>
+
+## Azure Policy
+
+Resources:
+    <a name="[1]"></a>
+    1. <a target="_blank" href="https://youtu.be/dxMaYF2GB7o">VIDEO</a>: Azure Policy for Azure Security Center
+    * <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/configure-azure-policy/?source=recommendations">Microsoft Learn: Configure Azure Policy</a> 1hr 30min
+    * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/policy/overview">https://learn.microsoft.com/en-us/azure/governance/policy/overview</a> provides the most detail
+    * <a target="_blank" href="https://www.youtube.com/watch?v=4wGns611G4w">VIDEO</a>: Anatomy of Azure Policy by John Savill.
+    <br /><br />
+
+Using Azure Policy is free for Azure resources, but there's a fee associated for each Arc resource (on-premises or other cloud).
+
+Popular governance actions enforced with Azure Policy include:
+   * Enforcing the consistent application of taxonomic tags
+   * Ensuring the team deploys Azure resources only to allowed regions
+   * Requiring resources to send diagnostic logs to a Log Analytics workspace
+   * Enforcing the use of encryption in transit and at rest
+   * Enforcing the use of approved Azure resource types while in TST
+   * Enforcing the use of approved VM images in production
+   <br /><br />
+
+Cost Control:
+   * Restrict the SKU's of virtual machines allowed to be created
+   * Avoid using Azure regions where the cost of a resource is higher
+   * Restrict the usage of solutions from Azure Marketplace that can increase your costs
+   <br /><br />
+
+Security:
+   * Enforce SSL connection to Azure MySQL database
+   * Ensure authentication on Linux machines should require SSH keys
+   * Ensure Windows machines should meet requirements for Windows Firewall Properties
+   <br /><br />
+
+Monitoring:
+   * Activity logs should be retained for at least one year
+   * Log Analytics Agent should be enabled for listed virtual machines images
+   * An activity log alert should exist for specific Security operations
+   <br /><br />
+
+Backup:
+   * Make sure all your virtual machines have Azure Backup enabled
+   * Ensure that geo-redundant backup is enabled on Azure Database for MySQL or PostgreSQL
+   * Ensure that long-term geo-redundant backup is enabled on Azure SQL Database
+   <br /><br />
+
+Governance:
+   * Ensure the proper tag usage as well tag enforcement on resources
+   * Audit virtual machines with a pending reboot
+   * Manage your organizational-compliance requirements by specifying whether an SSL certificate lifetime action is triggered at a specific percentage of its lifetime or at a certain number of days prior to its expiration
+   <br /><br />
+
+Actions at scale:
+   * Deploy Azure Monitor agent to all your virtual machines
+   * Enable Azure Backup for virtual machines
+   * Ensure auditing is enabled to all your Azure SQL Database instances
+   * Ensure secure connections (HTTPS) to storage accounts
+   * Prevent inbound RDP from internet on your virtual machines
+   <br /><br />
+
+
+    REMEMBER: Even if an individual has the Role access to perform an action, if the result is a non-compliant resource, Azure Policy still blocks the create or update.
+
+1.  Get to the "Policy" blade in the Azure Portal.
+
+    https://portal.azure.com/#view/Microsoft_Azure_Policy/PolicyMenuBlade/~/Overview
+
+    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696852800/azure-policy-2315x943_t0qe7s.png"><img alt="azure-policy-2315x943.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696852800/azure-policy-2315x943_t0qe7s.png"></a><br /> <a href="#[1]">[1]</a>
+
+1.  Click the "Definitions" menu link on the left to see hundreds of pre-defined Policy definitions.
+
+    REMEMBER: Each Policy is assigned to an Azure Subscription.
+
+1.  Click "Definition type". Individual Policies can optionally be grouped into "Initiatives".
+
+1.  Click "Category". The list is NOT SORTED! So I prepared <a target="_blank" href="">this Google Sheet</a> to sort them:
+
+1.  Click "Policy type". The default is "Built-in". Custom Policies can be created. There is also "Static".
+
+    * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies">Built-in Policy definitions</a>
+    * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/policy/samples/built-in-initiatives">Built-in Initiatives</a>
+
+1.  Click the "Assignments" menu link to see the "ASC Default" Initiative for your current Subscription Scope. 
+
+    "ASC" is Azure Security Center, which consolidates security alerts from multiple sources.
+
+1.  Click on that Assignment to see 335+ Parameters listed along with metrics status.
+
+    Notice that you already have "Non-compliant policies" even though you yourself have not assigned any Policies to your Subscription.
+
+    <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/policy/overview#maximum-count-of-azure-policy-objects">Maximums</a>: 500 Policy definitions per Scope.
+
+    "<strong>Exempt</strong> compliance state indicate resources covered by an exemption.
+    <a target="_blank" href="https://www.youtube.com/watch?v=clAu7VqpacA">VIDEO</a>: Azure Policy Exemptions by John Savill.
+
+1.  Click on "Non-compliant resources" to see resources that do not conform to the policy rule in the policy definition.
+
+    Types of compliance: Customer, Microsoft, Shared. <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/policy/concepts/regulatory-compliance">Regulatory</a>.
+
+    Enforcement Effects are defined within the Policy Rule portion of the policy definition:
+    * Deny the resource change
+    * Log the change to the resource
+    * Alter the resource before the change
+    * Alter the resource after the change
+    * Deploy related compliant resources
+    * Block actions on resources
+    <br /><br />
+
+    A JSON-defined object can, when triggered, <strong>correct resources</strong> violating policies with 
+    
+    COOL: <strong>deployIfNotExists</strong> or <strong>modify</strong> effects can be <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources">remediated</a> automatically by a triggered remediation task.
+    
+1.  Click "Change History. Click an entry to see a before/after copy of an ARM Template for your Subscription in the "Change details" blade.
+
+    If you had entered Entra to elevate the Global Administrator to the "User Access Admin" role, you would see it here.
+
+
+1.  View the JSON.
+
+    <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/policy/overview#maximum-count-of-azure-policy-objects">Maximum</a>: 1GB in Policy definition body
+
+    Parameters can be defined in Policy definitions.
+
+
+
+    Notice some are "[Deprecated]". The "Parameter value" of each shows its status.
+
+1.  Click "Compliance" at the top menu for metrics similar to 
+
+    Notice the "Initiative" is "Not started" because it has not been assigned to any resources.
+
+    An Initiative is sometimes called a policySet.
+
+    Many Policies recommend installing Defender services (for additional charge).
+
+
+1.  Click "+ Initiative definition" to create a new Initiative.
+
+    PROTIP: It takes careful "Organizational Change Management" to impose Policies on busy developers. Busy developers rightly see it as an imposition (overreach) unless it's introduced very carefully over a period of time. My team specializes in this. are often seen by developers as 
+    
+    
+* Microsoft offers <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/policy/samples/built-in-packages">DSC packages to install built-in Policy Packages</a>.
+
+
+Use Azure Resource Graph to run queries to get information about compliance details by assignments and resource types, list all noncompliant resources, summarize resource compliance by state, and more.
+   https://learn.microsoft.com/en-us/azure/governance/policy/samples/resource-graph-samples
+
+https://learn.microsoft.com/en-us/security/benchmark/azure/baselines/azure-policy-security-baseline
+
+https://github.com/MicrosoftDocs/SecurityBenchmarks/blob/master/Azure%20Offer%20Security%20Baselines/3.0/azure-policy-azure-security-benchmark-v3-latest-security-baseline.xlsx
+
+To find the right Azure Policy definitions for your Azure resources, see
+<a target="_blank" href="https://www.azadvertizer.net/index.html">https://www.azadvertizer.net/index.html</a> by
+<a target="_blank" href="https://www.linkedin.com/in/julianhayward/">Julian Hayward</a> in Germany.
+AzAdvertizer tracks updates of Governance policies (BuiltIn, ALZ, AMBA, Community), including Preview and Deprecated policies.
+ Policy built-in  Policy ALZ  Initiative  Alias  Role
+
+at <a target="_blank" href="https://www.linkedin.com/company/azure-security-center/">Azure Security Center</a> has a <a target="_blank" href="https://www.youtube.com/watch?v=dxMaYF2GB7o">VIDEO</a> on Azure Policy for Azure Security Center.
 
 <hr />
 
