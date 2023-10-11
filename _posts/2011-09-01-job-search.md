@@ -59,11 +59,19 @@ Major job sites
 
 ## Remote work job sites
 
+* Asurion have business-related jobs $21-32/hour. https://careers.asurion.com/ShowJob/JobId/1031/Work-at-Home-Customer-Care-Representative
+
+* Apple Home Advisors $32/hour plus benefits. https://www.apple.com/jobs/us/aha.html
+
+* LiveOps.com pay $12-17/hour
+
 * <a target="_blank" href="https://workingsolutions.com/">workingsolutions.com</a> is for remote jobs by people in US & Canada. They have 150,000 Whohoos, mostly in call center $15/hour jobs.
 
 * <a target="_blank" href="https://www.WeWorkRemotely.com/">WeWorkRemotely.com</a>
 
 * <a target="_blank" href="https://www.Flexjobs.com/">Flexjobs.com</a> (a subscription site)
+
+* Concentrix for QA, UX
 
 
 ## Jobs, Companies to target?
