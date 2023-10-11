@@ -16,13 +16,15 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-There is a massive amount of information about Azure. YouTube videos and the <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">certification courses</a> they promote only scratch the surface of all that is needed to get an enterprise up and running.
+There is a massive amount of information about Azure. YouTube videos and the <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">video certification courses</a> they promote only scratch the surface of all that is needed to get an enterprise up and running. Many demonstrate unsafe or inefficient practices (with inane examples).
 
-PROTIP: Here, all in one page, are <strong>hands-on</strong> steps to introduce the <a href="#Automation">automation</a> created to build Azure for a whole global enterprise, to minimize manual toil and add secure practices and mechanisms within workflows.
+> PROTIP: Here, all in one page, are the <strong>hands-on</strong>, <a href="#Automation">automation</a> and OCM (Organizational Change Management) steps needed to build Azure for a <strong>whole global enterprise</strong> to minimize manual toil and add secure practices and mechanisms within workflows.
+
+{% include whatever.html %}
 
 <a target="_blank" href="https://youtu.be/lwReERW_Pqo"><img align="left" alt="youtube-1024x721.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696234162/youtube-1024x721_ful6ky.png"><strong>Click here for a <strong>step-by-step</strong> 1-minute YouTube video</strong></a> (with no sound) about the <strong>sequence of work</strong> to setup a whole enterprise with Azure technologies in the cloud:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696827619/azure-flow-1729x866_yxthbu.png"><img alt="azure-flow-1729x866.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696827619/azure-flow-1729x866_yxthbu.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1697016934/azure-flow-1724x872_t27y4s.png"><img alt="azure-flow-1724x872.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1697016934/azure-flow-1724x872_t27y4s.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my animated PowerPoint file on GumRoad</a>.
 
 The set of services to create and manage <strong>resources</strong> (such as network, storage, compute, etc.) in the Azure cloud is called the <strong>Azure Resource Manager</strong> (ARM for short). 
 
@@ -85,7 +87,11 @@ With a paid P2 license for each user to use Azure securely. Most enterprises go 
 
     To minimize mistakes and abuse at enterprise scale, <strong>repeatability</strong> is needed to efficiently set up a whole enterprise full of users and resources. That's why <strong>IaC (Infrastructure as Code)</strong> automation is needed.
 
-13.  A set of files are in an <strong>Azure Stack</strong> folder. Each Stack creates a set of coordinated resources for a particular Scope. 
+13. Commands to create each Resource require a <a href="#ResourceGroups"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>Resource Group</strong></a> to be specified. Since Resource Groups being created must specify a Subscription, Azure knows how to bill for each Resource.
+
+14. Use of some services need to be <strong>Registered</strong>. For example, use of Entra ID B2C needs to be registered to an Entra ID Tenant.
+
+15. A set of files are in an <strong>Azure Stack</strong> folder. Each Stack creates a set of coordinated resources for a particular Scope. 
 
     <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696792519/azure-org-1758x916_sbaptk.png"><img alt="azure-org-1758x916.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696792519/azure-org-1758x916_sbaptk.png"><br /><em>Click image for full screen</em></a>.
 
@@ -109,34 +115,41 @@ With a paid P2 license for each user to use Azure securely. Most enterprises go 
 
     Boxes within dotted lines represents the <strong>paired region</strong> where Azure automatically sends back up data so they can restore everything in case of disaster in any given region. This is a major differentiator for Azure versus AWS which makes each customer do their own backup and recovery. 
     
-14.  Use of our automation enables iterations to be quicker because of the written confirmation produced. <a href="#IaC"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>There are several options for automating <strong>Bicep</strong> scripts to create resources. This is now favored over <strike>Terraform</strike>. Use of Bicep involves transpiling its YAML-formatted contents into the JSON format of <strong>ARM templates</strong>. Also, Microsoft has stopped development of its <a href="#Blueprints">"Blueprints"</a>) in favor of <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-specs?tabs=azure-powershell">Template Specs</a>).
+16.  Use of our automation enables iterations to be quicker because of the written confirmation produced. <a href="#IaC"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>There are several options for automating <strong>Bicep</strong> scripts to create resources. This is now favored over <strike>Terraform</strike>. Use of Bicep involves transpiling its YAML-formatted contents into the JSON format of <strong>ARM templates</strong>. Also, Microsoft has stopped development of its <a href="#Blueprints">"Blueprints"</a>) in favor of <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-specs?tabs=azure-powershell">Template Specs</a>).
 
     Because it takes some effort to configure each resource according to <strong>documentation</strong> for each service, an important part of automation is to <strong>audit</strong> scripts. 
 
-15. <strong>IaC Policies</strong> aim to identify vulnerabilities and logic errors before resources are deployed and thus possibly exposed. 
+17. <strong>IaC Policies</strong> aim to identify vulnerabilities and logic errors before resources are deployed and thus possibly exposed. 
 
-16. The most common policy check in IaC is to ensure that <a href="#Tags">Tags</a> are included with every resource so that  billing, disposal, and other aspects of every resource are defined.
+18. <strong>DevSecOps</strong> CI/CD runs.
+
+19. The most common policy check in IaC is to ensure that <a href="#Tags">Tags</a> are included with every resource so that  billing, disposal, and other aspects of every resource are defined.
  
     PROTIP: IaC Policies and Policy Definitions should ensure that each Resource in the DEV environment contain at least one Tag for billing. In Production, each Resource should be defined with several Tags.
 
     Automation can make it effortless to follow <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">naming conventions</a> by constructing Resource names from various elements.
 
-17. <strong>Policy Definitions</strong> are defined in JSON files that define rules for resources.
+20. <strong>Policy Definitions</strong> are defined in JSON files that define rules assigned by resource Scope.
 
+21. Individual policies are grouped under an <strong>Initiative</strong> - such as a corporate policy/mandate.
 
-18. <strong>Policy Audits</strong>, which do not block access, but alert about compliance. Their alerts are among other security events and metrics across all subscriptions in the <strong>Security Center</strong> dashboard.
+22. <strong>Exemptions</strong> can be defined.
 
-19. Individual policies can be grouped under an <strong>Initiative</strong>.
+23. Remediations override.
 
+24. <strong>Policy Audits</strong>, which do not block access, but alert about compliance. Their alerts are among other security events and metrics across all subscriptions in the <strong>Security Center</strong> dashboard.
 
+25. ASC (Azure Security Center), or "Security" for short:
 
-20. Commands to create each Resource require a <a href="#ResourceGroups"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>Resource Group</strong></a> to be specified. Since Resource Groups being created must specify a Subscription, Azure knows how to bill for each Resource.
+    https://portal.azure.com/#view/Microsoft_AAD_IAM/SecurityMenuBlade/~/GettingStarted
 
-21. Use of some services need to be <strong>Registered</strong>. For example, use of Entra ID B2C needs to be registered to an Entra ID Tenant.
+26. <strong>Azure-Managed Identities</strong> eliminates the need for developers to leave secret credentials in their code to access <strong>internal</strong> Azure resources. Instead of static user account keys and connection strings, <a target="_blank" href="https://www.youtube.com/watch?v=sA_mXKy_dKU">VIDEO</a>: the unique reference to blobs and such are associated with the caller's Managed Identity. When its <strong>ObjectID</strong> is given to the
 
-22. Service Principals are defined for use by ...
+27. <strong>Key Vault</strong> service, it generates its managed identity (based on a Role) that's then encrypted into a <strong>URI</strong> used to retrieve secrets. Brilliant! [<a target="_blank" href="https://www.youtube.com/watch?v=pBcXgJ5hT1o">VIDEO of scripts</a>]
 
-23. API-calling applications to access resources such as Storage or web apps.
+28. Service Principals are defined for use by ...
+
+29. API-calling applications to access resources such as Storage or web apps.
 
     <strong>Permanent active access</strong> permissions are dangerous to grant because they can be <strong>stolen</strong>. So <strong>Just-in-time</strong> temporary access is provided for ad hoc and limited periods of time after approval by a Privileged Role Administrator. The Administrator uses the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">PIM (Privileged Identity Management)</a> GUI and CLI.
 
@@ -147,14 +160,10 @@ With a paid P2 license for each user to use Azure securely. Most enterprises go 
 
     (with <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/governance/licensing-fundamentals">Entra ID Governance licensing</a>) provide users <strong>Just-in-time</strong> access for ad hoc and limited periods of time after approval by a Privileged Role Administrator. The Administrator uses the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">PIM (Privileged Identity Management)</a> GUI and CLI.
     
-24. <strong>Azure-Managed Identities</strong> eliminates the need for developers to leave secret credentials in their code to access <strong>internal</strong> Azure resources. Instead of static user account keys and connection strings, <a target="_blank" href="https://www.youtube.com/watch?v=sA_mXKy_dKU">VIDEO</a>: the unique reference to blobs and such are associated with the caller's Managed Identity. When its <strong>ObjectID</strong> is given to the
-
-25. <strong>Key Vault</strong> service, it generates its managed identity (based on a Role) that's then encrypted into a <strong>URI</strong> used to retrieve secrets. Brilliant! [<a target="_blank" href="https://www.youtube.com/watch?v=pBcXgJ5hT1o">VIDEO of scripts</a>]
-
 
 Recap:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696827619/azure-flow-1729x866_yxthbu.png"><img alt="azure-flow-1729x866.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696827619/azure-flow-1729x866_yxthbu.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my PowerPoint file on GumRoad</a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1697016934/azure-flow-1724x872_t27y4s.png"><img alt="azure-flow-1724x872.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1697016934/azure-flow-1724x872_t27y4s.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my animated PowerPoint file on GumRoad</a>.
 
 <hr />
 
@@ -169,9 +178,8 @@ Recap:
    * <strong>org-chart.py</strong> generates an organization chart graphic from a <a target="_blank" href="https://docs.google.com/spreadsheets/d/1EuIGw_qY9TgrGxcpll2WBoYpJJotJh-vUcZpSngYmUs/edit?usp=sharing">csv spreadsheet file</a>.
 
    * <strong>az-info.sh</strong> displays the status of various resources in Azure
-   audience.
 
-   * <strong>az-onboarding.sh</strong> automates the creation of all described below:
+   * <strong>azure-quickly.sh</strong> automates the creation of Azure Scopes, Policies, Groups, Users, Resources, etc.
    <br /><br />
 
 <hr />
@@ -547,13 +555,40 @@ PROTIP: Avoid using an email that you use for your own banking, shopping, social
 
    <a name="AllServices"></a>
 
-   ### All Services
+   ### All Azure Services
 
 1. For <a target="_blank" href="https://portal.azure.com/#allservices"><img width="20" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-cds/general-17-Home.svg">All services</a>, hold down G and press <strong>B</strong>.
 
 1. Click "All" for a complete of all services Azure has to offer, arranged within the category order on the left menu.
 
-   PROTIP: This gives you an idea of how vast the Azure offering is, and the product names certification aspirants should know.
+   PROTIP: <a target="_blank" href="https://docs.google.com/spreadsheets/d/1P7V69ax3RVCsOfs8viRzI6siZIA-1Yh9z8Bgn3Od7pg/edit?usp=sharing">This spreadsheet of each service offering in Azure</a> from the txt file updated monthly from the <a target="_blank" href="https://azure.microsoft.com/en-us/services/">Microsoft Azure Products Directory</a> by <a target="_blank" href="https://learn.microsoft.com/en-us/answers/questions/762503/list-of-all-available-azure-services-in-spreadshee">User kobulloc-MSFT</a>. Some services are not available in all regions. and some are in preview.
+
+   As of Oct 10, 2023, there are 285 Categories of Azure services (with the number of services in each):
+
+   1. AI & machine learning - 32
+   1. Analytics - 18
+   1. Compute - 20
+   1. Containers - 9
+   1. Databases - 15
+   1. Developer tools - 9
+   1. DevOps - 10
+   1. Hybrid + multicloud - 15
+   1. Identity - 4
+   1. Integration - 6
+   1. Internet of Things - 22
+   1. Management and governance - 23
+   1. Media - 6
+   1. Migration - 5
+   1. Mixed reality - 5
+   1. Mobile - 11
+   1. Networking - 23
+   1. Security - 17
+   1. Storage - 18
+   1. Virtual desktop infrastructure - 3
+   1. Web - 14
+   <br /><br />
+   
+   PROTIP: The above gives you an idea of how vast the Azure offering is, and the product names certification aspirants should know.
 
 
    <a name="FullScreen"></a>
@@ -4523,6 +4558,8 @@ Azure Role-Based Access Control (RBAC)
 
 Entra ID Roles
 
+
+
 <hr />
 
 <a name="Azure+Policy"></a>
@@ -4537,7 +4574,7 @@ Resources:
     * <a target="_blank" href="https://www.youtube.com/watch?v=4wGns611G4w">VIDEO</a>: Anatomy of Azure Policy by John Savill.
     <br /><br />
 
-Using Azure Policy is free for Azure resources, but there's a fee associated for each Arc resource (on-premises or other cloud).
+Using Azure Policy is free for Azure resources, but there's a fee for Arc resources on-premises or in other clouds.
 
 Popular governance actions enforced with Azure Policy include:
    * Enforcing the consistent application of taxonomic tags
@@ -4589,7 +4626,7 @@ Actions at scale:
 
     REMEMBER: Even if an individual has the Role access to perform an action, if the result is a non-compliant resource, Azure Policy still blocks the create or update.
 
-1.  Get to the "Policy" blade in the Azure Portal.
+1.  <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1697011376/az-policy-menu-342x814_gnmwrk.png"><img align="right" alt="" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1697011376/az-policy-menu-342x814_gnmwrk.png"></a>Get to the "Policy" blade in the Azure Portal.
 
     https://portal.azure.com/#view/Microsoft_Azure_Policy/PolicyMenuBlade/~/Overview
 
@@ -4680,8 +4717,8 @@ https://github.com/MicrosoftDocs/SecurityBenchmarks/blob/master/Azure%20Offer%20
 To find the right Azure Policy definitions for your Azure resources, see
 <a target="_blank" href="https://www.azadvertizer.net/index.html">https://www.azadvertizer.net/index.html</a> by
 <a target="_blank" href="https://www.linkedin.com/in/julianhayward/">Julian Hayward</a> in Germany.
-AzAdvertizer tracks updates of Governance policies (BuiltIn, ALZ, AMBA, Community), including Preview and Deprecated policies.
- Policy built-in  Policy ALZ  Initiative  Alias  Role
+AzAdvertizer tracks updates of Governance policies (BuiltIn, ALZ (Azure Landing Zone), AMBA (Azure Monitor Baseline Alerts), Community), including Preview and Deprecated policies.
+ Provides the definition of each Policy. 
 
 at <a target="_blank" href="https://www.linkedin.com/company/azure-security-center/">Azure Security Center</a> has a <a target="_blank" href="https://www.youtube.com/watch?v=dxMaYF2GB7o">VIDEO</a> on Azure Policy for Azure Security Center.
 
@@ -4748,7 +4785,7 @@ global.azurebootcamp.net</a> has converted to Vue and Google stuff.
    * <a target="_blank" href="https://podcasts.apple.com/us/podcast/azure-ninjas/id1305172229">Azure Ninjas</a> (Microsoft Global Black Belts)
 
 
-### azcopy
+### azcopy in Windows
 
 azcopy is a command-line utility designed for copying data to/from Microsoft Azure Blob, File, and Table storage, using simple commands designed for optimal performance. You can copy data between a file system and a storage account, or between storage accounts.
 

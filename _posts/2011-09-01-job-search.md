@@ -20,6 +20,7 @@ comments: true
 
 So I have sought the highly rated employers. 
 
+{% include whatever.html %}
 
 ## Major Job Websites
 
@@ -71,7 +72,7 @@ Major job sites
 
 * <a target="_blank" href="https://www.Flexjobs.com/">Flexjobs.com</a> (a subscription site)
 
-* Concentrix for QA, UX
+* Concentrix for QA, UX, and other jobs. https://careers.concentrix.com/careers/search-and-apply
 
 
 ## Jobs, Companies to target?
