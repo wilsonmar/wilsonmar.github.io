@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2023-10-10"
+file: "linux-bootup"
 title: "Linux Bootup"
 excerpt: "To diagnose and troubleshoot getting started"
 tags: [linux, setup, USB]
-date: "2014-08-04"
-file: "linux-bootup"
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/14624434/dab075ca-0597-11e6-9090-f93e259a5554.jpg
   credit:
@@ -18,6 +18,13 @@ comments: true
 This article describes the boot-up process on Linux 
 so you can better diagnose and troubleshoot issues.
 
+## One-hour Rocky Linux sandbox
+
+https://learning.oreilly.com/interactive-lab/rocky-linux-sandbox/9781098154349/lab/
+
+<hr />
+
+## Bootup
 
 1. View the System boot log:
 
@@ -208,8 +215,6 @@ Linux launches a root shell session with this line:
 
    <pre>Broadcast message from me@localhost.localdomain (pts/1) (Thu Nov 24 13:13:31 2019):
    </pre>
-
-
 
 ## Resources
 

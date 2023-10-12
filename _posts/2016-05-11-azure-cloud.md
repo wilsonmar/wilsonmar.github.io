@@ -41,9 +41,7 @@ Microsoft's Azure cloud was first announced in 2008 and released in 2010.
 
 ## Architectural components #
 
-<amp-img width="650" height="252" alt="azure compute platform 650x252-c60.jpg"
-layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/16688245/6898a7a0-44da-11e6-9245-ee5e1ff729f9.jpg">
-</amp-img><br />
+<a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/16688245/6898a7a0-44da-11e6-9245-ee5e1ff729f9.jpg"><img width="650" height="252" alt="azure compute platform 650x252-c60.jpg" src="https://cloud.githubusercontent.com/assets/300046/16688245/6898a7a0-44da-11e6-9245-ee5e1ff729f9.jpg"></a>
 
 <strong>End-Users</strong> buy SaaS (Software as a Service) online with only an internet browser (and a credit card):
 
