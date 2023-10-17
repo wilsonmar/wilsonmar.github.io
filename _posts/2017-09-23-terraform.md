@@ -5459,6 +5459,7 @@ https://learning.oreilly.com/live-events/hashicorp-certified-terraform-associate
 Aug 8-9, 2023
 by Benjamin Muschko
 
+https://github.com/shuaibiyy/awesome-terraform
 
 
 ## More on DevOps #
