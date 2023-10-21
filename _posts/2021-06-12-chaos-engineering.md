@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-18"
+date: "2023-10-18"
 file: "chaos-engineering"
 title: "Chaos Engineering"
 excerpt: "Use Gremlin, Chaos Monkey, and monitoring tools (such as Datadog) to measure and improve MTTD and MTTR"
@@ -20,16 +20,16 @@ comments: true
 
 {% include whatever.html %}
 
-## Definitions
-
-The definition <a target="_blank" href="https://www.wikiwand.com/en/Chaos_engineering">"Chaos Engineering" on Wikipedia</a>:
-
-   <ul>Chaos engineering is the discipline of experimenting on a software system in production in order to build confidence in the system's capability to withstand turbulent and unexpected conditions.
-   </ul>
+## What is Chaos Engineeering?
 
 Vendor Gremlin's definition:
 
    <ul>Chaos Engineering" consists of thoughtful controlled experiments designed to reveal the weaknesses of systems, which results in reduction of downtime and quicker response to anomalies.
+   </ul>
+
+The definition <a target="_blank" href="https://www.wikiwand.com/en/Chaos_engineering">"Chaos Engineering" on Wikipedia</a>:
+
+   <ul>Chaos engineering is the discipline of experimenting on a software system in production in order to build confidence in the system's capability to withstand turbulent and unexpected conditions.
    </ul>
 
 https://github.com/dastergon/awesome-chaos-engineering
@@ -425,6 +425,23 @@ Documentation is at https://litmusdocs-beta.netlify.app/docs/introduction/
 ## Social
 
 * https://groups.google.com/g/chaos-community/c/84VOWoDQiIg
+
+## Azure Chaos Studio
+
+https://www.youtube.com/watch?v=AQl_zx6NFfU
+
+Azure Chaos Studio Preview is a managed service that uses chaos engineering to help you measure, understand, and improve your cloud application and service resilience - to handle and recover from disruptions.
+
+Why? "Improve application resilience by introducing faults and simulating outages"
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=IkEQm6m46Ow">John Savill's video</a> on Azure Chaos Studio
+
+* https://azure.microsoft.com/en-us/products/chaos-studio
+* https://learn.microsoft.com/en-us/azure/chaos-studio/
+* https://learn.microsoft.com/en-us/azure/chaos-studio/chaos-studio-overview
+
+* https://azure.microsoft.com/en-us/pricing/calculator/?service=chaos-studio
+* https://azure.microsoft.com/en-us/pricing/details/chaos-studio/
 
 
 ## References
