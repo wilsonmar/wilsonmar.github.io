@@ -8015,6 +8015,33 @@ is a 50-hour video course "DevOps for Developers" with quizzes and hands-on labs
 
 The course was created by <a target="_blank" href="https://www.linkedin.com/in/ian-miell-694496/">Ian Miell</a> (from Oxford) and <a target="_blank" href="https://www.linkedin.com/in/aweil/">Arnaud Weil</a> (from France).
 
+## Sample apps
+
+TODO: Create automation to install and run these apps under load to see breaking points reached and alerts generated.
+
+https://github.com/kubernetes/examples from the Kubernetes team has examples written in Go, Redis, guestbook WordPress/SQL using Persistent Volumes with Claim, and Cassandra using Daemon Set, Stateful Set, Replication Controller.
+   * https://kubernetes.io/docs/tutorials/stateless-application/guestbook/
+   <br /><br />
+
+https://github.com/digitalocean/kubernetes-sample-apps
+
+   * The <a target="_blank" href="https://istio.io/latest/docs/examples/bookinfo/">bookinfo-example</a> from Istio app has Java reviews, Node ratings, Ruby details.
+   * doks-example - Deploy your first application (workload) to a fresh DOKS cluster.
+   * emojivoto-example - Deploy the Emojivoto sample application.
+   * game-2048-example - Build and deploy the 2048 game application.
+   * podinfo-example - Deploy the Podinfo sample application.
+   <br /><br />
+
+For a VMware demo app, <a target="_blank" href="https://williamlam.com/2020/06/interesting-kubernetes-application-demos.html">William Lamb</a> suggests <a target="_blank" href="http://www.it20.info/2017/07/yelb-yet-another-sample-app/">Yelb (Yet Another Sample App)</a> as a simple app 
+consisting of a UI Frontend, Application Server, Database Server, and Caching Service using Redis.
+
+Discussion: https://www.reddit.com/r/kubernetes/comments/j181tq/anyone_know_of_a_good_demo_app_for_kubernetes/ states the criteria:
+
+   1) scalable, 
+   2) demonstrate dependencies or sidecar containers, 
+   3) demonstrate shared state across replicas.
+   <br /><br />
+
 <hr />
 
 ## More on DevOps #
