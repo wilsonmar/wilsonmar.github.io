@@ -8019,6 +8019,9 @@ The course was created by <a target="_blank" href="https://www.linkedin.com/in/i
 
 TODO: Create automation to install and run these apps under load to see breaking points reached and alerts generated.
 
+https://docs.aws.amazon.com/eks/latest/userguide/sample-deployment.html
+deploys a eks-sample-linux-service.yaml with a LoadBalancer service type.
+
 https://github.com/kubernetes/examples from the Kubernetes team has examples written in Go, Redis, guestbook WordPress/SQL using Persistent Volumes with Claim, and Cassandra using Daemon Set, Stateful Set, Replication Controller.
    * https://kubernetes.io/docs/tutorials/stateless-application/guestbook/
    <br /><br />
@@ -8026,7 +8029,7 @@ https://github.com/kubernetes/examples from the Kubernetes team has examples wri
 https://github.com/digitalocean/kubernetes-sample-apps
 
    * The <a target="_blank" href="https://istio.io/latest/docs/examples/bookinfo/">bookinfo-example</a> from Istio app has Java reviews, Node ratings, Ruby details.
-   * doks-example - Deploy your first application (workload) to a fresh DOKS cluster.
+   * doks-example - plication (workload) to a fresh DOKS cluster.
    * emojivoto-example - Deploy the Emojivoto sample application.
    * game-2048-example - Build and deploy the 2048 game application.
    * podinfo-example - Deploy the Podinfo sample application.
@@ -8041,6 +8044,19 @@ Discussion: https://www.reddit.com/r/kubernetes/comments/j181tq/anyone_know_of_a
    2) demonstrate dependencies or sidecar containers, 
    3) demonstrate shared state across replicas.
    <br /><br />
+
+https://cloudsecdocs.com/containers/kubernetes/usage/sample_apps/
+provides a series of YAML references with canonical and as-simple-as-possible demonstrations of kubernetes functionality and features.
+   * https://github.com/ContainerSolutions/kubernetes-examples/
+   * https://k8s-examples.container-solutions.com/
+   <br /><br />
+
+Weave Works
+https://www.weave.works/blog/deploying-an-application-on-kubernetes-from-a-to-z
+
+<a target="_blank" href="https://devopsdirective.com/">devopsdirective.com</a> has
+<a target="_blank" href="https://www.youtube.com/watch?v=XltFOyGanYE">VIDEO</a>
+
 
 <hr />
 
