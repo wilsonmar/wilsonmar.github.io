@@ -5460,6 +5460,7 @@ Aug 8-9, 2023
 by Benjamin Muschko
 
 https://github.com/shuaibiyy/awesome-terraform
+A curated list of awesome Terraform tools, modules, resources and tutorials.
 
 
 ## More on DevOps #

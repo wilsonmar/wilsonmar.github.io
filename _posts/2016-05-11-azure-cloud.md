@@ -26,6 +26,7 @@ Naming conventions for Azure resources</a>
 
 Microsoft's Azure cloud was first announced in 2008 and released in 2010.
 
+
 ## Why?
 
  <a target="_blank" href="https://wilsonmar.github.io/cloud-comparisons">My Cloud Comparison article</a> defines the why:
