@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-09-05"
+date: "2023-10-22"
 file: "devsecops"
 title: "DevSecOps"
 excerpt: "How to get people to use products and processes that yield faster competitive speed AND improved Security Posture throughout a secure SDLC"
@@ -355,7 +355,7 @@ the explanation of "why" in a way that the learner would best understand.
 with links to explanations of underlying knowledge.
 Such a public forum is where debates about the merits of each rule.
 
-> "Where understanding abouds, acceptance will florish."
+> "Where understanding abounds, acceptance will flourish."
 
 ## Empathetic, specific, and kind feedback?
 
@@ -369,6 +369,36 @@ and just let the scanner do the rejection.
 This way, feeback cannot be perceived as a personal attack and thus cause animosity.
 
 Discussions about code can then transcend from whether someone is a good person depending on whether they use spaces or tabs.
+
+
+## DevSecOps for SAP
+
+In the past few years, organizations have seen a constant increase in cyberattacks targeting business-critical applications and the data within because that data is particularly lucrative to sell or trade. 
+
+I can see that organizations running SAP software are especially vulnerable to cyberattacks.
+SAP systems are complex because they are 
+   * are implemented within large bureaucracies, which make changes difficult and slow to coordinate
+   * were architected in the 90s when security was not a priority. DevSecOps tools developers need to validate source code for security flaws has not been built into SAP's transport management system.
+   * are highly customized, so vulnerable coding can creep in
+   * are highly interconnected with other systems, which makes segmentation difficult
+   * are easy to patch, so many users delay upgrades
+   * are implemented by specialized teams not integrated with cybersecurity teams
+   <br /><br />
+
+Onapsis is SAP’s chosen partner for cybersecurity.
+https://rev-trac.com/articles/sap-security-a-devsecops-solution/
+
+https://www.youtube.com/watch?v=dmmdooJmN_E
+Rev-Trac SAP Transport Security
+
+Julie Hallet - A Practical Guide to Cybersecurity in SAP
+
+SecurityBridge platform for SAP, Christoph Nagy CEO 
+
+https://blogs.sap.com/tag/devsecops/
+
+https://sapinsider.org/event-presentations/why-sap-customers-need-devsecops-now-more-than-ever/
+
 
 
 ## Professional certifications

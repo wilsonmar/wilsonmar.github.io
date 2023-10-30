@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-09-13"
+date: "2023-10-22"
 file: "aws-onboarding"
 title: "AWS Onboarding"
 excerpt: "Tips and tricks to get account. Lock down root accounts. Install and use the AWS CLI, securely"
@@ -256,6 +256,8 @@ Secure that email address with <strong>multi-factor authentication</strong> with
 
    ### All Amazon services
 
+   PROTIP: The <a target="_blank" href="https://chrome.google.com/webstore/detail/aws-services/jdkmpaoglhnpimfciphnednpkfbnphkp">Chrome browser extension "AWS Services"</a> provides a list of services by name and category so you can click it to get to Console and documentation for each service.
+
 1. Click to view all <strong>Services</strong> at the upper-left black menu band.
 
 1. Scroll to the category "Security, Identify, and Compliance" list of ever-growing services:
@@ -285,6 +287,7 @@ Secure that email address with <strong>multi-factor authentication</strong> with
    <a target="_blank" href="https://aws.amazon.com/documentation/">
    https://aws.amazon.com/documentation</a>
 
+   
 
    <a name="RootLockdown"></a>
 

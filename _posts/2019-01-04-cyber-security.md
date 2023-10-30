@@ -3155,7 +3155,7 @@ tcpdump options:
 
 <hr />
 
-## Resources
+## Podcasts
 
 * https://opensoc.io/ Network Defense Range (NDR) - a free, open-source, and community-driven project that provides a virtualized environment for security professionals to practice their skills in a safe and controlled environment. The NDR is a collection of virtual machines (VMs) that are pre-configured to simulate a real-world network. The NDR is designed to be used by security professionals to practice their skills in a safe and controlled environment. 
 
