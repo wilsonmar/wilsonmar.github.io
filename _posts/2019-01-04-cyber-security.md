@@ -3157,10 +3157,12 @@ tcpdump options:
 
 ## Podcasts
 
+* <a target="_blank" href="https://www.hubermanlab.com/podcast">https://www.hubermanlab.com/podcast</a> by Andrew Huberman
+
 * https://opensoc.io/ Network Defense Range (NDR) - a free, open-source, and community-driven project that provides a virtualized environment for security professionals to practice their skills in a safe and controlled environment. The NDR is a collection of virtual machines (VMs) that are pre-configured to simulate a real-world network. The NDR is designed to be used by security professionals to practice their skills in a safe and controlled environment. 
 
 * <a target="_blank" href="https://isc.sans.edu/podcast.html">PODCAST: SANS.edu Internet Storm Center daily</a>
-* <a target="_blank" href="https://www.cyberaces.org/">SANS Cyber Aces</a>
+* <a target="_blank" href="https://www.cyberaces.org/">SANS Cyber Access</a>
 * <a target="_blank" href="https://isc.sans.edu/forums/diary/Verifying+Running+Processes+against+VirusTotal+DomainWide/25078/">SANS.edu diary</a>
 * <a target="_blank" href="https://www.sans.org/reading-room">SANS.edu reading room white papers</a>
 
