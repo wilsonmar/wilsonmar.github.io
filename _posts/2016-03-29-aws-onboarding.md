@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-10-22"
+date: "2023-11-08"
 file: "aws-onboarding"
 title: "AWS Onboarding"
 excerpt: "Tips and tricks to get account. Lock down root accounts. Install and use the AWS CLI, securely"
@@ -24,6 +24,8 @@ Covered here are instructions on how to install and use AWS CLI automation, smar
 <a name="KPI"></a>
 
 ## KPI for Onboarding
+
+Recommendations in this article are intended to improve these Key Performance Indicators (KPIs) of an organization:
 
 A1. What is the total max/average hours an end-user needs to spend between receiving instructions to being completely productive on AWS?
 
