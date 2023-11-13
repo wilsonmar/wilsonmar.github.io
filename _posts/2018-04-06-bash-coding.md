@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-10-07"
+date: "2022-11-07"
 file: "bash-coding"
 title: "Bash (script) coding"
 excerpt: "Walk though the tricks (Bashisms) used in a script to install, configure, and run many programs on macOS and Linux"
@@ -1140,6 +1140,7 @@ https://serverfault.com/questions/103501/how-can-i-fully-log-all-bash-scripts-ac
 
 https://github.com/Zordrak/bashlog
 
+https://levelup.gitconnected.com/my-tips-and-tricks-for-bash-scripting-after-writing-hundreds-of-scripts-59987855b20a
 
 
 

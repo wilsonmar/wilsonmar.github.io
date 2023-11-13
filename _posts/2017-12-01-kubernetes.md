@@ -7946,6 +7946,27 @@ is normally $997, with a 60 day money-back guarantee.
 
 https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler
 
+
+## Rockstars
+
+<a target="_blank" href="https://www.linkedin.com/in/shon-lev-ran/">Shon Lev-Ran (who lives in Tel Aviv)</a>
+Kubernetes resources under the hood series:
+<a target="_blank" href="https://medium.com/directeam/kubernetes-resources-under-the-hood-part-1-4f2400b6bb96">
+Part 1</a>
+<a target="_blank" href="https://medium.com/directeam/kubernetes-resources-under-the-hood-part-2-6eeb50197c44">
+Part 2</a>
+<a target="_blank" href="https://medium.com/directeam/kubernetes-resources-under-the-hood-part-3-6ee7d6015965">
+Part 3</a>
+
+
+## Tutorials for sale
+
+https://learnk8s.io/academy has a library of written materials for $499.
+
+
+
+<hr />
+
 ## Fun facts
 
 NOTE: The Container Host Interface is NOT a common standard.
@@ -7955,8 +7976,6 @@ https://csrc.nist.gov/CSRC/media/Presentations/dod-enterprise-devsecops-initiati
 <hr />
 
 ## References
-
-https://learnk8s.io/academy has a library of written materials for $499.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=Bcji3AlT7v8&t=2511s">
 Demo of Fairwinds Insights dashboard</a>

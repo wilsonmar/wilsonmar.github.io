@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-08"
+date: "2023-11-11"
 file: "aws-onboarding"
 title: "AWS Onboarding"
 excerpt: "Tips and tricks to get account. Lock down root accounts. Install and use the AWS CLI, securely"
@@ -132,6 +132,8 @@ Secure that email address with <strong>multi-factor authentication</strong> with
    * If you're using a gov cloud:<br />https://aws.amazon.com/government-education/government/
    <br /><br />
 
+   ### Root Password
+
 1. Create a new 1Password entry to store the email, Account Name, password, Account ID, Secret info.
 
 1. For "AWS account name", examples are "master-billing" but the email works too.
@@ -258,9 +260,13 @@ Secure that email address with <strong>multi-factor authentication</strong> with
 
    ### All Amazon services
 
-   PROTIP: The <a target="_blank" href="https://chrome.google.com/webstore/detail/aws-services/jdkmpaoglhnpimfciphnednpkfbnphkp">Chrome browser extension "AWS Services"</a> provides a list of services by name and category so you can click it to get to Console and documentation for each service.
+1. PROTIP: The <a target="_blank" href="https://chrome.google.com/webstore/detail/aws-services/jdkmpaoglhnpimfciphnednpkfbnphkp">Chrome browser extension "AWS Services"</a> provides a list of services by name and category so you can click it to get to Console and documentation for each service.
 
-1. Click to view all <strong>Services</strong> at the upper-left black menu band.
+
+
+1. In the AWS Console, click to view all <strong>Services</strong> at the upper-left black menu band for:
+
+   https://us-east-2.console.aws.amazon.com/console/home
 
 1. Scroll to the category "Security, Identify, and Compliance" list of ever-growing services:
 
@@ -1258,6 +1264,8 @@ This is adapted from what is in <a target="_blank" href="https://aws.amazon.com/
 TODO: Put each AWS CLI command in a script at
 https://medium.com/circuitpeople/aws-cli-with-jq-and-bash-9d54e2eabaf1
 by Lee Harding
+
+https://aws.amazon.com/cli/
 
 
 ## More on Amazon #
