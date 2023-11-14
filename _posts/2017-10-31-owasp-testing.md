@@ -304,14 +304,29 @@ VMware Workstation on Windows or VMware Fusion on Mac:
 
 <a target="_blank" href="https://github.com/erev0s/VAmPI">https://github.com/erev0s/VAmPI</a> (described in <a target="_blank" href="https://www.erev0s.com/">erev0s.com</a>) is written in Python Flask as a target app that fails evaluation by tools that detect security issues described in OWASP Top 10 vulnerabilities for APIs.
 
-No one wants such switches in productive code. But VAmPI can nevertheless be used for learning/teaching:
+No one wants switches to add vulnerabilities in productive code. But code & app generators such as Outsystems and Mendix can.
+
+Nevertheless, VAmPI can be used for learning/teaching:
 
 1. Install Docker, Docker Compose, Postman, escape.tech, etc.
-1. Generate OpenAPI (Swagger) specs for use by https://www.escape.tech/ to evaluate the running app's security
-1. Generate Postman Collection 
+1. Generate OpenAPI (Swagger) specs for use by <a target="_blank" href="https://www.escape.tech/">escape.tech</a> to evaluate the running app's security, such as <a target="_blank" href="https://file.notion.so/f/f/91fce212-e4d5-429c-b881-ecf5af47d848/437c197d-909c-4098-b050-ae2717470b64/vampi-modified.json?id=31237011-ec94-4d06-ae85-4a57e639dc91&table=block&spaceId=91fce212-e4d5-429c-b881-ecf5af47d848&expirationTimestamp=1700056800000&signature=66biqFbBwN-Ym2ZmC4Um--waJW75SUNq0gO5AHAnQSs&downloadName=vampi-modified.json">this json</a>. <a target="_blank" href="https://success.outsystems.com/documentation/11/extensibility_and_integration/rest/expose_rest_apis/document_an_exposed_rest_api/">Outsystems generates that documentation automatically</a>.
 
-1. Start: docker run -p 5000:5000 erev0s/vampi:latest 
-1. In another Terminal tab at VAmPI root containing docker-compose.yaml: docker-compose up -d
+1. Generate a Collection file for explorating within Postman
+
+1. At <a target="_blank" href="https://app.escape.tech/ ">https://app.escape.tech/</a>, specify the app's endpoint URL.
+
+1. upload Escape's <a target="_blank" href="https://gontoz.escape.tech/graphql">https://gontoz.escape.tech/graphql</a> 
+1. https://vampi.tools.escape.tech/
+
+1. Start: <tt>docker run -p 5000:5000 erev0s/vampi:latest</tt>
+1. Fork, then <tt>git clone https://github.com/???/VAmPI</tt>
+1. <tt>git remote add upstream https://github.com/erev0s/VAmPI</tt>
+1. In another Terminal tab at VAmPI root containing docker-compose.yaml: <tt>docker-compose up -d</tt>
+
+   <pre>✔ Container vampi-secure      Started                                                                                             0.1s 
+   ✔ Container vampi-vulnerable  Started       
+   </pre>
+   
 1. Run user emulator to:
 
 1. Create database
