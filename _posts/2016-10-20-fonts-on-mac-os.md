@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2023-11-13"
+file: "fonts-on-mac-os"
 title: "Fonts on macOS"
 excerpt: "You are what font you use"
 tags: [apple, mac, setup]
-date: "2020-07-15"
-file: "fonts-on-mac-os"
 image:
 # feature: pic brown wood apple logo 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622035/740efa5c-0584-11e6-9a41-db5b03eaff85.jpg
@@ -129,7 +129,42 @@ The Light font is minimalistic.
 
 Many large enterprises prefer to use their own fonts as part of their "branding".
 
+   * Salesforce
+   * Microsoft
+   * Apple's San Francisco
+   <br /><br />
+
+See:
 * https://www.smashingmagazine.com/2008/03/60-brilliant-typefaces-for-corporate-design/
+
+
+## Elegant
+
+For menus, invitations,
+* <a target=="_blank" href="https://www.fontspace.com/christmas-calligraphy-font-f87022">christmas-calligraphy-font.zip</a>
+
+For invitations to baby showers:
+   * <a target="_blank" href="https://www.fontspace.com/baby-sela-font-f94949">Baby Sela</a>
+
+   * Edwardian
+For rustic elegance:
+   * https://www.fontspace.com/mountain-signature-font-f82513
+   * https://www.fontspace.com/countryside-font-f29783
+   * https://www.fontspace.com/beauty-mountains-font-f30686
+   * https://www.fontspace.com/blessed-day-font-f11511
+For a breezy
+   * https://www.fontspace.com/beautiful-people-font-f29700
+   * https://www.fontspace.com/hello-honey-font-f44406
+   * https://www.fontspace.com/hayward-font-f99438
+   * https://www.fontspace.com/violante-4-font-f59530
+For a jazzy script
+   * https://www.fontspace.com/solustion-font-f64099
+For a youthful script
+   * https://www.fontspace.com/youth-touch-font-f30771
+For an urban look
+   * https://www.fontspace.com/black-rusher-font-f94364
+For a hand-painted look
+   * https://www.fontspace.com/beautiful-dreams-script-font-f98276
 
 
 ## Bitmap vs vector

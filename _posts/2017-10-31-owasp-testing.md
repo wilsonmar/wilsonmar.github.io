@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-08-15"
+date: "2023-11-13"
 file: "owasp-testing"
 title: "OWASP"
 excerpt: "Practice finding security vulnerabilities within ZAP or the Broken Web App by running SCA, SAST, DAST, IAST using open-source SonarQube, Sonatype, Synopsys and other tools"
@@ -19,7 +19,7 @@ comments: true
 There are several websites which defines specific examples of insecure code turned secure:
 
 <a target="_blank" href="https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project">OWASP (Open Web Application Security Project) Top 10</a> - <a target="_blank" href="https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf">2017 PDF</a>:
-is the result of a non-profit team.
+is the result of an on-going active non-profit team.
 
 OSSTMM (Open Source Security Testing Methodology Manual) <a target="_blank" href="https://www.isecom.org/OSSTMM.3.pdf">v3 PDF</a> updated every six months by the <a target="_blank" href="https://www.isecom.org/research.html">ISECOM (Institute for Security and Open Methodologies)</a>. It was developed in an open community, and subjected to peer and cross-disciplinary review. ISECOM's <a target="_blank" href="https://www.isecom.org/STAR.3.pdf">PDF: Security Test Audit Report (STAR)</a> is a standardized form to summarize results of a security or penetration test - providing precise calculations of the Attack Surface, details of what was tested and how, and indemnification for testing organization.:
    1. Posture review
@@ -299,6 +299,33 @@ VMware Workstation on Windows or VMware Fusion on Mac:
    Beyond 1.0 from 2013</a>
    Chuck Willis (@chuckatsf) describes BWA origins
 
+
+### VAmPI (Python Flask)
+
+<a target="_blank" href="https://github.com/erev0s/VAmPI">https://github.com/erev0s/VAmPI</a> (described in <a target="_blank" href="https://www.erev0s.com/">erev0s.com</a>) is written in Python Flask as a target app that fails evaluation by tools that detect security issues described in OWASP Top 10 vulnerabilities for APIs.
+
+No one wants such switches in productive code. But VAmPI can nevertheless be used for learning/teaching:
+
+1. Install Docker, Docker Compose, Postman, escape.tech, etc.
+1. Generate OpenAPI (Swagger) specs for use by https://www.escape.tech/ to evaluate the running app's security
+1. Generate Postman Collection 
+
+1. Start: docker run -p 5000:5000 erev0s/vampi:latest 
+1. In another Terminal tab at VAmPI root containing docker-compose.yaml: docker-compose up -d
+1. Run user emulator to:
+
+1. Create database
+1. Issue GET unauthenticated requests
+1. Create account
+
+1. Login using Token-Based Authentication (Adjust lifetime from within app.py)
+1. Add books
+1. Retrieve books without secrets
+1. Retrieve books with secrets
+
+1. Enable global configuration settings to switch specific vulnerabilities on or off during testing and confirmation. 
+
+<hr />
 
 ## Install proxy server
 

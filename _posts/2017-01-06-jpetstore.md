@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2017-01-16"
+file: "jpetstore"
 title: "JPetstore"
 excerpt: "Sample Java Spring app for your abuse and amusement"
 tags: [Clouds, IoT]
-date: "2017-01-16"
-file: "jpetstore"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -16,11 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-The app was originally created for learning Java Spring and exploring JVM tools.
-
-WARNING: There are several obsolete versions of JPetstore on the internet,
-such as <a target="_blank" href="http://sourceforge.net/projects/ibatisjpetstore/">
-v4 on Sourceforge</a>.
+The app was originally created for learning <strong>Java Spring v5</strong> and exploring JVM tools MyBatis3, Stripes.
 
 Several performance testing tool vendors use JPetstore6 as a sample app under test in demos and documentation:
 
@@ -31,12 +27,17 @@ Several performance testing tool vendors use JPetstore6 as a sample app under te
    * <a target="_blank" href="https://helpdesk.arcturustech.com/hc/en-us/community/posts/225668906-Recording-a-JMeter-Traversal-Script-for-the-JPetStore-application-using-JMeter-proxy">JMeter Traversal Script</a>
    <br /><br />
    
+WARNING: There are several obsolete versions of JPetstore on the internet,
+such as <a target="_blank" href="http://sourceforge.net/projects/ibatisjpetstore/">
+v4 on Sourceforge</a>.
+
 This article describes the various ways to get hands-on with it:
 
    * Install Docker, then JPetstore6, and run it on your Mac. 
    * <a href="#LocalInstall">Install as part of others on your Mac</a>
    * <a href="#myBatis">install from source in GitHub (from MyBatis) on your Mac</a>
    * Install within an AWS EC2 instance (coming soon)
+   * <a target="_blank" href="https://github.com/Aj7Ay/jpetstore-6">install by Aj7Ay</a> Ajay Kumar Yegireddi at <a target="_blank" href="https://www.youtube.com/@mr.cloudbook">Mr Cloud Book</a>
    * <a target="_blank" href="https://topic.alibabacloud.com/a/installation-jpetstore-detailed-steps_8_8_20195558.html">Alibaba cloud</a>
    <br /><br />
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-07-01"
+date: "2023-11-13"
 file: "museums-roadtrip-usa"
 title: "Museums Roadtrip USA"
 excerpt: "Visual, architectural, and culinary art in every state and major city, mapped by Machine Learning"
@@ -23,7 +23,7 @@ I created this page as "bucket list" so that even if I can't visit each one and 
 
 {% include whatever.html %}
 
-## Menu
+## Journeys
 
 It's a large country, so cites are listed by each <a href="#CivilWar">state of the union</a>, along natural geography East-to-West:
 
@@ -82,15 +82,33 @@ To deter reckless driving among Extreme Road-trippers, the <a target="_blank" hr
 
 > Notice the transition between <strong>yellow to green</strong> down the middle of the country?
 
-<a target="_blank" href="https://www.youtube.com/watch?v=ki-hoy-3ea8&t=7m50s">VIDEO</a>: 80% of Americans live East of the <strong>98th Meridian</strong>, as shown by a green straight line overlaid this map from <a target="_blank" href="https://blackmarble.gsfc.nasa.gov/">NASA's BlackMarble satellite images of the nigh sky worldwide</a>:<br />
+<a target="_blank" href="https://www.youtube.com/watch?v=ki-hoy-3ea8&t=7m50s">VIDEO</a>: 80% of Americans live East of the (vertical) <strong>98th Meridian</strong>, as shown by a green straight line overlaid this map from <a target="_blank" href="https://blackmarble.gsfc.nasa.gov/">NASA's BlackMarble satellite images of the nigh sky worldwide</a>:<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1672456116/usa-frontier-1920x1080_a2urp2.jpg"><img alt="usa-frontier-1920x1800.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1672456116/usa-frontier-1920x1080_a2urp2.jpg"></a>
-
-That green line down the middle of America defines the extent wet storms reach from the East. West of that is the "Rain Shadow" of limited moisture from the Pacific West blocked by the tall Rocky Mountains (West of <a target="_blank" href="https://www.google.com/maps/place/Denver,+CO/@39.7584783,-113.8531857,5z/">Denver, Colorado</a>).
 
 When geologist John Westly Powell identified this phenomenon across the "pairies" in 1890, that natural line was at the 100th Meridian (vs. 98th today).
 Since then, "Climate change" continues to shift to the East. So expect less rain from Winnapeg (Canada) to Forth Worth, Ausin, and San Antonio Texas.
 Also impacted will be agriculture around Winnipeg (Manitoba, Canada), Fargo, Sioux Falls, Omaha, Lincoln, Wichita, Oklahoma City. 
 
+That green line down the middle of America defines the extent wet storms reach from the East. West of that is the "Rain Shadow" of limited moisture from the Pacific West blocked by the tall Cascade Mountains in Washington state housing Leavenworth, Washington and Rocky Mountains housing Aspen, Vail, Breckenridge, Telluride, <a target="_blank" href="https://www.google.com/maps/place/Denver,+CO/@39.7584783,-113.8531857,5z/">Denver, Colorado</a>), Park City, Utah, California.
+
+The East coast also has quaint <a target="_blank" href="https://www.travelandleisure.com/holiday-travel/americas-best-towns-for-the-holidays/">towns well decorated for Christmas </a>:
+   * Ogunquit, Maine
+   * Portsmouth, New Hampshire
+   * Nantucket, Massachusetts
+   * Newport, Rhode Island
+   * Christmas Village, Philadelphia
+   * Cape May, New Jersey
+   * Atlantic City, New Jersey
+   * New York, New York
+   
+   * Annapolis, Maryland
+   * Charlottesville, Virginia
+   * Lewisburg, West Virginia
+   * Beaufort, North Carolina
+   * Myrtle Beach, South Carolina
+   * Natchitoches, Louisiana
+   * Santa Rosa Beach, Florida
+   <br /><br />
 
 <a name="freeways"></a>
 
@@ -108,7 +126,7 @@ North-South interstate highway numbers end with 5.
 The number of <a target="_blank" href="https://www.tesla.com/supercharger">Tesla Supercharger locations</a> jumped to <a target="_blank" href="https://en.wikipedia.org/wiki/Tesla_Supercharger">2,966 in Q2 2021 from 1,587 at Q1 2019:<br />
 <img alt="map tesla charging stations 650x334-c59" width="650" height="334" src="https://cloud.githubusercontent.com/assets/300046/17037278/538ea0f8-4f4d-11e6-907a-6a0b65a807e5.jpg"></a>
 
-In 2023 Ford and GM ironed out an agreement to enable their electric cars to use Tesla's charging ports and stations.
+In 2023 Ford and GM agreed to enable their electric cars to use Tesla's charging ports and stations.
 
 A map of stations offering <strong>Ethanol-free</strong> premium gasoline (at higher prices) is at <a target="_blank" href="https://www.pure-gas.org/extensions/map.html">pure-gas.org/extensions/map.html</a>. My wife used it to figure out where I should stop along a route from Florida to Montana. It was difficult because we had to figure out where I was on the website's map. She also had to calculate how much further I could go with remaining gas. Somehow we managed to stay married after that.
 
@@ -118,9 +136,7 @@ A map of stations offering <strong>Ethanol-free</strong> premium gasoline (at hi
 ## Taxes
 
 No sales tax is collected from residents within the states of Alaska, Delaware, Montana, New Hampshire, and Oregon.
-
 <a target="_blank" href="https://www.salestaxinstitute.com/sales_tax_faqs/out_of_state_retailer_collect_sales_tax">The Sales Tax Institute</a> notes: Residents from other states are often required by laws in their home state to pay out-of-state sales tax. Sellers in tax-free states still collect the sales tax for visitors and remit it to the buyer's home state if the vendor has a presence in the buyer's home state. Otherwise, out-of-state buyers are required to pay use tax themselves.
-
 Many don't pay the use tax to their home state even though there can be significant fines, on top of paying the tax, for not doing so.
 
 <a target="_blank" href="https://9to5mac.com/2023/07/24/sales-tax-holiday-apple-products/">Some states offer sales tax-free holidays</a> (for a limited time) to encourage spending on products that are considered to be of benefit to the state's economy. This typically occurs in August and early September for back-to-school supplies, books, computers, and clothing.
