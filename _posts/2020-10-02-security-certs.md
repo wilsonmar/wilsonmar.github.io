@@ -1074,11 +1074,11 @@ EC-Council built the Advanced Penetration Testing Cyber Range (ECCAPT).
 
 ## APISec University
 
-APISec University (San Francisco launched August 2022 <a target="_blank" href="https://twitter.com/apisecu">Twitter: apisecu</a>, <a target="_blank" href="">LinkedIn</a>) provides FREE training on a <a target="_blank" href="https://www.apisecuniversity.com/api-tools-and-resources">list of security-related tools</a> that includes their own <a target="_blank" href="https://apisecscan.com/sampleApisecScan.html">API scanner running a sample netbanking app</a> [<a target="_blank" href="https://www.youtube.com/watch?v=MK3Xo9Dbvac&pp=ygURYXBpc2VjIHVuaXZlcnNpdHk%3D">demo</a>].
+<a target="_blank" href="https://APISec.ai/">APISec.ai</a> launched from San Francisco August 2022 at +1 415.236.0601 (<a target="_blank" href="https://twitter.com/apisecu">Twitter: apisecu</a>, <a target="_blank" href="">LinkedIn</a>, <a target="_blank" href="https://www.youtube.com/@apisecu">YouTube</a>, <a target="_blank" href="https://discord.com/channels/1009112852759593100/1009121947642245213">Discord</a>) provides FREE training on a <a target="_blank" href="https://www.apisecuniversity.com/api-tools-and-resources">list of security-related tools</a> that includes their own <a target="_blank" href="https://apisecscan.com/sampleApisecScan.html">API scanner running a sample netbanking app</a> [<a target="_blank" href="https://www.youtube.com/watch?v=MK3Xo9Dbvac&pp=ygURYXBpc2VjIHVuaXZlcnNpdHk%3D">demo</a>].
 
 APIsec Con with APIDays Paris, France in December 8, 2023. shelby@apisec.ai.
 
-Lectures from APISec University are also posed to their <a target="_blank" href="https://www.youtube.com/@apisecu">YouTube channel</a>.
+Attend <a target="_blank" href="https://university.apisec.ai/library">https://university.apisec.ai/library</a>
 
 FREE Foundation courses:
 
@@ -1099,7 +1099,7 @@ FREE Foundation courses:
 
 FREE Advanced courses:
 
-* 12 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/api-penetration-testing">API Penetration Testing</a> - Learn how to hack APIs like a professional penetration tester and find vulnerabilities.
+* 12 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/api-penetration-testing">API Penetration Testing</a> by <a target="_blank" href="https://www.linkedin.com/in/coreyjball/">Corey Ball</a> (author of <a target="_blank" href="https://www.amazon.com/Hacking-APIs-Application-Programming-Interfaces/dp/1718502443/">Hacking APIs</a>) - Learn how to hack APIs like a professional penetration tester and find vulnerabilities.
 
    <a target="_blank" href="https://www.youtube.com/watch?v=yJ0Ypcm7eDM&pp=ygURYXBpc2VjIHVuaXZlcnNpdHk%3D">VIDEO: Lab Setup and API Reconnaissance</a>
 
