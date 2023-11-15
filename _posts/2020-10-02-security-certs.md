@@ -1074,7 +1074,7 @@ EC-Council built the Advanced Penetration Testing Cyber Range (ECCAPT).
 
 ## APISec University
 
-APISec University (San Francisco launched August 2022 <a target="_blank" href="https://twitter.com/apisecu">Twitter: apisecu</a>, <a target="_blank" href="">LinkedIn</a>) provides FREE training on a <a target="_blank href="https://www.apisecuniversity.com/api-tools-and-resources">list of security-related tools</a> that includes their own <a target="_blank" href="https://apisecscan.com/sampleApisecScan.html">API scanner running a sample netbanking app</a> [<a target="_blank" href="https://www.youtube.com/watch?v=MK3Xo9Dbvac&pp=ygURYXBpc2VjIHVuaXZlcnNpdHk%3D">demo</a>].
+APISec University (San Francisco launched August 2022 <a target="_blank" href="https://twitter.com/apisecu">Twitter: apisecu</a>, <a target="_blank" href="">LinkedIn</a>) provides FREE training on a <a target="_blank" href="https://www.apisecuniversity.com/api-tools-and-resources">list of security-related tools</a> that includes their own <a target="_blank" href="https://apisecscan.com/sampleApisecScan.html">API scanner running a sample netbanking app</a> [<a target="_blank" href="https://www.youtube.com/watch?v=MK3Xo9Dbvac&pp=ygURYXBpc2VjIHVuaXZlcnNpdHk%3D">demo</a>].
 
 APIsec Con with APIDays Paris, France in December 8, 2023. shelby@apisec.ai.
 
@@ -1082,23 +1082,24 @@ Lectures from APISec University are also posed to their <a target="_blank" href=
 
 FREE Foundation courses:
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=o6d6BjX-Iys">VIDEO</a>: 2 CPE API Security Fundamentals course by <a target="_blank" href="https://www.linkedin.com/in/rdbarahona/">Dan Barahona</a> (founder)
+* 2 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/api-security-fundamentals">API Security Fundamentals</a> by <a target="_blank" href="https://www.linkedin.com/in/rdbarahona/">Dan Barahona</a> (founder)
 
+   <a target="_blank" href="https://www.youtube.com/watch?v=o6d6BjX-Iys">VIDEO</a>:  
    If you’re new to API security, this is the place to start. Learn about the OWASP API Top 10, real-world API breaches and more.
 
-* 2 CPE OWASP API Top 10 & Beyond! Build your API security foundation with a strong understanding of the OWASP API Top 10.
+* 2 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/owasp-api-security-top-10-and-beyond">OWASP API Top 10 & Beyond!</a> - Build your API security foundation with a strong understanding of the OWASP API Top 10.
 
-* 2 CPE API Documentation Best Practices - Strong API security starts with great API documentation. Learn the best practices, tools & techniques.
+* 2 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/api-documentation-best-practices">API Documentation Best Practices</a> - Strong API security starts with great API documentation. Learn the best practices, tools & techniques. By <a target="_blank" href="https://www.linkedin.com/in/jasonhnaustin/">Jason Harmon</a> of #APIIntersection podcast.
 
-* 1 CPE API Security for PCI Compliance - This 60-minute course examines the new PCI DSS 4.0 requirements and details the API security obligations for compliance.
+* 1 CPE (60-minute) <a target="_blank" href="https://www.apisecuniversity.com/courses/api-security-for-pci-compliance">API Security for PCI Compliance</a> examines the new PCI DSS 4.0 requirements and details the API security obligations for compliance.
 
 * 2 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/securing-api-servers">Securing API Servers</a> by Anthony Arague - Learn key concepts for keeping API servers secure - from CORS to error handling to rate limiting and more.
 
-* _ CPE (60 minute) API Security for Connected Cars and Fleets - Understand why attackers are targeting connected car and fleet APIs (telematics) and how to keep them secure. Includes real-world examples and quiz. Developed by Tom Kaplan @UpstreamAuto (XDR).
+* _ CPE (60 minute) <a target="_blank" href="https://www.apisecuniversity.com/api-tools-and-resources">API Security for Connected Cars and Fleets</a> - Understand why attackers are targeting connected car and fleet APIs (telematics) and how to keep them secure. Includes real-world examples and quiz. Developed by Tom Kaplan @UpstreamAuto (XDR).
 
 FREE Advanced courses:
 
-* 12 CPE API Penetration Testing - Learn how to hack APIs like a professional penetration tester and find vulnerabilities.
+* 12 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/api-penetration-testing">API Penetration Testing</a> - Learn how to hack APIs like a professional penetration tester and find vulnerabilities.
 
    <a target="_blank" href="https://www.youtube.com/watch?v=yJ0Ypcm7eDM&pp=ygURYXBpc2VjIHVuaXZlcnNpdHk%3D">VIDEO: Lab Setup and API Reconnaissance</a>
 
