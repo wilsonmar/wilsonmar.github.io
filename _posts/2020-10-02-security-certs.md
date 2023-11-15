@@ -1091,6 +1091,8 @@ FREE Foundation courses:
 
 * 2 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/api-documentation-best-practices">API Documentation Best Practices</a> - Strong API security starts with great API documentation. Learn the best practices, tools & techniques. By <a target="_blank" href="https://www.linkedin.com/in/jasonhnaustin/">Jason Harmon</a> of #APIIntersection podcast.
 
+   <a target="_blank" href="https://www.youtube.com/watch?v=XKgmiJVyLLQ" title="Oct 2023">Webinar: Why API Documentation Drives API Security 2</a> by Dan Barahona with Jason Harmon of Stoplight and Alex Savage.
+
 * 1 CPE (60-minute) <a target="_blank" href="https://www.apisecuniversity.com/courses/api-security-for-pci-compliance">API Security for PCI Compliance</a> examines the new PCI DSS 4.0 requirements and details the API security obligations for compliance.
 
 * 2 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/securing-api-servers">Securing API Servers</a> by Anthony Arague - Learn key concepts for keeping API servers secure - from CORS to error handling to rate limiting and more.
