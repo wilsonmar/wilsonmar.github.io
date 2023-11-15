@@ -1,11 +1,11 @@
 ---
 layout: post
+date: "2023-11-15"
+file: "wordpress"
 title: "WordPress"
 excerpt: "A vibrant ecosystem for quickly building and maintaining dynamic feature-rich websites"
 tags: [devops, front-end, evaluation]
 Categories: Devops
-date: "2019-03-15"
-file: "wordpress"
 # wordpress-1900x500.jpg 
 image:
   feature: https://user-images.githubusercontent.com/300046/60097512-c7de0d00-9710-11e9-9618-66fbfb1f682b.jpg
@@ -21,9 +21,9 @@ The interest in WordPress here is making use of recent (working) scripts and ins
 
 {% include whatever.html %}
 
+<!--
 My code for this is at <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/tree/master/wordpress">https://github.com/wilsonmar/DevSecOps/tree/master/wordpress</a>
-
-https://designextreme.com/
+-->
 
 ## WordPress has popular features
 
@@ -52,7 +52,9 @@ In summary:
 
 Wordpress was first released on May 27, 2003 by Matt Mullenwick in San Francisco, California, USA. See <a target="_blank" href="https://en.wikipedia.org/wiki/WordPress">Wikipedia</a>.
 
-Matt's company, Automattic, makes money from providing hosting to enterprises such as the New York Times, CNN, etc. Code created is folded into the open-source repository.
+Matt's company, Automattic, makes money from providing hosting to enterprises such as the New York Times, CNN, etc. 
+
+Code created for them are eventually folded into the open-source repository.
 
 
 <a name="Issues"></a>
@@ -81,11 +83,13 @@ This architecture of WordPress can result in developers and users experiencing a
 
 The many options for hosting a WordPress website:
 
-### On the cloud:
+### On WordPress.com:
 
-   * <a href="#WordPressOnline">WordPress online</a> provides a GUI
+   * <a href="#WordPressOnline">WordPress.com online</a> provides a GUI
 
 ### Easy local start on your laptop:
+
+For developers to exercise more control:
 
    * MAMP on your laptop requires configuration
    * MAMP on your laptop running within Virtualbox 
@@ -93,23 +97,27 @@ The many options for hosting a WordPress website:
    * <a href="#DockerCompose">Run Docker Compose</a>
    * <a href="#DockerLocal">Run docker on a laptop</a>
 
-### For developers to exercise more control:
-
    * <a href="#Bitnami">Bitnami AWS EC2 AMI</a> on AWS
 
+Docker image managed by Kubernetes in AWS, Azure, Google, <a href="#Alibaba">Alibaba</a>, and other cloud takes considerable work.
+
+### Hosted:
+
    * VPS (Virtual Private Server) hosts offer tools (e.g. Fantastico) to automatically install WordPress.
+
+### In the AWS cloud:
+
    * <a target="_blank" href="https://lightsail.aws.amazon.com/ls/docs/en/articles/getting-started-with-amazon-lightsail">AWS Lightsail</a> to <a target="_blank" href="https://aws.amazon.com/getting-started/tutorials/launch-a-wordpress-website/">Launch a WordPress Website in Amazon</a>
 
-In a cloud:
-
-   * Docker image managed by Kubernetes in AWS, Azure, Google, <a href="#Alibaba">Alibaba</a>, and other cloud takes considerable work.
    * <a target="_blank" href="https://aws.amazon.com/getting-started/tutorials/launch-an-app/?trk=gs_card">AWS Elastic Beanstalk</a>
    * AWS AMI images of EC2 instances using AWS ECS (Elastic Container Service) using a Load Balancer and RDS replicas 
    * <a target="_blank" href="https://bitnami.com/stack/wordpress/helm">Helm charts</a> using Amazon EKS (Elastic Kubernetes Service)
    * AWS AMI images of EC2 instances using AWS Fargate, which takes care of scaling
    <br /><br />
 
-Click on each option to view more.
+### In the Azure cloud
+
+<a href="#Azure">on Azure cloud</a>
 
 <hr />
 
@@ -226,34 +234,13 @@ https://www.monsterinsights.com/how-to-add-google-analytics-to-wordpress-without
 MonsterInsights plugin
 
 
-<a name="Alibaba"></a>
-
-## WordPress on Alibaba Cloud
-
-Just for comparison, Alibaba's WordPress cloud servers cost <strong>$4.6/Month</strong>.
-
-CAUTION: Restrictions on foreign trade imposed by China's government include the need for a China partner to host sites in China.
-
-<a target="_blank" href="https://www.alibabacloud.com/partners/wordpress?&msctype=email&mscareaid=sg&mscsiteid=intl&mscmsgid=4690219010900218104&&spm=a2c4l.12481553.enc.9&#floor1">
-Deploy WordPress on Alibaba Cloud Servers in 5 minutes</a>.
-
-1. Provide Username
-1. ECS Purchase Wizard, to select the billing and ECS configuration from cloud regions to instance type families.
-1. Select an ecs.t5-lc1m1.small instance from instance type families as the WordPress instance.
-<br /><br />
-
-<a target="_blank" href="https://www.alibabacloud.com/blog/deploy-web-apps-with-high-availability-fault-tolerance-and-load-balancing-on-alibaba-cloud_277149">Deploy Web Apps with High Availability, Fault Tolerance, and Load Balancing on Alibaba Cloud</a> November 29, 2017
-
-<a target="_blank" href="https://www.alibabacloud.com/blog/setting-up-a-server-cluster-for-enterprise-web-apps-%281%29_584040">
-Setting Up a Server Cluster for Enterprise Web Apps</a> April 23, 2018
-
-
+<hr />
 
 <a name="AWSHA"></a>
 
-## AWS EC2 High Availability with Auto-Scaling
+### AWS EC2 High Availability with Auto-Scaling
 
-Running WordPress in the cloud provides options for High-Availability, logging (CloudWatch), backups, CDN (CloudFront), etc:
+Running WordPress in the cloud provides options for High-Availability, logging (CloudWatch), backups, CDN (CloudFront), auto-renewing SSL certificates, etc:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/50410712-bef39980-07c8-11e9-9138-bc22d4183589.png"><img alt="1,920px × 1,080px" width="1920" src="https://user-images.githubusercontent.com/300046/50410712-bef39980-07c8-11e9-9138-bc22d4183589.png"></a>
 <a target="_blank" title="published Jan 3, 2012" href="https://www.slideshare.net/harishganesan/scaling-wordpress-in-aws-amazon-ec2">Image credit</a>: by <a target="_blank" title="harish11g.aws@gmail.com" href="http://harish11g.blogspot.com">Harish Ganesan</a> (<a target="_blank" href="https://www.linkedin.com/in/harishganesan/">*</a>) 
@@ -329,6 +316,38 @@ Once the instance is running, enter the public DNS provided by Amazon into your 
 You can go to '/wp-admin/' from your browser to access the application administration panel. The default server administrator is 'user'. Please check our documentation at https://docs.bitnami.com/aws/faq/#how-to-find-application-credentials to learn how to get your password. You may change this username and password within the application settings. You can also access your instance via SSH using the username 'bitnami' and your Amazon private key. For additional setup instructions and frequently asked questions please go to https://docs.bitnami.com/aws/apps/wordpress/
 
 
+<hr />
+
+<a name="Azure"></a>
+
+## WordPress on Azure cloud
+
+
+
+<hr />
+
+<a name="Alibaba"></a>
+
+## WordPress on Alibaba Cloud
+
+Just for comparison, Alibaba's WordPress cloud servers cost <strong>$4.6/Month</strong>.
+
+CAUTION: Restrictions on foreign trade imposed by China's government include the need for a China partner to host sites in China.
+
+<a target="_blank" href="https://www.alibabacloud.com/partners/wordpress?&msctype=email&mscareaid=sg&mscsiteid=intl&mscmsgid=4690219010900218104&&spm=a2c4l.12481553.enc.9&#floor1">
+Deploy WordPress on Alibaba Cloud Servers in 5 minutes</a>.
+
+1. Provide Username
+1. ECS Purchase Wizard, to select the billing and ECS configuration from cloud regions to instance type families.
+1. Select an ecs.t5-lc1m1.small instance from instance type families as the WordPress instance.
+<br /><br />
+
+<a target="_blank" href="https://www.alibabacloud.com/blog/deploy-web-apps-with-high-availability-fault-tolerance-and-load-balancing-on-alibaba-cloud_277149">Deploy Web Apps with High Availability, Fault Tolerance, and Load Balancing on Alibaba Cloud</a> November 29, 2017
+
+<a target="_blank" href="https://www.alibabacloud.com/blog/setting-up-a-server-cluster-for-enterprise-web-apps-%281%29_584040">
+Setting Up a Server Cluster for Enterprise Web Apps</a> April 23, 2018
+
+
 
 ## Duplicator plugin
 
@@ -364,3 +383,6 @@ After configuring it with their AWS account credentials, users can generate audi
    * https://make.wordpress.org/cli/handbook/installing/#installing-via-docker
 
    * https://codex.wordpress.org/Installing_WordPress
+
+   * <a target="_blank" href="https://designextreme.com/">https://designextreme.com</a>
+
