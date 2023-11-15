@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-10-05"
+date: "2023-11-14"
 file: "security-certs"
 title: "Security Certifications"
 excerpt: "There are several (overlapping) ones."
@@ -1070,6 +1070,56 @@ with training via CPENT.
 
 EC-Council built the Advanced Penetration Testing Cyber Range (ECCAPT).
 
+<hr />
+
+## APISec University
+
+APISec University (San Francisco launched August 2022 <a target="_blank" href="https://twitter.com/apisecu">Twitter: apisecu</a>, <a target="_blank" href="">LinkedIn</a>) provides FREE training on a <a target="_blank href="https://www.apisecuniversity.com/api-tools-and-resources">list of security-related tools</a> that includes their own <a target="_blank" href="https://apisecscan.com/sampleApisecScan.html">API scanner running a sample netbanking app</a> [<a target="_blank" href="https://www.youtube.com/watch?v=MK3Xo9Dbvac&pp=ygURYXBpc2VjIHVuaXZlcnNpdHk%3D">demo</a>].
+
+APIsec Con with APIDays Paris, France in December 8, 2023. shelby@apisec.ai.
+
+Lectures from APISec University are also posed to their <a target="_blank" href="https://www.youtube.com/@apisecu">YouTube channel</a>.
+
+FREE Foundation courses:
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=o6d6BjX-Iys">VIDEO</a>: 2 CPE API Security Fundamentals course by <a target="_blank" href="https://www.linkedin.com/in/rdbarahona/">Dan Barahona</a> (founder)
+
+   If you’re new to API security, this is the place to start. Learn about the OWASP API Top 10, real-world API breaches and more.
+
+* 2 CPE OWASP API Top 10 & Beyond! Build your API security foundation with a strong understanding of the OWASP API Top 10.
+
+* 2 CPE API Documentation Best Practices - Strong API security starts with great API documentation. Learn the best practices, tools & techniques.
+
+* 1 CPE API Security for PCI Compliance - This 60-minute course examines the new PCI DSS 4.0 requirements and details the API security obligations for compliance.
+
+* 2 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/securing-api-servers">Securing API Servers</a> by Anthony Arague - Learn key concepts for keeping API servers secure - from CORS to error handling to rate limiting and more.
+
+* _ CPE (60 minute) API Security for Connected Cars and Fleets - Understand why attackers are targeting connected car and fleet APIs (telematics) and how to keep them secure. Includes real-world examples and quiz. Developed by Tom Kaplan @UpstreamAuto (XDR).
+
+FREE Advanced courses:
+
+* 12 CPE API Penetration Testing - Learn how to hack APIs like a professional penetration tester and find vulnerabilities.
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=yJ0Ypcm7eDM&pp=ygURYXBpc2VjIHVuaXZlcnNpdHk%3D">VIDEO: Lab Setup and API Reconnaissance</a>
+
+<br /><br />
+
+### CASA 
+
+<a target="_blank" href="https://www.apisecuniversity.com/courses/api-security-certified-professional-exam">
+The $150 CASA (Certified API Security Analyst) exam from APISec University</a> is 100 questions online to "demonstrate your API security expertise."
+
+### ASCP 
+
+<a target="_blank" href="https://www.apisecuniversity.com/courses/api-security-certified-professional-exam">
+The $650 API Security Certified Professional exam from APISec University</a> is earned by capturing 6 of 8 flags to
+"prove your API hacking skills. Perform a penetration test of two API-driven applications by discovering vulnerabilities, exploiting weaknesses, and reporting your findings."
+
+Prepare for it by taking APISec University's API Penetration Testing course.
+
+
+<hr />
+
 ## IIBA Cybersecuity Analysis
 
 IIBA, the International Institute of Business Analysis (Pickering, Ontario, Canada), has an affiliation with the IEEE. Membership costs $139/year. For <a target="_blank" href="https://my.iiba.org/portal/s/store#/store/browse/detail/a133l000008axueAAA">$250 until Oct 31, 2022</a> then $400/$475 for members/non-members, it offers the <a target="_blank" href="https://www.iiba.org/business-analysis-certifications/certificate-in-cybersecurity-analysis/">CCA (Certification in Cybersecurity Analysis)</a> among its 6 other certifications administered online by PSI. IIBA does not disclose the score needed to pass, scores attained, nor scoring percentages.
@@ -1292,7 +1342,7 @@ Elsewhere:
 
 ## Secure Coding
 
-CodeBashing.com from Checkmarx has gamified tutorials on identifying and mitgating vulnerabilities in code for many languages:
+<a target="_blank" href="https://codebashing.com/">CodeBashing.com</a> (by security tools vendor Checkmarx) has gamified tutorials on identifying and mitgating vulnerabilities in code for many languages:
 <a target="_blank" href="https://free.codebashing.com/courses/hacking_headlines">Hacking Headlines</a>, 
 <a target="_blank" href="https://free.codebashing.com/courses/source_codes">Source Code (for each language)</a>:
 Android (Java), iOS, 
@@ -1305,6 +1355,8 @@ PHP,
 Python Django,
 Ruby on Rails,
 
+
+<hr />
 
 ## Networking (Firewall) certs
 
