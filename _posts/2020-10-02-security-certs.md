@@ -1097,7 +1097,13 @@ FREE Foundation courses:
 
 * 2 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/securing-api-servers">Securing API Servers</a> by Anthony Arague - Learn key concepts for keeping API servers secure - from CORS to error handling to rate limiting and more.
 
+   <a target="_blank" href="https://www.youtube.com/watch?v=8twQCmm1NdI">VIDEO: PCI DSS 4.0 Requirements for API Security</a>
+   
+   <a target="_blank" href="https://www.youtube.com/watch?v=f73crlwEdX0">VIDEO: API Security Requirements for PCI-DSS 4.0</a>
+
 * _ CPE (60 minute) <a target="_blank" href="https://www.apisecuniversity.com/api-tools-and-resources">API Security for Connected Cars and Fleets</a> - Understand why attackers are targeting connected car and fleet APIs (telematics) and how to keep them secure. Includes real-world examples and quiz. Developed by Tom Kaplan @UpstreamAuto (XDR).
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=zTCPKIEoz_0">VIDEO: Hacking Cars: Why APIs are the Weakest Link</a>
 
 FREE Advanced courses:
 
