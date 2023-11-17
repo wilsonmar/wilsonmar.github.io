@@ -1094,7 +1094,7 @@ Each course has quizzes and a certificate of completion.
 
 * 1 CPE (60-minute) <a target="_blank" href="https://www.apisecuniversity.com/courses/api-security-for-pci-compliance">API Security for PCI Compliance</a> examines the new PCI DSS 4.0 requirements and details the API security obligations for compliance.
 
-* 2 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/securing-api-servers">Securing API Servers</a> by Anthony Arague - Learn key concepts for keeping API servers secure - from CORS to error handling to rate limiting and more.
+* 2 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/securing-api-servers">Securing API Servers</a> by <a target="_blank" href="https://www.linkedin.com/in/anthonyaragues/">Anthony Arague</a> - Learn key concepts for keeping API servers secure - from CORS to error handling to rate limiting and more.
 
    <a target="_blank" href="https://www.youtube.com/watch?v=8twQCmm1NdI">VIDEO: PCI DSS 4.0 Requirements for API Security</a>
    
