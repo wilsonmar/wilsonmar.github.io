@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-14"
+date: "2023-11-17"
 file: "security-certs"
 title: "Security Certifications"
 excerpt: "There are several (overlapping) ones."
@@ -1086,7 +1086,7 @@ Each course has quizzes and a certificate of completion.
    <a target="_blank" href="https://www.youtube.com/watch?v=o6d6BjX-Iys">VIDEO</a>:  
    If you’re new to API security, this is the place to start. Learn about the OWASP API Top 10, real-world API breaches and more.
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1700243505/apisec-top100-badge-1000x1000_qjvk6h.png"><img align="right" width="200" alt="apisec-top100-badge-1000x1000.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700243505/apisec-top100-badge-1000x1000_qjvk6h.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1700243505/apisec-top100-badge-1000x1000_qjvk6h.png"><img align="right" width="100" alt="apisec-top100-badge-1000x1000.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700243505/apisec-top100-badge-1000x1000_qjvk6h.png"></a>
 * 2 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/owasp-api-security-top-10-and-beyond">OWASP API Top 10 & Beyond!</a> - Build your API security foundation with a strong understanding of the OWASP API Top 10.
 
 * 2 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/api-documentation-best-practices">API Documentation Best Practices</a> - Strong API security starts with great API documentation. Learn the best practices, tools & techniques. By <a target="_blank" href="https://www.linkedin.com/in/jasonhnaustin/">Jason Harmon</a> of #APIIntersection podcast.
@@ -1102,7 +1102,7 @@ Each course has quizzes and a certificate of completion.
    <a target="_blank" href="https://www.youtube.com/watch?v=f73crlwEdX0">VIDEO: API Security Requirements for PCI-DSS 4.0</a>
 
    <a name="Helmet"></a>
-   Sample API Node.js server configuration Helmet:
+   Sample API configuration (for Node.js Express server by Helmet taught at <a target="_blank" href="https://www.freecodecamp.org/learn/information-security/#python-for-penetration-testing">FreeCodeCamp InfoSec</a>):
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1700242291/sec-cors-helmet-node-express-858x419_wbdteo.png"><img alt="sec-cors-helmet-node-express-858x419.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700242291/sec-cors-helmet-node-express-858x419_wbdteo.png"></a>   
 
 * 1 CPE (60 minute) <a target="_blank" href="https://www.apisecuniversity.com/api-tools-and-resources">API Security for Connected Cars and Fleets</a> - Understand why attackers are targeting connected car and fleet APIs (telematics) and how to keep them secure. Includes real-world examples and quiz. Developed by <a target="_blank" href="https://www.linkedin.com/in/tom-kaplan-6a89401aa/">Tom Kaplan</a> @UpstreamAuto (XDR).
