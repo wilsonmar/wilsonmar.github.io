@@ -1078,9 +1078,8 @@ EC-Council built the Advanced Penetration Testing Cyber Range (ECCAPT).
 
 APIsec Con with APIDays Paris, France in December 8, 2023. shelby@apisec.ai.
 
-Attend <a target="_blank" href="https://university.apisec.ai/library">https://university.apisec.ai/library</a>
-
-FREE Foundation courses:
+Register to <a target="_blank" href="https://university.apisec.ai/library">attend at https://university.apisec.ai/library</a>.
+Each course has quizzes and a certificate of completion.
 
 * 2 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/api-security-fundamentals">API Security Fundamentals</a> by <a target="_blank" href="https://www.linkedin.com/in/rdbarahona/">Dan Barahona</a> (founder)
 
@@ -1101,11 +1100,9 @@ FREE Foundation courses:
    
    <a target="_blank" href="https://www.youtube.com/watch?v=f73crlwEdX0">VIDEO: API Security Requirements for PCI-DSS 4.0</a>
 
-* _ CPE (60 minute) <a target="_blank" href="https://www.apisecuniversity.com/api-tools-and-resources">API Security for Connected Cars and Fleets</a> - Understand why attackers are targeting connected car and fleet APIs (telematics) and how to keep them secure. Includes real-world examples and quiz. Developed by Tom Kaplan @UpstreamAuto (XDR).
+* 1 CPE (60 minute) <a target="_blank" href="https://www.apisecuniversity.com/api-tools-and-resources">API Security for Connected Cars and Fleets</a> - Understand why attackers are targeting connected car and fleet APIs (telematics) and how to keep them secure. Includes real-world examples and quiz. Developed by <a target="_blank" href="https://www.linkedin.com/in/tom-kaplan-6a89401aa/">Tom Kaplan</a> @UpstreamAuto (XDR).
 
    <a target="_blank" href="https://www.youtube.com/watch?v=zTCPKIEoz_0">VIDEO: Hacking Cars: Why APIs are the Weakest Link</a>
-
-FREE Advanced courses:
 
 * 12 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/api-penetration-testing">API Penetration Testing</a> by <a target="_blank" href="https://www.linkedin.com/in/coreyjball/">Corey Ball</a> (author of <a target="_blank" href="https://www.amazon.com/Hacking-APIs-Application-Programming-Interfaces/dp/1718502443/">Hacking APIs</a>) - Learn how to hack APIs like a professional penetration tester and find vulnerabilities.
 
