@@ -1081,19 +1081,23 @@ APIsec Con with APIDays Paris, France in December 8, 2023. shelby@apisec.ai.
 Register to <a target="_blank" href="https://university.apisec.ai/library">attend at https://university.apisec.ai/library</a>.
 Each course has quizzes and a certificate of completion.
 
-* 2 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/api-security-fundamentals">API Security Fundamentals</a> by <a target="_blank" href="https://www.linkedin.com/in/rdbarahona/">Dan Barahona</a> (founder)
+By <a target="_blank" href="https://www.linkedin.com/in/rdbarahona/">Dan Barahona</a> (founder):
+
+* 2 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/api-security-fundamentals">API Security Fundamentals</a> 
 
    <a target="_blank" href="https://www.youtube.com/watch?v=o6d6BjX-Iys">VIDEO</a>:  
    If you’re new to API security, this is the place to start. Learn about the OWASP API Top 10, real-world API breaches and more.
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1700243505/apisec-top100-badge-1000x1000_qjvk6h.png"><img align="right" width="100" alt="apisec-top100-badge-1000x1000.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700243505/apisec-top100-badge-1000x1000_qjvk6h.png"></a>
+<a target="_blank" href="https://www.credly.com/badges/aa078310-ec35-4986-b39d-e3b74412c90e/public_url"><img align="right" width="100" alt="apisec-top100-badge-1000x1000.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700243505/apisec-top100-badge-1000x1000_qjvk6h.png"></a>
 * 2 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/owasp-api-security-top-10-and-beyond">OWASP API Top 10 & Beyond!</a> - Build your API security foundation with a strong understanding of the OWASP API Top 10.
 
-* 2 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/api-documentation-best-practices">API Documentation Best Practices</a> - Strong API security starts with great API documentation. Learn the best practices, tools & techniques. By <a target="_blank" href="https://www.linkedin.com/in/jasonhnaustin/">Jason Harmon</a> of #APIIntersection podcast.
+* 1 CPE (60-minute) <a target="_blank" href="https://www.apisecuniversity.com/courses/api-security-for-pci-compliance">API Security for PCI Compliance</a> examines the new <a target="_blank" href="https://blog.pcisecuritystandards.org/pci-dss-v4-0-resource-hub">PCI DSS (Data Security Standard) v4.0 requirements</a> and details the API security obligations for compliance.
+
+By <a target="_blank" href="https://www.linkedin.com/in/jasonhnaustin/">Jason Harmon</a> of #APIIntersection podcast:
+
+* 2 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/api-documentation-best-practices">API Documentation Best Practices</a> - Strong API security starts with great API documentation. Learn the best practices, tools & techniques. 
 
    <a target="_blank" href="https://www.youtube.com/watch?v=XKgmiJVyLLQ" title="Oct 2023">Webinar: Why API Documentation Drives API Security 2</a> by Dan Barahona with Jason Harmon of Stoplight and Alex Savage.
-
-* 1 CPE (60-minute) <a target="_blank" href="https://www.apisecuniversity.com/courses/api-security-for-pci-compliance">API Security for PCI Compliance</a> examines the new PCI DSS 4.0 requirements and details the API security obligations for compliance.
 
 * 2 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/securing-api-servers">Securing API Servers</a> by <a target="_blank" href="https://www.linkedin.com/in/anthonyaragues/">Anthony Arague</a> - Learn key concepts for keeping API servers secure - from CORS to error handling to rate limiting and more.
 
@@ -1105,13 +1109,15 @@ Each course has quizzes and a certificate of completion.
    Sample API configuration (for Node.js Express server by Helmet taught at <a target="_blank" href="https://www.freecodecamp.org/learn/information-security/#python-for-penetration-testing">FreeCodeCamp InfoSec</a>):
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1700242291/sec-cors-helmet-node-express-858x419_wbdteo.png"><img alt="sec-cors-helmet-node-express-858x419.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700242291/sec-cors-helmet-node-express-858x419_wbdteo.png"></a>   
 
+By <a target="_blank" href="https://www.linkedin.com/in/coreyjball/">Corey Ball</a> (author of <a target="_blank" href="https://www.amazon.com/Hacking-APIs-Application-Programming-Interfaces/dp/1718502443/">Hacking APIs</a>:
+
+* 12 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/api-penetration-testing">API Penetration Testing</a> - Learn how to hack APIs like a professional penetration tester and find vulnerabilities.
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=yJ0Ypcm7eDM&pp=ygURYXBpc2VjIHVuaXZlcnNpdHk%3D">VIDEO: Lab Setup and API Reconnaissance</a>
+
 * 1 CPE (60 minute) <a target="_blank" href="https://www.apisecuniversity.com/api-tools-and-resources">API Security for Connected Cars and Fleets</a> - Understand why attackers are targeting connected car and fleet APIs (telematics) and how to keep them secure. Includes real-world examples and quiz. Developed by <a target="_blank" href="https://www.linkedin.com/in/tom-kaplan-6a89401aa/">Tom Kaplan</a> @UpstreamAuto (XDR).
 
    <a target="_blank" href="https://www.youtube.com/watch?v=zTCPKIEoz_0">VIDEO: Hacking Cars: Why APIs are the Weakest Link</a>
-
-* 12 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/api-penetration-testing">API Penetration Testing</a> by <a target="_blank" href="https://www.linkedin.com/in/coreyjball/">Corey Ball</a> (author of <a target="_blank" href="https://www.amazon.com/Hacking-APIs-Application-Programming-Interfaces/dp/1718502443/">Hacking APIs</a>) - Learn how to hack APIs like a professional penetration tester and find vulnerabilities.
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=yJ0Ypcm7eDM&pp=ygURYXBpc2VjIHVuaXZlcnNpdHk%3D">VIDEO: Lab Setup and API Reconnaissance</a>
 
 <br /><br />
 
