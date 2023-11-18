@@ -4016,6 +4016,12 @@ Compliance checks
 
 Network scanning
 
+<hr />
+
+## Resources
+
+   https://tomdeneire.medium.com/til-benchmarking-a-single-get-request-with-5-different-python-http-libraries-fce2bf0c86a4
+
 
 <hr />
 
