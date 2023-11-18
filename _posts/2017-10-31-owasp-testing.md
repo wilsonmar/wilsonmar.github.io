@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-13"
+date: "2023-11-18"
 file: "owasp-testing"
 title: "OWASP"
 excerpt: "Practice finding security vulnerabilities within ZAP or the Broken Web App by running SCA, SAST, DAST, IAST using open-source SonarQube, Sonatype, Synopsys and other tools"
@@ -16,57 +16,51 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-There are several websites which defines specific examples of insecure code turned secure:
 
-<a target="_blank" href="https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project">OWASP (Open Web Application Security Project) Top 10</a> - <a target="_blank" href="https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf">2017 PDF</a>:
-is the result of an on-going active non-profit team.
 
-OSSTMM (Open Source Security Testing Methodology Manual) <a target="_blank" href="https://www.isecom.org/OSSTMM.3.pdf">v3 PDF</a> updated every six months by the <a target="_blank" href="https://www.isecom.org/research.html">ISECOM (Institute for Security and Open Methodologies)</a>. It was developed in an open community, and subjected to peer and cross-disciplinary review. ISECOM's <a target="_blank" href="https://www.isecom.org/STAR.3.pdf">PDF: Security Test Audit Report (STAR)</a> is a standardized form to summarize results of a security or penetration test - providing precise calculations of the Attack Surface, details of what was tested and how, and indemnification for testing organization.:
-   1. Posture review
-   2. Logistics
-   3. Active Detection Verification
-   4. Visibility Audit
-   5. Access Verification
-   6. Trust Verification
-   7. Controls Verification
-   8. Process Verification
-   9. Configuration and Training Verification
-   10. Property Validation
-   11. Segregation Review
-   12. Exposure Verification
-   13. Competitive Intelligence Scouting
-   14. Quarantine Verification
-   15. Privileges Audit
-   16. Survivability Validation and Service Continuity
-   17. End Survey, Alert, and Log Review
+## APISec Test results
+
+<a target="_blank" href="https://apisecscan.com/sampleApisecScan.html">This sample API scan tests</a>:
+
+   * Fail "positive" tests when API functionality is found to not operate as expected according to the API specification.
+   * Fail "negative" tests when the API is found vulnerable to attacks imposed by testing tools.
    <br /><br />
 
-OSSTMM has five channels or operational areas:
+One vendor's API test results are organized into four categories:
 
-   * Human Security: The security of human interaction and communication is evaluated operationally as a means of testing
-   * Physical Security: The OSSTMM tests physical security, defined as any tangible element of security that takes physical effort to operate
-   * Wireless Communications: Electronic communications, signals, and emanations are all considered wireless communications that are part of the operational security testing
-   * Telecommunications: Whether the telecommunication network is digital or analog, any communication conducted over telephone or network lines is tested in the OSSTMM
-   * Data Networks: The security testing of data networks includes electronic systems and data networks that are used for communication or interaction via cable and wired network lines
+A. Vulnerable
+   * Injection (Log4J):	
+   * Fuzzing (random data):
+   * Reflected Injection:	
+
+B. Valuable
+   * Personal Data	
+   
+C. Configuration
+   * SSL Certificate	
+   * SSL Required	
+   * Server Properties Leak	
+   * HTTP Options	
+   * CORS Configuration	
+   * Incremental IDs	
+
+D. Authentication
+   * Broken Authentication	
    <br /><br />
 
-<a target="_blank" href="http://www.pentest-standard.org/index.php/Main_Page">PTES (Penetration Testing Execution Standard)</a> in 2009 defined phases of a pen-test engagement:
-
-   1. <a target="_blank" href="http://www.pentest-standard.org/index.php/Intelligence_Gathering">Intelligence Gathering</a>
-   2. <a target="_blank" href="http://www.pentest-standard.org/index.php/Pre-engagement">Pre-engagement Interactions</a>
-   3. <a target="_blank" href="http://www.pentest-standard.org/index.php/Threat_Modeling">Threat Modeling</a>
-   4. <a target="_blank" href="http://www.pentest-standard.org/index.php/Vulnerability_Analysis">Vulnerability Analysis</a>
-   5. <a target="_blank" href="http://www.pentest-standard.org/index.php/Exploitation">Exploitation</a>
-   6. <a target="_blank" href="http://www.pentest-standard.org/index.php/Post_Exploitation">Post Exploitation</a>
-   7. <a target="_blank" href="http://www.pentest-standard.org/index.php/Reporting">Reporting</a>
-   <br /><br />
-
-The PTES <a target="_blank" href="http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines">Technical Guidelines</a> is an "oldie but goodie" from 2014, but still has good wisdom.
+Testing is based on lists of vulnerabilities identified by OWASP, SANS, and other organizations.
 
 
 <a name="OWASP_Items"></a>
 
-## OWASP items
+## OWASP Web Top 10
+
+OWASP is a non-profit organization with a mission to provide practical vendor-neutral information about application security. 
+
+<a target="_blank" href="https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project">OWASP (Open Web Application Security Project) Top 10</a> - <a target="_blank" href="https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf">2017 PDF</a>:
+is the result of an on-going active non-profit team.
+
+The OWASP Top 10 Web Application Security Risks was updated in 2021.
 
 YouTube videos from F5 DevCentral 2017 by John Wagnon (and Description from OWASP):
 
@@ -102,28 +96,18 @@ YouTube videos from F5 DevCentral 2017 by John Wagnon (and Description from OWAS
    <br /><br />
 
 Also: Cross-Site Request Forgery (CSRF)
+   
+   * <a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization">Description</a>
+   * <a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities">Description</a>
+   * <a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A10-Insufficient_Logging%26Monitoring">Description</a>
+   <br /><br />
 
-## others
 
-   CWE Top 25
-   
-   PCI DSS
-   
-   MISRA®
-   
-   CERT C/C++, CERT Java, CERT Python?
-   
-   DISA STIG, 
-   
-   ISO 26262
-   
-   ISO/IEC TS 17961
-   
-   AUTOSAR®
+<a name="OWASP_API_Items"></a>
 
-## API Security 
+## API Security Top 10
 
-<a target="_blank" href="https://owasp.org/www-project-api-security/">API security has its own OWASP Top 10</a>:
+<a target="_blank" href="https://owasp.org/www-project-api-security/">API security has its own Top 10</a>:
 
 1. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/">API1:2019 Broken Object Level Authorization</a>
 
@@ -165,29 +149,115 @@ Also: Cross-Site Request Forgery (CSRF)
 
     Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows attackers to further attack systems, maintain persistence, pivot to more systems to tamper with, extract, or destroy data. Most breach studies demonstrate the time to detect a breach is over 200 days, typically detected by external parties rather than internal processes or monitoring.
 
-There is also SAN's <a target="_blank" href="https://www.sans.org/top25-software-errors/">Top 25 Software Errors</a> that include
-Insecure Interaction Between Components,
-Risky Resource Management, and
-Porous Defenses
+<hr />
 
-Additionally:
+
+## Top 10 Errors
+
+There is also SAN's <a target="_blank" href="https://www.sans.org/top25-software-errors/">Top 25 Software Errors</a> that include
+
+   * Insecure Interaction Between Components,
+   * Risky Resource Management, and
+   * Porous Defenses
+   <br /><br />
+
+
+## PCI DSS
+
 * Payment Card Industry Data Security Standard (PCI DSS)
+
+
+## Others
+
+* CWE Top 25
+   
 * Health Insurance Portability and Accountability Act (HIPAA)
+
 * Motor Industry Software Reliability Association (MISRA) C/C++ coding standards
+
+* MISRA®
+   
+* CERT C/C++, CERT Java, CERT Python?
+   
+* (US) DISA STIG, 
+   
+* ISO 26262
+   
+* ISO/IEC TS 17961
+   
+* AUTOSAR®
+
+
+<hr />
+
+## Software Testing Guidelines
+
+Several websites provide specific examples of insecure code turned secure:
+
+### OSSTMM
+
+OSSTMM (Open Source Security Testing Methodology Manual) <a target="_blank" href="https://www.isecom.org/OSSTMM.3.pdf">v3 PDF</a> updated every six months by the <a target="_blank" href="https://www.isecom.org/research.html">ISECOM (Institute for Security and Open Methodologies)</a>. It was developed in an open community, and subjected to peer and cross-disciplinary review. ISECOM's <a target="_blank" href="https://www.isecom.org/STAR.3.pdf">PDF: Security Test Audit Report (STAR)</a> is a standardized form to summarize results of a security or penetration test - providing precise calculations of the Attack Surface, details of what was tested and how, and indemnification for testing organization.:
+   1. Posture review
+   2. Logistics
+   3. Active Detection Verification
+   4. Visibility Audit
+   5. Access Verification
+   6. Trust Verification
+   7. Controls Verification
+   8. Process Verification
+   9. Configuration and Training Verification
+   10. Property Validation
+   11. Segregation Review
+   12. Exposure Verification
+   13. Competitive Intelligence Scouting
+   14. Quarantine Verification
+   15. Privileges Audit
+   16. Survivability Validation and Service Continuity
+   17. End Survey, Alert, and Log Review
+   <br /><br />
+
+OSSTMM has five channels or operational areas:
+
+   * Human Security: The security of human interaction and communication is evaluated operationally as a means of testing
+   * Physical Security: The OSSTMM tests physical security, defined as any tangible element of security that takes physical effort to operate
+   * Wireless Communications: Electronic communications, signals, and emanations are all considered wireless communications that are part of the operational security testing
+   * Telecommunications: Whether the telecommunication network is digital or analog, any communication conducted over telephone or network lines is tested in the OSSTMM
+   * Data Networks: The security testing of data networks includes electronic systems and data networks that are used for communication or interaction via cable and wired network lines
+   <br /><br />
+
+### PTES
+
+<a target="_blank" href="http://www.pentest-standard.org/index.php/Main_Page">PTES (Penetration Testing Execution Standard)</a> in 2009 defined phases of a pen-test engagement:
+
+   1. <a target="_blank" href="http://www.pentest-standard.org/index.php/Intelligence_Gathering">Intelligence Gathering</a>
+   2. <a target="_blank" href="http://www.pentest-standard.org/index.php/Pre-engagement">Pre-engagement Interactions</a>
+   3. <a target="_blank" href="http://www.pentest-standard.org/index.php/Threat_Modeling">Threat Modeling</a>
+   4. <a target="_blank" href="http://www.pentest-standard.org/index.php/Vulnerability_Analysis">Vulnerability Analysis</a>
+   5. <a target="_blank" href="http://www.pentest-standard.org/index.php/Exploitation">Exploitation</a>
+   6. <a target="_blank" href="http://www.pentest-standard.org/index.php/Post_Exploitation">Post Exploitation</a>
+   7. <a target="_blank" href="http://www.pentest-standard.org/index.php/Reporting">Reporting</a>
+   <br /><br />
+
+The PTES <a target="_blank" href="http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines">Technical Guidelines</a> is an "oldie but goodie" from 2014, but still has good wisdom.
+
 
 
 <hr />
 
 ## Software Security Testing
 
+DevSecOps is a practice of integrating security into the DevOps process.
+
 <a name="IAST"></a>
+
+### IAST (Interactive App Security Testing)
 
 IAST (Interactive App Security Testing) was invented by Checkmarx, which adds an agent running along the app to report to a central "Security Handler".
 
 
 <a name="DAST"></a>
 
-## DAST (Dynamic Application Security Testing)
+### DAST (Dynamic Application Security Testing)
 
 DAST aims to expose security weaknesses by watching application behavior while user actions are performed by automated scripts in a test environment, where various combinations of input actions are tried. 
 
@@ -212,7 +282,7 @@ E. <a target="_blank" href="https://www.brighttalk.com/webcast/17668/423557">VID
 
 <a name="SAST"></a>
 
-## SAST
+### SAST
 
 SAST (Static App Security Testing) tools focus on <strong>scanning application source code</strong> for vulnerabilities in coding. Static Application Security Testing (SAST) vendors include:
    * Veracode
@@ -224,7 +294,11 @@ SAST (Static App Security Testing) tools focus on <strong>scanning application s
 Security tests should also cover the efficacy of Runtime Application Self-Protection (RASP) built within apps, rather than relying completely on the infrastructure Web Application Firewall (WAF).
 
 
-## Get sample broken app
+<hr />
+
+<a name="SCA"></a>
+
+## Sample broken apps
 
 Several apps were created to exhibit vulnerability issues, as examples
 for Static Code vulnerability assessment (SAST) utilities such as GitHub CodeQL, SonarQube, Fortify, etc.. Which utility catches the most issues?
