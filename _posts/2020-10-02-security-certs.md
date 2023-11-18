@@ -1115,6 +1115,10 @@ By <a target="_blank" href="https://www.linkedin.com/in/coreyjball/">Corey Ball<
 
    <a target="_blank" href="https://www.youtube.com/watch?v=yJ0Ypcm7eDM&pp=ygURYXBpc2VjIHVuaXZlcnNpdHk%3D">VIDEO: Lab Setup and API Reconnaissance</a>
 
+   The course covers use of VMWare player playing a 4GB VMWare image containing Kali Linux VM bridged for direct connect.
+   
+   Burp Suite, and Postman.
+
 * 1 CPE (60 minute) <a target="_blank" href="https://www.apisecuniversity.com/api-tools-and-resources">API Security for Connected Cars and Fleets</a> - Understand why attackers are targeting connected car and fleet APIs (telematics) and how to keep them secure. Includes real-world examples and quiz. Developed by <a target="_blank" href="https://www.linkedin.com/in/tom-kaplan-6a89401aa/">Tom Kaplan</a> @UpstreamAuto (XDR).
 
    <a target="_blank" href="https://www.youtube.com/watch?v=zTCPKIEoz_0">VIDEO: Hacking Cars: Why APIs are the Weakest Link</a>
