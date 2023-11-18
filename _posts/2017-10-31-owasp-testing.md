@@ -17,7 +17,6 @@ comments: true
 {% include _toc.html %}
 
 
-
 ## APISec Test results
 
 <a target="_blank" href="https://apisecscan.com/sampleApisecScan.html">This sample API scan tests</a>:
@@ -25,6 +24,8 @@ comments: true
    * Fail "positive" tests when API functionality is found to not operate as expected according to the API specification.
    * Fail "negative" tests when the API is found vulnerable to attacks imposed by testing tools.
    <br /><br />
+
+> Only 4% of API testing focuses on security, according to <a target="_blank" href="https://www.gartner.com/en/documents/3986165">Gartner</a>.
 
 One vendor's API test results are organized into four categories:
 
@@ -164,10 +165,55 @@ There is also SAN's <a target="_blank" href="https://www.sans.org/top25-software
 
 ## PCI DSS
 
-* Payment Card Industry Data Security Standard (PCI DSS)
+The Payment Card Industry Data Security Standard (PCI DSS) is a proprietary information security standard for organizations that handle branded credit cards from the major card schemes including Visa, MasterCard, American Express, Discover, and JCB.
+
+https://www.pcisecuritystandards.org/
+PCI Security Standards Council
+
+https://blog.pcisecuritystandards.org/pci-dss-v4-0-resource-hub
+PCI DSS 4.0 Resource Hub
+
+https://www.pcisecuritystandards.org/document_library/
+PCI Document Library
+
+https://listings.pcisecuritystandards.org/documents/PCI_DSS-QRG-v3_2_1.pdf
+PCI DSS Quick Reference Guide (PDF)
+
+v1.0 was published in 2004.
+
+Despite v1.1 in 2006, TJMax was hacked in 2007 (45M). Heartland Payment Systems was hacked in 2008 (130M). 
+
+The previous verion, <a target="_blank" href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">PCI DSS v3.2.1</a> is a 139-page PDF.
+
+The current version, <a target="_blank" href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v4-0.pdf">PCI DSS v4.0</a> is a 360-page PDF published June 2022, with a deadline of <strong>31 March 2024</strong>. It addresses API risk for the first time.
+
+Cardholder data (CHD) is the full Primary Account Number (PAN) or the full PAN along with any of the following elements:
+
+   * Cardholder name
+   * Expiration date
+   * Service code
+   <br /><br />
+
+Sensitive authentication data (SAD) is the full magnetic stripe data, CAV2, CVC2, CVV2, CID, PINs, and PIN blocks.
+
+PCI DSS (Payment Card Industry Data Security Standard)
+Standards:
+   * PTS (PIN Transaction Security)
+   * PA-DSS (Payment Application Data Security Standard)
+   * P2PE (Point-to-Point Encryption)
+   * PCI PIN (PCI PIN Security Requirements)
+   * PCI SPoC (PCI Software PIN on COTS)
+   * PCI CPoC (PCI Contactless Payments on COTS)
+   * PCI DSS SAQ (PCI DSS Self-Assessment Questionnaire)
+   * PCI DSS ROC (PCI DSS Report on Compliance)
+   * PCI DSS AOC (PCI DSS Attestation of Compliance)
+   * PCI DSS QSA (PCI DSS Qualified Security Assessor)
+   * PCI DSS ASV (PCI DSS Approved Scanning Vendor)
+   * PCI DSS ISA (PCI DSS Internal Security Assessor)
+   * PCI DSS QIR (PCI DSS Qualified Integrator and Reseller)
 
 
-## Others
+## Other Standards
 
 * CWE Top 25
    
