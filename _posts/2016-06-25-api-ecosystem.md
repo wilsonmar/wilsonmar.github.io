@@ -1,11 +1,11 @@
 ---
 layout: post
+date: "2023-11-15"
+file: "api-ecosystem"
 filename: api-ecosystem
 title: "API Development Ecosystem"
 excerpt: "It does your job. And helps others to do your job."
 tags: [API, ecosystem, swagger, generation]
-date: "2016-06-25"
-file: "api-ecosystem"
 image:
 # pic-blue-city-abu-dhabi-skyscrapers-1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15269473/c8311bfa-19bc-11e6-890c-06abc511ef39.jpg
@@ -133,7 +133,7 @@ src="https://cloud.githubusercontent.com/assets/300046/16593898/e34ad1f4-42a4-11
 
 What I'm advocating here are:
 
-0. Programming of <strong>code generation programs</strong> so that 
+1. Programming of <strong>code generation programs</strong> so that 
    the many future changes in requirements is automatically reflected in working code.
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=ejF5p76L9Bw&t=10m57s">
@@ -142,29 +142,29 @@ What I'm advocating here are:
    rest-coder</a> Oct. 2013.
    <br /><br />
 
-0. Scan swagger JSON interface specs for issues based on commonly accepted rules, 
+1. Scan swagger JSON interface specs for issues based on commonly accepted rules, 
    just like we now use SonarQube to statically scan Java code for issues.
 
    * <a target="_blank" href="https://dojo.ministryoftesting.com/lessons/part-1-getting-started-installation-of-software">
    Let's Build an API Checking Framework</a>
    <br /><br />
 
-0. Expand a central museum (marketplace) of APIs out in the wide
+1. Expand a central museum (marketplace) of APIs out in the wide
    so people can discover and <strong>compare</strong> APIs
    techniques employed based on various evaluation criteria
    (like Consumer Reports does with consumer products).
 
-0. Elicit insights about billing on where databases are growing organically in order to 
+1. Elicit insights about billing on where databases are growing organically in order to 
    <strong>predict</strong> areas of stress, 
    so developers and programs have the wisdom to
    alter testing code to <strong>proacatively</strong> 
    verify if the database is ready for those specific types of growth.
 
-0. Leverage a <strong>community</strong> of developers and other professions 
+1. Leverage a <strong>community</strong> of developers and other professions 
    to achieve the above
    through a <strong>smart forum for collaboration</strong>.
 
-0. Perhaps the biggest one is that 
+1. Perhaps the biggest one is that 
    organizations can be inundated by so many APIs that a (easy) way to manage them together as a whole. 
    
    When an organization has a way of generating client apps from code,
@@ -179,6 +179,22 @@ What I'm advocating here are:
 
 We're talking about generating code based on a standard specification (Swagger)
 with known formats.
+
+
+## API search engines #
+
+Gitub: https://github.com/ 
+
+Postman Explore: https://www.postman.com/explore/apis
+
+ProgrammableWeb API Directory: https://www.programmableweb.com/apis/directory 
+
+APIs Guru: https://apis.guru/ 
+
+Public APIs Github Project: https://github.com/public-apis/public-apis 
+
+RapidAPI Hub: https://rapidapi.com/search/ 
+
 
 
 ## References

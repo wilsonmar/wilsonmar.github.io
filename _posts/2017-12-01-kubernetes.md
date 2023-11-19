@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-09-05"
+date: "2023-11-15"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 excerpt: "Get certified in how to orchestrate containers, especially in clouds, including OpenShift"
@@ -8059,9 +8059,9 @@ consisting of a UI Frontend, Application Server, Database Server, and Caching Se
 
 Discussion: https://www.reddit.com/r/kubernetes/comments/j181tq/anyone_know_of_a_good_demo_app_for_kubernetes/ states the criteria:
 
-   1) scalable, 
-   2) demonstrate dependencies or sidecar containers, 
-   3) demonstrate shared state across replicas.
+   1) scalable<br />
+   2) demonstrate dependencies or sidecar containers<br />
+   3) demonstrate shared state across replicas
    <br /><br />
 
 https://cloudsecdocs.com/containers/kubernetes/usage/sample_apps/
@@ -8076,6 +8076,8 @@ https://www.weave.works/blog/deploying-an-application-on-kubernetes-from-a-to-z
 <a target="_blank" href="https://devopsdirective.com/">devopsdirective.com</a> has
 <a target="_blank" href="https://www.youtube.com/watch?v=XltFOyGanYE">VIDEO</a>
 
+https://github.com/hajowieland/terraform-kubernetes-multi-cloud
+described at https://napo.io/posts/terraform-kubernetes-multi-cloud-ack-aks-dok-eks-gke-oke/
 
 <hr />
 
