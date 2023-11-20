@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-17"
+date: "2023-11-20"
 file: "security-certs"
 title: "Security Certifications"
 excerpt: "There are several (overlapping) ones."
@@ -21,12 +21,16 @@ For security professionals, there are several expensive overlapping certificatio
 
 {% include whatever.html %}
 
-This map is from <a target="_blank" href="https://pauljerimy.com/category/book-reviews/">security techo thriller book reviewer</a> Paul Jerimy at<br /><a target="_blank" href="https://pauljerimy.com/security-certification-roadmap/">https://pauljerimy.com/security-certification-roadmap:
+This map is from <a target="_blank" href="https://pauljerimy.com/category/book-reviews/">security techo thriller book reviewer</a> <a target="_blank" href="https://pauljerimy.com/security-certification-roadmap/">Paul Jerimy's roadmap</a> at<br />
 <img width="1613" alt="security-cert-landscape" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690304615/security-certs-1905x908_lsmbyg.png"><br /><em>Click for full screen image.</em></a>
 
-<a target="_blank" href="https://docs.google.com/spreadsheets/d/1Bk35IoIglqcPtcMLQUX4CLwaXgh8rdvw4UrbHqGJlE8/edit#gid=1478534077">spreadsheet</a>
-by Dean Bushmiller
+<a target="_blank" href="https://docs.google.com/spreadsheets/d/1Bk35IoIglqcPtcMLQUX4CLwaXgh8rdvw4UrbHqGJlE8/edit#gid=1478534077">spreadsheet</a> by Dean Bushmiller
 
+## Glossaries
+
+https://github.com/deanbushmiller/CEH-bootcamp/wiki/CEH-Glossary
+
+<hr />
 
 ## CCSK (Cloud Security Alliance Certificate of Security Knowledge)
 
@@ -638,6 +642,7 @@ is 48 hours of lab time spread across a 4 day event where the student has to fin
 
 https://medium.com/@adamgoss/certified-red-team-operator-crto-review-71ea4edef62a
 
+
 ## Offensive Security
 
 Offensive Security is a for-profit company offering courses with labs and certifications:
@@ -1030,13 +1035,11 @@ The prerequisite is earning the Cisco Certified Specialist - Security Core certi
 
 33% off until Dec 31.
 
-### CEH 
+### CEH Certified Ethical Hacker
 
-The CEHv10 (Certified Ethical Hacker version 11) ANSI exam 
-as defined by <a target="_blank" href="https://www.eccouncil.org/programs/certified-ethical-hacker-ceh">https://www.eccouncil.org/programs/certified-ethical-hacker-ceh</a>
-asks 125 multiple-choice questions in 4 hours.
+Now at v12, as defined by <a target="_blank" href="https://www.eccouncil.org/programs/certified-ethical-hacker-ceh">https://www.eccouncil.org/programs/certified-ethical-hacker-ceh</a> asks 125 multiple-choice questions in 4 hours.
 
-The exam is protored by ECC EXAM (as 312-50) and Pearson VUE (as 312-50), 
+The exam is proctored by ECC EXAM (as 312-50) and Pearson VUE (as 312-50), 
 courseware is discounted to $850, with upgrade for VUE exam for $100.
 from "Aspen iLabs".
 
@@ -1047,6 +1050,9 @@ CEH Candidate Handbook:
 https://s3-us-west-2.amazonaws.com/edm-image/documents/CEH-Handbook-v2.2.pdf
 
 Blueprint: https://cert.eccouncil.org/images/doc/CEH-Exam-Blueprint-v2.0.pdf
+
+<a target="_blank" href="https://learning.oreilly.com/live-events/certified-ethical-hacker-ceh-v12-technical-skills-in-2-weeks/0636920055985/0636920093458/">Dean Bushmiller's "in 2 week" Live Video Course on OReilly.com</a> with <a target="_blank" href="https://github.com/deanbushmiller/ceh-bootcamp">GitHub</a>
+
 
 ### CPENT / ECSA 
 
@@ -1092,6 +1098,10 @@ By <a target="_blank" href="https://www.linkedin.com/in/rdbarahona/">Dan Barahon
 * 2 CPE <a target="_blank" href="https://www.apisecuniversity.com/courses/owasp-api-security-top-10-and-beyond">OWASP API Top 10 & Beyond!</a> - Build your API security foundation with a strong understanding of the OWASP API Top 10.
 
 * 1 CPE (60-minute) <a target="_blank" href="https://www.apisecuniversity.com/courses/api-security-for-pci-compliance">API Security for PCI Compliance</a> examines the new <a target="_blank" href="https://blog.pcisecuritystandards.org/pci-dss-v4-0-resource-hub">PCI DSS (Data Security Standard) v4.0 requirements</a> and details the API security obligations for compliance.
+
+   * <a target="_blank" href="hhttps://www.youtube.com/watch?v=WKkoDXbLhJ4">VIDEO: Are your APIs DSS 4.0 Ready?</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=8twQCmm1NdI">VIDEO: PCI DSS 4.0 Requirements for API Security</a>
+   <br /><br />
 
 By <a target="_blank" href="https://www.linkedin.com/in/jasonhnaustin/">Jason Harmon</a> of #APIIntersection podcast:
 
@@ -1432,6 +1442,10 @@ TOP 5 Cyber Security Projects to go on Your Resume!</a> by Josh Madakor
 
 Azure Service Operator (ASO)
 Fabrikam Fabric Store
+
+## Movies
+
+https://www.magellantv.com/series/secret-wars
 
 
 ## More on Security #

@@ -17,44 +17,14 @@ comments: true
 {% include _toc.html %}
 
 
-## APISec Test results
+## What to Look for
 
-<a target="_blank" href="https://apisecscan.com/sampleApisecScan.html">This sample API scan tests</a>:
-
-   * Fail "positive" tests when API functionality is found to not operate as expected according to the API specification.
-   * Fail "negative" tests when the API is found vulnerable to attacks imposed by testing tools.
-   <br /><br />
-
-> Only 4% of API testing focuses on security, according to <a target="_blank" href="https://www.gartner.com/en/documents/3986165">Gartner</a>.
-
-One vendor's API test results are organized into four categories:
-
-A. Vulnerable
-   * Injection (Log4J):	
-   * Fuzzing (random data):
-   * Reflected Injection:	
-
-B. Valuable
-   * Personal Data	
-   
-C. Configuration
-   * SSL Certificate	
-   * SSL Required	
-   * Server Properties Leak	
-   * HTTP Options	
-   * CORS Configuration	
-   * Incremental IDs	
-
-D. Authentication
-   * Broken Authentication	
-   <br /><br />
-
-Testing is based on lists of vulnerabilities identified by OWASP, SANS, and other organizations.
+Threat hunting is a proactive approach to detecting and mitigating threats. It is a continuous process of searching for, identifying, and mitigating potential threats in your environment.
 
 
 <a name="OWASP_Items"></a>
 
-## OWASP Web Top 10
+### OWASP Web Top 10
 
 OWASP is a non-profit organization with a mission to provide practical vendor-neutral information about application security. 
 
@@ -103,10 +73,22 @@ Also: Cross-Site Request Forgery (CSRF)
    * <a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A10-Insufficient_Logging%26Monitoring">Description</a>
    <br /><br />
 
+### Top 10 Errors
+
+Top 25 Common Weakness Enumeration (CWE): category system for software vulnerabilities and weaknesses.
+   
+There is also SAN's <a target="_blank" href="https://www.sans.org/top25-software-errors/">Top 25 Software Errors</a> that include
+
+   * Insecure Interaction Between Components,
+   * Risky Resource Management, and
+   * Porous Defenses
+   <br /><br />
+
+
 
 <a name="OWASP_API_Items"></a>
 
-## API Security Top 10
+### API Security Top 10
 
 <a target="_blank" href="https://owasp.org/www-project-api-security/">API security has its own Top 10</a>:
 
@@ -153,17 +135,48 @@ Also: Cross-Site Request Forgery (CSRF)
 <hr />
 
 
-## Top 10 Errors
+### APISec Test results
 
-There is also SAN's <a target="_blank" href="https://www.sans.org/top25-software-errors/">Top 25 Software Errors</a> that include
+<a target="_blank" href="https://apisecscan.com/sampleApisecScan.html">This sample API scan tests</a>:
 
-   * Insecure Interaction Between Components,
-   * Risky Resource Management, and
-   * Porous Defenses
+   * Fail "positive" tests when API functionality is found to not operate as expected according to the API specification.
+   * Fail "negative" tests when the API is found vulnerable to attacks imposed by testing tools.
    <br /><br />
 
+> Only 4% of API testing focuses on security, according to <a target="_blank" href="https://www.gartner.com/en/documents/3986165">Gartner</a>.
 
-## PCI DSS
+One vendor's API test results are organized into four categories:
+
+A. Vulnerable
+   * Injection (Log4J):	
+   * Fuzzing (random data):
+   * Reflected Injection:	
+
+B. Valuable
+   * Personal Data	
+   
+C. Configuration
+   * SSL Certificate	
+   * SSL Required	
+   * Server Properties Leak	
+   * HTTP Options	
+   * CORS Configuration	
+   * Incremental IDs	
+
+D. Authentication
+   * Broken Authentication	
+   <br /><br />
+
+Testing is based on lists of vulnerabilities identified by OWASP, SANS, and other organizations.
+
+
+<hr />
+
+### PCI DSS v4 API Requirements
+
+<a target="_blank" href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v4-0.pdf">PCI DSS v4.0</a> is a 360-page PDF published June 2022, with a deadline of <strong>31 March 2024</strong>. It addresses API risks for the first time.
+
+The previous verion, <a target="_blank" href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">PCI DSS v3.2.1</a> is a 139-page PDF.
 
 The Payment Card Industry Data Security Standard (PCI DSS) is a proprietary information security standard for organizations that handle branded credit cards from the major card schemes including Visa, MasterCard, American Express, Discover, and JCB.
 
@@ -182,10 +195,6 @@ PCI DSS Quick Reference Guide (PDF)
 v1.0 was published in 2004.
 
 Despite v1.1 in 2006, TJMax was hacked in 2007 (45M). Heartland Payment Systems was hacked in 2008 (130M). 
-
-The previous verion, <a target="_blank" href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">PCI DSS v3.2.1</a> is a 139-page PDF.
-
-The current version, <a target="_blank" href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v4-0.pdf">PCI DSS v4.0</a> is a 360-page PDF published June 2022, with a deadline of <strong>31 March 2024</strong>. It addresses API risk for the first time.
 
 Cardholder data (CHD) is the full Primary Account Number (PAN) or the full PAN along with any of the following elements:
 
@@ -213,10 +222,10 @@ Standards:
    * PCI DSS QIR (PCI DSS Qualified Integrator and Reseller)
 
 
-## Other Standards
+<hr />
 
-* CWE Top 25
-   
+### Other Standards
+
 * Health Insurance Portability and Accountability Act (HIPAA)
 
 * Motor Industry Software Reliability Association (MISRA) C/C++ coding standards
@@ -233,111 +242,6 @@ Standards:
    
 * AUTOSAR®
 
-
-<hr />
-
-## Software Testing Guidelines
-
-Several websites provide specific examples of insecure code turned secure:
-
-### OSSTMM
-
-OSSTMM (Open Source Security Testing Methodology Manual) <a target="_blank" href="https://www.isecom.org/OSSTMM.3.pdf">v3 PDF</a> updated every six months by the <a target="_blank" href="https://www.isecom.org/research.html">ISECOM (Institute for Security and Open Methodologies)</a>. It was developed in an open community, and subjected to peer and cross-disciplinary review. ISECOM's <a target="_blank" href="https://www.isecom.org/STAR.3.pdf">PDF: Security Test Audit Report (STAR)</a> is a standardized form to summarize results of a security or penetration test - providing precise calculations of the Attack Surface, details of what was tested and how, and indemnification for testing organization.:
-   1. Posture review
-   2. Logistics
-   3. Active Detection Verification
-   4. Visibility Audit
-   5. Access Verification
-   6. Trust Verification
-   7. Controls Verification
-   8. Process Verification
-   9. Configuration and Training Verification
-   10. Property Validation
-   11. Segregation Review
-   12. Exposure Verification
-   13. Competitive Intelligence Scouting
-   14. Quarantine Verification
-   15. Privileges Audit
-   16. Survivability Validation and Service Continuity
-   17. End Survey, Alert, and Log Review
-   <br /><br />
-
-OSSTMM has five channels or operational areas:
-
-   * Human Security: The security of human interaction and communication is evaluated operationally as a means of testing
-   * Physical Security: The OSSTMM tests physical security, defined as any tangible element of security that takes physical effort to operate
-   * Wireless Communications: Electronic communications, signals, and emanations are all considered wireless communications that are part of the operational security testing
-   * Telecommunications: Whether the telecommunication network is digital or analog, any communication conducted over telephone or network lines is tested in the OSSTMM
-   * Data Networks: The security testing of data networks includes electronic systems and data networks that are used for communication or interaction via cable and wired network lines
-   <br /><br />
-
-### PTES
-
-<a target="_blank" href="http://www.pentest-standard.org/index.php/Main_Page">PTES (Penetration Testing Execution Standard)</a> in 2009 defined phases of a pen-test engagement:
-
-   1. <a target="_blank" href="http://www.pentest-standard.org/index.php/Intelligence_Gathering">Intelligence Gathering</a>
-   2. <a target="_blank" href="http://www.pentest-standard.org/index.php/Pre-engagement">Pre-engagement Interactions</a>
-   3. <a target="_blank" href="http://www.pentest-standard.org/index.php/Threat_Modeling">Threat Modeling</a>
-   4. <a target="_blank" href="http://www.pentest-standard.org/index.php/Vulnerability_Analysis">Vulnerability Analysis</a>
-   5. <a target="_blank" href="http://www.pentest-standard.org/index.php/Exploitation">Exploitation</a>
-   6. <a target="_blank" href="http://www.pentest-standard.org/index.php/Post_Exploitation">Post Exploitation</a>
-   7. <a target="_blank" href="http://www.pentest-standard.org/index.php/Reporting">Reporting</a>
-   <br /><br />
-
-The PTES <a target="_blank" href="http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines">Technical Guidelines</a> is an "oldie but goodie" from 2014, but still has good wisdom.
-
-
-
-<hr />
-
-## Software Security Testing
-
-DevSecOps is a practice of integrating security into the DevOps process.
-
-<a name="IAST"></a>
-
-### IAST (Interactive App Security Testing)
-
-IAST (Interactive App Security Testing) was invented by Checkmarx, which adds an agent running along the app to report to a central "Security Handler".
-
-
-<a name="DAST"></a>
-
-### DAST (Dynamic Application Security Testing)
-
-DAST aims to expose security weaknesses by watching application behavior while user actions are performed by automated scripts in a test environment, where various combinations of input actions are tried. 
-
-The main targets of a DAST system involve what offers a front door to attackers: HTTP and HTML -- protocols that drive the World Wide Web. 
-
-<a target="_blank" href="https://www.comparitech.com/net-admin/dast-tools/">Among DAST tools</a>: <a target="_blank" href=" https://www.owasp.org/index.php/Appendix_A:_Testing_Tools">web app penetration testing tools</a>:
-
-A. The <a target="_blank" href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">Zed Attack Proxy (ZAP)</a>
-is offered free, and is actively maintained by hundreds of international volunteers. 
-Use it to scan for security vulnerabilities in your web applications while you are developing and testing your applications. 
-
-   <img alt="web proxy" src="https://user-images.githubusercontent.com/300046/32320696-dd1e8f82-bf7b-11e7-891b-6b248fba5a0a.png">
-
-B. WebInspect from MicroFocus (formerly HP).
-
-C. <a target="_blank" href="">Burp Suite from Portswagger</a> ($399/year Pro) with <a target="_blank" href="https://github.com/snoopysecurity/awesome-burp-extensions">extensions</a>, <a target="_blank" href="https://deltarisk.com/blog/how-to-use-burp-suite-professional-for-web-application-security-part-one/">running on Kali Linux with FoxyProxy on Firefox, JPython, JRuby</a>
-
-D. Dirtbuster
-
-E. <a target="_blank" href="https://www.brighttalk.com/webcast/17668/423557">VIDEO</a>: ForAllSecure 
-
-
-<a name="SAST"></a>
-
-### SAST
-
-SAST (Static App Security Testing) tools focus on <strong>scanning application source code</strong> for vulnerabilities in coding. Static Application Security Testing (SAST) vendors include:
-   * Veracode
-   * Perforce
-   * http://www.castsoftware.com/
-   * Checkmarx, which adds an agent running along the app to report to a central Security Handler, called Interactive App Security Testing (IAST).
-   <br /><br />
-
-Security tests should also cover the efficacy of Runtime Application Self-Protection (RASP) built within apps, rather than relying completely on the infrastructure Web Application Firewall (WAF).
 
 
 <hr />
@@ -459,6 +363,111 @@ Nevertheless, VAmPI can be used for learning/teaching:
 1. Retrieve books with secrets
 
 1. Enable global configuration settings to switch specific vulnerabilities on or off during testing and confirmation. 
+
+
+<hr />
+
+## Software Testing Guidelines
+
+Several websites provide specific examples of insecure code turned secure:
+
+### OSSTMM
+
+OSSTMM (Open Source Security Testing Methodology Manual) <a target="_blank" href="https://www.isecom.org/OSSTMM.3.pdf">v3 PDF</a> updated every six months by the <a target="_blank" href="https://www.isecom.org/research.html">ISECOM (Institute for Security and Open Methodologies)</a>. It was developed in an open community, and subjected to peer and cross-disciplinary review. ISECOM's <a target="_blank" href="https://www.isecom.org/STAR.3.pdf">PDF: Security Test Audit Report (STAR)</a> is a standardized form to summarize results of a security or penetration test - providing precise calculations of the Attack Surface, details of what was tested and how, and indemnification for testing organization.:
+   1. Posture review
+   2. Logistics
+   3. Active Detection Verification
+   4. Visibility Audit
+   5. Access Verification
+   6. Trust Verification
+   7. Controls Verification
+   8. Process Verification
+   9. Configuration and Training Verification
+   10. Property Validation
+   11. Segregation Review
+   12. Exposure Verification
+   13. Competitive Intelligence Scouting
+   14. Quarantine Verification
+   15. Privileges Audit
+   16. Survivability Validation and Service Continuity
+   17. End Survey, Alert, and Log Review
+   <br /><br />
+
+OSSTMM has five channels or operational areas:
+
+   * Human Security: The security of human interaction and communication is evaluated operationally as a means of testing
+   * Physical Security: The OSSTMM tests physical security, defined as any tangible element of security that takes physical effort to operate
+   * Wireless Communications: Electronic communications, signals, and emanations are all considered wireless communications that are part of the operational security testing
+   * Telecommunications: Whether the telecommunication network is digital or analog, any communication conducted over telephone or network lines is tested in the OSSTMM
+   * Data Networks: The security testing of data networks includes electronic systems and data networks that are used for communication or interaction via cable and wired network lines
+   <br /><br />
+
+### PTES
+
+<a target="_blank" href="http://www.pentest-standard.org/index.php/Main_Page">PTES (Penetration Testing Execution Standard)</a> in 2009 defined phases of a pen-test engagement:
+
+   1. <a target="_blank" href="http://www.pentest-standard.org/index.php/Intelligence_Gathering">Intelligence Gathering</a>
+   2. <a target="_blank" href="http://www.pentest-standard.org/index.php/Pre-engagement">Pre-engagement Interactions</a>
+   3. <a target="_blank" href="http://www.pentest-standard.org/index.php/Threat_Modeling">Threat Modeling</a>
+   4. <a target="_blank" href="http://www.pentest-standard.org/index.php/Vulnerability_Analysis">Vulnerability Analysis</a>
+   5. <a target="_blank" href="http://www.pentest-standard.org/index.php/Exploitation">Exploitation</a>
+   6. <a target="_blank" href="http://www.pentest-standard.org/index.php/Post_Exploitation">Post Exploitation</a>
+   7. <a target="_blank" href="http://www.pentest-standard.org/index.php/Reporting">Reporting</a>
+   <br /><br />
+
+The PTES <a target="_blank" href="http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines">Technical Guidelines</a> is an "oldie but goodie" from 2014, but still has good wisdom.
+
+
+## Software Security Testing
+
+DevSecOps is a practice of integrating security into the DevOps process.
+
+<a name="IAST"></a>
+
+### IAST (Interactive App Security Testing)
+
+IAST (Interactive App Security Testing) was invented by Checkmarx, which adds an agent running along the app to report to a central "Security Handler".
+
+
+<a name="DAST"></a>
+
+### DAST (Dynamic Application Security Testing)
+
+DAST aims to expose security weaknesses by watching application behavior while user actions are performed by automated scripts in a test environment, where various combinations of input actions are tried. 
+
+The main targets of a DAST system involve what offers a front door to attackers: HTTP and HTML -- protocols that drive the World Wide Web. 
+
+<a target="_blank" href="https://www.comparitech.com/net-admin/dast-tools/">Among DAST tools</a>: <a target="_blank" href=" https://www.owasp.org/index.php/Appendix_A:_Testing_Tools">web app penetration testing tools</a>:
+
+A. The <a target="_blank" href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">Zed Attack Proxy (ZAP)</a>
+is offered free, and is actively maintained by hundreds of international volunteers. 
+Use it to scan for security vulnerabilities in your web applications while you are developing and testing your applications. 
+
+   <img alt="web proxy" src="https://user-images.githubusercontent.com/300046/32320696-dd1e8f82-bf7b-11e7-891b-6b248fba5a0a.png">
+
+B. WebInspect from MicroFocus (formerly HP).
+
+C. <a target="_blank" href="">Burp Suite from Portswagger</a> ($399/year Pro) with <a target="_blank" href="https://github.com/snoopysecurity/awesome-burp-extensions">extensions</a>, <a target="_blank" href="https://deltarisk.com/blog/how-to-use-burp-suite-professional-for-web-application-security-part-one/">running on Kali Linux with FoxyProxy on Firefox, JPython, JRuby</a>
+
+D. Dirtbuster
+
+E. <a target="_blank" href="https://www.brighttalk.com/webcast/17668/423557">VIDEO</a>: ForAllSecure 
+
+
+<a name="SAST"></a>
+
+### SAST
+
+SAST (Static App Security Testing) tools focus on <strong>scanning application source code</strong> for vulnerabilities in coding. Static Application Security Testing (SAST) vendors include:
+   * Veracode
+   * Perforce
+   * http://www.castsoftware.com/
+   * Checkmarx, which adds an agent running along the app to report to a central Security Handler, called Interactive App Security Testing (IAST).
+   <br /><br />
+
+Security tests should also cover the efficacy of Runtime Application Self-Protection (RASP) built within apps, rather than relying completely on the infrastructure Web Application Firewall (WAF).
+
+
 
 <hr />
 
