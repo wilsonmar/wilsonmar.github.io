@@ -21,6 +21,7 @@ comments: true
 
 Threat hunting is a proactive approach to detecting and mitigating threats. It is a continuous process of searching for, identifying, and mitigating potential threats in your environment.
 
+https://boris-figeczky.medium.com/comparative-analysis-of-osstmm-v3-and-owasp-4-0-e3ae1bf95e9e
 
 <a name="OWASP_Items"></a>
 
@@ -73,7 +74,8 @@ Also: Cross-Site Request Forgery (CSRF)
    * <a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A10-Insufficient_Logging%26Monitoring">Description</a>
    <br /><br />
 
-### Top 10 Errors
+
+### Coding Errors
 
 Top 25 Common Weakness Enumeration (CWE): category system for software vulnerabilities and weaknesses.
    
@@ -250,16 +252,28 @@ Standards:
 
 ## Sample broken apps
 
-Several apps were created to exhibit vulnerability issues, as examples
-for Static Code vulnerability assessment (SAST) utilities such as GitHub CodeQL, SonarQube, Fortify, etc.. Which utility catches the most issues?
+Several apps have been created to exhibit vulnerability issues, as examples for <a hred="SecTestingTools">testing tools</a>.
+
+Such apps should run only inside a guest machine within VirtualBox or VMware set to NAT networking mode. 
 
 CAUTION: Do not upload it to your hosting provider's public html folder or any Internet facing servers, as they will be compromised.
+If you run security vulnerability tests against a server you don't control, you are hacking that site.
+So get both an NDA and contract of scope of work before starting.
 
-So these apps should run only inside a guest machine within VirtualBox or VMware set to NAT networking mode. 
 
-CAUTION PROTIP: If you run ZAP against a server you don't control, you are hacking that site.
+### Metasploitable3
+
+<a target="_blank href="https://vimeo.com/731196164" title="From Expanding Security">VIDEO</a>: <a target="_blank" href="https://github.com/rapid7/metasploitable3">Metasploitable3 from Rapid7</a> is a victim VM created with intentional vulnerabilities for abuse by Metasploit and other tools.
+
+Dean Bushmiller has defined Debian-based <a target="_blank" href="https://wilsonmar.github.io/kali/">Kali Linux</a> VMs as AMIs activated using this single AWS Console command within region us-east-1:
+
+<pre>aws ec2 copy-image --name kali-linux --source-image-id ami-0e0c5931cfadd2102 --source-region us-east-1 && aws ec2 copy-image --name metasploitable3-linux --source-image-id ami-0b186198cc048aa9d --source-region us-east-1 && aws ec2 copy-image --name metasploitable3-windows --source-image-id ami-0e3153815a2b50c67 --source-region us-east-1</pre>
+
+PROTIP: Changing region values above would require change in associated AMI IDs.
+
 
 ### Juice Shop
+
 Perhaps the most modern sample vulnerabler web app is <a target="_blank" href="https://owasp-juice.shop">Juice Shop</a> maintained by OWSAP by volunteers at <a target="_blank" href="https://juice-shop.herokuapp.com/#/">https://juice-shop.herokuapp.com/</a>
 book: "Pwning OWASP Juice Shop" at <a target="_blank" href="https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content">https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content</a> referencing code at 
 <a target="_blank" href="https://github.com/bkimminich/juice-shop">https://github.com/bkimminich/juice-shop</a>.
@@ -371,7 +385,9 @@ Nevertheless, VAmPI can be used for learning/teaching:
 
 Several websites provide specific examples of insecure code turned secure:
 
-### OSSTMM
+### OSSTMM STAR
+
+<a target="_blank" href="https://www.isecom.org/STAR.3.pdf">PDF: form</a>: STAR (Security Test Audit Report) is a standardized form to summarize results of a security or penetration test - providing precise calculations of the Attack Surface, details of what was tested and how, and indemnification for testing organization.
 
 OSSTMM (Open Source Security Testing Methodology Manual) <a target="_blank" href="https://www.isecom.org/OSSTMM.3.pdf">v3 PDF</a> updated every six months by the <a target="_blank" href="https://www.isecom.org/research.html">ISECOM (Institute for Security and Open Methodologies)</a>. It was developed in an open community, and subjected to peer and cross-disciplinary review. ISECOM's <a target="_blank" href="https://www.isecom.org/STAR.3.pdf">PDF: Security Test Audit Report (STAR)</a> is a standardized form to summarize results of a security or penetration test - providing precise calculations of the Attack Surface, details of what was tested and how, and indemnification for testing organization.:
    1. Posture review
@@ -418,7 +434,11 @@ OSSTMM has five channels or operational areas:
 The PTES <a target="_blank" href="http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines">Technical Guidelines</a> is an "oldie but goodie" from 2014, but still has good wisdom.
 
 
-## Software Security Testing
+<hr />
+
+<a name="SecTestingTools"></a>
+
+## Security Testing Tools
 
 DevSecOps is a practice of integrating security into the DevOps process.
 
