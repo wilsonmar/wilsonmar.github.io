@@ -263,14 +263,66 @@ So get both an NDA and contract of scope of work before starting.
 
 ### Metasploitable3
 
-<a target="_blank href="https://vimeo.com/731196164" title="From Expanding Security">VIDEO</a>: <a target="_blank" href="https://github.com/rapid7/metasploitable3">Metasploitable3 from Rapid7</a> is a victim VM created with intentional vulnerabilities for abuse by Metasploit and other tools.
+<a target="_blank" href="https://github.com/rapid7/metasploitable3">Metasploitable3 from Rapid7</a> is a victim VM created with intentional vulnerabilities for abuse by Metasploit and other tools.
 
-Dean Bushmiller has defined Debian-based <a target="_blank" href="https://wilsonmar.github.io/kali/">Kali Linux</a> VMs as AMIs activated using this single AWS Console command within region us-east-1:
+<a target="_blank href="https://vimeo.com/731196164" title="From Expanding Security">VIDEO</a>: Dean Bushmiller has defined in <a target="_blank" href="https://github.com/deanbushmiller/ceh-bootcamp">his GitHub a way to setup</a> the Debian-based <a target="_blank" href="https://wilsonmar.github.io/kali/">Kali Linux</a> VMs as AMIs 
 
-<pre>aws ec2 copy-image --name kali-linux --source-image-id ami-0e0c5931cfadd2102 --source-region us-east-1 && aws ec2 copy-image --name metasploitable3-linux --source-image-id ami-0b186198cc048aa9d --source-region us-east-1 && aws ec2 copy-image --name metasploitable3-windows --source-image-id ami-0e3153815a2b50c67 --source-region us-east-1</pre>
+1. Activate them using this single AWS Console command within region us-east-1:
 
-PROTIP: Changing region values above would require change in associated AMI IDs.
+   <pre><strong>aws ec2 copy-image --name kali-linux --source-image-id ami-0e0c5931cfadd2102 --source-region us-east-1 && aws ec2 copy-image --name metasploitable3-linux --source-image-id ami-0b186198cc048aa9d --source-region us-east-1 && aws ec2 copy-image --name metasploitable3-windows --source-image-id ami-0e3153815a2b50c67 --source-region us-east-1</strong></pre>
 
+   PROTIP: The AMI id's above are for us-east-1. Changing those regions would require other AMIs to be created.
+
+   You will copy the response:
+
+   <pre>{
+    "ImageId": "ami-0e0c5931cfadd2102"
+}
+{
+    "ImageId": "ami-0b186198cc048aa9d"
+}
+{
+    "ImageId": "ami-0e3153815a2b50c67"
+}
+   </pre>
+
+TODO: Run script.
+
+Alternately, manually:
+
+1. Sign in the AWS Console GUI, search for the "EC2" service.
+1. Create a Key Pair named "kali-linux-231231" (with your current date instead) and operating system.
+
+1. Sign in the AWS Console GUI, search for the "Cloud Formation" service.
+
+   https://us-east-1.console.aws.amazon.com/cloudformation/home
+
+1. Click the drop-down "Create Stack" and select "With New Resources (standard)".
+1. In age with default "Template is ready" and "Amazon S3 URL", copy the URL below to paste into the "Amazon S3 URL" field:
+
+   https://ceh-v11-20220609.s3.amazonaws.com/20220715-LAB-Pentest/pentestlab.yml
+
+   The file begins with:
+   <pre>AWSTemplateFormatVersion: 2010-09-09
+Description: Penetration Testing Lab Environment V20221102
+   </pre>
+
+1. Click "Next" for the Parameters page.
+1. In the AttackerAMIId field, paste from above the first AMI id, for Kali Linux.
+1. In the LinuxVictimAMIId field, paste from above the second AMI id.
+1. In the WindowsVictimAMIId field, paste from above the third AMI id.
+1. In the PublicAddress field, find your public IP address by searching for "what is my ip" in a browser at https://whatismyipaddress.com/
+1. Click the SSHKeyPair field and select the key pair you created above.
+1. Click "Next" for the Stack Name at the top of the page.
+1. Give the stack a name containing today's date, such as 'pentestlab19991231'
+1. Click "Next".
+1. Click "Next" for the Review page.
+1. Click "Estimate cost" to see the cost of running the stack.
+1. Scroll to bottom to CHECK "I acknowledge that AWS CloudFormation might create IAM resources."
+1. Click the orange "Create stack" button.
+1. Wait (a few minutes) for "CREATE_IN_PROGRESS" to change to "CREATE_COMPLETE".
+
+1. Paste the AMI id's into the <a target="_blank" href="https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-0e0c5931cfadd2102">AWS Console</a> to launch instances.
 
 ### Juice Shop
 
