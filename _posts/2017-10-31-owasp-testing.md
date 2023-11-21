@@ -263,66 +263,223 @@ So get both an NDA and contract of scope of work before starting.
 
 ### Metasploitable3
 
-<a target="_blank" href="https://github.com/rapid7/metasploitable3">Metasploitable3 from Rapid7</a> is a victim VM created with intentional vulnerabilities for abuse by Metasploit and other tools.
+<a target="_blank" href="https://github.com/rapid7/metasploitable3">Metasploitable3 from Rapid7</a> is a victim VM created with intentional vulnerabilities for abuse by Metasploit and other <a name="SecTestingTools">ethical hacking tools</a>.
 
 <a target="_blank href="https://vimeo.com/731196164" title="From Expanding Security">VIDEO</a>: Dean Bushmiller has defined in <a target="_blank" href="https://github.com/deanbushmiller/ceh-bootcamp">his GitHub a way to setup</a> the Debian-based <a target="_blank" href="https://wilsonmar.github.io/kali/">Kali Linux</a> VMs as AMIs 
 
-1. Activate them using this single AWS Console command within region us-east-1:
+TODO: Create script to do the below.
+
+1. Sign in the AWS Console GUI.
+1. Click the CloudShell icon, for a URL such as:
+
+   https://us-east-1.console.aws.amazon.com/cloudshell/home?region=us-east-1
+
+1. Highlight and copy the single command below
 
    <pre><strong>aws ec2 copy-image --name kali-linux --source-image-id ami-0e0c5931cfadd2102 --source-region us-east-1 && aws ec2 copy-image --name metasploitable3-linux --source-image-id ami-0b186198cc048aa9d --source-region us-east-1 && aws ec2 copy-image --name metasploitable3-windows --source-image-id ami-0e3153815a2b50c67 --source-region us-east-1</strong></pre>
 
-   PROTIP: The AMI id's above are for us-east-1. Changing those regions would require other AMIs to be created.
+   PROTIP: The AMI id's above are for us-east-1 only. Changing those regions would require other AMIs to be created.
 
-   You will copy the response:
+1. Paste in the CloudShell and press Return to execute.
+
+   If you get a "500 - Internal Server Error", refresh the page.
+
+   The expected response are new ImageIds:
 
    <pre>{
-    "ImageId": "ami-0e0c5931cfadd2102"
+    "ImageId": "ami-0e0c5931cfadd1111"
 }
 {
-    "ImageId": "ami-0b186198cc048aa9d"
+    "ImageId": "ami-0b186198cc0482222"
 }
 {
-    "ImageId": "ami-0e3153815a2b50c67"
+    "ImageId": "ami-0e3153815a2b53333"
 }
    </pre>
 
-TODO: Run script.
+   NOTE: AWS charges are not incurred until these instances are launched.
+   
+1. Duplicate another AWS browser tab and search for the "EC2" service for your region, for a URL such as:
 
-Alternately, manually:
+   https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#Home:
 
-1. Sign in the AWS Console GUI, search for the "EC2" service.
-1. Create a Key Pair named "kali-linux-231231" (with your current date instead) and operating system.
+1. Click "Snapshots" in the left or middle menu to see a list of the AMIs created above.
 
-1. Sign in the AWS Console GUI, search for the "Cloud Formation" service.
+   ### For use to SSH into the instance
+
+1. Click "Key Pairs" in the left menu
+
+   https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#KeyPairs:
+
+1. Click the orange "Create Key Pair" 
+1. Type a Name such as "kali-linux-231231" and click "Create key pair".
+
+   Leave defaults RSA for Key Pair type and .pem for use with OpenSSH.
+
+1. Navigate to the folder where the .pem file is downloaded.
+
+   ### My IP Address
+
+   To find the public IP address of your laptop:
+
+1. In an internet browser such as Chrome, click this URL:
+
+   <a target="_blank" href="https://whatismyipaddress.com">https://whatismyipaddress.com</a>
+
+   You will <a href="#PublicIpAddress">later</a> highlight and copy the IPv4 address displayed.
+
+1. Open another browser tab so you can return to the above page.
+
+
+   ### Cloud Formation
+
+1. Search for the "Cloud Formation" service for your region, for a URL such as:
 
    https://us-east-1.console.aws.amazon.com/cloudformation/home
 
-1. Click the drop-down "Create Stack" and select "With New Resources (standard)".
-1. In age with default "Template is ready" and "Amazon S3 URL", copy the URL below to paste into the "Amazon S3 URL" field:
+1. Click the drop-down "Create Stack" and select "With New Resources (standard)" for the page with default "Template is ready" and "Amazon S3 URL"
+
+1. Copy the URL below to paste into the "Amazon S3 URL" field:
 
    https://ceh-v11-20220609.s3.amazonaws.com/20220715-LAB-Pentest/pentestlab.yml
 
-   The file begins with:
+   That file was create by Dean and has contents beginning with:
    <pre>AWSTemplateFormatVersion: 2010-09-09
 Description: Penetration Testing Lab Environment V20221102
    </pre>
 
-1. Click "Next" for the Parameters page.
-1. In the AttackerAMIId field, paste from above the first AMI id, for Kali Linux.
-1. In the LinuxVictimAMIId field, paste from above the second AMI id.
-1. In the WindowsVictimAMIId field, paste from above the third AMI id.
+1. Click "Next" for the "Specify stack details" page.
+1. For Stack name, type your unique name and today's date, such as <tt>johndoepentestlab231231a</tt>. 
+
+   No spaces are allowed in Stack names.
+
+1. Switch back to the tab for the CloudShell to highlight and copy each of the ami-xxxxxx values.
+
+   1. In the AttackerAMIId field, paste from above the first AMI id, for Kali Linux.
+   2. In the LinuxVictimAMIId field, paste from above the second AMI id.
+   3. In the WindowsVictimAMIId field, paste from above the third AMI id. (Windows 2008 R2)
+   
+   <a name="PublicIpAddress"></a>
 1. In the PublicAddress field, find your public IP address by searching for "what is my ip" in a browser at https://whatismyipaddress.com/
 1. Click the SSHKeyPair field and select the key pair you created above.
-1. Click "Next" for the Stack Name at the top of the page.
-1. Give the stack a name containing today's date, such as 'pentestlab19991231'
-1. Click "Next".
+1. Click "Next" for the "Configure stack options" page.
 1. Click "Next" for the Review page.
 1. Click "Estimate cost" to see the cost of running the stack.
-1. Scroll to bottom to CHECK "I acknowledge that AWS CloudFormation might create IAM resources."
+1. Scroll to the bottom to CHECK "I acknowledge that AWS CloudFormation might create IAM resources."
 1. Click the orange "Create stack" button.
 1. Wait (a few minutes) for "CREATE_IN_PROGRESS" to change to "CREATE_COMPLETE".
 
-1. Paste the AMI id's into the <a target="_blank" href="https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-0e0c5931cfadd2102">AWS Console</a> to launch instances.
+1. Click "Resources" in the horizontal menu.
+
+   TODO: If "ROLLBACK_IN_PROGRESS" appears...
+
+1. After "Initializing" turns to "checks passed" shows on all instances, dismiss the CloudShell and What is My IP Address tabs.
+
+   ### To SSH into the instance
+
+   Traditionally, to connect to a Windows instance GUI, a RDP client software program needs to be installed.
+   Similarly, to connect to a Linux instance, a SSH client software program needs to be installed.
+   Ditto with the VNC protocol.
+
+   However, Apache has done away with plugins or client software required by creating its <a target="_blank" href="https://guacamole.apache.org/">Guacamole</a> project to create a clientless remote desktop gateway.
+
+   <a target="_blank" href="https://vimeo.com/767687771">VIDEO</a> by Dean Bushmiller shows how to configure <strong>Guacamole HTML5</strong> to access the Kali Linux instance. (10.0.0.5)
+
+1. Duplicate another AWS browser tab and search for the "EC2" service for your region, instances, for a URL such as:
+
+   https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#Instances:instanceState=running
+
+1. Click the Instance ID of the instance name ending with "bastion-guacamole".
+
+   ### Get IP address
+
+1. Click the (copy to clipboard) icon to the left of the "Public IPv4 address" (such as 34.205.166.115).
+1. Open another browser tab and paste the IP address into the address bar to see the Guacamole login page.
+1. Click "Advanced" to "Your connection is not private".
+1. Click the link such as "Proceed to 34.205.166.115 (unsafe)" for the "APACHE GUACAMOLE" login page.
+1. Click "Allow".
+1. Type "guacadmin" for the Username.
+
+   ### Get password within logs
+
+1. Click "Actions" drop-down to select "Monitor and troubleshoot", and "Get system log".
+1. Click in the log and press Ctrl-F to search for "password".
+1. Highlight and copy the password text such as "WKO0Kq7kJw9N" in:
+
+   <pre>Setting Bitnami application password to 'WKO0Kq7kJw9N'</pre>
+ 
+1. Paste the password. Click "Login".
+1. At the upper-right, click "guacadmin", then "Settings", "New Connection" to fill in fields:
+
+1. Copy and paste to connect to Kali Linux
+
+   * Name: kali
+   * Protocol: RDP
+   * Maximum number of connections: 1
+   * Maximum number of connections per user: 1
+   
+   Skip down to: PARAMETERS | Network
+   * Hostname: 10.0.0.4
+   * Port: 3390
+   Authentication:
+   * Username: kali
+   * Password: kali
+   
+   Leave the rest blank.
+
+1. Scroll down to click "Save".
+1. At the upper-right, click "guacadmin", then "Home", then that "Kali".
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1700571239/kali-screen-1020x367_c3tgkj.png"><img alt="kali-screen-1020x367.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700571239/kali-screen-1020x367_c3tgkj.png"></a>
+
+   
+   ### Ubuntu victim
+
+1. At the upper-right, click "guacadmin", then "Settings", "New Connection" to fill in fields:
+1. Copy and paste
+
+   * Name: VIC-NIX
+   * Protocol: SSH
+   * Maximum number of connections: 1
+   * Maximum number of connections per user: 1
+   
+   Skip down to: PARAMETERS | Network
+   * Hostname: 10.0.0.10
+   * Port: 22
+   Authentication:
+   * Username: vagrant
+   * Password: vagrant
+
+1. Scroll down to click "Save".
+
+   ### Windows 2008 R2 victim
+
+   This is optional unless you want to confirm a Man-in-th-Middle impact.
+
+1. At the upper-right, click "guacadmin", then "Settings", "New Connection" to fill in fields:
+1. Copy and paste
+
+   * Name: VIC-WIN
+   * Protocol: RDP
+   * Maximum number of connections: 1
+   * Maximum number of connections per user: 1
+   
+   Skip down to: PARAMETERS | Network
+   * Hostname: 10.0.0.21
+   * Port: 3389
+   Authentication:
+   * Username: vagrant
+   * Password: vagrant
+   * Security mode: RDP encryption
+
+1. Scroll down to click "Save".
+
+1. Now, hack away!
+
+   ### To stop the instance
+
+1. Click the Instance ID of the instance name ending with "bastion-guacamole".
+
 
 ### Juice Shop
 
@@ -493,6 +650,18 @@ The PTES <a target="_blank" href="http://www.pentest-standard.org/index.php/PTES
 ## Security Testing Tools
 
 DevSecOps is a practice of integrating security into the DevOps process.
+
+
+### Ethical Hacking tools
+
+Many tools are used by Penetration Testers to attack systems and applications for the sake of finding vulnerabilities.
+
+* Kali Linux server
+
+* Metasploit
+
+* wazuh.com - https://www.youtube.com/watch?v=O5QnGeaLGIs Ubuntu
+
 
 <a name="IAST"></a>
 
