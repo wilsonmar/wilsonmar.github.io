@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-11-19"
+date: "2023-11-19"
 file: "prometheus"
 title: "Prometheus"
 excerpt: "Collect metrics (for visualization by Grafana), analyze using PromQL coding, and identify alerts, free from CNCF, especially for Kubernetes"
@@ -35,6 +35,57 @@ Promethus provides multiple modes of graphing and dashboarding support, but also
 exposes its time-series data to <strong>API clients</strong> such as <strong>Grafana</strong> which make <a href="#PromQL">PromQL</a> (Prometheus query language) to extract data in order to display <strong>visualizations</strong> on their websites. 
 
 Because people can't be always watching such screens, Rules are also set in Prometheus to trigger <strong>alerts</strong> pushed to the <a href="#AlertManager">Alert Manager</a> which notifies end-points such as email, Slack, Pager Duty SMS, or other notification mechanisms.
+
+
+## PCA Exam
+
+The $250 90-minute Prometheus Certified Associate (PCA) exam at https://training.linuxfoundation.org/certification/prometheus-certified-associate/
+is based on the <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/ProjectForethought.html">PaC (Project Forethought) application</a>, which is a simple to-do list program written in Node.js. It is Dockerized and deployed to a virtual machine. The application is instrumented with Prometheus client libraries to track metrics across the app. The exam's domains:
+
+18% Observability Concepts
+   * Metrics
+   * Understand logs and events
+   * Tracing and Spans
+   * Push vs Pull
+   * Service Discovery
+   * Basics of SLOs, SLAs, and SLIs
+   <br /><br />
+
+20% Prometheus Fundamentals
+   * System Architecture
+   * Configuration and Scraping
+   * Understanding Prometheus Limitations
+   * Data Model and Labels
+   * Exposition Format
+   <br /><br />
+
+28% PromQL
+   * Selecting Data
+   * Rates and Derivatives
+   * Aggregating over time
+   * Aggregating over dimensions
+   * Binary operators
+   * Histograms
+   * Timestamp Metrics
+   <br /><br />
+
+16% Instrumentation and Exporters
+   * Client Libraries
+   * Instrumentation
+   * Exporters
+   * Structuring and naming metrics
+   <br /><br />
+
+18% Alerting & Dashboarding
+   * Dashboarding basics
+   * Configuring Alerting rules
+   * Understand and Use Alertmanager
+   * Alerting basics (when, what, and why)
+   <br /><br />
+
+A PCA digital credential ensures the candidate understands how to use observability data to improve application performance, troubleshoot system implementations, and feed that data into other systems.
+
+The course "Monitoring Infrastructure and Containers with Prometheus" uses the PaC (Project Forethought) application, which is a simple to-do list program written in Node.js. It is Dockerized and deployed to a virtual machine. The application is instrumented with Prometheus client libraries to track metrics across the app.
 
 
 ## Learning Environment
@@ -576,6 +627,8 @@ references an <a target="_blank" href="https://interactive.linuxacademy.com/diag
    Finally, add recording and alerting rules, build out a series of routes so any alerts created get to their desired endpoint. 
 
    The course also looks at creating persistent dashboards with Grafana and use its various graphing options to better track data.
+
+
 
 ## Other notes
 
