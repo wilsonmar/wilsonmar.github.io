@@ -263,7 +263,7 @@ So get both an NDA and contract of scope of work before starting.
 
 <a target="_blank" href="https://github.com/rapid7/metasploitable3">Metasploitable3 from Rapid7</a> is a victim VM created with intentional vulnerabilities for abuse by Metasploit and other <a name="SecTestingTools">ethical hacking tools</a>.
 
-<a target="_blank href="https://vimeo.com/731196164" title="From Expanding Security">VIDEO</a>: Dean Bushmiller has defined in <a target="_blank" href="https://github.com/deanbushmiller/ceh-bootcamp">his GitHub a way to setup</a> the Debian-based <a target="_blank" href="https://wilsonmar.github.io/kali/">Kali Linux</a> VMs as AMIs 
+<a target="_blank" href="https://vimeo.com/731196164" title="From Expanding Security">VIDEO</a>: Dean Bushmiller has defined in <a target="_blank" href="https://github.com/deanbushmiller/ceh-bootcamp">his GitHub a way to setup</a> the Debian-based <a target="_blank" href="https://wilsonmar.github.io/kali/">Kali Linux</a> VMs as AMIs 
 
 TODO: Create script to do the below.
 
