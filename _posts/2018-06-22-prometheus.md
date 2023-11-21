@@ -85,8 +85,35 @@ is based on the <a target="_blank" href="https://interactive.linuxacademy.com/di
 
 A PCA digital credential ensures the candidate understands how to use observability data to improve application performance, troubleshoot system implementations, and feed that data into other systems.
 
-The course "Monitoring Infrastructure and Containers with Prometheus" uses the PaC (Project Forethought) application, which is a simple to-do list program written in Node.js. It is Dockerized and deployed to a virtual machine. The application is instrumented with Prometheus client libraries to track metrics across the app.
+## Sample app
 
+The $299 course "Monitoring Infrastructure and Containers with Prometheus" (LFS241) uses the PaC (Project Forethought) application, which is a simple to-do list program written in Node.js. It is Dockerized and deployed to a virtual machine. The application is instrumented with Prometheus client libraries to track metrics across the app.
+
+1. Course Introduction
+2. Introduction to Systems and Service Monitoring
+3. Introduction to Prometheus
+4. Installing and Setting Up Prometheus
+5. Basic Querying
+6. Dashboarding
+7. Monitoring Host Metrics
+8. Monitoring Container Metrics
+9. Instrumenting Code
+10. Building Exporters
+11. Advanced Querying
+12. Relabeling
+13. Service Discovery
+14. Blackbox Monitoring
+15. Pushing Data
+16. Alerting
+17. Making Prometheus Highly Available
+18. Recording Rules
+19. Scaling Prometheus Deployments
+20. Prometheus and Kubernetes
+21. Local Storage
+22. Remote Storage Integrations
+23. Transitioning From and Integrating with Other Monitoring Systems
+24. Monitoring and Debugging Prometheus
+<br /><br />
 
 ## Learning Environment
 
