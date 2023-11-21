@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-18"
+date: "2023-11-21"
 file: "owasp-testing"
 title: "OWASP"
 excerpt: "Practice finding security vulnerabilities within ZAP or the Broken Web App by running SCA, SAST, DAST, IAST using open-source SonarQube, Sonatype, Synopsys and other tools"
@@ -417,6 +417,7 @@ Description: Penetration Testing Lab Environment V20221102
    * Protocol: RDP
    * Maximum number of connections: 1
    * Maximum number of connections per user: 1
+   <br /><br />
    
    Skip down to: PARAMETERS | Network
    * Hostname: 10.0.0.4
@@ -424,6 +425,7 @@ Description: Penetration Testing Lab Environment V20221102
    Authentication:
    * Username: kali
    * Password: kali
+   <br /><br />
    
    Leave the rest blank.
 
@@ -433,7 +435,11 @@ Description: Penetration Testing Lab Environment V20221102
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1700571239/kali-screen-1020x367_c3tgkj.png"><img alt="kali-screen-1020x367.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700571239/kali-screen-1020x367_c3tgkj.png"></a>
 
    
-   ### Ubuntu victim
+   ### Victim Ubuntu config 
+
+   This is optional unless you want to confirm a Man-in-th-Middle impact.
+
+   Ansible scripts may be used to configure.
 
 1. At the upper-right, click "guacadmin", then "Settings", "New Connection" to fill in fields:
 1. Copy and paste
@@ -442,6 +448,7 @@ Description: Penetration Testing Lab Environment V20221102
    * Protocol: SSH
    * Maximum number of connections: 1
    * Maximum number of connections per user: 1
+   <br /><br />
    
    Skip down to: PARAMETERS | Network
    * Hostname: 10.0.0.10
@@ -449,12 +456,16 @@ Description: Penetration Testing Lab Environment V20221102
    Authentication:
    * Username: vagrant
    * Password: vagrant
+   <br /><br />
 
 1. Scroll down to click "Save".
 
-   ### Windows 2008 R2 victim
+
+   ### Victim Windows 2008 R2 config
 
    This is optional unless you want to confirm a Man-in-th-Middle impact.
+
+   Ansible or PowerShell scripts may be used to configure.
 
 1. At the upper-right, click "guacadmin", then "Settings", "New Connection" to fill in fields:
 1. Copy and paste
@@ -463,6 +474,7 @@ Description: Penetration Testing Lab Environment V20221102
    * Protocol: RDP
    * Maximum number of connections: 1
    * Maximum number of connections per user: 1
+   <br /><br />
    
    Skip down to: PARAMETERS | Network
    * Hostname: 10.0.0.21
@@ -471,14 +483,29 @@ Description: Penetration Testing Lab Environment V20221102
    * Username: vagrant
    * Password: vagrant
    * Security mode: RDP encryption
+   <br /><br />
 
 1. Scroll down to click "Save".
 
 1. Now, hack away!
 
-   ### To stop the instance
+
+   ### Stop instances
 
 1. Click the Instance ID of the instance name ending with "bastion-guacamole".
+
+   CloudFormation phase
+
+1. Go to AWS CloudFormation console, https://console.aws.amazon.com/cloudformation/home
+1. Select the stack you built previously and click Delete.
+   This will delete all resources for the solution (except the three copied AMIs; see below)
+
+AMI phase To delete the copied AMIs:
+1. Go to the EC2 Console > AMIs
+1. Find the three AMIs that were created earlier with the copy commands and deregister them
+1. After deregistering the AMIs, go to Snapshots in the EC2 Console
+
+   There will be three snapshots associated with the deleted AMIs that you can delete.
 
 
 ### Juice Shop
