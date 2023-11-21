@@ -232,8 +232,6 @@ Standards:
 
 * Motor Industry Software Reliability Association (MISRA) C/C++ coding standards
 
-* MISRA®
-   
 * CERT C/C++, CERT Java, CERT Python?
    
 * (US) DISA STIG, 
