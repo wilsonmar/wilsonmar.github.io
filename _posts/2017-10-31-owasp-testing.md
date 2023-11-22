@@ -142,6 +142,30 @@ There is also SAN's <a target="_blank" href="https://www.sans.org/top25-software
 
     Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows attackers to further attack systems, maintain persistence, pivot to more systems to tamper with, extract, or destroy data. Most breach studies demonstrate the time to detect a breach is over 200 days, typically detected by external parties rather than internal processes or monitoring.
 
+
+## Kubernetes Top 10
+
+See <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">My notes on Kubernetes</a>.
+
+<a target="_blank" href="https://owasp.org/www-project-kubernetes-top-ten/">https://owasp.org/www-project-kubernetes-top-ten</a>
+
+1. K01: Insecure Workload Configurations
+1. K02: Supply Chain Vulnerabilities
+1. K03: Overly Permissive RBAC Configurations
+1. K04: Lack of Centralized Policy Enforcement
+1. K05: Inadequate Logging and Monitoring
+1. K06: Broken Authentication Mechanisms
+1. K07: Missing Network Segmentation Controls
+1. K08: Secrets Management Failures
+1. K09: Misconfigured Cluster Components
+1. K10: Outdated and Vulnerable Kubernetes Components
+<br /><br />
+
+https://www.redhat.com/en/resources/state-kubernetes-security-report-2023
+
+https://www.cisecurity.org/benchmark/kubernetes
+
+
 <hr />
 
 
@@ -274,7 +298,7 @@ See <a target="_blank" href="https://www.offsec.com/metasploit-unleashed/">Metas
 
 Instructions below provide manual steps to use Dean Bushmiller's <a target="_blank" href="https://vimeo.com/731196164" title="From Expanding Security">VIDEO</a> describing the <a target="_blank" href="https://github.com/deanbushmiller/ceh-bootcamp">GitHub</a> he used to setup <a target="_blank" href="https://wilsonmar.github.io/kali/">Kali Linux</a> VMs as AMIs:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1700629223/kali-metasploit-979x497_odhxuq.png"><img src="kali-metasploit-975x500.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700629223/kali-metasploit-979x497_odhxuq.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1700665585/kali-metasploit-1787x783_j2xrpz.png"><img src="kali-metasploit-1787x783.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700665585/kali-metasploit-1787x783_j2xrpz.png"></a>
 
 
 TODO: Create script to do the below.
@@ -358,14 +382,17 @@ TODO: Create script to do the below.
    https://ceh-v11-20220609.s3.amazonaws.com/20220715-LAB-Pentest/pentestlab.yml
 
    That file was create by Dean and has contents beginning with:
+
    <pre>AWSTemplateFormatVersion: 2010-09-09
 Description: Penetration Testing Lab Environment V20221102
    </pre>
 
 1. Click "Next" for the "Specify stack details" page.
-1. For Stack name, type your unique name and today's date, such as <tt>johndoepentestlab231231a</tt>. 
+1. For Stack name, type your unique name and today's date, such as 
 
-   No spaces are allowed in Stack names.
+   <tt>johndoepentestlab231231a</tt>
+
+   No spaces are allowed in Stack names. because they are used in URLs.
 
 1. Switch back to the tab for the CloudShell to highlight and copy each of the ami-xxxxxx values.
 
@@ -382,10 +409,9 @@ Description: Penetration Testing Lab Environment V20221102
 1. Scroll to the bottom to CHECK "I acknowledge that AWS CloudFormation might create IAM resources."
 1. Click the orange "Create stack" button.
 1. Wait (a few minutes) for "CREATE_IN_PROGRESS" to change to "CREATE_COMPLETE".
-
 1. Click "Resources" in the horizontal menu.
 
-   TODO: If "ROLLBACK_IN_PROGRESS" appears...
+   If "ROLLBACK_IN_PROGRESS" appears, delete the stack and try again.
 
 1. After "Initializing" turns to "checks passed" shows on all instances, dismiss the CloudShell and What is My IP Address tabs.
 
