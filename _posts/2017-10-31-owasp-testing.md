@@ -263,7 +263,10 @@ So get both an NDA and contract of scope of work before starting.
 
 <a target="_blank" href="https://github.com/rapid7/metasploitable3">Metasploitable3 from Rapid7</a> is a victim VM created with intentional vulnerabilities for abuse by Metasploit and other <a name="SecTestingTools">ethical hacking tools</a>.
 
-<a target="_blank" href="https://vimeo.com/731196164" title="From Expanding Security">VIDEO</a>: Dean Bushmiller has defined in <a target="_blank" href="https://github.com/deanbushmiller/ceh-bootcamp">his GitHub a way to setup</a> the Debian-based <a target="_blank" href="https://wilsonmar.github.io/kali/">Kali Linux</a> VMs as AMIs 
+<a target="_blank" href="https://vimeo.com/731196164" title="From Expanding Security">VIDEO</a>: Dean Bushmiller has defined in <a target="_blank" href="https://github.com/deanbushmiller/ceh-bootcamp">his GitHub a way to setup</a> the Debian-based <a target="_blank" href="https://wilsonmar.github.io/kali/">Kali Linux</a> VMs as AMIs.
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1700627182/kali-metasploit-1164x575_hrwbrg.png"><img src="kali-metasploit-1164x575.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700627182/kali-metasploit-1164x575_hrwbrg.png"></a>
+
 
 TODO: Create script to do the below.
 
@@ -294,6 +297,7 @@ TODO: Create script to do the below.
     "ImageId": "ami-0e3153815a2b53333"
 }
    </pre>
+
 
    NOTE: AWS charges are not incurred until these instances are launched.
    
@@ -389,7 +393,7 @@ Description: Penetration Testing Lab Environment V20221102
 
 1. Click the Instance ID of the instance name ending with "bastion-guacamole".
 
-   ### Get IP address
+   ### Client IP address
 
 1. Click the (copy to clipboard) icon to the left of the "Public IPv4 address" (such as 34.205.166.115).
 1. Open another browser tab and paste the IP address into the address bar to see the Guacamole login page.
@@ -435,7 +439,7 @@ Description: Penetration Testing Lab Environment V20221102
    
    ### Victim Ubuntu config 
 
-   This is optional unless you want to confirm a Man-in-th-Middle impact.
+   This is optional unless you want to confirm a Man-in-the-Middle impact.
 
    Ansible scripts may be used to configure.
 
@@ -490,15 +494,16 @@ Description: Penetration Testing Lab Environment V20221102
 
    ### Stop instances
 
-1. Click the Instance ID of the instance name ending with "bastion-guacamole".
+1. In AWS EC2, click the Instance ID of the instance name ending with "bastion-guacamole".
 
-   CloudFormation phase
+   CloudFormation phase:
 
 1. Go to AWS CloudFormation console, https://console.aws.amazon.com/cloudformation/home
 1. Select the stack you built previously and click Delete.
    This will delete all resources for the solution (except the three copied AMIs; see below)
 
-AMI phase To delete the copied AMIs:
+   Delete the copied AMIs:
+
 1. Go to the EC2 Console > AMIs
 1. Find the three AMIs that were created earlier with the copy commands and deregister them
 1. After deregistering the AMIs, go to Snapshots in the EC2 Console
