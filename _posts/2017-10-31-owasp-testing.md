@@ -298,7 +298,7 @@ See <a target="_blank" href="https://www.offsec.com/metasploit-unleashed/">Metas
 
 Instructions below provide manual steps to use Dean Bushmiller's <a target="_blank" href="https://vimeo.com/731196164" title="From Expanding Security">VIDEO</a> describing the <a target="_blank" href="https://github.com/deanbushmiller/ceh-bootcamp">GitHub</a> he used to setup <a target="_blank" href="https://wilsonmar.github.io/kali/">Kali Linux</a> VMs as AMIs:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1700665585/kali-metasploit-1787x783_j2xrpz.png"><img src="kali-metasploit-1787x783.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700665585/kali-metasploit-1787x783_j2xrpz.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1700693593/kali-metasploit-3122x1402_e1oj1y.png"><img src="kali-metasploit-3122x1402.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700693593/kali-metasploit-3122x1402_e1oj1y.png"></a>
 
 
 TODO: Create script to do the below.
@@ -529,6 +529,7 @@ Description: Penetration Testing Lab Environment V20221102
 
 1. Now, hack away! see <a target="_blank" href="https://wilsonmar.github.io/kali/">Kali PenTesting</a>.
 
+    https://github.com/deanbushmiller/CEH-bootcamp/tree/master/4Day/LAB-Capture-pcapng
 
    ### Stop instances
 
