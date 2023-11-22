@@ -1351,6 +1351,13 @@ C >>> Invalid Azure Portal logins
 D Azure Storage recommendations
 
 
+## Resources
+
+To list hosts for the microsoft.com domain:
+
+<pre>amass enum -active -d microsoft.com 
+</pre>
+
 ## More about Azure #
 
 This is one of a series about Azure cloud:

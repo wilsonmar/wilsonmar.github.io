@@ -92,45 +92,53 @@ There is also SAN's <a target="_blank" href="https://www.sans.org/top25-software
 
 ### API Security Top 10
 
-<a target="_blank" href="https://owasp.org/www-project-api-security/">API security has its own Top 10</a>:
+<a target="_blank" href="https://owasp.org/www-project-api-security/">API security Top 10</a> had 2019 and 2023 versions.
 
-1. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/">API1:2019 Broken Object Level Authorization</a>
+1. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/">API1:2023 Broken Object Level Authorization (BOLA)</a>
 
-    APIs tend to expose endpoints that handle object identifiers, creating a wide attack surface Level Access Control issue. Object level authorization checks should be considered in every function that accesses a data source using an input from the user.
+    This is the most common AND damaging API vulnerability, resulting in data loss, disclosure, data manipulation. 
+    APIs can expose endpoints that handle object identifiers, creating a wide attack surface Level Access Control issue. 
+    Object level authorization checks should be in every function that accesses a data source using an input from the user.
+    An example is authenticated User A retrieves user B’s private data. Prevention:
+    * Define data access policies and implement them in the business logic of the API.
+    * Enforce data access controls on the server-side, not just the client-side.
+    * Implement horizontal access control checks to ensure one user cannot access another user’s data.
+    <br /><br />
 
-2. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa2-broken-authentication/">API2:2019 Broken User Authentication</a>
+2. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa2-broken-authentication/">API2:2023 Broken User Authentication</a>
 
     Authentication mechanisms are often implemented incorrectly, allowing attackers to compromise authentication tokens or to exploit implementation flaws to assume other user’s identities temporarily or permanently. Compromising system’s ability to identify the client/user, compromises API security overall.
 
-3. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa3-broken-object-property-level-authorization/">API3:2019 Excessive Data Exposure</a>
+3. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa3-broken-object-property-level-authorization/">API3:2023 Broken Object Property Level Authorization (BOPLA)</a>
 
     Looking forward to generic implementations, developers tend to expose all object properties without considering their individual sensitivity, relying on clients to perform the data filtering before displaying it to the user.
 
-4. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa4-unrestricted-resource-consumption/">API4:2019 Lack of Resources & Rate Limiting</a>
+4. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa4-unrestricted-resource-consumption/">API4:2023 Unrestricted Resource Consumption (Lack of Resources & Rate Limiting)</a>
 
     Quite often, APIs do not impose any restrictions on the size or number of resources that can be requested by the client/user. Not only can this impact the API server performance, leading to Denial of Service (DoS), but also leaves the door open to authentication flaws such as brute force.
 
-5. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa5-broken-function-level-authorization/">API5:2019 Broken Function Level Authorization</a>
+5. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa5-broken-function-level-authorization/">API5:2023 Broken Function Level Authorization</a>
 
     Complex access control policies with different hierarchies, groups, and roles, and an unclear separation between administrative and regular functions, tend to lead to authorization flaws. By exploiting these issues, attackers gain access to other users’ resources and/or administrative functions.
 
-6. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa6-unrestricted-access-to-sensitive-business-flows/">API6:2019 Mass Assignment</a>
+6. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa6-unrestricted-access-to-sensitive-business-flows/">API6:2023 Unrestricted Access to Sensitive Business Flows</a>
 
+    (Mass Assignment) 
     Binding client provided data (e.g., JSON) to data models, without proper properties filtering based on a whitelist, usually lead to Mass Assignment. Either guessing objects properties, exploring other API endpoints, reading the documentation, or providing additional object properties in request payloads, allows attackers to modify object properties they are not supposed to.
 
-7. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa7-server-side-request-forgery/">API7:2019 Security Misconfiguration</a>
+7. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa7-server-side-request-forgery/">API7:2023 Server Side Request Forgery</a>
+
+8. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa8-security-misconfiguration/">API8:2019 Security Misconfiguration</a>
 
     Security misconfiguration is commonly a result of unsecure default configurations, incomplete or ad-hoc configurations, open cloud storage, misconfigured HTTP headers, unnecessary HTTP methods, permissive Cross-Origin resource sharing (CORS), and verbose error messages containing sensitive information.
 
-8. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa8-security-misconfiguration/">API8:2019 Injection</a>
-
     Injection flaws, such as SQL, NoSQL, Command Injection, etc., occur when untrusted data is sent to an interpreter as part of a command or query. The attacker’s malicious data can trick the interpreter into executing unintended commands or accessing data without proper authorization.
 
-9. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa9-improper-inventory-management/">API9:2019 Improper Assets Management</a>
+9. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa9-improper-inventory-management/">API9:2023 Improper Inventory Management</a>
 
     APIs tend to expose more endpoints than traditional web applications, making proper and updated documentation highly important. Proper hosts and deployed API versions inventory also play an important role to mitigate issues such as deprecated API versions and exposed debug endpoints.
 
-10. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xaa-unsafe-consumption-of-apis/">API10:2019 Insufficient Logging & Monitoring</a>
+10. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xaa-unsafe-consumption-of-apis/">API10:2023 Unsafe Consumption of APIs</a>
 
     Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows attackers to further attack systems, maintain persistence, pivot to more systems to tamper with, extract, or destroy data. Most breach studies demonstrate the time to detect a breach is over 200 days, typically detected by external parties rather than internal processes or monitoring.
 
@@ -261,7 +269,8 @@ So get both an NDA and contract of scope of work before starting.
 
 ### Metasploitable3
 
-<a target="_blank" href="https://github.com/rapid7/metasploitable3">Metasploitable3 from Rapid7</a> is a victim VM created with intentional vulnerabilities for abuse by Metasploit and other <a name="SecTestingTools">ethical hacking tools</a> running in Kali OS.
+<a target="_blank" href="https://github.com/rapid7/metasploitable3">Metasploitable3 from Rapid7</a> is a victim VM created with <a target="_blank" href="https://github.com/rapid7/metasploitable3/wiki/Vulnerabilities">intentional vulnerabilities</a> for abuse by Metasploit and other <a name="SecTestingTools">ethical hacking tools</a> running in Kali OS.
+See <a target="_blank" href="https://www.offsec.com/metasploit-unleashed/">Metasploit Unleashed</a> at Offsec.com.
 
 Instructions below provide manual steps to use Dean Bushmiller's <a target="_blank" href="https://vimeo.com/731196164" title="From Expanding Security">VIDEO</a> describing the <a target="_blank" href="https://github.com/deanbushmiller/ceh-bootcamp">GitHub</a> he used to setup <a target="_blank" href="https://wilsonmar.github.io/kali/">Kali Linux</a> VMs as AMIs:
 
@@ -492,7 +501,7 @@ Description: Penetration Testing Lab Environment V20221102
 
 1. Scroll down to click "Save".
 
-1. Now, hack away!
+1. Now, hack away! see <a target="_blank" href="https://wilsonmar.github.io/kali/">Kali PenTesting</a>.
 
 
    ### Stop instances
@@ -501,13 +510,17 @@ Description: Penetration Testing Lab Environment V20221102
 
    CloudFormation phase:
 
-1. Go to AWS CloudFormation console, https://console.aws.amazon.com/cloudformation/home
+1. Go to AWS CloudFormation console
+
+   https://console.aws.amazon.com/cloudformation/home
+
 1. Select the stack you built previously and click Delete.
-   This will delete all resources for the solution (except the three copied AMIs; see below)
+   
+   This deletes all resources for the solution (except the three copied AMIs; see below)
 
    Delete the copied AMIs:
 
-1. Go to the EC2 Console > AMIs
+1. Go to the EC2 Console > AMIs.
 1. Find the three AMIs that were created earlier with the copy commands and deregister them
 1. After deregistering the AMIs, go to Snapshots in the EC2 Console
 
