@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-17"
+date: "2023-11-22"
 file: "cyber-ranges"
 title: "cyber-ranges"
 excerpt: "Install in AWS, Azure, GCP clouds (with Burt Suite, Postman, etc.) for security audits and penetration testing"
@@ -16,6 +16,27 @@ comments: true
 {% include _toc.html %}
 
 This document describes the <strong>fastest, easiest, most fool-proof</strong> way to establish a <strong>cyber-range</strong> (playground) for both defensive (White Hat) <strong>Penetration Testing</strong>, Security Auditing, Computer Forensics, and Reverse Engineering.
+
+## Why?
+
+Created, in Azure and AWS, Ubuntu, Windows, and Kali servers in Docker containers.
+Converted from Cloud Formation to Terraform IaC so vulnerabilities are identified before resource creation.
+Enabled isolated SSH & RDP access through a Guacamole Bastion host during testing and a Bastion host in prod.
+
+Automated 600+ penetration tests using Wireshark, Burp Suite, Postman, and many other tools.
+Coverage addressed OWASP API Top 10, PCI DSS v4, and SOC2/ISO 20000 audits.
+Designed tests based on OSSTMM standards, with reports in Markdown and HTML based on STAR.
+
+Tuned Kubernetes configurations to pass automated vulnerability tests run during automated load tests.
+
+
+
+Used Jira to pair-program with a remote team of 5 across 3 continents.
+
+https://www.youtube.com/watch?v=oCCguBcLyIU
+
+
+## The range of cyber ranges
 
 There are several <a target="_blank" href="https://www.wikiwand.com/en/Cyber_range">Cyber Ranges</a>) setup for <a target="_blank" href="https://www.wikiwand.com/en/Red_team">Red Teams</a> to attack and <a target="_blank" href="https://www.wikiwand.com/en/Blue_team_(computer_security)">Blue Teams</a> to defend:
 

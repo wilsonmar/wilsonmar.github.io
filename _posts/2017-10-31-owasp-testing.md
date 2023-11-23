@@ -665,7 +665,23 @@ Nevertheless, VAmPI can be used for learning/teaching:
 
 ## Software Testing Guidelines
 
-Several websites provide specific examples of insecure code turned secure:
+Guidance for planning and reporting of testing:
+
+### PTES
+
+<a target="_blank" href="http://www.pentest-standard.org/index.php/Main_Page">PTES (Penetration Testing Execution Standard)</a> in 2009 defined phases of a pen-test engagement:
+
+   1. <a target="_blank" href="http://www.pentest-standard.org/index.php/Intelligence_Gathering">Intelligence Gathering</a>
+   2. <a target="_blank" href="http://www.pentest-standard.org/index.php/Pre-engagement">Pre-engagement Interactions</a>
+   3. <a target="_blank" href="http://www.pentest-standard.org/index.php/Threat_Modeling">Threat Modeling</a>
+   4. <a target="_blank" href="http://www.pentest-standard.org/index.php/Vulnerability_Analysis">Vulnerability Analysis</a>
+   5. <a target="_blank" href="http://www.pentest-standard.org/index.php/Exploitation">Exploitation</a>
+   6. <a target="_blank" href="http://www.pentest-standard.org/index.php/Post_Exploitation">Post Exploitation</a>
+   7. <a target="_blank" href="http://www.pentest-standard.org/index.php/Reporting">Reporting</a>
+   <br /><br />
+
+The PTES <a target="_blank" href="http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines">Technical Guidelines</a> is an "oldie but goodie" from 2014, but still has good wisdom.
+
 
 ### OSSTMM STAR
 
@@ -699,21 +715,6 @@ OSSTMM has five channels or operational areas:
    * Telecommunications: Whether the telecommunication network is digital or analog, any communication conducted over telephone or network lines is tested in the OSSTMM
    * Data Networks: The security testing of data networks includes electronic systems and data networks that are used for communication or interaction via cable and wired network lines
    <br /><br />
-
-### PTES
-
-<a target="_blank" href="http://www.pentest-standard.org/index.php/Main_Page">PTES (Penetration Testing Execution Standard)</a> in 2009 defined phases of a pen-test engagement:
-
-   1. <a target="_blank" href="http://www.pentest-standard.org/index.php/Intelligence_Gathering">Intelligence Gathering</a>
-   2. <a target="_blank" href="http://www.pentest-standard.org/index.php/Pre-engagement">Pre-engagement Interactions</a>
-   3. <a target="_blank" href="http://www.pentest-standard.org/index.php/Threat_Modeling">Threat Modeling</a>
-   4. <a target="_blank" href="http://www.pentest-standard.org/index.php/Vulnerability_Analysis">Vulnerability Analysis</a>
-   5. <a target="_blank" href="http://www.pentest-standard.org/index.php/Exploitation">Exploitation</a>
-   6. <a target="_blank" href="http://www.pentest-standard.org/index.php/Post_Exploitation">Post Exploitation</a>
-   7. <a target="_blank" href="http://www.pentest-standard.org/index.php/Reporting">Reporting</a>
-   <br /><br />
-
-The PTES <a target="_blank" href="http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines">Technical Guidelines</a> is an "oldie but goodie" from 2014, but still has good wisdom.
 
 
 <hr />

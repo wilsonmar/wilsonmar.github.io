@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-09-25"
+date: "2023-11-22"
 file: "azure-certifications"
 title: "Azure (Microsoft cloud) certifications"
 excerpt: "Microsoft provides free hands-on (gamified) tutorials and free time"
@@ -998,12 +998,13 @@ The cybersecurity architect continuously collaborates with leaders and practitio
 A candidate for this exam should have advanced experience and knowledge in a wide range of security engineering areas including identity and access, platform protection, security operations, securing data and securing applications. They should also have experience with hybrid and cloud implementations.
 
 <a target="_blank" href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWVbXN">PDF</a>: <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/sc-100-design-zero-trust-strategy-architecture/">Free tutorials</a>:
-* Design a Zero Trust strategy and architecture (30–35%)
-* Evaluate Governance Risk Compliance (GRC) technical strategies and security operations
+
+1. <a target="_blank" href="https://www.linkedin.com/learning/microsoft-cybersecurity-architect-sc-100-cert-prep-1-design-a-zero-trust-strategy-and-architecture-by-microsof">PREP</a>: Design a Zero Trust strategy and architecture (30–35%)
+2. <a target="_blank" href="https://www.linkedin.com/learning/microsoft-cybersecurity-architect-sc-100-cert-prep-2-evaluate-governance-risk-compliance-grc-technical-strateg">PREP</a>: Evaluate Governance Risk Compliance (GRC) technical strategies and security operations
 strategies (10–15%)
-* Design security for infrastructure (10–15%)
-* Design a strategy for data and applications (15–20%)
-* Recommend security best practices and priorities (20–25%)
+3. <a target="_blank" href="https://www.linkedin.com/learning/microsoft-cybersecurity-architect-sc-100-cert-prep-3-design-security-for-infrastructure-by-microsoft-press">PREP</a>: Design security for infrastructure (10–15%)
+4. <a target="_blank" href="https://www.linkedin.com/learning/microsoft-cybersecurity-architect-sc-100-cert-prep-4-design-a-strategy-for-data-and-applications-by-microsoft">PREP</a>: Design a strategy for data and applications (15–20%)
+5. <a target="_blank" href="https://www.linkedin.com/learning/microsoft-cybersecurity-architect-expert-sc-100-cert-prep-5-recommend-security-best-practices-and-priorities">PREP</a>: Recommend security best practices and priorities (20–25%)
 <br /><br />
 
 https://github.com/MicrosoftLearning/SC-100-Microsoft-Cybersecurity-Architect has these hands-on labs:
