@@ -1,8 +1,8 @@
 ---
 layout: post
 date: "2023-11-17"
-file: "kali"
-title: "Kali (Linux OS)"
+file: "cyber-ranges"
+title: "cyber-ranges"
 excerpt: "Install in AWS, Azure, GCP clouds (with Burt Suite, Postman, etc.) for security audits and penetration testing"
 tags: [security, automation,linus]
 image:
@@ -15,20 +15,24 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This document describes the <strong>fastest, easiest, most fool-proof</strong> way to establish a playground for both offensive and defensive <strong>Penetration Testing</strong>, Security Auditing, Computer Forensics, and Reverse Engineering.
+This document describes the <strong>fastest, easiest, most fool-proof</strong> way to establish a <strong>cyber-range</strong> (playground) for both defensive (White Hat) <strong>Penetration Testing</strong>, Security Auditing, Computer Forensics, and Reverse Engineering.
 
-Kali is used by several isolated <a target="_blank" href="https://www.wikiwand.com/en/Cyber_range">Cyber Ranges</a>) setup for <a target="_blank" href="https://www.wikiwand.com/en/Red_team">Red Teams</a> to attack and <a target="_blank" href="https://www.wikiwand.com/en/Blue_team_(computer_security)">Blue Teams</a> to defend:
+There are several <a target="_blank" href="https://www.wikiwand.com/en/Cyber_range">Cyber Ranges</a>) setup for <a target="_blank" href="https://www.wikiwand.com/en/Red_team">Red Teams</a> to attack and <a target="_blank" href="https://www.wikiwand.com/en/Blue_team_(computer_security)">Blue Teams</a> to defend:
 
-   * https://theartofhacking.org/ & <a target="_blank" href="https://github.com/The-Art-of-Hacking/h4cker">GitHub</a> by <a target="_blank" href="https://keybase.io/santosomar">Omar Santos</a>
+   * https://theartofhacking.org/ & <a target="_blank" href="https://github.com/The-Art-of-Hacking/h4cker">GitHub</a> by <a target="_blank" href="https://keybase.io/santosomar">Omar Santos</a> with code at https://h4cker.org/github
+
    * <a target="_blank" href="https://HackTheBox.com/">HackTheBox.com</a> to To find 300+ pentest hacking labs
-   * TryHackMe.com
-   * <a target="_blank" href="https://github.com/rapid7/metasploitable3">github.com/rapid7/metasploitable3</a> is used by Packer to build a VM image for ESXi VMWare, Vagrant, or libvirt on either Ubuntu 14.04 or Windows. It contains many security vulnerabilities explained at <a target="_blank" href="https://github.com/rapid7/metasploitable3/wiki/">its wiki</a>
+
+   * <a trget="_blank" href="https://laurakokkarinen.com/how-to-set-up-a-kali-linux-virtual-machine-in-azure-to-serve-as-a-tryhackme-attack-box/">Create Kali on Azure</a> to attack apps running in cloud <a target="_blank" href="https://tryhackme.com/">TryHackMe.com</a>
+
+   * <a target="_blank" href="https://github.com/rapid7/metasploitable3">github.com/rapid7/metasploitable3</a> is used by Packer to build images using <a target="_blank" href="https://download.virtualbox.org/virtualbox/UserManual.pdf">PDF: Oracle VM Virtualbox</a>, VMware ESXi, HashiCorp Vagrant, or libvirt on either Ubuntu 14.04 or Windows. It contains many security vulnerabilities explained at <a target="_blank" href="https://github.com/rapid7/metasploitable3/wiki/">its wiki</a>
+
+   * Others may use Proxmox virtualization
    <br /><br />
 
-Kali is the basis for several certifications:
+Cyber Ranges are needed to learn several certifications:
    * CompTIA Pentest+ PT0-001 
    * CompTIA CEH (Certified Ethical Hacker) 312-50
-   * CompTIA PenTest+ PT0-001
    * GCIH certification?
    * eJPT certification?
    * OSCP certification
@@ -37,12 +41,20 @@ Kali is the basis for several certifications:
 After servers are created, Packer or Red Hat's Anible can be used to configure server settings.
 
 CAUTION: <a target="_blank" href="https://www.wikiwand.com/en/Kali_Linux">Kali Linux</a> was not designed for productive use like WordPress or Drupal servers. 
+   * https://remnux.org/ distro
+   * <a target="_blank" href="https://www.youtube.com/watch?v=SCG0wYGS-Mg">VIDEO: Wazuh</a>
+   <br /><br />
 
-Here we install Kali Linux (and <a href="#Metapackages">Kali's Metapackages</a> listing associated tools to install) within clouds:
+Here we install distros within clouds:
 
    * <a href="#AWS-Install">AWS cloud VPC for tunneling into Kali</a>
-   * <a href="#Azure-Install">Azure cloud VNet for tunneling into Kali</a>
    * <a href="#GCP-Install">GCP cloud VPC for tunneling into Kali</a>
+   * <a href="#Azure-Install">Azure cloud VNet for tunneling into Kali</a>
+
+   Not considered:
+   * Ocean Digital (Digital Ocean) cloud
+   * IBM Cloud
+   * Oracle Cloud
    <br /><br />
 
 
@@ -413,8 +425,32 @@ https://registry.terraform.io/modules/offensive-terraform/ec2-kali-linux/aws/lat
 
 https://www.kali.org/docs/cloud/azure/
 
+A. <a target="_blank" href="https://www.youtube.com/watch?v=Of5u2R5_Lrs">VIDEO</a>, <a target="_blank" href="https://www.youtube.com/watch?v=-qUxkXF4IGQ">VIDEO</a>: install 
+<a target="_blank" href="https://azuremarketplace.microsoft.com/en-us/marketlace/apps/kali-linux.kali-linux">Kali using Azure Marketplace</a> costs from $9.99/month to $99.99/month.
+
+   <ul><a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1700716126/kali-azure-docker-1776x791_ssml0q.png"><img alt="kali-azure-docker-1776x791" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700716126/kali-azure-docker-1776x791_ssml0q.png"></a>
+   
+   <a target="_blank" href="https://www.youtube.com/watch?v=nZl4dpYpnLk">VIDEO</a>: Using Portal GUI to setup Kali on Azure</a> (a minimal edition) from Marketplace & SSH into it.
+   </ul> 
+
+   Images:   
+   * https://azuremarketplace.microsoft.com/en-us/marketplace/apps/techlatest.desktop-linux-kali?tab=overview
+   * https://azuremarketplace.microsoft.com/en-us/marketplace/apps/ntegralinc1586961136942.ntg_kali_linux?tab=Overview
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=oCCguBcLyIU">VIDEO</a>: 
+   <a targete="_blank href="https://laurakokkarinen.com/how-to-set-up-a-kali-linux-virtual-machine-in-azure-to-serve-as-a-tryhackme-attack-box/">Create Kali on Azure</a> to attack apps running in cloud <a target="_blank" href="https://tryhackme.com/">TryHackMe.com</a>
+   
+   <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/run-docker-with-azure-container-instances/">Tutorial</a>
+   on using in Azure
+   <a target="_blank" href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes">machines of different sizes</a>
+   
+B. Install Kali by creating portable Docker container images using HashiCorp Packer.
+
+
 https://docmoa.github.io/04-HashiCorp/01-Packer/05-SamplePkr/Azure.html
 
+
+<hr />
 
 <a name="GCP-Install"></a>
 
