@@ -1088,7 +1088,8 @@ The fee includes a course with 145+ hours of video content and 121 labs.
 
 ## EC-Council Penetration Tester
 
-(International Council of E-Commerce Consultants) EC-Council from Malaysia since 2001 has 3 levels of certification. See FAQ at <a target="_blank" href="https://cert.eccouncil.org/faq.html">https://cert.eccouncil.org/faq.html</a>
+EC-Council (International Council of E-Commerce Consultants) is based in Malaysia. Since 2001 it offers 3 levels of certification. 
+See <a target="_blank" href="https://cert.eccouncil.org/faq.html">https://cert.eccouncil.org/faq.html</a>
 
 33% off until Dec 31.
 

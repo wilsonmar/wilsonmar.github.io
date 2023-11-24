@@ -60,7 +60,7 @@ This article is structured according to these categories of several technologies
 
    1. <a href="#Operating+Model">Operating Model</a> - On-prem, Private Cloud, Public Cloud, Hybrid, Cloud as a Service, etc.
    2. <a href="#Hardware">Hardware</a> - Instance Type: CPU, RAM, Storage, Network bandwidth, VMWare, etc.
-   3. <a href="#Networking">Networking</a> - Firewalls, VPN, DNS, SSH, RDP, SMS, email, chat, IoT edge devices, etc.
+   3. <a href="#Networking">Networking</a> - Ports: Firewalls, VPN, DNS, SSH, RDP, SMS, email, chat, IoT edge devices, etc.
    4. <a href="#OSs">Operating System (OS)</a> - Virtualization Hypervisors, Windows, macOS, Linux (Debian, Ubuntu, etc.
    
    5. <a href="#OperationalUtilities">Operational Utilities</a> - Backups, Logging, Monitoring, Tracing, Dashboards, Alerting, Chaos Engineering, ITIL, etc.
@@ -157,6 +157,8 @@ C. As part of an enterprise solution:
    <ul><a target="_blank" href="https://www.hashicorp.com/blog/announcing-hashicorp-waypoint">HashiCorp Waypoint</a>
    </ul>
 
+NAT (Network Address Translation) to reach out.
+
 Usage Instructions:
 
 1. Tools are located in /root/Desktop/Tools & /opt/
@@ -164,6 +166,16 @@ Usage Instructions:
 3. Wordlists are located in /usr/share/wordlists
 4. To use Empire & Starkiller, read the following file: /root/Instructions/empire-starkiller.txt
 
+
+### Linux
+
+PROTIP: On VirtualBox, for USB 3.0 support, enable extension pack.
+
+### Windows
+
+PROTIP: To improve performance and provide additional capabilities such as shared folders, once loaded, Insert Guest additions into the Windows virtual machine.
+
+To enable disk encryption, use BitLocker on Windows General Settings.
 
 
 <hr />

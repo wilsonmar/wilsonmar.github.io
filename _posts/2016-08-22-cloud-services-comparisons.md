@@ -271,9 +271,17 @@ layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/15745
 References:
    * https://cast.ai/blog/how-to-choose-the-best-vm-for-the-job/
    * https://www.simform.com/blog/compute-pricing-comparison-aws-azure-googlecloud/
- 
+   <br /><br />
 
-### Alternative clouds
+
+### Data breaches
+
+* https://firewalltimes.com/microsoft-data-breach-timeline/
+* https://firewalltimes.com/amazon-web-services-data-breach-timeline/
+* https://firewalltimes.com/google-data-breach-timeline/
+
+
+## Alternative clouds
 
 * https://console.hetzner.cloud/ - Hetzner Cloud 
 
