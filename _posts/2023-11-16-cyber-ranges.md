@@ -2,7 +2,7 @@
 layout: post
 date: "2023-11-22"
 file: "cyber-ranges"
-title: "cyber-ranges"
+title: "Cyber Ranges"
 excerpt: "Install in AWS, Azure, GCP clouds (with Burt Suite, Postman, etc.) for security audits and penetration testing"
 tags: [security, automation,linus]
 image:
@@ -15,9 +15,11 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This document describes the <strong>fastest, easiest, most fool-proof</strong> way to establish a <strong>cyber-range</strong> (playground) for both defensive (White Hat) <strong>Penetration Testing</strong>, Security Auditing, Computer Forensics, and Reverse Engineering.
+This article describes the <strong>fastest, easiest, most fool-proof</strong> way to establish a <strong>cyber-range</strong> (playground) for both defensive (White Hat) <strong>Penetration Testing</strong>, Security Auditing, Computer Forensics, and Reverse Engineering.
 
 ## Why?
+
+Here's an example of what you can add to your resume:
 
 Created, in Azure and AWS, Ubuntu, Windows, and Kali servers in Docker containers.
 Converted from Cloud Formation to Terraform IaC so vulnerabilities are identified before resource creation.
@@ -29,11 +31,18 @@ Designed tests based on OSSTMM standards, with reports in Markdown and HTML base
 
 Tuned Kubernetes configurations to pass automated vulnerability tests run during automated load tests.
 
-
-
 Used Jira to pair-program with a remote team of 5 across 3 continents.
 
 https://www.youtube.com/watch?v=oCCguBcLyIU
+
+
+Cyber Ranges are needed to learn several certifications:
+   * CompTIA Pentest+ PT0-001 
+   * CompTIA CEH (Certified Ethical Hacker) 312-50
+   * GCIH certification?
+   * eJPT certification?
+   * OSCP certification
+   <br /><br />
 
 
 ## The range of cyber ranges
@@ -51,13 +60,40 @@ There are several <a target="_blank" href="https://www.wikiwand.com/en/Cyber_ran
    * Others may use Proxmox virtualization
    <br /><br />
 
-Cyber Ranges are needed to learn several certifications:
-   * CompTIA Pentest+ PT0-001 
-   * CompTIA CEH (Certified Ethical Hacker) 312-50
-   * GCIH certification?
-   * eJPT certification?
-   * OSCP certification
+
+## Machines Technologies
+
+There are several technologies:
+
+A. Blinking machines you can see within real rooms, with doors.
+
+   These are used by the military, large corporations, and universities.
+
+   They provide not just the hardware but a community of people to learn from.
+
+B. Your own machines 
+
+   A Cyber range requires several machines, which take all 16 GB of typical laptops, even when Docker hypervisors are used.
+
+C. Remote public clouds
+
+   * AWS
+   * Azure
+   * GCP
+   * Digital Ocean
    <br /><br />
+
+D. In on-prem. hardware
+
+   * AWS Outpost 
+
+   * https://www.kali.org/docs/containers/official-kalilinux-docker-images/
+   <br /><br />
+
+
+
+
+<a target="_blank" href="https://virtualbox.org/">VirtualBox 6.1</a>
 
 After servers are created, Packer or Red Hat's Anible can be used to configure server settings.
 
@@ -78,6 +114,7 @@ Here we install distros within clouds:
    * Oracle Cloud
    <br /><br />
 
+<hr />
 
 ## About KaliLinux
 
@@ -388,6 +425,10 @@ The steps in this document was created after looking at what others have written
 
 https://www.kali.org/docs/cloud/aws/
 
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1700787035/kali-aws-metasplotable-3108x1498_zh9s8r.png"><img alt="kali-aws-metasplotable-3108x1498.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700787035/kali-aws-metasplotable-3108x1498_zh9s8r.png"></a>
+   
+
 Option A - Docker container images:
 https://www.kali.org/docs/containers/using-kali-docker-images/
 
@@ -419,8 +460,6 @@ is described at
 https://napo.io/posts/terraform-packer-to-create-a-kali-linux-aws-ec2-instance/
 
 Option C. 
-
-Option D.
 https://github.com/offensive-terraform/terraform-aws-ec2-kali-linux 
 (last updated Sep 27, 2020 from Offensive Terraform module) 
 creates Kali Linux from the AWS marketplace and installs cloud security tools 
@@ -449,12 +488,9 @@ https://www.kali.org/docs/cloud/azure/
 A. <a target="_blank" href="https://www.youtube.com/watch?v=Of5u2R5_Lrs">VIDEO</a>, <a target="_blank" href="https://www.youtube.com/watch?v=-qUxkXF4IGQ">VIDEO</a>: install 
 <a target="_blank" href="https://azuremarketplace.microsoft.com/en-us/marketlace/apps/kali-linux.kali-linux">Kali using Azure Marketplace</a> costs from $9.99/month to $99.99/month.
 
-   <ul><a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1700716126/kali-azure-docker-1776x791_ssml0q.png"><img alt="kali-azure-docker-1776x791" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700716126/kali-azure-docker-1776x791_ssml0q.png"></a>
-   
    <a target="_blank" href="https://www.youtube.com/watch?v=nZl4dpYpnLk">VIDEO</a>: Using Portal GUI to setup Kali on Azure</a> (a minimal edition) from Marketplace & SSH into it.
-   </ul> 
 
-   Images:   
+   Images from the Azure Marketplace:   
    * https://azuremarketplace.microsoft.com/en-us/marketplace/apps/techlatest.desktop-linux-kali?tab=overview
    * https://azuremarketplace.microsoft.com/en-us/marketplace/apps/ntegralinc1586961136942.ntg_kali_linux?tab=Overview
 
@@ -467,6 +503,8 @@ A. <a target="_blank" href="https://www.youtube.com/watch?v=Of5u2R5_Lrs">VIDEO</
    
 B. Install Kali by creating portable Docker container images using HashiCorp Packer.
 
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1700787030/kali-azure-metasplotable-3116x1502_tbvtp0.png"><img alt="kali-azure-metasplotable-3116x1502.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700787030/kali-azure-metasplotable-3116x1502_tbvtp0.png"></a>
+   
 
 https://docmoa.github.io/04-HashiCorp/01-Packer/05-SamplePkr/Azure.html
 
