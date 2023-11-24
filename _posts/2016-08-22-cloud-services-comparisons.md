@@ -15,9 +15,8 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Spending on shared cloud infrastructure now exceed spending on on-prem. data center hardware:
-
-<a target="_blank" href="https://www.srgresearch.com/articles/2020-the-year-that-cloud-service-revenues-finally-dwarfed-enterprise-spending-on-data-centers">SRG Research reported that in 2020</a>:
+<a target="_blank" href="https://www.srgresearch.com/articles/2020-the-year-that-cloud-service-revenues-finally-dwarfed-enterprise-spending-on-data-centers">SRG Research reported that in 2020</a>,
+customer spending on shared cloud infrastructure now exceeds spending on on-prem. data center hardware.
 
 ![cloud-svcs-exceeded-2020](https://user-images.githubusercontent.com/300046/138579710-70bcc651-3fe4-4fe7-880c-7047162043ea.jpg)
 
@@ -28,7 +27,7 @@ A larger research firm, Gartner, predicted the cross-over to occur in 2024:
 
 {% include whatever.html %}
 
-Analysis of corporate S-1 filings identified significant <strong>cloud spend</strong> as percentage of Total Revenue:
+Analysis of corporate S-1 filings identified significant <strong>cloud spend</strong> as percentage of corporate Total Revenue:
 
 ![cloud-svcs-spend-1312x560](https://user-images.githubusercontent.com/300046/138592222-e294f7e7-7271-4da8-83d6-fead30969d83.png)
 
@@ -78,7 +77,7 @@ Amazon's "Well Architected" notes the constraints removed by being in the cloud:
 
 ## Landing Zones
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone">Microsoft calls "Landing Zones"</a> the output of a multisubscription Azure environment that accounts for scale, security, governance, networking, and identity. Azure Landing Zones enable application migrationa and greenfield development at enterprise-scale in Azure. These zones consider all platform resources required to support the customer's application portfolio and don't differentiate between infrastructure as a service or platform as a service.
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone">Microsoft calls "Landing Zones"</a> the output of a multi-subscription Azure environment that accounts for scale, security, governance, networking, and identity. Azure Landing Zones enable application migration and greenfield development at enterprise scale in Azure. These zones consider all platform resources required to support the customer's application portfolio and don't differentiate between infrastructure as a service or platform as a service.
 
 
 ## Cloud "as a Service" (*aaS) models
@@ -127,12 +126,12 @@ More than <a target="_blank" href="https://docs.microsoft.com/en-us/learn/module
 
    <a target="_blank" href="https://i.pinimg.com/originals/e0/31/0c/e0310c5a495252faeb5b0c5820987685.jpg"><img alt="cloud-rehost-aws-2742x682" src="https://i.pinimg.com/originals/e0/31/0c/e0310c5a495252faeb5b0c5820987685.jpg"></a>
 
-   This is a functional recreation of infrastructure in the cloud: Networks would be recreated using VPCs. Apps would be place into EC2 instances. Storage drives would be converted to S3 buckets. That would shift CAPEX to OPEX variable expenses.
+   This is a functional recreation of infrastructure in the cloud: Networks would be recreated using VPCs. Apps would be placed into EC2 instances. Storage drives would be converted to S3 buckets. That would shift CAPEX to OPEX variable expenses.
 
    This would occur with minimal disruption and downtime to end-users. This would likely cost less than building alternatives. Consider the <a target="_blank" href="https://pages.awscloud.com/rs/112-TZM-766/images/hackett-group-the-business-value-of-migration-to-aws-012022.pdf">PDF: Business Value of Migration to Amazon Web Services</a>
    and the <a target="_blank" href="https://aws.amazon.com/server-migration-service/">AWS Server Migration Service</a>. AWS Professional Services created their <a target="_blank" href="">Cloud Adoption Framework</a>.
 
-   WARNING: Legacy application code tend to have security issues which must be patched. So Rehosting would buy more time to work on the app code, but not eliminate the need to remediate security issues in app code.
+   WARNING: Legacy application code tend to have security issues that must be patched. So Rehosting would buy more time to work on the app code, but not eliminate the need to remediate security issues in the app code.
    
 * <strong>Replatform ("Lift-tinker-and-shift")</strong> - making targeted cloud optimizations such as switching databases to cloud-based AWS RDS.
 
@@ -144,7 +143,7 @@ More than <a target="_blank" href="https://docs.microsoft.com/en-us/learn/module
 
 * <strong>Rearchitect</strong> - isolate application functionalities into separate <strong>microservices</strong> that can be independently deployed, tested, scaled up or down, and managed.
 
-* <strong>Replace</strong> - retire existing on-premises application and rewriting functionality under a new architecture such as a Serverless or SaaS ("cloud native") application.
+* <strong>Replace</strong> - retire existing on-premises applications and rewrite functionality under a new architecture such as a Serverless or SaaS ("cloud native") application.
 
 
 Despite all the good reasons, individuals used to the old way may still "drag their heels".
@@ -153,12 +152,12 @@ See my posts about <a target="_blank" href="https://wilsonmar.github.io/change-m
 
 <hr/>
 
-## Individuals must pick a single cloud?
+## We must pick a single cloud?
 
-Organizations are going multi-cloud by using software from HashiCorp, Snowflake for database, etc.
+Organizations are going multi-cloud by using software from Snowflake for database, etc.
 
 But an individual has a limited amount of time to keep up with changes.
-So many individual technologists need to select the cloud vendor which provides the best career prospects. Here's my logic:
+So many individual technologists need to select the cloud vendor that provides the best career prospects. Here's my logic:
 
 * If you code in C# on .NET and want to continue leveraging that experience, Azure is the natural choice. (But other clouds are trying to support Windows.)
 
@@ -245,9 +244,8 @@ ARM processors run faster and cooler than Intel x86 processors.
 
 ### Pricing #
 
-Even though cloud vendors provide a great deal of transparency to how they price their services,
-there are so many variables to what affects the final bill that the only accurate way is to
-actually run services.
+Even though cloud vendors provide a great deal of transparency in how they price their services,
+there are so many variables that affects the final bill that the only accurate way is to actually run services.
 
 <ul>
 <li><a target="_blank" href="https://azure.microsoft.com/en-us/pricing/calculator/">
@@ -293,7 +291,7 @@ References:
 
    Asset transfer occurs off-chain over mTLS.
 
-   Many are web3 related.    Payments are via <a target="_blank" href="https://www.coingecko.com/en/coins/akash-network">AKT blockchain coin</a>.
+   Many are web3-related.    Payments are via <a target="_blank" href="https://www.coingecko.com/en/coins/akash-network">AKT blockchain coin</a>.
 
    And the network is maintained by a network of validators and governed by AKT stakers.
 
@@ -307,7 +305,7 @@ References:
 
 ## Market share #
 
-   Amazon had an early lead in 2006 and has been maintaing its lead even though Microsoft and Google are growing fast as well with 50%+ annual growth<a target="_blank" href="http://www.kpcb.com/internet-trends" title="slide 185/294 from Mary Meeker's May 30, 2018">*</a>
+   Amazon had an early lead in 2006 and has been maintaining its lead even though Microsoft and Google are growing fast as well with 50%+ annual growth<a target="_blank" href="http://www.kpcb.com/internet-trends" title="slide 185/294 from Mary Meeker's May 30, 2018">*</a>
    <img alt="aws-onboarding-cloud-growth-441x272.jpg" width="441" src="https://user-images.githubusercontent.com/300046/40881057-5dc36fd6-667a-11e8-9166-cd5803dde7c3.jpg">
 
    At the end of 2018, corporate filings reavealed this:<br />
@@ -324,6 +322,7 @@ Earlier in 2015:
 
 As of May 2016, Microsoft Azure works with <strong>SUSE</strong> and Oracle Java,
 but <strong>NOT Red Hat</strong>/IBM Enterprise Linux (RHEL).
+IBM Cloud is a competitor to AWS and Azure.
 
 Amazon provides software to host whatever OS is put into images.
 But its free server images are based on CentOS, derived from <strong>Red Hat</strong> as both use the yum package manager.

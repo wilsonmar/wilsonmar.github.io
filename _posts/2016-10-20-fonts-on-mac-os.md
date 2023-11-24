@@ -2,7 +2,7 @@
 layout: post
 date: "2023-11-13"
 file: "fonts-on-mac-os"
-title: "Fonts on macOS"
+title: "Fonts"
 excerpt: "You are what font you use"
 tags: [apple, mac, setup]
 image:
@@ -16,7 +16,13 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-I had to install several fonts and throught you'd want to benefit from my experience.
+I had to install several fonts and thought you'd want to benefit from my experience.
+
+## Fonts folder
+
+On Kali and other Debian distributions, fonts are installed in folder <tt>/usr/share/fonts/truetype</tt> -
+so copy .ttf font files there.
+
 
 <a name="Brew"></a>
 
@@ -26,8 +32,8 @@ The easiest way to install free fonts is to use <a target="_blank" href="https:/
 
 1. First, do this command one time to configure:
 
-   <tt><strong>brew tap caskroom/fonts
-   </strong></tt>
+   <pre><strong>brew tap caskroom/fonts
+   </strong></pre>
 
    The response at time of writing:
 
