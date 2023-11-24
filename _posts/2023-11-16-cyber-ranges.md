@@ -15,7 +15,8 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This article describes the <strong>fastest, easiest, most fool-proof</strong> way to establish a <strong>cyber-range</strong> (playground) for both defensive (White Hat) <strong>Penetration Testing</strong>, Security Auditing, Computer Forensics, and Reverse Engineering.
+This article describes the <strong>fastest, easiest, least error-prone</strong> way to establish a <strong>cyber-range</strong> (playground) for learning and practicing <strong>Penetration Testing</strong>, Security Auditing, Computer Forensics, and Reverse Engineering.
+
 
 ## Why?
 
@@ -26,24 +27,105 @@ Converted from Cloud Formation to Terraform IaC so vulnerabilities are identifie
 Enabled isolated SSH & RDP access through a Guacamole Bastion host during testing and a Bastion host in prod.
 
 Automated 600+ penetration tests using Wireshark, Burp Suite, Postman, and many other tools.
-Coverage addressed OWASP API Top 10, PCI DSS v4, and SOC2/ISO 20000 audits.
-Designed tests based on OSSTMM standards, with reports in Markdown and HTML based on STAR.
+Addressed OWASP API Top 10, PCI DSS v4, and SOC2/ISO 20000 audits.
+Designed tests based on OSSTMM standards, with STAR reports in Markdown and HTML.
 
-Tuned Kubernetes configurations to pass automated vulnerability tests run during automated load tests.
+Tuned server and Kubernetes configurations to pass automated vulnerability tests run during automated load tests.
 
-Used Jira to pair-program with a remote team of 5 across 3 continents.
+Used Jira and pair-programed with a remote team of 5 across 3 continents.
 
 https://www.youtube.com/watch?v=oCCguBcLyIU
 
+## Certifications
 
-Cyber Ranges are needed to learn several certifications:
+Cyber Ranges are needed to achieve several <a target="_blank" href="https://wilsonmar.github.io/security-certs">security certifications</a>:
+   
    * CompTIA Pentest+ PT0-001 
    * CompTIA CEH (Certified Ethical Hacker) 312-50
-   * GCIH certification?
-   * eJPT certification?
-   * OSCP certification
+   * GCIH
+   * eJPT
+   * OSCP
    <br /><br />
 
+
+## The Range of Technologies
+
+This article is structured according to these categories of several technologies (from the bottom up):
+
+    1. <a href="#Operating+Model">Operating Model</a> - On-prem, Private Cloud, Public Cloud, Hybrid, Cloud as a Service, etc.
+    2. <a href="#Hardware">Hardware</a> - Instance Type: CPU, RAM, Storage, Network bandwidth, VMWare, etc.
+    3. <a href="#Networking">Networking</a> - Firewalls, VPN, DNS, SSH, RDP, SMS, email, chat, IoT edge devices, etc.
+    4. <a href="#OSs">Operating System (OS)</a> - Virtualization Hypervisors, Windows, macOS, Linux (Debian, Ubuntu, etc.
+    
+    5. <a href="#OperationalUtilities">Operational Utilities</a> - Backups, Logging, Monitoring, Tracing, Dashboards, Alerting, Chaos Engineering, ITIL, etc.
+    6. <a href="#Utilities">Utilities</a> - Logging, Monitoring, Analytics Dashboards, Threat Detection, Alerting, SOC, etc.
+    7. <a href="#DataLayer">Data Operations</a> - Databases (SQL, NoSQL, Graph, etc.), Machine Learning, AI (NLP), etc.
+    8. <a href="#AppUtilities">Applications Utilities</a> - DevSecOps CI/CD, Secrets Management, Auditing, Asset Management, etc.
+    
+    9. <a href="#AppFrameworks">Applications Frameworks</a> - Python/Flask, Java/Stack, C#/.NET, etc.
+    10. <a href="#AppPlatforms">Application platforms</a> - CI/CD, WordPress, Drupal, Salesforce, SAP, OutSystems, etc.
+    11. <a href="#Apps">Application programs</a> - custom WordPress, Drupal, Salesforce, SAP, Accounting, etc.
+
+    12. <a href="#People+Tech">People Tech</a> - Recruiting, Interviewing, Onboarding, Training, Development, etc.
+    <br /><br />
+
+Within each category are external dependencies, <strong>testing</strong> (for functionality, capacity, security vulnerabilities, etc.),  and multi-vendor considerations.
+
+
+<hr />
+
+<a name="Operating+Models"></a>
+
+## Operating Models
+
+There are several ways physical hardware technologies are housed:
+
+A. Your own machines (laptops, desktops, servers, etc.):
+
+   <ul>As with most production systems, a Cyber Range requires several machines that interact with each other.
+   
+   Even when Docker hypervisors are used, all of them running may take more than the usual 16 GB on typical laptops.
+
+   With hypervisors and containers, individual services can be setup and and tested on a small machine (laptop).
+   </ul>
+
+B. Remote public clouds (multi-tenant hypervisors):
+
+   * AWS (Amazon Web Services) VPC, S3, EBS, EC2, KMS, EKS
+   * Azure (Microsoft) VNets, VMs, AKS
+   * GCP (Google Cloud Platform) VPC, VMs, GKE
+   
+   * Digital Ocean Droplets
+   * Oracle Cloud
+   * IBM Cloud
+   * etc.
+   <br /><br />
+
+C. <strong>On-prem</strong> (premises) with blinking machines you can see within real rooms, with doors.
+
+   <ul>These are now used by the military, large corporations, and universities.
+
+   They provide not just the hardware but a community of people to learn from.
+   </ul>
+
+D. <strong>Hybrid Cloud as a Service</strong> that enable utilities from hyperscalers (APIs, EC2, etc.) to run within on-prem hardware:
+
+   <ul><a target="_blank" href="https://www.linkedin.com/pulse/comparison-between-aws-outpost-vs-azure-stack-google-anthos-crasto/" title="Image Source"><img alt="hybrid-cloud-benefits-700x324.jpeg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700817641/hybrid-cloud-benefits-700x324_oapgek.jpg"></a>
+   </ul>
+
+   * <a target="_blank" href="https://aws.amazon.com/outposts/">AWS Outpost</a> is fully managed by AWS, purchased directly from AWS.
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/azure-arc/">Azure Arc Stack Hub</a> and <a target="_blank" href="https://azure.microsoft.com/en-us/services/azure-stack/">Azure Stack</a>are available from several Microosft partners offering professional-level support.
+   * <a target="_blank" href="https://cloud.google.com/anthos">Google Anthros</a> is based on Kubernetes. Also runs on AWS or Azure.
+   
+   * VMware vCloud
+   * IBM/Red Hat OpenShift
+   <br /><br />
+
+   <ul><a target="_blank" href="https://www.linkedin.com/pulse/comparison-between-aws-outpost-vs-azure-stack-google-anthos-crasto/" title="Image Source"><img alt="hybrid-cloud-backup-574x258.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700817948/hybrid-cloud-backup-574x258_ibwvxb.png"></a>
+   </ul>
+
+
+<hr />
 
 ## The range of cyber ranges
 
@@ -58,36 +140,6 @@ There are several <a target="_blank" href="https://www.wikiwand.com/en/Cyber_ran
    * <a target="_blank" href="https://github.com/rapid7/metasploitable3">github.com/rapid7/metasploitable3</a> is used by Packer to build images using <a target="_blank" href="https://download.virtualbox.org/virtualbox/UserManual.pdf">PDF: Oracle VM Virtualbox</a>, VMware ESXi, HashiCorp Vagrant, or libvirt on either Ubuntu 14.04 or Windows. It contains many security vulnerabilities explained at <a target="_blank" href="https://github.com/rapid7/metasploitable3/wiki/">its wiki</a>
 
    * Others may use Proxmox virtualization
-   <br /><br />
-
-
-## Machines Technologies
-
-There are several technologies:
-
-A. Blinking machines you can see within real rooms, with doors.
-
-   These are used by the military, large corporations, and universities.
-
-   They provide not just the hardware but a community of people to learn from.
-
-B. Your own machines 
-
-   A Cyber range requires several machines, which take all 16 GB of typical laptops, even when Docker hypervisors are used.
-
-C. Remote public clouds
-
-   * AWS
-   * Azure
-   * GCP
-   * Digital Ocean
-   <br /><br />
-
-D. In on-prem. hardware
-
-   * AWS Outpost 
-
-   * https://www.kali.org/docs/containers/official-kalilinux-docker-images/
    <br /><br />
 
 
