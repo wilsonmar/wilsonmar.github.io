@@ -1027,6 +1027,63 @@ The prerequisite is earning the Cisco Certified Specialist - Security Core certi
    * [36-hour $50 CBTNuggets video class](https://www.cbtnuggets.com/learn/it-training/playlist/nrn:playlist:certification:5e8264a8695220001457924e/1?autostart=1)
    * https://www.linkedin.com/learning/paths/ccnp-security-prepare-for-the-implementing-and-operating-cisco-security-core-technologies-350-701-scor-exam
 
+
+<hr />
+
+<a name="eJPT"></a>
+
+## INE eLearnSecurity
+
+INE offers several certifications:
+
+   * <a href="#eJPT">eJPT</a>
+   * eCDFP $199.50
+   * eCIR $200
+   * eCPPT $200
+   * eCTHP $200
+   * eMAPT $200
+   * eWPTX $200
+   <br /><br />   
+
+### eJPT
+
+<a target="_blank" href="https://info.ine.com/ejpt/">eJPT (eLearnSecurity's Junior Penetration Tester)</a> 
+is an entry-level hands-on exam to prove that the individual has the knowledge, skills, and abilities required to be a junior Red Team  penetration tester on real-world engagements. For $299, candidates have two-attempts at using their 5 machines over 48 hours (two days) to answer 35 questions about enumerating, exploiting, pivoting, and possibly escalating privileges. <a target="_blank" href="https://medium.com/@cybenfolland/ejpt-a-guide-on-how-to-pass-first-time-f8cec3f79a73">One candidate said he passed in 6 hours</a>.
+The fee includes a course with 145+ hours of video content and 121 labs.
+
+* Locate endpoints on a network
+* Identify open ports and services on a target
+* Identify operating system of a target
+* Extract company information from public sources
+* Gather email addresses from public sources
+
+* Gather technical information from public sources
+* Identify vulnerabilities in services
+* Evaluate information and criticality or impact of vulnerabilities
+* Compile information from files on target
+* Enumerate network information from files on target
+
+* Enumerate system information on target
+* Gather user account information on target
+* Transfer files to and from target
+* Gather hash/password information from target
+* Identify and modify exploits
+
+* Conduct exploitation with metasploit
+* Demonstrate pivoting by adding a route and by port forwarding
+* Conduct brute-force password attacks and hash cracking
+* Identify vulnerabilities in web applications
+
+* Locate hidden file and directories
+* Conduct brute-force login attack
+* Conduct web application reconnaissance
+<br /><br />
+
+* 
+* https://security.ine.com/certifications/ejpt-certification/
+
+<hr />
+
 <a name="EC-Council"></a>
 
 ## EC-Council Penetration Tester

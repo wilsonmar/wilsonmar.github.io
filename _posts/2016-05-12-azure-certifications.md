@@ -1731,6 +1731,11 @@ Microsoft Certified Trainers</a> get 75% off exam fees. But there is a $800 annu
 
 https://mcp.microsoft.com/MCT/Enrollment?wa=wsignin1.0#/profile
 
+## Azure Penetration Testing
+
+Course: <a target="_blank" href="https://www.linkedin.com/learning/advanced-pen-testing-techniques-for-active-directory">Advanced Pen Testing Techniques for Active Directory</a>
+by Malcolm Shore
+
 <hr />
 
 ## References

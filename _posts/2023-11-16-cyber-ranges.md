@@ -3,7 +3,7 @@ layout: post
 date: "2023-11-22"
 file: "cyber-ranges"
 title: "Cyber Ranges"
-excerpt: "Install in AWS, Azure, GCP clouds (with Burt Suite, Postman, etc.) for security audits and penetration testing"
+excerpt: "Proving grounds with safe sandboxes for experimentation and testing of how a full stack of technologies integrates and operates."
 tags: [security, automation,linus]
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -38,36 +38,42 @@ https://www.youtube.com/watch?v=oCCguBcLyIU
 
 ## Certifications
 
-Cyber Ranges are needed to achieve several <a target="_blank" href="https://wilsonmar.github.io/security-certs">security certifications</a>:
+Cyber Ranges are used by individuals to achieve several <a target="_blank" href="https://wilsonmar.github.io/security-certs">security certifications</a>:
    
    * CompTIA Pentest+ PT0-001 
    * CompTIA CEH (Certified Ethical Hacker) 312-50
    * GCIH
-   * eJPT
+   * <a target="_blank" href="https://info.ine.com/ejpt/">eJPT (eLearnSecurity's Junior Penetration Tester)</a> 
    * OSCP
    <br /><br />
 
+PROTIP: Cyber ranges are also useful for entire corporations not just to train <a target="_blank" href="https://www.wikiwand.com/en/Red_team">Red Teams</a> to attack and <a target="_blank" href="https://www.wikiwand.com/en/Blue_team_(computer_security)">Blue Teams</a> to defend. Cyber ranges are the corporate proving grounds for to test the deployment, integration, and operation of how new technologies and processes. 
+
+   * Can people <strong>detect</strong> intrusions and other adverse events promptly?
+   * Can people <strong>respond</strong> promptly and appropriately (as tracked in tracking systems)?
+   * Are people <strong>trained</strong> to do the right things?
+   <br /><br />
 
 ## The Range of Technologies
 
 This article is structured according to these categories of several technologies (from the bottom up):
 
-    1. <a href="#Operating+Model">Operating Model</a> - On-prem, Private Cloud, Public Cloud, Hybrid, Cloud as a Service, etc.
-    2. <a href="#Hardware">Hardware</a> - Instance Type: CPU, RAM, Storage, Network bandwidth, VMWare, etc.
-    3. <a href="#Networking">Networking</a> - Firewalls, VPN, DNS, SSH, RDP, SMS, email, chat, IoT edge devices, etc.
-    4. <a href="#OSs">Operating System (OS)</a> - Virtualization Hypervisors, Windows, macOS, Linux (Debian, Ubuntu, etc.
+   1. <a href="#Operating+Model">Operating Model</a> - On-prem, Private Cloud, Public Cloud, Hybrid, Cloud as a Service, etc.
+   2. <a href="#Hardware">Hardware</a> - Instance Type: CPU, RAM, Storage, Network bandwidth, VMWare, etc.
+   3. <a href="#Networking">Networking</a> - Firewalls, VPN, DNS, SSH, RDP, SMS, email, chat, IoT edge devices, etc.
+   4. <a href="#OSs">Operating System (OS)</a> - Virtualization Hypervisors, Windows, macOS, Linux (Debian, Ubuntu, etc.
+   
+   5. <a href="#OperationalUtilities">Operational Utilities</a> - Backups, Logging, Monitoring, Tracing, Dashboards, Alerting, Chaos Engineering, ITIL, etc.
+   6. <a href="#Utilities">Utilities</a> - Logging, Monitoring, Analytics Dashboards, Threat Detection, Alerting, SOC, etc.
+   7. <a href="#DataLayer">Data Operations</a> - Databases (SQL, NoSQL, Graph, etc.), Machine Learning, AI (NLP), etc.
+   8. <a href="#AppUtilities">Applications Utilities</a> - DevSecOps CI/CD, Secrets Management, Auditing, Asset Management, etc.
     
-    5. <a href="#OperationalUtilities">Operational Utilities</a> - Backups, Logging, Monitoring, Tracing, Dashboards, Alerting, Chaos Engineering, ITIL, etc.
-    6. <a href="#Utilities">Utilities</a> - Logging, Monitoring, Analytics Dashboards, Threat Detection, Alerting, SOC, etc.
-    7. <a href="#DataLayer">Data Operations</a> - Databases (SQL, NoSQL, Graph, etc.), Machine Learning, AI (NLP), etc.
-    8. <a href="#AppUtilities">Applications Utilities</a> - DevSecOps CI/CD, Secrets Management, Auditing, Asset Management, etc.
-    
-    9. <a href="#AppFrameworks">Applications Frameworks</a> - Python/Flask, Java/Stack, C#/.NET, etc.
-    10. <a href="#AppPlatforms">Application platforms</a> - CI/CD, WordPress, Drupal, Salesforce, SAP, OutSystems, etc.
-    11. <a href="#Apps">Application programs</a> - custom WordPress, Drupal, Salesforce, SAP, Accounting, etc.
+   9. <a href="#AppFrameworks">Applications Frameworks</a> - Python/Flask, Java/Stack, C#/.NET, etc.
+   10. <a href="#AppPlatforms">Application platforms</a> - CI/CD, WordPress, Drupal, Salesforce, SAP, OutSystems, etc.
+   11. <a href="#Apps">Application programs</a> - custom WordPress, Drupal, Salesforce, SAP, Accounting, etc.
 
-    12. <a href="#People+Tech">People Tech</a> - Recruiting, Interviewing, Onboarding, Training, Development, etc.
-    <br /><br />
+   12. <a href="#People+Tech">People Tech</a> - Recruiting, Interviewing, Onboarding, Training, Development, etc.
+   <br /><br />
 
 Within each category are external dependencies, <strong>testing</strong> (for functionality, capacity, security vulnerabilities, etc.),  and multi-vendor considerations.
 
@@ -95,7 +101,7 @@ B. Remote public clouds (multi-tenant hypervisors):
    * Azure (Microsoft) VNets, VMs, AKS
    * GCP (Google Cloud Platform) VPC, VMs, GKE
    
-   * Digital Ocean Droplets
+   * Digital Ocean droplets
    * Oracle Cloud
    * IBM Cloud
    * etc.
@@ -108,34 +114,69 @@ C. <strong>On-prem</strong> (premises) with blinking machines you can see within
    They provide not just the hardware but a community of people to learn from.
    </ul>
 
-D. <strong>Hybrid Cloud as a Service</strong> that enable utilities from hyperscalers (APIs, EC2, etc.) to run within on-prem hardware:
+D. <strong>Multicloud</strong> with <strong>Hybrid Cloud as a Service</strong> that enable utilities from hyperscalers (APIs, EC2, etc.) to run within on-prem hardware:
 
    <ul><a target="_blank" href="https://www.linkedin.com/pulse/comparison-between-aws-outpost-vs-azure-stack-google-anthos-crasto/" title="Image Source"><img alt="hybrid-cloud-benefits-700x324.jpeg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700817641/hybrid-cloud-benefits-700x324_oapgek.jpg"></a>
    </ul>
 
    * <a target="_blank" href="https://aws.amazon.com/outposts/">AWS Outpost</a> is fully managed by AWS, purchased directly from AWS.
-   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/azure-arc/">Azure Arc Stack Hub</a> and <a target="_blank" href="https://azure.microsoft.com/en-us/services/azure-stack/">Azure Stack</a>are available from several Microosft partners offering professional-level support.
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/azure-stack/">Azure Stack Hub</a>, using apps built for multicloud using <a target="_blank" href="https://azure.microsoft.com/en-us/services/azure-arc/">Azure Arc</a>, are available from Microosft partners offering professional-level support.
    * <a target="_blank" href="https://cloud.google.com/anthos">Google Anthros</a> is based on Kubernetes. Also runs on AWS or Azure.
    
    * VMware vCloud
    * IBM/Red Hat OpenShift
    <br /><br />
 
-   <ul><a target="_blank" href="https://www.linkedin.com/pulse/comparison-between-aws-outpost-vs-azure-stack-google-anthos-crasto/" title="Image Source"><img alt="hybrid-cloud-backup-574x258.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700817948/hybrid-cloud-backup-574x258_ibwvxb.png"></a>
+   <ul>Hybrid technologies are used by large corporations and governments to to ensure resilience while avoiding vendor lock-in:<br />
+   <a target="_blank" href="https://www.linkedin.com/pulse/comparison-between-aws-outpost-vs-azure-stack-google-anthos-crasto/" title="Image Source"><img alt="hybrid-cloud-backup-574x258.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700817948/hybrid-cloud-backup-574x258_ibwvxb.png"></a>
    </ul>
+
+<hr />
+
+<a name="Networking"></a>
+
+## Networking
+
+There are several ways to reach (tunnel) within a network:
+
+A. <strong>SSH</strong> (Secure Shell) and RDP (Remote Desktop Protocol) 
+
+   <ul>A1. A client installed
+   </ul>
+
+   <ul>B2. Use a <strong>Bastion Host</strong> (jump box) to tunnel into a network:
+   </ul>
+
+B. <strong>VPN</strong> (Virtual Private Network) to tunnel into a network:
+
+   <ul>OpenVPN
+   </ul>
+
+C. As part of an enterprise solution:
+
+   <ul><a target="_blank" href="https://www.hashicorp.com/blog/announcing-hashicorp-waypoint">HashiCorp Waypoint</a>
+   </ul>
+
+Usage Instructions:
+
+1. Tools are located in /root/Desktop/Tools & /opt/
+2. Webshells are located in /usr/share/webshells
+3. Wordlists are located in /usr/share/wordlists
+4. To use Empire & Starkiller, read the following file: /root/Instructions/empire-starkiller.txt
+
 
 
 <hr />
 
 ## The range of cyber ranges
 
-There are several <a target="_blank" href="https://www.wikiwand.com/en/Cyber_range">Cyber Ranges</a>) setup for <a target="_blank" href="https://www.wikiwand.com/en/Red_team">Red Teams</a> to attack and <a target="_blank" href="https://www.wikiwand.com/en/Blue_team_(computer_security)">Blue Teams</a> to defend:
+Existing <a target="_blank" href="https://www.wikiwand.com/en/Cyber_range">Cyber Ranges</a>
 
    * https://theartofhacking.org/ & <a target="_blank" href="https://github.com/The-Art-of-Hacking/h4cker">GitHub</a> by <a target="_blank" href="https://keybase.io/santosomar">Omar Santos</a> with code at https://h4cker.org/github
 
    * <a target="_blank" href="https://HackTheBox.com/">HackTheBox.com</a> to To find 300+ pentest hacking labs
 
-   * <a trget="_blank" href="https://laurakokkarinen.com/how-to-set-up-a-kali-linux-virtual-machine-in-azure-to-serve-as-a-tryhackme-attack-box/">Create Kali on Azure</a> to attack apps running in cloud <a target="_blank" href="https://tryhackme.com/">TryHackMe.com</a>
+   * <a trget="_blank" href="https://laurakokkarinen.com/how-to-set-up-a-kali-linux-virtual-machine-in-azure-to-serve-as-a-tryhackme-attack-box/">Create Kali on Azure</a> to attack apps running in cloud <a target="_blank" href="https://tryhackme.com/">$120/month TryHackMe.com</a>
 
    * <a target="_blank" href="https://github.com/rapid7/metasploitable3">github.com/rapid7/metasploitable3</a> is used by Packer to build images using <a target="_blank" href="https://download.virtualbox.org/virtualbox/UserManual.pdf">PDF: Oracle VM Virtualbox</a>, VMware ESXi, HashiCorp Vagrant, or libvirt on either Ubuntu 14.04 or Windows. It contains many security vulnerabilities explained at <a target="_blank" href="https://github.com/rapid7/metasploitable3/wiki/">its wiki</a>
 
@@ -160,95 +201,6 @@ Here we install distros within clouds:
    * <a href="#GCP-Install">GCP cloud VPC for tunneling into Kali</a>
    * <a href="#Azure-Install">Azure cloud VNet for tunneling into Kali</a>
 
-   Not considered:
-   * Ocean Digital (Digital Ocean) cloud
-   * IBM Cloud
-   * Oracle Cloud
-   <br /><br />
-
-<hr />
-
-## About KaliLinux
-
-1. Versions of Kali Linux are listed at:
-
-   <a target="_blank" href="https://www.kali.org/releases/">https://www.kali.org/releases</a>
-
-   With version 2020.3 in August 2020, the default shell was switched from Bash to ZSH, with Bash remaining as an option.
-
-   Kali Linux is based on ATT Unix and the Debian-derived GNU/Linux distribution which began in 1993 & 1996 by Ian Murdock.
-   It was aimed at advanced Penetration Testing and Security Auditing.
-
-   Thus, <tt>apt</tt> commands are used to install packages and <a href="#AddUsers"><tt>adduser</tt> commands to add users</a>.
-
-   Kali Linux is the successor to <a target="_blank" href="https://en.wikipedia.org/wiki/BackTrack">BackTrack</a> by Mati Aharoni (@muts), which was based on <a target="_blank" href="https://en.wikipedia.org/wiki/Knoppix">Knoppix</a>.
-
-   BackTrack was rewritten and replaced by Kali Linux v1.0 released 2013 by Mati when he, with <a target="_blank" href="https://en.wikipedia.org/wiki/Devin_Akin">Devin Akin</a>, founded <a target="_blank" href="https://www.offensive-security.com/">Offensive Security</a> as an information security <a target="_blank" href="https://wilsonmar.github.io/security-certs/#offensive-security">training and certification</a> company.
-
-   <a target="_blank" href="https://www.kali.org/blog/kali-linux-2023-3-release/">Kali Linux's backend consists of</a>:
-   * OS version (Debian 12)
-   * CDN/WAF (Cloudflare)
-   * Web server service (Nginx)
-   * Infrastructure as Code (Ansible)
-   <br /><br />
-
-1. In 2017 Offensive Security workers Mati Aharoni, Devon Kearns, and Raphaël Hertzog wrote a book available for free download:
-
-   <a target="_blank" href="https://web.archive.org/web/20210102180929/https://kali.training/downloads/Kali-Linux-Revealed-1st-edition.pdf">Kali Linux Revealed</a> 
-
-1. Subscribe to the company's newsletter at
-
-   https://www.offsec.com/
-
-1. Offsec has a learning subscription offerings from $799 to $5499/year at
-
-   https://www.offsec.com/products/
-
-
-<hr />
-
-## Install on your laptop?
-
-The Kali Linux server can be installed within VMWare Player running on Windows and Linux laptops.
-
-   <ul><pre>https://kali.org/get-kali/">https://kali.org/get-kali/</pre></ul>
-
-Create a hash file to confirm the integrity of the downloaded file:
-
-   <ul><pre>certutil -hashfile .\VMware-player-full-16.2.4-20089737.exe SHA256
-   </pre></ul>
-
-macOS machines can run Kali Linux within a licensed VMWare Fusion running a virtual machine image.
-   
-But that's not recommended because 
-Kali Linux is a set of security tools that hackers use.
-So you don't want to install it on your laptop for hackers to hack your machine.
-That's like leaving lock pick tools in front of your door.
-
-However, we do install enough utilities on your laptop for use to install Kali in a cloud
-for you to SSH into from your laptop. Run my mac-install.sh script to install:
-
-   * XCode
-   * Homebrew
-   * js
-   * Git
-
-   * Python
-   * Golang
-
-   * Terraform
-   * Packer
-
-   * curl -s iac.sh/sysis | sh
-
-
-## Install in the cloud!
-
-Running Kali in a cloud enables you to bring it up, use it, and tear it down.
-
-No worries about getting yourself hacked because you used a separate machine to access your bank accounts and other personal information.
-
-For quick repeatability, to simplify, and for auditing before resources are created, we use Terraform to create the cloud infrastructure.
 
 
 <a name="AWS-Install"></a>
