@@ -17,7 +17,7 @@ comments: true
 {% include _toc.html %}
 
 
-## What to Look for
+## Why this?
 
 Threat hunting is a proactive approach to detecting and mitigating threats. It is a continuous process of searching for, identifying, and mitigating potential threats in your environment.
 

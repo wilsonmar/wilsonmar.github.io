@@ -326,6 +326,7 @@ Their Advanced covers
 
 https://vladtalkstech.com/microsoft-certification-study-guides
 
+
 <hr />
 
 ## Microsoft Exam
@@ -346,10 +347,10 @@ Azure Subscription Service Limits</a>
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-900">https://docs.microsoft.com/en-us/learn/certifications/exams/az-900</a>
 
-<a target="_blank" href="https://github.com/MicrosoftLearning/Lab-Demo-Recordings/blob/master/AZ-900.md">MS Videos</a>
-
-AZ-900 Microsoft Azure Fundamentals
+PROTIP: AZ-900 Microsoft Azure Fundamentals
 is not a required prerequisite for any associate or expert certification.
+
+<a target="_blank" href="https://github.com/MicrosoftLearning/Lab-Demo-Recordings/blob/master/AZ-900.md">MS Videos</a>
 
 It's less expensive than other AZ exams ($65 vs. $165).
 
@@ -503,7 +504,7 @@ A search of Microsoft Learn for "Administrator" and "Azure" <a target="_blank" h
 
 Video Lectures:
 
-1. <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg>11 hour VIDEO</a>: <a target="_blank" href="https://www.freecodecamp.org/news/azure-administrator-certification-az-104-pass-the-exam-with-this-free-11-hour-course/">course on FreeCodeCamp.org</a> <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg" title="May 3, 2021">on YouTube</a> by Andrew Brown offering his <a target="_blank" href="https://www.exampro.co/az-104">ExamPro</a>.
+1. <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg">11 hour VIDEO</a>: <a target="_blank" href="https://www.freecodecamp.org/news/azure-administrator-certification-az-104-pass-the-exam-with-this-free-11-hour-course/">course on FreeCodeCamp.org</a> <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg" title="May 3, 2021">on YouTube</a> by Andrew Brown offering his <a target="_blank" href="https://www.exampro.co/az-104">ExamPro</a>.
 
    PROTIP: I got a YouTube subscription to download videos for watching offline, so I can listen while I drive through spotty cell coverage areas.
 
@@ -1318,7 +1319,7 @@ Microsft's AZ-305 exam/learnings page</a> includes textual tutorials and hands-o
 
 https://aka.ms/AZ305-StudyGuide
 
-<a target="_blank" href="https://learning.oreilly.com/live-events/exam-az-305-designing-microsoft-azure-infrastructure-solutions-crash-course/Exam title="6 hour Aug. 10, 2023">AZ-305: Designing Microsoft Azure Infrastructure Solutions Crash Course</a>
+<a target="_blank" href="https://learning.oreilly.com/live-events/exam-az-305-designing-microsoft-azure-infrastructure-solutions-crash-course/Exam" title="6 hour Aug. 10, 2023">AZ-305: Designing Microsoft Azure Infrastructure Solutions Crash Course</a>
 by Tim Warner references<br /><a target="_blank" href="https://github.com/timothywarner/az305/">https://github.com/timothywarner/az305</a>
 
 
