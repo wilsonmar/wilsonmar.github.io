@@ -49,14 +49,14 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
    * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-900">AI-900 AI Fundamentals</a><br />
      * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-100">AI-100 Azure AI Engineer Associate</a><br />
      * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-102">AI-102 Azure AI Engineer</a><br />
-     * <a href="#DP-100">DP-100 Azure Data Scientist Associate</a>
+     * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-100">DP-100 Azure Data Scientist Associate</a>
    </td></tr>
 
 <tr valign="top"><td> Data Engineer<br /> Data Scientist</td><td>
-   * <a href="#DP-900">DP-900 Azure Data Fundamentals</a><br />
-   * <a href="#DP-100">DP-100 Azure Data Scientist Associate</a><br />
-   * <a href="#DP-203">DP-203 Azure Data Engineer Associate</a> (replaces DP-200 & DP-201)<br />
-   * <a target="_blank" href="https://wilsonmar.github.io/azure-data">DP-300 Azure Database Administrator Associate</a><br />
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-900">DP-900 Azure Data Fundamentals</a><br />
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-100">DP-100 Azure Data Scientist Associate</a><br />
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-203">DP-203 Azure Data Engineer Associate</a> (replaces DP-200 & DP-201)<br />
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-300">DP-300 Azure Database Administrator Associate</a><br />
    </td></tr>
 
 <tr valign="top"><td> <a href="#Power_Platform">Power Platform</a> </td><td>
@@ -1518,46 +1518,6 @@ Routing to separate pages for AI Engineer:
 
 <a href="#DP-100">DP-100 Azure Data Scientist Associate</a>
 
-
-
-<hr />
-
-<a name="DP-900"></a>
-
-## DP-900 Azure Data Fundamentals 
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-900">
-Microsoft's DP-900 exam page</a> include free tutorials.
-
-* <a target="_blank" href="https://learning.oreilly.com/live-training/courses/microsoft-azure-data-fundamentals-dp-900-crash-course/0636920051861/">OReilly live crash course</a> by Emilio Melo
-
-* https://learning.oreilly.com/videos/azure-overview-introduction/10009OVERVIEW/10009OVERVIEW-AZINTRO_16
-“Cloud and Azure Overview” section in Azure Overview: Introduction for Beginners (video)
-
-* https://learning.oreilly.com/videos/professional-azure-sql/9781789535495/
- Professional Azure SQL Database Administration (video, 4h 58m)
-
-* https://learning.oreilly.com/videos/getting-started-with/9781484260203/
-Getting Started with Microsoft Cosmos DB Using C#: Cloud Database Support for .NET Applications (video, 1h 2m)
-
-* https://learning.oreilly.com/videos/learning-microsoft-power/9781789347104/
-Learning Microsoft Power BI (video, 3h 55m)
-
-* https://learning.oreilly.com/videos/create-an-azure/9781491989623/
-Create an Azure SQL Data Warehouse in Minutes (video, 1h 22m)
-
-* https://learning.oreilly.com/videos/information-management-using/9781491989647/
-Information Management Using Azure Data Factory (video, 1h 16m)
-
-Sample exams:
-   * https://www.whizlabs.com/learn/course/microsoft-azure-dp-900/
-   <br /><br />
-
-BTW Left out of the ESI list is Azure Databricks, a cloud-scale platform for data analytics and machine learning. Microsoft's live class DP-090 "Implementing a Machine Learning Solution with Microsoft Azure Databricks" shows how to use Azure Databricks to explore, prepare, and model data; and integrate Databricks machine learning processes with Azure Machine Learning.
-
-<a target="_blank" href="https://www.aguidetocloud.com/full-courses/dp900fullcourse">3-hour AGuideToCloud video class by Susanth Sutheesh</a>
-
-<a target="_blank" href="https://www.aguidetocloud.com/full-courses/dp900fullcourse">3-hour AGuideToCloud video class by Susanth Sutheesh</a>
 
 <a name="DP-100"></a>
 

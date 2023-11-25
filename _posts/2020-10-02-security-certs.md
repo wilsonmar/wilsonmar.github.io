@@ -1079,7 +1079,6 @@ The fee includes a course with 145+ hours of video content and 121 labs.
 * Conduct web application reconnaissance
 <br /><br />
 
-* <a target="_blank" href="https://openvas.org/">OpenVAS</a> has been maintained by Greenbone Networks since 2009, to include 50,000+ vulerability tests. The licensed Greenbone Vulnerability Manager provides even more, with a SLA.
 * <a target="_blank" href="https://boris-figeczky.medium.com/comparative-analysis-of-osstmm-v3-and-owasp-4-0-e3ae1bf95e9e">
 OSSTMM vs OWASP</a>
 * https://security.ine.com/certifications/ejpt-certification/
