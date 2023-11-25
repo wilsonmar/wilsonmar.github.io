@@ -1632,7 +1632,11 @@ Example: Chris Green, chris@contoso.com, myPassword1234, No
 
 1. When your file passes validation, select Submit to start the Azure bulk operation that imports the new users.
 
-1. If failed, click "Download tasks".
+1. See the "Users | Bulk operation result" page at:
+
+   https://entra.microsoft.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/UserBackgroundTasks/menuId/
+
+1. If failed, click "Download tasks" 
 1. View in Downloads a file named "user create_11_24_2023-" appended in front of your file name.
 
    Status [status]	Failed reason [failedReason]	Account enabled [accountEnabled]	Usage location [usageLocation]	mailNickname	passwordProfile	passwordPolicies	rolesEntity	selectedRoleIds	selectedGroupIds	Street address [streetAddress]	City [city]	State or province [state]	Country or region [country]	Office phone [telephoneNumber]	Mobile phone [mobile]	Office [physicalDeliveryOfficeName]	ZIP or postal code [postalCode]	authenticationPhoneNumber	authenticationAlternativePhoneNumber	authenticationEmail	strongAuthenticationDetail	defaultImageUrl	ageGroup	consentProvidedForMinor	legalAgeGroupClassification	Object Id [objectId]	objectType	Name (example: Chris Green) [displayName] *	User name (example: chris@contoso.com) [userPrincipalName] *	thumbnailMediaContentType	First name [givenName]	Last name [surname]	mail	dirSyncEnabled	alternativeSecurityIds	signInNamesInfo	signInNames	ownedDevices	Job title [jobTitle]	Department [department]	displayUserPrincipalName	hasThumbnail	imageUrl	imageDataToUpload	source	sources	sourceText	userFlags	deletionTimestamp	permanentDeletionTime	alternateEmailAddress	manager	userType	isThumbnailUpdated	isAuthenticationContactInfoUpdated	searchableDeviceKey	displayEmail	creationType	userState	otherMails	invitedAsMail	proxyAddresses	companyName	employeeId
