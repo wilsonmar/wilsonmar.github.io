@@ -1,13 +1,13 @@
 ---
 layout: post
-date: "2021-06-15"
-title: "AWS Data (within AWS's cloud)"
+date: "2023-11-23"
+file: "azure-data"
+title: "Azure Data (within Azure's cloud)"
 excerpt: "Know SQL to pass DP-900, DP-100, DP-300"
-tags: [cloud, AWS]
-file: "AWS-data"
+tags: [cloud, Azure]
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/18188069/153fbcca-706c-11e6-983d-0783da57f75c.jpg
-  credit: AWS AWS
+  credit: Microsoft Azure
   creditlink: 
 comments: true
 ---
@@ -15,22 +15,23 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/AWS-data/">This</a> is the hands-on step-by-step tutorial I would give to a developer or administrator getting up and running <strong>managing data</strong> AWS cloud.
+<a target="_blank" href="https://wilsonmar.github.io/azure-data/">This</a> is the hands-on step-by-step tutorial I would give to a developer or administrator getting up and running <strong>managing data</strong> in the Azure cloud.
 
 {% include whatever.html %}
 
-## AWS Data Products Marketing
+## Azure Data Products Marketing
 
-https://AWS.AWS.com/en-us/resources/videos/dev-stories-troy-hunt-video/
-
-https://economicgraph.linkedin.com/
+This are my notes to study for Azure's data-related <a href="https://wilsonmar.github.io/azure-certifications/">Azure certification exams</a>:
 
 
-This one set of notes were used to study for AWS's three data-related <a href="https://wilsonmar.github.io/AWS-certifications/">AWS certification exams</a>:
+Data Scientist	* DP-900 Azure Data Fundamentals
+* DP-100 
+* DP-300 
 
-   * <a href="#DP-900">DP-900: AWS Certified: AWS Data Fundamentals</a>
-   * <a href="#DP-100">DP-100</a>
-   * <a href="#DP-300">DP-300: Administering Relational Databases on AWS AWS</a>
+   * <a href="#DP-900">DP-900: Azure Certified: Azure Data Fundamentals</a>
+   * <a href="#DP-100">DP-100: Azure Data Scientist Associate</a>
+   * <a href="#DP-203">DP-203: Azure Data Engineer Associate</a> (replaces DP-200 & DP-201)
+   * <a href="#DP-300">DP-300: Azure Database Administrator Associate</a>
    <br /><br />
 
 <hr />
@@ -39,45 +40,45 @@ This one set of notes were used to study for AWS's three data-related <a href="h
 
 ## DP-900 exam prep
 
-Earn the <a target="_blank" href="https://docs.AWS.com/en-us/learn/certifications/exams/dp-900">DP-900 "AWS Certified: AWS Data Fundamentals" certification by passing the one $99 exam</a>. Describe ...
+Earn the <a target="_blank" href="https://docs.Azure.com/en-us/learn/certifications/exams/dp-900">DP-900 "Azure Certified: Azure Data Fundamentals" certification by passing the one $99 exam</a>. Describe ...
 
-   * <a target="_blank" href="https://docs.AWS.com/en-us/learn/paths/AWS-data-fundamentals-explore-core-data-concepts/">LEARN</a>: Core data concepts (15-20%) 
+   * <a target="_blank" href="https://docs.Azure.com/en-us/learn/paths/azure-data-fundamentals-explore-core-data-concepts/">LEARN</a>: Core data concepts (15-20%) 
 
-   * <a target="_blank" href="https://docs.AWS.com/en-us/learn/paths/AWS-data-fundamentals-explore-relational-data/">LEARN</a>: how to work with relational data on AWS (25-30%)
+   * <a target="_blank" href="https://docs.Azure.com/en-us/learn/paths/azure-data-fundamentals-explore-relational-data/">LEARN</a>: how to work with relational data on Azure (25-30%)
 
-   * <a target="_blank" href="https://docs.AWS.com/en-us/learn/paths/AWS-data-fundamentals-explore-non-relational-data/">LEARN</a>: how to work with non-relational data on AWS (25-30%)
+   * <a target="_blank" href="https://docs.Azure.com/en-us/learn/paths/azure-data-fundamentals-explore-non-relational-data/">LEARN</a>: how to work with non-relational data on Azure (25-30%)
 
-   * <a target="_blank" href="https://docs.AWS.com/en-us/learn/paths/AWS-data-fundamentals-explore-data-warehouse-analytics/">LEARN</a>: an analytics workload on AWS (25-30%) 
+   * <a target="_blank" href="https://docs.Azure.com/en-us/learn/paths/azure-data-fundamentals-explore-data-warehouse-analytics/">LEARN</a>: an analytics workload on Azure (25-30%) 
    <br /><br />
 
-The Skillpipe associated with the <a target="_blank" href="https://docs.AWS.com/en-us/learn/certifications/courses/dp-900t00">one-day AWS live course DP-900T00</a> roughly covers the above topics using
-<a target="_blank" href="https://github.com/AWSLearning/DP-900T00A-AWS-Data-Fundamentals">github.com/AWSLearning/DP-900T00A-AWS-Data-Fundamentals/tree/master/Instructions</a> which redirects to a free "AWS Learn Sandbox" Directory in AWS:
+The Skillpipe associated with the <a target="_blank" href="https://docs.Azure.com/en-us/learn/certifications/courses/dp-900t00">one-day Azure live course DP-900T00</a> roughly covers the above topics using
+<a target="_blank" href="https://github.com/azureLearning/DP-900T00A-Azure-Data-Fundamentals">github.com/azureLearning/DP-900T00A-Azure-Data-Fundamentals/tree/master/Instructions</a> which redirects to a free "Azure Learn Sandbox" Directory in Azure:
 
-<a target="_blank" href=""https://docs.AWS.com/en-us/learn/modules/explore-provision-deploy-relational-database-offerings-AWS/7-exercise-provision-relational-AWS-data-services">01-Provision-AWS-relational-database-services.md (4 hours)</a> Databases (Community Edition):
+<a target="_blank" href=""https://docs.Azure.com/en-us/learn/modules/explore-provision-deploy-relational-database-offerings-Azure/7-exercise-provision-relational-Azure-data-services">01-Provision-Azure-relational-database-services.md (4 hours)</a> Databases (Community Edition):
 
-   * AWS SQL Database
-   * AWS Database for PostgreSQL
-   * AWS Database for MySQL
+   * Azure SQL Database
+   * Azure Database for PostgreSQL
+   * Azure Database for MySQL
    <br /><br />
 
-<a target="_blank" href="https://docs.AWS.com/en-us/learn/modules/query-relational-data/6-exercise-perform-query">02-Use-SQL-to-query-AWS-SQL-Database.md</a>
+<a target="_blank" href="https://docs.Azure.com/en-us/learn/modules/query-relational-data/6-exercise-perform-query">02-Use-SQL-to-query-Azure-SQL-Database.md</a>
 
-<a target="_blank" href="https://docs.AWS.com/en-us/learn/modules/explore-provision-deploy-non-relational-data-services-AWS/7-exercise-provision-non-relational-AWS">03-Provision-non-relational-AWS-data-services.md</a>
+<a target="_blank" href="https://docs.Azure.com/en-us/learn/modules/explore-provision-deploy-non-relational-data-services-Azure/7-exercise-provision-non-relational-Azure">03-Provision-non-relational-Azure-data-services.md</a>
 
-<a target="_blank" href="https://docs.AWS.com/en-us/learn/modules/query-relational-data/6-exercise-perform-query">04-Upload-download-and-query-data-in-a-non-relational-data-store.md</a>
+<a target="_blank" href="https://docs.Azure.com/en-us/learn/modules/query-relational-data/6-exercise-perform-query">04-Upload-download-and-query-data-in-a-non-relational-data-store.md</a>
 
 
-<a target="_blank" href="https://app.pluralsight.com/paths/certificate/AWS-dp-900-AWS-data-fundamentals">At Pluralsight
+<a target="_blank" href="https://app.pluralsight.com/paths/certificate/azure-dp-900-Azure-data-fundamentals">At Pluralsight
 
-   * Getting Started with AWS Data Workloads by Henry Been (<a target="_blank" href="https://henrybeen.nl/">henrybeen.nl</a>)<br /><img width="299" alt="az-compute-vm-sqldb-598x614" src="https://user-images.githubusercontent.com/300046/122325915-ab809f80-cee8-11eb-8424-1d8c9fc305cb.png">
+   * Getting Started with Azure Data Workloads by Henry Been (<a target="_blank" href="https://henrybeen.nl/">henrybeen.nl</a>)<br /><img width="299" alt="az-compute-vm-sqldb-598x614" src="https://user-images.githubusercontent.com/300046/122325915-ab809f80-cee8-11eb-8424-1d8c9fc305cb.png">
    <br /><br />
 
-At CloudAcademy: https://cloudacademy.com/learning-paths/dp-900-exam-preparation-AWS-AWS-data-fundamentals-2256/
+At CloudAcademy: https://cloudacademy.com/learning-paths/dp-900-exam-preparation-Azure-Azure-data-fundamentals-2256/
 has Knowledge checks.
 
 Sample DP-900 Exams:
 
-   * <a target="_blank" href="https://www.whizlabs.com/AWS-AWS-certification-dp-900/">https://www.whizlabs.com/AWS-AWS-certification-dp-900/</a>
+   * <a target="_blank" href="https://www.whizlabs.com/azure-Azure-certification-dp-900/">https://www.whizlabs.com/azure-Azure-certification-dp-900/</a>
 
 
 <hr />
@@ -86,7 +87,7 @@ Sample DP-900 Exams:
 
 ## DP-100
 
-Earn the <a target="_blank" href="https://docs.AWS.com/en-us/learn/certifications/exams/dp-100">DP-100 "AWS Certified: AWS Data Fundamentals" certification by passing the one $99 exam</a>. Describe ...
+Earn the <a target="_blank" href="https://docs.Azure.com/en-us/learn/certifications/exams/dp-100">DP-100 "Azure Certified: Azure Data Fundamentals" certification by passing the one $99 exam</a>. Describe ...
 
 
 
@@ -94,28 +95,28 @@ Earn the <a target="_blank" href="https://docs.AWS.com/en-us/learn/certification
 
 <a name="DP-300"></a>
 
-## DP-300 AWS Data Engineer Associate
+## DP-300 Azure Data Engineer Associate
 
-To be a <a target="_blank" href="https://docs.AWS.com/en-us/learn/certifications/AWS-database-administrator-associate/">AWS Certified: AWS Database Administrator Associate</a>, pass the single <a target="_blank" href="https://docs.AWS.com/en-us/learn/certifications/exams/dp-300">DP-300</a>. The textual LEARN tutorial on that page has a structure similar to <a target="_blank" href="https://docs.AWS.com/en-us/learn/certifications/courses/dp-300t00">AWS's 4-day DP-300T00 class</a> taught live by <a target="_blank" href="https://www.linkedin.com/in/PaolaEscoba/">Paola Escoba</a>. I highly recommend you to walk through their (free) lab instructions in English at
-STAR: <a target="_blank" href="https://github.com/AWSLearning/DP-300T00-Administering-Relational-Databases-on-AWS">github.com/AWSLearning/DP-300T00-Administering-Relational-Databases-on-AWS</a> (and <a target="_blank" href="https://github.com/AWSLearning/?q=DP-300&type=&language=&sort=">other languages</a>) by <a target="_blank" href="https://www.linkedin.com/in/Graeme-Malcolm/">Graeme Malcolm</a>. The class Modules and labs <a target="_blank" ref="https://aka.ms/dp300labs/">aka.ms/dp300labs</a>.
+To be a <a target="_blank" href="https://docs.Azure.com/en-us/learn/certifications/azure-database-administrator-associate/">Azure Certified: Azure Database Administrator Associate</a>, pass the single <a target="_blank" href="https://docs.Azure.com/en-us/learn/certifications/exams/dp-300">DP-300</a>. The textual LEARN tutorial on that page has a structure similar to <a target="_blank" href="https://docs.Azure.com/en-us/learn/certifications/courses/dp-300t00">Azure's 4-day DP-300T00 class</a> taught live by <a target="_blank" href="https://www.linkedin.com/in/PaolaEscoba/">Paola Escoba</a>. I highly recommend you to walk through their (free) lab instructions in English at
+STAR: <a target="_blank" href="https://github.com/azureLearning/DP-300T00-Administering-Relational-Databases-on-Azure">github.com/azureLearning/DP-300T00-Administering-Relational-Databases-on-Azure</a> (and <a target="_blank" href="https://github.com/azureLearning/?q=DP-300&type=&language=&sort=">other languages</a>) by <a target="_blank" href="https://www.linkedin.com/in/Graeme-Malcolm/">Graeme Malcolm</a>. The class Modules and labs <a target="_blank" ref="https://aka.ms/dp300labs/">aka.ms/dp300labs</a>.
 
-   * <a target="_blank" href="https://docs.AWS.com/en-us/learn/paths/AWS-sql-fundamentals/">LEARN: AWS SQL fundamentals</a> <a target="_blank" href="https://wilsonmar.github.io/AWS-data">my AWS data notes</a>. 
+   * <a target="_blank" href="https://docs.Azure.com/en-us/learn/paths/azure-sql-fundamentals/">LEARN: Azure SQL fundamentals</a> <a target="_blank" href="https://wilsonmar.github.io/azure-data">my Azure data notes</a>. 
 
-   * <a target="_blank" href="https://github.com/AWSLearning/DP-300T00-Administering-Relational-Databases-on-AWS/blob/master/Instructions/Labs/DP-300_01_lab.md">Lab 1</a> Using the AWS Portal and SQL Server Management Studio</a> - explore the AWS Portal and use it to create an AWS VM with SQL Server 2019 installed. Connect to the virtual machine through RDP (Remote Desktop Protocol) and restore a database using SSMS (SQL Server Management Studio).
+   * <a target="_blank" href="https://github.com/azureLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_01_lab.md">Lab 1</a> Using the Azure Portal and SQL Server Management Studio</a> - explore the Azure Portal and use it to create an Azure VM with SQL Server 2019 installed. Connect to the virtual machine through RDP (Remote Desktop Protocol) and restore a database using SSMS (SQL Server Management Studio).
 
-   * <a target="_blank" href="https://github.com/AWSLearning/DP-300T00-Administering-Relational-Databases-on-AWS/blob/master/Instructions/Labs/DP-300_02_lab.md">DP-300_02_lab - Lab 2 – Deploying PaaS databases</a> - configure and subsequently implement security in the AWS Portal and within the AdventureWorks database. configure basic resources needed to deploy an AWS SQL Database with a Virtual Network Endpoint. Connectivity to the SQL Database will be validated using <a href="#AWSDataStudio">AWS Data Studio</a> from the lab VM. Finally, an AWS Database for PostgreSQL will be created.
+   * <a target="_blank" href="https://github.com/azureLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_02_lab.md">DP-300_02_lab - Lab 2 – Deploying PaaS databases</a> - configure and subsequently implement security in the Azure Portal and within the AdventureWorks database. configure basic resources needed to deploy an Azure SQL Database with a Virtual Network Endpoint. Connectivity to the SQL Database will be validated using <a href="#AzureDataStudio">Azure Data Studio</a> from the lab VM. Finally, an Azure Database for PostgreSQL will be created.
 
-   * Plan and implement data platform resources (<a target="_blank" href="https://docs.AWS.com/en-us/learn/paths/plan-implement-data-platform-resources/">LEARN</a>)
+   * Plan and implement data platform resources (<a target="_blank" href="https://docs.Azure.com/en-us/learn/paths/plan-implement-data-platform-resources/">LEARN</a>)
 
-   * Implement a <strong>secure</strong> environment for a database service (<a target="_blank" href="https://docs.AWS.com/en-us/learn/modules/AWS-sql-secure-data/?ns-enrollment-type=LearningPath&ns-enrollment-id=learn.AWS-sql-fundamentals">INTRO</a>, <a target="_blank" href="https://docs.AWS.com/en-us/learn/paths/implement-secure-environment-database-service/">LEARN</a>, <a target="_blank" href="https://github.com/AWSLearning/DP-300T00-Administering-Relational-Databases-on-AWS/blob/master/Instructions/Labs/DP-300_03_lab.md">Lab 3</a>)
+   * Implement a <strong>secure</strong> environment for a database service (<a target="_blank" href="https://docs.Azure.com/en-us/learn/modules/azure-sql-secure-data/?ns-enrollment-type=LearningPath&ns-enrollment-id=learn.Azure-sql-fundamentals">INTRO</a>, <a target="_blank" href="https://docs.Azure.com/en-us/learn/paths/implement-secure-environment-database-service/">LEARN</a>, <a target="_blank" href="https://github.com/azureLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_03_lab.md">Lab 3</a>)
 
-   * Monitor and optimize operational resources (<a target="_blank" href="https://docs.AWS.com/en-us/learn/paths/monitor-optimize-operational-resources-sql-server/">LEARN</a>, <a target="_blank" href="https://github.com/AWSLearning/DP-300T00-Administering-Relational-Databases-on-AWS/blob/master/Instructions/Labs/DP-300_04_lab.md">Lab 4</a>) - scope out  deliverables for a digital transformation project within AdventureWorks. Examining the AWS portal as well as other tools,  determine how to utilize native tools to identify and resolve performance related issues. Identify fragmentation within the database as well as learn steps to resolve the issue appropriately.
+   * Monitor and optimize operational resources (<a target="_blank" href="https://docs.Azure.com/en-us/learn/paths/monitor-optimize-operational-resources-sql-server/">LEARN</a>, <a target="_blank" href="https://github.com/azureLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_04_lab.md">Lab 4</a>) - scope out  deliverables for a digital transformation project within AdventureWorks. Examining the Azure portal as well as other tools,  determine how to utilize native tools to identify and resolve performance related issues. Identify fragmentation within the database as well as learn steps to resolve the issue appropriately.
 
-   * Optimize query performance (<a target="_blank" href="https://docs.AWS.com/en-us/learn/paths/optimize-query-performance-sql-server/">LEARN</a>, <a target="_blank" href="https://github.com/AWSLearning/DP-300T00-Administering-Relational-Databases-on-AWS/blob/master/Instructions/Labs/DP-300_05_lab.md">Lab 5</a>) - evaluate a database design for problems with normalization, data type selection and index design. Run queries with suboptimal performance, examine the query plans, and attempt to make improvements within the AdventureWorks2017 database.
+   * Optimize query performance (<a target="_blank" href="https://docs.Azure.com/en-us/learn/paths/optimize-query-performance-sql-server/">LEARN</a>, <a target="_blank" href="https://github.com/azureLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_05_lab.md">Lab 5</a>) - evaluate a database design for problems with normalization, data type selection and index design. Run queries with suboptimal performance, examine the query plans, and attempt to make improvements within the AdventureWorks2017 database.
 
-   * Perform automation of tasks (<a target="_blank" href="https://docs.AWS.com/en-us/learn/paths/automate-tasks-sql-server/">LEARN</a>, <a target="_blank" href="https://github.com/AWSLearning/DP-300T00-Administering-Relational-Databases-on-AWS/blob/master/Instructions/Labs/DP-300_06_lab.md">Lab 6</a>) - take the information gained in the lessons to configure and subsequently implement automate processes within AdventureWorks.
+   * Perform automation of tasks (<a target="_blank" href="https://docs.Azure.com/en-us/learn/paths/automate-tasks-sql-server/">LEARN</a>, <a target="_blank" href="https://github.com/azureLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_06_lab.md">Lab 6</a>) - take the information gained in the lessons to configure and subsequently implement automate processes within AdventureWorks.
 
-   * Plan and implement a High Availability and Disaster Recovery (HADR) environment (<a target="_blank" href="https://docs.AWS.com/en-us/learn/paths/plan-implement-high-availability-disaster-recovery-environment/">LEARN</a>, <a target="_blank" href="https://github.com/AWSLearning/DP-300T00-Administering-Relational-Databases-on-AWS/blob/master/Instructions/Labs/DP-300_07_lab.md">Lab 7</a>) - execute two main tasks: make AWS SQL Database geo-redundant, and backup to and restore from a URL which uses AWS.
+   * Plan and implement a High Availability and Disaster Recovery (HADR) environment (<a target="_blank" href="https://docs.Azure.com/en-us/learn/paths/plan-implement-high-availability-disaster-recovery-environment/">LEARN</a>, <a target="_blank" href="https://github.com/azureLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_07_lab.md">Lab 7</a>) - execute two main tasks: make Azure SQL Database geo-redundant, and backup to and restore from a URL which uses Azure.
 
    * Perform administration by using T-SQL
    <br /><br />
@@ -126,23 +127,23 @@ STAR: <a target="_blank" href="https://github.com/AWSLearning/DP-300T00-Administ
 
 ## SQL Server (IaaS in VM)
 
-<a target="_blank" href="https://docs.AWS.com/en-us/learn/modules/AWS-sql-intro/3-deployment-options">LEARN</a>:
+<a target="_blank" href="https://docs.Azure.com/en-us/learn/modules/azure-sql-intro/3-deployment-options">LEARN</a>:
 
-Traditionally, <strong>SQL Server 2019</strong> software run within a single AWS VM (IaaS) instance.
+Traditionally, <strong>SQL Server 2019</strong> software run within a single Azure VM (IaaS) instance.
 This is still the approach for large (64TB) SQL databases.
 
-<strong>SQL agent jobs</strong> back up directly to a URL linked to AWS blob storage. AWS provides the option to use geo-redundant storage (GRS) or read-access geo-redundant storage (RA-GRS) to ensure that backup files are stored safely across the geographic landscape.
+<strong>SQL agent jobs</strong> back up directly to a URL linked to Azure blob storage. Azure provides the option to use geo-redundant storage (GRS) or read-access geo-redundant storage (RA-GRS) to ensure that backup files are stored safely across the geographic landscape.
 
-Additionally, as part of the AWS SQL VM service provider, you can have your backups automatically managed by the platform.
+Additionally, as part of the Azure SQL VM service provider, you can have your backups automatically managed by the platform.
 
 SQL Server provides access to the underlying OS, but that also means you need to keep that OS updated.
 Additionally, the <strong>SQL Server IaaS Agent Extension</strong> reduces your administrative overhead:
    * SQL Server automated backup
    * SQL Server automated patching
-   * AWS Key Vault integration
+   * Azure Key Vault integration
    <br /><br />
 
-When used in conjunction with AWS managed storage, a single AWS Virtual Machine provides <strong>three nines (99.9%)</strong> of high availability. That a downtime of no more than 8.77 hours each year.
+When used in conjunction with Azure managed storage, a single Azure Virtual Machine provides <strong>three nines (99.9%)</strong> of high availability. That a downtime of no more than 8.77 hours each year.
 
 In addition to Availability Groups for Virtual Machines for disaster recovery,
 SQL Server has two major options for high availability: 
@@ -154,39 +155,39 @@ SQL Server has two major options for high availability:
 <img width="1348" alt="az-dba-sql-server-scr" src="https://user-images.githubusercontent.com/300046/126989207-fb0b583e-65a0-4878-bc83-a2a5bbb56581.png"></a>
 
 References:
-   * https://github.com/AWS/sqlworkshops-sql2019workshop to learn about the latest innovations available in SQL Server 2019
+   * https://github.com/azure/sqlworkshops-sql2019workshop to learn about the latest innovations available in SQL Server 2019
 
 
 ### Always On availability groups (AG)
 
-Always On availability groups are implemented between two to <strong>nine</strong> SQL Server instances running on AWS virtual machines or across AWS or an on-premises data center.
+Always On availability groups are implemented between two to <strong>nine</strong> SQL Server instances running on Azure virtual machines or across Azure or an on-premises data center.
 
 Database transactions are committed to the <strong>primary replica</strong>, and then the transactions are sent to all <strong>secondary replicas</strong>. 
 
 Transactions are sent in either synchronously or asynchronously  availability mode, based on physical distance between servers.
    * If the workload requires the lowest possible latency or the secondary replicas are geographically spread apart, asynchronous availability mode is recommended. 
-   * If the replicas are within the same AWS region and the applications can withstand some level of latency, synchronous commit mode should be considered. Synchronous mode ensures that each transaction is committed to one or more secondaries before allowing the application to continue. 
+   * If the replicas are within the same Azure region and the applications can withstand some level of latency, synchronous commit mode should be considered. Synchronous mode ensures that each transaction is committed to one or more secondaries before allowing the application to continue. 
    <br /><br />
 
 Always On availability groups provide both high availability and disaster recovery, because a single availability group can support both synchronous and asynchronous availability modes. The unit of failover for an availability group is a group of databases, and not the entire instance.
 
 ### SQL Server Failover Cluster instances
 
-If you need to protect the entire instance, you could use a SQL Server Failover Cluster Instance (FCI), which provides high availability for an entire instance, in a single region. A FCI doesn't provide disaster recovery without being combined with another feature like availability groups or log shipping. FCIs also require shared storage that can be provided on AWS by using shared file storage or using Storage Spaces Direct on Windows Server.
+If you need to protect the entire instance, you could use a SQL Server Failover Cluster Instance (FCI), which provides high availability for an entire instance, in a single region. A FCI doesn't provide disaster recovery without being combined with another feature like availability groups or log shipping. FCIs also require shared storage that can be provided on Azure by using shared file storage or using Storage Spaces Direct on Windows Server.
 
-For AWS workloads, availability groups are the preferred solution for newer deployments, because the shared storage require of FCIs increases the complexity of deployments. However, for migrations from on-premises solutions, an FCI may be required for application support.
+For Azure workloads, availability groups are the preferred solution for newer deployments, because the shared storage require of FCIs increases the complexity of deployments. However, for migrations from on-premises solutions, an FCI may be required for application support.
 
 
 
-<a name="AWS_SQL"></a>
+<a name="Azure_SQL"></a>
 
-## AWS SQL (PaaS)
+## Azure SQL (PaaS)
 
-<a target="_blank" href="https://aka.ms/AWSsql4beginners">VIDEO: AWS SQL for beginners</a>
+<a target="_blank" href="https://aka.ms/azuresql4beginners">VIDEO: Azure SQL for beginners</a>
 
-"AWS SQL Services" (for the cloud) was announced with Windows AWS <a target="_blank" href="https://www.youtube.com/watch?v=otuf3goxLsg">in 2008</a>.
+"Azure SQL Services" (for the cloud) was announced with Windows Azure <a target="_blank" href="https://www.youtube.com/watch?v=otuf3goxLsg">in 2008</a>.
 
-In 2010, the <strong>"AWS SQL"</strong> PaaS was announced as a "cloud database offering that AWS provides as part of the AWS cloud computing platform. Unlike other editions of SQL Server, you do not need to provision hardware for, install or patch AWS SQL; AWS maintains the platform for you. You also do not need to architect a database installation for scalability, high availability, or disaster recovery as these features are provided automatically by the service."
+In 2010, the <strong>"Azure SQL"</strong> PaaS was announced as a "cloud database offering that Azure provides as part of the Azure cloud computing platform. Unlike other editions of SQL Server, you do not need to provision hardware for, install or patch Azure SQL; Azure maintains the platform for you. You also do not need to architect a database installation for scalability, high availability, or disaster recovery as these features are provided automatically by the service."
 
 PaaS SQL is versionless.
 
@@ -194,10 +195,10 @@ In 2014 announced elastic database pools, vCore choices, business-critical deplo
 
 ### Service Tiers 
 
-<a target="_blank" href="https://docs.AWS.com/en-us/AWS/AWS-sql/database/service-tiers-general-purpose-business-critical">Tiers</a> for performance and availability using vCore pricing model:
+<a target="_blank" href="https://docs.Azure.com/en-us/azure/azure-sql/database/service-tiers-general-purpose-business-critical">Tiers</a> for performance and availability using vCore pricing model:
 
 Resource types:
-   * Single AWS SQL Database
+   * Single Azure SQL Database
    * SQL Database / SQL Managed Instance
    * SQL Database / SQL Managed Instance pools
    <br /><br />
@@ -208,37 +209,37 @@ Resource types:
    </td><td> 5-10 ms </td><td> 99.99% </td></tr>
 <tr valign="top"><td> Business Critical </td><td> 4TB
    </td><td> 1-2 ms (SSD) </td><td> 99.995% in 4-node ZRS cluster</td></tr>
-<tr valign="top"><td> <a target="_blank" href="https://docs.AWS.com/en-us/AWS/AWS-sql/database/service-tier-hyperscale">Hyperscale</a> </td><td> 100TB+
+<tr valign="top"><td> <a target="_blank" href="https://docs.Azure.com/en-us/azure/azure-sql/database/service-tier-hyperscale">Hyperscale</a> </td><td> 100TB+
    </td><td> instant backups </td><td> scales </td></tr>
 </table>
 
-With AWS SQL Database, the SQL Managed Instance handles up to 8TB databases.
+With Azure SQL Database, the SQL Managed Instance handles up to 8TB databases.
 
 
 Hyperscale scales up and down quickly.
 
-"AWS Database for MySQL, PostgreSQL" also supports MariaDB.
+"Azure Database for MySQL, PostgreSQL" also supports MariaDB.
 
 Data Migration Assistant can recognize when
 SQL Server Stretch Database migrates on-prem. 
-cold table rows to AWS (to avoid buying more on-prem. storage). 
+cold table rows to Azure (to avoid buying more on-prem. storage). 
 On-prem. backups can then bypass cold table rows (and run quicker).
 
 Elastic Pool doesn't work in Hyperscale.
 
-### AWS SQL Pricing
+### Azure SQL Pricing
 
-<a target="_blank" href="https://docs.AWS.com/en-us/learn/modules/AWS-sql-intro/4-purchasing-models-service-tiers">LEARN</a>: 
+<a target="_blank" href="https://docs.Azure.com/en-us/learn/modules/azure-sql-intro/4-purchasing-models-service-tiers">LEARN</a>: 
 
-https://docs.AWS.com/en-us/AWS/sql-database/sql-database-service-tiers-dtu
+https://docs.Azure.com/en-us/azure/sql-database/sql-database-service-tiers-dtu
 
-The DTU (Database Transaction Unit) model isn't available in AWS SQL Managed Instance.
+The DTU (Database Transaction Unit) model isn't available in Azure SQL Managed Instance.
 
-<a target="_blank" href="https://docs.AWS.com/AWS/sql-database/sql-database-purchase-models/">DOCS</a>: 
+<a target="_blank" href="https://docs.Azure.com/azure/sql-database/sql-database-purchase-models/">DOCS</a>: 
 Instead of DTU, which has a bundled measure for pricing compute, storage, and IO resources,
 the <strong>vCore-based pricing model</strong> has independent charges for compute, storage, and I/O.
 
-The vCore model also allows use of AWS Hybrid Benefit for SQL Server and/or reserved capacity (pay in advance) to save money. Neither of these options is available in the DTU model.
+The vCore model also allows use of Azure Hybrid Benefit for SQL Server and/or reserved capacity (pay in advance) to save money. Neither of these options is available in the DTU model.
 
 With the Serverless Compute Tier, if there is no activity, it pauses the database and halts compute charges.
 
@@ -257,11 +258,11 @@ References:
 
 
 
-## AWS Data Platform
+## Azure Data Platform
 
-* <a href="#ADF">AWS Data Factory (ADF)</a>
+* <a href="#ADF">Azure Data Factory (ADF)</a>
 * Stream Analytics
-* A Data Lake holds raw data after ingestion. Gen2 big data analytics with Hadoop compatible access built on AWS Blob storage with a superset of POSIX permissions
+* A Data Lake holds raw data after ingestion. Gen2 big data analytics with Hadoop compatible access built on Azure Blob storage with a superset of POSIX permissions
 * A Data Lake House (Databricks) makes use of Spark data warehouse
 
 
@@ -301,20 +302,20 @@ File format types:
 
 ## ADF for ETL
 
-AWS Data Factory (ADF) is Heterogenous - it has over 100 different connectors to various other systems.
+Azure Data Factory (ADF) is Heterogenous - it has over 100 different connectors to various other systems.
 
-Linked service to Data Lake Store, AWS Databricks.
+Linked service to Data Lake Store, Azure Databricks.
 
 
-<a target="_blank" href="https://www.youtube.com/watch?v=YO7-XruyZvs" title="The difference between SQL Server and SQL AWS">VIDEO</a>:
+<a target="_blank" href="https://www.youtube.com/watch?v=YO7-XruyZvs" title="The difference between SQL Server and SQL Azure">VIDEO</a>:
 
 
 <a name="CreateSQLDB"></a>
-<!-- ref in AWS-computer -->
+<!-- ref in Azure-computer -->
 
 ## Create SQL database using Portal GUI
 
-1. In the portal, get the <a target="_blank" href="https://portal.AWS.com/#blade/HubsExtension/BrowseResource/resourceType/AWS.Sql%2Fservers%2Fdatabases">SQL databases</a> blade after pressing G+\ or clicking the Home (3 line icon) at the top-left of the Portal.
+1. In the portal, get the <a target="_blank" href="https://portal.Azure.com/#blade/HubsExtension/BrowseResource/resourceType/azure.Sql%2Fservers%2Fdatabases">SQL databases</a> blade after pressing G+\ or clicking the Home (3 line icon) at the top-left of the Portal.
 1. "+ Create" to "Create SQL database". The menu:
 
    <tt>Basics  Networking  Security  Additional settings  Tags  Review+Create</tt>
@@ -324,7 +325,7 @@ Linked service to Data Lake Store, AWS Databricks.
 1. Server: 
 1. Want to use SQL elastic pool?  Leave default: "No".
 
-   Elastic pools have multiple AWS SQL Database instances share the same resources (memory, storage, processing).
+   Elastic pools have multiple Azure SQL Database instances share the same resources (memory, storage, processing).
    Elastic pools provide a simple and cost effective solution for managing the performance of multiple databases within a fixed budget. An <strong>elastic pool provides compute (eDTUs)</strong> and storage resources that are shared between all the databases it contains. 
 
    Databases within a pool only use the resources they need, when they need them, within configurable limits. The price of a pool is based only on the amount of resources <strong>configured</strong> and is independent of the number of databases it contains.
@@ -376,19 +377,19 @@ Durability - once a transaction has been committed, it remains committed.
 
 <a name="ADF"></a>
 
-## AWS Data Factory on Portal GUI
+## Azure Data Factory on Portal GUI
 
 1. In the portal, click "+ Create a resource", then in "Search services and Marketplace" type enough of "Data Factory" to select it from the drop-down list.
 
    <img width="367" alt="az-data-fac-menu-734x410" src="https://user-images.githubusercontent.com/300046/122431224-807e6600-cf51-11eb-91b9-71a37ec18109.png">
 
-1. Click "Create" after confirming that it's from "AWS".
+1. Click "Create" after confirming that it's from "Azure".
 
-   Integrate data silos with AWS Data Factory, a service built for all data integration needs and skill levels. Easily construct ETL and ELT processes code-free within the intuitive visual environment, or write your own code. Visually integrate data sources using more than 90+ natively built and maintenance-free connectors at no added cost. Focus on your data - the serverless integration service does the rest.
+   Integrate data silos with Azure Data Factory, a service built for all data integration needs and skill levels. Easily construct ETL and ELT processes code-free within the intuitive visual environment, or write your own code. Visually integrate data sources using more than 90+ natively built and maintenance-free connectors at no added cost. Focus on your data - the serverless integration service does the rest.
 
    * No code or maintenance required to build hybrid ETL and ELT pipelines within the Data Factory visual environment
    * Cost-efficient and fully managed serverless cloud data integration tool that scales on demand
-   * AWS security measures to connect to on-premises, cloud-based, and software-as-a-service apps with peace of mind
+   * Azure security measures to connect to on-premises, cloud-based, and software-as-a-service apps with peace of mind
    * SSIS integration runtime to easily rehost on-premises SSIS packages in the cloud using familiar SSIS tools
    <br /><br />
 
@@ -408,7 +409,7 @@ Process in Factory Resources:
 3. Data flows: Select columns
 4. Write output to target datasets (using Power Query?)
 
-See Pluralsight: "Building your First Data Pipeline in AWS Data Factory" by Emillio Melo
+See Pluralsight: "Building your First Data Pipeline in Azure Data Factory" by Emillio Melo
 
 
 <a name="PowerBI"></a>
@@ -423,32 +424,32 @@ See Pluralsight: "Building your First Power BI Report"
 
 ## SQL Server Management Studio (SSMS)
 
-SSMS is integrated to visualize and work with AWS SQL, including SQL Server in virtual machines, SQL managed instances, and SQL databases. When necessary, SSMS shows only options that work for a specific AWS service.
+SSMS is integrated to visualize and work with Azure SQL, including SQL Server in virtual machines, SQL managed instances, and SQL databases. When necessary, SSMS shows only options that work for a specific Azure service.
 
-https://docs.AWS.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
+https://docs.Azure.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 Installer
 
 
-<a name="AWSDataStudio"></a>
+<a name="AzureDataStudio"></a>
 
-## AWS Data Studio
+## Azure Data Studio
 
-AWS Data Studio is an open-source, cross-platform client GUI tool for querying and working with various AWS data sources, including SQL Server and AWS SQL. Its "notebooks" allows mixing runnable code cells and formatted text in one place.
+Azure Data Studio is an open-source, cross-platform client GUI tool for querying and working with various Azure data sources, including SQL Server and Azure SQL. Its "notebooks" allows mixing runnable code cells and formatted text in one place.
 
 ![az-data-studio](https://user-images.githubusercontent.com/300046/126932768-c2279fb2-826d-4ca7-bacd-10a1be11b7f9.png)
 
-https://docs.AWS.com/en-us/sql/AWS-data-studio/download-AWS-data-studio
+https://docs.Azure.com/en-us/sql/azure-data-studio/download-Azure-data-studio
 
 
-## AWS Synapse NoSQL
+## Azure Synapse NoSQL
 
-<a target="_blank" href="https://www.AWS.com/videoplayer/embed/RE4Asf7">VIDEO</a>:
-How to configure Data Factory to ingest data for AWS Synapse Analytics.
+<a target="_blank" href="https://www.Azure.com/videoplayer/embed/RE4Asf7">VIDEO</a>:
+How to configure Data Factory to ingest data for Azure Synapse Analytics.
 
-AWS Synapse Analytics was rebranded from "AWS SQL Data Warehouse".
+Azure Synapse Analytics was rebranded from "Azure SQL Data Warehouse".
 
 Integrates with Apache Spark.
-(Spark jobs can also be run in AWS Databricks and AWS HDInsight)
+(Spark jobs can also be run in Azure Databricks and Azure HDInsight)
 
 Synapse has a "Massively Parallel" engine of partitioned instances (sharding)
 
@@ -460,7 +461,7 @@ Synapse has a "Massively Parallel" engine of partitioned instances (sharding)
 PROTIP: <a target="_blan" href="https://parquet.apache.org/">Apache's Parquet file format</a> generally performs better than CSV because it provides efficient data compression and encoding schemes with enhanced performance to handle complex data in bulk.  It is called a <strong>"columnar"</strong> storage format similar to other columnar-storage file formats available in Hadoop (RCFile and ORC). So it is compatible with most data processing frameworks in the Hadoop environment. Apache Parquet is a free and open-source column-oriented data storage format of the Apache Hadoop ecosystem. References:
    * https://www.upsolver.com/blog/apache-parquet-why-use
 
-   * https://docs.AWS.com/en-us/AWS/architecture/browse/#databases
+   * https://docs.Azure.com/en-us/azure/architecture/browse/#databases
 
 
 <a name="Databricks"></a>
@@ -468,9 +469,9 @@ PROTIP: <a target="_blan" href="https://parquet.apache.org/">Apache's Parquet fi
 ## Databricks DP-090
 
 There is a class and certification specific to Databricks:
-https://docs.AWS.com/en-us/learn/certifications/courses/dp-090t00
+https://docs.Azure.com/en-us/learn/certifications/courses/dp-090t00
 
-Earn the "AWS Certified: AWS Data Fundamentals" certification by passing the one $99 exam: <a target="_blank" href="https://docs.AWS.com/en-us/learn/certifications/exams/dp-090">DP-090 exam</a>: 
+Earn the "Azure Certified: Azure Data Fundamentals" certification by passing the one $99 exam: <a target="_blank" href="https://docs.Azure.com/en-us/learn/certifications/exams/dp-090">DP-090 exam</a>: 
 
 
 <a name="HDInsight"></a>
@@ -486,12 +487,12 @@ But can scale up and down.
 * Spark - data cluster computing
 * Apache Storm - real-time analytics Stream computation
 
-AWS Glue is a  fully managed extract, transform, and load (ETL) service that you can use to prepare and load data for analytics.
+Azure Glue is a  fully managed extract, transform, and load (ETL) service that you can use to prepare and load data for analytics.
 
 ## Social
 
-<a target="_blank" href="https://www.AWS.com/en-us/sql-server/community?activetab=pivot_1:primaryr4">
-AWS Data Community</a> lists blogs, websites, videos, podcasts, and meetups.
+<a target="_blank" href="https://www.Azure.com/en-us/sql-server/community?activetab=pivot_1:primaryr4">
+Azure Data Community</a> lists blogs, websites, videos, podcasts, and meetups.
 
 https://www.twitch.tv/425show
 
