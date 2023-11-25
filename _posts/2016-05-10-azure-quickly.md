@@ -1933,7 +1933,7 @@ PROTIP: Below I've added LinkedIn links to each Learn Room instructor.
 * Entra ID from A to Z - <a target="_blank" href="https://www.linkedin.com/in/ericmwoodruff/">Eric Woodruff</a> (ex-AWS)
 * Azure Centric Learning - <a target="_blank" href="https://www.linkedin.com/in/mdnoga/">Marcos Nogueira</a>
 * Azure Cloud Commanders - <a target="_blank" href="https://www.linkedin.com/in/ljmurray/">Luke Murray</a>
-* Azure Developer for AI, Data, and Cloud - Beginner to Expert - <a target="_blank" href="">Usama Wahab Khan</a>
+* Azure Developer for AI, Data, and Cloud - Beginner to Expert - <a target="_blank" href="https://www.linkedin.com/in/usamawahabkhan/">Usama Wahab Khan</a> in NYC & Dubai
 * Azure DevOps and .NET - <a target="_blank" href="https://www.linkedin.com/in/rodrigokono/">Rodrigo Kono</a> in Brazil
 * Azure Fundamentals and Developer Technologies - blgorman (<a target="_blank" href="https://www.linkedin.com/in/brianlgorman/">Brian Gorman</a>)
 * Azure Infrastructure by MTTs Learning Room

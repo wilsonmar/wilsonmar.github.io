@@ -277,6 +277,23 @@ After <a target="_blank" href="https://wilsonmar.github.io/azure-onboarding">get
    The Free subscription assesses Azure resources only. The "Standard" tier provides a full suite of security-related services including continuous monitoring, threat detection, just-in-time access control for ports, and more. After a free 60-day free trial, it's $15 per node per month.
 
 
+<a name="XP+Levels"></a>
+
+XP (Experience Points) levels in learning profiles grow by around 145% per level:
+   LEVEL  1 -     1,799 XP<br />
+
+   LEVEL  8 -    72,099 XP +145%<br />
+   LEVEL  9 -   106,299 XP +147%<br />
+   LEVEL 10 -   155,899 XP +147%<br />
+   LEVEL 11 -   172,099 XP +110%<br />
+   LEVEL 12 -   249,544 XP +145%<br />
+   LEVEL 13 -   483,199 XP +145%<br />
+   LEVEL 14 -   702,399 XP +145%<br />
+   LEVEL 15 - 1,020,199 XP +145%<br />
+   LEVEL 16 - 1,481,099 XP +145%<br />
+   LEVEL 17 - 2,149,099 XP +145%<br />
+   LEVEL 18 - 3,114,011 XP +145%<br />
+
 ## Architecting
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/architect-great-solutions-in-azure/">Architect great solutions in Azure</a>
