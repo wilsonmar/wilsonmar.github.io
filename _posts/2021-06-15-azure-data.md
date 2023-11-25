@@ -130,13 +130,80 @@ Others:
 ## DP-900 Azure Data Fundamentals 
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-900">
-Microsoft's $99 DP-900 exam page</a> include free tutorials.
+Microsoft's $99 DP-900 exam page</a> provides free tutorials.
 
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/azure-data-fundamentals-explore-core-data-concepts/?ns-enrollment-type=Collection&ns-enrollment-id=0kjyh8rn5gdrjj">LEARN</a>: Core data concepts (15-20%) 
-   * <a target="_blank" href="https://docs.azure.com/en-us/learn/paths/azure-data-fundamentals-explore-relational-data/">LEARN</a>: Explore relational data in Azure (25-30%)
-   * <a target="_blank" href="https://docs.azure.com/en-us/learn/paths/azure-data-fundamentals-explore-non-relational-data/">LEARN</a>: Explore non-relational data in Azure (25-30%)
-   * <a target="_blank" href="https://docs.azure.com/en-us/learn/paths/azure-data-fundamentals-explore-data-warehouse-analytics/">LEARN</a>: Explore analytics in Azure (25-30%) 
+<a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-900">Study Guide</a>:
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/azure-data-fundamentals-explore-core-data-concepts/?ns-enrollment-type=Collection&ns-enrollment-id=0kjyh8rn5gdrjj">LEARN</a>: Core data concepts (15-20%) 
+
+* Describe ways to represent data:
+   * Describe features of structured data
+   * Describe features of semi-structured
+   * Describe features of unstructured data
    <br /><br />
+
+* Identify options for data storage:
+   * Describe common formats for data files
+   * Describe types of databases
+   <br /><br />
+
+* Describe common data workloads:
+   * Describe features of transactional workloads
+   * Describe features of analytical workloads
+   <br /><br />
+
+* Identify roles and responsibilities for data workloads
+   * Describe responsibilities for database administrators
+   * Describe responsibilities for data engineers
+   * Describe responsibilities for data analysts
+   <br /><br />
+
+<a target="_blank" href="https://docs.azure.com/en-us/learn/paths/azure-data-fundamentals-explore-relational-data/">LEARN</a>: Explore relational data in Azure (25-30%)
+
+* Describe relational concepts:
+   * Identify features of relational data
+   * Describe normalization and why it is used
+   * Identify common structured query language (SQL) statements
+   * Identify common database objects
+   <br /><br />
+
+* Describe relational Azure data services:
+   * Describe the Azure SQL family of products including Azure SQL Database, Azure SQL Managed Instance, and SQL Server on Azure Virtual Machines
+   * Identify Azure database services for open-source database systems
+   <br /><br />
+
+<a target="_blank" href="https://docs.azure.com/en-us/learn/paths/azure-data-fundamentals-explore-non-relational-data/">LEARN</a>: Explore non-relational data in Azure (25-30%)
+
+* Describe capabilities of Azure storage:
+   * Describe Azure Blob storage
+   * Describe Azure File storage
+   * Describe Azure Table storage
+   <br /><br />
+
+Describe capabilities and features of Azure Cosmos DB
+   * Identify use cases for Azure Cosmos DB
+   * Describe Azure Cosmos DB APIs
+   <br /><br />
+
+<a target="_blank" href="https://docs.azure.com/en-us/learn/paths/azure-data-fundamentals-explore-data-warehouse-analytics/">LEARN</a>: Explore analytics in Azure (25-30%) 
+
+* Describe common elements of large-scale analytics:
+   * Describe considerations for data ingestion and processing
+   * Describe options for analytical data stores
+   * Describe Azure services for data warehousing, including Azure Synapse Analytics, Azure Databricks, Azure HDInsight, and Azure Data Factory
+   <br /><br />
+
+* Describe consideration for real-time data analytics:
+   * Describe the difference between batch and streaming data
+   * Describe technologies for real-time analytics including Azure Stream Analytics, Azure Synapse Data Explorer, and Spark Structured Streaming
+
+* Describe data visualization in Microsoft Power BI:
+   * Identify capabilities of Power BI
+   * Describe features of data models in Power BI
+   * Identify appropriate visualizations for data
+   <br /><br />
+
+<hr />
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/sc-900t00?resource_type=course&products=azure&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks">$1599 1-day course SC-900T00--A: Microsoft Security, Compliance, and Identity Fundamentals</a> provides live training with labs at
 https://learn.microsoft.com/en-us/collections/0kjyh8rn5gdrjj
