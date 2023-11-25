@@ -84,7 +84,7 @@ Tapped 0 formulae (1,156 files, 945.1KB)
 
 According to a research study done by Hongkiat, the top 10 free and paid fonts mentioned by web and graphic designers were:
 
-- Inconsolata (Free)
+* Inconsolata (Free)
 * Myriad Pro (Free)
 * Bebas Neue (Free)
 * Ubuntu (Free)
@@ -100,7 +100,7 @@ According to a research study done by Hongkiat, the top 10 free and paid fonts m
 * [Operator Mono](https://www.typography.com/fonts/operator/styles) (Paid)
 * [Fira Code](https://github.com/tonsky/FiraCode) (Free)
 
-- 
+
 <a id="FontBook"></a>
 
 ## View fonts you have on Mac
@@ -126,7 +126,7 @@ Open Sans on both Mac and Windows enable similar display.
 
 * <a target="_blank" href="https://www.fontsquirrel.com/fonts/open-sans">https://www.fontsquirrel.com/fonts/open-sans</a>
 
-https://fonts.google.com/specimen/Open+Sans
+* https://fonts.google.com/specimen/Open+Sans
 
 The Light font is minimalistic.
 
@@ -135,9 +135,9 @@ The Light font is minimalistic.
 
 Many large enterprises prefer to use their own fonts as part of their "branding".
 
-   * Salesforce
    * Microsoft
-   * Apple's San Francisco
+   * Salesforce
+   * Apple's San Francisco font
    <br /><br />
 
 See:

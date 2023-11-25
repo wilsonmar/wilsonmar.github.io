@@ -57,6 +57,7 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
    * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-100">DP-100 Azure Data Scientist Associate</a><br />
    * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-203">DP-203 Azure Data Engineer Associate</a> (replaces DP-200 & DP-201)<br />
    * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-300">DP-300 Azure Database Administrator Associate</a><br />
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-601">DP-601 Implementing a Lakehouse with Microsoft Fabric</a><br />
    </td></tr>
 
 <tr valign="top"><td> <a href="#Power_Platform">Power Platform</a> </td><td>
@@ -1518,15 +1519,6 @@ Routing to separate pages for AI Engineer:
 
 <a href="#DP-100">DP-100 Azure Data Scientist Associate</a>
 
-
-<a name="DP-100"></a>
-
-## DP-100 Azure Data Scientist Associate
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-100">
-Microsoft's DP-100 exam page</a> include free tutorials.
-
-PROTIP: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/build-ai-solutions-with-azure-ml-service/">FREE LEARNING PATH: Build AI solutions with Azure Machine Learning is 9 hr 51 min</a>. It has <a target="_blank" href="https://microsoftlearning.github.io/mslearn-dp100/">hands-on exercises</a> which references <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100">https://github.com/MicrosoftLearning/mslearn-dp100</a>
 
 
 <a name="DP-200"></a>

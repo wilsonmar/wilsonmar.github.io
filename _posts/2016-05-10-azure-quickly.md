@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-10-07"
+date: "2023-11-24"
 file: "azure-quickly"
 title: "Azure Quickly"
 excerpt: "Use this automation to minimize manual toil and mistakes but build-in secure practices and mechanisms to build global enterprises need. Not just for AZ-104, AZ-500"
@@ -340,35 +340,35 @@ PROTIP: Avoid using an email that you use for your own banking, shopping, social
 
 ### P1 vs P2 features
 
-   <strong>Premium P1</strong> (included in Microsoft 365 E3) features include Password Protection (custom banned password). Dynamic groups require a Premium P1 license.
+<strong>Premium P1</strong> (included in Microsoft 365 E3) features include Password Protection (custom banned password). Dynamic groups require a Premium P1 license.
 
-      * <strong>Conditional access</strong>
-      * Group assignment to applications
-      * Advanced group management (dynamic groups, naming policies, expiration, default classification)
+   * <strong>Conditional access</strong>
+   * Group assignment to applications
+   * Advanced group management (dynamic groups, naming policies, expiration, default classification)
 
-      * Cloud app discovery (Microsoft Defender for Cloud Apps)
-      * Application proxy for on-premises, header-based, and integrated Windows authentication
-      * Service level agreements (SLAs)
+   * Cloud app discovery (Microsoft Defender for Cloud Apps)
+   * Application proxy for on-premises, header-based, and integrated Windows authentication
+   * Service level agreements (SLAs)
 
-      * Microsoft identity manager user client access license (CAL)
-      * Cross-tenant user synchronization
-      * Advanced security and usage reports
+   * Microsoft identity manager user client access license (CAL)
+   * Cross-tenant user synchronization
+   * Advanced security and usage reports
 
-      * Automated user provisioning to on-premises apps
-      * Automated group provisioning to apps
+   * Automated user provisioning to on-premises apps
+   * Automated group provisioning to apps
 
-      * Self-service password reset (SSPR)
-      * Terms of use attestation
-      * Basic access certifications and reviews
-      * Basic entitlement management
-      * Entitlement management – separation of duties
+   * Self-service password reset (SSPR)
+   * Terms of use attestation
+   * Basic access certifications and reviews
+   * Basic entitlement management
+   * Entitlement management – separation of duties
 
-      * Risk level and risk detail fields are hidden to those with just the Entra ID Premium P1 edition.
-      * Advanced detections (such as unfamiliar sign-in properties) not covered by license appear under the name Sign-in with additional risk detected. 
-      * Privileged identity management (PIM)
-      <br /><br />
+   * Risk level and risk detail fields are hidden to those with just the Entra ID Premium P1 edition.
+   * Advanced detections (such as unfamiliar sign-in properties) not covered by license appear under the name Sign-in with additional risk detected. 
+   * Privileged identity management (PIM)
+   <br /><br />
 
-   <strong>Premium P2</strong> (included in Microsoft 365 E5) includes all P1 features plus really cool <strong>"Identity Protection"</strong> with policies Assignment to all users.
+<strong>Premium P2</strong> (included in Microsoft 365 E5) includes all P1 features plus really cool <strong>"Identity Protection"</strong> with policies Assignment to all users.
       * Identity governance/protection dashboard
       * Risk-based Conditional Access (sign-in risk, user risk)
       * Machine-learning assisted access certifications and reviews
@@ -1561,6 +1561,139 @@ Subscription types:
 
 ## Phase 05. Populate
 
+   * https://www.alitajran.com/create-azure-ad-users/ to add user info using PowerShell to Microsoft Graph.
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/entra/identity/users/users-bulk-add">LEARN</a> Create Azure users and groups in Microsoft Entra ID
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/create-users-and-groups-in-azure-active-directory/?source=recommendations">Training</a> for Bulk Create Users in Entra from CSV file.
+   * https://o365info.com/bulk-create-azure-ad-users/ proposes a PowerShell script to create users from a CSV file.
+   * https://www.youtube.com/watch?v=9wdjGqe_MdI
+   <br /><br />
+
+1. Define verified domain names in your Azure organization.
+
+1. As a User Administrator, sign in to the account you want to use at
+
+   https://portal.azure.com/#home
+
+1. Microsoft Entra admin center at:
+
+   https://entra.microsoft.com/#home
+
+1. Select Microsoft Entra ID.
+
+   https://entra.microsoft.com/#view/Microsoft_AAD_IAM/TenantOverview.ReactView
+
+1. In the left menu, select All users > Users > Bulk Operations > Bulk create for "Bulk create users" at the right.
+
+1. Click the blue "Download" to download the "UserCreateTemplate.csv" file to your local computer's Downloads folder.
+
+1. Open the file using a text editor to see three lines in the file:
+
+   <pre>version:v1.0
+Name [displayName] Required,User name [userPrincipalName] Required,Initial password [passwordProfile] Required,Block sign in (Yes/No) [accountEnabled] Required,First name [givenName],Last name [surname],Job title [jobTitle],Department [department],Usage location [usageLocation],Street address [streetAddress],State or province [state],Country or region [country],Office [physicalDeliveryOfficeName],City [city],ZIP or postal code [postalCode],Office phone [telephoneNumber],Mobile phone [mobile]
+Example: Chris Green, chris@contoso.com, myPassword1234, No
+   </pre>
+
+   CAUTION: Leave the first two rows as is. Do not change the column headings.
+   
+   Replace the 3rd row that starts with "Example" with actual data.
+
+1. Double-click on the file, which will open the file in Excel, showing the column headings and a sample row.
+
+   A. Name [displayName] Required<br />
+   B. User name [userPrincipalName] Required	email address with valid host name (such as contoso.com)<br />
+   C. Initial password [passwordProfile] Required	<br />
+   D. Block sign in (Yes/No) [accountEnabled] Required	<br />
+   E. First name [givenName]	<br />
+   F. Last name [surname]	<br />
+   
+   G. Job title [jobTitle]	<br />
+   H. Department [department]	<br />
+
+   I. Usage location [usageLocation]<br />	
+   J. Street address [streetAddress]	<br />
+   K. State or province [state]	<br />
+   L. Country or region [country]	<br />
+   M. Office [physicalDeliveryOfficeName]	<br />
+   N. City [city]	<br />
+   O. ZIP or postal code [postalCode]	<br />
+
+   P. Office phone [telephoneNumber]	<br />
+   Q. Mobile phone [mobile]<br />
+
+   CAUTION: Additional columns cannot be added.
+   
+1. Download my sample .csv file populated with specific user names who are later assigned groups and permissions:
+
+   "Azure-1000-Users.csv" from ???
+
+1. In the "Bulk create users" page, click field contents "Select a file".
+
+1. Click the blue "Submit" button for validation of the CSV file starts. It starts with "In progress".
+
+1. When your file passes validation, select Submit to start the Azure bulk operation that imports the new users.
+
+1. If failed, click "Download tasks".
+1. View in Downloads a file named "user create_11_24_2023-" appended in front of your file name.
+
+   Status [status]	Failed reason [failedReason]	Account enabled [accountEnabled]	Usage location [usageLocation]	mailNickname	passwordProfile	passwordPolicies	rolesEntity	selectedRoleIds	selectedGroupIds	Street address [streetAddress]	City [city]	State or province [state]	Country or region [country]	Office phone [telephoneNumber]	Mobile phone [mobile]	Office [physicalDeliveryOfficeName]	ZIP or postal code [postalCode]	authenticationPhoneNumber	authenticationAlternativePhoneNumber	authenticationEmail	strongAuthenticationDetail	defaultImageUrl	ageGroup	consentProvidedForMinor	legalAgeGroupClassification	Object Id [objectId]	objectType	Name (example: Chris Green) [displayName] *	User name (example: chris@contoso.com) [userPrincipalName] *	thumbnailMediaContentType	First name [givenName]	Last name [surname]	mail	dirSyncEnabled	alternativeSecurityIds	signInNamesInfo	signInNames	ownedDevices	Job title [jobTitle]	Department [department]	displayUserPrincipalName	hasThumbnail	imageUrl	imageDataToUpload	source	sources	sourceText	userFlags	deletionTimestamp	permanentDeletionTime	alternateEmailAddress	manager	userType	isThumbnailUpdated	isAuthenticationContactInfoUpdated	searchableDeviceKey	displayEmail	creationType	userState	otherMails	invitedAsMail	proxyAddresses	companyName	employeeId
+
+   Fix errors before submitting again. 
+
+   These appeared in the error response:
+
+   R. mailNickname	<br />
+   S. passwordProfile	<br />
+   T. passwordPolicies	<br />
+   U. rolesEntity	<br />
+   V. selectedRoleIds	<br />
+   W. selectedGroupIds<br />
+   
+   X. authenticationPhoneNumber	<br />
+   Y. authenticationAlternativePhoneNumber	<br />
+   Z. authenticationEmail	<br />
+   AA. strongAuthenticationDetail<br />
+   
+   defaultImageUrl	<br />
+   ageGroup	<br />
+   consentProvidedForMinor	<br />
+   legalAgeGroupClassification	<br />
+   Object Id [objectId]	<br />
+   objectType<br />
+
+   imageUrl	<br />
+   imageDataToUpload	<br />
+   source	<br />
+   sources	<br />
+   sourceText	<br />
+   userFlags	<br />
+   deletionTimestamp	<br />
+   permanentDeletionTime	<br />
+   alternateEmailAddress	<br />
+   manager	<br />
+   userType	<br />
+   isThumbnailUpdated	<br />
+   isAuthenticationContactInfoUpdated	<br />
+   searchableDeviceKey	<br />
+   displayEmail	<br />
+   creationType	<br />
+   userState	<br />
+   otherMails	<br />
+   invitedAsMail	<br />
+   proxyAddresses	<br />
+   companyName	<br />
+   employeeId <br />
+
+1. When the import operation completes with "File uploaded successfully", Status column should contain "Completed with no errors".
+
+1. Verify users in Entra ID > Users, Select All users (preview)
+
+1. See https://www.alitajran.com/create-azure-ad-users/ to add user info using Microsoft Graph.
+
+1. Notify users of their new accounts using PowerShell script
+
+   "You will need to change your password on first login."
+
+
 
 <hr />
 
@@ -1956,7 +2089,7 @@ The scripts are also useful for learning Azure.
    <pre><strong>chmod +x az-info.sh
    </strong></pre>
 
-1. To avoid <a target="_blank" href="https://stackoverflow.com/questions/16853624/git-discovery-across-filesystem-not-set"?error</a> "Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set)."
+1. To avoid <a target="_blank" href="https://stackoverflow.com/questions/16853624/git-discovery-across-filesystem-not-set">error</a> "Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set)."
 
    <pre><strong>export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
    git remote add origin https://github.com/wilsonmar/mac-setup

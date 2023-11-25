@@ -21,7 +21,6 @@ comments: true
 
 Threat hunting is a proactive approach to detecting and mitigating threats. It is a continuous process of searching for, identifying, and mitigating potential threats in your environment.
 
-https://boris-figeczky.medium.com/comparative-analysis-of-osstmm-v3-and-owasp-4-0-e3ae1bf95e9e
 
 <a name="OWASP_Items"></a>
 
@@ -90,7 +89,7 @@ There is also SAN's <a target="_blank" href="https://www.sans.org/top25-software
 
 <a name="OWASP_API_Items"></a>
 
-### API Security Top 10
+### OWASP API Security Top 10
 
 <a target="_blank" href="https://owasp.org/www-project-api-security/">API security Top 10</a> had 2019 and 2023 versions.
 
@@ -143,7 +142,7 @@ There is also SAN's <a target="_blank" href="https://www.sans.org/top25-software
     Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows attackers to further attack systems, maintain persistence, pivot to more systems to tamper with, extract, or destroy data. Most breach studies demonstrate the time to detect a breach is over 200 days, typically detected by external parties rather than internal processes or monitoring.
 
 
-## Kubernetes Top 10
+### Kubernetes Top 10
 
 See <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">My notes on Kubernetes</a>.
 
@@ -619,6 +618,8 @@ VMware Workstation on Windows or VMware Fusion on Mac:
    Beyond 1.0 from 2013</a>
    Chuck Willis (@chuckatsf) describes BWA origins
 
+
+<a name="VAmPI"></a>
 
 ### VAmPI (Python Flask)
 

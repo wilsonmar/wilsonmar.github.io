@@ -1,8 +1,8 @@
 ---
 layout: post
-date: "2023-11-23"
+date: "2023-11-24"
 file: "azure-data"
-title: "Azure Data (within Azure's cloud)"
+title: "Azure Data (within Microsft's cloud)"
 excerpt: "Obtain storage and database skills to pass DP-900, DP-100, DP-203, DP-300 exams"
 tags: [cloud, Azure]
 image:
@@ -121,9 +121,6 @@ Others:
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/dp-420t00?resource_type=course&products=azure&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks">
 4-day course DP-420T00--A: Designing and Implementing Cloud-Native Applications Using Microsoft Azure Cosmos DB</a>
-
-<hr />
-
 
 
 <hr />
@@ -290,7 +287,6 @@ makes use of lab instructions in English at
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/azure-data-engineer/">LEARN</a>: Design for data security and compliance (25-30%)
    <br /><br />
 
-zzz
 <hr />
 
 <a name="DP-300"></a>
@@ -309,24 +305,25 @@ Plan and Implement Data Platform Resources
    * Lab 1 - Provision SQL Server on an Azure Virtual Machine
    * Lab 2 - Provision an Azure SQL Database
 Implement a Secure Environment for a Database Service:
-	* Lab 3 – Authorize access to Azure SQL Database with Azure Active Directory
-   * Lab 4 – Configure Azure SQL Database firewall rules
-   * Lab 5 – Enable Microsoft Defender for SQL and Data classification
+	* Lab 3 - Authorize access to Azure SQL Database with Azure Active Directory
+   * Lab 4 - Configure Azure SQL Database firewall rules
+   * Lab 5 - Enable Microsoft Defender for SQL and Data classification
 Monitor and optimize operational resources in Azure SQL:
-   * Lab 6 – Isolate performance problems through monitoring
-   * Lab 7 – Detect and correct fragmentation issues
+   * Lab 6 - Isolate performance problems through monitoring
+   * Lab 7 - Detect and correct fragmentation issues
 Optimize query performance in Azure SQL:
-   * Lab 8 – Identify and resolve blocking issues
-   * Lab 9 – Identify database design issues
-   * Lab 10 – Isolate problem areas in poorly performing queries in a SQL Database
+   * Lab 8 - Identify and resolve blocking issues
+   * Lab 9 - Identify database design issues
+   * Lab 10 - Isolate problem areas in poorly performing queries in a SQL Database
 Automate database tasks for Azure SQL:
-   * Lab 11 – Deploy Azure SQL Database using Azure Resource Manager template
-   * Lab 12 – Create a CPU status alert for a SQL Server
-   * Lab 13 – Deploy an automation runbook to automatically rebuild indexes
+   * Lab 11 - Deploy Azure SQL Database using Azure Resource Manager template
+   * Lab 12 - Create a CPU status alert for a SQL Server
+   * Lab 13 - Deploy an automation runbook to automatically rebuild indexes
 Plan and implement a high availability and disaster recovery solution:
-   * Lab 14 – Configure geo-replication for Azure SQL Database
-   * Lab 15 – Backup to URL and Restore from URL MicrosoftLearning/dp-300-database-administrator
+   * Lab 14 - Configure geo-replication for Azure SQL Database
+   * Lab 15 - Backup to URL and Restore from URL MicrosoftLearning/dp-300-database-administrator
    <br /><br />
+
 
 References:
 
@@ -334,7 +331,7 @@ References:
 
    * <a target="_blank" href="https://github.com/azureLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_01_lab.md">Lab 1</a> Using the Azure Portal and SQL Server Management Studio</a> - explore the Azure Portal and use it to create an Azure VM with SQL Server 2019 installed. Connect to the virtual machine through RDP (Remote Desktop Protocol) and restore a database using SSMS (SQL Server Management Studio).
 
-   * <a target="_blank" href="https://github.com/azureLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_02_lab.md">DP-300_02_lab - Lab 2 – Deploying PaaS databases</a> - configure and subsequently implement security in the Azure Portal and within the AdventureWorks database. configure basic resources needed to deploy an Azure SQL Database with a Virtual Network Endpoint. Connectivity to the SQL Database will be validated using <a href="#AzureDataStudio">Azure Data Studio</a> from the lab VM. Finally, an Azure Database for PostgreSQL will be created.
+   * <a target="_blank" href="https://github.com/azureLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_02_lab.md">DP-300_02_lab - Lab 2 - Deploying PaaS databases</a> - configure and subsequently implement security in the Azure Portal and within the AdventureWorks database. configure basic resources needed to deploy an Azure SQL Database with a Virtual Network Endpoint. Connectivity to the SQL Database will be validated using <a href="#AzureDataStudio">Azure Data Studio</a> from the lab VM. Finally, an Azure Database for PostgreSQL will be created.
 
    * Plan and implement data platform resources (<a target="_blank" href="https://docs.azure.com/en-us/learn/paths/plan-implement-data-platform-resources/">LEARN</a>)
 

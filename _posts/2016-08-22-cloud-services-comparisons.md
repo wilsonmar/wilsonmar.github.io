@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-17"
+date: "2023-11-23"
 file: "cloud-services-comparisons"
 title: "Cloud services comparisons"
 excerpt: "Which cloud is best? Azure vs. AWS vs. Google"
