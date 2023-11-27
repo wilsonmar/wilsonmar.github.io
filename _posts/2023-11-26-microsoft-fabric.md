@@ -23,47 +23,50 @@ Here we have for you a hands-on step-by-step tutorial on quickly setting up and 
 
 {% include whatever.html %}
 
-Microsoft Fabric is a platform to get, create, share, and visualize data using an array of tools. 
+Microsoft Fabric is a platform to get, create, share, and visualize data using an array of tools, including a <strong>data lakehouse</strong> that combines the best of data warehouses and data lakes.
 
 PROTIP: The array of tools is shown in this diagram I adapted from Microsoft. All the components ("Experiences") of Fabric, in one page.
 We'll reference this throughout this article.
 
 <a name="Diagram"></a>
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701092170/microsoft-fabric-1688x994_gd4pm2.png"><img alt="microsoft-fabric-1688x994.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701092170/microsoft-fabric-1688x994_gd4pm2.png"><br /><em>Click for full-size image</em></a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701112374/microsoft-fabric-1673x997_oap1ad.png"><img alt="microsoft-fabric-1673x997.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701112374/microsoft-fabric-1673x997_oap1ad.png"><br /><em>Click for full-size image</em></a>.
+
 
 ## User Roles
 
-Unlike fanboys who talk about the product like it's a fancy model of automobile,
-here we focus on its impact on the lives of people who use it.
+Unlike fanboys who talk about products like fancy new features of a Tesla,
+here we focus on <strong>impacts</strong> on the lives of people.
 
 Use <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">this</a> to assign permissions for various Fabric "experiences" (sub-products):
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701057314/fabric-roles-1414x725_an4uxn.png"><img alt="fabric-roles-1414x725.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701057314/fabric-roles-1414x725_an4uxn.png"></a>
+Instead of the traditional generic "Database Administrator" role name:
 
-* Data Steward takes care of backing up logs and data. They establish IAM accounts with limited permissions and arrange for audits.
+* <strong>Data Stewards</strong> take care of backing up logs, transaction/master data. They establish IAM accounts with limited permissions and arrange for audits.
 
-* Data Engineers establish the platform and workflows for data cleaning, loading, and monitoring for governance.
-* Data scientists work on AI models using Data Science tools such as Notebooks written in PySpark for Machine Learning.
+* <strong>Data Engineers</strong> establish the platform and workflows for data cleaning, loading, and monitoring for governance.
+* <strong>Data Scientists</strong> work on AI models using Data Science tools such as Notebooks written in PySpark for Machine Learning.
 
-* Data (Business) Analysts serve the needs of Data Citizens by establishing dashboards and alerts, and training users on technologies and possibilities.
-* Data Citizens are end-users -- business people who need to make decisions and are the ones to take action.
+* <strong>Data (Business) Analysts</strong> serve the needs of Data Citizens by establishing dashboards and alerts, and training users on technologies and possibilities.
+* <strong>Data Citizens</strong> are end-users -- business people who need to make decisions and are the ones to take action.
 <br /><br />
 
 Additional roles:
 
-* Manager
-
-* Solution architects
-* AI engineers
-* Database administrators
+* Solution Architects/Architects
+* AI Engineers/Architects
 * Power BI data analysts
+* ETL developers
+* Information architects
+* DevOps Engineers/Architects
+
+* Managers & Supervisors
+* Executives: CEO, CTO, CMO, CRO, etc.
 <br /><br />
 
 
 ## Fabric Marketing
 
 Fabric was unveiled at Microsoft's Build 2023 conference.
-
 
 1. The marketing homepage for Fabric is:
 
