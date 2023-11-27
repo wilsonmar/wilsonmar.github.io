@@ -38,7 +38,7 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
 
 1. The marketing homepage for Fabric is:
 
-   <a target="_blank" href="https://www.microsoft.com/en-us/microsoft-fabric">https://www.microsoft.com/en-us/microsoft-fabric</a>
+   <a target="_blank" href="https://www.microsoft.com/en-us/microsoft-fabric"><strong>https://www.microsoft.com/en-us/microsoft-fabric</strong></a>
 
    This articles covers keywords on that page:
    <a href="#Capabilities">Capabilities</a> |
@@ -68,11 +68,11 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701041117/fabric-signin-318x367_lf2lqp.png"><img alt="fabric-signin-318x367.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701041117/fabric-signin-318x367_lf2lqp.png"></a>
 
    <a name="HomePage"></a>
-1. REMEMBER: The Microsoft Fabric working home page has Microsoft.com and not Azure:
+1. REMEMBER: The Microsoft <strong>Fabric working home page</strong> has Microsoft.com and not Azure:
 
-   <a target="_blank" href="https://app.fabric.microsoft.com">https://app.fabric.microsoft.com</a>
+   <a target="_blank" href="https://app.fabric.microsoft.com"><strong>https://app.fabric.microsoft.com</strong></a>
 
-   This is because Microsoft intends Fabric to be a service that can exchange data with competing clouds such as AWS and GCP as well as on-prem. data centers (through Microsoft's Arc). It's a "friendamy" strategy. Fabric's capabilities catches up to what <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a> and Databricks have been offering.
+   This is because Microsoft intends Fabric to be a service that can exchange data with competing clouds such as AWS and GCP as well as on-prem. data centers (through Microsoft's Arc). It's a "friendamy" strategy. Fabric is how Microsoft catches up to what <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a> and Databricks have been offering.
 
 1. What I call the "bouncer" page ensures that only <strong>organizational</strong> emails (work or school account) use Fabric. Your personal gmail or outlook.com account is no good here. Wow.
 
@@ -104,7 +104,7 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
 
    1 TB is allocated to OneLake storage.
 
-   64 capacity unit (CU)s allow consumption of 64x60 CU seconds every minute when "experiences" are run. 
+   64 capacity units (CUs) allow consumption of 64x60 CU seconds every minute when "experiences" are run. 
    
    PROTIP: When the capacity consumption exceeds its size, Microsoft slows down the experience similar to slowing down CPU performance.
 
@@ -264,11 +264,13 @@ Query data by using SQL:
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701057314/fabric-roles-1414x725_an4uxn.png"><img alt="fabric-roles-1414x725.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701057314/fabric-roles-1414x725_an4uxn.png"></a>
 
-   * Data Engineers
-   * Data scientists
-   * Data (Business) Analysts
-   * Data Citizen
-   * Data Steward
+   * Data Steward takes care of backups.
+
+   * Data Engineers establish the platform.
+   * Data scientists work on AI models using Data Science tools such as Machine Learning.
+
+   * Data (Business) Analysts serve the needs of Data Citizens.
+   * Data Citizens are end-users -- business people who need to make decisions and are the ones to take action.
    <br /><br />
 
     Other roles mentioned:
@@ -280,7 +282,7 @@ Query data by using SQL:
 
    <a name="Data+Activator"></a>
 
-   <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/8-exercise">Exerise</a>
+   <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/8-exercise">Excerise</a>
 
 1. Click "Data Activator" for its mode tabs at the bottom of the screen: Data mode and Design mode. 
 
