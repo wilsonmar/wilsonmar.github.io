@@ -3,12 +3,13 @@ layout: post
 date: "2023-11-26"
 file: "microsoft-fabric"
 title: "Microsoft Fabric"
-excerpt: "Obtain database skills to pass DP-600 exams"
+excerpt: "Get skilled in the multicloud data handling and analystics and pass the DP-600 exam"
 tags: [cloud, Azure]
 image:
-  feature: https://cloud.githubusercontent.com/assets/300046/18188069/153fbcca-706c-11e6-983d-0783da57f75c.jpg
+# microsoft-fabric-1900x500.png
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1701058121/microsoft-fabric-1900x500_sd6pku.png
   credit: Microsoft Azure
-  creditlink: 
+  creditlink: https://www.softwebsolutions.com/resources/benefits-and-features-of-microsoft-fabric.html
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -24,11 +25,13 @@ comments: true
 
 Microsoft Fabric is a platform that allows users to get, create, share, and visualize data using an array of tools. 
 
-1. The marketing homepage for fabric is
+It was unveiled at Microsoft's Build 2023 conference.
 
-   https://www.microsoft.com/en-us/microsoft-fabric
+1. The marketing homepage for Fabric is:
 
-   This articles covers each topic:
+   <a target="_blank" href="https://www.microsoft.com/en-us/microsoft-fabric">https://www.microsoft.com/en-us/microsoft-fabric</a>
+
+   This articles covers keywords on that page:
    <a href="#Capabilities">Capabilities</a> |
    <a href="#OneLake">OneLake</a> |
    <a href="#Data+Factory">Data Factory</a> |
@@ -230,7 +233,7 @@ Query data by using SQL
    <br /><br />
 
 
-### Product Components
+### Product Component "Experiences"
 
 1. Click the Microsoft Fabric icon at the bottom of the screen for a list of product components (without the vague marketing generalizations):
 
@@ -239,10 +242,22 @@ Query data by using SQL
    Notice that there is a group of <strong>Synapse brand</strong> data products with blue icons.
    Synapse is on Azure as a Platform-as-a-Service (PaaS)
 
-   The <strong>Fabric engine</strong> is an upgrade from separate systems used by data engineers, data scientists, and business analysts. 
+   ### Fabric Roles & Permissions
+
+   The <strong>Fabric engine</strong> is an upgrade from separate systems used by separate roles of people.
    So there is a lot of copying of data from one engine to another<a target="_blank" href="https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-explained-for-existing-synapse-users?ft=Synapse:category">:</a>
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701048036/ADLSg2-lakehouse-864x291_d8wv2o.png"><img alt="ADLSg2-lakehouse-864x291.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701048036/ADLSg2-lakehouse-864x291_d8wv2o.png"></a>
+   
+   Use <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">this</a> to assign permissions for various Fabric "experiences" (sub-products):
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701057314/fabric-roles-1414x725_an4uxn.png"><img alt="fabric-roles-1414x725.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701057314/fabric-roles-1414x725_an4uxn.png"></a>
+
+      * Data Engineers
+      * Data scientists
+      * Data (Business) Analysts
+      * Data Citizen
+      <br /><br />
 
    PROTIP: I created this diagram to describe the components of Fabric. Click to see the full-size image:
 
@@ -251,7 +266,7 @@ Query data by using SQL
    At the bottom is storage. "<a target="_blank" href="https://learn.microsoft.com/fabric/onelake/onelake-overview">One Lake</a>" is the branding for storage built on top of Azure Data Lake Storage Gen2 (ADLSg2) lakehouse that combines storage locations across different regions and clouds into a single logical lake, without moving or duplicating data (DirectLake mode).
 
 
-   ### Delta Format
+   ### Delta (Parquet) Format
 
    The key enabler (for Microsoft as well as Snowflake and Databricks DeltaLake) is the <strong>Delta format</strong> (generically called "Parquet" format) that enables ACID transactions on "unstructured" data in data lakes.
 
@@ -260,33 +275,34 @@ Query data by using SQL
 
    ### Workflow with Fabric 
 
+Microsoft Fabric offers a centralized storage solution, eliminating data fragmentation and promoting data integrity. 
+
    Fabric aims to eliminate silos and remove data duplication by providing a single platform for <strong>collaboration</strong> among data engineers, data scientists, and business analysts. The <a target="_blank" href="https://learn.microsoft.com/fabric/data-engineering/tutorial-lakehouse-introduction">flow</a> is:
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701049746/fabric-flow-842x516_bcpj9q.jpg"><img alt="fabric-flow-842x516.jpeg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701049746/fabric-flow-842x516_bcpj9q.jpg"></a>
 
    <a target="_blank" href="https://justb.dk/blog/2023/11/fabric-data-lakehouse-understanding-the-dataflow/">This article</a> describes the flow in detail.
 
-   1. Create a <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/get-started/workspaces">Fabric workspace</a>.
-   1. <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/data-engineering/tutorial-lakehouse-get-started">Create a lakehouse</a> using PowerBI. There's no limit on the number of workspaces or items you can create within your capacity.
+1. Create a <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/get-started/workspaces">Fabric workspace</a>.
+1. <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/data-engineering/tutorial-lakehouse-get-started">Create a lakehouse</a> using PowerBI. There's no limit on the number of workspaces or items you can create within your capacity.
 
-   1. DATA SOURCE: Obtain data in a variety of formats from a variety of sources.
+1. DATA SOURCE: Obtain data in a variety of formats from a variety of sources.
 
-      The end-to-end example is built using <a target="_blank" href="https://learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true">Microsoft's Wide World Importers (WWI) sample data</a>:
+   The end-to-end example is built using <a target="_blank" href="https://learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true">Microsoft's Wide World Importers (WWI) sample data</a>:
 
-   1. INGEST: 
+1. INGEST: 
 
-   1. TRANSFORM & STORE: transform data, and load it into the lakehouse. You can also explore the OneLake, one copy of your data across lakehouse mode and SQL analytics endpoint mode.
+1. TRANSFORM & STORE: transform data, and load it into the lakehouse. You can also explore the OneLake, one copy of your data across lakehouse mode and SQL analytics endpoint mode.
 
-      A major innovation with lakehouses instead of data warehouse is that instead of traditional transform before load (ETL), it's load then transform (ELT).
+   A major innovation with lakehouses instead of data warehouse is that instead of traditional transform before load (ETL), it's load then transform (ELT).
 
-   1. SERVE: Connect to the lakehouse's SQL analytics endpoint to create a Power BI report using DirectLake -- to analyze sales data across different dimensions.
+1. SERVE: Connect to the lakehouse's SQL analytics endpoint to create a Power BI report using DirectLake -- to analyze sales data across different dimensions.
 
-   1. CONSUME: Connect to the lakehouse's SQL analytics endpoint to create a Power BI report using DirectLake -- to analyze sales data across different dimensions.
-   
-   1. Optionally, orchestrate and schedule data ingestion and transformation flow with a pipeline.
-   <br /><br />
+1. CONSUME: Connect to the lakehouse's SQL analytics endpoint to create a Power BI report using DirectLake -- to analyze sales data across different dimensions.
 
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/">Use Data Factory pipelines in Microsoft Fabric</a>
-   <br /><br />
+1. Optionally, orchestrate and schedule data ingestion and transformation flow with a pipeline.
+<br /><br />
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/">Use Data Factory pipelines in Microsoft Fabric</a>
 
    Learn more:
 
