@@ -3,7 +3,7 @@ layout: post
 date: "2023-11-26"
 file: "microsoft-fabric"
 title: "Microsoft Fabric"
-excerpt: "Get skilled in the multicloud data handling and analystics and pass the DP-600 exam"
+excerpt: "Get skilled in multicloud data handling and analystics to pass the DP-600 exam"
 tags: [cloud, Azure]
 image:
 # microsoft-fabric-1900x500.png
@@ -52,6 +52,7 @@ It was unveiled at Microsoft's Build 2023 conference.
    Let's dive into the portal to work with Microsoft Fabric:
 
 1. PROTIP: In an internet browser (Safari, Google Chrome, etc.) I click the icon next to the browser's three-dot menu to use a <strong>browser profile</strong> that retains the browser history for the <strong>work (organizational) account</strong> I need to use with Fabric.
+
    <a name="AdminMenu"></a>
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701041117/fabric-signin-318x367_lf2lqp.png"><img alt="fabric-signin-318x367.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701041117/fabric-signin-318x367_lf2lqp.png"></a>
 
@@ -126,12 +127,16 @@ It was unveiled at Microsoft's Build 2023 conference.
 
    * https://aka.ms/Fabric-Hero-Blog-Ignite23
 
+Semantics relates to the study of references, specifically describing the real meaning between symbols or words. 
+
+A semantic model or semantic data model is a high-level databases. An SDM specification describes a database in terms of the kinds of entities that exist in the application environment, the classifications and groupings of those entities, and the structural interconnections among them.
+
 
 <a name="DP-600"></a>
 
 ## DP-600 Fabric Analytic Engineer Associate
 
-Microsoft's $165 <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/fabric-analytics-engineer-associate/">DP-600 Fabric Analytic Engineer Associate exam page</a> provides free tutorials.
+Microsoft's $165 <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/fabric-analytics-engineer-associate/">DP-600 Fabric Analytic Engineer Associate exam page</a> (available in January 2024) provides free tutorials.
 <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-600">Study Guide</a>
 
 <strong>Plan, implement, and manage a solution for data analytics (10–15%)</strong>
@@ -170,7 +175,7 @@ Create objects in a lakehouse or warehouse:
    * Enrich data by adding new columns or tables
    <br /><br />
 
-Copy data
+Copy data:
    * Choose an appropriate method for copying data from a Fabric data source to a lakehouse or warehouse
    * Copy data by using a data pipeline, dataflow, or notebook
    * Add stored procedures, notebooks, and dataflows to a data pipeline
@@ -178,7 +183,7 @@ Copy data
    * Schedule dataflows and notebooks
    <br /><br />
 
-Transform data
+Transform data:
    * Implement a data cleansing process
    * Implement a star schema for a lakehouse or warehouse, including Type 1 and Type 2 slowly changing dimensions
    * Implement bridge tables for a lakehouse or a warehouse
@@ -190,7 +195,7 @@ Transform data
    * Filter data
    <br /><br />
 
-Optimize performance
+Optimize performance:
    * Identify and resolve data loading performance bottlenecks in dataflows, notebooks, and SQL queries
    * Implement performance improvements in dataflows, notebooks, and SQL queries
    * Identify and resolve issues with Delta table file sizes
@@ -198,7 +203,7 @@ Optimize performance
 
 <strong>Implement and manage semantic models (20–25%)</strong>
 
-Design and build semantic models
+Design and build semantic models:
    * Choose a storage mode, including Direct Lake
    * Identify use cases for DAX Studio and Tabular Editor 2
    * Implement a star schema for a semantic model
@@ -211,7 +216,7 @@ Design and build semantic models
    * Validate row-level security and object-level security
    <br /><br />
 
-Optimize enterprise-scale semantic models
+Optimize enterprise-scale semantic models:
    * Implement performance improvements in queries and report visuals
    * Improve DAX performance by using DAX Studio
    * Optimize a semantic model by using Tabular Editor 2
@@ -220,13 +225,13 @@ Optimize enterprise-scale semantic models
 
 <strong>Explore and analyze data (20–25%)</strong>
 
-Perform exploratory analytics
+Perform exploratory analytics:
    * Implement descriptive and diagnostic analytics
    * Integrate prescriptive and predictive analytics into a visual or report
    * Profile data
    <br /><br />
 
-Query data by using SQL
+Query data by using SQL:
    * Query a lakehouse in Fabric by using SQL queries or the visual query editor
    * Query a warehouse in Fabric by using SQL queries or the visual query editor
    * Connect to and query datasets by using the XMLA endpoint
@@ -248,13 +253,45 @@ Query data by using SQL
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701057314/fabric-roles-1414x725_an4uxn.png"><img alt="fabric-roles-1414x725.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701057314/fabric-roles-1414x725_an4uxn.png"></a>
 
-      * Data Engineers
-      * Data scientists
-      * Data (Business) Analysts
-      * Data Citizen
-      <br /><br />
+   * Data Engineers
+   * Data scientists
+   * Data (Business) Analysts
+   * Data Citizen
+   * Data Steward
+   <br /><br />
 
-   PROTIP: <strong>Data Activator</strong>, if it works as intended, will the real game changer to enable <strong>Data Citizens</strong> who find Power BI is too complex to use. More importantly, Activator aims to <strong>take action</strong> based on data rather than merely displaying pretty charts and reports. Here's where machines (AI or not) can replace human workers.
+    Other roles mentioned:
+   * Solution architects
+   * AI engineers
+   * Database administrators
+   * Power BI data analysts
+   <br /><br />
+
+   <a name="Data+Activator"></a>
+
+   <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/8-exercise">Exerise</a>
+
+1. Click "Data Activator" for its mode tabs at the bottom of the screen: Data mode and Design mode. 
+
+   * Click Data mode to inspect the fresh data and link it to specific objects. 
+   * Click Design mode to develop triggers based on these objects. 
+   <br /><br />
+
+   PROTIP: <strong>Data Activator</strong>, if it works as intended, will the real game changer to enable <strong>Data Citizens</strong> who find Power BI is too complex to use. The payoff is not just that Microsoft Fabric "seamlessly" integrates with Microsoft 365, facilitating collaboration and enabling ad hoc analysis within familiar Microsoft 365 applications. More importantly, Activator aims to <strong>take action</strong> based on data rather than merely displaying pretty charts and reports. Here's where machines (AI or not) can replace human workers.
+
+   Consider the following three scenarios:
+
+   * A network administrator detects potential security breaches through real-time monitoring and initiates immediate protective actions.
+
+   * A warehouse manager needs to detect drops in product stocks and needs to start a reorder process to prevent running out of stock.
+
+   * A sales associate needs to receive alerts when a potential client is visiting their website and offers to start a live chat with them.
+
+   Data Activator initiate actions based on <strong>Reflex items</strong>, each containing all the details to connect to data sources, monitor conditions. A Reflex is typically setup for each business segment or process monitored.
+
+
+
+   Copilot, an AI-powered assistant assist users in tasks like generating SQL statements, creating reports and setting up automated workflows based on triggers. By leveraging AI capabilities, Copilot streamlines and automates data-related tasks, enabling users to work more efficiently and derive actionable insights from their data.
 
    The <strong>Fabric engine</strong> is an upgrade from separate systems used by separate roles of people.
    So there is a lot of copying of data from one engine to another<a target="_blank" href="https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-explained-for-existing-synapse-users?ft=Synapse:category">:</a>
@@ -306,6 +343,7 @@ Microsoft Fabric offers a centralized storage solution, eliminating data fragmen
 <br /><br />
 
 * <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/">Use Data Factory pipelines in Microsoft Fabric</a>
+<br /><br />
 
    Learn more:
 
@@ -329,19 +367,12 @@ Microsoft Fabric offers a centralized storage solution, eliminating data fragmen
 1. Data Factory: data integration <strong>pipelines</strong> to copy data and orchestrate data processing, combining Power Query. or Dataflows (Gen2) to Import and transform data from a range of sources using Power Query Online, and load it directly into a table in the lakehouse.
 
    * https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/
+   <br /><br />
 
 1. Power BI: business intelligence for translating data to decisions. Power BI administrators are now <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/admin/microsoft-fabric-admin">Fabric administrators</a>.
 
 1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/">Data Activator</a>: "Insight to action" takes action based on what's happening in your data. 
    * https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/
-
-      Consider the following three scenarios:
-
-      * A network administrator detects potential security breaches through real-time monitoring and initiates immediate protective actions.
-
-      * A warehouse manager needs to detect drops in product stocks and needs to start a reorder process to prevent running out of stock.
-
-      * A sales associate needs to receive alerts when a potential client is visiting their website and offers to start a live chat with them.
 
 * Introduction to end-to-end analytics using Microsoft Fabric - better collaboration between data engineers, data scientists, and business analysts. An analytical store that combines the file storage flexibility of a data lake with the T-SQL-based query capabilities of a data warehouse.
    * https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial
