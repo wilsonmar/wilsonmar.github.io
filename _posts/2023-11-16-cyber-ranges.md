@@ -120,7 +120,9 @@ D. <strong>Multicloud</strong> with <strong>Hybrid Cloud as a Service</strong> t
    </ul>
 
    * <a target="_blank" href="https://aws.amazon.com/outposts/">AWS Outpost</a> is fully managed by AWS, purchased directly from AWS.
+
    * <a target="_blank" href="https://azure.microsoft.com/en-us/services/azure-stack/">Azure Stack Hub</a>, using apps built for multicloud using <a target="_blank" href="https://azure.microsoft.com/en-us/services/azure-arc/">Azure Arc</a>, are available from Microosft partners offering professional-level support.
+   
    * <a target="_blank" href="https://cloud.google.com/anthos">Google Anthros</a> is based on Kubernetes. Also runs on AWS or Azure.
    
    * VMware vCloud
@@ -185,6 +187,8 @@ To enable disk encryption, use BitLocker on Windows General Settings.
 Existing <a target="_blank" href="https://www.wikiwand.com/en/Cyber_range">Cyber Ranges</a>
 
    * <a target="_blank" href="https://www.eccouncil.org/programs/cyber-range/">EC-Council's iLabs CEH</a> costs $200 for 40 hours. Recommended by Bushmiller.
+
+   * For $100/year, Cisco Virtual Internet Routing Lab (VIRL) is a network design and simulation environment that includes a GNS3 VM, VIRL Server, and a set of Cisco IOS virtual machines. VIRL allows you to create virtual network topologies using virtual networking devices such as Cisco routers and switches. You can use VIRL to create a virtual network and run different operating systems such as IOS, IOS-XE, IOS-XR, and NX-OS in the virtual devices. You can also use VIRL to create a virtual network and run different operating systems such as IOS, IOS-XE, IOS-XR, and NX-OS in the virtual devices. 
 
    * GNS3 (Graphical Network Simulator-3) is the name of a hosted service providing a tool to simulate complex networks (Cisco IOS). Pros use it to experiment features of Cisco IOS or to check configurations and test before implementationtha on real routers. First released in 2008, it runs on traditional PC hardware but may be used on Windows, Linux, and macOS. Use it to prepare for certification exams such as Cisco CCNA, CCNP, CCIP, CCSP, CCVP, CCIE, Juniper JNCIA, JNCIS and JNCIE. It is also used by network engineers to test network designs for Cisco CCIE certification. It is also used to experiment with network behavior. It is also used to provide complex virtual networks to students preparing for certification exams from Cisco Systems, Juniper Networks, Alcatel-Lucent, Check Point, Palo Alto Networks, F5 Networks, and others.
 

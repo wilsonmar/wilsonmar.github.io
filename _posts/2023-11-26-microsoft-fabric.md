@@ -29,18 +29,47 @@ PROTIP: The array of tools is shown in this diagram I adapted from Microsoft. Al
 We'll reference this throughout this article.
 
 <a name="Diagram"></a>
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701092170/microsoft-fabric-1688x994_gd4pm2.png"><img alt="microsoft-fabric-1688x994.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701092170/microsoft-fabric-1688x994_gd4pm2.png"><br />Click to see the full-size image</a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701092170/microsoft-fabric-1688x994_gd4pm2.png"><img alt="microsoft-fabric-1688x994.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701092170/microsoft-fabric-1688x994_gd4pm2.png"><br /><em>Click for full-size image</em></a>.
+
+## User Roles
+
+Unlike fanboys who talk about the product like it's a fancy model of automobile,
+here we focus on its impact on the lives of people who use it.
+
+Use <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">this</a> to assign permissions for various Fabric "experiences" (sub-products):
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701057314/fabric-roles-1414x725_an4uxn.png"><img alt="fabric-roles-1414x725.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701057314/fabric-roles-1414x725_an4uxn.png"></a>
+
+* Data Steward takes care of backing up logs and data. They establish IAM accounts with limited permissions and arrange for audits.
+
+* Data Engineers establish the platform and workflows for data cleaning, loading, and monitoring for governance.
+* Data scientists work on AI models using Data Science tools such as Notebooks written in PySpark for Machine Learning.
+
+* Data (Business) Analysts serve the needs of Data Citizens by establishing dashboards and alerts, and training users on technologies and possibilities.
+* Data Citizens are end-users -- business people who need to make decisions and are the ones to take action.
+<br /><br />
+
+Additional roles:
+
+* Manager
+
+* Solution architects
+* AI engineers
+* Database administrators
+* Power BI data analysts
+<br /><br />
 
 
 ## Fabric Marketing
 
 Fabric was unveiled at Microsoft's Build 2023 conference.
 
+
 1. The marketing homepage for Fabric is:
 
    <a target="_blank" href="https://www.microsoft.com/en-us/microsoft-fabric"><strong>https://www.microsoft.com/en-us/microsoft-fabric</strong></a>
 
-   This articles covers keywords on that page:
+   This article covers keywords on that page:
    <a href="#Capabilities">Capabilities</a> |
    <a href="#OneLake">OneLake</a> |
    <a href="#Data+Factory">Data Factory</a> |
@@ -74,15 +103,43 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
 
    This is because Microsoft intends Fabric to be a service that can exchange data with competing clouds such as AWS and GCP as well as on-prem. data centers (through Microsoft's Arc). It's a "friendamy" strategy. Fabric is how Microsoft catches up to what <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a> and Databricks have been offering.
 
-1. What I call the "bouncer" page ensures that only <strong>organizational</strong> emails (work or school account) use Fabric. Your personal gmail or outlook.com account is no good here. Wow.
+1. You'll see what I call the "bouncer" page ensures that only <strong>organizational</strong> emails (work or school account) use Fabric. Your personal gmail or outlook.com account is no good here. Wow.
 
    REMEMBER: You must setup Azure subscriptions using your work or school account, not your personal account.
 
    This is why you setup different browser profiles for different accounts. Click the profile icon at the top right of the browser window to switch between profiles.
 
+   If you have a license, you'll see the fabric-landing-711x400.jpeg landing page, which lists the Fabric components you have access to.
+
 1. Click the big round gray icon at the upper side of the Fabric page for the <a href="#AdminMenu">Admin/Sign In menu above</a>.
 
-   
+
+   ### User Communities
+
+1. Get a Microsoft Tech Community ID at <a target="_blank" href="https://techcommunity.microsoft.com/">https://techcommunity.microsoft.com</a>
+
+   https://community.fabric.microsoft.com/
+
+   https://powerusers.microsoft.com/
+
+   Azure Data Community at
+   https://www.microsoft.com/en-us/sql-server/community?activetab=pivot:sqlservertab
+   has several sub-commmunity pages.
+
+   https://www.meetup.com/pro/azuretechgroups/ managed according to 
+   https://developer.microsoft.com/en-us/azure-tech-groups/
+
+   Azure Data Tech Groups at
+   https://www.meetup.com/pro/azuredatatechgroups/
+   https://www.microsoft.com/en-us/sql-server/community?activetab=pivot:sqlservertab
+
+   https://passdatacommunitysummit.com (Nov 14-17 2023 Seattle)
+
+   Outside of Microsoft:
+
+   https://live360events.com/Events/Orlando-2023/Home.aspx
+
+
    ### Trial
 
 1. Click the green <strong>Start trial</strong> box.
@@ -258,27 +315,8 @@ Query data by using SQL:
    Notice that there is a group of <strong>Synapse brand</strong> data products with blue icons.
    Synapse is on Azure as a Platform-as-a-Service (PaaS)
 
-   ### Fabric Roles & Permissions
 
-   Use <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">this</a> to assign permissions for various Fabric "experiences" (sub-products):
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701057314/fabric-roles-1414x725_an4uxn.png"><img alt="fabric-roles-1414x725.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701057314/fabric-roles-1414x725_an4uxn.png"></a>
-
-   * Data Steward takes care of backups.
-
-   * Data Engineers establish the platform.
-   * Data scientists work on AI models using Data Science tools such as Machine Learning.
-
-   * Data (Business) Analysts serve the needs of Data Citizens.
-   * Data Citizens are end-users -- business people who need to make decisions and are the ones to take action.
-   <br /><br />
-
-    Other roles mentioned:
-   * Solution architects
-   * AI engineers
-   * Database administrators
-   * Power BI data analysts
-   <br /><br />
+   ### Data Activator
 
    <a name="Data+Activator"></a>
 
