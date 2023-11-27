@@ -244,11 +244,6 @@ Query data by using SQL
 
    ### Fabric Roles & Permissions
 
-   The <strong>Fabric engine</strong> is an upgrade from separate systems used by separate roles of people.
-   So there is a lot of copying of data from one engine to another<a target="_blank" href="https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-explained-for-existing-synapse-users?ft=Synapse:category">:</a>
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701048036/ADLSg2-lakehouse-864x291_d8wv2o.png"><img alt="ADLSg2-lakehouse-864x291.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701048036/ADLSg2-lakehouse-864x291_d8wv2o.png"></a>
-   
    Use <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">this</a> to assign permissions for various Fabric "experiences" (sub-products):
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701057314/fabric-roles-1414x725_an4uxn.png"><img alt="fabric-roles-1414x725.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701057314/fabric-roles-1414x725_an4uxn.png"></a>
@@ -258,6 +253,14 @@ Query data by using SQL
       * Data (Business) Analysts
       * Data Citizen
       <br /><br />
+
+   PROTIP: <strong>Data Activator</strong>, if it works as intended, will the real game changer to enable <strong>Data Citizens</strong> who find Power BI is too complex to use. More importantly, Activator aims to <strong>take action</strong> based on data rather than merely displaying pretty charts and reports. Here's where machines (AI or not) can replace human workers.
+
+   The <strong>Fabric engine</strong> is an upgrade from separate systems used by separate roles of people.
+   So there is a lot of copying of data from one engine to another<a target="_blank" href="https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-explained-for-existing-synapse-users?ft=Synapse:category">:</a>
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701048036/ADLSg2-lakehouse-864x291_d8wv2o.png"><img alt="ADLSg2-lakehouse-864x291.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701048036/ADLSg2-lakehouse-864x291_d8wv2o.png"></a>
+   
 
    PROTIP: I created this diagram to describe the components of Fabric. Click to see the full-size image:
 
