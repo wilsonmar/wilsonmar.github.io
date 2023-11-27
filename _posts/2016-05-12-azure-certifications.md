@@ -59,7 +59,7 @@ NOTE: Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/cr
    * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-300">DP-300 Azure Database Administrator Associate</a>
    * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-420">DP-420 Azure Cosmos DB Developer Specialty</a>
    * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-500">DP-500 Azure Enterprise Data Analyst Associate</a>
-   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-600">DP-600 Fabric Analytic Engineer Associate</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/microsoft-fabric/">DP-600 Fabric Analytic Engineer Associate</a>
    </td></tr>
 
 <tr valign="top"><td> <a href="#Power_Platform">Power Platform</a> </td><td>
@@ -565,7 +565,8 @@ Susanth Sutheesh
 
 ### Sample tests:
 
-* https://www.whizlabs.com/microsoft-azure-certification-az-104/
+   * https://www.whizlabs.com/microsoft-azure-certification-az-104/
+   <br /><br />
 
 1. Take a Practice Test (from MeasureUp) that feels just like the actual test, if you are enrolled in <a target="_blank" href="https://esi.microsoft.com/getcertification">Microsoft's Enterprise Skills Initiative</a>.
 
