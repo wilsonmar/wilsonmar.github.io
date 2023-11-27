@@ -23,6 +23,9 @@ This are my notes to study for specific data-related <a href="https://wilsonmar.
    * <a href="#DP-100">DP-100: Azure Data Scientist Associate</a>
    * <a href="#DP-203">DP-203: Azure Data Engineer Associate</a> (replaces DP-200 & DP-201)
    * <a href="#DP-300">DP-300: Azure Database Administrator Associate</a>
+   * <a href="#DP-420">DP-420: Azure Cosmos DB Developer Specialty</a>
+   * <a href="#DP-500">DP-500: Azure Enterprise Data Analyst Associate</a>
+   * <a href="#DP-600">DP-600: Fabric Analytic Engineer Associate</a>
    <br /><br />
 
 {% include whatever.html %}
@@ -118,9 +121,6 @@ Others:
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/dp-601t00?resource_type=course&products=azure&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks">
 1-day course DP-601T00---A: Implementing a Lakehouse with Microsoft Fabric</a>
-
-<a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/dp-420t00?resource_type=course&products=azure&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks">
-4-day course DP-420T00--A: Designing and Implementing Cloud-Native Applications Using Microsoft Azure Cosmos DB</a>
 
 
 <hr />
@@ -365,7 +365,7 @@ To be an <a target="_blank" href="https://docs.azure.com/en-us/learn/certificati
 The <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/dp-300t00?resource_type=course&products=azure&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks">
 4-day course DP-300T00--A: Administering Microsoft Azure SQL Solutions</a>
 references (free) lab instructions in English at
-<a target="_blank" ref="https://aka.ms/dp300labs/">aka.ms/dp300labs</a> = https://microsoftlearning.github.io/dp-300-database-administrator/.
+<a target="_blank" href="https://aka.ms/dp300labs/">aka.ms/dp300labs</a> = https://microsoftlearning.github.io/dp-300-database-administrator/.
 Modules and Exercise:
 * Setup your own environment
 Plan and Implement Data Platform Resources	
@@ -414,6 +414,296 @@ References:
 
    * Perform administration by using T-SQL
    <br /><br />
+
+<hr />
+
+## DP-420: Azure Cosmos DB Developer Associate
+
+To pass <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/azure-cosmos-db-developer-specialty/">
+Azure Cosmos DB Developer Associate</a>, pass the single <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-420">DP-420 exam</a>.
+
+The <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/dp-420t00?resource_type=course&products=azure&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks">
+$1599 4-day course DP-420T00--A: Designing and Implementing Cloud-Native Applications Using Microsoft Azure Cosmos DB</a>
+references <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/">these labs</a>
+formatted from <a target="_blank" href="https://github.com/MicrosoftLearning/dp-420-cosmos-db-dev">these files</a>.
+
+To setup:
+   * Create lab resource group
+   * Setup lab environment
+   * Enable resource providers
+Module 1 - Create an Azure Cosmos DB for NoSQL account<br />
+Module 2 - Plan and implement Azure Cosmos DB for NoSQL:	
+   * Configure throughput for Azure Cosmos DB For NoSQL with the Azure portal
+   * Migrate existing data using Azure Data Factory
+Module 3 - Connect to Azure Cosmos DB for NoSQL with the SDK:
+   * Connect to Azure Cosmos DB for NoSQL with the SDK
+   * Configure the Azure Cosmos DB for NoSQL SDK for offline development
+Module 4 - Access and manage data with the Azure Cosmos DB for NoSQL SDKs:
+   * Create and update documents with the Azure Cosmos DB for NoSQL SDK
+   * Batch multiple point operations together with the Azure Cosmos DB for NoSQL SDK
+   * Move multiple documents in bulk with the Azure Cosmos DB for NoSQL SDK
+Module 5 - Execute queries in Azure Cosmos DB for NoSQL:
+   * Execute a query with the Azure Cosmos DB for NoSQL SDK
+   * Paginate cross-product query results with the Azure Cosmos DB for NoSQL SDK
+Module 6 - Define and implement an indexing strategy for Azure Cosmos DB for NoSQL:
+   * Review the default index policy for an Azure Cosmos DB for NoSQL container with the portal
+   * Review the default index policy for an Azure Cosmos DB for NoSQL container with the portal
+Module 7 - Integrate Azure Cosmos DB for NoSQL with Azure services:
+   * Process change feed events using the Azure Cosmos DB for NoSQL SDK
+   * Process Azure Cosmos DB for NoSQL data using Azure Functions
+   * Search data using Azure Cognitive Search and Azure Cosmos DB for NoSQL
+Module 8 - Implement a data modeling and partitioning strategy for Azure Cosmos DB for NoSQL:
+   * Measure performance for customer entities
+   * Cost of denormalizing data and aggregates and using the change feed for referential integrity
+Module 9 - Design and implement a replication strategy for Azure Cosmos DB for NoSQL:
+   * Connect to different regions with the Azure Cosmos DB for NoSQL SDK
+   * Configure consistency models in the portal and the Azure Cosmos DB for NoSQL SDK
+   * Connect to a multi-region write account with the Azure Cosmos DB for NoSQL SDK
+Module 10 - Optimize query and operation performance in Azure Cosmos DB for NoSQL:
+   * Optimize an Azure Cosmos DB for NoSQL container’s indexing policy for common operations
+   * Optimize an Azure Cosmos DB for NoSQL container’s index policy for a specific query
+Module 11 - Monitor and troubleshoot an Azure Cosmos DB for NoSQL solution:
+   * Use Azure Monitor to analyze an Azure Cosmos DB for NoSQL account
+   * Troubleshoot an application using the Azure Cosmos DB for NoSQL SDK
+   * Store Azure Cosmos DB for NoSQL account keys in Azure Key Vault
+Module 12 - Manage an Azure Cosmos DB for NoSQL solution using DevOps practices:
+   * Adjust provisioned throughput using an Azure CLI script
+   * Create an Azure Cosmos DB for NoSQL container using Azure Resource Manager templates
+Module 13 - Create server-side programming constructs in Azure Cosmos DB for NoSQL:
+   * Create a stored procedure with the Azure portal
+   * Implement and then use user-defined functions with the SDK
+   <br /><br />
+
+<hr />
+
+<a name="DP-500"></a>
+
+Microsoft's $165 <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/azure-enterprise-data-analyst-associate/">DP-500 Azure Enterprise Data Analyst Associate exam page</a> provides free tutorials to get advanced Power BI skills, including managing data repositories and data processing in the cloud and on-premises, along with using Power Query and Data Analysis Expressions (DAX). You should also be proficient in consuming data from Azure Synapse Analytics and should have experience querying relational databases, analyzing data by using Transact-SQL (T-SQL), and visualizing data.
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-500">Study Guide</a>:
+
+The <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/dp-500t00?resource_type=course&products=azure&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks">
+4-day course DP-500T00--A:</a> references (free) <a target="_blank" href="https://microsoftlearning.github.io/DP-500-Azure-Data-Analyst/">labs</a> using <a target="_blank" href="https://github.com/MicrosoftLearning/DP-500-Azure-Data-Analyst/">these files</a>.
+
+* Setup your own environment on Windows 11: 
+   * Microsoft Edge
+   * Git
+   * <a target="_blank" href="https://aka.ms/ssmsfullsetup">SQL Server Management Studio</a>
+   * <a target="_blank" href="https://www.microsoft.com/download/details.aspx?id=58494">Power BI Desktop (April 2023)</a>
+   * <a target="_blank" href="https://www.microsoft.com/download/details.aspx?id=58158">Power BI Report Builder</a>
+* Model, query, and explore data in Azure Synapse
+   * Query files using a serverless SQL pool
+   * Analyze data in a data lake with Spark
+   * Explore a relational data warehouse
+* Prepare data for tabular models in Power BI	
+   * Create a star schema model
+   * Create a dataflow
+* Design and build tabular models  
+   * Work with model relationships
+   * Create calculation groups
+   * Create a composite model
+   * Enforce model security
+* Optimize enterprise-scale tabular models:
+   * Improve performance with hybrid tables
+   * Improve query performance with dual storage mode
+   * Improve query performance with aggregations
+   * Use tools to optimize Power BI performance
+* Implement advanced data visualization techniques by using Power BI:
+   * Monitor data in real time
+* Manage the analytics development lifecycle:
+   * Create reusable Power BI assets
+
+
+<hr />
+
+<a name="DP-600"></a>
+
+## DP-600 Fabric Analytic Engineer Associate
+
+Microsoft Fabric is a platform that allows users to get, create, share, and visualize data using an array of tools. 
+
+1. The marketing homepage for fabric is
+
+   https://www.microsoft.com/en-us/microsoft-fabric
+
+   This articles covers each topic:
+   Capabilities |
+   OneLake |
+   Data Factory |
+   Synapse |
+   Data Activator |
+   <a target="_blank" href="https://guidedtour.microsoft.com/en-US/guidedtour/power-platform/power-bi-and-modern-workplace/1/1">Power BI</a> |
+   <a target="_blank" href="https://powerbi.microsoft.com/en-us/blog/empower-power-bi-users-with-microsoft-fabric-and-copilot/">Copilot</a>
+
+   Let's dive into the portal to work with Microsoft Fabric:
+
+1. PROTIP: In an internet browser (Safari, Google Chrome, etc.) I click the icon next to the browser's three-dot menu to use a <strong>browser profile</strong> that retains the browser history for the <strong>work (organizational) account</strong> I need to use with Fabric.
+   <a name="AdminMenu"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701041117/fabric-signin-318x367_lf2lqp.png"><img align="right" width="200" alt="fabric-signin-318x367.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701041117/fabric-signin-318x367_lf2lqp.png"></a>
+
+   <a name="HomePage"></a>
+1. REMEMBER: The Microsoft Fabric home page host name is Microsoft and not Azure:
+
+   <a target="_blank" href="https://app.fabric.microsoft.com">https://app.fabric.microsoft.com</a>
+
+   This is because Microsoft intends Fabric to be a service that can reach out to competing clouds such as AWS and GCP as well as on-prem. data centers through their Arc offering. Fabric's capabilities catches up to what <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a> and Databricks have been offering.
+
+1. What I call the "bouncer" page ensures that only <strong>organizational</strong> emails (work or school account) use Fabric. Your personal gmail or outlook.com account is no good here. Wow.
+
+   PROTIP: This means that you must setup Azure subscriptions using your work or school account, not your personal account.
+
+   PROTIP: Setup different browser profiles for different accounts. Click the profile icon at the top right of the browser window to switch between profiles.
+
+1. Click the big round gray icon at the upper side of the Fabric page for the <a href="#AdminMenu">Admin/Sign In menu above</a>.
+
+   ### Trial
+
+1. Click the green <strong>Start trial</strong> box.
+
+   Notice the word "capacity" instead of "instances" because Fabric is a <strong>serverless</strong> service.
+
+1. Click "Start trial" to start a 30-day trial. 
+
+   PROTIP: In your Calendar, add a reminder to cancel the trial before the 30 days are up.
+   
+   The trial is for the <strong>Pro</strong> tier, which is the middle tier. The <strong>Premium</strong> tier is the top tier.
+
+   We'll come back to the "Learn more" link at: https://go.microsoft.com/fwlink/?linkid=2227617  which expands to
+   
+   https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial
+
+1. Select your Country (for data sovereignty) and Phone number (for SMS text verification).
+1. Click <strong>Start my new trial</strong>.
+1. Click <a href="#HomePage">"Fabric Home Page"</a> which takes you back to
+
+   https://app.fabric.microsoft.com/home?experience=fabric
+
+
+   ### Learning sites
+
+1. Click the <strong>Admin</strong> icon at the top right of the page to see the number of days remaining in the trial.
+
+1. PROTIP: Instead of clicking this <strong>Learn more</strong> link for the "Get started" tutorial, copy the URL and switch to your personal browser profile so you get points for learning,
+
+   This article contains information from the following sources:
+
+   * https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/azure-data-fundamentals-explore-data-warehouse-analytics/">Microsoft Documentation for Microsoft Fabric</a>
+
+   * Microsoft's $165 <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/fabric-analytics-engineer-associate/">DP-600 Fabric Analytic Engineer Associate exam page</a> provides free tutorials.
+
+   No course & lab files yet.
+
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-600">Study Guide</a>
+
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/collections/w2gkhrkzzmym?WT.mc_id=cloudskillschallenge_a68d938a-58b7-403e-89f2-b2305edb7c41">Microsoft Ignite: Microsoft Fabric Skills Challenge</a>
+
+   * https://aka.ms/Fabric-Hero-Blog-Ignite23
+
+
+   ### Product Components
+
+1. Click the Microsoft Fabic icon at the bottom of the screen for a list of product components without the vague marketing generalizations:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701046058/fabric-menu-624x584_de9vj1.png"><img alt="fabric-menu-624x584.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701046058/fabric-menu-624x584_de9vj1.png"></a>
+
+   Notice that there is a group of <strong>Synapse brand</strong> data products with blue icons.
+   Synapse is on Azure as a Platform-as-a-Service (PaaS)
+
+   The <strong>Fabric engine</strong> is an upgrade from separate systems used by data engineers, data scientists, and business analysts. 
+   So there is a lot of copying of data from one engine to another<a target="_blank" href="https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-explained-for-existing-synapse-users?ft=Synapse:category">:</a>
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701048036/ADLSg2-lakehouse-864x291_d8wv2o.png"><img alt="ADLSg2-lakehouse-864x291.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701048036/ADLSg2-lakehouse-864x291_d8wv2o.png"></a>
+
+   PROTIP: I created this diagram to describe the components of Fabric. Click to see the full-size image:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1700964204/azure-onelake-1659x849_robwur.png"><img alt="azure-onelake-1659x849.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700964204/azure-onelake-1659x849_robwur.png"></a>
+
+   At the bottom is storage. "<a target="_blank" href="https://learn.microsoft.com/fabric/onelake/onelake-overview">One Lake</a>" is the branding for storage built on top of Azure Data Lake Storage Gen2 (ADLSg2) lakehouse that combines storage locations across different regions and clouds into a single logical lake, without moving or duplicating data (DirectLake mode).
+
+   ### Delta Data Format
+
+   The key enabler (for Microsoft as well as Snowflake and Databricks DeltaLake) is the <strong>Delta format</strong> (generically called "Parquet" format) that enables ACID transactions on "unstructured" data in data lakes.
+
+   Previously, SQL and analytic data are stored in different database technologies.
+
+   ### Workflow with Fabric 
+
+   Fabric aims to eliminate silos and remove data duplication by providing a single platform for <strong>collaboration</strong> among data engineers, data scientists, and business analysts. The <a target="_blank" href="https://learn.microsoft.com/fabric/data-engineering/tutorial-lakehouse-introduction">flow</a> is:
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701049746/fabric-flow-842x516_bcpj9q.jpg"><img alt="fabric-flow-842x516.jpeg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701049746/fabric-flow-842x516_bcpj9q.jpg"></a>
+
+   1. Create a Fabric workspace.
+   1. <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/data-engineering/tutorial-lakehouse-get-started">Create a lakehouse</a> using PowerBI.
+
+   1. Obtain data in a DATA SOURCE.
+
+      The end-to-end example is built using <a target="_blank" href="https://learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true">Microsoft's Wide World Importers (WWI) sample data</a>:
+
+   1. INGEST: 
+   1. TRANSFORM & STORE: transform data, and load it into the lakehouse. You can also explore the OneLake, one copy of your data across lakehouse mode and SQL analytics endpoint mode.
+   1. CONSUME: Connect to the lakehouse using the SQL analytics endpoint and Create a Power BI report using DirectLake to analyze sales data across different dimensions.
+   
+   1. Optionally, orchestrate and schedule data ingestion and transformation flow with a pipeline.
+   <br /><br />
+
+
+   1. Synapse Data Warehouse: support <strong>data use</strong> from SQL Endpoints.
+   
+   1. Synapse Data Engineering: data engineering with a Spark platform for <strong>data transformation</strong> at scale.
+   
+   1. Synapse Data Science: data science with Azure Machine Learning and Spark for model training and execution tracking in a scalable environment.
+   
+   1. Synapse Real-Time Analytics: real-time analytics to query and analyze large volumes of data in real-time.
+   
+   1. Data Factory: data integration <strong>pipelines</strong> to copy data and orchestrate data processing, combining Power Query. or Dataflows (Gen2) to Import and transform data from a range of sources using Power Query Online, and load it directly into a table in the lakehouse.
+   
+   1. Power BI: business intelligence for translating data to decisions. Power BI administrators are now <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/admin/microsoft-fabric-admin">Fabric administrators</a>.
+   
+   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/">Data Activator</a>: "Insight to action" takes action based on what's happening in your data. 
+   
+
+   Consider the following three scenarios:
+
+   * A network administrator detects potential security breaches through real-time monitoring and initiates immediate protective actions.
+
+   * A warehouse manager needs to detect drops in product stocks and needs to start a reorder process to prevent running out of stock.
+
+   * A sales associate needs to receive alerts when a potential client is visiting their website and offers to start a live chat with them.
+
+
+* Introduction to end-to-end analytics using Microsoft Fabric - better collaboration between data engineers, data scientists, and business analysts. An analytical store that combines the file storage flexibility of a data lake with the T-SQL-based query capabilities of a data warehouse.
+   * https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial
+   * https://learn.microsoft.com/en-us/fabric/admin/fabric-switch = Enable Fabric
+   * Microsoft Fabric portal at https://app.fabric.microsoft.com
+   * Pro, Premium needed to create a lakehouse
+   * Default Delta Small or Large dataset storage format
+* Get started with lakehouses in Microsoft Fabric <a target="_blank" href="https://microsoftlearning.github.io/mslearn-fabric/Instructions/Labs/01-lakehouse.html">Exercise</a>
+   * Describe core features and capabilities of lakehouses in Microsoft Fabric
+   * Dataflows (Gen2) are based on Power Query - a familiar tool to data analysts using Excel or Power BI that provides visual representation of transformations as an alternative to traditional programming.
+   * Ingest data into files and tables in a lakehouse.
+   * Query lakehouse tables with SQL. Shortcuts point to different storage accounts and other Fabric items like data warehouses, KQL databases, and external Lakehouses.
+* Use Apache Spark in Microsoft Fabric
+* Work with Delta Lake tables in Microsoft Fabric
+* Use Data Factory pipelines in Microsoft Fabric
+* Ingest Data with Dataflows Gen2 in Microsoft Fabric
+
+* Get started with data warehouses in Microsoft Fabric: <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-data-warehouse/7-exercise">Exercise</a>
+   * Query and transform data
+   * Prepare data for analysis and reporting 
+   * https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-create-and-manage-relationships
+   * Measures are calculated fields based on the data in the tables in your data warehouse using the Data Analysis Expressions (DAX) formula language.
+   * Datasets are a semantic model with metrics that are used to create reports. 
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-data-warehouse/6-security-monitor">Secure and monitor your data warehouse</a> - Data in Fabric is organized into workspaces, which are used to control access and manage the lifecycle of data and services. 
+Dynamic management views (DMVs) to monitor connection, session, and request status to see live SQL query lifecycle insights.
+available to use in Fabric:
+   * sys.dm_exec_connections: Returns information about each connection established between the warehouse and the engine.
+   * sys.dm_exec_sessions: Returns information about each session authenticated between the item and engine.
+   * sys.dm_exec_requests: Returns information about each active request in a session.
+item permissions in a workspace grant access to individual warehouses to enable downstream consumption of data.
+* Get started with data science in Microsoft Fabric
+   Promotion can be done by any workspace member who has been granted permissions.
+   Certification are enabled in the tenant by the admin, and only designated certifiers can perform the endorsement. 
 
 
 <hr />

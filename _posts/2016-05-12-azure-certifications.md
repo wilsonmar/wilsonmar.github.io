@@ -19,7 +19,7 @@ comments: true
 
 PROTIP: When you pass each exam, Tweet <a target="_blank" href="https://twitter.com/search?q=%23azurecertified&src=typed_query">#azurecertified</a> and/or <a target="_blank" href="https://twitter.com/search?q=%23MicrosoftCertified&src=typed_query">#MicrosoftCertified</a>.
 
-NOTE: Groupings of Microsoft's certifications by roles below, people still take exams based on product:
+NOTE: Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/browse/?credential_types=certification">Microsoft's certifications</a> by role and product:
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Role </th><th> Certification exam </th></tr>
@@ -55,17 +55,20 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
 <tr valign="top"><td> Data Engineer<br /> Data Scientist</td><td>
    * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-900">DP-900 Azure Data Fundamentals</a><br />
    * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-100">DP-100 Azure Data Scientist Associate</a><br />
-   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-203">DP-203 Azure Data Engineer Associate</a> (replaces DP-200 & DP-201)<br />
-   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-300">DP-300 Azure Database Administrator Associate</a><br />
-   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-601">DP-601 Implementing a Lakehouse with Microsoft Fabric</a><br />
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-203">DP-203 Azure Data Engineer Associate</a> (replaces DP-200 & DP-201)</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-300">DP-300 Azure Database Administrator Associate</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-420">DP-420 Azure Cosmos DB Developer Specialty</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-500">DP-500 Azure Enterprise Data Analyst Associate</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-600">DP-600 Fabric Analytic Engineer Associate</a>
    </td></tr>
 
 <tr valign="top"><td> <a href="#Power_Platform">Power Platform</a> </td><td>
-   * PL-900 Power Platform Fundamentals<br />
-   * PL-200 Power Platform Functional Consultant<br />
-   * PL-400 Power Platform Developer<br />
-   * PL-100 Power Platform App-maker<br />
-   * PL-600 Power Platform Solution Architect Expert
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-fundamentals/">PL-900 Power Platform Fundamentals</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-app-maker/">PL-100 Power Platform App-maker Associate</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-functional-consultant-associate/">PL-200 Power Platform Functional Consultant</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-bi-data-analyst-associate/">PL-300 Power BI Data Analyst Associate</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-developer-associate/">PL-400 Power Platform Developer</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-solution-architect-expert/">PL-600 Power Platform Solution Architect Expert</a>
    </td></tr>
 
 <tr valign="top"><td> DevOps Engineer</td><td>
@@ -78,12 +81,12 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
    </td></tr>
 
 <tr valign="top"><td> <a href="#Sec_Certs">Security Certifications</a></td><td>
-   * <a href="#SC-900">SC-900 Security, Compliance, and Identity Fundamentals</a><br />
-   * <a href="#SC-200">SC-200 Security Operations Analyst Associate</a><br />
-   * <a href="#SC-300">SC-300 Identity and Access Administrator Associate</a><br />
-   * <a href="#SC-400">SC-400 Information Protection Administrator</a><br />
-   * <a href="#AZ-500">AZ-500 Azure Security Engineer Associate</a><br />
-   * <a href="#SC-100">SC-100 Microsoft Cybersecurity Architect</a><br />
+   * <a href="#SC-900">SC-900 Security, Compliance, and Identity Fundamentals</a>
+   * <a href="#SC-200">SC-200 Security Operations Analyst Associate</a>
+   * <a href="#SC-300">SC-300 Identity and Access Administrator Associate</a>
+   * <a href="#SC-400">SC-400 Information Protection Administrator</a>
+   * <a href="#AZ-500">AZ-500 Azure Security Engineer Associate</a>
+   * <a href="#SC-100">SC-100 Microsoft Cybersecurity Architect</a>
    </td></tr>
 </table>
 
@@ -492,9 +495,6 @@ https://docs.microsoft.com/en-us/learn/azure/
 
 <a target="_blank" href="https://www.youtube.com/watch?v=Qd0YI9ZMHHs">VIDEO</a>: <a target="_blank" href="https://github.com/madebygps/projects/tree/main/az-104">AZ-104 Projects by MadeByGPS</a> <a target="_blank" href="https://www.linkedin.com/in/madebygps/">Gwyneth Peña-Siguenza</a>. She <a target="_blank" href="https://payhip.com/b/BgnjT">sells her diagram</a> for $10.
 
-<br /><br />
-
-
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-administrator/?wt.mc_id=esi_lxp_webpage_wwl&tab=tab-learning-paths">Microsoft's tutorial</a> provides more managerial aspects (such as governance) than others.
 
 A search of Microsoft Learn for "Administrator" and "Azure" <a target="_blank" href="https://docs.microsoft.com/en-us/learn/browse/?roles=administrator&wt.mc_id=esi_lxp_webpage_wwl&products=azure&resource_type=learning%20path">82 </a> <a target="_blank" href="https://docs.microsoft.com/en-us/learn/browse/?roles=administrator&wt.mc_id=esi_lxp_webpage_wwl&products=azure&resource_type=module">yielded 317 modules</a> over 14 pages (at time of writing). Most of them focus on a specific service/product:
@@ -564,6 +564,8 @@ Susanth Sutheesh
    * <a target="_blank" href="https://quizlet.com/subject/az-104/">Quizlet flash cards</a>
 
 ### Sample tests:
+
+* https://www.whizlabs.com/microsoft-azure-certification-az-104/
 
 1. Take a Practice Test (from MeasureUp) that feels just like the actual test, if you are enrolled in <a target="_blank" href="https://esi.microsoft.com/getcertification">Microsoft's Enterprise Skills Initiative</a>.
 
