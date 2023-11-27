@@ -184,6 +184,10 @@ To enable disk encryption, use BitLocker on Windows General Settings.
 
 Existing <a target="_blank" href="https://www.wikiwand.com/en/Cyber_range">Cyber Ranges</a>
 
+   * <a target="_blank" href="https://www.eccouncil.org/programs/cyber-range/">EC-Council's iLabs CEH</a> costs $200 for 40 hours. Recommended by Bushmiller.
+
+   * GNS3 (Graphical Network Simulator-3) is the name of a hosted service providing a tool to simulate complex networks (Cisco IOS). Pros use it to experiment features of Cisco IOS or to check configurations and test before implementationtha on real routers. First released in 2008, it runs on traditional PC hardware but may be used on Windows, Linux, and macOS. Use it to prepare for certification exams such as Cisco CCNA, CCNP, CCIP, CCSP, CCVP, CCIE, Juniper JNCIA, JNCIS and JNCIE. It is also used by network engineers to test network designs for Cisco CCIE certification. It is also used to experiment with network behavior. It is also used to provide complex virtual networks to students preparing for certification exams from Cisco Systems, Juniper Networks, Alcatel-Lucent, Check Point, Palo Alto Networks, F5 Networks, and others.
+
    * https://theartofhacking.org/ & <a target="_blank" href="https://github.com/The-Art-of-Hacking/h4cker">GitHub</a> by <a target="_blank" href="https://keybase.io/santosomar">Omar Santos</a> with code at https://h4cker.org/github
 
    * <a target="_blank" href="https://HackTheBox.com/">HackTheBox.com</a> to To find 300+ pentest hacking labs

@@ -16,16 +16,25 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/microsoft-fabric/">This</a> is the hands-on step-by-step tutorial I would give to a developer or administrator getting up and running the <strong>Microsoft Fabric</strong> cloud and pass <a href="https://wilsonmar.github.io/azure-certifications/">Azure certification exam</a>
+Here we have for you a hands-on step-by-step tutorial on quickly setting up and running analytics on data using the <strong>Microsoft Fabric</strong> cloud and pass <a href="https://wilsonmar.github.io/azure-certifications/">Azure certification exam</a>
 
    * <a href="#DP-600">DP-600: Fabric Analytic Engineer Associate</a>
    <br /><br />
 
 {% include whatever.html %}
 
-Microsoft Fabric is a platform that allows users to get, create, share, and visualize data using an array of tools. 
+Microsoft Fabric is a platform to get, create, share, and visualize data using an array of tools. 
 
-It was unveiled at Microsoft's Build 2023 conference.
+PROTIP: The array of tools is shown in this diagram I adapted from Microsoft. All the components ("Experiences") of Fabric, in one page.
+We'll reference this throughout this article.
+
+<a name="Diagram"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701092170/microsoft-fabric-1688x994_gd4pm2.png"><img alt="microsoft-fabric-1688x994.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701092170/microsoft-fabric-1688x994_gd4pm2.png"><br />Click to see the full-size image</a>.
+
+
+## Fabric Marketing
+
+Fabric was unveiled at Microsoft's Build 2023 conference.
 
 1. The marketing homepage for Fabric is:
 
@@ -51,23 +60,25 @@ It was unveiled at Microsoft's Build 2023 conference.
 
    Let's dive into the portal to work with Microsoft Fabric:
 
+   ## Browser Profile
+
 1. PROTIP: In an internet browser (Safari, Google Chrome, etc.) I click the icon next to the browser's three-dot menu to use a <strong>browser profile</strong> that retains the browser history for the <strong>work (organizational) account</strong> I need to use with Fabric.
 
    <a name="AdminMenu"></a>
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701041117/fabric-signin-318x367_lf2lqp.png"><img alt="fabric-signin-318x367.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701041117/fabric-signin-318x367_lf2lqp.png"></a>
 
    <a name="HomePage"></a>
-1. REMEMBER: The Microsoft Fabric home page host name is Microsoft and not Azure:
+1. REMEMBER: The Microsoft Fabric working home page has Microsoft.com and not Azure:
 
    <a target="_blank" href="https://app.fabric.microsoft.com">https://app.fabric.microsoft.com</a>
 
-   This is because Microsoft intends Fabric to be a service that can exchange data with competing clouds such as AWS and GCP as well as on-prem. data centers (through Microsoft's Arc). Fabric's capabilities catches up to what <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a> and Databricks have been offering.
+   This is because Microsoft intends Fabric to be a service that can exchange data with competing clouds such as AWS and GCP as well as on-prem. data centers (through Microsoft's Arc). It's a "friendamy" strategy. Fabric's capabilities catches up to what <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a> and Databricks have been offering.
 
 1. What I call the "bouncer" page ensures that only <strong>organizational</strong> emails (work or school account) use Fabric. Your personal gmail or outlook.com account is no good here. Wow.
 
-   PROTIP: This means that you must setup Azure subscriptions using your work or school account, not your personal account.
+   REMEMBER: You must setup Azure subscriptions using your work or school account, not your personal account.
 
-   PROTIP: Setup different browser profiles for different accounts. Click the profile icon at the top right of the browser window to switch between profiles.
+   This is why you setup different browser profiles for different accounts. Click the profile icon at the top right of the browser window to switch between profiles.
 
 1. Click the big round gray icon at the upper side of the Fabric page for the <a href="#AdminMenu">Admin/Sign In menu above</a>.
 
@@ -299,18 +310,13 @@ Query data by using SQL:
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701048036/ADLSg2-lakehouse-864x291_d8wv2o.png"><img alt="ADLSg2-lakehouse-864x291.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701048036/ADLSg2-lakehouse-864x291_d8wv2o.png"></a>
    
 
-   PROTIP: I created this diagram to describe the components of Fabric. Click to see the full-size image:
+ ### Delta (Parquet) Format
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1700964204/azure-onelake-1659x849_robwur.png"><img alt="azure-onelake-1659x849.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1700964204/azure-onelake-1659x849_robwur.png"></a>
+At the bottom is storage. "<a target="_blank" href="https://learn.microsoft.com/fabric/onelake/onelake-overview">One Lake</a>" is the branding for storage built on top of Azure Data Lake Storage Gen2 (ADLSg2) lakehouse that combines storage locations across different regions and clouds into a single logical lake, without moving or duplicating data (DirectLake mode).
 
-   At the bottom is storage. "<a target="_blank" href="https://learn.microsoft.com/fabric/onelake/onelake-overview">One Lake</a>" is the branding for storage built on top of Azure Data Lake Storage Gen2 (ADLSg2) lakehouse that combines storage locations across different regions and clouds into a single logical lake, without moving or duplicating data (DirectLake mode).
+The key enabler (for Microsoft as well as Snowflake and Databricks DeltaLake) is the <strong>Delta format</strong> (generically called "Parquet" format) that enables ACID transactions on "unstructured" data in data lakes.
 
-
-   ### Delta (Parquet) Format
-
-   The key enabler (for Microsoft as well as Snowflake and Databricks DeltaLake) is the <strong>Delta format</strong> (generically called "Parquet" format) that enables ACID transactions on "unstructured" data in data lakes.
-
-   Previously, SQL and analytic data are stored in different database technologies.
+Previously, SQL and analytic data are stored in different database technologies.
 
 
    ### Workflow with Fabric 
