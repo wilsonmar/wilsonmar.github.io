@@ -171,10 +171,6 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
 
 1. <a target="_blank" href="https://www.youtube.com/watch?v=l3cpnX0mpXE">VIDEO</a>: <a target="_blank" href="https://blog.fabric.microsoft.com/en-US/blog/capacity-metrics-in-microsoft-fabric/">BLOG</a>: <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app">Monitor Capacity usage</a> using:
    
-1. In PowerBI, <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-install?tabs=1st">install the Microsoft Fabric Capacity Metrics app</a> to access:
-
-   <a target="_blank" href="https://app.fabric.microsoft.com/capacity/">https://app.fabric.microsoft.com/capacity</a>
-
 
    ### Learning sites
 
@@ -291,20 +287,57 @@ Microsoft Fabric offers a centralized storage solution, eliminating data fragmen
 
 1. <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701174778/fabric-left-menu-66x493_x7hpur.png"><img align="right" alt="fabric-left-menu-66x493.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701174778/fabric-left-menu-66x493_x7hpur.png"></a>Click on any of the icons to see the left menu for that component:
 
-   * Home
+   ### Admin verify domain
+
+1. Click the 9-dot icon at the top left of the screen present automation options: Power Automate, Power Pages, and 365 apps at
+
+   https://www.microsoft365.com/?auth=2&home=1
+
+1. Click the <strong>Admin</strong> link to designate the admin for the organizational domain name used to sign in.
+1. Click Next.
+1. Read the "See step-by-step instructions to add DNS records" about signing into the Domain Registry (such as GoDaddy) to specify a TXT record Fabric needs to use like a password to trust the domain.
+1. Return to Fabric and click <strong>Confirm record</strong>.
+1. Finish.
+
+   ### Left menu common items
+
+1. Click on Power BI on the left menu:
+
+   * <strong>Home</strong> is the landing page for the component.
    * Create
    * Browse
    * OneLake data hub
-   * Monitoring hub
+   * Monitoring hub - a station to view and track active activities across different products
    * Workspaces
    * My workspace
    <br /><br />
 
-   The <strong>Power BI</strong> icon is the only one that's not blue. It's a SaaS product that's not on Azure.
-   Its left menu contains what's not in other components: Apps, Metrics, Deployment pipelines, Learn.
+1. Click the <strong>Power BI</strong> icon (at the top as it's frequently used).
+   Its left menu contains what's not in other components: 
+   * Apps
+   * Metrics scorecards
+   * Deployment pipelines
+   * Learn - click on a sample to store its assets for that in your workspace, OneLake data hub, and left menu.
+   <br /><br /> 
 
-   
+   ### Install Metrics App
 
+1. Search for other apps for Fabric at
+
+   https://appsource.microsoft.com/en-us/marketplace/apps?exp=ubp8&search=fabric&page=1
+
+1. In PowerBI, <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-install?tabs=1st">install the Microsoft Fabric Capacity Metrics app</a> to read:
+
+   <a target="_blank" href="https://app.fabric.microsoft.com/capacity/">https://app.fabric.microsoft.com/capacity</a>
+
+1. Click "Get it now" at 
+
+   https://appsource.microsoft.com/en-us/product/power-bi/pbi_pcmm.microsoftpremiumfabricpreviewreport?exp=ubp8
+
+1. Click "Install".
+1. Click the app to go to it.
+1. Connect to your own data by providing a "CapacityID" and its UTC_offsite (time zone):
+1. Click "Go back" at the lower-left corner.
 
 
 ## End-to-End projects
