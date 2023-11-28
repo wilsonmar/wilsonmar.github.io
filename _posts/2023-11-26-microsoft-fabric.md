@@ -188,7 +188,7 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
 
    PROTIP: <a target="_blank" href="https://7451111251303.gumroad.com/l/cwchf" title="Spreadsheet available for purchase">My analysis, illustrated below</a>, shows that while the number of CUs doubles with each level, costs also double for the two ways of charging:
 
-   <img alt="fabric-cu-pricing-648x378.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701142082/fabric-cu-pricing-648x378_rocler.png">
+   <img alt="fabric-cu-pricing-662x386.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701144262/fabric-cu-pricing-662x386_ypmptq.png">
 
    Reserved is about 60% less than the Pay-as-you-go price at all levels.
    
