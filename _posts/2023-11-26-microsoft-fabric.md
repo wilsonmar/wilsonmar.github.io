@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-26"
+date: "2023-11-27"
 file: "microsoft-fabric"
 title: "Microsoft Fabric"
 excerpt: "Get skilled in multicloud data handling and analystics to pass the DP-600 exam"
@@ -274,12 +274,11 @@ Microsoft Fabric offers a centralized storage solution, eliminating data fragmen
 
    SKU = Stock Keeping Unit = a unique identifier for each distinct product and service that can be purchased in business.
 
-   PROTIP: <a target="_blank" href="https://7451111251303.gumroad.com/l/cwchf" title="Spreadsheet available for purchase">My analysis, illustrated below</a>, shows that while the number of CUs doubles with each level, costs also double for the two ways of charging:
+   PROTIP: <a target="_blank" href="https://7451111251303.gumroad.com/l/fjkxm" title="Spreadsheet available for purchase">My analysis, illustrated below</a>, shows that while the number of CUs doubles with each level, costs also double for the two ways of charging:
 
    <img alt="fabric-cu-pricing-670x388.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148689/fabric-cu-pricing-670x388_ihqdt8.png">
-   (Some regions do not yet have a price)
-
-   Reserved is 41% less than the Pay-as-you-go per-hour price at all levels, for all countries.
+   
+   Reserved CUs are 41% less than the Pay-as-you-go per-hour prices at all levels, for all countries.
    
    As for differences in CU Reserved cost among different regions (using different colors):<br />
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png"><img alt="fabric-cu-pricing-intl-394x696.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png"></a><br />
