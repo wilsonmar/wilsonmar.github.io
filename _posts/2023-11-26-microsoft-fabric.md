@@ -176,7 +176,95 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
    <a target="_blank" href="https://app.fabric.microsoft.com/capacity/">https://app.fabric.microsoft.com/capacity</a>
 
 
-   ### Pricing
+   ### Learning sites
+
+1. Click the <strong>Admin</strong> icon at the top right of the page to see the number of days remaining in the trial.
+
+1. PROTIP: Instead of clicking this <strong>Learn more</strong> link for the "Get started" tutorial, copy the URL and switch to your personal browser profile so you get points for learning,
+
+   This article contains information from the following sources:
+
+   * https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/azure-data-fundamentals-explore-data-warehouse-analytics/">Microsoft Documentation for Microsoft Fabric</a>
+
+   * https://learn.microsoft.com/en-us/fabric/
+   * https://learn.microsoft.com/en-us/training/paths/get-started-fabric
+
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/collections/w2gkhrkzzmym?WT.mc_id=cloudskillschallenge_a68d938a-58b7-403e-89f2-b2305edb7c41">Microsoft Ignite: Microsoft Fabric Skills Challenge</a>
+
+   * https://aka.ms/Fabric-Hero-Blog-Ignite23
+
+Semantics relates to the study of references, specifically describing the real meaning between symbols or words. 
+
+A semantic model or semantic data model is a high-level databases. An SDM specification describes a database in terms of the kinds of entities that exist in the application environment, the classifications and groupings of those entities, and the structural interconnections among them.
+
+
+## Workflow with Fabric 
+
+Microsoft Fabric offers a centralized storage solution, eliminating data fragmentation and promoting data integrity. 
+
+   Fabric aims to eliminate silos and remove data duplication by providing a single platform for <strong>collaboration</strong> among data engineers, data scientists, and business analysts. The <a target="_blank" href="https://learn.microsoft.com/fabric/data-engineering/tutorial-lakehouse-introduction">flow</a> is:
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701049746/fabric-flow-842x516_bcpj9q.jpg"><img alt="fabric-flow-842x516.jpeg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701049746/fabric-flow-842x516_bcpj9q.jpg"></a>
+
+   <a target="_blank" href="https://justb.dk/blog/2023/11/fabric-data-lakehouse-understanding-the-dataflow/">This article</a> describes the flow in detail.
+
+1. Create a <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/get-started/workspaces">Fabric workspace</a>.
+1. <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/data-engineering/tutorial-lakehouse-get-started">Create a lakehouse</a> using PowerBI. There's no limit on the number of workspaces or items you can create within your capacity.
+
+1. DATA SOURCE: Obtain data in a variety of formats from a variety of sources.
+
+   The end-to-end example is built using <a target="_blank" href="https://learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true">Microsoft's Wide World Importers (WWI) sample data</a>:
+
+1. INGEST: 
+
+1. TRANSFORM & STORE: transform data, and load it into the lakehouse. You can also explore the OneLake, one copy of your data across lakehouse mode and SQL analytics endpoint mode.
+
+   A major innovation with lakehouses instead of data warehouse is that instead of traditional transform before load (ETL), it's load then transform (ELT).
+
+1. SERVE: Connect to the lakehouse's SQL analytics endpoint to create a Power BI report using DirectLake -- to analyze sales data across different dimensions.
+
+1. CONSUME: Connect to the lakehouse's SQL analytics endpoint to create a Power BI report using DirectLake -- to analyze sales data across different dimensions.
+
+1. Optionally, orchestrate and schedule data ingestion and transformation flow with a pipeline.
+<br /><br />
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/">Use Data Factory pipelines in Microsoft Fabric</a>
+<br /><br />
+
+   Learn more:
+
+1. Synapse Data Warehouse: support <strong>data use</strong> from SQL Endpoints.
+
+   * https://learn.microsoft.com/en-us/training/modules/get-started-data-warehouse/
+   <br /><br />
+
+1. Synapse Data Engineering: run <strong>Notebooks</strong> within the Spark platform for <strong>data transformation</strong> at scale.
+
+   * https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/
+   <br /><br />
+
+1. Synapse Data Science: model training and execution tracking in a scalable environment using Azure Machine Learning and Spark.
+
+   * https://learn.microsoft.com/en-us/training/modules/get-started-data-science-fabric/
+   <br /><br />
+
+1. Synapse Real-Time Analytics: real-time analytics to query and analyze large volumes of data in real-time.
+
+1. Data Factory: data integration <strong>pipelines</strong> to copy data and orchestrate data processing, combining Power Query. or Dataflows (Gen2) to Import and transform data from a range of sources using Power Query Online, and load it directly into a table in the lakehouse.
+
+   * https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/
+   <br /><br />
+
+1. Power BI: business intelligence for translating data to decisions. Power BI administrators are now <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/admin/microsoft-fabric-admin">Fabric administrators</a>.
+
+1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/">Data Activator</a>: "Insight to action" takes action based on what's happening in your data. 
+   * https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/
+
+
+<hr />
+
+## Pricing
 
 1. Click "Pricing" to see the Fabric Pricing page:
 
@@ -206,28 +294,6 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
    https://learn.microsoft.com/en-us/fabric/enterprise/licenses
 
 
-   ### Learning sites
-
-1. Click the <strong>Admin</strong> icon at the top right of the page to see the number of days remaining in the trial.
-
-1. PROTIP: Instead of clicking this <strong>Learn more</strong> link for the "Get started" tutorial, copy the URL and switch to your personal browser profile so you get points for learning,
-
-   This article contains information from the following sources:
-
-   * https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial
-
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/azure-data-fundamentals-explore-data-warehouse-analytics/">Microsoft Documentation for Microsoft Fabric</a>
-
-   * https://learn.microsoft.com/en-us/fabric/
-   * https://learn.microsoft.com/en-us/training/paths/get-started-fabric
-
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/collections/w2gkhrkzzmym?WT.mc_id=cloudskillschallenge_a68d938a-58b7-403e-89f2-b2305edb7c41">Microsoft Ignite: Microsoft Fabric Skills Challenge</a>
-
-   * https://aka.ms/Fabric-Hero-Blog-Ignite23
-
-Semantics relates to the study of references, specifically describing the real meaning between symbols or words. 
-
-A semantic model or semantic data model is a high-level databases. An SDM specification describes a database in terms of the kinds of entities that exist in the application environment, the classifications and groupings of those entities, and the structural interconnections among them.
 
 
 <a name="DP-600"></a>
@@ -396,66 +462,6 @@ The key enabler (for Microsoft as well as Snowflake and Databricks DeltaLake) is
 Previously, SQL and analytic data are stored in different database technologies.
 
 
-### Workflow with Fabric 
-
-Microsoft Fabric offers a centralized storage solution, eliminating data fragmentation and promoting data integrity. 
-
-   Fabric aims to eliminate silos and remove data duplication by providing a single platform for <strong>collaboration</strong> among data engineers, data scientists, and business analysts. The <a target="_blank" href="https://learn.microsoft.com/fabric/data-engineering/tutorial-lakehouse-introduction">flow</a> is:
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701049746/fabric-flow-842x516_bcpj9q.jpg"><img alt="fabric-flow-842x516.jpeg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701049746/fabric-flow-842x516_bcpj9q.jpg"></a>
-
-   <a target="_blank" href="https://justb.dk/blog/2023/11/fabric-data-lakehouse-understanding-the-dataflow/">This article</a> describes the flow in detail.
-
-1. Create a <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/get-started/workspaces">Fabric workspace</a>.
-1. <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/data-engineering/tutorial-lakehouse-get-started">Create a lakehouse</a> using PowerBI. There's no limit on the number of workspaces or items you can create within your capacity.
-
-1. DATA SOURCE: Obtain data in a variety of formats from a variety of sources.
-
-   The end-to-end example is built using <a target="_blank" href="https://learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true">Microsoft's Wide World Importers (WWI) sample data</a>:
-
-1. INGEST: 
-
-1. TRANSFORM & STORE: transform data, and load it into the lakehouse. You can also explore the OneLake, one copy of your data across lakehouse mode and SQL analytics endpoint mode.
-
-   A major innovation with lakehouses instead of data warehouse is that instead of traditional transform before load (ETL), it's load then transform (ELT).
-
-1. SERVE: Connect to the lakehouse's SQL analytics endpoint to create a Power BI report using DirectLake -- to analyze sales data across different dimensions.
-
-1. CONSUME: Connect to the lakehouse's SQL analytics endpoint to create a Power BI report using DirectLake -- to analyze sales data across different dimensions.
-
-1. Optionally, orchestrate and schedule data ingestion and transformation flow with a pipeline.
-<br /><br />
-
-* <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/">Use Data Factory pipelines in Microsoft Fabric</a>
-<br /><br />
-
-   Learn more:
-
-1. Synapse Data Warehouse: support <strong>data use</strong> from SQL Endpoints.
-
-   * https://learn.microsoft.com/en-us/training/modules/get-started-data-warehouse/
-   <br /><br />
-
-1. Synapse Data Engineering: run <strong>Notebooks</strong> within the Spark platform for <strong>data transformation</strong> at scale.
-
-   * https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/
-   <br /><br />
-
-1. Synapse Data Science: model training and execution tracking in a scalable environment using Azure Machine Learning and Spark.
-
-   * https://learn.microsoft.com/en-us/training/modules/get-started-data-science-fabric/
-   <br /><br />
-
-1. Synapse Real-Time Analytics: real-time analytics to query and analyze large volumes of data in real-time.
-
-1. Data Factory: data integration <strong>pipelines</strong> to copy data and orchestrate data processing, combining Power Query. or Dataflows (Gen2) to Import and transform data from a range of sources using Power Query Online, and load it directly into a table in the lakehouse.
-
-   * https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/
-   <br /><br />
-
-1. Power BI: business intelligence for translating data to decisions. Power BI administrators are now <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/admin/microsoft-fabric-admin">Fabric administrators</a>.
-
-1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/">Data Activator</a>: "Insight to action" takes action based on what's happening in your data. 
-   * https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/
 
 * Introduction to end-to-end analytics using Microsoft Fabric - better collaboration between data engineers, data scientists, and business analysts. An analytical store that combines the file storage flexibility of a data lake with the T-SQL-based query capabilities of a data warehouse.
    * https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial
