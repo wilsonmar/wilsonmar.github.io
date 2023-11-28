@@ -182,21 +182,28 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
 
    https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/?country=us
 
-1. Select Region: <strong>East US</strong> (Virginia) in US Dollars by the hour.
+1. Select Region: <strong>East US</strong> (Virginia) in US Dollars by the hour. However, prices are the same in all US regions.
 
    SKU = Stock Keeping Unit = a unique identifier for each distinct product and service that can be purchased in business.
 
    PROTIP: <a target="_blank" href="https://7451111251303.gumroad.com/l/cwchf" title="Spreadsheet available for purchase">My analysis, illustrated below</a>, shows that while the number of CUs doubles with each level, costs also double for the two ways of charging:
 
-   <img alt="fabric-cu-pricing-662x386.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701144262/fabric-cu-pricing-662x386_ypmptq.png">
+   <img alt="fabric-cu-pricing-670x388.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148689/fabric-cu-pricing-670x388_ihqdt8.png">
+   (Some regions do not yet have a price)
 
-   Reserved is about 60% less than the Pay-as-you-go price at all levels.
+   Reserved is 41% less than the Pay-as-you-go per-hour price at all levels, for all countries.
    
-   The Premium tier is 4x the Pro tier?
+   Differences in CU Reserved cost among different regions (using different colors):
+   <img alt="fabric-cu-pricing-intl-394x696.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png">
 
+   <a target="_blank" href="https://www.youtube.com/watch?v=smmmE-rjXr8">VIDEO</a>: The Premium tier is 4x the Pro tier?
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=6AAeV3bSMso&t=5m6s">VIDEO</a>: A Power BI Pro license is not needed if you have a Fabric Pro license at F64 SKU or above.
+
+   "Charges for OneLake storage is comparable to Azure ADLS of $0.023/GB on US West 2."
+
+   For more:
    https://learn.microsoft.com/en-us/fabric/enterprise/licenses
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=6AAeV3bSMso">VIDEO</a>
 
 
    ### Learning sites
@@ -327,6 +334,13 @@ Query data by using SQL:
    * Query a warehouse in Fabric by using SQL queries or the visual query editor
    * Connect to and query datasets by using the XMLA endpoint
    <br /><br />
+
+
+## End-to-End projects
+
+<a target="_blank" href="https://www.youtube.com/watch?v=gKdlsHm7QgU&list=PL9SoC_dDpQ8FnIJZwlk5L4rU1r7-cQNCG">DataVerse Academy</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=yRJ03n1U5-E&list=PLug2zSFKZmV0Yaya7NxRQfrrPtfF2vj0K">Learn Microsoft Fabric with Will</a>
 
 
 ### Product Component "Experiences"
