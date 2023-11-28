@@ -281,18 +281,18 @@ Microsoft Fabric offers a centralized storage solution, eliminating data fragmen
 
    Reserved is 41% less than the Pay-as-you-go per-hour price at all levels, for all countries.
    
-   Differences in CU Reserved cost among different regions (using different colors):
-   <img alt="fabric-cu-pricing-intl-394x696.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png">
+   As for differences in CU Reserved cost among different regions (using different colors):
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png"><img alt="fabric-cu-pricing-intl-394x696.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png"></a>
+   Brazil South is double costs in the US. Fabric may not even be available there because the price for Pay-as-you-go is not listed for it on the website.
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=smmmE-rjXr8">VIDEO</a>: The Premium tier is 4x the Pro tier?
-
+   <a target="_blank" href="https://www.youtube.com/watch?v=smmmE-rjXr8">VIDEO</a>:
+   https://learn.microsoft.com/en-us/fabric/enterprise/licenses
+   
    <a target="_blank" href="https://www.youtube.com/watch?v=6AAeV3bSMso&t=5m6s">VIDEO</a>: A Power BI Pro license is not needed if you have a Fabric Pro license at F64 SKU or above.
 
-   "Charges for OneLake storage is comparable to Azure ADLS of $0.023/GB on US West 2."
+   https://learn.microsoft.com/en-us/power-bi/enterprise/service-premium-features
 
-   For more:
-   https://learn.microsoft.com/en-us/fabric/enterprise/licenses
-
+   "Charges for OneLake storage are comparable to Azure ADLS of $0.023/GB on US West 2."
 
 
 
