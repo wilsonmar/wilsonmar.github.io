@@ -186,11 +186,15 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
 
    SKU = Stock Keeping Unit = a unique identifier for each distinct product and service that can be purchased in business.
 
-   PROTIP: My analysis shows a linear relationship between CU cost and the two ways of charging:
+   PROTIP: My analysis illustrates that while the number of CUs doubles with each level, costs also double for the two ways of charging:
 
-   <img alt="fabric-cu-pricing-624-346.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701133129/fabric-cu-pricing-624-346_og6eyy.png">
+   <img alt="fabric-cu-pricing-328x195.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701138779/fabric-cu-pricing-328x195_w8gp4m.png">
+
+   Reserved is a consistent 68% more than the Pay-as-you-go price.
    
    The Premium tier is 4x the Pro tier?
+
+   https://learn.microsoft.com/en-us/fabric/enterprise/licenses
 
 
    ### Learning sites
