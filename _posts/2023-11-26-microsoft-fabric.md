@@ -186,7 +186,7 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
 
    SKU = Stock Keeping Unit = a unique identifier for each distinct product and service that can be purchased in business.
 
-   PROTIP: My analysis illustrates that while the number of CUs doubles with each level, costs also double for the two ways of charging:
+   PROTIP: <a target="_blank" href="https://7451111251303.gumroad.com/l/cwchf" title="Spreadsheet available for purchase">My analysis, illustrated below</a>, shows that while the number of CUs doubles with each level, costs also double for the two ways of charging:
 
    <img alt="fabric-cu-pricing-328x195.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701138779/fabric-cu-pricing-328x195_w8gp4m.png">
 
