@@ -40,16 +40,33 @@ This will be referenced throughout the text below.
 Rather than being a fanboy who focus too much on product technical features,
 here we focus on <strong>impacts</strong> on the lives of people.
 
-Instead of the traditional generic "Database Administrator" role name:
+Instead of the traditional generic "Database Administrator" role name, 
+Microsoft designed Fabric documentation based on these roles for enterprises,
+listed in order of when they get involved in a green-field implementation:
 
-* <strong>Data Stewards</strong> take care of backing up logs, transaction/master data. They establish IAM accounts with limited permissions and arrange for audits. In many organizations, to limit the impact of credential loss, they are the only ones who can delete data which others place in "limbo".
+* <strong>Data Citizens</strong> are true end-users -- business people who need to make decisions and take actions based on data. 
 
-* <strong>Data Engineers</strong> establish the platform and workflows for data cleaning, loading, and monitoring for governance.
+   They are the authority on what are correct values in databases.
+   
+   For each set of data, there is one <strong>data owner</strong> who approve data deletion and arrange for audits as well as
+   approving who have access and extent of permissions (for implementation by a central security team using IAM tools).
+
+   Data Citizens need to be trained to use the tools provided by Data Analysts (apps, Power BI, Data Activator, etc.).
+   Some track where they spend time on technical aspects to ensure that the time spent is worth the value of the data.
+
+* <strong>Data (Business) Analysts</strong> serve the needs of Data Citizens by establishing dashboards and alerts, and training users on technologies and possibilities. These Analysts design the "data models" defining relationships among sets of data.
+
+* <strong>Data Engineers</strong> create databases (platforms) and automated <strong>data pipelines</strong> to move data from one place to another, such as from a data lake to a data warehouse. workflows for monitoring, data cleaning, loading, backups, etc.
+
+* <a target="_blank" href="https://www.indeed.com/career-advice/finding-a-job/what-is-data-steward"><strong>Data Stewards</strong></a> are <strong>data custodians</strong> responsible for protecting the organization's most treasured assets: its data. Stewards setup and operate processes for data governance and data quality. They monitor processes for collecting data -- inspecting contents to ensure that data is in the right format. They ensure that app logs, metric collections, database logs shipped, app transactions, snapshots of master data are backed up fully and as scheduled. Once a month they ensure that data can be fully and quickly restored, as measured by RTO (Recovery Time Objective) and RPO (Recovery Point Objective) SLAs. Such is an important fall-back in case of ransomware attacks.
+
+   Data stewards collaborate with others to solve data corruption or mis-sychronization of data between apps and utilities.
+
+   In many organizations, to limit the impact of credential loss, they, after approval by the data owner, are the only accounts who can <strong>delete data</strong> which others put "in limbo".
+
+   PROTIP: Does Microsoft provide all the tools that Data Stewards need?
+
 * <strong>Data Scientists</strong> work on AI models using Data Science tools such as Notebooks written in PySpark for Machine Learning.
-
-* <strong>Data (Business) Analysts</strong> serve the needs of Data Citizens by establishing dashboards and alerts, and training users on technologies and possibilities.
-* <strong>Data Citizens</strong> are end-users -- business people who need to make decisions and are the ones to take action.
-<br /><br />
 
 Additional roles:
 
