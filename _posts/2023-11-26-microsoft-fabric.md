@@ -281,8 +281,8 @@ Microsoft Fabric offers a centralized storage solution, eliminating data fragmen
 
    Reserved is 41% less than the Pay-as-you-go per-hour price at all levels, for all countries.
    
-   As for differences in CU Reserved cost among different regions (using different colors):
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png"><img alt="fabric-cu-pricing-intl-394x696.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png"></a>
+   As for differences in CU Reserved cost among different regions (using different colors):<br />
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png"><img alt="fabric-cu-pricing-intl-394x696.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png"></a><br />
    Brazil South is double costs in the US. Fabric may not even be available there because the price for Pay-as-you-go is not listed for it on the website.
 
    <a target="_blank" href="https://www.youtube.com/watch?v=smmmE-rjXr8">VIDEO</a>:
