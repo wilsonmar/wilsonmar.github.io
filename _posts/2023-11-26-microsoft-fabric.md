@@ -1,9 +1,9 @@
 ---
 layout: post
-date: "2023-11-27"
+date: "2023-11-28"
 file: "microsoft-fabric"
 title: "Microsoft Fabric"
-excerpt: "Get skilled in multicloud data handling and analystics to pass the DP-600 exam"
+excerpt: "Get skilled in multicloud data handling and analystics and pass the DP-600 exam January 2024"
 tags: [cloud, Azure]
 image:
 # microsoft-fabric-1900x500.png
@@ -16,7 +16,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Here we have for you a hands-on step-by-step tutorial on quickly setting up and running analytics on data using the <strong>Microsoft Fabric</strong> cloud and pass <a href="https://wilsonmar.github.io/azure-certifications/">Azure certification exam</a>
+Let's get past the vapid marketing generalizations.
+
+Here we have for you a hands-on tutorial that takes you logically step-by-step to quickly set up and run analytics on data using the <strong>Microsoft Fabric</strong> cloud and pass <a href="https://wilsonmar.github.io/azure-certifications/">Azure certification exam</a>
 
    * <a href="#DP-600">DP-600: Fabric Analytic Engineer Associate</a>
    <br /><br />
@@ -283,7 +285,7 @@ Microsoft Fabric offers a centralized storage solution, eliminating data fragmen
 
    Fabric covers the complete spectrum of data services including data movement, data lake, data engineering, data integration and data science, observational analytics, and business intelligence.
    
-   ### Left Menu
+   ### Left Menus
 
 1. <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701174778/fabric-left-menu-66x493_x7hpur.png"><img align="right" alt="fabric-left-menu-66x493.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701174778/fabric-left-menu-66x493_x7hpur.png"></a>Click on any of the icons to see the left menu for that component:
 
@@ -340,15 +342,6 @@ Microsoft Fabric offers a centralized storage solution, eliminating data fragmen
 1. Click "Go back" at the lower-left corner.
 
 
-## End-to-End projects
-
-<a target="_blank" href="https://www.youtube.com/watch?v=gKdlsHm7QgU&list=PL9SoC_dDpQ8FnIJZwlk5L4rU1r7-cQNCG">DataVerse Academy</a>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=yRJ03n1U5-E&list=PLug2zSFKZmV0Yaya7NxRQfrrPtfF2vj0K">Learn Microsoft Fabric with Will</a>
-
-https://www.youtube.com/watch?v=a6A3jtvB62U James Serra
-
-
 <hr />
 
 ## Pricing
@@ -368,8 +361,10 @@ https://www.youtube.com/watch?v=a6A3jtvB62U James Serra
    Reserved CUs are 41% less than the Pay-as-you-go per-hour prices at all levels, for all countries.
    
    As for differences in CU Reserved cost among different regions (using different colors):<br />
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png"><img alt="fabric-cu-pricing-intl-394x696.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png"></a><br />
-   Brazil South is double costs in the US. Fabric may not even be available there because the price for Pay-as-you-go is not listed for it on the website.
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png"><img alt="fabric-cu-pricing-intl-394x696.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png"></a>
+   
+   Brazil South is double the cost in the US. 
+   Fabric may not even be available there because the price for Pay-as-you-go is not listed for it on the website.
 
    <a target="_blank" href="https://www.youtube.com/watch?v=smmmE-rjXr8">VIDEO</a>:
    https://learn.microsoft.com/en-us/fabric/enterprise/licenses
@@ -379,6 +374,16 @@ https://www.youtube.com/watch?v=a6A3jtvB62U James Serra
    https://learn.microsoft.com/en-us/power-bi/enterprise/service-premium-features
 
    "Charges for OneLake storage are comparable to Azure ADLS of $0.023/GB on US West 2."
+
+<hr />
+
+## End-to-End projects
+
+<a target="_blank" href="https://www.youtube.com/watch?v=gKdlsHm7QgU&list=PL9SoC_dDpQ8FnIJZwlk5L4rU1r7-cQNCG">DataVerse Academy</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=yRJ03n1U5-E&list=PLug2zSFKZmV0Yaya7NxRQfrrPtfF2vj0K">Learn Microsoft Fabric with Will</a>
+
+https://www.youtube.com/watch?v=a6A3jtvB62U James Serra
 
 
 
