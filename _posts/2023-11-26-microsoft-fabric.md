@@ -287,6 +287,26 @@ Microsoft Fabric offers a centralized storage solution, eliminating data fragmen
 
    Fabric covers the complete spectrum of data services including data movement, data lake, data engineering, data integration and data science, observational analytics, and business intelligence.
    
+   ### Left Menu
+
+1. <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701174778/fabric-left-menu-66x493_x7hpur.png"><img align="right" alt="fabric-left-menu-66x493.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701174778/fabric-left-menu-66x493_x7hpur.png"></a>Click on any of the icons to see the left menu for that component:
+
+   * Home
+   * Create
+   * Browse
+   * OneLake data hub
+   * Monitoring hub
+   * Workspaces
+   * My workspace
+   <br /><br />
+
+   The <strong>Power BI</strong> icon is the only one that's not blue. It's a SaaS product that's not on Azure.
+   Its left menu contains what's not in other components: Apps, Metrics, Deployment pipelines, Learn.
+
+   
+
+
+
 ## End-to-End projects
 
 <a target="_blank" href="https://www.youtube.com/watch?v=gKdlsHm7QgU&list=PL9SoC_dDpQ8FnIJZwlk5L4rU1r7-cQNCG">DataVerse Academy</a>
@@ -328,6 +348,8 @@ https://www.youtube.com/watch?v=a6A3jtvB62U James Serra
    "Charges for OneLake storage are comparable to Azure ADLS of $0.023/GB on US West 2."
 
 
+
+<hr />
 
 <a name="DP-600"></a>
 
@@ -433,9 +455,6 @@ Query data by using SQL:
    * Query a warehouse in Fabric by using SQL queries or the visual query editor
    * Connect to and query datasets by using the XMLA endpoint
    <br /><br />
-
-<hr />
-
 
 <hr />
 
