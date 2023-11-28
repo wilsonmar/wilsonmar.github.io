@@ -36,6 +36,31 @@ Used Jira and pair-programed with a remote team of 5 across 3 continents.
 
 https://www.youtube.com/watch?v=oCCguBcLyIU
 
+
+## The range of cyber ranges
+
+Existing <a target="_blank" href="https://www.wikiwand.com/en/Cyber_range">Cyber Ranges</a>
+
+   * <a target="_blank" href="https://www.eccouncil.org/programs/cyber-range/">EC-Council's iLabs CEH</a> costs $200 for 40 hours. Recommended by Bushmiller.
+
+   * <a target="_blank" href="https://tryhackme.com/">$120/year TryHackMe.com</a> provides a structured series of cloud-based scenarios. <a trget="_blank" href="https://laurakokkarinen.com/how-to-set-up-a-kali-linux-virtual-machine-in-azure-to-serve-as-a-tryhackme-attack-box/">Create Kali on Azure</a>
+
+   * For $100/year, Cisco Virtual Internet Routing Lab (VIRL) is a network design and simulation environment that includes a GNS3 VM, VIRL Server, and a set of Cisco IOS virtual machines. VIRL allows you to create virtual network topologies using virtual networking devices such as Cisco routers and switches. You can use VIRL to create a virtual network and run different operating systems such as IOS, IOS-XE, IOS-XR, and NX-OS in the virtual devices. You can also use VIRL to create a virtual network and run different operating systems such as IOS, IOS-XE, IOS-XR, and NX-OS in the virtual devices. 
+
+   * GNS3 (Graphical Network Simulator-3) is a hosted service providing the GEN3 tool to simulate complex networks (Cisco IOS). Pros use it to experiment features of Cisco IOS or to check configurations and test before implementationtha on real routers. First released in 2008, it runs on traditional PC hardware but may be used on Windows, Linux, and macOS. Use it to prepare for certification exams such as Cisco CCNA, CCNP, CCIP, CCSP, CCVP, CCIE, Juniper JNCIA, JNCIS and JNCIE. It is also used by network engineers to test network designs for Cisco CCIE certification. It is also used to experiment with network behavior. It is also used to provide complex virtual networks to students preparing for certification exams from Cisco Systems, Juniper Networks, Alcatel-Lucent, Check Point, Palo Alto Networks, F5 Networks, and others.
+
+   * https://theartofhacking.org/ & <a target="_blank" href="https://github.com/The-Art-of-Hacking/h4cker">GitHub</a> by <a target="_blank" href="https://keybase.io/santosomar">Omar Santos</a> with code at https://h4cker.org/github
+
+   * <a target="_blank" href="https://HackTheBox.com/">HackTheBox.com</a> to To find 300+ pentest hacking labs
+
+   * <a target="_blank" href="https://github.com/rapid7/metasploitable3">github.com/rapid7/metasploitable3</a> is used by Packer to build images using <a target="_blank" href="https://download.virtualbox.org/virtualbox/UserManual.pdf">PDF: Oracle VM Virtualbox</a>, VMware ESXi, HashiCorp Vagrant, or libvirt on either Ubuntu 14.04 or Windows. It contains many security vulnerabilities explained at <a target="_blank" href="https://github.com/rapid7/metasploitable3/wiki/">its wiki</a>
+
+   * Others may use Proxmox virtualization
+
+   * <a target="_blank" href="https://github.com/joe-shenouda/awesome-cyber-skills/blob/master/README.md">awesome-cyber-skills on GitHub</a> by <a target="_blank" href="https://www.linkedin.com/in/josephshenouda/">Joe Senouda</a> (<a target="_blank" href="https://cyber-consult.org/">cyber-consult.org</a>) provides a "curated list of hacking environments where you can train your cyber skills free, legally and safely".
+   <br /><br />
+
+
 ## Certifications
 
 Cyber Ranges are used by individuals to achieve several <a target="_blank" href="https://wilsonmar.github.io/security-certs">security certifications</a>:
@@ -76,6 +101,7 @@ This article is structured according to these categories of several technologies
    <br /><br />
 
 Within each category are external dependencies, <strong>testing</strong> (for functionality, capacity, security vulnerabilities, etc.),  and multi-vendor considerations.
+
 
 
 <hr />
@@ -181,29 +207,6 @@ To enable disk encryption, use BitLocker on Windows General Settings.
 
 
 <hr />
-
-## The range of cyber ranges
-
-Existing <a target="_blank" href="https://www.wikiwand.com/en/Cyber_range">Cyber Ranges</a>
-
-   * <a target="_blank" href="https://www.eccouncil.org/programs/cyber-range/">EC-Council's iLabs CEH</a> costs $200 for 40 hours. Recommended by Bushmiller.
-
-   * For $100/year, Cisco Virtual Internet Routing Lab (VIRL) is a network design and simulation environment that includes a GNS3 VM, VIRL Server, and a set of Cisco IOS virtual machines. VIRL allows you to create virtual network topologies using virtual networking devices such as Cisco routers and switches. You can use VIRL to create a virtual network and run different operating systems such as IOS, IOS-XE, IOS-XR, and NX-OS in the virtual devices. You can also use VIRL to create a virtual network and run different operating systems such as IOS, IOS-XE, IOS-XR, and NX-OS in the virtual devices. 
-
-   * GNS3 (Graphical Network Simulator-3) is the name of a hosted service providing a tool to simulate complex networks (Cisco IOS). Pros use it to experiment features of Cisco IOS or to check configurations and test before implementationtha on real routers. First released in 2008, it runs on traditional PC hardware but may be used on Windows, Linux, and macOS. Use it to prepare for certification exams such as Cisco CCNA, CCNP, CCIP, CCSP, CCVP, CCIE, Juniper JNCIA, JNCIS and JNCIE. It is also used by network engineers to test network designs for Cisco CCIE certification. It is also used to experiment with network behavior. It is also used to provide complex virtual networks to students preparing for certification exams from Cisco Systems, Juniper Networks, Alcatel-Lucent, Check Point, Palo Alto Networks, F5 Networks, and others.
-
-   * https://theartofhacking.org/ & <a target="_blank" href="https://github.com/The-Art-of-Hacking/h4cker">GitHub</a> by <a target="_blank" href="https://keybase.io/santosomar">Omar Santos</a> with code at https://h4cker.org/github
-
-   * <a target="_blank" href="https://HackTheBox.com/">HackTheBox.com</a> to To find 300+ pentest hacking labs
-
-   * <a trget="_blank" href="https://laurakokkarinen.com/how-to-set-up-a-kali-linux-virtual-machine-in-azure-to-serve-as-a-tryhackme-attack-box/">Create Kali on Azure</a> to attack apps running in cloud <a target="_blank" href="https://tryhackme.com/">$120/month TryHackMe.com</a>
-
-   * <a target="_blank" href="https://github.com/rapid7/metasploitable3">github.com/rapid7/metasploitable3</a> is used by Packer to build images using <a target="_blank" href="https://download.virtualbox.org/virtualbox/UserManual.pdf">PDF: Oracle VM Virtualbox</a>, VMware ESXi, HashiCorp Vagrant, or libvirt on either Ubuntu 14.04 or Windows. It contains many security vulnerabilities explained at <a target="_blank" href="https://github.com/rapid7/metasploitable3/wiki/">its wiki</a>
-
-   * Others may use Proxmox virtualization
-   <br /><br />
-
-
 
 
 <a target="_blank" href="https://virtualbox.org/">VirtualBox 6.1</a>

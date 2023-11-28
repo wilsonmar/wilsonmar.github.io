@@ -25,23 +25,22 @@ Here we have for you a hands-on step-by-step tutorial on quickly setting up and 
 
 Microsoft Fabric is a platform to get, create, share, and visualize data using an array of tools, including a <strong>data lakehouse</strong> that combines the best of data warehouses and data lakes.
 
-PROTIP: The array of tools is shown in this diagram I adapted from Microsoft. All the components ("Experiences") of Fabric, in one page.
-We'll reference this throughout this article.
+PROTIP: The array of tools is shown in this diagram I adapted from Microsoft and <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">others</a>. All the components ("Experiences") of Fabric, in one page.
 
 <a name="Diagram"></a>
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701112374/microsoft-fabric-1673x997_oap1ad.png"><img alt="microsoft-fabric-1673x997.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701112374/microsoft-fabric-1673x997_oap1ad.png"><br /><em>Click for full-size image</em></a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701112374/microsoft-fabric-1673x997_oap1ad.png"><img alt="microsoft-fabric-1673x997.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701112374/microsoft-fabric-1673x997_oap1ad.png"><br align="right" /><em>Click for full-size image</em></a>.
+
+This will be referenced throughout the text below.
 
 
 ## User Roles
 
-Unlike fanboys who talk about products like fancy new features of a Tesla,
+Rather than being a fanboy who focus too much on product technical features,
 here we focus on <strong>impacts</strong> on the lives of people.
-
-Use <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">this</a> to assign permissions for various Fabric "experiences" (sub-products):
 
 Instead of the traditional generic "Database Administrator" role name:
 
-* <strong>Data Stewards</strong> take care of backing up logs, transaction/master data. They establish IAM accounts with limited permissions and arrange for audits.
+* <strong>Data Stewards</strong> take care of backing up logs, transaction/master data. They establish IAM accounts with limited permissions and arrange for audits. In many organizations, to limit the impact of credential loss, they are the only ones who can delete data which others place in "limbo".
 
 * <strong>Data Engineers</strong> establish the platform and workflows for data cleaning, loading, and monitoring for governance.
 * <strong>Data Scientists</strong> work on AI models using Data Science tools such as Notebooks written in PySpark for Machine Learning.
@@ -62,6 +61,8 @@ Additional roles:
 * Managers & Supervisors
 * Executives: CEO, CTO, CMO, CRO, etc.
 <br /><br />
+
+The above are used to assign permissions to the Fabric "experiences" (sub-products).
 
 
 ## Fabric Marketing
@@ -174,9 +175,22 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
 
    <a target="_blank" href="https://app.fabric.microsoft.com/capacity/">https://app.fabric.microsoft.com/capacity</a>
 
-1. Click <a href="#HomePage">"Fabric Home Page"</a> which takes you back to
 
-   https://app.fabric.microsoft.com/home?experience=fabric
+   ### Pricing
+
+1. Click "Pricing" to see the Fabric Pricing page:
+
+   https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/?country=us
+
+1. Select Region: <strong>East US</strong> (Virginia) in US Dollars by the hour.
+
+   SKU = Stock Keeping Unit = a unique identifier for each distinct product and service that can be purchased in business.
+
+   PROTIP: My analysis shows a linear relationship between CU cost and the two ways of charging:
+
+   <img alt="fabric-cu-pricing-624-346.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701133129/fabric-cu-pricing-624-346_og6eyy.png">
+   
+   The Premium tier is 4x the Pro tier?
 
 
    ### Learning sites
@@ -353,7 +367,7 @@ Query data by using SQL:
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701048036/ADLSg2-lakehouse-864x291_d8wv2o.png"><img alt="ADLSg2-lakehouse-864x291.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701048036/ADLSg2-lakehouse-864x291_d8wv2o.png"></a>
    
 
- ### Delta (Parquet) Format
+### Delta (Parquet) Format
 
 At the bottom is storage. "<a target="_blank" href="https://learn.microsoft.com/fabric/onelake/onelake-overview">One Lake</a>" is the branding for storage built on top of Azure Data Lake Storage Gen2 (ADLSg2) lakehouse that combines storage locations across different regions and clouds into a single logical lake, without moving or duplicating data (DirectLake mode).
 
@@ -362,7 +376,7 @@ The key enabler (for Microsoft as well as Snowflake and Databricks DeltaLake) is
 Previously, SQL and analytic data are stored in different database technologies.
 
 
-   ### Workflow with Fabric 
+### Workflow with Fabric 
 
 Microsoft Fabric offers a centralized storage solution, eliminating data fragmentation and promoting data integrity. 
 

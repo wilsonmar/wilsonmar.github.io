@@ -1083,6 +1083,7 @@ The fee includes a course with 145+ hours of video content and 121 labs.
 OSSTMM vs OWASP</a>
 * https://security.ine.com/certifications/ejpt-certification/
 
+
 <hr />
 
 <a name="EC-Council"></a>
@@ -1091,16 +1092,32 @@ OSSTMM vs OWASP</a>
 
 EC-Council (International Council of E-Commerce Consultants) is based in Malaysia. Since 2001 it offers 3 levels of certification. 
 See <a target="_blank" href="https://cert.eccouncil.org/faq.html">https://cert.eccouncil.org/faq.html</a>
+   * <a href="#CEH">CEH = Certified Ethical Hacker</a>
+   * <a href="#ECSA">CPENT / ECSA</a>
+   * <a href="#LPT">Expert Level is LPT: Licensed Penetration Tester [Master]</a>
+   <br /><br />
 
 33% off until Dec 31.
 
+
 ### CEH Certified Ethical Hacker
 
-Now at v12, as defined by <a target="_blank" href="https://www.eccouncil.org/programs/certified-ethical-hacker-ceh">https://www.eccouncil.org/programs/certified-ethical-hacker-ceh</a> asks 125 multiple-choice questions in 4 hours.
+Now at v12, as defined by <a target="_blank" href="https://www.eccouncil.org/programs/certified-ethical-hacker-ceh">https://www.eccouncil.org/programs/certified-ethical-hacker-ceh</a> asks 125 multiple-choice questions in 4 hours. Most questions is select from 4 options.
 
-The exam is proctored by ECC EXAM (as 312-50) and Pearson VUE (as 312-50), 
+The $1,100 exam is proctored by ECC EXAM (as 312-50) and Pearson VUE (as 312-50), 
 courseware is discounted to $850, with upgrade for VUE exam for $100.
 from "Aspen iLabs".
+
+NOTE: The CompTIA PenTest+ is cheaper and doesn't require 2 years of experience.
+
+Before applying for the exam, ask for a "direct exam" when providing who will verify your experience at
+https://cert.eccouncil.org/Exam-Eligibility-Form.html
+and pay $100 to apply at
+https://store.eccouncil.org/product/eligibility-application-fee/
+
+The form needs to be printed, signed, scanned to a PDF, then emailed.
+
+Don't pay for the exam until you get approval.
 
 Exam Brochure:
 https://www.eccouncil.org/wp-content/uploads/2016/07/CEHv10-Brochure.pdf
@@ -1108,10 +1125,15 @@ https://www.eccouncil.org/wp-content/uploads/2016/07/CEHv10-Brochure.pdf
 CEH Candidate Handbook:
 https://s3-us-west-2.amazonaws.com/edm-image/documents/CEH-Handbook-v2.2.pdf
 
-Blueprint: https://cert.eccouncil.org/images/doc/CEH-Exam-Blueprint-v2.0.pdf
+Blueprint: 
+https://cert.eccouncil.org/images/doc/CEH-Exam-Blueprint-v2.0.pdf
 
 <a target="_blank" href="https://learning.oreilly.com/live-events/certified-ethical-hacker-ceh-v12-technical-skills-in-2-weeks/0636920055985/0636920093458/">Dean Bushmiller's "in 2 week" Live Video Course on OReilly.com</a> with <a target="_blank" href="https://github.com/deanbushmiller/ceh-bootcamp">GitHub</a>
 
+"Footprinting" is a term EC-Council invented as aka for "reconnaissance".
+
+
+<a name="ECSA"></a>
 
 ### CPENT / ECSA 
 
@@ -1122,6 +1144,7 @@ is being phased out in Oct. 2020 in favor of the <a target="_blank" href="https:
 Covers "double pivoting".
 
 $2199 w/ training, $799 for challenge.
+
 
 <a name="LPT"></a>
 
