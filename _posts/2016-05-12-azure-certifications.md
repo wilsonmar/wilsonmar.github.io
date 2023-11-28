@@ -540,35 +540,40 @@ Niraj Kumar, founder of <a target="_blank" href="https://azureezy.com/az-104-azu
    * <a target="_blank" href="https://www.youtube.com/watch?v=AzPvDNUldoI&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&index=8&t=10m43s" title="Sep 15, 2020">1hr 47m Azure Monitoring</a>
    <br /><br />
 
+Chris Wahl (twitch.tv/wahlnetwork)
+   * <a target="_blank" href="https://www.youtube.com/watch?v=gyZdCzdkSY4" title="Oct 13, 2020">Beginners Tutorial to Terraform with Azure</a>
+   <br /><br />
+
+Susanth Sutheesh
+   * <a target="_blank" href="https://www.youtube.com/watch?v=I1zvntPHNMk">Full course</a>
+   <br /><br />
+
+ The Tech BlackBoard
+   * <a target="_blank" href="https://www.youtube.com/playlist?list=PL0AYtrUw-NRTX9NFza7kfTDlxYaKxooCk">5 hour Q&A</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=11XlNifbHfM">July 28, 2023 update</a>
+   <br /><br />
+Eydiea
+   * https://www.youtube.com/watch?v=wYUhumwOGrM&list=PLA_CqAntXBh4DPIYCcplBWLjT3AYl1822
+
 On ACloudGuru.com/LinuxAcademy.com:
 
    https://app.pluralsight.com/paths/certificate/microsoft-azure-administrator-az-104 by Tim Warner and <a target="_blank" href="https://www.linkedin.com/in/michael-teske-45240561/">Michael Teske</a>
    * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/573">LinuxAcademy</a>
    * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/763">Intro to Azure Files</a>
-
-Chris Wahl (twitch.tv/wahlnetwork)
-
-   * <a target="_blank" href="https://www.youtube.com/watch?v=gyZdCzdkSY4" title="Oct 13, 2020">Beginners Tutorial to Terraform with Azure</a>
-
-Susanth Sutheesh
-
-   * <a target="_blank" href="https://www.youtube.com/watch?v=I1zvntPHNMk">Full course</a>
-
- The Tech BlackBoard
- 
-   * <a target="_blank" href="https://www.youtube.com/playlist?list=PL0AYtrUw-NRTX9NFza7kfTDlxYaKxooCk">5 hour Q&A</a>
-   * <a target="_blank" href="https://www.youtube.com/watch?v=11XlNifbHfM">July 28, 2023 update</a>
+   <br /><br />
 
 ### Flash cards:
 
    * <a target="_blank" href="https://quizlet.com/subject/az-104/">Quizlet flash cards</a>
+   <br /><br />
 
 ### Sample tests:
 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=ef87Qun5wBU">VIDEO 4-hr questions</a>
    * https://www.whizlabs.com/microsoft-azure-certification-az-104/
    <br /><br />
 
-1. Take a Practice Test (from MeasureUp) that feels just like the actual test, if you are enrolled in <a target="_blank" href="https://esi.microsoft.com/getcertification">Microsoft's Enterprise Skills Initiative</a>.
+   Practice Test (from MeasureUp) that feels just like the actual test, if you are enrolled in <a target="_blank" href="https://esi.microsoft.com/getcertification">Microsoft's Enterprise Skills Initiative</a>.
 
    After sign-up, you get an email to register an account <a target="_blank" href="https://www.skillpipe.com/">https://www.skillpipe.com</a> then paste the license key from the email to redeem it on your <a target="_blank" href="https://www.skillpipe.com/#/bookshelf/books">bookshelf</a>, where you take the course.
 
@@ -579,8 +584,9 @@ by Tim Warner with <a target="_blank" href="https://www.kaplanlearn.com/educatio
 
 * <a target="_blank" href="https://www.aguidetocloud.com/full-courses/az104fullcourse">10-hour AGuideToCloud video class by Susanth Sutheesh</a>
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=QGZWqYIpOMw">VIDEO: 190-question Q&A in 5 hours</a> from The Tech BlackBoard by Vipin Vij.
-
+from The Tech BlackBoard by Vipin Vij.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=QGZWqYIpOMw">VIDEO: 190-question Q&A in 5 hours</a> 
+   * https://www.youtube.com/watch?v=EkJQXUGlLGU case studies
 
 
 <hr />
@@ -1224,8 +1230,7 @@ https://docs.microsoft.com/en-us/learn/certifications/exams/az-303">
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-303</a>
 is the official description ($165 for 2-3 hours) and text tutorial.
 
-NOTE: AZ-303 replaces <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-300-MicrosoftAzureArchitectTechnologies">AZ-300</a>, and 
-AZ-104 is not a pre-requisite but covers same topics more conceptually than this.
+NOTE: AZ-303 replaces <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-300-MicrosoftAzureArchitectTechnologies">AZ-300</a>, and AZ-104 is not a pre-requisite but covers same topics more conceptually than this.
 
 Microsoft's 4-day live class covers these modules, with <a target="_blank" href="https://microsoftlearning.github.io/AZ-303-Microsoft-Azure-Architect-Technologies/">lab scenarios</a> defined in <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies">https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies</a> 
 

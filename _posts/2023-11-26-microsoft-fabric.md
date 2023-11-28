@@ -25,10 +25,10 @@ Here we have for you a hands-on step-by-step tutorial on quickly setting up and 
 
 Microsoft Fabric is a platform to get, create, share, and visualize data using an array of tools, including a <strong>data lakehouse</strong> that combines the best of data warehouses and data lakes.
 
-PROTIP: The array of tools is shown in this diagram I adapted from Microsoft and <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">others</a>. All the components ("Experiences") of Fabric, in one page.
+PROTIP: The array of tools is shown in <a target="_blank" href="https://7451111251303.gumroad.com/l/fkrvnn" title="Available for purchase">this diagram</a> I adapted from Microsoft and <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">others</a>. All the components ("Experiences") of Fabric, in one page:
 
 <a name="Diagram"></a>
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701112374/microsoft-fabric-1673x997_oap1ad.png"><img alt="microsoft-fabric-1673x997.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701112374/microsoft-fabric-1673x997_oap1ad.png"><br align="right" /><em>Click for full-size image</em></a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701174274/microsoft-fabric-diagram-1688x999_m2rl5y.png"><img alt="microsoft-fabric-diagram-1688x999.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701174274/microsoft-fabric-diagram-1688x999_m2rl5y.png"><br align="right" /><em>Click for full-size image</em></a>.
 
 This will be referenced throughout the text below.
 
@@ -253,6 +253,7 @@ Microsoft Fabric offers a centralized storage solution, eliminating data fragmen
 
 1. Data Factory: data integration <strong>pipelines</strong> to copy data and orchestrate data processing, combining Power Query. or Dataflows (Gen2) to Import and transform data from a range of sources using Power Query Online, and load it directly into a table in the lakehouse.
 
+   * https://learn.microsoft.com/en-us/fabric/data-factory/data-factory-overview
    * https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/
    <br /><br />
 
@@ -260,6 +261,39 @@ Microsoft Fabric offers a centralized storage solution, eliminating data fragmen
 
 1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/">Data Activator</a>: "Insight to action" takes action based on what's happening in your data. 
    * https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/
+
+
+## Product Component "Experiences"
+
+1. Click the Microsoft Fabric icon at the bottom of the screen for a list of product components (without the vague marketing generalizations):
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701046058/fabric-menu-624x584_de9vj1.png"><img alt="fabric-menu-624x584.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701046058/fabric-menu-624x584_de9vj1.png"></a>
+
+   Notice that there is a group of <strong>Synapse brand</strong> data products with blue icons.
+   Synapse is on Azure as a Platform-as-a-Service (PaaS)
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=Shw8FbDi4lQ&t=5m39s" title="by Deepika Bhatt with James Leonard">DEMO</a>: 
+   Fabric integrates into a single unified SaaS analytics platform :
+   * Azure Data Factory
+   * Azure Data Explorer
+   * Azure Synapse Analytics operates on workspaces containing both relational SQL databases and big-data Lake databases, all linked to blobs (files) within Azure Data Lake Storage (ADLS) Gen2
+   * Azure Databricks
+   * Azure Synapse SQL
+   * Power BI to 
+   <br /><br />
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=Shw8FbDi4lQ&t=2m40s" title="by James Leonard">VIDEO</a>: 
+   "Synapse Data Analytics" integrates relational data with big data, both using Azure Data Lake Storage (ADLS) Gen2, Azure Data Factory, Azure Databricks, Azure Synapse SQL, and Power BI into a single unified analytics platform.
+
+   Fabric covers the complete spectrum of data services including data movement, data lake, data engineering, data integration and data science, observational analytics, and business intelligence.
+   
+## End-to-End projects
+
+<a target="_blank" href="https://www.youtube.com/watch?v=gKdlsHm7QgU&list=PL9SoC_dDpQ8FnIJZwlk5L4rU1r7-cQNCG">DataVerse Academy</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=yRJ03n1U5-E&list=PLug2zSFKZmV0Yaya7NxRQfrrPtfF2vj0K">Learn Microsoft Fabric with Will</a>
+
+https://www.youtube.com/watch?v=a6A3jtvB62U James Serra
 
 
 <hr />
@@ -368,7 +402,7 @@ Optimize performance:
 
 Design and build semantic models:
    * Choose a storage mode, including Direct Lake
-   * Identify use cases for DAX Studio and Tabular Editor 2
+   * Identify use cases for <a href="#DAX+Studio">DAX Studio</a> and Tabular Editor 2
    * Implement a star schema for a semantic model
    * Implement relationships, such as bridge tables and many-to-many relationships
    * Write calculations that use DAX variables and functions, such as iterators, table filtering, windowing, and information functions
@@ -381,7 +415,7 @@ Design and build semantic models:
 
 Optimize enterprise-scale semantic models:
    * Implement performance improvements in queries and report visuals
-   * Improve DAX performance by using DAX Studio
+   * Improve DAX performance by using <a href="#DAX+Studio">DAX Studio</a>
    * Optimize a semantic model by using Tabular Editor 2
    * Implement incremental refresh
    <br /><br />
@@ -400,27 +434,14 @@ Query data by using SQL:
    * Connect to and query datasets by using the XMLA endpoint
    <br /><br />
 
-
-## End-to-End projects
-
-<a target="_blank" href="https://www.youtube.com/watch?v=gKdlsHm7QgU&list=PL9SoC_dDpQ8FnIJZwlk5L4rU1r7-cQNCG">DataVerse Academy</a>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=yRJ03n1U5-E&list=PLug2zSFKZmV0Yaya7NxRQfrrPtfF2vj0K">Learn Microsoft Fabric with Will</a>
+<hr />
 
 
-### Product Component "Experiences"
+<hr />
 
-1. Click the Microsoft Fabric icon at the bottom of the screen for a list of product components (without the vague marketing generalizations):
+<a name="Data+Activator"></a>
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701046058/fabric-menu-624x584_de9vj1.png"><img alt="fabric-menu-624x584.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701046058/fabric-menu-624x584_de9vj1.png"></a>
-
-   Notice that there is a group of <strong>Synapse brand</strong> data products with blue icons.
-   Synapse is on Azure as a Platform-as-a-Service (PaaS)
-
-
-   ### Data Activator
-
-   <a name="Data+Activator"></a>
+## Data Activator
 
    <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/8-exercise">Excerise</a>
 
@@ -494,6 +515,66 @@ item permissions in a workspace grant access to individual warehouses to enable 
 * Get started with data science in Microsoft Fabric
    Promotion can be done by any workspace member who has been granted permissions.
    Certification are enabled in the tenant by the admin, and only designated certifiers can perform the endorsement. 
+
+<hr />
+
+## DAX Studio
+
+Among https://www.sqlbi.com/tools/
+
+DAX Studio is an open-sourced free IDE that provides an Object Browser, query editing and execution, formula and measure editing, syntax highlighting and formatting, integrated tracing, and query execution breakdowns
+to write, execute, and analyze DAX queries in Power BI Designer, Power Pivot for Excel, and Analysis Services Tabular.
+
+Use Power BI Desktop to explore the Adventureworks database at
+https://daxstudio.org/docs/tutorials/writing-dax-queries/
+using these sample commands:
+
+The syntax of DAX Queries are described by Microsoft at
+https://learn.microsoft.com/en-us/dax/dax-queries
+
+<pre>[DEFINE 
+    (
+     (MEASURE <table name>[<measure name>] = <scalar expression>) | 
+     (VAR <var name> = <table or scalar expression>) |
+     (TABLE <table name> = <table expression>) | 
+     (COLUMN <table name>[<column name>] = <scalar expression>) | 
+    ) + 
+]
+(EVALUATE
+    'Internet Sales'
+ORDER BY
+    'Internet Sales'[Sales Order Number]
+START AT "SO7000") +
+</pre>
+
+To returns the calculated total sales for years 2013 and 2014, and combined calculated total sales for years 2013 and 2014, as a table. The measure in the DEFINE statement, Internet Total Sales, is used in both Total Sales and Combined Years Total Sales expressions.
+
+<pre>DEFINE
+    MEASURE 'Internet Sales'[Internet Total Sales] =
+        SUM ( 'Internet Sales'[Sales Amount] )
+
+EVALUATE
+SUMMARIZECOLUMNS (
+    'Date'[Calendar Year],
+    TREATAS (
+        {
+            2013,
+            2014
+        },
+        'Date'[Calendar Year]
+    ),
+    "Total Sales", [Internet Total Sales],
+    "Combined Years Total Sales",
+        CALCULATE (
+            [Internet Total Sales],
+            ALLSELECTED ( 'Date'[Calendar Year] )
+        )
+)
+ORDER BY [Calendar Year]
+</pre>
+
+References:
+   * https://hevodata.com/learn/dax-studio/
 
 
 <hr />
