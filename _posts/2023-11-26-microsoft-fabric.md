@@ -48,7 +48,7 @@ listed in order of when they get involved in a green-field implementation:
 
    They are the authority on what are correct values in databases.
    
-   PROTIP: For each set of data, there is one <strong>data owner</strong> who approve data deletion and arrange for audits as well as
+   PROTIP: For each set of data, there is one <strong>data owner</strong> who approves data deletion and arranges for audits as well as
    approving who have access and extent of permissions (for implementation by a central security team using IAM tools).
 
    Data Citizens need to be trained to use <a href="#PowerBI">Power BI</a> for <a href="#Analytics">Analytics</a>, <a href="#Data+Activator">Data Activator</a> for alerts, and other tools provided by Data Analysts. Some track where they spend time on technical aspects to ensure that the time spent is worth the value of the data.
@@ -70,9 +70,11 @@ listed in order of when they get involved in a green-field implementation:
 
    PROTIP: In response to security incidents, automation enables complete recreation of capabilities with the latest patches, rather than patching.
 
+   Microsoft's documentation now calls "Power BI administrators" <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/admin/microsoft-fabric-admin">Fabric administrators</a>.
+
 * <a target="_blank" href="https://www.indeed.com/career-advice/finding-a-job/what-is-data-steward"><strong>Data Stewards</strong></a> are <strong>data custodians</strong> responsible for protecting the organization's most treasured assets: its data. Stewards setup and operate processes for data governance and data quality. They monitor processes for collecting data -- inspecting contents to ensure that data is in the right format. They ensure that app logs, metric collections, database logs shipped, app transactions, snapshots of master data are backed up fully and as scheduled. Once a month they ensure that data can be fully and quickly restored, as measured by RTO (Recovery Time Objective) and RPO (Recovery Point Objective) SLAs. Such is an important fall-back in case of ransomware attacks.
 
-   Data stewards collaborate with others to solve data corruption or mis-sychronization of data between apps and utilities.
+   Data stewards collaborate with others to detect and solve data corruption or mis-sychronization of data between apps and utilities.
 
    PROTIP: In many organizations, to limit the impact of credential loss, they, after approval by the data owner, are the only accounts who can <strong>delete data</strong> which others put "in limbo".
 
@@ -132,6 +134,9 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701041117/fabric-signin-318x367_lf2lqp.png"><img alt="fabric-signin-318x367.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701041117/fabric-signin-318x367_lf2lqp.png"></a>
 
    <a name="HomePage"></a>
+
+   ### Working Home Page
+
 1. REMEMBER: The Microsoft <strong>Fabric working home page</strong> has Microsoft.com and not Azure:
 
    <a target="_blank" href="https://app.fabric.microsoft.com"><strong>https://app.fabric.microsoft.com</strong></a>
@@ -149,33 +154,7 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
 1. Click the big round gray icon at the upper side of the Fabric page for the <a href="#AdminMenu">Admin/Sign In menu above</a>.
 
 
-   ### User Communities
-
-1. Get a Microsoft Tech Community ID at <a target="_blank" href="https://techcommunity.microsoft.com/">https://techcommunity.microsoft.com</a>
-
-   https://community.fabric.microsoft.com/
-
-   https://powerusers.microsoft.com/
-
-   Azure Data Community at
-   https://www.microsoft.com/en-us/sql-server/community?activetab=pivot:sqlservertab
-   has several sub-commmunity pages.
-
-   https://www.meetup.com/pro/azuretechgroups/ managed according to 
-   https://developer.microsoft.com/en-us/azure-tech-groups/
-
-   Azure Data Tech Groups at
-   https://www.meetup.com/pro/azuredatatechgroups/
-   https://www.microsoft.com/en-us/sql-server/community?activetab=pivot:sqlservertab
-
-   https://passdatacommunitysummit.com (Nov 14-17 2023 Seattle)
-
-   Outside of Microsoft:
-
-   https://live360events.com/Events/Orlando-2023/Home.aspx
-
-
-   ### Trial
+   ### Start Trial
 
 1. Click the green <strong>Start trial</strong> box.
 
@@ -202,10 +181,10 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
 
 1. <a target="_blank" href="https://www.youtube.com/watch?v=l3cpnX0mpXE">VIDEO</a>: <a target="_blank" href="https://blog.fabric.microsoft.com/en-US/blog/capacity-metrics-in-microsoft-fabric/">BLOG</a>: <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app">Monitor Capacity usage</a> using:
    
-
-   ### Learning sites
-
 1. Click the <strong>Admin</strong> icon at the top right of the page to see the number of days remaining in the trial.
+
+
+   ### Learn More
 
 1. PROTIP: Instead of clicking this <strong>Learn more</strong> link for the "Get started" tutorial, copy the URL and switch to your personal browser profile so you get points for learning,
 
@@ -227,68 +206,9 @@ Semantics relates to the study of references, specifically describing the real m
 A semantic model or semantic data model is a high-level databases. An SDM specification describes a database in terms of the kinds of entities that exist in the application environment, the classifications and groupings of those entities, and the structural interconnections among them.
 
 
-## Workflow with Fabric 
+<hr />
 
-Microsoft Fabric offers a centralized storage solution, eliminating data fragmentation and promoting data integrity. 
-
-   Fabric aims to eliminate silos and remove data duplication by providing a single platform for <strong>collaboration</strong> among data engineers, data scientists, and business analysts. The <a target="_blank" href="https://learn.microsoft.com/fabric/data-engineering/tutorial-lakehouse-introduction">flow</a> is:
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701049746/fabric-flow-842x516_bcpj9q.jpg"><img alt="fabric-flow-842x516.jpeg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701049746/fabric-flow-842x516_bcpj9q.jpg"></a>
-
-   <a target="_blank" href="https://justb.dk/blog/2023/11/fabric-data-lakehouse-understanding-the-dataflow/">This article</a> describes the flow in detail.
-
-1. Create a <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/get-started/workspaces">Fabric workspace</a>.
-1. <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/data-engineering/tutorial-lakehouse-get-started">Create a lakehouse</a> using PowerBI. There's no limit on the number of workspaces or items you can create within your capacity.
-
-1. DATA SOURCE: Obtain data in a variety of formats from a variety of sources.
-
-   The end-to-end example is built using <a target="_blank" href="https://learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true">Microsoft's Wide World Importers (WWI) sample data</a>:
-
-1. INGEST: 
-
-1. TRANSFORM & STORE: transform data, and load it into the lakehouse. You can also explore the OneLake, one copy of your data across lakehouse mode and SQL analytics endpoint mode.
-
-   A major innovation with lakehouses instead of data warehouse is that instead of traditional transform before load (ETL), it's load then transform (ELT).
-
-1. SERVE: Connect to the lakehouse's SQL analytics endpoint to create a Power BI report using DirectLake -- to analyze sales data across different dimensions.
-
-1. CONSUME: Connect to the lakehouse's SQL analytics endpoint to create a Power BI report using DirectLake -- to analyze sales data across different dimensions.
-
-1. Optionally, orchestrate and schedule data ingestion and transformation flow with a pipeline.
-<br /><br />
-
-* <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/">Use Data Factory pipelines in Microsoft Fabric</a>
-<br /><br />
-
-   Learn more:
-
-1. Synapse Data Warehouse: support <strong>data use</strong> from SQL Endpoints.
-
-   * https://learn.microsoft.com/en-us/training/modules/get-started-data-warehouse/
-   <br /><br />
-
-1. Synapse Data Engineering: run <strong>Notebooks</strong> within the Spark platform for <strong>data transformation</strong> at scale.
-
-   * https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/
-   <br /><br />
-
-1. Synapse Data Science: model training and execution tracking in a scalable environment using Azure Machine Learning and Spark.
-
-   * https://learn.microsoft.com/en-us/training/modules/get-started-data-science-fabric/
-   <br /><br />
-
-1. Synapse Real-Time Analytics: real-time analytics to query and analyze large volumes of data in real-time.
-
-1. Data Factory: data integration <strong>pipelines</strong> to copy data and orchestrate data processing, combining Power Query. or Dataflows (Gen2) to Import and transform data from a range of sources using Power Query Online, and load it directly into a table in the lakehouse.
-
-   * https://learn.microsoft.com/en-us/fabric/data-factory/data-factory-overview
-   * https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/
-   <br /><br />
-
-1. Power BI: business intelligence for translating data to decisions. Power BI administrators are now <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/admin/microsoft-fabric-admin">Fabric administrators</a>.
-
-1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/">Data Activator</a>: "Insight to action" takes action based on what's happening in your data. 
-   * https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/
-
+<a name="Experiences"></a>
 
 ## Product Component "Experiences"
 
@@ -368,7 +288,22 @@ Microsoft Fabric offers a centralized storage solution, eliminating data fragmen
 
 1. Click "Install".
 1. Click the app to go to it.
-1. Connect to your own data by providing a "CapacityID" and its UTC_offsite (time zone):
+1. Connect to your own data by providing a "CapacityID" (GUID) and its UTC_offsite (time zone).
+
+   <a target="_blank" href="https://community.fabric.microsoft.com/t5/Developer/How-to-get-Power-BI-Embedded-Capacity-ID/m-p/2942860">PROTIP</a>: 
+   The capacity ID is shown in the capacity management page within the Power BI service -> Settings > Admin portal -> Capacity settings. Select a Gen2 capacity. 
+   In the URL of that page is the capacity ID. For example, "9B77CC50-E537-40E4-99B9-2B356347E584" is the Capacity ID in the URL:
+   
+   <tt>https://app.powerbi.com/admin-portal/capacities/9B77CC50-E537-40E4-99B9-2B356347E584</tt>
+
+   You may first have to <a target="_blank" href="https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-premium-manage">set your Service Principal as a Capacity Admin</a>. 
+
+   References:
+   * https://blog.fabric.microsoft.com/en-US/blog/capacity-metrics-in-microsoft-fabric/
+   * https://learn.microsoft.com/en-us/fabric/data-warehouse/usage-reporting
+   * https://learn.microsoft.com/en-us/fabric/admin/feature-usage-adoption
+   <br /><br />
+   
 1. Click "Go back" at the lower-left corner.
 
 
@@ -415,6 +350,69 @@ Microsoft Fabric offers a centralized storage solution, eliminating data fragmen
 
 https://www.youtube.com/watch?v=a6A3jtvB62U James Serra
 
+
+
+## Workflow with Fabric 
+
+Microsoft Fabric offers a centralized storage solution, eliminating data fragmentation and promoting data integrity. 
+
+   Fabric aims to eliminate silos and remove data duplication by providing a single platform for <strong>collaboration</strong> among data engineers, data scientists, and business analysts. The <a target="_blank" href="https://learn.microsoft.com/fabric/data-engineering/tutorial-lakehouse-introduction">flow</a> is:
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701049746/fabric-flow-842x516_bcpj9q.jpg"><img alt="fabric-flow-842x516.jpeg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701049746/fabric-flow-842x516_bcpj9q.jpg"></a>
+
+   <a target="_blank" href="https://justb.dk/blog/2023/11/fabric-data-lakehouse-understanding-the-dataflow/">This article</a> describes the flow in detail.
+
+1. Create a <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/get-started/workspaces">Fabric workspace</a>.
+1. <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/data-engineering/tutorial-lakehouse-get-started">Create a lakehouse</a> using PowerBI. There's no limit on the number of workspaces or items you can create within your capacity.
+
+1. DATA SOURCE: Obtain data in a variety of formats from a variety of sources.
+
+   The end-to-end example is built using <a target="_blank" href="https://learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true">Microsoft's Wide World Importers (WWI) sample data</a>:
+
+1. INGEST: 
+
+1. TRANSFORM & STORE: transform data, and load it into the lakehouse. You can also explore the OneLake, one copy of your data across lakehouse mode and SQL analytics endpoint mode.
+
+   A major innovation with lakehouses instead of data warehouse is that instead of traditional transform before load (ETL), it's load then transform (ELT).
+
+1. SERVE: Connect to the lakehouse's SQL analytics endpoint to create a Power BI report using DirectLake -- to analyze sales data across different dimensions.
+
+1. CONSUME: Connect to the lakehouse's SQL analytics endpoint to create a Power BI report using DirectLake -- to analyze sales data across different dimensions.
+
+1. Optionally, orchestrate and schedule data ingestion and transformation flow with a pipeline.
+<br /><br />
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/">Use Data Factory pipelines in Microsoft Fabric</a>
+<br /><br />
+
+   Learn more:
+
+1. Synapse Data Warehouse: support <strong>data use</strong> from SQL Endpoints.
+
+   * https://learn.microsoft.com/en-us/training/modules/get-started-data-warehouse/
+   <br /><br />
+
+1. Synapse Data Engineering: run <strong>Notebooks</strong> within the Spark platform for <strong>data transformation</strong> at scale.
+
+   * https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/
+   <br /><br />
+
+1. Synapse Data Science: model training and execution tracking in a scalable environment using Azure Machine Learning and Spark.
+
+   * https://learn.microsoft.com/en-us/training/modules/get-started-data-science-fabric/
+   <br /><br />
+
+1. Synapse Real-Time Analytics: real-time analytics to query and analyze large volumes of data in real-time.
+
+1. Data Factory: data integration <strong>pipelines</strong> to copy data and orchestrate data processing, combining Power Query. or Dataflows (Gen2) to Import and transform data from a range of sources using Power Query Online, and load it directly into a table in the lakehouse.
+
+   * https://learn.microsoft.com/en-us/fabric/data-factory/data-factory-overview
+   * https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/
+   <br /><br />
+
+1. Power BI: business intelligence for translating data to decisions. Power BI administrators are now <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/admin/microsoft-fabric-admin">Fabric administrators</a>.
+
+1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/">Data Activator</a>: "Insight to action" takes action based on what's happening in your data. 
+   * https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/
 
 
 <hr />
@@ -690,6 +688,35 @@ ORDER BY [Calendar Year]
 
 References:
    * https://hevodata.com/learn/dax-studio/
+
+
+<hr />
+
+## User Communities
+
+1. Get a Microsoft Tech Community ID at <a target="_blank" href="https://techcommunity.microsoft.com/">https://techcommunity.microsoft.com</a>
+
+   https://community.fabric.microsoft.com/
+
+   https://powerusers.microsoft.com/
+
+   Azure Data Community at
+   https://www.microsoft.com/en-us/sql-server/community?activetab=pivot:sqlservertab
+   has several sub-commmunity pages.
+
+   https://www.meetup.com/pro/azuretechgroups/ managed according to 
+   https://developer.microsoft.com/en-us/azure-tech-groups/
+
+   Azure Data Tech Groups at
+   https://www.meetup.com/pro/azuredatatechgroups/
+   https://www.microsoft.com/en-us/sql-server/community?activetab=pivot:sqlservertab
+
+   https://passdatacommunitysummit.com (Nov 14-17 2023 Seattle)
+
+   Outside of Microsoft:
+
+   https://live360events.com/Events/Orlando-2023/Home.aspx
+
 
 
 <hr />
