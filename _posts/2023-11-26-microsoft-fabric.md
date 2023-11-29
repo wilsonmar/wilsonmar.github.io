@@ -48,16 +48,25 @@ listed in order of when they get involved in a green-field implementation:
 
    They are the authority on what are correct values in databases.
    
-   For each set of data, there is one <strong>data owner</strong> who approve data deletion and arrange for audits as well as
+   PROTIP: For each set of data, there is one <strong>data owner</strong> who approve data deletion and arrange for audits as well as
    approving who have access and extent of permissions (for implementation by a central security team using IAM tools).
 
    Data Citizens need to be trained to use <a href="#PowerBI">Power BI</a> for <a href="#Analytics">Analytics</a>, <a href="#Data+Activator">Data Activator</a> for alerts, and other tools provided by Data Analysts. Some track where they spend time on technical aspects to ensure that the time spent is worth the value of the data.
 
 * <strong>Data (Business) Analysts</strong> serve the needs of Data Citizens by establishing dashboards and alerts, and training users on technologies and possibilities. These Analysts design the "data models" defining relationships among sets of data.
 
-   Business analysts also coordinate <a target="_blank" href="https://wilsonmar.github.io/chaos-engineering/">Chaos Engineering efforts</a> to ensure that recovery efforts are quick and effective.
+   PROTIP: Business analysts also coordinate <a target="_blank" href="https://wilsonmar.github.io/chaos-engineering/">Chaos Engineering efforts</a> to ensure that recovery efforts are quick and effective.
 
-* <strong>Data Engineers</strong> create databases (platforms) and automated <strong>data pipelines</strong> to move data from one place to another, such as from a data lake to a data warehouse. workflows for monitoring, data cleaning, loading, backups, etc.
+* <strong>Data Engineers</strong> create databases (platforms):
+
+   * Define Shortcuts to data files within OneLake storage
+   * Program SQL within Synapse Data Warehouse to create traditional relational SQL databases 
+   * Program KQL (Kusto Query Language) within Synapse Real Time Analytics to create analytic databases
+   * Program PySpark Notebooks within Synapse Data Engineering to create <strong>data lakes</strong>
+   * Use Data Factory to create data pipelines to move data from one place to another, such as from a data lake to a data warehouse.
+   <br /><br />
+
+   Engineers also build automated <strong>workflows</strong> for monitoring, data cleaning, loading, backups, etc.
 
    PROTIP: In response to security incidents, automation enables complete recreation of capabilities with the latest patches, rather than patching.
 
@@ -65,7 +74,7 @@ listed in order of when they get involved in a green-field implementation:
 
    Data stewards collaborate with others to solve data corruption or mis-sychronization of data between apps and utilities.
 
-   In many organizations, to limit the impact of credential loss, they, after approval by the data owner, are the only accounts who can <strong>delete data</strong> which others put "in limbo".
+   PROTIP: In many organizations, to limit the impact of credential loss, they, after approval by the data owner, are the only accounts who can <strong>delete data</strong> which others put "in limbo".
 
    QUESTION: Does Microsoft provide all the tools that Data Stewards need?
 

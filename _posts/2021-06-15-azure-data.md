@@ -368,6 +368,7 @@ references (free) lab instructions in English at
 <a target="_blank" href="https://aka.ms/dp300labs/">aka.ms/dp300labs</a> = https://microsoftlearning.github.io/dp-300-database-administrator/.
 Modules and Exercise:
 * Setup your own environment<br />
+<br /><br />
 Plan and Implement Data Platform Resources	
    * Lab 1 - Provision SQL Server on an Azure Virtual Machine
    * Lab 2 - Provision an Azure SQL Database
