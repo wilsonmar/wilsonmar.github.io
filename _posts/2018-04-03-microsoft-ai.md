@@ -1,9 +1,9 @@
 ---
 layout: post
-date: "2023-08-08"
+date: "2023-11-28"
 file: "microsoft-ai"
 title: "Microsoft AI (Azure OpenAI and Cognitive Services)"
-excerpt: "Notes for before and after getting AI-900, AI-100, AI-102 certified, as we automate AI workflows in the Azure PaaS cloud"
+excerpt: "How to automate AI workflows in Microsoft's Azure and Fabric, despite marketing rebrands, and passing AI-900, AI-100, AI-102 certified"
 tags: [microsoft, azure, machine learning, AI]
 image:
 # feature: pic green matrix hallway 1900x500.jpg
@@ -21,11 +21,13 @@ This article presents my notes toward a guided tour to introduce use of Microsof
 TL;DR look for "PROTIP:" in this article highlight the author's hard-won experience.You likely won't find such information anywhere else.
 My contribution to the world (to you) is a less overwhelming <a href="#LearningSequence">learning sequence</a>, one that starts with the <strong>least complex</strong> of technologies used, then more complex ones.
 
+<a target="_blank" href="https://www.youtube.com/c/MicrosoftMechanicsSeries">Microsoft Mechanics YouTube channel</a> is focused on Microsoft's AI work.
+
 <a name="ServiceProviders"></a>
 
-## AI = Bing = Cortana = Cognitive Services?
+## AI Language = Bing = Cortana = Cognitive Services
 
-Microsoft has published different lists for what services constitute its "Cognitive Services" brand name to achieve AI-enhanced solutions which mimic human intelligence.
+The 2023 branding for Microsoft's AI services to mimic human intelligence is "AI Language".
 
 <a target="_blank" href="https://www.youtube.com/watch?v=KxwjnuhNVIY&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&index=33">"Cortana"</a> was the brand-name for Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Alexa, Siri, Hey Google, and other AI-powered personal assistants which respond to voice commands controlling skills that turn lights on and off, etc. However, since 2019, Cortana is considered a "skill" (app) that Amazon's Alexa and Google Assistant can call, working across multiple platforms.
 
@@ -161,7 +163,7 @@ Case studies of how people are already making use of AI/ML to save time and mone
 
 <a name="Cognitive_Services"></a>
 
-## Kinds of Cognitive Services
+## Kinds of AI Services
 
 As of this writing, in various marketing and certification training <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services">DOCS</a>, Azure Cognitive Services is categorized into these (which is the basis this article is arranged. Click on the bolded word to jump to it below):
 
@@ -327,7 +329,7 @@ IMPORTANT PROTIP: Microsoft allows its free "F0" tier to be applied to only a si
 
 <a name="LearningSequence"></a>
 
-## Prequisites to this document
+## Prerequisites to this document
 
 This document assumes that you have done the following:
 
@@ -1481,7 +1483,7 @@ vs. <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/ser
    * Category 3: considered offensive in certain situations.
    <br /><br />
 
-
+https://learn.microsoft.com/en-us/training/modules/analyze-text-ai-language/3-detect-language
 
 <a target="_blank" href="https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7">v2.1 API Testing Console</a>
 
@@ -1725,6 +1727,92 @@ https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/documenttran
 
 ## Vision services
 
+
+### Use GUI
+
+   References:
+   * aka.ms/cognitivevision
+   <br /><br />
+
+1. In a web browser, navigate to Vision Studio:
+
+   <a target="_blank" href="https://portal.vision.cognitive.azure.com/gallery/featured"><strong>https://portal.vision.cognitive.azure.com/gallery/featured</strong></a>
+
+1. Sign in.
+1. Select a Subscription.
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=4shB_qdU3Gs" title="by Matt McSpirit">VIDEO</a>: 
+   The menu of AI Vision service categories uses Microsoft's "Florence foundational model" (new in 2023)
+   models trained with an "open world" of billions of images combined with a large language model.
+   That enables the identification of objects and their location in a frame such as this:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701223998/microsoft-ai-frame-915x343_m56sm9.pnghttps://res.cloudinary.com/dcajqrroq/image/upload/v1701223998/microsoft-ai-frame-915x343_m56sm9.png"><img alt="microsoft-ai-frame-915x343.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701223998/microsoft-ai-frame-915x343_m56sm9.png"></a>
+
+1. Click each, then "Try it out":
+
+   Optical character recognition (OCR):
+   * Extract text from images - Extract printed and handwritten style text from images and documents for supported languages.
+   <br /><br />
+   Spatial analysis - Video Retrieval and Summary:
+   * Video Retrieval and Summary - Generate a brief summary of the main points shown in video. Locate specific keywords and jump to the relevant section.
+   * Count people in an area - Analyze real-time or recorded video to count the number of people in a designated zone in a camera's field of view.
+   * Detect when people cross a line - Analyze real-time streaming video to detect when a person crosses a line in the camera's field of view.
+   * Detect when people enter/exit a zone - Analyze real-time streaming video to detect when a person enters or exits a zone in the camera's field of view.
+   * Monitor social distancing - Analyze real-time streaming video that tracks when people violate a distance rule in the camera's field of view.
+   <br /><br />
+   * <a href="#Face">Face</a> - Detect faces in an image
+   <br /><br />
+   Image analysis - click "Try it out" on each of these:
+   * Recognize products on shelves - Identify products on shelves, gaps in product availability, and compliance for planograms.
+   * Customize models with images - Create custom image classification and object detection models with images using Vision Studio and Azure ML.
+   * Search photos with image retrieval - Retrieve specific moments within your photo album. For example, you can search for: a wedding you attended last summer, your pet, or your favorite city.
+   * Add dense captions to images - Generate human-readable captions for all important objects detected in your image.
+   * Remove backgrounds from images - Easily remove the background and preserve foreground elements in your image.
+   * Add captions to images - Generate a human-readable sentence that describes the content of an image.
+   * Detect common objects in images - Recognize the location of objects of interest in an image and assign them a label.
+   * Extract common tags from images - Use an AI model to automatically assign one or more labels to an image.
+   * Detect sensitive content in images - Detect sensitive content in images so you can moderate their usage in your applications.
+   * Create smart-cropped images - Create cropped image thumbnails based on the key areas of a larger image.
+   <br /><br />
+
+1. Click "I acknowledge that this service will incur usage to my Azure account."
+1. Select a Region (East US, West Europe, West US, or West US 2)
+
+   The "cog-ms-learn-vision" resource is created for you automatically.
+
+1. Click "View all resources"
+1. Check "cog-ms-learn-vision" created for you automatically.
+1. Click "Select as default resource".
+1. Close.
+
+
+### Use REST API
+
+https://github.com/Azure-Samples/cognitive-service-vision-model-customization-python-samples
+
+   https://microsoftlearning.github.io/mslearn-ai-fundamentals/Instructions/Labs/05-ocr.html
+
+
+1. On the Getting started with Vision landing page, select Optical character recognition, and then the Extract text from images tile.
+
+1. Under the Try It Out subheading, acknowledge the resource usage policy by reading and checking the box.
+
+1. download ocr-images.zip by selecting 
+
+   https://aka.ms/mslearn-ocr-images 
+
+1. Open the folder.
+
+1. On the portal, select Browse for a file and navigate to the folder on your computer where you downloaded ocr-images.zip. Select advert.jpg and select Open.
+
+1. review what is returned:
+
+   In Detected attributes, any text found in the image is organized into a hierarchical structure of regions, lines, and words.
+
+   On the image, the location of text is indicated by a bounding box, as shown here:
+
+
+
 App for the blind: <a target="_blank" href="https://www.youtube.com/watch?v=R2mC-NUAmMk&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&start_radio=1">
 VIDEO</a>: <a target="_blank" href="https://www.youtube.com/watch?v=bqeQByqf_f8&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&index=2">INTRO</a>: <a target="_blank" href="https://www.seeingai.com/">SeeingAI.com</a>.
 Permissions for the "See It All" app are for its internal name "Mt Studio Web Prod".
@@ -1733,8 +1821,7 @@ Permissions for the "See It All" app are for its internal name "Mt Studio Web Pr
 https://docs.microsoft.com/en-us/learn/paths/explore-computer-vision-microsoft-azure/">
 https://docs.microsoft.com/en-us/learn/paths/explore-computer-vision-microsoft-azure</a>
 
-HISTORY: In 2014, Microsoft showed off its facial recognition capabilities with
-<a target="_blank" href="https://www.how-old.net/"><strong>how-old.net</strong></a>
+HISTORY: In 2014, Microsoft showed off its facial recognition capabilities with a website (how-old.net which now is owned by others) 
 to guess how old someone is. At conferences they built a booth that takes a picture.
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/4-understand-computer-vision">LEARN</a>: 
@@ -1774,6 +1861,7 @@ https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/quicks
 READ
 
 #### Computer Vision demo
+
 
 1. Select images and review the information returned by the Azure Computer Vision web service:
 
@@ -2007,9 +2095,11 @@ https://github.com/Azure-Samples/media-services-video-indexer
 https://dev.to/adbertram/getting-started-with-azure-video-indexer-and-powershell-3i32
 
 
+<hr />
+
 <a name="Face"></a>
 
-### Azure Face
+## Azure Face
 
 <a target="_blank" href="https://www.youtube.com/watch?v=abhqxG1nSGg">VIDEO</a>:
 <a target="_blank" href="https://www.youtube.com/watch?v=KCSyRO0KotA">API DEMO</a>:
@@ -2058,6 +2148,7 @@ https://github.com/Azure-Samples/cognitive-services-FaceAPIEnrollmentSample
 
 DEMO: LAB: https://github.com/microsoft/hackwithazure/tree/master/workshops/web-ai-happy-sad-angry
 
+https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/quickstarts-sdk/identity-client-library?tabs=windows%2Cvisual-studio&pivots=programming-language-csharp
 
 #### Create a Face API subscription
 
@@ -2160,9 +2251,11 @@ https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/concepts/plan
 Bots are extended by <a target="_blank" href="https://microsoft.github.io/botframework-solutions/overview/skills/">Skills</a>
 
 
+<hr />
+
 <a href="#QnA_Maker"></a>
 
-### QnA Maker
+## QnA Maker
 
    The cognitive service name "QnA Maker" (Question and Answer Maker)</a> 
    is a cloud-based API service that lets you create a conversational question-and-answer layer over your existing data. The service enables the building of <strong>knowledge bases</strong> of questions and answers that form the basis of a dialog between a human and an AI agent.
@@ -2389,6 +2482,7 @@ References:
    * <a target="_blank" href="https://www.microsoft.com/en-us/research/publication/responsible-bots/">Responsible Bots:</a>
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/bot-service/bot-service-design-user-experience?view=azure-bot-service-4.0">Design the user experience</a>
    * <a target="_blank" href="https://docs.microsoft.com/en-us/composer/introduction">Intro to Composer</a>
+
 
 <hr />
 

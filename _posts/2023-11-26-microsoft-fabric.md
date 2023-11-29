@@ -56,7 +56,11 @@ listed in order of when they get involved in a green-field implementation:
 
 * <strong>Data (Business) Analysts</strong> serve the needs of Data Citizens by establishing dashboards and alerts, and training users on technologies and possibilities. These Analysts design the "data models" defining relationships among sets of data.
 
+   Business analysts also coordinate <a target="_blank" href="https://wilsonmar.github.io/chaos-engineering/">Chaos Engineering efforts</a> to ensure that recovery efforts are quick and effective.
+
 * <strong>Data Engineers</strong> create databases (platforms) and automated <strong>data pipelines</strong> to move data from one place to another, such as from a data lake to a data warehouse. workflows for monitoring, data cleaning, loading, backups, etc.
+
+   PROTIP: In response to security incidents, automation enables complete recreation of capabilities with the latest patches, rather than patching.
 
 * <a target="_blank" href="https://www.indeed.com/career-advice/finding-a-job/what-is-data-steward"><strong>Data Stewards</strong></a> are <strong>data custodians</strong> responsible for protecting the organization's most treasured assets: its data. Stewards setup and operate processes for data governance and data quality. They monitor processes for collecting data -- inspecting contents to ensure that data is in the right format. They ensure that app logs, metric collections, database logs shipped, app transactions, snapshots of master data are backed up fully and as scheduled. Once a month they ensure that data can be fully and quickly restored, as measured by RTO (Recovery Time Objective) and RPO (Recovery Point Objective) SLAs. Such is an important fall-back in case of ransomware attacks.
 
@@ -64,9 +68,9 @@ listed in order of when they get involved in a green-field implementation:
 
    In many organizations, to limit the impact of credential loss, they, after approval by the data owner, are the only accounts who can <strong>delete data</strong> which others put "in limbo".
 
-   PROTIP: Does Microsoft provide all the tools that Data Stewards need?
+   QUESTION: Does Microsoft provide all the tools that Data Stewards need?
 
-* <strong>Data Scientists</strong> work on AI models using Data Science tools such as Notebooks written in PySpark for Machine Learning.
+* <strong>Data Scientists</strong> work on AI models using Data Science tools such as Notebooks written in PySpark for Machine Learning. The intelligence created can be custom tags that extend generic LLM (Large Language Models) created by others for NLP (Natural Language Processing) and other AI (Artificial Intelligence) capabilities.
 
 Additional roles:
 
@@ -81,7 +85,7 @@ Additional roles:
 * Executives: CEO, CTO, CMO, CRO, etc.
 <br /><br />
 
-The above are used to assign permissions to the Fabric "experiences" (sub-products).
+The above are used as the basis to assign permissions to the Fabric "experiences" (sub-products).
 
 
 ## Fabric Marketing
@@ -315,7 +319,8 @@ Microsoft Fabric offers a centralized storage solution, eliminating data fragmen
 1. Click the <strong>Admin</strong> link to designate the admin for the organizational domain name used to sign in.
 1. Click Next.
 1. Read the "See step-by-step instructions to add DNS records" about signing into the Domain Registry (such as GoDaddy) to specify a TXT record Fabric needs to use like a password to trust the domain.
-1. Return to Fabric and click <strong>Confirm record</strong>.
+1. Return to Fabric and click <strong>Confirm record</strong> for "You're now the admin".
+1. Click "Go to the admin center".
 1. Finish.
 
    ### Left menu common items
@@ -589,6 +594,34 @@ item permissions in a workspace grant access to individual warehouses to enable 
 * Get started with data science in Microsoft Fabric
    Promotion can be done by any workspace member who has been granted permissions.
    Certification are enabled in the tenant by the admin, and only designated certifiers can perform the endorsement. 
+
+<hr />
+
+<a name="Analytics"></a>
+
+## Real-Time Analytics
+
+1. In "Real-Time Analytics".
+1. Click "Use a sample" for this menu:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701209892/fabric-analytics-samples-970x388_bzvzr2.png"><img alt="fabric-analytics-samples-970x388.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701209892/fabric-analytics-samples-970x388_bzvzr2.png"></a>
+
+1. Click "Log Analytics" to load and "RawSysLogsSample" appears in the left menu.
+1. Click "Run". 
+
+   <pre>Error: Semantic error: 'take' operator: Failed to resolve table or column expression named 'DownSampledTransformedLogs'
+&nbsp;
+ clientRequestId: </pre>
+
+1. Click "Metrics analytics" to load and "RawServerMetricsSample" appears in the left menu.
+1. Click "Run". 
+
+   <pre>Error: Semantic error: Stored query result 'DailySQLMetrics' was not found
+&nbsp;
+ clientRequestId: </pre>
+
+1. TODO: Report errors?
+
 
 <hr />
 
