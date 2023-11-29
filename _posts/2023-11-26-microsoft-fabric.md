@@ -30,15 +30,15 @@ Microsoft Fabric is a platform to get, create, share, and visualize data using a
 PROTIP: The array of tools is shown in <a target="_blank" href="https://7451111251303.gumroad.com/l/fkrvnn" title="Available for purchase">this diagram</a> I adapted from Microsoft and <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">others</a>. All the components ("Experiences") of Fabric, in one page:
 
 <a name="Diagram"></a>
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701174274/microsoft-fabric-diagram-1688x999_m2rl5y.png"><img alt="microsoft-fabric-diagram-1688x999.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701174274/microsoft-fabric-diagram-1688x999_m2rl5y.png"><br align="right" /><em>Click for full-size image</em></a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701283548/microsoft-fabric-1703x995_okeala.png"><img alt="microsoft-fabric-1703x995" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701283548/microsoft-fabric-1703x995_okeala.png"><br align="right" /><em>Click for full-size image</em></a>.
 
 This will be referenced throughout the text below.
 
 
 ## User Roles
 
-Rather than being a fanboy who focus too much on product technical features,
-here we focus on <strong>impacts</strong> on the lives of people.
+Rather than being a fanboy who say "it's the latest cool thing, let's switch now",
+in this article we focus on <strong>impacts</strong> on the lives of people.
 
 Instead of the traditional generic "Database Administrator" role name, 
 Microsoft designed Fabric documentation based on these roles for enterprises,
@@ -57,12 +57,14 @@ listed in order of when they get involved in a green-field implementation:
 
    PROTIP: Business analysts also coordinate <a target="_blank" href="https://wilsonmar.github.io/chaos-engineering/">Chaos Engineering efforts</a> to ensure that recovery efforts are quick and effective.
 
+   Data Analysts collaborate with Security on using Microsft Purview.
+
 * <strong>Data Engineers</strong> create databases (platforms):
 
-   * Define Shortcuts to data files within OneLake storage
-   * Program SQL within Synapse Data Warehouse to create traditional relational SQL databases 
-   * Program KQL (Kusto Query Language) within Synapse Real Time Analytics to create analytic databases
-   * Program PySpark Notebooks within Synapse Data Engineering to create <strong>data lakes</strong>
+   * Define Shortcuts to reference data files within <a href="#OneLake">OneLake storage</a>
+   * Program SQL within <a href="#SDW">Synapse Data Warehouse</a> to create traditional relational SQL databases 
+   * Program <a target="_blank" href="https://wilsonmar.github.io/kql">KQL (Kusto Query Language)</a> within <a href="#RTA">Synapse Real Time Analytics</a> to create (star schema) databases for analytics
+   * Program PySpark Notebooks within Synapse Data Engineering to create "big data" (Hadoop-style) <strong>data lakes</strong>
    * Use Data Factory to create data pipelines to move data from one place to another, such as from a data lake to a data warehouse.
    <br /><br />
 
@@ -221,7 +223,7 @@ A semantic model or semantic data model is a high-level databases. An SDM specif
 
    <a target="_blank" href="https://www.youtube.com/watch?v=Shw8FbDi4lQ&t=5m39s" title="by Deepika Bhatt with James Leonard">DEMO</a>: 
    Fabric integrates into a single unified SaaS analytics platform :
-   * Azure Data Factory
+   * <a href="#Data+Factory">Azure Data Factory</a>
    * Azure Data Explorer
    * Azure Synapse Analytics operates on workspaces containing both relational SQL databases and big-data Lake databases, all linked to blobs (files) within Azure Data Lake Storage (ADLS) Gen2
    * Azure Databricks
@@ -230,10 +232,23 @@ A semantic model or semantic data model is a high-level databases. An SDM specif
    <br /><br />
 
    <a target="_blank" href="https://www.youtube.com/watch?v=Shw8FbDi4lQ&t=2m40s" title="by James Leonard">VIDEO</a>: 
-   "Synapse Data Analytics" integrates relational data with big data, both using Azure Data Lake Storage (ADLS) Gen2, Azure Data Factory, Azure Databricks, Azure Synapse SQL, and Power BI into a single unified analytics platform.
+   "Synapse Data Analytics" integrates relational data with big data, both using Azure Data Lake Storage (ADLS) Gen2, <a href="#Data+Factory">Azure Data Factory</a>, Azure Databricks, Azure Synapse SQL, and Power BI into a single unified analytics platform.
 
-   Fabric covers the complete spectrum of data services including data movement, data lake, data engineering, data integration and data science, observational analytics, and business intelligence.
+   Fabric covers the "complete spectrum" of data services including data movement, data lake, data engineering, data integration and data science, observational analytics, and business intelligence.
    
+   But what happened to products previously shown in menus:
+   * Azure Databricks - "Fast, easy, and collaborative Apache Spark-based analytics platform"
+   * Azure Data Explorer - "Fast and highly scalable data exploration service"
+   * Azure Synapse Analytics - "Limitless analytics service with unmatched time to insight"
+   * Azure Analysis Services - "Enterprise-grade analytics engine as a service"
+   * Azure Machine Learning - "Build, train, and deploy models from the cloud to the edge"
+   * Azure Stream Analytics - "Real-time analytics on fast-moving streaming data"
+   * HDInsight - "Provision cloud Hadoop, Spark, R Server, HBase, and Storm clusters"
+   * Microsoft Purview - "Govern, protect, and manage your data estate"
+   <br /><br />
+
+   And Copilot? It's a feature within Power BI. <a target="_blank" href="https://www.youtube.com/watch?v=cTqVa1Gdn4s">Tak Tech Analytics</a> explains it.
+
    ### Left Menus
 
 1. <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701174778/fabric-left-menu-66x493_x7hpur.png"><img align="right" alt="fabric-left-menu-66x493.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701174778/fabric-left-menu-66x493_x7hpur.png"></a>Click on any of the icons to see the left menu for that component:
@@ -303,9 +318,12 @@ A semantic model or semantic data model is a high-level databases. An SDM specif
    * https://learn.microsoft.com/en-us/fabric/data-warehouse/usage-reporting
    * https://learn.microsoft.com/en-us/fabric/admin/feature-usage-adoption
    <br /><br />
-   
+
 1. Click "Go back" at the lower-left corner.
 
+Each component has its own licensing considerations. See the next section.
+
+   * https://www.youtube.com/watch?v=8BAeLUywEMM by RADACAD "Why is it a big deal".
 
 <hr />
 
@@ -348,8 +366,9 @@ A semantic model or semantic data model is a high-level databases. An SDM specif
 
 <a target="_blank" href="https://www.youtube.com/watch?v=yRJ03n1U5-E&list=PLug2zSFKZmV0Yaya7NxRQfrrPtfF2vj0K">Learn Microsoft Fabric with Will</a>
 
-https://www.youtube.com/watch?v=a6A3jtvB62U James Serra
+<a target="_blank" href="https://www.youtube.com/watch?v=a6A3jtvB62U">James Serra</a>
 
+<a target="_blank" href="https://www.youtube.com/watch?v=IaA9YNlg5hM">End-to-end</a>
 
 
 ## Workflow with Fabric 
@@ -358,6 +377,8 @@ Microsoft Fabric offers a centralized storage solution, eliminating data fragmen
 
    Fabric aims to eliminate silos and remove data duplication by providing a single platform for <strong>collaboration</strong> among data engineers, data scientists, and business analysts. The <a target="_blank" href="https://learn.microsoft.com/fabric/data-engineering/tutorial-lakehouse-introduction">flow</a> is:
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701049746/fabric-flow-842x516_bcpj9q.jpg"><img alt="fabric-flow-842x516.jpeg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701049746/fabric-flow-842x516_bcpj9q.jpg"></a>
+
+Databricks is a cloud-based service that provides a unified analytics platform for data scientists, data engineers, and business analysts. It provides a collaborative workspace for data scientists to build and train machine learning models. It also provides a platform for data engineers to build data pipelines and perform complex data engineering tasks. It provides a platform for business analysts to perform data analysis and build reports and dashboards.
 
    <a target="_blank" href="https://justb.dk/blog/2023/11/fabric-data-lakehouse-understanding-the-dataflow/">This article</a> describes the flow in detail.
 
@@ -403,10 +424,26 @@ Microsoft Fabric offers a centralized storage solution, eliminating data fragmen
 
 1. Synapse Real-Time Analytics: real-time analytics to query and analyze large volumes of data in real-time.
 
-1. Data Factory: data integration <strong>pipelines</strong> to copy data and orchestrate data processing, combining Power Query. or Dataflows (Gen2) to Import and transform data from a range of sources using Power Query Online, and load it directly into a table in the lakehouse.
+
+   <a name="Data+Factory"></a>
+
+   ### Azure Data Factory (ADF)
+
+1. Data Factory: data integration <strong>pipelines</strong> to copy data and orchestrate data processing, combining <strong>Power Query Online</strong> and/or Dataflows (Gen2) to Import and transform data from 90+ data sources, and load it directly into a table in the lakehouse.
 
    * https://learn.microsoft.com/en-us/fabric/data-factory/data-factory-overview
    * https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/
+   * https://www.youtube.com/watch?v=CtTrnd-UGt8
+   <br /><br />
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=WbDqeNsmoL4">Why you should look</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=_QtA_492l4k">SQLBits</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=tW6vXSIV0kc&t=13m51s" title="by Lisa Hoving">VIDEO</a>: Azure Synapse Analytics is a combination of Azure SQL Data Warehouse and Azure Data Factory.
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=tW6vXSIV0kc" title="by Lisa Hoving">VIDEO</a>: Difficulties with Data Factory include:
+   * Little flexibility beyond what's available
+   * Difficult to create generic pipelines
+   * Difficult to optimize
    <br /><br />
 
 1. Power BI: business intelligence for translating data to decisions. Power BI administrators are now <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/admin/microsoft-fabric-admin">Fabric administrators</a>.
@@ -581,7 +618,7 @@ Previously, SQL and analytic data are stored in different database technologies.
    * Query lakehouse tables with SQL. Shortcuts point to different storage accounts and other Fabric items like data warehouses, KQL databases, and external Lakehouses.
 * Use Apache Spark in Microsoft Fabric
 * Work with Delta Lake tables in Microsoft Fabric
-* Use Data Factory pipelines in Microsoft Fabric
+* Use <a href="#Data+Factory">Data Factory</a> pipelines in Microsoft Fabric
 * Ingest Data with Dataflows Gen2 in Microsoft Fabric
 
 * Get started with data warehouses in Microsoft Fabric: <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-data-warehouse/7-exercise">Exercise</a>
