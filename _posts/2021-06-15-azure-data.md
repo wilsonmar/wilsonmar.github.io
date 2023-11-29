@@ -367,25 +367,30 @@ The <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/
 references (free) lab instructions in English at
 <a target="_blank" href="https://aka.ms/dp300labs/">aka.ms/dp300labs</a> = https://microsoftlearning.github.io/dp-300-database-administrator/.
 Modules and Exercise:
-* Setup your own environment
+* Setup your own environment<br />
 Plan and Implement Data Platform Resources	
    * Lab 1 - Provision SQL Server on an Azure Virtual Machine
    * Lab 2 - Provision an Azure SQL Database
+   <br /><br />
 Implement a Secure Environment for a Database Service:
 	* Lab 3 - Authorize access to Azure SQL Database with Azure Active Directory
    * Lab 4 - Configure Azure SQL Database firewall rules
    * Lab 5 - Enable Microsoft Defender for SQL and Data classification
+   <br /><br />
 Monitor and optimize operational resources in Azure SQL:
    * Lab 6 - Isolate performance problems through monitoring
    * Lab 7 - Detect and correct fragmentation issues
+   <br /><br />
 Optimize query performance in Azure SQL:
    * Lab 8 - Identify and resolve blocking issues
    * Lab 9 - Identify database design issues
    * Lab 10 - Isolate problem areas in poorly performing queries in a SQL Database
+   <br /><br />
 Automate database tasks for Azure SQL:
    * Lab 11 - Deploy Azure SQL Database using Azure Resource Manager template
    * Lab 12 - Create a CPU status alert for a SQL Server
    * Lab 13 - Deploy an automation runbook to automatically rebuild indexes
+   <br /><br />
 Plan and implement a high availability and disaster recovery solution:
    * Lab 14 - Configure geo-replication for Azure SQL Database
    * Lab 15 - Backup to URL and Restore from URL MicrosoftLearning/dp-300-database-administrator

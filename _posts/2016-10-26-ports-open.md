@@ -49,6 +49,7 @@ Common TCP Ports in layer 4: REMEMBER
    * 135, 137, 138?, 139, 445 = NETBios (Network Basic Input/Output System) to share files and printers
    * 143/993 = IMAP (Internet Message Access Protocol) files remain on server / TLS
    * 161/162 = SNMP (Simple Network Management Protocol) to monitor network devices
+   * 162 = UDP TRAP
 
    * 1433, 1434 = SQL Server (Microsoft)
    * 1521 = Oracle SQL

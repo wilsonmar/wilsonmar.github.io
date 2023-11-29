@@ -35,8 +35,8 @@ NOTE: Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/cr
 
 <tr valign="top"><td> <a href="#SolutionArchitect">Solution Architect Expert</a></td><td>
         * <a href="#AZ-305">AZ-305</a> Azure Solutions Architect<br />
-        * <a href="#AZ-303">AZ-303</a> Azure Solutions Architect Expert: Technologies (retired)<br />
-        * <a href="#AZ-304">AZ-304</a> Azure Solutions Architect Expert: Design (retired)<br />
+        * <a href="#AZ-303"><strike>AZ-303 Azure Solutions Architect Expert: Technologies (retired)</strike></a><br />
+        * <a href="#AZ-304"><strike>AZ-304 Azure Solutions Architect Expert: Design (retired)</strike></a><br />
         * AZ-600 Stack Hub Operator Associate<br />
         * AZ-120 Azure for SAP Workloads Specialty
    </td></tr>
