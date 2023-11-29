@@ -25,7 +25,7 @@ Here we have for you a hands-on tutorial that takes you logically step-by-step t
 
 {% include whatever.html %}
 
-Microsoft Fabric is a platform to get, create, share, and visualize data using an array of tools, including a <strong>data lakehouse</strong> that combines the best of data warehouses and data lakes.
+Microsoft Fabric is a platform to "get, create, share, and visualize data", including a <strong>data lakehouse</strong> that combines tools working with both data warehouses and data lakes.
 
 PROTIP: The array of tools is shown in <a target="_blank" href="https://7451111251303.gumroad.com/l/fkrvnn" title="Available for purchase">this diagram</a> I adapted from Microsoft and <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">others</a>. All the components ("Experiences") of Fabric, in one page:
 
@@ -61,7 +61,9 @@ listed in order of when they get involved in a green-field implementation:
 
 * <strong>Data Engineers</strong> create databases (platforms):
 
-   * Define Shortcuts to reference data files within <a href="#OneLake">OneLake storage</a>
+   * Move data using <a href="#Data+Factory">Data Factory</a>
+   * <a href="#Define+Shortcuts">Define Shortcuts</a> to reference data files within <a href="#OneLake">OneLake storage</a>
+
    * Program SQL within <a href="#SDW">Synapse Data Warehouse</a> to create traditional relational SQL databases 
    * Program <a target="_blank" href="https://wilsonmar.github.io/kql">KQL (Kusto Query Language)</a> within <a href="#RTA">Synapse Real Time Analytics</a> to create (star schema) databases for analytics
    * Program PySpark Notebooks within Synapse Data Engineering to create "big data" (Hadoop-style) <strong>data lakes</strong>
@@ -80,7 +82,7 @@ listed in order of when they get involved in a green-field implementation:
 
    PROTIP: In many organizations, to limit the impact of credential loss, they, after approval by the data owner, are the only accounts who can <strong>delete data</strong> which others put "in limbo".
 
-   QUESTION: Does Microsoft provide all the tools that Data Stewards need?
+   They use <a href="#Purview">Microsoft Purview</a>. QUESTION: Does Microsoft provide all the tools that Data Stewards need?
 
 * <strong>Data Scientists</strong> work on AI models using Data Science tools such as Notebooks written in PySpark for Machine Learning. The intelligence created can be custom tags that extend generic LLM (Large Language Models) created by others for NLP (Natural Language Processing) and other AI (Artificial Intelligence) capabilities.
 
@@ -666,6 +668,29 @@ item permissions in a workspace grant access to individual warehouses to enable 
 1. TODO: Report errors?
 
 
+
+<hr />
+
+## Microsoft Purview
+
+Among Microsoft's security portfolio: Defender, Entra, Intune, Priva, Purview, Sentinel, and Azure Security Center.
+
+https://www.microsoft.com/en-us/security/business/microsoft-purview 
+
+
+Microsoft's Security Copilot makes use of (Language Model Logics) to detect anomalies in logs.
+   * https://www.microsoft.com/en-us/security/business/ai-machine-learning/microsoft-security-copilot?rtc=1
+   * https://www.microsoft.com/en-us/security/blog/2023/11/08/insights-from-microsoft-security-copilot-early-adopters/
+   <br /><br />
+
+https://www.microsoft.com/en-us/security/blog/
+
+<a target="_blank" href="https://clouddamcdnprodep.azureedge.net/gdc/gdcieULMS/original">PDF: Crash Course</a>
+
+https://www.microsoft.com/en-us/security/blog/2022/03/31/3-strategies-to-launch-an-effective-data-governance-plan/
+
+
+
 <hr />
 
 ## DAX Studio
@@ -697,12 +722,12 @@ ORDER BY
 START AT "SO7000") +
 </pre>
 
-To returns the calculated total sales for years 2013 and 2014, and combined calculated total sales for years 2013 and 2014, as a table. The measure in the DEFINE statement, Internet Total Sales, is used in both Total Sales and Combined Years Total Sales expressions.
+To return the calculated total sales for years 2013 and 2014, and combined calculated total sales for years 2013 and 2014, as a table. The measure in the DEFINE statement, Internet Total Sales, is used in both Total Sales and Combined Years Total Sales expressions.
 
 <pre>DEFINE
     MEASURE 'Internet Sales'[Internet Total Sales] =
         SUM ( 'Internet Sales'[Sales Amount] )
-
+&nbsp;
 EVALUATE
 SUMMARIZECOLUMNS (
     'Date'[Calendar Year],
@@ -725,7 +750,7 @@ ORDER BY [Calendar Year]
 
 References:
    * https://hevodata.com/learn/dax-studio/
-
+   <br /><br />
 
 <hr />
 
