@@ -55,19 +55,19 @@ NOTE: Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/cr
 <tr valign="top"><td> Data Engineer<br /> Data Scientist</td><td>
    * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-900">DP-900 Azure Data Fundamentals</a><br />
    * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-100">DP-100 Azure Data Scientist Associate</a><br />
-   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-203">DP-203 Azure Data Engineer Associate</a> (replaces DP-200 & DP-201)</a>
-   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-300">DP-300 Azure Database Administrator Associate</a>
-   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-420">DP-420 Azure Cosmos DB Developer Specialty</a>
-   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-500">DP-500 Azure Enterprise Data Analyst Associate</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-203">DP-203 Azure Data Engineer Associate</a> (replaces DP-200 & DP-201)<br />
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-300">DP-300 Azure Database Administrator Associate</a><br />
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-420">DP-420 Azure Cosmos DB Developer Specialty</a><br />
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-500">DP-500 Azure Enterprise Data Analyst Associate</a><br />
    * <a target="_blank" href="https://wilsonmar.github.io/microsoft-fabric/">DP-600 Fabric Analytic Engineer Associate</a>
    </td></tr>
 
 <tr valign="top"><td> <a href="#Power_Platform">Power Platform</a> </td><td>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-fundamentals/">PL-900 Power Platform Fundamentals</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-app-maker/">PL-100 Power Platform App-maker Associate</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-functional-consultant-associate/">PL-200 Power Platform Functional Consultant</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-bi-data-analyst-associate/">PL-300 Power BI Data Analyst Associate</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-developer-associate/">PL-400 Power Platform Developer</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-fundamentals/">PL-900 Power Platform Fundamentals</a><br />
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-app-maker/">PL-100 Power Platform App-maker Associate</a><br />
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-functional-consultant-associate/">PL-200 Power Platform Functional Consultant</a><br />
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-bi-data-analyst-associate/">PL-300 Power BI Data Analyst Associate</a><br />
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-developer-associate/">PL-400 Power Platform Developer</a><br />
    * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-solution-architect-expert/">PL-600 Power Platform Solution Architect Expert</a>
    </td></tr>
 
@@ -81,11 +81,11 @@ NOTE: Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/cr
    </td></tr>
 
 <tr valign="top"><td> <a href="#Sec_Certs">Security Certifications</a></td><td>
-   * <a href="#SC-900">SC-900 Security, Compliance, and Identity Fundamentals</a>
-   * <a href="#SC-200">SC-200 Security Operations Analyst Associate</a>
-   * <a href="#SC-300">SC-300 Identity and Access Administrator Associate</a>
-   * <a href="#SC-400">SC-400 Information Protection Administrator</a>
-   * <a href="#AZ-500">AZ-500 Azure Security Engineer Associate</a>
+   * <a href="#SC-900">SC-900 Security, Compliance, and Identity Fundamentals</a><br />
+   * <a href="#SC-200">SC-200 Security Operations Analyst Associate</a><br />
+   * <a href="#SC-300">SC-300 Identity and Access Administrator Associate</a><br />
+   * <a href="#SC-400">SC-400 Information Protection Administrator</a><br />
+   * <a href="#AZ-500">AZ-500 Azure Security Engineer Associate</a><br />
    * <a href="#SC-100">SC-100 Microsoft Cybersecurity Architect</a>
    </td></tr>
 </table>

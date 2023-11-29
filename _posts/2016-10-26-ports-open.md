@@ -71,7 +71,7 @@ Common TCP Ports in layer 4: REMEMBER
    * 513 = Rlogin (Remote Login) to execute commands on another machine (through Secure Shell)
    * 514 = Remote Shell Syslog (System Logging Protocol) to send event messages to a logging server
    * 5353 = mDNS UDP (Multicast DNS) in <tt>224.0.0.251</tt> & <tt>ff02::fb</tt> for Bonjour, AirPlay, AirPrint, etc.
-   * 548 = AFP (Apple Filing Protocol) https://www.wikiwand.com/en/Apple_Filing_Protocol elim. for AppleTalk
+   * 548 = <a target="_blank" href="https://www.wikiwand.com/en/Apple_Filing_Protocol">AFP (Apple Filing Protocol)</a> elim. for AppleTalk
    * 554 = RTSP (Real Time Streaming Protocol) to stream audio/video
    * 593 = RPC over HTTP (Remote Procedure Call) to execute code on another machine
    * 5900 = VNC (Virtual Network Computing) to remote control another machine
