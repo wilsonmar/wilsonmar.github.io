@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-08-07"
+date: "2023-11-27"
 file: "cyber-security"
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
@@ -2736,7 +2736,7 @@ Memory:
 
 The bounds of a process set limits on the memory addresses and resources the process can access. The bounds logically segment memory areas for each process to use.
 
-For list of ports, see my https://wilsonmar.github.io/ports-open
+For list of ports, see my <a target="_blank" href="https://wilsonmar.github.io/ports-open">https://wilsonmar.github.io/ports-open</a>
 
 MPLS is a protocol-independent transport mechanism. Uses labels, but not for IP routing.
 

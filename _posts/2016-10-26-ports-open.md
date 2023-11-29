@@ -33,28 +33,68 @@ PAT (Port Address Translation) maps ports.:
    * 49152 - 54535 65535 = dynamic ports
    <br /><br />
 
-Port 3389 is used for communicating with Microsoft's RDP (Remote Desktop Protocol) on Windows machines. See <a target="_blank" href="https://wilsonmar.github.io/rdp">My notes on Windows RDP</a>.
+Port 3389 is used for communicating with Microsoft's RDP (Remote Desktop Protocol) on Windows machines. 
 
 Common TCP Ports in layer 4: REMEMBER
-   * 80/443 = HTTPS (Secure, encrypted)
-   * 21/990 = FTP and FTPS which adds SSL & TLS to encrypt
+   * 80/443 = HTTP/HTTPS (Secure, encrypted)
+   * 80/443/8080/8088 = Web servies admin
+   * 20/21/<strong>990</strong> = FTP/FTPS which adds SSL & TLS to encrypt
+   * 69 = TFTP/FTPS (Trivial File Transfer Protocol) used by PXE (Preboot Execution Environment) to boot from a server
+
+   * <strong>25/465/587</strong> = Email: SMTP (Simple Mail Transfer Protocol) / TLS <a target="_blank" href="https://www.youtube.com/watch?v=8Ppl62Bl9RE">VIDEO</a>
+   * 110/995 = POP (post Office Protocol) clear text auth. / TLS
+   * 111 = Port Mapper RPC (Remote Procedure Call) to execute code on another machine
+   * 123 = NTP (Network Time Protocol) to sync clocks
+ 
+   * 135, 137, 138?, 139, 445 = NETBios (Network Basic Input/Output System) to share files and printers
+   * 143/993 = IMAP (Internet Message Access Protocol) files remain on server / TLS
+   * 161/162 = SNMP (Simple Network Management Protocol) to monitor network devices
+
+   * 1433, 1434 = SQL Server (Microsoft)
+   * 1521 = Oracle SQL
 
    * 22 = SSH (Secure Shell) used by SFTP
-   * 23: Telnet (not secure)
-   * 3389 = RDP (Remote Desktop Protocol) from Microsoft
+   * 23 = Telnet (not secure)
+   * 2049 = NFS (Network File System) to share files between Linux machines
 
-   * 25/465 = SMTP (Simple Mail Transfer Protocol) / TLS <a target="_blank" href="https://www.youtube.com/watch?v=8Ppl62Bl9RE">VIDEO</a>
-   * 110/995 = POP (post Office Protocol) clear text auth. / TLS
-   * 143/993 = IMAP (Internet Message Access Protocol) files remain on server / TLS
+   * 3306 = MySQL
+   * 3389 = <a target="_blank" href="https://wilsonmar.github.io/rdp">RDP (Remote Desktop Protocol) from Microsoft</a>
+   * 389/636 = LDAP (Lightweight Directory Access Protocol) to query Active Directory
+   * 389/646 = LDAP / Secure LDAP
+   
+   * 445 = SMB (Server Message Block) from Azure Files
 
-   * 137, 138, 139 = NETBios
+   * 500 = IPSec (Internet Protocol Security) to encrypt data
+   * 5060/5061 = SIP (Session Initiation Protocol) to set up VoIP (Voice over Internet Protocol) calls
    * 53 = DNS (Domain Name System) lookups
+   * 500,1723 = PPTP (Point-to-Point Tunneling Protocol) to tunnel through firewalls
+   * 513 = Rlogin (Remote Login) to execute commands on another machine (through Secure Shell)
+   * 514 = Remote Shell Syslog (System Logging Protocol) to send event messages to a logging server
+   * 5353 = mDNS UDP (Multicast DNS) in <tt>224.0.0.251</tt> & <tt>ff02::fb</tt> for Bonjour, AirPlay, AirPrint, etc.
+   * 548 = AFP (Apple Filing Protocol) https://www.wikiwand.com/en/Apple_Filing_Protocol elim. for AppleTalk
+   * 554 = RTSP (Real Time Streaming Protocol) to stream audio/video
+   * 593 = RPC over HTTP (Remote Procedure Call) to execute code on another machine
+   * 5900 = VNC (Virtual Network Computing) to remote control another machine
+
+   * 67/68 = DHCP (Dynamic Host Configuration Protocol) to assign IP addresses
+   * 636 = LDAPS (Lightweight Directory Access Protocol over TLS/SSL) to query Active Directory
+   * 6000 = X11 (X Window System) to remote control another machine
+   * 6667 = IRC (Internet Relay Chat) to chat with others
+   * 67/68 = DHCP (Dynamic Host Configuration Protocol) to assign IP addresses
+   * 69 = TFTP (Trivial File Transfer Protocol) used by PXE (Preboot Execution Environment) to boot from a server
+
+   * 79 = Finger (not secure)
+
    * No port for ICMP RFC 792 Pings RFC 1122 as it's in IP transport layer
 
-   * 389/646 = LDAP / Secure LDAP
+   * 873 = Rsync (Remote Sync) to sync files between machines
    * 88 = Kerberos (Windows)
-   * 445 = SMB (Server Message Block) from Azure Files
-   * 548 = AFP (Apple Filing Protocol) https://www.wikiwand.com/en/Apple_Filing_Protocol elim. for AppleTalk
+   
+   * 902 = VMware Server
+   * 993 = IMAP (Internet Message Access Protocol) files remain on server / TLS
+   * 995 = POP (post Office Protocol) clear text auth. / TLS
+
+   * UDP 5355 = LLMNR	(Link-Local Multicast Name Resolution - Microsoft protocol for name resolution) Multicast 224.0.0.252 / FF02:0:0:0:0:0:1:3 or FF02::1:3
    <br /><br />
 
 <a name="Spring"></a>

@@ -3,7 +3,7 @@ layout: post
 date: "2023-11-28"
 file: "microsoft-fabric"
 title: "Microsoft Fabric"
-excerpt: "Get skilled in multicloud data handling and analystics and pass the DP-600 exam January 2024"
+excerpt: "Get skilled in multicloud data handling and real-time analystics, then pass the DP-600 exam January 2024"
 tags: [cloud, Azure]
 image:
 # microsoft-fabric-1900x500.png
@@ -51,8 +51,7 @@ listed in order of when they get involved in a green-field implementation:
    For each set of data, there is one <strong>data owner</strong> who approve data deletion and arrange for audits as well as
    approving who have access and extent of permissions (for implementation by a central security team using IAM tools).
 
-   Data Citizens need to be trained to use the tools provided by Data Analysts (apps, Power BI, Data Activator, etc.).
-   Some track where they spend time on technical aspects to ensure that the time spent is worth the value of the data.
+   Data Citizens need to be trained to use <a href="#PowerBI">Power BI</a> for <a href="#Analytics">Analytics</a>, <a href="#Data+Activator">Data Activator</a> for alerts, and other tools provided by Data Analysts. Some track where they spend time on technical aspects to ensure that the time spent is worth the value of the data.
 
 * <strong>Data (Business) Analysts</strong> serve the needs of Data Citizens by establishing dashboards and alerts, and training users on technologies and possibilities. These Analysts design the "data models" defining relationships among sets of data.
 
