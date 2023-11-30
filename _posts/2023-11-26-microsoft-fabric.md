@@ -16,6 +16,8 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+https://learn.microsoft.com/en-us/fabric/
+
 With this article I aim to get you past the vapid marketing generalizations.
 This is a hands-on technical tutorial that takes you logically step-by-step to quickly learn how to setup, navigate, and use the <strong>Microsoft Fabric</strong> cloud and pass <a href="https://wilsonmar.github.io/azure-certifications/">Azure certification exam</a>
 
@@ -62,19 +64,13 @@ Applications and services outside of Fabric can access Shortcuts through <a targ
 
    <ul><tt>https://onelake.dfs.fabric.microsoft.com/MyWorkspace/MyLakhouse/Tables/MyShortcut/MyFile.csv</tt></ul>
 
+ADLS and S3 shortcut target paths can contain "-" / "." / "_" / "~" but not <a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc3986#section-2.2">reserved characters in RCF 3986 section 2.2</a>.
+
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701352948/fabric-onelake-shortcuts-1031x632_nszljw.png"><img alt="fabric-onelake-shortcuts-1031x632.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701352948/fabric-onelake-shortcuts-1031x632_nszljw.png"></a>
 
 Shortcuts can be created within Microsoft's various SQL data warehouses, lakehouses, KQL databases, etc.
  
 PROTIP: By themselves, Shortcuts don't "unify data across domains". People do that by actively managing a "unified namespace" of Shortcuts across the entire enterprise. That's hard work that requires executive and worker support across departments and geographies. Thus the "Chief Data Officer" (CDO).
-
-
-What does this mean?
-
-that work together to provide a <strong>lakehouse</strong> (a combination of a data warehouse and a data lake) to store and analyze data.
-
-Microsoft Fabric is a platform to "get, create, share, and visualize data", including a <strong>data lakehouse</strong> that combines tools working with both data warehouses and data lakes.
-
 
 
 Now let's focus on <strong>impacts</strong> on the lives of people, before examining the home pages and <strong>capabilities</strong> of the products.
