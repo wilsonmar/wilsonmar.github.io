@@ -676,9 +676,30 @@ item permissions in a workspace grant access to individual warehouses to enable 
 Among Microsoft's security portfolio: Defender, Entra, Intune, Priva, Purview, Sentinel, and Azure Security Center.
 
 https://www.microsoft.com/en-us/security/business/microsoft-purview 
+is the marketing landing page
+
+https://learn.microsoft.com/en-us/training/modules/intro-to-microsoft-purview/?source=recommendations
+
+1. Enter the Governance Portal:
+
+   https://purview.microsoft.com/
+
+   https://web.purview.azure.com/resource/
+
+1. Enter the Compliance Portal:
+
+   https://compliance.microsoft.com/
+
+https://learn.microsoft.com/en-us/purview/purview describes features:
+   * Data Catalog - discover and catalog data assets
+   * Data Loss Prevention (DLP) - identify and protect sensitive data
+   * Privileged Access Management (PAM) - manage, control, and monitor access to critical assets
+   <br /><br />
 
 
 Microsoft's Security Copilot makes use of (Language Model Logics) to detect anomalies in logs.
+
+   * https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-overview
    * https://www.microsoft.com/en-us/security/business/ai-machine-learning/microsoft-security-copilot?rtc=1
    * https://www.microsoft.com/en-us/security/blog/2023/11/08/insights-from-microsoft-security-copilot-early-adopters/
    <br /><br />
@@ -709,10 +730,10 @@ https://learn.microsoft.com/en-us/dax/dax-queries
 
 <pre>[DEFINE 
     (
-     (MEASURE <table name>[<measure name>] = <scalar expression>) | 
-     (VAR <var name> = <table or scalar expression>) |
-     (TABLE <table name> = <table expression>) | 
-     (COLUMN <table name>[<column name>] = <scalar expression>) | 
+     (MEASURE <table name>[<em>measure name</em>] = <scalar expression>) | 
+     (VAR <em>var name</em> = <em>table or scalar expression</em>) |
+     (TABLE <em>table name</em> = <em>table expression</em>) | 
+     (COLUMN <em>table name</em>[<column name>] = <em>scalar expression</em>) | 
     ) + 
 ]
 (EVALUATE
@@ -751,6 +772,7 @@ ORDER BY [Calendar Year]
 References:
    * https://hevodata.com/learn/dax-studio/
    <br /><br />
+
 
 <hr />
 
