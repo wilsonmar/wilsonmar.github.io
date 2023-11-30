@@ -16,37 +16,77 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Let's get past the vapid marketing generalizations.
-
-Here we have for you a hands-on tutorial that takes you logically step-by-step to quickly set up and run analytics on data using the <strong>Microsoft Fabric</strong> cloud and pass <a href="https://wilsonmar.github.io/azure-certifications/">Azure certification exam</a>
+With this article I aim to get you past the vapid marketing generalizations.
+This is a hands-on technical tutorial that takes you logically step-by-step to quickly learn how to setup, navigate, and use the <strong>Microsoft Fabric</strong> cloud and pass <a href="https://wilsonmar.github.io/azure-certifications/">Azure certification exam</a>
 
    * <a href="#DP-600">DP-600: Fabric Analytic Engineer Associate</a>
    <br /><br />
 
 {% include whatever.html %}
 
-Microsoft Fabric is a platform to "get, create, share, and visualize data", including a <strong>data lakehouse</strong> that combines tools working with both data warehouses and data lakes.
-
-PROTIP: The array of tools is shown in <a target="_blank" href="https://7451111251303.gumroad.com/l/fkrvnn" title="Available for purchase">this diagram</a> I adapted from Microsoft and <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">others</a>. All the components ("Experiences") of Fabric, in one page:
+PROTIP: I adapted <a target="_blank" href="https://7451111251303.gumroad.com/l/fkrvnn" title="Available for purchase">this diagram</a> from Microsoft and <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">others</a> to show, all in one page, relationships among key components ("Experiences") to Fabric:
 
 <a name="Diagram"></a>
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701283548/microsoft-fabric-1703x995_okeala.png"><img alt="microsoft-fabric-1703x995" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701283548/microsoft-fabric-1703x995_okeala.png"><br align="right" /><em>Click for full-size image</em></a>.
 
-This will be referenced throughout the text below.
+Rather than other fanboys who say "it's the latest cool thing, let's switch now", let's first clear up some common confusions:
 
+
+## Home Pages & Terminology
+
+The product name "<strong>Fabric</strong>" Microsoft introduced March 2023 along with a set of cloud-based product <strong>experiences</strong> containing the same words also used in legacy products that Microsoft continues to sell: <a target=_blank" href="https://www.casewhen.co/blog/data-factory-showdown-fabric-vs-azure">BLOG</a>:
+
+   * Fabric "Data Factory" is different from "Azure Data Factory (ADF)" that continues to be used (at lower cost). PROTIP: Use "<strong>Data Factory in Microsoft Fabric (DFiMF)</strong>" to differentiate it from the legacy ADF. DFiMF adds to ADF features from <a target="_blank" href="https://www.casewhen.co/blog/data-analysis-and-data-transformation-with-power-query-in-power-bi">Power Query Dataflows</a> and integrates tagging for Data Governance.
+
+   * The "Synapse" prefix to several Fabric products is different from the "Azure Synapse Analytics" product that Microsoft continues to sell.
+
+
+<a name="Shortcuts"></a>
+
+### OneLake Shortcuts
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-shortcuts">Shortcuts</a> are the most significant technical achievement that comes with Fabric's "OneLake" capabilities.
+
+<a target="_blank" href="https://blog.fabric.microsoft.com/en-us/blog/using-azure-databricks-with-microsoft-fabric-and-onelake?ft=All%3A">BLOG</a>:
+With Shortcuts, Microsoft enables the processing of specific datasets from "anywhere", including blobs (files) in AWS S3 and Google Cloud Storage as well as Microsoft's own Azure Blob Storage, Azure Data Lake Storage (ADLS) Gen2, Azure Databricks, etc.
+
+Shortcuts enable Data Engineers to create and manage data pipelines that move data from any one place to another.
+
+Behind the scenes, OneLake manages the various permissions and credentials to access data.
+Relative file paths can be used to directly read data from shortcuts.
+ADLS shortcuts point to the DFS endpoint for the storage account. Example: 
+
+   <ul><tt>https://accountname.dfs.core.windows.net/...</tt></ul>
+
+Applications and services outside of Fabric can access Shortcuts through <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-access-api">OneLake's API</a>, using enpoints such as:
+
+   <ul><tt>https://onelake.dfs.fabric.microsoft.com/MyWorkspace/MyLakhouse/Tables/MyShortcut/MyFile.csv</tt></ul>
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701352948/fabric-onelake-shortcuts-1031x632_nszljw.png"><img alt="fabric-onelake-shortcuts-1031x632.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701352948/fabric-onelake-shortcuts-1031x632_nszljw.png"></a>
+
+Shortcuts can be created within Microsoft's various SQL data warehouses, lakehouses, KQL databases, etc.
+ 
+PROTIP: By themselves, Shortcuts don't "unify data across domains". People do that by actively managing a "unified namespace" of Shortcuts across the entire enterprise. That's hard work that requires executive and worker support across departments and geographies. Thus the "Chief Data Officer" (CDO).
+
+
+What does this mean?
+
+that work together to provide a <strong>lakehouse</strong> (a combination of a data warehouse and a data lake) to store and analyze data.
+
+Microsoft Fabric is a platform to "get, create, share, and visualize data", including a <strong>data lakehouse</strong> that combines tools working with both data warehouses and data lakes.
+
+
+
+Now let's focus on <strong>impacts</strong> on the lives of people, before examining the home pages and <strong>capabilities</strong> of the products.
 
 ## User Roles
 
-Rather than being a fanboy who say "it's the latest cool thing, let's switch now",
-in this article we focus on <strong>impacts</strong> on the lives of people.
-
 Instead of the traditional generic "Database Administrator" role name, 
-Microsoft designed Fabric documentation based on these roles for enterprises,
-listed in order of when they get involved in a green-field implementation:
+Microsoft designed Fabric documentation around different roles within enterprises, listed here in order of introduction during a green-field implementation:
 
 * <strong>Data Citizens</strong> are true end-users -- business people who need to make decisions and take actions based on data. 
 
-   They are the authority on what are correct values in databases.
+   They have the budget authority and the responsibility for what are correct values in databases.
    
    PROTIP: For each set of data, there is one <strong>data owner</strong> who approves data deletion and arranges for audits as well as
    approving who have access and extent of permissions (for implementation by a central security team using IAM tools).
@@ -62,7 +102,7 @@ listed in order of when they get involved in a green-field implementation:
 * <strong>Data Engineers</strong> create databases (platforms):
 
    * Move data using <a href="#Data+Factory">Data Factory</a>
-   * <a href="#Define+Shortcuts">Define Shortcuts</a> to reference data files within <a href="#OneLake">OneLake storage</a>
+   * Organize <a href="#Shortcuts">Shortcuts</a> to reference data files within <a href="#OneLake">OneLake storage</a>
 
    * Program SQL within <a href="#SDW">Synapse Data Warehouse</a> to create traditional relational SQL databases 
    * Program <a target="_blank" href="https://wilsonmar.github.io/kql">KQL (Kusto Query Language)</a> within <a href="#RTA">Synapse Real Time Analytics</a> to create (star schema) databases for analytics
@@ -130,7 +170,7 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
 
    Let's dive into the portal to work with Microsoft Fabric:
 
-   ## Browser Profile
+   ### Browser Profile
 
 1. PROTIP: In an internet browser (Safari, Google Chrome, etc.) I click the icon next to the browser's three-dot menu to use a <strong>browser profile</strong> that retains the browser history for the <strong>work (organizational) account</strong> I need to use with Fabric.
 
@@ -218,7 +258,9 @@ A semantic model or semantic data model is a high-level databases. An SDM specif
 
 ## Product Component "Experiences"
 
-1. Click the Microsoft Fabric icon at the bottom of the screen for a list of product components (without the vague marketing generalizations):
+PROTIP: Although Fabric is marketed as a "unified" product, practically it's operated as a collection of products that Microsoft users navigate around.
+
+1. Click the Microsoft Fabric icon at the bottom-left of the screen for a list of product components (without the vague marketing generalizations):
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701046058/fabric-menu-624x584_de9vj1.png"><img alt="fabric-menu-624x584.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701046058/fabric-menu-624x584_de9vj1.png"></a>
 
@@ -838,7 +880,7 @@ https://learn.microsoft.com/en-us/dax/dax-queries
 
 <pre>[DEFINE 
     (
-     (MEASURE <table name>[<em>measure name</em>] = <scalar expression>) | 
+     (MEASURE <em>table name</em>[<em>measure name</em>] = <em>scalar expression</em>) | 
      (VAR <em>var name</em> = <em>table or scalar expression</em>) |
      (TABLE <em>table name</em> = <em>table expression</em>) | 
      (COLUMN <em>table name</em>[<column name>] = <em>scalar expression</em>) | 
@@ -885,6 +927,8 @@ References:
 <hr />
 
 ## User Communities
+
+https://www.reddit.com/r/MicrosoftFabric/comments/14iuplv/azure_data_factory_vs_data_pipelines/
 
 1. Get a Microsoft Tech Community ID at <a target="_blank" href="https://techcommunity.microsoft.com/">https://techcommunity.microsoft.com</a>
 
