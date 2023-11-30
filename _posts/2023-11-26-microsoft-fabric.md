@@ -180,6 +180,8 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
    1 TB is allocated to OneLake storage.
 
    64 capacity units (CUs) allow consumption of 64x60 CU seconds every minute when "experiences" are run. 
+
+   Each data <a target="_blank" href="https://learn.microsoft.com/en-us/purview/concept-elastic-data-map">Purview Data Map</a> capacity unit includes a throughput of 25 operations/sec and 10 GB of metadata storage limit for <a target="_blank" href="https://learn.microsoft.com/en-us/purview/concept-scans-and-ingestion">scanning</a>.
    
    PROTIP: When the capacity consumption exceeds its size, Microsoft slows down the experience similar to slowing down CPU performance.
 
@@ -427,9 +429,11 @@ Databricks is a cloud-based service that provides a unified analytics platform f
 1. Synapse Real-Time Analytics: real-time analytics to query and analyze large volumes of data in real-time.
 
 
-   <a name="Data+Factory"></a>
+<a name="Data+Factory"></a>
 
-   ### Azure Data Factory (ADF)
+## Azure Data Factory (ADF)
+
+<a target="_blank" href="https://www.youtube.com/watch?v=EpDkxTHAhOs&list=PLGjZwEtPN7j8b9dPA0HrtJDptOB69B506&index=1">VIDEO</a>:
 
 1. Data Factory: data integration <strong>pipelines</strong> to copy data and orchestrate data processing, combining <strong>Power Query Online</strong> and/or Dataflows (Gen2) to Import and transform data from 90+ data sources, and load it directly into a table in the lakehouse.
 
@@ -646,6 +650,8 @@ item permissions in a workspace grant access to individual warehouses to enable 
 
 ## Real-Time Analytics
 
+<a target="_blank" href="https://learn.microsoft.com/en-us/answers/questions/1444761/fabric-real-time-analytics-sample-log-analytics-ra">Q&A</a>:
+
 1. In "Real-Time Analytics".
 1. Click "Use a sample" for this menu:
 
@@ -669,26 +675,43 @@ item permissions in a workspace grant access to individual warehouses to enable 
 
 
 
+Check that the tables have been loaded properly by going to the "Data" section of the workspace and verifying that the tables are present.
+Check that the table and column names in the queries are correct and match the names of the tables and columns in the workspace.
+Try running the queries again after refreshing the page or restarting the workspace.
+
+
 <hr />
 
 ## Microsoft Purview
 
-Among Microsoft's security portfolio: Defender, Entra, Intune, Priva, Purview, Sentinel, and Azure Security Center.
+Among Microsoft's security portfolio: Defender XDR, Entra PIM, Intune MDM, Priva, Purview DLP, Sentinel SIEM, and Azure Security Center.
 
 https://www.microsoft.com/en-us/security/business/microsoft-purview 
 is the marketing landing page
 
-https://learn.microsoft.com/en-us/training/modules/intro-to-microsoft-purview/?source=recommendations
+"Microsoft Purview is a comprehensive portfolio of products spanning data governance, data security, and risk and compliance solutions."
 
-1. Enter the Governance Portal:
+   * https://www.microsoft.com/en-us/security/business/microsoft-purview
+   * https://www.microsoft.com/en-us/security/business/microsoft-purview?rtc=1
+   * https://www.microsoft.com/en-us/security/business/microsoft-purview?rtc=1#data-governance
+   * https://www.microsoft.com/en-us/security/business/microsoft-purview?rtc=1#data-security
+   * https://www.microsoft.com/en-us/security/business/microsoft-purview?rtc=1#risk-compliance
+   * https://www.microsoft.com/en-us/security/business/microsoft-purview?rtc=1#data-governance
+   * https://www.microsoft.com/en-us/security/business/microsoft-purview?rtc=1#data-security
+   * https://www.microsoft.com/en-us/security/business/microsoft-purview?rtc=1#risk-compliance
+   <br /><br />
 
-   https://purview.microsoft.com/
+   <a target="_blank" href="https://www.youtube.com/watch?v=8BAeLUywEMM&t=1m30s">VIDEO</a>: 
+   "Microsoft Purview is a unified data governance platform that helps you manage and govern your on-premises, multi-cloud, and software-as-a-service (SaaS) data. Purview provides a unified view of your data estate by discovering and classifying your data, mapping data lineage, and enabling data protection."
 
-   https://web.purview.azure.com/resource/
+   <a target="_blank" href="https://www.youtube.com/watch?v=8BAeLUywEMM&t=2m40s">VIDEO</a>: 
+   "Microsoft Purview is a unified data governance platform that helps you manage and govern your on-premises, multi-cloud, and software-as-a-service (SaaS) data. Purview provides a unified view of your data estate by discovering and classifying your data, mapping data lineage, and enabling data protection."
 
-1. Enter the Compliance Portal:
+   <a target="_blank" href="https://www.youtube.com/watch?v=8BAeLUywEMM&t=3m30s">VIDEO</a>: 
+   "Microsoft Purview is a unified data governance platform that helps you manage and govern your on-premises, multi-cloud, and software-as-a-service (SaaS) data. Purview provides a unified view of your data estate by discovering and classifying your data, mapping data lineage, and enabling data protection."
 
-   https://compliance.microsoft.com/
+   <a target="_
+
 
 https://learn.microsoft.com/en-us/purview/purview describes features:
    * Data Catalog - discover and catalog data assets
@@ -696,6 +719,83 @@ https://learn.microsoft.com/en-us/purview/purview describes features:
    * Privileged Access Management (PAM) - manage, control, and monitor access to critical assets
    <br /><br />
 
+https://learn.microsoft.com/en-us/training/modules/intro-to-microsoft-purview/?source=recommendations
+
+Based on https://learn.microsoft.com/en-us/purview/create-microsoft-purview-portal
+
+   ### Purview Account
+
+1. Search for "Purview accounts":
+   https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Purview%2FAccounts
+
+1. Click "Create Microsoft Purview account".
+   https://portal.azure.com/#create/Microsoft.AzurePurviewGalleryPackage
+   
+1. Select the Subscription to use.
+1. Select an existing Resource group or create a new one.
+
+   purview-west-us-231129a
+
+   PROTIP: A Purview account needs to be created for each Region your organization operates.
+
+1. For Microsoft Purview account name, specify the same name as the Resource Group.
+1. For Location, select the same location as the Resource Group.
+
+   Notice the CU. The default is 1. The maximum is 64.
+
+1. In Tags, specify a tag "CreatedBy" with your name and email address as the Value.
+1. Create for the Overview Deployment
+
+   ### Purview Governance Portal
+
+1. Enter the Purview Portal:
+
+   https://web.purview.azure.com/
+
+1. Select the Directory and Purview Account (just created) for the Data catalog view.
+1. Expand the left menu
+
+   * Data Catalog
+   * Data Map
+   * Data estate insights
+   * Data Policies
+   
+   Not shown:
+   * Data Sources
+   * Data Lineage
+   * Data Protection
+   * Data Classification
+   * Data Discovery
+   * Data Governance
+   <br /><br />
+
+1. View Microsoft Purview overview at
+   https://go.microsoft.com/fwlink/?linkid=2148717
+
+   Get Started at
+   https://go.microsoft.com/fwlink/?linkid=2149760
+
+   Documentation at:
+   https://go.microsoft.com/fwlink/?linkid=2148916
+
+
+1. Based on "Get Started" at
+   https://go.microsoft.com/fwlink/?linkid=2149760
+
+
+   ### Purview Risk and Compliance
+
+1. Enter the Compliance Portal:
+
+   https://compliance.microsoft.com/
+
+   ### End-to-End
+
+   https://learn.microsoft.com/en-us/training/modules/building-end-to-end-data-governance-master-data-stack-with-microsoft-purview-cluedin/
+   in 2 hr 38 min - Build an end to end data governance and master data management stack with Microsoft Purview and CluedIn
+
+
+   ### Security Copilot
 
 Microsoft's Security Copilot makes use of (Language Model Logics) to detect anomalies in logs.
 
@@ -710,6 +810,14 @@ https://www.microsoft.com/en-us/security/blog/
 
 https://www.microsoft.com/en-us/security/blog/2022/03/31/3-strategies-to-launch-an-effective-data-governance-plan/
 
+
+
+## Priva (Privacy)
+
+https://learn.microsoft.com/en-us/privacy/priva/priva-overview
+
+* European Union's General Data Protection Regulation (GDPR)
+* California Consumer Privacy Act (CCPA)
 
 
 <hr />
