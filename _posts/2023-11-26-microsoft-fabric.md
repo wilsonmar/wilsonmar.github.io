@@ -38,7 +38,9 @@ The product name "<strong>Fabric</strong>" Microsoft introduced March 2023 along
 
    * Fabric "Data Factory" is different from "Azure Data Factory (ADF)" that continues to be used (at lower cost). PROTIP: Use "<strong>Data Factory in Microsoft Fabric (DFiMF)</strong>" to differentiate it from the legacy ADF. DFiMF adds to ADF features from <a target="_blank" href="https://www.casewhen.co/blog/data-analysis-and-data-transformation-with-power-query-in-power-bi">Power Query Dataflows</a> and integrates tagging for Data Governance.
 
-   * The "Synapse" prefix to several Fabric products is different from the "Azure Synapse Analytics" product that Microsoft continues to sell.
+   * The "Synapse" prefix to several Fabric products is different from the "Azure Synapse Analytics" product that Microsoft continues to sell. <a target="_blank" href="https://endjin.com/blog/2023/05/azure-synapse-analytics-versus-microsoft-fabric-a-side-by-side-comparison">"There is no automatic upgrade path"</a>
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701362429/microsoft-fabric-artefacts-1280x720_swuigs.webp"><img alt="microsoft-fabric-artefacts-1280x720" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701362429/microsoft-fabric-artefacts-1280x720_swuigs.webp"></a>
 
 
 <a name="Shortcuts"></a>
@@ -230,14 +232,12 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
 
    This article contains information from the following sources:
 
-   * https://learn.microsoft.com/en-us/fabric/
+   * https://learn.microsoft.com/en-us/fabric/ is the main Fabric page.
 
    * https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial
+   * https://learn.microsoft.com/en-us/training/paths/get-started-fabric
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/azure-data-fundamentals-explore-data-warehouse-analytics/">Microsoft Documentation for Microsoft Fabric</a>
-
-   * https://learn.microsoft.com/en-us/fabric/
-   * https://learn.microsoft.com/en-us/training/paths/get-started-fabric
 
    * <a target="_blank" href="https://learn.microsoft.com/en-us/collections/w2gkhrkzzmym?WT.mc_id=cloudskillschallenge_a68d938a-58b7-403e-89f2-b2305edb7c41">Microsoft Ignite: Microsoft Fabric Skills Challenge</a>
 
