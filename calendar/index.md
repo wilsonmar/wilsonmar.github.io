@@ -283,7 +283,7 @@ Over the years, the group did less touring and performing (in green).
 
 ### Google
 
-If you use <a target=_blank" href="https://calendar.google.com/calendar/u/0/r">Google Calendar</a> click "+ Create" at the top-right for <a target="_blank" href="https://support.google.com/calendar/answer/10729749?hl=en">Appointment schedule</a> See https://www.wired.com/story/google-calendar-find-time-to-meet-appointment-scheduler/
+If you use <a target="_blank" href="https://calendar.google.com/calendar/u/0/r">Google Calendar</a> click "+ Create" at the top-right for <a target="_blank" href="https://support.google.com/calendar/answer/10729749?hl=en">Appointment schedule</a> See https://www.wired.com/story/google-calendar-find-time-to-meet-appointment-scheduler/
 
 <hr />
 
