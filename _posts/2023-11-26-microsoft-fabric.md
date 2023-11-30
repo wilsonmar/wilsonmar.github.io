@@ -16,8 +16,6 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-https://learn.microsoft.com/en-us/fabric/
-
 With this article I aim to get you past the vapid marketing generalizations.
 This is a hands-on technical tutorial that takes you logically step-by-step to quickly learn how to setup, navigate, and use the <strong>Microsoft Fabric</strong> cloud and pass <a href="https://wilsonmar.github.io/azure-certifications/">Azure certification exam</a>
 
@@ -231,6 +229,8 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
 1. PROTIP: Instead of clicking this <strong>Learn more</strong> link for the "Get started" tutorial, copy the URL and switch to your personal browser profile so you get points for learning,
 
    This article contains information from the following sources:
+
+   * https://learn.microsoft.com/en-us/fabric/
 
    * https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial
 
