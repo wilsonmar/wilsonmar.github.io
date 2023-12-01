@@ -24,15 +24,9 @@ This is a hands-on technical tutorial that takes you logically step-by-step to q
 
 {% include whatever.html %}
 
-PROTIP: I adapted <a target="_blank" href="https://7451111251303.gumroad.com/l/fkrvnn" title="Available for purchase">this diagram</a> from Microsoft and <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">others</a> to show, all in one page, relationships among key technology components ("Experiences") in Fabric:
-
-<a name="Diagram"></a>
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701283548/microsoft-fabric-1703x995_okeala.png"><img alt="microsoft-fabric-1703x995" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701283548/microsoft-fabric-1703x995_okeala.png"><br align="right" /><em>Click for full-size image</em></a>.
+## Home Pages & Terminology
 
 Rather than other fanboys who say "it's the latest cool thing, let's switch now", let's first clear up some common confusions:
-
-
-## Home Pages & Terminology
 
 > <a target="_blank" href="https://endjin.com/blog/2023/05/intro-to-microsoft-fabric">BLOG</a>: "Microsoft Fabric can be thought of as the third generation of Microsoft data platforms, where first generation (e.g. HDInsight, SQL Data Warehouse) were somewhat isolated takes on traditional data products; Second generation was Azure Synapse Analytics, which integrated platforms at a UX level but still felt a little disjointed at the data level; and now we have Microsoft Fabric which builds upon the Synapse "unification" vision, with a particular focus on enabling deep data-level interoperability."
 
@@ -139,7 +133,7 @@ Like Adobe's PDF file format, which enabled many companies in the printing indus
    First generation platforms used ETL to Transfor and Load data into data warehouses from which analytics reports are created.
    Two-tier architectures still use ETL despite using data lakes referrenced directly by Machine Learning systems.
    
-   Lakehouse architecture is a data management architecture that combines the best elements of data warehouses with the scale and flexibility of data lakes to support every known data workload. It is a new paradigm that enables data teams to work with any type of data, build data pipelines in any language, and use any kind of downstream analytics, business intelligence, or machine learning tool.
+   Lakehouse architecture is a data management architecture that combines the analytic capabilities of data warehouses with the scale and flexibility of data lakes to support every known data workload. It is a new paradigm that enables data teams to work with any type of data, build data pipelines in any language, and use any kind of downstream analytics, business intelligence, or machine learning tool.
 
    Combined with the wide and easy availability of disk space on hyperscalers (AWS, Azure, Google), data that used to be processed by ETL can now be processed by ELT or ELTL.
 
@@ -162,6 +156,11 @@ Like Adobe's PDF file format, which enabled many companies in the printing indus
 
 
 <hr />
+
+PROTIP: I adapted <a target="_blank" href="https://7451111251303.gumroad.com/l/fkrvnn" title="Available for purchase">this diagram</a> from Microsoft and <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">others</a> to show, all in one page, relationships among key technology components ("Experiences") in Fabric:
+
+<a name="Diagram"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701283548/microsoft-fabric-1703x995_okeala.png"><img alt="microsoft-fabric-1703x995" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701283548/microsoft-fabric-1703x995_okeala.png"><br align="right" /><em>Click for full-size image</em></a>.
 
 Now let's focus on <strong>impacts</strong> on the lives of people, before examining the home pages and <strong>capabilities</strong> of the products.
 
