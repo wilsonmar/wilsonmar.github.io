@@ -38,7 +38,7 @@ The product name "<strong>Fabric</strong>" Microsoft introduced March 2023 along
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701362429/microsoft-fabric-artefacts-1280x720_swuigs.webp"><img alt="microsoft-fabric-artefacts-1280x720" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701362429/microsoft-fabric-artefacts-1280x720_swuigs.webp"></a>
 
-New to Microsoft customers with Fabric:
+What's so cool about Microsoft Fabric?
    * <a href="#Shortcuts">OneLake Shortcuts</a>
    * <a href="#DeltaFormat">OneLake DeltaFormat</a>
    * <a href="#Data+Activator">Data Activator</a>
@@ -52,7 +52,7 @@ New to Microsoft customers with Fabric:
 
 ## OneLake Shortcuts
 
-<a target="_blank" href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-shortcuts">Shortcuts</a> are the most significant technical achievement that comes with Fabric's "OneLake" capabilities.
+<a target="_blank" href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-shortcuts">Shortcuts</a> are the most significant technical advancement with Fabric's "OneLake" capabilities. It's a simple but important feature.
 
 <a target="_blank" href="https://blog.fabric.microsoft.com/en-us/blog/using-azure-databricks-with-microsoft-fabric-and-onelake?ft=All%3A">BLOG</a>:
 With Shortcuts, Microsoft enables the processing of specific datasets from "anywhere", including blobs (files) in AWS S3 and Google Cloud Storage as well as Microsoft's own Azure Blob Storage, Azure Data Lake Storage (ADLS) Gen2, Azure Databricks, etc.
@@ -121,6 +121,8 @@ Like Adobe's PDF file format, which enabled many companies in the printing indus
 
    * Contains its own indexing mechanisms
    
+   * multiple queries can write to the same delta table simultaneously (at exactly the same time). <a target="_blank" href="https://books.japila.pl/delta-lake-internals/overview/">BLOG</a>
+   
    * Can handle continuous streams of data
 
 
@@ -145,7 +147,6 @@ Like Adobe's PDF file format, which enabled many companies in the printing indus
    "Delta Lake supports several operations to modify tables using standard <strong>DataFrame APIs</strong>."
 
    Additional descriptions at:
-   * <a target="_blank" href="https://books.japila.pl/delta-lake-internals/overview/">https://books.japila.pl/delta-lake-internals/overview</a>
    * <a target="_blank" href="https://docs.delta.io/latest/delta-intro.html">https://docs.delta.io/latest/delta-intro.html</a>
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/databricks/delta/">https://docs.microsoft.com/en-us/azure/databricks/delta/</a>
    <br /><br />
