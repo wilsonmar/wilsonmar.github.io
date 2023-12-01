@@ -26,6 +26,7 @@ This is a hands-on technical tutorial that takes you logically step-by-step to q
 
 ## What's Different?
 
+
 Rather than other fanboys who say "it's the latest cool thing, let's switch now", let's first clear up some common confusions:
 
 > <a target="_blank" href="https://endjin.com/blog/2023/05/intro-to-microsoft-fabric">BLOG</a>: "Microsoft Fabric can be thought of as the third generation of Microsoft data platforms, where first generation (e.g. HDInsight, SQL Data Warehouse) were somewhat isolated takes on traditional data products; Second generation was Azure Synapse Analytics, which integrated platforms at a UX level but still felt a little disjointed at the data level; and now we have Microsoft Fabric which builds upon the Synapse "unification" vision, with a particular focus on enabling deep data-level interoperability."
@@ -42,16 +43,20 @@ This "Wordly Map" (from Barry Smart <a target="_blank" href="https://endjin.com/
 
    * The workspace in Azure Synapse Analytics is Synapse Studio GUI. However, Fabric uses a Power BI-based interface organized around <a href="#Personas">personas</a> — data science, data engineering, real-time analytics, etc.
 
+   * "Mapping Data Flows" (and "Synapse Links") are not available in Fabric.
+   
+   * "Mapping Data Flows" (and "Synapse Pipelines") are now called "<a target="_blank" href="https://docs.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview">Data Flows</a>" within Data Factory in Fabric.
+   
+PROTIP: Here's what I say is so cool about all of Microsoft Fabric:
+   * <a href="#Shortcuts">OneLake Shortcuts</a> to access any data anywhere
+   * <a href="#DeltaFormat">OneLake DeltaFormat</a> for time travel, streaming, and other magic with databases in all formats
+   * <a href="#Data+Activator">Data Activator</a>, new to all Microsoft and the industry, for triggering automatic actions
+   <br /><br />
+
 Individual artefacts before and after Fabric:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701362429/microsoft-fabric-artefacts-1280x720_swuigs.webp"><img alt="microsoft-fabric-artefacts-1280x720" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701362429/microsoft-fabric-artefacts-1280x720_swuigs.webp"></a>
 
-
-PROTIP: Here's what I say is so cool about Microsoft Fabric:
-   * <a href="#Shortcuts">OneLake Shortcuts</a> to access any data anywhere
-   * <a href="#DeltaFormat">OneLake DeltaFormat</a> for time travel, streaming, and other magic with databases in all formats
-   * <a href="#Data+Activator">Data Activator</a> for triggering automatic actions
-   <br /><br />
 
 <hr />
 
