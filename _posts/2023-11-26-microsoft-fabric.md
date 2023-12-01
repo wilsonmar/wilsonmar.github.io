@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-28"
+date: "2023-11-30"
 file: "microsoft-fabric"
 title: "Microsoft Fabric"
 excerpt: "Get skilled in multicloud data handling and real-time analystics, then pass the DP-600 exam January 2024"
@@ -34,11 +34,13 @@ Rather than other fanboys who say "it's the latest cool thing, let's switch now"
 
 ## Home Pages & Terminology
 
+> <a target="_blank" href="https://endjin.com/blog/2023/05/intro-to-microsoft-fabric">BLOG</a>: Microsoft Fabric can be thought of as the third generation of Microsoft data platforms, where first generation (e.g. HDInsight, SQL Data Warehouse) were somewhat isolated takes on traditional data products; second generation was Azure Synapse Analytics, which integrated platforms at a UX level but still felt a little disjointed at the data level; and now we have Microsoft Fabric which builds upon the Synapse "unification" vision, with a particular focus on enabling deep data-level interoperability.
+
 The product name "<strong>Fabric</strong>" Microsoft introduced March 2023 along with a set of cloud-based product <strong>experiences</strong> containing the same words also used in legacy products that Microsoft continues to sell: <a target="_blank" href="https://www.casewhen.co/blog/data-factory-showdown-fabric-vs-azure">BLOG</a>:
 
    * Fabric "Data Factory" is different from "Azure Data Factory (ADF)" that continues to be used (at lower cost). PROTIP: Use "<strong>Data Factory in Microsoft Fabric (DFiMF)</strong>" to differentiate it from the legacy ADF. DFiMF adds to ADF features from <a target="_blank" href="https://www.casewhen.co/blog/data-analysis-and-data-transformation-with-power-query-in-power-bi">Power Query Dataflows</a> and integrates tagging for Data Governance.
 
-   * The "Synapse" prefix to several Fabric products is different from the "Azure Synapse Analytics" product that Microsoft continues to sell. <a target="_blank" href="https://endjin.com/blog/2023/05/azure-synapse-analytics-versus-microsoft-fabric-a-side-by-side-comparison">"There is no automatic upgrade path"</a>
+   * The "Synapse" prefix to several Fabric products is different from the "Azure Synapse Analytics" product, which Microsoft continues to sell. <a target="_blank" href="https://endjin.com/blog/2023/05/azure-synapse-analytics-versus-microsoft-fabric-a-side-by-side-comparison">"There is no automatic upgrade path"</a>
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701362429/microsoft-fabric-artefacts-1280x720_swuigs.webp"><img alt="microsoft-fabric-artefacts-1280x720" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701362429/microsoft-fabric-artefacts-1280x720_swuigs.webp"></a>
 
