@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-30"
+date: "2023-12-01"
 file: "microsoft-fabric"
 title: "Microsoft Fabric"
 excerpt: "Get skilled in multicloud data handling and real-time analystics, then pass the DP-600 exam January 2024"
@@ -36,14 +36,16 @@ The product name "<strong>Fabric</strong>" Microsoft introduced March 2023 along
 
    * The "Synapse" prefix is now applied to several Fabric products. Before Fabric, Microsoft used the Synapse brand for <a target="_blank" href="https://learn.microsoft.com/en-us/azure/synapse-analytics/synapse-link/sql-synapse-link-overview">Synapse Link</a> and the "Azure Synapse Analytics" product, which Microsoft continues to sell. "<a target="_blank" href="https://endjin.com/blog/2023/05/azure-synapse-analytics-versus-microsoft-fabric-a-side-by-side-comparison">There is no automatic upgrade path"</a> from Azure Synapse Analytics to Fabric Real-Time Analytics. 
    
-   * The workspace in Azure Synapse Analytics is Synapse Studio GUI. However, Fabric uses a Power BI-based interface organized around <a href="#Personas">personas</a> — data science, data engineering, real-time analytics, etc.
-
 This "Wordly Map" (from Barry Smart <a target="_blank" href="https://endjin.com/blog/2023/05/azure-synapse-analytics-versus-microsoft-fabric-a-side-by-side-comparison">at Endjin</a>) provides a high-level overview of the evolution of products and features from "Uncharted" to "Industrial" utility in Fabric:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701439136/fabric-wardley-map-1121x793_pufd34.webp"><img alt="fabric-wardley-map-1121x793.webp" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701439136/fabric-wardley-map-1121x793_pufd34.webp"></a>
 
+   * The workspace in Azure Synapse Analytics is Synapse Studio GUI. However, Fabric uses a Power BI-based interface organized around <a href="#Personas">personas</a> — data science, data engineering, real-time analytics, etc.
+
+Individual artefacts before and after Fabric:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701362429/microsoft-fabric-artefacts-1280x720_swuigs.webp"><img alt="microsoft-fabric-artefacts-1280x720" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701362429/microsoft-fabric-artefacts-1280x720_swuigs.webp"></a>
+
 
 PROTIP: Here's what I say is so cool about Microsoft Fabric:
    * <a href="#Shortcuts">OneLake Shortcuts</a> to access any data anywhere
@@ -149,7 +151,8 @@ Like Adobe's PDF file format, which enabled many companies in the printing indus
    <a target="_blank" href="https://www.linkedin.com/pulse/comparing-microsoft-fabric-azure-machine-learning-which-kim-berg/">PROTIP</a>:
    Microsoft's legacy <strong>Azure ML</strong> PaaS offering is elevated by Fabric's <strong>Synapse Data Science</strong> SaaS offering by adding access to OneCloud Delta format and the "universal" data preparation, management, and analysis tools that goes with it. 
    
-   
+   REMEMBER: Microsoft has renamed the Power BI "dataset" content type to :semantic model". Semantics relates to the study of references, specifically describing the real meaning between symbols or words. A semantic model or semantic data model is a high-level databases. An SDM specification describes a database in terms of the kinds of entities that exist in the application environment, the classifications and groupings of those entities, and the structural interconnections among them.
+
 
 1. For a deeper dive, get the 267-page ebook PDF "Delta Lake: Up & Running by O’Reilly at:
 
@@ -349,10 +352,6 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
    * <a target="_blank" href="https://learn.microsoft.com/en-us/collections/w2gkhrkzzmym?WT.mc_id=cloudskillschallenge_a68d938a-58b7-403e-89f2-b2305edb7c41">Microsoft Ignite: Microsoft Fabric Skills Challenge</a>
 
    * https://aka.ms/Fabric-Hero-Blog-Ignite23
-
-Semantics relates to the study of references, specifically describing the real meaning between symbols or words. 
-
-A semantic model or semantic data model is a high-level databases. An SDM specification describes a database in terms of the kinds of entities that exist in the application environment, the classifications and groupings of those entities, and the structural interconnections among them.
 
 
 <hr />
@@ -612,7 +611,7 @@ Databricks is a cloud-based service that provides a unified analytics platform f
 Microsoft's $165 <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/fabric-analytics-engineer-associate/">DP-600 Fabric Analytic Engineer Associate exam page</a> (available in January 2024) provides free tutorials.
 <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-600">Study Guide</a>
 
-<strong>Plan, implement, and manage a solution for data analytics (10–15%)</strong>
+#### Plan, implement, and manage a solution for data analytics (10–15%)
 
 Plan a data analytics environment:
    * Identify requirements for a solution, including components, features, performance, and capacity stock-keeping units (SKUs)
@@ -638,7 +637,7 @@ Manage the analytics development lifecycle
    * Create and update reusable assets, including Power BI template (.pbit) files, Power BI data source (.pbids) files, and shared semantic models
    <br /><br />
 
-<strong>Prepare and serve data (40–45%)</strong>
+#### Prepare and serve data (40–45%)
 
 Create objects in a lakehouse or warehouse:
    * Ingest data by using a data pipeline, dataflow, or notebook
@@ -674,7 +673,7 @@ Optimize performance:
    * Identify and resolve issues with Delta table file sizes
    <br /><br />
 
-<strong>Implement and manage semantic models (20–25%)</strong>
+#### Implement and manage semantic models (20–25%)
 
 Design and build semantic models:
    * Choose a storage mode, including Direct Lake
@@ -696,7 +695,7 @@ Optimize enterprise-scale semantic models:
    * Implement incremental refresh
    <br /><br />
 
-<strong>Explore and analyze data (20–25%)</strong>
+#### Explore and analyze data (20–25%)
 
 Perform exploratory analytics:
    * Implement descriptive and diagnostic analytics
