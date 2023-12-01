@@ -24,7 +24,7 @@ This is a hands-on technical tutorial that takes you logically step-by-step to q
 
 {% include whatever.html %}
 
-## Home Pages & Terminology
+## What's Different?
 
 Rather than other fanboys who say "it's the latest cool thing, let's switch now", let's first clear up some common confusions:
 
@@ -32,19 +32,24 @@ Rather than other fanboys who say "it's the latest cool thing, let's switch now"
 
 The product name "<strong>Fabric</strong>" Microsoft introduced March 2023 along with a set of cloud-based product <strong>experiences</strong> containing the same words also used in legacy products that Microsoft continues to sell: <a target="_blank" href="https://www.casewhen.co/blog/data-factory-showdown-fabric-vs-azure">BLOG</a>:
 
-   * Fabric "Data Factory" is different from "Azure Data Factory (ADF)" that continues to be used (at lower cost). PROTIP: Use "<strong>Data Factory in Microsoft Fabric (DFiMF)</strong>" to differentiate it from the legacy ADF. DFiMF adds to ADF features from <a target="_blank" href="https://www.casewhen.co/blog/data-analysis-and-data-transformation-with-power-query-in-power-bi">Power Query Dataflows</a> and integrates tagging for Data Governance.
+   * Fabric "Data Factory" is different from "Azure Data Factory (ADF)" that continues to be used (at lower cost). PROTIP: Some use the term "<strong>Data Factory in Microsoft Fabric (DFiMF)</strong>" to differentiate it from the legacy ADF. DFiMF adds to ADF features from <a target="_blank" href="https://www.casewhen.co/blog/data-analysis-and-data-transformation-with-power-query-in-power-bi">Power Query Dataflows</a> and integrates tagging for Data Governance.
 
-   * The "Synapse" prefix to several Fabric products is different from the "Azure Synapse Analytics" product, which Microsoft continues to sell. <a target="_blank" href="https://endjin.com/blog/2023/05/azure-synapse-analytics-versus-microsoft-fabric-a-side-by-side-comparison">"There is no automatic upgrade path"</a>
+   * The "Synapse" prefix is now applied to several Fabric products. Before Fabric, Microsoft used the Synapse brand for <a target="_blank" href="https://learn.microsoft.com/en-us/azure/synapse-analytics/synapse-link/sql-synapse-link-overview">Synapse Link</a> and the "Azure Synapse Analytics" product, which Microsoft continues to sell. "<a target="_blank" href="https://endjin.com/blog/2023/05/azure-synapse-analytics-versus-microsoft-fabric-a-side-by-side-comparison">There is no automatic upgrade path"</a> from Azure Synapse Analytics to Fabric Real-Time Analytics. 
+   
+   * The workspace in Azure Synapse Analytics is Synapse Studio GUI. However, Fabric uses a Power BI-based interface organized around <a href="#Personas">personas</a> — data science, data engineering, real-time analytics, etc.
+
+This "Wordly Map" (from Barry Smart <a target="_blank" href="https://endjin.com/blog/2023/05/azure-synapse-analytics-versus-microsoft-fabric-a-side-by-side-comparison">at Endjin</a>) provides a high-level overview of the evolution of products and features from "Uncharted" to "Industrial" utility in Fabric:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701439136/fabric-wardley-map-1121x793_pufd34.webp"><img alt="fabric-wardley-map-1121x793.webp" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701439136/fabric-wardley-map-1121x793_pufd34.webp"></a>
+
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701362429/microsoft-fabric-artefacts-1280x720_swuigs.webp"><img alt="microsoft-fabric-artefacts-1280x720" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701362429/microsoft-fabric-artefacts-1280x720_swuigs.webp"></a>
 
-What's so cool about Microsoft Fabric?
-   * <a href="#Shortcuts">OneLake Shortcuts</a>
-   * <a href="#DeltaFormat">OneLake DeltaFormat</a>
-   * <a href="#Data+Activator">Data Activator</a>
+PROTIP: Here's what I say is so cool about Microsoft Fabric:
+   * <a href="#Shortcuts">OneLake Shortcuts</a> to access any data anywhere
+   * <a href="#DeltaFormat">OneLake DeltaFormat</a> for time travel, streaming, and other magic with databases in all formats
+   * <a href="#Data+Activator">Data Activator</a> for triggering automatic actions
    <br /><br />
-
-
 
 <hr />
 
@@ -84,7 +89,7 @@ PROTIP: By themselves, Shortcuts don't "unify data across domains". People do th
 
 ## Delta/Parquet Format
 
-Like Adobe's PDF file format, which enabled many companies in the printing industry to flourish due to widespread adoption, the <strong>Delta Lake data format</strong> has enabled the <strong>datalake</strong> industry to achieve a whole new level. Database vendors <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a> and Databricks have been using the Delta format for years.
+Like Adobe's PDF file format, which enabled many companies in the printing industry to flourish due to widespread adoption, the <strong>Delta Lake data format</strong> has enabled the <strong>datalake</strong> industry to achieve a whole new level. Database vendors <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a> and Databricks have been using the Delta format for years. The storage format used by Microsoft SQL Server format was proprietary.
 
 1. Visit:
 
@@ -115,9 +120,11 @@ Like Adobe's PDF file format, which enabled many companies in the printing indus
 
    * <a target="_blank" href="https://github.com/delta-io/delta/blob/master/PROTOCOL.md">Logging of ACID transactions</a> (changes) are enabled by Apache's <strong>"Parquet"</strong> file format, which not only enables auditing governance but also enables <strong>time travel</strong> -- bringing the whole database to specific points back in time. This is similar to what can be done with repositories of text files using Git.
 
-   * Share live data without copying to another system.
+   * Share live data without copying to another system
 
-   * Contains metadata that describes the data it contains.
+   * Hold structured and unstructured data in the same place
+
+   * Contains metadata that describes the data it contains
 
    * Contains its own indexing mechanisms
    
@@ -132,12 +139,17 @@ Like Adobe's PDF file format, which enabled many companies in the printing indus
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701404722/lakehouse-gens-1609x654_rey2mo.png"><img alt="lakehouse-gens-1609x654.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701404722/lakehouse-gens-1609x654_rey2mo.png"></a>
 
-   First generation platforms used ETL to Transfor and Load data into data warehouses from which analytics reports are created.
-   Two-tier architectures still use ETL despite using data lakes referrenced directly by Machine Learning systems.
+   First generation platforms used ETL to Transform and Load data into data warehouses from which analytics reports are created.
+   Two-tier architectures still use ETL despite using data lakes referred directly by Machine Learning systems.
    
    Lakehouse architecture is a data management architecture that combines the analytic capabilities of data warehouses with the scale and flexibility of data lakes to support every known data workload. It is a new paradigm that enables data teams to work with any type of data, build data pipelines in any language, and use any kind of downstream analytics, business intelligence, or machine learning tool.
 
    Combined with the wide and easy availability of disk space on hyperscalers (AWS, Azure, Google), data that used to be processed by ETL can now be processed by ELT or ELTL.
+
+   <a target="_blank" href="https://www.linkedin.com/pulse/comparing-microsoft-fabric-azure-machine-learning-which-kim-berg/">PROTIP</a>:
+   Microsoft's legacy <strong>Azure ML</strong> PaaS offering is elevated by Fabric's <strong>Synapse Data Science</strong> SaaS offering by adding access to OneCloud Delta format and the "universal" data preparation, management, and analysis tools that goes with it. 
+   
+   
 
 1. For a deeper dive, get the 267-page ebook PDF "Delta Lake: Up & Running by O’Reilly at:
 
@@ -158,14 +170,16 @@ Like Adobe's PDF file format, which enabled many companies in the printing indus
 
 <hr />
 
-PROTIP: I adapted <a target="_blank" href="https://7451111251303.gumroad.com/l/fkrvnn" title="Available for purchase">this diagram</a> from Microsoft and <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">others</a> to show, all in one page, relationships among key technology components ("Experiences") in Fabric:
+<a name="Personas"></a>
+
+## Personas (User Roles)
+
+PROTIP: I adapted <a target="_blank" href="https://7451111251303.gumroad.com/l/fkrvnn" title="Available for purchase">this diagram</a> from <a target="_blank" href="https://learn.microsoft.com/en-in/fabric/get-started/microsoft-fabric-overview">Microsoft</a> and <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">others</a> to show, all in one page, relationships among key technology components ("Experiences") in Fabric:
 
 <a name="Diagram"></a>
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701283548/microsoft-fabric-1703x995_okeala.png"><img alt="microsoft-fabric-1703x995" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701283548/microsoft-fabric-1703x995_okeala.png"><br align="right" /><em>Click for full-size image</em></a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701439638/microsoft-fabric-diagram-231201a-wm_aiciwa.png"><img alt="microsoft-fabric-diagram-231201a-wm.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701439638/microsoft-fabric-diagram-231201a-wm_aiciwa.png"><br align="right" /><em>Click for full-size image</em></a>.
 
 Now let's focus on <strong>impacts</strong> on the lives of people, before examining the home pages and <strong>capabilities</strong> of the products.
-
-## User Roles (Personas)
 
 Instead of the traditional generic "Database Administrator" role name, 
 Microsoft designed Fabric documentation around different roles within enterprises, listed here in order of introduction during a green-field implementation:
@@ -194,7 +208,7 @@ Microsoft designed Fabric documentation around different roles within enterprise
 
    * Program SQL within <a href="#SDW">Synapse Data Warehouse</a> to create traditional relational SQL databases 
    
-   * Program PySpark Notebooks within Synapse Data Engineering to create "big data" (Hadoop-style) <strong>data lakes</strong>
+   * Program PySpark within Synapse Data Engineering to create "big data" (Hadoop-style) <strong>data lakes</strong>
    
    * Use Data Factory to create data pipelines to move data from one place to another, such as from a data lake to a data warehouse.
    <br /><br />
@@ -278,9 +292,9 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
 
 1. You'll see what I call the "bouncer" page ensures that only <strong>organizational</strong> emails (work or school account) use Fabric. Your personal gmail or outlook.com account is no good here. Wow.
 
-   REMEMBER: You must setup Azure subscriptions using your work or school account, not your personal account.
-
-   This is why you setup different browser profiles for different accounts. Click the profile icon at the top right of the browser window to switch between profiles.
+   "You can't sign in here with a personal account. Use your work or school account instead."
+   
+   This is why you setup a <a href="#Browser+Profile">browser profiles</a> for each email account. Click the profile icon at the top right of the browser window to switch between profiles.
 
    If you have a license, you'll see the fabric-landing-711x400.jpeg landing page, which lists the Fabric components you have access to.
 
@@ -291,9 +305,9 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
 
 1. Click the green <strong>Start trial</strong> box.
 
-   Notice the word "capacity" instead of "instances" because Fabric is a <strong>serverless</strong> service.
+   REMEMBER: Notice the word "capacity" instead of "instances" because Fabric is a <strong>serverless</strong> service.
 
-1. Click "Start trial" to start a 30-day trial. 
+1. Click "Start trial". 
 
    PROTIP: In your Calendar, add a reminder to cancel the trial before the 30 days are up.
    
