@@ -24,7 +24,7 @@ This is a hands-on technical tutorial that takes you logically step-by-step to q
 
 {% include whatever.html %}
 
-PROTIP: I adapted <a target="_blank" href="https://7451111251303.gumroad.com/l/fkrvnn" title="Available for purchase">this diagram</a> from Microsoft and <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">others</a> to show, all in one page, relationships among key components ("Experiences") to Fabric:
+PROTIP: I adapted <a target="_blank" href="https://7451111251303.gumroad.com/l/fkrvnn" title="Available for purchase">this diagram</a> from Microsoft and <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">others</a> to show, all in one page, relationships among key technology components ("Experiences") in Fabric:
 
 <a name="Diagram"></a>
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701283548/microsoft-fabric-1703x995_okeala.png"><img alt="microsoft-fabric-1703x995" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701283548/microsoft-fabric-1703x995_okeala.png"><br align="right" /><em>Click for full-size image</em></a>.
@@ -34,7 +34,7 @@ Rather than other fanboys who say "it's the latest cool thing, let's switch now"
 
 ## Home Pages & Terminology
 
-> <a target="_blank" href="https://endjin.com/blog/2023/05/intro-to-microsoft-fabric">BLOG</a>: Microsoft Fabric can be thought of as the third generation of Microsoft data platforms, where first generation (e.g. HDInsight, SQL Data Warehouse) were somewhat isolated takes on traditional data products; second generation was Azure Synapse Analytics, which integrated platforms at a UX level but still felt a little disjointed at the data level; and now we have Microsoft Fabric which builds upon the Synapse "unification" vision, with a particular focus on enabling deep data-level interoperability.
+> <a target="_blank" href="https://endjin.com/blog/2023/05/intro-to-microsoft-fabric">BLOG</a>: "Microsoft Fabric can be thought of as the third generation of Microsoft data platforms, where first generation (e.g. HDInsight, SQL Data Warehouse) were somewhat isolated takes on traditional data products; Second generation was Azure Synapse Analytics, which integrated platforms at a UX level but still felt a little disjointed at the data level; and now we have Microsoft Fabric which builds upon the Synapse "unification" vision, with a particular focus on enabling deep data-level interoperability."
 
 The product name "<strong>Fabric</strong>" Microsoft introduced March 2023 along with a set of cloud-based product <strong>experiences</strong> containing the same words also used in legacy products that Microsoft continues to sell: <a target="_blank" href="https://www.casewhen.co/blog/data-factory-showdown-fabric-vs-azure">BLOG</a>:
 
@@ -44,10 +44,19 @@ The product name "<strong>Fabric</strong>" Microsoft introduced March 2023 along
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701362429/microsoft-fabric-artefacts-1280x720_swuigs.webp"><img alt="microsoft-fabric-artefacts-1280x720" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701362429/microsoft-fabric-artefacts-1280x720_swuigs.webp"></a>
 
+New to Microsoft customers with Fabric:
+   * <a href="#Shortcuts">OneLake Shortcuts</a>
+   * <a href="#DeltaFormat">OneLake DeltaFormat</a>
+   * <a href="#Data+Activator">Data Activator</a>
+   <br /><br />
+
+
+
+<hr />
 
 <a name="Shortcuts"></a>
 
-### OneLake Shortcuts
+## OneLake Shortcuts
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-shortcuts">Shortcuts</a> are the most significant technical achievement that comes with Fabric's "OneLake" capabilities.
 
@@ -75,9 +84,88 @@ Shortcuts can be created within Microsoft's various SQL data warehouses, lakehou
 PROTIP: By themselves, Shortcuts don't "unify data across domains". People do that by actively managing a "unified namespace" of Shortcuts across the entire enterprise. That's hard work that requires executive and worker support across departments and geographies. Thus the "Chief Data Officer" (CDO).
 
 
+<hr />
+
+<a name="DeltaFormat"></a>
+
+## Delta/Parquet Format
+
+Like Adobe's PDF file format, which enabled many companies in the printing industry to flourish due to widespread adoption, the <strong>Delta Lake data format</strong> has enabled the <strong>datalake</strong> industry to achieve a whole new level. Database vendors <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a> and Databricks have been using the Delta format for years.
+
+1. Visit:
+
+   https://www.linkedin.com/company/deltalake/
+
+   Delta Lake is an independent open-source project and not controlled by any single company. To emphasize this we joined the Delta Lake Project in 2019, which is a sub-project of the Linux Foundation Projects.
+
+1. Visit their open-source project at:
+
+   https://github.com/delta-io
+
+   "An open-source <strong>storage framework</strong> that enables building a <a href="#Lakehouse">Lakehouse architecture</a> with compute engines including Spark, PrestoDB, Flink, Trino, and Hive and APIs"
+
+1. Visit their website at:
+
+   https://www.delta.io
+
+   <a target="_blank" href="https://docs.delta.io/latest/delta-intro.html">Delta Lake</a> is an open-source storage layer that brings ACID transactions to Apache Spark™ and big data workloads. Delta Lake runs on top of your existing data lake and is fully compatible with Apache Spark APIs.
+
+
+1. Click the "Lakehouse architecture" link to see the seminal academic paper about that architectural pattern at:
+
+   https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf
+
+   The seminal paper's lead author is <a target="_blank" href="https://www.linkedin.com/in/michaelarmbrust/">Michael Armbrust of Databricks</a> (after a PhD at UC Berkeley).
+
+   It's next-level genius:
+
+   * <a target="_blank" href="https://github.com/delta-io/delta/blob/master/PROTOCOL.md">Logging of ACID transactions</a> (changes) are enabled by Apache's <strong>"Parquet"</strong> file format, which not only enables auditing governance but also enables <strong>time travel</strong> -- bringing the whole database to specific points back in time. This is similar to what can be done with repositories of text files using Git.
+
+   * Share live data without copying to another system.
+
+   * Contains metadata that describes the data it contains.
+
+   * Contains its own indexing mechanisms
+   
+   * Can handle continuous streams of data
+
+
+   ### Lakehouse Architecture
+
+   <a name="Lakehouse"></a>
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701404722/lakehouse-gens-1609x654_rey2mo.png"><img alt="lakehouse-gens-1609x654.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701404722/lakehouse-gens-1609x654_rey2mo.png"></a>
+
+   First generation platforms used ETL to Transfor and Load data into data warehouses from which analytics reports are created.
+   Two-tier architectures still use ETL despite using data lakes referrenced directly by Machine Learning systems.
+   
+   Lakehouse architecture is a data management architecture that combines the best elements of data warehouses with the scale and flexibility of data lakes to support every known data workload. It is a new paradigm that enables data teams to work with any type of data, build data pipelines in any language, and use any kind of downstream analytics, business intelligence, or machine learning tool.
+
+   Combined with the wide and easy availability of disk space on hyperscalers (AWS, Azure, Google), data that used to be processed by ETL can now be processed by ELT or ELTL.
+
+1. For a deeper dive, get the 267-page ebook PDF "Delta Lake: Up & Running by O’Reilly at:
+
+   https://www.databricks.com/resources/ebook/delta-lake-running-oreilly<br />
+   https://www.databricks.com/sites/default/files/2023-10/oreilly-delta-lake_-up-and-running.pdf
+
+   "Delta Lake supports several operations to modify tables using standard <strong>DataFrame APIs</strong>."
+
+   Additional descriptions at:
+   * <a target="_blank" href="https://books.japila.pl/delta-lake-internals/overview/">https://books.japila.pl/delta-lake-internals/overview</a>
+   * <a target="_blank" href="https://docs.delta.io/latest/delta-intro.html">https://docs.delta.io/latest/delta-intro.html</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/databricks/delta/">https://docs.microsoft.com/en-us/azure/databricks/delta/</a>
+   <br /><br />
+
+<!--
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701352948/fabric-onelake-shortcuts-1031x632_nszljw.png"><img alt="fabric-onelake-shortcuts-1031x632.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701352948/fabric-onelake-shortcuts-1031x632_nszljw.png"></a>
+-->
+
+
+<hr />
+
 Now let's focus on <strong>impacts</strong> on the lives of people, before examining the home pages and <strong>capabilities</strong> of the products.
 
-## User Roles
+## User Roles (Personas)
 
 Instead of the traditional generic "Database Administrator" role name, 
 Microsoft designed Fabric documentation around different roles within enterprises, listed here in order of introduction during a green-field implementation:
@@ -95,6 +183,8 @@ Microsoft designed Fabric documentation around different roles within enterprise
 
    PROTIP: Business analysts also coordinate <a target="_blank" href="https://wilsonmar.github.io/chaos-engineering/">Chaos Engineering efforts</a> to ensure that recovery efforts are quick and effective.
 
+   That includes coding <a target="_blank" href="https://wilsonmar.github.io/kql">KQL (Kusto Query Language)</a> within <a href="#RTA"><strong>Synapse Real Time Analytics</strong></a> to create (star schema) databases for analytics. The product is an evolution of Synapse Data Explorer, but also introduces the "Eventstreams" feature that's very similar to Azure Stream Analytics no-code editor.
+   
    Data Analysts collaborate with Security on using Microsft Purview.
 
 * <strong>Data Engineers</strong> create databases (platforms):
@@ -103,8 +193,9 @@ Microsoft designed Fabric documentation around different roles within enterprise
    * Organize <a href="#Shortcuts">Shortcuts</a> to reference data files within <a href="#OneLake">OneLake storage</a>
 
    * Program SQL within <a href="#SDW">Synapse Data Warehouse</a> to create traditional relational SQL databases 
-   * Program <a target="_blank" href="https://wilsonmar.github.io/kql">KQL (Kusto Query Language)</a> within <a href="#RTA">Synapse Real Time Analytics</a> to create (star schema) databases for analytics
+   
    * Program PySpark Notebooks within Synapse Data Engineering to create "big data" (Hadoop-style) <strong>data lakes</strong>
+   
    * Use Data Factory to create data pipelines to move data from one place to another, such as from a data lake to a data warehouse.
    <br /><br />
 
