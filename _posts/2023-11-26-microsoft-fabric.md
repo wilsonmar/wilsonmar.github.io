@@ -158,18 +158,16 @@ Like Adobe's PDF file format, which enabled many companies in the printing indus
    
    REMEMBER: Microsoft has renamed the Power BI "dataset" content type to :semantic model". Semantics relates to the study of references, specifically describing the real meaning between symbols or words. A semantic model or semantic data model is a high-level databases. An SDM specification describes a database in terms of the kinds of entities that exist in the application environment, the classifications and groupings of those entities, and the structural interconnections among them.
 
+1. Additional descriptions at:
+   * <a target="_blank" href="https://docs.delta.io/latest/delta-intro.html">https://docs.delta.io/latest/delta-intro.html</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/databricks/delta/">https://docs.microsoft.com/en-us/azure/databricks/delta/</a>
+   <br /><br />
 
-1. For a deeper dive, get the 267-page ebook PDF "Delta Lake: Up & Running by O’Reilly at:
-
+   For a deeper dive, get the 267-page ebook PDF "Delta Lake: Up & Running by O’Reilly at:
    https://www.databricks.com/resources/ebook/delta-lake-running-oreilly<br />
    https://www.databricks.com/sites/default/files/2023-10/oreilly-delta-lake_-up-and-running.pdf
 
    "Delta Lake supports several operations to modify tables using standard <strong>DataFrame APIs</strong>."
-
-   Additional descriptions at:
-   * <a target="_blank" href="https://docs.delta.io/latest/delta-intro.html">https://docs.delta.io/latest/delta-intro.html</a>
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/databricks/delta/">https://docs.microsoft.com/en-us/azure/databricks/delta/</a>
-   <br /><br />
 
 <!--
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701352948/fabric-onelake-shortcuts-1031x632_nszljw.png"><img alt="fabric-onelake-shortcuts-1031x632.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701352948/fabric-onelake-shortcuts-1031x632_nszljw.png"></a>

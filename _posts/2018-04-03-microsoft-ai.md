@@ -2015,13 +2015,13 @@ Media Services & Storage Account:
 
 1. Switch to the file which defines Azure environment variable VIDEO_INDEXER_ACCOUNT (in setmem.sh) as described in 
  
-   https://wilsonmar.github.io/azure-quickly
+   <a target="_blank" href="https://wilsonmar.github.io/azure-quickly">https://wilsonmar.github.io/azure-quickly</a>
 
 1. Switch back.
 1. In Account settings, click "Copy" to get the Account ID GUID in your Clipboard. 
 1. Switch to the file which defines Azure environment variable VIDEO_INDEXER_ACCOUNT (in setmem.sh) as described in 
 
-   https://wilsonmar.github.io/azure-quickly
+   <a target="_blank" href="https://wilsonmar.github.io/azure-quickly">https://wilsonmar.github.io/azure-quickly</a>
 
 1. Highlight the sample value and paste (Command+V).
 1. Switch back.

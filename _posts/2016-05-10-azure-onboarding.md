@@ -1,8 +1,8 @@
 ---
 layout: post
 date: "2023-11-24"
-file: "azure-quickly"
-title: "Azure Quickly"
+file: "azure-onboarding"
+title: "Azure Onboarding"
 excerpt: "Use this automation to minimize manual toil and mistakes but build-in secure practices and mechanisms to build global enterprises need. Not just for AZ-104, AZ-500"
 tags: [cloud, azure]
 image:
@@ -2057,26 +2057,51 @@ The scripts are also useful for learning Azure.
 
 <a name="CloudShell"></a>
 
-### Cloud Shell (CLI & PowerShell)
+### Login to az CLI & PowerShell
 
-   Resources:
+   * https://learn.microsoft.com/en-us/cli/azure/?view=azure-cli-latest#az_login
+   * https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli-interactively
+   * https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli
+   * https://learn.microsoft.com/en-us/cli/azure/manage-azure-subscriptions-azure-cli#change-the-active-tenant
+   <br /><br />
+
+1. Open a Terminal. 
+1. The command to login to Azure is:
+
+   <pre><strong>az login</strong></pre>
+
+1. In the browser window that opens, select the email account you want to use. Successful login would result in a list of subscriptions you have access to, such as:
+
+   <pre>...
+    "name": "Azure Subscription 1",
+    "tenantId": "11111234-aaaa-bbbb-cccc-dddeeefff111",
+    ...
+    "name": "Pay-As-You-Go",
+    "tenantId": "22221234-aaaa-bbbb-cccc-dddeeefff111",
+    ...
+    "name": "Twilio SendGrid",
+    "tenantId": "33331234-aaaa-bbbb-cccc-dddeeefff111",
+    ...
+   </pre>
+
+   Enterprise admins are likely to have multiple Azure accounts, so highlight and copy the tenant you want:
+
+1. PROTIP: Define in ~/mac-setup.env secrets file the tenents so that you can specify which one to use each time.
+
+   The resulting login command would be like:
+
+   <pre><strong>az login --tenant 11111234-aaaa-bbbb-cccc-dddeeefff111</strong></pre>
+
+   Alternately, https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli-interactively
+   <pre>read -sp "Azure password: " AZ_PASS && echo && az login -u <username> -p $AZ_PASS</pre>
+
+1. Close the browser window or read resources about AZ CLI from a Terminal:
+
    * https://ss64.com/ps/ (A-Z index of PowerShell commands)
    * <a target="_blank" href="https://www.youtube.com/watch?v=x2aIVYxim-A&t=2m56m&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=6" title="Forced to learn a new shell and vi editor by Dana Epps Oct 3, 2019">VIDEO</a>: Cloud Shell
    <br /><br />
 
-1. If you're executing from a local machine, first login to Azure:
-
-   <pre><strong>az login</strong></pre>
-
-   PROTIP: If you have multiple Azure accounts, you can specify which one to use by adding the --tenant parameter to the login command.
-
-   <pre>[
-  {
-    "cloudName": "AzureCloud",
-    "homeTenantId": "3902...
-   </pre>
-
-1. Close the browser window.
+   REMEMBER: Each Azure account has a 5GB storage held in your file share.
 
 1. Create a folder, substituting your own project name:
 
