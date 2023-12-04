@@ -20,14 +20,6 @@ WARNING: There is a massive amount of information about Azure. YouTube videos an
 
 This article covers how an initial administrator gets started in Azure with a starter account to create a global enterprise. The phases:
 
-<a href="#PHASE01">PHASE 01 - Global Admin Starter Account</a><br />
-<a href="#PHASE02">PHASE 02 - Portal Settings</a><br />
-<a href="#PHASE03">PHASE 03 - People Organization</a><br />
-<a href="#PHASE03">PHASE 03 - People Organization</a><br />
-
-
-
-
 > PROTIP: Here, all in one page, are the <strong>hands-on</strong>, <a href="#Automation">automation</a> and OCM (Organizational Change Management) steps needed to build Azure for a <strong>whole global enterprise</strong> to minimize manual toil and add secure practices and mechanisms within workflows.
 
 {% include whatever.html %}
@@ -68,26 +60,42 @@ The set of services to create and manage <strong>resources</strong> (such as net
 
 PHASES:
 
-1.  First, we describe how the first person working on behalf of an enterprise -- the <a href="#Global+Administrator">Global Administrator</a> -- supplies an email to the Azure Portal GUI to get a <a href="#Starter+Account">Starter Azure</a> with initial <strong>Subscriptions</strong>. Such skills are tested by Microsoft's <a href="#AZ-104">AZ-104</a> certification exam.
+<a href="#PHASE01">PHASE 01 - Global Admin Starter Account</a><br />
+<a href="#PHASE02">PHASE 02 - Portal Settings</a><br />
+<a href="#PHASE03">PHASE 03 - People Organization</a><br />
+<a href="#PHASE03">PHASE 03 - People Organization</a><br />
 
-2.  Global Admins create versioned <strong>CLI</strong> automation, with training, to securely setup workstations (laptops) for other admins.
 
+
+    <a name="PHASE01"></a>
+1.  First, we describe how the first person working on behalf of an enterprise -- the initial <a href="#Global+Administrator">Global Administrator</a> -- supplies an email to the Azure Portal GUI to get a <a href="#Starter+Account">Starter Azure</a> with initial <strong>Subscriptions</strong>. Such skills are tested by Microsoft's <a href="#AZ-104">AZ-104</a> certification exam.
+
+    <a name="PHASE02"></a>
+2.  Global Admins prepare versioned <strong>automation</strong>, aligned with training assets, to securely setup workstations (laptops) for other admins.
+
+    <a name="PHASE03"></a>
 3.  <a href="#PeopleInfo"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Working within an enterprise requires an understanding of all the <strong>people involved</strong>: who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier for SMS, GitHub account, etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) and Privileged Access Management structures need to be set up.
 
     <a target="_blank" href="https://redmondmag.com/articles/2023/07/11/microsoft-entra-new-products.aspx">In 2023</a> Microsoft renamed from "Azure AD" (for Azure Active Directory) with <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/compare">Microsoft Entra ID</a> to reference its "Identity as a Service (IDaaS)" solution (like Okta) for apps across cloud and on-premises.
     
+    <a name="PHASE04"></a>
 4.  <strong>other System Administrators</strong> assigned from within the people organization are setup with automation and trained by Global Admins.
 
+    <a name="PHASE05"></a>
 5.  Admins would work with <strong>Finance</strong> to work through financial workflows and oversight of the <strong>Payments</strong> for <strong>billings</strong> associated with each Subscription and <a href="#Licenses">licenses</a>. Bills are paid for by <strong>credit cards or invoices</strong> set through a Microsoft salesperson or Cloud Service Provider.
 
+    <a name="PHASE06"></a>
 6.  PROTIP: A firm decision on what <strong>Licenses</strong> the enterprise will pay for can minimize rework in automation efforts and workflow documentation.  
 
-With a paid P2 license for each user to use Azure securely. Most enterprises go with the <a href="#P1vsP2">P2</a> for mobile MFA (Multi-Factor) verification, a crucial security feature.
+    With a paid P2 license for each user to use Azure securely. Most enterprises go with the <a href="#P1vsP2">P2</a> for mobile MFA (Multi-Factor) verification, a crucial security feature.
 
+    <a name="PHASE07"></a>
 7.  <a href="#EndUsers"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>End Users</strong></a> on Entra are usually provisioned by responding to requests from <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/app-provisioning/plan-cloud-hr-provision">external HR systems</a> such as Workday, SuccessFactors, Oracle Peoplesoft.
 
+    <a name="PHASE08"></a>
 8.  When MFA (Multi-Factor Authentication) is available for each user, users can register their mobile <strong>Devices</strong> for <strong>identity verification</strong>.
 
+    <a name="PHASE09"></a>
 9.  <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/concept-learn-about-groups">Using groups</a> enables Administrators to assign a set of access permissions to all members of the group. 
 
     P2 licenses enable users to automatically be joined to <strong>Security Groups</strong> dynamically, which saves manual time and effort in assigning Roles and Policies to each User.
@@ -96,6 +104,7 @@ With a paid P2 license for each user to use Azure securely. Most enterprises go 
 
     <a href="#Administrators"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>System Administrators</strong></a> are the "gate-keepers" who define IaC (Infrastructure as Code) to setup technical "guardrails" that limit <strong>Actions</strong> operating on <strong>Resource</strong>. 
 
+    <a name="PHASE10"></a>
 10. Azure provides a <strong>RBAC</strong> (Role-based Access Control) mechanism defined by: the <strong>profile</strong> defined for each <strong>A. Security Principals</strong> limited by <strong>B. Role Definitions</strong> assigned to <strong>C. Scopes</strong> around resources.
 
     As for <strong>Role Definitions</strong>: A P2 license enables <strong>custom roles</strong> to be defined in addition to <strong>built-in</strong> roles that apply to <strong>Security Principals</strong>.
@@ -117,20 +126,25 @@ With a paid P2 license for each user to use Azure securely. Most enterprises go 
 
     Each Scope is defined as a leaf of a <strong>hierarchy</strong> that consists of a Subscription under a <a target="_blank" href="https://learn.microsoft.com/en-us/azure/governance/management-groups/overview"><strong>Management Group</strong></a> so each Administrator has their own group to manage.
 
+    <a name="PHASE11"></a>
 11. Management Groups usually map to the people Organization.
 
     PROTIP: Our automation includes using a spreadsheet to define the hierarchy, and loading that into Azure, for both samples in test and to prepare for productive use.
 
     The design begins from the top of the chart at the root of the Tenant Entra ID directory because that's where Scopes are stored.
 
+    <a name="PHASE12"></a>
 12. PROTIP: Azure makes it such that a Global Admin make changes to Management Groups after signing into Entra to give themselves the "User Access Admin" role. 
 
     To minimize mistakes and abuse at enterprise scale, <strong>repeatability</strong> is needed to efficiently set up a whole enterprise full of users and resources. That's why <strong>IaC (Infrastructure as Code)</strong> automation is needed.
 
+    <a name="PHASE13"></a>
 13. Commands to create each Resource require a <a href="#ResourceGroups"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>Resource Group</strong></a> to be specified. Since Resource Groups being created must specify a Subscription, Azure knows how to bill for each Resource.
 
+    <a name="PHASE14"></a>
 14. Use of some services need to be <strong>Registered</strong>. For example, use of Entra ID B2C needs to be registered to an Entra ID Tenant.
 
+    <a name="PHASE15"></a>
 15. A set of files are in an <strong>Azure Stack</strong> folder. Each Stack creates a set of coordinated resources for a particular Scope. 
 
     <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696792519/azure-org-1758x916_sbaptk.png"><img alt="azure-org-1758x916.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696792519/azure-org-1758x916_sbaptk.png"><br /><em>Click image for full screen</em></a>.
@@ -155,40 +169,54 @@ With a paid P2 license for each user to use Azure securely. Most enterprises go 
 
     Boxes within dotted lines represents the <strong>paired region</strong> where Azure automatically sends back up data so they can restore everything in case of disaster in any given region. This is a major differentiator for Azure versus AWS which makes each customer do their own backup and recovery. 
     
+    <a name="PHASE16"></a>
 16. Use of our automation enables iterations to be quicker because of the written confirmation produced. <a href="#IaC"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>There are several options for automating <strong>Bicep</strong> scripts to create resources. This is now favored over <strike>Terraform</strike>. Use of Bicep involves transpiling its YAML-formatted contents into the JSON format of <strong>ARM templates</strong>. Also, Microsoft has stopped development of its <a href="#Blueprints">"Blueprints"</a>) in favor of <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-specs?tabs=azure-powershell">Template Specs</a>).
 
     Because it takes some effort to configure each resource according to <strong>documentation</strong> for each service, an important part of automation is to <strong>audit</strong> scripts. 
 
+    <a name="PHASE17"></a>
 17. <strong>IaC Policies</strong> aim to identify vulnerabilities and logic errors before resources are deployed and thus possibly exposed. 
 
+    <a name="PHASE18"></a>
 18. <strong>DevSecOps</strong> CI/CD runs.
 
+    <a name="PHASE19"></a>
 19. The most common policy check in IaC is to ensure that <a href="#Tags">Tags</a> are included with every resource so that  billing, disposal, and other aspects of every resource are defined.
  
     PROTIP: IaC Policies and Policy Definitions should ensure that each Resource in the DEV environment contain at least one Tag for billing. In Production, each Resource should be defined with several Tags.
 
     Automation can make it effortless to follow <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">naming conventions</a> by constructing Resource names from various elements.
 
+    <a name="PHASE20"></a>
 20. <strong>Policy Definitions</strong> are defined in JSON files that define rules assigned by resource Scope.
 
+    <a name="PHASE21"></a>
 21. Individual policies are grouped under an <strong>Initiative</strong> - such as a corporate policy/mandate.
 
+    <a name="PHASE22"></a>
 22. <strong>Exemptions</strong> can be defined.
 
+    <a name="PHASE23"></a>
 23. Remediations override.
 
+    <a name="PHASE24"></a>
 24. <strong>Policy Audits</strong>, which do not block access, but alert about compliance. Their alerts are among other security events and metrics across all subscriptions in the <strong>Security Center</strong> dashboard.
 
+    <a name="PHASE25"></a>
 25. ASC (Azure Security Center), or "Security" for short:
 
     https://portal.azure.com/#view/Microsoft_AAD_IAM/SecurityMenuBlade/~/GettingStarted
 
+    <a name="PHASE26"></a>
 26. <strong>Azure-Managed Identities</strong> eliminates the need for developers to leave secret credentials in their code to access <strong>internal</strong> Azure resources. Instead of static user account keys and connection strings, <a target="_blank" href="https://www.youtube.com/watch?v=sA_mXKy_dKU">VIDEO</a>: the unique reference to blobs and such are associated with the caller's Managed Identity. When its <strong>ObjectID</strong> is given to the
 
+    <a name="PHASE27"></a>
 27. <strong>Key Vault</strong> service, it generates its managed identity (based on a Role) that's then encrypted into a <strong>URI</strong> used to retrieve secrets. Brilliant! [<a target="_blank" href="https://www.youtube.com/watch?v=pBcXgJ5hT1o">VIDEO of scripts</a>]
 
+    <a name="PHASE28"></a>
 28. Service Principals are defined for use by ...
 
+    <a name="PHASE29"></a>
 29. API-calling applications to access resources such as Storage or web apps.
 
     <strong>Permanent active access</strong> permissions are dangerous to grant because they can be <strong>stolen</strong>. So <strong>Just-in-time</strong> temporary access is provided for ad hoc and limited periods of time after approval by a Privileged Role Administrator. The Administrator uses the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">PIM (Privileged Identity Management)</a> GUI and CLI.
