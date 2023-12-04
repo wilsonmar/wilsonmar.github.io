@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-27"
+date: "2023-12-03"
 file: "cyber-security"
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
@@ -22,31 +22,49 @@ Here are my notes on resources for Cyber Security, which is a vast field. But ne
 
 {% include whatever.html %}
 
+## Glossary
+
+PROTIP: <a target="_blank" href="https://quizlet.com/222277746/devsecops-acronyms-and-buzzwords-flash-cards/">
+My Quizlet of Cyber Security Aconyms</a>
+
+   * Guidelines - recommended actions to follow
+   * Policies - general statements from management
+   * Standards - specific mandatory security controls
+   * Procedures - step-by-step instructions
+   <br /><br />
+
 PROTIP: Acronyms here are in my <a target="_blank" href="https://quizlet.com/159167491/acronyms-for-secure-iot-flash-cards/">444 item Quizlet flashcards for Cyber Security</a> for you to study more efficient.
 
-From <a target="_blank" href="https://aka.ms/SecurityRoles/">https://aka.ms/SecurityRoles</a>:<br />
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1686006843/securityroles-1280x720_hy4ydf.png"><img alt="securityroles-1280x720.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1686006843/securityroles-1280x720_hy4ydf.png"></a>
 
 <hr />
 
-## Zero Trust Security Approach
+## Jobs & Occupations
 
-We adopt a "Zero Trust Architecture" (ZTA) cybersecurity paradigm.
+PROTIP: <a target="_blank" href="https://www.sans.org/nice-framework/">SANS created a framework describing skills</a> -- used to identify training and certifications for cybersecurity role.
 
-Why? Inadequate access controls can lead to data exfiltration, unauthorized access, lateral movement and/or the introduction of malware into an environment. Consequences of that include damage to brand/reputation, fines, erosion of customer confidence, delays in service delivery due to unplanned downtime, lengthened approval processes and impacts to partner relationships.
+* <a target="_blank" href="https://www.sans.org/nice-framework/oversee-govern/?msc=nice-page-grid">Oversee and Govern (OV)</a> - Provides leadership, management, direction, or development and advocacy so the organization may effectively conduct cybersecurity work.
+* <a target="_blank" href="https://www.sans.org/nice-framework/security-provisionals/?msc=nice-page-grid">Security Provisionals (SP)</a> - (Architectes?) Conceptualizes, designs, procures, and/or builds secure information technology (IT) systems, with responsibility for aspects of system and/or network development.
 
-So rather than depending solely on using VPNs to access static firewalls to protect all resources within an on-premises network, an end-to-end, "Zero Trust" approach is necessary for operating in public networks.
+* <a target="_blank" href="https://www.sans.org/nice-framework/operate-collect/?msc=nice-page-grid">Collect and Operate (CO)</a> - Provides specialized denial and deception operations and collection of cybersecurity information that may be used to develop intelligence.
+* <a target="_blank" href="https://www.sans.org/nice-framework/operate-maintain/?msc=nice-page-grid">Operate and Maintain (OM)</a> - Provides the support, administration, and maintenance necessary to ensure effective and efficient information technology (IT) system performance & security.
 
-The term was first popularized by Forrester industry analyst John Kindervag in 2010. In 2020 NIST published <a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf">50-page PDF: Special Publication SP800-207</a>. It noted that "Industry has not yet coalesced around a single set of terms or concepts to describe ZTA components and operations."
+* <a target="_blank" href="https://www.sans.org/nice-framework/protect-defend/?msc=nice-page-grid">Analyze (AN)</a> - Performs highly-specialized review and evaluation of incoming cybersecurity information to determine its usefulness for intelligence.
+* <a target="_blank" href="https://www.sans.org/nice-framework/investigate/?msc=nice-page-grid">Investigate (IN)</a> - Investigates cybersecurity events or crimes related to information technology (IT) systems, network, and digital evidence.
+* <a target="_blank" href="https://www.sans.org/nice-framework/protect-defend/?msc=nice-page-grid">Protect and Defend (PR)</a> - Identifies, analyzes, and mitigates <strong>threats</strong> to internal information technology (IT) systems and/or networks.
 
-"Zero Trust" means that we "assume breach". So network and access are segregated. Each DAAS (Data, Assets, Applications, Services) resource only interacts with entitites which are authenticated and authorized by dynamic fine-grained "least privilege" policies, on a per-session basis. Both server resources 
-and endpoints which request services (user, machine, app, etc.) each must also prove its identity, using mutual TLS (mTLS).
+* <a target="_blank" href="https://www.sans.org/nice-framework/industrial-control-systems/">Industrial Control Systems (ICS)</a> - ICS security is a security framework that protects industrial control systems against accidental or intentional risks safeguards critical infrastructures. 
 
-"Zero Trust" needs to be all-encompassing in its vigilence. The current state of assets, network infrastructure, and communications are continuously collected for forensics in case of breach and for analysis to improves the "security posture" of each device, user, and enterprise as a whole.
 
-Because service accounts and authorization are tightly coupled with the application, it often makes sense to set up identities and policies as part of the application infrastructure deployment. Delegating this authority to the development team allows it to iterate quickly on application development (the DevSecOps model).
+## Security Architecture leadership
 
-The Cybersecurity Enhancement Act of 2014 (CEA), aka Public Law No. 113-274, provide a voluntary public-private partnership to improve cybersecurity.
+* Security Identities and Access led by a Chief HR/People Officer (CPO) 
+* Security Operations (SecOps/SOC) led by a Chief Security Officer (CSO)
+* Infrastructure and development Security led by a Chief Information Security Officer (CISO)
+* Data Security & Governance led byy a Chief Data Officer (CDO)
+
+* IoT & OT (operational technology) security led by a Chief Information Officer (CIO)
+* Spend/Billings led by a Chief Financial Officer (CFO)
+<br /><br />
 
 
 ## Security Processes
@@ -126,16 +144,29 @@ Education/Experience Requirements:
 * In-depth knowledge of more than one Information Security principle and discipline.
 <br /><br />
 
-## Glossary
 
-<a target="_blank" href="https://quizlet.com/222277746/devsecops-acronyms-and-buzzwords-flash-cards/">
-My Quizlet of Cyber Security Aconyms</a>
+<hr />
 
-   * Guidelines - recommended actions to follow
-   * Policies - general statements from management
-   * Standards - specific mandatory security controls
-   * Procedures - step-by-step instructions
-   <br /><br />
+## Zero Trust Security Approach
+
+We adopt a "Zero Trust Architecture" (ZTA) cybersecurity paradigm.
+
+Why? Inadequate access controls can lead to data exfiltration, unauthorized access, lateral movement and/or the introduction of malware into an environment. Consequences of that include damage to brand/reputation, fines, erosion of customer confidence, delays in service delivery due to unplanned downtime, lengthened approval processes and impacts to partner relationships.
+
+So rather than depending solely on using VPNs to access static firewalls to protect all resources within an on-premises network, an end-to-end, "Zero Trust" approach is necessary for operating in public networks.
+
+The term was first popularized by Forrester industry analyst John Kindervag in 2010. In 2020 NIST published <a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf">50-page PDF: Special Publication SP800-207</a>. It noted that "Industry has not yet coalesced around a single set of terms or concepts to describe ZTA components and operations."
+
+"Zero Trust" means that we "assume breach". So network and access are segregated. Each DAAS (Data, Assets, Applications, Services) resource only interacts with entitites which are authenticated and authorized by dynamic fine-grained "least privilege" policies, on a per-session basis. Both server resources 
+and endpoints which request services (user, machine, app, etc.) each must also prove its identity, using mutual TLS (mTLS).
+
+"Zero Trust" needs to be all-encompassing in its vigilance. The current state of assets, network infrastructure, and communications are continuously collected for forensics in case of breach and for analysis to improve the "security posture" of each device, user, and enterprise as a whole.
+
+Because service accounts and authorization are tightly coupled with the application, it often makes sense to set up identities and policies as part of the application infrastructure deployment. Delegating this authority to the development team allows it to iterate quickly on application development (the DevSecOps model).
+
+The Cybersecurity Enhancement Act of 2014 (CEA), aka Public Law No. 113-274, provide a voluntary public-private partnership to improve cybersecurity.
+
+
 
 <a name="Threats"></a>
 
@@ -187,18 +218,21 @@ Impact from loss of confidentiality:
 
    * Accountability (auditing)
 
+### Confidentiality 
+
 Elements of Confidentiality:
    * Sensitivity
    * Discretion
    * Criticality
    * Concealment
+
    * Secrecy
    * Privacy
    * Seclusion
    * Isolation
    <br /><br />
 
-Privacy Threshold Assesssment is used to identify PI and determine how to treat the data.
+Privacy Threshold Assessment is used to identify PII and determine how to treat the data.
 
 OCTAVE (Operationally Critical Threat, Asset, and Vulnerability Evaluation) developed at Carnegie Mellon SEI.
 
@@ -214,14 +248,14 @@ The newer acronym CIEM (Cloud Infrastructure Entitlements Management) was coined
    <br /><br />
 
 
-## Jericho Commandments
+### Zero-Trust Jericho Commandments
 
 <a target="_blank" href="https://collaboration.opengroup.org/jericho/commandments_v1.2.pdf">
 https://collaboration.opengroup.org/jericho/commandments_v1.2.pdf</a> 
 define the 11 areas and principles that must be observed when planning for a 
 de-perimeterized future in cloud environments. 
 
-4pGiTpJNYjjbtTVcxGU9Aoztb6DRjFJ7
+
 ## Vendor Compliance
 
 <a target="_blank" href="https://aws.amazon.com/compliance/">aws.Amazon.com/Compliance</a>
@@ -237,7 +271,22 @@ de-perimeterized future in cloud environments.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=emdGpNwfWHY">VIDEO Distilling</a>
 <a target="_blank" href="https://aka.ms/MCRA/">Infographic in PowerPoint: Microsoft Azure Cybersecurity Reference Architecture</a>
+<a target="_blank" href="https://www.youtube.com/watch?v=6iYxNm3TOiI">VIDEO</a> MCRA video by Mark Simos
 
+### Jobs to be done
+
+From <a target="_blank" href="https://aka.ms/SecurityRoles/">https://aka.ms/SecurityRoles</a>:<br />
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1686006843/securityroles-1280x720_hy4ydf.png"><img alt="securityroles-1280x720.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1686006843/securityroles-1280x720_hy4ydf.png"></a>
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/security/cybersecurity-reference-architecture/mcra">Microsoft's Cybersecurity Reference Architecture (MCRA)</a> is a technology agnostic framework that provides a blueprint for implementing a comprehensive, end-to-end cybersecurity solution. It is a companion to the <a target="_blank" href="https://www.microsoft.com/en-us/download/details.aspx?id=55319">Microsoft Cloud Adoption Framework for Azure</a> and the <a target="_blank" href="https://www.microsoft.com/en-us/download/details.aspx?id=55325">Microsoft Azure Well-Architected Framework</a>. 
+
+Microsoft’s cybersecurity capabilities and technologies are described in<br />
+<a target="_blank" href="https://docs.microsoft.com/en-us/security/">Microsoft Security Documentation</a> site and<br />
+<a target="_blank" href="https://learn.microsoft.com/en-us/security/ciso-workshop/adoption">Microsoft's Security Adoption Framework (SAF)</a>
+(<a target="_blank" href="https://github.com/MicrosoftDocs/security/blob/main/Downloads/mcra-december-2023.pptx?raw=true">mcra-december-2023.pptx</a>)
+
+
+<hr />
 
 ## Adobe Common Control Framework
 
@@ -1471,10 +1520,17 @@ CSF process:
 7. Implementation Action Pln
 
 
-SP 800-139 Functions to implement the appropriate safeguards to ensure delivery of critical infrastructure services
+<a name="IDPRR"></a>
+  
+<strong>SP 800-139 Functions</strong> to implement the appropriate safeguards to ensure delivery of critical infrastructure services
+
+<a target="_blank" href="https://www.nist.gov/cyberframework/online-learning/five-functions">IDENTIFY, PROTECT, DETECT, RESPOND, RECOVER</a>
+
    * Identify (ID): Develop the organizational understanding to manage cybersecurity risk to systems, assets, data, and capabilities.
    * Protect (PR): Develop and implement the appropriate safeguards to ensure the delivery of critical infrastructure services.
+
    * Detect (DE): Develop and implement the appropriate activities to identify the occurrence of a cybersecurity event.
+
    * Respond (RS): Develop and implement the appropriate activities to take action regarding a detected cybersecurity event.
    * Recover (RC): Develop and implement the appropriate activities to maintain plans for resilience and to restore any capabilities or services that were impaired due to a cybersecurity event.
    <br /><br />

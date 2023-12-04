@@ -92,6 +92,7 @@ There is also SAN's <a target="_blank" href="https://www.sans.org/top25-software
 ### OWASP API Security Top 10
 
 <a target="_blank" href="https://owasp.org/www-project-api-security/">API security Top 10</a> had 2019 and 2023 versions.
+Courses are from <a target="_blank" href="https://www.linkedin.com/company/apisec-university/">APISec.ai</a>.
 
 1. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/">API1:2023 Broken Object Level Authorization (BOLA)</a>
 

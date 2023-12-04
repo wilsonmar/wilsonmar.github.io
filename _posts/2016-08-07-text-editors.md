@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-09-11"
+date: "2023-12-04"
 file: "text-editors"
 title: "Text Editors (on the Mac)"
 excerpt: "nano, pico, vim, subl, VSCode, Eclipse, IntelliJ, Visual Studio, Cloud9, etc."
@@ -37,7 +37,7 @@ Below is a list of text editors grouped by licensing term:
    * <a target="_blank" href="http://www.annedawson.net/Python_Editor_IDLE.htm">
    Python IDLE Editor</a>
 
-   * <a href="#Neovim">Neovim</a>
+   * <a href="#Neovim">Neovim</a> (configurable)
    * <a href="#MacVim">MacVim</a> for Mac
 
 ## Free IDEs :
@@ -513,13 +513,11 @@ Nevertheless, some still use "old-school" vi because Vim ignores control charact
 
 ### Neovim
  
-<a target="_blank" href="https://neovim.io/">NeoVim<.io</a> 
+<a target="_blank" href="https://neovim.io/">NeoVim.io</a> 
 
 <a target="_blank" href="https://neovim.io/doc/user/">nvim command</a>) supports Vimscript engine with Lua programming language.
 
-GitHub/Microsoft's <a target="_blank" href="https://wilsonmar.github.io/copilots/">Copilots</a> has support for Neovim.
-See https://docs.github.com/en/copilot/getting-started-with-github-copilot?tool=neovim#about-github-copilot-and-neovim
-   <br /><br />
+GitHub/Microsoft's <a target="_blank" href="https://wilsonmar.github.io/copilots/">Copilots</a> has <a target="_blank" href="https://docs.github.com/en/copilot/getting-started-with-github-copilot?tool=neovim#about-github-copilot-and-neovim">support for Neovim</a>.
 
 
 ### For all vi-based editors

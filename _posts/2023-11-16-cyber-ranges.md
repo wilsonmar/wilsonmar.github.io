@@ -55,6 +55,8 @@ Existing <a target="_blank" href="https://www.wikiwand.com/en/Cyber_range">Cyber
 
    * <a target="_blank" href="https://github.com/rapid7/metasploitable3">github.com/rapid7/metasploitable3</a> is used by Packer to build images using <a target="_blank" href="https://download.virtualbox.org/virtualbox/UserManual.pdf">PDF: Oracle VM Virtualbox</a>, VMware ESXi, HashiCorp Vagrant, or libvirt on either Ubuntu 14.04 or Windows. It contains many security vulnerabilities explained at <a target="_blank" href="https://github.com/rapid7/metasploitable3/wiki/">its wiki</a>
 
+   * <a target="_blank" href="https://cyberwarfare.live/">CyberWarfare.live</a> provides 30-day CW Labs to study for their 14 certifications (up to $599 each).
+
    * Others may use Proxmox virtualization
 
    * <a target="_blank" href="https://github.com/joe-shenouda/awesome-cyber-skills/blob/master/README.md">awesome-cyber-skills on GitHub</a> by <a target="_blank" href="https://www.linkedin.com/in/josephshenouda/">Joe Senouda</a> (<a target="_blank" href="https://cyber-consult.org/">cyber-consult.org</a>) provides a "curated list of hacking environments where you can train your cyber skills free, legally and safely".
@@ -753,15 +755,6 @@ sudo reboot -f
 ## Add Users
 
 <tt>adduser</tt> commands to add users</a>.
-
-
-<hr />
-
-## Backup Kali
-
-1. To backup the Kali Linux server, create an AMI image of the EC2 instance.
-
-   This is so you can restore the Kali Linux server at various points in time rather than having to rebuild it from scratch.
 
 
 <hr />
