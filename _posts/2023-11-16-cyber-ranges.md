@@ -55,7 +55,7 @@ Existing <a target="_blank" href="https://www.wikiwand.com/en/Cyber_range">Cyber
 
    * <a target="_blank" href="https://github.com/rapid7/metasploitable3">github.com/rapid7/metasploitable3</a> is used by Packer to build images using <a target="_blank" href="https://download.virtualbox.org/virtualbox/UserManual.pdf">PDF: Oracle VM Virtualbox</a>, VMware ESXi, HashiCorp Vagrant, or libvirt on either Ubuntu 14.04 or Windows. It contains many security vulnerabilities explained at <a target="_blank" href="https://github.com/rapid7/metasploitable3/wiki/">its wiki</a>
 
-   * <a target="_blank" href="https://cyberwarfare.live/">CyberWarfare.live</a> provides 30-day CW Labs to study for their 14 certifications (up to $599 each).
+   * <a target="_blank" href="https://cyberwarfare.live/">CyberWarfare.live</a> (<a target="_blank" href="https://www.linkedin.com/company/cyberwarfarelabs/">LinkedIn</a>) provides 30-day CW Labs to study for their 14 certifications (up to $599 each).
 
    * Others may use Proxmox virtualization
 

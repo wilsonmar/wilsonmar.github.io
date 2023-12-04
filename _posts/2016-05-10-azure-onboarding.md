@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-24"
+date: "2023-12-04"
 file: "azure-onboarding"
 title: "Azure Onboarding"
 excerpt: "Use this automation to minimize manual toil and mistakes but build-in secure practices and mechanisms to build global enterprises need. Not just for AZ-104, AZ-500"
@@ -16,11 +16,15 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-There is a massive amount of information about Azure. YouTube videos and the <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">video certification courses</a> they promote only scratch the surface of all that is needed to get an enterprise up and running. Many demonstrate unsafe or inefficient practices (with inane examples).
+WARNING: There is a massive amount of information about Azure. YouTube videos and the <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">video certification courses</a> they promote only scratch the surface of all that is needed to get an enterprise up and running. Many demonstrate unsafe or inefficient practices (with inane examples).
+
+This article covers how to get started in Azure as the initial administrator of a global  enterprise.
 
 > PROTIP: Here, all in one page, are the <strong>hands-on</strong>, <a href="#Automation">automation</a> and OCM (Organizational Change Management) steps needed to build Azure for a <strong>whole global enterprise</strong> to minimize manual toil and add secure practices and mechanisms within workflows.
 
 {% include whatever.html %}
+
+## Enterprise Adoption Path
 
 <a target="_blank" href="https://youtu.be/lwReERW_Pqo"><img align="left" alt="youtube-1024x721.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696234162/youtube-1024x721_ful6ky.png"><strong>Click here for a <strong>step-by-step</strong> 1-minute YouTube video</strong></a> (with no sound) about the <strong>sequence of work</strong> to setup a whole enterprise with Azure technologies in the cloud:
 
@@ -28,7 +32,7 @@ There is a massive amount of information about Azure. YouTube videos and the <a 
 
 The set of services to create and manage <strong>resources</strong> (such as network, storage, compute, etc.) in the Azure cloud is called the <strong>Azure Resource Manager</strong> (ARM for short). 
 
-1.  <a href="#PeopleInfo"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>The whole effort begins with an understanding of all the <strong>people involved</strong></a>: who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier for SMS, GitHub account, etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be set up.
+1.  <a href="#PeopleInfo"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>The whole effort begins with an understanding of all the <strong>people involved</strong>: who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier for SMS, GitHub account, etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be set up.
 
 2.  The first person tasked with creating Azure resources is the <a href="#Global+Administrator">Global Administrator</a> who uses the ARM Portal GUI to get a <a href="#Starter+Account">Starter Azure Account</a> with an initial <strong>Subscription</strong>. 
 
@@ -107,7 +111,7 @@ With a paid P2 license for each user to use Azure securely. Most enterprises go 
 
     Most enterprises today have a central SOC (Security Operations Center) to monitor and quickly respond to incidents in Production environments ("PRD").
 
-    The Operations ("Ops") team builds complete Staging ("STG") environment to conduct systems capacity testing and chaos engineering once the QA team has tested individual components. Each of these teams can be from under different Vice Presidents, to serve as liasions to those other organizations.
+    The Operations ("Ops") team builds complete Staging ("STG") environment to conduct systems capacity testing and chaos engineering once the QA team has tested individual components. Each of these teams can be from under different Vice Presidents, to serve as liaisons to those other organizations.
 
     For <a target="_blank" href="https://docs.google.com/spreadsheets/d/1diCL35orX9cVEgti1eU7aaG_sgyDSPmbQjnXBamUnVc/edit?usp=sharing">example</a>, virtual machines (VMs) in a particular Management Group can be limited to being created in <strong>specific regions</strong> (soverignties). Policies for each management group apply to all nested management groups, subscriptions, and resources.
 
@@ -115,7 +119,7 @@ With a paid P2 license for each user to use Azure securely. Most enterprises go 
 
     Boxes within dotted lines represents the <strong>paired region</strong> where Azure automatically sends back up data so they can restore everything in case of disaster in any given region. This is a major differentiator for Azure versus AWS which makes each customer do their own backup and recovery. 
     
-16.  Use of our automation enables iterations to be quicker because of the written confirmation produced. <a href="#IaC"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>There are several options for automating <strong>Bicep</strong> scripts to create resources. This is now favored over <strike>Terraform</strike>. Use of Bicep involves transpiling its YAML-formatted contents into the JSON format of <strong>ARM templates</strong>. Also, Microsoft has stopped development of its <a href="#Blueprints">"Blueprints"</a>) in favor of <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-specs?tabs=azure-powershell">Template Specs</a>).
+16. Use of our automation enables iterations to be quicker because of the written confirmation produced. <a href="#IaC"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>There are several options for automating <strong>Bicep</strong> scripts to create resources. This is now favored over <strike>Terraform</strike>. Use of Bicep involves transpiling its YAML-formatted contents into the JSON format of <strong>ARM templates</strong>. Also, Microsoft has stopped development of its <a href="#Blueprints">"Blueprints"</a>) in favor of <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-specs?tabs=azure-powershell">Template Specs</a>).
 
     Because it takes some effort to configure each resource according to <strong>documentation</strong> for each service, an important part of automation is to <strong>audit</strong> scripts. 
 

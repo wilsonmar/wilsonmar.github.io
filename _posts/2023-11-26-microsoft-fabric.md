@@ -1,9 +1,9 @@
 ---
 layout: post
-date: "2023-12-01"
+date: "2023-12-04"
 file: "microsoft-fabric"
 title: "Microsoft Fabric"
-excerpt: "Get skilled in multicloud data handling and real-time analystics, then pass the DP-600 exam January 2024"
+excerpt: "Simplify multi-cloud data handling for real-time analytics, then pass the DP-600 exam in January 2024"
 tags: [cloud, Azure]
 image:
 # microsoft-fabric-1900x500.png
@@ -25,7 +25,6 @@ This is a hands-on technical tutorial that takes you logically step-by-step to q
 {% include whatever.html %}
 
 ## What's Different?
-
 
 Rather than other fanboys who say "it's the latest cool thing, let's switch now", let's first clear up some common confusions:
 
@@ -57,6 +56,7 @@ Individual artefacts before and after Fabric:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701362429/microsoft-fabric-artefacts-1280x720_swuigs.webp"><img alt="microsoft-fabric-artefacts-1280x720" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701362429/microsoft-fabric-artefacts-1280x720_swuigs.webp"></a>
 
+<a target="_blank" href="https://www.youtube.com/watch?v=oxMUJT3p9f4">Justyna Lucznik</a> explains the differences between Azure Synapse Analytics and Microsoft Fabric.
 
 <hr />
 

@@ -525,8 +525,10 @@ GitHub/Microsoft's <a target="_blank" href="https://wilsonmar.github.io/copilots
 *nix operating sytems end each line with a line-feed (LF) character.
 Windows end each line with a carriage-return and line-feed character.
 
-In vim, use <tt>:set ff=unix</tt> to convert to Unix and
-and <tt>:set ff=dos</tt> to convert to Windows.
+In vim, to convert to Unix:
+   <ul><tt>:set ff=unix</tt></ul>
+To convert to Windows:
+   <ul><tt>:set ff=dos</tt></ul>
 
    <a target="_blank" href="http://vimdoc.sourceforge.net/htmldoc/">Vim documentation is at http://vimdoc.sourceforge.net/htmldoc</a>
 
