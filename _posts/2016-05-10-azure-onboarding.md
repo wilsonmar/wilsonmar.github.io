@@ -18,29 +18,65 @@ comments: true
 
 WARNING: There is a massive amount of information about Azure. YouTube videos and the <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">video certification courses</a> they promote only scratch the surface of all that is needed to get an enterprise up and running. Many demonstrate unsafe or inefficient practices (with inane examples).
 
-This article covers how to get started in Azure as the initial administrator of a global  enterprise.
+This article covers how an initial administrator gets started in Azure with a starter account to create a global enterprise. The phases:
+
+<a href="#PHASE01">PHASE 01 - Global Admin Starter Account</a><br />
+<a href="#PHASE02">PHASE 02 - Portal Settings</a><br />
+<a href="#PHASE03">PHASE 03 - People Organization</a><br />
+<a href="#PHASE03">PHASE 03 - People Organization</a><br />
+
+
+
 
 > PROTIP: Here, all in one page, are the <strong>hands-on</strong>, <a href="#Automation">automation</a> and OCM (Organizational Change Management) steps needed to build Azure for a <strong>whole global enterprise</strong> to minimize manual toil and add secure practices and mechanisms within workflows.
 
 {% include whatever.html %}
 
+## Ways to get into Azure
+
+The set of services to create and manage <strong>resources</strong> (such as network, storage, compute, etc.) in the Azure cloud is called the <strong>Azure Resource Manager</strong> (ARM for short). 
+
+* GUI Portal
+* GUI CloudShell
+* CLI Bash scripts
+* CLI PowerShell scripts
+<br /><br />
+
+
+<a name="Automation"></a>
+
+## Summary of Automation
+
+   * <strong>mac-setup.sh</strong> for <strong>laptop setup</strong> -- installing everything needed on your mac with a single command. Then it makes runs simple to repeat and optionally cleans up after runs.
+
+   * <strong>org-gen.py</strong> generates csv files containing sample values for an organization with a size of your choosing. (100, 1000, 10000, etc.). The data describes a hierarchy of departments, jobs, roles, groups, people, projects, etc. used as the basis for assigning Least-Privilege permissions to resources.
+
+   * <strong>org-chart.py</strong> generates an organization chart graphic from a <a target="_blank" href="https://docs.google.com/spreadsheets/d/1EuIGw_qY9TgrGxcpll2WBoYpJJotJh-vUcZpSngYmUs/edit?usp=sharing">csv spreadsheet file</a>.
+
+   * <strong>az-info.sh</strong> displays the status of various resources in Azure
+
+   * <strong>azure-quickly.sh</strong> automates the creation of Azure Scopes, Policies, Groups, Users, Resources, etc.
+   <br /><br />
+
+<hr />
+
 ## Enterprise Adoption Path
 
 <a target="_blank" href="https://youtu.be/lwReERW_Pqo"><img align="left" alt="youtube-1024x721.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696234162/youtube-1024x721_ful6ky.png"><strong>Click here for a <strong>step-by-step</strong> 1-minute YouTube video</strong></a> (with no sound) about the <strong>sequence of work</strong> to setup a whole enterprise with Azure technologies in the cloud:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1697016934/azure-flow-1724x872_t27y4s.png"><img alt="azure-flow-1724x872.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1697016934/azure-flow-1724x872_t27y4s.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my animated PowerPoint file on GumRoad</a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701716482/azure-onboarding-ent-flow-1707x872_afgcsc.png"><img alt="azure-onboarding-ent-flow-1707x872.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701716482/azure-onboarding-ent-flow-1707x872_afgcsc.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my animated PowerPoint file on GumRoad</a>.
 
-The set of services to create and manage <strong>resources</strong> (such as network, storage, compute, etc.) in the Azure cloud is called the <strong>Azure Resource Manager</strong> (ARM for short). 
+PHASES:
 
-1.  <a href="#PeopleInfo"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>The whole effort begins with an understanding of all the <strong>people involved</strong>: who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier for SMS, GitHub account, etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) structure needs to be set up.
+1.  First, we describe how the first person working on behalf of an enterprise -- the <a href="#Global+Administrator">Global Administrator</a> -- supplies an email to the Azure Portal GUI to get a <a href="#Starter+Account">Starter Azure</a> with initial <strong>Subscriptions</strong>. Such skills are tested by Microsoft's <a href="#AZ-104">AZ-104</a> certification exam.
 
-2.  The first person tasked with creating Azure resources is the <a href="#Global+Administrator">Global Administrator</a> who uses the ARM Portal GUI to get a <a href="#Starter+Account">Starter Azure Account</a> with an initial <strong>Subscription</strong>. 
+2.  Global Admins create versioned <strong>CLI</strong> automation, with training, to securely setup workstations (laptops) for other admins.
+
+3.  <a href="#PeopleInfo"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Working within an enterprise requires an understanding of all the <strong>people involved</strong>: who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier for SMS, GitHub account, etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) and Privileged Access Management structures need to be set up.
 
     <a target="_blank" href="https://redmondmag.com/articles/2023/07/11/microsoft-entra-new-products.aspx">In 2023</a> Microsoft renamed from "Azure AD" (for Azure Active Directory) with <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/compare">Microsoft Entra ID</a> to reference its "Identity as a Service (IDaaS)" solution (like Okta) for apps across cloud and on-premises.
     
-3.  Global Admins are responsible for creating versioned <strong>CLI</strong> automation, with training, to securely setup workstations (laptops) for ...
-
-4.  <strong>other System Administrators</strong> assigned from within the people organization.
+4.  <strong>other System Administrators</strong> assigned from within the people organization are setup with automation and trained by Global Admins.
 
 5.  Admins would work with <strong>Finance</strong> to work through financial workflows and oversight of the <strong>Payments</strong> for <strong>billings</strong> associated with each Subscription and <a href="#Licenses">licenses</a>. Bills are paid for by <strong>credit cards or invoices</strong> set through a Microsoft salesperson or Cloud Service Provider.
 
@@ -171,20 +207,6 @@ Recap:
 
 <hr />
 
-<a name="Automation"></a>
-
-## Summary of Automation
-
-   * <strong>mac-setup.sh</strong> for <strong>laptop setup</strong> -- installing everything needed on your mac with a single command. Then it makes runs simple to repeat and optionally cleans up after runs.
-
-   * <strong>org-gen.py</strong> generates csv files containing sample values for an organization with a size of your choosing. (100, 1000, 10000, etc.). The data describes a hierarchy of departments, jobs, roles, groups, people, projects, etc. used as the basis for assigning Least-Privilege permissions to resources.
-
-   * <strong>org-chart.py</strong> generates an organization chart graphic from a <a target="_blank" href="https://docs.google.com/spreadsheets/d/1EuIGw_qY9TgrGxcpll2WBoYpJJotJh-vUcZpSngYmUs/edit?usp=sharing">csv spreadsheet file</a>.
-
-   * <strong>az-info.sh</strong> displays the status of various resources in Azure
-
-   * <strong>azure-quickly.sh</strong> automates the creation of Azure Scopes, Policies, Groups, Users, Resources, etc.
-   <br /><br />
 
 <hr />
 
@@ -373,25 +395,25 @@ PROTIP: Avoid using an email that you use for your own banking, shopping, social
    <br /><br />
 
 <strong>Premium P2</strong> (included in Microsoft 365 E5) includes all P1 features plus really cool <strong>"Identity Protection"</strong> with policies Assignment to all users.
-      * Identity governance/protection dashboard
-      * Risk-based Conditional Access (sign-in risk, user risk)
-      * Machine-learning assisted access certifications and reviews
-      * Authentication context (step-up authentication)
-      * Device and application filters for Conditional Access
-      * Token protection
-      * Vulnerabilities and risky accounts
-      * Risk events investigation, security information and event management (SIEM) connectivity
-      * Self-service entitlement management (My Access)
-      * Entitlement management with Verified ID
-      * Lifecycle workflows
-      <br /><br />
+   * Identity governance/protection dashboard
+   * Risk-based Conditional Access (sign-in risk, user risk)
+   * Machine-learning-assisted access certifications and reviews
+   * Authentication context (step-up authentication)
+   * Device and application filters for Conditional Access
+   * Token protection
+   * Vulnerabilities and risky accounts
+   * Risk events investigation, security information and event management (SIEM) connectivity
+   * Self-service entitlement management (My Access)
+   * Entitlement management with Verified ID
+   * Lifecycle workflows
+   <br /><br />
 
    The new <strong>$7/person Microsoft Entra ID Governace</strong> offering adds:
-      * Identity governance dashboard
-      * Entitlement management with Verified ID
-      * Lifecycle workflows
-      * <strong>Machine learning assisted</strong> access certifications and reviews
-      <br /><br />
+   * Identity governance dashboard
+   * Entitlement management with Verified ID
+   * Lifecycle workflows
+   * <strong>Machine learning assisted</strong> access certifications and reviews
+   <br /><br />
 
    * Multi-factor authentication registration policy to Require MFA
 
@@ -2794,7 +2816,9 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 
 ### Resource Providers, Actions, Operations, Permissions, Scopes, Groups, Policies
 
-   <a name="Providers"></a>
+<a name="Providers"></a>
+
+https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-services-resource-providers
 
    "Microsoft.KeyVault", "Microsoft.Compute", etc. are <strong>providers</strong> 
    which provide the programming to respond or block APIs requesting some functionality.

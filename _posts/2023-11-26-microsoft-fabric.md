@@ -1028,7 +1028,6 @@ References:
    * https://hevodata.com/learn/dax-studio/
    <br /><br />
 
-
 <hr />
 
 ## User Communities
@@ -1063,6 +1062,12 @@ https://www.reddit.com/r/MicrosoftFabric/comments/14iuplv/azure_data_factory_vs_
 <hr />
 
 ## Resources
+
+
+<a target="_blank" href="https://www.youtube.com/watch?v=bQBVNg6gEYw">VIDEO</a>:
+Data Science with MLFlow (with demo):
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701712190/flow-datasci-1781x808_zswviq.png"><img alt="flow-datasci-1781x808.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701712190/flow-datasci-1781x808_zswviq.png"></a>
+
 
 ## More #
 
