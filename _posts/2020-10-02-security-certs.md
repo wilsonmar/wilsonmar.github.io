@@ -901,16 +901,13 @@ FOR498: Digital Acquisition and Rapid Triage
 <tr valign="top" align="left"><td>GRIC</td><td>Response and Industrial Defense</td><td>ICS515: ICS Visibility, Detection, and Response</td><td>-</td><td>-</td><td>-</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>X</td></tr>
 
-
 </table>
 
-Others:
+Based on the <a target="_blank" href="https://www.giac.org/certifications/niceframework">NICE framework</a>
 
    * <a target="_blank" href="https://www.giac.org/certification/enterprise-vulnerability-assessor-geva">GEVA (GIAC Enterprise Vulnerability Assessor)</a>requires 71% correct from among 75 questions over 2 hours. It covers Vulnerability assessment framework planning and methodology in an enterprise environment; Discovery and validation of vulnerabilities using tactics like network scanning and PowerShell scripting; Remediation and reporting techniques utilizing proper data management
 
    * <a target="_blank" href="https://www.giac.org/certification/certified-incident-handler-gcih">GCIH (GIAC Certified Incident Handler)</a> requires an undeterminate correct from among 100-150 questions over 4 hours. It covers Incident Handling (Response) and Computer Crime Investigation; Computer and Network Hacker Exploits; Hacker Tools (Nmap, Nessus, Metasploit, Netcat). A single chapter on NIST800-61.
-
-   Based on the <a target="_blank" href="https://www.giac.org/certifications/niceframework">NICE framework</a>
 
    * <a target="_blank" href="https://www.giac.org/certification/certified-enterprise-defender-gced">GCED (GIAC Certified Enterprise Defender)</a> requires 70% correct from among 115 questions over 3 hours. It covers Incident handling and computer crime investigation; Computer and network hacker exploits; Hacker tools (Nmap, Nessus, Metasploit and Netcat)
 
