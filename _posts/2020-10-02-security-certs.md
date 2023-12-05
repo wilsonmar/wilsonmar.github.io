@@ -806,7 +806,7 @@ FOR578</td><td>
 FOR518: Mac and iOS Forensic Analysis and Incident Response</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/information-security-fundamentals-gisf">GISF</a></td><td>Information Security Fundamentals</td><td>SEC301</td><td>?</td><td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/information-security-fundamentals-gisf">GISF</a></td><td>Information Security Fundamentals</td><td>SEC301</td><td>1</td><td>
 X</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
@@ -824,8 +824,8 @@ LEG523</td><td>?</td><td>
 -</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/mobile-device-security-analyst-gmob">GMOB</a></td><td>Mobile (Device Security Analyst)</td><td>?</td><td>
-SEC575: iOS and Android Application Security Analysis and Penetration Testing</td><td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/mobile-device-security-analyst-gmob">GMOB</a></td><td>Mobile (Device Security Analyst)</td><td>
+SEC575: iOS and Android Application Security Analysis and Penetration Testing</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/continuous-monitoring-certification-gmon">GMON</a></td><td>(Continuous) Monitoring</td><td>SEC511</td><td>?</td><td>
@@ -836,7 +836,7 @@ SEC575: iOS and Android Application Security Analysis and Penetration Testing</t
 FOR572: Advanced Network Forensics: Threat Hunting, Analysis, and Incident Response</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/open-source-intelligence-gosi">GOSI</a></td><td>Open Source Intelligence</td><td>SEC487</td><td>?</td><td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/open-source-intelligence-gosi">GOSI</a></td><td>Open Source Intelligence</td><td>SEC487</td><td>3</td><td>
 -</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
@@ -866,7 +866,7 @@ SEC565: Red Team Operations and Adversary Emulation</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/security-essentials-gsec/">GSEC</a></td><td>Security Essentials</td><td>SEC401</td><td>?</td><td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/security-essentials-gsec/">GSEC</a></td><td>Security Essentials</td><td>SEC401</td><td>2</td><td>
 X</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
@@ -887,8 +887,9 @@ LDR551: Building, Leading, & Managing (SOC) Security Operations Center</td><td>?
 -</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/strategic-planning-policy-leadership-gstrt">GSTRT</a></td><td>Strategic Planning, Policy, and Leadership</td><td>?</td><td>
-MGT514</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/strategic-planning-policy-leadership-gstrt">GSTRT</a></td><td>Strategic Planning, Policy, and Leadership</td><td>
+MGT514</td><td>?</td><td>
+-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/web-application-penetration-tester-gwapt">GWAPT</a></td><td>Web Application Penetration Tester</td><td>
@@ -898,8 +899,8 @@ SEC542</td><td>?</td><td>
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/certified-web-application-defender-gweb">GWEB</a></td><td>Web Application Defender</td><td>SEC522</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/exploit-researcher-advanced-penetration-tester-gxpn">GXPN</a></td><td>Exploit Researcher and Advanced Penetration Tester</td><td>?</td><td>
-SEC660: Advanced Penetration Testing, Exploit Writing, and Ethical Hacking</td><td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/exploit-researcher-advanced-penetration-tester-gxpn">GXPN</a></td><td>Exploit Researcher and Advanced Penetration Tester</td><td>
+SEC660: Advanced Penetration Testing, Exploit Writing, and Ethical Hacking</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
 </table>
