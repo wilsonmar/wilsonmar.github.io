@@ -857,8 +857,7 @@ SEC565: Red Team Operations and Adversary Emulation</td><td>
 -</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td>GPYC
-GIAC Python Coder (GPYC)</td><td>Python Coder</td><td>
+<tr valign="top" align="left"><td>GPYC</td><td>Python Coder</td><td>
 SEC573: Automating Information Security with Python</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
@@ -893,17 +892,14 @@ FOR498: Digital Acquisition and Rapid Triage
 </td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>X</td><td>-</td></tr>
 
 
-<tr valign="top" align="left"><td>GSEC</td><td>Security Essentials</td><td>SEC401</td><td>X</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
 <tr valign="top" align="left"><td>GICSP</td><td>Global Industrial Cyber Security Professional</td><td>ICS410: ICS/SCADA Security Essentials</td><td>-</td><td>-</td><td>-</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>X</td><td>-</td></tr>
+<td>-</td><td>-</td><td>-</td><td>X</td></tr>
 
 <tr valign="top" align="left"><td>GCIP</td><td>Critical Infrastructure Protection</td><td>ICS456: Essentials for NERC Critical Infrastructure Protection</td><td>-</td><td>-</td><td>-</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>X</td><td>-</td></tr>
+<td>-</td><td>-</td><td>-</td><td>X</td></tr>
 
 <tr valign="top" align="left"><td>GRIC</td><td>Response and Industrial Defense</td><td>ICS515: ICS Visibility, Detection, and Response</td><td>-</td><td>-</td><td>-</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>X</td><td>-</td></tr>
+<td>-</td><td>-</td><td>-</td><td>X</td></tr>
 
 
 </table>
