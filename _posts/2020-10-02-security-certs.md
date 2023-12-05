@@ -867,7 +867,7 @@ MGT514
 SEC542</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td>CWEB</a></td><td>Web Application Defender</td><td>SEC522</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/certified-web-application-defender-gweb">GWEB</a></td><td>Web Application Defender</td><td>SEC522</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/exploit-researcher-advanced-penetration-tester-gxpn">GXPN</a></td><td>Exploit Researcher and Advanced Penetration Tester</td><td>
 SEC660: Advanced Penetration Testing, Exploit Writing, and Ethical Hacking</td><td>
