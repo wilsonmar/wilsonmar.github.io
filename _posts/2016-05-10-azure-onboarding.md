@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-WARNING: There is a massive amount of information about Azure. YouTube videos and the <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">video certification courses</a> they promote only scratch the surface of all that is needed to get an enterprise up and running. Many demonstrate unsafe or inefficient practices (with inane examples).
+WARNING: There is a massive amount of information about Azure. YouTube videos about <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">certifications</a> only scratch the surface of all that is needed to get an enterprise up and running. Many demonstrate unsafe or inefficient practices with toy examples not suitable for production.
 
 This article is what I've learned so far about how an initial administrator gets started in Azure with a starter account to create a global enterprise. Updates on this are sure to follow as I learn more and as Azure evolves.
 
