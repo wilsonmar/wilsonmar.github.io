@@ -786,6 +786,14 @@ SEC566: Implementing and Auditing Security Frameworks and Controls
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 
+<tr valign="top" align="left"><td>CWEB</td><td>Web Application Defender</td><td>SEC522</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GCSA</td><td>Cloud Security Automation</td><td>SEC540</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>   
+<tr valign="top" align="left"><td>GCLD</td><td>Cloud Security Essentials ?</td><td>SEC488</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GCTD</td><td>Cloud Threat Detection</td><td>SEC541</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GPCS</td><td>Public Cloud Security</td><td>SEC510</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GCFR</td><td>Cloud Forensics Responder</td><td>FOR509</td><td>-</td><td>-</td><td>-</td><td>X</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GCPN</td><td>Cloud Penetration Tester</td><td>SEC588</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>X</td><td>-</td></tr>
+
 
 
 <tr valign="top" align="left"><td>GX-FA</td><td>Experienced Forensic Analyst</td><td>
@@ -831,16 +839,6 @@ FOR572: Advanced Network Forensics: Threat Hunting, Analysis, and Incident Respo
 <tr valign="top" align="left"><td>GREM</td><td>Reverse Engineering Malware</td><td>
 FOR610</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
-
-
-<tr valign="top" align="left"><td>CWEB</td><td>Web Application Defender</td><td>SEC522</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr valign="top" align="left"><td>GCSA</td><td>Cloud Security Automation</td><td>SEC540</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>   
-<tr valign="top" align="left"><td>GCLD</td><td>Cloud Security Essentials ?</td><td>SEC488</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr valign="top" align="left"><td>GCTD</td><td>Cloud Threat Detection</td><td>SEC541</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr valign="top" align="left"><td>GPCS</td><td>Public Cloud Security</td><td>SEC510</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr valign="top" align="left"><td>GCFR</td><td>Cloud Forensics Responder</td><td>FOR509</td><td>-</td><td>-</td><td>-</td><td>X</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
-<tr valign="top" align="left"><td>GCPN</td><td>Cloud Penetration Tester</td><td>SEC588</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>X</td><td>-</td></tr>
-
 
 
 <tr valign="top" align="left"><td>GX-PT</td><td>Experienced Penetration Tester</td><td>
