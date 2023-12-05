@@ -678,8 +678,8 @@ SANS formed the Global Information Assurance Certification (GIAC) program to act
 GIAC has a https://www.giac.org/certifications/get-certified/roadmap
 to dozen of exams across six specific domains. It offers remote proctoring through ProctorU.
 
-GIAC offers two levels: First attempts at the Practitioner level are $979. At the Applied Knowledge level, it's $1,299 or $499 if a GIAC is active. 
-Retakes are $100 less. Renewals ar $479 at all levels. The exams and classes by 8 Cyber Specialities:
+GIAC offers two levels: First attempts at the Practitioner level are $979. At the <a href="#SANS+Expert">Applied Knowledge level are "GX" or "Experienced" level exams</a>, it's $1,299 or $499 if a GIAC is active. 
+Retakes are $100 less. Renewals ar $479 at all levels. The exams and classes by 8 focus areas (Cyber Specialities):
 
    <ul>A. Cybersecurity and IT Essentials<br />
    B. Security Management, Legal, and Audit<br />
@@ -690,6 +690,7 @@ Retakes are $100 less. Renewals ar $479 at all levels. The exams and classes by 
    G. Operating System & Device In-Depth<br />
    H. Industrial Control Systems Security<br />
    </ul>
+   
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom" align="left"><th>Cert</th><th>Description</th><th>Class</th><th>A. Ess</th><th>B. SM</th><th>C. CD</th><th>D. Cloud</th><th>E. IR</th><th>F. PT</th><th>G. OS</th><th>H. ICS</th></tr>
@@ -743,12 +744,6 @@ SEC566: Implementing and Auditing Security Frameworks and Controls
 <tr valign="top" align="left"><td>GCIA</td><td>Certified Intrusion Analyst</td><td>SEC503</td><td>-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td>GX-IH</td><td>Experienced Incident Handler</td><td>SEC504: Hacker Tools, Techniques, Exploits, and Incident Handling</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
-<tr valign="top" align="left"><td>GX-CS</td><td>Experienced Cyber Security</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-   
 <tr valign="top" align="left"><td>GMLE</td><td>Machine Learning Engineer</td><td>SEC595</td><td>-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
@@ -796,10 +791,6 @@ SEC566: Implementing and Auditing Security Frameworks and Controls
 
 
 
-<tr valign="top" align="left"><td>GX-FA</td><td>Experienced Forensic Analyst</td><td>
--</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
-
 <tr valign="top" align="left"><td>GCTI</td><td>Cyber Threat Intelligence</td><td>
 FOR578</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
@@ -841,20 +832,12 @@ FOR610</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
 
-<tr valign="top" align="left"><td>GX-PT</td><td>Experienced Penetration Tester</td><td>
--</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
-
 <tr valign="top" align="left"><td>GRTP</td><td>Red Team Professional</td><td>
 SEC565: Red Team Operations and Adversary Emulation</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td>GEVA</td><td>Enterprise Vulnerability Assessor</td><td>
 </td><td>
--</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
-
-<tr valign="top" align="left"><td>GX-IA</td><td>Experienced Intrusion Analyst</td><td>
--</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td>GPYC</td><td>Python Coder</td><td>
@@ -903,9 +886,37 @@ FOR498: Digital Acquisition and Rapid Triage
 
 </table>
 
+
+<a name="SANS+Expert"></a>
+
+Applied Knowledge level are "GX" or "Experienced" level exams
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="bottom" align="left"><th>Cert</th><th>Description</th><th>Class</th><th>A. Ess</th><th>B. SM</th><th>C. CD</th><th>D. Cloud</th><th>E. IR</th><th>F. PT</th><th>G. OS</th><th>H. ICS</th></tr>
+
+<tr valign="top" align="left"><td>GX-PT</td><td>Experienced Penetration Tester</td><td>
+-</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
+
+<tr valign="top" align="left"><td>GX-FA</td><td>Experienced Forensic Analyst</td><td>
+-</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top" align="left"><td>GX-IH</td><td>Experienced Incident Handler</td><td>SEC504: Hacker Tools, Techniques, Exploits, and Incident Handling</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top" align="left"><td>GX-CS</td><td>Experienced Cyber Security</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+   
+<tr valign="top" align="left"><td>GX-IA</td><td>Experienced Intrusion Analyst</td><td>
+-</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
+
+</table>
+
 Based on the <a target="_blank" href="https://www.giac.org/certifications/niceframework">NICE framework</a>
 
-   * <a target="_blank" href="https://www.giac.org/certification/enterprise-vulnerability-assessor-geva">GEVA (GIAC Enterprise Vulnerability Assessor)</a>requires 71% correct from among 75 questions over 2 hours. It covers Vulnerability assessment framework planning and methodology in an enterprise environment; Discovery and validation of vulnerabilities using tactics like network scanning and PowerShell scripting; Remediation and reporting techniques utilizing proper data management
+   * <a target="_blank" href="https://www.giac.org/certification/enterprise-vulnerability-assessor-geva">GEVA (GIAC Enterprise Vulnerability Assessor)</a> requires 71% correct from among 75 questions over 2 hours. It covers Vulnerability assessment framework planning and methodology in an enterprise environment; Discovery and validation of vulnerabilities using tactics like network scanning and PowerShell scripting; Remediation and reporting techniques utilizing proper data management
 
    * <a target="_blank" href="https://www.giac.org/certification/certified-incident-handler-gcih">GCIH (GIAC Certified Incident Handler)</a> requires an undeterminate correct from among 100-150 questions over 4 hours. It covers Incident Handling (Response) and Computer Crime Investigation; Computer and Network Hacker Exploits; Hacker Tools (Nmap, Nessus, Metasploit, Netcat). A single chapter on NIST800-61.
 
