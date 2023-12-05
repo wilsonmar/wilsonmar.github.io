@@ -817,6 +817,58 @@ AUD507</td><td>-</td><td>X</td><td>-</td><td>-</td>
 
 
 
+<tr valign="top"><td>GX-PT</td><td>Experienced Penetration Tester</td><td>
+-</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GRTP</td><td>Red Team Professional</td><td>
+SEC565: Red Team Operations and Adversary Emulation</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GEVA</td><td>Enterprise Vulnerability Assessor</td><td>
+</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GX-IA</td><td>Experienced Intrusion Analyst</td><td>
+-</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GPYC
+GIAC Python Coder (GPYC)</td><td>Python Coder</td><td>
+SEC573: Automating Information Security with Python</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GMOB</td><td>Mobile (Device Security Analyst)</td><td>
+SEC575: iOS and Android Application Security Analysis and Penetration Testing</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GPEN</td><td>Penetration Tester</td><td>
+SEC560</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GWAPT</td><td>Web Application Penetration Tester</td><td>
+SEC542</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GAWN</td><td>Assessing and Auditing Wireless Networks</td><td>
+SEC617: Wireless Penetration Testing and Ethical Hacking</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GXPN</td><td>Exploit Researcher and Advanced Penetration Tester</td><td>
+SEC660: Advanced Penetration Testing, Exploit Writing, and Ethical Hacking</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+
+
+
+<tr valign="top"><td>GASF</td><td>Advanced Smartphone Forensics</td><td>
+FOR585: Smartphone Forensic Analysis In-Depth
+</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GBFA</td><td>Battlefield Forensics and Acquisition</td><td>
+FOR498: Digital Acquisition and Rapid Triage
+</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
+
+
 <tr valign="top"><td>GSEC</td><td>Security Essentials</td><td>SEC401</td><td>X</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
