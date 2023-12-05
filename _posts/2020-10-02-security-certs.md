@@ -695,11 +695,11 @@ Retakes are $100 less. Renewals ar $479 at all levels. The exams and classes by 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom" align="left"><th>Cert</th><th>Description</th><th>Class</th><th>A. Ess</th><th>B. SM</th><th>C. CD</th><th>D. Cloud</th><th>E. IR</th><th>F. PT</th><th>G. OS</th><th>H. ICS</th></tr>
 
-<tr valign="top" align="left"><td>GSEC</td><td>Security Essentials</td><td>SEC401</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top" align="left"><td>GISF</td><td>Information Security Fundamentals</td><td>SEC301</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/security-essentials-gsec/">GSEC</a></td><td>Security Essentials</td><td>SEC401</td><td>X</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr valign="top" align="left"><td>GCED</td><td>Certified Enterprise Defender</td><td>SEC501</td><td>X</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr valign="top" align="left"><td>GISF</td><td>Information Security Fundamentals</td><td>SEC301</td><td>X</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr valign="top" align="left"><td>GCIH</td><td>Certified Incident Handler</td><td>
 SEC504: Hacker Tools, Techniques, and Incident Handling
@@ -741,7 +741,7 @@ SEC566: Implementing and Auditing Security Frameworks and Controls
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 
-<tr valign="top" align="left"><td>GCIA</td><td>Certified Intrusion Analyst</td><td>SEC503</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/certified-intrusion-analyst-gcia">GCIA</a></td><td>Certified Intrusion Analyst</td><td>SEC503</td><td>-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td>GMLE</td><td>Machine Learning Engineer</td><td>SEC595</td><td>-</td><td>-</td><td>X</td><td>-</td>
@@ -832,7 +832,7 @@ FOR610</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
 
-<tr valign="top" align="left"><td>GRTP</td><td>Red Team Professional</td><td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/red-team-professional-grtp">GRTP</a></td><td>Red Team Professional</td><td>
 SEC565: Red Team Operations and Adversary Emulation</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
@@ -894,21 +894,21 @@ FOR498: Digital Acquisition and Rapid Triage
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom" align="left"><th>Cert</th><th>Description</th><th>Class</th><th>A. Ess</th><th>B. SM</th><th>C. CD</th><th>D. Cloud</th><th>E. IR</th><th>F. PT</th><th>G. OS</th><th>H. ICS</th></tr>
 
-<tr valign="top" align="left"><td>GX-PT</td><td>Experienced Penetration Tester</td><td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/experienced-penetration-tester-gxpt/">GX-PT</a></td><td>Experienced Penetration Tester</td><td>
 -</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td>GX-FA</td><td>Experienced Forensic Analyst</td><td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/experienced-forensic-analyst-gxfa">GX-FA</a></td><td>Experienced Forensic Analyst</td><td>
 -</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td>GX-IH</td><td>Experienced Incident Handler</td><td>SEC504: Hacker Tools, Techniques, Exploits, and Incident Handling</td><td>-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td>GX-CS</td><td>Experienced Cyber Security</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/experienced-cyber-security-gxcs">GX-CS</a></td><td>Experienced Cyber Security</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
    
-<tr valign="top" align="left"><td>GX-IA</td><td>Experienced Intrusion Analyst</td><td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/experienced-intrusion-analyst-gxia">GX-IA</a></td><td>Experienced Intrusion Analyst</td><td>
 -</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
