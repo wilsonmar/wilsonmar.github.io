@@ -747,7 +747,7 @@ FOR509</td><td>?</td><td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/certified-incident-handler-gcih">GCIH</a></td><td>Certified Incident Handler</td><td>
-SEC504: Hacker Tools, Techniques, and Incident Handling</td><td>?</td><td>
+SEC504: Hacker Tools, Techniques, and Incident Handling</td><td>3</td><td>
 X</td><td>-</td><td>X</td><td>-</td><td>X</td><td>X</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/critical-infrastructure-protection-gcip">GCIP</a></td><td>Critical Infrastructure Protection</td><td>ICS456: Essentials for NERC Critical Infrastructure Protection</td><td>?</td><td>
@@ -793,7 +793,8 @@ FOR578</td><td>
 -</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/foundational-cybersecurity-technologies-gfact">GFACT</a></td><td>Foundational Cybersecurity Technologies</td><td>?</td><td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/foundational-cybersecurity-technologies-gfact">GFACT</a></td><td>Foundational Cybersecurity Technologies</td><td>
+SEC275</td><td>1</td><td>
 -</td><td>-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
@@ -836,7 +837,7 @@ SEC575: iOS and Android Application Security Analysis and Penetration Testing</t
 FOR572: Advanced Network Forensics: Threat Hunting, Analysis, and Incident Response</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/open-source-intelligence-gosi">GOSI</a></td><td>Open Source Intelligence</td><td>SEC487</td><td>3</td><td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/open-source-intelligence-gosi">GOSI</a></td><td>Open Source Intelligence</td><td>SEC487</td><td>4</td><td>
 -</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
@@ -905,6 +906,11 @@ SEC660: Advanced Penetration Testing, Exploit Writing, and Ethical Hacking</td><
 
 </table>
 
+https://www.sans.org/cyber-academy/vetsuccess/
+100% scholarship for US veterans - 9 months to complete 3 courses 
+
+foundation & 
+SAN275 
 
 <a name="SANS+Expert"></a>
 
