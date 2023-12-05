@@ -21,11 +21,11 @@ comments: true
 <a target="_blank" href="https://www.linkedin.com/in/joaomiguelneves/">Joao Neves</a>, VP of Engineering at Outsystems, says that Outsystems is a "<strong>low-code</strong> platform for building enterprise-grade web and mobile apps that help you get the job done faster. It generates feature-rich web and mobile apps using low-code running within a full suite of enterprise-grade utilities and services."
 
 From <a target="_blank" href="https://www.youtube.com/watch?v=XR4n9fq1wJM" title="of version  9.1 Bali 2016">DEMO</a> by <a target="_blank" href="https://www.linkedin.com/in/pedrovcmoliveira/">Pedro Oliveira</a>:<br />
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696043554/outsystems-arch-1152x720_okgood.jpg"><img alt="outsystems-arch-1152x720.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696043554/outsystems-arch-1152x720_okgood.jpg"><br /><em>Click for full screen</em></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696043554/outsystems-arch-1152x720_okgood.jpg"><img alt="outsystems-arch-1152x720.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696043554/outsystems-arch-1152x720_okgood.jpg"><em>Click for full screen</em></a>
 
 PROTIP: Outsystems runs web and mobile apps as .NET DLLs on Windows-based servers within their private cloud (as PaaS like Salesforce) or on-prem servers. 
 
-All app resources are in Outsystem servers (within their cloud or on-prem), apps can be developed on Windows, Linux, and macOS laptops using a browser-based IDE.
+App resources are in Outsystem servers (within their cloud or on-prem), so apps are developed using their IDE installed on Windows, Linux, and macOS laptops.
 However, "no network, no work".
 
 
@@ -35,8 +35,8 @@ Its "low code" approach enables enterprises to <strong>hire less people</strong>
 not only because Outsystems generates a lot of the code 
 but also because back-end and operational features are already operational.
 
-Types of applications:
-   * "Traditional web apps" for older browsers, to enable slow-moving customer organizations to develop apps.
+Types of applications (chosen from the beginnging):
+   * "Traditional web apps" for older browsers, to enable slow-moving customer organizations to develop new apps.
    * "Reactive (HTML5) web apps" adapt to different screen sizes and across devices as "PWA" apps. 
    * "Mobile iPhone & Android native apps" can be used offline, NOT as a PWA app.
    <br /><br />
@@ -199,6 +199,14 @@ Here we compare the 2019 vs. 2023 ratings by Forrester:
 <a target="_blank" href="https://www.mendix.com/">Mendix.com</a> is a PaaS and more a direct competitor.
 Gartner has Mendix as a leader in its <a target="_blank" href="https://www.mendix.com/resources/gartner-magic-quadrant-for-low-code-application-platforms/">2023 Magic Quadrant for "Enterprise Low-Code Application Platforms"</a>.
 
+<a target="_blank" href="https://marutitech.com/best-low-code-platforms/">Developer agency Marutitech explains why they named Outsystems the #1 low-code platform</a>.
+
+<a target="_blank" href="https://www.outsystems.com/mendix-vs-outsystems/">Outsystems cautions that</a> 
+
+> "Many organizations that invest in no-code platforms get push-back from IT and developers due to the inherent limitations enforced by no-code architecture, forcing the IT devs to re-write the applications."
+
+Outsystems developers can extend app functionality by writing custom code in Java, SQL, C#, CSS, HTML, and JavaScript.
+
 Like Outsystems, Salesforce is a PaaS. But Salesforce is more expensive and very complex.
 
 Microsoft's PowerApps is a SaaS (browser-based). But PowerApps is more expensive and overly complex.
@@ -210,9 +218,13 @@ ServiceNow has gained in favor with Forrester.
 
 ## Pricing
 
-Outsystems provides a free developer edition (ODC) with no time limits to build a single app.
+Outsystems provides a free developer edition (ODC) with no time limits to build a single app for up to 100 users.
+$4,000/month for up to 1000 users. $10,000/month for unlimited users and support.
+
+Mendix charges $1,817/month for a single app in production for up to 10 users. $5,375/month for unlimited apps, $7,825/month for advanced features.
 
 Outsystems charges $1,135/month for up to 3 apps in production.
+
 
 A 30-day trial edition is available for temporary access to a production environment.
 
@@ -228,12 +240,12 @@ In documentation, "O11" means Outsystems 11, the paid version.
    * .NET Core 3.1 Runtime & Hosting Bundle for Windows
    <br /><br />
 
-
+https://learn.microsoft.com/credentials
 ### ODC (Outsystems Developer Cloud)
 
 In documentation, "ODC" means Outsystems Developer Cloud, the free version.
 
-Outsystems removes barrier to entry for learning, and creates a large community of developers around the world on their free ODC (Outsystems Developer Cloud) edition.
+Outsystems removes barriers to entry for learning, and creates a large community of developers around the world on their free ODC (Outsystems Developer Cloud) edition.
 
 ODC is a single-user environment used to develop and deploy web applications that access data in the cloud.
 
@@ -320,7 +332,7 @@ Surface data from enterprise systems like SAP ERPs and Salesforce CRM, etc. for 
 
     3. <a href="#Logic"><strong>Logic</strong></a> is where business logic of the application is defined: Client Actions, Server Actions, Integrations to SOAP/APIs, Roles, Exceptions (Security policies)
 
-    4. <a href="#Interface"><strong>Interface</strong></a> is where the user interface (UI) of the application is defined: UI Flows, Images, Themes (base look an feel), Scripts (<a target="_blank" href="https://learn.outsystems.com/training/journeys/mobile-developer-679/demo-how-to-use-javascript-in-logic/o11/344>JavaScript</a> and <a target="_blank" href="https://www.youtube.com/watch?v=JMWqFwnks4Q">external JavaScript</a>) for client-side logic, and Styles for CSS.
+    4. <a href="#Interface"><strong>Interface</strong></a> is where the user interface (UI) of the application is defined: UI Flows, Images, Themes (base look an feel), Scripts (<a target="_blank" href="https://learn.outsystems.com/training/journeys/mobile-developer-679/demo-how-to-use-javascript-in-logic/o11/344>"JavaScript</a> and <a target="_blank" href="https://www.youtube.com/watch?v=JMWqFwnks4Q">external JavaScript</a>) for client-side logic, and Styles for CSS.
 
 1.  PROTIP: Having several monitors plugged in helps with productivity.
 
@@ -449,7 +461,9 @@ for transitioning to support Linux and Oracle on macOS laptops.
 1.  Publishing involves an XML file sent to the Platform Server. It's then compiled into DLL files.
 
     Outsystems creates static native mobile apps which require update within the app store.
-    Many users delay updating their apps.
+    Many users delay updating their apps. 
+
+    Publish mobile apps directly to Aooke App Store and Google Play.
     
     CAUTION: Outsystems are NOT like apps which can be updated without going through the app store.
 
