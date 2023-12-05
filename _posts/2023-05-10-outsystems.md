@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2023-10-01"
-file: "outsysstems"
+date: "2023-12-04"
+file: "outsystems"
 title: "Outsystems"
 excerpt: "Generate feature-rich web and mobile apps using low-code running within a full suite of enterprise-grade utilities and services"
 tags: [cloud, azure, C#]
@@ -20,13 +20,13 @@ comments: true
 
 <a target="_blank" href="https://www.linkedin.com/in/joaomiguelneves/">Joao Neves</a>, VP of Engineering at Outsystems, says that Outsystems is a "<strong>low-code</strong> platform for building enterprise-grade web and mobile apps that help you get the job done faster. It generates feature-rich web and mobile apps using low-code running within a full suite of enterprise-grade utilities and services."
 
-<a target="_blank" href="https://www.youtube.com/watch?v=XR4n9fq1wJM">VIDEO</a> Outsystems Demo (of version  9.1 Bali 2016) by <a target="_blank" href="https://www.linkedin.com/in/pedrovcmoliveira/">Pedro Oliveira</a>
+From <a target="_blank" href="https://www.youtube.com/watch?v=XR4n9fq1wJM" title="of version  9.1 Bali 2016">DEMO</a> by <a target="_blank" href="https://www.linkedin.com/in/pedrovcmoliveira/">Pedro Oliveira</a>:<br />
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696043554/outsystems-arch-1152x720_okgood.jpg"><img alt="outsystems-arch-1152x720.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696043554/outsystems-arch-1152x720_okgood.jpg"><br /><em>Click for full screen</em></a>
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696043554/outsystems-arch-1152x720_okgood.jpg"><img alt="outsystems-arch-1152x720.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696043554/outsystems-arch-1152x720_okgood.jpg"></a>
+PROTIP: Outsystems runs web and mobile apps as .NET DLLs on Windows-based servers within their private cloud (as PaaS like Salesforce) or on-prem servers. 
 
-Outsystems runs web and mobile apps as .NET DLLs on Windows-based servers within their private cloud (as PaaS like Salesforce) or on-prem servers. 
-
-However, apps can be developed on Windows, Linux, and macOS laptops. 
+All app resources are in Outsystem servers (within their cloud or on-prem), apps can be developed on Windows, Linux, and macOS laptops using a browser-based IDE.
+However, "no network, no work".
 
 
 ## Why it's a big deal
@@ -35,17 +35,24 @@ Its "low code" approach enables enterprises to <strong>hire less people</strong>
 not only because Outsystems generates a lot of the code 
 but also because back-end and operational features are already operational.
 
+Types of applications:
+   * "Traditional web apps" for older browsers, to enable slow-moving customer organizations to develop apps.
+   * "Reactive (HTML5) web apps" adapt to different screen sizes and across devices as "PWA" apps. 
+   * "Mobile iPhone & Android native apps" can be used offline, NOT as a PWA app.
+   <br /><br />
+
+
 ### Dev processes
 
-Adopting Outsystems is like inheriting a mature organization where people have settled in what to call things and how to do things a particular way, such as the job roles and when they participate<a target="_blank" href="https://learn.outsystems.com/training/journeys/devops-659/project-timebox-overview/o11/780">:</a>
+PROTIP: Adopting Outsystems is like inheriting a mature organization where people have settled in what to call things and how to do things a particular way, such as the job roles and when they participate<a target="_blank" href="https://learn.outsystems.com/training/journeys/devops-659/project-timebox-overview/o11/780">:</a>
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696120691/outsystems-whowhat-1276x571_xme8u4.png"><img alt="outsystems-whowhat-1276x571.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696120691/outsystems-whowhat-1276x571_xme8u4.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696120691/outsystems-whowhat-1276x571_xme8u4.png"><img alt="outsystems-whowhat-1276x571.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696120691/outsystems-whowhat-1276x571_xme8u4.png"><br /><em>Click for full screen</em></a>
 
 Outsystems provides free video classes and written docs describing its processes and tools.
 
-Because a lot of what is necessary is built-in to the tool, theree is <strong>less waste time wasted arguing</strong> about the <a target="_blank" href="https://success.outsystems.com/documentation/11/developing_an_application/">application lifecycle</a>: what framework to use, <a target="_blank" href="https://learn.outsystems.com/training/journeys/devops-659/ci-cd-with-outsystems/o11/2436">what CI/CD</a> to use, naming conventions, what logging, metrics, KPIs, what is a higher priority, etc. Helpful automation bakes in for all users the terminology and methodology for going to production: 
+PROTIP: Because a lot of what is necessary is built-in to the tool, <strong>less time is wasted arguing</strong> about the <a target="_blank" href="https://success.outsystems.com/documentation/11/developing_an_application/">application lifecycle</a>: what framework to use, <a target="_blank" href="https://learn.outsystems.com/training/journeys/devops-659/ci-cd-with-outsystems/o11/2436">what CI/CD</a> to use, naming conventions, what logging, metrics, KPIs, what is a higher priority, etc. Helpful automation bakes in for all users the terminology and methodology for going to production: 
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696067986/outsystems-phases-1724x880_p9lngu.png"><img alt="outsystems-phases-1724x880.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696067986/outsystems-phases-1724x880_p9lngu.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696067986/outsystems-phases-1724x880_p9lngu.png"><img alt="outsystems-phases-1724x880.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696067986/outsystems-phases-1724x880_p9lngu.png"><br /><em>Click for full screen</em></a>
 
    * DoR = Definition of Ready
    * DoD = Definition of Done
@@ -56,7 +63,7 @@ Because a lot of what is necessary is built-in to the tool, theree is <strong>le
 
 Outsystems CI (Continuous Integration) <strong>assumes</strong> a process which other shops can take years to instill among developers:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696070702/outsystems-ci-1486x548_df7tvn.png"><img alt="outsystems-ci-1486x548.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696070702/outsystems-ci-1486x548_df7tvn.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696070702/outsystems-ci-1486x548_df7tvn.png"><img alt="outsystems-ci-1486x548.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696070702/outsystems-ci-1486x548_df7tvn.png"><br /><em>Click for full screen</em></a>
 
    * DEV = Development environment (contains mocks)
    * QUA = Quality Assurance environment
@@ -65,12 +72,20 @@ Outsystems CI (Continuous Integration) <strong>assumes</strong> a process which 
    * PRE = Pre-production environment
    * PRD = Production environment
    <br /><br />
-   
-Because the language and framework are the same in all shops, new developers can more quickly pick up where the last one left off.
+
+
+## Observability
 
 The Outsystems platform is instrumented, by default, to (asynchronously) collect runtime logs, errors, audit and performance events for <a target="_blank" href="https://www.outsystems.com/evaluation-guide/monitoring-and-analytics/">monitoring trend analytics visualiation</a>: Users connected, Hits/Hour, Errors/Hour, CPU, Memory, Disk, etc. It's also used for debugging and troubleshooting.
 
-So Outsystem customers' IT workforce consists largely be those who can be <strong>near end-users</strong> and focus on the business logic and user experience. There is less need for IT management and specialist "Developer Platform builders".
+https://itnext.io/management-of-the-outsystems-platform-useful-or-necessary-c13de3a6c413
+
+
+## People Strategy
+
+PROTIP: Because the language and framework are the same in all shops, new developers can more quickly pick up where the last one left off.
+
+Outsystem customers' IT workforce consists largely be those who can be <strong>near end-users</strong> and focus on the business logic and user experience. There is less need for IT management and specialist "Developer Platform builders".
 
 Outsystems customers don't have to find experts in bleeding-edge technologies such as AI because Outsystems had the foresight to have already been innovating it.
 
@@ -78,16 +93,8 @@ It's not just about programming skill sets, to include "citizen developers" who 
 
 This also means that the IT workforce can be <strong>more diverse</strong> and closer to end-users.
 
-All the above enables faster development of new applications:
-   * Traditional web apps are for older browsers.
-   * Reactive (HTML5) web apps adapt to different screen sizes and across devices. 
-   * Mobile iPhone & Android native apps can be used offline, NOT as a PWA app.
-   <br /><br />
 
-https://itnext.io/management-of-the-outsystems-platform-useful-or-necessary-c13de3a6c413
-
-
-## Jobs to Roles and Certifications
+### Jobs to Roles and Certifications
 
 * <a target="_blank" href="https://www.outsystems.com/community/jobs/?q=&c=&t=&l=&r=&w=&s=">Outsystems Job Board</a> lists jobs at partners and customers, worldwide.
 
@@ -119,6 +126,8 @@ $200, 120-minute exams:
 * OutSystems Certified Trainer
 <br /><br />
 
+
+<hr />
 
 ## Outsystems The Company
 
@@ -172,6 +181,7 @@ The company was a pioneer in transitioning to working in C# on macOS laptops and
 
 Their <a target="_blank" href="https://www.outsystems.com/community/jobs/?q=&c=&t=&l=&r=&w=&s=">Job Board</a> lists jobs worldwide.
 
+
 ## Competition
 
 Here we compare the 2019 vs. 2023 ratings by Forrester:
@@ -186,22 +196,37 @@ Here we compare the 2019 vs. 2023 ratings by Forrester:
 
 <a target="_blank" href="https://www.outsystems.com/evaluation-guide/low-code-platforms/">Outsystems' own comparison</a> with other low-code platforms:
 
-Like Outsystems, Salesforce is a PaaS. But Salesforce is more expensive and overly complex.
+<a target="_blank" href="https://www.mendix.com/">Mendix.com</a> is a PaaS and more a direct competitor.
+Gartner has Mendix as a leader in its <a target="_blank" href="https://www.mendix.com/resources/gartner-magic-quadrant-for-low-code-application-platforms/">2023 Magic Quadrant for "Enterprise Low-Code Application Platforms"</a>.
+
+Like Outsystems, Salesforce is a PaaS. But Salesforce is more expensive and very complex.
 
 Microsoft's PowerApps is a SaaS (browser-based). But PowerApps is more expensive and overly complex.
 
 ServiceNow has gained in favor with Forrester.
 
-Mendix is a PaaS and more a direct competitor?
 
+<hr />
 
 ## Pricing
+
+Outsystems provides a free developer edition (ODC) with no time limits to build a single app.
 
 Outsystems charges $1,135/month for up to 3 apps in production.
 
 A 30-day trial edition is available for temporary access to a production environment.
 
+
+## Versions
+
 In documentation, "O11" means Outsystems 11, the paid version.
+
+<a target="_blank" href="https://success.outsystems.com/support/release_notes/">https://success.outsystems.com/support/release_notes/</a>
+
+   * Microsoft .NET Framework 4.8 (supported since Platform Server 11 – Release Oct.2019 CP2) or Microsoft .NET Framework 4.7.2
+   * Microsoft Build Tools 2015
+   * .NET Core 3.1 Runtime & Hosting Bundle for Windows
+   <br /><br />
 
 
 ### ODC (Outsystems Developer Cloud)
@@ -285,7 +310,7 @@ Surface data from enterprise systems like SAP ERPs and Salesforce CRM, etc. for 
 
 1.  At the upper-right of the IDE is a "tab" to reach each layer. Click on it for the <strong>"widgets"</strong> and toolbox associated with that layer:
 
-    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696148883/outsystems-ide-451x100_zszwdm.png"><img alt="outsystems-ids-layers-451x100.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696148883/outsystems-ide-451x100_zszwdm.png"></a>
+    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696148883/outsystems-ide-451x100_zszwdm.png"><img alt="outsystems-ids-layers-451x100.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696148883/outsystems-ide-451x100_zszwdm.png"><br /><em>Click for full screen</em></a>
 
     This numbering is my usual order of creation:
 
@@ -326,7 +351,7 @@ Physical databases can be defined in the IDE.
 </table>
 
 A sample Entity Schema:<br />
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696152238/outsystems-entities-606x536_qttb0h.png"><img alt="outsystems-entities-606x536.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696152238/outsystems-entities-606x536_qttb0h.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696152238/outsystems-entities-606x536_qttb0h.png"><img alt="outsystems-entities-606x536.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696152238/outsystems-entities-606x536_qttb0h.png"><br /><em>Click for full screen</em></a>
 
 Data types (such as Integer) are automatically inferred from Entity names entered (such as  "Id" or "Number").
 
@@ -384,20 +409,20 @@ Only server actions can be called from other actions and have output parameters.
 
 Please confirm:
 
-* REST API - have Swagger/OpenAPI specification?
-* SOAP API - have WSDL specification?
+* REST API - have Swagger/OpenAPI specifications?
+* SOAP API - have WSDL specifications?
 
 * gRPC API - have protobuf specification?
 * Kafka API - have Kafka schema specification?
-* AMQP API - have AMQP schema specification?
-* MQTT API - have MQTT schema specification?
+* AMQP API - have AMQP schema specifications?
+* MQTT API - have MQTT schema specifications?
 * WebSockets API - have WebSockets schema specification?
 * WebHooks API - have WebHooks schema specification?
-* OData API - have OData schema specification?
+* OData API - have OData schema specifications?
 
-* XML API - have XML schema specification?
-* JSON API - have JSON schema specification?
-* CSV API - have CSV schema specification?
+* XML API - have XML schema specifications?
+* JSON API - have JSON schema specifications?
+* CSV API - have CSV schema specifications?
 
 
 <hr />
@@ -474,16 +499,6 @@ Depending on the version:
 
 * Service Actions — gives messages about the REST-based request within the platform
 
-
-
-## Versions
-
-<a target="_blank" href="https://success.outsystems.com/support/release_notes/">https://success.outsystems.com/support/release_notes/</a>
-
-   * Microsoft .NET Framework 4.8 (supported since Platform Server 11 – Release Oct.2019 CP2) or Microsoft .NET Framework 4.7.2
-   * Microsoft Build Tools 2015
-   * .NET Core 3.1 Runtime & Hosting Bundle for Windows
-   <br /><br />
 
 ## Naming Conventions
 

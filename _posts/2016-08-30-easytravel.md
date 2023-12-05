@@ -89,9 +89,9 @@ What is special about the system is it is designed to exhibit different problem 
    <tr valign="top"><td>5.</td><td>Business Backend</td><td> Java/Tomcat</td><td align="right"> &lt;190 MB</td><td>-</td></tr>
    <tr valign="top"><td>6.</td><td>Payment Backend</td><td> .NET/MVC</td><td align="right"> 65 MB</td><td>-</td></tr>
    <tr valign="top"><td>7.</td><td>Payment Database</td><td>MSSQL Compact</td><td align="right"> ? MB</td><td>-</td></tr>
-   <tr valign="top"><td>8.</td><td>Credit Card Authorization</td><td> C++/ADK</td><td align="right"> &lt;1 MB<td>-</td></td></tr>
+   <tr valign="top"><td>8.</td><td>Credit Card Authorization</td><td> C++/ADK</td><td align="right"> &lt;1 MB<td>-</td></tr>
    <tr valign="top"><td>9.</td><td>"Third Party" User emulator</td><td> ?</td><td align="right"> ? MB</td><td>imposes load</td></tr>
-   <tr valign="top"><td colspan="3"><strong>Overall</strong></td><td align="right"> <strong>&lt;800 MB</strong><td>Optional</td></td></tr>
+   <tr valign="top"><td colspan="3"><strong>Overall</strong></td><td align="right"> <strong>&lt;800 MB</strong><td>Optional</td></tr>
    </tbody></table>
 
    <strong>PROTIP: You can't run the whole set on your Mac</strong>
