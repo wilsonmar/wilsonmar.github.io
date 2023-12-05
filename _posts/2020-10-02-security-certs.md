@@ -769,11 +769,11 @@ MGT525: Managing Cybersecurity Initiatives & Effective Communication</td><td>?</
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/cloud-security-automation-gcsa">GCSA</a></td><td>Cloud Security Automation</td><td>SEC540</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>   
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/cloud-threat-detection-gctd">GCTD</a></td><td>Cloud Threat Detection</td><td>SEC541</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/cloud-threat-detection-gctd">GCTD</a></td><td>Cloud Threat Detection</td><td>SEC541</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/cyber-threat-intelligence-gcti">GCTI</a></td><td>Cyber Threat Intelligence</td><td>
 FOR578</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></td><td>-</td></tr>
 
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/certified-windows-security-administrator-gcwn">GCWN</a></td><td>Certified Windows (Security) Administrator</td><td>SEC505</td><td>?</td><td>
@@ -796,7 +796,7 @@ FOR578</td><td>
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/foundational-cybersecurity-technologies-gfact">GFACT</a></td><td>Foundational Cybersecurity Technologies</td><td>
 SEC275</td><td>1</td><td>
 -</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<td>-</td><td>-</td><td>-</td></tr>
 
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/global-industrial-cyber-security-professional-gicsp">GICSP</a></td><td>Global Industrial Cyber Security Professional</td><td>ICS410: ICS/SCADA Security Essentials</td><td>?</td><td>
