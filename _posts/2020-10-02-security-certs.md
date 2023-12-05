@@ -692,239 +692,240 @@ Retakes are $100 less. Renewals ar $479 at all levels. The exams and classes by 
    </ul>
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom"><th>Cert</th><th>Description</th><th>Class</th><th>A. Ess</th><th>B. SM</th><th>C. CD</th><th>D. Cloud</th><th>E. IR</th><th>F. PT</th><th>G. OS</th><th>H. ICS</th></tr>
+<tr valign="bottom" align="left"><th>Cert</th><th>Description</th><th>Class</th><th>A. Ess</th><th>B. SM</th><th>C. CD</th><th>D. Cloud</th><th>E. IR</th><th>F. PT</th><th>G. OS</th><th>H. ICS</th></tr>
 
-<tr valign="top"><td>GCPM</td><td>GIAC Certified Project Manager</td><td>
+<tr valign="top" align="left"><td>GCPM</td><td>GIAC Certified Project Manager</td><td>
 MGT525: Managing Cybersecurity Initiatives & Effective Communication
-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GCCC</td><td>Critical Controls Certification</td><td>
+<tr valign="top" align="left"><td>GCCC</td><td>Critical Controls Certification</td><td>
 SEC566: Implementing and Auditing Security Frameworks and Controls
-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GLEG</td><td>Law of Data Security & Investigations</td><td>
+<tr valign="top" align="left"><td>GLEG</td><td>Law of Data Security & Investigations</td><td>
 LEG523
-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GSLC</td><td>Security Leadership</td><td>
+<tr valign="top" align="left"><td>GSLC</td><td>Security Leadership</td><td>
 MGT512: Leadership Essentials for Security Managers
-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GSOM</td><td>Security Operations Manager</td><td>
+<tr valign="top" align="left"><td>GSOM</td><td>Security Operations Manager</td><td>
 LDR551: Building, Leading, & Managing (SOC) Security Operations Center
-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GSTRT</td><td>Strategic Planning, Policy, and Leadership</td><td>
+<tr valign="top" align="left"><td>GSTRT</td><td>Strategic Planning, Policy, and Leadership</td><td>
 MGT514
-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GSNA</td><td>Systems and Network Auditor</td><td>
+<tr valign="top" align="left"><td>GSNA</td><td>Systems and Network Auditor</td><td>
 AUD507: Auditing Systems, Applications, and the Cloud
-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GCIH</td><td>Certified Incident Handler</td><td>
+<tr valign="top" align="left"><td>GCIH</td><td>Certified Incident Handler</td><td>
 SEC504: Hacker Tools, Techniques, and Incident Handling
-</td><td>X</td><td>-</td><td>X</td><td>-</td><td>X</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+</td><td>X</td><td>-</td><td>X</td><td>-</td><td>X</td><td>X</td><td>-</td><td>-</td></tr>
 
 
-<tr valign="top"><td>GCCC</td><td>Critical Controls Certification</td><td>
+<tr valign="top" align="left"><td>GCCC</td><td>Critical Controls Certification</td><td>
 SEC566: Implementing and Auditing Security Frameworks and Controls
 </td><td>-</td><td>X</td><td>-</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 
-<tr valign="top"><td></td><td>GLEG</td><td>Law of Data Security & Investigations</td><td>
+<tr valign="top" align="left"><td></td><td>GLEG</td><td>Law of Data Security & Investigations</td><td>
 LEG523</td><td>Security Management, Legal, and Audit
 </td><td>-</td><td>X</td><td>-</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td></td><td>GSLC</td><td>Security Leadership Cert</td><td>
+<tr valign="top" align="left"><td></td><td>GSLC</td><td>Security Leadership Cert</td><td>
 MGT512
 </td><td>-</td><td>X</td><td>-</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td></td><td>GSTRT</td><td>Strategic Planning, Policy, and Leadership</td><td>
+<tr valign="top" align="left"><td></td><td>GSTRT</td><td>Strategic Planning, Policy, and Leadership</td><td>
 MGT514
 </td><td>-</td><td>X</td><td>-</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td></td><td>GSNA</td><td>Systems and Network Auditor</td><td>
+<tr valign="top" align="left"><td></td><td>GSNA</td><td>Systems and Network Auditor</td><td>
 AUD507</td><td>-</td><td>X</td><td>-</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 
-<tr valign="top"><td>GX-FA</td><td>Experienced Forensic Analyst</td><td>
+<tr valign="top" align="left"><td>GX-FA</td><td>Experienced Forensic Analyst</td><td>
 -</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GCTI</td><td>Cyber Threat Intelligence</td><td>
+<tr valign="top" align="left"><td>GCTI</td><td>Cyber Threat Intelligence</td><td>
 FOR578</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GRID</td><td>Response and Industrial Defense</td><td>
+<tr valign="top" align="left"><td>GRID</td><td>Response and Industrial Defense</td><td>
 ICS515: ICS Visibility, Detection, and Response</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GASF</td><td>Advanced Smartphone Forensics</td><td>
+<tr valign="top" align="left"><td>GASF</td><td>Advanced Smartphone Forensics</td><td>
 FOR585: Smartphone Forensic Analysis In-Depth</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GBFA</td><td>Battlefield Forensics and Acquisition</td><td>
+<tr valign="top" align="left"><td>GBFA</td><td>Battlefield Forensics and Acquisition</td><td>
 FOR498: Digital Acquisition and Rapid Triage</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GCFA</td><td>Certified Forensic Analyst</td><td>
+<tr valign="top" align="left"><td>GCFA</td><td>Certified Forensic Analyst</td><td>
 FOR508: Advanced Incident Response, Threat Hunting, and Digital Forensics</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GCFE</td><td>Certified Forensic Examiner</td><td>
+<tr valign="top" align="left"><td>GCFE</td><td>Certified Forensic Examiner</td><td>
 FOR500: Windows Forensic Analysis</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GCFR</td><td>Cloud Forensics Responder</td><td>
+<tr valign="top" align="left"><td>GCFR</td><td>Cloud Forensics Responder</td><td>
 FOR509: Enterprise Cloud Forensics and Incident Response</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GIME</td><td>iOS and macOS Examiner</td><td>
+<tr valign="top" align="left"><td>GIME</td><td>iOS and macOS Examiner</td><td>
 FOR518: Mac and iOS Forensic Analysis and Incident Response</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GNFA</td><td>Network Forensic Analyst</td><td>
+<tr valign="top" align="left"><td>GNFA</td><td>Network Forensic Analyst</td><td>
 FOR572: Advanced Network Forensics: Threat Hunting, Analysis, and Incident Response</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GREM</td><td>Reverse Engineering Malware</td><td>
+<tr valign="top" align="left"><td>GREM</td><td>Reverse Engineering Malware</td><td>
 FOR610</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
 
-<tr valign="top"><td>CWEB</td><td>Web Application Defender</td><td>SEC522</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr valign="top"><td>GCSA</td><td>Cloud Security Automation</td><td>SEC540</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>   
-<tr valign="top"><td>GCLD</td><td>Cloud Security Essentials ?</td><td>SEC488</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr valign="top"><td>GCTD</td><td>Cloud Threat Detection</td><td>SEC541</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr valign="top"><td>GPCS</td><td>Public Cloud Security</td><td>SEC510</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr valign="top"><td>GCFR</td><td>Cloud Forensics Responder</td><td>FOR509</td><td>-</td><td>-</td><td>-</td><td>X</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr valign="top"><td>GCPN</td><td>Cloud Penetration Tester</td><td>SEC588</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>CWEB</td><td>Web Application Defender</td><td>SEC522</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GCSA</td><td>Cloud Security Automation</td><td>SEC540</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>   
+<tr valign="top" align="left"><td>GCLD</td><td>Cloud Security Essentials ?</td><td>SEC488</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GCTD</td><td>Cloud Threat Detection</td><td>SEC541</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GPCS</td><td>Public Cloud Security</td><td>SEC510</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GCFR</td><td>Cloud Forensics Responder</td><td>FOR509</td><td>-</td><td>-</td><td>-</td><td>X</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GCPN</td><td>Cloud Penetration Tester</td><td>SEC588</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>X</td><td>-</td></tr>
 
-<tr valign="top"><td>GSEC</td><td>Security Essentials</td><td>SEC401</td><td>X</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GSEC</td><td>Security Essentials</td><td>SEC401</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GCIA</td><td>Certified Intrusion Analyst</td><td>SEC503</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GCIA</td><td>Certified Intrusion Analyst</td><td>SEC503</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GX-IH</td><td>Experienced Incident Handler</td><td>SEC504: Hacker Tools, Techniques, Exploits, and Incident Handling</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GX-IH</td><td>Experienced Incident Handler</td><td>SEC504: Hacker Tools, Techniques, Exploits, and Incident Handling</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GX-CS</td><td>Experienced Cyber Security</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GX-CS</td><td>Experienced Cyber Security</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
    
-<tr valign="top"><td>GMLE</td><td>Machine Learning Engineer</td><td>SEC595</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GMLE</td><td>Machine Learning Engineer</td><td>SEC595</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GCDA</td><td>Certified Detection Analyst</td><td>SEC555: SIEM with Tactical Analytics</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GCDA</td><td>Certified Detection Analyst</td><td>SEC555: SIEM with Tactical Analytics</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GCED</td><td>Certified Enterprise Defender</td><td>SEC501</td><td>X</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GCED</td><td>Certified Enterprise Defender</td><td>SEC501</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GCWN</td><td>Certified Windows (Security) Administrator</td><td>SEC505</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GCWN</td><td>Certified Windows (Security) Administrator</td><td>SEC505</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GMON</td><td>(Continuous) Monitoring</td><td>SEC511</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GMON</td><td>(Continuous) Monitoring</td><td>SEC511</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GDSA</td><td>Defensible Security Architect</td><td>SEC530: Zero Trust</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GDSA</td><td>Defensible Security Architect</td><td>SEC530: Zero Trust</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GISF</td><td>Information Security Fundamentals</td><td>SEC301</td><td>X</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GISF</td><td>Information Security Fundamentals</td><td>SEC301</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GSOC</td><td>Security Operations Certified</td><td>SEC450: Blue Team Fundamentals: Security Operations and Analysis</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GSOC</td><td>Security Operations Certified</td><td>SEC450: Blue Team Fundamentals: Security Operations and Analysis</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GOSI</td><td>Open Source Intelligence</td><td>SEC487</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GOSI</td><td>Open Source Intelligence</td><td>SEC487</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GISP</td><td>Information Security Professional</td><td>LDR414: SANS Training Program for CISSP® Certification</td><td>X</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GISP</td><td>Information Security Professional</td><td>LDR414: SANS Training Program for CISSP® Certification</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GSOM</td><td>Security Operations Manager</td><td>LDR551: Building, Leading, & Managing (SOC) Security Operations Center</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GSOM</td><td>Security Operations Manager</td><td>LDR551: Building, Leading, & Managing (SOC) Security Operations Center</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GCIH</td><td>Certified Incident Handler</td><td>SEC504: Hacker Tools, Techniques, and Incident Handling</td><td>X</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GCIH</td><td>Certified Incident Handler</td><td>SEC504: Hacker Tools, Techniques, and Incident Handling</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GDAT</td><td>Defending Advanced Threats</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GDAT</td><td>Defending Advanced Threats</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GFACT</td><td>Foundational Cybersecurity Technologies</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GFACT</td><td>Foundational Cybersecurity Technologies</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 
 
-<tr valign="top"><td>GX-PT</td><td>Experienced Penetration Tester</td><td>
+<tr valign="top" align="left"><td>GX-PT</td><td>Experienced Penetration Tester</td><td>
 -</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GRTP</td><td>Red Team Professional</td><td>
+<tr valign="top" align="left"><td>GRTP</td><td>Red Team Professional</td><td>
 SEC565: Red Team Operations and Adversary Emulation</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GEVA</td><td>Enterprise Vulnerability Assessor</td><td>
+<tr valign="top" align="left"><td>GEVA</td><td>Enterprise Vulnerability Assessor</td><td>
 </td><td>
--</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GX-IA</td><td>Experienced Intrusion Analyst</td><td>
+<tr valign="top" align="left"><td>GX-IA</td><td>Experienced Intrusion Analyst</td><td>
 -</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GPYC
+<tr valign="top" align="left"><td>GPYC
 GIAC Python Coder (GPYC)</td><td>Python Coder</td><td>
 SEC573: Automating Information Security with Python</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GMOB</td><td>Mobile (Device Security Analyst)</td><td>
+<tr valign="top" align="left"><td>GMOB</td><td>Mobile (Device Security Analyst)</td><td>
 SEC575: iOS and Android Application Security Analysis and Penetration Testing</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GPEN</td><td>Penetration Tester</td><td>
+<tr valign="top" align="left"><td>GPEN</td><td>Penetration Tester</td><td>
 SEC560</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GWAPT</td><td>Web Application Penetration Tester</td><td>
+<tr valign="top" align="left"><td>GWAPT</td><td>Web Application Penetration Tester</td><td>
 SEC542</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GAWN</td><td>Assessing and Auditing Wireless Networks</td><td>
+<tr valign="top" align="left"><td>GAWN</td><td>Assessing and Auditing Wireless Networks</td><td>
 SEC617: Wireless Penetration Testing and Ethical Hacking</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GXPN</td><td>Exploit Researcher and Advanced Penetration Tester</td><td>
+<tr valign="top" align="left"><td>GXPN</td><td>Exploit Researcher and Advanced Penetration Tester</td><td>
 SEC660: Advanced Penetration Testing, Exploit Writing, and Ethical Hacking</td><td>
--</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
 
 
-<tr valign="top"><td>GASF</td><td>Advanced Smartphone Forensics</td><td>
+<tr valign="top" align="left"><td>GASF</td><td>Advanced Smartphone Forensics</td><td>
 FOR585: Smartphone Forensic Analysis In-Depth
-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
+</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>X</td><td>-</td></tr>
 
-<tr valign="top"><td>GBFA</td><td>Battlefield Forensics and Acquisition</td><td>
+<tr valign="top" align="left"><td>GBFA</td><td>Battlefield Forensics and Acquisition</td><td>
 FOR498: Digital Acquisition and Rapid Triage
-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
+</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>X</td><td>-</td></tr>
 
 
-<tr valign="top"><td>GSEC</td><td>Security Essentials</td><td>SEC401</td><td>X</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GSEC</td><td>Security Essentials</td><td>SEC401</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GICSP</td><td>Global Industrial Cyber Security Professional</td><td>ICS410: ICS/SCADA Security Essentials</td><td>-</td><td>-</td><td>-</td><td>-</td>
+<tr valign="top" align="left"><td>GICSP</td><td>Global Industrial Cyber Security Professional</td><td>ICS410: ICS/SCADA Security Essentials</td><td>-</td><td>-</td><td>-</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>X</td><td>-</td></tr>
 
-<tr valign="top"><td>GCIP</td><td>Critical Infrastructure Protection</td><td>ICS456: Essentials for NERC Critical Infrastructure Protection</td><td>-</td><td>-</td><td>-</td><td>-</td>
+<tr valign="top" align="left"><td>GCIP</td><td>Critical Infrastructure Protection</td><td>ICS456: Essentials for NERC Critical Infrastructure Protection</td><td>-</td><td>-</td><td>-</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>X</td><td>-</td></tr>
 
-<tr valign="top"><td>GRIC</td><td>Response and Industrial Defense</td><td>ICS515: ICS Visibility, Detection, and Response</td><td>-</td><td>-</td><td>-</td><td>-</td>
+<tr valign="top" align="left"><td>GRIC</td><td>Response and Industrial Defense</td><td>ICS515: ICS Visibility, Detection, and Response</td><td>-</td><td>-</td><td>-</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>X</td><td>-</td></tr>
+
 
 </table>
 
