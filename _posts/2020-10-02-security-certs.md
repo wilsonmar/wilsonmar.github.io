@@ -744,6 +744,21 @@ Retakes are $100 less. Renewals ar $479 at all levels. The exams and classes by 
 
 <tr valign="top"><td>GFACT</td><td>Foundational Cybersecurity Technologies</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+
+
+<tr valign="top"><td>GSEC</td><td>Security Essentials</td><td>SEC401</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GICSP</td><td>Global Industrial Cyber Security Professional</td><td>ICS410: ICS/SCADA Security Essentials</td><td>-</td><td>-</td><td>-</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>X</td><td>-</td></tr>
+
+<tr valign="top"><td>GCIP</td><td>Critical Infrastructure Protection</td><td>ICS456: Essentials for NERC Critical Infrastructure Protection</td><td>-</td><td>-</td><td>-</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>X</td><td>-</td></tr>
+
+<tr valign="top"><td>GRIC</td><td>Response and Industrial Defense</td><td>ICS515: ICS Visibility, Detection, and Response<br />Industrial Control Systems Security. Digital Forensics, Incident Response & Threat Hunting</td><td>-</td><td>-</td><td>-</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>X</td><td>-</td></tr>
+
 </table>
 
 A. Cybersecurity and IT Essentials
