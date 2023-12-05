@@ -28,7 +28,7 @@ This article is what I've learned so far about how an initial administrator gets
 
 <a target="_blank" href="https://youtu.be/lwReERW_Pqo"><img align="left" alt="youtube-1024x721.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696234162/youtube-1024x721_ful6ky.png"><strong>Click here for a <strong>step-by-step</strong> 1-minute YouTube video</strong></a> (with no sound) about the <strong>sequence of work</strong> to setup a whole enterprise with Azure technologies in the cloud:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701716482/azure-onboarding-ent-flow-1707x872_afgcsc.png"><img alt="azure-onboarding-ent-flow-1707x872.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701716482/azure-onboarding-ent-flow-1707x872_afgcsc.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my animated PowerPoint file on GumRoad</a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701745621/azure-onboarding-ent-flow--1713x864_n0fcpc.png"><img alt="azure-onboarding-ent-flow-1713x864.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701745621/azure-onboarding-ent-flow--1713x864_n0fcpc.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my animated PowerPoint file on GumRoad</a>.
 
 PHASES:
 
@@ -40,14 +40,16 @@ PHASES:
 3.  <a href="#PHASE03"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Working within an enterprise requires an understanding of all the <strong>people involved</strong>: who reports to whom in the people organization, their job titles, and responsibilities, with metadata about each person (such as their geographic location, emails, phone number, carrier for SMS, GitHub account, etc.). This background metadata determines what <a href="#IAM">IAM</a> (Identity and Access Management) and Privileged Access Management structures need to be set up.
 
     <a target="_blank" href="https://redmondmag.com/articles/2023/07/11/microsoft-entra-new-products.aspx">In 2023</a> Microsoft renamed from "Azure AD" (for Azure Active Directory) with <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/compare">Microsoft Entra ID</a> to reference its "Identity as a Service (IDaaS)" solution (like Okta) for apps across cloud and on-premises.
+
+    NOTE: An Azure Resource exists in only one Resource Group (to store metadata). A Resource Group can have resources from different Regions and Subscriptions. <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-support-resources">Moving resources</a> between Resource Groups is possible, but not between Subscriptions. 
     
-4.  <a href="#PHASE04"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a><strong>other System Administrators</strong> assigned from within the people organization are setup with automation and trained by Global Admins.
+4.  <a href="#PHASE04"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Admins would work with <strong>Finance</strong> to work through financial workflows and oversight of the <strong>Payments</strong> for <strong>billings</strong> associated with each Subscription and <a href="#Licenses">licenses</a>. Bills are paid for by <strong>credit cards or invoices</strong> set through a Microsoft salesperson or Cloud Service Provider.
 
-5.  <a href="#PHASE05"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Admins would work with <strong>Finance</strong> to work through financial workflows and oversight of the <strong>Payments</strong> for <strong>billings</strong> associated with each Subscription and <a href="#Licenses">licenses</a>. Bills are paid for by <strong>credit cards or invoices</strong> set through a Microsoft salesperson or Cloud Service Provider.
+5.  <a href="#Licenses"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>PROTIP: A firm decision on what <strong>Licenses</strong> the enterprise will pay for can (contiunually) minimizes rework in automation efforts and workflow documentation. A <a href="#P1vsP2">P2</a> license for each user is needed for enterprises to use Azure securely. Among P2 features are MFA (Multi-Factor) verification, a crucial security feature.
 
-6.  <a href="#PHASE06"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>PROTIP: A firm decision on what <strong>Licenses</strong> the enterprise will pay for can minimize rework in automation efforts and workflow documentation.  
+6.  <a href="#PHASE06"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a><strong>other System Administrators</strong> assigned from within the people organization are setup with automation and trained by Global Admins.
 
-    With a paid P2 license for each user to use Azure securely. Most enterprises go with the <a href="#P1vsP2">P2</a> for mobile MFA (Multi-Factor) verification, a crucial security feature.
+5.  Automation
 
 7.  <a href="#PHASE07"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>End Users</strong></a> on Entra are usually provisioned by responding to requests from <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/app-provisioning/plan-cloud-hr-provision">external HR systems</a> such as Workday, SuccessFactors, Oracle Peoplesoft.
 
@@ -92,7 +94,7 @@ PHASES:
 
     To minimize mistakes and abuse at enterprise scale, <strong>repeatability</strong> is needed to efficiently set up a whole enterprise full of users and resources. That's why <strong>IaC (Infrastructure as Code)</strong> automation is needed.
 
-13. <a href="#PHASE13"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Commands to create each Resource require a <a href="#ResourceGroups"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>Resource Group</strong></a> to be specified. Since Resource Groups being created must specify a Subscription, Azure knows how to bill for each Resource.
+13. <a href="#PHASE13"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Commands to create each Resource require <a href="#ResourceGroups"><strong>Resource Group</strong></a> to be specified. Since Resource Groups being created must specify a Subscription, Azure knows how to bill for each Resource.
 
 14. <a href="#PHASE14"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Use of some services need to be <strong>Registered</strong>. For example, use of Entra ID B2C needs to be registered to an Entra ID Tenant.
 
@@ -120,7 +122,7 @@ PHASES:
 
     Boxes within dotted lines represents the <strong>paired region</strong> where Azure automatically sends back up data so they can restore everything in case of disaster in any given region. This is a major differentiator for Azure versus AWS which makes each customer do their own backup and recovery. 
     
-16. <a href="#PHASE16"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Use of our automation enables iterations to be quicker because of the written confirmation produced. <a href="#IaC"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>There are several options for automating <strong>Bicep</strong> scripts to create resources. This is now favored over <strike>Terraform</strike>. Use of Bicep involves transpiling its YAML-formatted contents into the JSON format of <strong>ARM templates</strong>. Also, Microsoft has stopped development of its <a href="#Blueprints">"Blueprints"</a>) in favor of <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-specs?tabs=azure-powershell">Template Specs</a>).
+16. <a href="#PHASE16"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Use of <a href="#IaC">automation</a> enables iterations to be quicker because of the written confirmation produced. There are several options for automating <strong>Bicep</strong> scripts to create resources. This is now favored over <strike>Terraform</strike>. Use of Bicep involves transpiling its YAML-formatted contents into the JSON format of <strong>ARM templates</strong>. Also, Microsoft has stopped development of its <a href="#Blueprints">"Blueprints"</a>) in favor of <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-specs?tabs=azure-powershell">Template Specs</a>).
 
     Because it takes some effort to configure each resource according to <strong>documentation</strong> for each service, an important part of automation is to <strong>audit</strong> scripts. 
 
@@ -169,7 +171,7 @@ PHASES:
 
 Recap:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1697016934/azure-flow-1724x872_t27y4s.png"><img alt="azure-flow-1724x872.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1697016934/azure-flow-1724x872_t27y4s.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my animated PowerPoint file on GumRoad</a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701716482/azure-onboarding-ent-flow-1707x872_afgcsc.png"><img alt="azure-onboarding-ent-flow-1707x872.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701716482/azure-onboarding-ent-flow-1707x872_afgcsc.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my animated PowerPoint file on GumRoad</a>.
 
 <hr />
 
@@ -214,6 +216,7 @@ The set of services to create and manage <strong>resources</strong> (such as net
 <br /><br />
 
 
+<a name="PHASE02"></a>
 <a name="Automation"></a>
 
 ## Summary of Automation
@@ -661,9 +664,10 @@ https://azure.microsoft.com/en-us/free/free-account-faq</a> lists services which
 
 <hr />
 
+<a name="PHASE03"></a>
 <a name="PeopleInfo"></a>
 
-## PHASE 02. People Information
+## PHASE 03. People Information
 
 PROTIP: Python program generates an organization chart graphic from a csv spreadsheet file.
 
@@ -692,6 +696,7 @@ Search for what to "REMEMBER" to pass <a target="_blank" href="https://wilsonmar
 
 <hr />
 
+<a name="PHASE04"></a>
 <a name="Administrators"></a>
 
 ## PHASE 02. Administrators
@@ -771,7 +776,7 @@ and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-archit
 
 <a name="Tenants"></a>
 
-## Phase 07. Tenants
+## Tenants
 
    The Azure SaaS service separates different customers into different <strong>tenants</strong> (like tenants in an apartment building). Each tenant is a dedicated, isolated instance of the AAD/Entra service, owned and managed by an organization. 
 
@@ -793,7 +798,7 @@ and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-archit
 
 <a name="GlobalAdmin"></a>
 
-## PHASE 03. Global Administrator
+## Global Administrators
 
 <strong>Global Administrators</strong> are aka "Company Administrators" in Entra ID because they have access to <strong>almody all services</strong> that impact AAD/Entra identities (Microsoft 365 security center, Intune, Microsoft 365 compliance center, Exchange Online, SharePoint Online, Skype for Business Online, etc.).
 
@@ -1535,7 +1540,7 @@ https://levelup.gitconnected.com/build-a-custom-url-shortener-using-azure-functi
 
 <a name="Subscriptions"></a>
 
-## PHASE 03. Subscriptions
+## Subscriptions
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=LMAC0IIYSJM&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=17">VIDEO KnowOps</a>
    <br /><br />
@@ -2615,7 +2620,7 @@ the "Domain" text is a combination of the root account email address text in fro
 
     <a name="License"></a>
     
-    ### Tenant License
+    ## Licenses
 
     Each license has its own options.
 
