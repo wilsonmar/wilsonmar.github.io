@@ -675,11 +675,8 @@ They offer a $5,499/year bundle for unlimited labs and exam attempts.
 ## SANS
 
 SANS formed the Global Information Assurance Certification (GIAC) program to act as the certification arm for its training courses.
-GIAC has a https://www.giac.org/certifications/get-certified/roadmap
-to dozen of exams across six specific domains. It offers remote proctoring through ProctorU.
-
-GIAC offers two levels: First attempts at the Practitioner level are $979. At the <a href="#SANS+Expert">Applied Knowledge level are "GX" or "Experienced" level exams</a>, it's $1,299 or $499 if a GIAC is active. 
-Retakes are $100 less. Renewals ar $479 at all levels. The exams and classes by 8 focus areas (Cyber Specialities):
+GIAC has a <a target="_blank" href="https://www.giac.org/certifications/get-certified/roadmap">roadmap</a>
+to dozen of exams across eight focus areas. Remote proctoring is offered through ProctorU.
 
    <ul>A. Cybersecurity and IT Essentials<br />
    B. Security Management, Legal, and Audit<br />
@@ -691,6 +688,9 @@ Retakes are $100 less. Renewals ar $479 at all levels. The exams and classes by 
    H. Industrial Control Systems Security<br />
    </ul>
    
+GIAC offers two levels: First attempts at the Practitioner level are $979. At the <a href="#SANS+Expert">Applied Knowledge level are "GX" or "Experienced" level exams</a>, it's $1,299 or $499 if a GIAC is active. 
+Retakes are $100 less. Renewals ar $479 at all levels. The exams and classes by 8 focus areas (Cyber Specialities):
+
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom" align="left"><th>Cert</th><th>Description</th><th>Class</th><th>A. Ess</th><th>B. SM</th><th>C. CD</th><th>D. Cloud</th><th>E. IR</th><th>F. PT</th><th>G. OS</th><th>H. ICS</th></tr>
