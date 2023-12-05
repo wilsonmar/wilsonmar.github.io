@@ -740,6 +740,54 @@ SEC566: Implementing and Auditing Security Frameworks and Controls
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 
+<tr valign="top" align="left"><td>GCIA</td><td>Certified Intrusion Analyst</td><td>SEC503</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top" align="left"><td>GX-IH</td><td>Experienced Incident Handler</td><td>SEC504: Hacker Tools, Techniques, Exploits, and Incident Handling</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top" align="left"><td>GX-CS</td><td>Experienced Cyber Security</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+   
+<tr valign="top" align="left"><td>GMLE</td><td>Machine Learning Engineer</td><td>SEC595</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top" align="left"><td>GCDA</td><td>Certified Detection Analyst</td><td>SEC555: SIEM with Tactical Analytics</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top" align="left"><td>GCWN</td><td>Certified Windows (Security) Administrator</td><td>SEC505</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top" align="left"><td>GMON</td><td>(Continuous) Monitoring</td><td>SEC511</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top" align="left"><td>GDSA</td><td>Defensible Security Architect</td><td>SEC530: Zero Trust</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top" align="left"><td>GSOC</td><td>Security Operations Certified</td><td>SEC450: Blue Team Fundamentals: Security Operations and Analysis</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top" align="left"><td>GOSI</td><td>Open Source Intelligence</td><td>SEC487</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top" align="left"><td>GISP</td><td>Information Security Professional</td><td>LDR414: SANS Training Program for CISSP® Certification</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top" align="left"><td>GSOM</td><td>Security Operations Manager</td><td>LDR551: Building, Leading, & Managing (SOC) Security Operations Center</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top" align="left"><td>GCIH</td><td>Certified Incident Handler</td><td>SEC504: Hacker Tools, Techniques, and Incident Handling</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top" align="left"><td>GDAT</td><td>Defending Advanced Threats</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top" align="left"><td>GFACT</td><td>Foundational Cybersecurity Technologies</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+
+
+
 <tr valign="top" align="left"><td>GX-FA</td><td>Experienced Forensic Analyst</td><td>
 -</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
@@ -792,51 +840,6 @@ FOR610</td><td>
 <tr valign="top" align="left"><td>GPCS</td><td>Public Cloud Security</td><td>SEC510</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr valign="top" align="left"><td>GCFR</td><td>Cloud Forensics Responder</td><td>FOR509</td><td>-</td><td>-</td><td>-</td><td>X</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 <tr valign="top" align="left"><td>GCPN</td><td>Cloud Penetration Tester</td><td>SEC588</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>X</td><td>-</td></tr>
-
-<tr valign="top" align="left"><td>GCIA</td><td>Certified Intrusion Analyst</td><td>SEC503</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
-<tr valign="top" align="left"><td>GX-IH</td><td>Experienced Incident Handler</td><td>SEC504: Hacker Tools, Techniques, Exploits, and Incident Handling</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
-<tr valign="top" align="left"><td>GX-CS</td><td>Experienced Cyber Security</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-   
-<tr valign="top" align="left"><td>GMLE</td><td>Machine Learning Engineer</td><td>SEC595</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
-<tr valign="top" align="left"><td>GCDA</td><td>Certified Detection Analyst</td><td>SEC555: SIEM with Tactical Analytics</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
-<tr valign="top" align="left"><td>GCWN</td><td>Certified Windows (Security) Administrator</td><td>SEC505</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
-<tr valign="top" align="left"><td>GMON</td><td>(Continuous) Monitoring</td><td>SEC511</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
-<tr valign="top" align="left"><td>GDSA</td><td>Defensible Security Architect</td><td>SEC530: Zero Trust</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
-<tr valign="top" align="left"><td>GSOC</td><td>Security Operations Certified</td><td>SEC450: Blue Team Fundamentals: Security Operations and Analysis</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
-<tr valign="top" align="left"><td>GOSI</td><td>Open Source Intelligence</td><td>SEC487</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
-<tr valign="top" align="left"><td>GISP</td><td>Information Security Professional</td><td>LDR414: SANS Training Program for CISSP® Certification</td><td>X</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
-<tr valign="top" align="left"><td>GSOM</td><td>Security Operations Manager</td><td>LDR551: Building, Leading, & Managing (SOC) Security Operations Center</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
-<tr valign="top" align="left"><td>GCIH</td><td>Certified Incident Handler</td><td>SEC504: Hacker Tools, Techniques, and Incident Handling</td><td>X</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
-<tr valign="top" align="left"><td>GDAT</td><td>Defending Advanced Threats</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
-<tr valign="top" align="left"><td>GFACT</td><td>Foundational Cybersecurity Technologies</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 
 
