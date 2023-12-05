@@ -694,6 +694,17 @@ Retakes are $100 less. Renewals ar $479 at all levels. The exams and classes by 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom" align="left"><th>Cert</th><th>Description</th><th>Class</th><th>A. Ess</th><th>B. SM</th><th>C. CD</th><th>D. Cloud</th><th>E. IR</th><th>F. PT</th><th>G. OS</th><th>H. ICS</th></tr>
 
+<tr valign="top" align="left"><td>GSEC</td><td>Security Essentials</td><td>SEC401</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GCED</td><td>Certified Enterprise Defender</td><td>SEC501</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GISF</td><td>Information Security Fundamentals</td><td>SEC301</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td>GCIH</td><td>Certified Incident Handler</td><td>
+SEC504: Hacker Tools, Techniques, and Incident Handling
+</td><td>X</td><td>-</td><td>X</td><td>-</td><td>X</td><td>X</td><td>-</td><td>-</td></tr>
+
+
 <tr valign="top" align="left"><td>GCPM</td><td>GIAC Certified Project Manager</td><td>
 MGT525: Managing Cybersecurity Initiatives & Effective Communication
 </td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
@@ -722,34 +733,10 @@ MGT514
 AUD507: Auditing Systems, Applications, and the Cloud
 </td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td>GCIH</td><td>Certified Incident Handler</td><td>
-SEC504: Hacker Tools, Techniques, and Incident Handling
-</td><td>X</td><td>-</td><td>X</td><td>-</td><td>X</td><td>X</td><td>-</td><td>-</td></tr>
-
 
 <tr valign="top" align="left"><td>GCCC</td><td>Critical Controls Certification</td><td>
 SEC566: Implementing and Auditing Security Frameworks and Controls
 </td><td>-</td><td>X</td><td>-</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
-
-<tr valign="top" align="left"><td></td><td>GLEG</td><td>Law of Data Security & Investigations</td><td>
-LEG523</td><td>Security Management, Legal, and Audit
-</td><td>-</td><td>X</td><td>-</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
-<tr valign="top" align="left"><td></td><td>GSLC</td><td>Security Leadership Cert</td><td>
-MGT512
-</td><td>-</td><td>X</td><td>-</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
-<tr valign="top" align="left"><td></td><td>GSTRT</td><td>Strategic Planning, Policy, and Leadership</td><td>
-MGT514
-</td><td>-</td><td>X</td><td>-</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
-<tr valign="top" align="left"><td></td><td>GSNA</td><td>Systems and Network Auditor</td><td>
-AUD507</td><td>-</td><td>X</td><td>-</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 
@@ -806,9 +793,6 @@ FOR610</td><td>
 <tr valign="top" align="left"><td>GCFR</td><td>Cloud Forensics Responder</td><td>FOR509</td><td>-</td><td>-</td><td>-</td><td>X</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 <tr valign="top" align="left"><td>GCPN</td><td>Cloud Penetration Tester</td><td>SEC588</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>X</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td>GSEC</td><td>Security Essentials</td><td>SEC401</td><td>X</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
 <tr valign="top" align="left"><td>GCIA</td><td>Certified Intrusion Analyst</td><td>SEC503</td><td>-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
@@ -824,9 +808,6 @@ FOR610</td><td>
 <tr valign="top" align="left"><td>GCDA</td><td>Certified Detection Analyst</td><td>SEC555: SIEM with Tactical Analytics</td><td>-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td>GCED</td><td>Certified Enterprise Defender</td><td>SEC501</td><td>X</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
 <tr valign="top" align="left"><td>GCWN</td><td>Certified Windows (Security) Administrator</td><td>SEC505</td><td>-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
@@ -834,9 +815,6 @@ FOR610</td><td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td>GDSA</td><td>Defensible Security Architect</td><td>SEC530: Zero Trust</td><td>-</td><td>-</td><td>X</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-
-<tr valign="top" align="left"><td>GISF</td><td>Information Security Fundamentals</td><td>SEC301</td><td>X</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td>GSOC</td><td>Security Operations Certified</td><td>SEC450: Blue Team Fundamentals: Security Operations and Analysis</td><td>-</td><td>-</td><td>X</td><td>-</td>
