@@ -894,21 +894,21 @@ FOR498: Digital Acquisition and Rapid Triage
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom" align="left"><th>Cert</th><th>Description</th><th>Class</th><th>A. Ess</th><th>B. SM</th><th>C. CD</th><th>D. Cloud</th><th>E. IR</th><th>F. PT</th><th>G. OS</th><th>H. ICS</th></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/experienced-penetration-tester-gxpt/">GX-PT</a></td><td>Experienced Penetration Tester</td><td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/experienced-penetration-tester-gxpt/">GX-PT</a></td><td>Experienced<br /> Penetration Tester</td><td>
 -</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/experienced-forensic-analyst-gxfa">GX-FA</a></td><td>Experienced Forensic Analyst</td><td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/experienced-forensic-analyst-gxfa">GX-FA</a></td><td>Experienced<br />Forensic Analyst</td><td>
 -</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/experienced-incident-handler-gxih">GX-IH</a></td><td>Experienced Incident Handler</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/experienced-incident-handler-gxih">GX-IH</a></td><td>Experienced<br />Incident Handler</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/experienced-cyber-security-gxcs">GX-CS</a></td><td>Experienced Cyber Security</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/experienced-cyber-security-gxcs">GX-CS</a></td><td>Experienced<br />Cyber Security</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
    
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/experienced-intrusion-analyst-gxia">GX-IA</a></td><td>Experienced Intrusion Analyst</td><td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/experienced-intrusion-analyst-gxia">GX-IA</a></td><td>Experienced<br />Intrusion Analyst</td><td>
 -</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
