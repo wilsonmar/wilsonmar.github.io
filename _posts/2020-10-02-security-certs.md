@@ -889,7 +889,7 @@ FOR498: Digital Acquisition and Rapid Triage
 
 <a name="SANS+Expert"></a>
 
-"Applied Knowledge" level exams are named with "GX-" or "Experienced" in their name:
+"Applied Knowledge" level exams are named with "GX-" and "Experienced" in their name:
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom" align="left"><th>Cert</th><th>Description</th><th>Class</th><th>A. Ess</th><th>B. SM</th><th>C. CD</th><th>D. Cloud</th><th>E. IR</th><th>F. PT</th><th>G. OS</th><th>H. ICS</th></tr>
@@ -902,7 +902,7 @@ FOR498: Digital Acquisition and Rapid Triage
 -</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td>GX-IH</td><td>Experienced Incident Handler</td><td>SEC504: Hacker Tools, Techniques, Exploits, and Incident Handling</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/experienced-incident-handler-gxih">GX-IH</a></td><td>Experienced Incident Handler</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/experienced-cyber-security-gxcs">GX-CS</a></td><td>Experienced Cyber Security</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
