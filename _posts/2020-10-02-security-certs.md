@@ -693,7 +693,7 @@ Retakes are $100 less. Renewals ar $479 at all levels. The exams and classes by 
 
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom" align="left"><th>Cert</th><th>Description</th><th>Class
+<tr valign="bottom" align="left"><th>Cert</th><th>Description</th><th>Class</th><th>Seq
 </th><th><a target="_blank" href="https://www.giac.org/certifications/?focus-area=cyber-security-it-essentials" title="Cybersecurity and IT Essentials">A. Ess</a>
 </th><th><a target="_blank" href="https://www.giac.org/certifications/?focus-area=security-management-legal-audit" title="Security Management, Legal, and Audit">B. SM</a>
 </th><th><a target="_blank" href="https://www.giac.org/certifications/?focus-area=cyber-defense" title="Cyber Defense">C. CD</a>
@@ -705,62 +705,69 @@ Retakes are $100 less. Renewals ar $479 at all levels. The exams and classes by 
 </th></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/advanced-smartphone-forensics-gasf">GASF</a></td><td>Advanced Smartphone Forensics</td><td>
-FOR585: Smartphone Forensic Analysis In-Depth</td><td>
+FOR585: Smartphone Forensic Analysis In-Depth</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>X</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/assessing-auditing-wireless-networks-gawn">GAWN</a></td><td>Assessing and Auditing Wireless Networks</td><td>
-SEC617: Wireless Penetration Testing and Ethical Hacking</td><td>
+SEC617: Wireless Penetration Testing and Ethical Hacking</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/battlefield-forensics-acquisition-gbfa">GBFA</a></td><td>Battlefield Forensics and Acquisition</td><td>
-FOR498: Digital Acquisition and Rapid Triage</td><td>
+FOR498: Digital Acquisition and Rapid Triage</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>X</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/critical-controls-certification-gccc">GCCC</a></td><td>Critical Controls Certification</td><td>
-SEC566: Implementing and Auditing Security Frameworks and Controls
-</td><td>-</td><td>X</td><td>-</td><td>-</td>
+SEC566: Implementing and Auditing Security Frameworks and Controls</td><td>?</td><td>
+-</td><td>X</td><td>-</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/certified-detection-analyst-gcda">GCDA</a></td><td>Certified Detection Analyst</td><td>SEC555: SIEM with Tactical Analytics</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/certified-detection-analyst-gcda">GCDA</a></td><td>Certified Detection Analyst</td><td>SEC555: SIEM with Tactical Analytics</td><td>?</td><td>
+-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/certified-enterprise-defender-gced">GCED</a></td><td>Certified Enterprise Defender</td><td>SEC501</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/certified-enterprise-defender-gced">GCED</a></td><td>Certified Enterprise Defender</td><td>SEC501</td><td>?</td><td>
+X</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/certified-forensic-analyst-gcfa">GCFA</a></td><td>Certified Forensic Analyst</td><td>
-FOR508: Advanced Incident Response, Threat Hunting, and Digital Forensics</td><td>
+FOR508: Advanced Incident Response, Threat Hunting, and Digital Forensics</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/certified-forensic-examiner-gcfe">GCFE</a></td><td>Certified Forensic Examiner</td><td>
-FOR500: Windows Forensic Analysis</td><td>
+FOR500: Windows Forensic Analysis</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/cloud-forensics-responder-gcfr">GCFR</a></td><td>Cloud Forensics Responder</td><td>
-FOR509</td><td>
+FOR509</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>X</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/certified-intrusion-analyst-gcia">GCIA</a></td><td>Certified Intrusion Analyst</td><td>SEC503</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/certified-intrusion-analyst-gcia">GCIA</a></td><td>Certified Intrusion Analyst</td><td>SEC503</td><td>?</td><td>
+-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/certified-incident-handler-gcih">GCIH</a></td><td>Certified Incident Handler</td><td>
-SEC504: Hacker Tools, Techniques, and Incident Handling
-</td><td>X</td><td>-</td><td>X</td><td>-</td><td>X</td><td>X</td><td>-</td><td>-</td></tr>
+SEC504: Hacker Tools, Techniques, and Incident Handling</td><td>?</td><td>
+X</td><td>-</td><td>X</td><td>-</td><td>X</td><td>X</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/critical-infrastructure-protection-gcip">GCIP</a></td><td>Critical Infrastructure Protection</td><td>ICS456: Essentials for NERC Critical Infrastructure Protection</td><td>-</td><td>-</td><td>-</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/critical-infrastructure-protection-gcip">GCIP</a></td><td>Critical Infrastructure Protection</td><td>ICS456: Essentials for NERC Critical Infrastructure Protection</td><td>?</td><td>
+-</td><td>-</td><td>-</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>X</td></tr>
 
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/cloud-security-essentials-gcld">GCLD</a></td><td>Cloud Security Essentials ?</td><td>SEC488</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/cloud-security-essentials-gcld">GCLD</a></td><td>Cloud Security Essentials ?</td><td>SEC488</td><td>?</td><td>
+-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/cloud-penetration-tester-gcpn">GCPN</a></td><td>Cloud Penetration Tester</td><td>
-SEC588</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>X</td><td>-</td></tr>
+SEC588</td><td>?</td><td>
+-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>X</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/certified-project-manager-gcpm">GCPM</a></td><td>GIAC Certified Project Manager</td><td>
-MGT525: Managing Cybersecurity Initiatives & Effective Communication
-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+MGT525: Managing Cybersecurity Initiatives & Effective Communication</td><td>?</td><td>
+-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/cloud-security-automation-gcsa">GCSA</a></td><td>Cloud Security Automation</td><td>SEC540</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>   
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/cloud-security-automation-gcsa">GCSA</a></td><td>Cloud Security Automation</td><td>SEC540</td><td>?</td><td>
+-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>   
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/cloud-threat-detection-gctd">GCTD</a></td><td>Cloud Threat Detection</td><td>SEC541</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
@@ -769,116 +776,129 @@ FOR578</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/certified-windows-security-administrator-gcwn">GCWN</a></td><td>Certified Windows (Security) Administrator</td><td>SEC505</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/certified-windows-security-administrator-gcwn">GCWN</a></td><td>Certified Windows (Security) Administrator</td><td>SEC505</td><td>?</td><td>
+-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/defending-advanced-threats-gdat">GDAT</a></td><td>Defending Advanced Threats</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/defending-advanced-threats-gdat">GDAT</a></td><td>Defending Advanced Threats</td><td>?</td><td>
+-</td><td>-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/defensible-security-architecture-gdsa">GDSA</a></td><td>Defensible Security Architect</td><td>SEC530: Zero Trust</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/defensible-security-architecture-gdsa">GDSA</a></td><td>Defensible Security Architect</td><td>SEC530: Zero Trust</td><td>?</td><td>
+-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/enterprise-vulnerability-assessor-geva">GEVA</a></td><td>Enterprise Vulnerability Assessor</td><td>
-</td><td>
+-</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/foundational-cybersecurity-technologies-gfact">GFACT</a></td><td>Foundational Cybersecurity Technologies</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/foundational-cybersecurity-technologies-gfact">GFACT</a></td><td>Foundational Cybersecurity Technologies</td><td>?</td><td>
+-</td><td>-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/global-industrial-cyber-security-professional-gicsp">GICSP</a></td><td>Global Industrial Cyber Security Professional</td><td>ICS410: ICS/SCADA Security Essentials</td><td>-</td><td>-</td><td>-</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/global-industrial-cyber-security-professional-gicsp">GICSP</a></td><td>Global Industrial Cyber Security Professional</td><td>ICS410: ICS/SCADA Security Essentials</td><td>?</td><td>
+-</td><td>-</td><td>-</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>X</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/ios-macos-examiner-gime">GIME</a></td><td>iOS and macOS Examiner</td><td>
-FOR518: Mac and iOS Forensic Analysis and Incident Response</td><td>
+FOR518: Mac and iOS Forensic Analysis and Incident Response</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/information-security-fundamentals-gisf">GISF</a></td><td>Information Security Fundamentals</td><td>SEC301</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/information-security-fundamentals-gisf">GISF</a></td><td>Information Security Fundamentals</td><td>SEC301</td><td>?</td><td>
+X</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/information-security-professional-gisp">GISP</a></td><td>Information Security Professional</td><td>LDR414: SANS Training Program for CISSP® Certification</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/information-security-professional-gisp">GISP</a></td><td>Information Security Professional</td><td>LDR414: SANS Training Program for CISSP® Certification</td><td>?</td><td>
+X</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/law-data-security-investigations-gleg">GLEG</a></td><td>Law of Data Security & Investigations</td><td>
-LEG523
-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+LEG523</td><td>?</td><td>
+-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/machine-learning-engineer-gmle">GMLE</a></td><td>Machine Learning Engineer</td><td>SEC595</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/machine-learning-engineer-gmle">GMLE</a></td><td>Machine Learning Engineer</td><td>SEC595</td><td>?</td><td>
+-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/mobile-device-security-analyst-gmob">GMOB</a></td><td>Mobile (Device Security Analyst)</td><td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/mobile-device-security-analyst-gmob">GMOB</a></td><td>Mobile (Device Security Analyst)</td><td>?</td><td>
 SEC575: iOS and Android Application Security Analysis and Penetration Testing</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/continuous-monitoring-certification-gmon">GMON</a></td><td>(Continuous) Monitoring</td><td>SEC511</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/continuous-monitoring-certification-gmon">GMON</a></td><td>(Continuous) Monitoring</td><td>SEC511</td><td>?</td><td>
+-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/network-forensic-analyst-gnfa">GNFA</a></td><td>Network Forensic Analyst</td><td>
-FOR572: Advanced Network Forensics: Threat Hunting, Analysis, and Incident Response</td><td>
+FOR572: Advanced Network Forensics: Threat Hunting, Analysis, and Incident Response</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/open-source-intelligence-gosi">GOSI</a></td><td>Open Source Intelligence</td><td>SEC487</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/open-source-intelligence-gosi">GOSI</a></td><td>Open Source Intelligence</td><td>SEC487</td><td>?</td><td>
+-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/public-cloud-security-gpcs">GPCS</a></td><td>Public Cloud Security</td><td>SEC510</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/public-cloud-security-gpcs">GPCS</a></td><td>Public Cloud Security</td><td>SEC510</td><td>?</td><td>
+-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/penetration-tester-gpen">GPEN</a></td><td>Penetration Tester</td><td>
-SEC560</td><td>
+SEC560</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/python-coder-gpyc">GPYC</a></td><td>Python Coder</td><td>
-SEC573: Automating Information Security with Python</td><td>
+SEC573: Automating Information Security with Python</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/reverse-engineering-malware-grem">GREM</a></td><td>Reverse Engineering Malware</td><td>
-FOR610</td><td>
+FOR610</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/response-industrial-defense-grid">GRID</a></td><td>Response and Industrial Defense</td><td>
-ICS515: ICS Visibility, Detection, and Response</td><td>
+ICS515: ICS Visibility, Detection, and Response</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>X</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/red-team-professional-grtp">GRTP</a></td><td>Red Team Professional</td><td>
-SEC565: Red Team Operations and Adversary Emulation</td><td>
+SEC565: Red Team Operations and Adversary Emulation</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/security-essentials-gsec/">GSEC</a></td><td>Security Essentials</td><td>SEC401</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/security-essentials-gsec/">GSEC</a></td><td>Security Essentials</td><td>SEC401</td><td>?</td><td>
+X</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/security-leadership-gslc">GSLC</a></td><td>Security Leadership</td><td>
-MGT512: Leadership Essentials for Security Managers
-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+MGT512: Leadership Essentials for Security Managers</td><td>?</td><td>
+-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/systems-network-auditor-gsna">GSNA</a></td><td>Systems and Network Auditor</td><td>
-AUD507: Auditing Systems, Applications, and the Cloud
-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+AUD507: Auditing Systems, Applications, and the Cloud</td><td>?</td><td>
+-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/security-operations-certified-gsoc">GSOC</a></td><td>Security Operations Certified</td><td>SEC450: Blue Team Fundamentals: Security Operations and Analysis</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/security-operations-certified-gsoc">GSOC</a></td><td>Security Operations Certified</td><td>SEC450: Blue Team Fundamentals: Security Operations and Analysis</td><td>?</td><td>
+-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/security-operations-manager-gsom">GSOM</a></td><td>Security Operations Manager</td><td>
-LDR551: Building, Leading, & Managing (SOC) Security Operations Center
-</td><td>-</td><td>-</td><td>X</td><td>-</td>
+LDR551: Building, Leading, & Managing (SOC) Security Operations Center</td><td>?</td><td>
+-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/strategic-planning-policy-leadership-gstrt">GSTRT</a></td><td>Strategic Planning, Policy, and Leadership</td><td>
-MGT514
-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/strategic-planning-policy-leadership-gstrt">GSTRT</a></td><td>Strategic Planning, Policy, and Leadership</td><td>?</td><td>
+MGT514</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/web-application-penetration-tester-gwapt">GWAPT</a></td><td>Web Application Penetration Tester</td><td>
-SEC542</td><td>
+SEC542</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/certified-web-application-defender-gweb">GWEB</a></td><td>Web Application Defender</td><td>SEC522</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/certified-web-application-defender-gweb">GWEB</a></td><td>Web Application Defender</td><td>SEC522</td><td>?</td><td>
+-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/exploit-researcher-advanced-penetration-tester-gxpn">GXPN</a></td><td>Exploit Researcher and Advanced Penetration Tester</td><td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/exploit-researcher-advanced-penetration-tester-gxpn">GXPN</a></td><td>Exploit Researcher and Advanced Penetration Tester</td><td>?</td><td>
 SEC660: Advanced Penetration Testing, Exploit Writing, and Ethical Hacking</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
