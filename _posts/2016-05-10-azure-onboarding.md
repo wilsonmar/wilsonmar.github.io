@@ -28,7 +28,7 @@ This article is what I've learned so far about how an initial administrator gets
 
 <a target="_blank" href="https://youtu.be/lwReERW_Pqo"><img align="left" alt="youtube-1024x721.png" width="50" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696234162/youtube-1024x721_ful6ky.png"><strong>Click here for a <strong>step-by-step</strong> 1-minute YouTube video</strong></a> (with no sound) about the <strong>sequence of work</strong> to setup a whole enterprise with Azure technologies in the cloud:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701750168/azure-onboarding-231204a-2998x1540_fegjig.png"><img alt="azure-onboarding-231204a-2998x1540.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701750168/azure-onboarding-231204a-2998x1540_fegjig.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my animated PowerPoint file on GumRoad</a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701750168/azure-onboarding-231204a-2998x1540_fegjig.png"><img alt="azure-onboarding-231204a-2998x1540.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701750168/azure-onboarding-231204a-2998x1540_fegjig.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my animated PowerPoint file available on GumRoad</a>.
 
 PHASES:
 
@@ -170,7 +170,7 @@ PHASES:
 
 Recap:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701750168/azure-onboarding-231204a-2998x1540_fegjig.png"><img alt="azure-onboarding-231204a-2998x1540.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701750168/azure-onboarding-231204a-2998x1540_fegjig.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my animated PowerPoint file on GumRoad</a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701750168/azure-onboarding-231204a-2998x1540_fegjig.png"><img alt="azure-onboarding-231204a-2998x1540.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701750168/azure-onboarding-231204a-2998x1540_fegjig.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my animated PowerPoint file available on GumRoad</a>.
 
 <hr />
 
