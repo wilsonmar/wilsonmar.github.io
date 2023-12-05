@@ -682,7 +682,7 @@ GIAC offers two levels: First attempts at the Practitioner level are $979. At th
 Retakes are $100 less. Renewals ar $479 at all levels. The exams and classes by 8 Cyber Specialities:
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom"><th>Cert</th><th>Class</th><th>A. Ess</th><th>B. SM</th><th>C. CD</th><th>D. Cloud</th><th>E. IR</th><th>F. PT</th><th>G. OS</th><th>H. ICS</th></tr>
+<tr valign="bottom"><th>Cert</th><th>Description</th><th>Class</th><th>A. Ess</th><th>B. SM</th><th>C. CD</th><th>D. Cloud</th><th>E. IR</th><th>F. PT</th><th>G. OS</th><th>H. ICS</th></tr>
 <tr valign="top"><td>CWEB</td><td>Web Application Defender</td><td>SEC522</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr valign="top"><td>GCSA</td><td>Cloud Security Automation</td><td>SEC540</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>   
 <tr valign="top"><td>GCLD</td><td>Cloud Security Essentials ?</td><td>SEC488</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
@@ -690,6 +690,60 @@ Retakes are $100 less. Renewals ar $479 at all levels. The exams and classes by 
 <tr valign="top"><td>GPCS</td><td>Public Cloud Security</td><td>SEC510</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr valign="top"><td>GCFR</td><td>Cloud Forensics Responder</td><td>FOR509</td><td>-</td><td>-</td><td>-</td><td>X</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr valign="top"><td>GCPN</td><td>Cloud Penetration Tester</td><td>SEC588</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GSEC</td><td>Security Essentials</td><td>SEC401</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GCIA</td><td>Certified Intrusion Analyst</td><td>SEC503</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GX-IH</td><td>Experienced Incident Handler</td><td>SEC504: Hacker Tools, Techniques, Exploits, and Incident Handling</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GX-CS</td><td>Experienced Cyber Security</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+   
+<tr valign="top"><td>GMLE</td><td>Machine Learning Engineer</td><td>SEC595</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GCDA</td><td>Certified Detection Analyst</td><td>SEC555: SIEM with Tactical Analytics</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GCED</td><td>Certified Enterprise Defender</td><td>SEC501</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GCWN</td><td>Certified Windows (Security) Administrator</td><td>SEC505</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GMON</td><td>(Continuous) Monitoring</td><td>SEC511</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GDSA</td><td>Defensible Security Architect</td><td>SEC530: Zero Trust</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GISF</td><td>Information Security Fundamentals</td><td>SEC301</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GSOC</td><td>Security Operations Certified</td><td>SEC450: Blue Team Fundamentals: Security Operations and Analysis</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GOSI</td><td>Open Source Intelligence</td><td>SEC487</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GISP</td><td>Information Security Professional</td><td>LDR414: SANS Training Program for CISSP® Certification</td><td>X</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GSOM</td><td>Security Operations Manager</td><td>LDR551: Building, Leading, & Managing (SOC) Security Operations Center</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GCIH</td><td>Certified Incident Handler</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GDAT</td><td>Defending Advanced Threats</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GFACT</td><td>Foundational Cybersecurity Technologies</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 </table>
 
 A. Cybersecurity and IT Essentials
