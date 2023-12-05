@@ -694,7 +694,7 @@ Retakes are $100 less. Renewals ar $479 at all levels. The exams and classes by 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th>Cert</th><th>Description</th><th>Class</th><th>A. Ess</th><th>B. SM</th><th>C. CD</th><th>D. Cloud</th><th>E. IR</th><th>F. PT</th><th>G. OS</th><th>H. ICS</th></tr>
 
-<tr valign="top"><td>GCPM</td><td>GIAC Certified Project Manager ()
+<tr valign="top"><td>GCPM</td><td>GIAC Certified Project Manager</td><td>
 MGT525: Managing Cybersecurity Initiatives & Effective Communication
 </td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
@@ -751,6 +751,51 @@ MGT514
 <tr valign="top"><td></td><td>GSNA</td><td>Systems and Network Auditor</td><td>
 AUD507</td><td>-</td><td>X</td><td>-</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+
+<tr valign="top"><td>GX-FA</td><td>Experienced Forensic Analyst</td><td>
+-</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GCTI</td><td>Cyber Threat Intelligence</td><td>
+FOR578</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GRID</td><td>Response and Industrial Defense</td><td>
+ICS515: ICS Visibility, Detection, and Response</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GASF</td><td>Advanced Smartphone Forensics</td><td>
+FOR585: Smartphone Forensic Analysis In-Depth</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GBFA</td><td>Battlefield Forensics and Acquisition</td><td>
+FOR498: Digital Acquisition and Rapid Triage</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GCFA</td><td>Certified Forensic Analyst</td><td>
+FOR508: Advanced Incident Response, Threat Hunting, and Digital Forensics</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GCFE</td><td>Certified Forensic Examiner</td><td>
+FOR500: Windows Forensic Analysis</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GCFR</td><td>Cloud Forensics Responder</td><td>
+FOR509: Enterprise Cloud Forensics and Incident Response</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GIME</td><td>iOS and macOS Examiner</td><td>
+FOR518: Mac and iOS Forensic Analysis and Incident Response</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GNFA</td><td>Network Forensic Analyst</td><td>
+FOR572: Advanced Network Forensics: Threat Hunting, Analysis, and Incident Response</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GREM</td><td>Reverse Engineering Malware</td><td>
+FOR610</td><td>
+-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 
 <tr valign="top"><td>CWEB</td><td>Web Application Defender</td><td>SEC522</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
