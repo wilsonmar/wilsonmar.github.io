@@ -62,11 +62,13 @@ PHASES:
 
 10. <a href="#Administrators"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>System Administrators</strong></a> implement for the portion assigned to them <strong>Roles</strong> needed to perform <strong>Actions</strong> on <strong>Resources</strong> within <strong>Scopes</strong> defined.
 
-11.  <a href="#PHASE11"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>End Users</strong></a> on Entra are usually provisioned by responding to requests from <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/app-provisioning/plan-cloud-hr-provision">external HR systems</a> such as Workday, SuccessFactors, Oracle Peoplesoft.
+    Automatic resource deletion locks are set to prevent one group deleting resources needed by another, such as an ExpressRoute circuit with connectivity back on the on-premises network.
 
-12.  <a href="#PHASE12"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>When MFA (Multi-Factor Authentication) is available for each user, users can register their mobile <strong>Devices</strong> for <strong>identity verification</strong>.
+11. <a href="#PHASE11"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"><strong>End Users</strong></a> on Entra are usually provisioned by responding to requests from <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/app-provisioning/plan-cloud-hr-provision">external HR systems</a> such as Workday, SuccessFactors, Oracle Peoplesoft.
 
-13.  <a href="#PHASE13"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a><a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/concept-learn-about-groups">Using groups</a> enables Administrators to assign a set of access permissions to all members of the group. 
+12. <a href="#PHASE12"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>When MFA (Multi-Factor Authentication) is available for each user, users can register their mobile <strong>Devices</strong> for <strong>identity verification</strong>.
+
+13. <a href="#PHASE13"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a><a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/concept-learn-about-groups">Using groups</a> enables Administrators to assign a set of access permissions to all members of the group. 
 
     P2 licenses enable users to automatically be joined to <strong>Security Groups</strong> dynamically, which saves manual time and effort in assigning Roles and Policies to each User.
 

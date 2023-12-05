@@ -3369,6 +3369,8 @@ https://www.pulseconferences.com/
 
 ## Resources
 
+https://www.microsoft.com/en-us/cybersecurity/content-hub/cybersecurity-policy-framework
+
 
 ## More on Security #
 
