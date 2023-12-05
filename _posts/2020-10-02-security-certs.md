@@ -693,7 +693,16 @@ Retakes are $100 less. Renewals ar $479 at all levels. The exams and classes by 
 
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom" align="left"><th>Cert</th><th>Description</th><th>Class</th><th>A. Ess</th><th>B. SM</th><th>C. CD</th><th>D. Cloud</th><th>E. IR</th><th>F. PT</th><th>G. OS</th><th>H. ICS</th></tr>
+<tr valign="bottom" align="left"><th>Cert</th><th>Description</th><th>Class
+</th><th><a target="_blank" href="https://www.giac.org/certifications/?focus-area=cyber-security-it-essentials" title="Cybersecurity and IT Essentials">A. Ess</a>
+</th><th><a target="_blank" href="https://www.giac.org/certifications/?focus-area=security-management-legal-audit" title="Security Management, Legal, and Audit">B. SM</a>
+</th><th><a target="_blank" href="https://www.giac.org/certifications/?focus-area=cyber-defense" title="Cyber Defense">C. CD</a>
+</th><th><a target="_blank" href="https://www.giac.org/certifications/?focus-area=cloud-security" title="Cloud Security">D. Cloud</a>
+</th><th><a target="_blank" href="https://www.giac.org/certifications/?focus-area=digital-forensics" title="Digital Forensics, Incident Response & Threat Hunting">E. IR</a>
+</th><th><a target="_blank" href="https://www.giac.org/certifications/?focus-area=offensive-operations" title="Offensive Operations, Pen Testing, and Red Teaming">F. PT</a>
+</th><th><a target="_blank" href="https://www.giac.org/certifications/?focus-area=operating-system-device-in-depth" title="Operating System & Device In-Depth">G. OS</a>
+</th><th><a target="_blank" href="https://www.giac.org/certifications/?focus-area=industrial-control-systems-security" title="Industrial Control Systems Security">H. ICS</a>
+</th></tr>
 
 <tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/advanced-smartphone-forensics-gasf">GASF</a></td><td>Advanced Smartphone Forensics</td><td>
 FOR585: Smartphone Forensic Analysis In-Depth</td><td>
