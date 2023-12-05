@@ -681,8 +681,78 @@ to dozen of exams across six specific domains. It offers remote proctoring throu
 GIAC offers two levels: First attempts at the Practitioner level are $979. At the Applied Knowledge level, it's $1,299 or $499 if a GIAC is active. 
 Retakes are $100 less. Renewals ar $479 at all levels. The exams and classes by 8 Cyber Specialities:
 
+   <ul>A. Cybersecurity and IT Essentials<br />
+   B. Security Management, Legal, and Audit<br />
+   C. Cyber Defense<br />
+   D. Cloud Security<br />
+   E. Digital Forensics, Incident Response & Threat Hunting<br />
+   F. Offensive Operations, Pen Testing, and Red Teaming<br />
+   G. Operating System & Device In-Depth<br />
+   H. Industrial Control Systems Security<br />
+   </ul>
+
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th>Cert</th><th>Description</th><th>Class</th><th>A. Ess</th><th>B. SM</th><th>C. CD</th><th>D. Cloud</th><th>E. IR</th><th>F. PT</th><th>G. OS</th><th>H. ICS</th></tr>
+
+<tr valign="top"><td>GCPM</td><td>GIAC Certified Project Manager ()
+MGT525: Managing Cybersecurity Initiatives & Effective Communication
+</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GCCC</td><td>Critical Controls Certification</td><td>
+SEC566: Implementing and Auditing Security Frameworks and Controls
+</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GLEG</td><td>Law of Data Security & Investigations</td><td>
+LEG523
+</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GSLC</td><td>Security Leadership</td><td>
+MGT512: Leadership Essentials for Security Managers
+</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GSOM</td><td>Security Operations Manager</td><td>
+LDR551: Building, Leading, & Managing (SOC) Security Operations Center
+</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GSTRT</td><td>Strategic Planning, Policy, and Leadership</td><td>
+MGT514
+</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GSNA</td><td>Systems and Network Auditor</td><td>
+AUD507: Auditing Systems, Applications, and the Cloud
+</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td>GCIH</td><td>Certified Incident Handler</td><td>
+SEC504: Hacker Tools, Techniques, and Incident Handling
+</td><td>X</td><td>-</td><td>X</td><td>-</td><td>X</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
+
+
+<tr valign="top"><td>GCCC</td><td>Critical Controls Certification</td><td>
+SEC566: Implementing and Auditing Security Frameworks and Controls
+</td><td>-</td><td>X</td><td>-</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+
+<tr valign="top"><td></td><td>GLEG</td><td>Law of Data Security & Investigations</td><td>
+LEG523</td><td>Security Management, Legal, and Audit
+</td><td>-</td><td>X</td><td>-</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td></td><td>GSLC</td><td>Security Leadership Cert</td><td>
+MGT512
+</td><td>-</td><td>X</td><td>-</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td></td><td>GSTRT</td><td>Strategic Planning, Policy, and Leadership</td><td>
+MGT514
+</td><td>-</td><td>X</td><td>-</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+<tr valign="top"><td></td><td>GSNA</td><td>Systems and Network Auditor</td><td>
+AUD507</td><td>-</td><td>X</td><td>-</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+
+
 <tr valign="top"><td>CWEB</td><td>Web Application Defender</td><td>SEC522</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr valign="top"><td>GCSA</td><td>Cloud Security Automation</td><td>SEC540</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>   
 <tr valign="top"><td>GCLD</td><td>Cloud Security Essentials ?</td><td>SEC488</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
@@ -736,7 +806,7 @@ Retakes are $100 less. Renewals ar $479 at all levels. The exams and classes by 
 <tr valign="top"><td>GSOM</td><td>Security Operations Manager</td><td>LDR551: Building, Leading, & Managing (SOC) Security Operations Center</td><td>-</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top"><td>GCIH</td><td>Certified Incident Handler</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
+<tr valign="top"><td>GCIH</td><td>Certified Incident Handler</td><td>SEC504: Hacker Tools, Techniques, and Incident Handling</td><td>X</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
 <tr valign="top"><td>GDAT</td><td>Defending Advanced Threats</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td>
@@ -756,80 +826,10 @@ Retakes are $100 less. Renewals ar $479 at all levels. The exams and classes by 
 <tr valign="top"><td>GCIP</td><td>Critical Infrastructure Protection</td><td>ICS456: Essentials for NERC Critical Infrastructure Protection</td><td>-</td><td>-</td><td>-</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>X</td><td>-</td></tr>
 
-<tr valign="top"><td>GRIC</td><td>Response and Industrial Defense</td><td>ICS515: ICS Visibility, Detection, and Response<br />Industrial Control Systems Security. Digital Forensics, Incident Response & Threat Hunting</td><td>-</td><td>-</td><td>-</td><td>-</td>
+<tr valign="top"><td>GRIC</td><td>Response and Industrial Defense</td><td>ICS515: ICS Visibility, Detection, and Response</td><td>-</td><td>-</td><td>-</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>X</td><td>-</td></tr>
 
 </table>
-
-A. Cybersecurity and IT Essentials
-
-B. Security Management, Legal, and Audit
-
-C. Cyber Defense
-
-   * GCIA (GIAC Certified Intrusion Analyst) - a practitioner’s knowledge of network and host monitoring, traffic analysis, and intrusion detection.<br />SEC503: Intrusion Detection In-Depth
-
-   * GX-IH (GIAC Experienced Incident Handler) - superior incident response skills.<br />SEC504: Hacker Tools, Techniques, Exploits, and Incident Handling
-   * GX-CS (GIAC Experienced Cyber Security) - qualified for hands-on IT systems roles.
-   
-   * GMLE (GIAC Machine Learning Engineer) - of practical data science, statistics, probability, and machine learning. GMLE certification holders have demonstrated that they are qualified to solve real-world cyber security problems using Machine Learning.<br />SEC595: AI, Applied Data Science, and Machine Learning for Cybersecurity Professionals
-
-   * GCDA (GIAC Certified Detection Analyst) - knows how to collect, analyze, and tactically use modern network and endpoint data sources to detect malicious or unauthorized activity.<br />SEC555: SIEM with Tactical Analytics
-
-   * GCE (GIAC Certified Enterprise Defender) - builds on the security skills measured by the GIAC Security Essentials certification. It assesses more advanced, technical skills that are needed to defend the enterprise environment and protect an organization as a whole.<br />SEC501: Advanced Security Essentials - Enterprise Defender
-
-   * GCWN (GIAC Certified Windows Security Administrator) - to secure Microsoft Windows clients and servers.<br />SEC505: Securing Windows and PowerShell Automation
-
-   * GMON (GIAC Continuous Monitoring Certification) - to deter intrusions and quickly detect anomalous activity.<br />SEC511: Continuous Monitoring and Security Operations
-
-   * GDSA (GIAC Defensible Security Architect Certification) - design and implement an effective combination of network-centric and data-centric controls to balance prevention, detection, and response.<br />SEC530: Defensible Security Architecture and Engineering: Implementing Zero Trust for the Hybrid Enterprise
-
-   * GISF (GIAC Information Security Fundamentals) - a practitioner's knowledge of security's foundation, computer functions and networking, introductory level cryptography, and cybersecurity technologies.<br />SEC301: Introduction to Cyber Security
-
-   * GSOC (GIAC Security Operations Certified) - to defend an enterprise using essential blue team incident response tools and techniques.<br />SEC450: Blue Team Fundamentals: Security Operations and Analysis
-
-   * GOSI (GIAC Open Source Intelligence Certification) - a strong foundation in OSINT methodologies and are well-versed in data collection, analysis, and reporting.<br />SEC487: Open-Source Intelligence (OSINT) Gathering and Analysis
-
-   * GISP (GIAC Information Security Professional Certification) - knowledge of the 8 domains of cybersecurity knowledge as determined by (ISC)2 that form a critical part of CISSP® exam.<br />LDR414: SANS Training Program for CISSP® Certification
-
-   * GSOM (GIAC Security Operations Manager Certification) - to run an effective security operations center.<br />LDR551: Building, Leading, & Managing (SOC) Security Operations Center
-
-   * GCIH (GIAC Certified Incident Handler Certification) - to detect, respond, and resolve computer security incidents using a wide range of essential security skills.<br />SEC504: Hacker Tools, Techniques, and Incident Handling
-
-   * GDAT (GIAC Defending Advanced Threats) - covers both offensive and defensive security topics in-depth.<br />SEC599: Defeating Advanced Adversaries - Purple Team Tactics & Kill Chain Defenses
-
-   * GFACT (GIAC Foundational Cybersecurity Technologies) - essential foundational cybersecurity concepts.<br />SEC275: Foundations: Computers, Technology, & Security
-
-D. Cloud Security
-
-   * CWEB (Certified Web Application Defender) - to deal with common web application errors that lead to most security problems.<br />SEC522: Application Security: Securing Web Applications, APIs, and Microservices
-
-   * GCSA (GIAC Cloud Security Automation) - cloud services and modern DevSecOps practices that are used to build and deploy systems and applications more securely.<br />SEC540: Cloud Security and DevSecOps Automation
-   
-   * GCLD (GIAC Cloud Security Essentials Certification) - to implement preventive, detective, and reactionary techniques to defend valuable cloud-based workloads.<br />SEC488: Cloud Security Essentials
-
-   * GCTD (GIAC Cloud Threat Detection) - to detect and investigate suspicious activity in cloud infrastructure.<br />SEC541: Cloud Security Attacker Techniques, Monitoring, and Threat Detection
-
-   * GPCS (GIAC Public Cloud Security) - to secure the cloud in both public cloud and multi cloud environments.<br />SEC510: Public Cloud Security: AWS, Azure, and GCP.
-   
-   * GCFR (GIAC Cloud Forensics Responder) - to track incidents and collect and interpret logs across Amazon, Google, and Microsoft cloud providers.<br />FOR509: Enterprise Cloud Forensics and Incident Response
-
-   * GCPN (GIAC Cloud Penetration Tester) - to conduct cloud-focused penetration testing and assess the security of systems, networks, architecture, and cloud technologies.<br />SEC588: Cloud Penetration Testing
-   <br /><br />
-
-E. Digital Forensics, Incident Response & Threat Hunting
-
-F. Offensive Operations, Pen Testing, and Red Teaming
-
-G. Operating System & Device In-Depth
-
-H. Industrial Control Systems Security
-
-   * GICSP (Global Industrial Cyber Security Professional Certification) - to achieve security for industrial control systems from design through retirement.<br />ICS410: ICS/SCADA Security Essentials
-
-   * GCIP (GIAC Critical Infrastructure Protection Certification) - who access, support and maintain the critical systems have an understanding of the regulatory requirements of NERC CIP as well as practical implementation strategies.<br />ICS456: Essentials for NERC Critical Infrastructure Protection
-
-   * GRIC (GIAC Response and Industrial Defense) - to demonstrate that they can perform Active Defense strategies specific to and appropriate for an Industrial Control System (ICS) network and systems.<br />ICS515: ICS Visibility, Detection, and Response<br />Industrial Control Systems Security. Digital Forensics, Incident Response & Threat Hunting, 
 
 Others:
 
