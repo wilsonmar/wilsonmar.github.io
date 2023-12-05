@@ -889,7 +889,7 @@ FOR498: Digital Acquisition and Rapid Triage
 
 <a name="SANS+Expert"></a>
 
-Applied Knowledge level are "GX" or "Experienced" level exams
+"Applied Knowledge" level exams are named with "GX-" or "Experienced" in their name:
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom" align="left"><th>Cert</th><th>Description</th><th>Class</th><th>A. Ess</th><th>B. SM</th><th>C. CD</th><th>D. Cloud</th><th>E. IR</th><th>F. PT</th><th>G. OS</th><th>H. ICS</th></tr>
