@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-09-23"
+date: "2023-12-06"
 file: "azure-networking"
 title: "Azure networking"
 excerpt: "vNets, Peering, NSG, CDN, Scaling with Load Balancers, Gateways, Firewall, Front Door, Traffic Manager, DDoS"
@@ -42,14 +42,14 @@ https://www.thomasmaurer.ch/2021/06/az-700-study-guide-microsoft-azure-networkin
 PROTIP: Plan out your network typology ahead of time to define names of resources in a diagram such as this:
 
 <a target="_blank" href="https://learning.oreilly.com/attend/exam-az-303-microsoft-azure-architect-technologies-crash-course/0636920452881/0636920053523/">
-Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target="_blank" href="https://github.com/timothywarner/az303">GitHub repo</a> which includes a <a target="_blank" title="warner-azure-frankenstein-V2-793x629" href="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png">full diagram<br />
+Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target="_blank" href="https://github.com/timothywarner/az303">GitHub repo</a> which includes a <a target="_blank" title="warner-azure-frankenstein-V2-793x629" href="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png">this full diagram:<br />
 <img alt="warner-azure-frankenstein-V2-793x629" width="793" height="629" src="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png"></a>
 
 
 
 ## Hands-on start here
 
-This page assumes you've absorbed my <a target="_blank" href="https://wilsonmar.github.io/azure-onboarding/">Azure cloud onramp</a> for skill at Portal GUI and CLI.
+This page assumes you've absorbed <a target="_blank" href="https://wilsonmar.github.io/azure-onboarding/">my Azure onboarding instructions</a> for skill at Portal GUI and CLI.
 
 1. In the Portal GUI, G+\ to Search for "Net" and there appears:
 
@@ -717,9 +717,12 @@ Azure Playground at https://cloudacademy.com/lab/azure-playground-2747/</a>
 
 ## Network Watcher
 
+Network Watcher is a <strong>suite</strong> of tools:
+
+
 <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=0a254f0c-5467-400a-9b06-1eb0e37902df">VIDEO</a>:
 
-* CLI:
+CLI:
 
    <pre>az network watcher configure--locations $LOCATION --enabled -o table \
      --resource-group $MY_RG 
@@ -729,7 +732,6 @@ Azure Playground at https://cloudacademy.com/lab/azure-playground-2747/</a>
 
    Notice it runs on a regional level.
 
-Network Watcher is a <strong>suite</strong> of tools:
 * Diagram
 
 To generate a visual to view VNet layout Topology. Downloads an SVG graphic image.
@@ -1350,6 +1352,59 @@ B Alerts for suspected VM malware and potential SQL DB injection attacks
 C >>> Invalid Azure Portal logins
 D Azure Storage recommendations
 
+
+## Azure Network Watcher Topology
+
+1. Get to the service "Network Watcher" for a URL such as:
+
+   https://portal.azure.com/#view/Microsoft_Azure_Network/NetworkWatcherMenuBlade/~/overview/menuId~/%7B%22target%22%3A%7B%7D%7D
+
+   ### View a topology:
+
+1. In the search box at the top of the Azure portal, enter Monitor. Select Monitor from the search results.
+1. In the Azure portal, get to the service "Monitor" for a URL such as:
+
+   https://portal.azure.com/#view/Microsoft_Azure_Monitoring/AzureMonitoringBrowseBlade/~/overview
+
+1. Under Insights on the left menu, select Networks.
+1. Select Topology at the row.
+
+   TODO: "We recommend using at most 10 subscriptions and 10 location filter values for optimal experience."
+
+   At the right pane:
+1. Click "Subscriptions" dropdown to select the subscription(s) to view.
+1. Click "Resources" dropdown to select the resource(s) to view.
+1. Click "Locations" (Regions) dropdown to select the location(s) to view.
+
+   Above the Topology diagram:
+1. Click "Scope : " to define the scope of the Topology.
+
+1. In the Select scope pane, select the list of Subscriptions, Resource groups, and Locations of the resources for which you want to view the topology. Select Save.
+1. Select the "Resource type : " to display the list of resource types to view:
+
+   * Application gateways
+   * Load Balancers
+   * PrivateLink services
+   * Virtual WAN (Wide Area Network)
+   * Azure front doors
+   * Bastions
+
+   Others?
+   * Azure Bastion hosts
+   * Azure Front Door profiles
+   * ExpressRoute circuits
+   * Network interfaces
+   * Network security groups
+   * Private endpoints
+   * Public IP addresses
+   * Virtual machines
+   * Virtual network gateways
+   * Virtual networks
+
+1. Select Apply to display.
+
+
+<hr />
 
 ## Resources
 

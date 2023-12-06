@@ -513,6 +513,14 @@ Each component has its own licensing considerations. See the next section.
 
 ## End-to-End projects
 
+1. <a target="_blank" href="https://www.youtube.com/watch?v=fRBKcFaItZs" title="by Centida BI & Analytics">VIDEO</a>: Ways of getting <a target="_blank" href="https://learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver16">Wide World Importers sample Lakehouse databases</a> into Lakehouse:
+
+   1. Fact table from a OneLake Shortcut to a blob (file)
+   1. Order details from a Data Factory pipeline 
+   1. 2-dim tables from Excel using Dataflows
+   4. 3-dim tables from CSV (regular uploads)
+   <br /><br />
+
 <a target="_blank" href="https://www.youtube.com/watch?v=gKdlsHm7QgU&list=PL9SoC_dDpQ8FnIJZwlk5L4rU1r7-cQNCG">DataVerse Academy</a>
 
 <a target="_blank" href="https://www.youtube.com/watch?v=yRJ03n1U5-E&list=PLug2zSFKZmV0Yaya7NxRQfrrPtfF2vj0K">Learn Microsoft Fabric with Will</a>

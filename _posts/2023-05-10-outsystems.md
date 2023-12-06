@@ -25,7 +25,7 @@ From <a target="_blank" href="https://www.youtube.com/watch?v=XR4n9fq1wJM" title
 
 PROTIP: Outsystems runs web and mobile apps as .NET DLLs on Windows-based servers within their private cloud (as PaaS like Salesforce) or on-prem servers. 
 
-App resources are in Outsystem servers (within their cloud or on-prem), so apps are developed using their IDE installed on Windows, Linux, and macOS laptops.
+App resources are in Outsystem servers (within their cloud or on-prem), so apps are developed using their <a href="#ServiceStudio">"Service Studio" IDE</a> installed on Windows, Linux, and macOS laptops.
 However, "no network, no work".
 
 
@@ -109,7 +109,7 @@ $100, 90-minutes exams:
 
 $200, 120-minute exams:
 
-* Associate Developer (ODC = OutSystems Developer Cloud)
+* Associate Developer (<a href="#odc-outsystems-developer-cloud">ODC = OutSystems Developer Cloud</a>)
 * Associate Reactive Developer
 
 * Architecture Specialist
@@ -218,7 +218,7 @@ ServiceNow has gained in favor with Forrester.
 
 ## Pricing
 
-Outsystems provides a free developer edition (ODC) with no time limits to build a single app for up to 100 users.
+Outsystems provides a free developer edition (<a href="#odc-outsystems-developer-cloud">ODC = OutSystems Developer Cloud</a>), with no time limits to build a single app for up to 100 users.
 $4,000/month for up to 1000 users. $10,000/month for unlimited users and support.
 
 Mendix charges $1,817/month for a single app in production for up to 10 users. $5,375/month for unlimited apps, $7,825/month for advanced features.
@@ -240,16 +240,16 @@ In documentation, "O11" means Outsystems 11, the paid version.
    * .NET Core 3.1 Runtime & Hosting Bundle for Windows
    <br /><br />
 
-https://learn.microsoft.com/credentials
+
 ### ODC (Outsystems Developer Cloud)
 
-In documentation, "ODC" means Outsystems Developer Cloud, the free version.
-
-Outsystems removes barriers to entry for learning, and creates a large community of developers around the world on their free ODC (Outsystems Developer Cloud) edition.
+In documentation, <a href="#odc-outsystems-developer-cloud">ODC = OutSystems Developer Cloud</a>, the free version.
 
 ODC is a single-user environment used to develop and deploy web applications that access data in the cloud.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=3ZE1Sw1gshY&list=PLxALhSwsaivzR0SyCo_LHhDvOARPtZPi6&index=2&t=2m37s">VIDEO</a>: Using a link in their own URL-shortener service, <a target="_blank" href="https://outsyste.ms/DecodedCC/">outsyste.ms/DecodedCC Personal Edition</a> is a free single-developer single application for less than 10 users, on ________.outsystemscloud.com.
+
+Outsystems removes barriers to entry for learning, and creates a large community of developers around the world on their free ODC (Outsystems Developer Cloud) edition.
 
 
 ## Toolset
@@ -306,7 +306,7 @@ Surface data from enterprise systems like SAP ERPs and Salesforce CRM, etc. for 
 
 ## Service Studio IDE
 
-1.  The <a target="_blank" href="https://www.outsystems.com/Portal/Trial_Portal">304 MB download</a> for macOS is not available via HomeBrew. So you'll have to manually download, invoke, and drag the 755 MB ServiceStudio.app into your /Applications folder.
+1.  The <a target="_blank" href="https://www.outsystems.com/Portal/Trial_Portal">304 MB download</a> for macOS is NOT available via HomeBrew. So you'll have to manually download, invoke, and drag the 755 MB ServiceStudio.app into your /Applications folder.
 
     <a target="_blank" href="https://learn.outsystems.com/training/journeys/web-developer-662/service-studio-overview/o11/2347">VIDEO</a> REMEMBER: Dismiss the downloader in Finder.
 
