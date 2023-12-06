@@ -45,8 +45,13 @@ PROTIP: Plan out your network typology ahead of time to define names of resource
 Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target="_blank" href="https://github.com/timothywarner/az303">GitHub repo</a> which includes a <a target="_blank" title="warner-azure-frankenstein-V2-793x629" href="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png">this full diagram:<br />
 <img alt="warner-azure-frankenstein-V2-793x629" width="793" height="629" src="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png"></a>
 
-<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-monitor/overview?WT.mc_id=Portal-Microsoft_OperationsManagementSuite_Workspace">DIAGRAM</a>: Azure Monitor provides a single source for monitoring Azure resources. It collects and analyzes telemetry from Azure infrastructure and services, and from on-premises and other cloud environments. It also provides a customizable dashboard for viewing health and performance data for all your resources.
-<a target="_blank" href="https://raw.githubusercontent.com/wilsonmar/wilsonmar.github.io/master/images/az-monitor-overview.svg?token=GHSAT0AAAAAACETGKIDAGLMV2I5BT4BYHEGZLQ3ZSA"><img alt="az-monitor-overview.svg" src="https://raw.githubusercontent.com/wilsonmar/wilsonmar.github.io/master/images/az-monitor-overview.svg?token=GHSAT0AAAAAACETGKIDAGLMV2I5BT4BYHEGZLQ3ZSA"></a>
+
+## Monitoring
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-monitor/overview?WT.mc_id=Portal-Microsoft_OperationsManagementSuite_Workspace">DIAGRAM</a>: 
+<a target="_blank" href="https://raw.githubusercontent.com/wilsonmar/wilsonmar.github.io/master/images/az-monitor-overview.svg?token=GHSAT0AAAAAACETGKIDAGLMV2I5BT4BYHEGZLQ3ZSA"><img alt="az-monitor-overview.svg" src="https://raw.githubusercontent.com/wilsonmar/wilsonmar.github.io/master/images/az-monitor-overview.svg?token=GHSAT0AAAAAACETGKIDAGLMV2I5BT4BYHEGZLQ3ZSA"><em>Click here for full page</em></a>.
+
+Azure Monitor provides a single source for monitoring Azure resources. It collects and analyzes telemetry from Azure infrastructure and services, and from on-premises and other cloud environments. It also provides a customizable dashboard for viewing health and performance data for all your resources.
 
 
 ## Hands-on start here
