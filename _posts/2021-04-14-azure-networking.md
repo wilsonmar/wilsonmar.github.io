@@ -37,9 +37,9 @@ https://github.com/HoussemDellai/azure-bicep-course
 https://www.thomasmaurer.ch/2021/06/az-700-study-guide-microsoft-azure-networking-solutions
 
 
-## Planning
+## The Kitchen Sink
 
-PROTIP: Plan out your network typology ahead of time to define names of resources in a diagram such as this:
+PROTIP: Plan out your network typology ahead of time to plan <strong>naming conventions</strong> of resources in a diagram such as this:
 
 <a target="_blank" href="https://learning.oreilly.com/attend/exam-az-303-microsoft-azure-architect-technologies-crash-course/0636920452881/0636920053523/">
 Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target="_blank" href="https://github.com/timothywarner/az303">GitHub repo</a> which includes a <a target="_blank" title="warner-azure-frankenstein-V2-793x629" href="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png">this full diagram:<br />

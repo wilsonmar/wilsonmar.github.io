@@ -123,9 +123,11 @@ Like Adobe's PDF file format, which enabled many companies in the printing indus
 
    The seminal paper's lead author is <a target="_blank" href="https://www.linkedin.com/in/michaelarmbrust/">Michael Armbrust of Databricks</a> (after a PhD at UC Berkeley).
 
-   It's next-level genius:
+   Delta Lakehouse data structures are next-level genius:
 
    * <a target="_blank" href="https://github.com/delta-io/delta/blob/master/PROTOCOL.md">Logging of ACID transactions</a> (changes) are enabled by Apache's <strong>"Parquet"</strong> file format, which not only enables auditing governance but also enables <strong>time travel</strong> -- bringing the whole database to specific points back in time. This is similar to what can be done with repositories of text files using Git.
+
+   * Responds to (is fully compatible with) Apache Spark APIs to access data live
 
    * Share live data without copying to another system
 
@@ -137,8 +139,12 @@ Like Adobe's PDF file format, which enabled many companies in the printing indus
    
    * multiple queries can write to the same delta table simultaneously (at exactly the same time). <a target="_blank" href="https://books.japila.pl/delta-lake-internals/overview/">BLOG</a>
    
-   * Can handle continuous streams of data
+   * Can handle continuous streams of data, processing video, audio, and other media data types
 
+   PROTIP: The Delta format enables a revolution in how people collaborate because for once there is <strong>a "single source of truth"</strong> for data engineers, data scientists, and business analysts. 
+
+   To reiterate, in the future there won't be SSIS ETL jobs creating subsets of data to each remote department. 
+   Each department accesses the same DataLake.
 
    ### Lakehouse Architecture
 
@@ -206,6 +212,10 @@ Microsoft designed Fabric documentation around different roles within enterprise
    That includes coding <a target="_blank" href="https://wilsonmar.github.io/kql">KQL (Kusto Query Language)</a> within <a href="#RTA"><strong>Synapse Real Time Analytics</strong></a> to create (star schema) databases for analytics. The product is an evolution of Synapse Data Explorer, but also introduces the "Eventstreams" feature that's very similar to Azure Stream Analytics no-code editor.
    
    Data Analysts collaborate with Security on using Microsft Purview.
+
+   Those slinging legacy SSIS ETLs can add value now by enabling "Data Citizens" to use PowerBI (and Data Activator) such that they "won't notice" (are impacted minimally) when data inevitably moves from on-prem to the Fabric cloud. Then they can brag on their resume:
+
+   > "Migrated users quickly to Data Activator automation with minimal disruption by proactively restructuring on-prem. SSIS ETL so users access legacy data using PowerBI front-ends similar to how they would access Lakehouse data in the Fabric cloud."
 
 * <strong>Data Engineers</strong> create databases (platforms):
 

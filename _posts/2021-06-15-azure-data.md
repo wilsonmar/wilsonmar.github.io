@@ -28,6 +28,12 @@ This are my notes to study for specific data-related <a href="https://wilsonmar.
    * <a target="_blank" href="https://wilsonmar.github.io/microsoft-fabric/">DP-600: Fabric Analytic Engineer Associate</a>
    <br /><br />
 
+These replace certifications about Microsoft on-prem. technologies SQL-Server and SSIS <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/mcsa-sql2016-business-intelligence-certification/">retired Jan 31, 2021</a>:
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/70-767">70-767: Implementing a SQL Data Warehouse</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/70-768">70-768: Developing SQL Data Models</a>
+   <br /><br />
+
 {% include whatever.html %}
 
 ## Azure Database Products
@@ -132,7 +138,9 @@ Others:
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-900">
 Microsoft's $99 DP-900 exam page</a> provides free tutorials.
 
-<a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-900">Study Guide</a>:
+Answer 40-60 questions in 180-minutes.
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-900">Microsoft's Study Guide</a>
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/azure-data-fundamentals-explore-core-data-concepts/?ns-enrollment-type=Collection&ns-enrollment-id=0kjyh8rn5gdrjj">LEARN</a>: Core data concepts (15-20%) 
 
@@ -205,7 +213,7 @@ Describe capabilities and features of Azure Cosmos DB
 
 <hr />
 
-<a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/sc-900t00?resource_type=course&products=azure&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks">$1599 1-day course SC-900T00--A: Microsoft Security, Compliance, and Identity Fundamentals</a> provides live training with labs at
+<a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/sc-900t00?resource_type=course&products=azure&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks">$1599 1-day (8 hour) course SC-900T00--A: Microsoft Security, Compliance, and Identity Fundamentals</a> provides live training with labs at
 https://learn.microsoft.com/en-us/collections/0kjyh8rn5gdrjj
 and
 https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/
@@ -213,19 +221,18 @@ and assets downloaded from:
 https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals
 to Explore:
 
-   * Azure SQL Database
-   * Azure Database for PostgreSQL
-   * Azure Database for MySQL
-   * Azure Storage
-   * Azure Cosmos DB
-   * data analytics in Azure with Azure Synapse Analytics
-   * data analytics in Microsoft Fabric
-   * Azure Stream Analytics
-   * Spark Streaming in Azure Synapse Analytics
-   * Azure Synapse Data Explorer
-   * real-time analytics in Microsoft Fabric
-   * fundamentals of data visualization with Power BI
-   <br /><br />
+1. Azure SQL Database
+1. Azure Database for PostgreSQL
+1. Azure Storage
+1. Azure Cosmos DB
+1. data analytics in Azure with Azure Synapse Analytics
+1. data analytics in Microsoft Fabric
+1. Azure Stream Analytics
+1. Spark Streaming in Azure Synapse Analytics
+1. Azure Synapse Data Explorer
+1. real-time analytics in Microsoft Fabric
+1. fundamentals of data visualization with Power BI
+<br /><br />
 
 The Skillpipe associated with the <a target="_blank" href="https://docs.azure.com/en-us/learn/certifications/courses/dp-900t00">one-day Azure live course DP-900T00</a> roughly covers the above topics using
 <a target="_blank" href="https://github.com/azureLearning/DP-900T00A-Azure-Data-Fundamentals">github.com/azureLearning/DP-900T00A-Azure-Data-Fundamentals/tree/master/Instructions</a> which redirects to a free "Azure Learn Sandbox" Directory in Azure:
@@ -244,7 +251,8 @@ The Skillpipe associated with the <a target="_blank" href="https://docs.azure.co
 <a target="_blank" href="https://docs.azure.com/en-us/learn/modules/query-relational-data/6-exercise-perform-query">04-Upload-download-and-query-data-in-a-non-relational-data-store.md</a>
 
 
-BTW Left out of the ESI list is Azure Databricks, a cloud-scale platform for data analytics and machine learning. Microsoft's live class DP-090 "Implementing a Machine Learning Solution with Microsoft Azure Databricks" shows how to use Azure Databricks to explore, prepare, and model data; and integrate Databricks machine learning processes with Azure Machine Learning.
+PROTIP: BTW Left out of the ESI list is Azure Databricks, a cloud-scale platform for data analytics and machine learning. Microsoft's live class DP-090 "Implementing a Machine Learning Solution with Microsoft Azure Databricks" shows how to use Azure Databricks to explore, prepare, and model data; and integrate Databricks machine learning processes with Azure Machine Learning.
+
 
 Sample DP-900 Exams:
 
@@ -262,6 +270,12 @@ CloudAcademy: https://cloudacademy.com/exam/landing/37208/
 has Knowledge checks.
 
 * <a target="_blank" href="https://learning.oreilly.com/live-training/courses/microsoft-azure-data-fundamentals-dp-900-crash-course/0636920051861/">OReilly live crash course</a> by Emilio Melo
+
+On LinkedIn Learning:
+
+* <a target="_blank" href="https://www.linkedin.com/learning/paths/prepare-for-the-azure-data-fundamentals-dp-900-certification-exam">3 courses over 3 hours</a> by <a target="_blank" href="https://www.linkedin.com/in/gregorsuttie/">Gregor Suttie</a>, Adam Wilbert, Keith Atherton
+
+On OReilly.com:
 
 * https://learning.oreilly.com/videos/azure-overview-introduction/10009OVERVIEW/10009OVERVIEW-AZINTRO_16
 “Cloud and Azure Overview” section in Azure Overview: Introduction for Beginners (video)
@@ -283,8 +297,18 @@ Information Management Using Azure Data Factory (video, 1h 16m)
 
 <a target="_blank" href="https://www.aguidetocloud.com/full-courses/dp900fullcourse">3-hour AGuideToCloud video class by Susanth Sutheesh</a>
 
-<a target="_blank" href="https://www.aguidetocloud.com/full-courses/dp900fullcourse">3-hour AGuideToCloud video class by Susanth Sutheesh</a>
+On YouTube:
 
+* <a target="_blank" href="https://www.youtube.com/watch?v=P3qmqUZJ7l0">4-hour</a> from Andrew Brown
+* <a target="_blank" href="https://www.youtube.com/watch?v=jopyoCgQjkM">2-hour "Full Class"</a> from Tech Tutorials with Piyush
+* <a target="_blank" href="https://www.youtube.com/watch?v=XbV0Di5ggvY">2.5-hour Full Course</a> from Susanth Sutheesh
+* <a target="_blank" href="https://www.youtube.com/watch?v=0gtpasITVnk">2-hour Study Cram</a> from John Savill
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=xKOiNPvAQqM">34 min. "Actual Exam Questions"</a> from CertyIQ
+* <a target="_blank" href="https://www.youtube.com/watch?v=Hq1KsO0Zct8">2-hour "Exam Dumps"</a> from Clearcat.net
+* <a target="_blank" href="https://www.youtube.com/watch?v=U64NZ3DjsmI&list=PL0AYtrUw-NRRVVTnRf0yi0AW-DvtLkaT2">2:29 Real Exam Questions for each part</a> from The Tech BlackBoard
+
+* <a target="_blank" href="https://www.youtube.com/@AdamMarczakYT">Channel list of Adam Marczak</a>
 
 
 <hr />

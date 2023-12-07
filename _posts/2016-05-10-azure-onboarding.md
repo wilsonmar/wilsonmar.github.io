@@ -318,6 +318,10 @@ DEFINITION: A "Subscription" in Azure is the account for <strong>billing</strong
    
    PROTIP: Create a separate card sub-account for each cloud account.
 
+### Support
+
+1. See the list of support tickets <a target="_blank" href="https://portal.azure.com/#view/Microsoft_Azure_Support/HelpAndSupportBlade/~/overview">here</a>
+
 
 <a name="MSAccount"></a>
 
