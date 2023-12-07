@@ -87,7 +87,7 @@ ADLS and S3 shortcut target paths can contain "-" / "." / "_" / "~" but not <a t
 
 Shortcuts can be created within Microsoft's various SQL data warehouses, lakehouses, KQL databases, etc.
  
-PROTIP: By themselves, Shortcuts don't "unify data across domains". People do that by actively managing a "unified namespace" of Shortcuts across the entire enterprise. That's hard work that requires executive and worker support across departments and geographies. Thus the "Chief Data Officer" (CDO).
+PROTIP: By themselves, Shortcuts don't "unify data across domains". People do that by actively managing a "unified namespace" of Shortcuts across the entire enterprise. That's hard work requiring both executive and worker support across departments and geographies. Thus the "Chief Data Officer" (CDO).
 
 
 <hr />
@@ -754,11 +754,13 @@ Query data by using SQL:
    * Click Design mode to develop triggers based on these objects. 
    <br /><br />
 
-   PROTIP: <strong>Data Activator</strong>, if it works as intended, will the real game changer to enable <strong>Data Citizens</strong> who find Power BI is too complex to use. The payoff is not just that Microsoft Fabric "seamlessly" integrates with Microsoft 365, facilitating collaboration and enabling ad hoc analysis within familiar Microsoft 365 applications. More importantly, Activator aims to <strong>take action</strong> based on data rather than merely displaying pretty charts and reports. Here's where machines (AI or not) can replace human workers.
+   The real payoff is not just that Microsoft Fabric "seamlessly" integrates with Microsoft 365, facilitating collaboration and enabling ad hoc analysis within familiar Microsoft 365 applications. 
+
+   PROTIP: <strong>Data Activator</strong>, if it works as intended, is the real game changer to enable <strong>Data Citizens</strong> to have robots automatically <strong>take action</strong> rather than relying on someone seeing something on pretty dashboards. Here's where machines (AI or not) replace human workers -- and <a target="_blank" href="https://www.youtube.com/watch?v=8CPoXDrwPP8">"The Sorcerer's Apprentice"</a> <a target="_blank" href="https://www.youtube.com/watch?v=ZcesnqVF0us&t=1m39s">VIDEO: fiasco</a> becomes reality.
 
    Consider the following three scenarios:
 
-   * A network administrator detects potential security breaches through real-time monitoring and initiates immediate protective actions.
+   * When a potential security breach is identified through real-time monitoring, immediate protective actions are initiated.
 
    * A warehouse manager needs to detect drops in product stocks and needs to start a reorder process to prevent running out of stock.
 

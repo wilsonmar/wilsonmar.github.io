@@ -193,7 +193,9 @@ Describe capabilities and features of Azure Cosmos DB
    * Describe Azure Cosmos DB APIs
    <br /><br />
 
-<a target="_blank" href="https://docs.azure.com/en-us/learn/paths/azure-data-fundamentals-explore-data-warehouse-analytics/">LEARN</a>: Explore analytics in Azure (25-30%) 
+<a target="_blank" href="https://docs.azure.com/en-us/learn/paths/azure-data-fundamentals-explore-data-warehouse-analytics/">LEARN</a>: 
+<a target="_blank" href="https://www.linkedin.com/learning/azure-data-fundamentals-dp-900-cert-prep-4-analytics-workloads-on-azure/dp-900-exam-analytics-workloads">VIDEO</a>: 
+<strong>Explore analytics in Azure (25-30%)</strong>
 
 * Describe common elements of large-scale analytics:
    * Describe considerations for data ingestion and processing
