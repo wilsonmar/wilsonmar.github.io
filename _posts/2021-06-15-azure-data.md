@@ -546,6 +546,19 @@ The <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/
    * Create reusable Power BI assets
 
 
+<hr />
+
+## Data transformations
+
+* Filter and Sort rows
+* Pivot and Unpivot
+* Merge and Append queries
+* Split and Conditional split
+* Replace values and Remove duplicates
+* Add, Rename, Reorder, or Delete columns
+* Rank and Percentage calculator
+* Top N and Bottom N
+
 
 <hr />
 
@@ -859,6 +872,7 @@ Azure Data Studio is an open-source, cross-platform client GUI tool for querying
 https://docs.azure.com/en-us/sql/azure-data-studio/download-Azure-data-studio
 
 
+
 ## Azure Synapse NoSQL
 
 <a target="_blank" href="https://www.azure.com/videoplayer/embed/RE4Asf7">VIDEO</a>:
@@ -871,6 +885,8 @@ Integrates with Apache Spark.
 
 Synapse has a "Massively Parallel" engine of partitioned instances (sharding)
 
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio?tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall">Data Studio is installed</a> automtically 
+when SQL Server Management Studio (SSMS) 18.7, Azure Data Studio is installed.
 
 <a name="CosmoDB"></a>
 

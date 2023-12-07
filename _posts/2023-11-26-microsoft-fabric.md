@@ -32,7 +32,7 @@ Rather than other fanboys who say "it's the latest cool thing, let's switch now"
 
 The product name "<strong>Fabric</strong>" Microsoft introduced March 2023 along with a set of cloud-based product <strong>experiences</strong> containing the same words also used in legacy products that Microsoft continues to sell: <a target="_blank" href="https://www.casewhen.co/blog/data-factory-showdown-fabric-vs-azure">BLOG</a>:
 
-   * Fabric "Data Factory" is different from "Azure Data Factory (ADF)" that continues to be used (at lower cost). PROTIP: Some use the term "<strong>Data Factory in Microsoft Fabric (DFiMF)</strong>" to differentiate it from the legacy ADF. DFiMF adds to ADF features from <a target="_blank" href="https://www.casewhen.co/blog/data-analysis-and-data-transformation-with-power-query-in-power-bi">Power Query Dataflows</a> and integrates tagging for Data Governance.
+   * Fabric "Data Factory" is different from "Azure Data Factory (ADF)" that continues to be used (at lower cost). PROTIP: Some use the term "<strong>Data Factory in Microsoft Fabric (DFiMF)</strong>" to differentiate it from the legacy ADF. DFiMF adds to ADF features from <a target="_blank" href="https://www.casewhen.co/blog/data-analysis-and-data-transformation-with-power-query-in-power-bi">Power Query Dataflows</a> and integrates tagging for Data Governance. DEFINITION: Azure Data Factory is a service that can ingest large amounts of raw, unorganized data from relational and non-relational systems, and convert this data into meaningful information. Therefore, it's referred to as a data integration service.
 
    * The "Synapse" prefix is now applied to several Fabric products. Before Fabric, Microsoft used the Synapse brand for <a target="_blank" href="https://learn.microsoft.com/en-us/azure/synapse-analytics/synapse-link/sql-synapse-link-overview">Synapse Link</a> and the "Azure Synapse Analytics" product, which Microsoft continues to sell. "<a target="_blank" href="https://endjin.com/blog/2023/05/azure-synapse-analytics-versus-microsoft-fabric-a-side-by-side-comparison">There is no automatic upgrade path"</a> from Azure Synapse Analytics to Fabric Real-Time Analytics. 
    
@@ -133,13 +133,15 @@ Like Adobe's PDF file format, which enabled many companies in the printing indus
 
    * Hold structured and unstructured data in the same place
 
+   * Use a "schema-on-read" approach which define tabular schemas on semi-structured data files at the point where the data is read for analysis, without applying constraints when it's stored, rather than legacy "schema-on-write" approach which requires data to be structured before it's stored.
+   
    * Contains metadata that describes the data it contains
 
    * Contains its own indexing mechanisms
-   
+
    * multiple queries can write to the same delta table simultaneously (at exactly the same time). <a target="_blank" href="https://books.japila.pl/delta-lake-internals/overview/">BLOG</a>
    
-   * Can handle continuous streams of data, processing video, audio, and other media data types
+   * Can handle continuous <strong>streams</strong> of data, processing video, audio, and other media data types
 
    PROTIP: The Delta format enables a revolution in how people collaborate because for once there is <strong>a "single source of truth"</strong> for data engineers, data scientists, and business analysts. 
 
@@ -184,7 +186,7 @@ Like Adobe's PDF file format, which enabled many companies in the printing indus
 
 <a name="Personas"></a>
 
-## Personas (User Roles)
+## Personas (Fabric User Roles)
 
 PROTIP: I adapted <a target="_blank" href="https://7451111251303.gumroad.com/l/fkrvnn" title="Available for purchase">this diagram</a> from <a target="_blank" href="https://learn.microsoft.com/en-in/fabric/get-started/microsoft-fabric-overview">Microsoft</a> and <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">others</a> to show, all in one page, relationships among key technology components ("Experiences") in Fabric:
 
@@ -219,7 +221,7 @@ Microsoft designed Fabric documentation around different roles within enterprise
 
    PROTIP: Those slinging legacy SSIS ETLs can add value now by enabling "Data Citizens" to use PowerBI (and Data Activator) such that they "won't notice" (are impacted minimally) when data inevitably moves from on-prem to the Fabric cloud. Then they can brag on their resume:
 
-   > "Migrated users quickly to Azure Fabric Data Activator automation with minimal disruption due to proactive restructuring of on-prem. SSIS ETLs so users access legacy dashboards and reports from PowerBI similar to how they would eventually access Lakehouse data in the cloud."
+   > "Migrated users quickly to Azure Fabric Data Activator automation with minimal disruption due to proactive restructuring of on-prem. SSIS ETLs so users access legacy visualizations and alerts from PowerBI similar to how they access Lakehouse data in the cloud."
 
 
 ### Data Engineers
@@ -614,6 +616,7 @@ Databricks is a cloud-based service that provides a unified analytics platform f
 <a target="_blank" href="https://www.youtube.com/watch?v=EpDkxTHAhOs&list=PLGjZwEtPN7j8b9dPA0HrtJDptOB69B506&index=1">VIDEO</a>:
 
 1. Data Factory: data integration <strong>pipelines</strong> to copy data and orchestrate data processing, combining <strong>Power Query Online</strong> and/or Dataflows (Gen2) to Import and transform data from 90+ data sources, and load it directly into a table in the lakehouse.
+Dataflows (Gen2) performs ETL tasks using Power Query Online.
 
    * https://learn.microsoft.com/en-us/fabric/data-factory/data-factory-overview
    * https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/
@@ -756,6 +759,8 @@ Query data by using SQL:
    * Click Data mode to inspect the fresh data and link it to specific objects. 
    * Click Design mode to develop triggers based on these objects. 
    <br /><br />
+
+   NOTE: Previously, Azure Synapse Pipelines had Schedule trigger, Tumbling Window trigger, and Event-Based trigger.
 
    The real payoff is not just that Microsoft Fabric "seamlessly" integrates with Microsoft 365, facilitating collaboration and enabling ad hoc analysis within familiar Microsoft 365 applications. 
 
