@@ -196,6 +196,8 @@ Now let's focus on <strong>impacts</strong> on the lives of people, before exami
 Instead of the traditional generic "Database Administrator" role name, 
 Microsoft designed Fabric documentation around different roles within enterprises, listed here in order of introduction during a green-field implementation:
 
+<a name="DataCitizens"></a>
+
 * <strong>Data Citizens</strong> are true end-users -- business people who need to make decisions and take actions based on data. 
 
    They have the budget authority and the responsibility for what are correct values in databases.
@@ -205,6 +207,8 @@ Microsoft designed Fabric documentation around different roles within enterprise
 
    Data Citizens need to be trained to use <a href="#PowerBI">Power BI</a> for <a href="#Analytics">Analytics</a>, <a href="#Data+Activator">Data Activator</a> for alerts, and other tools provided by Data Analysts. Some track where they spend time on technical aspects to ensure that the time spent is worth the value of the data.
 
+<a name="DataAnalysts"></a>
+
 * <strong>Data (Business) Analysts</strong> serve the needs of Data Citizens by establishing dashboards and alerts, and training users on technologies and possibilities. These Analysts design the "data models" defining relationships among sets of data.
 
    PROTIP: Business analysts also coordinate <a target="_blank" href="https://wilsonmar.github.io/chaos-engineering/">Chaos Engineering efforts</a> to ensure that recovery efforts are quick and effective.
@@ -213,9 +217,11 @@ Microsoft designed Fabric documentation around different roles within enterprise
    
    Data Analysts collaborate with Security on using Microsft Purview.
 
-   Those slinging legacy SSIS ETLs can add value now by enabling "Data Citizens" to use PowerBI (and Data Activator) such that they "won't notice" (are impacted minimally) when data inevitably moves from on-prem to the Fabric cloud. Then they can brag on their resume:
+   PROTIP: Those slinging legacy SSIS ETLs can add value now by enabling "Data Citizens" to use PowerBI (and Data Activator) such that they "won't notice" (are impacted minimally) when data inevitably moves from on-prem to the Fabric cloud. Then they can brag on their resume:
 
-   > "Migrated users quickly to Data Activator automation with minimal disruption by proactively restructuring on-prem. SSIS ETL so users access legacy data using PowerBI front-ends similar to how they would access Lakehouse data in the Fabric cloud."
+   > "Migrated users quickly to Azure Fabric Data Activator automation with minimal disruption by proactively restructuring on-prem. SSIS ETLs so users access legacy dashboards using PowerBI similar to how they would eventually access Lakehouse data in the cloud."
+
+<a name="DataEngineers"></a>
 
 * <strong>Data Engineers</strong> create databases (platforms):
 
@@ -235,6 +241,8 @@ Microsoft designed Fabric documentation around different roles within enterprise
 
    Microsoft's documentation now calls "Power BI administrators" <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/admin/microsoft-fabric-admin">Fabric administrators</a>.
 
+<a name="DataStewards"></a>
+
 * <a target="_blank" href="https://www.indeed.com/career-advice/finding-a-job/what-is-data-steward"><strong>Data Stewards</strong></a> are <strong>data custodians</strong> responsible for protecting the organization's most treasured assets: its data. Stewards setup and operate processes for data governance and data quality. They monitor processes for collecting data -- inspecting contents to ensure that data is in the right format. They ensure that app logs, metric collections, database logs shipped, app transactions, snapshots of master data are backed up fully and as scheduled. Once a month they ensure that data can be fully and quickly restored, as measured by RTO (Recovery Time Objective) and RPO (Recovery Point Objective) SLAs. Such is an important fall-back in case of ransomware attacks.
 
    Data stewards collaborate with others to detect and solve data corruption or mis-sychronization of data between apps and utilities.
@@ -242,6 +250,8 @@ Microsoft designed Fabric documentation around different roles within enterprise
    PROTIP: In many organizations, to limit the impact of credential loss, they, after approval by the data owner, are the only accounts who can <strong>delete data</strong> which others put "in limbo".
 
    They use <a href="#Purview">Microsoft Purview</a>. QUESTION: Does Microsoft provide all the tools that Data Stewards need?
+
+<a name="DataScientists"></a>
 
 * <strong>Data Scientists</strong> work on AI models using Data Science tools such as Notebooks written in PySpark for Machine Learning. The intelligence created can be custom tags that extend generic LLM (Large Language Models) created by others for NLP (Natural Language Processing) and other AI (Artificial Intelligence) capabilities.
 
