@@ -221,7 +221,7 @@ Microsoft designed Fabric documentation around different roles within enterprise
 
    PROTIP: Those slinging legacy SSIS ETLs can add value now by enabling "Data Citizens" to use PowerBI (and Data Activator) such that they "won't notice" (are impacted minimally) when data inevitably moves from on-prem to the Fabric cloud. Then they can brag on their resume:
 
-   > "Migrated users quickly to Azure Fabric Data Activator automation with minimal disruption due to proactive restructuring of on-prem. SSIS ETLs so users access legacy visualizations and alerts from PowerBI similar to how they access Lakehouse data in the cloud."
+   > "Migrated users quickly to Azure Fabric Data Activator automation with minimal disruption due to proactive restructuring of on-prem. SSIS ETLs so users access legacy visualizations and alerts from PowerBI similar to how they view data in cloud Lakehouses."
 
 
 ### Data Engineers

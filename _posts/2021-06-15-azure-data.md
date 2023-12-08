@@ -36,87 +36,114 @@ These replace certifications about Microsoft on-prem. technologies SQL-Server an
 
 {% include whatever.html %}
 
-## Azure Database Products
+## Types of databases
 
+SQL, NoSQL, Columnar, Graph, etc. are types of databases. 
+
+See the <a target="_blank" href="https://azure.microsoft.com/en-us/product-categories/databases/">Azure Databases</a> page.
 Microsoft has these offerings in the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/?product=databases"><strong>databases</strong> category</a>:
 
-* Azure Cache for Redis - Power applications with high-throughput, low-latency data access
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/">Documentation</a>
-* Azure confidential ledger - Tamperproof, unstructured data store hosted in trusted execution environments (TEEs) and backed by cryptographically verifiable evidence
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/confidential-ledger/">Documentation</a>
-* Azure Cosmos DB - Fast NoSQL database with open APIs for any scale
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/">Documentation</a>
-* Azure Database for MariaDB - Managed MariaDB database service for app developers
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/mariadb/">Documentation</a>
-* Azure Database for MySQL - Managed MySQL database service for app developers
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/mysql/">Documentation</a>
-* Azure Database for PostgreSQL - Managed PostgreSQL database service for app developers
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/postgresql/">Documentation</a>
-* Azure Database Migration Service - Simplify on-premises database migration to the cloud
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/dms/">Documentation</a>
-* Azure Managed Instance for Apache Cassandra - Automate deployment and scaling for managed open-source Apache Cassandra datacenters
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/managed-instance-apache-cassandra/">Documentation</a>
-* Azure SQL - Modern SQL family for migration and app modernization
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/index">Documentation</a>
-* Azure SQL Database - Managed, intelligent SQL in the cloud
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/database/index">Documentation</a>
-* Azure SQL Edge - Small-footprint, edge-optimized data engine with built-in AI
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql-edge/">Documentation</a>
-* Azure SQL Managed Instance - Managed, always up-to-date SQL instance in the cloud
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/index">Documentation</a>
-* SQL Server on Virtual Machines - Host enterprise SQL Server apps in the cloud
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview?toc=/azure/virtual-machines/windows/toc.json">Documentation</a>
-* Table Storage - NoSQL key-value store using semi-structured datasets
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/tables/table-storage-overview">Documentation</a>
-<br /><br />
+SQL language syntax was standardized as ISO 9075. However, Oracle, Microsoft, and IBM each have their own dialects.
+But SQL language is used as the basis for NoSQL as well.
+
+Let's first look at traditional SQL "relational" databases.
+
+
+## Azure SQL database products
+
+1. With a Subscription, search for Azure service "SQL" at the top of the page to see that there are many services offered directly and from the Marketplace:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702008284/azure-data-sql-svcs-880x358_smd4t1.png"><img alt="azure-data-sql-svcs-880x358.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702008284/azure-data-sql-svcs-880x358_smd4t1.png"><em>Click for full screen</em></a>.
+
+2. Select "Azure SQL" to see a menu of the categories of services handling SQL syntax:
+   
+   A. "SQL virtual machines" (VMs) to lift-and-shift of <strong>SQL Server machines</strong> from on-prem. data centers. You manage SQL Server and OS-level settings/configurations. "High availability" is an option. [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview?toc=/azure/virtual-machines/windows/toc.json">DOCS</a>] 
+   
+   * SQL Server 2022 Enterprise on Windows Server 2022?
+   * SQL Server 2019 Enterprise on Windows Server 2019 (and earlier 2014, 2017)?
+   <br /><br />
+
+   B. "SQL managed" (single) "instances" have always up-to-date OSs managed by Azure. Used for "Arc" running Azure on customer on-prem. data centers. [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/index">DOCS</a>]
+   
+   C. Azure "SQL databases" are totally managed by Microsoft in its Azure cloud as serverless hyperscale databases [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/database/index">DOCS</a>] The different cloud options:
+
+   C1. Single (SQL) database
+   C2. Elastic pool
+   C3. Database server
+   <br /><br />
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702014746/az-cloud-sqls-1254x246_ikhh9v.png"><img alt="az-cloud-sqls-1254x246.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702014746/az-cloud-sqls-1254x246_ikhh9v.png"></a>
+
+   Other choices:
+   * SQL servers?
+   * SQL elastic pools?
+   * SQL Server stretch databases
+   * Dedicated SQL pools (formerly SQL DW)
+   <br /><br />
+
+   Among Marketplace services:
+
+   * SQL Database
+   * <strong>Azure SQL</strong> - Modern SQL family for migration and app modernization [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/index">DOCS</a>]
+   * Azure Synapse Analytics?
+   * SQL server (logical server)?
+   * Web App + Database?
+   <br /><br />
+
+   Open-source SQL Managed database service (for app developers) not shown on the menu:
+
+   * Azure Database for MySQL - One of the earliest open-sourced databases. Acquired by Sun then Oracle. It's a pure relational database, easy to setup, use, and maintain. Has multiple storage engines (InnoDB and MyIsam) [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/mysql/">DOCS</a>]
+   * Azure Database for MariaDB - a fork of MySQL [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/mariadb/">DOCS</a>]
+   * Azure Database for PostgreSQL - evaloved from the Ingres project at UCLA. The most advanced open-source object-relational database with single storage engine. It supports full text search, table inheritance, triggers, rows, data types, etc. [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/postgresql/">DOCS</a>]
+   <br /><br />
+
+   Citus is an open-scource extension that transforms Postgres into a <strong>hyperscale</strong> distributed database. It scales out PostgreSQL across multiple nodes using sharding and replication beyond 100 GB for SaaS apps that need to scale for multi-tenants and real-time analytics. It's not a good fit for transactional workloads, apps that require complex SQL queries or require a lot of data transformations.
+
+   * Azure SQL Edge - Small-footprint, edge-optimized data engine with built-in AI [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql-edge/">DOCS</a>]
+   * Table Storage - NoSQL key-value store using semi-structured datasets [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/tables/table-storage-overview">DOCS</a>]
+   <br /><br />
+
+   Non-SQL databases:
+
+   * Azure Cache for Redis - Power applications with high-throughput, low-latency data access [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/">DOCS</a>]
+   * Azure confidential ledger - Tamperproof, unstructured data store hosted in trusted execution environments (TEEs) and backed by cryptographically verifiable evidence [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/confidential-ledger/">DOCS</a>]
+   * Azure Cosmos DB - Fast NoSQL database with open APIs for any scale [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/">DOCS</a>]
+   * Azure Database Migration Service - Simplify on-premises database migration to the cloud [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/dms/">DOCS</a>]
+   * Azure Managed Instance for Apache Cassandra - Automate deployment and scaling for managed open-source Apache Cassandra datacenters [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/managed-instance-apache-cassandra/">DOCS</a>]
+
+1. Per the Hands-on</a>, select "Azure SQL"
+
+
+<hr />
 
 ## Azure Storage Products
 
 Microsoft has these offerings in the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/?product=storage"><strong>storage</strong> category</a>:
 
-* Archive Storage - Industry leading price point for storing rarely accessed data
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview">Documentation</a>
-* Avere vFXT for Azure - Run high-performance, file-based workloads in the cloud
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/avere-vfxt/">Documentation</a>
-* Azure Backup - Simplify data protection and protect against ransomware
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/backup/">Documentation</a>
-* Azure confidential ledger - Tamperproof, unstructured data store hosted in trusted execution environments (TEEs) and backed by cryptographically verifiable evidence
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/confidential-ledger/">Documentation</a>
-* Azure Container Storage - Manage persistent volumes for stateful container applications
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/container-storage/">Documentation</a>
-* Azure Data Lake Storage - Massively scalable, secure data lake functionality built on Azure Blob Storage
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction">Documentation</a>
-* Azure Data Share - A simple and safe service for sharing big data with external organizations
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/data-share/">Documentation</a>
-* Azure Elastic SAN (Preview) - Elastic SAN is a cloud-native Storage Area Network (SAN) service built on Azure. Gain access to an end-to-end experience like your on-premises SAN.
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/elastic-san/">Documentation</a>
-* Azure Files - Simple, secure and serverless enterprise-grade cloud file shares
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/files/">Documentation</a>
-* Azure FXT Edge Filer - Hybrid storage optimization solution for HPC environments
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/fxt-edge-filer/">Documentation</a>
-* Azure HPC Cache - File caching for high-performance computing (HPC)
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/hpc-cache/">Documentation</a>
-* Azure Managed Lustre - A fully managed, cloud-based parallel file system that enables customers to run their high-performance computing (HPC) workloads in the cloud
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-managed-lustre/">Documentation</a>
-* Azure NetApp Files - Enterprise-grade Azure file shares, powered by NetApp
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-netapp-files/">Documentation</a>
-* Blob Storage - REST-based object storage for unstructured data
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/blobs/">Documentation</a>
-* Data Box - Appliances and solutions for offline data transfer to Azure
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/databox/">Documentation</a>
-* Disk Storage - High-performance, highly durable block storage for Azure Virtual Machines
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview">Documentation</a>
-* Queue Storage - Effectively scale apps according to traffic
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/queues/">Documentation</a>
-* Storage - Durable, highly available, and massively scalable cloud storage
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/">Documentation</a>
-* Storage Explorer - View and interact with Azure Storage resources
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/vs-azure-tools-storage-manage-with-storage-explorer">Documentation</a>
-* StorSimple - Lower costs with an enterprise hybrid cloud storage solution
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/storsimple/">Documentation</a>
+* Archive Storage - Industry leading price point for storing rarely accessed data [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview">DOCS</a>]
+* Avere vFXT for Azure - Run high-performance, file-based workloads in the cloud [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/avere-vfxt/">DOCS</a>]
+* Azure Backup - Simplify data protection and protect against ransomware [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/backup/">DOCS</a>]
+* Azure confidential ledger - Tamperproof, unstructured data store hosted in trusted execution environments (TEEs) and backed by cryptographically verifiable evidence [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/confidential-ledger/">DOCS</a>]
+* Azure Container Storage - Manage persistent volumes for stateful container applications [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/container-storage/">DOCS</a>]
+* Azure Data Lake Storage - Massively scalable, secure data lake functionality built on Azure Blob Storage [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction">DOCS</a>]
+* Azure Data Share - A simple and safe service for sharing big data with external organizations [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/data-share/">DOCS</a>]
+* Azure Elastic SAN (Preview) - Elastic SAN is a cloud-native Storage Area Network (SAN) service built on Azure. Gain access to an end-to-end experience like your on-premises SAN. [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/elastic-san/">DOCS</a>]
+* Azure Files - Simple, secure and serverless enterprise-grade cloud file shares [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/files/">DOCS</a>]
+* Azure FXT Edge Filer - Hybrid storage optimization solution for HPC environments [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/fxt-edge-filer/">DOCS</a>]
+* Azure HPC Cache - File caching for high-performance computing (HPC) [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/hpc-cache/">DOCS</a>]
+* Azure Managed Lustre - A fully managed, cloud-based parallel file system that enables customers to run their high-performance computing (HPC) workloads in the cloud [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-managed-lustre/">DOCS</a>]
+* Azure NetApp Files - Enterprise-grade Azure file shares, powered by NetApp [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-netapp-files/">DOCS</a>]
+* Blob Storage - REST-based object storage for unstructured data [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/blobs/">DOCS</a>]
+* Data Box - Appliances and solutions for offline data transfer to Azure [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/databox/">DOCS</a>]
+* Disk Storage - High-performance, highly durable block storage for Azure Virtual Machines [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview">DOCS</a>]
+* Queue Storage - Effectively scale apps according to traffic [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/queues/">DOCS</a>]
+* Storage - Durable, highly available, and massively scalable cloud storage [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/">DOCS</a>]
+* Storage Explorer - View and interact with Azure Storage resources [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/vs-azure-tools-storage-manage-with-storage-explorer">DOCS</a>]
+* StorSimple - Lower costs with an enterprise hybrid cloud storage solution [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storsimple/">DOCS</a>]
 <br /><br />
 
-Others:
+Other Azure services:
+
 * <a href="#ADF">Azure Data Factory (ADF)</a>
 * Stream Analytics
 * A Data Lakehouse holds raw data after ingestion. Gen2 big data analytics with Hadoop compatible access built on Azure Blob storage with a superset of POSIX permissions
@@ -213,6 +240,13 @@ Describe capabilities and features of Azure Cosmos DB
    * Identify appropriate visualizations for data
    <br /><br />
 
+NOTE: Underlying data models can be viewed and modified for Inteeractive Reports, but not with Dashboards.
+
+For dashboards, the PowerBI cloud service is at https://app.powerbi.com/home
+* A Power BI dashboard is a single page "canvas" that tells a story through visualizations.
+* A dashboard contains several tiles, each a snapshot of data, pinned to the dashboard, created from a report dataset, dashboard, Q&A box, Excel, SQL Server Reporting Services (SSRS), or a streaming dataset.
+* 
+
 <hr />
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/sc-900t00?resource_type=course&products=azure&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks">$1599 1-day (8 hour) course SC-900T00--A: Microsoft Security, Compliance, and Identity Fundamentals</a> provides live training with labs at
@@ -221,19 +255,21 @@ and
 https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/
 and assets downloaded from:
 https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals
-to Explore:
+to Explore...
 
-1. Azure SQL Database
-1. Azure Database for PostgreSQL
-1. Azure Storage
-1. Azure Cosmos DB
-1. data analytics in Azure with Azure Synapse Analytics
-1. data analytics in Microsoft Fabric
-1. Azure Stream Analytics
-1. Spark Streaming in Azure Synapse Analytics
-1. Azure Synapse Data Explorer
-1. real-time analytics in Microsoft Fabric
-1. fundamentals of data visualization with Power BI
+1. <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-01-sql-lab.html">Azure SQL Database</a>
+2. <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-01a-postgresql-lab.html">Azure Database for PostgreSQL</a>
+* <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-01b-mysql-lab.html">Azure Database for MySQL</a>
+3. <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-02-storage-lab.html">Azure Storage</a>
+
+4. <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-03-cosmos-lab.html">Azure Cosmos DB</a>
+1. <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-04-synapse-lab.html">Data analytics in Azure with Azure Synapse Analytics</a>
+1. <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-04b-fabric-lake-lab.html">Data analytics in Microsoft Fabric</a>
+1. <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-05-stream-lab.html">Azure Stream Analytics</a>
+1. <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-05a-stream-with-spark.html">Spark Streaming in Azure Synapse Analytics</a>
+1. <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-05b-stream-synapse-data-explorer.html">Azure Synapse Data Explorer</a>
+1. <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-05c-fabric-realtime-lab.html">Real-time analytics in Microsoft Fabric</a>
+1. <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-pbi-06-lab.html">Fundamentals of data visualization with Power BI</a>
 <br /><br />
 
 The Skillpipe associated with the <a target="_blank" href="https://docs.azure.com/en-us/learn/certifications/courses/dp-900t00">one-day Azure live course DP-900T00</a> roughly covers the above topics using
@@ -428,7 +464,7 @@ References:
 
    * <a target="_blank" href="https://docs.azure.com/en-us/learn/paths/azure-sql-fundamentals/">LEARN: Azure SQL fundamentals</a> <a target="_blank" href="https://wilsonmar.github.io/azure-data">my Azure data notes</a>. 
 
-   * <a target="_blank" href="https://github.com/azureLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_01_lab.md">Lab 1</a> Using the Azure Portal and SQL Server Management Studio</a> - explore the Azure Portal and use it to create an Azure VM with SQL Server 2019 installed. Connect to the virtual machine through RDP (Remote Desktop Protocol) and restore a database using SSMS (SQL Server Management Studio).
+   * <a target="_blank" href="https://github.com/azureLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_01_lab.md">Lab 1</a> Using the Azure Portal and SQL Server Management Studio</a> - explore the Azure Portal and use it to create an Azure VM with SQL Server 2019 installed. Connect to the virtual machine through RDP (Remote Desktop Protocol) and restore a database using <a target="_blank" href="https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16">SSMS (SQL Server Management Studio)</a>.
 
    * <a target="_blank" href="https://github.com/azureLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_02_lab.md">DP-300_02_lab - Lab 2 - Deploying PaaS databases</a> - configure and subsequently implement security in the Azure Portal and within the AdventureWorks database. configure basic resources needed to deploy an Azure SQL Database with a Virtual Network Endpoint. Connectivity to the SQL Database will be validated using <a href="#AzureDataStudio">Azure Data Studio</a> from the lab VM. Finally, an Azure Database for PostgreSQL will be created.
 
@@ -545,6 +581,19 @@ The <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/
 * Manage the analytics development lifecycle:
    * Create reusable Power BI assets
 
+
+<hr />
+
+## Data Wrangling
+
+The process of transforming and mapping data from a "raw" form to another format, to make it more appropriate and valuable for a variety of downstream purposes such as analytics. AKA "data munging".
+
+1. Discovery - of domain-specific details
+2. Structuring - for ease of work
+3. Cleaning - remove outliers and duplicates, special characters, change null values, standardize formatting.
+4. Enriching - with relevant context obtained from additional sources.
+5. Validating - authenticate the reliability, quality, and safety of the data
+6. Publishing - in a datastore for use downstream.
 
 <hr />
 
@@ -710,17 +759,23 @@ OLAP = data periodically loaded, aggregataed, stored in a cube.
    * Trend
    <br /><br />
 
-A Data Warehouse 
-
-Polybase is file-based, retrieve data from Excel, etc.
+<strong>Polybase</strong> is a data virtualization feature that enables SQL Server to query data using T-SQL directly from heterogenous (external) data:
+   * Oracle
+   * Teradata
+   * MongoDB
+   * Apache Hadoop clusters
+   * Azure Cosmos DB
+   <br /><br />
 
 SSIS is also heterogenous
 
-File format types:
+Synapse SQL is a distributed version of T-SQL, with extensions for streaming and machine learning (T-SQL PREDICT function).
 
-* Avro (row-based)
-* Parquet (columnal-based)
+## File format types:
+
 * ORC (Optimized Row Columnar) stores Hive data efficiently
+* Avro (row-based)
+* Parquet (columnal-based) used by Linux Foundation Delta Lake adopted by Apache Spark and Azure Synapsee.
 
 * Binary (pdf)
 * Delimited text (CSV)
@@ -746,7 +801,11 @@ Linked service to Data Lake Store, Azure Databricks.
 
 ## Create SQL database using Portal GUI
 
+<a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-01-sql-lab.html">LAB</a>:
+Explore Azure SQL Database
+
 1. In the portal, get the <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/azure.Sql%2Fservers%2Fdatabases">SQL databases</a> blade after pressing G+\ or clicking the Home (3 line icon) at the top-left of the Portal.
+
 1. "+ Create" to "Create SQL database". The menu:
 
    <tt>Basics  Networking  Security  Additional settings  Tags  Review+Create</tt>

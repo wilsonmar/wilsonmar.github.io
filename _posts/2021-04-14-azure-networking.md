@@ -3,7 +3,7 @@ layout: post
 date: "2023-12-06"
 file: "azure-networking"
 title: "Azure networking"
-excerpt: "vNets, Peering, NSG, CDN, Scaling with Load Balancers, Gateways, Firewall, Front Door, Traffic Manager, DDoS"
+excerpt: "vNets, Peering, NSG, CDN, Scaling with Load Balancers, Gateways, Firewall, Front Door, Traffic Manager, DDoS, to get AZ-700 certified."
 tags: [azure, cloud, networking]
 image:
 # azure ms logo wait 1900x500-39kb.jpg
@@ -1419,6 +1419,9 @@ To list hosts for the microsoft.com domain:
 
 <pre>amass enum -active -d microsoft.com 
 </pre>
+
+https://techcommunity.microsoft.com/t5/azure/my-learning-path-to-becoming-a-microsoft-certified-azure-network/m-p/3044581
+
 
 ## More about Azure #
 
