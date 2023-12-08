@@ -55,9 +55,9 @@ Let's first look at traditional SQL "relational" databases.
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702008284/azure-data-sql-svcs-880x358_smd4t1.png"><img alt="azure-data-sql-svcs-880x358.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702008284/azure-data-sql-svcs-880x358_smd4t1.png"><em>Click for full screen</em></a>.
 
-2. Select "Azure SQL" to see a menu of the categories of services handling SQL syntax:
+2. <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-01-sql-lab.html">HANDS-ON</a>: Select "Azure SQL" to see a menu of the categories of services handling SQL syntax:
    
-   A. "SQL virtual machines" (VMs) to lift-and-shift of <strong>SQL Server machines</strong> from on-prem. data centers. You manage SQL Server and OS-level settings/configurations. "High availability" is an option. [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview?toc=/azure/virtual-machines/windows/toc.json">DOCS</a>] 
+   A. "SQL virtual machines" (VMs) to lift-and-shift of <strong>SQL Server machines</strong> (along with Microsoft licenses) from on-prem. data centers. You manage SQL Server and OS-level settings/configurations. "High availability" (with automatic backups) is an option to enable Disaster Recovery (DR). [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview?toc=/azure/virtual-machines/windows/toc.json">DOCS</a>] 
    
    * SQL Server 2022 Enterprise on Windows Server 2022?
    * SQL Server 2019 Enterprise on Windows Server 2019 (and earlier 2014, 2017)?
@@ -65,7 +65,7 @@ Let's first look at traditional SQL "relational" databases.
 
    B. "SQL managed" (single) "instances" have always up-to-date OSs managed by Azure. Used for "Arc" running Azure on customer on-prem. data centers. [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/index">DOCS</a>]
    
-   C. Azure "SQL databases" are totally managed by Microsoft in its Azure cloud as serverless hyperscale databases [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/database/index">DOCS</a>] The different cloud options:
+   C. Azure "SQL databases" are totally managed by Microsoft in its Azure cloud as serverless hyperscale databases designed to be fault-tolerant and highly available [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/database/index">DOCS</a>] The different cloud options:
 
    C1. Single (SQL) database
    C2. Elastic pool
@@ -110,8 +110,33 @@ Let's first look at traditional SQL "relational" databases.
    * Azure Cosmos DB - Fast NoSQL database with open APIs for any scale [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/">DOCS</a>]
    * Azure Database Migration Service - Simplify on-premises database migration to the cloud [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/dms/">DOCS</a>]
    * Azure Managed Instance for Apache Cassandra - Automate deployment and scaling for managed open-source Apache Cassandra datacenters [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/managed-instance-apache-cassandra/">DOCS</a>]
+   <br /><br />
 
 1. Per the Hands-on</a>, select "Azure SQL"
+
+1. Select Resource group.
+
+1. Click "Accept offer" of first 100,000 vCore seconds and 32GB of data & 32GB of backup storage free per month for lifetime of the subscription.
+
+   https://learn.microsoft.com/en-us/azure/azure-sql/database/free-offer?view=azuresql
+
+1. Compose Database name with a data.
+
+1. Compose Server name with a date suffix to make it unique like
+
+   <tt><strong>wow-westus-231207a</strong>.database.windows.net</tt>
+
+1. Select the Location.
+1. Select Authentication method.
+1. Set Microsoft Entra admin. Click Select.
+
+1. PROTIP: Note the Admin Object/App ID GUID.
+
+1. Click OK to create the database. Click "Review + Create". Click "Create".
+
+   In the Deployment page, notice the resources created with the various IDs on the right pane.
+
+1. Click "Go to resource".
 
 
 <hr />
