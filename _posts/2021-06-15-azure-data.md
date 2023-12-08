@@ -40,14 +40,13 @@ These replace certifications about Microsoft on-prem. technologies SQL-Server an
 
 Over time, data has been organized in different ways to better suit different ways to access data for reports and dashboards:
 
+Traditionally, limitations in CPU and memory size required different database structures at different purposes:
+For OLTP (Online Transaction Processing) data is stored for fast ingestion in rows with columns.
+
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702039629/database-types-828x394_m9rsua.jpg">
 <img alt="database-types-828x394.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702039629/database-types-828x394_m9rsua.jpg"></a>
 
 The types of databases are: Key-value -> Column -> Document -> Relational (SQL) -> Graph -> Deltalake
-
-The SQL language to manipulate data was invented in the 1970s and standardized as ISO 9075. 
-However, Oracle, Microsoft, IBM, and others each have their own proprietary dialects.
-The SQL language has also been enhanced for use with "NoSQL", Graph, and now Datalake databases.
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th>Types:</th><th>Key-value</th><th>Column</th><th>Document</th><th>Relational</th><th>Graph</th><th>Deltalake</th></tr>
@@ -57,32 +56,36 @@ The SQL language has also been enhanced for use with "NoSQL", Graph, and now Dat
 <tr valign="top" align="center"><td>Flexibility</td><td>high</td><td>moderate</td><td>high</td><td>high</td><td>high</td><td>high</td></tr>
 </table>
 
+The SQL language to manipulate data was invented in the 1970s and standardized as ISO 9075. 
+However, Oracle, Microsoft, IBM, and others each have their own proprietary dialects.
+The SQL language has also been enhanced for use with "NoSQL", Graph, and now Datalake databases.
+
 The underlying <strong>format of files</strong> used to store data within Apache Spark, Hadoop "Big data" evolved from 
    1. RCFile to 
-   1. ORC to 
-   1. Parquet, which enabled the revolution to Deltalakes.
+   1. ORC (Optimized Row Columnar) stores Hive data efficiently
+   1. Avro (row-based)
+   1. Parquet (columnal-based) used by Linux Foundation Delta Lake adopted by Apache Spark and Azure Synapsee.
    <br /><br />
 
-The wide availability of fast internet and public clouds providing a lot of fast data storage has enabled a revolution in how data can be stored and accessed.
+For OLAP (Online Analytical Processing), large amounts of data are stored in a "star schema" in <strong>data warehouses</strong> (separate from databases for OLTP) for access to by date and other dimensions.
+
+Wide availability of fast internet and public clouds providing a lot of fast data storage and compute has enabled a revolution in how data can be stored and accessed.
    * "Distributed database" can now span multiple regional data centers (horizontally scalable), yet globally immediately consistent. Released in 2017 (Microsoft Cosmos DB, Postgres Citus, <a target="_blank" href="https://cloud.google.com/spanner/">Google Cloud Spanner</a>)
-   * "Deltalake" is a revolution because instead of arranging data in tables or graphs data for easier access, data is stored in Parquet format (Azure Data Lake Storage Gen2, Hadoop, Databricks, <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a>)
-   <br /><br />
 
-See the <a target="_blank" href="https://azure.microsoft.com/en-us/product-categories/databases/">Azure Databases</a> page.
-Microsoft has these offerings in the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/?product=databases"><strong>databases</strong> category</a>:
+   * "Deltalake" is a revolution because instead of arranging data in tables or graphs data for easier access, data is stored in Parquet format used by Azure Data Lake Storage Gen2, Hadoop, Databricks, <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a>
+   <br /><br />
 
 Let's first look at traditional SQL "relational" databases.
 
-
-## Azure SQL database products
+## Azure's SQL database products
 
 1. With a Subscription, search for Azure service "SQL" at the top of the page to see that there are many services offered directly and from the Marketplace:
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702008284/azure-data-sql-svcs-880x358_smd4t1.png"><img alt="azure-data-sql-svcs-880x358.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702008284/azure-data-sql-svcs-880x358_smd4t1.png"><em>Click for full screen</em></a>.
 
-2. <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-01-sql-lab.html">HANDS-ON</a>: Select "Azure SQL" to see a menu of the categories of services handling SQL syntax:
-   
-   A. "SQL virtual machines" (VMs) to lift-and-shift of <strong>SQL Server machines</strong> (along with Microsoft licenses) from on-prem. data centers. You manage SQL Server and OS-level settings/configurations. "High availability" (with automatic backups) is an option to enable Disaster Recovery (DR). [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview?toc=/azure/virtual-machines/windows/toc.json">DOCS</a>] 
+2. <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-01-sql-lab.html">HANDS-ON</a>: Select "<strong>Azure SQL</strong>", which is an <strong>"umbrella"</strong> service offering different ways Azure provides SQL software [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/index">DOCS</a>]
+
+   A. "SQL virtual machines" (VMs) to lift-and-shift of <strong>SQL Server machines</strong> (along with Microsoft licenses) from on-prem. data centers.  "High availability" (with automatic backups) is an option to enable Disaster Recovery (DR). Here you manage (potentially obsolete) SQL Server and OS-level settings/configurations. [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview?toc=/azure/virtual-machines/windows/toc.json">DOCS</a>] 
    
    * SQL Server 2022 Enterprise on Windows Server 2022?
    * SQL Server 2019 Enterprise on Windows Server 2019 (and earlier 2014, 2017)?
@@ -104,14 +107,15 @@ Let's first look at traditional SQL "relational" databases.
 
    Among Marketplace services:
 
-   * SQL Database
-   * <strong>Azure SQL</strong> - Modern SQL family for migration and app modernization [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/index">DOCS</a>]
    * Azure Synapse Analytics?
    * SQL server (logical server)?
    * Web App + Database?
    <br /><br />
 
-   Open-source SQL Managed database service (for app developers) not shown on the menu:
+   Open-source SQL Managed database service (for app developers) not shown on the menu but listed in 
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/product-categories/databases/">Azure Databases</a> page. 
+   * offerings in the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/?product=databases"><strong>databases</strong> category</a>:
+   <br /><br />
 
    * Azure Database for MySQL - One of the earliest open-sourced databases. Acquired by Sun then Oracle. It's a pure relational database, easy to setup, use, and maintain. Has multiple storage engines (InnoDB and MyIsam) [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/mysql/">DOCS</a>]
    * Azure Database for MariaDB - a fork of MySQL [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/mariadb/">DOCS</a>]
@@ -119,12 +123,13 @@ Let's first look at traditional SQL "relational" databases.
    <br /><br />
 
    Other choices not shown on the menu:
+   * Azure Databricks?
    * Azure SQL Edge - Small-footprint, edge-optimized data engine with built-in AI [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql-edge/">DOCS</a>]
    * Table Storage - NoSQL key-value store using semi-structured datasets [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/tables/table-storage-overview">DOCS</a>]
-   * <a name="Postgres+Citus"></a> Postgres Citus is an open-scource extension that transforms Postgres into a <strong>hyperscale</strong> distributed database. It scales out PostgreSQL across multiple nodes using sharding and replication beyond 100 GB for SaaS apps that need to scale for multi-tenants and real-time analytics. It's not a good fit for transactional workloads, apps that require complex SQL queries or require a lot of data transformations.
+   * <a name="Postgres+Citus"></a> Postgres Citus is an open-source extension that transforms Postgres into a <strong>hyperscale</strong> distributed database. It scales out PostgreSQL across multiple nodes using sharding and replication beyond 100 GB for SaaS apps that need to scale for multi-tenants and real-time analytics. It's not a good fit for transactional workloads, apps that require complex SQL queries or require a lot of data transformations.
    <br /><br />
 
-   Non-SQL databases:
+   Non-SQL databases not shown on the menu:
 
    * Azure Cache for Redis - Power applications with high-throughput, low-latency data access [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/">DOCS</a>]
    * Azure confidential ledger - Tamperproof, unstructured data store hosted in trusted execution environments (TEEs) and backed by cryptographically verifiable evidence [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/confidential-ledger/">DOCS</a>]
@@ -149,9 +154,16 @@ Let's first look at traditional SQL "relational" databases.
 1. Select Authentication method.
 1. Set Microsoft Entra admin. Click Select.
 
+   ### Connection Policy
 1. On the Create SQL Database page, select Next :Networking >, and on the Networking page, in the Network connectivity section, select Public endpoint. Then select Yes for both options in the Firewall rules section to allow access to your database server from Azure services and your current client IP address.
 
-1. Select Next: Security > and set the Enable Microsoft Defender for SQL option to Not now.
+   * "Redirect" within the Azure network
+   * "Proxy" (through a gateway via <strong>port 1443</strong>) for access outside the Azure network - Allow access from any IP address
+   <br /><br />
+
+   ### Defender
+
+1. Select Next: Security > and set the Enable Microsoft Defender for SQL option to "Not now" during testing.
 
 1. Select Next: Additional Settings > and on the Additional settings tab, set the Use existing data option to Sample (this will create a sample database that you can explore later).
 
@@ -315,6 +327,7 @@ to Explore...
 4. <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-03-cosmos-lab.html">Azure Cosmos DB</a>
 1. <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-04-synapse-lab.html">Data analytics in Azure with Azure Synapse Analytics</a>
 1. <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-04b-fabric-lake-lab.html">Data analytics in Microsoft Fabric</a>
+
 1. <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-05-stream-lab.html">Azure Stream Analytics</a>
 1. <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-05a-stream-with-spark.html">Spark Streaming in Azure Synapse Analytics</a>
 1. <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-05b-stream-synapse-data-explorer.html">Azure Synapse Data Explorer</a>
@@ -821,11 +834,8 @@ SSIS is also heterogenous
 
 Synapse SQL is a distributed version of T-SQL, with extensions for streaming and machine learning (T-SQL PREDICT function).
 
-## File format types:
 
-* ORC (Optimized Row Columnar) stores Hive data efficiently
-* Avro (row-based)
-* Parquet (columnal-based) used by Linux Foundation Delta Lake adopted by Apache Spark and Azure Synapsee.
+## File format types:
 
 * Binary (pdf)
 * Delimited text (CSV)
