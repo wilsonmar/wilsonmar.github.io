@@ -24,8 +24,11 @@ The contribution of this article is a maticulously sequenced presentation that c
 
 Graph type databases is the latest in the evolution of data storage mechanisms to handle complexity.
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/34469117-20b4bd9c-eed5-11e7-9967-f652cc2d67ca.jpg">
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702039629/database-types-828x394_m9rsua.jpg">
+<img alt="database-types-828x394.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702039629/database-types-828x394_m9rsua.jpg"></a>
+<!-- a target="_blank" href="https://user-images.githubusercontent.com/300046/34469117-20b4bd9c-eed5-11e7-9967-f652cc2d67ca.jpg">
 <img alt="neo4j-evolution-828x394-72052.jpg" src="https://user-images.githubusercontent.com/300046/34469117-20b4bd9c-eed5-11e7-9967-f652cc2d67ca.jpg"></a>
+-->
 
 PROTIP: People using graph databases call themselves "Graphistas".
 

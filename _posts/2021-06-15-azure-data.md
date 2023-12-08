@@ -38,13 +38,38 @@ These replace certifications about Microsoft on-prem. technologies SQL-Server an
 
 ## Types of databases
 
-SQL, NoSQL, Columnar, Graph, etc. are types of databases. 
+Over time, data has been organized in different ways to better suit different ways to access data for reports and dashboards:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702039629/database-types-828x394_m9rsua.jpg">
+<img alt="database-types-828x394.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702039629/database-types-828x394_m9rsua.jpg"></a>
+
+The types of databases are: Key-value -> Column -> Document -> Relational (SQL) -> Graph -> Deltalake
+
+The SQL language to manipulate data was invented in the 1970s and standardized as ISO 9075. 
+However, Oracle, Microsoft, IBM, and others each have their own proprietary dialects.
+The SQL language has also been enhanced for use with "NoSQL", Graph, and now Datalake databases.
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th>Types:</th><th>Key-value</th><th>Column</th><th>Document</th><th>Relational</th><th>Graph</th><th>Deltalake</th></tr>
+<tr valign="top" align="center"><td>Complexity</td><td>none</td><td>low</td><td>low</td><td>moderate</td><td>high</td><td>high</td></tr>
+<tr valign="top" align="center"><td>Performance</td><td>high</td><td>high</td><td>high</td><td>high</td><td>variable</td><td>high</td></tr>
+<tr valign="top" align="center"><td>Scalability</td><td>high</td><td>high</td><td>high / variable</td><td>high</td><td>variable</td><td>high</td></tr>
+<tr valign="top" align="center"><td>Flexibility</td><td>high</td><td>moderate</td><td>high</td><td>high</td><td>high</td><td>high</td></tr>
+</table>
+
+The underlying <strong>format of files</strong> used to store data within Apache Spark, Hadoop "Big data" evolved from 
+   1. RCFile to 
+   1. ORC to 
+   1. Parquet, which enabled the revolution to Deltalakes.
+   <br /><br />
+
+The wide availability of fast internet and public clouds providing a lot of fast data storage has enabled a revolution in how data can be stored and accessed.
+   * "Distributed database" can now span multiple regional data centers (horizontally scalable), yet globally immediately consistent. Released in 2017 (Microsoft Cosmos DB, Postgres Citus, <a target="_blank" href="https://cloud.google.com/spanner/">Google Cloud Spanner</a>)
+   * "Deltalake" is a revolution because instead of arranging data in tables or graphs data for easier access, data is stored in Parquet format (Azure Data Lake Storage Gen2, Hadoop, Databricks, <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a>)
+   <br /><br />
 
 See the <a target="_blank" href="https://azure.microsoft.com/en-us/product-categories/databases/">Azure Databases</a> page.
 Microsoft has these offerings in the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/?product=databases"><strong>databases</strong> category</a>:
-
-SQL language syntax was standardized as ISO 9075. However, Oracle, Microsoft, and IBM each have their own dialects.
-But SQL language is used as the basis for NoSQL as well.
 
 Let's first look at traditional SQL "relational" databases.
 
@@ -67,18 +92,14 @@ Let's first look at traditional SQL "relational" databases.
    
    C. Azure "SQL databases" are totally managed by Microsoft in its Azure cloud as serverless hyperscale databases designed to be fault-tolerant and highly available [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/database/index">DOCS</a>] The different cloud options:
 
-   C1. Single (SQL) database
-   C2. Elastic pool to manage and scale multiple databases with varying and unpredictable usage patterns, sharing a single set of resources (at a prescribed budget). [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/database/elastic-pool-overview">DOCS</a>]
-   C3. Database server
+   * Single (SQL) database
+   * Elastic pool to manage and scale multiple databases with varying and unpredictable usage patterns, sharing a single set of resources (at a prescribed budget). [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/database/elastic-pool-overview">DOCS</a>] NOTE: Dedicated SQL pools (formerly SQL DW)
+   * Database server
    <br /><br />
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702014746/az-cloud-sqls-1254x246_ikhh9v.png"><img alt="az-cloud-sqls-1254x246.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702014746/az-cloud-sqls-1254x246_ikhh9v.png"></a>
 
-   Other choices:
-   * SQL servers?
-   * SQL elastic pools?
    * SQL Server stretch databases
-   * Dedicated SQL pools (formerly SQL DW)
    <br /><br />
 
    Among Marketplace services:
@@ -97,10 +118,10 @@ Let's first look at traditional SQL "relational" databases.
    * Azure Database for PostgreSQL - evaloved from the Ingres project at UCLA. The most advanced open-source object-relational database with single storage engine. It supports full text search, table inheritance, triggers, rows, data types, etc. [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/postgresql/">DOCS</a>]
    <br /><br />
 
-   Citus is an open-scource extension that transforms Postgres into a <strong>hyperscale</strong> distributed database. It scales out PostgreSQL across multiple nodes using sharding and replication beyond 100 GB for SaaS apps that need to scale for multi-tenants and real-time analytics. It's not a good fit for transactional workloads, apps that require complex SQL queries or require a lot of data transformations.
-
+   Other choices not shown on the menu:
    * Azure SQL Edge - Small-footprint, edge-optimized data engine with built-in AI [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql-edge/">DOCS</a>]
    * Table Storage - NoSQL key-value store using semi-structured datasets [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/tables/table-storage-overview">DOCS</a>]
+   * <a name="Postgres+Citus"></a> Postgres Citus is an open-scource extension that transforms Postgres into a <strong>hyperscale</strong> distributed database. It scales out PostgreSQL across multiple nodes using sharding and replication beyond 100 GB for SaaS apps that need to scale for multi-tenants and real-time analytics. It's not a good fit for transactional workloads, apps that require complex SQL queries or require a lot of data transformations.
    <br /><br />
 
    Non-SQL databases:
@@ -112,8 +133,6 @@ Let's first look at traditional SQL "relational" databases.
    * Azure Managed Instance for Apache Cassandra - Automate deployment and scaling for managed open-source Apache Cassandra datacenters [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/managed-instance-apache-cassandra/">DOCS</a>]
    <br /><br />
 
-1. Per the Hands-on</a>, select "Azure SQL"
-
 1. Select Resource group.
 
 1. Click "Accept offer" of first 100,000 vCore seconds and 32GB of data & 32GB of backup storage free per month for lifetime of the subscription.
@@ -122,7 +141,7 @@ Let's first look at traditional SQL "relational" databases.
 
 1. Compose Database name with a data.
 
-1. Compose Server name with a date suffix to make it unique like
+1. Compose Server name with a date suffix to make it unique, such as:
 
    <tt><strong>wow-westus-231207a</strong>.database.windows.net</tt>
 
@@ -147,7 +166,7 @@ Let's first look at traditional SQL "relational" databases.
 
 <hr />
 
-## Azure Storage Products
+## Azure Storage products
 
 Microsoft has these offerings in the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/?product=storage"><strong>storage</strong> category</a>:
 
