@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-26"
+date: "2023-12-07"
 file: "azure-data"
 title: "Azure Data (within Microsft's cloud)"
 excerpt: "Obtain storage and database skills to pass DP-900, DP-100, DP-203, DP-300 exams"
@@ -68,7 +68,7 @@ Let's first look at traditional SQL "relational" databases.
    C. Azure "SQL databases" are totally managed by Microsoft in its Azure cloud as serverless hyperscale databases designed to be fault-tolerant and highly available [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/database/index">DOCS</a>] The different cloud options:
 
    C1. Single (SQL) database
-   C2. Elastic pool
+   C2. Elastic pool to manage and scale multiple databases with varying and unpredictable usage patterns, sharing a single set of resources (at a prescribed budget). [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/database/elastic-pool-overview">DOCS</a>]
    C3. Database server
    <br /><br />
 
@@ -130,7 +130,13 @@ Let's first look at traditional SQL "relational" databases.
 1. Select Authentication method.
 1. Set Microsoft Entra admin. Click Select.
 
-1. PROTIP: Note the Admin Object/App ID GUID.
+1. On the Create SQL Database page, select Next :Networking >, and on the Networking page, in the Network connectivity section, select Public endpoint. Then select Yes for both options in the Firewall rules section to allow access to your database server from Azure services and your current client IP address.
+
+1. Select Next: Security > and set the Enable Microsoft Defender for SQL option to Not now.
+
+1. Select Next: Additional Settings > and on the Additional settings tab, set the Use existing data option to Sample (this will create a sample database that you can explore later).
+
+   PROTIP: Note the Admin Object/App ID GUID.
 
 1. Click OK to create the database. Click "Review + Create". Click "Create".
 
