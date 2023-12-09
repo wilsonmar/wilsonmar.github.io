@@ -56,8 +56,10 @@ The types of databases are: Key-value -> Column -> Document -> Relational (SQL) 
 <tr valign="top" align="center"><td>Flexibility</td><td>high</td><td>moderate</td><td>high</td><td>high</td><td>high</td><td>high</td></tr>
 </table>
 
-The SQL language to manipulate data was invented in the 1970s and standardized as ISO 9075. 
+The SQL language to manipulate data was invented in the 1970s (by IBM) and standardized as ISO 9075. 
 However, Oracle, Microsoft, IBM, and others each have their own proprietary dialects.
+Microsft's T-SQL (for Transac-SQL) is a superset of SQL with additional commands (such as EXEC to rename databases).
+
 The SQL language has also been enhanced for use with "NoSQL", Graph, and now Datalake databases.
 
 The underlying <strong>format of files</strong> used to store data within Apache Spark, Hadoop "Big data" evolved from 
@@ -102,7 +104,7 @@ Let's first look at traditional SQL "relational" databases.
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702014746/az-cloud-sqls-1254x246_ikhh9v.png"><img alt="az-cloud-sqls-1254x246.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702014746/az-cloud-sqls-1254x246_ikhh9v.png"></a>
 
-   * SQL Server stretch databases
+   * on-prem "SQL Server stretch databases" stretches (migrates in the background) cold SQL data to the Azure cloud <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/database/stretch-database-overview">Deprecated in SQL Server 2022 (16.x) and Azure SQL Database</a>
    <br /><br />
 
    Among Marketplace services:
@@ -155,13 +157,20 @@ Let's first look at traditional SQL "relational" databases.
 1. Set Microsoft Entra admin. Click Select.
 
    ### Connection Policy
+
 1. On the Create SQL Database page, select Next :Networking >, and on the Networking page, in the Network connectivity section, select Public endpoint. Then select Yes for both options in the Firewall rules section to allow access to your database server from Azure services and your current client IP address.
 
    * "Redirect" within the Azure network
    * "Proxy" (through a gateway via <strong>port 1443</strong>) for access outside the Azure network - Allow access from any IP address
    <br /><br />
 
+   Server Firewall rules can also be set using T-SQL:
+   <pre>EXECUTE sp_set_database_firewall_rule N'OnlyAllowServer','0.0.0.4','0.0.0.4';</pre>
+
+
    ### Defender
+
+   "Microsoft Defender" is a suite of "unified" offerings to discover and classify sensitive data, protect data and respond to data risks in Azure SQL Database and Azure Synapse Analytics. It's a unified solution that includes Azure SQL Database Advanced Threat Protection (ATP) and Azure SQL Database Vulnerability Assessment (VA). It's built into Azure SQL Database and Azure Synapse Analytics and is enabled by default. It's also available for Azure SQL Managed Instance and SQL Server on Azure Virtual Machines. [<a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-sql/database/advanced-data-security">DOCS</a>]
 
 1. Select Next: Security > and set the Enable Microsoft Defender for SQL option to "Not now" during testing.
 
@@ -647,6 +656,24 @@ The <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/
 
 <hr />
 
+## RBAC Permissions
+
+SQL DB Contributor:
+   * manage SQL database 
+   * can't manage their security-related policies or their parent SQL servers
+   <br /><br />
+SQL Managed Instance Contributor:
+   * manage SQL-managed instances and required network configuration
+   * can't give access to others
+   <br /><br />
+SQL Security Manager:
+   * manage security-related <strong>policies</strong> of SQL servers and databases
+   * no access to SQL servers
+   <br /><br />
+
+
+<hr />
+
 ## Data Wrangling
 
 The process of transforming and mapping data from a "raw" form to another format, to make it more appropriate and valuable for a variety of downstream purposes such as analytics. AKA "data munging".
@@ -683,7 +710,8 @@ The process of transforming and mapping data from a "raw" form to another format
 Traditionally, <strong>SQL Server 2019</strong> software run within a single Azure VM (IaaS) instance.
 This is still the approach for large (64TB) SQL databases.
 
-<strong>SQL agent jobs</strong> back up directly to a URL linked to Azure blob storage. Azure provides the option to use geo-redundant storage (GRS) or read-access geo-redundant storage (RA-GRS) to ensure that backup files are stored safely across the geographic landscape.
+<strong>SQL agent jobs</strong> back up directly to a URL linked to Azure blob storage. 
+Azure provides the option to use <a href="#Redundancy">redundancy options</a> to ensure that backup files are stored safely across the geographic landscape:
 
 Additionally, as part of the Azure SQL VM service provider, you can have your backups automatically managed by the platform.
 
@@ -1041,6 +1069,53 @@ But can scale up and down.
 * Apache Storm - real-time analytics Stream computation
 
 Azure Glue is a  fully managed extract, transform, and load (ETL) service that you can use to prepare and load data for analytics.
+
+## MongoDB
+
+MongoDB can be used as a file system called GridFS. It stores files up to 16TB with load balancing and data replication over multiple machines.
+
+
+## Storage
+
+<a target="_blank" href="https://www.youtube.com/watch?v=P3qmqUZJ7l0&t=3h47m33s">DEMO</a>: Create Blob and File storage
+
+https://www.techtarget.com/searchstorage/tutorial/How-to-create-an-Azure-Data-Lake-Storage-Gen2-account
+
+https://www.techtarget.com/searchstorage/tip/Compare-Azure-Blob-Storage-vs-Data-Lake
+
+1. Create a storage account. REMEMBER: Name must be 24 characters or less.
+1. For Performance: when selecting Premium (SSD) for low latency:
+   * "Block blobs: Best for high transaction rates or low storage latency", storing large amounts of text or binary data, storing data for streaming and storing data for backup and restore scenarios.
+   * "File shares: Best for enterprise or high-performance applications that need to scale", and scenarios that require a fully SMB compatible file system.
+   * "Page blobs: Best for random read/write operations" and frequent read/write operations in small ranges.
+   <br /><br />
+
+   ### Redundancy
+
+1. For Redundancy: (to achieve disaster recovery): [<a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy">DOCS</a>]
+
+   * LRS = Locally redundant storage : "Lowest-cost option with basic protection against server rack and drive failures. Recommended for non-critical scenarios." Data is replicated three times within a single facility in a single region.
+
+   * LRS premium
+   
+   * ZRS = Zone-redundant storage : "Intermediate option with protection against datacenter-level failures. Recommended for high availability scenarios."<br />Data is replicated synchronously across three Azure availability zones in a single region.
+   
+   * GRS = Geo-redundant storage : "Intermediate option with failover capabilities in a secondary region. Recommended for backup scenarios."<br />Data is replicated synchronously across three Azure availability zones in a single region, and then asynchronously to a paired region.
+
+   * GZRS = Geo-zone-redundant storage : "Optimal data protection solution that includes the offerings of both GRS and ZRS. Recommended for critical data workloads."<br />Data is replicated synchronously across three Azure availability zones in a single region, and then asynchronously to a paired region that is geographically distant from the primary region.
+
+   * RA-GRS = Read-Access Geo-Redundant Storage : GRS plus read access to the secondary region. Recommended for scenarios requiring read access in the secondary region.<br />Data is replicated synchronously across three Azure availability zones in a single region, and then asynchronously to a paired region that is geographically distant from the primary region.
+   
+   * RA-ZGRS = Read-Access Geo-Zone-Redundant Storage : GZRS plus read access to the secondary region. Recommended for scenarios requiring read access in the secondary region."<br />Data is replicated synchronously across three Azure availability zones in a single region, and then asynchronously to a paired region that is geographically distant from the primary region. This is the Highest-cost option with the highest level of availability and durability.
+
+1. for "Read-access geo-redundant storage (RA-GRS)" is selected, also check "Make read access to data available in the event of regional unavailability" 
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702090058/azure-data-regional-205x808_mjwbvk.png"><img align="right" width="205" alt="azure-data-regional-205x808.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702090058/azure-data-regional-205x808_mjwbvk.png"></a>
+   <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/blobs/">PRICING</a> for data storage is based on several factors. But the basic cost of the first 50 TB of LRS Hot Hierarchical Gen2 storage, by Region/Location, in $/GB/Month USD. <a target="_blank" href="https://7451111251303.gumroad.com/l/fjkxm">According to my calculations (in an Excel file) on Dec 8, 2023</a>:
+   
+   <strong>Brazil Southeast</strong> is the most expensive -- over 2.5 times the cost of the cheapest region, West US 2.
+   
+   That's before adding costs for reservations, time lengths, Data egress fees, etc. which can be substantial and dramatically impact the storage budget. 
 
 ## Social
 
