@@ -125,6 +125,8 @@ Like Adobe's PDF file format, which enabled many companies in the printing indus
 
    Delta Lakehouse data structures are next-level genius:
 
+   * The binary format compresses data (using algorithms Snappy, Gzip, LZ4, etc.) that's 75% than CSV files
+
    * <a target="_blank" href="https://github.com/delta-io/delta/blob/master/PROTOCOL.md">Logging of ACID transactions</a> (changes) are enabled by Apache's <strong>"Parquet"</strong> file format, which not only enables auditing governance but also enables <strong>time travel</strong> -- bringing the whole database to specific points back in time. This is similar to what can be done with repositories of text files using Git.
 
    * Responds to (is fully compatible with) Apache Spark APIs to access data live
@@ -142,6 +144,8 @@ Like Adobe's PDF file format, which enabled many companies in the printing indus
    * multiple queries can write to the same delta table simultaneously (at exactly the same time). <a target="_blank" href="https://books.japila.pl/delta-lake-internals/overview/">BLOG</a>
    
    * Can handle continuous <strong>streams</strong> of data, processing video, audio, and other media data types
+
+   * Designed to be splittable -- be divided into smaller chunks for parallel processing in distributed computing frameworks like Apache Hadoop and Apache Spark.
 
    PROTIP: The Delta format enables a revolution in how people collaborate because for once there is <strong>a "single source of truth"</strong> for data engineers, data scientists, and business analysts. 
 
@@ -318,7 +322,7 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
 
    ### Working Home Page
 
-1. REMEMBER: The Microsoft <strong>Fabric working home page</strong> has Microsoft.com and not Azure:
+1. REMEMBER: The Microsoft <strong>Fabric working home page</strong> has Microsoft.com and NOT Azure, at:
 
    <a target="_blank" href="https://app.fabric.microsoft.com"><strong>https://app.fabric.microsoft.com</strong></a>
 
@@ -404,7 +408,7 @@ PROTIP: Although Fabric is marketed as a "unified" product, practically it's ope
    Fabric integrates into a single unified SaaS analytics platform :
    * <a href="#Data+Factory">Azure Data Factory</a>
    * Azure Data Explorer
-   * Azure Synapse Analytics operates on workspaces containing both relational SQL databases and big-data Lake databases, all linked to blobs (files) within Azure Data Lake Storage (ADLS) Gen2
+   * Azure Synapse Analytics operates on <a href="#Workspaces">workspaces</a> containing both relational SQL databases and big-data Lake databases, all linked to blobs (files) within Azure Data Lake Storage (ADLS) Gen2
    * Azure Databricks
    * Azure Synapse SQL
    * Power BI to 
@@ -454,7 +458,7 @@ PROTIP: Although Fabric is marketed as a "unified" product, practically it's ope
    * Browse
    * OneLake data hub
    * Monitoring hub - a station to view and track active activities across different products
-   * Workspaces
+   * <a href="#Workspaces">Workspaces</a>
    * My workspace
    <br /><br />
 
@@ -512,9 +516,9 @@ Each component has its own licensing considerations. See the next section.
 
    https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/?country=us
 
-1. Select Region: <strong>East US</strong> (Virginia) in US Dollars by the hour. However, prices are the same in all US regions.
+1. Select Region: <strong>East US</strong> (Virginia) in US Dollars by the hour. 
 
-   SKU = Stock Keeping Unit = a unique identifier for each distinct product and service that can be purchased in business.
+   DEFINITION: SKU = Stock Keeping Unit = a unique identifier for each distinct product and service that can be purchased in business.
 
    PROTIP: <a target="_blank" href="https://7451111251303.gumroad.com/l/fjkxm?layout=profile" title="Spreadsheet available for purchase">My analysis, illustrated below</a>, shows that while the number of CUs doubles with each level, costs also double for the two ways of charging:
 
@@ -525,6 +529,7 @@ Each component has its own licensing considerations. See the next section.
    As for differences in CU Reserved cost among different regions (using different colors):<br />
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png"><img alt="fabric-cu-pricing-intl-394x696.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png"></a>
    
+   PROTIP: There is only one "US" entry because prices are the same in all US regions.<br />
    Brazil South is double the cost in the US. 
    Fabric may not even be available there because the price for Pay-as-you-go is not listed for it on the website.
 
@@ -557,6 +562,95 @@ Each component has its own licensing considerations. See the next section.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=IaA9YNlg5hM">End-to-end</a>
 
+<hr />
+
+## Domain?
+
+
+## Workspaces
+
+   * <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-04b-fabric-lake-lab.html">HANDS-ON: Explore data analytics in Microsoft Fabric from the DP-900 labs</a>
+   * <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-05c-fabric-realtime-lab.html">HANDS-ON: Explore real-time analytics in Microsoft Fabric from the DP-900 labs</a>
+
+1. Using the browser profile for the email you want to use,
+ 
+   https://app.fabric.microsoft.com
+
+1. Click "Real Time Analytics" to see the left menu for that component:
+
+1. In the Fabric left menu, select <strong>Workspaces</strong>.
+1. Click the green "New workspace" button.
+1. PROTIP: For Workspace Name, construct a name that includes a project name and the date, such as 
+
+   <tt>RTA1-eastus2-231231a</tt>
+
+1. PROTIP: For Workspace image, construct an image file less that 45 KB to upload. Use a utility to compress an icon image around 100x100 pixels.
+1. Click "Advanced" to select a licensing mode in the Advanced section that includes Fabric capacity (Trial, Premium, or Fabric).
+
+   ### License Mode
+
+   * Select Pro to use basic Power BI features and collaborate on reports, dashboards, and scorecards. To access a Pro workspace, users need Pro per-user licenses. 
+   
+   * Select Premium per-user to collaborate using Power BI Premium features, including paginated reports, dataflows, and datamarts. To collaborate and share content in a Premium per-user workspace, users need Premium per-user licenses. Learn more
+   
+   * Select premium capacity if the workspace will be hosted in a premium capacity. When you share, collaborate on, and distribute Power BI and Microsoft Fabric content, users in the viewer role can access this content without needing a Pro or Premium per-user license. Learn more
+   
+   * Select embedded if the workspace will be hosted in an Azure embedded capacity. ISVs and developers use Power BI Embedded to embed visuals and analytics in their applications. Learn more
+   
+   * Select Fabric capacity if the workspace will be hosted in a Microsoft Fabric capacity. With Fabric capacities, users can create Microsoft Fabric items and collaborate with others using Fabric features and experiences. Explore new capabilities in Power BI, Data Factory, Data Engineering, and Real-Time Analytics, among others. Learn more
+
+   * Select the free trial per-user license to try all the new features and experiences in Microsoft Fabric for 60 days. A Microsoft Fabric trial license allows users to create Microsoft Fabric items and collaborate with others in a Microsoft Fabric trial capacity. Explore new capabilities in Power BI, Data Factory, Data Engineering, and Real-Time Analytics, among others. Learn more
+
+1. Do not check "Develop template apps".
+
+1. Click "Apply" for new workspace with "There is nothing here yet".
+
+   ### Create KQL database
+
+1. Click "+ New", then "KQL database" from the dropdown.
+1. For KQL Database name, include your project name and date:
+
+   <tt>RTA1-KQL-eastus2-231231a</tt>
+   
+1. Click "Create" to see a KQL database page.
+
+   <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-05c-fabric-realtime-lab.html#create-an-eventstream">HANDS-ON: Create an EventStream</a>
+
+1. Click "Home" to see the workspace page with these icons:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702097886/azure-KQL-workspace-1120x220_icdfho.png"><img alt="azure-KQL-workspace-1120x220.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702097886/azure-KQL-workspace-1120x220_icdfho.png"></a>
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=rQjhpP9HHI8&t=1m32s" title="Oct 3, 2023 by Wagner Crivelini from Brazil.">VIDEO</a>: Ingesting Real-Time Data with MICROSOFT FABRIC and KUSTO
+
+1. Click the "Eventstream" icon.
+1. For New Eventstream Name, construct
+
+   <tt>RTA1-KQL-stream-eastus2-231231a</tt>
+
+1. The visual designer canvas shows a source that connects to your eventstream, which in turn is connected to a destination.
+1. Click "New source" on the designer canvas to select "Sample data" for a "Sample data" pane.
+1. For "Source name", type "taxis" and select among "Sample Data" dropdown "Yellow Taxi (high sample rate)". 
+1. Click "Add".
+1. Select "Data preview" (on the tab beneath the designer canvas) to preview the data being streamed from the source.
+1. Click "New destination" on the designer canvas to select "KQL database" for a "KQL database" entry pane.
+
+1. Leave Data Ingestion mode at default "Event processing before ingestion".
+1. For "Destination name", type "taxi-data".
+1. For "Workspace", select the one you created.
+1. For "KQL database", select the one you created. 
+1. For "Destination table", type "taxi-data". ???
+1. Click "Add".
+
+1. In the Ingest data wizard, on the Destination page, select New table and enter the table name taxi-data. Then select Next: Source.
+
+1. On the Source page, review the default data connection name, and then select Next: Schema.
+1. On the Schema page, change the Data format from TXT to JSON, and view the preview to verify that this format results in multiple columns of data. Then select Next: Summary.
+1. On the Summary page, wait for continuous ingestion to be established, and then select Close.
+1. Verify that your completed eventstream says "successful".
+
+   Query real-time data in a KQL database
+
+<hr />
 
 ## Workflow with Fabric 
 
@@ -565,7 +659,7 @@ Microsoft Fabric offers a centralized storage solution, eliminating data fragmen
    Fabric aims to eliminate silos and remove data duplication by providing a single platform for <strong>collaboration</strong> among data engineers, data scientists, and business analysts. The <a target="_blank" href="https://learn.microsoft.com/fabric/data-engineering/tutorial-lakehouse-introduction">flow</a> is:
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701049746/fabric-flow-842x516_bcpj9q.jpg"><img alt="fabric-flow-842x516.jpeg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701049746/fabric-flow-842x516_bcpj9q.jpg"></a>
 
-Databricks is a cloud-based service that provides a unified analytics platform for data scientists, data engineers, and business analysts. It provides a collaborative workspace for data scientists to build and train machine learning models. It also provides a platform for data engineers to build data pipelines and perform complex data engineering tasks. It provides a platform for business analysts to perform data analysis and build reports and dashboards.
+Databricks is a cloud-based service that provides a unified analytics platform for data scientists, data engineers, and business analysts. It provides a collaborative workspace for data scientists to build and train machine learning models. It also provides a platform for data engineers to build data pipelines and perform complex data engineering tasks. It provides a platform for business analysts to perform data analysis and build reports and dashboards. https://github.com/derar-alhussein/Databricks-Certified-Data-Engineer-Associate
 
    <a target="_blank" href="https://justb.dk/blog/2023/11/fabric-data-lakehouse-understanding-the-dataflow/">This article</a> describes the flow in detail.
 
