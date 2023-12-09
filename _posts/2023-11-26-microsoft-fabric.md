@@ -188,14 +188,17 @@ Like Adobe's PDF file format, which enabled many companies in the printing indus
 
 <hr />
 
-<a name="Personas"></a>
+<a name="Diagram"></a>
 
-## Personas (Fabric User Roles)
+## Diagram
 
 PROTIP: I adapted <a target="_blank" href="https://7451111251303.gumroad.com/l/fkrvnn" title="Available for purchase">this diagram</a> from <a target="_blank" href="https://learn.microsoft.com/en-in/fabric/get-started/microsoft-fabric-overview">Microsoft</a> and <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">others</a> to show, all in one page, relationships among key technology components ("Experiences") in Fabric:
 
-<a name="Diagram"></a>
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701439638/microsoft-fabric-diagram-231201a-wm_aiciwa.png"><img alt="microsoft-fabric-diagram-231201a-wm.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701439638/microsoft-fabric-diagram-231201a-wm_aiciwa.png"><br align="right" /><em>Click for full-size image</em></a>.
+
+<a name="Personas"></a>
+
+## Personas (Fabric User Roles)
 
 Now let's focus on <strong>impacts</strong> on the lives of people, before examining the home pages and <strong>capabilities</strong> of the products.
 
@@ -614,7 +617,7 @@ Each component has its own licensing considerations. See the next section.
    
 1. Click "Create" to see a KQL database page.
 
-   <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-05c-fabric-realtime-lab.html#create-an-eventstream">HANDS-ON: Create an EventStream</a>
+   <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-05c-fabric-realtime-lab.html#create-an-eventstream">HANDS-ON: Create a KQL EventStream</a>
 
 1. Click "Home" to see the workspace page with these icons:
 
@@ -1125,7 +1128,7 @@ https://learn.microsoft.com/en-us/dax/dax-queries
      (MEASURE <em>table name</em>[<em>measure name</em>] = <em>scalar expression</em>) | 
      (VAR <em>var name</em> = <em>table or scalar expression</em>) |
      (TABLE <em>table name</em> = <em>table expression</em>) | 
-     (COLUMN <em>table name</em>[<column name>] = <em>scalar expression</em>) | 
+     (COLUMN <em>table name</em>[<em>column name</em>] = <em>scalar expression</em>) | 
     ) + 
 ]
 (EVALUATE
@@ -1193,7 +1196,6 @@ https://www.reddit.com/r/MicrosoftFabric/comments/14iuplv/azure_data_factory_vs_
    Outside of Microsoft:
 
    https://live360events.com/Events/Orlando-2023/Home.aspx
-
 
 
 <hr />
