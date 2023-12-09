@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-20"
+date: "2023-12-08"
 file: "security-certs"
 title: "Security Certifications"
 excerpt: "There are several (overlapping) ones."
@@ -807,7 +807,7 @@ SEC275</td><td>1</td><td>
 FOR518: Mac and iOS Forensic Analysis and Incident Response</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td><td>-</td></tr>
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/information-security-fundamentals-gisf">GISF</a></td><td>Information Security Fundamentals</td><td>SEC301</td><td>1</td><td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/information-security-fundamentals-gisf">GISF</a></td><td>Information Security Fundamentals</td><td>SEC301</td><td>2</td><td>
 X</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 
@@ -867,7 +867,7 @@ SEC565: Red Team Operations and Adversary Emulation</td><td>?</td><td>
 -</td><td>-</td><td>-</td><td>-</td><td>-</td><td>X</td><td>-</td><td>-</td></tr>
 
 
-<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/security-essentials-gsec/">GSEC</a></td><td>Security Essentials</td><td>SEC401</td><td>2</td><td>
+<tr valign="top" align="left"><td><a target="_blank" href="https://www.giac.org/certifications/security-essentials-gsec/">GSEC</a></td><td>Security Essentials</td><td>SEC401</td><td>3</td><td>
 X</td><td>-</td><td>X</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td></tr>
 

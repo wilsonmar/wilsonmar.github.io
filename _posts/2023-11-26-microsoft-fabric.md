@@ -1,9 +1,9 @@
 ---
 layout: post
-date: "2023-12-04"
+date: "2023-12-09"
 file: "microsoft-fabric"
 title: "Microsoft Fabric"
-excerpt: "Simplify multi-cloud data handling for real-time analytics, then pass the DP-600 exam in January 2024"
+excerpt: "Simplify multi-cloud data handling for real-time analytics in Delta Lakehouses. Pass the DP-600 exam."
 tags: [cloud, Azure]
 image:
 # microsoft-fabric-1900x500.png
@@ -221,7 +221,7 @@ Microsoft designed Fabric documentation around different roles within enterprise
 
    PROTIP: Those slinging legacy SSIS ETLs can add value now by enabling "Data Citizens" to use PowerBI (and Data Activator) such that they "won't notice" (are impacted minimally) when data inevitably moves from on-prem to the Fabric cloud. Then they can brag on their resume:
 
-   > "Migrated users quickly to Azure Fabric Data Activator automation with minimal disruption due to proactive restructuring of on-prem. SSIS ETLs so users access legacy visualizations and alerts from PowerBI similar to how they view data in cloud Lakehouses."
+   > "Migrated users quickly to Azure Fabric Data Activator automation with minimal disruption due to proactive restructuring of on-prem. SSIS ETLs so users access legacy visualizations and alerts from PowerBI similar to how they view data in cloud Lakehousesxx."
 
 
 ### Data Engineers
@@ -258,7 +258,10 @@ Microsoft designed Fabric documentation around different roles within enterprise
 
 <strong>Data Scientists</strong> work on AI models using Data Science tools such as Notebooks written in PySpark for Machine Learning. The intelligence created can be custom tags that extend generic LLM (Large Language Models) created by others for NLP (Natural Language Processing) and other AI (Artificial Intelligence) capabilities.
 
-Additional roles:
+Data Scientists are the ones who add embeddings tags within databases to enhance LLMs with custom data.
+
+
+### Additional roles:
 
 * Solution Architects/Architects
 * AI Engineers/Architects
@@ -835,7 +838,9 @@ item permissions in a workspace grant access to individual warehouses to enable 
 
 ## Real-Time Analytics
 
-<a target="_blank" href="https://learn.microsoft.com/en-us/answers/questions/1444761/fabric-real-time-analytics-sample-log-analytics-ra">Q&A</a>:
+   * <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-04b-fabric-lake-lab.html">HANDS-ON: Explore data analytics in Microsoft Fabric from the DP-900 labs</a>
+   * <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-05c-fabric-realtime-lab.html">HANDS-ON: Explore real-time analytics in Microsoft Fabric from the DP-900 labs</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/answers/questions/1444761/fabric-real-time-analytics-sample-log-analytics-ra">Q&A</a>:
 
 1. In "Real-Time Analytics".
 1. Click "Use a sample" for this menu:

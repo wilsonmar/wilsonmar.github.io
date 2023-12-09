@@ -1006,6 +1006,9 @@ Synapse has a "Massively Parallel" engine of partitioned instances (sharding)
 <a target="_blank" href="https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio?tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall">Data Studio is installed</a> automtically 
 when SQL Server Management Studio (SSMS) 18.7, Azure Data Studio is installed.
 
+
+<hr />
+
 <a name="CosmoDB"></a>
 
 ## Non-Relational CosmosDB
@@ -1016,14 +1019,23 @@ PROTIP: <a target="_blan" href="https://parquet.apache.org/">Apache's Parquet fi
    * https://docs.azure.com/en-us/azure/architecture/browse/#databases
 
 
+<hr />
+
 <a name="Databricks"></a>
 
-## Databricks DP-090
+## Databricks 
 
-There is a class and certification specific to Databricks:
-https://docs.azure.com/en-us/learn/certifications/courses/dp-090t00
+https://learn.microsoft.com/en-us/azure/databricks/getting-started/free-training
+from the Databricks Academy at https://www.databricks.com/learn/training/home
+with videos at https://www.youtube.com/@Databricks
 
-Earn the "Azure Certified: Azure Data Fundamentals" certification by passing the one $99 exam: <a target="_blank" href="https://docs.azure.com/en-us/learn/certifications/exams/dp-090">DP-090 exam</a>: 
+https://www.databricks.com/learn/training/lakehouse-fundamentals-accreditation#video
+2-hour Delta Lakehouse Fundamentals
+
+$200 Annual subscription for all classes at
+https://customer-academy.databricks.com/learn
+Six 2 hour "Get Started" E-learning classes
+
 
 
 <a name="HDInsight"></a>
