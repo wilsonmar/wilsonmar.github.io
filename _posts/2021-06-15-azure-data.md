@@ -184,44 +184,15 @@ Let's first look at traditional SQL "relational" databases.
 
 1. Click "Go to resource".
 
-
 <hr />
 
-## Azure Storage products
-
-Microsoft has these offerings in the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/?product=storage"><strong>storage</strong> category</a>:
-
-* Archive Storage - Industry leading price point for storing rarely accessed data [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview">DOCS</a>]
-* Avere vFXT for Azure - Run high-performance, file-based workloads in the cloud [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/avere-vfxt/">DOCS</a>]
-* Azure Backup - Simplify data protection and protect against ransomware [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/backup/">DOCS</a>]
-* Azure confidential ledger - Tamperproof, unstructured data store hosted in trusted execution environments (TEEs) and backed by cryptographically verifiable evidence [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/confidential-ledger/">DOCS</a>]
-* Azure Container Storage - Manage persistent volumes for stateful container applications [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/container-storage/">DOCS</a>]
-* Azure Data Lake Storage - Massively scalable, secure data lake functionality built on Azure Blob Storage [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction">DOCS</a>]
-* Azure Data Share - A simple and safe service for sharing big data with external organizations [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/data-share/">DOCS</a>]
-* Azure Elastic SAN (Preview) - Elastic SAN is a cloud-native Storage Area Network (SAN) service built on Azure. Gain access to an end-to-end experience like your on-premises SAN. [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/elastic-san/">DOCS</a>]
-* Azure Files - Simple, secure and serverless enterprise-grade cloud file shares [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/files/">DOCS</a>]
-* Azure FXT Edge Filer - Hybrid storage optimization solution for HPC environments [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/fxt-edge-filer/">DOCS</a>]
-* Azure HPC Cache - File caching for high-performance computing (HPC) [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/hpc-cache/">DOCS</a>]
-* Azure Managed Lustre - A fully managed, cloud-based parallel file system that enables customers to run their high-performance computing (HPC) workloads in the cloud [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-managed-lustre/">DOCS</a>]
-* Azure NetApp Files - Enterprise-grade Azure file shares, powered by NetApp [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-netapp-files/">DOCS</a>]
-* Blob Storage - REST-based object storage for unstructured data [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/blobs/">DOCS</a>]
-* Data Box - Appliances and solutions for offline data transfer to Azure [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/databox/">DOCS</a>]
-* Disk Storage - High-performance, highly durable block storage for Azure Virtual Machines [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview">DOCS</a>]
-* Queue Storage - Effectively scale apps according to traffic [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/queues/">DOCS</a>]
-* Storage - Durable, highly available, and massively scalable cloud storage [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/">DOCS</a>]
-* Storage Explorer - View and interact with Azure Storage resources [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/vs-azure-tools-storage-manage-with-storage-explorer">DOCS</a>]
-* StorSimple - Lower costs with an enterprise hybrid cloud storage solution [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storsimple/">DOCS</a>]
-<br /><br />
-
-Other Azure services:
+## Other Azure services:
 
 * <a href="#ADF">Azure Data Factory (ADF)</a>
 * Stream Analytics
 * A Data Lakehouse holds raw data after ingestion. Gen2 big data analytics with Hadoop compatible access built on Azure Blob storage with a superset of POSIX permissions
 * A Data Lake House (like Databricks) makes use of Spark data warehouse
 
-
-## Courses
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/dp-601t00?resource_type=course&products=azure&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks">
 1-day course DP-601T00---A: Implementing a Lakehouse with Microsoft Fabric</a>
@@ -1075,7 +1046,35 @@ Azure Glue is a  fully managed extract, transform, and load (ETL) service that y
 MongoDB can be used as a file system called GridFS. It stores files up to 16TB with load balancing and data replication over multiple machines.
 
 
-## Storage
+
+<hr />
+
+## Azure Storage products
+
+Microsoft has these offerings in the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/?product=storage"><strong>storage</strong> category</a>:
+
+* Archive Storage - Industry leading price point for storing rarely accessed data [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview">DOCS</a>]
+* Avere vFXT for Azure - Run high-performance, file-based workloads in the cloud [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/avere-vfxt/">DOCS</a>]
+* Azure Backup - Simplify data protection and protect against ransomware [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/backup/">DOCS</a>]
+* Azure confidential ledger - Tamperproof, unstructured data store hosted in trusted execution environments (TEEs) and backed by cryptographically verifiable evidence [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/confidential-ledger/">DOCS</a>]
+* Azure Container Storage - Manage persistent volumes for stateful container applications [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/container-storage/">DOCS</a>]
+* Azure Data Lake Storage - Massively scalable, secure data lake functionality built on Azure Blob Storage [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction">DOCS</a>]
+* Azure Data Share - A simple and safe service for sharing big data with external organizations [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/data-share/">DOCS</a>]
+* Azure Elastic SAN (Preview) - Elastic SAN is a cloud-native Storage Area Network (SAN) service built on Azure. Gain access to an end-to-end experience like your on-premises SAN. [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/elastic-san/">DOCS</a>]
+* Azure Files - Simple, secure and serverless enterprise-grade cloud file shares [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/files/">DOCS</a>]
+* Azure FXT Edge Filer - Hybrid storage optimization solution for HPC environments [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/fxt-edge-filer/">DOCS</a>]
+* Azure HPC Cache - File caching for high-performance computing (HPC) [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/hpc-cache/">DOCS</a>]
+* Azure Managed Lustre - A fully managed, cloud-based parallel file system that enables customers to run their high-performance computing (HPC) workloads in the cloud [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-managed-lustre/">DOCS</a>]
+* Azure NetApp Files - Enterprise-grade Azure file shares, powered by NetApp [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-netapp-files/">DOCS</a>]
+* Blob Storage - REST-based object storage for unstructured data [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/blobs/">DOCS</a>]
+* Data Box - Appliances and solutions for offline data transfer to Azure [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/databox/">DOCS</a>]
+* Disk Storage - High-performance, highly durable block storage for Azure Virtual Machines [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview">DOCS</a>]
+* Queue Storage - Effectively scale apps according to traffic [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/queues/">DOCS</a>]
+* Storage - Durable, highly available, and massively scalable cloud storage [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/">DOCS</a>]
+* Storage Explorer - View and interact with Azure Storage resources [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/vs-azure-tools-storage-manage-with-storage-explorer">DOCS</a>]
+* StorSimple - Lower costs with an enterprise hybrid cloud storage solution [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storsimple/">DOCS</a>]
+<br /><br />
+
 
 <a target="_blank" href="https://www.youtube.com/watch?v=P3qmqUZJ7l0&t=3h47m33s">DEMO</a>: Create Blob and File storage
 
@@ -1113,9 +1112,11 @@ https://www.techtarget.com/searchstorage/tip/Compare-Azure-Blob-Storage-vs-Data-
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702090058/azure-data-regional-205x808_mjwbvk.png"><img align="right" width="205" alt="azure-data-regional-205x808.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702090058/azure-data-regional-205x808_mjwbvk.png"></a>
    <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/blobs/">PRICING</a> for data storage is based on several factors. But the basic cost of the first 50 TB of LRS Hot Hierarchical Gen2 storage, by Region/Location, in $/GB/Month USD. <a target="_blank" href="https://7451111251303.gumroad.com/l/fjkxm">According to my calculations (in an Excel file) on Dec 8, 2023</a>:
    
-   <strong>Brazil Southeast</strong> is the most expensive -- over 2.5 times the cost of the cheapest region, West US 2.
+   <strong>Brazil Southeast</strong> (in red) is the most expensive -- 2.35 times the cost of the cheapest region, West US 2.
    
    That's before adding costs for reservations, time lengths, Data egress fees, etc. which can be substantial and dramatically impact the storage budget. 
+
+<hr />
 
 ## Social
 
