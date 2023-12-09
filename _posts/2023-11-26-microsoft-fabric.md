@@ -24,6 +24,263 @@ This is a hands-on technical tutorial that takes you logically step-by-step to q
 
 {% include whatever.html %}
 
+   Let's dive right into the Microsoft Fabric working portal GUI:
+
+   ### Browser Profile
+
+1. PROTIP: In an internet browser (Safari, Google Chrome, etc.) I click the icon next to the browser's three-dot menu to use a <strong>browser profile</strong> that retains the browser history for the <strong>work (organizational) account</strong> I need to use with Fabric.
+
+   <a name="AdminMenu"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701041117/fabric-signin-318x367_lf2lqp.png"><img alt="fabric-signin-318x367.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701041117/fabric-signin-318x367_lf2lqp.png"></a>
+
+   <a name="HomePage"></a>
+
+   ### Working Home Page
+
+1. REMEMBER: The Microsoft <strong>Fabric working home page</strong> has Microsoft.com and NOT Azure, at:
+
+   <a target="_blank" href="https://app.fabric.microsoft.com"><strong>https://app.fabric.microsoft.com</strong></a>
+
+   This is because Microsoft intends Fabric to be a service that can exchange data with competing clouds such as AWS and GCP as well as on-prem. data centers (through Microsoft's Arc). It's a "friendamy" strategy. Fabric is how Microsoft catches up to what <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a> and Databricks have been offering.
+
+1. You'll see what I call the "bouncer" page ensures that only <strong>organizational</strong> emails (work or school account) use Fabric. Your personal gmail or outlook.com account is no good here. Wow.
+
+   "You can't sign in here with a personal account. Use your work or school account instead."
+   
+   This is why you setup a <a href="#Browser+Profile">browser profiles</a> for each email account. Click the profile icon at the top right of the browser window to switch between profiles.
+
+   If you have a license, you'll see the fabric-landing-711x400.jpeg landing page, which lists the Fabric components you have access to.
+
+1. Click the big round gray icon at the upper side of the Fabric page for the <a href="#AdminMenu">Admin/Sign In menu above</a>.
+
+
+   ### Start Trial
+
+1. Click the green <strong>Start trial</strong> box.
+
+   REMEMBER: Notice the word "capacity" instead of "instances" because Fabric is a <strong>serverless</strong> service.
+
+1. Click "Start trial". 
+
+   PROTIP: In your Calendar, add a reminder to cancel the trial before the 30 days are up.
+   
+   The trial is for the <strong>Pro</strong> tier, which is the middle tier. The <strong>Premium</strong> tier is the top tier.
+
+   We'll come back to the "Learn more" link at: https://go.microsoft.com/fwlink/?linkid=2227617  which expands to
+   
+   https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial
+
+1. Select your Country (for data sovereignty) and Phone number (for SMS text verification).
+1. Click <strong>Start my new trial</strong>. This creates a new <a target="_blank" href="https://learn.microsoft.com/en-us/microsoft-365/education/deploy/intro-azure-active-directory#what-is-an-azure-ad-tenant">Entra ID</a> (Azure Active Directory) <a target="_blank" href="https://learn.microsoft.com/en-us/entra/fundamentals/create-new-tenant">tenant</a> tied to a DNS domain name to provide identity and access management (IAM) capabilities to applications and resources.
+
+   1 TB is allocated to OneLake storage.
+
+   64 capacity units (CUs) allow consumption of 64x60 CU seconds every minute when "experiences" are run. 
+
+   Each data <a target="_blank" href="https://learn.microsoft.com/en-us/purview/concept-elastic-data-map">Purview Data Map</a> capacity unit includes a throughput of 25 operations/sec and 10 GB of metadata storage limit for <a target="_blank" href="https://learn.microsoft.com/en-us/purview/concept-scans-and-ingestion">scanning</a>.
+   
+   PROTIP: When the capacity consumption exceeds its size, Microsoft slows down the experience similar to slowing down CPU performance.
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=l3cpnX0mpXE">VIDEO</a>: <a target="_blank" href="https://blog.fabric.microsoft.com/en-US/blog/capacity-metrics-in-microsoft-fabric/">BLOG</a>: <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app">Monitor Capacity usage</a> using:
+   
+1. Click the <strong>Admin</strong> icon at the top right of the page to see the number of days remaining in the trial.
+
+
+   ### Learn More
+
+1. PROTIP: Instead of clicking this <strong>Learn more</strong> link for the "Get started" tutorial, copy the URL and switch to your personal browser profile so you get points for learning,
+
+   This article contains information from the following sources:
+
+   * https://learn.microsoft.com/en-us/fabric/ is the main Fabric page.
+
+   * https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial
+   * https://learn.microsoft.com/en-us/training/paths/get-started-fabric
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/azure-data-fundamentals-explore-data-warehouse-analytics/">Microsoft Documentation for Microsoft Fabric</a>
+
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/collections/w2gkhrkzzmym?WT.mc_id=cloudskillschallenge_a68d938a-58b7-403e-89f2-b2305edb7c41">Microsoft Ignite: Microsoft Fabric Skills Challenge</a>
+
+   * https://aka.ms/Fabric-Hero-Blog-Ignite23
+
+
+<hr />
+
+<a name="Experiences"></a>
+
+## Product Component "Experiences"
+
+PROTIP: Although Fabric is marketed as a "unified" product, practically it's operated as a collection of products that Microsoft users navigate around.
+
+1. Click the Microsoft Fabric icon at the bottom-left of the screen for a list of product components (without the vague marketing generalizations):
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701046058/fabric-menu-624x584_de9vj1.png"><img alt="fabric-menu-624x584.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701046058/fabric-menu-624x584_de9vj1.png"></a>
+
+   Notice that there is a group of <strong>Synapse brand</strong> data products with blue icons.
+   Synapse is on Azure as a Platform-as-a-Service (PaaS)
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=Shw8FbDi4lQ&t=5m39s" title="by Deepika Bhatt with James Leonard">DEMO</a>: 
+   Fabric integrates into a single unified SaaS analytics platform :
+   * <a href="#Data+Factory">Azure Data Factory</a>
+   * Azure Data Explorer
+   * Azure Synapse Analytics operates on <a href="#Workspaces">workspaces</a> containing both relational SQL databases and big-data Lake databases, all linked to blobs (files) within Azure Data Lake Storage (ADLS) Gen2
+   * Azure Databricks
+   * Azure Synapse SQL
+   * Power BI to 
+   <br /><br />
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=Shw8FbDi4lQ&t=2m40s" title="by James Leonard">VIDEO</a>: 
+   "Synapse Data Analytics" integrates relational data with big data, both using Azure Data Lake Storage (ADLS) Gen2, <a href="#Data+Factory">Azure Data Factory</a>, Azure Databricks, Azure Synapse SQL, and Power BI into a single unified analytics platform.
+
+   Fabric covers the "complete spectrum" of data services including data movement, data lake, data engineering, data integration and data science, observational analytics, and business intelligence.
+   
+   But what happened to products previously shown in menus:
+   * Azure Databricks - "Fast, easy, and collaborative Apache Spark-based analytics platform"
+   * Azure Data Explorer - "Fast and highly scalable data exploration service"
+   * Azure Synapse Analytics - "Limitless analytics service with unmatched time to insight"
+   * Azure Analysis Services - "Enterprise-grade analytics engine as a service"
+   * Azure Machine Learning - "Build, train, and deploy models from the cloud to the edge"
+   * Azure Stream Analytics - "Real-time analytics on fast-moving streaming data"
+   * HDInsight - "Provision cloud Hadoop, Spark, R Server, HBase, and Storm clusters"
+   * Microsoft Purview - "Govern, protect, and manage your data estate"
+   <br /><br />
+
+   And Copilot? It's a feature within Power BI. <a target="_blank" href="https://www.youtube.com/watch?v=cTqVa1Gdn4s">Tak Tech Analytics</a> explains it.
+
+   ### Left Menus
+
+1. <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701174778/fabric-left-menu-66x493_x7hpur.png"><img align="right" alt="fabric-left-menu-66x493.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701174778/fabric-left-menu-66x493_x7hpur.png"></a>Click on any of the icons to see the left menu for that component:
+
+   ### Admin verify domain
+
+1. Click the 9-dot icon at the top left of the screen present automation options: Power Automate, Power Pages, and 365 apps at
+
+   https://www.microsoft365.com/?auth=2&home=1
+
+1. Click the <strong>Admin</strong> link to designate the admin for the organizational domain name used to sign in.
+1. Click Next.
+1. Read the "See step-by-step instructions to add DNS records" about signing into the Domain Registry (such as GoDaddy) to specify a TXT record Fabric needs to use like a password to trust the domain.
+1. Return to Fabric and click <strong>Confirm record</strong> for "You're now the admin".
+1. Click "Go to the admin center".
+1. Finish.
+
+   ### Left menu common items
+
+1. Click on Power BI on the left menu:
+
+   * <strong>Home</strong> is the landing page for the component.
+   * Create
+   * Browse
+   * OneLake data hub
+   * Monitoring hub - a station to view and track active activities across different products
+   * <a href="#Workspaces">Workspaces</a>
+   * My workspace
+   <br /><br />
+
+1. Click the <strong>Power BI</strong> icon (at the top as it's frequently used).
+   Its left menu contains what's not in other components: 
+   * Apps
+   * Metrics scorecards
+   * Deployment pipelines
+   * Learn - click on a sample to store its assets for that in your workspace, OneLake data hub, and left menu.
+   <br /><br /> 
+
+   ### Install Metrics App
+
+1. Search for other apps for Fabric at
+
+   https://appsource.microsoft.com/en-us/marketplace/apps?exp=ubp8&search=fabric&page=1
+
+1. In PowerBI, <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-install?tabs=1st">install the Microsoft Fabric Capacity Metrics app</a> to read:
+
+   <a target="_blank" href="https://app.fabric.microsoft.com/capacity/">https://app.fabric.microsoft.com/capacity</a>
+
+1. Click "Get it now" at 
+
+   https://appsource.microsoft.com/en-us/product/power-bi/pbi_pcmm.microsoftpremiumfabricpreviewreport?exp=ubp8
+
+1. Click "Install".
+1. Click the app to go to it.
+1. Connect to your own data by providing a "CapacityID" (GUID) and its UTC_offsite (time zone).
+
+   <a target="_blank" href="https://community.fabric.microsoft.com/t5/Developer/How-to-get-Power-BI-Embedded-Capacity-ID/m-p/2942860">PROTIP</a>: 
+   The capacity ID is shown in the capacity management page within the Power BI service -> Settings > Admin portal -> Capacity settings. Select a Gen2 capacity. 
+   In the URL of that page is the capacity ID. For example, "9B77CC50-E537-40E4-99B9-2B356347E584" is the Capacity ID in the URL:
+   
+   <tt>https://app.powerbi.com/admin-portal/capacities/9B77CC50-E537-40E4-99B9-2B356347E584</tt>
+
+   You may first have to <a target="_blank" href="https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-premium-manage">set your Service Principal as a Capacity Admin</a>. 
+
+   References:
+   * https://blog.fabric.microsoft.com/en-US/blog/capacity-metrics-in-microsoft-fabric/
+   * https://learn.microsoft.com/en-us/fabric/data-warehouse/usage-reporting
+   * https://learn.microsoft.com/en-us/fabric/admin/feature-usage-adoption
+   <br /><br />
+
+1. Click "Go back" at the lower-left corner.
+
+Each component has its own licensing considerations. See the next section.
+
+   * https://www.youtube.com/watch?v=8BAeLUywEMM by RADACAD "Why is it a big deal".
+
+<hr />
+
+## Pricing
+
+1. Click "Pricing" to see the Fabric Pricing page:
+
+   https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/?country=us
+
+1. Select Region: <strong>East US</strong> (Virginia) in US Dollars by the hour. 
+
+   DEFINITION: SKU = Stock Keeping Unit = a unique identifier for each distinct product and service that can be purchased in business.
+
+   PROTIP: <a target="_blank" href="https://7451111251303.gumroad.com/l/fjkxm?layout=profile" title="Spreadsheet available for purchase">My analysis, illustrated below</a>, shows that while the number of CUs doubles with each level, costs also double for the two ways of charging:
+
+   <img alt="fabric-cu-pricing-670x388.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148689/fabric-cu-pricing-670x388_ihqdt8.png">
+   
+   Reserved CUs are 41% less than the Pay-as-you-go per-hour prices at all levels, for all countries.
+   
+   As for differences in CU Reserved cost among different regions (using different colors):<br />
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png"><img alt="fabric-cu-pricing-intl-394x696.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png"></a>
+   
+   PROTIP: There is only one "US" entry because prices are the same in all US regions.<br />
+   Brazil South is double the cost in the US. 
+   Fabric may not even be available there because the price for Pay-as-you-go is not listed for it on the website.
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=smmmE-rjXr8">VIDEO</a>:
+   https://learn.microsoft.com/en-us/fabric/enterprise/licenses
+   
+   <a target="_blank" href="https://www.youtube.com/watch?v=6AAeV3bSMso&t=5m6s">VIDEO</a>: A Power BI Pro license is not needed if you have a Fabric Pro license at F64 SKU or above.
+
+   https://learn.microsoft.com/en-us/power-bi/enterprise/service-premium-features
+
+   "Charges for OneLake storage are comparable to Azure ADLS of $0.023/GB on US West 2."
+
+<hr />
+
+## End-to-End projects
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=fRBKcFaItZs" title="by Centida BI & Analytics">VIDEO</a>: Ways of getting <a target="_blank" href="https://learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver16">Wide World Importers sample Lakehouse databases</a> into Lakehouse:
+
+   1. Fact table from a OneLake Shortcut to a blob (file)
+   1. Order details from a Data Factory pipeline 
+   1. 2-dim tables from Excel using Dataflows
+   4. 3-dim tables from CSV (regular uploads)
+   <br /><br />
+
+<a target="_blank" href="https://www.youtube.com/watch?v=gKdlsHm7QgU&list=PL9SoC_dDpQ8FnIJZwlk5L4rU1r7-cQNCG">DataVerse Academy</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=yRJ03n1U5-E&list=PLug2zSFKZmV0Yaya7NxRQfrrPtfF2vj0K">Learn Microsoft Fabric with Will</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=a6A3jtvB62U">James Serra</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=IaA9YNlg5hM">End-to-end</a>
+
+
+
+<hr />
+
 ## What's Different?
 
 Rather than other fanboys who say "it's the latest cool thing, let's switch now", let's first clear up some common confusions:
@@ -312,258 +569,6 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
    <a href="#Semantic+models">Semantic models</a>  |
    <a href="#Reports">Reports</a> 
 
-   Let's dive into the portal to work with Microsoft Fabric:
-
-   ### Browser Profile
-
-1. PROTIP: In an internet browser (Safari, Google Chrome, etc.) I click the icon next to the browser's three-dot menu to use a <strong>browser profile</strong> that retains the browser history for the <strong>work (organizational) account</strong> I need to use with Fabric.
-
-   <a name="AdminMenu"></a>
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701041117/fabric-signin-318x367_lf2lqp.png"><img alt="fabric-signin-318x367.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701041117/fabric-signin-318x367_lf2lqp.png"></a>
-
-   <a name="HomePage"></a>
-
-   ### Working Home Page
-
-1. REMEMBER: The Microsoft <strong>Fabric working home page</strong> has Microsoft.com and NOT Azure, at:
-
-   <a target="_blank" href="https://app.fabric.microsoft.com"><strong>https://app.fabric.microsoft.com</strong></a>
-
-   This is because Microsoft intends Fabric to be a service that can exchange data with competing clouds such as AWS and GCP as well as on-prem. data centers (through Microsoft's Arc). It's a "friendamy" strategy. Fabric is how Microsoft catches up to what <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a> and Databricks have been offering.
-
-1. You'll see what I call the "bouncer" page ensures that only <strong>organizational</strong> emails (work or school account) use Fabric. Your personal gmail or outlook.com account is no good here. Wow.
-
-   "You can't sign in here with a personal account. Use your work or school account instead."
-   
-   This is why you setup a <a href="#Browser+Profile">browser profiles</a> for each email account. Click the profile icon at the top right of the browser window to switch between profiles.
-
-   If you have a license, you'll see the fabric-landing-711x400.jpeg landing page, which lists the Fabric components you have access to.
-
-1. Click the big round gray icon at the upper side of the Fabric page for the <a href="#AdminMenu">Admin/Sign In menu above</a>.
-
-
-   ### Start Trial
-
-1. Click the green <strong>Start trial</strong> box.
-
-   REMEMBER: Notice the word "capacity" instead of "instances" because Fabric is a <strong>serverless</strong> service.
-
-1. Click "Start trial". 
-
-   PROTIP: In your Calendar, add a reminder to cancel the trial before the 30 days are up.
-   
-   The trial is for the <strong>Pro</strong> tier, which is the middle tier. The <strong>Premium</strong> tier is the top tier.
-
-   We'll come back to the "Learn more" link at: https://go.microsoft.com/fwlink/?linkid=2227617  which expands to
-   
-   https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial
-
-1. Select your Country (for data sovereignty) and Phone number (for SMS text verification).
-1. Click <strong>Start my new trial</strong>. This creates a new <a target="_blank" href="https://learn.microsoft.com/en-us/microsoft-365/education/deploy/intro-azure-active-directory#what-is-an-azure-ad-tenant">Entra ID</a> (Azure Active Directory) <a target="_blank" href="https://learn.microsoft.com/en-us/entra/fundamentals/create-new-tenant">tenant</a> tied to a DNS domain name to provide identity and access management (IAM) capabilities to applications and resources.
-
-   1 TB is allocated to OneLake storage.
-
-   64 capacity units (CUs) allow consumption of 64x60 CU seconds every minute when "experiences" are run. 
-
-   Each data <a target="_blank" href="https://learn.microsoft.com/en-us/purview/concept-elastic-data-map">Purview Data Map</a> capacity unit includes a throughput of 25 operations/sec and 10 GB of metadata storage limit for <a target="_blank" href="https://learn.microsoft.com/en-us/purview/concept-scans-and-ingestion">scanning</a>.
-   
-   PROTIP: When the capacity consumption exceeds its size, Microsoft slows down the experience similar to slowing down CPU performance.
-
-1. <a target="_blank" href="https://www.youtube.com/watch?v=l3cpnX0mpXE">VIDEO</a>: <a target="_blank" href="https://blog.fabric.microsoft.com/en-US/blog/capacity-metrics-in-microsoft-fabric/">BLOG</a>: <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app">Monitor Capacity usage</a> using:
-   
-1. Click the <strong>Admin</strong> icon at the top right of the page to see the number of days remaining in the trial.
-
-
-   ### Learn More
-
-1. PROTIP: Instead of clicking this <strong>Learn more</strong> link for the "Get started" tutorial, copy the URL and switch to your personal browser profile so you get points for learning,
-
-   This article contains information from the following sources:
-
-   * https://learn.microsoft.com/en-us/fabric/ is the main Fabric page.
-
-   * https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial
-   * https://learn.microsoft.com/en-us/training/paths/get-started-fabric
-
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/azure-data-fundamentals-explore-data-warehouse-analytics/">Microsoft Documentation for Microsoft Fabric</a>
-
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/collections/w2gkhrkzzmym?WT.mc_id=cloudskillschallenge_a68d938a-58b7-403e-89f2-b2305edb7c41">Microsoft Ignite: Microsoft Fabric Skills Challenge</a>
-
-   * https://aka.ms/Fabric-Hero-Blog-Ignite23
-
-
-<hr />
-
-<a name="Experiences"></a>
-
-## Product Component "Experiences"
-
-PROTIP: Although Fabric is marketed as a "unified" product, practically it's operated as a collection of products that Microsoft users navigate around.
-
-1. Click the Microsoft Fabric icon at the bottom-left of the screen for a list of product components (without the vague marketing generalizations):
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701046058/fabric-menu-624x584_de9vj1.png"><img alt="fabric-menu-624x584.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701046058/fabric-menu-624x584_de9vj1.png"></a>
-
-   Notice that there is a group of <strong>Synapse brand</strong> data products with blue icons.
-   Synapse is on Azure as a Platform-as-a-Service (PaaS)
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=Shw8FbDi4lQ&t=5m39s" title="by Deepika Bhatt with James Leonard">DEMO</a>: 
-   Fabric integrates into a single unified SaaS analytics platform :
-   * <a href="#Data+Factory">Azure Data Factory</a>
-   * Azure Data Explorer
-   * Azure Synapse Analytics operates on <a href="#Workspaces">workspaces</a> containing both relational SQL databases and big-data Lake databases, all linked to blobs (files) within Azure Data Lake Storage (ADLS) Gen2
-   * Azure Databricks
-   * Azure Synapse SQL
-   * Power BI to 
-   <br /><br />
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=Shw8FbDi4lQ&t=2m40s" title="by James Leonard">VIDEO</a>: 
-   "Synapse Data Analytics" integrates relational data with big data, both using Azure Data Lake Storage (ADLS) Gen2, <a href="#Data+Factory">Azure Data Factory</a>, Azure Databricks, Azure Synapse SQL, and Power BI into a single unified analytics platform.
-
-   Fabric covers the "complete spectrum" of data services including data movement, data lake, data engineering, data integration and data science, observational analytics, and business intelligence.
-   
-   But what happened to products previously shown in menus:
-   * Azure Databricks - "Fast, easy, and collaborative Apache Spark-based analytics platform"
-   * Azure Data Explorer - "Fast and highly scalable data exploration service"
-   * Azure Synapse Analytics - "Limitless analytics service with unmatched time to insight"
-   * Azure Analysis Services - "Enterprise-grade analytics engine as a service"
-   * Azure Machine Learning - "Build, train, and deploy models from the cloud to the edge"
-   * Azure Stream Analytics - "Real-time analytics on fast-moving streaming data"
-   * HDInsight - "Provision cloud Hadoop, Spark, R Server, HBase, and Storm clusters"
-   * Microsoft Purview - "Govern, protect, and manage your data estate"
-   <br /><br />
-
-   And Copilot? It's a feature within Power BI. <a target="_blank" href="https://www.youtube.com/watch?v=cTqVa1Gdn4s">Tak Tech Analytics</a> explains it.
-
-   ### Left Menus
-
-1. <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701174778/fabric-left-menu-66x493_x7hpur.png"><img align="right" alt="fabric-left-menu-66x493.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701174778/fabric-left-menu-66x493_x7hpur.png"></a>Click on any of the icons to see the left menu for that component:
-
-   ### Admin verify domain
-
-1. Click the 9-dot icon at the top left of the screen present automation options: Power Automate, Power Pages, and 365 apps at
-
-   https://www.microsoft365.com/?auth=2&home=1
-
-1. Click the <strong>Admin</strong> link to designate the admin for the organizational domain name used to sign in.
-1. Click Next.
-1. Read the "See step-by-step instructions to add DNS records" about signing into the Domain Registry (such as GoDaddy) to specify a TXT record Fabric needs to use like a password to trust the domain.
-1. Return to Fabric and click <strong>Confirm record</strong> for "You're now the admin".
-1. Click "Go to the admin center".
-1. Finish.
-
-   ### Left menu common items
-
-1. Click on Power BI on the left menu:
-
-   * <strong>Home</strong> is the landing page for the component.
-   * Create
-   * Browse
-   * OneLake data hub
-   * Monitoring hub - a station to view and track active activities across different products
-   * <a href="#Workspaces">Workspaces</a>
-   * My workspace
-   <br /><br />
-
-1. Click the <strong>Power BI</strong> icon (at the top as it's frequently used).
-   Its left menu contains what's not in other components: 
-   * Apps
-   * Metrics scorecards
-   * Deployment pipelines
-   * Learn - click on a sample to store its assets for that in your workspace, OneLake data hub, and left menu.
-   <br /><br /> 
-
-   ### Install Metrics App
-
-1. Search for other apps for Fabric at
-
-   https://appsource.microsoft.com/en-us/marketplace/apps?exp=ubp8&search=fabric&page=1
-
-1. In PowerBI, <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-install?tabs=1st">install the Microsoft Fabric Capacity Metrics app</a> to read:
-
-   <a target="_blank" href="https://app.fabric.microsoft.com/capacity/">https://app.fabric.microsoft.com/capacity</a>
-
-1. Click "Get it now" at 
-
-   https://appsource.microsoft.com/en-us/product/power-bi/pbi_pcmm.microsoftpremiumfabricpreviewreport?exp=ubp8
-
-1. Click "Install".
-1. Click the app to go to it.
-1. Connect to your own data by providing a "CapacityID" (GUID) and its UTC_offsite (time zone).
-
-   <a target="_blank" href="https://community.fabric.microsoft.com/t5/Developer/How-to-get-Power-BI-Embedded-Capacity-ID/m-p/2942860">PROTIP</a>: 
-   The capacity ID is shown in the capacity management page within the Power BI service -> Settings > Admin portal -> Capacity settings. Select a Gen2 capacity. 
-   In the URL of that page is the capacity ID. For example, "9B77CC50-E537-40E4-99B9-2B356347E584" is the Capacity ID in the URL:
-   
-   <tt>https://app.powerbi.com/admin-portal/capacities/9B77CC50-E537-40E4-99B9-2B356347E584</tt>
-
-   You may first have to <a target="_blank" href="https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-premium-manage">set your Service Principal as a Capacity Admin</a>. 
-
-   References:
-   * https://blog.fabric.microsoft.com/en-US/blog/capacity-metrics-in-microsoft-fabric/
-   * https://learn.microsoft.com/en-us/fabric/data-warehouse/usage-reporting
-   * https://learn.microsoft.com/en-us/fabric/admin/feature-usage-adoption
-   <br /><br />
-
-1. Click "Go back" at the lower-left corner.
-
-Each component has its own licensing considerations. See the next section.
-
-   * https://www.youtube.com/watch?v=8BAeLUywEMM by RADACAD "Why is it a big deal".
-
-<hr />
-
-## Pricing
-
-1. Click "Pricing" to see the Fabric Pricing page:
-
-   https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/?country=us
-
-1. Select Region: <strong>East US</strong> (Virginia) in US Dollars by the hour. 
-
-   DEFINITION: SKU = Stock Keeping Unit = a unique identifier for each distinct product and service that can be purchased in business.
-
-   PROTIP: <a target="_blank" href="https://7451111251303.gumroad.com/l/fjkxm?layout=profile" title="Spreadsheet available for purchase">My analysis, illustrated below</a>, shows that while the number of CUs doubles with each level, costs also double for the two ways of charging:
-
-   <img alt="fabric-cu-pricing-670x388.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148689/fabric-cu-pricing-670x388_ihqdt8.png">
-   
-   Reserved CUs are 41% less than the Pay-as-you-go per-hour prices at all levels, for all countries.
-   
-   As for differences in CU Reserved cost among different regions (using different colors):<br />
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png"><img alt="fabric-cu-pricing-intl-394x696.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png"></a>
-   
-   PROTIP: There is only one "US" entry because prices are the same in all US regions.<br />
-   Brazil South is double the cost in the US. 
-   Fabric may not even be available there because the price for Pay-as-you-go is not listed for it on the website.
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=smmmE-rjXr8">VIDEO</a>:
-   https://learn.microsoft.com/en-us/fabric/enterprise/licenses
-   
-   <a target="_blank" href="https://www.youtube.com/watch?v=6AAeV3bSMso&t=5m6s">VIDEO</a>: A Power BI Pro license is not needed if you have a Fabric Pro license at F64 SKU or above.
-
-   https://learn.microsoft.com/en-us/power-bi/enterprise/service-premium-features
-
-   "Charges for OneLake storage are comparable to Azure ADLS of $0.023/GB on US West 2."
-
-<hr />
-
-## End-to-End projects
-
-1. <a target="_blank" href="https://www.youtube.com/watch?v=fRBKcFaItZs" title="by Centida BI & Analytics">VIDEO</a>: Ways of getting <a target="_blank" href="https://learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver16">Wide World Importers sample Lakehouse databases</a> into Lakehouse:
-
-   1. Fact table from a OneLake Shortcut to a blob (file)
-   1. Order details from a Data Factory pipeline 
-   1. 2-dim tables from Excel using Dataflows
-   4. 3-dim tables from CSV (regular uploads)
-   <br /><br />
-
-<a target="_blank" href="https://www.youtube.com/watch?v=gKdlsHm7QgU&list=PL9SoC_dDpQ8FnIJZwlk5L4rU1r7-cQNCG">DataVerse Academy</a>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=yRJ03n1U5-E&list=PLug2zSFKZmV0Yaya7NxRQfrrPtfF2vj0K">Learn Microsoft Fabric with Will</a>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=a6A3jtvB62U">James Serra</a>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=IaA9YNlg5hM">End-to-end</a>
 
 <hr />
 
@@ -611,15 +616,15 @@ Each component has its own licensing considerations. See the next section.
    ### Create KQL database
 
 1. Click "+ New", then "KQL database" from the dropdown.
-1. For KQL Database name, include your project name and date:
+1. PROTIP: For KQL Database name, include your project name and date:
 
    <tt>RTA1-KQL-eastus2-231231a</tt>
    
 1. Click "Create" to see a KQL database page.
 
-   <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-05c-fabric-realtime-lab.html#create-an-eventstream">HANDS-ON: Create a KQL EventStream</a>
+   The following is my experience trying to follow <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-05c-fabric-realtime-lab.html#create-an-eventstream">HANDS-ON: Create a KQL EventStream</a>
 
-1. Click "Home" to see the workspace page with these icons:
+1. Click "Home" icon to see the workspace page with these icons:
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702097886/azure-KQL-workspace-1120x220_icdfho.png"><img alt="azure-KQL-workspace-1120x220.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702097886/azure-KQL-workspace-1120x220_icdfho.png"></a>
 
@@ -988,29 +993,24 @@ is the marketing landing page
    * https://www.microsoft.com/en-us/security/business/microsoft-purview?rtc=1#risk-compliance
    <br /><br />
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=8BAeLUywEMM&t=1m30s">VIDEO</a>: 
    "Microsoft Purview is a unified data governance platform that helps you manage and govern your on-premises, multi-cloud, and software-as-a-service (SaaS) data. Purview provides a unified view of your data estate by discovering and classifying your data, mapping data lineage, and enabling data protection."
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=8BAeLUywEMM&t=2m40s">VIDEO</a>: 
-   "Microsoft Purview is a unified data governance platform that helps you manage and govern your on-premises, multi-cloud, and software-as-a-service (SaaS) data. Purview provides a unified view of your data estate by discovering and classifying your data, mapping data lineage, and enabling data protection."
+   * <a target="_blank" href="https://www.youtube.com/watch?v=8BAeLUywEMM&t=1m30s">VIDEO</a>: 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=8BAeLUywEMM&t=2m40s">VIDEO</a>: 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=8BAeLUywEMM&t=3m30s">VIDEO</a>: 
+   <br /><br />
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=8BAeLUywEMM&t=3m30s">VIDEO</a>: 
-   "Microsoft Purview is a unified data governance platform that helps you manage and govern your on-premises, multi-cloud, and software-as-a-service (SaaS) data. Purview provides a unified view of your data estate by discovering and classifying your data, mapping data lineage, and enabling data protection."
-
-   <a target="_
-
-
-https://learn.microsoft.com/en-us/purview/purview describes features:
+   https://learn.microsoft.com/en-us/purview/purview describes features:
    * Data Catalog - discover and catalog data assets
    * Data Loss Prevention (DLP) - identify and protect sensitive data
    * Privileged Access Management (PAM) - manage, control, and monitor access to critical assets
    <br /><br />
 
-https://learn.microsoft.com/en-us/training/modules/intro-to-microsoft-purview/?source=recommendations
+   https://learn.microsoft.com/en-us/training/modules/intro-to-microsoft-purview/?source=recommendations
 
-Based on https://learn.microsoft.com/en-us/purview/create-microsoft-purview-portal
+   Based on https://learn.microsoft.com/en-us/purview/create-microsoft-purview-portal
 
-   ### Purview Account
+### Purview Account
 
 1. Search for "Purview accounts":
    https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Purview%2FAccounts
