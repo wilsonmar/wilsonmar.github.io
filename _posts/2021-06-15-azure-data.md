@@ -945,8 +945,9 @@ Azure Data Studio is an open-source, cross-platform client GUI tool for querying
 https://docs.azure.com/en-us/sql/azure-data-studio/download-Azure-data-studio
 
 
+<a name="Azure+Synapse+Analytics"></a>
 
-## Azure Synapse NoSQL
+## Azure Synapse Analytics
 
 <a target="_blank" href="https://www.azure.com/videoplayer/embed/RE4Asf7">VIDEO</a>:
 How to configure Data Factory to ingest data for Azure Synapse Analytics.
@@ -960,6 +961,7 @@ Synapse has a "Massively Parallel" engine of partitioned instances (sharding)
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio?tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall">Data Studio is installed</a> automtically 
 when SQL Server Management Studio (SSMS) 18.7, Azure Data Studio is installed.
+
 
 
 <hr />
@@ -984,7 +986,8 @@ Microsoft Azure Cosmos DB is a fully managed API service to provide a <strong>sc
 
 <a target="_blank" href="https://www.techtarget.com/searchcloudcomputing/tip/Get-to-know-Microsoft-Azure-Cosmos-DB-use-cases">BLOG</a>:
 Cosmos began in 2010 as "Project Florence" to provide a globally distributed database service for Microsoft's internal use. It was released to the public in 2015 as "Azure DocumentDB" (like AWS), a NoSQL database that stores data in JSON documents for querying using SQL commands. 
-In 2017, Azure Cosmos DB is announced with global regions and multiple data models. 99.999% avilability SLA announced for read/write.
+In 2017, Azure Cosmos DB is announced with global regions and multiple data models. 
+99.999% read/write avilability SLA announced for mission-critical apps.
 
 1. Search for service "Cosmos" for a list of services:
 
@@ -1011,9 +1014,17 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
 
 1. Click "+ Create" to create a new Cosmos DB account.
 1. For Resource Group, Instance Account Name: PROTIP: Add a date to the end of the name to make it unique.
-1. For Capacity mode, leave the default "Provisioned throughput", NOT "Serverless". Learn more about capacity mode
-1. Check "Apply" to Apply Free Tier Discount. With Azure Cosmos DB free tier, you will get the first 1000 RU/s and 25 GB of storage for free in an account. You can enable free tier on up to one account per subscription. Estimated $64/month discount per account.
-1. For "Limit total account throughput", leave checked "Limit the total amount of throughput that can be provisioned on this account
+1. For Capacity mode, <a target="_blank" href="https://aka.ms/cosmos-models">Learn more</a>
+   * leave the default "Provisioned throughput", 
+   * NOT "Serverless". 
+   <br /><br />
+
+   Automatic scaling for unpredictable spikes and dips in traffic.
+   Guaranteed speed at any scale—even through bursts—with instant, limitless elasticity, fast reads, and multi-master writes, anywhere in the world.
+
+1. Check "Apply" to Apply Free Tier Discount. With Azure Cosmos DB free tier, you will get the first 1000 RU/s and 25 GB of storage for free in an account. You can enable free tier on up to one account per subscription. Estimated $64/month discount per account."
+
+1. For "Limit total account throughput", leave checked "Limit the total amount of throughput that can be provisioned on this account"
 
    This limit will prevent unexpected charges related to provisioned throughput. You can update or remove this limit after your account is created.
 
@@ -1066,83 +1077,68 @@ No pre-requisite exams to get the <a target="_blank" href="https://learn.microso
 
 1. PROTIP: Learn concepts and terminology by going through <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-420">these modules at the bottom of Microsoft's exam page</a>, 
 
-   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/get-started-azure-cosmos-db-sql-api/">LEARN</a>: Get started with Azure Cosmos DB for NoSQL
-   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/plan-implement-azure-cosmos-db-sql-api/">LEARN</a>: <strong>Plan</strong> and <strong>implement</strong> Azure Cosmos DB for NoSQL
-   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/connect-to-azure-cosmos-db-sql-api-sdk/">LEARN</a>: <strong>Connect</strong> to Azure Cosmos DB for NoSQL with the SDK
-   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/access-manage-data-azure-cosmos-db-sql-api-sdks/">LEARN</a>: <strong>Access</strong> and manage data with the Azure Cosmos DB for NoSQL SDKs
-   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/execute-queries-azure-cosmos-db-sql-api/">LEARN</a>: Execute <strong>queries</strong> in Azure Cosmos DB for NoSQL
-   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/define-implement-indexing-strategy-cosmos-db-sql-api/">LEARN</a>: Define and implement an <strong>indexing</strong> strategy for Azure Cosmos DB for NoSQL
-   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/integrate-azure-cosmos-db-sql-api-azure-services/">LEARN</a>: <strong>Integrate</strong> Azure Cosmos DB for NoSQL with Azure services
-   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/implement-modeling-partitioning-azure-cosmos-db-sql-api/">LEARN</a>: Implement a data modeling and <strong>partitioning</strong> strategy for Azure Cosmos DB for NoSQL
-   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-implement-replication-strategy-cosmos-db-sql-api/">LEARN</a>: Design and implement a <strong>replication</strong> strategy for Azure Cosmos DB for NoSQL
-   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/optimize-query-performance-azure-cosmos-db-sql-api/">LEARN</a>: <strong>Optimize</strong> query and operation performance in Azure Cosmos DB for NoSQL
-   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/monitor-troubleshoot-azure-cosmos-db-sql-api-solution/">LEARN</a>: <strong>Monitor</strong> and troubleshoot</strong> an Azure Cosmos DB for NoSQL solution
-   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/manage-cosmos-db-sql-api-solution-using-devops-practices/">LEARN</a>: <strong>Manage</strong> an Azure Cosmos DB for NoSQL solution using DevOps practices
-   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/create-server-side-programming-azure-cosmos-db-sql-api/">LEARN</a>: Create server-side <strong>programming</strong> constructs in Azure Cosmos DB for NoSQL
-   <br /><br />
-
 1. Perform the <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/">hands-on labs detailed here</a>, which references <a target="_blank" href="https://github.com/MicrosoftLearning/dp-420-cosmos-db-dev">these files</a>.
 
-> 1 - Get started with Azure Cosmos DB for NoSQL
-   * Create lab resource group
-   * Setup lab environment
-   * Enable resource providers
-   * Create an Azure Cosmos DB for NoSQL account
-   <br /><br />
-> 2 - Plan and implement Azure Cosmos DB for NoSQL:	
-   * Configure throughput for Azure Cosmos DB For NoSQL with the Azure portal
-   * Migrate existing data using Azure Data Factory
-   <br /><br />
-> 3 - Connect to Azure Cosmos DB for NoSQL with the SDK:
-   * Connect to Azure Cosmos DB for NoSQL with the SDK
-   * Configure the Azure Cosmos DB for NoSQL SDK for offline development
-   <br /><br />
-> 4 - Access and manage data with the Azure Cosmos DB for NoSQL SDKs:
-   * Create and update documents with the Azure Cosmos DB for NoSQL SDK
-   * Batch multiple point operations together with the Azure Cosmos DB for NoSQL SDK
-   * Move multiple documents in bulk with the Azure Cosmos DB for NoSQL SDK
-   <br /><br />
-> 5 - Execute queries in Azure Cosmos DB for NoSQL:
-   * Execute a query with the Azure Cosmos DB for NoSQL SDK
-   * Paginate cross-product query results with the Azure Cosmos DB for NoSQL SDK
-   <br /><br />
-> 6 - Define and implement an indexing strategy for Azure Cosmos DB for NoSQL:
-   * Review the default index policy for an Azure Cosmos DB for NoSQL container with the portal
-   * Review the default index policy for an Azure Cosmos DB for NoSQL container with the portal
-   <br /><br />
-> 7 - Integrate Azure Cosmos DB for NoSQL with Azure services: https://learn.microsoft.com/en-us/fabric/data-factory/connector-azure-cosmosdb-for-nosql
-   * Process change feed events using the Azure Cosmos DB for NoSQL SDK
-   * Process Azure Cosmos DB for NoSQL data using Azure Functions
-   * Search data using Azure Cognitive Search and Azure Cosmos DB for NoSQL
-   <br /><br />
-> 8 - Implement a data modeling and partitioning strategy for Azure Cosmos DB for NoSQL:
-   * Measure performance for customer entities
-   * Cost of denormalizing data and aggregates and using the change feed for referential integrity
-   <br /><br />
-> 9 - Design and implement a replication strategy for Azure Cosmos DB for NoSQL:
-   * Connect to different regions with the Azure Cosmos DB for NoSQL SDK
-   * Configure consistency models in the portal and the Azure Cosmos DB for NoSQL SDK
-   * Connect to a multi-region write account with the Azure Cosmos DB for NoSQL SDK
-   <br /><br />
-> 10 - Optimize query and operation performance in Azure Cosmos DB for NoSQL:
-   * Optimize an Azure Cosmos DB for NoSQL container’s indexing policy for common operations
-   * Optimize an Azure Cosmos DB for NoSQL container’s index policy for a specific query
-   <br /><br />
-> 11 - Monitor and troubleshoot an Azure Cosmos DB for NoSQL solution:
-   * Use Azure Monitor to analyze an Azure Cosmos DB for NoSQL account https://devblogs.microsoft.com/cosmosdb/announcing-azure-cosmos-db-mirroring-in-microsoft-fabric-private-preview/
-   * Troubleshoot an application using the Azure Cosmos DB for NoSQL SDK
-   * Store Azure Cosmos DB for NoSQL account keys in Azure Key Vault
-   <br /><br />
-> 12 - Manage an Azure Cosmos DB for NoSQL solution using DevOps practices:
-   * Adjust provisioned throughput using an Azure CLI script
-   * Create an Azure Cosmos DB for NoSQL container using Azure Resource Manager templates
-   <br /><br />
-> 13 - Create server-side programming constructs in Azure Cosmos DB for NoSQL:
-   * Build multi-item transactions with the Azure Cosmos DB for NoSQL 39 min
-   <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/build-multi-item-transactions-azure-cosmos-db-sql-api/6-exercise-create-stored-procedure-azure-portal">EXERCISE</a>: with the Azure portal, Author & Rollback a server-side JavaScript <strong>stored procedure</strong> scoped to a single logical partition 
-   * Expand query and transaction functionality in Azure Cosmos DB for NoSQL
-   Implement and then use user-defined functions with the SDK
-   <br /><br />
+   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/get-started-azure-cosmos-db-sql-api/">LEARN</a>: Get started with Azure Cosmos DB for NoSQL
+      * Create lab resource group
+      * Setup lab environment
+      * Enable resource providers
+      * Create an Azure Cosmos DB for NoSQL account
+      <br /><br />
+   2. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/plan-implement-azure-cosmos-db-sql-api/">LEARN</a>: <strong>Plan</strong> and <strong>implement</strong> Azure Cosmos DB for NoSQL
+      * Configure throughput for Azure Cosmos DB For NoSQL with the Azure portal
+      * Migrate existing data using Azure Data Factory
+      <br /><br />
+   3. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/connect-to-azure-cosmos-db-sql-api-sdk/">LEARN</a>: <strong>Connect</strong> to Azure Cosmos DB for NoSQL with the SDK
+      * Connect to Azure Cosmos DB for NoSQL with the SDK
+      * Configure the Azure Cosmos DB for NoSQL SDK for offline development
+      <br /><br />
+   4. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/access-manage-data-azure-cosmos-db-sql-api-sdks/">LEARN</a>: <strong>Access</strong> and manage data with the Azure Cosmos DB for NoSQL SDKs
+      * Create and update documents with the Azure Cosmos DB for NoSQL SDK
+      * Batch multiple point operations together with the Azure Cosmos DB for NoSQL SDK
+      * Move multiple documents in bulk with the Azure Cosmos DB for NoSQL SDK
+      <br /><br />
+   5. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/execute-queries-azure-cosmos-db-sql-api/">LEARN</a>: Execute <strong>queries</strong> in Azure Cosmos DB for NoSQL
+      * Execute a query with the Azure Cosmos DB for NoSQL SDK
+      * Paginate cross-product query results with the Azure Cosmos DB for NoSQL SDK
+      <br /><br />
+   6. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/define-implement-indexing-strategy-cosmos-db-sql-api/">LEARN</a>: Define and implement an <strong>indexing</strong> strategy for Azure Cosmos DB for NoSQL
+      * Review the default index policy for an Azure Cosmos DB for NoSQL container with the portal
+      * Review the default index policy for an Azure Cosmos DB for NoSQL container with the portal
+      <br /><br />
+   7. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/integrate-azure-cosmos-db-sql-api-azure-services/">LEARN</a>: <strong>Integrate</strong> Azure Cosmos DB for NoSQL with Azure services
+      * Process change feed events using the Azure Cosmos DB for NoSQL SDK
+      * Process Azure Cosmos DB for NoSQL data using Azure Functions
+      * Search data using Azure Cognitive Search and Azure Cosmos DB for NoSQL
+      <br /><br />
+   8. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/implement-modeling-partitioning-azure-cosmos-db-sql-api/">LEARN</a>: Implement a data modeling and <strong>partitioning</strong> strategy for Azure Cosmos DB for NoSQL <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/partitioning-overview#choose-partitionkey">LEARN</a>
+      * Measure performance for customer entities
+      * Cost of denormalizing data and aggregates and using the change feed for referential integrity
+      <br /><br />
+   9. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-implement-replication-strategy-cosmos-db-sql-api/">LEARN</a>: Design and implement a <strong>replication</strong> strategy for Azure Cosmos DB for NoSQL
+      * Connect to different regions with the Azure Cosmos DB for NoSQL SDK
+      * Configure consistency models in the portal and the Azure Cosmos DB for NoSQL SDK
+      * Connect to a multi-region write account with the Azure Cosmos DB for NoSQL SDK
+      <br /><br />
+   10. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/optimize-query-performance-azure-cosmos-db-sql-api/">LEARN</a>: <strong>Optimize</strong> query and operation performance in Azure Cosmos DB for NoSQL
+      * Optimize an Azure Cosmos DB for NoSQL container’s indexing policy for common operations
+      * Optimize an Azure Cosmos DB for NoSQL container’s index policy for a specific query
+      <br /><br />
+   11. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/monitor-troubleshoot-azure-cosmos-db-sql-api-solution/">LEARN</a>: <strong>Monitor</strong> and troubleshoot</strong> an Azure Cosmos DB for NoSQL solution
+      * Use Azure Monitor to analyze an Azure Cosmos DB for NoSQL account https://devblogs.microsoft.com/cosmosdb/announcing-azure-cosmos-db-mirroring-in-microsoft-fabric-private-preview/
+      * Troubleshoot an application using the Azure Cosmos DB for NoSQL SDK
+      * Store Azure Cosmos DB for NoSQL account keys in Azure Key Vault
+      <br /><br />
+   12. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/manage-cosmos-db-sql-api-solution-using-devops-practices/">LEARN</a>: <strong>Manage</strong> an Azure Cosmos DB for NoSQL solution using DevOps practices
+      * Adjust provisioned throughput using an Azure CLI script
+      * Create an Azure Cosmos DB for NoSQL container using Azure Resource Manager templates
+      <br /><br />
+   13. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/create-server-side-programming-azure-cosmos-db-sql-api/">LEARN</a>: Create server-side <strong>programming</strong> constructs in Azure Cosmos DB for NoSQL
+      * Build multi-item transactions with the Azure Cosmos DB for NoSQL 39 min
+      <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/build-multi-item-transactions-azure-cosmos-db-sql-api/6-exercise-create-stored-procedure-azure-portal">EXERCISE</a>: with the Azure portal, Author & Rollback a server-side JavaScript <strong>stored procedure</strong> scoped to a single logical partition 
+      * Expand query and transaction functionality in Azure Cosmos DB for NoSQL
+      Implement and then use user-defined functions with the SDK
+      <br /><br />
 
 <hr />
 
