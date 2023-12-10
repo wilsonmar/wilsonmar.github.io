@@ -34,6 +34,8 @@ These replace certifications about Microsoft on-prem. technologies SQL-Server an
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/70-768">70-768: Developing SQL Data Models</a>
    <br /><br />
 
+https://www.microsoft.com/en-ie/training-days#pp
+
 {% include whatever.html %}
 
 ## Types of databases
@@ -104,9 +106,9 @@ Let's first look at traditional SQL "relational" databases.
    * SQL Server 2019 Enterprise on Windows Server 2019 (and earlier 2014, 2017)?
    <br /><br />
 
-   B. "SQL managed" (single) "instances" have always up-to-date OSs managed by Azure. Used for "Arc" running Azure on customer on-prem. data centers. [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/index">DOCS</a>]
+   B. "SQL managed instances" are managed by Microsoft to provide always-up-to-date OSs managed by Azure. Used for "Arc" running Azure on customer on-prem. data centers. [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/index">DOCS</a>]
    
-   C. Azure "SQL databases" are totally managed by Microsoft in its Azure cloud as serverless hyperscale databases designed to be fault-tolerant and highly available [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/database/index">DOCS</a>] The different cloud options:
+   C. Azure "SQL databases" are totally managed by Microsoft in its Azure cloud as <strong>serverless</strong> hyperscale infrastructure designed to be fault-tolerant and highly available [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/database/index">DOCS</a>] The different "SQL database" options:
 
    * Single (SQL) database
    * Elastic pool to manage and scale multiple databases with varying and unpredictable usage patterns, sharing a single set of resources (at a prescribed budget). [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-sql/database/elastic-pool-overview">DOCS</a>] NOTE: Dedicated SQL pools (formerly SQL DW)
@@ -973,7 +975,7 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702241094/cosmosdb-flow-231210a_dltlb1.png"><img alt="cosmosdb-flow-231210a.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702240615/cosmosdb-flow-231210a_dltlb1.png"></a>
 
-   My diagram above (available on GumRoad)</a> shows the various services accessing the API of whatever model is defined in your Cosmos DB within the Azure cloud. 
+   <a target="_blank" href="https://7451111251303.gumroad.com/l/vxgnn">My diagram above (available on GumRoad)</a> shows the various services accessing the API of whatever model is defined in your Cosmos DB within the Azure cloud. 
 
    ### Mirror for Fabric
 
