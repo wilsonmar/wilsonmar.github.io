@@ -541,15 +541,18 @@ References:
 
 ## DP-420: Azure Cosmos DB Developer Associate
 
-No pre-requisite exams to get the <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/azure-cosmos-db-developer-specialty/">"Microsoft Certified: Azure Cosmos DB Developer Specialty" certification</a> by passing the $165 <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/azure-cosmos-db-developer-specialty/">DP-420 "Designing and Implementing Cloud-Native Applications using Microsoft Azure Cosmos DB"</a> Developer Associate</a>. Skills: 
+No pre-requisite exams to get the <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/azure-cosmos-db-developer-specialty/">"Microsoft Certified: Azure Cosmos DB Developer Specialty" certification</a> (Developer Associate) by passing the  <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/azure-cosmos-db-developer-specialty/">$165 DP-420 "Designing and Implementing Cloud-Native Applications using Microsoft Azure Cosmos DB" exam</a>. Skills: 
    * Design and implement data models (35–40%)
    * Design and implement data distribution (5–10%)
+
    * Integrate an Azure Cosmos DB solution (5–10%)
    * Optimize an Azure Cosmos DB solution (15–20%)
    * Maintain an Azure Cosmos DB solution (25–30%)
    <br /><br />
 
-1. PROTIP: Get an overview by going through <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-420">these modules at the bottom of Microsoft's exam page</a>, which are aligned with <a target="_blank" href="https://aka.ms/DP420-StudyGuide">modules defined in the Study Guide for the exam</a>:
+   <a target="_blank" href="https://aka.ms/DP420-StudyGuide">Microsoft's Study Guide, as of November 2, 2023</a> adds details to the above, which DOES NOT MATCH the outline of what is covered live during the <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/dp-420t00?resource_type=course&products=azure&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks">$1599 4-day course DP-420T00--A: Designing and Implementing Cloud-Native Applications Using Microsoft Azure Cosmos DB</a>.
+
+1. PROTIP: Learn concepts and terminology by going through <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-420">these modules at the bottom of Microsoft's exam page</a>, 
 
    1. Get started with Azure Cosmos DB for NoSQL
    1. <strong>Plan</strong> and <strong>implement</strong> Azure Cosmos DB for NoSQL
@@ -566,18 +569,16 @@ No pre-requisite exams to get the <a target="_blank" href="https://learn.microso
    1. Create server-side <strong>programming</strong> constructs in Azure Cosmos DB for NoSQL
    <br /><br />
 
-   The above are covered live during the <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/dp-420t00?resource_type=course&products=azure&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks">$1599 4-day course DP-420T00--A: Designing and Implementing Cloud-Native Applications Using Microsoft Azure Cosmos DB</a>.
-
 1. Perform the <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/">hands-on labs detailed here</a>, which references <a target="_blank" href="https://github.com/MicrosoftLearning/dp-420-cosmos-db-dev">these files</a>.
 
 > 1 - Get started with Azure Cosmos DB for NoSQL
-* Create lab resource group
-* Setup lab environment
-* Enable resource providers
-* Create an Azure Cosmos DB for NoSQL account
+   * Create lab resource group
+   * Setup lab environment
+   * Enable resource providers
+   * Create an Azure Cosmos DB for NoSQL account
 > 2 - Plan and implement Azure Cosmos DB for NoSQL:	
-* Configure throughput for Azure Cosmos DB For NoSQL with the Azure portal
-* Migrate existing data using Azure Data Factory
+   * Configure throughput for Azure Cosmos DB For NoSQL with the Azure portal
+   * Migrate existing data using Azure Data Factory
 > 3 - Connect to Azure Cosmos DB for NoSQL with the SDK:
    * Connect to Azure Cosmos DB for NoSQL with the SDK
    * Configure the Azure Cosmos DB for NoSQL SDK for offline development
@@ -613,9 +614,9 @@ No pre-requisite exams to get the <a target="_blank" href="https://learn.microso
    * Adjust provisioned throughput using an Azure CLI script
    * Create an Azure Cosmos DB for NoSQL container using Azure Resource Manager templates
 > 13 - Create server-side programming constructs in Azure Cosmos DB for NoSQL:
-* Build multi-item transactions with the Azure Cosmos DB for NoSQL 39 min
-   Create a stored procedure with the Azure portal
-* Expand query and transaction functionality in Azure Cosmos DB for NoSQL
+   * Build multi-item transactions with the Azure Cosmos DB for NoSQL 39 min
+   <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/build-multi-item-transactions-azure-cosmos-db-sql-api/6-exercise-create-stored-procedure-azure-portal">EXERCISE</a>: with the Azure portal, Author & Rollback a server-side JavaScript <strong>stored procedure</strong> scoped to a single logical partition 
+   * Expand query and transaction functionality in Azure Cosmos DB for NoSQL
    Implement and then use user-defined functions with the SDK
 <br /><br />
 
