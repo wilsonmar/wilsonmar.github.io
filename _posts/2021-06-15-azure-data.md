@@ -72,10 +72,19 @@ The underlying <strong>format of files</strong> used to store data within Apache
 For OLAP (Online Analytical Processing), large amounts of data are stored in a "star schema" in <strong>data warehouses</strong> (separate from databases for OLTP) for access to by date and other dimensions.
 
 Wide availability of fast internet and public clouds providing a lot of fast data storage and compute has enabled a revolution in how data can be stored and accessed.
+
    * "Distributed database" can now span multiple regional data centers (horizontally scalable), yet globally immediately consistent. Released in 2017 (Microsoft Cosmos DB, Postgres Citus, <a target="_blank" href="https://cloud.google.com/spanner/">Google Cloud Spanner</a>)
 
    * "Deltalake" is a revolution because instead of arranging data in tables or graphs data for easier access, data is stored in Parquet format used by Azure Data Lake Storage Gen2, Hadoop, Databricks, <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a>
    <br /><br />
+
+PROTIP: <a target="_blan" href="https://parquet.apache.org/">Apache's Parquet file format</a> generally performs better than CSV because it provides efficient data compression and encoding schemes with enhanced performance to handle complex data in bulk.  It is called a <strong>"columnar"</strong> storage format similar to other columnar-storage file formats available in Hadoop (RCFile and ORC). So it is compatible with most data processing frameworks in the Hadoop environment. Apache Parquet is a free and open-source column-oriented data storage format of the Apache Hadoop ecosystem. 
+
+   References:
+   * https://www.upsolver.com/blog/apache-parquet-why-use
+   * https://docs.azure.com/en-us/azure/architecture/browse/#databases
+   <br /><br />
+
 
 Let's first look at traditional SQL "relational" databases.
 
@@ -1013,11 +1022,13 @@ when SQL Server Management Studio (SSMS) 18.7, Azure Data Studio is installed.
 
 ## Non-Relational CosmosDB
 
-PROTIP: <a target="_blan" href="https://parquet.apache.org/">Apache's Parquet file format</a> generally performs better than CSV because it provides efficient data compression and encoding schemes with enhanced performance to handle complex data in bulk.  It is called a <strong>"columnar"</strong> storage format similar to other columnar-storage file formats available in Hadoop (RCFile and ORC). So it is compatible with most data processing frameworks in the Hadoop environment. Apache Parquet is a free and open-source column-oriented data storage format of the Apache Hadoop ecosystem. References:
-   * https://www.upsolver.com/blog/apache-parquet-why-use
+1. Search for service "Cosmos" for a list of services:
 
-   * https://docs.azure.com/en-us/azure/architecture/browse/#databases
+   <a target="_blan" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702173114/azure-cosmos-svcs-1554x650_wqfeza.png"><img alt="azure-cosmos-svcs-1554x650.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702173114/azure-cosmos-svcs-1554x650_wqfeza.png"></a>
 
+1. Click "+ Create" to create a new Cosmos DB account.
+
+   <a target="_blan" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702173114/azure-cosmos-svcs-1554x650_wqfeza.png"><img alt="azure-cosmos-svcs-1554x650.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702173114/azure-cosmos-svcs-1554x650_wqfeza.png"></a>
 
 <hr />
 
