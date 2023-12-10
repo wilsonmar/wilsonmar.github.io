@@ -1088,49 +1088,62 @@ No pre-requisite exams to get the <a target="_blank" href="https://learn.microso
    * Setup lab environment
    * Enable resource providers
    * Create an Azure Cosmos DB for NoSQL account
+   <br /><br />
 > 2 - Plan and implement Azure Cosmos DB for NoSQL:	
    * Configure throughput for Azure Cosmos DB For NoSQL with the Azure portal
    * Migrate existing data using Azure Data Factory
+   <br /><br />
 > 3 - Connect to Azure Cosmos DB for NoSQL with the SDK:
    * Connect to Azure Cosmos DB for NoSQL with the SDK
    * Configure the Azure Cosmos DB for NoSQL SDK for offline development
+   <br /><br />
 > 4 - Access and manage data with the Azure Cosmos DB for NoSQL SDKs:
    * Create and update documents with the Azure Cosmos DB for NoSQL SDK
    * Batch multiple point operations together with the Azure Cosmos DB for NoSQL SDK
    * Move multiple documents in bulk with the Azure Cosmos DB for NoSQL SDK
+   <br /><br />
 > 5 - Execute queries in Azure Cosmos DB for NoSQL:
    * Execute a query with the Azure Cosmos DB for NoSQL SDK
    * Paginate cross-product query results with the Azure Cosmos DB for NoSQL SDK
+   <br /><br />
 > 6 - Define and implement an indexing strategy for Azure Cosmos DB for NoSQL:
    * Review the default index policy for an Azure Cosmos DB for NoSQL container with the portal
    * Review the default index policy for an Azure Cosmos DB for NoSQL container with the portal
+   <br /><br />
 > 7 - Integrate Azure Cosmos DB for NoSQL with Azure services: https://learn.microsoft.com/en-us/fabric/data-factory/connector-azure-cosmosdb-for-nosql
    * Process change feed events using the Azure Cosmos DB for NoSQL SDK
    * Process Azure Cosmos DB for NoSQL data using Azure Functions
    * Search data using Azure Cognitive Search and Azure Cosmos DB for NoSQL
+   <br /><br />
 > 8 - Implement a data modeling and partitioning strategy for Azure Cosmos DB for NoSQL:
    * Measure performance for customer entities
    * Cost of denormalizing data and aggregates and using the change feed for referential integrity
+   <br /><br />
 > 9 - Design and implement a replication strategy for Azure Cosmos DB for NoSQL:
    * Connect to different regions with the Azure Cosmos DB for NoSQL SDK
    * Configure consistency models in the portal and the Azure Cosmos DB for NoSQL SDK
    * Connect to a multi-region write account with the Azure Cosmos DB for NoSQL SDK
+   <br /><br />
 > 10 - Optimize query and operation performance in Azure Cosmos DB for NoSQL:
    * Optimize an Azure Cosmos DB for NoSQL container’s indexing policy for common operations
    * Optimize an Azure Cosmos DB for NoSQL container’s index policy for a specific query
+   <br /><br />
 > 11 - Monitor and troubleshoot an Azure Cosmos DB for NoSQL solution:
    * Use Azure Monitor to analyze an Azure Cosmos DB for NoSQL account https://devblogs.microsoft.com/cosmosdb/announcing-azure-cosmos-db-mirroring-in-microsoft-fabric-private-preview/
    * Troubleshoot an application using the Azure Cosmos DB for NoSQL SDK
    * Store Azure Cosmos DB for NoSQL account keys in Azure Key Vault
+   <br /><br />
 > 12 - Manage an Azure Cosmos DB for NoSQL solution using DevOps practices:
    * Adjust provisioned throughput using an Azure CLI script
    * Create an Azure Cosmos DB for NoSQL container using Azure Resource Manager templates
+   <br /><br />
 > 13 - Create server-side programming constructs in Azure Cosmos DB for NoSQL:
    * Build multi-item transactions with the Azure Cosmos DB for NoSQL 39 min
    <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/build-multi-item-transactions-azure-cosmos-db-sql-api/6-exercise-create-stored-procedure-azure-portal">EXERCISE</a>: with the Azure portal, Author & Rollback a server-side JavaScript <strong>stored procedure</strong> scoped to a single logical partition 
    * Expand query and transaction functionality in Azure Cosmos DB for NoSQL
    Implement and then use user-defined functions with the SDK
-<br /><br />
+   <br /><br />
+
 <hr />
 
 <a name="Databricks"></a>
