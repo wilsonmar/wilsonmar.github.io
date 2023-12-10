@@ -985,15 +985,18 @@ Microsoft Azure Cosmos DB is a fully managed API service to provide a <strong>sc
    <br /><br />
 
 <a target="_blank" href="https://www.techtarget.com/searchcloudcomputing/tip/Get-to-know-Microsoft-Azure-Cosmos-DB-use-cases">BLOG</a>:
-Cosmos began in 2010 as "Project Florence" to provide a globally distributed database service for Microsoft's internal use. It was released to the public in 2015 as "Azure DocumentDB" (like AWS), a NoSQL database that stores data in JSON documents for querying using SQL commands. 
+Cosmos began in 2010 as "Project Florence" to provide a globally distributed database service for Microsoft's internal use. It was released to the public 
+
+The predecessor to Cosmos was announced in 2015 as "Azure DocumentDB" (like AWS), a NoSQL database that stores data in JSON documents for querying using SQL commands. To this day "Microsoft.DocumentDB" is the name of the Cosmos resource provider.
+
 In 2017, Azure Cosmos DB is announced with global regions and multiple data models. 
-99.999% read/write avilability SLA announced for mission-critical apps.
+<a target="_blank" href="https://azure.microsoft.com/support/legal/sla/cosmos-db/">read/write SLA</a> announced for mission-critical app throughput, consistency, 99.999% availability, and < 10-ms latency.
 
 1. Search for service "Cosmos" for a list of services:
 
    <a target="_blan" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702173114/azure-cosmos-svcs-1554x650_wqfeza.png"><img alt="azure-cosmos-svcs-1554x650.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702173114/azure-cosmos-svcs-1554x650_wqfeza.png"></a>
 
-   DEFINITION: "RU" = Request Units = 1KB of data read or written per second.
+   DEFINITION: "RU" = Request Units = 1KB of data read or written per second, when Provisioned throughput is selected.
 
 1. PROTIP: <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/choose-api">Choose one</a> data model:
 
@@ -1014,13 +1017,10 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
 
 1. Click "+ Create" to create a new Cosmos DB account.
 1. For Resource Group, Instance Account Name: PROTIP: Add a date to the end of the name to make it unique.
-1. For Capacity mode, <a target="_blank" href="https://aka.ms/cosmos-models">Learn more</a>
-   * leave the default "Provisioned throughput", 
-   * NOT "Serverless". 
+1. For Capacity mode, <a target="_blank" href="https://aka.ms/cosmos-models">Learn more</a>. <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/plan-manage-costs#estimating-serverless-costs">Estimate costs</a>.
+   * leave the default "Provisioned throughput" for workloads with sustained traffic requiring predictable performance, billed by Request Units per second (RU/s) <strong>provisioned</strong>. Unlimited storage per container.
+   * "Serverless" for automatic scaling for workloads with intermittent and unpredictable bursts/spikes and dips in traffic. Maximum <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/serverless-performance">1 TB storage per container</a>. Billed by RUs/second <strong>consumed</strong>. 
    <br /><br />
-
-   Automatic scaling for unpredictable spikes and dips in traffic.
-   Guaranteed speed at any scale—even through bursts—with instant, limitless elasticity, fast reads, and multi-master writes, anywhere in the world.
 
 1. Check "Apply" to Apply Free Tier Discount. With Azure Cosmos DB free tier, you will get the first 1000 RU/s and 25 GB of storage for free in an account. You can enable free tier on up to one account per subscription. Estimated $64/month discount per account."
 
@@ -1059,6 +1059,11 @@ With Cosmos DB, developers can pick and choose which fields should have strong c
 <a target="_blank" href="https://devblogs.microsoft.com/cosmosdb/announcing-azure-cosmos-db-mirroring-in-microsoft-fabric-private-preview/">BLOG</a>:
 Data within Cosmos DB instances can be accessed by Fabric apps after being <strong>mirrored</strong> (for a price).
 
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/resource-model">Entity model</a>: Accout -> Database -> Container -> Item
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702207323/cosmos-entities-1042x464_jdjrnc.png"><img alt="cosmos-entities-1042x464.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702207323/cosmos-entities-1042x464_jdjrnc.png"></a>
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/synapse-link">Azure Synapase Link for Azure Cosmos DB</a>
+
 
 <a name="DP-420"></a>
 
@@ -1083,7 +1088,7 @@ No pre-requisite exams to get the <a target="_blank" href="https://learn.microso
       * Create lab resource group
       * Setup lab environment
       * Enable resource providers
-      * Create an Azure Cosmos DB for NoSQL account
+      * <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/instructions/01-create-account.html#use-the-data-explorer-to-create-a-new-database-and-container">HANDS-ON</a>: Create an Azure Cosmos DB for NoSQL account. Use Data Explorer to create new items and issue basic queries.
       <br /><br />
    2. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/plan-implement-azure-cosmos-db-sql-api/">LEARN</a>: <strong>Plan</strong> and <strong>implement</strong> Azure Cosmos DB for NoSQL
       * Configure throughput for Azure Cosmos DB For NoSQL with the Azure portal
@@ -1124,7 +1129,7 @@ No pre-requisite exams to get the <a target="_blank" href="https://learn.microso
       * Optimize an Azure Cosmos DB for NoSQL container’s indexing policy for common operations
       * Optimize an Azure Cosmos DB for NoSQL container’s index policy for a specific query
       <br /><br />
-   11. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/monitor-troubleshoot-azure-cosmos-db-sql-api-solution/">LEARN</a>: <strong>Monitor</strong> and troubleshoot</strong> an Azure Cosmos DB for NoSQL solution
+   11. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/monitor-troubleshoot-azure-cosmos-db-sql-api-solution/">LEARN</a>: <strong>Monitor</strong> and <strong>troubleshoot</strong> an Azure Cosmos DB for NoSQL solution
       * Use Azure Monitor to analyze an Azure Cosmos DB for NoSQL account https://devblogs.microsoft.com/cosmosdb/announcing-azure-cosmos-db-mirroring-in-microsoft-fabric-private-preview/
       * Troubleshoot an application using the Azure Cosmos DB for NoSQL SDK
       * Store Azure Cosmos DB for NoSQL account keys in Azure Key Vault
