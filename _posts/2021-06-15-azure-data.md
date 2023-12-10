@@ -56,6 +56,8 @@ The types of databases are: Key-value -> Column -> Document -> Relational (SQL) 
 <tr valign="top" align="center"><td>Flexibility</td><td>high</td><td>moderate</td><td>high</td><td>high</td><td>high</td><td>high</td></tr>
 </table>
 
+A competitor to Delta metadata layer on top of Parquet is <a target="_blank" href="https://www.theregister.com/2023/01/03/apache_iceberg/">Apache Iceberg</a>, used by Snowflake, Cloudera, and Google's BigLake.
+
 The SQL language to manipulate data was invented in the 1970s (by IBM) and standardized as ISO 9075. 
 However, Oracle, Microsoft, IBM, and others each have their own proprietary dialects.
 Microsft's T-SQL (for Transac-SQL) is a superset of SQL with additional commands (such as EXEC to rename databases).
@@ -73,7 +75,7 @@ For OLAP (Online Analytical Processing), large amounts of data are stored in a "
 
 Wide availability of fast internet and public clouds providing a lot of fast data storage and compute has enabled a revolution in how data can be stored and accessed.
 
-   * "Distributed database" can now span multiple regional data centers (horizontally scalable), yet globally immediately consistent. Released in 2017 (Microsoft Cosmos DB, Postgres Citus, <a target="_blank" href="https://cloud.google.com/spanner/">Google Cloud Spanner</a>)
+   * "Distributed database" can now span multiple regional data centers (horizontally scalable), yet globally immediately consistent. Released in 2017 (Microsoft Cosmos DB, <a target="_blank" href="https://github.com/citusdata/citus">Postgres Citus</a>, <a target="_blank" href="https://cloud.google.com/spanner/">Google Cloud Spanner</a>)
 
    * "Deltalake" is a revolution because instead of arranging data in tables or graphs data for easier access, data is stored in Parquet format used by Azure Data Lake Storage Gen2, Hadoop, Databricks, <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a>
    <br /><br />
@@ -266,7 +268,7 @@ Answer 40-60 questions in 180-minutes.
    * Describe Azure Table storage
    <br /><br />
 
-Describe capabilities and features of Azure Cosmos DB
+Describe capabilities and features of <a href="#CosmosDB">Azure Cosmos DB</a>
    * Identify use cases for Azure Cosmos DB
    * Describe Azure Cosmos DB APIs
    <br /><br />
@@ -535,90 +537,6 @@ References:
    * Perform administration by using T-SQL
    <br /><br />
 
-<hr />
-
-<a name="DP-420"></a>
-
-## DP-420: Azure Cosmos DB Developer Associate
-
-No pre-requisite exams to get the <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/azure-cosmos-db-developer-specialty/">"Microsoft Certified: Azure Cosmos DB Developer Specialty" certification</a> (Developer Associate) by passing the  <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/azure-cosmos-db-developer-specialty/">$165 DP-420 "Designing and Implementing Cloud-Native Applications using Microsoft Azure Cosmos DB" exam</a>. Skills: 
-   * Design and implement data models (35–40%)
-   * Design and implement data distribution (5–10%)
-
-   * Integrate an Azure Cosmos DB solution (5–10%)
-   * Optimize an Azure Cosmos DB solution (15–20%)
-   * Maintain an Azure Cosmos DB solution (25–30%)
-   <br /><br />
-
-   <a target="_blank" href="https://aka.ms/DP420-StudyGuide">Microsoft's Study Guide, as of November 2, 2023</a> adds details to the above, which DOES NOT MATCH the outline of what is covered live during the <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/dp-420t00?resource_type=course&products=azure&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks">$1599 4-day course DP-420T00--A: Designing and Implementing Cloud-Native Applications Using Microsoft Azure Cosmos DB</a>.
-
-1. PROTIP: Learn concepts and terminology by going through <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-420">these modules at the bottom of Microsoft's exam page</a>, 
-
-   1. Get started with Azure Cosmos DB for NoSQL
-   1. <strong>Plan</strong> and <strong>implement</strong> Azure Cosmos DB for NoSQL
-   1. <strong>Connect</strong> to Azure Cosmos DB for NoSQL with the SDK
-   1. <strong>Access</strong> and manage data with the Azure Cosmos DB for NoSQL SDKs
-   1. Execute <strong>queries</strong> in Azure Cosmos DB for NoSQL
-   1. Define and implement an <strong>indexing</strong> strategy for Azure Cosmos DB for NoSQL
-   1. <strong>Integrate</strong> Azure Cosmos DB for NoSQL with Azure services
-   1. Implement a data modeling and <strong>partitioning</strong> strategy for Azure Cosmos DB for NoSQL
-   1. Design and implement a <strong>replication</strong> strategy for Azure Cosmos DB for NoSQL
-   1. <strong>Optimize</strong> query and operation performance in Azure Cosmos DB for NoSQL
-   1. <strong>Monitor</strong> and troubleshoot</strong> an Azure Cosmos DB for NoSQL solution
-   1. <strong>Manage</strong> an Azure Cosmos DB for NoSQL solution using DevOps practices
-   1. Create server-side <strong>programming</strong> constructs in Azure Cosmos DB for NoSQL
-   <br /><br />
-
-1. Perform the <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/">hands-on labs detailed here</a>, which references <a target="_blank" href="https://github.com/MicrosoftLearning/dp-420-cosmos-db-dev">these files</a>.
-
-> 1 - Get started with Azure Cosmos DB for NoSQL
-   * Create lab resource group
-   * Setup lab environment
-   * Enable resource providers
-   * Create an Azure Cosmos DB for NoSQL account
-> 2 - Plan and implement Azure Cosmos DB for NoSQL:	
-   * Configure throughput for Azure Cosmos DB For NoSQL with the Azure portal
-   * Migrate existing data using Azure Data Factory
-> 3 - Connect to Azure Cosmos DB for NoSQL with the SDK:
-   * Connect to Azure Cosmos DB for NoSQL with the SDK
-   * Configure the Azure Cosmos DB for NoSQL SDK for offline development
-> 4 - Access and manage data with the Azure Cosmos DB for NoSQL SDKs:
-   * Create and update documents with the Azure Cosmos DB for NoSQL SDK
-   * Batch multiple point operations together with the Azure Cosmos DB for NoSQL SDK
-   * Move multiple documents in bulk with the Azure Cosmos DB for NoSQL SDK
-> 5 - Execute queries in Azure Cosmos DB for NoSQL:
-   * Execute a query with the Azure Cosmos DB for NoSQL SDK
-   * Paginate cross-product query results with the Azure Cosmos DB for NoSQL SDK
-> 6 - Define and implement an indexing strategy for Azure Cosmos DB for NoSQL:
-   * Review the default index policy for an Azure Cosmos DB for NoSQL container with the portal
-   * Review the default index policy for an Azure Cosmos DB for NoSQL container with the portal
-> 7 - Integrate Azure Cosmos DB for NoSQL with Azure services:
-   * Process change feed events using the Azure Cosmos DB for NoSQL SDK
-   * Process Azure Cosmos DB for NoSQL data using Azure Functions
-   * Search data using Azure Cognitive Search and Azure Cosmos DB for NoSQL
-> 8 - Implement a data modeling and partitioning strategy for Azure Cosmos DB for NoSQL:
-   * Measure performance for customer entities
-   * Cost of denormalizing data and aggregates and using the change feed for referential integrity
-> 9 - Design and implement a replication strategy for Azure Cosmos DB for NoSQL:
-   * Connect to different regions with the Azure Cosmos DB for NoSQL SDK
-   * Configure consistency models in the portal and the Azure Cosmos DB for NoSQL SDK
-   * Connect to a multi-region write account with the Azure Cosmos DB for NoSQL SDK
-> 10 - Optimize query and operation performance in Azure Cosmos DB for NoSQL:
-   * Optimize an Azure Cosmos DB for NoSQL container’s indexing policy for common operations
-   * Optimize an Azure Cosmos DB for NoSQL container’s index policy for a specific query
-> 11 - Monitor and troubleshoot an Azure Cosmos DB for NoSQL solution:
-   * Use Azure Monitor to analyze an Azure Cosmos DB for NoSQL account
-   * Troubleshoot an application using the Azure Cosmos DB for NoSQL SDK
-   * Store Azure Cosmos DB for NoSQL account keys in Azure Key Vault
-> 12 - Manage an Azure Cosmos DB for NoSQL solution using DevOps practices:
-   * Adjust provisioned throughput using an Azure CLI script
-   * Create an Azure Cosmos DB for NoSQL container using Azure Resource Manager templates
-> 13 - Create server-side programming constructs in Azure Cosmos DB for NoSQL:
-   * Build multi-item transactions with the Azure Cosmos DB for NoSQL 39 min
-   <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/build-multi-item-transactions-azure-cosmos-db-sql-api/6-exercise-create-stored-procedure-azure-portal">EXERCISE</a>: with the Azure portal, Author & Rollback a server-side JavaScript <strong>stored procedure</strong> scoped to a single logical partition 
-   * Expand query and transaction functionality in Azure Cosmos DB for NoSQL
-   Implement and then use user-defined functions with the SDK
-<br /><br />
 
 <hr />
 
@@ -1046,18 +964,172 @@ when SQL Server Management Studio (SSMS) 18.7, Azure Data Studio is installed.
 
 <hr />
 
-<a name="CosmoDB"></a>
+<a name="CosmosDB"></a>
 
-## Non-Relational CosmosDB
+## Cosmos DB
+
+Microsoft Azure Cosmos DB is a fully managed API service to provide a <strong>scale-out</strong>, operational database fabric that suits read-heavy apps, workloads that need to scale geographically and use cases where the application requires multiple data models (Key-Value Table, NoSQL document, relational, time-series, Graph).
+
+   * http://www.cosmosdb.com/
+   * https://twitter.com/AzureCosmosDB
+   * https://devblogs.microsoft.com/cosmosdb/tag/microsoft-fabric/
+   * https://www.linkedin.com/company/azure-cosmos-db/
+   * https://www.linkedin.com/company/azure-cosmos/about/
+   * <a target="_blank" href="https://cosmos.azure.com/try/">TRY FREE 30 days</a> for NoSQL, MongoDB, Cassandra, PostgreSQL
+   * https://datamonkeysite.com/2023/05/27/first-impression-of-microsoft-fabric/
+   * https://www.linkedin.com/company/alpaqastudio/?lipi=urn%3Ali%3Apage%3Acompanies_company_about_index%3Bfc500df4-de5d-407e-949e-72a2e33c649a
+   * https://devblogs.microsoft.com/cosmosdb/announcing-azure-cosmos-db-mirroring-in-microsoft-fabric-private-preview/
+   <br /><br />
+
+<a target="_blank" href="https://www.techtarget.com/searchcloudcomputing/tip/Get-to-know-Microsoft-Azure-Cosmos-DB-use-cases">BLOG</a>:
+Cosmos began in 2010 as "Project Florence" to provide a globally distributed database service for Microsoft's internal use. It was released to the public in 2015 as "Azure DocumentDB" (like AWS), a NoSQL database that stores data in JSON documents for querying using SQL commands. 
+In 2017, Azure Cosmos DB is announced with global regions and multiple data models. 99.999% avilability SLA announced for read/write.
 
 1. Search for service "Cosmos" for a list of services:
 
    <a target="_blan" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702173114/azure-cosmos-svcs-1554x650_wqfeza.png"><img alt="azure-cosmos-svcs-1554x650.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702173114/azure-cosmos-svcs-1554x650_wqfeza.png"></a>
 
+   DEFINITION: "RU" = Request Units = 1KB of data read or written per second.
+
+1. PROTIP: <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/choose-api">Choose one</a> data model:
+
+   * <a target="_blank" href="https://aka.ms/cosmos-sql-api-landing-page">Azure Cosmos DB for NoSQL</a> - Azure Cosmos DB's core, or native API for working with documents. Supports fast, flexible development with familiar SQL query language and client libraries for .NET, JavaScript, Python, and Java.
+   
+   * <a target="_blank" href="https://go.microsoft.com/fwlink/?linkid=2086090">Azure Cosmos DB for PostgreSQL</a> - Fully-managed relational database service for PostgreSQL with distributed query execution, powered by the Citus open source extension. Build new apps on single or multi-node clusters—with support for JSONB, geospatial, rich indexing, and high-performance scale-out.
+   
+   * <a target="_blank" href="https://aka.ms/cosmos-mongo-api-landing-page">Azure Cosmos DB for MongoDB</a> - Fully managed database service for apps written for MongoDB. Recommended if you have existing MongoDB workloads that you plan to migrate to Azure Cosmos DB.
+   
+   * <a target="_blank" href="https://aka.ms/cosmos-cassandra-api-landing-page">Azure Cosmos DB for Apache Cassandra</a> - Fully managed Cassandra database service for apps written for Apache Cassandra. Recommended if you have existing Cassandra workloads that you plan to migrate to Azure Cosmos DB.
+    
+   * <a target="_blank" href="https://aka.ms/cosmos-table-api-landing-page">Azure Cosmos DB for Table</a> - Fully managed database service for apps written for Azure Table storage. Recommended if you have existing Azure Table storage workloads that you plan to migrate to Azure Cosmos DB.
+   
+   * <a target="_blank" href="https://aka.ms/cosmos-gremlin-api-landing-page">Azure Cosmos DB for Apache Gremlin</a> - Fully managed graph database service using the Gremlin query language, based on Apache TinkerPop project. Recommended for new workloads that need to store relationships between data.
+   <br /><br />
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702184478/cloud-nosql-955x552_edipql.png"><img alt="cloud-nosql-955x552.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702184478/cloud-nosql-955x552_edipql.png"></a>
+
 1. Click "+ Create" to create a new Cosmos DB account.
+1. For Resource Group, Instance Account Name: PROTIP: Add a date to the end of the name to make it unique.
+1. For Capacity mode, leave the default "Provisioned throughput", NOT "Serverless". Learn more about capacity mode
+1. Check "Apply" to Apply Free Tier Discount. With Azure Cosmos DB free tier, you will get the first 1000 RU/s and 25 GB of storage for free in an account. You can enable free tier on up to one account per subscription. Estimated $64/month discount per account.
+1. For "Limit total account throughput", leave checked "Limit the total amount of throughput that can be provisioned on this account
 
-   <a target="_blan" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702173114/azure-cosmos-svcs-1554x650_wqfeza.png"><img alt="azure-cosmos-svcs-1554x650.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702173114/azure-cosmos-svcs-1554x650_wqfeza.png"></a>
+   This limit will prevent unexpected charges related to provisioned throughput. You can update or remove this limit after your account is created.
 
+1. Click "Next: Global Distribution" to specify Disaster Recovery options: 
+   * "Geo-Redundancy" 
+   * "Multi-region writes"
+   * "Availability Zones" (if available for the Location/Region chosen above).
+   <br /><br />
+1. Click "Networking" tab  to specify Firewall and Virtual Network options:
+   * "Allow access from" - "Selected networks" (default) or "All networks"
+   * "Virtual networks" - "Add existing virtual network" (default) or "Create new virtual network"
+   * "Firewall rules" - "Add existing rule" (default) or "Create new rule"
+   <br /><br />
+1. Click "Backup Policy" tab to specify backup options:
+   * "Backup policy" - "Periodic" is the default. Other options: "Continuous (7 days)" and "Continuous (30 days)"
+   * "Backup interval (minutes)" - 240 (30-1440) is the default
+   * "Backup retention" - 8 Hours is the default
+   * "Copies of data retained" - 2
+   <br /><br />
+1. Click "Encryption" tab to specify encryption options:
+   * "Server-managed key" is the default.
+   <br /><br />
+1. Click "Tags" tab to specify Key "CreatedBy" tag with your email as the Value for "Azure Cosmos DB account" billing and management.
+1. Click "Review + Create". Click "Create".
+
+
+Cosmos DB can automatically generate a database index without the user putting together a schema upfront. 
+However, developers still need to select the consistency model, the level of scalability, and the appropriate API for data storage.
+
+With Cosmos DB, developers can pick and choose which fields should have strong consistency and which are less of a priority.
+
+<a target="_blank" href="https://devblogs.microsoft.com/cosmosdb/announcing-azure-cosmos-db-mirroring-in-microsoft-fabric-private-preview/">BLOG</a>:
+Data within Cosmos DB instances can be accessed by Fabric apps after being <strong>mirrored</strong> (for a price).
+
+
+<a name="DP-420"></a>
+
+### DP-420: Azure Cosmos DB Developer Associate
+
+No pre-requisite exams to get the <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/azure-cosmos-db-developer-specialty/">"Microsoft Certified: Azure Cosmos DB Developer Specialty" certification</a> (Developer Associate) by passing the  <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/azure-cosmos-db-developer-specialty/">$165 DP-420 "Designing and Implementing Cloud-Native Applications using Microsoft Azure Cosmos DB" exam</a>. Skills: 
+   * Design and implement data models (35–40%)
+   * Design and implement data distribution (5–10%)
+
+   * Integrate an Azure Cosmos DB solution (5–10%)
+   * Optimize an Azure Cosmos DB solution (15–20%)
+   * Maintain an Azure Cosmos DB solution (25–30%)
+   <br /><br />
+
+   <a target="_blank" href="https://aka.ms/DP420-StudyGuide">Microsoft's Study Guide, as of November 2, 2023</a> adds details to the above, which DOES NOT MATCH the outline of what is covered live during the <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/dp-420t00?resource_type=course&products=azure&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks">$1599 4-day course DP-420T00--A: Designing and Implementing Cloud-Native Applications Using Microsoft Azure Cosmos DB</a>.
+
+1. PROTIP: Learn concepts and terminology by going through <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-420">these modules at the bottom of Microsoft's exam page</a>, 
+
+   1. Get started with Azure Cosmos DB for NoSQL
+   1. <strong>Plan</strong> and <strong>implement</strong> Azure Cosmos DB for NoSQL
+   1. <strong>Connect</strong> to Azure Cosmos DB for NoSQL with the SDK
+   1. <strong>Access</strong> and manage data with the Azure Cosmos DB for NoSQL SDKs
+   1. Execute <strong>queries</strong> in Azure Cosmos DB for NoSQL
+   1. Define and implement an <strong>indexing</strong> strategy for Azure Cosmos DB for NoSQL
+   1. <strong>Integrate</strong> Azure Cosmos DB for NoSQL with Azure services
+   1. Implement a data modeling and <strong>partitioning</strong> strategy for Azure Cosmos DB for NoSQL
+   1. Design and implement a <strong>replication</strong> strategy for Azure Cosmos DB for NoSQL
+   1. <strong>Optimize</strong> query and operation performance in Azure Cosmos DB for NoSQL
+   1. <strong>Monitor</strong> and troubleshoot</strong> an Azure Cosmos DB for NoSQL solution
+   1. <strong>Manage</strong> an Azure Cosmos DB for NoSQL solution using DevOps practices
+   1. Create server-side <strong>programming</strong> constructs in Azure Cosmos DB for NoSQL
+   <br /><br />
+
+1. Perform the <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/">hands-on labs detailed here</a>, which references <a target="_blank" href="https://github.com/MicrosoftLearning/dp-420-cosmos-db-dev">these files</a>.
+
+> 1 - Get started with Azure Cosmos DB for NoSQL
+   * Create lab resource group
+   * Setup lab environment
+   * Enable resource providers
+   * Create an Azure Cosmos DB for NoSQL account
+> 2 - Plan and implement Azure Cosmos DB for NoSQL:	
+   * Configure throughput for Azure Cosmos DB For NoSQL with the Azure portal
+   * Migrate existing data using Azure Data Factory
+> 3 - Connect to Azure Cosmos DB for NoSQL with the SDK:
+   * Connect to Azure Cosmos DB for NoSQL with the SDK
+   * Configure the Azure Cosmos DB for NoSQL SDK for offline development
+> 4 - Access and manage data with the Azure Cosmos DB for NoSQL SDKs:
+   * Create and update documents with the Azure Cosmos DB for NoSQL SDK
+   * Batch multiple point operations together with the Azure Cosmos DB for NoSQL SDK
+   * Move multiple documents in bulk with the Azure Cosmos DB for NoSQL SDK
+> 5 - Execute queries in Azure Cosmos DB for NoSQL:
+   * Execute a query with the Azure Cosmos DB for NoSQL SDK
+   * Paginate cross-product query results with the Azure Cosmos DB for NoSQL SDK
+> 6 - Define and implement an indexing strategy for Azure Cosmos DB for NoSQL:
+   * Review the default index policy for an Azure Cosmos DB for NoSQL container with the portal
+   * Review the default index policy for an Azure Cosmos DB for NoSQL container with the portal
+> 7 - Integrate Azure Cosmos DB for NoSQL with Azure services: https://learn.microsoft.com/en-us/fabric/data-factory/connector-azure-cosmosdb-for-nosql
+   * Process change feed events using the Azure Cosmos DB for NoSQL SDK
+   * Process Azure Cosmos DB for NoSQL data using Azure Functions
+   * Search data using Azure Cognitive Search and Azure Cosmos DB for NoSQL
+> 8 - Implement a data modeling and partitioning strategy for Azure Cosmos DB for NoSQL:
+   * Measure performance for customer entities
+   * Cost of denormalizing data and aggregates and using the change feed for referential integrity
+> 9 - Design and implement a replication strategy for Azure Cosmos DB for NoSQL:
+   * Connect to different regions with the Azure Cosmos DB for NoSQL SDK
+   * Configure consistency models in the portal and the Azure Cosmos DB for NoSQL SDK
+   * Connect to a multi-region write account with the Azure Cosmos DB for NoSQL SDK
+> 10 - Optimize query and operation performance in Azure Cosmos DB for NoSQL:
+   * Optimize an Azure Cosmos DB for NoSQL container’s indexing policy for common operations
+   * Optimize an Azure Cosmos DB for NoSQL container’s index policy for a specific query
+> 11 - Monitor and troubleshoot an Azure Cosmos DB for NoSQL solution:
+   * Use Azure Monitor to analyze an Azure Cosmos DB for NoSQL account https://devblogs.microsoft.com/cosmosdb/announcing-azure-cosmos-db-mirroring-in-microsoft-fabric-private-preview/
+   * Troubleshoot an application using the Azure Cosmos DB for NoSQL SDK
+   * Store Azure Cosmos DB for NoSQL account keys in Azure Key Vault
+> 12 - Manage an Azure Cosmos DB for NoSQL solution using DevOps practices:
+   * Adjust provisioned throughput using an Azure CLI script
+   * Create an Azure Cosmos DB for NoSQL container using Azure Resource Manager templates
+> 13 - Create server-side programming constructs in Azure Cosmos DB for NoSQL:
+   * Build multi-item transactions with the Azure Cosmos DB for NoSQL 39 min
+   <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/build-multi-item-transactions-azure-cosmos-db-sql-api/6-exercise-create-stored-procedure-azure-portal">EXERCISE</a>: with the Azure portal, Author & Rollback a server-side JavaScript <strong>stored procedure</strong> scoped to a single logical partition 
+   * Expand query and transaction functionality in Azure Cosmos DB for NoSQL
+   Implement and then use user-defined functions with the SDK
+<br /><br />
 <hr />
 
 <a name="Databricks"></a>
@@ -1163,7 +1235,7 @@ https://www.techtarget.com/searchstorage/tip/Compare-Azure-Blob-Storage-vs-Data-
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702090058/azure-data-regional-205x808_mjwbvk.png"><img align="right" width="205" alt="azure-data-regional-205x808.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702090058/azure-data-regional-205x808_mjwbvk.png"></a>
    <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/blobs/">PRICING</a> for data storage is based on several factors. But the basic cost of the first 50 TB of LRS Hot Hierarchical Gen2 storage, by Region/Location, in $/GB/Month USD. <a target="_blank" href="https://7451111251303.gumroad.com/l/fjkxm">According to my calculations (in an Excel file) on Dec 8, 2023</a>:
    
-   <strong>Brazil Southeast</strong> (in red) is the most expensive -- 2.35 times the cost of the cheapest region, West US 2.
+   <strong>Brazil Southeast</strong> (in red) is the most expensive -- 2.35 times the cost of the cheapest region (shown in dark green).
    
    That's before adding costs for reservations, time lengths, Data egress fees, etc. which can be substantial and dramatically impact the storage budget. 
 
