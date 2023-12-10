@@ -969,9 +969,11 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
    With Cosmos DB, developers can pick and choose which fields should have strong consistency.
 
 
-   ### Cosmos flow
+   ### Cosmos DB workflow
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702240615/cosmosdb-flow-231210a_ujph6s.png"><img alt="cosmosdb-flow-231210a.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702240615/cosmosdb-flow-231210a_ujph6s.png"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702241094/cosmosdb-flow-231210a_dltlb1.png"><img alt="cosmosdb-flow-231210a.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702240615/cosmosdb-flow-231210a_dltlb1.png"></a>
+
+   My diagram above (available on GumRoad)</a> shows the various services accessing the API of whatever model is defined in your Cosmos DB within the Azure cloud. 
 
    ### Mirror for Fabric
 
