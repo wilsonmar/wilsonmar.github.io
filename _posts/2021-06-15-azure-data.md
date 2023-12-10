@@ -552,18 +552,18 @@ No pre-requisite exams to get the <a target="_blank" href="https://learn.microso
 1. PROTIP: Get an overview by going through <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-420">these modules at the bottom of Microsoft's exam page</a>, which are aligned with <a target="_blank" href="https://aka.ms/DP420-StudyGuide">modules defined in the Study Guide for the exam</a>:
 
    1. Get started with Azure Cosmos DB for NoSQL
-   1. Plan and implement Azure Cosmos DB for NoSQL
-   1. Connect to Azure Cosmos DB for NoSQL with the SDK
-   1. Access and manage data with the Azure Cosmos DB for NoSQL SDKs
-   1. Execute queries in Azure Cosmos DB for NoSQL
-   1. Define and implement an indexing strategy for Azure Cosmos DB for NoSQL
-   1. Integrate Azure Cosmos DB for NoSQL with Azure services
-   1. Implement a data modeling and partitioning strategy for Azure Cosmos DB for NoSQL
-   1. Design and implement a replication strategy for Azure Cosmos DB for NoSQL
-   1. Optimize query and operation performance in Azure Cosmos DB for NoSQL
-   1. Monitor and troubleshoot an Azure Cosmos DB for NoSQL solution
-   1. Manage an Azure Cosmos DB for NoSQL solution using DevOps practices
-   1. Create server-side programming constructs in Azure Cosmos DB for NoSQL
+   1. <strong>Plan</strong> and <strong>implement</strong> Azure Cosmos DB for NoSQL
+   1. <strong>Connect</strong> to Azure Cosmos DB for NoSQL with the SDK
+   1. <strong>Access</strong> and manage data with the Azure Cosmos DB for NoSQL SDKs
+   1. Execute <strong>queries</strong> in Azure Cosmos DB for NoSQL
+   1. Define and implement an <strong>indexing</strong> strategy for Azure Cosmos DB for NoSQL
+   1. <strong>Integrate</strong> Azure Cosmos DB for NoSQL with Azure services
+   1. Implement a data modeling and <strong>partitioning</strong> strategy for Azure Cosmos DB for NoSQL
+   1. Design and implement a <strong>replication</strong> strategy for Azure Cosmos DB for NoSQL
+   1. <strong>Optimize</strong> query and operation performance in Azure Cosmos DB for NoSQL
+   1. <strong>Monitor</strong> and troubleshoot</strong> an Azure Cosmos DB for NoSQL solution
+   1. <strong>Manage</strong> an Azure Cosmos DB for NoSQL solution using DevOps practices
+   1. Create server-side <strong>programming</strong> constructs in Azure Cosmos DB for NoSQL
    <br /><br />
 
    The above are covered live during the <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/dp-420t00?resource_type=course&products=azure&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks">$1599 4-day course DP-420T00--A: Designing and Implementing Cloud-Native Applications Using Microsoft Azure Cosmos DB</a>.
