@@ -570,15 +570,14 @@ No pre-requisite exams to get the <a target="_blank" href="https://learn.microso
 
 1. Perform the <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/">hands-on labs detailed here</a>, which references <a target="_blank" href="https://github.com/MicrosoftLearning/dp-420-cosmos-db-dev">these files</a>.
 
-> Setup:
-   * Create lab resource group
-   * Setup lab environment
-   * Enable resource providers
 > 1 - Get started with Azure Cosmos DB for NoSQL
-   * Create an Azure Cosmos DB for NoSQL account<br />
+* Create lab resource group
+* Setup lab environment
+* Enable resource providers
+* Create an Azure Cosmos DB for NoSQL account
 > 2 - Plan and implement Azure Cosmos DB for NoSQL:	
-   * Configure throughput for Azure Cosmos DB For NoSQL with the Azure portal
-   * Migrate existing data using Azure Data Factory
+* Configure throughput for Azure Cosmos DB For NoSQL with the Azure portal
+* Migrate existing data using Azure Data Factory
 > 3 - Connect to Azure Cosmos DB for NoSQL with the SDK:
    * Connect to Azure Cosmos DB for NoSQL with the SDK
    * Configure the Azure Cosmos DB for NoSQL SDK for offline development
@@ -614,13 +613,17 @@ No pre-requisite exams to get the <a target="_blank" href="https://learn.microso
    * Adjust provisioned throughput using an Azure CLI script
    * Create an Azure Cosmos DB for NoSQL container using Azure Resource Manager templates
 > 13 - Create server-side programming constructs in Azure Cosmos DB for NoSQL:
-   * Create a stored procedure with the Azure portal
-   * Implement and then use user-defined functions with the SDK
-   <br /><br />
+* Build multi-item transactions with the Azure Cosmos DB for NoSQL 39 min
+   Create a stored procedure with the Azure portal
+* Expand query and transaction functionality in Azure Cosmos DB for NoSQL
+   Implement and then use user-defined functions with the SDK
+<br /><br />
 
 <hr />
 
 <a name="DP-500"></a>
+
+## DP-500: Azure Data Engineer Associate
 
 Microsoft's $165 <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/azure-enterprise-data-analyst-associate/">DP-500 Azure Enterprise Data Analyst Associate exam page</a> provides free tutorials to get advanced Power BI skills, including managing data repositories and data processing in the cloud and on-premises, along with using Power Query and Data Analysis Expressions (DAX). You should also be proficient in consuming data from Azure Synapse Analytics and should have experience querying relational databases, analyzing data by using Transact-SQL (T-SQL), and visualizing data.
 
@@ -629,32 +632,32 @@ Microsoft's $165 <a target="_blank" href="https://learn.microsoft.com/en-us/cred
 The <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/dp-500t00?resource_type=course&products=azure&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks">
 4-day course DP-500T00--A:</a> references (free) <a target="_blank" href="https://microsoftlearning.github.io/DP-500-Azure-Data-Analyst/">labs</a> using <a target="_blank" href="https://github.com/MicrosoftLearning/DP-500-Azure-Data-Analyst/">these files</a>.
 
-* Setup your own environment on Windows 11: 
+> 1. Setup your own environment on Windows 11: 
    * Microsoft Edge
    * Git
    * <a target="_blank" href="https://aka.ms/ssmsfullsetup">SQL Server Management Studio</a>
    * <a target="_blank" href="https://www.microsoft.com/download/details.aspx?id=58494">Power BI Desktop (April 2023)</a>
    * <a target="_blank" href="https://www.microsoft.com/download/details.aspx?id=58158">Power BI Report Builder</a>
-* Model, query, and explore data in Azure Synapse
+> 2. Model, query, and explore data in Azure Synapse
    * Query files using a serverless SQL pool
    * Analyze data in a data lake with Spark
    * Explore a relational data warehouse
-* Prepare data for tabular models in Power BI	
+> 3. Prepare data for tabular models in Power BI	
    * Create a star schema model
    * Create a dataflow
-* Design and build tabular models  
+> 4. Design and build tabular models  
    * Work with model relationships
    * Create calculation groups
    * Create a composite model
    * Enforce model security
-* Optimize enterprise-scale tabular models:
+> 5. Optimize enterprise-scale tabular models:
    * Improve performance with hybrid tables
    * Improve query performance with dual storage mode
    * Improve query performance with aggregations
    * Use tools to optimize Power BI performance
-* Implement advanced data visualization techniques by using Power BI:
+> 6. Implement advanced data visualization techniques by using Power BI:
    * Monitor data in real time
-* Manage the analytics development lifecycle:
+> 7. Manage the analytics development lifecycle:
    * Create reusable Power BI assets
 
 
