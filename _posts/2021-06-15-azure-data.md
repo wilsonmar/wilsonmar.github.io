@@ -798,17 +798,6 @@ Synapse SQL is a distributed version of T-SQL, with extensions for streaming and
 * XML
 
 
-<a name="ADF"></a>
-
-## ADF for ETL
-
-Azure Data Factory (ADF) is Heterogenous - it has over 100 different connectors to various other systems.
-
-Linked service to Data Lake Store, Azure Databricks.
-
-
-<a target="_blank" href="https://www.youtube.com/watch?v=YO7-XruyZvs" title="The difference between SQL Server and SQL Azure">VIDEO</a>:
-
 
 <a name="CreateSQLDB"></a>
 <!-- ref in Azure-computer -->
@@ -877,92 +866,6 @@ Isolation - concurrent execution of transactions leave the database in the same 
 Durability - once a transaction has been committed, it remains committed.
 
 
-<hr />
-
-<a name="ADF"></a>
-
-## Azure Data Factory on Portal GUI
-
-1. In the portal, click "+ Create a resource", then in "Search services and Marketplace" type enough of "Data Factory" to select it from the drop-down list.
-
-   <img width="367" alt="az-data-fac-menu-734x410" src="https://user-images.githubusercontent.com/300046/122431224-807e6600-cf51-11eb-91b9-71a37ec18109.png">
-
-1. Click "Create" after confirming that it's from "Azure".
-
-   Integrate data silos with Azure Data Factory, a service built for all data integration needs and skill levels. Easily construct ETL and ELT processes code-free within the intuitive visual environment, or write your own code. Visually integrate data sources using more than 90+ natively built and maintenance-free connectors at no added cost. Focus on your data - the serverless integration service does the rest.
-
-   * No code or maintenance required to build hybrid ETL and ELT pipelines within the Data Factory visual environment
-   * Cost-efficient and fully managed serverless cloud data integration tool that scales on demand
-   * Azure security measures to connect to on-premises, cloud-based, and software-as-a-service apps with peace of mind
-   * SSIS integration runtime to easily rehost on-premises SSIS packages in the cloud using familiar SSIS tools
-   <br /><br />
-
-1. Resource group:
-1. Database name: up to 128 characters, unique on same server.
-1. Server: 
-
-
-ADF automates data movement and transformation (ETL).
-
-ADF can spin up and down HDInsights clusters.
-
-Process in Factory Resources:
-
-1. Pipeline
-2. Combine datasets (sources)
-3. Data flows: Select columns
-4. Write output to target datasets (using Power Query?)
-
-See Pluralsight: "Building your First Data Pipeline in Azure Data Factory" by Emillio Melo
-
-
-<a name="PowerBI"></a>
-
-## PowerBI
-
-See my <a target="_blank" href="https://wilsonmar.github.io/powerbi">PowerBI notes</a>
-
-See Pluralsight: "Building your First Power BI Report"
-
-
-
-## SQL Server Management Studio (SSMS)
-
-SSMS is integrated to visualize and work with Azure SQL, including SQL Server in virtual machines, SQL managed instances, and SQL databases. When necessary, SSMS shows only options that work for a specific Azure service.
-
-https://docs.azure.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
-Installer
-
-
-<a name="AzureDataStudio"></a>
-
-## Azure Data Studio
-
-Azure Data Studio is an open-source, cross-platform client GUI tool for querying and working with various Azure data sources, including SQL Server and Azure SQL. Its "notebooks" allows mixing runnable code cells and formatted text in one place.
-
-![az-data-studio](https://user-images.githubusercontent.com/300046/126932768-c2279fb2-826d-4ca7-bacd-10a1be11b7f9.png)
-
-https://docs.azure.com/en-us/sql/azure-data-studio/download-Azure-data-studio
-
-
-<a name="Azure+Synapse+Analytics"></a>
-
-## Azure Synapse Analytics
-
-<a target="_blank" href="https://www.azure.com/videoplayer/embed/RE4Asf7">VIDEO</a>:
-How to configure Data Factory to ingest data for Azure Synapse Analytics.
-
-Azure Synapse Analytics was rebranded from "Azure SQL Data Warehouse".
-
-Integrates with Apache Spark.
-(Spark jobs can also be run in Azure Databricks and Azure HDInsight)
-
-Synapse has a "Massively Parallel" engine of partitioned instances (sharding)
-
-<a target="_blank" href="https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio?tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall">Data Studio is installed</a> automtically 
-when SQL Server Management Studio (SSMS) 18.7, Azure Data Studio is installed.
-
-
 
 <hr />
 
@@ -992,13 +895,18 @@ The predecessor to Cosmos was announced in 2015 as "Azure DocumentDB" (like AWS)
 In 2017, Azure Cosmos DB is announced with global regions and multiple data models. 
 <a target="_blank" href="https://azure.microsoft.com/support/legal/sla/cosmos-db/">read/write SLA</a> announced for mission-critical app throughput, consistency, 99.999% availability, and < 10-ms latency.
 
+<a target="_blank" href="https://www.youtube.com/watch?v=P3qmqUZJ7l0&t=3h57m33s">VIDEO</a> Creating and accessing different data models.
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/resource-model">Entity model</a>: Accout -> Database -> Container -> Item
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702207323/cosmos-entities-1042x464_jdjrnc.png"><img alt="cosmos-entities-1042x464.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702207323/cosmos-entities-1042x464_jdjrnc.png"></a>
+
 1. Search for service "Cosmos" for a list of services:
 
    <a target="_blan" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702173114/azure-cosmos-svcs-1554x650_wqfeza.png"><img alt="azure-cosmos-svcs-1554x650.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702173114/azure-cosmos-svcs-1554x650_wqfeza.png"></a>
 
    DEFINITION: "RU" = Request Units = 1KB of data read or written per second, when Provisioned throughput is selected.
 
-1. PROTIP: <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/choose-api">Choose one</a> data model:
+1. PROTIP: <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/choose-api">Choose one</a> data model: 
 
    * <a target="_blank" href="https://aka.ms/cosmos-sql-api-landing-page">Azure Cosmos DB for NoSQL</a> - Azure Cosmos DB's core, or native API for working with documents. Supports fast, flexible development with familiar SQL query language and client libraries for .NET, JavaScript, Python, and Java.
    
@@ -1015,8 +923,12 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702184478/cloud-nosql-955x552_edipql.png"><img alt="cloud-nosql-955x552.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702184478/cloud-nosql-955x552_edipql.png"></a>
 
-1. Click "+ Create" to create a new Cosmos DB account.
-1. For Resource Group, Instance Account Name: PROTIP: Add a date to the end of the name to make it unique.
+1. Click "+ Create" to create a new Cosmos DB account. In the Basics tab:
+1. For Resource Group, PROTIP: Add a date to the end of the name to make it unique.
+1. For Account Name (to be used as part of the DNS address for requests to the service)
+
+   The globally unique account name. The portal will check the name in real time.
+
 1. For Capacity mode, <a target="_blank" href="https://aka.ms/cosmos-models">Learn more</a>. <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/plan-manage-costs#estimating-serverless-costs">Estimate costs</a>.
    * leave the default "Provisioned throughput" for workloads with sustained traffic requiring predictable performance, billed by Request Units per second (RU/s) <strong>provisioned</strong>. Unlimited storage per container.
    * "Serverless" for automatic scaling for workloads with intermittent and unpredictable bursts/spikes and dips in traffic. Maximum <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/serverless-performance">1 TB storage per container</a>. Billed by RUs/second <strong>consumed</strong>. 
@@ -1049,18 +961,15 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
    <br /><br />
 1. Click "Tags" tab to specify Key "CreatedBy" tag with your email as the Value for "Azure Cosmos DB account" billing and management.
 1. Click "Review + Create". Click "Create".
-
+   * <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/instructions/02-configure-throughput.html#create-a-serverless-account">HANDS-ON</a>: Create a serverless account
+   * <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/instructions/02-configure-throughput.html#create-a-serverless-account">HANDS-ON</a>: Create a provisioned account
 
 Cosmos DB can automatically generate a database index without the user putting together a schema upfront. 
 However, developers still need to select the consistency model, the level of scalability, and the appropriate API for data storage.
-
-With Cosmos DB, developers can pick and choose which fields should have strong consistency and which are less of a priority.
+With Cosmos DB, developers can pick and choose which fields should have strong consistency.
 
 <a target="_blank" href="https://devblogs.microsoft.com/cosmosdb/announcing-azure-cosmos-db-mirroring-in-microsoft-fabric-private-preview/">BLOG</a>:
 Data within Cosmos DB instances can be accessed by Fabric apps after being <strong>mirrored</strong> (for a price).
-
-<a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/resource-model">Entity model</a>: Accout -> Database -> Container -> Item
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702207323/cosmos-entities-1042x464_jdjrnc.png"><img alt="cosmos-entities-1042x464.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702207323/cosmos-entities-1042x464_jdjrnc.png"></a>
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/synapse-link">Azure Synapase Link for Azure Cosmos DB</a>
 
@@ -1082,63 +991,63 @@ No pre-requisite exams to get the <a target="_blank" href="https://learn.microso
 
 1. PROTIP: Learn concepts and terminology by going through <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-420">these modules at the bottom of Microsoft's exam page</a>, 
 
-1. Perform the <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/">hands-on labs detailed here</a>, which references <a target="_blank" href="https://github.com/MicrosoftLearning/dp-420-cosmos-db-dev">these files</a>.
+1. Perform the <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/">hands-on labs detailed here</a> generated from <a target="_blank" href="https://github.com/MicrosoftLearning/dp-420-cosmos-db-dev">these files</a> and using https://github.com/microsoftlearning/dp-420-cosmos-db-dev
 
-   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/get-started-azure-cosmos-db-sql-api/">LEARN</a>: Get started with Azure Cosmos DB for NoSQL
+   MODULE 1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/get-started-azure-cosmos-db-sql-api/">LEARN</a>: Get started with Azure Cosmos DB for NoSQL
       * Create lab resource group
       * Setup lab environment
       * Enable resource providers
       * <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/instructions/01-create-account.html#use-the-data-explorer-to-create-a-new-database-and-container">HANDS-ON</a>: Create an Azure Cosmos DB for NoSQL account. Use Data Explorer to create new items and issue basic queries.
       <br /><br />
-   2. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/plan-implement-azure-cosmos-db-sql-api/">LEARN</a>: <strong>Plan</strong> and <strong>implement</strong> Azure Cosmos DB for NoSQL
+   MODULE 2. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/plan-implement-azure-cosmos-db-sql-api/">LEARN</a>: <strong>Plan</strong> and <strong>implement</strong> Azure Cosmos DB for NoSQL
       * Configure throughput for Azure Cosmos DB For NoSQL with the Azure portal
-      * Migrate existing data using Azure Data Factory
+      * Migrate existing data using <a href="#ADF">Azure Data Factory</a>
       <br /><br />
-   3. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/connect-to-azure-cosmos-db-sql-api-sdk/">LEARN</a>: <strong>Connect</strong> to Azure Cosmos DB for NoSQL with the SDK
-      * Connect to Azure Cosmos DB for NoSQL with the SDK
-      * Configure the Azure Cosmos DB for NoSQL SDK for offline development
+   MODULE 3. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/connect-to-azure-cosmos-db-sql-api-sdk/">LEARN</a>: <strong>Connect</strong> to Azure Cosmos DB for NoSQL with the SDK
+      * Connect to Azure Cosmos DB for NoSQL with the .NET SDK at https://github.com/microsoftlearning/dp-420-cosmos-db-dev
+      * Configure the Azure Cosmos DB for NoSQL SDK for offline development (using the Windows  Azure Cosmos DB Emulator) 
       <br /><br />
-   4. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/access-manage-data-azure-cosmos-db-sql-api-sdks/">LEARN</a>: <strong>Access</strong> and manage data with the Azure Cosmos DB for NoSQL SDKs
-      * Create and update documents with the Azure Cosmos DB for NoSQL SDK
+   MODULE 4. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/access-manage-data-azure-cosmos-db-sql-api-sdks/">LEARN</a>: <strong>Access</strong> and manage data with the Azure Cosmos DB for NoSQL SDKs
+      * Create and update documents with the Azure Cosmos DB for NoSQL SDK - navigate to the Keys pane connection details and credentials necessary to connect to the account from the SDK. Specifically: URI endpoint value
       * Batch multiple point operations together with the Azure Cosmos DB for NoSQL SDK
       * Move multiple documents in bulk with the Azure Cosmos DB for NoSQL SDK
       <br /><br />
-   5. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/execute-queries-azure-cosmos-db-sql-api/">LEARN</a>: Execute <strong>queries</strong> in Azure Cosmos DB for NoSQL
+   MODULE 5. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/execute-queries-azure-cosmos-db-sql-api/">LEARN</a>: Execute <strong>queries</strong> in Azure Cosmos DB for NoSQL
       * Execute a query with the Azure Cosmos DB for NoSQL SDK
       * Paginate cross-product query results with the Azure Cosmos DB for NoSQL SDK
       <br /><br />
-   6. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/define-implement-indexing-strategy-cosmos-db-sql-api/">LEARN</a>: Define and implement an <strong>indexing</strong> strategy for Azure Cosmos DB for NoSQL
+   MODULE 6. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/define-implement-indexing-strategy-cosmos-db-sql-api/">LEARN</a>: Define and implement an <strong>indexing</strong> strategy for Azure Cosmos DB for NoSQL
       * Review the default index policy for an Azure Cosmos DB for NoSQL container with the portal
       * Review the default index policy for an Azure Cosmos DB for NoSQL container with the portal
       <br /><br />
-   7. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/integrate-azure-cosmos-db-sql-api-azure-services/">LEARN</a>: <strong>Integrate</strong> Azure Cosmos DB for NoSQL with Azure services
+   MODULE 7. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/integrate-azure-cosmos-db-sql-api-azure-services/">LEARN</a>: <strong>Integrate</strong> Azure Cosmos DB for NoSQL with Azure services
       * Process change feed events using the Azure Cosmos DB for NoSQL SDK
       * Process Azure Cosmos DB for NoSQL data using Azure Functions
       * Search data using Azure Cognitive Search and Azure Cosmos DB for NoSQL
       <br /><br />
-   8. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/implement-modeling-partitioning-azure-cosmos-db-sql-api/">LEARN</a>: Implement a data modeling and <strong>partitioning</strong> strategy for Azure Cosmos DB for NoSQL <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/partitioning-overview#choose-partitionkey">LEARN</a>
+   MODULE 8. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/implement-modeling-partitioning-azure-cosmos-db-sql-api/">LEARN</a>: Implement a data modeling and <strong>partitioning</strong> strategy for Azure Cosmos DB for NoSQL <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/partitioning-overview#choose-partitionkey">LEARN</a>
       * Measure performance for customer entities
       * Cost of denormalizing data and aggregates and using the change feed for referential integrity
       <br /><br />
-   9. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-implement-replication-strategy-cosmos-db-sql-api/">LEARN</a>: Design and implement a <strong>replication</strong> strategy for Azure Cosmos DB for NoSQL
-      * Connect to different regions with the Azure Cosmos DB for NoSQL SDK
+   MODULE 9. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-implement-replication-strategy-cosmos-db-sql-api/">LEARN</a>: Design and implement a <strong>replication</strong> strategy for Azure Cosmos DB for NoSQL
+      * Connect to different regions with the Azure Cosmos DB for NoSQL SDK - using <tt>dotnet build</tt>
       * Configure consistency models in the portal and the Azure Cosmos DB for NoSQL SDK
       * Connect to a multi-region write account with the Azure Cosmos DB for NoSQL SDK
       <br /><br />
-   10. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/optimize-query-performance-azure-cosmos-db-sql-api/">LEARN</a>: <strong>Optimize</strong> query and operation performance in Azure Cosmos DB for NoSQL
+   MODULE 10. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/optimize-query-performance-azure-cosmos-db-sql-api/">LEARN</a>: <strong>Optimize</strong> query and operation performance in Azure Cosmos DB for NoSQL
       * Optimize an Azure Cosmos DB for NoSQL container’s indexing policy for common operations
       * Optimize an Azure Cosmos DB for NoSQL container’s index policy for a specific query
       <br /><br />
-   11. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/monitor-troubleshoot-azure-cosmos-db-sql-api-solution/">LEARN</a>: <strong>Monitor</strong> and <strong>troubleshoot</strong> an Azure Cosmos DB for NoSQL solution
+   MODULE 11. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/monitor-troubleshoot-azure-cosmos-db-sql-api-solution/">LEARN</a>: <strong>Monitor</strong> and <strong>troubleshoot</strong> an Azure Cosmos DB for NoSQL solution
       * Use Azure Monitor to analyze an Azure Cosmos DB for NoSQL account https://devblogs.microsoft.com/cosmosdb/announcing-azure-cosmos-db-mirroring-in-microsoft-fabric-private-preview/
       * Troubleshoot an application using the Azure Cosmos DB for NoSQL SDK
       * Store Azure Cosmos DB for NoSQL account keys in Azure Key Vault
       <br /><br />
-   12. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/manage-cosmos-db-sql-api-solution-using-devops-practices/">LEARN</a>: <strong>Manage</strong> an Azure Cosmos DB for NoSQL solution using DevOps practices
+   MODULE 12. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/manage-cosmos-db-sql-api-solution-using-devops-practices/">LEARN</a>: <strong>Manage</strong> an Azure Cosmos DB for NoSQL solution using DevOps practices
       * Adjust provisioned throughput using an Azure CLI script
       * Create an Azure Cosmos DB for NoSQL container using Azure Resource Manager templates
       <br /><br />
-   13. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/create-server-side-programming-azure-cosmos-db-sql-api/">LEARN</a>: Create server-side <strong>programming</strong> constructs in Azure Cosmos DB for NoSQL
+   MODULE 13. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/create-server-side-programming-azure-cosmos-db-sql-api/">LEARN</a>: Create server-side <strong>programming</strong> constructs in Azure Cosmos DB for NoSQL
       * Build multi-item transactions with the Azure Cosmos DB for NoSQL 39 min
       <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/build-multi-item-transactions-azure-cosmos-db-sql-api/6-exercise-create-stored-procedure-azure-portal">EXERCISE</a>: with the Azure portal, Author & Rollback a server-side JavaScript <strong>stored procedure</strong> scoped to a single logical partition 
       * Expand query and transaction functionality in Azure Cosmos DB for NoSQL
@@ -1182,6 +1091,196 @@ Azure Glue is a  fully managed extract, transform, and load (ETL) service that y
 ## MongoDB
 
 MongoDB can be used as a file system called GridFS. It stores files up to 16TB with load balancing and data replication over multiple machines.
+
+
+<hr />
+
+<a name="ADF"></a>
+
+## ADF
+
+Azure Data Factory (ADF) is Heterogenous - it has over 100 different connectors to various other systems.
+
+Linked service to Data Lake Store, Azure Databricks.
+
+
+<a target="_blank" href="https://www.youtube.com/watch?v=YO7-XruyZvs" title="The difference between SQL Server and SQL Azure">VIDEO</a>:
+
+### Azure Data Factory on Portal GUI
+
+1. In the portal, click "+ Create a resource", then in "Search services and Marketplace" type enough of "Data Factory" to select it from the drop-down list.
+
+   <img width="367" alt="az-data-fac-menu-734x410" src="https://user-images.githubusercontent.com/300046/122431224-807e6600-cf51-11eb-91b9-71a37ec18109.png">
+
+1. Click "Create" after confirming that it's from "Azure".
+
+   Integrate data silos with Azure Data Factory, a service built for all data integration needs and skill levels. Easily construct ETL and ELT processes code-free within the intuitive visual environment, or write your own code. Visually integrate data sources using more than 90+ natively built and maintenance-free connectors at no added cost. Focus on your data - the serverless integration service does the rest.
+
+   * No code or maintenance required to build hybrid ETL and ELT pipelines within the Data Factory visual environment
+   * Cost-efficient and fully managed serverless cloud data integration tool that scales on demand
+   * Azure security measures to connect to on-premises, cloud-based, and software-as-a-service apps with peace of mind
+   * SSIS integration runtime to easily rehost on-premises SSIS packages in the cloud using familiar SSIS tools
+   <br /><br />
+
+1. Resource group:
+1. Database name: up to 128 characters, unique on same server.
+1. Server: 
+
+
+ADF automates data movement and transformation (ETL).
+
+ADF can spin up and down HDInsights clusters.
+
+Process in Factory Resources:
+
+1. Pipeline
+2. Combine datasets (sources)
+3. Data flows: Select columns
+4. Write output to target datasets (using Power Query?)
+
+See Pluralsight: "Building your First Data Pipeline in Azure Data Factory" by Emillio Melo
+
+
+
+
+## SQL Server Management Studio (SSMS)
+
+SSMS is integrated to visualize and work with Azure SQL, including SQL Server in virtual machines, SQL managed instances, and SQL databases. When necessary, SSMS shows only options that work for a specific Azure service.
+
+https://docs.azure.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
+Installer
+
+
+<a name="AzureDataStudio"></a>
+
+## Azure Data Studio
+
+Azure Data Studio is an open-source, cross-platform client GUI tool for querying and working with various Azure data sources, including SQL Server and Azure SQL. Its "notebooks" allows mixing runnable code cells and formatted text in one place.
+
+![az-data-studio](https://user-images.githubusercontent.com/300046/126932768-c2279fb2-826d-4ca7-bacd-10a1be11b7f9.png)
+
+https://docs.azure.com/en-us/sql/azure-data-studio/download-Azure-data-studio
+
+
+<a name="Azure+Synapse+Analytics"></a>
+
+## Azure Synapse Analytics
+
+<a target="_blank" href="https://www.azure.com/videoplayer/embed/RE4Asf7">VIDEO</a>:
+How to configure Data Factory to ingest data for Azure Synapse Analytics.
+
+Azure Synapse Analytics was rebranded from "Azure SQL Data Warehouse".
+
+Integrates with Apache Spark.
+(Spark jobs can also be run in Azure Databricks and Azure HDInsight)
+
+Synapse has a "Massively Parallel" engine of partitioned instances (sharding)
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio?tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall">Data Studio is installed</a> automtically 
+when SQL Server Management Studio (SSMS) 18.7, Azure Data Studio is installed.
+
+<a name="PowerBI"></a>
+
+## PowerBI
+
+See my <a target="_blank" href="https://wilsonmar.github.io/powerbi">PowerBI notes</a>
+
+See Pluralsight: "Building your First Power BI Report"
+
+
+<hr />
+
+<a name="ADF"></a>
+
+## ADF
+
+Azure Data Factory (ADF) is Heterogenous - it has over 100 different connectors to various other systems.
+
+Linked service to Data Lake Store, Azure Databricks.
+
+
+<a target="_blank" href="https://www.youtube.com/watch?v=YO7-XruyZvs" title="The difference between SQL Server and SQL Azure">VIDEO</a>:
+
+### Azure Data Factory on Portal GUI
+
+1. In the portal, click "+ Create a resource", then in "Search services and Marketplace" type enough of "Data Factory" to select it from the drop-down list.
+
+   <img width="367" alt="az-data-fac-menu-734x410" src="https://user-images.githubusercontent.com/300046/122431224-807e6600-cf51-11eb-91b9-71a37ec18109.png">
+
+1. Click "Create" after confirming that it's from "Azure".
+
+   Integrate data silos with Azure Data Factory, a service built for all data integration needs and skill levels. Easily construct ETL and ELT processes code-free within the intuitive visual environment, or write your own code. Visually integrate data sources using more than 90+ natively built and maintenance-free connectors at no added cost. Focus on your data - the serverless integration service does the rest.
+
+   * No code or maintenance required to build hybrid ETL and ELT pipelines within the Data Factory visual environment
+   * Cost-efficient and fully managed serverless cloud data integration tool that scales on demand
+   * Azure security measures to connect to on-premises, cloud-based, and software-as-a-service apps with peace of mind
+   * SSIS integration runtime to easily rehost on-premises SSIS packages in the cloud using familiar SSIS tools
+   <br /><br />
+
+1. Resource group:
+1. Database name: up to 128 characters, unique on same server.
+1. Server: 
+
+
+ADF automates data movement and transformation (ETL).
+
+ADF can spin up and down HDInsights clusters.
+
+Process in Factory Resources:
+
+1. Pipeline
+2. Combine datasets (sources)
+3. Data flows: Select columns
+4. Write output to target datasets (using Power Query?)
+
+See Pluralsight: "Building your First Data Pipeline in Azure Data Factory" by Emillio Melo
+
+
+
+
+## SQL Server Management Studio (SSMS)
+
+SSMS is integrated to visualize and work with Azure SQL, including SQL Server in virtual machines, SQL managed instances, and SQL databases. When necessary, SSMS shows only options that work for a specific Azure service.
+
+https://docs.azure.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
+Installer
+
+
+<a name="AzureDataStudio"></a>
+
+## Azure Data Studio
+
+Azure Data Studio is an open-source, cross-platform client GUI tool for querying and working with various Azure data sources, including SQL Server and Azure SQL. Its "notebooks" allows mixing runnable code cells and formatted text in one place.
+
+![az-data-studio](https://user-images.githubusercontent.com/300046/126932768-c2279fb2-826d-4ca7-bacd-10a1be11b7f9.png)
+
+https://docs.azure.com/en-us/sql/azure-data-studio/download-Azure-data-studio
+
+
+<a name="Azure+Synapse+Analytics"></a>
+
+## Azure Synapse Analytics
+
+<a target="_blank" href="https://www.azure.com/videoplayer/embed/RE4Asf7">VIDEO</a>:
+How to configure Data Factory to ingest data for Azure Synapse Analytics.
+
+Azure Synapse Analytics was rebranded from "Azure SQL Data Warehouse".
+
+Integrates with Apache Spark.
+(Spark jobs can also be run in Azure Databricks and Azure HDInsight)
+
+Synapse has a "Massively Parallel" engine of partitioned instances (sharding)
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio?tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall">Data Studio is installed</a> automtically 
+when SQL Server Management Studio (SSMS) 18.7, Azure Data Studio is installed.
+
+<a name="PowerBI"></a>
+
+## PowerBI
+
+See my <a target="_blank" href="https://wilsonmar.github.io/powerbi">PowerBI notes</a>
+
+See Pluralsight: "Building your First Power BI Report"
 
 
 
