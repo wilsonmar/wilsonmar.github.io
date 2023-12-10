@@ -973,11 +973,12 @@ Microsoft Azure Cosmos DB is a fully managed API service to provide a <strong>sc
    * http://www.cosmosdb.com/
    * https://twitter.com/AzureCosmosDB
    * https://devblogs.microsoft.com/cosmosdb/tag/microsoft-fabric/
+   * https://learn.microsoft.com/en-us/answers/tags/187/azure-cosmos-db
    * https://www.linkedin.com/company/azure-cosmos-db/
    * https://www.linkedin.com/company/azure-cosmos/about/
    * <a target="_blank" href="https://cosmos.azure.com/try/">TRY FREE 30 days</a> for NoSQL, MongoDB, Cassandra, PostgreSQL
    * https://datamonkeysite.com/2023/05/27/first-impression-of-microsoft-fabric/
-   * https://www.linkedin.com/company/alpaqastudio/?lipi=urn%3Ali%3Apage%3Acompanies_company_about_index%3Bfc500df4-de5d-407e-949e-72a2e33c649a
+   * https://www.linkedin.com/company/alpaqastudio/
    * https://devblogs.microsoft.com/cosmosdb/announcing-azure-cosmos-db-mirroring-in-microsoft-fabric-private-preview/
    <br /><br />
 
@@ -1065,19 +1066,19 @@ No pre-requisite exams to get the <a target="_blank" href="https://learn.microso
 
 1. PROTIP: Learn concepts and terminology by going through <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-420">these modules at the bottom of Microsoft's exam page</a>, 
 
-   1. Get started with Azure Cosmos DB for NoSQL
-   1. <strong>Plan</strong> and <strong>implement</strong> Azure Cosmos DB for NoSQL
-   1. <strong>Connect</strong> to Azure Cosmos DB for NoSQL with the SDK
-   1. <strong>Access</strong> and manage data with the Azure Cosmos DB for NoSQL SDKs
-   1. Execute <strong>queries</strong> in Azure Cosmos DB for NoSQL
-   1. Define and implement an <strong>indexing</strong> strategy for Azure Cosmos DB for NoSQL
-   1. <strong>Integrate</strong> Azure Cosmos DB for NoSQL with Azure services
-   1. Implement a data modeling and <strong>partitioning</strong> strategy for Azure Cosmos DB for NoSQL
-   1. Design and implement a <strong>replication</strong> strategy for Azure Cosmos DB for NoSQL
-   1. <strong>Optimize</strong> query and operation performance in Azure Cosmos DB for NoSQL
-   1. <strong>Monitor</strong> and troubleshoot</strong> an Azure Cosmos DB for NoSQL solution
-   1. <strong>Manage</strong> an Azure Cosmos DB for NoSQL solution using DevOps practices
-   1. Create server-side <strong>programming</strong> constructs in Azure Cosmos DB for NoSQL
+   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/get-started-azure-cosmos-db-sql-api/">LEARN</a>: Get started with Azure Cosmos DB for NoSQL
+   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/plan-implement-azure-cosmos-db-sql-api/">LEARN</a>: <strong>Plan</strong> and <strong>implement</strong> Azure Cosmos DB for NoSQL
+   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/connect-to-azure-cosmos-db-sql-api-sdk/">LEARN</a>: <strong>Connect</strong> to Azure Cosmos DB for NoSQL with the SDK
+   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/access-manage-data-azure-cosmos-db-sql-api-sdks/">LEARN</a>: <strong>Access</strong> and manage data with the Azure Cosmos DB for NoSQL SDKs
+   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/execute-queries-azure-cosmos-db-sql-api/">LEARN</a>: Execute <strong>queries</strong> in Azure Cosmos DB for NoSQL
+   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/define-implement-indexing-strategy-cosmos-db-sql-api/">LEARN</a>: Define and implement an <strong>indexing</strong> strategy for Azure Cosmos DB for NoSQL
+   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/integrate-azure-cosmos-db-sql-api-azure-services/">LEARN</a>: <strong>Integrate</strong> Azure Cosmos DB for NoSQL with Azure services
+   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/implement-modeling-partitioning-azure-cosmos-db-sql-api/">LEARN</a>: Implement a data modeling and <strong>partitioning</strong> strategy for Azure Cosmos DB for NoSQL
+   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-implement-replication-strategy-cosmos-db-sql-api/">LEARN</a>: Design and implement a <strong>replication</strong> strategy for Azure Cosmos DB for NoSQL
+   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/optimize-query-performance-azure-cosmos-db-sql-api/">LEARN</a>: <strong>Optimize</strong> query and operation performance in Azure Cosmos DB for NoSQL
+   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/monitor-troubleshoot-azure-cosmos-db-sql-api-solution/">LEARN</a>: <strong>Monitor</strong> and troubleshoot</strong> an Azure Cosmos DB for NoSQL solution
+   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/manage-cosmos-db-sql-api-solution-using-devops-practices/">LEARN</a>: <strong>Manage</strong> an Azure Cosmos DB for NoSQL solution using DevOps practices
+   1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/create-server-side-programming-azure-cosmos-db-sql-api/">LEARN</a>: Create server-side <strong>programming</strong> constructs in Azure Cosmos DB for NoSQL
    <br /><br />
 
 1. Perform the <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/">hands-on labs detailed here</a>, which references <a target="_blank" href="https://github.com/MicrosoftLearning/dp-420-cosmos-db-dev">these files</a>.
