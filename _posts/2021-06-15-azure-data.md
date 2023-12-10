@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-12-07"
+date: "2023-12-10"
 file: "azure-data"
 title: "Azure Data (within Microsft's cloud)"
 excerpt: "Obtain storage and database skills to pass DP-900, DP-100, DP-203, DP-300 exams"
@@ -836,7 +836,7 @@ Batch jobs - REMEMBER:
 
    * ETL = Extract, Transform, Load into SQL star databases with usage "schema on write" for faster read
 
-   * ELT = Extract, Load, Transform = data saved as-is into NoSQL (document) databases with usage "schema on read" for greater scale and exploration
+   * ELT = Extract, Load, Transform = data saved as-is into NoSQL (document) databases with usage "schema on read" for greater scale and exploration<br /<a target="_blank" href="https://www.youtube.com/watch?v=P3qmqUZJ7l0&t=4h27m6s" title="2021 By Andrew Brown">VIDEO</a> Create a ELT job from Azure SQL to Blog Storage, using Data Factory, Author & Monitor.
 
    * Hybrid - data ingested on-prem, transformed in the cloud
    <br /><br />
@@ -895,7 +895,7 @@ The predecessor to Cosmos was announced in 2015 as "Azure DocumentDB" (like AWS)
 In 2017, Azure Cosmos DB is announced with global regions and multiple data models. 
 <a target="_blank" href="https://azure.microsoft.com/support/legal/sla/cosmos-db/">read/write SLA</a> announced for mission-critical app throughput, consistency, 99.999% availability, and < 10-ms latency.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=P3qmqUZJ7l0&t=3h57m33s">VIDEO</a> Creating and accessing different data models.
+<a target="_blank" href="https://www.youtube.com/watch?v=P3qmqUZJ7l0&t=3h57m33s" title="2021 By Andrew Brown">VIDEO</a> Creating and accessing different data models.
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/resource-model">Entity model</a>: Accout -> Database -> Container -> Item
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702207323/cosmos-entities-1042x464_jdjrnc.png"><img alt="cosmos-entities-1042x464.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702207323/cosmos-entities-1042x464_jdjrnc.png"></a>
@@ -964,12 +964,22 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
    * <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/instructions/02-configure-throughput.html#create-a-serverless-account">HANDS-ON</a>: Create a serverless account
    * <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/instructions/02-configure-throughput.html#create-a-serverless-account">HANDS-ON</a>: Create a provisioned account
 
-Cosmos DB can automatically generate a database index without the user putting together a schema upfront. 
-However, developers still need to select the consistency model, the level of scalability, and the appropriate API for data storage.
-With Cosmos DB, developers can pick and choose which fields should have strong consistency.
+   Cosmos DB can automatically generate a database index without the user putting together a schema upfront. 
+   However, developers still need to select the consistency model, the level of scalability, and the appropriate API for data storage.
+   With Cosmos DB, developers can pick and choose which fields should have strong consistency.
 
-<a target="_blank" href="https://devblogs.microsoft.com/cosmosdb/announcing-azure-cosmos-db-mirroring-in-microsoft-fabric-private-preview/">BLOG</a>:
-Data within Cosmos DB instances can be accessed by Fabric apps after being <strong>mirrored</strong> (for a price).
+
+   ### Cosmos flow
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702240615/cosmosdb-flow-231210a_ujph6s.png"><img alt="cosmosdb-flow-231210a.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702240615/cosmosdb-flow-231210a_ujph6s.png"></a>
+
+   ### Mirror for Fabric
+
+   <a target="_blank" href="https://devblogs.microsoft.com/cosmosdb/announcing-azure-cosmos-db-mirroring-in-microsoft-fabric-private-preview/">BLOG</a>:
+   Data within Cosmos DB instances can be accessed by Fabric apps after being <strong>mirrored</strong> (for a price).
+
+
+
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/synapse-link">Azure Synapase Link for Azure Cosmos DB</a>
 
@@ -999,10 +1009,12 @@ No pre-requisite exams to get the <a target="_blank" href="https://learn.microso
       * Enable resource providers
       * <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/instructions/01-create-account.html#use-the-data-explorer-to-create-a-new-database-and-container">HANDS-ON</a>: Create an Azure Cosmos DB for NoSQL account. Use Data Explorer to create new items and issue basic queries.
       <br /><br />
+
    MODULE 2. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/plan-implement-azure-cosmos-db-sql-api/">LEARN</a>: <strong>Plan</strong> and <strong>implement</strong> Azure Cosmos DB for NoSQL
       * Configure throughput for Azure Cosmos DB For NoSQL with the Azure portal
       * Migrate existing data using <a href="#ADF">Azure Data Factory</a>
       <br /><br />
+
    MODULE 3. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/connect-to-azure-cosmos-db-sql-api-sdk/">LEARN</a>: <strong>Connect</strong> to Azure Cosmos DB for NoSQL with the SDK
       * Connect to Azure Cosmos DB for NoSQL with the .NET SDK at https://github.com/microsoftlearning/dp-420-cosmos-db-dev
       * Configure the Azure Cosmos DB for NoSQL SDK for offline development (using the Windows  Azure Cosmos DB Emulator) 
@@ -1016,10 +1028,12 @@ No pre-requisite exams to get the <a target="_blank" href="https://learn.microso
       * Execute a query with the Azure Cosmos DB for NoSQL SDK
       * Paginate cross-product query results with the Azure Cosmos DB for NoSQL SDK
       <br /><br />
+
    MODULE 6. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/define-implement-indexing-strategy-cosmos-db-sql-api/">LEARN</a>: Define and implement an <strong>indexing</strong> strategy for Azure Cosmos DB for NoSQL
       * Review the default index policy for an Azure Cosmos DB for NoSQL container with the portal
       * Review the default index policy for an Azure Cosmos DB for NoSQL container with the portal
       <br /><br />
+
    MODULE 7. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/integrate-azure-cosmos-db-sql-api-azure-services/">LEARN</a>: <strong>Integrate</strong> Azure Cosmos DB for NoSQL with Azure services
       * Process change feed events using the Azure Cosmos DB for NoSQL SDK
       * Process Azure Cosmos DB for NoSQL data using Azure Functions
@@ -1034,6 +1048,7 @@ No pre-requisite exams to get the <a target="_blank" href="https://learn.microso
       * Configure consistency models in the portal and the Azure Cosmos DB for NoSQL SDK
       * Connect to a multi-region write account with the Azure Cosmos DB for NoSQL SDK
       <br /><br />
+
    MODULE 10. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/optimize-query-performance-azure-cosmos-db-sql-api/">LEARN</a>: <strong>Optimize</strong> query and operation performance in Azure Cosmos DB for NoSQL
       * Optimize an Azure Cosmos DB for NoSQL container’s indexing policy for common operations
       * Optimize an Azure Cosmos DB for NoSQL container’s index policy for a specific query
@@ -1043,6 +1058,7 @@ No pre-requisite exams to get the <a target="_blank" href="https://learn.microso
       * Troubleshoot an application using the Azure Cosmos DB for NoSQL SDK
       * Store Azure Cosmos DB for NoSQL account keys in Azure Key Vault
       <br /><br />
+
    MODULE 12. <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/manage-cosmos-db-sql-api-solution-using-devops-practices/">LEARN</a>: <strong>Manage</strong> an Azure Cosmos DB for NoSQL solution using DevOps practices
       * Adjust provisioned throughput using an Azure CLI script
       * Create an Azure Cosmos DB for NoSQL container using Azure Resource Manager templates
@@ -1058,7 +1074,11 @@ No pre-requisite exams to get the <a target="_blank" href="https://learn.microso
 
 <a name="Databricks"></a>
 
-## Databricks 
+## Databricks
+
+<a target="_blank" href="https://www.youtube.com/watch?v=P3qmqUZJ7l0&t=4h33m3s" title="2021 By Andrew Brown">VIDEO</a> Explore Azure Databrics
+
+Use Community Edition for free at https://community.cloud.databricks.com/login.html
 
 https://learn.microsoft.com/en-us/azure/databricks/getting-started/free-training
 from the Databricks Academy at https://www.databricks.com/learn/training/home
@@ -1166,6 +1186,8 @@ https://docs.azure.com/en-us/sql/azure-data-studio/download-Azure-data-studio
 
 ## Azure Synapse Analytics
 
+<a target="_blank" href="https://www.youtube.com/watch?v=P3qmqUZJ7l0&t=4h39m47s" title="DP-900 2021 By Andrew Brown">VIDEO</a> Explore Azure Synapse Analytics
+
 <a target="_blank" href="https://www.azure.com/videoplayer/embed/RE4Asf7">VIDEO</a>:
 How to configure Data Factory to ingest data for Azure Synapse Analytics.
 
@@ -1179,11 +1201,12 @@ Synapse has a "Massively Parallel" engine of partitioned instances (sharding)
 <a target="_blank" href="https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio?tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall">Data Studio is installed</a> automtically 
 when SQL Server Management Studio (SSMS) 18.7, Azure Data Studio is installed.
 
+
 <a name="PowerBI"></a>
 
 ## PowerBI
 
-See my <a target="_blank" href="https://wilsonmar.github.io/powerbi">PowerBI notes</a>
+See <a target="_blank" href="https://wilsonmar.github.io/powerbi">my notes about PowerBI and PowerApps</a>
 
 See Pluralsight: "Building your First Power BI Report"
 
