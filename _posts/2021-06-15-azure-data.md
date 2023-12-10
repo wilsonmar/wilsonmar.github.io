@@ -1230,9 +1230,9 @@ https://www.techtarget.com/searchstorage/tip/Compare-Azure-Blob-Storage-vs-Data-
    
    * RA-ZGRS = Read-Access Geo-Zone-Redundant Storage : GZRS plus read access to the secondary region. Recommended for scenarios requiring read access in the secondary region."<br />Data is replicated synchronously across three Azure availability zones in a single region, and then asynchronously to a paired region that is geographically distant from the primary region. This is the Highest-cost option with the highest level of availability and durability.
 
-1. for "Read-access geo-redundant storage (RA-GRS)" is selected, also check "Make read access to data available in the event of regional unavailability" 
+1. If "Read-access geo-redundant storage (RA-GRS)" is selected, also check "Make read access to data available in the event of regional unavailability" 
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702090058/azure-data-regional-205x808_mjwbvk.png"><img align="right" width="205" alt="azure-data-regional-205x808.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702090058/azure-data-regional-205x808_mjwbvk.png"></a>
+   PROTIP: <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702090058/azure-data-regional-205x808_mjwbvk.png"><img align="right" width="205" alt="azure-data-regional-205x808.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702090058/azure-data-regional-205x808_mjwbvk.png"></a>
    <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/blobs/">PRICING</a> for data storage is based on several factors. But the basic cost of the first 50 TB of LRS Hot Hierarchical Gen2 storage, by Region/Location, in $/GB/Month USD. <a target="_blank" href="https://7451111251303.gumroad.com/l/fjkxm">According to my calculations (in an Excel file) on Dec 8, 2023</a>:
    
    <strong>Brazil Southeast</strong> (in red) is the most expensive -- 2.35 times the cost of the cheapest region (shown in dark green).
