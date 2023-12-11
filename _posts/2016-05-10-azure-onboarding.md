@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-12-04"
+date: "2023-12-12"
 file: "azure-onboarding"
 title: "Azure Onboarding"
 excerpt: "Use this automation to minimize manual toil and mistakes but build-in secure practices and mechanisms to build global enterprises need. Not just for AZ-104, AZ-500"
@@ -175,6 +175,20 @@ Recap:
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701750168/azure-onboarding-231204a-2998x1540_fegjig.png"><img alt="azure-onboarding-231204a-2998x1540.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701750168/azure-onboarding-231204a-2998x1540_fegjig.png"><em>Click image here for full-screen image</em></a> generated from animations in <a target="_blank" href="https://7451111251303.gumroad.com/l/kjhhj">my animated PowerPoint file available on GumRoad</a>.
 
 <hr />
+
+## Sales pitches
+
+For a high-level technical overview from a Sales Engineer, with demos:<br />
+<a target="_blank" href="https://www.microsoft.com/en-ie/training-days">SIGN-UP: Microsoft's LIVE 2-hour Virtual Training Days</a>:
+
+   * <strong>Azure</strong> : Modernize Enterprise Applications [<a target="_blank" href="https://learn.microsoft.com/en-us/collections/77k4bnned84kn0">LINKS</a>]
+   * <strong>365</strong>
+   * <strong>Security</strong>
+   * <strong>Dynamics 365</strong>
+   * <strong>Power Platform</strong>
+   <br /><br />
+
+<a target="_blank" href="https://mybuild.microsoft.com/">mybuild.microsoft.com</a>  "Build" conference every year.
 
 
 <hr />

@@ -57,15 +57,20 @@ https://www.microsoft.com/en-ie/training-days#pp
 
 * <strong>Predictive</strong> analytics predict <strong>what might happen</strong> based <strong>regression</strong> from historical data revealing trends.
 
-* <strong>Prescriptive</strong> analytics prescribe <strong>what to do</strong> based on the likelihood of what might happen. 
+* <strong>Prescriptive</strong> analytics prescribe (recommend) <strong>what to do</strong> based <strong>forecasts</strong> on the what might happen. 
 
+   * Weather reports likelihood of rain.
    * <strong>Optimization</strong> is used to find the best solution to a problem. 
    * <strong>Simulation</strong> is used to predict the impact of a decision. 
    * <strong>Heuristics</strong> are used to find a solution that is "good enough" but not necessarily the best.
    <br /><br />
 
-* <strong>Cognitive</strong> analytics predict <strong>what if these happen</strong> by analyzing the possible consequences of various courses of action ("war game") based on <strong>inferences</strong> - beyond decision trees.
+* <strong>Cognitive</strong> analytics cogitate about <strong>what if these happen</strong> by analyzing the possible consequences of various courses of action based on <strong>inferences</strong> - beyond decision trees.
 
+   * Self-driving vehicles calculate what to do based on predictions about all the objects that might move around it.
+   * Generative AI (GAN) to create new images, videos, text, and audio use "Transformers" to understand the context of words based on the likelihood of words appearing together.
+   * "Reinforcement learning" to learn from experience.
+   * "war games"
 
 ## Types of databases
 
@@ -995,7 +1000,8 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
 
 1. For Account Name (to be used as part of the DNS address for requests to the service)
 
-   The globally unique account name. The portal will check the name in real time.
+   PROTIP: This should be globally unique account name. The portal will check the name in real time. 
+   Account names are limited to 44 characters, and can only contain lowercase letters, numbers, and the hyphen (-) character. The account name must start with a letter and must end with a letter or number. The account name must be unique within Azure. If the name is already in use, you'll need to try a different name.
 
 1. For Capacity mode, <a target="_blank" href="https://aka.ms/cosmos-models">Learn more</a>. <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/plan-manage-costs#estimating-serverless-costs">Estimate costs</a>.
    * leave the default "Provisioned throughput" for workloads with sustained traffic requiring predictable performance, billed by Request Units per second (RU/s) <strong>provisioned</strong>. Unlimited storage per container.
@@ -1033,6 +1039,32 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
    * <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/instructions/02-configure-throughput.html#create-a-serverless-account">HANDS-ON</a>: Create a serverless account
    * <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/instructions/02-configure-throughput.html#create-a-serverless-account">HANDS-ON</a>: Create a provisioned account
 
+   ### terraform
+
+   Alternately, look at <a target="_blank" href="https://wilsonmar.github.io/terraform/">my notes about using Terraform</a>
+   because many companies now require that skill to ensure consistency across environments, security, etc.
+   
+   Discussions:
+   * https://www.reddit.com/r/Terraform/comments/y7htsm/azure_cosmos_db_for_postgresql/
+   * https://build5nines.com/terraform-create-azure-cosmos-db-database-and-container/
+   * https://shisho.dev/dojo/providers/azurerm/CosmosDB_DocumentDB/azurerm-cosmosdb-sql-container/
+   * https://sbulav.github.io/terraform/terraform-azure-cosmosdb/
+   * https://jamescook.dev/terraform-cosmosdb-7-day-continuous-backups
+   * https://faun.pub/terraform-series-scalable-webapp-using-azure-cosmosdb-fb4b56f6d2af
+   <br /><br />
+
+   Courses:
+   * https://www.pluralsight.com/resources/blog/cloud/deploy-a-simple-application-in-azure-using-terraform
+   <br /><br />
+
+   https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/samples-terraform
+
+   https://github.com/Azure/terraform-azurerm-cosmosdb
+
+   https://dev.to/krpmuruga/terraform-with-azure-cosmosdb-example-34c7
+
+   https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cosmosdb_account
+
    ### Cosmos DB Containers
 
    <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/resource-model">Entity model</a>: Accout -> Database -> Container -> Item
@@ -1040,7 +1072,14 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
 
 1. Click "Go to resource" to Choose a platform.
 1. Click language .NET (C#), Xamarin (mobile), Java, Node.js, or Python.
-1. Click "Create 'items' container.
+
+   ### Data Explorer
+
+1. Instead of clicking "Create 'items' container", click "Data Explorer" to create a new container.
+
+   REMEMBER: Data Explorer is a web-based UI for managing Azure Cosmos DB data. It provides a tree view of all the resources in your account, including databases, containers, and items. You can use Data Explorer to create, read, update, and delete (CRUD) items, stored procedures, triggers, and user-defined functions (UDFs). You can also use Data Explorer to query your data using SQL syntax.
+
+1. REMEMBER: Click "+ New Container" to select "New database".
 
    ### Expose Connection
 
