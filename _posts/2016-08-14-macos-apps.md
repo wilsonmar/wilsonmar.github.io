@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "MacOS Apps"
-excerpt: "OSX Applications for a long, prosperous, happy life"
-tags: [apple, mac, setup]
 date: "2016-08-14"
-file: "apple-mac-osx-apps"
+file: "macos-apps"
+title: "MacOS Apps"
+excerpt: "Applications for a long, prosperous, happy life"
+tags: [apple, mac, setup]
 image:
 # feature: pic rainbow black apple logo 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622136/1c1cec72-0585-11e6-8a62-060c26928878.jpg
@@ -18,11 +18,54 @@ comments: true
 
 PROTIP: After installation, in the Finder, right-click on the installer to free up disk space.
 
+## MLX (Machine Language eXplore)
+
+Apple has stayed clear of using the word AI in many of its keynote presentations.
+
+In response to Google's announcement of AI chips for its Pixel phones, Apple announced its own AI chip for its iPhone 8 and iPhone X.
+https://www.techrepublic.com/article/apple-mlx-framework-machine-learning/
+
+<a target="_blank" href="https://twitter.com/awnihannun/status/1732184443451019431?s=20">On December 5, 2023, Awni Hannun tweeted</a>
+about Apple's Machine Learning Research team's new Machine Learning Framework at<br />
+<a target="_blank" href="https://github.com/ml-explore/mlx/blob/main/README.md">https://github.com/ml-explore/mlx/blob/main/README.md</a> with docs at<br />
+<a target="_blank" href="https://mx-explore.github.io/build/">https://mx-explore.github.io/build/</a>
+
+Aditionally, Apple's Machine Learning Data team released a new Machine Learning Data Framework at<br />
+<a target="_blank" href="https://github.com/ml-explore/mlx-data/blob/main/README.md">https://github.com/ml-explore/mlx-data/blob/main/README.md</a>
+
+MLX was built to run on Apple Silicon (Mac Laptops) - Metal Performance Shaders and Accelerate.
+
+A notable difference from MLX and other frameworks is the unified memory model. 
+Arrays in MLX live in shared memory. 
+Operations on MLX arrays can be performed on any of the supported device types without transferring data.
+
+MLX has a Python API that closely follows NumPy. 
+Its C++ API closely mirrors the Python API. 
+
+Its higher-level packages (mlx.nn and mlx.optimizers) closely follow PyTorch.
+It's also inspired by Jax, and ArrayFire.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=FplJsVd2dTk">VIDEO</a>: Install
+
+https://github.com/ml-explore/mlx-examples/blob/main/README.md
+shows use of familiar MNIST example.
+
+Among examples provided:
+
+* Transformer model sequence labeling example uses the PTB corpus containing Wall Street Journal articles.
+* Large scale text generation with Meta's LLaMA or Mistral.
+* Parameter efficient fine-tuning with LoRA.
+* Generating images with Stability AI’s Stable Diffusion.
+* Speech recognition with OpenAI's Whisper.
+<br /><br />
+
+<hr />
+
 ## Installer managers
 
 <a target="_blank" href="http://disney.github.io/">
 Disney has open-sourced</a> a repo,
-https://github.com/munki/munki,
+<a target="_blank" href="https://github.com/munki/munki,">https://github.com/munki/munki</a>,
 manages software installation for OS X.
 Munki can install software packaged in the Apple package format, and also supports Adobe CS3/CS4/CS5/CS6 Enterprise Deployment "packages", and drag-and-drop disk images as installer sources - 
 webserver-based repository of packages and package metadata.

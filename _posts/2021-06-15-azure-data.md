@@ -40,7 +40,7 @@ https://www.microsoft.com/en-ie/training-days#pp
 
 ## Why Analytics?
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702292144/analytics-venn-1404x1210_rp3p4j.png"><img alt="analytics-venn-1404x1210"> src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702292144/analytics-venn-1404x1210_rp3p4j.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702292144/analytics-venn-1404x1210_rp3p4j.png"><img alt="analytics-venn-1404x1210"  src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702292144/analytics-venn-1404x1210_rp3p4j.png"></a>
 
 <a target="_blank" href="https://www.youtube.com/watch?v=XbV0Di5ggvY&t=51m39s">VIDEO explainer</a>:
 
@@ -50,6 +50,7 @@ https://www.microsoft.com/en-ie/training-days#pp
    * Return on Investment (ROI)
    * Balanced Scorecard (BSC) financials
    * Mean Time to Repair (MTTR)
+   * etc.
    <br /><br />
 
 * <strong>Diagnostic</strong> analytics diagnose <strong>why it happened</strong> (causes) based on drill-downs to see relative contribution to sales by region, by product, by salesperson. Find anomalies.
@@ -63,7 +64,7 @@ https://www.microsoft.com/en-ie/training-days#pp
    * <strong>Heuristics</strong> are used to find a solution that is "good enough" but not necessarily the best.
    <br /><br />
 
-* <strong>Cognitive</strong> analytics predict <strong>what if these happens</strong> by analyzing the possible consequences of various courses of action ("war game") based on <strong>inferences</strong>.
+* <strong>Cognitive</strong> analytics predict <strong>what if these happen</strong> by analyzing the possible consequences of various courses of action ("war game") based on <strong>inferences</strong> - beyond decision trees.
 
 
 ## Types of databases
@@ -89,7 +90,7 @@ The types of databases are: Key-value -> Column -> Document -> Relational (SQL) 
 A competitor to Delta metadata layer on top of Parquet is <a target="_blank" href="https://www.theregister.com/2023/01/03/apache_iceberg/">Apache Iceberg</a>, used by Snowflake, Cloudera, and Google's BigLake.
 
 The SQL language to manipulate data was invented in the 1970s (by IBM) and standardized as ISO 9075 in 1986.
-However, Oracle, Microsoft, IBM, and others each have their own proprietary dialects.
+However, each database vendor have their own proprietary dialects. Oracle's PL/SQL. IBM's pgSQL.
 Microsft's T-SQL (for Transac-SQL) is a superset of SQL with additional commands (such as EXEC to rename databases).
 
 The SQL language has also been enhanced for use with "NoSQL", Graph, and now Datalake databases.
@@ -418,9 +419,10 @@ Information Management Using Azure Data Factory (video, 1h 16m)
 
 On YouTube:
 
+* <a target="_blank" href="https://www.youtube.com/watch?v=jopyoCgQjkM">1.3-hr "Full course"</a> from Piyush 2021
 * <a target="_blank" href="https://www.youtube.com/watch?v=XbV0Di5ggvY">2.5-hour Full Course</a> from Susanth Sutheesh
-* <a target="_blank" href="https://www.youtube.com/watch?v=P3qmqUZJ7l0">4-hour</a> from Andrew Brown (CloudSkills.io) - struggles
-* <a target="_blank" href="https://www.youtube.com/watch?v=jopyoCgQjkM">2-hour "Full Class"</a> from Tech Tutorials with Piyush
+* <a target="_blank" href="https://www.youtube.com/watch?v=P3qmqUZJ7l0">4-hour</a> from Andrew Brown (CloudSkills.io) - with some struggling
+* <a target="_blank" href="https://www.youtube.com/watch?v=jopyoCgQjkM">2-hour "Full Class"</a> from Tech Tutorials with Piyush Sachdeva
 * <a target="_blank" href="https://www.youtube.com/watch?v=0gtpasITVnk">2-hour Study Cram</a> from John Savill
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=xKOiNPvAQqM">34 min. "Actual Exam Questions"</a> from CertyIQ
@@ -961,9 +963,6 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
 
 <a target="_blank" href="https://www.youtube.com/watch?v=P3qmqUZJ7l0&t=3h57m33s" title="2021 By Andrew Brown">VIDEO</a> Creating and accessing different data models.
 
-<a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/resource-model">Entity model</a>: Accout -> Database -> Container -> Item
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702207323/cosmos-entities-1042x464_jdjrnc.png"><img alt="cosmos-entities-1042x464.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702207323/cosmos-entities-1042x464_jdjrnc.png"></a>
-
 ### Cosmos DB Database Models
 
 1. Search for service "Cosmos" for a list of services:
@@ -1020,7 +1019,7 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
    * "Firewall rules" - "Add existing rule" (default) or "Create new rule"
    <br /><br />
 1. Click "Backup Policy" tab to specify backup options:
-   * "Backup policy" - "Periodic" is the default. Other options: "Continuous (7 days)" and "Continuous (30 days)"
+   * "Backup policy" - "Periodic" is the default. but requires contacting Microsoft support for restore.<br />PROTIP: "Continuous (7 days)" and "Continuous (30 days)" is the default for Serverless.
    * "Backup interval (minutes)" - 240 (30-1440) is the default
    * "Backup retention" - 8 Hours is the default
    * "Copies of data retained" - 2
@@ -1030,10 +1029,21 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
    <br /><br />
 1. Click "Tags" tab to specify Key "CreatedBy" tag with your email as the Value for "Azure Cosmos DB account" billing and management.
 1. Click "Review + Create". Click "Create".
+
    * <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/instructions/02-configure-throughput.html#create-a-serverless-account">HANDS-ON</a>: Create a serverless account
    * <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/instructions/02-configure-throughput.html#create-a-serverless-account">HANDS-ON</a>: Create a provisioned account
 
+   ### Cosmos DB Containers
+
+   <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/resource-model">Entity model</a>: Accout -> Database -> Container -> Item
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702207323/cosmos-entities-1042x464_jdjrnc.png"><img alt="cosmos-entities-1042x464.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702207323/cosmos-entities-1042x464_jdjrnc.png"></a>
+
+1. Click "Go to resource" to Choose a platform.
+1. Click language .NET (C#), Xamarin (mobile), Java, Node.js, or Python.
+1. Click "Create 'items' container.
+
    ### Expose Connection
+
 
 
 
