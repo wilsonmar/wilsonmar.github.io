@@ -999,12 +999,18 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
 
    <a target="_blank" href="https://7451111251303.gumroad.com/l/vxgnn">My diagram above (available on GumRoad)</a> shows the various services accessing the API of whatever model is defined in your Cosmos DB within the Azure cloud. 
 
+   <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/synapse-link">Azure Synapse Link</a> applies Transactional And Analytical Processing (HTAP) capability by enabling near real-time analytics over operational data in Azure Cosmos DB. Streaming operational data is loaded directly into rows within a <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/analytical-store-introduction">Cosmos DB Analytical Store</a> instead of ETL jobs.
+   Operational row data is auto-synced to NoSQL, MongoDB, or Gremlin, which Azure Synapse Analytics reads for real-time insights.
+
+
    ### Mirror for Fabric
 
    <a target="_blank" href="https://devblogs.microsoft.com/cosmosdb/announcing-azure-cosmos-db-mirroring-in-microsoft-fabric-private-preview/">BLOG</a>:
    Data within Cosmos DB instances can be accessed by Fabric apps after being <strong>mirrored</strong> (for a price).
 
+   PROTIP: Cosmos DB is really a legacy technology in regards to Microsoft Fabric.
 
+   After migration of data, existing apps (such as Azure Functions) would need to be modified to use Fabric APIs instead of the Cosmos DB API.
 
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/synapse-link">Azure Synapase Link for Azure Cosmos DB</a>
