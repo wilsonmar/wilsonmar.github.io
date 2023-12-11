@@ -46,8 +46,10 @@ https://www.microsoft.com/en-ie/training-days#pp
 
 * <strong>Description</strong> analytics describe <strong>what has happened</strong> based on historical data such as report of sales.
 
-   * Key Performance Indicators
-   * Return on Investment
+   * Key Performance Indicators (KPI)
+   * Return on Investment (ROI)
+   * Balanced Scorecard (BSC) financials
+   * Mean Time to Repair (MTTR)
    <br /><br />
 
 * <strong>Diagnostic</strong> analytics diagnose <strong>why it happened</strong> (causes) based on drill-downs to see relative contribution to sales by region, by product, by salesperson. Find anomalies.
@@ -86,7 +88,7 @@ The types of databases are: Key-value -> Column -> Document -> Relational (SQL) 
 
 A competitor to Delta metadata layer on top of Parquet is <a target="_blank" href="https://www.theregister.com/2023/01/03/apache_iceberg/">Apache Iceberg</a>, used by Snowflake, Cloudera, and Google's BigLake.
 
-The SQL language to manipulate data was invented in the 1970s (by IBM) and standardized as ISO 9075. 
+The SQL language to manipulate data was invented in the 1970s (by IBM) and standardized as ISO 9075 in 1986.
 However, Oracle, Microsoft, IBM, and others each have their own proprietary dialects.
 Microsft's T-SQL (for Transac-SQL) is a superset of SQL with additional commands (such as EXEC to rename databases).
 
