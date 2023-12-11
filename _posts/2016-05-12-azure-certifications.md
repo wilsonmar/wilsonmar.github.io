@@ -1111,8 +1111,6 @@ formally defines the test and provides textual tutorial. The test is about devel
 
 PROTIP: <a target="_blank" href="https://learning.oreilly.com/videos/microsoft-az-204-certification/">Skylines Academy videos on OReilly</a> I think are the most thorough and best sequenced courses (and I've seen them all).
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-900">DB-900 Microsoft Azure Data Fundamentals</a> should be a pre-requisite.
-
 <strong>Develop</strong> Azure compute solutions (25-30%)
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/create-serverless-applications/">Create serverless applications</a>
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/connect-your-services-together/">Deploy resources in Azure</a>

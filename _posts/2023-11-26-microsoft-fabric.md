@@ -26,6 +26,8 @@ This is a hands-on technical tutorial that takes you logically step-by-step to q
 
 Let's dive right into the Microsoft Fabric working portal GUI:
 
+https://www.linkedin.com/company/microsoftfabric/
+
 ## Browser Profile
 
 1. PROTIP: In an internet browser (Safari, Google Chrome, etc.) I click the icon next to the browser's three-dot menu to use a <strong>browser profile</strong> that retains the browser history for the <strong>work (organizational) account</strong> I need to use with Fabric.

@@ -38,21 +38,30 @@ https://www.microsoft.com/en-ie/training-days#pp
 
 {% include whatever.html %}
 
-## Why?
+## Why Analytics?
 
-To make more money from better decisions.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702292144/analytics-venn-1404x1210_rp3p4j.png"><img alt="analytics-venn-1404x1210"> src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702292144/analytics-venn-1404x1210_rp3p4j.png"></a>
 
 <a target="_blank" href="https://www.youtube.com/watch?v=XbV0Di5ggvY&t=51m39s">VIDEO explainer</a>:
 
-* <strong>Description</strong> analytics describe <strong>what has happened</strong> based on historical data
+* <strong>Description</strong> analytics describe <strong>what has happened</strong> based on historical data such as report of sales.
 
-* <strong>Diagnostic</strong> analytics diagnose <strong>why things happened</strong> (causes) based on historical data
+   * Key Performance Indicators
+   * Return on Investment
+   <br /><br />
 
-* <strong>Predictive</strong> analytics predict <strong>what might happen</strong> based on trends obtained from <strong>regression</strong> from historical data
+* <strong>Diagnostic</strong> analytics diagnose <strong>why it happened</strong> (causes) based on drill-downs to see relative contribution to sales by region, by product, by salesperson. Find anomalies.
 
-* <strong>Prescriptive</strong> analytics prescribe <strong>what to do</strong> based on the likelihood of what might happen
+* <strong>Predictive</strong> analytics predict <strong>what might happen</strong> based <strong>regression</strong> from historical data revealing trends.
 
-* <strong>Cognitive</strong> analytics predict <strong>consequences</strong> to various courses of action ("war game") based on <strong>inferences</strong>. 
+* <strong>Prescriptive</strong> analytics prescribe <strong>what to do</strong> based on the likelihood of what might happen. 
+
+   * <strong>Optimization</strong> is used to find the best solution to a problem. 
+   * <strong>Simulation</strong> is used to predict the impact of a decision. 
+   * <strong>Heuristics</strong> are used to find a solution that is "good enough" but not necessarily the best.
+   <br /><br />
+
+* <strong>Cognitive</strong> analytics predict <strong>what if these happens</strong> by analyzing the possible consequences of various courses of action ("war game") based on <strong>inferences</strong>.
 
 
 ## Types of databases
@@ -652,6 +661,40 @@ The process of transforming and mapping data from a "raw" form to another format
 Traditionally, <strong>SQL Server 2019</strong> software run within a single Azure VM (IaaS) instance.
 This is still the approach for large (64TB) SQL databases.
 
+### Create Instance
+
+<a target="_blank" href="https://www.youtube.com/watch?v=XbV0Di5ggvY&t=1h16m39s">VIDEO</a>:
+
+1. Among services, search for "SQL". Select "Azure SQL".
+1. Click "Create Azure SQL resource".
+1. Among "SQL databases", select "Single database".
+1. Select Subscription.
+1. Resource group: "Create new" and enter "sql-rg".
+1. For Database name, 
+1. For Server, click "Create new" for the sub-form.
+1. For Server name, include a project and date.
+1. For Server admin login, generate one and save it in a password manager.
+1. For Location, see my notes (to avoid cross-region networking charges). 
+1. Click OK to dismiss the sub-form.
+
+1. For "Want to use SQL elastic pool?", select "No".
+1. For Compute + storage, select "Configure database" if you don't the default "Gen5, 2 vCores, 32 GB".
+1. Make the selections according to my notes about Service Tiers. Click "Apply".
+1. Click "Networking" tab. Select Connectivity method "No Access". It's safer to make it a Public endpoint later.
+
+1. Click "Additional settings" tab. 
+1. For "Use existing data", click "Sample" during this demo for "AdventureWorksLT".
+1. For "Collation", select "SQL_Latin1_General_CP1_CI_AS".
+
+1. CLick "Tags" tab.
+1. Click "Review + create" tab to start Deployment.
+<br /><br />
+
+### Connect to server
+
+
+
+
 <strong>SQL agent jobs</strong> back up directly to a URL linked to Azure blob storage. 
 Azure provides the option to use <a href="#Redundancy">redundancy options</a> to ensure that backup files are stored safely across the geographic landscape:
 
@@ -988,9 +1031,10 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
    * <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/instructions/02-configure-throughput.html#create-a-serverless-account">HANDS-ON</a>: Create a serverless account
    * <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/instructions/02-configure-throughput.html#create-a-serverless-account">HANDS-ON</a>: Create a provisioned account
 
-   Cosmos DB can automatically generate a database index without the user putting together a schema upfront. 
-   However, developers still need to select the consistency model, the level of scalability, and the appropriate API for data storage.
-   With Cosmos DB, developers can pick and choose which fields should have strong consistency.
+   ### Expose Connection
+
+
+
 
 
    ### Cosmos DB workflow
@@ -1012,6 +1056,11 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
 
    After migration of data, existing apps (such as Azure Functions) would need to be modified to use Fabric APIs instead of the Cosmos DB API.
 
+   ### indexing
+
+   Cosmos DB can automatically generate a database index without the user putting together a schema upfront. 
+   However, developers still need to select the consistency model, the level of scalability, and the appropriate API for data storage.
+   With Cosmos DB, developers can pick and choose which fields should have strong consistency.
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/synapse-link">Azure Synapase Link for Azure Cosmos DB</a>
 
