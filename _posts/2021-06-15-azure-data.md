@@ -38,6 +38,23 @@ https://www.microsoft.com/en-ie/training-days#pp
 
 {% include whatever.html %}
 
+## Why?
+
+To make more money from better decisions.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=XbV0Di5ggvY&t=51m39s">VIDEO explainer</a>:
+
+* <strong>Description</strong> analytics describe <strong>what has happened</strong> based on historical data
+
+* <strong>Diagnostic</strong> analytics diagnose <strong>why things happened</strong> (causes) based on historical data
+
+* <strong>Predictive</strong> analytics predict <strong>what might happen</strong> based on trends obtained from <strong>regression</strong> from historical data
+
+* <strong>Prescriptive</strong> analytics prescribe <strong>what to do</strong> based on the likelihood of what might happen
+
+* <strong>Cognitive</strong> analytics predict <strong>consequences</strong> to various courses of action ("war game") based on <strong>inferences</strong>. 
+
+
 ## Types of databases
 
 Over time, data has been organized in different ways to better suit different ways to access data for reports and dashboards:
@@ -220,7 +237,7 @@ Let's first look at traditional SQL "relational" databases.
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-900">
 Microsoft's $99 DP-900 exam page</a> provides free tutorials.
 
-Answer 40-60 questions in 180-minutes.
+Answer 40-60 multiple-choice questions (no cases) in 180-minutes.
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-900">Microsoft's Study Guide</a>
 
@@ -377,9 +394,6 @@ On OReilly.com:
 * https://learning.oreilly.com/videos/professional-azure-sql/9781789535495/
  Professional Azure SQL Database Administration (video, 4h 58m)
 
-* https://learning.oreilly.com/videos/getting-started-with/9781484260203/
-Getting Started with Microsoft Cosmos DB Using C#: Cloud Database Support for .NET Applications (video, 1h 2m)
-
 * https://learning.oreilly.com/videos/learning-microsoft-power/9781789347104/
 Learning Microsoft Power BI (video, 3h 55m)
 
@@ -393,9 +407,9 @@ Information Management Using Azure Data Factory (video, 1h 16m)
 
 On YouTube:
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=P3qmqUZJ7l0">4-hour</a> from Andrew Brown
-* <a target="_blank" href="https://www.youtube.com/watch?v=jopyoCgQjkM">2-hour "Full Class"</a> from Tech Tutorials with Piyush
 * <a target="_blank" href="https://www.youtube.com/watch?v=XbV0Di5ggvY">2.5-hour Full Course</a> from Susanth Sutheesh
+* <a target="_blank" href="https://www.youtube.com/watch?v=P3qmqUZJ7l0">4-hour</a> from Andrew Brown (CloudSkills.io) - struggles
+* <a target="_blank" href="https://www.youtube.com/watch?v=jopyoCgQjkM">2-hour "Full Class"</a> from Tech Tutorials with Piyush
 * <a target="_blank" href="https://www.youtube.com/watch?v=0gtpasITVnk">2-hour Study Cram</a> from John Savill
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=xKOiNPvAQqM">34 min. "Actual Exam Questions"</a> from CertyIQ
@@ -887,7 +901,10 @@ Microsoft Azure Cosmos DB is a fully managed API service to provide a <strong>sc
    * https://datamonkeysite.com/2023/05/27/first-impression-of-microsoft-fabric/
    * https://www.linkedin.com/company/alpaqastudio/
    * https://devblogs.microsoft.com/cosmosdb/announcing-azure-cosmos-db-mirroring-in-microsoft-fabric-private-preview/
+   * <a target="_blank" href="https://learning.oreilly.com/videos/getting-started-with/9781484260203/">Oreilly</a>: Getting Started with Microsoft Cosmos DB Using C#: Cloud Database Support for .NET Applications (video, 1h 2m)
    <br /><br />
+
+   Tutorial
 
 <a target="_blank" href="https://www.techtarget.com/searchcloudcomputing/tip/Get-to-know-Microsoft-Azure-Cosmos-DB-use-cases">BLOG</a>:
 Cosmos began in 2010 as "Project Florence" to provide a globally distributed database service for Microsoft's internal use. It was released to the public 
@@ -901,6 +918,8 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/resource-model">Entity model</a>: Accout -> Database -> Container -> Item
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702207323/cosmos-entities-1042x464_jdjrnc.png"><img alt="cosmos-entities-1042x464.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702207323/cosmos-entities-1042x464_jdjrnc.png"></a>
+
+### Cosmos DB Database Models
 
 1. Search for service "Cosmos" for a list of services:
 
@@ -927,6 +946,9 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
 
 1. Click "+ Create" to create a new Cosmos DB account. In the Basics tab:
 1. For Resource Group, PROTIP: Add a date to the end of the name to make it unique.
+
+   ### Cosmos DB Accounts
+
 1. For Account Name (to be used as part of the DNS address for requests to the service)
 
    The globally unique account name. The portal will check the name in real time.
@@ -973,7 +995,7 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
 
    ### Cosmos DB workflow
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702241094/cosmosdb-flow-231210a_dltlb1.png"><img alt="cosmosdb-flow-231210a.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702240615/cosmosdb-flow-231210a_dltlb1.png"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702278568/cosmosdb-flow-231211_zxzyf6.png"><img alt="cosmosdb-flow-231211.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702278568/cosmosdb-flow-231211_zxzyf6.png"></a>
 
    <a target="_blank" href="https://7451111251303.gumroad.com/l/vxgnn">My diagram above (available on GumRoad)</a> shows the various services accessing the API of whatever model is defined in your Cosmos DB within the Azure cloud. 
 
