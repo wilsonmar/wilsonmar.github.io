@@ -128,8 +128,13 @@ ZORDER BY (<em>eventType</em>)
 
 Databricks claims as customers more than five thousand organizations worldwide — including Shell, Comcast, CVS Health, HSBC, T-Mobile and Regeneron.
 
-
-New York City Taxi data
+New York City Taxi data 2009-2020+
+   * https://www.kaggle.com/c/nyc-taxi-trip-duration
+   *https://www.kaggle.com/datasets/microize/newyork-yellow-taxi-trip-data-2020-2019
+   * https://learn.microsoft.com/en-us/azure/open-datasets/dataset-taxi-yellow?tabs=azureml-opendatasets
+   * https://learn.microsoft.com/en-us/sql/machine-learning/tutorials/demo-data-nyctaxi-in-sql?view=sql-server-ver16
+   * https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+   <br /><br />
 
 <tt>SELECT * FROM samples.nyctaxi.trips limit 1000</tt>
 
@@ -190,10 +195,10 @@ Roles - Persona-based use cases
 
 IAM SSO
 
-Unity Catalog for fine-grained access control to data in Delta Lake tables
-by storing user management and metastore metadata in a single location.
+<strong>Unity Catalog</strong> for fine-grained access control to data in Delta Lake tables
+by storing user management and <strong>metastore</strong> metadata in a single location.
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702362553/databricks-metastore-1633x666_rmkxfw.png"><img alt="databricks-metastore-1633x666.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702362553/databricks-metastore-1633x666_rmkxfw.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702385686/databricks-metastore-3058x2156_ywnq59.png"><img alt="databricks-metastore-3058x2156.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702385686/databricks-metastore-3058x2156_ywnq59.png"></a>
 
 impact analysis of data access patterns and lineage.
 
