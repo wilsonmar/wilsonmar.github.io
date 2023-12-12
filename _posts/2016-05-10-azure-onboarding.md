@@ -44,7 +44,7 @@ PHASES:
 
     NOTE: An Azure Resource exists in only one Resource Group (to store metadata). A Resource Group can have resources from different Regions and Subscriptions. <a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-support-resources">Moving resources</a> between Resource Groups is possible, but not between Subscriptions. 
     
-4.  <a href="#PHASE04"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Admins would work with <strong>Finance</strong> to work through financial workflows and oversight of the <strong>Payments</strong> for <strong>billings</strong> associated with each <a href="#Subscription">Subscription</a> and <a href="#Licenses">licenses</a>. Bills are paid for by <strong>credit cards or invoices</strong> set through a Microsoft salesperson or Cloud Service Provider.
+4.  <a href="#Payments"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>Admins would work with <strong>Finance</strong> to work through financial workflows and oversight of the <strong>Payments</strong> for <strong>billings</strong> associated with each <a href="#Subscription">Subscription</a> and <a href="#Licenses">licenses</a>. Bills are paid for by <strong>credit cards or invoices</strong> set through a Microsoft salesperson or Cloud Service Provider.
 
 5.  <a href="#Licenses"><img align="right" width="30" height="30" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696347985/icon-info-2000x2000_s4f16e.png"></a>PROTIP: A firm decision on what <strong>Licenses</strong> the enterprise will pay for can (contiunually) minimizes rework in automation efforts and workflow documentation. A <a href="#P1vsP2">P2</a> license for each user is needed for enterprises to use Azure securely. Among P2 features are MFA (Multi-Factor) verification, a crucial security feature.
 
@@ -181,7 +181,7 @@ Recap:
 For a high-level technical overview from a Sales Engineer, with demos:<br />
 <a target="_blank" href="https://www.microsoft.com/en-ie/training-days">SIGN-UP: Microsoft's LIVE 2-hour Virtual Training Days</a>:
 
-   * <strong>Azure</strong> : Modernize Enterprise Applications [<a target="_blank" href="https://learn.microsoft.com/en-us/collections/77k4bnned84kn0">LINKS</a>]
+   * <strong>Azure</strong> : Modernize Enterprise Applications [<a target="_blank" href="https://learn.microsoft.com/en-us/collections/77k4bnned84kn0">LINKS</a>] makes use of Artilery to generate artificial load on web apps.
    * <strong>365</strong>
    * <strong>Security</strong>
    * <strong>Dynamics 365</strong>
@@ -269,7 +269,10 @@ PROTIP: Setup <strong>different browser profiles</strong> on the same browser, a
 1. Do the above for each browser (Google Chrome, Microsoft Edge, Firefox, etc.).
 
 
+<a name="Payments"></a>
+
 ### Free Subscriptions
+
 
 DEFINITION: A "Subscription" in Azure is the account for <strong>billing</strong> to payment options such as a credit card or invoice account setup with a Microsoft salesperson.
 
@@ -715,7 +718,7 @@ Search for what to "REMEMBER" to pass <a target="_blank" href="https://wilsonmar
 
 <hr />
 
-<a name="PHASE04"></a>
+<a name="PHASE09"></a>
 <a name="Administrators"></a>
 
 ## PHASE 02. Administrators
