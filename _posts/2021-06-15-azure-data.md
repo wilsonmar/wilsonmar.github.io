@@ -40,6 +40,8 @@ https://www.microsoft.com/en-ie/training-days#pp
 
 ## Why Analytics?
 
+Data is a valuable asset to organizations. Data is the new oil.
+
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702292144/analytics-venn-1404x1210_rp3p4j.png"><img alt="analytics-venn-1404x1210"  src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702292144/analytics-venn-1404x1210_rp3p4j.png"></a>
 
 <a target="_blank" href="https://www.youtube.com/watch?v=XbV0Di5ggvY&t=51m39s">VIDEO explainer</a>:
@@ -1046,24 +1048,45 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
    
    Discussions:
    * https://www.reddit.com/r/Terraform/comments/y7htsm/azure_cosmos_db_for_postgresql/
+   * https://devops.stackexchange.com/questions/16667/cosmosdb-account-virtual-network-rule-for-each
+   <br /><br />
+
+   Tutorials:
+   * https://www.sqlservercentral.com/articles/database-deployment-with-terraform-modules
+   * https://digital.interhyp.de/2021/09/30/three-simple-steps-to-securely-scaffold-and-deploy-a-cosmosdb-into-azure-with-terraform/
+   * https://blog.entek.org.uk/notes/2021/09/23/getting-started-with-terraform.html
+   * https://devpress.csdn.net/mongodb/62f20efac6770329307f5e2a.html
    * https://build5nines.com/terraform-create-azure-cosmos-db-database-and-container/
    * https://shisho.dev/dojo/providers/azurerm/CosmosDB_DocumentDB/azurerm-cosmosdb-sql-container/
+   * https://docs.w3cub.com/terraform/providers/azurerm/d/cosmosdb_account
    * https://sbulav.github.io/terraform/terraform-azure-cosmosdb/
    * https://jamescook.dev/terraform-cosmosdb-7-day-continuous-backups
    * https://faun.pub/terraform-series-scalable-webapp-using-azure-cosmosdb-fb4b56f6d2af
+   * https://hub.steampipe.io/mods/turbot/terraform_azure_compliance/controls/benchmark.cosmosdb
+   * http://man.hubwiz.com/docset/Terraform.docset/Contents/Resources/Documents/docs/providers/azurerm/r/cosmosdb_account.html
+   * https://www.tenable.com/policies/[type]/AC_AZURE_0227
+   
+   Warnings:
+   * https://docs.bridgecrew.io/docs/bc_azr_storage_4
+   * https://gsl.dome9.com/D9.AZU.CRY.29.html
+   * https://ngeor.com/2018/11/04/terraform-secrets-part-2-randomize-it.html
    <br /><br />
 
    Courses:
    * https://www.pluralsight.com/resources/blog/cloud/deploy-a-simple-application-in-azure-using-terraform
    <br /><br />
 
-   https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/samples-terraform
+   Microsoft:
+   * https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/samples-terraform
+   * https://www.infoq.com/news/2023/03/azure-cosmosdb-mongodb-vcore/
+   <br /><br />
 
    https://github.com/Azure/terraform-azurerm-cosmosdb
 
    https://dev.to/krpmuruga/terraform-with-azure-cosmosdb-example-34c7
 
-   https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cosmosdb_account
+   * https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cosmosdb_account
+   * https://discuss.hashicorp.com/t/azure-cosmos-support-for-compulsory-role-based-authentication-as-the-only-method/29201
 
    ### Cosmos DB Containers
 
@@ -1252,6 +1275,8 @@ MongoDB can be used as a file system called GridFS. It stores files up to 16TB w
 ## ADF
 
 Azure Data Factory (ADF) is Heterogenous - it has over 100 different connectors to various other systems.
+
+https://learn.microsoft.com/en-us/azure/data-factory/
 
 Linked service to Data Lake Store, Azure Databricks.
 

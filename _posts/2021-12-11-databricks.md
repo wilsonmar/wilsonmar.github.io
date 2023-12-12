@@ -3,7 +3,7 @@ layout: post
 date: "2023-12-11"
 file: "databricks"
 title: "Databricks"
-excerpt: "Create Analytics visualization dashboards pulling from Datalakes and DeltaLakes SaaS on Azure and AWS, coding ApacheSpark SQL, Python Notebooks, and MLFlow"
+excerpt: "Create Analytics visualization dashboards pulling from Datalakes and DeltaLakes SaaS on Azure and AWS, coding ApacheSpark SQL, Python Notebooks, low-code AutoML,  and MLFlow"
 tags: [dataops]
 image:
 # splunk-lakehouse-1900x500.png
@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/databricks/">This article</a> skips the generalizations to present a deep yet succinct hands-on tutorial so you get perficient quickly.
+This article aims to avoid sales generalizations to present a deep yet succinct hands-on tutorial so you get perficient quickly.
 
 {% include whatever.html %}
 
@@ -43,6 +43,10 @@ Databricks came up with the word <a target="_blank" href="https://databricks.com
 * <a href="#Access">Access</a>
 
 * <a href="#Samples">Samples</a>
+* <a href="#Apache+Spark">Apache Spark</a>
+
+* <a href="#CLI">CLI</a>
+* <a href="#GUI">GUI</a>
 
 * <a href="#Compute">Compute</a>
 * <a href="#Clusters">Clusters</a>
@@ -82,6 +86,8 @@ Databricks competes with integrated cloud-based multi-region delta lakehouses wi
 * <a target="_blank" href="https://wilsonmar.github.io/microsoft-fabric/">Microsoft Fabric</a>
 * AWS
 * Google Cloud Platform (GCP)
+* Fivetran
+* talend
 <br /><br />
 
 <table border="1" cellpadding="4" cellspacing="0">
@@ -107,7 +113,21 @@ Databricks competes with integrated cloud-based multi-region delta lakehouses wi
 
 Serverless SQL Compute has elastic scaling, auto-backups, patched and upgraded.
 
+Streaming:
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702363870/databricks-streaming-1850x847_mymaku.png">
+<img alt="databricks-streaming-1850x847.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702363870/databricks-streaming-1850x847_mymaku.png"></a>
+
+Delta Lake Z-Ordering by eventType to skip data blocks not needed, to reduce I/O and improve performance:
+
+<pre>OPTIMIZE events
+WHERE date >= current_timestamp() - INTERVAL 1 day
+ZORDER BY (<em>eventType</em>)
+</pre>
+
 ## Samples
+
+Databricks claims as customers more than five thousand organizations worldwide — including Shell, Comcast, CVS Health, HSBC, T-Mobile and Regeneron.
+
 
 New York City Taxi data
 
@@ -122,17 +142,17 @@ New York City Taxi data
 
 ## CLI
 
-Databricks CLI: brew tap databricks/tap;brew install databricks; which databricks ; databricks --help
+Install the Databricks CLI on your local machine to run commands against your Databricks workspace.
+
+   * brew tap databricks/tap;brew install databricks; which databricks ; databricks --help
    * databricks configure --token ???
    * databricks clusters list  # IDs
    * Error: cannot load Databricks config file: no configuration file found at /Users/wilsonmar/.databrickscfg; please create one first
-   * databricks clusters get 1122-123456-abc123 | jq -r .name
+   * databricks clusters get 1122-123456-abc123 \| jq -r .name
    * databricks clusters start 1122-123456-abc123
    <br /><br />
 
-## Clients
-
-Install the Databricks CLI on your local machine to run commands against your Databricks workspace.
+## GUI
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702357261/databricks-menu-910x1788_zsmwyo.png"><img alt="databricks-menu-910x1788.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702357261/databricks-menu-910x1788_zsmwyo.png"></a>
 
@@ -161,8 +181,6 @@ Install the Databricks CLI on your local machine to run commands against your Da
 1. Confirm email.
 
 Databricks is the Data + AI company. With origins in academia and the open-source community, the company was founded in 2013 by the original creators of Apache Spark™, Delta Lake and MLflow. Built on a modern Lakehouse architecture in the cloud, Databricks combines the best of data warehouses and data lakes to offer an open and unified platform for data and AI.
-
-Today, more than five thousand organizations worldwide —including Shell, Comcast, CVS Health, HSBC, T-Mobile and Regeneron — rely on Databricks to enable massive-scale data engineering, collaborative data science, full-lifecycle machine learning and business analytics. See real world examples.
 
 Headquartered in San Francisco with offices around the world and hundreds of global partners, including Microsoft, Amazon, Tableau, Informatica, Cap Gemini and Booz Allen Hamilton, Databricks is on a mission to simplify and democratize data and AI, helping data teams solve the world’s toughest problems.
 
@@ -301,8 +319,8 @@ Catalog Explorer
 Transaction Logs for Time Travel restore
 
 
-
 ## Data Governance
+
 
 Table metadata
 
@@ -311,13 +329,22 @@ Vacuum Garbage Collect
 
 ## Machine Learning
 
-<a target="_blank" href="https://www.databricks.com/learn/training/lakehouse-fundamentals-accreditation#video"><img align="right" width="200" alt="databricks-menu-ml.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702358670/databricks-fund-badge-320x349_pzh9r7.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702368185/databricks-ml-1540x729_rgzkuo.png"><img alt="databricks-ml-1540x729.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702368185/databricks-ml-1540x729_rgzkuo.png"></a>
+
+   * <a target="_blank" href="https://learning.oreilly.com/library/view/-/9781801812030/" title="Publisher:Packt Publishing">>BOOK</a>: Practical Machine Learning on Databricks - 244 pages by Debu Sinha November 2023 
+   <br /><br />
+
+   * <a target="_blank" href="https://learning.oreilly.com/videos/-/090142022VIDEOPAIML/" title="Publisher:Pragmatic AI Solutions">BOOK</a>: Assimilate Databricks ML Certification By Alfredo Deza and Noah Gift September 2022 0h 58m
+
 
 Experiments, Features, Models, Serving
    
 ## Certifications
 
-<a target="_blank" href=""><img alt="databricks-fund-badge-320x349.png" src=""></a>
+<a target="_blank" href="https://www.databricks.com/learn/training/lakehouse-fundamentals-accreditation#video"><img align="right" width="200" alt="databricks-menu-ml.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702358670/databricks-fund-badge-320x349_pzh9r7.png"></a>
 
-* 2h 21m <a target="_blank" href="https://learning.oreilly.com/videos/-/12212024VIDEOPAIML/">VIDEO</a>: Databricks Certified Data Engineer Associate By Alfredo Deza and Noah Gift Publisher:Pragmatic AI Solutions December 2023 
+
+* <a target="_blank" href="https://learning.oreilly.com/videos/-/12212024VIDEOPAIML/">2h 21m VIDEO</a>: Databricks Certified Data Engineer Associate By Alfredo Deza and Noah Gift Publisher:Pragmatic AI Solutions December 2023 
+
+## Resources
 
