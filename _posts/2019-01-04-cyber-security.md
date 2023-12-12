@@ -1557,9 +1557,9 @@ CSF process:
 <tr valign="top"><td rowspan="7"> PROTECT 
    </td><td> PR.AC </td><td> Identity Management & Access Control
    #4, 9, 11, 12, 13, 14, 16 </td></tr>
-<tr valign="top"><td> PR.AT </td><td> Asset Management
+<tr valign="top"><td> PR.AM </td><td> Asset Management
    - </td></tr>
-<tr valign="top"><td> PR.AM </td><td> Awareness and Training
+<tr valign="top"><td> PR.AT </td><td> Awareness and Training
    #4, 17 </td></tr>
 <tr valign="top"><td> PR.DS </td><td> Data Security
    #1, 2, 13, 14, 18 </td></tr>

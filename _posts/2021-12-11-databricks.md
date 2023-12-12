@@ -20,7 +20,15 @@ This article aims to avoid "salesy" generalizations to present a deep yet succin
 
 {% include whatever.html %}
 
-<a target="_blank" href="https://www.databricks.com/">Databricks</a> was founded by the original creators of <a href="#Apache+Spark">Apache Spark</a> to provide personas <strong>data scientists</strong> and data engineers</strong> a cloud-based vendor-managed platform to <strong>easily</strong> run analytics in a <strong>scalable</strong> manner. 
+## Databricks, the company
+
+<a target="_blank" href="https://www.databricks.com/">Databricks</a> is headquartered in San Francisco with offices around the world.
+
+Databricks calls itself the "Data + AI" company. Databricks is on a mission to "simplify and democratize data and AI, helping data teams solve the world’s toughest problems." Databricks boasts hundreds of global partners, including Microsoft, Amazon, Tableau, Informatica, Cap Gemini and Booz Allen Hamilton, etc.
+
+With origins in academia and the open-source community, the company was founded in 2013 by the original creators of Apache Spark™, Delta Lake and MLflow. Built on a modern Lakehouse architecture in the cloud, Databricks combines the best of data warehouses and data lakes to offer an open and unified platform for data and AI.
+
+The company was founded by the original creators of <a href="#Apache+Spark">Apache Spark</a> to provide personas <strong>data scientists</strong> and data engineers</strong> a cloud-based vendor-managed platform to <strong>easily</strong> run analytics in a <strong>scalable</strong> manner. 
 Databricks provides a managed Spark cloud service along with a platform for managing the full data analytics lifecycle using Python Jupyter notebooks for interactive data exploration and dashboards for sharing visualizations. Jobs for scheduling and automating workflows.
 Added to the platform are libraries for machine learning.
  
@@ -149,7 +157,7 @@ New York City Taxi data 2009-2020+
 
 Install the Databricks CLI on your local machine to run commands against your Databricks workspace.
 
-   * brew tap databricks/tap;brew install databricks; which databricks ; databricks --help
+   * <tt>brew tap databricks/tap;brew install databricks; which databricks ; databricks --help</tt>
    * databricks configure --token ???
    * databricks clusters list  # IDs
    * Error: cannot load Databricks config file: no configuration file found at /Users/wilsonmar/.databrickscfg; please create one first
@@ -185,9 +193,6 @@ Install the Databricks CLI on your local machine to run commands against your Da
 
 1. Confirm email.
 
-Databricks is the Data + AI company. With origins in academia and the open-source community, the company was founded in 2013 by the original creators of Apache Spark™, Delta Lake and MLflow. Built on a modern Lakehouse architecture in the cloud, Databricks combines the best of data warehouses and data lakes to offer an open and unified platform for data and AI.
-
-Headquartered in San Francisco with offices around the world and hundreds of global partners, including Microsoft, Amazon, Tableau, Informatica, Cap Gemini and Booz Allen Hamilton, Databricks is on a mission to simplify and democratize data and AI, helping data teams solve the world’s toughest problems.
 
 ## Access
 
@@ -195,8 +200,9 @@ Roles - Persona-based use cases
 
 IAM SSO
 
-<strong>Unity Catalog</strong> for fine-grained access control to data in Delta Lake tables
-by storing user management and <strong>metastore</strong> metadata in a single location.
+There is one <strong>metastore</strong> of metadata per deployment.
+Within that can be several <strong>Unity Catalogs</strong> for fine-grained access control to data in Delta Lake tables
+by storing user management
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702385686/databricks-metastore-3058x2156_ywnq59.png"><img alt="databricks-metastore-3058x2156.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702385686/databricks-metastore-3058x2156_ywnq59.png"></a>
 
@@ -244,7 +250,12 @@ as measured by TPC benchmarks on DBR versions.
 Cluster Create, List, Start, Stop, Restart, Terminate
 
 Unified Catalog, vs. Metastores
-Best Practices Catalogs, connections, Business Units
+Best Practices 
+* Catalogs: Least Privilege
+* Connections: Limit visibility, access, Tag connections
+* Business Units: Dedicated sandbox for each unit. Centralize shared data. Discoverability of glossaries/hierarchy. 
+Federate queries
+<br /><br />
 
 ## Notebooks
 
