@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This article aims to avoid sales generalizations to present a deep yet succinct hands-on tutorial so you get perficient quickly.
+This article aims to avoid "salesy" generalizations to present a deep yet succinct hands-on tutorial so you get perficient quickly.
 
 {% include whatever.html %}
 
@@ -100,7 +100,7 @@ Databricks competes with integrated cloud-based multi-region delta lakehouses wi
 <tr valign="top"><td>Persona emphasis</td><td>Data Engineer</td><td>Data Analyst</td><td>Citizen</td></tr>
 <tr valign="top"><td>Handle Relational data structure</td><td>Yes</td><td COLSPAN="2">Yes</td></tr>
 <tr valign="top"><td>Handle Semi-structured data</td><td>No</td><td COLSPAN="2">Yes</td></tr>
-<tr valign="top"><td>Handle Unstructured (audio, video)</td><td>No</td><td COLSPAN="2">Yes</td></tr>
+<tr valign="top"><td>Handle Unstructured (pdf, audio, photo, video, etc.)</td><td>No</td><td COLSPAN="2">Yes</td></tr>
 <tr valign="top"><td>Processing</td><td>ETL</td><td COLSPAN="2">ELT</td></tr>
 <tr valign="top"><td>Streaming</td><td>No</td><td COLSPAN="2">Yes</td></tr>
 </table>
@@ -190,7 +190,7 @@ Roles - Persona-based use cases
 
 IAM SSO
 
-Unity Catalog for fine-grained access control to data in Delta Lake tables.
+Unity Catalog for fine-grained access control to data in Delta Lake tables
 by storing user management and metastore metadata in a single location.
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702362553/databricks-metastore-1633x666_rmkxfw.png"><img alt="databricks-metastore-1633x666.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702362553/databricks-metastore-1633x666_rmkxfw.png"></a>
@@ -286,17 +286,23 @@ Driver logs
 
 ## Jobs
 
-Continuous triggered
+<a target="_blank" href="https://learning.oreilly.com/videos/databricks-certified-data/12212024VIDEOPAIML/12212024VIDEOPAIML-c5_s4/">VIDEO</a>: Jobs are defined within the Workflows menu  by specifying Task Name, Type, Source, Path Cluster, Dependent libraries, Parameters (GB), Notifications, Retries:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702384696/databricks-jobs-2674x1888_qu0z6g.png"><img alt="databricks-jobs-2674x1888.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702384696/databricks-jobs-2674x1888_qu0z6g.png"></a>
+
+Job & All-Purpose Cluster ???
+
+Timeout, Concurrency, Schedule (Trigger Type = Continuous)
 
 Config Auto Loader
 
 Query Pipeline Events
 
-Task Dependencies
+Task Dependencies: Ingestion, etc ???
+
+View Job History within Data Engineering Job Runs.
 
 Handle Failures, Retries
-
-View Job History
 
 ## Queries
 
@@ -326,6 +332,8 @@ Table metadata
 
 Vacuum Garbage Collect
 
+Data quality: Detect <a target="_blank" href="https://www.youtube.com/watch?v=uOG685WFO00">Drift</a>
+
 
 ## Machine Learning
 
@@ -334,11 +342,11 @@ Vacuum Garbage Collect
    * <a target="_blank" href="https://learning.oreilly.com/library/view/-/9781801812030/" title="Publisher:Packt Publishing">>BOOK</a>: Practical Machine Learning on Databricks - 244 pages by Debu Sinha November 2023 
    <br /><br />
 
-   * <a target="_blank" href="https://learning.oreilly.com/videos/-/090142022VIDEOPAIML/" title="Publisher:Pragmatic AI Solutions">BOOK</a>: Assimilate Databricks ML Certification By Alfredo Deza and Noah Gift September 2022 0h 58m
+   * <a target="_blank" href="https://learning.oreilly.com/videos/-/090142022VIDEOPAIML/" title="Publisher:Pragmatic AI Solutions">VIDEO</a>: Assimilate Databricks ML Certification By Alfredo Deza and Noah Gift September 2022 0h 58m
 
 
 Experiments, Features, Models, Serving
-   
+
 ## Certifications
 
 <a target="_blank" href="https://www.databricks.com/learn/training/lakehouse-fundamentals-accreditation#video"><img align="right" width="200" alt="databricks-menu-ml.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702358670/databricks-fund-badge-320x349_pzh9r7.png"></a>
@@ -348,3 +356,37 @@ Experiments, Features, Models, Serving
 
 ## Resources
 
+* <a target="_blank" href="https://learning.oreilly.com/library/view/-/9781838647216/" title="Publisher:Packt Publishing">BOOK</a>:
+Distributed Data Systems with Azure Databricks By Alan Bernardo Palacio
+4 stars
+May 2021
+414 pages
+
+* Azure Databricks Cookbook
+By Phani Raj and Vinod Jaiswal
+Publisher:Packt Publishing
+September 2021
+Write the 
+first review
+452 pages
+
+
+* Optimizing Databricks Workloads By Anirudh Kala, Anshul Bhatnagar and Sarthak Sarbahi
+Publisher:Packt Publishing
+December 2021
+230 pages
+
+* <a target="_blank" href="https://learning.oreilly.com/library/view/-/9781803235332/" title="Publisher:Packt Publishing
+">BOOK</a>: Business Intelligence with Databricks SQL By Vihag Gupta
+September 2022
+348 pages
+
+
+* <a target="_blank" href="https://learning.oreilly.com/videos/-/062592022VIDEOPAIML/" title="Publisher:Pragmatic AI Solutions">VIDEO</a>: Doing MLOps with Databricks and MLFlow - Full Course By Alfredo Deza and Noah Gift
+August 2022
+1h 39m
+covers Spark Dbmlops 
+
+* <a target="_blank" href="https://learning.oreilly.com/videos/-/032232022VIDEOPAIML/" title="Publisher:Pragmatic AI Solutions">>VIDEO</a>: MLOps Platforms From Zero: Databricks, MLFlow/MLRun/SKLearn By Alfredo Deza and Noah Gift
+March 2022 
+2h 26m
