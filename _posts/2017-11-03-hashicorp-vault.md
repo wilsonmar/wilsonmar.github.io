@@ -16,22 +16,53 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-HashiCorp's Vault securely stores <a href="#Secrets">most type of secrets</a> in a way that spans <a href="#multi-cloud">multiple clouds</a>. 
+HashiCorp's Vault is used by enterprises to centrally secure <a href="#types-of-secrets">all manner of secrets</a> in a way that spans <a href="#multi-cloud">multiple clouds</a>. 
 
 The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained, so you use HashiCorp Vault with less manual copy/paste and typing. Thus, quicker with less mistakes. All in one page for easy search.
 
 {% include whatever.html %}
+
+## But it takes a village
+
+PROTIP: It may be reassuring for your boss, auditors, and customers to know that you're using Vault.
+
+If you're a developer, you may be able to get a Vault instance running on your laptop, but that's not the same as a production instance.
+
+They ask "how long have you proven the resilience of your production Vault instance?" because the answer is a sign of your organization's maturity -- ability to survive.
+
+Unless regular Chaos Engineering "War Games" are conducted to <strong>prove</strong> that a Vault instance is resilient to imposed failure, it's not ready for reliance as production.
+
+Traditionally, enterprises have "production operations" teams to provide "adult supervision" of systems that must stay up. 
+
+Vault must stay up. A Vault instance in production is the heart of your data center. If that goes down, everything else cannot function.
+
+Loss of secrets in your Vault may make it impossible to recover from a disaster.
+
+Several teams are needed to make Vault (and other production systems) work:
+
+1. There is a <strong>Financials team</strong> to provide accounts that will stay active. This team proactively makes sure to switch to a new credit card BEFORE it expires. This team makes sure that the credit card used remains paid. This is the team that dispenses accounts with fine-grained budgets and makes sure that overspend alerts are resolved quickly. To ensure that things don't "fall through the cracks", they may provide operational teams with <strong>group emails</strong> that are sent to multiple people. 
+
+2. There is an <strong>Access team</strong> that defines what accounts are given out to whom. This team is an internal customer to HR, obtaining metadata about workers to ensure that joiners are equipped to become productive quickly with all the permissions they need, and none that they don't. This team doesn't have access to app secrets. This team also ensures that leavers are quickly removed from all accounts and permissions.
+
+3. There is a <strong>Business Owner</strong> responsible for the organization's success (including compliance with regulations and standards). This person defines the budgets and who is granted permissions. This person gives approval before each backup is destroyed. 
+
+4. There is an <strong>Internal Audit</strong> team that reports on performance against SLAs, after setting up and maintaining <strong>observability systems</strong> to collect and process metrics (including availability, performance, accuracy, etc.). This team has read-only access to ensure that the organization is compliant with all relevant regulations and standards. This team includes the SOC (Security Operations Center) which operates around the clock to detect and respond to alerts and incidents.
+
+6. There is a <strong>Platform team</strong> that installs, configures, and updates Vault technologies. This team creates the automation and training assets to ensure developers work efficiently and securely. This team has read-only access to logs (but limited access to app data values).
+
+So set up your Vault instance based on a structure such as the above.
+
 
 
 <a name="Users"></a>
 
 ## How to keep and use secrets
 
-Like all other data in computers, secrets are accessed and managed these ways:
+Like all other data in computers, secrets are accessed and managed using these technologies:
 
    * GUI on a website (operated as SaaS or on-prem/cloud server)
    * CLI on a Terminal used by developers accessing a web service when dealing with files
-   * API calls by application programs (including the Vault CLI agent program you install)
+   * API calls by application programs (including the Vault CLI agent program installed)
    <br /><br />
 
 HashiCorp's Vault provides tools to work with each of the above.
@@ -124,7 +155,8 @@ Each "organization" hosted within Enterprise Vault is isolated and <strong>segme
 into different <strong>workspaces</strong> for different teams and projects. 
 This limits the exposure of "lateral movement" possible with stolen credentials.
 
-<a target="_blank" href="https://www.hashicorp.com/blog/vault-on-the-hashicorp-cloud-platform">Announced Oct. 14, 2020</a>, HCP Vault is a hosted SaaS (Software as a Service like Salesforce) operated by HashiCorp SREs, using the same binary as self-hosted Vault Enterprise, but with enhancements. 
+<a target="_blank" href="https://www.hashicorp.com/blog/vault-on-the-hashicorp-cloud-platform">Announced Oct. 14, 2020</a>, HashiCorp began to offer HCP Vault in a hosted SaaS (Software as a Service like Salesforce) operated by HashiCorp SREs, using an enhancements edition of the binary as self-hosted Vault Enterprise.
+
 HCP Vault enables organizations to <strong>scale</strong> effortlessly, 
 and without the complexity and overhead of self-managed instances.
 
@@ -135,7 +167,7 @@ and without the complexity and overhead of self-managed instances.
 
 Most enterprises prefer to pay for quicker corporate support and features needed by enterprises.
 
-   * <a target="_blank" href="https://cloud.hashicorp.com/docs/vault">https://cloud.hashicorp.com/docs/vault</a> summarizes the differences between "Self-managed" and HCP Vault cluster.
+   * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault">https://developer.hashicorp.com/hcp/docs/vault</a> summarizes the differences between "Self-managed" and HCP-managed Vault clusters.
    * https://github.com/hashicorp/vault-guides provides the technical content to support the Vault learn site.
    * https://hashicorp-education.s3-us-west-2.amazonaws.com/courses/vault-101/Vault-101_LabBook.html
    <br /><br />
