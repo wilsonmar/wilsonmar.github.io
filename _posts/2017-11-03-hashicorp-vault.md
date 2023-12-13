@@ -73,6 +73,7 @@ That means installation of Vault is dependent on effective installation of subsi
    * An anonymous "Suggestion Box" for individuals to communicate around gatekeepers to Executives
    
    * A system (such as GitHub) to share and collaborate on generating code and documentation, to ensure that everyone is on the same page
+   * A system (such as Jenkins) to automate work
    * A system (such as Slack) for individual employees and vendors to communicate with each other, to ensure that everyone is on the same page
    * A system (such as Jira) to request of individual employees' actions (such as completing security updates), to ensure timely completion by every employee
    * A system (such as PagerDuty) to escalate alerts automatically whenever response is delayed, to ensure rapid response to events
@@ -722,7 +723,7 @@ Documentation on HCP Vault in the cloud:
 <a name="OptionB"></a>
 <a name="VaultAgent"></a>
 
-## Vault Agent on laptops
+## Option B: Vault Agent on laptops
 
 REMEMBER: There are <strong>different executable editions</strong> of the Vault program 
 for open source vs. Enterprise (licensed/more secure) versions of Vault.
