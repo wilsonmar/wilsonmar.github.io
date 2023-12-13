@@ -40,11 +40,11 @@ it is actually NOT ready for reliance for productive use.
 ## It takes a village
 
 So, traditionally, enterprises establish several teams to provide "adult supervision" of systems that must stay up. 
-Several teams are needed to make Vault (and other production systems) work:
+Several teams are needed to make Vault (and other production systems) bullet-proof:
 
-1. There is a <strong>Financials team</strong> to provide accounts that will stay active. This team proactively makes sure to switch to a new credit card BEFORE it expires. This team makes sure that the credit card used remains paid. This is the team that dispenses accounts with fine-grained budgets and makes sure that overspend alerts are resolved quickly. They define tags and include scanners to ensure their use. To ensure that things don't "fall through the cracks", they provide operational teams with <strong>group emails</strong> that are sent to multiple people. 
+1. There is a <strong>Business Owner</strong> responsible for the organization's success (including compliance with regulations and standards). This person defines the budgets and who is granted permissions. This person gives approval before each backup is destroyed. 
 
-2. There is a <strong>Business Owner</strong> responsible for the organization's success (including compliance with regulations and standards). This person defines the budgets and who is granted permissions. This person gives approval before each backup is destroyed. 
+2. There is a <strong>Financials team</strong> to provide people accounts that will stay active. This team proactively makes sure to switch to a new credit card BEFORE it expires. This team makes sure that the credit card used remains paid. This is the team that dispenses accounts with fine-grained budgets and makes sure that overspend alerts are resolved quickly. They define tags and include scanners to ensure their use. To ensure that things don't "fall through the cracks", they provide operational teams with <strong>group emails</strong> that are sent to multiple people. 
 
 3. There is an <strong>Access team</strong> that ensures "Least Privilege" by defining what accounts are given out to which job roles, departments, and projects. This team obtains from HR metadata about worker changes -- to ensure that joiners are equipped to become productive quickly with all the permissions they need, and none that they don't. This team also ensures that leavers are quickly removed from all accounts and permissions. This team doesn't have access to app secrets. 
 
