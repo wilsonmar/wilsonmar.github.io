@@ -61,18 +61,23 @@ The above implements the principle of "<strong>separation of concerns</strong>" 
 
 PROTIP: Set up your Vault instance based on an organizational structure with consideration of the above. Executives need to clarify (in a formal statement) the corporate policy regarding centralization -- should each project/department/division have its own set of teams to manage separate Vault instances (dev, test, prod) -- to <strong>limit the blast radius</strong> in case of a compromise? Or should there be a single <strong>central</strong> team to manage the entire organization?
 
-Implementing Vault isn't like installing a copying machine or vending machine.
+
+### Pre-requisite systems
+
+Implementing Vault isn't like installing a copying machine or a Coke vending machine.
 
 PROTIP: To be successful at implementing Vault within an enterprise, you need to understand that a <strong>transformation in culture</strong> is often necessary.
 That means installation of Vault is dependent on effective installation of subsidiary systems such as:
 
    * An employee survey system to obtain the feedback needed to get an unfiltered understanding of how people really feel
    * An anonymous "Suggestion Box" for individuals to communicate around gatekeepers to Executives
-   * An employee evaluation system that exposes what managers need to improve as well as what employees need to improve
    
+   * A system (such as GitHub) to share and collaborate on generating code and documentation, to ensure that everyone is on the same page
+   * A system (such as Slack) for individual employees and vendors to communicate with each other, to ensure that everyone is on the same page
    * A system (such as Jira) to request of individual employees' actions (such as completing security updates), to ensure timely completion by every employee
    * A system (such as PagerDuty) to escalate alerts automatically whenever response is delayed, to ensure rapid response to events
 
+   * An employee evaluation system that exposes what managers need to improve as well as what employees need to improve
    * A metrics collection and visualization system used to identify improvements rather than to isolate punishments, because improvements need to be team efforts
    <br /><br />
 
@@ -82,7 +87,7 @@ That means installation of Vault is dependent on effective installation of subsi
 
 ## Why Vault's Popular
 
-HashiCorp's Vault is popular because the product solves the <strong>secrets sprawl</strong> problem -- where secrets sit too long on unsecure locations such as laptops and in publicly accessible files.
+HashiCorp's Vault is popular because it solves the <strong>secrets sprawl</strong> problem -- where secrets sit too long on unsecure locations such as laptops and in publicly accessible files.
 
 Ineffective secrets handling has resulted in billions lost to ransoms 
 and the loss of reputation, reducing the value of companies and jobs 
@@ -93,21 +98,11 @@ which include ensuring that all transactions are authenticated and authorized.
 Vault provides clever and secure ways to encrypt and decrypt data in transit and at rest.
 
 
-### Agnostic Multi-Platform
+### Multi-Platform Legacy
 
 HashiCorp continues to support the largest set of operating systems 
 (Windows, macOS, Red Hat and Ubuntu Linux, within Docker, etc.). 
 So enterprises are assured of support for legacy systems.
-
-Each public cloud provides their own secrets handling services:
-
-   * AWS Secrets Manager
-   * Azure Key Vault
-   * GCP Secret Manager
-   * etc.
-   <br /><br />
-
-Enterprises deploy Vault to avoid vendor lock-in and to provide a consistent way to handle secrets across clouds.
 
 
 ### Vendor-agnostic identities
@@ -121,6 +116,34 @@ Vault provides mechanisms to <strong>authenticate</strong> users and application
    <br /><br />
 
 This also avoids vendor lock-in and provides a consistent way to handle identities across clouds.
+
+
+### Multi-Cloud secrets store
+
+Enterprises deploy Vault to avoid disruption when working with different clouds.
+
+HashiCorp provides a single consistent way to handle secrets across clouds.
+
+HashiCorp Vault adds the distinct advantage of being able to <strong>work either inside and outside each of several clouds</strong>:
+
+   * <a target="_blank" href="https://aws.amazon.com/secrets-manager/">AWS Secrets Manager</a> is a service (managed by AWS) to rotate, manage, and retrieve any credentials, API keys, or secrets to encrypt EBS volumes, Dynamo DB, S3 objects. I
+  
+   * <a target="_blank" href="https://aws.amazon.com/kms/">AWS KMS (Key Management Server)</a> is used by AWS Secrets Manager and other services to generate new keys using various encryption algorithms based onn imported key material. See https://github.com/awsdocs/aws-kms-developer-guide/tree/master/doc_source
+
+   * AWS External Key Store (XKS)
+
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/key-vault/">Azure Key Vault</a>
+   
+      <a target="_blank" href="https://www.udemy.com/course/azure-key-vault-the-complete-introduction/">NOTE</a>:
+      Azure has higher "Premium" prices for use of it HSM (Hardware Security Module), which <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/key-vault/">stores up to 5,000 key vault keys and the ability to access their keys from any device.</a> The subscription price for Azure key vault is $5 per user per month. First 250 keys are $5 per month. For more keys, it costs $2.50 per month, and then 90 cents per month.
+
+   * <a target="_blank" href="https://cloud.google.com/secret-manager">GCP Secret Manager</a>
+
+   * Azure Key Vault
+   <br /><br />
+
+PROTIP: With HashiCorp Vault, a particular secret can be added within AWS and then retrieved from within an Azure cloud.
+This is a requirement for true enterprise capability, due to needs imposed by corporate mergers and acquisitions.
 
 
 ### Dynamic secrets
@@ -147,53 +170,9 @@ Unique abilities of Vault are that it can:
    https://github.com/scarolan/painless-password-rotation
 
 
-
-<a name="Origins"></a>
-
-## Open Source Origins
-
-HashiCorp first released Vault as open-source software in 2015 at:<br />
-<a target="_blank" href="https://github.com/hashicorp/vault">https://github.com/hashicorp/vault</a>
-
-   Documentation:
-   * https://www.vaultproject.io/api-docs/ and https://learn.hashicorp.com/vault/ now redirects to
-   * https://developer.hashicorp.com/vault
-   <br /><br />
-
-HashiCorp continues to provide Vault free under open-source licensing, with community support.
-
-<a href="#OSSVaultInstall">To install the open-source edition of Vault</a>, 
-use Homebrew on macOS, etc. 
-
-NOTE: HashiCorp does not offer support contracts (in addition to community support)
-on its open-source software.
-
-
-
-## Enterprise Ready SaaS
-
-However, HashiCorp makes money from licensing and supporting its 
-   * on-prem (self-managed) enterprise software installed by customers, and
-   * the same enterprise software installed by HashiCorp SREs in HashiCorp's cloud <strong>Vault HCP</strong> (HashiCorp Cloud Platform).
-   <br />
-
-Either way, licensed editions provide a GUI (Graphic User Interface of web pages) 
-to ensure <strong>user self-service</strong>. 
-That enables organizations to get up and running quickly.
-
-Each "organization" hosted within Enterprise Vault is isolated and <strong>segmented</strong> 
-into different <strong>workspaces</strong> for different teams and projects. 
-This limits the exposure of "lateral movement" possible with stolen credentials.
-
-<a target="_blank" href="https://www.hashicorp.com/blog/vault-on-the-hashicorp-cloud-platform">Announced Oct. 14, 2020</a>, HashiCorp began to offer HCP Vault in a hosted SaaS (Software as a Service like Salesforce) operated by HashiCorp SREs, using an enhancements edition of the binary as self-hosted Vault Enterprise.
-
-HCP Vault enables organizations to <strong>scale</strong> effortlessly, 
-and without the complexity and overhead of self-managed instances.
-
-
 <a name="EntCapabilities"></a>
 
-### Vault Enterprise Capabilities
+### Enterprise Capabilities
 
 Most enterprises prefer to pay for quicker corporate support and features needed by enterprises.
 
@@ -216,53 +195,90 @@ Enterprise capabilities add:
    <br /><br />
 
 
-<a name="Users"></a>
 
-## How to keep and use secrets
+### Centralized Administration of Secrets
 
-Like all other data in computers, secrets are accessed and managed using these technologies:
+But what HashiCorp Vault offers is <strong>centralizing</strong> secrets handling across organizations by automating replacement of long-lived secrets with dynamically generated secrets (X.509 certificates) which have a controlled lease period. Vault forces a mandatory <strong>lease contract</strong> with clients. All secrets read from Vault have an associated lease to enable key usage auditing, perform key rolling, and ensure automatic revocation. Vault provides multiple revocation mechanisms to give operators a clear "break glass" procedure after a potential compromise.
 
-   * GUI on a website (operated as SaaS or on-prem/cloud server)
-   * CLI on a Terminal used by developers accessing a web service when dealing with files
-   * API calls by application programs (including the Vault CLI agent program installed)
+* Vault provides high-level policy management, secret leasing, audit logging, and automatic revocation.
+
+* Vault provides a unified interface to secrets while providing tight access control plus recording a detailed audit log.
+
+* Vault is installed in <strong>sealed mode</strong> (provides no access)
+
+   Only the storage backend (which durably stores encrypted data) and the HTTP API are outside the barrier which is sealed and unsealed.
+
+
+### Enterprise worthy?
+
+There is also various levels of paid "Enterprise" edition which companies install themselves in a cloud or on-prem. In large companies, Vault is usually installed, configured, and maintained by a 
+<strong>Platform Team</strong> (formerly "Administrators" or "SysAdmins").
+
+HashiCorp provides a fully enterprise-level 24/7 support worldwide.
+HashiCorp began as a remote workforce and today HashiCorp people are in 47 countries.
+Just 15% of the 2,000 employees work in HashiCorp's San Francisco headquarters 
+(next to the Salesforce Transit Center).
+
+Vault supports PKI (Private Key Infrastructure) used to handle certificates.
+
+All HashiCorp's products provide a detailed <strong>audit logs</strong> needed for forensics.
+
+Enterprises send logs to a central repository (such as Splunk) where their SOC team monitors
+and responds to security events.
+
+Multi-cloud support in HCP started in 2022 with AWS, and moving to AZure.
+   https://developer.hashicorp.com/vault/tutorials/adp/key-management-secrets-engine-azure-key-vault
+
+Also, HashiCorp supports its enterprise services partners via a team specializing in partner technical support worldwide.
+
+Vault is FIPS-certified, so it does not require any special/proprietary hardware such as physical HSMs (Hardware Security Modules).
+
+
+<a name="Origins"></a>
+
+### Open Source Origins
+
+HashiCorp first released Vault as open-source software in 2015 at:<br />
+<a target="_blank" href="https://github.com/hashicorp/vault">https://github.com/hashicorp/vault</a>
+
+   Documentation:
+   * https://www.vaultproject.io/api-docs/ and https://learn.hashicorp.com/vault/ now redirects to
+   * https://developer.hashicorp.com/vault
    <br /><br />
 
-HashiCorp's Vault provides tools to work with each of the above.
+HashiCorp continues to provide Vault free under open-source licensing, with community support.
 
-NOTE: HashiCorp doesn't currently offer mobile apps.
+<a href="#OSSVaultInstall">To install the open-source edition of Vault</a>, 
+use Homebrew on macOS, etc. 
+
+NOTE: HashiCorp does not offer support contracts (in addition to community support)
+on its open-source software.
 
 
 
+## Enterprise Ready SaaS
 
-<a name="OptionB"></a>
-<a name="VaultAgent"></a>
+HashiCorp makes money from licensing and supporting its 
+   * on-prem (self-managed) enterprise software installed by customers, and
+   * the same enterprise software installed by HashiCorp SREs in HashiCorp's cloud <strong>Vault HCP</strong> (HashiCorp Cloud Platform).
+   <br />
 
-## Vault Agent on laptops
+Either way, licensed editions provide a GUI (Graphic User Interface of web pages) 
+to ensure <strong>user self-service</strong>. 
+That enables organizations to get up and running quickly.
 
-REMEMBER: There are <strong>different executable editions</strong> of the Vault program 
-for open source vs. Enterprise (licensed/more secure) versions of Vault.
+Each "organization" hosted within Enterprise Vault is isolated and <strong>segmented</strong> 
+into different <strong>workspaces</strong> for different teams and projects. 
+This limits the exposure of "lateral movement" possible with stolen credentials.
 
-With all Enterprise options, you would also <a href="#EntVaultInstall">install the Enterprise edition of Vault</a> on clients
-accessing Vault servers with a paid license file from HashiCorp.
-This install involves use of GPG to verify signatures of the installer.
+<a target="_blank" href="https://www.hashicorp.com/blog/vault-on-the-hashicorp-cloud-platform">Announced Oct. 14, 2020</a>, HashiCorp began to offer HCP Vault in a hosted SaaS (Software as a Service like Salesforce) operated by HashiCorp SREs, using an enhancements edition of the binary as self-hosted Vault Enterprise.
 
-REMEMBER: The Vault program can act as both a server and a client.
+HCP Vault enables organizations to <strong>scale</strong>,
+without the complexity and overhead of self-managed instances.
 
-Installed as a client, the Vault program acts as a <strong>cache</strong> (like Redis) 
-to a central Vault server, responding to requests that can be served locally when secrets have not expired.
 
-The <a target="_blank" href="https://developer.hashicorp.com/vault/docs/agent">Vault Agent</a> 
-is a client daemon that provides:
 
-   * <strong>Caching</strong> of client-side responses containing newly created tokens and responses containing leased secrets generated off of these newly created tokens.
-
-   * Automatic authentication to Vault -- manage the token renewal process for locally-retrieved <a href="#DynamicSecrets">dynamic secrets</a>.
-
-   * Templating -- rendering of user-supplied <a target="_blank" href="https://www.vaultproject.io/docs/agent/template">template "moustache" markdown</a> , using the token generated by the Auto-Auth step. To dynamically renew destination file. Example at: https://banzaicloud.com/docs/bank-vaults/mutating-webhook/vault-agent-templating/
-
-   * Secure delivery/storage of tokens (using mTLS communications in-transit).
-
-   * Lifecycle management (renewal and re-authentication) of tokens.
+<hr />
 
 
 <a name="VaultSvcInstall"></a>
@@ -295,68 +311,6 @@ and defaults to compose a particular combination consisting of, for example:
    * Number of nodes in Kubernetes (EKS, AKS, GKE)
    * inclusion of <a href="HashiCups">HashiCups fictional sample app</a> with a database
    * etc.
-
-
-### Multi-Cloud
-
-Each cloud vendor (AWS, Azure, GCP, etc.) have their own secrets handling offering.
-
-But HashiCorp Vault adds the distinct advantage of being able to <strong>work either inside and outside each of several clouds</strong>:
-
-   * <a target="_blank" href="https://aws.amazon.com/secrets-manager/">AWS Secrets Manager</a> is a service (managed by AWS) to rotate, manage, and retrieve any credentials, API keys, or secrets to encrypt EBS volumes, Dynamo DB, S3 objects. I
-  
-   * <a target="_blank" href="https://aws.amazon.com/kms/">AWS KMS (Key Management Server)</a> is used by AWS Secrets Manager and other services to generate new keys using various encryption algorithms based onn imported key material. See https://github.com/awsdocs/aws-kms-developer-guide/tree/master/doc_source
-
-   * AWS External Key Store (XKS)
-
-   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/key-vault/">Azure Key Vault</a>
-   
-      <a target="_blank" href="https://www.udemy.com/course/azure-key-vault-the-complete-introduction/">NOTE</a>:
-      Azure has higher "Premium" prices for use of it HSM (Hardware Security Module), which <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/key-vault/">stores up to 5,000 key vault keys and the ability to access their keys from any device.</a> The subscription price for Azure key vault is $5 per user per month. First 250 keys are $5 per month. For more keys, it costs $2.50 per month, and then 90 cents per month.
-
-   * <a target="_blank" href="https://cloud.google.com/secret-manager">GCP Secret Manager</a>
-
-With Vault, a particular secret can be added within AWS and then retrieved from within an Azure cloud.
-This is a requirement for true enterprise capability, due to needs imposed by corporate mergers and acquisitions.
-
-
-### Centralized Administration of Secrets
-
-But what HashiCorp Vault offers is <strong>centralizing</strong> secrets handling across organizations by automating replacement of long-lived secrets with dynamically generated secrets (X.509 certificates) which have a controlled lease period. Vault forces a mandatory <strong>lease contract</strong> with clients. All secrets read from Vault have an associated lease to enable key usage auditing, perform key rolling, and ensure automatic revocation. Vault provides multiple revocation mechanisms to give operators a clear "break glass" procedure after a potential compromise.
-
-* Vault provides high-level policy management, secret leasing, audit logging, and automatic revocation.
-
-* Vault from HashiCorp provides a unified interface to secrets while providing tight access control plus recording a detailed audit log.
-
-* Vault is installed in <strong>sealed mode</strong> (provides no access)
-
-   Only the storage backend (which durably stores encrypted data) and the HTTP API are outside the barrier which is sealed and unsealed.
-
-
-### Enterprise worthy?
-
-There is also various levels of paid "Enterprise" edition which companies install themselves in a cloud or on-prem. In large companies, Vault is usually installed, configured, and maintained by a 
-<strong>Platform Team</strong> (formerly "Administrators" or "SysAdmins").
-
-HashiCorp provides a fully enterprise-level 24/7 support worldwide.
-HashiCorp began as a remote workforce and today HashiCorp people are in 47 countries.
-Just 15% of the 2,000 employees work in HashiCorp's San Francisco headquarters 
-(next to the Salesforce Transit Center).
-
-Vault supports PKI (Private Key Infrastructure) used to handle certificates.
-
-All HashiCorp's products provide a detailed <strong>audit logs</strong> needed for forensics.
-
-Enterprises send logs to a central repository (such as Splunk) where their SOC team monitors
-and responds to security events.
-
-Multi-cloud support in HCP started in 2022 with AWS, and moving to AZure.
-   https://developer.hashicorp.com/vault/tutorials/adp/key-management-secrets-engine-azure-key-vault
-
-Also, HashiCorp supports its enterprise services partners via a team specializing in partner technical support worldwide.
-
-Vault is FIPS-certified, so it does not require any special/proprietary hardware such as physical HSMs (Hardware Security Modules).
-
 
 <hr />
 
@@ -735,6 +689,61 @@ Documentation on HCP Vault in the cloud:
     * 1 error occurred:
 	    * permission denied
     </pre>
+
+
+<hr />
+
+
+<a name="OptionB"></a>
+<a name="VaultAgent"></a>
+
+## Vault Agent on laptops
+
+REMEMBER: There are <strong>different executable editions</strong> of the Vault program 
+for open source vs. Enterprise (licensed/more secure) versions of Vault.
+
+With all Enterprise options, you would also <a href="#EntVaultInstall">install the Enterprise edition of Vault</a> on clients
+accessing Vault servers with a paid license file from HashiCorp.
+This install involves use of GPG to verify signatures of the installer.
+
+REMEMBER: The Vault program can act as both a server and a client.
+
+Installed as a client, the Vault program acts as a <strong>cache</strong> (like Redis) 
+to a central Vault server, responding to requests that can be served locally when secrets have not expired.
+
+The <a target="_blank" href="https://developer.hashicorp.com/vault/docs/agent">Vault Agent</a> 
+is a client daemon that provides:
+
+   * <strong>Caching</strong> of client-side responses containing newly created tokens and responses containing leased secrets generated off of these newly created tokens.
+
+   * Automatic authentication to Vault -- manage the token renewal process for locally-retrieved <a href="#DynamicSecrets">dynamic secrets</a>.
+
+   * Templating -- rendering of user-supplied <a target="_blank" href="https://www.vaultproject.io/docs/agent/template">template "moustache" markdown</a> , using the token generated by the Auto-Auth step. To dynamically renew destination file. Example at: https://banzaicloud.com/docs/bank-vaults/mutating-webhook/vault-agent-templating/
+
+   * Secure delivery/storage of tokens (using mTLS communications in-transit).
+
+   * Lifecycle management (renewal and re-authentication) of tokens.
+
+
+
+
+
+<a name="Users"></a>
+
+## How to keep and use secrets
+
+Like all other data in computers, secrets are accessed and managed using these technologies:
+
+   * GUI on a website (operated as SaaS or on-prem/cloud server)
+   * CLI on a Terminal used by developers accessing a web service when dealing with files
+   * API calls by application programs (including the Vault CLI agent program installed)
+   <br /><br />
+
+HashiCorp's Vault provides tools to work with each of the above.
+
+NOTE: HashiCorp doesn't currently offer mobile apps.
+
+
 
 <hr />
 
