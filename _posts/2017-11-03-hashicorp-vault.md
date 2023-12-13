@@ -61,6 +61,18 @@ The above implements the principle of "<strong>separation of concerns</strong>" 
 
 PROTIP: Set up your Vault instance based on an organizational structure with consideration of the above. Executives need to clarify (in a formal statement) the corporate policy regarding centralization -- should each project/department/division have its own set of teams to manage separate Vault instances (dev, test, prod) -- to <strong>limit the blast radius</strong> in case of a compromise? Or should there be a single <strong>central</strong> team to manage the entire organization?
 
+Implementing Vault isn't like installing a copying machine or vending machine.
+
+PROTIP: To be successful at implementing Vault within an enterprise, you need to understand that a <strong>transformation in culture</strong> is often necessary.
+That means installation of Vault is dependent on effective installation of subsidiary systems such as:
+
+   * An employee survey system to obtain the feedback needed to get an unfiltered understanding of how people feel
+   * An annoymouse "Suggestion Box" for individuals to communicate around gatekeepers to Executives
+   * An employee evaluation system that exposes what managers need to improve as well as what employees need to improve
+   * A system to ensure rapid response to events, such as one that escalates alerts automatically whenever response is delayed
+   * Using metrics to identify improvements rather than for punishment, because improvements need to be team efforts
+   <br /><br />
+
 <hr />
 
 <a name="ValueProp"></a>
