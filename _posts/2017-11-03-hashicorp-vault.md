@@ -687,7 +687,7 @@ each a "<a target="_blank" href="https://developer.hashicorp.com/vault/docs/use-
 
 Behind its "cryptographic barrier", the <strong>KV</strong> Secrets Engine stores secrets such as these :
 
-   * Passwords associated with userids typed in to login web applications. 
+   * Passwords associated with userids (such as email address) typed in to log in to web applications. 
 
    * Tokens - a sensitive value created for an unrelated value, such as <a target="_blank" href="https://learn.hashicorp.com/tutorials/nomad/hashicorp-enterprise-license?in=vault/enterprise">enterprise software license keys</a>
 
@@ -1246,7 +1246,7 @@ Auth (authorization) methods perform authentication to verify the user or machin
    * AppRole auth method is recommended for server machines or apps handling automated workflows
    <br /><br />
 
-   ## Login with Default Auth Token
+### Login with Default Auth Token
 
 1. Log into Vault using the vault CLI:
 
@@ -2991,7 +2991,7 @@ EOL
 <hr />
 
 
-   ### Manage secrets within Vault
+## Manage secrets within Vault
 
 2. List a secret
 
@@ -3573,7 +3573,7 @@ An example in Java is <a target="_blank" href="https://github.com/jenkinsci/hash
 See <a target="_blank" href="https://github.com/amarruedo/hashicorp-vault-jenkins">https://github.com/amarruedo/hashicorp-vault-jenkins</a>
 
 
-   ### GitHub Token
+### GitHub Token
 
    <pre><strong>
    vault auth -method=github token=<em>GITHUB_ACCESS_TOKEN</em>
@@ -4146,7 +4146,7 @@ PROTIP: Here is a tool to test access to a Vault instance (locally and publicly)
 
 (rather than using Git, which exposes all teams/users having access to all secrets and each password rotate taking up more space in history. Use of GPG is cumbersome)
 
-<img alt="VaultPass Options" width="786" height="884" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1653481659/vaultpass-options-786x884_mkolcc.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1653481659/vaultpass-options-786x884_mkolcc.png"><img alt="VaultPass Options" width="786" height="884" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1653481659/vaultpass-options-786x884_mkolcc.png"></a>
 
 
 In <a target="_blank" href="https://www.hashicorp.com/resources/developer-first-application-security-and-devsecops">"Developer-First Application Security and DevSecOps"</a> by Kevin Alwell (@alwell-kevin at GitHub)
