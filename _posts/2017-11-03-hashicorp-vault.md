@@ -22,65 +22,52 @@ HashiCorp's Vault is used by enterprises to centrally secure <a href="#types-of-
 
 ## This is serious, folks
 
-PROTIP: HashiCorp Vault is popular not because of its convenience to developers. 
-The product is <strong>imposed</strong> on developers to enhance the ability of the organization to survive.
+PROTIP: HashiCorp Vault is useful not because it provides convenience to developers (although it does). 
+The product is <strong>imposed</strong> (top down) on developers to enhance the ability of the organization to survive.
 
-A Vault instance in production is the beating heart of your data center. If that goes down, your data center dies.
-Loss of secrets in your Vault may make it impossible to recover from a disaster.
+Mechanisms to maintain secrets in production is the beating heart of a data center. 
+If that goes down, the data center dies.
+Loss of secrets makes it impossible to recover from a disaster.
 So production Vault instances must stay up, despite disasters occuring.
 
 Executives, auditors, and customers ask this question to judge the maturity of your organization:
 
-   <ul><strong>How long have you <strong>proven</strong> the resilience of your production Vault instance?</strong></ul>
+   <ul><strong>How long have you <strong>regularly proved</strong> the resilience of your production Vault instance?</strong></ul>
 
 Unless regular Chaos Engineering "War Games" are conducted to prove that a Vault instance is resilient to <strong>imposed failure modes</strong>, 
-it is actually NOT ready for reliance for productive use.
+it should not be relied upon for productive use.
 
 
 ## It takes a village
 
-So, traditionally, enterprises establish several teams to provide "adult supervision" of systems that must stay up. 
+Traditionally, enterprises establish several teams to provide "adult supervision" of systems that must stay up. 
 Several teams are needed to make Vault (and other production systems) bullet-proof:
 
 1. There is a <strong>Business Owner</strong> responsible for the organization's success (including compliance with regulations and standards). This person defines the budgets and who is granted permissions. This person gives approval before each backup is destroyed. Good security practice is that this person is NOT given WRITE or DELETE access used by operational roles, in case the owner account is compromised.
 
 2. There is a <strong>Financials team</strong> to provide people accounts that will stay active. This team proactively makes sure to switch to a new credit card BEFORE it expires. This team makes sure that the credit card used remains paid. This is the team that dispenses accounts with fine-grained budgets and makes sure that overspending alerts are resolved quickly. They define tags and include scanners to ensure their use. To ensure that things don't "fall through the cracks", they provide operational teams with <strong>group emails</strong> that are sent to multiple people. 
 
-3. There is an <strong>Access team</strong> who ensures "Least Privileges" by defining what accounts are given out to which job roles, departments, and projects. This team obtains from HR metadata about workers -- to ensure that joiners are equipped to become productive quickly with all the permissions they need, and none that they don't. This team also ensures that leavers are quickly removed from all accounts and permissions. This team doesn't have access to app secrets. 
+3. There is an <strong>Access team</strong> who ensures "Least Privileges" by defining what permissions are granted to access the assets to each department and project. This team obtains from HR metadata about workers -- to ensure that joiners are equipped to become productive quickly with all the permissions they need, and none that they don't. This team also ensures that leavers are quickly removed from all accounts and permissions. This team doesn't have access to app secrets. 
 
 4. There is an <strong>Internal Audit</strong> team that reports on the organization's performance against SLAs -- after setting up and maintaining <strong>observability systems</strong> to collect and process metrics (including availability, performance, accuracy, etc.). This team has read-only access to ensure that the organization is compliant with all relevant regulations and standards. This team includes the SOC (Security Operations Center) which operates around the clock to detect and respond to alerts and incidents.
 
-5. There is a <strong>Platform team</strong> that installs, configures, and updates Vault technologies. This team creates the automation and training assets to ensure developers work efficiently and securely. This team has read-only access to logs (but limited access to app data values).
+5. There is a <strong>Platform team</strong> that installs, configures, and updates Vault technologies. This team creates the <strong>automation</strong> and <strong>training</strong> assets to ensure developers work efficiently and securely. This team has read-only access to logs (but limited access to app data values).
+
+   PROTIP: Most training about Vault is focused on the technical skills needed by this team. This article is focused on the skills needed by the other teams.
 
 6. There are <strong>Developers</strong> who create and maintain <strong>utilities and libraries</strong> that other developers use to develop their applications -- providing a consistent way yet quickly updatable way to access secrets and perform other tasks. Common utilities are encouraged to quickly respond when a new vulnerability is discovered. This team has full access to logs until their app enters production, then they may get temporary read-only access so someone using their account can't "cover their tracks".
 
 The above implements the principle of "<strong>separation of concerns</strong>" with "checks and balances".
 
-PROTIP: Set up your Vault instance based on an organizational structure with consideration of the above. Executives need to clarify their position on centralization -- should each division have its own set of teams to manage <strong>separate Vault instance</strong> (dev, test, prod) -- to limit the blast radius of a compromise? Or should there be a single central team to manage the entire organization?
+PROTIP: Set up your Vault instance based on an organizational structure with consideration of the above. Executives need to clarify (in a formal statement) the corporate policy regarding centralization -- should each project/department/division have its own set of teams to manage separate Vault instances (dev, test, prod) -- to <strong>limit the blast radius</strong> in case of a compromise? Or should there be a single <strong>central</strong> team to manage the entire organization?
 
 <hr />
-
-<a name="Users"></a>
-
-## How to keep and use secrets
-
-Like all other data in computers, secrets are accessed and managed using these technologies:
-
-   * GUI on a website (operated as SaaS or on-prem/cloud server)
-   * CLI on a Terminal used by developers accessing a web service when dealing with files
-   * API calls by application programs (including the Vault CLI agent program installed)
-   <br /><br />
-
-HashiCorp's Vault provides tools to work with each of the above.
-
-NOTE: HashiCorp doesn't currently offer mobile apps.
-
 
 <a name="ValueProp"></a>
 
 ## Why Vault's Popular
 
-HashiCorp's Vault is popular because the product solves the <strong>secrets sprawl</strong> problem -- where employees create and store secrets that last too long sitting on unsecure locations such as laptops and in publicly accessible files.
+HashiCorp's Vault is popular because the product solves the <strong>secrets sprawl</strong> problem -- where secrets sit too long on unsecure locations such as laptops and in publicly accessible files.
 
 Ineffective secrets handling has resulted in billions lost to ransoms 
 and the loss of reputation, reducing the value of companies and jobs 
@@ -88,7 +75,37 @@ and the loss of reputation, reducing the value of companies and jobs
 
 Within enterprises, Vault has a major role in achieving "<strong>Zero Trust</strong>", 
 which include ensuring that all transactions are authenticated and authorized.
-Vault provides the encryption and decryption of data in transit and at rest.
+Vault provides clever and secure ways to encrypt and decrypt data in transit and at rest.
+
+
+### Agnostic Multi-Platform
+
+HashiCorp continues to support the largest set of operating systems 
+(Windows, macOS, Red Hat and Ubuntu Linux, within Docker, etc.). 
+So enterprises are assured of support for legacy systems.
+
+Each public cloud provides their own secrets handling services:
+
+   * AWS Secrets Manager
+   * Azure Key Vault
+   * GCP Secret Manager
+   * etc.
+   <br /><br />
+
+Enterprises deploy Vault to avoid vendor lock-in and to provide a consistent way to handle secrets across clouds.
+
+
+### Vendor-agnostic identities
+
+Vault provides mechanisms to <strong>authenticate</strong> users and applications separate from cloud vendors' identity management systems
+
+   * AWS IAM
+   * GCP IAM
+   * Azure Entra (formerly Active Directory)
+   * etc.
+   <br /><br />
+
+This also avoids vendor lock-in and provides a consistent way to handle identities across clouds.
 
 
 ### Dynamic secrets
@@ -137,14 +154,6 @@ NOTE: HashiCorp does not offer support contracts (in addition to community suppo
 on its open-source software.
 
 
-## Multi-Platform
-
-HashiCorp continues to support the largest set of operating systems.
-
-Vault is designed to be deployed to <strong>all major platforms</strong> 
-(Windows, macOS, Red Hat and Ubuntu Linux, within Docker, etc.). 
-This is a feature appreciated by enterprise who have legacy systems.
-
 
 ## Enterprise Ready SaaS
 
@@ -190,6 +199,24 @@ Enterprise capabilities add:
    * Namespaces (to segment data between teams to limit lateral movement by hackers)
    * <a target="_blank" href="https://www.wikiwand.com/en/FIPS_140-2">FIPS 140-2</a>/3 <a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.140-2.pdf">PDF</a> by <a target="_blank" href="https://csrc.nist.gov/publications/detail/fips/140/2/final">US government computer security standard</a> (for testing/certifying cryptographic modules as being secure)
    <br /><br />
+
+
+<a name="Users"></a>
+
+## How to keep and use secrets
+
+Like all other data in computers, secrets are accessed and managed using these technologies:
+
+   * GUI on a website (operated as SaaS or on-prem/cloud server)
+   * CLI on a Terminal used by developers accessing a web service when dealing with files
+   * API calls by application programs (including the Vault CLI agent program installed)
+   <br /><br />
+
+HashiCorp's Vault provides tools to work with each of the above.
+
+NOTE: HashiCorp doesn't currently offer mobile apps.
+
+
 
 
 <a name="OptionB"></a>
