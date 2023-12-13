@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-09-02"
+date: "2023-12-12"
 file: "hashicorp-vault"
 title: "HashiCorp Vault"
 excerpt: "How to keep secrets secret (in a central place), but still shared and refreshed."
@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-HashiCorp's Vault securely stores <a href="#Secrets">most type of secrets</a> in a way that spans <a href="#Multi-Cloud">multiple clouds</a>. 
+HashiCorp's Vault securely stores <a href="#Secrets">most type of secrets</a> in a way that spans <a href="#multi-cloud">multiple clouds</a>. 
 
 The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained, so you use HashiCorp Vault with less manual copy/paste and typing. Thus, quicker with less mistakes. All in one page for easy search.
 
@@ -215,6 +215,7 @@ and defaults to compose a particular combination consisting of, for example:
    * Number of nodes in Kubernetes (EKS, AKS, GKE)
    * inclusion of <a href="HashiCups">HashiCups fictional sample app</a> with a database
    * etc.
+
 
 ### Multi-Cloud
 
@@ -681,6 +682,8 @@ Vault provides <a href="#SecretsEngines">secrets engines</a> to work with each t
 each a "<a target="_blank" href="https://developer.hashicorp.com/vault/docs/use-cases">use case</a>" for the Vault product:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"><img width="1460" alt="vault-secrets-engines-1460x1048" src="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"></a>
+
+### Types of secrets
 
 Behind its "cryptographic barrier", the <strong>KV</strong> Secrets Engine stores secrets such as these :
 
