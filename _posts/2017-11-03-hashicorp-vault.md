@@ -48,7 +48,9 @@ Several teams are needed to make Vault (and other production systems) work:
 
 4. There is an <strong>Internal Audit</strong> team that reports on performance against SLAs, after setting up and maintaining <strong>observability systems</strong> to collect and process metrics (including availability, performance, accuracy, etc.). This team has read-only access to ensure that the organization is compliant with all relevant regulations and standards. This team includes the SOC (Security Operations Center) which operates around the clock to detect and respond to alerts and incidents.
 
-6. There is a <strong>Platform team</strong> that installs, configures, and updates Vault technologies. This team creates the automation and training assets to ensure developers work efficiently and securely. This team has read-only access to logs (but limited access to app data values).
+5. There is a <strong>Platform team</strong> that installs, configures, and updates Vault technologies. This team creates the automation and training assets to ensure developers work efficiently and securely. This team has read-only access to logs (but limited access to app data values).
+
+6. There are <strong>Developers</strong> who create and maintain <strong>utilities and libraries</strong> that other developers use to develop their applications -- providing a consistent way yet quickly updatable way to access secrets and perform other tasks. 
 
 So set up your Vault instance based on a structure such as the above.
 
