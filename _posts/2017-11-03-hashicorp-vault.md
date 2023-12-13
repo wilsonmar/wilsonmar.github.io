@@ -32,7 +32,7 @@ So production Vault instances must stay up, despite disasters occuring.
 
 Executives, auditors, and customers ask this question to judge the maturity of your organization:
 
-   <ul><strong>How long have you <strong>regularly proved</strong> the resilience of your production Vault instance?</strong></ul>
+   <ul><strong>How long have you <strong>regularly proved</strong> the resilience of your Vault instance?</strong></ul>
 
 Unless regular Chaos Engineering "War Games" are conducted to prove that a Vault instance is resilient to <strong>imposed failure modes</strong>, 
 it should not be relied upon for productive use.
@@ -66,11 +66,14 @@ Implementing Vault isn't like installing a copying machine or vending machine.
 PROTIP: To be successful at implementing Vault within an enterprise, you need to understand that a <strong>transformation in culture</strong> is often necessary.
 That means installation of Vault is dependent on effective installation of subsidiary systems such as:
 
-   * An employee survey system to obtain the feedback needed to get an unfiltered understanding of how people feel
-   * An annoymouse "Suggestion Box" for individuals to communicate around gatekeepers to Executives
+   * An employee survey system to obtain the feedback needed to get an unfiltered understanding of how people really feel
+   * An anonymous "Suggestion Box" for individuals to communicate around gatekeepers to Executives
    * An employee evaluation system that exposes what managers need to improve as well as what employees need to improve
-   * A system to ensure rapid response to events, such as one that escalates alerts automatically whenever response is delayed
-   * Using metrics to identify improvements rather than for punishment, because improvements need to be team efforts
+   
+   * A system (such as Jira) to request of individual employees' actions (such as completing security updates), to ensure timely completion by every employee
+   * A system (such as PagerDuty) to escalate alerts automatically whenever response is delayed, to ensure rapid response to events
+
+   * A metrics collection and visualization system used to identify improvements rather than to isolate punishments, because improvements need to be team efforts
    <br /><br />
 
 <hr />
