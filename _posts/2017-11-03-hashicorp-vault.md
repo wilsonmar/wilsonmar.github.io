@@ -46,7 +46,7 @@ Several teams are needed to make Vault (and other production systems) bullet-pro
 
 2. There is a <strong>Financials team</strong> to provide people accounts that will stay active. This team proactively makes sure to switch to a new credit card BEFORE it expires. This team makes sure that the credit card used remains paid. This is the team that dispenses accounts with fine-grained budgets and makes sure that overspending alerts are resolved quickly. They define tags and include scanners to ensure their use. To ensure that things don't "fall through the cracks", they provide operational teams with <strong>group emails</strong> that are sent to multiple people. 
 
-3. There is an <strong>Access team</strong> who ensures "Least Privileges" by defining what accounts are given out to which job roles, departments, and projects. This team obtains from HR metadata about worker -- to ensure that joiners are equipped to become productive quickly with all the permissions they need, and none that they don't. This team also ensures that leavers are quickly removed from all accounts and permissions. This team doesn't have access to app secrets. 
+3. There is an <strong>Access team</strong> who ensures "Least Privileges" by defining what accounts are given out to which job roles, departments, and projects. This team obtains from HR metadata about workers -- to ensure that joiners are equipped to become productive quickly with all the permissions they need, and none that they don't. This team also ensures that leavers are quickly removed from all accounts and permissions. This team doesn't have access to app secrets. 
 
 4. There is an <strong>Internal Audit</strong> team that reports on the organization's performance against SLAs -- after setting up and maintaining <strong>observability systems</strong> to collect and process metrics (including availability, performance, accuracy, etc.). This team has read-only access to ensure that the organization is compliant with all relevant regulations and standards. This team includes the SOC (Security Operations Center) which operates around the clock to detect and respond to alerts and incidents.
 
@@ -54,9 +54,11 @@ Several teams are needed to make Vault (and other production systems) bullet-pro
 
 6. There are <strong>Developers</strong> who create and maintain <strong>utilities and libraries</strong> that other developers use to develop their applications -- providing a consistent way yet quickly updatable way to access secrets and perform other tasks. Common utilities are encouraged to quickly respond when a new vulnerability is discovered. This team has full access to logs until their app enters production, then they may get temporary read-only access so someone using their account can't "cover their tracks".
 
-So set up your Vault instance based on an organizational structure with consideration of the above.
+The above implements the principle of "<strong>separation of concerns</strong>" with "checks and balances".
 
+PROTIP: Set up your Vault instance based on an organizational structure with consideration of the above. Executives need to clarify their position on centralization -- should each division have its own set of teams to manage <strong>separate Vault instance</strong> (dev, test, prod) -- to limit the blast radius of a compromise? Or should there be a single central team to manage the entire organization?
 
+<hr />
 
 <a name="Users"></a>
 
