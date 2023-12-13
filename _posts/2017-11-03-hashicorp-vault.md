@@ -170,31 +170,6 @@ Unique abilities of Vault are that it can:
    https://github.com/scarolan/painless-password-rotation
 
 
-<a name="EntCapabilities"></a>
-
-### Enterprise Capabilities
-
-Most enterprises prefer to pay for quicker corporate support and features needed by enterprises.
-
-   * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault">https://developer.hashicorp.com/hcp/docs/vault</a> summarizes the differences between "Self-managed" and HCP-managed Vault clusters.
-   * https://github.com/hashicorp/vault-guides provides the technical content to support the Vault learn site.
-   * https://hashicorp-education.s3-us-west-2.amazonaws.com/courses/vault-101/Vault-101_LabBook.html
-   <br /><br />
-
-Enterprise capabilities add:
-
-   * Quicker "Premium" customer support world-wide in English, German, Japanese, etc.
-   * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/login-mfa">MFA (Multi-Factor Authentication) for human users</a>
-   * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/audit-log">Audit Log Management for Monitoring</a>
-   * <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/cloud-ops/vault-replication">Replication (for faster read performance across regions)</a> <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/cloud-ops/vault-replication">Performance Replication</a> is available with "HCP Vault Plus" licensing.
-   * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/high-avail-disaster-recover">Disaster Recovery</a>
-
-   * <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/adp">Advanced Data Protection (ADP)</a> Transform Secrets Engine (that generates tokens in place of sensitive data such as credit card numbers)
-   * Namespaces (to segment data between teams to limit lateral movement by hackers)
-   * <a target="_blank" href="https://www.wikiwand.com/en/FIPS_140-2">FIPS 140-2</a>/3 <a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.140-2.pdf">PDF</a> by <a target="_blank" href="https://csrc.nist.gov/publications/detail/fips/140/2/final">US government computer security standard</a> (for testing/certifying cryptographic modules as being secure)
-   <br /><br />
-
-
 
 ### Centralized Administration of Secrets
 
@@ -209,7 +184,7 @@ But what HashiCorp Vault offers is <strong>centralizing</strong> secrets handlin
    Only the storage backend (which durably stores encrypted data) and the HTTP API are outside the barrier which is sealed and unsealed.
 
 
-### Enterprise worthy?
+### Enterprise worthy features
 
 There is also various levels of paid "Enterprise" edition which companies install themselves in a cloud or on-prem. In large companies, Vault is usually installed, configured, and maintained by a 
 <strong>Platform Team</strong> (formerly "Administrators" or "SysAdmins").
@@ -256,7 +231,37 @@ on its open-source software.
 
 
 
-## Enterprise Ready SaaS
+<a name="EntCapabilities"></a>
+
+### Enterprise Capabilities
+
+Most enterprises prefer to pay for quicker corporate support and features needed by enterprises.
+
+   * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault">https://developer.hashicorp.com/hcp/docs/vault</a> summarizes the differences between "Self-managed" and HCP-managed Vault clusters.
+   * https://github.com/hashicorp/vault-guides provides the technical content to support the Vault learn site.
+   * https://hashicorp-education.s3-us-west-2.amazonaws.com/courses/vault-101/Vault-101_LabBook.html
+   <br /><br />
+
+Enterprise capabilities add:
+
+   * Quicker "Premium" customer support in multiple time zones and languages (English, German, Japanese, etc.)
+   * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/login-mfa">MFA (Multi-Factor Authentication) for human users</a>
+   * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/audit-log">Audit Log Management for Monitoring</a>
+
+   * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/high-avail-disaster-recover">Disaster Recovery</a>
+   * <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/cloud-ops/vault-replication">Replication (for faster read performance across regions)</a> <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/cloud-ops/vault-replication">Performance Read Replicas</a> is available with "HCP Vault Plus" licensing.
+
+   * Policy-as-code to define insecure or other custom conditions to detect ("Sentinel" product like AWS Config Rules)
+   * <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/adp">Advanced Data Protection (ADP)</a> "Transform Secrets Engine" generates tokens in place of sensitive data such as credit card numbers. 
+   * Use of <strong>KMIP</strong> - the <a target="_blank" href="http://docs.oasis-open.org/kmip/spec/v1.4/kmip-spec-v1.4.html">OASIS-defined</a> industry-standard <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/adp/kmip-engine">Key Management Interoperability Protocol</a> to secure transfer (delegation) of secrets among different systems.
+   * Namespaces (to segment data between teams to limit lateral movement by hackers)
+
+   * High-security HSM (Hardware Security Module) Auto-unseal
+   * <a target="_blank" href="https://www.wikiwand.com/en/FIPS_140-2">FIPS 140-2</a>/3 <a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.140-2.pdf">PDF</a> by <a target="_blank" href="https://csrc.nist.gov/publications/detail/fips/140/2/final">US government computer security standard</a> (for testing/certifying cryptographic modules as being secure)
+   <br /><br />
+
+
+### Enterprise features
 
 HashiCorp makes money from licensing and supporting its 
    * on-prem (self-managed) enterprise software installed by customers, and
@@ -275,6 +280,26 @@ This limits the exposure of "lateral movement" possible with stolen credentials.
 
 HCP Vault enables organizations to <strong>scale</strong>,
 without the complexity and overhead of self-managed instances.
+
+
+
+<a name="WaysToInteract"></a>
+
+### Several ways to interact
+
+HashiCorp supports several technologies that developers and operations people need to interact with systems:
+
+   * GUI on a website (operated as SaaS or on-prem/cloud server)
+
+   * CLI on a Terminal used by developers accessing a web service when dealing with files
+
+   * API calls by application programs (including the Vault CLI agent program installed)
+
+   * Declarative JSON code for Infrastructure as Code (IaC) using Terraform, Ansible, etc. to install and configure Vault
+
+HashiCorp's Vault provides tools to work with each of the above.
+
+NOTE: HashiCorp doesn't currently offer mobile apps.
 
 
 
@@ -728,22 +753,6 @@ is a client daemon that provides:
 
 
 
-<a name="Users"></a>
-
-## How to keep and use secrets
-
-Like all other data in computers, secrets are accessed and managed using these technologies:
-
-   * GUI on a website (operated as SaaS or on-prem/cloud server)
-   * CLI on a Terminal used by developers accessing a web service when dealing with files
-   * API calls by application programs (including the Vault CLI agent program installed)
-   <br /><br />
-
-HashiCorp's Vault provides tools to work with each of the above.
-
-NOTE: HashiCorp doesn't currently offer mobile apps.
-
-
 
 <hr />
 
@@ -799,7 +808,7 @@ Secrets engines listed alphabetically:
    * GoogleCloud
    * GoogleCloud KMS (Key Managerment Service)
 
-   * <strong>kmip</strong> is the <a target="_blank" href="http://docs.oasis-open.org/kmip/spec/v1.4/kmip-spec-v1.4.html">OASIS-defined</a> industry-standard <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/adp/kmip-engine">KMIP</a> (Key Management Interoperability Protocol) to secure transfer (delegation) of secrets among different systems.
+   * <strong>KMIP</strong> is the <a target="_blank" href="http://docs.oasis-open.org/kmip/spec/v1.4/kmip-spec-v1.4.html">OASIS-defined</a> industry-standard <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/adp/kmip-engine">KMIP</a> (Key Management Interoperability Protocol) to secure transfer (delegation) of secrets among different systems.
 
    * <strong>kv</strong> (Key/Value), the most basic to store password (like 1Password)
    * <strong>nomad</strong> (from HashiCorp)
