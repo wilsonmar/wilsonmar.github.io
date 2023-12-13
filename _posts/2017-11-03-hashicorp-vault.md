@@ -18,26 +18,28 @@ comments: true
 
 HashiCorp's Vault is used by enterprises to centrally secure <a href="#types-of-secrets">all manner of secrets</a> in a way that spans <a href="#multi-cloud">multiple clouds</a>. 
 
-The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained, so you use HashiCorp Vault with less manual copy/paste and typing. Thus, quicker with less mistakes. All in one page for easy search.
-
 {% include whatever.html %}
 
-## But it takes a village
+## This is serious, folks
 
-PROTIP: It may be reassuring for your boss, auditors, and customers to know that you're using Vault.
+PROTIP: HashiCorp Vault is popular not because of its convenience to developers. 
+The product is <strong>imposed</strong> on developers to enhance the ability of the organization to survive.
 
-If you're a developer, you may be able to get a Vault instance running on your laptop, but that's not the same as a production instance.
-
-They ask "how long have you proven the resilience of your production Vault instance?" because the answer is a sign of your organization's maturity -- ability to survive.
-
-Unless regular Chaos Engineering "War Games" are conducted to <strong>prove</strong> that a Vault instance is resilient to imposed failure, it's not ready for reliance as production.
-
-Traditionally, enterprises have "production operations" teams to provide "adult supervision" of systems that must stay up. 
-
-Vault must stay up. A Vault instance in production is the heart of your data center. If that goes down, everything else cannot function.
-
+A Vault instance in production is the beating heart of your data center. If that goes down, your data center dies.
 Loss of secrets in your Vault may make it impossible to recover from a disaster.
+So production Vault instances must stay up, despite disasters occuring.
 
+Executives, auditors, and customers ask this question to judge the maturity of your organization:
+
+   <ul><strong>How long have you <strong>proven</strong> the resilience of your production Vault instance?</strong></ul>
+
+Unless regular Chaos Engineering "War Games" are conducted to prove that a Vault instance is resilient to <strong>imposed failure modes</strong>, 
+it is actually NOT ready for reliance for productive use.
+
+
+## It takes a village
+
+So, traditionally, enterprises establish several teams to provide "adult supervision" of systems that must stay up. 
 Several teams are needed to make Vault (and other production systems) work:
 
 1. There is a <strong>Financials team</strong> to provide accounts that will stay active. This team proactively makes sure to switch to a new credit card BEFORE it expires. This team makes sure that the credit card used remains paid. This is the team that dispenses accounts with fine-grained budgets and makes sure that overspend alerts are resolved quickly. They define tags and include scanners to ensure their use. To ensure that things don't "fall through the cracks", they provide operational teams with <strong>group emails</strong> that are sent to multiple people. 
