@@ -367,6 +367,7 @@ Experiments, Features, Models, Serving
 
 <a target="_blank" href="https://www.databricks.com/learn/training/lakehouse-fundamentals-accreditation#video"><img align="right" width="200" alt="databricks-menu-ml.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702358670/databricks-fund-badge-320x349_pzh9r7.png"></a>
 
+* <a target="_blank" href="https://learning.oreilly.com/live-events/databricks-data-engineer-associate-certification-prep-in-2-weeks/0636920093415/">CLASS</a>: Databricks Data Engineer Associate Certification Prep in 2 Weeks
 
 * <a target="_blank" href="https://learning.oreilly.com/videos/-/12212024VIDEOPAIML/">2h 21m VIDEO</a>: Databricks Certified Data Engineer Associate By Alfredo Deza and Noah Gift Publisher:Pragmatic AI Solutions December 2023 
 
@@ -403,6 +404,6 @@ August 2022
 1h 39m
 covers Spark Dbmlops 
 
-* <a target="_blank" href="https://learning.oreilly.com/videos/-/032232022VIDEOPAIML/" title="Publisher:Pragmatic AI Solutions">>VIDEO</a>: MLOps Platforms From Zero: Databricks, MLFlow/MLRun/SKLearn By Alfredo Deza and Noah Gift
+* <a target="_blank" href="https://learning.oreilly.com/videos/-/032232022VIDEOPAIML/" title="Publisher:Pragmatic AI Solutions">VIDEO</a>: MLOps Platforms From Zero: Databricks, MLFlow/MLRun/SKLearn By Alfredo Deza and Noah Gift
 March 2022 
 2h 26m
