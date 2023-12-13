@@ -73,13 +73,27 @@ That means installation of Vault is dependent on effective installation of subsi
    * An anonymous "Suggestion Box" for individuals to communicate around gatekeepers to Executives
    
    * A system (such as GitHub) to share and collaborate on generating code and documentation, to ensure that everyone is on the same page
-   * A system (such as Jenkins) to automate work
+   * A system (such as Jenkins) to automate workflows so security checks are performed automatically, to minimize disruption
    * A system (such as Slack) for individual employees and vendors to communicate with each other, to ensure that everyone is on the same page
    * A system (such as Jira) to request of individual employees' actions (such as completing security updates), to ensure timely completion by every employee
    * A system (such as PagerDuty) to escalate alerts automatically whenever response is delayed, to ensure rapid response to events
 
    * An employee evaluation system that exposes what managers need to improve as well as what employees need to improve
    * A metrics collection and visualization system used to identify improvements rather than to isolate punishments, because improvements need to be team efforts
+   <br /><br />
+
+<hr />
+
+## Why is a system needed for secrets?
+
+Questions for secrets management:
+
+   1. How do applications get secrets?
+   1. How do humans acquire secrets?
+   1. How are secrets updated? (rotated)
+   1. How is a secret revoked?
+   1. When were secrets used? (lookup in usage logs)
+   1. What do we do in the event of compromise? (an unauthorized third-party, such as hackers, make use of the secret)
    <br /><br />
 
 <hr />
@@ -185,7 +199,7 @@ But what HashiCorp Vault offers is <strong>centralizing</strong> secrets handlin
    Only the storage backend (which durably stores encrypted data) and the HTTP API are outside the barrier which is sealed and unsealed.
 
 
-### Enterprise worthy features
+### Enterprise-worthy features
 
 There is also various levels of paid "Enterprise" edition which companies install themselves in a cloud or on-prem. In large companies, Vault is usually installed, configured, and maintained by a 
 <strong>Platform Team</strong> (formerly "Administrators" or "SysAdmins").
@@ -227,7 +241,7 @@ HashiCorp continues to provide Vault free under open-source licensing, with comm
 <a href="#OSSVaultInstall">To install the open-source edition of Vault</a>, 
 use Homebrew on macOS, etc. 
 
-NOTE: HashiCorp does not offer support contracts (in addition to community support)
+PROTIP: HashiCorp does not offer support contracts (in addition to community support)
 on its open-source software.
 
 
@@ -292,13 +306,29 @@ HashiCorp supports several technologies that developers and operations people ne
 
    * GUI on a website (operated as SaaS or on-prem/cloud server)
 
-   * CLI on a Terminal used by developers accessing a web service when dealing with files
+   * CLI on a Terminal used by developers accessing a web service when dealing with files. The CLI is a wrapper performing API calls.
 
-   * API calls by application programs (including the Vault CLI agent program installed)
+   * <a href="#API+calls>API calls</a> by application programs (including the Vault CLI agent program installed)
 
    * Declarative JSON code for Infrastructure as Code (IaC) using Terraform, Ansible, etc. to install and configure Vault
 
 HashiCorp's Vault provides tools to work with each of the above.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM">VIDEO: Introduction to HashiCorp Vault</a> Mar 23, 2018
+by Armon Dadgar, HashiCorp's CTO,
+is a whiteboard talk about avoiding "secret sprawl" living in clear text with
+empheral (temporary) passwords and cryptographic offload to a central service:
+<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM"><img alt="hashicorp-vault-dadgar-927x522-94211" src="https://user-images.githubusercontent.com/300046/38281567-67193598-3768-11e8-9061-ebc6abbeb1e9.jpg"></a>
+
+1. Machine authentication and authorization focuses on proving a machine’s identity and authorizing
+what a machine is enabled to do.
+
+2. Machine-to-machine access is about controlling which machines are allowed to speak to one another.
+
+3. Human-to-machine access concerns how we control which humans are allowed to speak to which
+machines.
+
+4. Human authentication and authorization uses third-party identity tools to enable single sign-on. 
 
 NOTE: HashiCorp doesn't currently offer mobile apps.
 
@@ -576,7 +606,7 @@ Documentation on HCP Vault in the cloud:
 
     * <a href="#WebUI">Web UI</a>
     * <a href="#AccessCLI">Command-line (CLI)</a> Linux Terminal commands within Bash scripts
-    * <a href="#APICalls">API</a> (REST calls invoked by the CLI and by application programs written in Python, Go, etc.)
+    * <a href="#API+calls">API</a> (REST calls invoked by the CLI and by application programs written in Python, Go, etc.)
     <br /><br />
 
     We show each in sequence below, starting from the Web UI, then CLI and API.
@@ -757,7 +787,7 @@ is a client daemon that provides:
 
 <hr />
 
-<a name="APICalls"></a>
+<a name="API+calls"></a>
 
 ## API calls
 
@@ -917,28 +947,6 @@ database_password = get_secret('db_pass')
    <br /><br />
 
 
-## Different ways to access secrets 
-
-<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM">VIDEO: Introduction to HashiCorp Vault</a> Mar 23, 2018
-by Armon Dadgar, HashiCorp's CTO,
-is a whiteboard talk about avoiding "secret sprawl" living in clear text with
-empheral (temporary) passwords and cryptographic offload to a central service:
-<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM"><img alt="hashicorp-vault-dadgar-927x522-94211" src="https://user-images.githubusercontent.com/300046/38281567-67193598-3768-11e8-9061-ebc6abbeb1e9.jpg"></a>
-
-1. Machine authentication and authorization focuses on proving a machine’s identity and authorizing
-what a machine is enabled to do.
-
-2. Machine-to-machine access is about controlling which machines are allowed to speak to one another.
-
-3. Human-to-machine access concerns how we control which humans are allowed to speak to which
-machines.
-
-4. Human authentication and authorization uses third-party identity tools to enable single sign-on. 
-
-Administrators and users can interact with Vault using its GUI, CLI, or API.
-Its CLI is a wrapper performing API calls.
-
-
 <hr />
 
 ## Vault client install
@@ -983,19 +991,6 @@ Capabilities that Vault does not address (for Zero-Trust), but other HashiCorp p
    * Consul: Replace perimeter-based security referencing static IP addresses with dynamic <strong>identity-based security</strong>
    * Simulated phising: Avoid being a victim of phishing. Don't respond to email links, unknown calls & text without verification.
    <br /><br />
-
-## Why is a system needed for secrets?
-
-Questions for secrets management:
-
-   1. How do applications get secrets?
-   1. How do humans acquire secrets?
-   1. How are secrets updated? (rotated)
-   1. How is a secret revoked?
-   1. When were secrets used? (lookup in usage logs)
-   1. What do we do in the event of compromise? (an unauthorized third-party, such as hackers, make use of the secret)
-   <br /><br />
-
 
 
 <hr />
@@ -1612,8 +1607,22 @@ export VAULT_NAMESPACE="admin"
 1. Paste the value ???
 
 
+<hr />
 
-## API to access HCP Vault
+<a name="WithinCode"></a>
+
+## Within App Programming Code
+
+Even though the "12 Factor App" advocates for app programming code to obtain secret data from <strong>environment variables</strong> (rather than hard-coding them in code stored within GitHub). 
+So, populating environment variables with clear-text secrets would occur outside the app, in the run-time environment.
+Seveal utilities have been created for that:
+
+   * <a target="_blank" href="https://github.com/jamhed/govaultenv">https://github.com/jamhed/govaultenv</a> includes access to <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a> (but not clouds AWS, GCP, etc.).
+
+   <a name="Daytona"></a>
+   * The Daytona Golang CLI client from Cruise (the autonomous car company) at <a target="_blank" href="https://github.com/cruise-automation/daytona">https://github.com/cruise-automation/daytona</a> is written in <strong>Golang</strong> to be a "lighter, alternative, implementation" Vault client CLI services and containers. It automates authentication, fetching of secrets, and token renewal to Kubernetes, AWS, and GCP. Daytona is performant because it pre-fetches secrets upon launch and store them either in environment variables, as JSON in a specified file, or as singular or plural secrets in a specified file.
+
+### API to access HCP Vault
 
    * https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-apis
    * https://learn.hashicorp.com/tutorials/vault/getting-started-apis
@@ -1797,22 +1806,6 @@ Secrets are requested based on a <strong>specification of secrets</strong> to be
    <ul><pre>production/third-party#api-key</pre></ul>
 
 Credentials authorizing retrieval requests are defined ...
-
-<hr />
-
-<a name="WithinCode"></a>
-
-## Within App Programming Code
-
-Even though the "12 Factor App" advocates for app programming code to obtain secret data from <strong>environment variables</strong> (rather than hard-coding them in code stored within GitHub). 
-So, populating environment variables with clear-text secrets would occur outside the app, in the run-time environment.
-Seveal utilities have been created for that:
-
-   * <a target="_blank" href="https://github.com/jamhed/govaultenv">https://github.com/jamhed/govaultenv</a> includes access to <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a> (but not clouds AWS, GCP, etc.).
-
-   <a name="Daytona"></a>
-   * The Daytona Golang CLI client from Cruise (the autonomous car company) at <a target="_blank" href="https://github.com/cruise-automation/daytona">https://github.com/cruise-automation/daytona</a> is written in <strong>Golang</strong> to be a "lighter, alternative, implementation" Vault client CLI services and containers. It automates authentication, fetching of secrets, and token renewal to Kubernetes, AWS, and GCP. Daytona is performant because it pre-fetches secrets upon launch and store them either in environment variables, as JSON in a specified file, or as singular or plural secrets in a specified file.
-
 
 <hr />
 
@@ -2090,7 +2083,7 @@ The utility is written in the Haskell language under a 3-clause BSD license and 
 <a name="OptionD"></a>
 <a name="InstallServer"></a>
 
-## Install Server binaries
+## Option D: Install Server binaries
 
 Precompiled Vault binaries are available at <a target="_blank" href="https://releases.hashicorp.com/vault/">https://releases.hashicorp.com/vault</a>
 
@@ -2153,7 +2146,7 @@ It is well suited for cloud environments where HSMs are either not available or 
 <a name="OptionC"></a>
 <a name="VaultCompose"></a>
 
-## Docker Compose of Vault server
+## Option C: Docker Compose of Vault server
 
 <pre>brew install docker
 brew install docker-compose  # now a plug-in to docker
