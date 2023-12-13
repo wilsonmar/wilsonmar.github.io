@@ -40,19 +40,19 @@ Loss of secrets in your Vault may make it impossible to recover from a disaster.
 
 Several teams are needed to make Vault (and other production systems) work:
 
-1. There is a <strong>Financials team</strong> to provide accounts that will stay active. This team proactively makes sure to switch to a new credit card BEFORE it expires. This team makes sure that the credit card used remains paid. This is the team that dispenses accounts with fine-grained budgets and makes sure that overspend alerts are resolved quickly. To ensure that things don't "fall through the cracks", they may provide operational teams with <strong>group emails</strong> that are sent to multiple people. 
+1. There is a <strong>Financials team</strong> to provide accounts that will stay active. This team proactively makes sure to switch to a new credit card BEFORE it expires. This team makes sure that the credit card used remains paid. This is the team that dispenses accounts with fine-grained budgets and makes sure that overspend alerts are resolved quickly. They define tags and include scanners to ensure their use. To ensure that things don't "fall through the cracks", they provide operational teams with <strong>group emails</strong> that are sent to multiple people. 
 
-2. There is an <strong>Access team</strong> that defines what accounts are given out to whom. This team is an internal customer to HR, obtaining metadata about workers to ensure that joiners are equipped to become productive quickly with all the permissions they need, and none that they don't. This team doesn't have access to app secrets. This team also ensures that leavers are quickly removed from all accounts and permissions.
+2. There is a <strong>Business Owner</strong> responsible for the organization's success (including compliance with regulations and standards). This person defines the budgets and who is granted permissions. This person gives approval before each backup is destroyed. 
 
-3. There is a <strong>Business Owner</strong> responsible for the organization's success (including compliance with regulations and standards). This person defines the budgets and who is granted permissions. This person gives approval before each backup is destroyed. 
+3. There is an <strong>Access team</strong> that ensures "Least Privilege" by defining what accounts are given out to which job roles, departments, and projects. This team obtains from HR metadata about worker changes -- to ensure that joiners are equipped to become productive quickly with all the permissions they need, and none that they don't. This team also ensures that leavers are quickly removed from all accounts and permissions. This team doesn't have access to app secrets. 
 
-4. There is an <strong>Internal Audit</strong> team that reports on performance against SLAs, after setting up and maintaining <strong>observability systems</strong> to collect and process metrics (including availability, performance, accuracy, etc.). This team has read-only access to ensure that the organization is compliant with all relevant regulations and standards. This team includes the SOC (Security Operations Center) which operates around the clock to detect and respond to alerts and incidents.
+4. There is an <strong>Internal Audit</strong> team that reports on the organization's performance against SLAs -- after setting up and maintaining <strong>observability systems</strong> to collect and process metrics (including availability, performance, accuracy, etc.). This team has read-only access to ensure that the organization is compliant with all relevant regulations and standards. This team includes the SOC (Security Operations Center) which operates around the clock to detect and respond to alerts and incidents.
 
 5. There is a <strong>Platform team</strong> that installs, configures, and updates Vault technologies. This team creates the automation and training assets to ensure developers work efficiently and securely. This team has read-only access to logs (but limited access to app data values).
 
 6. There are <strong>Developers</strong> who create and maintain <strong>utilities and libraries</strong> that other developers use to develop their applications -- providing a consistent way yet quickly updatable way to access secrets and perform other tasks. 
 
-So set up your Vault instance based on a structure such as the above.
+So set up your Vault instance based on an organizational structure with consideration of the above.
 
 
 
