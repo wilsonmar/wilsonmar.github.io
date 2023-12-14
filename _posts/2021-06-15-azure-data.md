@@ -1041,7 +1041,7 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
    * <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/instructions/02-configure-throughput.html#create-a-serverless-account">HANDS-ON</a>: Create a serverless account
    * <a target="_blank" href="https://microsoftlearning.github.io/dp-420-cosmos-db-dev/instructions/02-configure-throughput.html#create-a-serverless-account">HANDS-ON</a>: Create a provisioned account
 
-   ### terraform
+   ### Terraform
 
    Alternately, look at <a target="_blank" href="https://wilsonmar.github.io/terraform/">my notes about using Terraform</a>
    because many companies now require that skill to ensure consistency across environments, security, etc.
