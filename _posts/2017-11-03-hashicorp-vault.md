@@ -22,7 +22,7 @@ HashiCorp's Vault is used by enterprises to centrally secure <a href="#types-of-
 
 ## This is serious, folks
 
-PROTIP: HashiCorp Vault is useful not because it provides convenience to developers (although it does). 
+PROTIP: HashiCorp Vault is useful not because it provides convenience to developers (although <a href="#ForDevs">it does</a>). 
 The product is <strong>imposed</strong> (top down) on developers to enhance the ability of the organization to survive.
 
 Mechanisms to maintain secrets in production is the beating heart of a data center. 
@@ -59,7 +59,35 @@ Several teams are needed to make Vault (and other production systems) bullet-pro
 
 The above implements the principle of "<strong>separation of concerns</strong>" with "checks and balances".
 
+The typical arrangement is a differentiation between Service Owners vs. Security Owners:
+
+<strong>Service Owners</strong> are responsible for:
+   * Operational Access
+   * Authentication Methods
+   * Reliability of Vault (Availability reporting)
+   <br /><br />
+
+<strong>Security Owners</strong> are responsible for:
+   * Authorization Methods
+   * Secrets Policy
+   * Rotation Strategy
+   * Data, Application, and Systems Access
+   <br /><br />
+
+
+<a name="Centralization"></a>
+
+### Centralization policy
+
 PROTIP: Set up your Vault instance based on an organizational structure with consideration of the above. Executives need to clarify (in a formal statement) the corporate policy regarding centralization -- should each project/department/division have its own set of teams to manage separate Vault instances (dev, test, prod) -- to <strong>limit the blast radius</strong> in case of a compromise? Or should there be a single <strong>central</strong> team to manage the entire organization?
+
+Centralization enables a common set of <strong>policies</strong> to be enforced globally, with a consistent set of secrets and keys are exposed to applications so they can interoperate.
+
+Many of the <a target="_blank" href="https://www.forbes.com/lists/global2000/?sh=79d491635ac0">"Forbes Global 2000" largest companies in the world</a> license Vault's Enterprise capabilities to <strong>centralize management of secrets</strong> for both faster response to changes to personnel and systems.
+
+Installation and maintenance of Vault requires some configuration and tuning along with changes in workflows.
+
+So it is assumed that Vault server and SaaS offerings provide a <strong>central group</strong> of people to provide a <strong>concerted approach</strong> to guarding their employer's secrets handling by employees.
 
 
 ### Pre-requisite systems
@@ -75,7 +103,7 @@ That means installation of Vault is dependent on effective installation of subsi
    * A system (such as GitHub) to share and collaborate on generating code and documentation, to ensure that everyone is on the same page
    * A system (such as Jenkins) to automate workflows so security checks are performed automatically, to minimize disruption
    * A system (such as Slack) for individual employees and vendors to communicate with each other, to ensure that everyone is on the same page
-   * A system (such as Jira) to request of individual employees' actions (such as completing security updates), to ensure timely completion by every employee
+   * A system (such as Jira) to request individual employees' actions (such as completing security updates), to ensure timely completion by every employee
    * A system (such as PagerDuty) to escalate alerts automatically whenever response is delayed, to ensure rapid response to events
 
    * An employee evaluation system that exposes what managers need to improve as well as what employees need to improve
@@ -86,14 +114,16 @@ That means installation of Vault is dependent on effective installation of subsi
 
 ## Why is a system needed for secrets?
 
-Questions for secrets management:
+Successful installation of HashiCorp Vault enables organizations to confidently answer questions for secrets management for <a target="_blank" href="https://wilsonmar.github.io/caiq/">CAIQ</a>, SOC2/ISO270xx, and other audits:
 
    1. How do applications get secrets?
    1. How do humans acquire secrets?
    1. How are secrets updated? (rotated)
    1. How is a secret revoked?
    1. When were secrets used? (lookup in usage logs)
-   1. What do we do in the event of compromise? (an unauthorized third-party, such as hackers, make use of the secret)
+
+   1. How would you know when a compromise has occurred?
+   1. What occurs in the event of compromise? (an unauthorized third-party, such as hackers, make use of the secret)
    <br /><br />
 
 <hr />
@@ -995,39 +1025,6 @@ Capabilities that Vault does not address (for Zero-Trust), but other HashiCorp p
 
 <hr />
 
-
-<a name="Centralization"></a>
-
-## Centralization
-
-Centralization enables a common set of <strong>policies</strong> to be enforced globally, with a consistent set of secrets and keys are exposed to applications so they can interoperate.
-
-and policy management that is highly available and scaleable as the number of clients and their functional needs increase. 
-
-### Centralized Security Pros
-
-Many of the <a target="_blank" href="https://www.forbes.com/lists/global2000/?sh=79d491635ac0">"Forbes Global 2000" largest companies in the world</a> license Vault's Enterprise capabilities to <strong>centralize management of secrets</strong> for both faster response to changes to personnel and systems.
-
-Installation and maintenance of Vault requires some configuration and tuning along with changes in workflows.
-
-So it is assumed that Vault server and SaaS offerings provide a <strong>central group</strong> of people to provide a <strong>concerted approach</strong> to guarding their employer's secrets handling by employees.
-
-The typical arrangement is a differentiation between Service Owners vs. Security Owners:
-
-<strong>Service Owners</strong> are responsible for:
-   * Operational Access
-   * Authentication Methods
-   * Reliability of Vault (Availability reporting)
-   <br /><br />
-
-<strong>Security Owners</strong> are responsible for:
-   * Authorization Methods
-   * Secrets Policy
-   * Rotation Strategy
-   * Data, Application, and Systems Access
-   <br /><br />
-
-
 <a name="Tasks"></a>
 
 ## RBAC Tasks
@@ -1911,7 +1908,12 @@ NOTE: Labs timeout every 2 hours.
 
    <pre>vault operator init</pre>
 
-1. Alternately, use <strong>Cloud Auto Unseal</strong> by retrieving a Master Key by supplying a Key ID stored in a HSM within a cloud (AWS KMS, Google Cloud KMS, Azure Key Vault, etc.). For example, in the Vault config file:
+
+### Auto Unseal using Transit Secret Engine
+
+1. <a target="_blank" href="https://learning.oreilly.com/videos/hashicorp-certified/9781805129417/9781805129417-video3_9/">VIDEO</a>: Alternately, use <strong>Cloud Auto Unseal</strong> by using the "Transit Secret Engine" to of a different Vault cluster to retrieve a Master Key configured in a Namespace. 
+
+   By supplying a Key ID stored in a HSM within a cloud (AWS KMS, Google Cloud KMS, Azure Key Vault, etc.). For example, in the Vault config file:
 
    <pre>seal "awskms" {
   region = "us-east-1"
@@ -1924,8 +1926,86 @@ NOTE: Labs timeout every 2 hours.
 
    PROTIP: Vault configuration files are at <tt>/etc/vault.d/vault.hcl</tt>
 
-   NOTE: The Master Key remains memory-resident in a Vault Node memory and not stored.
+   NOTE: The Master Key remains memory-resident in Vault Node memory and not stored.
 
+   "disable_renewal" means Transit Unseal supports key rotation.
+
+1. Enable the Transit Secret Engine:
+
+   <pre><strong>vault secrets enable transit</strong></pre>
+
+   <pre>Success! Enabled the transit secrets engine at: transit/</pre>
+
+1. Write:
+
+   <pre><strong>vault write -f transit/keys/unseal-key ; vault list transit/key</strong></pre>
+
+   <pre>Success! Data written to: transit/keys/unseal-key</pre>
+
+1. Create <tt>policy.hcl</tt> file:
+
+   <pre>path "transit/encrypt/unseal-key" {
+  capabilities = ["update"]
+  }
+path "transit/decrypt/unseal-key" {
+   capabilities = ["update"]
+   }
+    </pre>
+
+   <pre><strong>vault policy write unseal policy.hcl ; vault policy list</strong></pre>
+
+   <pre>Success! Upload policy: unseal</pre>
+
+1. TODO: Configure the token_duration default.
+
+1. Capture the token value created for policy:
+
+   <pre><strong>vault token create -policy=unseal</strong></pre>
+
+   <pre>Key        Value</pre>
+---        -----
+token      s.v9dkc24rbFGargHd034droGGG
+   </pre>
+
+1. Switch to vault1 to <tt>sudo vi /etc/vault.d/vault.hcl</tt>
+
+   <pre>seal "transit" {
+  address = "https://vault2.example.com:8200"
+  token = "s.v9dkc24rbFGargHd034droGGG"
+  disable_renewal = "false"
+  # key config:
+  key_name = "unseal-key"
+  mount_path = "transit/"
+  namespace = "ns1/"
+
+   # TLS config:
+   tls_ca_cert = "/etc/vault/ca_cert.pem"
+   tls_client_cert = "/etc/vault/client_cert.pem"
+   tls_client_key = "/etc/vault/ca_cert.pem"
+   tls_server_name = "vault"
+   tls_skip_verify = "false"
+   }
+}
+   </pre>
+
+1. Restart Vault1 (with auto unseal):
+
+   <pre><strong>sudo systemctl restart vault
+vault status
+vault operator init >null/void
+   </strong></pre>
+
+   <pre>Key                  Value</pre>
+---                   -----
+Recovery Seal Type    transit
+   </pre>
+
+1. Initialize Vault1 without sending Recovery keys to console:
+
+   <pre><strong>vault operator init >null/void
+   </strong></pre>
+
+1. Write a secret into vault to confirm.
 
 
 <a name="TransitEngine"></a>
@@ -4369,6 +4449,13 @@ https://www.youtube.com/watch?v=c3SLWu3BoQo
     <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/cloud/vault-introduction">NOTE</a>: 
     Auto-unseal is configured. A unique Key Management Service (KMS) key is created for each cluster.
 
+<hr />
+
+## Resources
+
+https://www.g2.com/categories/certificate-lifecycle-management-clm
+
+https://www.appvia.io/blog/managing-kubernetes-secrets-with-hashicorp-vault-vs-azure-key-vault
 
 
 <hr />

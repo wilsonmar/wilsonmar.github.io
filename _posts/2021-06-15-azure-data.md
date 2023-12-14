@@ -1246,7 +1246,63 @@ $200 Annual subscription for all classes at
 https://customer-academy.databricks.com/learn
 Six 2 hour "Get Started" E-learning classes
 
+https://learning.oreilly.com/library/view/-/9781789809718/
+Azure Databricks Cookbook By Phani Raj and Vinod Jaiswal
+Publisher:Packt Publishing
+September 2021
+452 pages
 
+https://learning.oreilly.com/library/view/-/9781801077347/
+Data Modeling for Azure Data Services
+By Peter ter Braake
+Publisher:Packt Publishing
+July 2021
+428 pages
+
+https://learning.oreilly.com/library/view/-/9781837634811/
+Azure Architecture Explained
+By David Rendón and Brett Hargreaves
+Publisher:Packt Publishing
+September 2023
+446 pages
+
+https://learning.oreilly.com/library/view/-/9781837633012/
+A Developer's Guide to .NET in Azure
+By Anuraj Parameswaran and Tamir Al Balkhi
+Publisher:Packt Publishing
+October 2023
+504 pages
+
+https://learning.oreilly.com/videos/-/10000MNLV202178/
+Secrets Management with Terraform
+By <a target="_blank" href="https://www.linkedin.com/in/scott-winkler/">Scott Winkler</a>
+Publisher:Manning Publications
+July 2020
+1h 10m
+
+https://learning.oreilly.com/library/view/-/9780137908790/
+Designing and Developing Secure Azure Solutions
+By Michael Howard, Simone Curzi and Heinrich Gantenbein
+Publisher:Microsoft Press
+November 2022
+528 pages
+
+https://learning.oreilly.com/library/view/-/9780137593163/
+Microsoft Azure Storage: The Definitive Guide
+By Avinash Valiramani
+Publisher:Microsoft Press
+September 2023
+304 pages
+
+https://learning.oreilly.com/library/view/-/9781484296783/
+Design and Deploy a Secure Azure Environment: Mapping the NIST Cybersecurity Framework to Azure Services
+By Puthiyavan Udayakumar
+Publisher:Apress
+September 2023
+714 pages
+
+
+<hr />
 
 <a name="HDInsight"></a>
 
@@ -1545,6 +1601,12 @@ https://www.twitch.tv/425show
 <hr />
 
 ## Resources
+
+https://www.youtube.com/watch?v=N_Ta23hIBaI
+19:48 Q&A in detail</a> by Ravikiran Srinivasulu, Microsoft Azure Data PM
+
+https://www.youtube.com/watch?v=oj5inTNyRW8
+1:32:49 Q&A</a> by Creative Solutions
 
 ## More #
 
