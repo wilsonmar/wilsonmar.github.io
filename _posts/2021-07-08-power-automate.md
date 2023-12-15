@@ -54,15 +54,13 @@ This article aims to clarify the confusing terminology and product names, and pr
 
    ### Power Automate
 
-   <a target="_blank" href="https://make.powerautomate.com/">https://make.powerautomate.com/</a>
+   <a target="_blank" href="https://make.powerautomate.com/"><strong>https://make.powerautomate.com/...</strong></a>
 
-   * "Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 2016.
-   * "Power Automate" also replaces SharePoint 2010 Flows introduced November 2020.
-   * "Power Automate" is one of Microsoft's "Power Platform" offerings for "citizen developers" using low-code development tools.
+   "Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 2016.<br />
+   "Power Automate" also replaces SharePoint 2010 "Flows" introduced November 2020.<br />
+   "Power Automate" is one of Microsoft's "Power Platform" offerings for "citizen developers" using low-code development tools.
 
    ### Menus
-
-1. Click "More" and click  the pin for all items:
 
    <table cellpadding="0" cellspacing="0">
    <tr align="left"><th> make.powerautomate.com </th><th> make.powerapps.com </th></tr>
@@ -71,36 +69,37 @@ This article aims to clarify the confusing terminology and product names, and pr
    </td></tr>
    </table>
 
-<!-- <img alt="power-automate-menu-410x1444.png" width="203" src="https://user-images.githubusercontent.com/300046/125302215-f96ea480-e2e8-11eb-8020-0ed15e56752e.png"></a>
--->
+   <!-- <img alt="power-automate-menu-410x1444.png" width="203" src="https://user-images.githubusercontent.com/300046/125302215-f96ea480-e2e8-11eb-8020-0ed15e56752e.png"></a>
+   -->
 
-In their menu, both have Learn (either at the top or bottom), Create, Data, AI Builder.
+1. The above shows after menu items after clicking "More" and clicking to pin all items.
 
-
-   ### Power Platform
+   In their menu, both have Learn (either at the top or bottom), Create, Data, AI Builder.
 
 1. Click the "Power Platform" link at the left menu for these options:
+
+   ### Power Platform
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702646881/power-platform-610x502_b036ni.png"><img alt="power-platform-610x502.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702646881/power-platform-610x502_b036ni.png"></a>
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr align="left"><th> Feature </th><th> Component Name </th><th> Usage </th></tr>
-   <tr valign="top"><td> App dev </td><td> Power Apps </td><td> Low-code custom mobile/web app development environment - designer GUI for Flows.
+   <tr align="left"><th> Component Name </th><th> Usage </th></tr>
+   <tr valign="top"><td>Power Apps </td><td> App dev: Low-code custom mobile/web app development environment - designer GUI for Flows.
       </td></tr>
-   <tr valign="top"><td> Analytics and visualization </td><td> Power BI </td><td> -
+   <tr valign="top"><td> Power BI </td><td> Analytics and visualization
       </td></tr>
-   <tr valign="top"><td> - </td><td> Power Pages </td><td> -
+   <tr valign="top"><td> Power Pages </td><td> -
       </td></tr>
-   <tr valign="top"><td> Chatbots </td><td> Power Virtual Agent and visualization </td><td> -
+   <tr valign="top"><td> Power Virtual Agent and visualization </td><td> Chatbots
       </td></tr>
 
-   <tr valign="top"><td> Database store </td><td> Microsoft Dataverse </td><td> DaaS (Database as a Service) common data services
+   <tr valign="top"><td> Microsoft Dataverse </td><td> Database: DaaS (Database as a Service) common data services
       </td></tr>
-   <tr valign="top"><td> External interfaces </td><td> Connectors </td><td> to exchange data with established and custom APIs
+   <tr valign="top"><td> Connectors </td><td> External interfaces to exchange data with established and custom APIs
       </td></tr>
-   <tr valign="top"><td> AI/ML form processing </td><td> AI Builder </td><td> - 
+   <tr valign="top"><td> AI Builder </td><td> AI/ML form processing 
       </td></tr>
-   <tr valign="top"><td> Automation </td><td> Power Automate Desktop </td><td> RPA (UI Flows designer)
+   <tr valign="top"><td> Power Automate Desktop </td><td> Windows RPA (Robotic Process Automation) UI Flows designer
       </td></tr>
    </table>
 
@@ -114,10 +113,6 @@ In their menu, both have Learn (either at the top or bottom), Create, Data, AI B
    <br /><br />
 
 
-
-https://learn.microsoft.com/en-us/collections/y3e6sdd7nmm0rk
-Microsoft Power Platform Virtual Training Day: Automate Business Processes
-Edited on 1/17/2023
 
 ## Competitors 
 
@@ -144,8 +139,11 @@ Personas:
 * Functional Consultant
 <br /><br />
 
-To be certified a <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-app-maker/">"Power Platform App Maker Associate"</a>, score 70% on the <a target="_blank" href="https://learn.microsoft.com/en-us/certifications/exams/pl-100?ns-enrollment-type=Collection&ns-enrollment-id=y3e6sdd7nmm0rk">$165 Exam PL-100: Microsoft Power Platform App Maker - Certifications</a>. 
+https://learn.microsoft.com/en-us/collections/y3e6sdd7nmm0rk
+Microsoft Power Platform Virtual Training Day: Automate Business Processes
 
+To be certified a <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-app-maker/">"Power Platform App Maker Associate"</a>, score 70% on the <a target="_blank" href="https://learn.microsoft.com/en-us/certifications/exams/pl-100?ns-enrollment-type=Collection&ns-enrollment-id=y3e6sdd7nmm0rk">
+$165 Exam PL-100: Microsoft Power Platform App Maker - Certifications</a>. 
 The <a target="_blank" href="https://aka.ms/PL100-StudyGuide">Study Guide</a> details what is covered:
 
    * Design business solutions (20–25%)
@@ -155,7 +153,7 @@ The <a target="_blank" href="https://aka.ms/PL100-StudyGuide">Study Guide</a> de
 
 1. Read through the text in <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/pl-100t00">course PL-100T100</a>
 
-   1. Describe the business value of the Microsoft Power Platform
+   1. Describe the business value of the <a href="#Power+Platform">Microsoft Power Platform</a>
    1. How to build your first model-driven app with Dataverse
    1. Create tables in Dataverse
 
@@ -224,6 +222,9 @@ The <a target="_blank" href="https://aka.ms/PL100-StudyGuide">Study Guide</a> de
 
    * <strong>Unattended RPA</strong>
    <br /><br />
+
+   https://powerautomate.microsoft.com/en-us/pricing/
+
 
 <hr />
 
