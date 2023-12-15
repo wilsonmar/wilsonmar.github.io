@@ -109,6 +109,49 @@ This article aims to clarify the confusing terminology and product names, and pr
    * "Power Automate Desktop" is also called "UI Flows".
    <br /><br />
 
+1. Click the "X" to dismiss the "Power Platforms" dialog.
+
+   ### Licensing
+
+   NOTE: There are two types of <strong>flows</strong> which serve different but complementary purposes in an organization’s overall business process management (BPM) strategies and initiatives:
+   
+1. Click "Home", then the "Compare plans" under "Pricing" at
+
+   <a target="_blank" href="https://powerautomate.microsoft.com/en-us/pricing/">https://powerautomate.microsoft.com/en-us/pricing</a>
+
+   Each "Premium" license enables an individual <strong>human user</strong> to run <strong>attended mode</strong> automate processes.
+   
+   Each "Process" license enables an <strong>unattended bot</strong> to run with minimal human supervision. This the higher cost.
+
+   * "cloud flows (DPA)" (Digital Process Automation) run on internet browsers (Microsoft Edge, Google Chrome, etc.)
+   
+   * "desktop flows" run by <strong>Power Automate Desktop</strong> on Windows machines is also called RPA (Remote Process Automation) aka "UI Flows".
+   
+   "Power Automate Desktop is available to Windows 10 users at no additional cost" means that you can install it, but using it and creating "Flows" for others to run requires licensing.
+
+   Each license includes a limited resources:
+   
+   * Mining data storage - 50 MB
+   
+   * AI Builder credits - 5,000 
+
+   * Dataverse entitlements of 250 MB database and 2 GB file
+
+1. Microsoft's Power Automate marketing homepages: 
+
+   <a target="_blank" href="https://powerautomate.microsoft.com/en-us/">https://powerautomate.microsoft.com/en-us</a>
+
+   https://www.microsoft.com/en-us/power-platform/products/power-automate
+
+
+   REMEMBER: <strong>Each "Flow" is a distinct (automated) workflow, akin to a program module.</strong>
+
+
+
+   https://powerautomate.microsoft.com/en-us/pricing/
+
+
+
 
    <br /><br />
 
@@ -200,38 +243,17 @@ The <a target="_blank" href="https://aka.ms/PL100-StudyGuide">Study Guide</a> de
    7. Testing & deployment<br />
    
 
-## Licensing
-
-   PROTIP: Know the cost implications of different Flow types at<br />
-   <a target="_blank" href="https://flow.microsoft.com/en-us/pricing">https://flow.microsoft.com/en-us/pricing</a>
-
-   "Power Automate Desktop is available to Windows 10 users at no additional cost" means that you can install it, but using it and creating "Flows" for others to run requires licensing.
-
-1. Microsoft's Power Automate marketing homepages: 
-
-   <a target="_blank" href="https://powerautomate.microsoft.com/en-us/">https://powerautomate.microsoft.com/en-us</a>
-
-   https://www.microsoft.com/en-us/power-platform/products/power-automate
-
-
-   REMEMBER: <strong>Each "Flow" is a distinct (automated) workflow, akin to a program module.</strong>
-
-   There are two types of Flows which serve different but complementary purposes in an organization’s overall business process management (BPM) strategies and initiatives:
-
-   * <strong>Attended RPA</strong> is actually <strong>DPA (Digital Process Automation)</strong>, which is not intended to fully replace tasks completed by humans.
-
-   * <strong>Unattended RPA</strong>
-   <br /><br />
-
-   https://powerautomate.microsoft.com/en-us/pricing/
-
-
 <hr />
 
 <a name="UserMenuItems"></a>
 
 ## User Menu Items
 
+* 
+
+   ### Approvals
+
+   Requires a license.
 
    ### Monitor
 
