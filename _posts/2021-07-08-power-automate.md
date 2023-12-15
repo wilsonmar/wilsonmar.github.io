@@ -28,9 +28,7 @@ This article aims to clarify the confusing terminology and product names, and pr
    * <a target="_blank" href="https://docs.microsoft.com/en-us/power-automate/getting-started">Quickstart</a>:
    <br /><br />
 
-1. Get on the working website:
-
-   * If you're new to Microsoft and Azure, <a target="_blank" href="https://docs.microsoft.com/en-us/power-automate/sign-up-sign-in">Sign-up</a> and sign-in to:
+* If you're new to Microsoft and Azure, <a target="_blank" href="https://docs.microsoft.com/en-us/power-automate/sign-up-sign-in">Sign-up</a> and sign-in to:
 
    <a target="_blank" href="https://flow.microsoft.com/"><strong>https://flow.microsoft.com</strong></a>
 
@@ -40,11 +38,11 @@ This article aims to clarify the confusing terminology and product names, and pr
 
    Notice at the upper-left "Office 365".
 
-   * If you're a 365 Administrator, sign in using your Microsoft 365 credentials (@inmicrosoft.com) at:
+* If you're a 365 Administrator, sign in using your Microsoft 365 credentials (@inmicrosoft.com) at:
 
    <a target="_blank" href="https://admin.powerplatform.microsoft.com/">https://admin.powerplatform.microsoft.com</a>
 
-   * If you have an <strong>Office 365</strong> user account, sign on to:
+* If you have an <strong>Office 365</strong> user account, sign on to:
 
    <a target="_blank" href="https://www.office.com">office.com</a>
 
@@ -61,6 +59,23 @@ This article aims to clarify the confusing terminology and product names, and pr
    * "Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 2016.
    * "Power Automate" also replaces SharePoint 2010 Flows introduced November 2020.
    * "Power Automate" is one of Microsoft's "Power Platform" offerings for "citizen developers" using low-code development tools.
+
+   ### Menus
+
+1. Click "More" and click  the pin for all items:
+
+   <table cellpadding="0" cellspacing="0">
+   <tr align="left"><th> make.powerautomate.com </th><th> make.powerapps.com </th></tr>
+   <tr valign="top"><td><a href="#UserMenuItems"><img alt="power-automate-menu-410x1444.png" width="203" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702647834/power-automate-menu-410x1444_iqpku4.png"></a>
+   </td><td><a href="#DevMenuItems"><img alt="powerapp-menu-408x938" width="204" src="https://user-images.githubusercontent.com/300046/124976962-296a2f00-dfed-11eb-8d8c-d737d53cfecc.png"></a>
+   </td></tr>
+   </table>
+
+<!-- <img alt="power-automate-menu-410x1444.png" width="203" src="https://user-images.githubusercontent.com/300046/125302215-f96ea480-e2e8-11eb-8020-0ed15e56752e.png"></a>
+-->
+
+In their menu, both have Learn (either at the top or bottom), Create, Data, AI Builder.
+
 
    ### Power Platform
 
@@ -94,18 +109,6 @@ This article aims to clarify the confusing terminology and product names, and pr
    * "Power Automate Desktop" is also called "attended RPA" and "unattended RPA".
    * "Power Automate Desktop" is also called "UI Flows".
    <br /><br />
-
-   ### Menus
-
-   <table cellpadding="0" cellspacing="0">
-   <tr align="left"><th> make.powerautomate.com </th><th> make.powerapps.com </th></tr>
-   <tr valign="top"><td><a href="#UserMenuItems"><img alt="o365-menu-203x500.png" width="203" src="https://user-images.githubusercontent.com/300046/125302215-f96ea480-e2e8-11eb-8020-0ed15e56752e.png"></a>
-   </td><td><a href="#DevMenuItems"><img alt="powerapp-menu-408x938" width="204" src="https://user-images.githubusercontent.com/300046/124976962-296a2f00-dfed-11eb-8d8c-d737d53cfecc.png"></a>
-   </td></tr>
-   </table>
-
-In their menu, both have Learn (either at the top or bottom), Create, Data, AI Builder.
-
 
 
    <br /><br />
@@ -213,8 +216,6 @@ The <a target="_blank" href="https://aka.ms/PL100-StudyGuide">Study Guide</a> de
    https://www.microsoft.com/en-us/power-platform/products/power-automate
 
 
-
-
    REMEMBER: <strong>Each "Flow" is a distinct (automated) workflow, akin to a program module.</strong>
 
    There are two types of Flows which serve different but complementary purposes in an organization’s overall business process management (BPM) strategies and initiatives:
@@ -224,7 +225,11 @@ The <a target="_blank" href="https://aka.ms/PL100-StudyGuide">Study Guide</a> de
    * <strong>Unattended RPA</strong>
    <br /><br />
 
-   
+<hr />
+
+<a name="UserMenuItems"></a>
+
+## User Menu Items
 
 
    ### Monitor
