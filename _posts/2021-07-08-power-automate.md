@@ -128,14 +128,6 @@ This article aims to clarify the confusing terminology and product names, and pr
 
 1. Click the "X" to dismiss the "Power Platforms" dialog.
 
-   ### Learn
-
-1. Click the "Learn" menu item for the busy Documentation page at:
-
-   https://learn.microsoft.com/en-us/power-automate/?utm_source=flow-sidebar&utm_medium=web
-
-   https://learn.microsoft.com/en-us/training/browse/?products=ai-builder%2Cdataverse%2Cpower-apps%2Cpower-automate%2Cpower-bi
-
 
    ### Licensing
 
@@ -163,6 +155,18 @@ This article aims to clarify the confusing terminology and product names, and pr
 
    * Dataverse entitlements of 250 MB database and 2 GB file
 
+
+   ### Learn
+
+1. Click the "Learn" menu item for the busy Documentation page at:
+
+   https://learn.microsoft.com/en-us/power-automate/?utm_source=flow-sidebar&utm_medium=web
+
+   https://learn.microsoft.com/en-us/training/browse/?products=ai-builder%2Cdataverse%2Cpower-apps%2Cpower-automate%2Cpower-bi
+
+
+   ### Marketing pages
+
 1. Microsoft's Power Automate marketing homepages: 
 
    <a target="_blank" href="https://powerautomate.microsoft.com/en-us/">https://powerautomate.microsoft.com/en-us</a>
@@ -172,15 +176,9 @@ This article aims to clarify the confusing terminology and product names, and pr
 
    REMEMBER: <strong>Each "Flow" is a distinct (automated) workflow, akin to a program module.</strong>
 
-
+   https://powerautomate.microsoft.com/en-us/blog/introducing-approvals-kit/
 
    https://powerautomate.microsoft.com/en-us/pricing/
-
-
-
-
-   <br /><br />
-
 
 
 <hr />
