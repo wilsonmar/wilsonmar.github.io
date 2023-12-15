@@ -78,9 +78,11 @@ This article aims to clarify the confusing terminology and product names, and pr
 
 1. Click the "Power Platform" link at the left menu for these options:
 
-   ### Power Platform
+   ### Power Platform 
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702646881/power-platform-610x502_b036ni.png"><img alt="power-platform-610x502.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702646881/power-platform-610x502_b036ni.png"></a>
+
+   ### Brand Decoder
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr align="left"><th> Component Name </th><th> Usage </th></tr>
@@ -88,28 +90,52 @@ This article aims to clarify the confusing terminology and product names, and pr
       </td></tr>
    <tr valign="top"><td> Power BI </td><td> Analytics and visualization
       </td></tr>
-   <tr valign="top"><td> Power Pages </td><td> -
+   <tr valign="top"><td> Power Pages </td><td> create secure, low-code business websites
       </td></tr>
    <tr valign="top"><td> Power Virtual Agent and visualization </td><td> Chatbots
       </td></tr>
 
-   <tr valign="top"><td> Microsoft Dataverse </td><td> Database: DaaS (Database as a Service) common data services
+   <tr valign="top"><td> <a target="_blank" href="https://powerplatform.microsoft.com/en-us/dataverse/">Microsoft Dataverse</a> </td><td> Database: DaaS (Database as a Service) common data services<
       </td></tr>
-   <tr valign="top"><td> Connectors </td><td> External interfaces to exchange data with established and custom APIs
+   <tr valign="top"><td> <a target="_blank" href="https://powerplatform.microsoft.com/en-us/connectors/">Connectors</a> </td><td> External interfaces to exchange data with established and custom APIs
       </td></tr>
-   <tr valign="top"><td> AI Builder </td><td> AI/ML form processing 
+   <tr valign="top"><td> Task Mining </td><td> ?
       </td></tr>
-   <tr valign="top"><td> Power Automate Desktop </td><td> Windows RPA (Robotic Process Automation) UI Flows designer
+   <tr valign="top"><td> AI Builder </td><td> Infuse AI into flows (forms) with custom or prebuilt models. $500/month/unit
+      </td></tr>
+   <tr valign="top"><td> Power Automate Desktop </td><td> Windows RPA (Robotic Process Automation) UI Flows designer 
+      </td></tr>
+   <tr valign="top"><td> Copilot Studio </td><td> ?
+      </td></tr>
+   <tr valign="top"><td> Process Mining </td><td> Discover, visualize and analyze processes to identify opportunities to improve and optimize - $5,000/tenant/month
       </td></tr>
    </table>
 
    * "Power Automate Desktop" is the 2020 rebranding of "UI Flows" introduced in 2019.
    * "Power Automate Desktop" is also called "RPA" (Robotic Process Automation) and "DPA" (Digital Process Automation).
-   * "Power Automate Desktop" is also called "attended RPA" and "unattended RPA".
+   * "Power Automate Desktop" is also called "attended mode RPA" and "unattended mode RPA".
    * "Power Automate Desktop" is also called "UI Flows".
    <br /><br />
 
+   ### RPA Competitors 
+
+   RPA is an industry term. Others offering it:
+   * Automation Anywhere
+   * UiPath
+   * Tricentis
+   * etc.
+   <br /><br />
+
 1. Click the "X" to dismiss the "Power Platforms" dialog.
+
+   ### Learn
+
+1. Click the "Learn" menu item for the busy Documentation page at:
+
+   https://learn.microsoft.com/en-us/power-automate/?utm_source=flow-sidebar&utm_medium=web
+
+   https://learn.microsoft.com/en-us/training/browse/?products=ai-builder%2Cdataverse%2Cpower-apps%2Cpower-automate%2Cpower-bi
+
 
    ### Licensing
 
@@ -119,9 +145,9 @@ This article aims to clarify the confusing terminology and product names, and pr
 
    <a target="_blank" href="https://powerautomate.microsoft.com/en-us/pricing/">https://powerautomate.microsoft.com/en-us/pricing</a>
 
-   Each "Premium" license enables an individual <strong>human user</strong> to run <strong>attended mode</strong> automate processes.
+   Each $15/month "Premium" license enables a single individual <strong>human user</strong> to run <strong>attended mode</strong> automate processes.
    
-   Each "Process" license enables an <strong>unattended bot</strong> to run with minimal human supervision. This the higher cost.
+   Each $150/month "Process" license enables a single <strong>unattended bot</strong> to run with minimal human supervision.
 
    * "cloud flows (DPA)" (Digital Process Automation) run on internet browsers (Microsoft Edge, Google Chrome, etc.)
    
@@ -129,7 +155,7 @@ This article aims to clarify the confusing terminology and product names, and pr
    
    "Power Automate Desktop is available to Windows 10 users at no additional cost" means that you can install it, but using it and creating "Flows" for others to run requires licensing.
 
-   Each license includes a limited resources:
+   Each license includes some limited resources:
    
    * Mining data storage - 50 MB
    
@@ -156,15 +182,6 @@ This article aims to clarify the confusing terminology and product names, and pr
    <br /><br />
 
 
-
-## Competitors 
-
-On this Microsoft competes with:
-   * Automation Anywhere
-   * UiPath
-   * Tricentis
-   * etc.
-   <br /><br />
 
 <hr />
 
