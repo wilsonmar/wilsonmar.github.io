@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Power Automate"
-excerpt: "Microsoft's RPA (Robotic Process Automation) and DPA (Digital Process Automation) product to create and run low-code flows accessing various connectors, augmented by AI/ML"
-tags: [Clouds, IoT, Azure]
 date: "2021-12-12"
 file: "power-automate"
+title: "Power Automate"
+excerpt: "Reduce repetitive tasks using Microsoft's Windows RPA and DPA low-code flows accessing various connectors, augmented by AI/ML"
+tags: [Desktop, IoT, Windows]
 image:
 # ms-iot-hero-1900x500
   feature: https://user-images.githubusercontent.com/300046/71724170-8a0f1f00-2dec-11ea-8ceb-823f5abbb31d.jpg
@@ -16,77 +16,35 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This article provides a hands-on tour with commentary. 
+This article provides a hands-on tour with commentary to streamline repetitive tasks and paperless processes" with (Robotic Process Automation) and (Digital Process Automation) 
 
 {% include whatever.html %}
 
-Microsoft's PowerAutomate marketing homepage at <a target="_blank" href="https://powerautomate.microsoft.com/en-us/">https://powerautomate.microsoft.com/en-us</a> says: 
+This article aims to clarify the confusing terminology and product names, and provide a hands-on tour with commentary to streamline repetitive tasks and paperless processes" with (Robotic Process Automation) and (Digital Process Automation)
 
-> "Streamline repetitive tasks and paperless processes"
-
-Competitors to Microsoft are:
-   * Automation Anywhere
-   * UiPath
-   * Tricentis
-   * etc.
-   <br /><br />
-
-
-### MS Power Platform Components
-
-BTW "Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 2016 and also replaces SharePoint 2010 Flows introduced November 2020.
-
-"Power Automate" is one of Microsoft's "Power Platform" offerings for "citizen developers" using the low-code development platform:
-
-   <table border="1" cellpadding="4" cellspacing="0">
-   <tr><th> Feature </th><th> Component Name </th></tr>
-   <tr valign="top"><td> database store </td><td> Microsoft Dataverse </td><td> DaaS (Database as a Service) common data services
-      </td></tr>
-   <tr valign="top"><td> external interfaces </td><td> Connectors </td><td> to exchange data with established and custom APIs
-      </td></tr>
-   <tr valign="top"><td> AI/ML form processing </td><td> AI Builder </td><td> - 
-      </td></tr>
-   <tr valign="top"><td> automation </td><td> Power Automate Desktop </td><td> RPA (UI Flows designer)
-      </td></tr>
-   <tr valign="top"><td> app dev </td><td> Power Apps </td><td> low-code custom mobile/web app development environment
-      </td></tr>
-   <tr valign="top"><td> analytics and visualization </td><td> Power BI </td><td> -
-      </td></tr>
-   <tr valign="top"><td> chatbots </td><td> Power Virtual Agent and visualization -
-      </td></tr>
-   </table>
-
-   Menus are similar:
-
-   <table>
-   <tr align="left"><th> For users: </th><th> Fo developers: </th></tr>
-   <tr valign="top"><td><img alt="o365-menu-203x500.png" width="203" src="https://user-images.githubusercontent.com/300046/125302215-f96ea480-e2e8-11eb-8020-0ed15e56752e.png">
-   </td><td><img alt="powerapp-menu-408x938" width="204" src="https://user-images.githubusercontent.com/300046/124976962-296a2f00-dfed-11eb-8d8c-d737d53cfecc.png">
-   </td></tr></table>
-
-<strong>"Power App" is the designer GUI for Flows.</strong>
 
 ## Get Started
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/power-automate/getting-started">Quickstart</a>:
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/power-automate/getting-started">Quickstart</a>:
+   <br /><br />
 
-* If you're new to Microsoft and Azure, <a target="_blank" href="https://docs.microsoft.com/en-us/power-automate/sign-up-sign-in">Sign-up</a> and sign-in to:
+1. Get on the working website:
+
+   * If you're new to Microsoft and Azure, <a target="_blank" href="https://docs.microsoft.com/en-us/power-automate/sign-up-sign-in">Sign-up</a> and sign-in to:
 
    <a target="_blank" href="https://flow.microsoft.com/"><strong>https://flow.microsoft.com</strong></a>
 
    BTW <a target="_blank" href="https://powerautomate.com/">powerautomate.com</a> now redirects to<br />
-<a target="_blank" href="https://us.flow.microsoft.com/en-us/">https://us.flow.microsoft.com/en-us</a>
-if the server detects that you're from the US.
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/146571400-f73e1621-278d-45d2-80f9-902e84d8149c.png"><img align="right" width="200" alt="power-automate-menu-21-12-16-400x1098" src="https://user-images.githubusercontent.com/300046/146571400-f73e1621-278d-45d2-80f9-902e84d8149c.png"></a>
+   <a target="_blank" href="https://us.flow.microsoft.com/en-us/">https://us.flow.microsoft.com/en-us</a>
+   if the server detects that you're from the US.
 
    Notice at the upper-left "Office 365".
 
-* If you're a 365 Administrator, sign in using your Microsoft 365 credentials (@inmicrosoft.com) at:
+   * If you're a 365 Administrator, sign in using your Microsoft 365 credentials (@inmicrosoft.com) at:
 
    <a target="_blank" href="https://admin.powerplatform.microsoft.com/">https://admin.powerplatform.microsoft.com</a>
 
-* If you have an <strong>Office 365</strong> user account, sign on to:
+   * If you have an <strong>Office 365</strong> user account, sign on to:
 
    <a target="_blank" href="https://www.office.com">office.com</a>
 
@@ -94,26 +52,190 @@ if the server detects that you're from the US.
 
    <img width="349" alt="power-automate-office-211216-698x206" src="https://user-images.githubusercontent.com/300046/146636030-8f78be82-f7e3-439e-aa77-5bd49f32edca.png">
 
+1. Select your country. Click "Get Started" to arrive at:
+
+   ### Power Automate
+
+   <a target="_blank" href="https://make.powerautomate.com/">https://make.powerautomate.com/</a>
+
+   * "Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 2016.
+   * "Power Automate" also replaces SharePoint 2010 Flows introduced November 2020.
+   * "Power Automate" is one of Microsoft's "Power Platform" offerings for "citizen developers" using low-code development tools.
+
+   ### Power Platform
+
+1. Click the "Power Platform" link at the left menu for these options:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702646881/power-platform-610x502_b036ni.png"><img alt="power-platform-610x502.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702646881/power-platform-610x502_b036ni.png"></a>
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr align="left"><th> Feature </th><th> Component Name </th><th> Usage </th></tr>
+   <tr valign="top"><td> App dev </td><td> Power Apps </td><td> Low-code custom mobile/web app development environment - designer GUI for Flows.
+      </td></tr>
+   <tr valign="top"><td> Analytics and visualization </td><td> Power BI </td><td> -
+      </td></tr>
+   <tr valign="top"><td> - </td><td> Power Pages </td><td> -
+      </td></tr>
+   <tr valign="top"><td> Chatbots </td><td> Power Virtual Agent and visualization </td><td> -
+      </td></tr>
+
+   <tr valign="top"><td> Database store </td><td> Microsoft Dataverse </td><td> DaaS (Database as a Service) common data services
+      </td></tr>
+   <tr valign="top"><td> External interfaces </td><td> Connectors </td><td> to exchange data with established and custom APIs
+      </td></tr>
+   <tr valign="top"><td> AI/ML form processing </td><td> AI Builder </td><td> - 
+      </td></tr>
+   <tr valign="top"><td> Automation </td><td> Power Automate Desktop </td><td> RPA (UI Flows designer)
+      </td></tr>
+   </table>
+
+   * "Power Automate Desktop" is the 2020 rebranding of "UI Flows" introduced in 2019.
+   * "Power Automate Desktop" is also called "RPA" (Robotic Process Automation) and "DPA" (Digital Process Automation).
+   * "Power Automate Desktop" is also called "attended RPA" and "unattended RPA".
+   * "Power Automate Desktop" is also called "UI Flows".
+   <br /><br />
+
+   ### Menus
+
+   <table cellpadding="0" cellspacing="0">
+   <tr align="left"><th> make.powerautomate.com </th><th> make.powerapps.com </th></tr>
+   <tr valign="top"><td><a href="#UserMenuItems"><img alt="o365-menu-203x500.png" width="203" src="https://user-images.githubusercontent.com/300046/125302215-f96ea480-e2e8-11eb-8020-0ed15e56752e.png"></a>
+   </td><td><a href="#DevMenuItems"><img alt="powerapp-menu-408x938" width="204" src="https://user-images.githubusercontent.com/300046/124976962-296a2f00-dfed-11eb-8d8c-d737d53cfecc.png"></a>
+   </td></tr>
+   </table>
+
+In their menu, both have Learn (either at the top or bottom), Create, Data, AI Builder.
 
 
-## Menu items
+
+   <br /><br />
+
+
+
+https://learn.microsoft.com/en-us/collections/y3e6sdd7nmm0rk
+Microsoft Power Platform Virtual Training Day: Automate Business Processes
+Edited on 1/17/2023
+
+## Competitors 
+
+On this Microsoft competes with:
+   * Automation Anywhere
+   * UiPath
+   * Tricentis
+   * etc.
+   <br /><br />
+
+<hr />
+
+## Certifications
+
+Personas:
+
+* Administrator 
+* AI Builder
+* App Maker
+
+* Business Analyst
+* Business User
+
+* Functional Consultant
+<br /><br />
+
+To be certified a <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-app-maker/">"Power Platform App Maker Associate"</a>, score 70% on the <a target="_blank" href="https://learn.microsoft.com/en-us/certifications/exams/pl-100?ns-enrollment-type=Collection&ns-enrollment-id=y3e6sdd7nmm0rk">$165 Exam PL-100: Microsoft Power Platform App Maker - Certifications</a>. 
+
+The <a target="_blank" href="https://aka.ms/PL100-StudyGuide">Study Guide</a> details what is covered:
+
+   * Design business solutions (20–25%)
+   * Analyze and visualize data (10–15%)
+   * Create business solutions (60–65%)
+   <br /><br />
+
+1. Read through the text in <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/pl-100t00">course PL-100T100</a>
+
+   1. Describe the business value of the Microsoft Power Platform
+   1. How to build your first model-driven app with Dataverse
+   1. Create tables in Dataverse
+
+   1. Get started with model-driven apps in Power Apps
+   1. Create and manage columns within a table in Dataverse
+
+   1. Get started with security roles in Dataverse
+   1. Document and test your Power Apps application
+
+   1. Get started with Microsoft Dataverse for Teams
+   1. Build your first app with Power Apps and Dataverse for Teams
+
+   1. Create a canvas app in Power Apps
+   1. Navigation in a canvas app in Power Apps
+   1. How to build the UI in a canvas app in Power Apps
+   1. Use and understand Controls in a canvas app in Power Apps
+
+   1. Get started with Power Automate
+   1. Use the Admin center to manage environments and data policies in Power Automate
+   1. Introduction to Microsoft Power Platform security and governance
+   1. Build your first workflow with Power Automate and Dataverse for Teams
+
+   1. Get started building with Power BI
+   1. Get data with Power BI Desktop
+   1. Create reports with Power BI and Dataverse for Teams
+
+   1. Get started with AI Builder
+   1. Create a chatbot with Microsoft Copilot Studio and Dataverse for Teams
+   <br /><br />
+
+   https://learn.microsoft.com/en-us/training/paths/automate-process-power-automate/
+
+1. During a live course, you get help on <a target="_blank" href="https://aka.ms/pl100labs">step-by-step lab instructions at https://aka.ms/pl100labs</a> = https://microsoftlearning.github.io/PL-100-Microsoft-Power-Platform-App-Maker
+
+   Course introduction - Validate lab environment<br />
+   1. Introduction to Power Platform	- Design the solution<br />
+   2.1 Create a model-driven app - Data model and model-driven app<br />
+   2.2 Building model-driven apps - Business Process Flows and Business Rules<br />
+   3.1 Create a canvas app - Create apps in Teams<br />
+   3.2 Create a canvas app - Canvas app<br />
+   4. Power Automate<br />
+   5. Power BI<br />
+   6. AI builder and Power Virtual Agents - Create Power Virtual Agents in Teams<br />
+   7. Testing & deployment<br />
+   
+
+## Licensing
+
+   PROTIP: Know the cost implications of different Flow types at<br />
+   <a target="_blank" href="https://flow.microsoft.com/en-us/pricing">https://flow.microsoft.com/en-us/pricing</a>
+
+   "Power Automate Desktop is available to Windows 10 users at no additional cost" means that you can install it, but using it and creating "Flows" for others to run requires licensing.
+
+1. Microsoft's Power Automate marketing homepages: 
+
+   <a target="_blank" href="https://powerautomate.microsoft.com/en-us/">https://powerautomate.microsoft.com/en-us</a>
+
+   https://www.microsoft.com/en-us/power-platform/products/power-automate
+
+
+
 
    REMEMBER: <strong>Each "Flow" is a distinct (automated) workflow, akin to a program module.</strong>
 
    There are two types of Flows which serve different but complementary purposes in an organization’s overall business process management (BPM) strategies and initiatives:
 
    * <strong>Attended RPA</strong> is actually <strong>DPA (Digital Process Automation)</strong>, which is not intended to fully replace tasks completed by humans.
+
    * <strong>Unattended RPA</strong>
    <br /><br />
 
    
 
 
+   ### Monitor
+
 1. Under "Monitor" is where you'll see alerts, runs, and notifications for
 
    "Cloud Flow activity" for flows which run on the cloud
 
    "Desktop flow runs" for flows which run on <a target="_blank" href="https://docs.microsoft.com/en-us/power-automate/desktop-flows/manage-machines">"Machines"</a>.
+
+   ### Action Items 
 
 1. Action Items sub-menus are "Approvals" and "Business Process Flows"
 
@@ -156,7 +278,19 @@ if the server detects that you're from the US.
 
 1. Under Data, Connect to more than 500 data sources or any publicly available API.
 
-1. Under <a href="#AIBuilder">"AI Builder"</a>, select "Build". Notice the hostname changes to:
+   ### AI Builder
+
+1. Under <a href="#AIBuilder">"AI Builder"</a>, 
+
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-with-ai-builder/?ns-enrollment-type=Collection&ns-enrollment-id=y3e6sdd7nmm0rk">LEARN module</a>
+
+   Menu items:
+   * Build
+   * Models
+   * Document automation (preview)
+   <br /><br />
+
+   select "Build". Notice the hostname changes to:
 
    https://us.flow.microsoft.com/manage/environments/e77746a0-41e1-4543-9ec2-bc8732e6ad8b/aibuilder/build
 
@@ -166,10 +300,6 @@ if the server detects that you're from the US.
 
 1. <a target="_blank" href="https://docs.microsoft.com/en-us/power-automate/?utm_source=flow-sidebar&utm_medium=web">Learn</a> takes you to a <strong>separate tab</strong> containing documentation.
 
-
-   ### Power Automate
-
-   Expansion of items:
 
    Action Items:
    * Approvals
@@ -191,20 +321,16 @@ if the server detects that you're from the US.
    <br /><br />
 
    <a href="#AIBuilder">AI Builder</a>:
-   * Build
-   * Models
-   * Document automation (preview)
-   <br /><br />
 
    <a href="#ProcessAdvisor">Process advisor</a>:
+
+
+   ### Process Advisor
+
+   Sub-menu items:
    * Create
    * Processes
    <br /><br />
-
-
-   <a name="ProcessAdvisor"></a>
-
-   ### Process Advisor
 
    Process Advisor requires a "Premium" license.
 
@@ -239,17 +365,7 @@ if the server detects that you're from the US.
    Each Flow is processed by a <strong>bot</strong> (as in robot) created using "AI Builder".
 
 
-   <a name="Licensing"></a>
-
-   ## Licensing
-
-   PROTIP: Know the cost implications of different Flow types at<br />
-   <a target="_blank" href="https://flow.microsoft.com/en-us/pricing">https://flow.microsoft.com/en-us/pricing</a>
-
-   "Power Automate Desktop is available to Windows 10 users at no additional cost" means that you can install it, but using it and creating "Flows" for others to run requires licensing.
-
-
-
+   
    ### Social
 
    VIDEO: <a target="_blank" href="https://www.youtube.com/channel/UCgc3NEslE8oISOEawhcpMCA">Microsoft Power Platform YouTube channel</a>

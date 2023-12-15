@@ -60,14 +60,18 @@ Free to start, then pop-ups asking for money:
 
 ## Licensed IDEs :
 
-   * <a href="#JetBrains">From JetBrains</a>: <a target="_blank" href="https://wilsonmar.github.io/intellij/">IntelliJ for Java</a>, $200 PyCharm for Python, WebStorm and PhpStorm for JavaScript, etc.
-   * <a href="#VisualStudioForMac">Visual Studio 2019 for Mac from Microsoft</a>, ported from Visual Studio (for Windows), for developing <a target="_blank" href="https://wilsonmar.github.io/xamarion/">Xamarin</a>, MAUI, and Unity (3D) apps in the C# language
+   * <a href="#JetBrains">From JetBrains</a>: <a target="_blank" href="https://wilsonmar.github.io/intellij/">IntelliJ for Java</a>, $200 PyCharm for Python, WebStorm and PhpStorm for JavaScript, etc. 
+   * <a target="_blank" href="https://www.jetbrains.com/rider/">$169 JetBrains Rider</a> built using <a target="_blank" href="https://avaloniaui.net/">Avaloniaui.net</a>, a cross-platform spiritual successor to WPF. WPF, Silverlight, and UWP.
+   It comes with ReSharper for C#.
+   * <a href="#VisualStudioForMac">Visual Studio for Mac from Microsoft</a> does not officially support .NET 8 since it will be killed on August 2024. It was renamed when Microsoft purchased <a target="_blank" href="https://wilsonmar.github.io/xamarion/">Xamarin</a>, MAUI, and Unity (3D) apps in the C# language
    * $49.99 <a target="_blank" href="https://www.barebones.com/products/bbedit/">BBEdit</a> has a 30-day evaluation period.
    * <a target="_blank" href="https://www.activestate.com/products/komodo-ide/">multi-platform Komodo IDE</a> since 2018 is "free" as is part of an ActiveState Platform subscription. Its plug-ins are based on Mozilla add-ons such as a DOM Inspector.
 
 ## On-line (SaaS) :
 
 Browser-based subscriptions avoids need for setup and makes collaboration easier:
+
+   * <a target="_blank" href="https://github.com/features/codespaces">GitHub Codespaces</a>
 
    * <a href="#Cloud9">Cloud9 from Amazon</a> runs in an EC2 instance to provide a debugger and terminal to various dev environments for AWS Lambda serverless, CodeStar, CodeBuild, CodePipeline, etc.
 

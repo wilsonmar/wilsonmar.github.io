@@ -506,6 +506,9 @@ makes use of lab instructions in English at
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/azure-data-engineer/">LEARN</a>: Design for data security and compliance (25-30%)
    <br /><br />
 
+<a target="_blank" href="https://learning.oreilly.com/live-events/-/0636920093050/">Crash Course</a> Jan. 16, 2024 by Tim Warner
+
+
 <hr />
 
 <a name="DP-300"></a>

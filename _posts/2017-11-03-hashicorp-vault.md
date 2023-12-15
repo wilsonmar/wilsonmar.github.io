@@ -18,6 +18,8 @@ comments: true
 
 HashiCorp's Vault is used by enterprises to centrally secure <a href="#types-of-secrets">all manner of secrets</a> in a way that spans <a href="#multi-cloud">multiple clouds</a>. 
 
+Many of the <a target="_blank" href="https://www.forbes.com/lists/global2000/?sh=79d491635ac0">"Forbes Global 2000" largest companies in the world</a> license Vault's Enterprise capabilities to <strong>centralize management of secrets</strong> for both faster response to changes to personnel and systems.
+
 {% include whatever.html %}
 
 ## This is serious, folks
@@ -36,6 +38,8 @@ Executives, auditors, and customers ask this question to judge the maturity of y
 
 Unless regular Chaos Engineering "War Games" are conducted to prove that a Vault instance is resilient to <strong>imposed failure modes</strong>, 
 it should not be relied upon for productive use.
+
+> PROTIP: Gradual implementation of security features is like closing a wide-open bank vault door at 1 inch per day.
 
 
 ## It takes a village
@@ -83,7 +87,7 @@ PROTIP: Set up your Vault instance based on an organizational structure with con
 
 Centralization enables a common set of <strong>policies</strong> to be enforced globally, with a consistent set of secrets and keys are exposed to applications so they can interoperate.
 
-Many of the <a target="_blank" href="https://www.forbes.com/lists/global2000/?sh=79d491635ac0">"Forbes Global 2000" largest companies in the world</a> license Vault's Enterprise capabilities to <strong>centralize management of secrets</strong> for both faster response to changes to personnel and systems.
+PROTIP: Policies and procedures that clarify rotation of people through various roles enhance employee development and innovation.
 
 Installation and maintenance of Vault requires some configuration and tuning along with changes in workflows.
 
@@ -384,13 +388,13 @@ to provide Vault services and data running in memory only for demos and training
 to provide Vault services and data running in memory only for demos and training purposes.
 
 <a href="#OptionD">Option D</a>: 
-<a href="#InstallServer">Install</a> a "self-managed" 
+<a href="#InstallServer">Install</a> (for on-prem. use) a "self-managed" 
 <strong>single-node</strong> OSS Vault server using Packer to create a <strong>Docker image</strong> you install in your laptop/local machine for developer learning, based on <a target="_blank" href="https://github.com/hashicorp/vault-guides/blob/master/operations/provision-vault/best-practices/terraform-aws">"Provision a Best Practices Vault & Consul Cluster on AWS with Terraform"</a>.
 
 <a href="#OptionE">Option E</a>: Install a "self-managed" <strong>multi-node</strong> 
 OSS Vault server you install in your cloud environment (<a href="#AWS">AWS</a>, Azure, GCP, etc.). For HA (High Availability), <a target="_blank" href="https://learn.hashicorp.com/vault/operations/raft-reference-architecture">the "Vault with Integrated Storage Reference Architecture" document</a> recommends a Consul cluster with 5 Vault nodes over 3 availability zones (within a single Region). <a href="#InstallEKS">AWS EKS cluster</a>. Each node would use a TLS certificate for HTTPS protocol use.
 
-<a href="#OptionF">Option F</a>: Install a <strong>production</strong>, licensed, "self-managed" 
+<a href="#OptionF">Option F</a>: Install <strong>in a cloud a production</strong>, licensed, "self-managed" 
 Enterprise Vault instance. Various example configurations make use of various "feature flags" 
 and defaults to compose a particular combination consisting of, for example:
    * AWS, Azure, GCP cloud
@@ -2006,6 +2010,8 @@ Recovery Seal Type    transit
    </strong></pre>
 
 1. Write a secret into vault to confirm.
+
+1. Take a snapshot to establish a restore point.
 
 
 <a name="TransitEngine"></a>
@@ -3669,7 +3675,7 @@ describes "A unified interface to manage and encrypt secrets on the AWS Cloud".
 <a name="OptionE"></a>
 <a name="InstallEKS"></a>
 
-### Install Vault within AWS EKS cluster
+## Option E: Install Vault within AWS EKS cluster
 
 <a target="_blank" href="https://www.hashicorp.com/blog/announcing-the-vault-helm-chart/">
 HashiCorp's Helm chart to setup Vault in Kubernetes</a>
@@ -4456,6 +4462,23 @@ https://www.youtube.com/watch?v=c3SLWu3BoQo
 https://www.g2.com/categories/certificate-lifecycle-management-clm
 
 https://www.appvia.io/blog/managing-kubernetes-secrets-with-hashicorp-vault-vs-azure-key-vault
+
+### At Pluralsight.com
+
+<a target="_blank" href="https://app.pluralsight.com/paths/certificate/hashicorp-certified-vault-associate">
+"HashiCorp Certified: Vault Associate CERTIFICATION EXAM PREP</a> 6h 43m by Ned Bellavance (@ned1313, nedinthecloud.com)
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-certified-vault-associate-getting-started">21-03-03 "Hashicorp Certified Vault Associate: Getting Started"</a> 
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-certified-vault-associate-vault-management">21-04-11 "HashiCorp Certified Vault Associate: Vault Management"</a> 
+   <br /><br />
+
+<a target="_blank" href="https://app.pluralsight.com/paths/skill/implementing-and-managing-hashicorp-vault">
+PATH: "Implementing and Managing HashiCorp Vault"</a> consists of 4 video courses:
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-vault-installing-configuring">21-08-26 "Installing and Configuring HashiCorp Vault"  4h 28m</a> by Ned Bellavance 
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-vault-managing-access-secrets">21-10-11 "Managing Access and Secrets in HashiCorp Vault" 4h 28m</a> by George Smith
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-vault-integrating-devops-workflows">21-11-23 "Integrating HashiCorp Vault in DevOps Workflows"  4h 28m</a> by Chris Green
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-vault-server-managing">21-09-05 "Installing and Configuring HashiCorp Vault"  4h 28m</a> by S Panda
 
 
 <hr />

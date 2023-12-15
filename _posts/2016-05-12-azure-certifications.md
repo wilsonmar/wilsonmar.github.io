@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-22"
+date: "2023-12-14"
 file: "azure-certifications"
 title: "Azure (Microsoft cloud) certifications"
 excerpt: "Microsoft provides free hands-on (gamified) tutorials and free time"
@@ -112,7 +112,7 @@ Microsoft continues to <a target="_blank" href="https://docs.microsoft.com/en-us
    * 70-532 - Developing Microsoft Azure Solutions
    * 70-533 - Implementing Microsoft Azure Infrastructure Solutions
    * 70-534 - Architecting Azure Solutions
-   * 70-535 - Architecting Microsoft Azure Solutions (ARM templates)
+   * 70-535 - Architecting Microsoft Azure Solutions (ARM templates) <a target="_blank" href="https://trainingsupport.microsoft.com/en-us/mcp/forum/all/replacement-exam-of-70-535/5c030474-28e1-4baa-9282-f3bf7a5a6e58">replaced by AZ-300 and AZ-301 Jan 1, 2020</a>
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/70-537">70-538 - Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack</a> replaced by AZ-600 Stack Hub Operator Associate.
    <br /><br />
 
@@ -509,15 +509,20 @@ Video Lectures:
 
    PROTIP: I got a YouTube subscription to download videos for watching offline, so I can listen while I drive through spotty cell coverage areas.
 
-1. DEFUNCT: <a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course">Tim Warner and Mike Pfeiffer's CloudSkills.io</a> after collecting $1,000 from students before shutting down in 2021.
+DEFUNCT: <a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course">Tim Warner and Mike Pfeiffer's CloudSkills.io</a> after collecting $1,000 from students before shutting down in 2021. We felt cheated.
+Tim Warner:
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-administrator-preparing-az-104-exam">Pluralsight: Microsoft Azure Administrator: Preparing for the AZ-104 Exam 4 Oct 2020</a>
+   * <a target="_blank" href="https://learning.oreilly.com/live-events/exam-az-104-microsoft-azure-administrator-crash-course/0636920094475/">OReilly 5h Crash Course</a> Feb 13, 2024 referencing https://github.com/timothywarner/az104
+   <br /><br />
+
+OReilly:
+   * <a target="_blank" href="https://learning.oreilly.com/live-events/azure-administrator-certification-az-104-crash-course/0636920052897/0636920099990/">Azure Administrator Certification (AZ-104) Crash Course</a> Jan. 26, 2024 & Feb. 25, 2021 by Glenn Weadock   
 
 1. Michael J. Shannon takes a deep dive on a lightboard in <a target="_blank" href="https://learning.oreilly.com/videos/exam-az-104-microsoft/9780136823483/9780136823483-A104_01_01_01">9+ hours of videos with transcript from OReilly</a> 
 
 * Pluralsight has <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-azure-administrator-az-104">a series of videos for each domain</a>
 
 * <a target="_blank" href="https://cloudacademy.com/learning-paths/az-104-exam-preparation-microsoft-azure-administrator-1-1332/">CloudAcademy's learning path</a>, by Thomas Mitchell, provides quizzes along the way and <strong>time on actual Azure instances</strong>.
-
-* Tim Warner <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-administrator-preparing-az-104-exam">Pluralsight: Microsoft Azure Administrator: Preparing for the AZ-104 Exam</a>
 
 * <a target="_blank" href="https://cloudacademy.com/learning-paths/az-104-exam-preparation-microsoft-azure-administrator-1-1332/">
 CloudAcademy</a> provides lab time on the real Azure environment.

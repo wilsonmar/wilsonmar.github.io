@@ -1,5 +1,4 @@
 42Crunch.vscode-openapi
-ahmadawais.shades-of-purple
 alexcvzz.vscode-sqlite
 anfuchs.alexa-code-snippets
 antfu.icons-carbon
