@@ -42,7 +42,7 @@ This article aims to clarify the confusing terminology and product names, and pr
 
    <a target="_blank" href="https://admin.powerplatform.microsoft.com/">https://admin.powerplatform.microsoft.com</a>
 
-* If you have an <strong>Office 365</strong> user account, sign on to:
+* <a target="_blank" href="https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/sign-in-to-power-apps#sign-in-using-microsoft-account-preview">LEARN</a>: If you have an <strong>Office 365</strong> user account, sign on to:
 
    <a target="_blank" href="https://www.office.com">office.com</a>
 
@@ -56,6 +56,7 @@ This article aims to clarify the confusing terminology and product names, and pr
 
    <a target="_blank" href="https://make.powerautomate.com/"><strong>https://make.powerautomate.com/...</strong></a>
 
+   PROTIP:<br />
    "Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 2016.<br />
    "Power Automate" also replaces SharePoint 2010 "Flows" introduced November 2020.<br />
    "Power Automate" is one of Microsoft's "Power Platform" offerings for "citizen developers" using low-code development tools.
