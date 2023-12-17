@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-12-10"
+date: "2023-12-16"
 file: "azure-data"
 title: "Azure Data (within Microsft's cloud)"
 excerpt: "Obtain storage and database skills to pass DP-900, DP-100, DP-203, DP-300 exams"
@@ -15,7 +15,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/azure-data/">This</a> is the hands-on step-by-step tutorial I would give to a developer or administrator getting up and running <strong>managing data</strong> in the Azure cloud.
+This is a hands-on step-by-step tutorial I would give to a developer or administrator getting up and running <strong>managing data</strong> in the Azure cloud.
 
 This are my notes to study for specific data-related <a href="https://wilsonmar.github.io/azure-certifications/">Azure certification exams</a>:
 
@@ -73,6 +73,8 @@ Data is a valuable asset to organizations. Data is the new oil.
    * Generative AI (GAN) to create new images, videos, text, and audio use "Transformers" to understand the context of words based on the likelihood of words appearing together.
    * "Reinforcement learning" to learn from experience.
    * "war games"
+   <br /><br />
+
 
 ## Types of databases
 
@@ -96,11 +98,7 @@ The types of databases are: Key-value -> Column -> Document -> Relational (SQL) 
 
 A competitor to Delta metadata layer on top of Parquet is <a target="_blank" href="https://www.theregister.com/2023/01/03/apache_iceberg/">Apache Iceberg</a>, used by Snowflake, Cloudera, and Google's BigLake.
 
-The SQL language to manipulate data was invented in the 1970s (by IBM) and standardized as ISO 9075 in 1986.
-However, each database vendor have their own proprietary dialects. Oracle's PL/SQL. IBM's pgSQL.
-Microsft's T-SQL (for Transac-SQL) is a superset of SQL with additional commands (such as EXEC to rename databases).
-
-The SQL language has also been enhanced for use with "NoSQL", Graph, and now Datalake databases.
+<a target="_blank" href="https://wilsonmar.github.io/sql/">My notes about the SQL language is here</a>.
 
 The underlying <strong>format of files</strong> used to store data within Apache Spark, Hadoop "Big data" evolved from 
    1. RCFile to 
@@ -126,7 +124,11 @@ PROTIP: <a target="_blan" href="https://parquet.apache.org/">Apache's Parquet fi
    <br /><br />
 
 
-Let's first look at traditional SQL "relational" databases.
+## End-to-end Projects
+
+<a target="_blank" href="https://www.youtube.com/watch?v=iQ41WqhHglk">VIDEO</a> by <a target="_blank" href="https://www.linkedin.com/in/mrk-talkstech/">Mr. K Talks Tech</a>.
+
+First look at traditional SQL "relational" databases.
 
 ## Azure's SQL database products
 
@@ -233,6 +235,20 @@ Let's first look at traditional SQL "relational" databases.
 
 1. Click "Go to resource".
 
+
+<hr />
+
+## Azure Data Lake Storage Gen2 Storage
+
+Gen2 has the concept of having a single format to hold varioius "layers" in a new <a target="_blank" href="https://piethein.medium.com/medallion-architecture-best-practices-for-managing-bronze-silver-and-gold-486de7c90055">"Medallion architecture"</a> <a target="_blank" href="https://www.databricks.com/glossary/medallion-architecture">defined by Databricks</a>:
+
+   * The <strong>Bronze</strong> layer contains <strong>raw</strong> data layer as loaded "as is" from the source, such as ADF. Thus, this is also called a "Landing Zone". This layer provides a historical archive of source (cold storage), data lineage, auditability, reprocessing if needed without rereading the data from the source system.
+
+   * The <strong>Silver</strong> layer contains <strong>filtered, cleaned, and augmented</strong> data that ends up having a clean schema after traditional ETL processing.
+
+   * The <strong>Gold</strong> layer contains <strong>curated</strong> business-level aggregated data, such as what was in "Kimball-style star schema" analytics data warehouses ready to be read by OLAP, Business Intelligence (BI) and Machine Learning/AI models to make predictions.
+
+
 <hr />
 
 ## Other Azure services:
@@ -306,7 +322,7 @@ Answer 40-60 multiple-choice questions (no cases) in 180-minutes.
    * Describe Azure Table storage
    <br /><br />
 
-Describe capabilities and features of <a href="#CosmosDB">Azure Cosmos DB</a>
+Describe capabilities and features of <a href="#Cosmos+DB">Azure Cosmos DB</a>
    * Identify use cases for Azure Cosmos DB
    * Describe Azure Cosmos DB APIs
    <br /><br />
@@ -627,15 +643,18 @@ SQL DB Contributor:
    * manage SQL database 
    * can't manage their security-related policies or their parent SQL servers
    <br /><br />
+
 SQL Managed Instance Contributor:
    * manage SQL-managed instances and required network configuration
    * can't give access to others
    <br /><br />
+
 SQL Security Manager:
    * manage security-related <strong>policies</strong> of SQL servers and databases
    * no access to SQL servers
    <br /><br />
 
+   NOTE: SQL Security Manager is not available for SQL-Managed instances.
 
 <hr />
 
@@ -930,7 +949,9 @@ Pipelines:
 
 ## ACID Properties in Transactional data
 
-Atomicity - each transaction is treated as a ingle unit, which is successful completely or failed completely. Back-off intermediate changes.
+See https://www.sciencedirect.com/topics/computer-science/acid-properties
+
+Atomicity - each transaction is treated as a single unit, which is successful completely or failed completely. The server would refuse transactions until the previous one has committed. Failed intermediate changes are backed-off (undone).
 
 Consistency - transactions can only take the data in the database from one valid state to another.
 
@@ -942,7 +963,7 @@ Durability - once a transaction has been committed, it remains committed.
 
 <hr />
 
-<a name="CosmosDB"></a>
+<a name="Cosmos+DB"></a>
 
 ## Cosmos DB
 
@@ -1333,12 +1354,19 @@ MongoDB can be used as a file system called GridFS. It stores files up to 16TB w
 
 ## ADF
 
-Azure Data Factory (ADF) is Heterogenous - it has over 100 different connectors to various other systems.
-
 https://learn.microsoft.com/en-us/azure/data-factory/
 
-Linked service to Data Lake Store, Azure Databricks.
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/data-factory/concepts-integration-runtime/">ADF's Integration Runtime (IR)</a> provides the compute infrastructure to run data integration jobs. It can be installed on a machine in your on-premises network (self-hosted) or on a machine in Azure (Azure-SSIS).
 
+   * Data Flow
+   * Data movement
+   * Activity dispatch
+   * SSIS package execution
+   <br /><br />
+
+Azure Data Factory (ADF) is heterogenous - it has over 100 different connectors to various other systems.
+
+Linked service to Data Lake Store, Azure Databricks.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=YO7-XruyZvs" title="The difference between SQL Server and SQL Azure">VIDEO</a>:
 
@@ -1352,7 +1380,7 @@ Linked service to Data Lake Store, Azure Databricks.
 
    Integrate data silos with Azure Data Factory, a service built for all data integration needs and skill levels. Easily construct ETL and ELT processes code-free within the intuitive visual environment, or write your own code. Visually integrate data sources using more than 90+ natively built and maintenance-free connectors at no added cost. Focus on your data - the serverless integration service does the rest.
 
-   * No code or maintenance required to build hybrid ETL and ELT pipelines within the Data Factory visual environment
+   * No code or maintenance is required to build hybrid ETL and ELT pipelines within the Data Factory visual environment
    * Cost-efficient and fully managed serverless cloud data integration tool that scales on demand
    * Azure security measures to connect to on-premises, cloud-based, and software-as-a-service apps with peace of mind
    * SSIS integration runtime to easily rehost on-premises SSIS packages in the cloud using familiar SSIS tools
@@ -1385,6 +1413,8 @@ SSMS is integrated to visualize and work with Azure SQL, including SQL Server in
 
 https://docs.azure.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 Installer
+
+Microsoft SQL Server Data Tools (MDT)
 
 
 <a name="AzureDataStudio"></a>

@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-19"
+date: "2023-12-17"
 file: "prometheus"
 title: "Prometheus"
 excerpt: "Collect metrics (for visualization by Grafana), analyze using PromQL coding, and identify alerts, free from CNCF, especially for Kubernetes"
@@ -18,20 +18,25 @@ comments: true
 
 The name Prometheus comes from Greek mythology. The Titan Prometheus was an immortal servant of the gods, who stole fire and gave it to humankind. This changed the human race forever (for better and worse). But this made mankind dangerous to the gods. Ridley Scott named his <a target="_blank" href="https://www.imdb.com/title/tt1446714/trivia">2012 film "Prometheus"</a>, saying: "It's the story of creation; the gods and the man who stood against them." 
 
+<a target="_blank" href="https://prometheus.io/docs/introduction/overview/">https://prometheus.io/docs/introduction/overview/</a><br />
+The software named Prometheus was created by ex-Google SREs (Site Reliability Engineers) at SoundCloud in 2012. It was open-sourced in 2015 and joined the CNCF (Cloud Native Computing Foundation) in 2016 as its second hosted project after Kubernetes. So as would be expected, Prometheus works with K8s.
+
+## How it works
+
+<a target="_blank" href="https://www.youtube.com/watch?v=5GYe_-qqP30&t=15m14s">VIDEO</a>: <a target="_blank" href="https://7451111251303.gumroad.com/l/wzcnen">Get the file used to create this diagram</a>:<br />
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702812774/prometheus-arch-2940x1286_u2awin.png"><img alt="prometheus-arch-2940x1286.jpg" width="1531" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702812774/prometheus-arch-2940x1286_u2awin.png"></a>
+
+The main component of Prometheus is a <strong>run service</strong> that pulls or <strong>scrapes</strong> (gathers) metrics on <strong>target hosts</strong> and applications using instrumentation <a href="#Exporters">job exporters</a> or other  <strong>custom metric providers</strong> to expose metrics, either directly or via an intermediary <strong>push gateway</strong> for short-lived jobs. 
+
 Unlike the legacy "statsd" daemon which is concerned only with system-level metrics such as CPU, Memory, etc., the tool Prometheus (at <a target="_blank" href="https://prometheus.io/">https://prometheus.io</a>) gathers metrics from targets at the cluster, node, and microservice API levels.
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/58507263-8f1d3900-814e-11e9-93fe-327ca116d28d.jpg"><img alt="prometheus-v01-1531x644-58322.jpg" width="1531" src="https://user-images.githubusercontent.com/300046/58507263-8f1d3900-814e-11e9-93fe-327ca116d28d.jpg"></a>
-<a target="_blank" href="https://www.youtube.com/watch?v=5GYe_-qqP30&t=15m14s">*</a>
-
-Prometheus has a <strong>run service</strong> that pulls or <strong>scrapes</strong> (gathers) metrics on <strong>target hosts</strong> and applications using instrumention <a href="#Exporters">job exporters</a> or other  <strong>custom metric providers</strong> to expose metrics, either directly or via an intermediary <strong>push gateway</strong> for short-lived jobs. 
 
 In addition to static configurations, Prometheus can also <strong>discover targets</strong> to monitor with its <strong>Services Discovery</strong>.
 
-Prometheus stores scraped samples locally in its own multi-dimensional numeric <strong>time-series database</strong>. Unlike central data collectors (such as Splunk), each Prometheus server runs as distributed standalone and thus not dependent on network storage or other remote services. So it's available even when other parts of the infrastructure are broken.
+Prometheus stores scraped samples locally in its own multi-dimensional numeric <strong>time-series database</strong>. Unlike central data collectors (such as Splunk), each Prometheus server runs distributed standalone so thus not dependent on network storage or other remote services. So it's available even when other parts of the infrastructure are broken.
 
 <strong>Rules</strong> running in the Prometheus database either aggregate and record new time series from existing data. 
 
-Promethus provides multiple modes of graphing and dashboarding support, but also
+Prometheus provides multiple modes of graphing and dashboarding support, but also
 exposes its time-series data to <strong>API clients</strong> such as <strong>Grafana</strong> which make <a href="#PromQL">PromQL</a> (Prometheus query language) to extract data in order to display <strong>visualizations</strong> on their websites. 
 
 Because people can't be always watching such screens, Rules are also set in Prometheus to trigger <strong>alerts</strong> pushed to the <a href="#AlertManager">Alert Manager</a> which notifies end-points such as email, Slack, Pager Duty SMS, or other notification mechanisms.
@@ -41,6 +46,10 @@ Because people can't be always watching such screens, Rules are also set in Prom
 
 The $250 90-minute Prometheus Certified Associate (PCA) exam at https://training.linuxfoundation.org/certification/prometheus-certified-associate/
 is based on the <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/ProjectForethought.html">PaC (Project Forethought) application</a>, which is a simple to-do list program written in Node.js. It is Dockerized and deployed to a virtual machine. The application is instrumented with Prometheus client libraries to track metrics across the app. The exam's domains:
+
+   References:
+   * https://devopscube.com/prometheus-certified-associate/
+   <br /><br />
 
 18% Observability Concepts
    * Metrics
@@ -115,9 +124,12 @@ The $299 course "Monitoring Infrastructure and Containers with Prometheus" (LFS2
 24. Monitoring and Debugging Prometheus
 <br /><br />
 
-## Learning Environment
 
-The <a target="_blank" href="https://beta.linuxacademy.com/#/hands-on-labs/details/fe6f98da-ab26-48a6-9b58-edc6b3c1d808">"DevOps Monitoring Deep Dive"</a> video course by Elle Krout references an <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/ProjectForethought.html">interactive Lucid diagram called "ProjectForethought"</a> for the NodeJs simple to-do list program called Forethought that is the subject of monitoring. 
+## Learning
+
+<a target="_blank" href="https://app.pluralsight.com/search/?q=Prometheus">On Pluralsight.com</a>, the <a target="_blank" href="https://app.pluralsight.com/paths/skill/event-monitoring-and-alerting-with-prometheus">9-hour Event Monitoring and Alerting with Prometheus path</a> has 4 courses.
+
+The <a target="_blank" href="https://www.pluralsight.com/cloud-guru/courses/prometheus-deep-dive">12-hour "DevOps Monitoring Deep Dive" video course</a> by Elle Krout references an <a target="_blank" href="https://lucid.app/lucidchart/918602e0-14b7-473c-92e7-bfbc4a15ba8f/view?page=j8p68BdUlMFS#">interactive Lucid diagram called "ProjectForethought"</a> for the NodeJs simple to-do list program called Forethought that is the subject of monitoring. 
 
 1. Create within Linux Academy's <a target="_blank" href="https://playground.linuxacademy.com/server-list">Servers in the cloud</a>, the "DevOps Monitoring Deep Dive" distribution in a small-sized host. 
 1. When "READY", click the Distribution name "DevOps Monitoring Deep Dive" for details.
@@ -165,7 +177,7 @@ The <a target="_blank" href="https://beta.linuxacademy.com/#/hands-on-labs/detai
    NOTE: The Terminal is inside a Dockerized Ubuntu (18.04 Bionic Beaver LTS) image.
    So `apt-get` commands are used to install <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/4049/lesson/2/module/329">Prometheus</a>, <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/4049/lesson/3/module/329">Alertmanager</a>, and <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/4049/lesson/4/module/329">Grafana</a>.
 
-   The infrastructure is monitored by using Prometheus's Node Exporter and viewed statistic about our CPU, memory, disk, file system, basic networking, and load metrics. Also monitored are contrainers being using on virtual machines.
+   The infrastructure is monitored by using <a target="_blank" href="https://github.com/prometheus/node_exporter">Prometheus's Node Exporter</a> and viewed statistic about our CPU, memory, disk, file system, basic networking, and load metrics. Also monitored are contrainers being using on virtual machines.
 
    Once infrastructure monitoring is up and running, the basic Node.js application uses a Prometheus client libary to track metrics across the app.
 
