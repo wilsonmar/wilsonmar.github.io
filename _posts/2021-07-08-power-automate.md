@@ -57,6 +57,7 @@ This article aims to clarify the confusing terminology and product names, and pr
    <a target="_blank" href="https://make.powerautomate.com/"><strong>https://make.powerautomate.com/...</strong></a>
 
    PROTIP:<br />
+   "Power Automate" is for Process Automation.<br />
    "Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 2016.<br />
    "Power Automate" also replaces SharePoint 2010 "Flows" introduced November 2020.<br />
    "Power Automate" is one of Microsoft's "Power Platform" offerings for "citizen developers" using low-code development tools.
@@ -87,24 +88,30 @@ This article aims to clarify the confusing terminology and product names, and pr
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr align="left"><th> Component Name </th><th> Usage </th></tr>
-   <tr valign="top"><td>Power Apps </td><td> App dev: Low-code custom mobile/web app development environment - designer GUI for Flows.
+   <tr valign="top"><td> <a href="#Power+Apps">Power Apps</a> </td><td> App dev: Low-code custom mobile/web app development environment - designer GUI for Flows.
+      </td></tr>
+   <tr valign="top"><td> <a href="#Power+Pages">Power Pages</a> </td><td> Create secure, low-code business websites
       </td></tr>
    <tr valign="top"><td> Power BI </td><td> Analytics and visualization
       </td></tr>
-   <tr valign="top"><td> Power Pages </td><td> create secure, low-code business websites
+   <tr valign="top"><td> Power Virtual Agents </td><td> Chatbots
       </td></tr>
-   <tr valign="top"><td> Power Virtual Agent and visualization </td><td> Chatbots
+   <tr valign="top"><td> <a target="_blank" href="https://aka.ms/ppac">Power Platform Admin Center</a> </td><td> for Administrators
+      </td></tr>
+   <tr valign="top"><td> Power Automate Desktop </td><td> Windows RPA (Robotic Process Automation) UI Flows designer 
+      </td></tr>
+   <tr valign="top"><td> Power Fx </td><td> ?
+      </td></tr>
+   <tr valign="top"><td> <a href="#Managed+Environments">Managed Environments</a> </td><td> ?
       </td></tr>
 
    <tr valign="top"><td> <a target="_blank" href="https://powerplatform.microsoft.com/en-us/dataverse/">Microsoft Dataverse</a> </td><td> Database: DaaS (Database as a Service) common data services<
-      </td></tr>
+      </td></tr> 
    <tr valign="top"><td> <a target="_blank" href="https://powerplatform.microsoft.com/en-us/connectors/">Connectors</a> </td><td> External interfaces to exchange data with established and custom APIs
       </td></tr>
    <tr valign="top"><td> Task Mining </td><td> ?
       </td></tr>
-   <tr valign="top"><td> AI Builder </td><td> Infuse AI into flows (forms) with custom or prebuilt models. $500/month/unit
-      </td></tr>
-   <tr valign="top"><td> Power Automate Desktop </td><td> Windows RPA (Robotic Process Automation) UI Flows designer 
+   <tr valign="top"><td> AI Builder </td><td> Infuse AI into flows (forms) with custom or prebuilt models. $500/month/unit for 5,000 credits
       </td></tr>
    <tr valign="top"><td> Copilot Studio </td><td> ?
       </td></tr>
@@ -744,6 +751,60 @@ by Reza Dorrani
 https://docs.microsoft.com/en-us/learn/modules/introduction-power-automate/?ranMID=24542&ranEAID=je6NUbpObpQ&ranSiteID=je6NUbpObpQ-omnFLFQ1IfYU4qFyOjDc9A&epi=je6NUbpObpQ-omnFLFQ1IfYU4qFyOjDc9A&irgwc=1&OCID=AID2200057_aff_7593_1243925&tduid=(ir__90rmzhneiskfqkx0y92ssxlp0v2xubjcvz0m2puv00)(7593)(1243925)(je6NUbpObpQ-omnFLFQ1IfYU4qFyOjDc9A)()&irclickid=_90rmzhneiskfqkx0y92ssxlp0v2xubjcvz0m2puv00&ns-enrollment-type=LearningPath&ns-enrollment-id=learn-bizapps.wwl.power-plat-fundamentals
 
 on <a target="_blank" href="https://www.youtube.com/channel/UCgc3NEslE8oISOEawhcpMCA">Microsoft Power Platform YouTube channel</a>
+
+
+<hr />
+
+## Power Pages
+
+Low-code way to build model-driven data-centric desktop & mobile web pages, with enterprise RBAC security.
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=SG382TuFIaQ&pp=ygULcG93ZXIgcGFnZXM%3D">VIDEO: Introduction</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=R6CBtLBud2k&list=PLMLjnY5iPR3Wk1GbWPMIh6Tsn4zPBq6nd">Playlist: Power Platform</a> by <a target="_blank" href="https://www.linkedin.com/in/deshonclark/">DeShon Clark</a> (<a target="_blank" href=" http://spclassroom.com">spclassroom.com</a>) gives the best intro: Authentication can be using LinkedIn, etc. such as before becoming an employee.
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=uqYgq9wmgQg">What is Power Apps?</a> by Lisa Crosbie
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=QFNbPeGCBqo">How to use</a> by Kevin Stratvert
+   * <a target="_blank" href="https://www.youtube.com/watch?v=a2kTnelFyiw">Build web apps and connect to data faster using Microsoft Power Pages</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=ISQ55UNa6iI&list=PLib8Q64STW-sVvDIc5Fl2RCOBQ-7Qhx-H">Power Pages Tutorials Step by Step</a> by Dhruvin Shah
+   * <a target="_blank" href="https://www.youtube.com/watch?v=bH4YrvaQJPI&list=PLcwrIWK7WBcS-NgNucsU9cN74Zk2vM6hk">Playlist</a> by Pragmatic Works
+   
+   * <a target="_blank" href="https://www.youtube.com/watch?v=PGEHMnBl6dg">Connect to Dataverse</a>
+   <br /><br />
+
+Microsoft's Power Pages is based on the purchase of ADX Studio in 2015.
+
+"Power Pages" was renamed from "Power Apps Pages" in 2021.
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=eDy58Qi7vKU&list=PLJXMFihzhj53rwha4h7smb7nW-oSFWzfL">VIDEO: Intro</a> by <a target="_blank" href="https://www.linkedin.com/in/arpit-shrivastava-29747761/">Arpit Shrivastava</a> of <a target="_blank" href="https://arpitpowerguilde.com/">Arpit Power Guide</a> #PowerPages30DaysLearningChallenge series that ended on January 2023.
+
+### Licensing
+
+<a target="_blank" href="https://www.youtube.com/watch?v=XzW6XG-CdWU">VIDEO</a> by Bright Ideas Agency
+
+https://powerapps.microsoft.com/en-us/pricing/
+Premium licenses include Power Pages.
+For 2,000+ users, Microsoft offers a 40% discount.
+
+https://powerpages.microsoft.com/en-us/pricing/
+are just for Power Pages.
+
+https://learn.microsoft.com/en-us/power-platform/admin/powerapps-flow-licensing-faq#power-pages
+
+<a target="_blank" href="https://www.youtube.com/watch?v=o8oQSKaJlis&t=3m42s">VIDEO</a> tiers
+* $200/month for up to 100 authenticated users and 2 GB database and 16 GB file storage
+   $2/user/month for additional users
+* $75/month for up to 500 anonymous users and 500 MB database and 4 GB file storage
+   $0.15/user/month for additional users
+
+
+Pay-As-You-Go.
+
+
+<hr />
+
+## Managed Enviornments
+
 
 
 <hr />

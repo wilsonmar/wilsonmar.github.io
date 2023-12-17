@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-11"
+date: "2023-12-16"
 file: "aws-onboarding"
 title: "AWS Onboarding"
 excerpt: "Tips and tricks to get account. Lock down root accounts. Install and use the AWS CLI, securely"
@@ -566,6 +566,101 @@ Secure that email address with <strong>multi-factor authentication</strong> with
 
 <hr />
 
+## HashiCorp Terraform
+
+HashiCorp's Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently. 
+Terraform can manage existing and popular service providers as well as custom in-house solutions.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=nvNqfgojocs&t=8m25s">VIDEO</a>: To use <a target="_blank" href="https://wilsonmar.github.io/terraform">Terrafrom</a> IaC (Infrastructure as Code) to create a AWS EC2 instances (<a target="_blank" href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c">instead of Chef, Puppet, Ansible, etc.):
+
+   CAUTION: The AWS way of keeping credentials in the <tt>$HOME/.aws/credentials</tt> file is not secure because if your laptop is compromised or stolen, those secrets could be used without authentication. So many organizations request that secret credential files be temporary (valid for just one day). So some make available a corporate "Vending Machine" app which generates credentials instead of the manual process below.
+
+1. Click on your email at the upper-right corner to select "Security credentials" for the IAM page.
+1. Scroll to click "Create Access keys", "Command Line Interface".
+1. Check "I understand", "Next".
+1. Construct a Description tag value  that satisfies your organization's naming conventions.
+1. Click "Create access key".
+
+1. Switch to a Terminal to issue <tt>aws configure</tt> to specify the Access Key ID and Secret Access Key.
+
+   PROTIP: The <tt>aws configure</tt> command creates a file at <tt>$HOME/.aws/credentials</tt> with the Access Key ID and Secret Access Key.
+
+1. Switch back to the web page.
+1. Click the copy icon for the Access Key. Switch to your secret file and paste the value into a text file.
+1. Click the copy icon for the Secret Access key. Switch to your secret file and paste it into the same text file.
+1. Specify Default region such as <tt>us-east-1</tt> - the default.
+1. Specify Default output format <tt>json</tt>.
+
+1. Switch to the web page to click "Done".
+1. Identify a GitHub repo you want.
+
+1. Switch to the Terminal.
+1. Create or navigate to a folder for your GitHub account to receive repositories cloned.
+1. Get that sample Terraform repo, and cd into it.
+
+   <pre><strong>git clone https://github.com/wilsonmar/aws-ec2-micro.git --depth 1
+   cd aws-ec2-micro
+   </strong></pre>
+   
+   PROTIP: Typically, for secure production usage, many resources would be created, including roles to limit access. So using Terraform would be faster, easier, more accurate, and more secure than manual creation clicking and typing on the AWS Console GUI.
+
+1. Edit the files which specify the AWS provider described at <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs">https://registry.terraform.io/providers/hashicorp/aws/latest/docs</a>, such as this <tt>main.tf</tt> 
+
+   <pre>
+   provider "aws" {
+     region = "us-east-1"
+   }
+   resource "aws_instance" "example" {
+     ami           = "ami-0c55b159cbfafe1f0"
+     instance_type = "t2.micro"
+   }
+   </pre>
+
+   REMEMBER: The ami id is tied to the region and instance_type <a targete="_blank" href="https://www.appsloveworld.com/amazon-ec2/4/get-latest-ami-id-for-aws-instance">for which it was created</a>. For that reason, many run a Bash script to <a target="_blank" href="https://letslearndevops.com/2018/08/23/terraform-get-latest-centos-ami/">get the latest ami</a> or <a target="_blank" href="https://wilsonmar.github.io/packer">use the Packer utility</a> to <a target="_blank" href="https://github.com/hashicorp/packer/issues/2756">create a custom ami</a>. That is safer than referencing <a target="_blank" href="https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EC2/approved-golden-amis.html">"golden" ami images</a> created by another organization to meet compliance standards: APRA, MAS, and NIST4.
+
+   PROTIP: We recommend that you run a Bash shell file to select the latest ami and for whatever region was selected for the server instance_type. The script can confirm whether the instance_type specified is available in the region specified. The script would also have coding to set environment variables in a secure way, consistently over time among teammates. This also enables AWS Tags to be specified effortlessly, such as "CreatedBy" with your email address pulled in automatically. See my documentation.
+
+   <a target="_blank" href="https://serverfault.com/questions/369872/run-a-bash-script-after-ec2-instance-boots">PROTIP</a>: Many specify in the <tt>user_data</tt> section within the <tt>main.tf</tt> file Bash scripts containing Ansible commands to run immediately after EC2 instance boot up.
+
+1. A <tt>terraform.tfvars</tt> file is commonly specified to specify custom values to replace default values in the <tt>main.tf</tt> file.
+
+   PROTIP: The <tt>terraform.tfvars</tt> file may contain secrets, so its file name is specified in <tt>.gitignore</tt> to prevent it from being checked into GitHub.
+
+1. The script would <a target="_blank" href="https://spacelift.io/blog/terraform-provisioners">collect locally Terraform provider files</a> specified in the <tt>main.tf</tt> file:
+
+   <pre><strong>terraform init
+   </strong></pre>
+
+1. Run Terraform:
+
+   <pre><strong>terraform plan --auto-approve
+   terraform apply --auto-approve
+   </strong></pre>
+
+   The <tt>--auto-approve</tt> option is used to avoid the need to type "yes" to confirm.
+
+   PROTIP: A Bash script issuing the above commands would add additional steps such as checking for errors, to ensure that resources with vulnerabilities are not even created.
+
+1. Switch back to the web page to view the resources.
+
+1. Use the resources.
+
+1. Delete the resources previously created by Terraform files in the folder:
+
+   <pre><strong>terraform destroy</strong></pre>
+
+1. REMEMBER: Delete the credentials file after use.
+
+
+<a target="_blank" href="https://webinars.securityboulevard.com/controlling-cloud-costs-with-hashicorp-terraform">VIDEO</a>: HashiCorp has a "Sentinal" product component which enforces various fine-grained rules (policy sets) to what can be done by each role. It also estimates monthly cost from cloud usage.
+
+Rules in HashiCorp's <a target="_blank" href="https://www.hashicorp.com/resources/secure-your-cloud-with-terraform-foundational-policy-library/">
+Foundational Policy library</a> is at <a target="_blank" href="https://github.com/hashicorp/terraform-foundational-policies-library">https://github.com/hashicorp/terraform-foundational-policies-library</a>. Such "Policies as Code" are crafted based on <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks/">Center for Internet Security (CIS) Benchmarks</a> [<a target="_blank" href="https://www.cisecurity.org/wp-content/uploads/2018/03/CIS-Controls-Measures-and-Metrics-V7.pdf">pdf</a>] (including Compute, Databases, Kubernetes, Storage, Networks) covering Azure and GCP as well as AWS.
+
+
+
+<hr />
+
 <a name="ProgrammaticAccess"></a>
 
 ## Programmatic Access
@@ -842,15 +937,6 @@ PROTIP: Use different colors for lines and text to reduce visual confusion.
 You can also download a zip containing .png and .svg files of icons
 (AWS_Simple_Icons_EPS-SVG_v16.2.22.zip).
 
-
-<hr />
-
-## HashiCorp Terraform Enterprise
-
-<a target="_blank" href="https://webinars.securityboulevard.com/controlling-cloud-costs-with-hashicorp-terraform">VIDEO</a>: HashiCorp has a "Sentinal" product component which enforces various fine-grained rules (policy sets) to what can be done by each role. It also estimates monthly cost from cloud usage.
-
-Rules in HashiCorp's <a target="_blank" href="https://www.hashicorp.com/resources/secure-your-cloud-with-terraform-foundational-policy-library/">
-Foundational Policy library</a> is at <a target="_blank" href="https://github.com/hashicorp/terraform-foundational-policies-library">https://github.com/hashicorp/terraform-foundational-policies-library</a>. Such "Policies as Code" are crafted based on <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks/">Center for Internet Security (CIS) Benchmarks</a> [<a target="_blank" href="https://www.cisecurity.org/wp-content/uploads/2018/03/CIS-Controls-Measures-and-Metrics-V7.pdf">pdf</a>] (including Compute, Databases, Kubernetes, Storage, Networks) covering Azure and GCP as well as AWS.
 
 
 <hr />
