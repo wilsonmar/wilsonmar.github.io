@@ -162,7 +162,11 @@ Secure that email address with <strong>multi-factor authentication</strong> with
 
    ### Compare Support Plans
 
+   https://support.microsoft.com/en-us/home/contact?SourceApp=smcivr2
+
 1. Click <a target="_blank" href="https://console.aws.amazon.com/support/plans/home?#/">Amazon's Support Plan page here</a>.
+
+   Admins call (800) 865-9408 or (800) 642 7676 (toll-free, US only). Outside the United States, see <a target="_blank" href="https://support.microsoft.com/en-us/topic/global-customer-service-phone-numbers-c0389ade-5640-e588-8b0e-28de8afeb3f2">global support phone numbers</a>.
 
    The Basic account does not enable you to communicate with Amazon people who can answer technical questions.
 

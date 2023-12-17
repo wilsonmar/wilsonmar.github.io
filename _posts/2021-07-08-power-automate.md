@@ -96,7 +96,7 @@ This article aims to clarify the confusing terminology and product names, and pr
       </td></tr>
    <tr valign="top"><td> Power Virtual Agents </td><td> Chatbots
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://aka.ms/ppac">Power Platform Admin Center</a> </td><td> for Administrators
+   <tr valign="top"><td> <a target="_blank" href="https://aka.ms/ppac">Power Platform Admin Center</a> </td><td> for Administrators <a target="_blank" href="https://www.youtube.com/watch?v=PV4ortF3hR8">VIDEO</a> <a target="_blank" href="https://abouttmc.com/glossary/power-platform-admin-center/">BLOG</a>
       </td></tr>
    <tr valign="top"><td> Power Automate Desktop </td><td> Windows RPA (Robotic Process Automation) UI Flows designer 
       </td></tr>

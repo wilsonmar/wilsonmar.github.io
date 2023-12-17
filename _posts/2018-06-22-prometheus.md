@@ -19,14 +19,19 @@ comments: true
 The name Prometheus comes from Greek mythology. The Titan Prometheus was an immortal servant of the gods, who stole fire and gave it to humankind. This changed the human race forever (for better and worse). But this made mankind dangerous to the gods. Ridley Scott named his <a target="_blank" href="https://www.imdb.com/title/tt1446714/trivia">2012 film "Prometheus"</a>, saying: "It's the story of creation; the gods and the man who stood against them." 
 
 <a target="_blank" href="https://prometheus.io/docs/introduction/overview/">https://prometheus.io/docs/introduction/overview/</a><br />
-The software named Prometheus was created by ex-Google SREs (Site Reliability Engineers) at SoundCloud in 2012. It was open-sourced in 2015 and joined the CNCF (Cloud Native Computing Foundation) in 2016 as its second hosted project after Kubernetes. So as would be expected, Prometheus works with K8s.
+The software named Prometheus began at SoundCloud in 2012, where ex-Google SREs (Site Reliability Engineers) adopted Google's Borgmon. 
+Prometheus was open-sourced in 2015 at https://github.com/prometheus/prometheus/releases
+
+Prometheus joined the CNCF (Cloud Native Computing Foundation) in 2016 as its second hosted project after Kubernetes. 
+So as would be expected, Prometheus works with K8s.
+
 
 ## How it works
 
 <a target="_blank" href="https://www.youtube.com/watch?v=5GYe_-qqP30&t=15m14s">VIDEO</a>: <a target="_blank" href="https://7451111251303.gumroad.com/l/wzcnen">Get the file used to create this diagram</a>:<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702812774/prometheus-arch-2940x1286_u2awin.png"><img alt="prometheus-arch-2940x1286.jpg" width="1531" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702812774/prometheus-arch-2940x1286_u2awin.png"></a>
 
-The main component of Prometheus is a <strong>run service</strong> that pulls or <strong>scrapes</strong> (gathers) metrics on <strong>target hosts</strong> and applications using instrumentation <a href="#Exporters">job exporters</a> or other  <strong>custom metric providers</strong> to expose metrics, either directly or via an intermediary <strong>push gateway</strong> for short-lived jobs. 
+The main component of Prometheus is a <strong>run service</strong> (written in <a target="_blank" href="https://wilsonmar.github.io/golang/">Golang</a>) that pulls or <strong>scrapes</strong> (gathers) metrics on <strong>target hosts</strong> and applications using instrumentation <a href="#Exporters">job exporters</a> or other  <strong>custom metric providers</strong> to expose metrics, either directly or via an intermediary <strong>push gateway</strong> for short-lived jobs. 
 
 Unlike the legacy "statsd" daemon which is concerned only with system-level metrics such as CPU, Memory, etc., the tool Prometheus (at <a target="_blank" href="https://prometheus.io/">https://prometheus.io</a>) gathers metrics from targets at the cluster, node, and microservice API levels.
 
@@ -34,22 +39,47 @@ In addition to static configurations, Prometheus can also <strong>discover targe
 
 Prometheus stores scraped samples locally in its own multi-dimensional numeric <strong>time-series database</strong>. Unlike central data collectors (such as Splunk), each Prometheus server runs distributed standalone so thus not dependent on network storage or other remote services. So it's available even when other parts of the infrastructure are broken.
 
+   <ul><a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/3e05432b-7c61-4eb1-83b1-7cef861beb0b/a90d6e30-c9f1-43ee-9778-5d5824a34690">NOTE</a>: A single Prometheus server can handle up to 1,000 scrape targets, at 100,000+ samples per second. But for larger deployments, multiple Prometheus servers can be deployed in a federated architecture, with a root Prometheus server scraping data from the child servers.
+   </ul>
+
 <strong>Rules</strong> running in the Prometheus database either aggregate and record new time series from existing data. 
+
+   <ul>PROTIP: Strategically send operational data to a central (for review by SOC) and local server health data to a local Prometheus server. This would require diligence at managing disk space and retention. But sending data to a cloud service would require as much work be more expensive.
+   </ul>
 
 Prometheus provides multiple modes of graphing and dashboarding support, but also
 exposes its time-series data to <strong>API clients</strong> such as <strong>Grafana</strong> which make <a href="#PromQL">PromQL</a> (Prometheus query language) to extract data in order to display <strong>visualizations</strong> on their websites. 
 
 Because people can't be always watching such screens, Rules are also set in Prometheus to trigger <strong>alerts</strong> pushed to the <a href="#AlertManager">Alert Manager</a> which notifies end-points such as email, Slack, Pager Duty SMS, or other notification mechanisms.
 
+   <ul>In a HA configuration, alerts are sent to multiple Alert Managers (with different external labels -a and -b), which deduplicate and fan out alerts to their configured receivers.
+   </ul>
+
+   <ul><a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/3e05432b-7c61-4eb1-83b1-7cef861beb0b/ae204f21-9e52-4272-842b-eb155b77e3fb">NOTE</a>: Shard data.
+   </ul>
+
+Data stored on the Prometheus server should be considered temporary to receive data before being frequently shuttled to some long-term storage such as in a cloud.
+Prometheus can write to dozens of storage backends, <strong>remote write</strong> (such as <strong>InfluxDB</strong>).
+
+PROTIP: When using S3, Promethus was designed to reference a static enviornment file. To prevent compromise, many organizations leave that file blank but use a utility such as HashiCorp Vault to create a new set of S3 credentials every time before running the backup.
+
+PROTIP: In AWS S3, follow your organization's Least-Privilege security policies by not giving one account all Actions for Prometheus:
+
+   <ul>"Action": [
+      "s3:PutObject",
+      "s3:GettObject",
+      "s3:PutObjectAcl",
+      "s3:DeleteObject",
+      "s3:ListBucket",
+      "s3:GetBucketLocation"
+   ]
+   </ul>
+
 
 ## PCA Exam
 
-The $250 90-minute Prometheus Certified Associate (PCA) exam at https://training.linuxfoundation.org/certification/prometheus-certified-associate/
-is based on the <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/ProjectForethought.html">PaC (Project Forethought) application</a>, which is a simple to-do list program written in Node.js. It is Dockerized and deployed to a virtual machine. The application is instrumented with Prometheus client libraries to track metrics across the app. The exam's domains:
-
-   References:
-   * https://devopscube.com/prometheus-certified-associate/
-   <br /><br />
+Answer 75% of 60 questions in 90-minutes to pass the $250 <a target="_blank" href="https://training.linuxfoundation.org/certification/prometheus-certified-associate/">
+Prometheus Certified Associate (PCA) exam</a>. The exam's domains:
 
 18% Observability Concepts
    * Metrics
@@ -68,7 +98,7 @@ is based on the <a target="_blank" href="https://interactive.linuxacademy.com/di
    * Exposition Format
    <br /><br />
 
-28% PromQL
+28% <a href="#PromQL">PromQL</a>
    * Selecting Data
    * Rates and Derivatives
    * Aggregating over time
@@ -92,9 +122,150 @@ is based on the <a target="_blank" href="https://interactive.linuxacademy.com/di
    * Alerting basics (when, what, and why)
    <br /><br />
 
-A PCA digital credential ensures the candidate understands how to use observability data to improve application performance, troubleshoot system implementations, and feed that data into other systems.
+<hr />
+
+
+## Courses
+
+By Bipin
+
+<a target="_blank" href="https://devopscube.com/prometheus-certified-associate/">Prometheus Certified Associate (PCA) Exam Study Guide</a> by Bipin Upadhyay, who has a <a target="_blank" href="https://www.linkedin.com/in/bipinupadhyay/">LinkedIn profile</a> and <a target="_blank" href="https://devopscube.com/author/bipin/">blog</a> at DevOpsCube.com. He has a <a target="_blank" href="https://www.udemy.com/course/prometheus/">4-hour "Prometheus and Grafana - Monitoring Docker Containers"</a> video course on Udemy.
+
+   * <a target="_blank" href="https://devopscube.com/setup-prometheus-using-docker/">Setup Prometheus stack using Docker Compose</a>
+   * <a target="_blank" href="https://devopscube.com/install-configure-prometheus-linux/">Setup Prometheus on Linux</a>
+   * <a target="_blank" href="https://devopscube.com/setup-prometheus-monitoring-on-kubernetes/">Setup Prometheus on Kubernetes</a>
+   <br /><br />
+
+On Udemy, <a target="_blank" href="https://www.udemy.com/course/prometheus/">4-hour "Prometheus and Grafana - Monitoring Docker Containers"</a> video course by <a target="_blank" href="https://www.linkedin.com/in/wardviaene/">Edward Viaene</a> and <a target="_blank" href="https://www.linkedin.com/in/jornjambers/">Jorn Jambers</a>. They show <a target="_blank" href="https://www.udemy.com/course/monitoring-and-alerting-with-prometheus/learn/lecture/10630768#overview">install of Xinial Ubuntu within Digital Ocean's cloud</a>.
+
+<a target="_blank" href="https://app.pluralsight.com/search/?q=Prometheus">On Pluralsight.com</a>, the <a target="_blank" href="https://app.pluralsight.com/paths/skill/event-monitoring-and-alerting-with-prometheus">9-hour Event Monitoring and Alerting with Prometheus path</a> has 4 courses.
+
+
+By <a target="_blank" href="https://www.linkedin.com/in/eltonstoneman/">Elton Stoneman</a> (sixeyed.com):
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/getting-started-prometheus">Getting Started with Prometheus</a> Jun 23, 2020 shows use of a Windows machine .NET Core web app that has an optional "slow" response specification.
+
+   <pre>docker run -d -p 8080:80 --name web sexeyed/prometheus-demo-web:windows</pre>
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/prometheus-grafana-building-dashboards-data">"Building Dashboards from Prometheus Data in Grafana"</a> Sep 22, 2020
+<br /><br />
+
+By <a target="_blank" href="https://www.linkedin.com/in/chris-james-green/">Chris Green</a> (direct-root.com):
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/prometheus-configuring-collect-metrics">Configuring Prometheus 2 to Collect Metrics</a> July 13, 2021
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/prometheus-grafana-building-dashboards-data">Building Dashboards from Prometheus Data in Grafana</a> Oct 25, 2021
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/prometheus-running-production">Running Prometheus in Production</a> Aug 12, 2021
+<br /><br />
+
+By <a target="_blank" href="https://www.linkedin.com/in/craig-d-golightly/">Craig Golightly</a>: 
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/monitoring-key-systems-prometheus-exporters">Monitoring Key Systems with Prometheus Exporters</a> 
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/alerting-issues-prometheus-alertmanager">Alerting on Issues with Prometheus Alertmanager</a> 
+<br /><br />
+
+
+https://github.com/ACloudGuru-Resources/DevOps-Monitoring-Deep-Dive
+by https://www.linkedin.com/in/marcosmsouza/
+
+<br /><br />
+
+The <a target="_blank" href="https://www.pluralsight.com/cloud-guru/courses/prometheus-deep-dive">12-hour "DevOps Monitoring Deep Dive" video course</a> by Elle Krout references an <a target="_blank" href="https://lucid.app/lucidchart/918602e0-14b7-473c-92e7-bfbc4a15ba8f/view?page=j8p68BdUlMFS#">interactive Lucid diagram called "ProjectForethought"</a> for the NodeJs simple to-do list program called Forethought that is the subject of monitoring. 
+
+1. Create within Linux Academy's <a target="_blank" href="https://playground.linuxacademy.com/server-list">Servers in the cloud</a>, the "DevOps Monitoring Deep Dive" distribution in a small-sized host.  https://github.com/linuxacademy/content-devops-monitoring-app
+
+1. When "READY", click the Distribution name "DevOps Monitoring Deep Dive" for details.
+1. Highlight and copy the Temp. Password by clicking the copy icon.
+1. Click "Terminal" to open another browser window.
+1. Type "cloud_user" to login:
+1. Paste the password.
+1. For a new password, I paste the password again, but add an additional character. 
+1. Again to confirm.
+
+1. When an environment is opened, highlight and copy this command:
+
+   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/Prometheus/prometheus-setup.sh)"</strong></pre>
+
+1. Copy the password to your computer's Clipboard.
+1. Switch to the Terminal to paste, which runs the script.
+1. Paste the password when prompted.
+
+1. To rerun the script, discard the current instance and create a new instance.
+
+   The script is self-documented, but below are additional comments:
+
+
+## Install
+
+1. Identify your client machine's IP address:
+
+
+## Configuration
+
+1. Define storage location:
+
+   <pre><strong>sudo mkdir -p /etc/prometheus</strong></pre>
+
+1. Estimate space usage:
+
+   size = time * sample rate * bytes per sample
+
+1. Construct 
+
+   Define where to store Time-series database:
+
+   <pre><strong>--storage.tsdb.path</strong></pre>
+
+   Define removal of data after this length of time:
+
+   <pre><strong>--storage.tsdb.retention-time</strong></pre>
+
+   Define removal of data after amount of space used (like in Splunk):
+
+   <pre><strong>--storage.tsdb.retention-size</strong></pre>
+
+
+1. <a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/b2ce8f3a-830e-44a5-839e-77ac927f0629/f6ae685b-31df-4473-a3f6-e22a92c05ce8">VIDEO</a>: Verify release
+
+   <pre><strong>curl -s localhost:9090/api/v1/status/buildinfo | python3 -m json.tool</strong></pre>
+
+   <pre>{
+   "status": "success",
+   "data": {
+      "version": "2.28.1",
+      "revision": "d039c3e1c",
+      "branch": "HEAD",
+      "buildUser": "root@fa123cd1234",
+      "buildDate": "2021-05-26T14:28:09Z",
+      "goVersion": "go1.16.5"
+   }
+}
+   </pre>
+
+   ### Upgrade
+
+   To ensure that data is not lost, the upgrade process is to stop the old Prometheus server, install the new version, and then start the new version.
+
+1. Setup a symlink to the physical location of the binary using the <tt>ln</tt> (link) command:
+
+   <pre>sudo ln -s /usr/local/bin/prometheus /usr/local/bin/prometheus-2.2.0.linux-amd64/prometheus
+   </pre>
+
+1. Define a special port for versions under test:
+
+   <pre><strong>./prometheus --web.listen-address localhost:9091</strong></pre>
+
+1. Start Prometheus server gracefully:
+
+   <pre><strong>systemct stop prometheus</strong></pre>
+
+1. Run:
+
+   <pre>./prometheus --config.file prometheus.yml</pre>
+
+   
+
+
 
 ## Sample app
+
+   * it's based on the <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/ProjectForethought.html">PaC (Project Forethought) application</a>, which is a simple to-do list program written in Node.js. It is Dockerized and deployed to a virtual machine. The application is instrumented with Prometheus client libraries to track metrics across the app. 
 
 The $299 course "Monitoring Infrastructure and Containers with Prometheus" (LFS241) uses the PaC (Project Forethought) application, which is a simple to-do list program written in Node.js. It is Dockerized and deployed to a virtual machine. The application is instrumented with Prometheus client libraries to track metrics across the app.
 
@@ -125,34 +296,7 @@ The $299 course "Monitoring Infrastructure and Containers with Prometheus" (LFS2
 <br /><br />
 
 
-## Learning
-
-<a target="_blank" href="https://app.pluralsight.com/search/?q=Prometheus">On Pluralsight.com</a>, the <a target="_blank" href="https://app.pluralsight.com/paths/skill/event-monitoring-and-alerting-with-prometheus">9-hour Event Monitoring and Alerting with Prometheus path</a> has 4 courses.
-
-The <a target="_blank" href="https://www.pluralsight.com/cloud-guru/courses/prometheus-deep-dive">12-hour "DevOps Monitoring Deep Dive" video course</a> by Elle Krout references an <a target="_blank" href="https://lucid.app/lucidchart/918602e0-14b7-473c-92e7-bfbc4a15ba8f/view?page=j8p68BdUlMFS#">interactive Lucid diagram called "ProjectForethought"</a> for the NodeJs simple to-do list program called Forethought that is the subject of monitoring. 
-
-1. Create within Linux Academy's <a target="_blank" href="https://playground.linuxacademy.com/server-list">Servers in the cloud</a>, the "DevOps Monitoring Deep Dive" distribution in a small-sized host. 
-1. When "READY", click the Distribution name "DevOps Monitoring Deep Dive" for details.
-1. Highlight and copy the Temp. Password by clicking the copy icon.
-1. Click "Terminal" to open another browser window.
-1. Type "cloud_user" to login:
-1. Paste the password.
-1. For a new password, I paste the password again, but add an additional character. 
-1. Again to confirm.
-
-1. When an environment is opened, highlight and copy this command:
-
-   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/Prometheus/prometheus-setup.sh)"</strong></pre>
-
-1. Copy the password to your computer's Clipboard.
-1. Switch to the Terminal to paste, which runs the script.
-1. Paste the password when prompted.
-
-1. To rerun the script, discard the current instance and create a new instance.
-
-   The script is self-documented, but below are additional comments:
-
-### Below is a description of Docker
+## Docker
 
 1. Confirm the creation of the existing Docker image:
  
@@ -444,7 +588,7 @@ The WMI Exporter provides system metrics for Windows servers.
 
 Custom exporters are in the category of: database, messaging systems, APIs, logging, storage, hardware related, HTTP, etc.
 
-Ports:
+Ports used by exporters:
 
 * 9100 - <a href="http://github.com/prometheus/node_exporter">Node exporter</a>
 * 9101 - <a href="http://github.com/prometheus/haproxy_exporter">HAProxy exporter</a>
@@ -488,8 +632,7 @@ The node_exporter exporter runs, by default, on <strong>port 9100</strong> to ex
 
 And:
 
-   <pre>
-scrape_configs:
+   <pre>scrape_configs:
   - job_name: "prometheus"
     metrics_path: "/metrics"
     static_configs:
@@ -501,13 +644,84 @@ scrape_configs:
       - "/etc/prometheus/file_sd/node.yml"
    </pre>
 
-### Metrics exposition format
+<hr />
 
-   <pre>
-# HELP http_request_duration_microseconds The HTTP request latencies in microseconds.
+### Metric types
+
+Counter increments
+
+Gauge
+
+Summary 
+
+
+### Metrics exposition
+
+Node Exporter: http://<em>server</em>:8080/metrics
+
+<em>Space lines added for clarity</em>
+
+   <pre># HELP node uname info from the uname system call
+# TYPE node_uname_info gauge
+node_uname_info{domainname="(none)",machine="x86_64",nodename="localhost.localdomain",release="4.15.0-20-generic",sysname="Linux",version="#21-Ubuntu SMP Tue Apr 24 06:16:15 UTC 2018"} 1
+&nbsp;
+   # HELP http_request_duration_microseconds The HTTP request latencies in microseconds.
 # TYPE http_request_duration_microseconds summary
 http_request_duration_microseconds{handler="prometheus",quantile="0.5"} 73334.095
+&nbsp;
+# HELP dotnet_total_memory_bytes Total known allocated memory
+# TYPE dotnet_total_memory_bytes gauge
+# TYPE node_filefd_allocated gauge
+dotnet_total_memory_bytes 363222
+&nbsp;
+# HELP dotnet_collection_count_total GC collection count
+# TYPE dotnet_collection_count_total counter
+dotnet_collection_count_total{generation="0"} 0
+dotnet_collection_count_total{generation="1"} 0
+dotnet_collection_count_total{generation="2"} 0
+&nbsp;
+# HELP node_filefd_allocated File descriptor statistics: allocated.
+# TYPE node_filefd_allocated gauge
+node_filefd_allocated 1184
+&nbsp;
+# HELP node_disk_io_time_seconds_total Total seconds spent doing I/Os.
+# TYPE node_disk_io_time_seconds_total counter
+node_disk_io_time_seconds_total{device="sda"} 104.296
+&nbsp;
+# HELP node_disk_io_now The number of I/Os currently in progress.
+# TYPE node_disk_io_now gauge
+node_disk_io_now{device="sda"} 0
+&nbsp;
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 1.048576e+06
+&nbsp;
+# HELP node_disk_io_time_weighted_seconds_total The weighted # of seconds spent doing I/Os.
+# TYPE node_disk_io_time_weighted_seconds_total counter
+node_disk_io_time_weighted_seconds_total{device="sda"} 104.296
+&nbsp;
+# HELP worker_queue_length The length of the queue of pending requests.
+# TYPE worker_queue_length gauge
+worker_queue_length 0
+&nbsp;
+# HELP worker_jobs_total Worker jobs handled
+# TYPE worker_jobs_total counter
+worker_jobs_tota{status="processed"} 1570222
+worker_jobs_total{status="failed"} 122
+&nbsp;
+# HELP worker_jobs_active Worker jobs in process
+# TYPE worker_jobs_active gauge
+worker_jobs_active 10
+&nbsp;
+# HELP process_open_handless Number of open handles
+# TYPE process_open_handless gauge
+process_open_handless 10
+&nbsp;
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 0.01
    </pre>
+
 
 <a name="Operator"></a>
 
