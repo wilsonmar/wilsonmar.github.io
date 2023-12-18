@@ -61,9 +61,9 @@ Because people can't be always watching such screens, Rules are also set in Prom
 Data stored on the Prometheus server should be considered temporary to receive data before being frequently shuttled to some long-term storage such as in a cloud.
 Prometheus can write to dozens of storage backends, <strong>remote write</strong> (such as <strong>InfluxDB</strong>).
 
-PROTIP: When using S3, Promethus was designed to reference a static enviornment file. To prevent compromise, many organizations leave that file blank but use a utility such as HashiCorp Vault to create a new set of S3 credentials every time before running the backup.
+PROTIP: When using S3, Prometheus was designed to reference a static environment file. To prevent compromise, many organizations leave that file blank but use a utility such as HashiCorp Vault to create a new set of S3 credentials every time before running the backup.
 
-PROTIP: In AWS S3, follow your organization's Least-Privilege security policies by not giving one account all Actions for Prometheus:
+PROTIP: In AWS S3, follow your organization's Least-Privilege security policies by not allowing a single account all Actions for Prometheus:
 
    <ul>"Action": [
       "s3:PutObject",
@@ -127,14 +127,45 @@ Prometheus Certified Associate (PCA) exam</a>. The exam's domains:
 
 ## Courses
 
-By Bipin
-
-<a target="_blank" href="https://devopscube.com/prometheus-certified-associate/">Prometheus Certified Associate (PCA) Exam Study Guide</a> by Bipin Upadhyay, who has a <a target="_blank" href="https://www.linkedin.com/in/bipinupadhyay/">LinkedIn profile</a> and <a target="_blank" href="https://devopscube.com/author/bipin/">blog</a> at DevOpsCube.com. He has a <a target="_blank" href="https://www.udemy.com/course/prometheus/">4-hour "Prometheus and Grafana - Monitoring Docker Containers"</a> video course on Udemy.
-
-   * <a target="_blank" href="https://devopscube.com/setup-prometheus-using-docker/">Setup Prometheus stack using Docker Compose</a>
+Bipin wrote <a target="_blank" href="https://devopscube.com/prometheus-certified-associate/">Prometheus Certified Associate (PCA) Exam Study Guide</a> by Bipin Upadhyay, who has a <a target="_blank" href="https://www.linkedin.com/in/bipinupadhyay/">LinkedIn profile</a> and <a target="_blank" href="https://devopscube.com/author/bipin/">blog</a> at DevOpsCube.com. He has a <a target="_blank" href="https://www.udemy.com/course/prometheus/">4-hour "Prometheus and Grafana - Monitoring Docker Containers"</a> video course on Udemy.
    * <a target="_blank" href="https://devopscube.com/install-configure-prometheus-linux/">Setup Prometheus on Linux</a>
    * <a target="_blank" href="https://devopscube.com/setup-prometheus-monitoring-on-kubernetes/">Setup Prometheus on Kubernetes</a>
    <br /><br />
+
+By <a target="_blank" href="https://www.linkedin.com/in/alexphilip5/">Alex Philip</a>:
+* <a target="_blank" href="https://devopscube.com/setup-prometheus-using-docker/">Setup Prometheus stack using Docker Compose</a> within AWS December 2, 2023 referencing<br />https://github.com/techiescamp/devops-projects
+   <pre>.
+├── LICENSE
+├── Makefile
+├── README.md
+├── SECURITY.md
+├── alertmanager
+│   └── alertmanager.yml
+├── docker-compose.yml
+├── prometheus
+│   ├── alertrules.yml
+│   ├── prometheus.yml
+│   └── targets.json
+└── terraform-aws
+    ├── README.md
+    ├── modules
+    │   ├── ec2
+    │   │   ├── main.tf
+    │   │   ├── outputs.tf
+    │   │   ├── user-data.sh
+    │   │   └── variables.tf
+    │   └── security-group
+    │       ├── main.tf
+    │       ├── outputs.tf
+    │       └── variables.tf
+    ├── prometheus-stack
+    │   ├── main.tf
+    │   ├── outputs.tf
+    │   └── variables.tf
+    └── vars
+        └── ec2.tfvars
+   </pre>
+
 
 On Udemy, <a target="_blank" href="https://www.udemy.com/course/prometheus/">4-hour "Prometheus and Grafana - Monitoring Docker Containers"</a> video course by <a target="_blank" href="https://www.linkedin.com/in/wardviaene/">Edward Viaene</a> and <a target="_blank" href="https://www.linkedin.com/in/jornjambers/">Jorn Jambers</a>. They show <a target="_blank" href="https://www.udemy.com/course/monitoring-and-alerting-with-prometheus/learn/lecture/10630768#overview">install of Xinial Ubuntu within Digital Ocean's cloud</a>.
 

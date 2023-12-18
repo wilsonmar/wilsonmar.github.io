@@ -37,6 +37,8 @@ A. What is the total max/average hours an <strong>end-user</strong> needs to spe
 
 B. What is the total max/average hours of effort by <strong>Administrators</strong> to get accounts and a laptop ready for receipt by a new employee?
 
+PROTIP: CAUTION: Using speed as the primary basis for judging performance can lead to cutting corners and thus security holes. So security must be a primary consideration. But security is difficult to measure.
+
 
 ## Prep Steps
 
