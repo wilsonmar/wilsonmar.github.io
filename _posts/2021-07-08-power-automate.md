@@ -312,6 +312,12 @@ The <a target="_blank" href="https://aka.ms/PL100-StudyGuide">Study Guide</a> de
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/124976956-27a06b80-dfed-11eb-99fd-c5e7bd415b64.png"><img width="239" alt="powerapp-newflow-478x674" src="https://user-images.githubusercontent.com/300046/124976956-27a06b80-dfed-11eb-99fd-c5e7bd415b64.png"></a>
 
 
+   ### Connectors
+
+   * <a target="_blank" href="https://us.flow.microsoft.com/en-us/connectors/">Connectors</a> to APIs from Microsoft and others which you create flow code to access. "PREMIUM" means additional charges are incurred.
+   * <a targete="_blank" href="https://powerusers.microsoft.com/t5/Using-Connectors/bd-p/ConnectingToData">Microsoft's User Community: Connectors</a>
+   * <a targete="_blank" href="https://powerusers.microsoft.com/t5/Connector-Development/bd-p/ConnectorDevelopment">Microsoft's User Community: Connector Development</a>
+   <br /><br />
 
 1. <a target="_blank" href="https://us.flow.microsoft.com/en-us/connectors/">Connectors</a> to APIs from Microsoft and others which you create flow code to access. "PREMIUM" means additional charges are incurred.
    
@@ -330,6 +336,9 @@ The <a target="_blank" href="https://aka.ms/PL100-StudyGuide">Study Guide</a> de
 1. Under Data, Connect to more than 500 data sources or any publicly available API.
 
    ### AI Builder
+
+   * <a targete="_blank" href="hhttps://powerusers.microsoft.com/t5/AI-Builder/bd-p/AIBuilder">Microsoft's User Community: AI Builder</a>
+   <br /><br />
 
 1. Under <a href="#AIBuilder">"AI Builder"</a>, 
 
@@ -487,7 +496,7 @@ Microsoft Dataverse is a scalable data service and app platform which lets users
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/use-custom-connectors-in-powerapps-canvas-app/">DOCS</a>:
 Custom connectors can be built to call a publicly available API, or a custom API hosted in a cloud provider.
-Custom connectors can be used in Power Apps, Power Automate, and Azure Logic Apps.
+Custom connectors can be used in Power Apps, Power Automate, and <a target="_blank" href="https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview">Azure Logic Apps</a>.
 Custom connectors can reference an OpenAPI definition or a Postman collection.
 
 <strong>Power Apps</strong> provides a rapid <strong>low code</strong> development environment for building custom apps for business needs. It has services, connectors, and a scalable data service and app platform (Microsoft Dataverse) to allow simple integration and interaction with existing data. Power Apps enables the creation of web and mobile applications that run on all devices, but with a simple interface.
@@ -680,6 +689,20 @@ https://github.com/MicrosoftLearning/PL-600-Microsoft-Power-Platform-Solution-Ar
 * <a target="_blank" href="https://github.com/MicrosoftLearning/PL-600-Microsoft-Power-Platform-Solution-Architect/blob/master/Instructions/Labs/Lab03%5BPL-600%5D_RPA.md">Lab03[PL-600]_RPA.md</a> using Power Automate Desktop to automate "Security Sweep Flow" on a legacy Windows app.
 
 
+## Flows
+
+   * <a targete="_blank" href="https://powerusers.microsoft.com/t5/Building-Flows/bd-p/BuildingFlows">Microsoft's User Community: Building Flows</a>
+   <br /><br />
+
+   * <a targete="_blank" href="https://powerusers.microsoft.com/t5/Using-Flows/bd-p/UsingFlows">Microsoft's User Community: Using Flows</a>
+   <br /><br />
+
+
+## Power Automate Desktop
+
+   * <a targete="_blank" href="https://powerusers.microsoft.com/t5/Power-Automate-Desktop/bd-p/MPADesktop">Microsoft's User Community: Power Automate Desktop</a>
+   <br /><br />
+
 
 <a name="Dataverse"></a>
 
@@ -861,6 +884,21 @@ Python in Power BI 2018
 https://docs.microsoft.com/en-us/learn/modules/build-simple-dashboard/?ranMID=24542&ranEAID=je6NUbpObpQ&ranSiteID=je6NUbpObpQ-omnFLFQ1IfYU4qFyOjDc9A&epi=je6NUbpObpQ-omnFLFQ1IfYU4qFyOjDc9A&irgwc=1&OCID=AID2200057_aff_7593_1243925&tduid=(ir__90rmzhneiskfqkx0y92ssxlp0v2xubjcvz0m2puv00)(7593)(1243925)(je6NUbpObpQ-omnFLFQ1IfYU4qFyOjDc9A)()&irclickid=_90rmzhneiskfqkx0y92ssxlp0v2xubjcvz0m2puv00&ns-enrollment-type=LearningPath&ns-enrollment-id=learn-bizapps.wwl.power-plat-fundamentals
 
 
+<hr />
+
+## Process Mining
+
+   * <a targete="_blank" href="https://powerusers.microsoft.com/t5/Process-Mining/bd-p/ProcessAdvisor">Microsoft's User Community: Process Mining</a>
+   <br /><br />
+
+<hr />
+
+## Mobile
+
+   * <a targete="_blank" href="https://powerusers.microsoft.com/t5/Power-Automate-Mobile-App/bd-p/MPAMobileApp">Microsoft's User Community: Mobile App</a>
+   <br /><br />
+
+
 
 <a name="Social"></a>
 
@@ -869,6 +907,12 @@ https://docs.microsoft.com/en-us/learn/modules/build-simple-dashboard/?ranMID=24
 <a target="_blank" href="https://powerusers.microsoft.com/t5/Microsoft-Power-Automate/ct-p/MPACommunity">
 Microsoft's Power Automate Community</a>
 
+<a target="_blank" href="https://flow.microsoft.com/en-us/partners/">Microsoft's Partners in Power Automate</a>:
+   * https://smartbridge.com/
+   <br /><br />
+
+
+<hr />
 
 ## Videos Referenced
 
@@ -879,6 +923,14 @@ by Reza Dorrani
 <a target="_blank" href="https://www.youtube.com/watch?v=SUsik0FGzI0&list=RDCMUCJtUOos_MwJa_Ewii-R3cJA&start_radio=1&rv=SUsik0FGzI0" title="Feb 16, 2021">
 Learn to Use Power Automate with Examples | Create Bulk PDF Files | Planner to Outlook</a>
 Leila Gharani
+
+<hr />
+
+## Social
+
+<a target="_blank" href="https://powerusers.microsoft.com/t5/Microsoft-Power-Automate/ct-p/MPACommunity">
+Power Automate User Community</a> is a forum for asking questions and sharing knowledge.
+
 
 
 ## More about Azure #

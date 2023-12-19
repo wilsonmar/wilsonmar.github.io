@@ -139,7 +139,13 @@ Create a VNet with a name for specification when a VM is created later.
    <tr valign="top"><td> /32 </td><td> ? </td><td> ? </td></tr>
    </table>
 
-The first 3 addresses Azure takes for its own.
+   REMEMBER: Azure takes for its own the first 3 and the last address of each subnet:
+   * x.x.x.0 - Network address
+   * x.x.x.1 - Reserved by Azure for the default gateway
+   * x.x.x.2 - Reserved by Azure for DNS
+   * x.x.x.3 - Reserved by Azure for future use
+   * x.x.x.255 - Network broadcast address. Azure does not allow traffic to this address.
+   <br /><br />
 
 Secure resources within subnets using Network Security Groups (NSGs).
 
@@ -899,7 +905,22 @@ Powershell to add (create) network interface
    ### CIDR block
 
    ??? CIDR block (<a target="_blank" href="https://tools.ietf.org/html/rfc1918/">RFC 1918</a>) class A, B, C
- 
+
+   REMEMBER: Reserved ranges for private networks:
+   * 10.0.0.0 - 10.255.255.255 (10/8 prefix)
+   * 172.16.0.0 - 172.31.255.255 (172.16/12 prefix)
+   * 192.168.0.0 - 192.168.255.255 (192.168/16 prefix)
+   <br /><br />
+
+   REMEMBER: Unavailable address ranges:
+   * 127.0.0.0/8 (loopback local)
+   * 169.254.0.0/16 (Link-local)
+   * 168.63.129.16/32 (Internal DNS)
+   * 224.0.0.0/4 (Multicast)
+   * 255.555.255.255/32 (Broadcast)
+   <br /><br />
+
+
 4. In the Menu to the left, click Connected Devices:
 
    There are currently two are Network Interfaces connected to this VNet. 

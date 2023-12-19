@@ -1631,6 +1631,11 @@ Azure Data Community</a> lists blogs, websites, videos, podcasts, and meetups.
 
 https://www.twitch.tv/425show
 
+<a target="_blank" href="https://flow.microsoft.com/en-us/partners/">Microsoft's Partners in Power Automate</a>:
+   * https://smartbridge.com/
+   <br /><br />
+   
+
 <hr />
 
 ## Resources
