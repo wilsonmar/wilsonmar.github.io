@@ -4483,6 +4483,12 @@ PATH: "Implementing and Managing HashiCorp Vault"</a> consists of 4 video course
 
 <hr />
 
+## References
+
+https://shadow-soft.com/blog/tech/custom-vault-integrations-python
+
+<hr />
+
 ## More on DevOps #
 
 This is one of a series on DevOps:

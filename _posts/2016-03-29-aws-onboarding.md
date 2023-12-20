@@ -637,10 +637,14 @@ Terraform can manage existing and popular service providers as well as custom in
    <pre><strong>terraform init
    </strong></pre>
 
-1. Run Terraform:
+1. Create resources:
 
-   <pre><strong>terraform plan --auto-approve
-   terraform apply --auto-approve
+   <pre><strong>terraform plan --auto-approve --var-file=../vars/ec2.tfvars
+   </strong></pre>
+
+   If that works:
+
+   <pre><strong>terraform apply --auto-approve --var-file=../vars/ec2.tfvars
    </strong></pre>
 
    The <tt>--auto-approve</tt> option is used to avoid the need to type "yes" to confirm.
@@ -653,7 +657,8 @@ Terraform can manage existing and popular service providers as well as custom in
 
 1. Delete the resources previously created by Terraform files in the folder:
 
-   <pre><strong>terraform destroy</strong></pre>
+   <pre><strong>terraform destroy --var-file=../vars/ec2.tfvars
+   </strong></pre>
 
 1. REMEMBER: Delete the credentials file after use.
 
@@ -1379,3 +1384,4 @@ This is one of a series on Security in DevSecOps:
 
 {% include security_links.html %}
 
+https://www.mssqltips.com/sqlservertip/5997/create-sql-server-notebooks-in-azure-data-studio/

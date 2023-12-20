@@ -134,7 +134,10 @@ Bipin wrote <a target="_blank" href="https://devopscube.com/prometheus-certified
 
 By <a target="_blank" href="https://www.linkedin.com/in/alexphilip5/">Alex Philip</a>:
 * <a target="_blank" href="https://devopscube.com/setup-prometheus-using-docker/">Setup Prometheus stack using Docker Compose</a> within AWS December 2, 2023 referencing folder 04-prometheus-observability-stack within<br /><a target="_blank" href="https://github.com/techiescamp/devops-projects/tree/main/04-prometheus-observability-stack">https://github.com/techiescamp/devops-projects</a>
+
    <pre>.
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
 ├── LICENSE
 ├── Makefile
 ├── README.md

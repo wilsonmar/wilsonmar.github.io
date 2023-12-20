@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-12-16"
+date: "2023-12-19"
 file: "azure-data"
 title: "Azure Data (within Microsft's cloud)"
 excerpt: "Obtain storage and database skills to pass DP-900, DP-100, DP-203, DP-300 exams"
@@ -42,11 +42,11 @@ https://www.microsoft.com/en-ie/training-days#pp
 
 Data is a valuable asset to organizations. Data is the new oil.
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702292144/analytics-venn-1404x1210_rp3p4j.png"><img alt="analytics-venn-1404x1210"  src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702292144/analytics-venn-1404x1210_rp3p4j.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702292144/analytics-venn-1404x1210_rp3p4j.png"><img alt="analytics-venn-1404x1210" width="300" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702292144/analytics-venn-1404x1210_rp3p4j.png"></a>
 
 <a target="_blank" href="https://www.youtube.com/watch?v=XbV0Di5ggvY&t=51m39s">VIDEO explainer</a>:
 
-* <strong>Description</strong> analytics describe <strong>what has happened</strong> based on historical data such as report of sales.
+* <strong>Descriptive</strong> analytics describe <strong>what has happened</strong> based on historical data such as report of sales.
 
    * Key Performance Indicators (KPI)
    * Return on Investment (ROI)
@@ -57,7 +57,7 @@ Data is a valuable asset to organizations. Data is the new oil.
 
 * <strong>Diagnostic</strong> analytics diagnose <strong>why it happened</strong> (causes) based on drill-downs to see relative contribution to sales by region, by product, by salesperson. Find anomalies.
 
-* <strong>Predictive</strong> analytics predict <strong>what might happen</strong> based <strong>regression</strong> from historical data revealing trends.
+* <strong>Predictive</strong> analytics predict <strong>what might happen</strong> based <strong>regression</strong> of historical data revealing trends.
 
 * <strong>Prescriptive</strong> analytics prescribe (recommend) <strong>what to do</strong> based <strong>forecasts</strong> on the what might happen. 
 
@@ -90,8 +90,8 @@ The types of databases are: Key-value -> Column -> Document -> Relational (SQL) 
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th>Types:</th><th>Key-value</th><th>Column</th><th>Document</th><th>Relational</th><th>Graph</th><th>Deltalake</th></tr>
-<tr valign="top" align="center"><td>Complexity</td><td>none</td><td>low</td><td>low</td><td>moderate</td><td>high</td><td>high</td></tr>
-<tr valign="top" align="center"><td>Performance</td><td>high</td><td>high</td><td>high</td><td>high</td><td>variable</td><td>high</td></tr>
+<tr valign="top" align="center"><td>Complexity</td><td>low</td><td>low</td><td>low</td><td>moderate</td><td>high</td><td>high</td></tr>
+<tr valign="top" align="center"><td>Performance</td><td>high</td><td>high</td><td>high</td><td>tuned</td><td>variable</td><td>high</td></tr>
 <tr valign="top" align="center"><td>Scalability</td><td>high</td><td>high</td><td>high / variable</td><td>high</td><td>variable</td><td>high</td></tr>
 <tr valign="top" align="center"><td>Flexibility</td><td>high</td><td>moderate</td><td>high</td><td>high</td><td>high</td><td>high</td></tr>
 </table>
@@ -1421,6 +1421,10 @@ Microsoft SQL Server Data Tools (MDT)
 
 ## Azure Data Studio
 
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703090671/AzureDS-menu-208x367_o3ykxj.png"><img alt="AzureDS-menu-208x367.png" width="208" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703090671/AzureDS-menu-208x367_o3ykxj.png"></a>
+
+<a target="_blank" href="https://www.mssqltips.com/sqlservertip/5997/create-sql-server-notebooks-in-azure-data-studio/">BLOG</a> SQL Server Notebook</a>
+
 Azure Data Studio is an open-source, cross-platform client GUI tool for querying and working with various Azure data sources, including SQL Server and Azure SQL. Its "notebooks" allows mixing runnable code cells and formatted text in one place.
 
 ![az-data-studio](https://user-images.githubusercontent.com/300046/126932768-c2279fb2-826d-4ca7-bacd-10a1be11b7f9.png)
@@ -1631,10 +1635,6 @@ Azure Data Community</a> lists blogs, websites, videos, podcasts, and meetups.
 
 https://www.twitch.tv/425show
 
-<a target="_blank" href="https://flow.microsoft.com/en-us/partners/">Microsoft's Partners in Power Automate</a>:
-   * https://smartbridge.com/
-   <br /><br />
-   
 
 <hr />
 
