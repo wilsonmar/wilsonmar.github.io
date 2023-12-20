@@ -928,8 +928,15 @@ Leila Gharani
 
 ## Social
 
-<a target="_blank" href="https://powerusers.microsoft.com/t5/Microsoft-Power-Automate/ct-p/MPACommunity">
-Power Automate User Community</a> is a forum for asking questions and sharing knowledge.
+https://powerusers.microsoft.com/
+
+<a target="_blank" href="https://powerusers.microsoft.com/">Power Automate User Community</a> is a forum for asking questions and sharing knowledge covers:
+   * Power BI
+   * Power Apps
+   * Power Pages
+   * Power Automate
+   * Copilot Studio
+   * <strike>Power Virtual Agents</strike>
 
 
 
