@@ -38,9 +38,58 @@ https://www.microsoft.com/en-ie/training-days#pp
 
 {% include whatever.html %}
 
-## Why Analytics?
-
 Data is a valuable asset to organizations. Data is the new oil.
+
+
+## Database models
+
+Over time, data has been organized in different ways to better suit different ways to access data for reports and dashboards:
+
+Traditionally, limitations in CPU and memory size required different database structures at different purposes:
+For OLTP (Online Transaction Processing) data is stored for fast ingestion in rows with columns.
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702039629/database-types-828x394_m9rsua.jpg">
+<img alt="database-types-828x394.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702039629/database-types-828x394_m9rsua.jpg"></a>
+
+The types of databases are: Key-value -> Column -> Document -> Relational (SQL) -> Graph -> Deltalake
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th>Types:</th><th>Key-value</th><th>Column</th><th>Document</th><th>Relational</th><th>Graph</th><th>Deltalake</th></tr>
+<tr valign="top" align="center"><td>Complexity</td><td>low</td><td>low</td><td>low</td><td>moderate</td><td>high</td><td>high</td></tr>
+<tr valign="top" align="center"><td>Performance</td><td>high</td><td>high</td><td>high</td><td>tuned</td><td>variable</td><td>high</td></tr>
+<tr valign="top" align="center"><td>Scalability</td><td>high</td><td>high</td><td>high / variable</td><td>high</td><td>variable</td><td>high</td></tr>
+<tr valign="top" align="center"><td>Flexibility</td><td>high</td><td>moderate</td><td>high</td><td>high</td><td>high</td><td>high</td></tr>
+</table>
+
+A competitor to Delta metadata layer on top of Parquet is <a target="_blank" href="https://www.theregister.com/2023/01/03/apache_iceberg/">Apache Iceberg</a>, used by Snowflake, Cloudera, and Google's BigLake.
+
+<a target="_blank" href="https://wilsonmar.github.io/sql/">My notes about the SQL language is here</a>.
+
+The underlying <strong>format of files</strong> used to store data within Apache Spark, Hadoop "Big data" evolved from 
+   1. RCFile to 
+   1. ORC (Optimized Row Columnar) stores Hive data efficiently
+   1. Avro (row-based)
+   1. Parquet (columnal-based) used by Linux Foundation Delta Lake adopted by Apache Spark and Azure Synapsee.
+   <br /><br />
+
+Wide availability of fast internet and public clouds providing a lot of fast data storage and compute has enabled a revolution in how data can be stored and accessed.
+
+   * "Distributed database" can now span multiple regional data centers (horizontally scalable), yet globally immediately consistent. Released in 2017 (<a href="#Cosmos+DB">Microsoft Azure Cosmos DB</a>, <a target="_blank" href="https://github.com/citusdata/citus">Postgres Citus</a>, <a target="_blank" href="https://cloud.google.com/spanner/">Google Cloud Spanner</a>)
+
+   * "Deltalake" is a revolution because instead of arranging data in tables or graphs data for easier access, data is stored in Parquet format used by Azure Data Lake Storage Gen2, Hadoop, Databricks, <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a>
+   <br /><br />
+
+PROTIP: <a target="_blan" href="https://parquet.apache.org/">Apache's Parquet file format</a> generally performs better than CSV because it provides efficient data compression and encoding schemes with enhanced performance to handle complex data in bulk.  It is called a <strong>"columnar"</strong> storage format similar to other columnar-storage file formats available in Hadoop (RCFile and ORC). So it is compatible with most data processing frameworks in the Hadoop environment. Apache Parquet is a free and open-source column-oriented data storage format of the Apache Hadoop ecosystem. 
+
+   References:
+   * https://www.upsolver.com/blog/apache-parquet-why-use
+   * https://docs.azure.com/en-us/azure/architecture/browse/#databases
+   <br /><br />
+
+
+### OLAP Analytics
+
+For OLAP (Online Analytical Processing), large amounts of data are stored in a "star schema" in <strong>data warehouses</strong> (separate from databases for OLTP) for access to by date and other dimensions.
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702292144/analytics-venn-1404x1210_rp3p4j.png"><img alt="analytics-venn-1404x1210" width="300" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702292144/analytics-venn-1404x1210_rp3p4j.png"></a>
 
@@ -73,54 +122,6 @@ Data is a valuable asset to organizations. Data is the new oil.
    * Generative AI (GAN) to create new images, videos, text, and audio use "Transformers" to understand the context of words based on the likelihood of words appearing together.
    * "Reinforcement learning" to learn from experience.
    * "war games"
-   <br /><br />
-
-
-## Types of databases
-
-Over time, data has been organized in different ways to better suit different ways to access data for reports and dashboards:
-
-Traditionally, limitations in CPU and memory size required different database structures at different purposes:
-For OLTP (Online Transaction Processing) data is stored for fast ingestion in rows with columns.
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702039629/database-types-828x394_m9rsua.jpg">
-<img alt="database-types-828x394.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702039629/database-types-828x394_m9rsua.jpg"></a>
-
-The types of databases are: Key-value -> Column -> Document -> Relational (SQL) -> Graph -> Deltalake
-
-<table border="1" cellpadding="4" cellspacing="0">
-<tr><th>Types:</th><th>Key-value</th><th>Column</th><th>Document</th><th>Relational</th><th>Graph</th><th>Deltalake</th></tr>
-<tr valign="top" align="center"><td>Complexity</td><td>low</td><td>low</td><td>low</td><td>moderate</td><td>high</td><td>high</td></tr>
-<tr valign="top" align="center"><td>Performance</td><td>high</td><td>high</td><td>high</td><td>tuned</td><td>variable</td><td>high</td></tr>
-<tr valign="top" align="center"><td>Scalability</td><td>high</td><td>high</td><td>high / variable</td><td>high</td><td>variable</td><td>high</td></tr>
-<tr valign="top" align="center"><td>Flexibility</td><td>high</td><td>moderate</td><td>high</td><td>high</td><td>high</td><td>high</td></tr>
-</table>
-
-A competitor to Delta metadata layer on top of Parquet is <a target="_blank" href="https://www.theregister.com/2023/01/03/apache_iceberg/">Apache Iceberg</a>, used by Snowflake, Cloudera, and Google's BigLake.
-
-<a target="_blank" href="https://wilsonmar.github.io/sql/">My notes about the SQL language is here</a>.
-
-The underlying <strong>format of files</strong> used to store data within Apache Spark, Hadoop "Big data" evolved from 
-   1. RCFile to 
-   1. ORC (Optimized Row Columnar) stores Hive data efficiently
-   1. Avro (row-based)
-   1. Parquet (columnal-based) used by Linux Foundation Delta Lake adopted by Apache Spark and Azure Synapsee.
-   <br /><br />
-
-For OLAP (Online Analytical Processing), large amounts of data are stored in a "star schema" in <strong>data warehouses</strong> (separate from databases for OLTP) for access to by date and other dimensions.
-
-Wide availability of fast internet and public clouds providing a lot of fast data storage and compute has enabled a revolution in how data can be stored and accessed.
-
-   * "Distributed database" can now span multiple regional data centers (horizontally scalable), yet globally immediately consistent. Released in 2017 (Microsoft Cosmos DB, <a target="_blank" href="https://github.com/citusdata/citus">Postgres Citus</a>, <a target="_blank" href="https://cloud.google.com/spanner/">Google Cloud Spanner</a>)
-
-   * "Deltalake" is a revolution because instead of arranging data in tables or graphs data for easier access, data is stored in Parquet format used by Azure Data Lake Storage Gen2, Hadoop, Databricks, <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a>
-   <br /><br />
-
-PROTIP: <a target="_blan" href="https://parquet.apache.org/">Apache's Parquet file format</a> generally performs better than CSV because it provides efficient data compression and encoding schemes with enhanced performance to handle complex data in bulk.  It is called a <strong>"columnar"</strong> storage format similar to other columnar-storage file formats available in Hadoop (RCFile and ORC). So it is compatible with most data processing frameworks in the Hadoop environment. Apache Parquet is a free and open-source column-oriented data storage format of the Apache Hadoop ecosystem. 
-
-   References:
-   * https://www.upsolver.com/blog/apache-parquet-why-use
-   * https://docs.azure.com/en-us/azure/architecture/browse/#databases
    <br /><br />
 
 
@@ -186,7 +187,7 @@ First look at traditional SQL "relational" databases.
 
    * Azure Cache for Redis - Power applications with high-throughput, low-latency data access [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/">DOCS</a>]
    * Azure confidential ledger - Tamperproof, unstructured data store hosted in trusted execution environments (TEEs) and backed by cryptographically verifiable evidence [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/confidential-ledger/">DOCS</a>]
-   * Azure Cosmos DB - Fast NoSQL database with open APIs for any scale [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/">DOCS</a>]
+   * <a href="#Cosmos+DB">Azure Cosmos DB</a> - Fast NoSQL database with open APIs for any scale [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/">DOCS</a>]
    * Azure Database Migration Service - Simplify on-premises database migration to the cloud [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/dms/">DOCS</a>]
    * Azure Managed Instance for Apache Cassandra - Automate deployment and scaling for managed open-source Apache Cassandra datacenters [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/managed-instance-apache-cassandra/">DOCS</a>]
    <br /><br />
@@ -323,7 +324,7 @@ Answer 40-60 multiple-choice questions (no cases) in 180-minutes.
    <br /><br />
 
 Describe capabilities and features of <a href="#Cosmos+DB">Azure Cosmos DB</a>
-   * Identify use cases for Azure Cosmos DB
+   * Identify use cases for <a href="#Cosmos+DB">Azure Cosmos DB</a>
    * Describe Azure Cosmos DB APIs
    <br /><br />
 
@@ -502,7 +503,7 @@ makes use of lab instructions in English at
 * Load Data into a Relational Data Warehouse	Lab
 * Build a data pipeline in Azure Synapse Analytics	Lab
 * Use an Apache Spark notebook in a pipeline	Lab
-* Use Azure Synapse Link for Azure Cosmos DB	Lab
+* Use Azure Synapse Link for <a href="#Cosmos+DB">Azure Cosmos DB</a>	Lab
 * Use Azure Synapse Link for SQL	Suggested demo
 * Get started with Azure Stream Analytics	Suggested demo
 * Ingest realtime data with Azure Stream Analytics and Azure Synapse Analytics	Lab
@@ -873,7 +874,7 @@ OLAP = data periodically loaded, aggregataed, stored in a cube.
    * Teradata
    * MongoDB
    * Apache Hadoop clusters
-   * Azure Cosmos DB
+   * <a href="#Cosmos+DB">Azure Cosmos DB</a>
    <br /><br />
 
 SSIS is also heterogenous
@@ -953,7 +954,15 @@ See https://www.sciencedirect.com/topics/computer-science/acid-properties
 
 Atomicity - each transaction is treated as a single unit, which is successful completely or failed completely. The server would refuse transactions until the previous one has committed. Failed intermediate changes are backed-off (undone).
 
-Consistency - transactions can only take the data in the database from one valid state to another.
+<a name="Consistency"></a>
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/consistency-levels?WT.mc_id=Portal-Microsoft_Azure_DocumentDB#consistent-prefix">Consistency</a> - transactions can only take the data in the database from one valid state to another. In a service: Azure Cosmos DB account page, levels:
+   * STRONG = reads are guaranteed to see the most recent write within a single region.
+   * BOUNDED STALENESS = for any read regions (along with a write region) - for applications featuring group collaboration and sharing, stock ticker, publish-subscribe/queueing etc.
+   * SESSION = (the most widely used) It provides write latencies, availability and read throughput comparable to that of eventual consistency but also provides the consistency guarantees that suit the needs of applications written to operate in the context of a user.
+   * CONSISTENT PREFIX = guarantees that reads never see out-of-order writes with throughput comparable to that of eventual consistency.
+   * EVENTUAL = (the least consistent) useful in applications that can tolerate staleness in the data being read, where a client may get older values for a limited time.
+   <br /><br />
 
 Isolation - concurrent execution of transactions leave the database in the same state.
 
@@ -967,7 +976,8 @@ Durability - once a transaction has been committed, it remains committed.
 
 ## Cosmos DB
 
-Microsoft Azure Cosmos DB is a fully managed API service to provide a <strong>scale-out</strong>, operational database fabric that suits read-heavy apps, workloads that need to scale geographically and use cases where the application requires multiple data models (Key-Value Table, NoSQL document, relational, time-series, Graph).
+<a target="_blank" href="https://www.youtube.com/watch?v=Jvgh64rvdXU&list=PLLasX02E8BPDd2fKwLCHnmWoyo4bL-oKr" title="by Tech Mkg Mgr Mustafa Branch">VIDEO</a>:
+"Microsoft Azure Cosmos DB is a fully managed API service to provide a <strong>scale-out</strong>, operational database fabric that suits read-heavy apps, workloads that need to scale geographically and use cases where the application requires multiple data models" 
 
    * http://www.cosmosdb.com/
    * https://twitter.com/AzureCosmosDB
@@ -1143,6 +1153,17 @@ In 2017, Azure Cosmos DB is announced with global regions and multiple data mode
 
    <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/synapse-link">Azure Synapse Link</a> applies Transactional And Analytical Processing (HTAP) capability by enabling near real-time analytics over operational data in Azure Cosmos DB. Streaming operational data is loaded directly into rows within a <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cosmos-db/analytical-store-introduction">Cosmos DB Analytical Store</a> instead of ETL jobs.
    Operational row data is auto-synced to NoSQL, MongoDB, or Gremlin, which Azure Synapse Analytics reads for real-time insights.
+
+   ### Knowlege Graph
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr><th> RDBMS </th><th> Graph DB </th></tr>
+   <tr valign="top"><td> Table </td><td> Vertex </td></tr>
+   <tr valign="top"><td> Column </td><td> Property </td></tr>
+   <tr valign="top"><td> Relation </td><td> Edge </td></tr>
+   </table>
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=NTl_dmttwAY&list=PLcGfCK-5BExSDXcgcLC4nuT-Yg7nxqvb8&index=2">Atmosera</a>
 
 
    ### Mirror for Fabric
@@ -1645,6 +1666,14 @@ https://www.youtube.com/watch?v=N_Ta23hIBaI
 
 https://www.youtube.com/watch?v=oj5inTNyRW8
 1:32:49 Q&A</a> by Creative Solutions
+
+<a target="_blank" href="https://www.youtube.com/watch?v=BlSVX1WqTXk&list=PLlVtbbG169nGccbp8VSpAozu3w9xSQJoY">
+John Savill's Azure Master Class v2 - Module 9 - Database & A.I.</a>
+
+https://www.youtube.com/watch?v=uaW1wf_BYFc
+Graph Databases 101 with Cosmos DB
+by Maxime Rouiller
+
 
 ## More #
 

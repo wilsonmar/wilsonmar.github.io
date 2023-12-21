@@ -5062,6 +5062,63 @@ https://www.aGuideToCloud.com
 Trainer Tim Warner (at timw.info) has been, over the years, been updating his <a target="_blank" href="https://github.com/timothywarner/frankenstein/blob/main/diagrams/tim-frankenstein-networking.png">"Frankenstein" diagram</a> that connects together as many Azure services as he can cram in:<br />
 <a target="_blank" href="https://github.com/timothywarner/frankenstein/blob/main/diagrams/tim-frankenstein-networking.png?raw=true"><img alt="Frankenstein" src="https://github.com/timothywarner/frankenstein/blob/main/diagrams/tim-frankenstein-networking.png?raw=true"></a>
 
+
+https://www.youtube.com/watch?v=kmmuCapzX8I
+John Savill's Azure Master Class v2 - Module 9 - Database & A.I.
+
+https://www.youtube.com/watch?v=CzPeD7sR-ng
+Azure Active Directory - Tenant Basics for those that never knew
+
+https://www.youtube.com/watch?v=Q1GogsFkX-s
+How Azure subscriptions and tenant are related and how to manage permissions at different levels
+Michael Lord Nov 22, 2019
+   * https://ea.azure.com (Azure enrollment under Enterprise Agreements)
+   
+https://www.youtube.com/watch?v=nHVqbtcUH_I
+Understanding Azure Subscriptions
+CloudStrategist
+6.7K views 3 years ago
+
+https://www.youtube.com/watch?v=-BD5rlMyLUY
+
+
+BLAH: https://www.youtube.com/watch?v=IGTWEcTTWkQ
+Understanding Azure: Subscription, Tenant, Active Directory and Accounts
+by Frank Liu
+
+https://www.youtube.com/watch?v=FAbqJqr93v8
+Azure Tutorial - Tenants, Subscriptions & Resource Groups Explained
+Nerdio
+49K views 4 years ago
+
+https://www.youtube.com/watch?v=-BD5rlMyLUY&t=33s
+Understanding AZURE Tenants and Subscriptions
+Taste of Premier
+46K views 4 years ago
+
+https://www.youtube.com/watch?v=mVV_4O_QPI0
+Azure Active Directory - Tenant, Subscription and Directory - हिंदी में
+Tech learning
+141K views 3 years ago
+
+https://www.youtube.com/watch?v=LMAC0IIYSJM
+How to setup your Azure Subscriptions the right way
+KnowOps
+20K views 4 years ago
+
+https://www.youtube.com/watch?v=MgTUYIiPn2g
+learn azure subscription types
+Paddy Maddy
+11K views 3 years ago
+
+End-to-End projects
+https://github.com/madebygps/projects/tree/main/az-104
+1. Onboard Automator (Manage Azure identities and governance)
+1. ShareSafely - File Share Web App (Implement and manage storage)
+1. VM Fleet Commander (Deploy and manage Azure compute resources)
+1. NetMaze Explorer (Implement and manage virtual networking)
+1. InsightScape (Monitor and back up Azure resources)
+
 <hr />
 
 <a name="More"></a>
