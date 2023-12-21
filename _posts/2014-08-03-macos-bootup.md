@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2023-12-19"
+file: "macos-bootup"
 title: "MacOS Bootup"
 excerpt: "To diagnose and troubleshoot getting started (vs. Linux)"
 tags: [apple, mac, setup, USB]
-date: "2021-03-03"
-file: "macos-bootup"
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/14624434/dab075ca-0597-11e6-9090-f93e259a5554.jpg
   credit:
@@ -200,9 +200,20 @@ which controls the services that start up on boot.
 
 ## PAM
 
-Linux operating sytems use PAM (Pluggable Authentication Model).
+Linux operating systems use PAM (Pluggable Authentication Model).
 
-<tt>otool -L /usr/bin/login</tt> is the macOS equivalent of the Linux <tt>ldd</tt> command which lists the shared library dependencies of an executable or shared library.
+The macOS equivalent of the Linux <tt>ldd</tt> command which lists the shared library dependencies of an executable or shared library is:
+
+   <ul><tt>otool -L /usr/bin/login</tt>
+   
+   Example response:
+   <pre>/usr/bin/login:
+        /usr/lib/libbsm.0.dylib (compatibility version 1.0.0, current version 1.0.0)
+        /usr/lib/libpam.2.dylib (compatibility version 3.0.0, current version 3.0.0)
+        /usr/lib/libEndpointSecuritySystem.dylib (compatibility version 1.0.0, current version 368.140.3, weak)
+        /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1319.100.3)
+   </pre>
+   </ul>
 
 Within folder <tt>cd /etc/pam.d</tt>, file <tt>login</tt> contains:
 

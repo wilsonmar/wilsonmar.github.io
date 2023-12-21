@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2016-08-23"
+file: "mac-iphone"
 title: "Mac - iPhone integration"
 excerpt: "Copy files"
 tags: [mac, iphone]
-date: "2016-08-23"
-file: "mac-iphone"
 image:
 # feature: pic gray apple logo 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622417/0edc21ac-0587-11e6-9f30-ccf9560ce462.jpg
@@ -15,6 +15,17 @@ comments: true
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
+
+Apple-Authorized Training providers offer:
+
+* A 3-day $2,100 <a target="_blank" href="https://www.thenewit.com/go-apple-technician-training/apple-service-fundamentals">Apple Service Fundamentals class</a>
+
+* A 4-day $2,800 <a target="_blank" href="https://www.thenewit.com/go-apple-technician-training/apple-certified-ios-technician">Apple Certified iOS Technician (ACiT)</a> who take the ACiT iOS Service Certification exam on the 4th day.
+create certified in troubleshooting iPhone or iPad, and repairing iPhone models at an Apple-authorized service facility. They learn setup, navigation, features, and associated services of iOS devices. Participants also learn how to maintain, troubleshoot, and repair iOS devices. Participants’ knowledge and skills are tested and reinforced by working through real-world scenarios in hands-on labs.
+
+
+
+## Store Maps
 
 PROTIP: Store maps of public transportation routes and timetables on your mobile phone so it's available without need for a wi-fi or cellular servide (which are not available within most subways).
 

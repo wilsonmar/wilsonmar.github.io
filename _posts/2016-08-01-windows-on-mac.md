@@ -1,9 +1,9 @@
 ---
 layout: post
-date: "2023-07-04"
+date: "2023-12-14"
 file: "windows-on-mac"
-title: "Windows on Apple macOS"
-excerpt: "Where to run Windows from a Mac: RDP to EC2, Amazon WorkSpaces, Vagrant, BootCamp, VMWare Fusion, Docker"
+title: "Windows and Linux on Apple hardware"
+excerpt: "Triple-boot to run Windows and Ubuntu and other Linux on a Mac: Vagrant, BootCamp, VMWare Fusion, etc."
 tags: [apple, mac, setup, VMWare, Fusion]
 image:
 # feature: pic gray apple logo 1900x500.jpg
@@ -16,12 +16,14 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/windows-on-apple-mac-osx">This</a> describes several ways to run Microsoft Windows on an Apple MacOS.
+Apple no longer provides updates to hardware with <strong>Intel x86 chips</strong> (such as my Quad-Core Intel Core i7) beyond their <strong>Ventura 13.6.1</strong> macOS release. My Early 2013 MacBook Pro is forever stuck at macOS 10.13.6 High Sierra.
+
+So a great use for hardware "obsoleted" by Apple is to convert them to <strong>run Linux and Windows</strong> operating systems, which were built on Intel "x86" chips.
+<a target="_blank" href="https://www.youtube.com/watch?v=X0DIHlnD_S0">VIDEO: Why Apple macs are good</a>. <a target="_blank" href="https://www.youtube.com/watch?v=0T38XIzusFc">VIDEO</a>
+
+This article describes several ways to run Microsoft Windows on an Apple MacOS.
 Each approach has its own advantages and disadvantages:
 
-* <a href="#Amazon">Amazon EC2 Cloud Images</a> of server machines
-* <a href="#WorkSpaces">On an internet browser to Amazon WorkSpaces</a> (virtual Desktop machines)
-* <a href="#Docker">Docker Windows instance</a>
 * <a href="#Vagrant">Vagrant Virtualbox</a>
 * <a href="#BootCamp">BootCamp</a>
 * <a href="#VMwareFusion">VMWare Fusion</a>
@@ -32,379 +34,91 @@ Each approach has its own advantages and disadvantages:
 
 <hr />
 
-Access Windows machines by running a [client software that runs Microsoft's Remote Desktop Protocol (RDP)](/rdp/), from within a Windows, MacOS, or Linux machine.
+## Apple skills
 
-## Apple docs
+To gain user skills on macOS, use the <a target="_blank" href="https://www.youtube.com/@applesupport/search?query=macos">Apple Support channel on YouTube</a> and <a target="_blank" href="https://support.apple.com/guide/mac-help/welcome/mac">macOS User Guide</a>.
+
+Apple has a <a target="_blank" href="https://support.apple.com/en-lamr/aasp-program">Apple Authorized Service Provider (AASP) Program</a> for companies who repair Apple products using genuine Apple parts, tools, training, service guides, diagnostics and resources.
+
+https://www.wikiwand.com/en/Apple_certification_programs
+
+<a target="_blank" href="https://support.apple.com/en-us/HT205332">AppleCare service certifications</a> are for technicians who work at or want to work at Apple-authorized service facilities. Access the Apple Technical Learning Administration System (ATLAS) is AppleCare Service Training's website for online training and other learning resources. Use ATLAS to prepare for the certifications required to service Apple products.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=G2qnXieYuw4">VIDEO</a>: Apple-Authorized Training providers offer a 4-day $2,800 <a target="_blank" href="https://www.thenewit.com/go-apple-technician-training/apple-certified-mac-technician">Apple Certified Mac Technician (ACMT)</a> who take the ACMT Mac Service Certification exam on the 4th day. They also offer a <a target="_blank" href="https://www.youtube.com/watch?v=ZyHpSESFzEY">$250 Apple Certified Support Professional (ACSP)</a> exam prep course on macOS core functionality and that you can configure key services, perform basic troubleshooting, and support multiple Mac users. 
+
+https://www.credly.com/organizations/apple/badges list these certifications issued by Apple:
+As of Dec 2023, <a target="_blank" href="https://www.credly.com/organizations/apple/directory">3,355 passed</a> one or more of these <a target="_blank" href="https://training.apple.com/us/en/it/exams">exams</a>:
+
+   * "Apple Device Support exam (SVC-20A)" to join <a target="_blank" href="https://www.credly.com/org/apple/badge/apple-certified-support-professional">Apple Certified Support Professionals (ACRSs)</a> who support and troubleshoot Apple devices in a large organization as a level 1 or 2 help desk professional. <a target="_blank" href="https://training.apple.com/content/dam/appletraining/us/en/2024/documents/Apple%20Device%20Support%20Exam%20Prep%20Guide.pdf">PDF: Exam prep guide</a>.
+
+   * "Apple Deployment and Management exam (SVC-19A)" to join <a target="_blank" href="https://www.credly.com/org/apple/badge/apple-certified-it-professional">Apple Certified IT Professionals (ACITPs)</a> who deploy, secure, and manage Apple devices at scale in large organizations using mobile device management (MDM). 
+
+   * App Development with Swift Associate
+
+   * App Development with Swift Certified User 
+   <br /><br />
+
+https://www.macadmins.org/
+
+https://www.quora.com/How-can-I-become-an-Apple-repair-technician
+
+<a target="_blank" href="https://www.youtube.com/watch?v=ymA6f3jhV-c">VIDEO: "Become an Apple Genius"</a> and <a target="_blank" href="https://www.youtube.com/watch?v=KRxT2e_4Boo">Uncover the secrets</a> "Align - Assure - Acknowledge"
+
+<a target="_blank" href="https://www.youtube.com/watch?v=PRMZhuc_6Bw&t=20s">VIDEO: BECOME AN APPLE GENIUS - How to get a Job and work for Apple!</a>
 
 Apple offers the "Mac OS X - Certified Associate" certification exam on this topic (Mac Integration) on each OSX version. Those who pass get on <a target="_blank" href="https://i7lp.integral7.com/durango/do/pr/prSearch?ownername=apple&channel=apple">Apple's Registry</a>.
+Gone through <a target="_blank" href="https://it-training.apple.com/tutorials/apt-support">14-hour "Learn How to Support Apple Devices"</a> is for the <a target="_blank" href="https://wilsonmar.github.io/apple-mac-osx-versions/">latest versions of iPhone, iPad, and macOS</a>.
+
+<a target="_blank" href="https://certifications.apple.com/viewer/home">Certifications</a> and <a target="_blank" href="https://certifications.apple.com/viewer/exams">Assessments</a>
 
 <a target="_blank" href="https://training.apple.com/pdf/Mac_Integration_Basics_10.13_Participant_Guide.pdf">Apple has a document</a>
 that shows how to:
- Integrate a Mac into a Windows network environment and configure a Mac to work with Active Directory to take advantage of network services, file sharing, printing, instant messaging, email, calendars, and contacts.
-Included is security at the user, local-networking, and remote-networking levels.
-Migrate data from a Windows computer to a Mac.
-Back up data.
-Run Windows programs on a Mac. 
-
-
-<hr />
-
-<a name="Amazon"></a>
-
-#### Amazon EC2 Cloud Images
-
-   <a target="_blank" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html">GUIDE</a>
-
-A <a target="_blank" href="https://secureanycloud.com/">hardened</a> Amazon Machine Image (AMI) containing Visual Studio 2017 Community Edition on Windows Server 2016 <a target="_blank" href="https://aws.amazon.com/marketplace/pp/B06XKP1YWV">costs 28 cents per hour on a t2.medium in the US</a>. 20 cents of that goes pays for <a target="_blank" href="mailto:Support@SecureAnyCloud.com">support</a> from <a target="_blank" href="https://secureanycloud.com/">Cognosys</a>, its creator. 888.489-2723
-
-   Cost per hour increases in a straight line (linear) way for number of CPUs:
-   ![ec2-cognosys-vcpu-per-dollar-562x217-54344](https://user-images.githubusercontent.com/300046/30037418-d2ddfd46-9177-11e7-93ad-f376ccca8dc1.jpg)
-   <br />
-   Cost per hour increases in the same way for amount of Memory (RAM):
-   ![ec2-cognosys-mem-per-dollar-562x225-62637](https://user-images.githubusercontent.com/300046/30037332-200f3fd6-9177-11e7-98c2-bd1a76592089.jpg)
-
-
-   <a target="_blank" href="http://www.ec2instances.info/">ec2instances.info</a> provides a spreadsheet.
-
-   WARNING: On AWS EC2, Windows Server 2016 Nano servers do not support RDP, only Windows PowerShell.
-
-   <a target="_blank" href="https://aws.amazon.com/ec2/instance-types/">A t2.medium has 2 cores and 4 GB</a>.
-
-   PROTIP: With Amazon, you pay for hourly increments. With Google, you pay per minute.
-
-<a target="_blank" href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html">Connect to an instance in AWS EC2</a>:
-
-1. Create an Amazon EC2 account at http://aws.amazon.com/ec2/.
-
-
-<a name="WorkSpaces"></a>
-
-### Client WorkSpaces in AWS cloud
-
-This approach works not just a MacOS laptop, 
-but for any computer running a modern browser,
-such as <a target="_blank" href="http://docs.aws.amazon.com/workspaces/latest/userguide/amazon-workspaces-chromebook-client.html">
-on a Chromebook</a>. No files are transferred, just graphic
-images of a screen on servers within the AWS cloud.
-This makes for more stringent security, but also mean significant lag that affect productivity.
-
-   * <a target="_blank" href="https://forums.aws.amazon.com/search.jspa?mbtc=iQylnisvlZwOpRpOlSNPnOsymqDNwqQZ&objID=f164&q=workspaces&x=0&y=0">
-   Amazon's Workspaces Forum questions</a>
+Integrate a Mac into a Windows network environment and configure a Mac to work with Active Directory to take advantage of network services, file sharing, printing, instant messaging, email, calendars, and contacts. Topics:
+   * security at the user, local-networking, and remote-networking levels.
+   * Migrate data from a Windows computer to a Mac.
+   * Back up data.
+   * Run Windows programs on a Mac. 
    <br /><br />
 
-1. Use an appropriate AWS IAM account to login to the <strong>WorkSpaces Console</strong> at
+<a target="_blank" href="https://jobs.apple.com/app/en-us/getdiscovered?stepName=resume">Submit your resume</a>.
 
-   <a target="_blank" href="https://console.aws.amazon.com/workspaces/home">
-   https://console.aws.amazon.com/workspaces/home</a>
+<a target="_blank" href="https://www.youtube.com/watch?v=ylZ6w6eYRjI">VIDEO: How to answer 36 Questions Asked in 97% Apple Interviews</a>
 
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/57975600-4238a600-7989-11e9-8834-12f0d42b6c2b.jpg"><img align="right" alt="windows-on-mac-189x434-6552.jpb" width="189" height="434" src="https://user-images.githubusercontent.com/300046/57975600-4238a600-7989-11e9-8834-12f0d42b6c2b.jpg"></a>
+<a target="_blank" href="https://support.apple.com/guide/mac-help/switched-from-windows-to-mac-mchlbc684e49/14.0/mac/14.0">On Transitioning from Windows to Mac</a>
 
-1. Select the region.
-1. Click "Directories" menu and set up a Directory.
-1. Launch. Select the Directory.
-1. For the simplest approach, select "Simple AD" Next. Small AWS Managed Microsoft AD".
-1. Use a password generator UoyJhssxbcQzrDwT8ciF. Next.
-1. Choose VPC and two subnets.
-1. Wait for Status to go from "Requested" to "Creating" to "Active".
 
-   ### Launch Workspaces
 
-   An image contains only the OS, software, and settings. A bundle is a combination of both that image and the hardware from which a WorkSpace is launched.
+## Not new-generation M1 chips
 
-   The Free Tier provides two Standard bundle WorkSpaces for up to 40 hours of combined use per month, for two calendar months, from the time you create your first WorkSpace. Usage time accrues while you’re actively using your WorkSpace as well as the time it takes to stop after a specified period of inactivity, which by default is set to one hour. If you exceed the Free Tier limits, you will be charged the standard Amazon WorkSpaces hourly rate for the additional resources you use. At the end of two calendar months, the WorkSpaces you launched in the Free Tier will automatically be billed at the applicable hourly rate.
+Newer Macs with <strong>Apple Silicon</strong> (M1, M2, M3, etc.) chips' ARM architecture are not supported by Linux (at time of writing). To run Linux on Apple Silicon Macs use  virtual machine software such as:
 
-   Amazon's regular <a target="_blank" href="https://aws.amazon.com/workspaces/pricing/">
-   pricing is $25 to $75 per month per user</a>, which Amazon estimates is 59% less than traditional Virtual Desktop Infrastructures (VDI) from Citrix and VMware.
+   * <a target="_blank" href="https://www.vmware.com/products/fusion.html">$299 VMWare Fusion</a> 
 
-   Amazon's approach uses newer tech than VDI. 
-
-1. Click "WorkSpaces" in menu.
-1. Click blue "Launch WorkSpaces".
-1. Select the Directory and Subnets.
-
-   ### Set-up Users
-
-1. Specify for each user his/her Username, First Name, Last Name, and Email for the Bundle selected.
-
-   PROTIP: Use a email as the Username.
-
-1. Click "Create Users".
-1. Check the user you want.
-
-   If a new user input was already defined, the form is cleared.
-
-1. Click "Show All Users".
-1. Check the user.
-1. Click "Next Step".
-1. Select Bundle for the OS (with default 80 GB root and 50 GB user volume).
-1. Select Running Mode (AlwaysOn or AutoStop hours).
-1. Click "Next Step".
-
-1. Click Launch Workspace (for all users). 
-1. Wait (about 20 minutes) for the Workspace Console goes from PENDING to AVAILABLE (in green letters). 
-1. To refresh the page, type command+R or click the recycle icon.
-
-   ### Amazon WorkSpaces Application Manager (WAM)
-
-1. Switch to return to managed users in the Amazon WorkSpaces Application Manager (WAM) for your current region at:
-
-   <a target="_blank" href="https://us-west-2.console.aws.amazon.com/wam/home">
-   https://us-west-2.console.aws.amazon.com/wam/home</a> 
-
-   CAUTION: There is no moving WorkSpaces from one region to another.
-
-   There is a WAM Standard for additional functionality.
-
-   ### Install WorkSpaces client
+   * <a href="#UTM">UTM</a> - has a <a target="_blank" href="https://mac.getutm.app/">free version</a> and a <a target="_blank" href="https://apps.apple.com/us/app/utm-virtual-machines/id1538878817">$9.99 edition on the Mac App Store</a> with some additional features. It uses QEMU.
    
-1. In each user's email client, open the welcome email and click the link.
-1. Set your WorkSpaces credentials with a password.s
-1. Highlight the registration code in the email and copy to your Clipboard.
-   
-1. Choose the link for your laptop model at <br />
-   <a target="_blank" href="http://clients.amazonworkspaces.com/">
-   http://clients.amazonworkspaces.com</a> 
+   * <a target="_blank" href="https://www.parallels.com/products/desktop/">Parallels Desktop</a> - a commercial product that runs as a macOS app. It's the most well-established and probably the easiest to use.
 
-1. Click to download the "WorkSpaces.pkg" to your Downloads folder.
+   * Virtual Box is free but can be difficult to configure if you haven’t used it before. It conflicts with Docker.
 
-   On a MacOS, it's file "WorkSpaces.pkg" (38.2 MB taking 115.3 MB space).
+(Boot Camp is for Windows only, not Linux.)
 
-   On a Chromebook, click "ADD TO CHROME" at the upper-right corner.
+https://www.youtube.com/watch?v=uF6Wal8vFJg
+home server
 
-1. Switch to Finder and click to invoke the installer the Chrome application to enable the proprietary PC over IP (PCoIP) protocol (from Teradici) to compress, encrypt and rapidly transport image pixels between client and server.
 
-1. Double-click on the installer and click Continue and
-   finally, Install. Provide your password when requested.
+## Triple-boot Mac
 
-1. Move the installer file (WorkSpaces.pkg) to Trash, to recover disk space.
-   
-1. Do a Chromebook search to verify that the Amazon WorkSpaces client app icon appears.
+<a target="_blank" href="https://www.youtube.com/watch?v=B0EuYHFeLAA">VIDEO</a>:
+<a target="_blank" href="https://www.youtube.com/watch?v=0T38XIzusFc">VIDEO</a>:
 
-1. BLAH: The full graphic streaming virtual desktops tends to eat up much bandwidth. So measure how much you have used before and after sessions.
+1. Use Apple's Boot Camp to partition disk space for Windows and Linux.
+1. Use Apple's Boot Camp to install Windows on the new Windows partition.
+1. Install boot loader <strong>rEFInd</strong> so we can <strong>choose OS at boot time</strong>
 
-   Optionally, your company's existing on-premises Active Directory (AD) can be reached by Amazon via an Amazon Virtual Private Cloud (VPC) with a hardware virtual private network (VPN) connection or a dedicated connection with AWS Direct Connect. 
+1. Shrink (compress) the partition for Boot Camp to allow space for Linux installation
+1. Install Ubuntu Linux on the newly created partition.
 
-   Once linked up, you use the  AWS Management Console to select the users in your Active Directory who will receive a WorkSpace. 
-
-1. Open the app for the first time.
-1. Type your <strong>user name</strong> and password and choose Sign In.
-1. Switch to your user's email client and highlight the registration code from the "Your Amazon WorkSpace" email, then paste on the form.
-1. Click Register.
-
-   ### Repeat Login
-
-   NOTE: 1Password cannot auto-fill Username and Password on the MacOS WorkSpaces app nor on Chrombook.
-
-1. Login using the Username and password for the WorkSpaces client.
-
-   If your Amazon WorkSpaces administrator has enabled multi-factor authentication for your organization's WorkSpaces, you are prompted for a passcode to complete your login. 
-
-   CAUTION: Only one browser can be used at the same time.
-   Amazon logs off a session when another session is started on another computer.
-
-1. If your Amazon WorkSpaces administrator has not disabled the "Remember Me" feature, you are prompted to save your credentials securely so that you can connect to your WorkSpace easily in the future. Your credentials are securely cached while the application is running.
-
-   After the client application connects to your WorkSpace, your WorkSpace desktop is displayed.
-
-1. (Optional) If your WorkSpace uses an AD Connector directory, update the maximum lifetime of the Kerberos ticket by following the steps in Configuring Kerberos Policies in the Microsoft TechNet Library. 
-
-1. If you need to disable the "Remember Me" feature, search for help in the Amazon WorkSpaces forum.
-
-   ### Configure Remote Assistance
-
-1. Open PowerShell window.
-1. Install Remote Assistance using this PowerShell command:
-  
-   <tt><strong>Add-WindowsFeature Remote-Assistance
-   <strong></tt>
-
-   Open port 3389 in the firewall and in the Security Group, Remote Desktop should work using the username and password in the traditional way.
-
-
-   ### Configure Windows 7 Folder Options
-
-0. Click the Windows Start round icon at the bottom left of the screen.
-0. Type "folder options" (without the quotes) until the line "Folder Options" appears for you to click at the top of the menu.
-0. In the "Folder Options" dialog box, click the "View" tab at the top of the window.
-0. Select "Show hidden files, folders, and drives".
-0. Click to uncheck the box for "Hide extensions for known file types".
-0. Click the "OK" button at the bottom of the dialog box.
-
-   ### Configure Windows 7 Toolbar
-
-0. Click the Windows Start round icon at the bottom left of the screen.
-0. Click All Programs, Accessories. All the usual tools are there.
-0. Drag Notepad and drop it on the tool bar at the bottom of the screen.
-
-0. Click the Windows PowerShell folder.
-0. Drag "Windows PowerShell" and drop it on the tool bar at the bottom of the screen.
-
-0. Open Windows Explorer from the tool bar at the bottom of the screen.
-0. Click on "Computer". Notice there is no C: drive and no access to C:\Windows internals.
-0. Double-Click on "User Profile D:" drive.
-
-   Notice there are 50 GB for you.
-
-0. Double-Click on D: and navigate into folder Users, your account name.
-
-   PROTIP: Here is the default location when command line windows open by default.
-   So place scripts here (among folders).
-
-0. Right-Click Windows PowerShell to select "Run as Administrator".
-0. Type:
-
-   <tt><strong>echo $Env:USERPROFILE
-   </strong></tt>
-
-   This is your user home folder.
-
-0. Set permissions:
-
-   <tt><strong>set-executionpolicy remotesigned
-   </strong></tt>
-
-   <pre>
-Execution Policy Change
-The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose
-you to the security risks described in the about_Execution_Policies help topic at
-http://go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy?
-[Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
-   </pre>
-
-0. Type Y to confirm.
-   
-   See <a target="_blank" href="https://technet.microsoft.com/en-us/library/bb613481.aspx">
-   How to write a PowerShell script</a>
-
-
-0. Within PowerShell you can also go your home by typing:
-
-   <tt><strong>cd ~
-   </strong></tt>
-
-0. Verify whether you can create a PowerShell script file:
-
-   <tt><strong>Add-Content helloworld.ps1 'Write-Host "Hello World"'
-   </strong></tt>
-
-   This is the PowerShell equivalent of `echo "Hello World" >helloworld.ps1`.
-
-0. List directory:
-
-   <tt><strong>dir
-   </strong></tt>
-
-0. Type the first letter h and press Tab to auto-complete:
-
-   <tt><strong>./helloworld.ps1
-   </strong></tt>
-
-   Instead of "Hello World", if you get this, it means executionpolicy was not set correctly:
-
-   <pre>
-    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
-    + FullyQualifiedErrorId : UnauthorizedAccess
-   </pre>
-
-
-   ### Install posh-git for PowerShell
-
-   TODO:
-   file:///C:/Program%20Files%20(x86)/AWS%20Tools/Documentation/AWSToolsForWindows.html 
-   AWS Tools for Windows 
-   AWS SDK for .NET
-
-0. To exchange files among a group of people, setup:<br />
-   <a target="_blank" href="https://amazonworkdocs.com/en/clients">
-   https://amazonworkdocs.com/en/clients</a>
-
-   ### Install clients using Chocolatey 
-
-   <a target="_blank" href="https://blogs.technet.microsoft.com/heyscriptingguy/2014/08/23/weekend-scripter-powershell-and-chocolatey/">
-   [Find-Package from OneGet included in Windows Management Framework 5.0 Preview gets packages from the Chocolatey installer repository]</a>
-
-0. Right-click on cmd and select "Run as Administrator".
-0. Copy <a target="_blank" href="https://chocolatey.org/install#install-with-cmdexe">
-   this</a> and right-click in the command window:
-
-   <pre><strong>
-@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
-   </strong></pre>
-
-0. Install <a target="_blank" href="https://chocolatey.org/packages/jdk8">
-   Java Development Kit for version 8 using Chocolatey</a>:
-
-   <tt><strong>choco install jdk8 -y
-   </strong></tt>
-
-0. Install <a target="_blank" href="https://chocolatey.org/packages?q=chrome">
-   Chrome browser</a>:
-
-   <tt><strong>choco install googlechrome -y
-   </strong></tt>
-
-0. Install <a target="_blank" href="https://chocolatey.org/packages?q=git">
-   Git for Windows</a> client:
-
-   <tt><strong>choco install git -y
-   </strong></tt>
-
-   Alternately, to add a Git client manually, open Firefox, search for "Git for Windows". Click Download.
-   Click Save file. Click the down arrow for a list of downloads.
-   Click to Open File. Run. Yes to UAC. Next all, but Git LFS. then Finish.
-   Close Firefox.
-   Click Windows icon. All Programs. Click Git, Git Bash.
-
-0. Install <a target="_blank" href="https://chocolatey.org/packages/poshgit">
-   Posh Git for PowerShell</a>:
-
-   <tt><strong>choco install poshgit -y
-   </strong></tt>
-
-   * Launch each and configure the window properties to enable Quick Edit and set 
-   Layout Height (scroll buffer) to 9999 lines.
-
-   https://www.develves.net/blogs/asd/articles/using-git-with-powershell-on-windows-10/#fn:start
-
-   ### Clone Samples 
-
-   Download Git repository containing bootstrap script:
-
-0. Open a Git Bash window.
-0. cd to where you add Git repositories:
-
-   <tt><strong>cd gits;<br />
-   git clone https://github.com/wilsonmar/loadrunner.git \-\-depth=1<br />
-   git clone https://github.com/wilsonmar/git-utilities.git \-\-depth=1
-   </strong></tt>
-
-
-   ### Shut-down and Resume
-
-   BLAH: It takes many minutes to stop and resume.
-
-
-   ### Custom WorkSpaces
-
-0. As an administrator, in the Console, select the WorkSpace and select "Create Image" to create an image with your applications and settings. 
-
-   NOTE: Custom images created from Amazon WorkSpaces Graphics bundles can only be used with Graphics bundles, and custom images created from Value, Standard, Performance, or Power bundles can only be used with those bundles. Most Amazon WorkSpace images are available within 45 minutes.
-
-   See http://docs.aws.amazon.com/console/workspaces/images
-
-
-<a name="Docker"></a>
-
-## Docker #
-
-Docker is now a favored approach because it runs the same (unaltered)
-[(Dockerized apps)](/dockerize/) on Windows, Mac, and Linux platforms.
-
-Docker provides a transparent interface to operating systems.
-
-* [Docker setup](/docker-setup/)
-* [Docker build](/docker-build/)
-
+<hr />
 
 <a name="Vagrant"></a>
 
@@ -415,7 +129,7 @@ Vagrant (at <a target="_blank" href="https://www.vagrantup.com/">https://www.vag
 Vagrant provisions complete virtual machines (Unix, Linux, Mac, or Windows) inside the Mac operating system as virtual machines. The VMs are segregated from other processes. This allows you to test software in a variety of environments.
 
 
-### Install
+### Install Virtualbox
 
 0. First, <a target="_blank" href="https://wilsonmar.github.io/xcode">Apple XCode needs to be installed</a>.
 
@@ -426,10 +140,9 @@ Vagrant provisions complete virtual machines (Unix, Linux, Mac, or Windows) insi
    <tt><strong>brew install Caskroom/cask/virtualbox
    </strong></tt>
 
-   The response at time of writing:
+   The response (at time of writing):
 
-   <pre>
-Updating Homebrew...
+   <pre>Updating Homebrew...
 ==> Auto-updated Homebrew!
 Updated 1 tap (homebrew/core).
 ==> Updated Formulae
@@ -457,8 +170,7 @@ Password:
 
    The response at time of writing:
 
-   <pre>
-Updating Homebrew...
+   <pre>Updating Homebrew...
 ==> Auto-updated Homebrew!
 Updated 1 tap (caskroom/cask).
 No changes to formulae.
@@ -489,8 +201,7 @@ All Cask dependencies satisfied.
 
    The response at time of writing:
 
-   <pre>
-==> brew install --cask Caskroom/cask/vagrant 
+   <pre>==> brew install --cask Caskroom/cask/vagrant 
 ==> Satisfying dependencies
 ==> Downloading https://releases.hashicorp.com/vagrant/2.0.0/vagrant_2.0.0_x86_64.dmg
 ######################################################################## 100.0%
@@ -803,6 +514,7 @@ Blogs about this topic:
 
 ## Boot Camp on Mac #
 
+<a target="_blank" href="https://www.youtube.com/watch?v=Hmm9Q-T0oTo">VIDEO</a>:
 Apple came up with it, at <a target="_blank" href="https://support.apple.com/en-us/HT201468">
 https://support.apple.com/en-us/HT201468</a>
 says the installer is in the <strong>Utilities folder inside the Applications folder</strong>.
@@ -1395,6 +1107,9 @@ now built on Google Chrome.
 * <a target="_blank" href="https://www.howtogeek.com/187359/5-ways-to-run-windows-software-on-a-mac/">5 ways to run windows software on a Mac</a>
 
 * <a target="_blank" href="https://www.pcmag.com/news/how-to-run-windows-on-a-mac">How to run Windows on a Mac</a>
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=Kq849CpGd88">QEMU</a>
+<a target="_blank" href="https://www.youtube.com/watch?v=BgZHbCDFODk">for beginners</a>
 
 
 ## More on OSX

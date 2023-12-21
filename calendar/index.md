@@ -1,6 +1,6 @@
 ---
 layout: page
-date: "2023-11-15"
+date: "2023-12-15"
 file: "calendar"
 title: Please send me an appointment
 tags: [calendar, contact, Jekyll]
@@ -111,6 +111,8 @@ PROTIP: In meetings, I've found it helpful to arrange the next meeting appointme
 I can't find a <strong>keyboard</strong> quiet enough to use while in meeting, where the microphone picks up every keypress.
 
 
+<hr />
+
 ## Speedy Outlook usage with Keyboard shortcuts
 
 You can move faster around Outlook by using <a target="_blank" href="https://support.microsoft.com/en-us/office/keyboard-shortcuts-for-outlook-3cdeb221-7ae5-4c1d-8c1d-9e63216c1efd
@@ -162,8 +164,13 @@ The author pane at the left of this theme was updated to add Calendar under the 
    &#123;% endif %}
    </code></pre>
 
+<hr />
 
-## Load .ics files into Google Calendar
+## Google
+
+If you use <a target="_blank" href="https://calendar.google.com/calendar/u/0/r">Google Calendar</a> click "+ Create" at the top-right for <a target="_blank" href="https://support.google.com/calendar/answer/10729749?hl=en">Appointment schedule</a> See https://www.wired.com/story/google-calendar-find-time-to-meet-appointment-scheduler/
+
+### Load .ics files into Google Calendar
 
 If you clicked on a "Add to your calendar" link and ended up receiving an .ics file in your Downloads folder, here's what to do.
 
@@ -207,6 +214,46 @@ NOTE: This above is a modification of
 <a target="_blank" href="https://support.google.com/calendar/answer/37118?hl=en">
 a Google article</a>.
 
+
+## Gmail Google Calendar apps
+
+If you use Google as your calendar, instead of keeping a web browser open to it (which is not secure way to go), buy the <a target="_blank" href="https://apps.apple.com/us/app/gcal-for-google-calendar/id1107163858?mt=12">$3.99 GCal for Google Calendar app</a> (by Chandalis Meas for Macs at version 11 and above) and keep it running as an Apple app opened from your Mac's menu bar or Dock as a resizable floating window with responsive design.
+
+It caught my attention because it's the #8 most popular app in the Mac App Store.
+
+CAVEAT: It needs constant internet. Offline mode is not supported (unlike calendar.google.com). And it does not support <a target="_blank" href="https://www.youtube.com/watch?v=EKx0IwS1ZcI">GCal tricks</a> (<a target="_blank" href="https://www.youtube.com/watch?v=kqTL7Gr5oFg">VIDEO</a>) nor <a target="_blank" href="https://tasks.google.com/">Google Tasks</a>.
+
+It boasts a fast and responsive design with Advanced Notifications.
+• Global Hot Key to open app or create events.
+• Use Trackpad and swipe between time period, and more with our extras.
+<br /><br />
+
+
+
+<hr />
+
+## Optimizations
+
+<a target="_blank" href="https://www.youtube.com/watch?v=8G4Q5dw3aQo">VIDEO</a> recommends:
+
+   * Appointments which should not be moved.
+   * Bottlenecks
+   * Critical tasks (change with care)
+   * Daily routines (time to take shower, exercise, etc. when you can't do anything else)
+   * Flexible
+   <br /><br />
+
+Alternatives to Google Calendar <a target="_blank" href="https://www.youtube.com/watch?v=7dIGU2w-sRg">VIDEO</a>:
+
+   * Plan provides drag and drop of Tasks into the Calendar, and visa versa.
+   * Timeblock for phone 
+   * Cron (acquired by Notion) has integration with Slack for collaboration.
+   * Tick Tick is a simplified version of Google Calendar. Includes a Pomodoro timer.
+   * Akiflow is a Chrome extension that integrates with Google Calendar.
+   * Aplenote <a target="_blank" href="https://www.youtube.com/watch?v=qZ8ljrXYva0&t=53s">VIDEO</a>.
+   <br /><br />
+
+<hr />
 
 <a name="OnePage"></a>
 
@@ -280,10 +327,6 @@ which illustrates the group's work activities, month-by-month:
 Over the years, the group did less touring and performing (in green).
 
 > Does this chart say anything else to you?
-
-### Google
-
-If you use <a target="_blank" href="https://calendar.google.com/calendar/u/0/r">Google Calendar</a> click "+ Create" at the top-right for <a target="_blank" href="https://support.google.com/calendar/answer/10729749?hl=en">Appointment schedule</a> See https://www.wired.com/story/google-calendar-find-time-to-meet-appointment-scheduler/
 
 <hr />
 

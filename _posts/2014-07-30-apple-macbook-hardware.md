@@ -1,9 +1,9 @@
 ---
 layout: post
-date: "2022-09-30"
+date: "2023-12-13"
 file: "apple-macbook-hardware"
 title: "Apple Macbook Hardware"
-excerpt: "It's stylish because it's expensive"
+excerpt: "It's stylish because it's expensive. Or is that the other way around?"
 tags: [apple, mac, setup]
 image:
 # ![apple-store-fisheye-1900x500-42783.jpg
@@ -927,6 +927,65 @@ Bus 000 Device 001: ID 1d6b:IPPT Linux Foundation USB 3.0 Bus
 
 The above uses the built-in utility
 <tt>/usr/sbin/system_profiler SPHardwareDataType</tt>
+
+
+<hr />
+
+
+## Apple skills
+
+To gain user skills on macOS, use the <a target="_blank" href="https://www.youtube.com/@applesupport/search?query=macos">Apple Support channel on YouTube</a> and <a target="_blank" href="https://support.apple.com/guide/mac-help/welcome/mac">macOS User Guide</a>.
+
+Apple has a <a target="_blank" href="https://support.apple.com/en-lamr/aasp-program">Apple Authorized Service Provider (AASP) Program</a> for companies who repair Apple products using genuine Apple parts, tools, training, service guides, diagnostics and resources.
+
+https://www.wikiwand.com/en/Apple_certification_programs
+
+<a target="_blank" href="https://support.apple.com/en-us/HT205332">AppleCare service certifications</a> are for technicians who work at or want to work at Apple-authorized service facilities. Access the Apple Technical Learning Administration System (ATLAS) is AppleCare Service Training's website for online training and other learning resources. Use ATLAS to prepare for the certifications required to service Apple products.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=G2qnXieYuw4">VIDEO</a>: Apple-Authorized Training providers offer a 4-day $2,800 <a target="_blank" href="https://www.thenewit.com/go-apple-technician-training/apple-certified-mac-technician">Apple Certified Mac Technician (ACMT)</a> who take the ACMT Mac Service Certification exam on the 4th day. They also offer a <a target="_blank" href="https://www.youtube.com/watch?v=ZyHpSESFzEY">$250 Apple Certified Support Professional (ACSP)</a> exam prep course on macOS core functionality and that you can configure key services, perform basic troubleshooting, and support multiple Mac users. 
+
+https://www.credly.com/organizations/apple/badges list these certifications issued by Apple:
+As of Dec 2023, <a target="_blank" href="https://www.credly.com/organizations/apple/directory">3,355 passed</a> one or more of these <a target="_blank" href="https://training.apple.com/us/en/it/exams">exams</a>:
+
+   * "Apple Device Support exam (SVC-20A)" to join <a target="_blank" href="https://www.credly.com/org/apple/badge/apple-certified-support-professional">Apple Certified Support Professionals (ACRSs)</a> who support and troubleshoot Apple devices in a large organization as a level 1 or 2 help desk professional. <a target="_blank" href="https://training.apple.com/content/dam/appletraining/us/en/2024/documents/Apple%20Device%20Support%20Exam%20Prep%20Guide.pdf">PDF: Exam prep guide</a>.
+
+   * "Apple Deployment and Management exam (SVC-19A)" to join <a target="_blank" href="https://www.credly.com/org/apple/badge/apple-certified-it-professional">Apple Certified IT Professionals (ACITPs)</a> who deploy, secure, and manage Apple devices at scale in large organizations using mobile device management (MDM). 
+
+   * App Development with Swift Associate
+
+   * App Development with Swift Certified User 
+   <br /><br />
+
+https://www.macadmins.org/
+
+https://www.quora.com/How-can-I-become-an-Apple-repair-technician
+
+<a target="_blank" href="https://www.youtube.com/watch?v=ymA6f3jhV-c">VIDEO: "Become an Apple Genius"</a> and <a target="_blank" href="https://www.youtube.com/watch?v=KRxT2e_4Boo">Uncover the secrets</a> "Align - Assure - Acknowledge"
+
+<a target="_blank" href="https://www.youtube.com/watch?v=PRMZhuc_6Bw&t=20s">VIDEO: BECOME AN APPLE GENIUS - How to get a Job and work for Apple!</a>
+
+Apple offers the "Mac OS X - Certified Associate" certification exam on this topic (Mac Integration) on each OSX version. Those who pass get on <a target="_blank" href="https://i7lp.integral7.com/durango/do/pr/prSearch?ownername=apple&channel=apple">Apple's Registry</a>.
+Gone through <a target="_blank" href="https://it-training.apple.com/tutorials/apt-support">14-hour "Learn How to Support Apple Devices"</a> is for the <a target="_blank" href="https://wilsonmar.github.io/apple-mac-osx-versions/">latest versions of iPhone, iPad, and macOS</a>.
+
+<a target="_blank" href="https://certifications.apple.com/viewer/home">Certifications</a> and <a target="_blank" href="https://certifications.apple.com/viewer/exams">Assessments</a>
+
+<a target="_blank" href="https://training.apple.com/pdf/Mac_Integration_Basics_10.13_Participant_Guide.pdf">Apple has a document</a>
+that shows how to:
+Integrate a Mac into a Windows network environment and configure a Mac to work with Active Directory to take advantage of network services, file sharing, printing, instant messaging, email, calendars, and contacts. Topics:
+   * security at the user, local-networking, and remote-networking levels.
+   * Migrate data from a Windows computer to a Mac.
+   * Back up data.
+   * Run Windows programs on a Mac. 
+   <br /><br />
+
+<a target="_blank" href="https://jobs.apple.com/app/en-us/getdiscovered?stepName=resume">Submit your resume</a>.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=ylZ6w6eYRjI">VIDEO: How to answer 36 Questions Asked in 97% Apple Interviews</a>
+
+<a target="_blank" href="https://support.apple.com/guide/mac-help/switched-from-windows-to-mac-mchlbc684e49/14.0/mac/14.0">On Transitioning from Windows to Mac</a>
+
+
+
 
 ## More on MacOS
 
