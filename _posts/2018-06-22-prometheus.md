@@ -33,35 +33,37 @@ So as would be expected, Prometheus works with K8s.
 From the <a target="_blank" href="https://7451111251303.gumroad.com/l/wzcnen">PowerPoint file animations used to create</a> this <a target="_blank" href="https://www.youtube.com/watch?v=5GYe_-qqP30&t=15m14s">VIDEO</a> and diagram:<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703231177/prometheus-231218-2958x1488_sgbpan.png"><img alt="prometheus-231218-2958x1488.png" width="1531" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703231177/prometheus-231218-2958x1488_sgbpan.png"></a>
 
-The main component of Prometheus is a <strong>run service</strong> (written in <a target="_blank" href="https://wilsonmar.github.io/golang/">Golang</a>) that pulls or <strong>scrapes</strong> (gathers) metrics on <strong>target hosts</strong> and applications using instrumentation <a href="#Exporters">job exporters</a> or other  <strong>custom metric providers</strong> to expose metrics, either directly or via an intermediary <strong>push gateway</strong> for short-lived jobs. 
+1. The main component of Prometheus is a <strong>run service</strong> (written in <a target="_blank" href="https://wilsonmar.github.io/golang/">Golang</a>).
+1. The service <strong>scrapes</strong> (pulls, gathers) metrics from <strong>target hosts</strong> running applications by interacting with
+1. <a href="#Exporters">job exporters</a> or other <strong>custom metric providers</strong> to expose metrics. This can be done 
+1. either directly or via an intermediary <strong>push gateway</strong> for short-lived jobs. 
 
-Unlike the legacy "statsd" daemon which is concerned only with system-level metrics such as CPU, Memory, etc., the tool Prometheus (at <a target="_blank" href="https://prometheus.io/">https://prometheus.io</a>) gathers metrics from targets at the cluster, node, and microservice API levels.
+1. Unlike the legacy "statsd" daemon which is concerned only with system-level metrics such as CPU, Memory, etc., the tool Prometheus (at <a target="_blank" href="https://prometheus.io/">https://prometheus.io</a>) gathers metrics from targets at the cluster, node, and microservice API levels.
 
-In addition to static configurations, Prometheus can also <strong>discover targets</strong> to monitor with its <strong>Services Discovery</strong>.
+   In addition to static configurations, Prometheus can also 
 
-Prometheus stores scraped samples locally in its own multi-dimensional numeric <strong>time-series database</strong>. Unlike central data collectors (such as Splunk), each Prometheus server runs distributed standalone so thus not dependent on network storage or other remote services. So it's available even when other parts of the infrastructure are broken.
+1. <strong>discover targets</strong> to monitor with its <strong>Services Discovery</strong>.
 
-   <ul><a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/3e05432b-7c61-4eb1-83b1-7cef861beb0b/a90d6e30-c9f1-43ee-9778-5d5824a34690">NOTE</a>: A single Prometheus server can handle up to 1,000 scrape targets, at 100,000+ samples per second. But for larger deployments, multiple Prometheus servers can be deployed in a federated architecture, with a root Prometheus server scraping data from the child servers.
-   </ul>
+1. Prometheus stores scraped samples locally in its own multi-dimensional numeric <strong>time-series database</strong>. Unlike central data collectors (such as Splunk), each Prometheus server runs distributed standalone so thus not dependent on network storage or other remote services. So it's available even when other parts of the infrastructure are broken.
 
-<strong>Rules</strong> running in the Prometheus database either aggregate and record new time series from existing data. 
+   <a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/3e05432b-7c61-4eb1-83b1-7cef861beb0b/a90d6e30-c9f1-43ee-9778-5d5824a34690">NOTE</a>: A single Prometheus server can handle up to 1,000 scrape targets, at 100,000+ samples per second. But for larger deployments, multiple Prometheus servers can be deployed in a federated architecture, with a root Prometheus server scraping data from the child servers.
 
-   <ul>PROTIP: Strategically send operational data to a central (for review by SOC) and local server health data to a local Prometheus server. This would require diligence at managing disk space and retention. But sending data to a cloud service would require as much work be more expensive.
-   </ul>
+1. <strong>Rules</strong> running in the Prometheus database either aggregate and record new time series from existing data. 
 
-Prometheus provides multiple modes of graphing and dashboarding support, but also
+   PROTIP: Strategically send operational data to a central (for review by SOC) and local server health data to a local Prometheus server. This would require diligence at managing disk space and retention. But sending data to a cloud service would require as much work be more expensive.
+
+1. Prometheus provides multiple modes of graphing and dashboarding support, but also
 exposes its time-series data to <strong>API clients</strong> such as <strong>Grafana</strong> which make <a href="#PromQL">PromQL</a> (Prometheus query language) to extract data in order to display <strong>visualizations</strong> on their websites. 
 
-Because people can't be always watching such screens, Rules are also set in Prometheus to trigger <strong>alerts</strong> pushed to the <a href="#AlertManager">Alert Manager</a> which notifies end-points such as email, Slack, Pager Duty SMS, or other notification mechanisms.
+   Because people can't be always watching such screens, Rules are also set in Prometheus to trigger <strong>alerts</strong> pushed to the <a href="#AlertManager">Alert Manager</a> which notifies end-points such as email, Slack, Pager Duty SMS, or other notification mechanisms.
 
-   <ul>In a HA configuration, alerts are sent to multiple Alert Managers (with different external labels -a and -b), which deduplicate and fan out alerts to their configured receivers.
-   </ul>
+   In a HA configuration, alerts are sent to multiple Alert Managers (with different external labels -a and -b), which deduplicate and fan out alerts to their configured receivers.
 
-   <ul><a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/3e05432b-7c61-4eb1-83b1-7cef861beb0b/ae204f21-9e52-4272-842b-eb155b77e3fb">NOTE</a>: Shard data.
-   </ul>
+   <a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/3e05432b-7c61-4eb1-83b1-7cef861beb0b/ae204f21-9e52-4272-842b-eb155b77e3fb">NOTE</a>: Shard data.
 
-Data stored on the Prometheus server should be considered temporary to receive data before being frequently shuttled to some long-term storage such as in a cloud.
-Prometheus can write to dozens of storage backends, <strong>remote write</strong> (such as <strong>InfluxDB</strong>).
+1. Data stored on the Prometheus server should be considered temporary to receive data before being frequently shuttled to some long-term storage such as in a cloud.
+
+1. Prometheus can write to dozens of storage backends, <strong>remote write</strong> (such as <strong>InfluxDB</strong>).
 
 PROTIP: When using S3, Prometheus was designed to reference a static environment file. To prevent compromise, many organizations leave that file blank but use a utility such as HashiCorp Vault to create a new set of S3 credentials every time before running the backup.
 

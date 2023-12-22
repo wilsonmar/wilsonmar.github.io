@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-17"
+date: "2023-12-17"
 file: "iot-raspberry-install"
 title: "IoT Raspberry Install"
 excerpt: "How to setup a Raspberry Pi on macOS with Raspbian, Python, Node, Ansible, Kubernetes"
@@ -520,16 +520,17 @@ Steps in this section can be performed by a script.
 
 0. On MacOS, download from their website (formerly etcher.io):
 
-   <a target="_blank" href="https://www.balena.io/etcher/">https://www.balena.io/etcher</a>
+   <a target="_blank" href="https://etcher.balena.io/#download-etcher">https://etcher.balena.io/#download-etcher</a>
 
    NOTE: The Homebrew package "etcher" in no longer available.
 
 1. Click "Download for Mac" (they also have a version for Windows and <a target="_blank" href="https://www.youtube.com/watch?v=xb4fiFda4no">Linux</a>).
 
-1. Select a platform to download the Etcher app for your platform.
+   The "Got info" over time for macOS:
 
    | File downloaded | Size | Date |
    | --------------- | ---: | --- |
+   | belanaEtcher-1.18.11.dmg | 100.8 MB | 2023-12-22 |
    | belanaEtcher-1.5.33.dmg | 116.3 MB | 2019-05-04 |
    | Etcher-1.1.2.dmg | 58.9 MB | 2018-11-03 |
    | Etcher-1.0.0-darwin-x64.dmg | 67.9 MB | 2017-10-15 |
