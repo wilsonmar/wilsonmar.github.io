@@ -16,7 +16,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-The name Prometheus comes from Greek mythology. The Titan Prometheus was an immortal servant of the gods, who stole fire and gave it to humankind. This changed the human race forever (for better and worse). But this made mankind dangerous to the gods. Ridley Scott named his <a target="_blank" href="https://www.imdb.com/title/tt1446714/trivia">2012 film "Prometheus"</a>, saying: "It's the story of creation; the gods and the man who stood against them." 
+"Prometheus" is, <a target="_blank" href="https://www.wikiwand.com/en/Prometheus">in Ancient Greek mythology, a Titan of forethought, fire, and crafty counsel</a> -- an immortal servant of the gods. He stole fire and gave it to humankind. This changed the human race forever (for better and worse). But this made mankind dangerous to the gods. 
+
+Ridley Scott named his <a target="_blank" href="https://www.imdb.com/title/tt1446714/trivia">2012 film "Prometheus"</a>, saying: "It's the story of creation; the gods and the man who stood against them." 
 
 <a target="_blank" href="https://prometheus.io/docs/introduction/overview/">https://prometheus.io/docs/introduction/overview/</a><br />
 The software named Prometheus began at SoundCloud in 2012, where ex-Google SREs (Site Reliability Engineers) adopted Google's Borgmon. 
@@ -28,8 +30,8 @@ So as would be expected, Prometheus works with K8s.
 
 ## How it works
 
-<a target="_blank" href="https://www.youtube.com/watch?v=5GYe_-qqP30&t=15m14s">VIDEO</a>: <a target="_blank" href="https://7451111251303.gumroad.com/l/wzcnen">Get the file used to create this diagram</a>:<br />
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702812774/prometheus-arch-2940x1286_u2awin.png"><img alt="prometheus-arch-2940x1286.jpg" width="1531" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702812774/prometheus-arch-2940x1286_u2awin.png"></a>
+From the <a target="_blank" href="https://7451111251303.gumroad.com/l/wzcnen">PowerPoint file animations used to create</a> this <a target="_blank" href="https://www.youtube.com/watch?v=5GYe_-qqP30&t=15m14s">VIDEO</a> and diagram:<br />
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703231177/prometheus-231218-2958x1488_sgbpan.png"><img alt="prometheus-231218-2958x1488.png" width="1531" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703231177/prometheus-231218-2958x1488_sgbpan.png"></a>
 
 The main component of Prometheus is a <strong>run service</strong> (written in <a target="_blank" href="https://wilsonmar.github.io/golang/">Golang</a>) that pulls or <strong>scrapes</strong> (gathers) metrics on <strong>target hosts</strong> and applications using instrumentation <a href="#Exporters">job exporters</a> or other  <strong>custom metric providers</strong> to expose metrics, either directly or via an intermediary <strong>push gateway</strong> for short-lived jobs. 
 

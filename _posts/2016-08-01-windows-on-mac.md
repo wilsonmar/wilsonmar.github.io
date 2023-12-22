@@ -21,71 +21,14 @@ Apple no longer provides updates to hardware with <strong>Intel x86 chips</stron
 So a great use for hardware "obsoleted" by Apple is to convert them to <strong>run Linux and Windows</strong> operating systems, which were built on Intel "x86" chips.
 <a target="_blank" href="https://www.youtube.com/watch?v=X0DIHlnD_S0">VIDEO: Why Apple macs are good</a>. <a target="_blank" href="https://www.youtube.com/watch?v=0T38XIzusFc">VIDEO</a>
 
+Optionally, run 2012 mac Minis as a NAS server.
+
 This article describes several ways to run Microsoft Windows on an Apple MacOS.
 Each approach has its own advantages and disadvantages:
-
-* <a href="#Vagrant">Vagrant Virtualbox</a>
-* <a href="#BootCamp">BootCamp</a>
-* <a href="#VMwareFusion">VMWare Fusion</a>
-* <a href="#Parallels">Parallels</a>
-<br /><br />
 
 {% include whatever.html %}
 
 <hr />
-
-## Apple skills
-
-To gain user skills on macOS, use the <a target="_blank" href="https://www.youtube.com/@applesupport/search?query=macos">Apple Support channel on YouTube</a> and <a target="_blank" href="https://support.apple.com/guide/mac-help/welcome/mac">macOS User Guide</a>.
-
-Apple has a <a target="_blank" href="https://support.apple.com/en-lamr/aasp-program">Apple Authorized Service Provider (AASP) Program</a> for companies who repair Apple products using genuine Apple parts, tools, training, service guides, diagnostics and resources.
-
-https://www.wikiwand.com/en/Apple_certification_programs
-
-<a target="_blank" href="https://support.apple.com/en-us/HT205332">AppleCare service certifications</a> are for technicians who work at or want to work at Apple-authorized service facilities. Access the Apple Technical Learning Administration System (ATLAS) is AppleCare Service Training's website for online training and other learning resources. Use ATLAS to prepare for the certifications required to service Apple products.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=G2qnXieYuw4">VIDEO</a>: Apple-Authorized Training providers offer a 4-day $2,800 <a target="_blank" href="https://www.thenewit.com/go-apple-technician-training/apple-certified-mac-technician">Apple Certified Mac Technician (ACMT)</a> who take the ACMT Mac Service Certification exam on the 4th day. They also offer a <a target="_blank" href="https://www.youtube.com/watch?v=ZyHpSESFzEY">$250 Apple Certified Support Professional (ACSP)</a> exam prep course on macOS core functionality and that you can configure key services, perform basic troubleshooting, and support multiple Mac users. 
-
-https://www.credly.com/organizations/apple/badges list these certifications issued by Apple:
-As of Dec 2023, <a target="_blank" href="https://www.credly.com/organizations/apple/directory">3,355 passed</a> one or more of these <a target="_blank" href="https://training.apple.com/us/en/it/exams">exams</a>:
-
-   * "Apple Device Support exam (SVC-20A)" to join <a target="_blank" href="https://www.credly.com/org/apple/badge/apple-certified-support-professional">Apple Certified Support Professionals (ACRSs)</a> who support and troubleshoot Apple devices in a large organization as a level 1 or 2 help desk professional. <a target="_blank" href="https://training.apple.com/content/dam/appletraining/us/en/2024/documents/Apple%20Device%20Support%20Exam%20Prep%20Guide.pdf">PDF: Exam prep guide</a>.
-
-   * "Apple Deployment and Management exam (SVC-19A)" to join <a target="_blank" href="https://www.credly.com/org/apple/badge/apple-certified-it-professional">Apple Certified IT Professionals (ACITPs)</a> who deploy, secure, and manage Apple devices at scale in large organizations using mobile device management (MDM). 
-
-   * App Development with Swift Associate
-
-   * App Development with Swift Certified User 
-   <br /><br />
-
-https://www.macadmins.org/
-
-https://www.quora.com/How-can-I-become-an-Apple-repair-technician
-
-<a target="_blank" href="https://www.youtube.com/watch?v=ymA6f3jhV-c">VIDEO: "Become an Apple Genius"</a> and <a target="_blank" href="https://www.youtube.com/watch?v=KRxT2e_4Boo">Uncover the secrets</a> "Align - Assure - Acknowledge"
-
-<a target="_blank" href="https://www.youtube.com/watch?v=PRMZhuc_6Bw&t=20s">VIDEO: BECOME AN APPLE GENIUS - How to get a Job and work for Apple!</a>
-
-Apple offers the "Mac OS X - Certified Associate" certification exam on this topic (Mac Integration) on each OSX version. Those who pass get on <a target="_blank" href="https://i7lp.integral7.com/durango/do/pr/prSearch?ownername=apple&channel=apple">Apple's Registry</a>.
-Gone through <a target="_blank" href="https://it-training.apple.com/tutorials/apt-support">14-hour "Learn How to Support Apple Devices"</a> is for the <a target="_blank" href="https://wilsonmar.github.io/apple-mac-osx-versions/">latest versions of iPhone, iPad, and macOS</a>.
-
-<a target="_blank" href="https://certifications.apple.com/viewer/home">Certifications</a> and <a target="_blank" href="https://certifications.apple.com/viewer/exams">Assessments</a>
-
-<a target="_blank" href="https://training.apple.com/pdf/Mac_Integration_Basics_10.13_Participant_Guide.pdf">Apple has a document</a>
-that shows how to:
-Integrate a Mac into a Windows network environment and configure a Mac to work with Active Directory to take advantage of network services, file sharing, printing, instant messaging, email, calendars, and contacts. Topics:
-   * security at the user, local-networking, and remote-networking levels.
-   * Migrate data from a Windows computer to a Mac.
-   * Back up data.
-   * Run Windows programs on a Mac. 
-   <br /><br />
-
-<a target="_blank" href="https://jobs.apple.com/app/en-us/getdiscovered?stepName=resume">Submit your resume</a>.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=ylZ6w6eYRjI">VIDEO: How to answer 36 Questions Asked in 97% Apple Interviews</a>
-
-<a target="_blank" href="https://support.apple.com/guide/mac-help/switched-from-windows-to-mac-mchlbc684e49/14.0/mac/14.0">On Transitioning from Windows to Mac</a>
-
 
 
 ## Not new-generation M1 chips
@@ -105,18 +48,81 @@ Newer Macs with <strong>Apple Silicon</strong> (M1, M2, M3, etc.) chips' ARM arc
 https://www.youtube.com/watch?v=uF6Wal8vFJg
 home server
 
+<hr />
 
 ## Triple-boot Mac
 
 <a target="_blank" href="https://www.youtube.com/watch?v=B0EuYHFeLAA">VIDEO</a>:
 <a target="_blank" href="https://www.youtube.com/watch?v=0T38XIzusFc">VIDEO</a>:
+The stages:
 
-1. Use Apple's Boot Camp to partition disk space for Windows and Linux.
+1. <a href="#Empty+Trash">Empty Trash</a>
+1. <a href="#Take+full+backup">Take full backup</a> of your Mac.
+1. <a href="#Partition">Partition disk space</a> for Windows and Linux.
+1. <a href="#Create+Bootable+USB">Create a bootable USB</a> on a Mac.
 1. Use Apple's Boot Camp to install Windows on the new Windows partition.
 1. Install boot loader <strong>rEFInd</strong> so we can <strong>choose OS at boot time</strong>
 
 1. Shrink (compress) the partition for Boot Camp to allow space for Linux installation
 1. Install Ubuntu Linux on the newly created partition.
+
+* <a href="#Vagrant">Vagrant Virtualbox</a>
+* <a href="#BootCamp">BootCamp</a>
+* <a href="#VMwareFusion">VMWare Fusion</a>
+* <a href="#Parallels">Parallels</a>
+<br /><br />
+
+
+<hr />
+
+## Empty Trash
+
+1. Cursor to the edge for the Trash Can to appear so you can right-click it to select "Empty Trash". Confirm.
+
+
+   ## Take Full backup
+
+1. Plug in a USB drive with enough space to hold your various backups.
+   
+   If the drive is new, you'll be prompted to format it.
+
+1. Cursor to the top edge to click the backup icon to select "Back Up Now".
+1. Wait for the backup to complete.
+1. In Finder, scroll down to the USB drive to click the eject icon.
+
+   <a name="Partition"></a>
+
+   ## Partition disk space
+
+1. Press command+spacebar for the Spotlight to type enough of "Disk Utility.app" to press Enter to open it.
+
+1. Click View in the top left corner of the window to select "Show All Devices".
+1. To see the left menu better, click and drag the divider between the panes.
+1. Notice the total amount of disk space available on the upper-right box (such as "499.96 GB"). Later on the app would show the same disk at "500.28 GB".
+1. Click "Macintosh HD - Data" on the left pane.
+
+   PROTIP: You'll be allocating from the <strong>Free</strong> amount. Make sure there's enough.
+   
+1. Click the "Partition" square icon at the top of the window. If you are using a newer Mac, you might be asked to add a volume. Click Partition on the pop-up. 
+
+   Allocate <strong>20 GB</strong> each for Linux and Windows:
+
+1. For Name:, type "LINUX". No space character.
+1. For Format, select "MS-DOS (FAT)".
+1. Drag the little white circles on the edge of the larger circle. The gray side of the pie is space for your Mac, while the blue space is your new partition. 
+
+   Alternately, type the size in the box next to Size. 
+
+   It is recommended that you set aside at least 20GB for Linux. 
+   
+1. Take note of the size of your partition, you will need this information later.
+
+1. Click "Apply". Your computer becomes unresponsive as the partition is created.
+
+1. Click Partition and Continue when further prompted and wait for the partition process to finish. 
+
+1. <a href="#Create+Bootable+USB">Create a bootable USB</a> on a Mac.
+
 
 <hr />
 
@@ -1110,6 +1116,8 @@ now built on Google Chrome.
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=Kq849CpGd88">QEMU</a>
 <a target="_blank" href="https://www.youtube.com/watch?v=BgZHbCDFODk">for beginners</a>
+
+* https://www.youtube.com/watch?v=D7wOcIvWdxc First look: Linux Mint 21 beta, on a 10 year old Mac! by Veronica Explains
 
 
 ## More on OSX

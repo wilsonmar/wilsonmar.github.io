@@ -30,9 +30,10 @@ You can also use <a target="_blank" href="https://www.timeanddate.com/worldclock
 
 ## Pick a slot on my calendar
 
-<strong>To work internationally, I am usually up by 6 am Mountain (5 am Pacific Time, 7 am Central, 8 am Eastern).</strong>
+<strong>PROTIP: To work internationally, I am usually up by 6 am Mountain (5 am Pacific Time, 7 am Central, 8 am Eastern).</strong>
 
-PROTIP: It helps if you have two screens to reduce switching back and forward between your own calendar and mine to identify a mutually open time.
+PROTIP: It helps if you have <strong>two monitors/screens</strong> to reduce switching back and forward between your own calendar and mine to identify a mutually open time.
+
 
 ### OPTION A: Use my Calendly subscription:
 
@@ -94,26 +95,55 @@ create a link to Your Outlook Calendar in your email signature</a>.
 
  <a target="_blank" href="https://support.microsoft.com/en-us/topic/how-to-create-a-findtime-poll-4dc806ed-fde3-4ea7-8c5e-b5d1fddab4a6">install an Outlook add-in for scheduling meetings</a> called <a target="_blank" href="https://findtime.microsoft.com/">FindTime</a> which adds a "Reply with Meeting poll" button to the Home tab. The organizer can send multiple time options through FindTime 
 
-
-## Calendar services
-
-There are several services that enable others to pick a time to meet with you:
-
-* <a target="_blank" href="https://www.calendly.com/">calendly.com</a> only offers <a target="_blank" href="https://www.trustpilot.com/review/calendly.com">customer service by email</a>, and their <a target="_blank" href="https://calendly.com/privacy">privacy policy</a> is <a target="_blank" href="https://privacyspy.org/product/calendly/">rated 3.5/10</a>.
-
-* x.ai ?
-
+<hr />
 
 ## Create meetings 
 
 PROTIP: In meetings, I've found it helpful to arrange the next meeting appointment while everyone is still on a call.
 
-I can't find a <strong>keyboard</strong> quiet enough to use while in meeting, where the microphone picks up every keypress.
+There are several services that enable others to pick a time to meet with you:
 
+* <a target="_blank" href="https://www.calendly.com/">calendly.com</a> only offers <a target="_blank" href="https://www.trustpilot.com/review/calendly.com">customer service by email</a>, and their <a target="_blank" href="https://calendly.com/privacy">privacy policy</a> is <a target="_blank" href="https://privacyspy.org/product/calendly/">rated 3.5/10</a>.
+
+* <a target="_blank" href="https://www.blab.co/">blab.co</a> (an acronym for Book Like A Boss) is $35/month.
+
+* <a target="_blank" href="https://acuityscheduling.com/">acuityscheduling.com</a> is $15/month.
+
+* <a target="_blank" href="https://goldie.com/">goldie.com</a> is $20/month.
+
+
+### Google Calendar (Gmail)
+
+Google Calendar is a free time-management web application offered by Google. It became available on April 13, 2006, and exited the beta stage in July 2009. Users are required to have a Google Account in order to use the software.
+
+1. At <a target="_blank" href="https://calendar.google.com/calendar/u/0/r">https://calendar.google.com/calendar/u/0/r</a>
+1. Click "+ Create" at the top-right for <a target="_blank" href="https://support.google.com/calendar/answer/10729749?hl=en">Appointment schedule</a> See https://www.wired.com/story/google-calendar-find-time-to-meet-appointment-scheduler/
+<br /><br />
+
+The above steps can be taken because I've setup my calendar ahead of time:
+<a target="_blank" href="https://www.youtube.com/watch?v=5fXVY6RH7jk&t=10m9s">VIDEO</a>: 
+1. Select any time on the calendar.
+1. Click "Appointment schedule" in the pop-up.
+1. Click "Setup up the schedule" for the "BOOKABLE APPOINTMENT SCHEDULE".
+1. Type a name for a schedule (you can make several).
+1. Select a color for that schedule.
+
+1. On each day, click "Unavailable" to change to "Available" and set the time range.
+1. Choose the Scheduling window for how far out.
+1. Set blackout periods.
+1. Click "Next".
+1. Set the Booking page photo and name.
+1. Set the Location and conferencing (Zoom, etc.).
+1. For Description, paste the Zoom link.<br />Add the purpse of the meeting.<br />Add a conclusion such as "Looking forward to talking with you."<br />Add a footer such as "Please let me know if you need to reschedule."<br />Add a signature such as "Wilson Mar, 650-793-3093,
+1. Set payments and cancellation policy.
+1. Booking confirmations and reminders.
+1. Click "Save".
 
 <hr />
 
-## Speedy Outlook usage with Keyboard shortcuts
+## Outlook usage with Keyboard shortcuts
+
+I can't find a <strong>keyboard</strong> quiet enough to use while in meeting, where the microphone picks up every keypress.
 
 You can move faster around Outlook by using <a target="_blank" href="https://support.microsoft.com/en-us/office/keyboard-shortcuts-for-outlook-3cdeb221-7ae5-4c1d-8c1d-9e63216c1efd
 ">Keyboard shortcuts</a>:
@@ -165,10 +195,6 @@ The author pane at the left of this theme was updated to add Calendar under the 
    </code></pre>
 
 <hr />
-
-## Google
-
-If you use <a target="_blank" href="https://calendar.google.com/calendar/u/0/r">Google Calendar</a> click "+ Create" at the top-right for <a target="_blank" href="https://support.google.com/calendar/answer/10729749?hl=en">Appointment schedule</a> See https://www.wired.com/story/google-calendar-find-time-to-meet-appointment-scheduler/
 
 ### Load .ics files into Google Calendar
 
@@ -248,7 +274,7 @@ Alternatives to Google Calendar <a target="_blank" href="https://www.youtube.com
    * Plan provides drag and drop of Tasks into the Calendar, and visa versa.
    * Timeblock for phone 
    * Cron (acquired by Notion) has integration with Slack for collaboration.
-   * Tick Tick is a simplified version of Google Calendar. Includes a Pomodoro timer.
+   * Tick Tick is a simplified version of Google Calendar. Includes a Pomodoro timer. <a target="_blank" href="https://www.youtube.com/watch?v=cQNlcnLp4cE">Used by MKHD</a>.
    * Akiflow is a Chrome extension that integrates with Google Calendar.
    * Aplenote <a target="_blank" href="https://www.youtube.com/watch?v=qZ8ljrXYva0&t=53s">VIDEO</a>.
    <br /><br />
