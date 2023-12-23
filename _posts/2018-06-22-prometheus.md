@@ -34,26 +34,40 @@ From the <a target="_blank" href="https://7451111251303.gumroad.com/l/wzcnen">Po
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703231177/prometheus-231218-2958x1488_sgbpan.png"><img alt="prometheus-231218-2958x1488.png" width="1531" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703231177/prometheus-231218-2958x1488_sgbpan.png"></a>
 
 1. The main component of Prometheus is a <strong>run service</strong> (written in <a target="_blank" href="https://wilsonmar.github.io/golang/">Golang</a>).
-1. The service <strong>scrapes</strong> (pulls, gathers) metrics from <strong>target hosts</strong> running applications by interacting with
-1. <a href="#Exporters">job exporters</a> or other <strong>custom metric providers</strong> to expose metrics. This can be done 
-1. either directly or via an intermediary <strong>push gateway</strong> for short-lived jobs. 
+1. The service <strong>scrapes</strong> (pulls, gathers) metrics from <strong>target hosts</strong> defined in its <tt>targets.json</tt> file. In addition to statically-defined targets, 
+1. Targets can be discovered by <strong>Service Discovery</strong> such as DNS, <a target="_blank" href="https://kubernetes.io/docs/concepts/services-networking/service/">Kubernetes Services</a>, or HashiCorp Consul services. The frequency of scraping and other settings are defined in the <tt>prometheus.yml</tt> file.
+
+1. Each target interacts with Prometheus through a <a href="#Exporters">job exporter</a> service installed on each host. There is a WMI exporter on Windows and another type of exporter on Linux.
+1. This can be done via an intermediary <strong>push gateway</strong> for short-lived jobs. 
+1. Exporters reference <strong>custom metric providers</strong> which expose specific metrics. 
 
 1. Unlike the legacy "statsd" daemon which is concerned only with system-level metrics such as CPU, Memory, etc., the tool Prometheus (at <a target="_blank" href="https://prometheus.io/">https://prometheus.io</a>) gathers metrics from targets at the cluster, node, and microservice API levels.
 
-   In addition to static configurations, Prometheus can also 
-
-1. <strong>discover targets</strong> to monitor with its <strong>Services Discovery</strong>.
-
-1. Prometheus stores scraped samples locally in its own multi-dimensional numeric <strong>time-series database</strong>. Unlike central data collectors (such as Splunk), each Prometheus server runs distributed standalone so thus not dependent on network storage or other remote services. So it's available even when other parts of the infrastructure are broken.
-
    <a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/3e05432b-7c61-4eb1-83b1-7cef861beb0b/a90d6e30-c9f1-43ee-9778-5d5824a34690">NOTE</a>: A single Prometheus server can handle up to 1,000 scrape targets, at 100,000+ samples per second. But for larger deployments, multiple Prometheus servers can be deployed in a federated architecture, with a root Prometheus server scraping data from the child servers.
 
-1. <strong>Rules</strong> running in the Prometheus database either aggregate and record new time series from existing data. 
+1. Prometheus stores scraped samples locally in its own multi-dimensional numeric <strong>time-series database (TSDB)</strong>. 
+
+1. <strong>Rules</strong> defined in the Prometheus TSDB can be defined with filtering and aggregate new time series from data.
+
+   Each Prometheus server runs distributed standalone so thus not dependent on network storage or other remote services. So it's available even when other parts of the infrastructure are broken.
+
+   PROTIP: Data on Prometheus servers should be considered temporary because data on it can be lost if the server is restarted. 
+
+1. Data on Prometheus should be frequently sent to a long-term storage system such as AWS S3, <a target="_blank" href="https://www.influxdata.com/">InfluxDB</a>, <a target="_blank" href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a>, <a target="_blank" href="https://wilsonmar.github.io/microsoft-fabric/">Microsoft Fabric</a>, etc.
 
    PROTIP: Strategically send operational data to a central (for review by SOC) and local server health data to a local Prometheus server. This would require diligence at managing disk space and retention. But sending data to a cloud service would require as much work be more expensive.
 
-1. Prometheus provides multiple modes of graphing and dashboarding support, but also
-exposes its time-series data to <strong>API clients</strong> such as <strong>Grafana</strong> which make <a href="#PromQL">PromQL</a> (Prometheus query language) to extract data in order to display <strong>visualizations</strong> on their websites. 
+1. PROTIP: Cloud storage mechanism has a <strong>backup</strong> mechanism to <strong>restore</strong> data in case of failure. Practice restoring data to a new server to ensure that the backup mechanism actually works.
+
+1. PROTIP: To minimize training and confusion, enterprise organizations typically have a preferred set of tools for <strong>analytics</strong> processing to generate <strong>graphs</strong> and <strong>dashboards</strong> for visualization.
+
+1. The same vendor who created Prometheus also created <a target="_blank" href="https://grafana.com/">Grafana</a> to present <strong>dashboards</strong> to visualize data. 
+
+   <a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/3e05432b-7c61-4eb1-83b1-7cef861beb0b/ae204f21-9e52-4272-842b-eb155b77e3fb">NOTE</a>: Grafana can also be used to visualize data from other sources such as <a target="_blank" href="https://www.influxdata.com/">InfluxDB</a>, <a target="_blank" href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a>, <a target="_blank" href="https://wilsonmar.github.io/microsoft-fabric/">Microsoft Fabric</a>, etc.
+
+1. The Prometheus server can be configured to <strong>read</strong> data from remote sources -- perform <strong>remote read</strong>.
+
+1. Prometheus exposes its time-series data to <strong>API clients</strong> such as <strong>Grafana</strong> which make <a href="#PromQL">PromQL</a> (Prometheus query language) to extract data in order to display <strong>visualizations</strong> on their websites. 
 
    Because people can't be always watching such screens, Rules are also set in Prometheus to trigger <strong>alerts</strong> pushed to the <a href="#AlertManager">Alert Manager</a> which notifies end-points such as email, Slack, Pager Duty SMS, or other notification mechanisms.
 
@@ -61,9 +75,6 @@ exposes its time-series data to <strong>API clients</strong> such as <strong>Gra
 
    <a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/3e05432b-7c61-4eb1-83b1-7cef861beb0b/ae204f21-9e52-4272-842b-eb155b77e3fb">NOTE</a>: Shard data.
 
-1. Data stored on the Prometheus server should be considered temporary to receive data before being frequently shuttled to some long-term storage such as in a cloud.
-
-1. Prometheus can write to dozens of storage backends, <strong>remote write</strong> (such as <strong>InfluxDB</strong>).
 
 PROTIP: When using S3, Prometheus was designed to reference a static environment file. To prevent compromise, many organizations leave that file blank but use a utility such as HashiCorp Vault to create a new set of S3 credentials every time before running the backup.
 
