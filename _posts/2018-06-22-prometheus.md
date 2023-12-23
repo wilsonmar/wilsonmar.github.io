@@ -31,7 +31,7 @@ So as would be expected, Prometheus works with K8s.
 ## How it works
 
 From the <a target="_blank" href="https://7451111251303.gumroad.com/l/wzcnen">PowerPoint file animations used to create</a> this <a target="_blank" href="https://www.youtube.com/watch?v=5GYe_-qqP30&t=15m14s">VIDEO</a> and diagram:<br />
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703231177/prometheus-231218-2958x1488_sgbpan.png"><img alt="prometheus-231218-2958x1488.png" width="1531" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703231177/prometheus-231218-2958x1488_sgbpan.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703296700/prometheus-231222-2918x1482_g8amux.png"><img alt="prometheus-231222-2918x1482.png" width="1531" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703296700/prometheus-231222-2918x1482_g8amux.png"></a>
 
 1. The main component of Prometheus is a <strong>run service</strong> (written in <a target="_blank" href="https://wilsonmar.github.io/golang/">Golang</a>).
 1. The service sends HTTPS GET requests to <strong>scrape</strong> (pull) metrics from <strong>target hosts</strong> defined in its <tt>targets.json</tt> file. In addition to statically-defined targets, 
@@ -53,7 +53,9 @@ From the <a target="_blank" href="https://7451111251303.gumroad.com/l/wzcnen">Po
 
    PROTIP: Data on Prometheus servers should be considered <strong>short-lived (temporary)</strong> because data on it can be lost if the server is restarted. 
 
-1. Prometheus exposes its time-series data to a variety of <strong>API clients</strong> making <a href="#PromQL">PromQL</a> (Prometheus Query Language) statements which extract data. Authentication is based on <strong>Bearer tokens</strong> (JWT) or <strong>Basic Auth</strong> (username/password) ???
+1. Prometheus exposes its time-series data to a variety of <strong>API clients</strong> making <a href="#PromQL">PromQL</a> (Prometheus Query Language) statements which extract data. 
+
+1. Many enterprises have API clients go through an API Gateway to enforce strong authentication and traffic limits from specific users.
 
 1. Data on Prometheus should be frequently sent to a long-term storage system such as AWS S3, <a target="_blank" href="https://www.influxdata.com/">InfluxDB</a>, <a target="_blank" href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a>, <a target="_blank" href="https://wilsonmar.github.io/microsoft-fabric/">Microsoft Fabric</a>, etc.
 
@@ -225,12 +227,15 @@ By <a target="_blank" href="https://www.linkedin.com/in/craig-d-golightly/">Crai
 <br /><br />
 
 
-https://github.com/ACloudGuru-Resources/DevOps-Monitoring-Deep-Dive
-By https://www.linkedin.com/in/marcosmsouza/
+By <a target="_blank" href="https://www.linkedin.com/in/marcosmsouza/">Marcos Souza</a>:
 
-<br /><br />
+   * https://github.com/ACloudGuru-Resources/DevOps-Monitoring-Deep-Dive
+   <br /><br />
 
-The <a target="_blank" href="https://www.pluralsight.com/cloud-guru/courses/prometheus-deep-dive">12-hour "DevOps Monitoring Deep Dive" video course</a> by Elle Krout references an <a target="_blank" href="https://lucid.app/lucidchart/918602e0-14b7-473c-92e7-bfbc4a15ba8f/view?page=j8p68BdUlMFS#">interactive Lucid diagram called "ProjectForethought"</a> for the NodeJs simple to-do list program called Forethought that is the subject of monitoring. 
+by Elle Krout:
+
+   * The <a target="_blank" href="https://www.pluralsight.com/cloud-guru/courses/prometheus-deep-dive">12-hour "DevOps Monitoring Deep Dive" video course</a> references an <a target="_blank" href="https://lucid.app/lucidchart/918602e0-14b7-473c-92e7-bfbc4a15ba8f/view?page=j8p68BdUlMFS#">interactive Lucid diagram called "ProjectForethought"</a> for the NodeJs simple to-do list program called Forethought that is the subject of monitoring. 
+   <br /><br />
 
 1. Create within Linux Academy's <a target="_blank" href="https://playground.linuxacademy.com/server-list">Servers in the cloud</a>, the "DevOps Monitoring Deep Dive" distribution in a small-sized host.  https://github.com/linuxacademy/content-devops-monitoring-app
 
@@ -672,9 +677,12 @@ https://prometheus.io/docs/instrumenting/exporters</a><br />
 and downloadable from<br /><a target="_blank" href="
 https://github.com/prometheus
 
+
 ### NodeJs
 
 Node (JavaScript) is a popular language for web apps. 
+
+https://github.com/prometheus/node_exporter
 
 <pre># Get the exporter tar:
 wget https://github.com/prometheus/node_exporter/releases/download/v*/node_exporter-*.*linux-amd64.tar.gz
