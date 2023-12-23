@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-12-17"
+date: "2023-12-22"
 file: "prometheus"
 title: "Prometheus"
 excerpt: "Collect metrics (for visualization by Grafana), analyze using PromQL coding, and identify alerts, free from CNCF, especially for Kubernetes"
@@ -34,10 +34,10 @@ From the <a target="_blank" href="https://7451111251303.gumroad.com/l/wzcnen">Po
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703231177/prometheus-231218-2958x1488_sgbpan.png"><img alt="prometheus-231218-2958x1488.png" width="1531" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703231177/prometheus-231218-2958x1488_sgbpan.png"></a>
 
 1. The main component of Prometheus is a <strong>run service</strong> (written in <a target="_blank" href="https://wilsonmar.github.io/golang/">Golang</a>).
-1. The service <strong>scrapes</strong> (pulls, gathers) metrics from <strong>target hosts</strong> defined in its <tt>targets.json</tt> file. In addition to statically-defined targets, 
+1. The service sends HTTPS GET requests to <strong>scrape</strong> (pull) metrics from <strong>target hosts</strong> defined in its <tt>targets.json</tt> file. In addition to statically-defined targets, 
 1. Targets can be discovered by <strong>Service Discovery</strong> such as DNS, <a target="_blank" href="https://kubernetes.io/docs/concepts/services-networking/service/">Kubernetes Services</a>, or HashiCorp Consul services. The frequency of scraping and other settings are defined in the <tt>prometheus.yml</tt> file.
 
-1. Each target interacts with Prometheus through a <a href="#Exporters">job exporter</a> service installed on each host. There is a WMI exporter on Windows and another type of exporter on Linux.
+1. Each target interacts with Prometheus through a <a href="#Exporters">job exporter</a> service installed on each host. There is a <a href="#WMI+Exporter">WMI exporter on Windows</a> and another type of exporter on Linux.
 1. This can be done via an intermediary <strong>push gateway</strong> for short-lived jobs. 
 1. Exporters reference <strong>custom metric providers</strong> which expose specific metrics. 
 
@@ -63,8 +63,11 @@ From the <a target="_blank" href="https://7451111251303.gumroad.com/l/wzcnen">Po
 
 1. The same vendor who created Prometheus also created <a target="_blank" href="https://grafana.com/">Grafana</a> to present <strong>dashboards</strong> to visualize data. 
 
-   <a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/3e05432b-7c61-4eb1-83b1-7cef861beb0b/ae204f21-9e52-4272-842b-eb155b77e3fb">NOTE</a>: Grafana can also be used to visualize data from other sources such as <a target="_blank" href="https://www.influxdata.com/">InfluxDB</a>, <a target="_blank" href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a>, <a target="_blank" href="https://wilsonmar.github.io/microsoft-fabric/">Microsoft Fabric</a>, etc.
-
+   <a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/3e05432b-7c61-4eb1-83b1-7cef861beb0b/ae204f21-9e52-4272-842b-eb155b77e3fb">NOTE</a>: Grafana can also be used to visualize data from other sources such as 
+   * <a target="_blank" href="https://www.influxdata.com/">InfluxDB</a>, 
+   * <a target="_blank" href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a>, 
+   * <a target="_blank" href="https://wilsonmar.github.io/microsoft-fabric/">Microsoft Fabric</a> running Cosmos DB, etc.
+   <br /><br />
 
 1. PROTIP: When using S3, by default, Prometheus references a static file of long-lived credentials for authentication. To prevent compromise, many organizations use a <strong>Credentials insert</strong> utility such as HashiCorp Vault which dynamically creates a new set of S3 credentials every time before running the backup.
 
@@ -91,6 +94,8 @@ PROTIP: In AWS S3, follow your organization's Least-Privilege security policies 
    ]
    </ul>
 
+
+<hr />
 
 ## PCA Exam
 
@@ -127,7 +132,7 @@ Prometheus Certified Associate (PCA) exam</a>. The exam's domains:
 16% Instrumentation and Exporters
    * Client Libraries
    * Instrumentation
-   * Exporters
+   * <a href="#Exporters">Exporters</a>
    * Structuring and naming metrics
    <br /><br />
 
@@ -145,8 +150,14 @@ Prometheus Certified Associate (PCA) exam</a>. The exam's domains:
 
 <a name="Bipin"></a>
 
-Bipin wrote <a target="_blank" href="https://devopscube.com/prometheus-certified-associate/">Prometheus Certified Associate (PCA) Exam Study Guide</a> by Bipin Upadhyay, who has a <a target="_blank" href="https://www.linkedin.com/in/bipinupadhyay/">LinkedIn profile</a> and <a target="_blank" href="https://devopscube.com/author/bipin/">blog</a> at DevOpsCube.com. He has a <a target="_blank" href="https://www.udemy.com/course/prometheus/">4-hour "Prometheus and Grafana - Monitoring Docker Containers"</a> video course on Udemy.
+By Bipin:
+
+   * <a target="_blank" href="https://devopscube.com/prometheus-certified-associate/">Prometheus Certified Associate (PCA) Exam Study Guide</a> by Bipin Upadhyay, who has a <a target="_blank" href="https://www.linkedin.com/in/bipinupadhyay/">LinkedIn profile</a> and <a target="_blank" href="https://devopscube.com/author/bipin/">blog</a> at DevOpsCube.com. 
    * <a target="_blank" href="https://devopscube.com/install-configure-prometheus-linux/">Setup Prometheus on Linux</a>
+   <br /><br />
+
+By Sean Bradley:
+   * <a target="_blank" href="https://www.udemy.com/course/prometheus/">4-hour "Prometheus and Grafana - Monitoring Docker Containers"</a> video course on Udemy Jan 2024.
    <br /><br />
 
 By <a target="_blank" href="https://www.linkedin.com/in/alexphilip5/">Alex Philip</a>:
@@ -186,10 +197,12 @@ By <a target="_blank" href="https://www.linkedin.com/in/alexphilip5/">Alex Phili
         └── ec2.tfvars
    </pre>
 
+By <a target="_blank" href="https://www.linkedin.com/in/wardviaene/">Edward Viaene</a> and <a target="_blank" href="https://www.linkedin.com/in/jornjambers/">Jorn Jambers</a>:
 
-On Udemy, <a target="_blank" href="https://www.udemy.com/course/prometheus/">4-hour "Prometheus and Grafana - Monitoring Docker Containers"</a> video course by <a target="_blank" href="https://www.linkedin.com/in/wardviaene/">Edward Viaene</a> and <a target="_blank" href="https://www.linkedin.com/in/jornjambers/">Jorn Jambers</a>. They show <a target="_blank" href="https://www.udemy.com/course/monitoring-and-alerting-with-prometheus/learn/lecture/10630768#overview">install of Xinial Ubuntu within Digital Ocean's cloud</a>.
+   * On Udemy, <a target="_blank" href="https://www.udemy.com/course/prometheus/">4-hour "Prometheus and Grafana - Monitoring Docker Containers"</a> video course. They show <a target="_blank" href="https://www.udemy.com/course/monitoring-and-alerting-with-prometheus/learn/lecture/10630768#overview">install of Xinial Ubuntu within Digital Ocean's cloud</a>.
+   <br /><br />
 
-<a target="_blank" href="https://app.pluralsight.com/search/?q=Prometheus">On Pluralsight.com</a>, the <a target="_blank" href="https://app.pluralsight.com/paths/skill/event-monitoring-and-alerting-with-prometheus">9-hour Event Monitoring and Alerting with Prometheus path</a> has 4 courses.
+* <a target="_blank" href="https://app.pluralsight.com/search/?q=Prometheus">On Pluralsight.com</a>, the <a target="_blank" href="https://app.pluralsight.com/paths/skill/event-monitoring-and-alerting-with-prometheus">9-hour Event Monitoring and Alerting with Prometheus path</a> has 4 courses.
 
 
 By <a target="_blank" href="https://www.linkedin.com/in/eltonstoneman/">Elton Stoneman</a> (sixeyed.com):
@@ -213,7 +226,7 @@ By <a target="_blank" href="https://www.linkedin.com/in/craig-d-golightly/">Crai
 
 
 https://github.com/ACloudGuru-Resources/DevOps-Monitoring-Deep-Dive
-by https://www.linkedin.com/in/marcosmsouza/
+By https://www.linkedin.com/in/marcosmsouza/
 
 <br /><br />
 
@@ -329,7 +342,7 @@ The $299 course "Monitoring Infrastructure and Containers with Prometheus" (LFS2
 7. Monitoring Host Metrics
 8. Monitoring Container Metrics
 9. Instrumenting Code
-10. Building Exporters
+10. Building <a href="#Exporters">Exporters</a>
 11. Advanced Querying
 12. Relabeling
 13. Service Discovery
@@ -380,8 +393,9 @@ The $299 course "Monitoring Infrastructure and Containers with Prometheus" (LFS2
 
    The course also looks at creating persistent dashboards with Grafana and use its various graphing options to better track data.
 
+<hr />
 
-## Kubernetes
+## Monitoring Kubernetes
 
 Prometheus joined the CNCF (Cloud Native Computing Foundation) in 2016 as its second hosted project after Kubernetes. So naturally, Prometheus works with K8s. 
 
@@ -640,17 +654,69 @@ the Utilization Saturation and Errors (USE) Method by Brendan Gregg (of Netflix)
 Predictive: saturation is the basis for projections of impending issues, such as "at the current rate, your database will fill its hard drive in 4 hours."
 
 
+<hr />
+
 <a name="Exporters"></a>
 
 ## Exporters
 
-Prometheus manages exporters to well-known services: StatsD, Node, AWS Cloudwatch, InfluxDB, JMX, SNMP, HAProxy, Consul, Memchached, Graphite, Blackbox, etc. See <a target="_blank" href="https://prometheus.io/docs/instrumenting/exporters">https://prometheus.io/docs/instrumenting/exporters</a>
+   * By <a target="_blank" href="https://www.linkedin.com/in/craig-d-golightly/">Craig Golightly</a> (seethatgo.com, @seethatgo): <a target="_blank" href="https://app.pluralsight.com/library/courses/monitoring-key-systems-prometheus-exporters">Monitoring Key Systems with Prometheus Exporters</a> Aug 12, 2020
+   * <a target="_blank" href="https://prometheus.io/docs/instrumenting/exporters">https://prometheus.io/docs/instrumenting/exporters</a>
+   <br /><br />
 
-The WMI Exporter provides system metrics for Windows servers.
+"Instrumentation" is the process of adding code to your application to expose metrics to Prometheus.
 
-Custom exporters are in the category of: database, messaging systems, APIs, logging, storage, hardware related, HTTP, etc.
+Pre-defined third-party exporters and software exposing Prometheus metrics are listed at<br /><a target="_blank" href="
+https://prometheus.io/docs/instrumenting/exporters/">
+https://prometheus.io/docs/instrumenting/exporters</a><br />
+and downloadable from<br /><a target="_blank" href="
+https://github.com/prometheus
 
-Ports used by exporters:
+### NodeJs
+
+Node (JavaScript) is a popular language for web apps. 
+
+<pre># Get the exporter tar:
+wget https://github.com/prometheus/node_exporter/releases/download/v*/node_exporter-*.*linux-amd64.tar.gz
+# unpack:
+tar xvfz node_exporter-*.*-amd64.tar.gz
+# Move into folder:
+cd node_exporter-*.*-amd64
+# Get menu of parms and defaults:
+./node_exporter --help
+# Start the exporter:
+./node_exporter --web.listen-address=":9100" > node.out 2>&1
+</pre>
+
+<pre># On a client machine, Check that metrics are publishing
+curl http://localhost:9100/metrics
+</pre>
+
+### scrape_configs
+
+On the Prometheus server, edit the <strong>prometheus.yml</strong> file to add a new scrape_configs section to recognize the exporter on host at 172.31.122.23:
+
+<pre>scrape_configs:
+  - job_name: "prometheus"
+    metrics_path: "/metrics"
+    static_configs:
+    - targets:
+      - "localhost:9090"
+  - job_name: node
+    file_sd_configs:
+    - files:
+      - "/etc/prometheus/file_sd/node.yml"
+  - job_name: 'node_exporter'
+    static_configs:
+    - targets: ['172.31.122.23:9100']
+</pre>
+
+Restart the Prometheus server to pick up the new configuration.
+
+
+### Exporter Ports
+
+PROTIP: Default Ports used by popular exporters:
 
 * 9100 - <a href="http://github.com/prometheus/node_exporter">Node exporter</a>
 * 9101 - <a href="http://github.com/prometheus/haproxy_exporter">HAProxy exporter</a>
@@ -658,6 +724,44 @@ Ports used by exporters:
 * 9103 - <a href="http://github.com/prometheus/collectd_exporter">Collectd exporter</a>
 * 9108 - <a href="http://github.com/prometheus/graphite_exporter">Graphite exporter</a>
 * 9110 - <a href="https://github.com/prometheus/blackbox_exporter">Blackbox exporter</a>
+<br /><br />
+
+Prometheus manages exporters:
+* AWS Cloudwatch, 
+* JMX, 
+* SNMP, 
+* Consul, 
+* Memchached, 
+* etc. 
+<br /><br />
+
+Monitoring databases
+
+* InfluxDB, 
+* MongoDB,
+* MySQL,
+* PostgreSQL,
+* Redis,
+<br /><br />
+
+Monitoring Network Endpoints
+
+Monitoring messaging queues
+
+Monitoring Kubernetes clusters
+
+Monitoring systems, APIs, logging, storage, hardware related, HTTP, etc.
+
+   * <a target="_blank" href="
+
+
+### WMI Exporter
+
+The WMI Exporter provides system metrics for Windows servers.
+
+## Creating Exporters
+
+https://prometheus.io/docs/instrumenting/writing_exporters/
 
 
 ## Node Exporter
