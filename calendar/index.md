@@ -277,6 +277,7 @@ Alternatives to Google Calendar <a target="_blank" href="https://www.youtube.com
    * Tick Tick is a simplified version of Google Calendar. Includes a Pomodoro timer. <a target="_blank" href="https://www.youtube.com/watch?v=cQNlcnLp4cE">Used by MKHD</a>.
    * Akiflow is a Chrome extension that integrates with Google Calendar.
    * Aplenote <a target="_blank" href="https://www.youtube.com/watch?v=qZ8ljrXYva0&t=53s">VIDEO</a>.
+   * Daybridge.com
    <br /><br />
 
 <hr />
