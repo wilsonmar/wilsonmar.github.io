@@ -51,15 +51,13 @@ From the <a target="_blank" href="https://7451111251303.gumroad.com/l/wzcnen">Po
 
    Each Prometheus server runs distributed standalone so thus not dependent on network storage or other remote services. So it's available even when other parts of the infrastructure are broken.
 
-   PROTIP: Data on Prometheus servers should be considered temporary because data on it can be lost if the server is restarted. 
+   PROTIP: Data on Prometheus servers should be considered <strong>short-lived (temporary)</strong> because data on it can be lost if the server is restarted. 
+
+1. Prometheus exposes its time-series data to a variety of <strong>API clients</strong> making <a href="#PromQL">PromQL</a> (Prometheus Query Language) statements which extract data. Authentication is based on <strong>Bearer tokens</strong> (JWT) or <strong>Basic Auth</strong> (username/password) ???
 
 1. Data on Prometheus should be frequently sent to a long-term storage system such as AWS S3, <a target="_blank" href="https://www.influxdata.com/">InfluxDB</a>, <a target="_blank" href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a>, <a target="_blank" href="https://wilsonmar.github.io/microsoft-fabric/">Microsoft Fabric</a>, etc.
 
-   PROTIP: Strategically send operational data to a central (for review by SOC) and local server health data to a local Prometheus server. This would require diligence at managing disk space and retention. But sending data to a cloud service would require as much work be more expensive.
-
-1. PROTIP: When using S3, by default Prometheus references a static file of long-lived credentials for authentication. To prevent compromise, many organizations use a <strong>Credentials insert</strong> utility such as HashiCorp Vault which dynamically creates a new set of S3 credentials every time before running the backup.
-
-1. PROTIP: Cloud storage mechanism has a <strong>backup</strong> mechanism to <strong>restore</strong> data in case of failure. Practice restoring data to a new server to ensure that the backup mechanism actually works.
+   PROTIP: Sending operational data to a <strong>central enterprise repository</strong> would enable a central SOC (Security Operations Center) to <strong>correlate events</strong> from throughout the enterprise and outside the enterprise. This approach does require diligence at managing disk space and retention.
 
 1. PROTIP: To minimize training and confusion, enterprise organizations typically have a preferred set of tools for <strong>analytics</strong> processing to generate <strong>graphs</strong> and <strong>dashboards</strong> for visualization.
 
@@ -67,13 +65,19 @@ From the <a target="_blank" href="https://7451111251303.gumroad.com/l/wzcnen">Po
 
    <a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/3e05432b-7c61-4eb1-83b1-7cef861beb0b/ae204f21-9e52-4272-842b-eb155b77e3fb">NOTE</a>: Grafana can also be used to visualize data from other sources such as <a target="_blank" href="https://www.influxdata.com/">InfluxDB</a>, <a target="_blank" href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a>, <a target="_blank" href="https://wilsonmar.github.io/microsoft-fabric/">Microsoft Fabric</a>, etc.
 
-1. <a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/3e05432b-7c61-4eb1-83b1-7cef861beb0b/ae204f21-9e52-4272-842b-eb155b77e3fb">NOTE</a>: The Prometheus server can be configured to <strong>read</strong> data from remote sources -- perform <strong>remote read</strong>.
 
-1. Prometheus exposes its time-series data to a variety of <strong>API clients</strong> making <a href="#PromQL">PromQL</a> (Prometheus Query Language) statements which extract data. Authentication???
+1. PROTIP: When using S3, by default, Prometheus references a static file of long-lived credentials for authentication. To prevent compromise, many organizations use a <strong>Credentials insert</strong> utility such as HashiCorp Vault which dynamically creates a new set of S3 credentials every time before running the backup.
+
+1. PROTIP: Cloud storage mechanisms have a <strong>backup</strong> mechanism to <strong>restore</strong> data in case of failure. Practice restoring data to a new server to ensure that the backup mechanism actually works.
+
+1. <a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/3e05432b-7c61-4eb1-83b1-7cef861beb0b/ae204f21-9e52-4272-842b-eb155b77e3fb">NOTE</a>: The Prometheus server can be configured to <strong>read</strong> data from remote sources -- perform <strong>remote read</strong>.
 
 1. Because people can't be always watching dashboard screens, <strong>Alerting Rules</strong> are set to trigger <strong>alerts</strong> pushed to the <a href="#AlertManager">Alert Manager</a> which forwards to various <strong>end-points</strong> such as email, Slack, Pager Duty SMS, or other notification mechanisms.
 
    <a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/3e05432b-7c61-4eb1-83b1-7cef861beb0b/ae204f21-9e52-4272-842b-eb155b77e3fb">NOTE</a>: In a HA configuration, alerts are sent to multiple Alert Managers (with different external labels -a and -b), which deduplicate and fan out alerts to their configured receivers. 
+
+1. PROTIP: To minimize training and confusion, enterprise organizations typically have a preferred set of tools for <strong>analytics</strong> processing to generate <strong>graphs</strong> and <strong>dashboards</strong> for visualization.
+
 
 PROTIP: In AWS S3, follow your organization's Least-Privilege security policies by not allowing a single account all Actions for Prometheus:
 
