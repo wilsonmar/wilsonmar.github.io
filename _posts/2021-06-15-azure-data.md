@@ -1419,49 +1419,54 @@ Elements of ADF include: pipelines, datasets, linked services, triggers, and int
 1. <strong>Data Control</strong> within each Pipeline activity (such as For Each, Set, Until, Wait, or other logic) can be controlled by <strong>Triggers</strong> that are event-based, scheduled on a recurring day/time, or within a tumbling window (such as every 2 hours).
 1. <strong>Linked service</strong> to Data Lake Store, Azure Databricks.
 
-ADF v1 was controlled mainly by JSON, but<br />
-ADF v2 can work with data in other locations, including on-premises and other clouds.
-
 ADF can run packages from legacy SSIS (SQL Server Integration Services) -- ADF's predecessor that runs on-prem.
 
-ADF dispatches activites and executes Data Flows, Data Movements, and SSIS packages using its <strong>Integration Runtimes</strong> compute infrastructure. There are three types of <a target="_blank" href="https://docs.microsoft.com/en-us/azure/data-factory/concepts-integration-runtime/">Integration Runtimes</a> are automatically created when a new ADF Resource is created:
-
-   * An Azure <tt>AutoResolveIntegrationRuntime</tt> is created for Mapping Dataflows, the native way to transform data on ADF. It does data movement between public cloud endpoints (such as AWS, GCP, Azure, or SaaS Salesforce, SAP, etc.).
-   * A <tt>Self-hosted IR</a> is installed on resources (such as SQL Server) on a machine in self-hosted on-premises networks.
-   * A <tt>Azure-SSIS IR</tt> is installed on an Azure VM (Azure-SSIS) machine to run SS packages, such as for migration.
-   <br /><br />
-
-
-### ADF Portal GUI
-
-1. In the portal, click "+ Create a resource", then in "Search services and Marketplace" type enough of "Data Factory" to select it from the drop-down list.
-
-   <img width="367" alt="az-data-fac-menu-734x410" src="https://user-images.githubusercontent.com/300046/122431224-807e6600-cf51-11eb-91b9-71a37ec18109.png">
-
-1. Click "Create" after confirming that it's from "Azure".
-
-   Use ADF to integrate "data silos" by people of various skill levels -- construct ETL and ELT processes either code-free within an intuitive visual environment or write your own code
+Use ADF to integrate "data silos" by people of various skill levels -- construct ETL and ELT processes either code-free within an intuitive visual environment or write your own code
    
    * Azure security measures to connect to on-premises, cloud-based, and software-as-a-service apps with peace of mind
    * scales on demand
    * SSIS integration runtime to rehost on-premises SSIS packages in the cloud using familiar SSIS tools
    <br /><br />
 
-1. Resource group:
-1. Database name: up to 128 characters, unique on same server.
-1. Server: 
 
-   ADF can spin up and down HDInsights clusters.
+### ADF Portal GUI
 
-   Process in Factory Resources:
+1. In the portal, click "+ Create a resource".
+1. REMEMBER: In "Search services and Marketplace" type enough of "<strong>Data Factory</strong>" to select it from the drop-down list that appears.
+1. Click "Data Factory" Microsoft Azure Service to reveal:
 
-1. Pipeline
-2. Combine datasets (sources)
-3. Data flows: Select columns
-4. Write output to target datasets (using Power Query?)
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703393978/adf-create-446x730_aodw7l.png"><img alt="adf-create-446x730.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703393978/adf-create-446x730_aodw7l.png"></a>
+
+1. Click its "Create" to click the "Data Factory" that appears. The Basics.
+1. Subscription:
+1. Resource group: "adf-231222-demo"
+1. Instance details: Name (of database) is up to 128 characters, unique on same server.
+1. Region: "East US" or whatever you are using for your other resources.
+1. Version: "V2" is the only choice. ADF v1 was controlled mainly by JSON, but<br />
+ADF v2 can work with data in other locations, including on-premises and other clouds.
+
+1. Click "Git configuration" tab to specify Git options:
+1. Check "Configure Git later".
+
+1. Click "Networking" tab to specify Firewall and Virtual Network options:
+
+   ### ADF Integration Runtimes
+
+1. Check "Enable Managed Virtual Network on the default AutoResolveIntegrationRuntime"
+1. Select radio button "Private endpoint".
+
+   ADF dispatches activites and executes Data Flows, Data Movements, and SSIS packages using its <strong>Integration Runtimes</strong> compute infrastructure. There are three types of <a target="_blank" href="https://docs.microsoft.com/en-us/azure/data-factory/concepts-integration-runtime/">Integration Runtimes</a> are automatically created when a new ADF Resource is created:
+
+   * An Azure <tt>AutoResolveIntegrationRuntime</tt> is created for Mapping Dataflows, the native way to transform data on ADF. It does data movement between public cloud endpoints (such as AWS, GCP, Azure, or SaaS Salesforce, SAP, etc.).
+   * A <tt>Self-hosted IR</a> is installed on resources (such as SQL Server) on a machine in self-hosted private on-premises networks.
+   * A <tt>Azure-SSIS IR</tt> is installed on an Azure VM (Azure-SSIS) machine to run SS packages, such as for migration.
+   <br /><br />
+
+
+1. Click "Advanced" tab. Unless in production, do not "Enable encryption using a Customer Managed Key".
+1. Click "Tags" tab to specify a "CreatedBy" key with your email.
+1. Click "Review + Create". Click "Create".
 <br /><br />
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703393296/adf-menu-163x614_us5xke.png"><img alt="adf-menu-163x614.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703393296/adf-menu-163x614_us5xke.png"></a>
 
 
 <hr />
