@@ -1623,19 +1623,29 @@ It integrates with Apache Spark. (Spark jobs can also be run in Azure Databricks
 
 Synapse has a "Massively Parallel" engine of partitioned instances (sharding)
 
+<a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/eb1b95ce-2260-4542-aa92-762fd8e880c3/a7dc8c15-f014-4a90-850c-731167c0583a/46bd4549-a829-41de-8881-3afeabc1f01c">DEMO</a>: Setup a workspace:
+
+1. Create a Gen2 account.
+
+1. In the portal service search, type enough of "Azure Synapse Analytics" to select it.
+1. Click "+ Create" for the Basics page.
+1. For Subscription
+1. For Resource group: "synapse-231222-demo"
+1. For Managed resource group: "synapse-231222-demo"
+
+1. For Workspace name: "synapse-231222-demo"
+1. For Region: "East US" or whatever you are using for your other resources.
+1. Select Data Lake Storage Gen21. 
+1. For Account name: "synapse-231222-demo"
+1. For File system name:
+
+1. Click Security tab.
+1. Click "Networking" tab.
+1. Click "Tags" tab.
+1. Click "Review + Create". Click "Create".
+
 <a target="_blank" href="https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio?tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall">Data Studio is installed</a> automtically 
 when SQL Server Management Studio (SSMS) 18.7, Azure Data Studio is installed.
-
-
-<hr />
-
-<a name="PowerBI"></a>
-
-## PowerBI
-
-See <a target="_blank" href="https://wilsonmar.github.io/powerbi">my notes about PowerBI and PowerApps</a>
-
-See Pluralsight: "Building your First Power BI Report"
 
 
 <hr />
@@ -1724,6 +1734,9 @@ Synapse has a "Massively Parallel" engine of partitioned instances (sharding)
 <a target="_blank" href="https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio?tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall">Data Studio is installed</a> automtically 
 when SQL Server Management Studio (SSMS) 18.7, Azure Data Studio is installed.
 
+
+<hr />
+
 <a name="PowerBI"></a>
 
 ## PowerBI
@@ -1731,7 +1744,6 @@ when SQL Server Management Studio (SSMS) 18.7, Azure Data Studio is installed.
 See my <a target="_blank" href="https://wilsonmar.github.io/powerbi">PowerBI notes</a>
 
 See Pluralsight: "Building your First Power BI Report"
-
 
 
 <hr />
