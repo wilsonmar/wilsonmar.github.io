@@ -63,14 +63,41 @@ The types of databases are: Key-value -> Column -> Document -> Relational (SQL) 
 
 A competitor to Delta metadata layer on top of Parquet is <a target="_blank" href="https://www.theregister.com/2023/01/03/apache_iceberg/">Apache Iceberg</a>, used by Snowflake, Cloudera, and Google's BigLake.
 
+## SQL Language
+
 <a target="_blank" href="https://wilsonmar.github.io/sql/">My notes about the SQL language is here</a>.
 
-The underlying <strong>format of files</strong> used to store data within Apache Spark, Hadoop "Big data" evolved from 
+<strong>Polybase</strong> is a data virtualization feature that enables SQL Server to query data using T-SQL directly from heterogenous (external) data:
+   * Oracle
+   * Teradata
+   * MongoDB
+   * Apache Hadoop clusters
+   * <a href="#Cosmos+DB">Azure Cosmos DB</a>
+   <br /><br />
+
+Synapse SQL is a distributed version of T-SQL, with extensions for streaming and machine learning (T-SQL PREDICT function).
+
+
+## File formats
+
+## File format types:
+
+* Binary (pdf)
+* Delimited text (CSV)
+* Excel (XML)
+* JSON
+* XML
+
+Within Apache Spark, Hadoop "Big data" evolved from the underlying <strong>format of files</strong> used to store data:
+
    1. RCFile to 
    1. ORC (Optimized Row Columnar) stores Hive data efficiently
    1. Avro (row-based)
    1. Parquet (columnal-based) used by Linux Foundation Delta Lake adopted by Apache Spark and Azure Synapsee.
    <br /><br />
+
+
+## Evolution
 
 Wide availability of fast internet and public clouds providing a lot of fast data storage and compute has enabled a revolution in how data can be stored and accessed.
 
@@ -85,30 +112,6 @@ PROTIP: <a target="_blan" href="https://parquet.apache.org/">Apache's Parquet fi
    * https://www.upsolver.com/blog/apache-parquet-why-use
    * https://docs.azure.com/en-us/azure/architecture/browse/#databases
    <br /><br />
-
-
-<hr />
-
-## Polybase
-
-<strong>Polybase</strong> is a data virtualization feature that enables SQL Server to query data using T-SQL directly from heterogenous (external) data:
-   * Oracle
-   * Teradata
-   * MongoDB
-   * Apache Hadoop clusters
-   * <a href="#Cosmos+DB">Azure Cosmos DB</a>
-   <br /><br />
-
-Synapse SQL is a distributed version of T-SQL, with extensions for streaming and machine learning (T-SQL PREDICT function).
-
-
-## File format types:
-
-* Binary (pdf)
-* Delimited text (CSV)
-* Excel (XML)
-* JSON
-* XML
 
 
 
