@@ -164,7 +164,7 @@ First look at traditional SQL "relational" databases.
 
    Among Marketplace services:
 
-   * Azure Synapse Analytics?
+   * <a href="#Azure+Synapse+Analytics">Azure Synapse Analytics</a>
    * SQL server (logical server)?
    * Web App + Database?
    <br /><br />
@@ -225,7 +225,7 @@ First look at traditional SQL "relational" databases.
 
    ### Defender
 
-   "Microsoft Defender" is a suite of "unified" offerings to discover and classify sensitive data, protect data and respond to data risks in Azure SQL Database and Azure Synapse Analytics. It's a unified solution that includes Azure SQL Database Advanced Threat Protection (ATP) and Azure SQL Database Vulnerability Assessment (VA). It's built into Azure SQL Database and Azure Synapse Analytics and is enabled by default. It's also available for Azure SQL Managed Instance and SQL Server on Azure Virtual Machines. [<a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-sql/database/advanced-data-security">DOCS</a>]
+   "Microsoft Defender" is a suite of "unified" offerings to discover and classify sensitive data, protect data and respond to data risks in Azure SQL Database and <a href="#Azure+Synapse+Analytics">Azure Synapse Analytics</a>. It's a unified solution that includes Azure SQL Database Advanced Threat Protection (ATP) and Azure SQL Database Vulnerability Assessment (VA). It's built into Azure SQL Database and <a href="#Azure+Synapse+Analytics">Azure Synapse Analytics</a>, enabled by default. It's also available for Azure SQL Managed Instance and SQL Server on Azure Virtual Machines. [<a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-sql/database/advanced-data-security">DOCS</a>]
 
 1. Select Next: Security > and set the Enable Microsoft Defender for SQL option to "Not now" during testing.
 
@@ -422,7 +422,7 @@ Other Tutorials:
    
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/data-literacy-essentials-azure-databricks">Data Literacy: Essentials of Azure Databricks</a> by Dayo Bamikole Apr 26, 2021
    
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/data-literacy-essentials-azure-databricks">Data Literacy: Essentials of Azure Synapse Analytics</a> By Mohit Batra June 14, 2021
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/data-literacy-essentials-azure-databricks">Data Literacy: Essentials of Azure Synapse Analytics</a> By <a target="_blank" href="https://linkedin.com/in/mohitbatra">Mohit Batra</a> June 14, 2021
    <br /><br />
 
 CloudAcademy: https://cloudacademy.com/exam/landing/37208/
@@ -487,8 +487,8 @@ PROTIP: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/bu
 NOTE: DP-203 replaces DP-200 & DP-201.
 
 To be an <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/azure-data-engineer/">Azure Certified: Azure Data Engineer Associate</a>, pass the single <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-203/">DP-203 exam</a>, which covers the following products:
-   * Azure Synapse Analytics
-   * Azure Data Factory
+   * <a href="#Azure+Synapse+Analytics">Azure Synapse Analytics</a>
+   * <a href="#ADF">Azure Data Factory</a>
    * Azure Stream Analytics
    * Azure Event Hubs
    * Azure Data Lake Storage
@@ -500,13 +500,13 @@ makes use of lab instructions in English at
 <a target="_blank" ref="https://aka.ms/dp203labs/">aka.ms/dp203labs</a> = <a target="_blank" href="https://microsoftlearning.github.io/dp-203-azure-data-engineer/">microsoftlearning.github.io/dp-203-azure-data-engineer</a>:
 
 
-* Explore Azure Synapse Analytics	Lab
+* Explore <a href="#Azure+Synapse+Analytics">Azure Synapse Analytics</a>	Lab
 * Query files using a serverless SQL pool	Suggested demo
 * Transform data using a serverless SQL pool	Lab
 * Analyze data in a lake database	Suggested demo
 * Analyze data in a data lake with Spark	Suggested demo
 * Transform data using Spark in Synapse Analytics	Lab
-* Use Delta Lake in Azure Synapse Analytics	Lab
+* Use Delta Lake in <a href="#Azure+Synapse+Analytics">Azure Synapse Analytics</a>	Lab
 * Explore a relational data warehouse	Suggested demo
 * Load Data into a Relational Data Warehouse	Lab
 * Build a data pipeline in Azure Synapse Analytics	Lab
@@ -1364,6 +1364,8 @@ September 2023
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/data-literacy-essentials-azure-hdinsight">Data Literacy: Essentials of Azure HDInsight</a> by <a target="_blank" href="https://www.linkedin.com/in/niraj-joshi-7a557517/">Niraj Joshi</a> Mar 22, 2021 provided this diagram:
    <br /><br />
 
+Hadoop is an open-source software framework for storing data and running applications on clusters of commodity hardware. It provides massive storage for any kind of data, enormous processing power and the ability to handle virtually limitless concurrent tasks or jobs.
+
 Like Hadoop, HDInsight is an open-source software framework for storing data and running applications on clusters of commodity "nodes" (hardware), shown at the bottom of this diagram:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703396324/hadoop-arch-3028x1758_z7g5pa.png"><img alt="hadoop-arch-3028x1758.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703396324/hadoop-arch-3028x1758_z7g5pa.png"></a>
@@ -1379,9 +1381,7 @@ HDInsight is an Azure-managed service. As a cloud service:
    * Optimized components
    <br /><br />
 
-Hadoop is an open-source software framework for storing data and running applications on clusters of commodity hardware. It provides massive storage for any kind of data, enormous processing power and the ability to handle virtually limitless concurrent tasks or jobs.
-
-
+Benefits of Data Lakes:
    * Volume
    * Velocity
    * Variety
@@ -1477,6 +1477,8 @@ Azure Glue is a  fully managed extract, transform, and load (ETL) service to pre
    Additional components can be install on your cluster.
    * Avro
    <br /><br />
+
+1. Alerts
 
 1. Delete the Resources created and accessed above.
 <br /><br />
@@ -1602,21 +1604,30 @@ https://docs.azure.com/en-us/sql/azure-data-studio/download-Azure-data-studio
 
 ## Azure Synapse Analytics
 
-<a target="_blank" href="https://www.youtube.com/watch?v=P3qmqUZJ7l0&t=4h39m47s" title="DP-900 2021 By Andrew Brown">VIDEO</a> Explore Azure Synapse Analytics
-
-<a target="_blank" href="https://www.azure.com/videoplayer/embed/RE4Asf7">VIDEO</a>:
-How to configure Data Factory to ingest data for Azure Synapse Analytics.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=P3qmqUZJ7l0&t=4h39m47s" title="DP-900 2021 By Andrew Brown">VIDEO</a> Explore Azure Synapse Analytics
+   * <a target="_blank" href="https://www.azure.com/videoplayer/embed/RE4Asf7">VIDEO</a>: How to configure Data Factory to ingest data for Azure Synapse Analytics.
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/data-literacy-essentials-azure-databricks">Data Literacy: Essentials of Azure Synapse Analytics</a> By <a target="_blank" href="https://linkedin.com/in/mohitbatra">Mohit Batra</a> June 14, 2021 provided this diagram:
+   <br /><br />
 
 Azure Synapse Analytics was rebranded from "Azure SQL Data Warehouse".
 
-Integrates with Apache Spark.
-(Spark jobs can also be run in Azure Databricks and Azure HDInsight)
+Azure Synapse Analytics is a "unified" cloud-based data warehousing service that combines  into a single solution:
+   * data integration, 
+   * enterprise data warehousing, and 
+   * big data analytics
+   <br /><br />
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703399715/azure-synapse-analytics-3308x1996_nbtgho.png"><img alt="azure-synapse-analytics-3308x1996.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703399715/azure-synapse-analytics-3308x1996_nbtgho.png"></a>
+
+It integrates with Apache Spark. (Spark jobs can also be run in Azure Databricks and Azure HDInsight)
 
 Synapse has a "Massively Parallel" engine of partitioned instances (sharding)
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio?tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall">Data Studio is installed</a> automtically 
 when SQL Server Management Studio (SSMS) 18.7, Azure Data Studio is installed.
 
+
+<hr />
 
 <a name="PowerBI"></a>
 
