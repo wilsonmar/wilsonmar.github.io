@@ -16,17 +16,6 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-"Prometheus" is, <a target="_blank" href="https://www.wikiwand.com/en/Prometheus">in Ancient Greek mythology, a Titan of forethought, fire, and crafty counsel</a> -- an immortal servant of the gods. He stole fire and gave it to humankind. This changed the human race forever (for better and worse). But this made mankind dangerous to the gods. 
-
-Ridley Scott named his <a target="_blank" href="https://www.imdb.com/title/tt1446714/trivia">2012 film "Prometheus"</a>, saying: "It's the story of creation; the gods and the man who stood against them." 
-
-<a target="_blank" href="https://prometheus.io/docs/introduction/overview/">https://prometheus.io/docs/introduction/overview/</a><br />
-The software named Prometheus began at SoundCloud in 2012, where ex-Google SREs (Site Reliability Engineers) adopted Google's Borgmon. 
-Prometheus was open-sourced in 2015 at https://github.com/prometheus/prometheus/releases
-
-Prometheus joined the CNCF (Cloud Native Computing Foundation) in 2016 as its second hosted project after Kubernetes. 
-So as would be expected, Prometheus works with K8s.
-
 
 ## How it works
 
@@ -95,6 +84,22 @@ PROTIP: In AWS S3, follow your organization's Least-Privilege security policies 
       "s3:GetBucketLocation"
    ]
    </ul>
+
+
+<hr />
+
+## History of Prometheus
+
+"Prometheus" is, <a target="_blank" href="https://www.wikiwand.com/en/Prometheus">in Ancient Greek mythology, a Titan of forethought, fire, and crafty counsel</a> -- an immortal servant of the gods. He stole fire and gave it to humankind. This changed the human race forever (for better and worse). But this made mankind dangerous to the gods. 
+
+Ridley Scott named his <a target="_blank" href="https://www.imdb.com/title/tt1446714/trivia">2012 film "Prometheus"</a>, saying: "It's the story of creation; the gods and the man who stood against them." 
+
+<a target="_blank" href="https://prometheus.io/docs/introduction/overview/">https://prometheus.io/docs/introduction/overview/</a><br />
+The software named Prometheus began at SoundCloud in 2012, where ex-Google SREs (Site Reliability Engineers) adopted Google's Borgmon. 
+Prometheus was open-sourced in 2015 at https://github.com/prometheus/prometheus/releases
+
+Prometheus joined the CNCF (Cloud Native Computing Foundation) in 2016 as its second hosted project after Kubernetes. 
+So as would be expected, Prometheus works with K8s.
 
 
 <hr />
@@ -226,13 +231,12 @@ By <a target="_blank" href="https://www.linkedin.com/in/craig-d-golightly/">Crai
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/alerting-issues-prometheus-alertmanager">Alerting on Issues with Prometheus Alertmanager</a> 
 <br /><br />
 
-
 By <a target="_blank" href="https://www.linkedin.com/in/marcosmsouza/">Marcos Souza</a>:
 
    * https://github.com/ACloudGuru-Resources/DevOps-Monitoring-Deep-Dive
    <br /><br />
 
-by Elle Krout:
+By Elle Krout:
 
    * The <a target="_blank" href="https://www.pluralsight.com/cloud-guru/courses/prometheus-deep-dive">12-hour "DevOps Monitoring Deep Dive" video course</a> references an <a target="_blank" href="https://lucid.app/lucidchart/918602e0-14b7-473c-92e7-bfbc4a15ba8f/view?page=j8p68BdUlMFS#">interactive Lucid diagram called "ProjectForethought"</a> for the NodeJs simple to-do list program called Forethought that is the subject of monitoring. 
    <br /><br />
@@ -259,6 +263,8 @@ by Elle Krout:
 
    The script is self-documented, but below are additional comments:
 
+
+<hr />
 
 ## Install
 
@@ -330,7 +336,7 @@ by Elle Krout:
 
    
 
-
+<hr />
 
 ## Sample app
 
@@ -365,7 +371,7 @@ The $299 course "Monitoring Infrastructure and Containers with Prometheus" (LFS2
 <br /><br />
 
 
-## Docker
+### Docker
 
 1. Confirm the creation of the existing Docker image:
  
@@ -678,11 +684,41 @@ and downloadable from<br /><a target="_blank" href="
 https://github.com/prometheus
 
 
-### NodeJs
+### Setup NodeJs Exporter
 
 Node (JavaScript) is a popular language for web apps. 
 
-https://github.com/prometheus/node_exporter
+Prometheus <strong>Node Explorer</strong> has its own repo at 
+
+   <ul><a target="_blank" href="https://github.com/prometheus/node_exporter">https://github.com/prometheus/node_exporter</a>
+   </ul>
+
+To download a release from GitHub:
+
+   <a target="_blank" href="https://github.com/prometheus/node_exporter/releases">https://github.com/prometheus/node_exporter/releases</a>
+
+<pre>
+# TODO: Identify latest version URL in https://prometheus.io/download/#node_exporter
+# TODO: Code different downloads for Darwin vs. other OS:
+wget https://github.com/prometheus/node_exporter/releases/download/v0.16.0/node_exporter-0.16.0.linux-amd64.tar.gz
+   # https://github.com/prometheus/node_exporter/releases/download/v0.16.0/node_exporter-0.16.0.darwin-386.tar.gz
+   # v0.16.0 is dated 2018-05-15
+tar -xzf node_exporter-*
+sudo cp node_exporter-*/node_exporter /usr/local/bin/
+</pre>
+
+   <pre><strong>node_exporter --version</strong></pre>
+
+   A sample response (at time of writing): 
+
+<pre>node_exporter, version 0.16.0 (branch: HEAD, revision: 6
+e2053c557f96efb63aef3691f15335a70baaffd)
+. . .</pre>
+
+The node_exporter exporter runs, by default, on <strong>port 9100</strong> to expose metrics, but can be changed:
+
+   <pre>node_exporter --web.listen-address=":9100" \
+   --web.telemetrypath="/node_metrics"</pre>
 
 <pre># Get the exporter tar:
 wget https://github.com/prometheus/node_exporter/releases/download/v*/node_exporter-*.*linux-amd64.tar.gz
@@ -722,7 +758,9 @@ On the Prometheus server, edit the <strong>prometheus.yml</strong> file to add a
 Restart the Prometheus server to pick up the new configuration.
 
 
-### Exporter Ports
+<hr />
+
+## Exporter Ports
 
 PROTIP: Default Ports used by popular exporters:
 
@@ -730,8 +768,10 @@ PROTIP: Default Ports used by popular exporters:
 * 9101 - <a href="http://github.com/prometheus/haproxy_exporter">HAProxy exporter</a>
 * 9102 - <a href="http://github.com/prometheus/statsd_exporter">StatsD exporter</a>
 * 9103 - <a href="http://github.com/prometheus/collectd_exporter">Collectd exporter</a>
+* 9104 - MySQL
 * 9108 - <a href="http://github.com/prometheus/graphite_exporter">Graphite exporter</a>
 * 9110 - <a href="https://github.com/prometheus/blackbox_exporter">Blackbox exporter</a>
+* 9115 - Black Box (probe metrics to host URLs)
 <br /><br />
 
 Prometheus manages exporters:
@@ -752,71 +792,44 @@ Monitoring databases
 * Redis,
 <br /><br />
 
-Monitoring Network Endpoints
+MySQL setup:
 
-Monitoring messaging queues
+For the MySQL prompt:
+<pre><strong>mysql -u root -p</strong></pre>
 
-Monitoring Kubernetes clusters
+* Create a database user for the exporter to use.
+* Grant permissions
+* Provide credentials to exporter
+<br /><br />
 
-Monitoring systems, APIs, logging, storage, hardware related, HTTP, etc.
+<pre>CREATE USER 'mysqld_exporter'@'localhost' IDENTIFIED BY 'password' WITH MAX_USER_CONNECTIONS 3; 
+GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'mysqld_exporter'@'localhost';
+FLUSH PRIVILEGES; 
+export DATA_SOURCE_NAME='mysqld_exporter:password@(localhost:3306)/';
+</pre>
 
-   * <a target="_blank" href="
+
+## Monitoring Network Endpoints
+
+## Monitoring messaging queues
+
+## Monitoring Kubernetes clusters
+
+## Monitoring others
+
+systems, APIs, logging, storage, hardware related, HTTP, etc.
 
 
-### WMI Exporter
+## WMI Exporter
 
 The WMI Exporter provides system metrics for Windows servers.
+
+<hr />
 
 ## Creating Exporters
 
 https://prometheus.io/docs/instrumenting/writing_exporters/
 
-
-## Node Exporter
-
-The Prometheus <strong>Node Explorer</strong> has its own repo at <a target="_blank" href="https://github.com/prometheus/node_exporter">https://github.com/prometheus/node_exporter</a>
-
-To download a release from GitHub:
-
-   <a target="_blank" href="https://github.com/prometheus/node_exporter/releases">https://github.com/prometheus/node_exporter/releases</a>
-
-<pre>
-# TODO: Identify latest version URL in https://prometheus.io/download/#node_exporter
-# TODO: Code different downloads for Darwin vs. other OS:
-wget https://github.com/prometheus/node_exporter/releases/download/v0.16.0/node_exporter-0.16.0.linux-amd64.tar.gz
-   # https://github.com/prometheus/node_exporter/releases/download/v0.16.0/node_exporter-0.16.0.darwin-386.tar.gz
-   # v0.16.0 is dated 2018-05-15
-tar -xzf node_exporter-*
-sudo cp node_exporter-*/node_exporter /usr/local/bin/
-</pre>
-
-   <pre><strong>node_exporter --version</strong></pre>
-
-   A sample response (at time of writing): 
-
-<pre>
-node_exporter, version 0.16.0 (branch: HEAD, revision: 6
-e2053c557f96efb63aef3691f15335a70baaffd)
-. . .</pre>
-
-The node_exporter exporter runs, by default, on <strong>port 9100</strong> to expose metrics, but can be changed:
-
-   <pre>node_exporter --web.listen-address=":9100" \
-   --web.telemetrypath="/node_metrics"</pre>
-
-And:
-
-   <pre>scrape_configs:
-  - job_name: "prometheus"
-    metrics_path: "/metrics"
-    static_configs:
-    - targets:
-      - "localhost:9090"
-  - job_name: node
-    file_sd_configs:
-    - files:
-      - "/etc/prometheus/file_sd/node.yml"
-   </pre>
 
 <hr />
 

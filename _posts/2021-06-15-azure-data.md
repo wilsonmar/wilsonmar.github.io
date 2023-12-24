@@ -133,6 +133,9 @@ First look at traditional SQL "relational" databases.
 
 ## Azure's SQL database products
 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=YO7-XruyZvs" title="The difference between SQL Server and SQL Azure">VIDEO</a>:
+   <br /><br />
+
 1. With a Subscription, search for Azure service "SQL" at the top of the page to see that there are many services offered directly and from the Marketplace:
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702008284/azure-data-sql-svcs-880x358_smd4t1.png"><img alt="azure-data-sql-svcs-880x358.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702008284/azure-data-sql-svcs-880x358_smd4t1.png"><em>Click for full screen</em></a>.
@@ -192,7 +195,7 @@ First look at traditional SQL "relational" databases.
    * Azure Managed Instance for Apache Cassandra - Automate deployment and scaling for managed open-source Apache Cassandra datacenters [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/managed-instance-apache-cassandra/">DOCS</a>]
    <br /><br />
 
-1. Select Resource group.
+1. Select a Resource group.
 
 1. Click "Accept offer" of first 100,000 vCore seconds and 32GB of data & 32GB of backup storage free per month for lifetime of the subscription.
 
@@ -350,12 +353,13 @@ Describe capabilities and features of <a href="#Cosmos+DB">Azure Cosmos DB</a>
 
 NOTE: Underlying data models can be viewed and modified for Inteeractive Reports, but not with Dashboards.
 
-For dashboards, the PowerBI cloud service is at https://app.powerbi.com/home
-* A Power BI dashboard is a single page "canvas" that tells a story through visualizations.
-* A dashboard contains several tiles, each a snapshot of data, pinned to the dashboard, created from a report dataset, dashboard, Q&A box, Excel, SQL Server Reporting Services (SSRS), or a streaming dataset.
-* 
+For dashboards, the PowerBI cloud service is at 
+<a target="_blank" href="https://app.powerbi.com/home">https://app.powerbi.com/home</a>
 
-<hr />
+   * A Power BI dashboard is a single-page "canvas" that tells a story through visualizations.
+
+   * A dashboard contains several tiles, each a snapshot of data, pinned to the dashboard, created from a report dataset, dashboard, Q&A box, Excel, SQL Server Reporting Services (SSRS), or a streaming dataset.
+
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/sc-900t00?resource_type=course&products=azure&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks">$1599 1-day (8 hour) course SC-900T00--A: Microsoft Security, Compliance, and Identity Fundamentals</a> provides live training with labs at
 https://learn.microsoft.com/en-us/collections/0kjyh8rn5gdrjj
@@ -408,15 +412,21 @@ Sample DP-900 Exams:
 
 Other Tutorials:
 
-<a target="_blank" href="https://app.pluralsight.com/paths/certificate/azure-dp-900-Azure-data-fundamentals">At Pluralsight
+<a target="_blank" href="https://app.pluralsight.com/paths/certificate/azure-dp-900-Azure-data-fundamentals">At Pluralsight: Microsoft Azure Data Fundamentals (DP-900)</a> 
 
    * Getting Started with Azure Data Workloads by Henry Been (<a target="_blank" href="https://henrybeen.nl/">henrybeen.nl</a>)<br /><img width="299" alt="az-compute-vm-sqldb-598x614" src="https://user-images.githubusercontent.com/300046/122325915-ab809f80-cee8-11eb-8424-1d8c9fc305cb.png">
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/data-literacy-essentials-azure-data-factory">Data Literacy: Essentials of Azure Data Factory</a> by Emilio Melo Apr 7, 2021
+   
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/data-literacy-essentials-azure-hdinsight">Data Literacy: Essentials of Azure HDInsight</a> by Niraj Joshi Mar 22, 2021
+   
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/data-literacy-essentials-azure-databricks">Data Literacy: Essentials of Azure Databricks</a> by Dayo Bamikole Apr 26, 2021
+   
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/data-literacy-essentials-azure-databricks">Data Literacy: Essentials of Azure Synapse Analytics</a> By Mohit Batra June 14, 2021
    <br /><br />
 
 CloudAcademy: https://cloudacademy.com/exam/landing/37208/
 has Knowledge checks.
-
-* <a target="_blank" href="https://learning.oreilly.com/live-training/courses/microsoft-azure-data-fundamentals-dp-900-crash-course/0636920051861/">OReilly live crash course</a> by Emilio Melo
 
 On LinkedIn Learning:
 
@@ -424,22 +434,20 @@ On LinkedIn Learning:
 
 On OReilly.com:
 
-* https://learning.oreilly.com/videos/azure-overview-introduction/10009OVERVIEW/10009OVERVIEW-AZINTRO_16
-“Cloud and Azure Overview” section in Azure Overview: Introduction for Beginners (video)
+* <a target="_blank" href="https://learning.oreilly.com/live-training/courses/microsoft-azure-data-fundamentals-dp-900-crash-course/0636920051861/">live crash course</a> by Emilio Melo
 
-* https://learning.oreilly.com/videos/professional-azure-sql/9781789535495/
- Professional Azure SQL Database Administration (video, 4h 58m)
+* <a target="_blank" href="https://learning.oreilly.com/videos/azure-overview-introduction/10009OVERVIEW/10009OVERVIEW-AZINTRO_16">“Cloud and Azure Overview” section in Azure Overview: Introduction for Beginners (video)</a>
 
-* https://learning.oreilly.com/videos/learning-microsoft-power/9781789347104/
-Learning Microsoft Power BI (video, 3h 55m)
+* <a target="_blank" href="https://learning.oreilly.com/videos/professional-azure-sql/9781789535495/">Professional Azure SQL Database Administration (video, 4h 58m)</a>
 
-* https://learning.oreilly.com/videos/create-an-azure/9781491989623/
-Create an Azure SQL Data Warehouse in Minutes (video, 1h 22m)
+* <a target="_blank" href="https://learning.oreilly.com/videos/learning-microsoft-power/9781789347104/">Learning Microsoft Power BI (video, 3h 55m)</a>
 
-* https://learning.oreilly.com/videos/information-management-using/9781491989647/
-Information Management Using Azure Data Factory (video, 1h 16m)
+* <a target="_blank" href="https://learning.oreilly.com/videos/create-an-azure/9781491989623/">Create an Azure SQL Data Warehouse in Minutes (video, 1h 22m)</a>
 
-<a target="_blank" href="https://www.aguidetocloud.com/full-courses/dp900fullcourse">3-hour AGuideToCloud video class by Susanth Sutheesh</a>
+* <a target="_blank" href="https://learning.oreilly.com/videos/information-management-using/9781491989647/">Information Management Using Azure Data Factory (video, 1h 16m)</a>
+
+* <a target="_blank" href="https://www.aguidetocloud.com/full-courses/dp900fullcourse">3-hour AGuideToCloud video class by Susanth Sutheesh</a>
+
 
 On YouTube:
 
@@ -1369,66 +1377,13 @@ Azure Glue is a  fully managed extract, transform, and load (ETL) service that y
 MongoDB can be used as a file system called GridFS. It stores files up to 16TB with load balancing and data replication over multiple machines.
 
 
+
+
 <hr />
 
-<a name="ADF"></a>
-
-## ADF
-
-https://learn.microsoft.com/en-us/azure/data-factory/
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/data-factory/concepts-integration-runtime/">ADF's Integration Runtime (IR)</a> provides the compute infrastructure to run data integration jobs. It can be installed on a machine in your on-premises network (self-hosted) or on a machine in Azure (Azure-SSIS).
-
-   * Data Flow
-   * Data movement
-   * Activity dispatch
-   * SSIS package execution
-   <br /><br />
-
-Azure Data Factory (ADF) is heterogenous - it has over 100 different connectors to various other systems.
-
-Linked service to Data Lake Store, Azure Databricks.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=YO7-XruyZvs" title="The difference between SQL Server and SQL Azure">VIDEO</a>:
-
-### Azure Data Factory on Portal GUI
-
-1. In the portal, click "+ Create a resource", then in "Search services and Marketplace" type enough of "Data Factory" to select it from the drop-down list.
-
-   <img width="367" alt="az-data-fac-menu-734x410" src="https://user-images.githubusercontent.com/300046/122431224-807e6600-cf51-11eb-91b9-71a37ec18109.png">
-
-1. Click "Create" after confirming that it's from "Azure".
-
-   Integrate data silos with Azure Data Factory, a service built for all data integration needs and skill levels. Easily construct ETL and ELT processes code-free within the intuitive visual environment, or write your own code. Visually integrate data sources using more than 90+ natively built and maintenance-free connectors at no added cost. Focus on your data - the serverless integration service does the rest.
-
-   * No code or maintenance is required to build hybrid ETL and ELT pipelines within the Data Factory visual environment
-   * Cost-efficient and fully managed serverless cloud data integration tool that scales on demand
-   * Azure security measures to connect to on-premises, cloud-based, and software-as-a-service apps with peace of mind
-   * SSIS integration runtime to easily rehost on-premises SSIS packages in the cloud using familiar SSIS tools
-   <br /><br />
-
-1. Resource group:
-1. Database name: up to 128 characters, unique on same server.
-1. Server: 
-
-
-ADF automates data movement and transformation (ETL).
-
-ADF can spin up and down HDInsights clusters.
-
-Process in Factory Resources:
-
-1. Pipeline
-2. Combine datasets (sources)
-3. Data flows: Select columns
-4. Write output to target datasets (using Power Query?)
-
-See Pluralsight: "Building your First Data Pipeline in Azure Data Factory" by Emillio Melo
-
-
-
-
 ## SQL Server Management Studio (SSMS)
+
+legacy on-prem. only.
 
 SSMS is integrated to visualize and work with Azure SQL, including SQL Server in virtual machines, SQL managed instances, and SQL databases. When necessary, SSMS shows only options that work for a specific Azure service.
 
@@ -1437,6 +1392,79 @@ Installer
 
 Microsoft SQL Server Data Tools (MDT)
 
+<hr />
+
+<a name="ADF"></a>
+
+## ADF
+
+   * https://learn.microsoft.com/en-us/azure/data-factory/
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/data-literacy-essentials-azure-data-factory">Data Literacy: Essentials of Azure Data Factory</a> by Emilio Melo (cloudadvantage.tech) Apr 7, 2021 provided this diagram:
+   <br /><br />
+
+Azure Data Factory (ADF) v2 is a cloud-based data integration (PaaS) service 
+used to orchestrate and automate data movement and data transformation.
+
+REMEMBER: ADF itself does not store persisted data.
+
+Elements of ADF include: pipelines, datasets, linked services, triggers, and integration runtimes.
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703379028/adf-2870x956_durbrr.png"><img alt="adf-2870x956.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703379028/adf-2870x956_durbrr.png"></a>
+
+1. Within ADF, Pipelines are constructed to execute a logical group of <strong>activities</strong>. Each activity performs a specific task, such as copying data from a data source to a destination, executing a Hive query, or running a custom C# or Python activity.
+1. Each <strong>data movement</strong> consumes or produces a dataset. The copy activity can connect (using encrypted TLS on 87 different <strong>connectors</strong>) such as ODBC and HTTPS as well as pre-defined systems (Salesforce, SAP, QuickBooks, Concur, etc.).
+1. Each <strong>Dataset</strong> can be structured or unstructured, from a variety of data sources, including Azure Blob storage, Azure Data Lake Storage Gen1, Azure Data Lake Storage Gen2, Azure SQL Database, Azure SQL Data Warehouse, Azure Cosmos DB, Azure Table storage, and Azure Database for MySQL.
+1. Each <strong>Data Transformation> within a Pipeline is a mapping data flow that can be used to transform data at scale. ADF provides a visual interface to create data transformation logic without writing code. 
+1. To run custom code, ADF can call 13 different external services (Azure Machine Learning, Azure Functions, Azure HDInsight, Azure Databricks, Azure SQL Database, Azure SQL Data Warehouse, Azure Cosmos DB, Azure Data Lake Storage Gen1, Azure Data Lake Storage Gen2, Azure Blob storage, Azure Table storage, Azure Database for MySQL, and Azure Database for PostgreSQL).
+1. <strong>Data Control</strong> within each Pipeline activity (such as For Each, Set, Until, Wait, or other logic) can be controlled by <strong>Triggers</strong> that are event-based, scheduled on a recurring day/time, or within a tumbling window (such as every 2 hours).
+1. <strong>Linked service</strong> to Data Lake Store, Azure Databricks.
+
+ADF v1 was controlled mainly by JSON, but<br />
+ADF v2 can work with data in other locations, including on-premises and other clouds.
+
+ADF can run packages from legacy SSIS (SQL Server Integration Services) -- ADF's predecessor that runs on-prem.
+
+ADF dispatches activites and executes Data Flows, Data Movements, and SSIS packages using its <strong>Integration Runtimes</strong> compute infrastructure. There are three types of <a target="_blank" href="https://docs.microsoft.com/en-us/azure/data-factory/concepts-integration-runtime/">Integration Runtimes</a> are automatically created when a new ADF Resource is created:
+
+   * An Azure <tt>AutoResolveIntegrationRuntime</tt> is created for Mapping Dataflows, the native way to transform data on ADF. It does data movement between public cloud endpoints (such as AWS, GCP, Azure, or SaaS Salesforce, SAP, etc.).
+   * A <tt>Self-hosted IR</a> is installed on resources (such as SQL Server) on a machine in self-hosted on-premises networks.
+   * A <tt>Azure-SSIS IR</tt> is installed on an Azure VM (Azure-SSIS) machine to run SS packages, such as for migration.
+   <br /><br />
+
+
+### ADF Portal GUI
+
+1. In the portal, click "+ Create a resource", then in "Search services and Marketplace" type enough of "Data Factory" to select it from the drop-down list.
+
+   <img width="367" alt="az-data-fac-menu-734x410" src="https://user-images.githubusercontent.com/300046/122431224-807e6600-cf51-11eb-91b9-71a37ec18109.png">
+
+1. Click "Create" after confirming that it's from "Azure".
+
+   Use ADF to integrate "data silos" by people of various skill levels -- construct ETL and ELT processes either code-free within an intuitive visual environment or write your own code
+   
+   * Azure security measures to connect to on-premises, cloud-based, and software-as-a-service apps with peace of mind
+   * scales on demand
+   * SSIS integration runtime to rehost on-premises SSIS packages in the cloud using familiar SSIS tools
+   <br /><br />
+
+1. Resource group:
+1. Database name: up to 128 characters, unique on same server.
+1. Server: 
+
+   ADF can spin up and down HDInsights clusters.
+
+   Process in Factory Resources:
+
+1. Pipeline
+2. Combine datasets (sources)
+3. Data flows: Select columns
+4. Write output to target datasets (using Power Query?)
+<br /><br />
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703393296/adf-menu-163x614_us5xke.png"><img alt="adf-menu-163x614.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703393296/adf-menu-163x614_us5xke.png"></a>
+
+
+<hr />
 
 <a name="AzureDataStudio"></a>
 
