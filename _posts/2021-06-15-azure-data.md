@@ -87,6 +87,31 @@ PROTIP: <a target="_blan" href="https://parquet.apache.org/">Apache's Parquet fi
    <br /><br />
 
 
+<hr />
+
+## Polybase
+
+<strong>Polybase</strong> is a data virtualization feature that enables SQL Server to query data using T-SQL directly from heterogenous (external) data:
+   * Oracle
+   * Teradata
+   * MongoDB
+   * Apache Hadoop clusters
+   * <a href="#Cosmos+DB">Azure Cosmos DB</a>
+   <br /><br />
+
+Synapse SQL is a distributed version of T-SQL, with extensions for streaming and machine learning (T-SQL PREDICT function).
+
+
+## File format types:
+
+* Binary (pdf)
+* Delimited text (CSV)
+* Excel (XML)
+* JSON
+* XML
+
+
+
 ### OLAP Analytics
 
 For OLAP (Online Analytical Processing), large amounts of data are stored in a "star schema" in <strong>data warehouses</strong> (separate from databases for OLTP) for access to by date and other dimensions.
@@ -130,6 +155,104 @@ For OLAP (Online Analytical Processing), large amounts of data are stored in a "
 <a target="_blank" href="https://www.youtube.com/watch?v=iQ41WqhHglk">VIDEO</a> by <a target="_blank" href="https://www.linkedin.com/in/mrk-talkstech/">Mr. K Talks Tech</a>.
 
 First look at traditional SQL "relational" databases.
+
+
+## Azure Storage products
+
+Microsoft has these offerings in the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/?product=storage"><strong>storage</strong> category</a>:
+
+* Archive Storage - Industry leading price point for storing rarely accessed data [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview">DOCS</a>]
+* Avere vFXT for Azure - Run high-performance, file-based workloads in the cloud [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/avere-vfxt/">DOCS</a>]
+* Azure Backup - Simplify data protection and protect against ransomware [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/backup/">DOCS</a>]
+* Azure confidential ledger - Tamperproof, unstructured data store hosted in trusted execution environments (TEEs) and backed by cryptographically verifiable evidence [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/confidential-ledger/">DOCS</a>]
+* Azure Container Storage - Manage persistent volumes for stateful container applications [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/container-storage/">DOCS</a>]
+* Azure Data Lake Storage - Massively scalable, secure data lake functionality built on Azure Blob Storage [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction">DOCS</a>]
+* Azure Data Share - A simple and safe service for sharing big data with external organizations [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/data-share/">DOCS</a>]
+* Azure Elastic SAN (Preview) - Elastic SAN is a cloud-native Storage Area Network (SAN) service built on Azure. Gain access to an end-to-end experience like your on-premises SAN. [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/elastic-san/">DOCS</a>]
+* <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cosmos-db/sql-query-working-with-json">Azure Files</a> - Simple, secure and serverless enterprise-grade cloud file shares using <a target="_blank" href="https://cloud.netapp.com/blog/azure-smb-server-messsage-block-in-the-cloud-for-azure-files">SMB v3 protocol</a> [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/files/">DOCS</a>]
+* Azure FXT Edge Filer - Hybrid storage optimization solution for HPC environments [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/fxt-edge-filer/">DOCS</a>]
+* Azure HPC Cache - File caching for high-performance computing (HPC) [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/hpc-cache/">DOCS</a>]
+* Azure Managed Lustre - A fully managed, cloud-based parallel file system that enables customers to run their high-performance computing (HPC) workloads in the cloud [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-managed-lustre/">DOCS</a>]
+* Azure NetApp Files - Enterprise-grade Azure file shares, powered by NetApp [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-netapp-files/">DOCS</a>]
+* Blob Storage - REST-based object storage for unstructured data [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/blobs/">DOCS</a>]
+* Data Box - Appliances and solutions for offline data transfer to Azure [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/databox/">DOCS</a>]
+* Disk Storage - High-performance, highly durable block storage for Azure Virtual Machines [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview">DOCS</a>]
+* Queue Storage - Effectively scale apps according to traffic [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/queues/">DOCS</a>]
+* Storage - Durable, highly available, and massively scalable cloud storage [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/">DOCS</a>]
+* Storage Explorer - View and interact with Azure Storage resources [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/vs-azure-tools-storage-manage-with-storage-explorer">DOCS</a>]
+* StorSimple - Lower costs with an enterprise hybrid cloud storage solution [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storsimple/">DOCS</a>]
+<br /><br />
+
+<a target="_blank" href="https://www.youtube.com/watch?v=P3qmqUZJ7l0&t=3h47m33s">DEMO</a>: Create Blob and File storage
+
+https://www.techtarget.com/searchstorage/tutorial/How-to-create-an-Azure-Data-Lake-Storage-Gen2-account
+
+https://www.techtarget.com/searchstorage/tip/Compare-Azure-Blob-Storage-vs-Data-Lake
+
+1. Create a storage account. REMEMBER: Name must be 24 characters or less.
+1. For Performance: when selecting Premium (SSD) for low latency:
+   * "Block blobs: Best for high transaction rates or low storage latency", storing large amounts of text or binary data, storing data for streaming and storing data for backup and restore scenarios.
+   * "File shares: Best for enterprise or high-performance applications that need to scale", and scenarios that require a fully SMB compatible file system.
+   * "Page blobs: Best for random read/write operations" and frequent read/write operations in small ranges.
+   <br /><br />
+
+   ### Redundancy
+
+1. For Redundancy: (to achieve disaster recovery): [<a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy">DOCS</a>]
+
+   * LRS = Locally redundant storage : "Lowest-cost option with basic protection against server rack and drive failures. Recommended for non-critical scenarios." Data is replicated three times within a single facility in a single region.
+
+   * LRS premium
+   
+   * ZRS = Zone-redundant storage : "Intermediate option with protection against datacenter-level failures. Recommended for high availability scenarios."<br />Data is replicated synchronously across three Azure availability zones in a single region.
+   
+   * GRS = Geo-redundant storage : "Intermediate option with failover capabilities in a secondary region. Recommended for backup scenarios."<br />Data is replicated synchronously across three Azure availability zones in a single region, and then asynchronously to a paired region.
+
+   * GZRS = Geo-zone-redundant storage : "Optimal data protection solution that includes the offerings of both GRS and ZRS. Recommended for critical data workloads."<br />Data is replicated synchronously across three Azure availability zones in a single region, and then asynchronously to a paired region that is geographically distant from the primary region.
+
+   * RA-GRS = Read-Access Geo-Redundant Storage : GRS plus read access to the secondary region. Recommended for scenarios requiring read access in the secondary region.<br />Data is replicated synchronously across three Azure availability zones in a single region, and then asynchronously to a paired region that is geographically distant from the primary region.
+   
+   * RA-ZGRS = Read-Access Geo-Zone-Redundant Storage : GZRS plus read access to the secondary region. Recommended for scenarios requiring read access in the secondary region."<br />Data is replicated synchronously across three Azure availability zones in a single region, and then asynchronously to a paired region that is geographically distant from the primary region. This is the Highest-cost option with the highest level of availability and durability.
+
+1. If "Read-access geo-redundant storage (RA-GRS)" is selected, also check "Make read access to data available in the event of regional unavailability" 
+
+   PROTIP: <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702090058/azure-data-regional-205x808_mjwbvk.png"><img align="right" width="205" alt="azure-data-regional-205x808.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702090058/azure-data-regional-205x808_mjwbvk.png"></a>
+   <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/blobs/">PRICING</a> for data storage is based on several factors. But the basic cost of the first 50 TB of LRS Hot Hierarchical Gen2 storage, by Region/Location, in $/GB/Month USD. <a target="_blank" href="https://7451111251303.gumroad.com/l/fjkxm">According to my calculations (in an Excel file) on Dec 8, 2023</a>:
+   
+   <strong>Brazil Southeast</strong> (in red) is the most expensive -- 2.35 times the cost of the cheapest region (shown in dark green).
+   
+   That's before adding costs for reservations, time lengths, Data egress fees, etc. which can be substantial and dramatically impact the storage budget. 
+
+
+
+## SQL Server Management Studio (SSMS)
+
+SSMS is integrated to visualize and work with Azure SQL, including SQL Server in virtual machines, SQL managed instances, and SQL databases. When necessary, SSMS shows only options that work for a specific Azure service.
+
+https://docs.azure.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
+Installer
+
+
+
+<hr />
+
+<a name="AzureDataStudio"></a>
+
+## Azure Data Studio
+
+Azure Data Studio is an open-source, cross-platform client GUI tool for querying and working with various Azure data sources, including SQL Server and Azure SQL. Its "notebooks" allows mixing runnable code cells and formatted text in one place.
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703090671/AzureDS-menu-208x367_o3ykxj.png"><img alt="AzureDS-menu-208x367.png" width="208" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703090671/AzureDS-menu-208x367_o3ykxj.png"></a>
+
+<a target="_blank" href="https://www.mssqltips.com/sqlservertip/5997/create-sql-server-notebooks-in-azure-data-studio/">BLOG</a> SQL Server Notebook</a>
+
+![az-data-studio](https://user-images.githubusercontent.com/300046/126932768-c2279fb2-826d-4ca7-bacd-10a1be11b7f9.png)
+
+https://docs.azure.com/en-us/sql/azure-data-studio/download-Azure-data-studio
+
+
+
+<hr />
 
 ## Azure's SQL database products
 
@@ -864,41 +987,7 @@ References:
 
 
 
-
 <hr />
-
-## Types of data
-
-OLTP = Data is stored one transaction at a time.
-
-OLAP = data periodically loaded, aggregataed, stored in a cube.
-
-   * Summary
-   * Trend
-   <br /><br />
-
-<strong>Polybase</strong> is a data virtualization feature that enables SQL Server to query data using T-SQL directly from heterogenous (external) data:
-   * Oracle
-   * Teradata
-   * MongoDB
-   * Apache Hadoop clusters
-   * <a href="#Cosmos+DB">Azure Cosmos DB</a>
-   <br /><br />
-
-SSIS is also heterogenous
-
-Synapse SQL is a distributed version of T-SQL, with extensions for streaming and machine learning (T-SQL PREDICT function).
-
-
-## File format types:
-
-* Binary (pdf)
-* Delimited text (CSV)
-* Excel (XML)
-* JSON
-* XML
-
-
 
 <a name="CreateSQLDB"></a>
 <!-- ref in Azure-computer -->
@@ -1583,22 +1672,6 @@ ADF v2 can work with data in other locations, including on-premises and other cl
 <br /><br />
 
 
-<hr />
-
-<a name="AzureDataStudio"></a>
-
-## Azure Data Studio
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703090671/AzureDS-menu-208x367_o3ykxj.png"><img alt="AzureDS-menu-208x367.png" width="208" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703090671/AzureDS-menu-208x367_o3ykxj.png"></a>
-
-<a target="_blank" href="https://www.mssqltips.com/sqlservertip/5997/create-sql-server-notebooks-in-azure-data-studio/">BLOG</a> SQL Server Notebook</a>
-
-Azure Data Studio is an open-source, cross-platform client GUI tool for querying and working with various Azure data sources, including SQL Server and Azure SQL. Its "notebooks" allows mixing runnable code cells and formatted text in one place.
-
-![az-data-studio](https://user-images.githubusercontent.com/300046/126932768-c2279fb2-826d-4ca7-bacd-10a1be11b7f9.png)
-
-https://docs.azure.com/en-us/sql/azure-data-studio/download-Azure-data-studio
-
 
 <a name="Azure+Synapse+Analytics"></a>
 
@@ -1698,24 +1771,7 @@ See Pluralsight: "Building your First Data Pipeline in Azure Data Factory" by Em
 
 
 
-## SQL Server Management Studio (SSMS)
-
-SSMS is integrated to visualize and work with Azure SQL, including SQL Server in virtual machines, SQL managed instances, and SQL databases. When necessary, SSMS shows only options that work for a specific Azure service.
-
-https://docs.azure.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
-Installer
-
-
-<a name="AzureDataStudio"></a>
-
-## Azure Data Studio
-
-Azure Data Studio is an open-source, cross-platform client GUI tool for querying and working with various Azure data sources, including SQL Server and Azure SQL. Its "notebooks" allows mixing runnable code cells and formatted text in one place.
-
-![az-data-studio](https://user-images.githubusercontent.com/300046/126932768-c2279fb2-826d-4ca7-bacd-10a1be11b7f9.png)
-
-https://docs.azure.com/en-us/sql/azure-data-studio/download-Azure-data-studio
-
+<hr />
 
 <a name="Azure+Synapse+Analytics"></a>
 
@@ -1748,72 +1804,6 @@ See Pluralsight: "Building your First Power BI Report"
 
 <hr />
 
-## Azure Storage products
-
-Microsoft has these offerings in the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/?product=storage"><strong>storage</strong> category</a>:
-
-* Archive Storage - Industry leading price point for storing rarely accessed data [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview">DOCS</a>]
-* Avere vFXT for Azure - Run high-performance, file-based workloads in the cloud [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/avere-vfxt/">DOCS</a>]
-* Azure Backup - Simplify data protection and protect against ransomware [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/backup/">DOCS</a>]
-* Azure confidential ledger - Tamperproof, unstructured data store hosted in trusted execution environments (TEEs) and backed by cryptographically verifiable evidence [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/confidential-ledger/">DOCS</a>]
-* Azure Container Storage - Manage persistent volumes for stateful container applications [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/container-storage/">DOCS</a>]
-* Azure Data Lake Storage - Massively scalable, secure data lake functionality built on Azure Blob Storage [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction">DOCS</a>]
-* Azure Data Share - A simple and safe service for sharing big data with external organizations [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/data-share/">DOCS</a>]
-* Azure Elastic SAN (Preview) - Elastic SAN is a cloud-native Storage Area Network (SAN) service built on Azure. Gain access to an end-to-end experience like your on-premises SAN. [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/elastic-san/">DOCS</a>]
-* <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cosmos-db/sql-query-working-with-json">Azure Files</a> - Simple, secure and serverless enterprise-grade cloud file shares using <a target="_blank" href="https://cloud.netapp.com/blog/azure-smb-server-messsage-block-in-the-cloud-for-azure-files">SMB v3 protocol</a> [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/files/">DOCS</a>]
-* Azure FXT Edge Filer - Hybrid storage optimization solution for HPC environments [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/fxt-edge-filer/">DOCS</a>]
-* Azure HPC Cache - File caching for high-performance computing (HPC) [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/hpc-cache/">DOCS</a>]
-* Azure Managed Lustre - A fully managed, cloud-based parallel file system that enables customers to run their high-performance computing (HPC) workloads in the cloud [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-managed-lustre/">DOCS</a>]
-* Azure NetApp Files - Enterprise-grade Azure file shares, powered by NetApp [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-netapp-files/">DOCS</a>]
-* Blob Storage - REST-based object storage for unstructured data [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/blobs/">DOCS</a>]
-* Data Box - Appliances and solutions for offline data transfer to Azure [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/databox/">DOCS</a>]
-* Disk Storage - High-performance, highly durable block storage for Azure Virtual Machines [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview">DOCS</a>]
-* Queue Storage - Effectively scale apps according to traffic [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/queues/">DOCS</a>]
-* Storage - Durable, highly available, and massively scalable cloud storage [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/">DOCS</a>]
-* Storage Explorer - View and interact with Azure Storage resources [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/vs-azure-tools-storage-manage-with-storage-explorer">DOCS</a>]
-* StorSimple - Lower costs with an enterprise hybrid cloud storage solution [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storsimple/">DOCS</a>]
-<br /><br />
-
-
-<a target="_blank" href="https://www.youtube.com/watch?v=P3qmqUZJ7l0&t=3h47m33s">DEMO</a>: Create Blob and File storage
-
-https://www.techtarget.com/searchstorage/tutorial/How-to-create-an-Azure-Data-Lake-Storage-Gen2-account
-
-https://www.techtarget.com/searchstorage/tip/Compare-Azure-Blob-Storage-vs-Data-Lake
-
-1. Create a storage account. REMEMBER: Name must be 24 characters or less.
-1. For Performance: when selecting Premium (SSD) for low latency:
-   * "Block blobs: Best for high transaction rates or low storage latency", storing large amounts of text or binary data, storing data for streaming and storing data for backup and restore scenarios.
-   * "File shares: Best for enterprise or high-performance applications that need to scale", and scenarios that require a fully SMB compatible file system.
-   * "Page blobs: Best for random read/write operations" and frequent read/write operations in small ranges.
-   <br /><br />
-
-   ### Redundancy
-
-1. For Redundancy: (to achieve disaster recovery): [<a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy">DOCS</a>]
-
-   * LRS = Locally redundant storage : "Lowest-cost option with basic protection against server rack and drive failures. Recommended for non-critical scenarios." Data is replicated three times within a single facility in a single region.
-
-   * LRS premium
-   
-   * ZRS = Zone-redundant storage : "Intermediate option with protection against datacenter-level failures. Recommended for high availability scenarios."<br />Data is replicated synchronously across three Azure availability zones in a single region.
-   
-   * GRS = Geo-redundant storage : "Intermediate option with failover capabilities in a secondary region. Recommended for backup scenarios."<br />Data is replicated synchronously across three Azure availability zones in a single region, and then asynchronously to a paired region.
-
-   * GZRS = Geo-zone-redundant storage : "Optimal data protection solution that includes the offerings of both GRS and ZRS. Recommended for critical data workloads."<br />Data is replicated synchronously across three Azure availability zones in a single region, and then asynchronously to a paired region that is geographically distant from the primary region.
-
-   * RA-GRS = Read-Access Geo-Redundant Storage : GRS plus read access to the secondary region. Recommended for scenarios requiring read access in the secondary region.<br />Data is replicated synchronously across three Azure availability zones in a single region, and then asynchronously to a paired region that is geographically distant from the primary region.
-   
-   * RA-ZGRS = Read-Access Geo-Zone-Redundant Storage : GZRS plus read access to the secondary region. Recommended for scenarios requiring read access in the secondary region."<br />Data is replicated synchronously across three Azure availability zones in a single region, and then asynchronously to a paired region that is geographically distant from the primary region. This is the Highest-cost option with the highest level of availability and durability.
-
-1. If "Read-access geo-redundant storage (RA-GRS)" is selected, also check "Make read access to data available in the event of regional unavailability" 
-
-   PROTIP: <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702090058/azure-data-regional-205x808_mjwbvk.png"><img align="right" width="205" alt="azure-data-regional-205x808.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702090058/azure-data-regional-205x808_mjwbvk.png"></a>
-   <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/blobs/">PRICING</a> for data storage is based on several factors. But the basic cost of the first 50 TB of LRS Hot Hierarchical Gen2 storage, by Region/Location, in $/GB/Month USD. <a target="_blank" href="https://7451111251303.gumroad.com/l/fjkxm">According to my calculations (in an Excel file) on Dec 8, 2023</a>:
-   
-   <strong>Brazil Southeast</strong> (in red) is the most expensive -- 2.35 times the cost of the cheapest region (shown in dark green).
-   
-   That's before adding costs for reservations, time lengths, Data egress fees, etc. which can be substantial and dramatically impact the storage budget. 
 
 <hr />
 
@@ -1829,17 +1819,17 @@ https://www.twitch.tv/425show
 
 ## Resources
 
-https://www.youtube.com/watch?v=N_Ta23hIBaI
+<a target="_blank" href="https://www.youtube.com/watch?v=N_Ta23hIBaI">
 19:48 Q&A in detail</a> by Ravikiran Srinivasulu, Microsoft Azure Data PM
 
-https://www.youtube.com/watch?v=oj5inTNyRW8
+<a target="_blank" href="https://www.youtube.com/watch?v=oj5inTNyRW8
 1:32:49 Q&A</a> by Creative Solutions
 
 <a target="_blank" href="https://www.youtube.com/watch?v=BlSVX1WqTXk&list=PLlVtbbG169nGccbp8VSpAozu3w9xSQJoY">
 John Savill's Azure Master Class v2 - Module 9 - Database & A.I.</a>
 
-https://www.youtube.com/watch?v=uaW1wf_BYFc
-Graph Databases 101 with Cosmos DB
+<a target="_blank" href="https://www.youtube.com/watch?v=uaW1wf_BYFc">
+Graph Databases 101 with Cosmos DB</a>
 by Maxime Rouiller
 
 
