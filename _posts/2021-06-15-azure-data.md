@@ -338,7 +338,7 @@ Describe capabilities and features of <a href="#Cosmos+DB">Azure Cosmos DB</a>
 * Describe common elements of large-scale analytics:
    * Describe considerations for data ingestion and processing
    * Describe options for analytical data stores
-   * Describe Azure services for data warehousing, including Azure Synapse Analytics, Azure Databricks, Azure HDInsight, and Azure Data Factory
+   * Describe Azure services for data warehousing, including Azure Synapse Analytics, Azure Databricks, Azure <a href="#HDInsight">HDInsight</a>, and Azure Data Factory
    <br /><br />
 
 * Describe consideration for real-time data analytics:
@@ -418,7 +418,7 @@ Other Tutorials:
 
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/data-literacy-essentials-azure-data-factory">Data Literacy: Essentials of Azure Data Factory</a> by Emilio Melo Apr 7, 2021
    
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/data-literacy-essentials-azure-hdinsight">Data Literacy: Essentials of Azure HDInsight</a> by Niraj Joshi Mar 22, 2021
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/data-literacy-essentials-azure-hdinsight">Data Literacy: Essentials of Azure HDInsight</a> by <a target="_blank" href="https://www.linkedin.com/in/niraj-joshi-7a557517/">Niraj Joshi</a> Mar 22, 2021
    
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/data-literacy-essentials-azure-databricks">Data Literacy: Essentials of Azure Databricks</a> by Dayo Bamikole Apr 26, 2021
    
@@ -1359,18 +1359,130 @@ September 2023
 
 <a name="HDInsight"></a>
 
-## HDInsight "big data"
+## HDInsight 
 
-Batch-only (runs cannot be stopped).
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/data-literacy-essentials-azure-hdinsight">Data Literacy: Essentials of Azure HDInsight</a> by <a target="_blank" href="https://www.linkedin.com/in/niraj-joshi-7a557517/">Niraj Joshi</a> Mar 22, 2021 provided this diagram:
+   <br /><br />
 
-But can scale up and down.
+Like Hadoop, HDInsight is an open-source software framework for storing data and running applications on clusters of commodity "nodes" (hardware), shown at the bottom of this diagram:
 
-* Kafka - stream processing message broker
-* Hadoop - Distributed file system
-* Spark - data cluster computing
-* Apache Storm - real-time analytics Stream computation
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703396324/hadoop-arch-3028x1758_z7g5pa.png"><img alt="hadoop-arch-3028x1758.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703396324/hadoop-arch-3028x1758_z7g5pa.png"></a>
 
-Azure Glue is a  fully managed extract, transform, and load (ETL) service that you can use to prepare and load data for analytics.
+The top of the diagram shows that HDInsight provides data to analytics applications in the format of Blobs, Tables, SQL Database, etc.
+
+HDInsight provides massive storage for any kind of data, enormous processing power and the ability to handle virtually limitless concurrent tasks or jobs.
+
+HDInsight is an Azure-managed service. As a cloud service:
+   * Easy-to-spin-up clusters
+   * Reduced costs
+   * Enterprise-grade scurity
+   * Optimized components
+   <br /><br />
+
+Hadoop is an open-source software framework for storing data and running applications on clusters of commodity hardware. It provides massive storage for any kind of data, enormous processing power and the ability to handle virtually limitless concurrent tasks or jobs.
+
+
+   * Volume
+   * Velocity
+   * Variety
+   * Veracity
+   <br /><br />
+
+
+Azure Glue is a  fully managed extract, transform, and load (ETL) service to prepare and load data for analytics.
+
+### Demo HDInsight
+
+<a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/64bb5c3b-734f-4d73-9a7c-158160ea7777/38ecdd34-73fe-4160-86fd-b3efdb7b1888/3b6e5436-6b00-4a54-acf7-feac04f913ac">VIDEO</a>:
+
+1. In the portal Home, click "+ Create a resource".
+1. REMEMBER: In "Search services and Marketplace" type enough of "<strong>HDInsight</strong>" to select it from the drop-down list that appears.
+1. Click "HDInsight" from Microsoft to reveal:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703397366/azure-hdinsights-2226x1394_vuo1m3.png"><img alt="azure-hdinsights-2226x1394.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703397366/azure-hdinsights-2226x1394_vuo1m3.png"></a>
+
+1. Click "Create" under "Azure HDInsight" to click the "Azure HDInsight" that appears.
+1. In the "Basics" screen. 
+
+   For "Cluster details":
+1. For "CCluster name"
+1. For "Region"
+
+   ### HDInsight Cluster Type
+
+1. For "Cluster Type", click "Select cluster type".
+
+   HDInsight processs "Big Data" <strong>Datalakes</strong> using multiple cluster types:
+
+   * Hadoop - Distributed file system for Batch Query
+   * Spark - data cluster computing
+   * Kafka - stream processing message broker
+   * HBase - processes schema-free data
+   * Apache Storm - real-time analytics Stream computation
+   * ML Services - predictive modeling
+   * Interactive query - in-memory caching
+   <br /><br />
+
+1. Select the Version, such as "Hadoop 2.7.3 (HDI 3.6)".
+
+   ### Cluster credentials
+   
+   Enter credentials that will be used to administer or access the cluster:
+
+1. For Cluster login username, replace "admin"
+1. For Cluster login password
+1. Repeat to Confirm cluster login password
+1. For Secure Shell (SSH) username, replace "sshuser"
+1. Check "Use cluster login password for SSH
+
+   PROTIP: Store the username and password in a secure location. You will need them to access the cluster.
+
+1. Click the "Storage" tab.
+
+1. Click the "Security + networking" tab.
+1. In prod, check the "Enable enterprise security package", which adds cost.
+1. For Network settings: Resource provider connection", 
+   * Select "Inbound" (default) or "Outbound" (if you have a VPN).
+1. Specify the "Virtual network" and "Subnet" to use if one was created.
+
+1. Click the "Configuration + pricing" tab.
+1. For each Node type, select its Node size.
+
+1. Click "Tags" tab to specify a "CreatedBy" key with your email.
+1. Click "Review + Create". Click "Create".
+1. Wait for "Validation successful" to click "Create".
+
+   ### Connect to HDInsight
+
+1. Make use of the cluster when "Your deployment is complete" appears.
+
+   A URL is created, such as for the dashboard:
+
+   <tt><strong>https://<em>name</em>.azurehdinsight.net</strong></tt>
+
+   Like others, HDInsight clusters come with a set of pre-installed services components to analyze <strong>batch</strong> data.
+
+   * HDFS
+   * YARN
+   * MapReduce2
+   * Taz
+   * Hive
+   * Pig
+   * Sqoop
+   * Oozie
+   * Zookeeper
+   * Ambari Metrics
+   <br /><br />
+
+   Additional components can be install on your cluster.
+   * Avro
+   <br /><br />
+
+1. Delete the Resources created and accessed above.
+<br /><br />
+
+
+<hr />
 
 ## MongoDB
 
@@ -1413,11 +1525,11 @@ Elements of ADF include: pipelines, datasets, linked services, triggers, and int
 
 1. Within ADF, Pipelines are constructed to execute a logical group of <strong>activities</strong>. Each activity performs a specific task, such as copying data from a data source to a destination, executing a Hive query, or running a custom C# or Python activity.
 1. Each <strong>data movement</strong> consumes or produces a dataset. The copy activity can connect (using encrypted TLS on 87 different <strong>connectors</strong>) such as ODBC and HTTPS as well as pre-defined systems (Salesforce, SAP, QuickBooks, Concur, etc.).
-1. Each <strong>Dataset</strong> can be structured or unstructured, from a variety of data sources, including Azure Blob storage, Azure Data Lake Storage Gen1, Azure Data Lake Storage Gen2, Azure SQL Database, Azure SQL Data Warehouse, Azure Cosmos DB, Azure Table storage, and Azure Database for MySQL.
+1. Each <strong>Dataset</strong> defines the actual representation of data (structured or unstructured), at a variety of data sources, including Azure Blob storage, Azure Data Lake Storage Gen1, Azure Data Lake Storage Gen2, Azure SQL Database, Azure SQL Data Warehouse, Azure Cosmos DB, Azure Table storage, and Azure Database for MySQL.
 1. Each <strong>Data Transformation> within a Pipeline is a mapping data flow that can be used to transform data at scale. ADF provides a visual interface to create data transformation logic without writing code. 
 1. To run custom code, ADF can call 13 different external services (Azure Machine Learning, Azure Functions, Azure HDInsight, Azure Databricks, Azure SQL Database, Azure SQL Data Warehouse, Azure Cosmos DB, Azure Data Lake Storage Gen1, Azure Data Lake Storage Gen2, Azure Blob storage, Azure Table storage, Azure Database for MySQL, and Azure Database for PostgreSQL).
 1. <strong>Data Control</strong> within each Pipeline activity (such as For Each, Set, Until, Wait, or other logic) can be controlled by <strong>Triggers</strong> that are event-based, scheduled on a recurring day/time, or within a tumbling window (such as every 2 hours).
-1. <strong>Linked service</strong> to Data Lake Store, Azure Databricks.
+1. <strong>Linked service</strong> specifes where to find data (in Data Lake Store, Azure Databricks, etc.).
 
 ADF can run packages from legacy SSIS (SQL Server Integration Services) -- ADF's predecessor that runs on-prem.
 
