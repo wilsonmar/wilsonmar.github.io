@@ -1119,6 +1119,11 @@ now built on Google Chrome.
 
 * https://www.youtube.com/watch?v=D7wOcIvWdxc First look: Linux Mint 21 beta, on a 10 year old Mac! by Veronica Explains
 
+* https://www.youtube.com/watch?v=pKCrZEzuALA Which .NET on a Mac type are you? by Alex Ziskind
+
+* https://www.youtube.com/watch?v=gjQyIUMKmZ8 I'm switching to Mac, after a lifetime of Windows by Fstoppers
+
+
 
 ## More on OSX
 

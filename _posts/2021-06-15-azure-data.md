@@ -120,7 +120,8 @@ Synapse SQL is a distributed version of T-SQL, with extensions for streaming and
    * RCFile (Record Columnar File) is a data placement structure designed to provide a fast serialized columnar data format for Hadoop. It was created at Facebook. It is a flat file format that is optimized for large flat table scans. It is not a block-based file format like ORC or Parquet. It is a row-based file format.
    * ORC (Optimized Row Columnar) stores Hive data efficiently
    * Avro (row-based)
-   * Parquet (columnal-based) used by Linux Foundation Delta Lake adopted by Apache Spark and Azure Synapsee.
+   * <a target="_blan" href="https://parquet.apache.org/">Apache's Parquet file format</a>  is freely licensed by the Linux Foundation DeltaLake adopted by Apache Spark and Azure Synapse. PROTIP: Parquet generally performs better than CSV because it provides efficient data compression and encoding schemes with enhanced performance to handle complex data in bulk. It is called a <strong>"columnar"</strong> storage format similar to other columnar-storage file formats available in Hadoop (RCFile and ORC). So it is compatible with most data processing frameworks in the Hadoop environment.
+
    * Delta format
    <br /><br />
 
@@ -134,13 +135,12 @@ Wide availability of fast internet and public clouds providing a lot of fast dat
    * "Deltalake" is a revolution because instead of arranging data in tables or graphs data for easier access, data is stored in Parquet format used by Azure Data Lake Storage Gen2, Hadoop, Databricks, <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a>
    <br /><br />
 
-PROTIP: <a target="_blan" href="https://parquet.apache.org/">Apache's Parquet file format</a> generally performs better than CSV because it provides efficient data compression and encoding schemes with enhanced performance to handle complex data in bulk.  It is called a <strong>"columnar"</strong> storage format similar to other columnar-storage file formats available in Hadoop (RCFile and ORC). So it is compatible with most data processing frameworks in the Hadoop environment. Apache Parquet is a free and open-source column-oriented data storage format of the Apache Hadoop ecosystem. 
-
    References:
    * https://www.upsolver.com/blog/apache-parquet-why-use
    * https://docs.azure.com/en-us/azure/architecture/browse/#databases
    <br /><br />
 
+On Windows VMs, <a target="_blan" href="https://learn.microsoft.com/en-us/azure/virtual-machines/disks-benchmarks">Benchmark your disks</a> using the <a target="_blank" href="https://github.com/Microsoft/diskspd">DISKSP tool</a>
 
 
 ### OLAP Analytics

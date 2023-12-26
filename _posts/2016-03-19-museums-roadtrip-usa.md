@@ -250,6 +250,8 @@ The ride stopped on May 14 in Anniston, Alabama where their bus was burnt by seg
 
 ### Boston:
 
+Boston is among the safest large cities in the US.
+
 <ul>
 <li><a target="_blank" href="https://www.umb.edu/in_the_community/arts/arts_on_the_point/">Arts on the Point Sculpture Park</a>, Boston</li>
 <li><a target="_blank" href="https://www.bu.edu/art/">Boston University Art Gallery</a></li>
@@ -555,6 +557,8 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 
 > <strong>Maryland</strong>
 
+Baltimore had the #3 rate of crime among all cities in the US (2,027/100,000 in 2022).
+
 <ul>
 <li><a target="_blank" href="https://www.art-academy.org/">Academy Art Museum</a>, Easton</li>
 <li><a target="_blank" href="https://www.africanartmuseum.org/">African Art Museum of Maryland</a>, Columbia</li>
@@ -622,6 +626,8 @@ US Holocost Memorial Museum</a> 10-5:30 every day, but timed passes are necessar
 <a name="VA"></a>
 
 > <strong>Virginia</strong>
+
+Richmond is the capital of Virginia, and the capital of the Confederacy during the Civil War. In 2022 it was the 3rd most dangerous city in the US (2,027/100,000).
 
 <ul>
 <li><a target="_blank" href="https://www.pubinfo.vcu.edu/artweb/gallery/">Anderson Gallery at the VCU School for the Arts</a>, Richmond</li>
@@ -847,6 +853,8 @@ on <a target="_blank" href="https://www.vikingrivercruises.com/cruise-destinatio
 
 ### Chicago:
 
+Chicago had the #20 rate of crime among all cities in the US (1,099/100,000 in 2022).
+
 <ul>
 <li><a target="_blank" href="https://mcachicago.org/Home"> Museum of Contemporary Art (MCA)</a>, Chicago</li>
 <li><a target="_blank" href="https://www.artic.edu/aic/"><strong>Art Institute of Chicago</strong></a></li>
@@ -901,6 +909,8 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 
 ### St. Louis:
 
+St. Louis had the #1 rate of crime among all cities in the US (2,082/100,000 in 2022).
+
 <ul>
 <li><a target="_blank" href="https://www.contemporarystl.org/">Contemporary Art Museum St. Louis</a></li>
 <li><a target="_blank" href="https://kemperartmuseum.wustl.edu/">Mildred Lane Kemper Art Museum at Washington University</a></li>
@@ -929,6 +939,8 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 
 ### Nashville:
 
+Nashville had the #16 rate of crime among all cities in the US (1,138/100,000 in 2022).
+
 <ul>
 <li><a target="_blank" href="https://www.cheekwood.org/art.html">Cheekwood Museum of Art</a>, Nashville</li>
 <li><a target="_blank" href="https://www.parthenon.org/">The Parthenon</a>, Nashville</li>
@@ -939,6 +951,8 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 <a name="Memphis"></a>
 
 ### Memphis:
+
+Memphis had the #4 rate of crime among all cities in the US (2,003/100,000 in 2022).
 
 <ul>
 <li><a target="_blank" href="https://www.people.memphis.edu/~artmuseum/amhome.html">Art Museum of the University of Memphis</a></li>
@@ -953,6 +967,8 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 <a name="AR"></a>
 
 > <strong> Arkansas </strong>
+
+Little Rock had the #5 rate of crime among all cities in the US (1,634/100,000 in 2022).
 
 <ul>
 <li><a target="_blank" href="https://www.garvangardens.org/">Anthony Chapel in Garvan Woodland Gardens at U of Arkansas</a></li>
@@ -980,6 +996,8 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 > <strong> Louisiana </strong>
 
 <a name="NewOrleans"></a>
+
+New Orleans had the #18 rate of crime among all cities in the US (1,121/100,000 in 2022).
 
 <ul>
 <li><a target="_blank" href="https://www.themuseum.org/">Alexandria Museum of Art</a></li>
@@ -1171,6 +1189,8 @@ But their service lasted for less than 2 years -- from April 3, 1860 to October 
 
 ### Detroit
 
+Detroit had the #2 rate of crime among all cities in the US (2,057/100,000 in 2022).
+
 <ul>
 <li><a target="_blank" href="https://www.dia.org/">Detroit Institute of Art</strong></a></li>
 <li><a target="_blank" href="https://www.diamondial.org/">Detroit Institute of Arts Image Database</a></li>
@@ -1203,6 +1223,8 @@ But their service lasted for less than 2 years -- from April 3, 1860 to October 
 <a name="Cleveland"></a>
 
 ### Cleveland:
+
+Cleveland had the #8 rate of crime among all cities in the US (1,557/100,000 in 2022).
 
 <ul>
 <li><a target="_blank" href="https://www.rockhall.com/"> Rock and Roll Hall of Fame</a>, Cleveland</li>
@@ -1514,7 +1536,7 @@ Jundt Art Center and Museum at Gonzaga University</a></li>
 
 > <strong> Hawaii </strong>
 
-   Just so we include all the states:
+Honolulu and Hawaii as a whole had the lowest crime rate among all US cities and states.
 
 <ul>
 <li><a target="_blank" href="https://www.tcmhi.org/">Contemporary Museum</a>, Honolulu</li>
@@ -1631,6 +1653,8 @@ A map of the trail in 1907:
 
 ### Milwaukee:
 
+Milwaukee had the #6 rate of crime among all cities in the US (2,082/100,000 in 2022).
+
 <ul>
 <li><a target="_blank" href="https://www.eisnermuseum.org/">William F. Eisner Museum of Advertising and Design</a>, Milwaukee</li>
 <li><a target="_blank" href="https://www.marquette.edu/haggerty/">Haggerty Museum of Art at Marquette University</a>, Milwaukee</li>
@@ -1652,6 +1676,8 @@ A map of the trail in 1907:
 <a name="Minneapolis"></a>
 
 ### Minneapolis:
+
+Minneapolis had the #19 rate of crime among all cities in the US (1,101/100,000 in 2022).
 
 <ul>
 <li><a target="_blank" href="https://www.mtn.org/MIA/">The Minneapolis Institute of Arts</a></li>
