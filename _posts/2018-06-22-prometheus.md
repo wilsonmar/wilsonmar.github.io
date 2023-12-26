@@ -439,7 +439,8 @@ $ prometheus --config.file "/etc/prometheus/prometheus.yml" &
    <br /><br />
 
 As with most things Kubernetes, a Helm chart can do it all:
-   * <a target="_blank" href="https://www.youtube.com/watch?v=QoDqxm7ybLc">VIDEO</a>: Setup Prometheus Monitoring on Kubernetes using Helm and Prometheus Operator | Part 1 - by TechWorld with Nana 362K views 2020
+   * <a target="_blank" href="https://www.youtube.com/watch?v=QoDqxm7ybLc">VIDEO</a>: Setup Prometheus Monitoring on Kubernetes using Helm and Prometheus Operator | Part 1 - by TechWorld with Nana 2020
+   <br /><br />
 
 https://gitlab.com/nanuchi/youtube-tutorial-series/-/blob/master/prometheus-exporter/install-prometheus-commands.md
 

@@ -34,7 +34,6 @@ These replace certifications about Microsoft on-prem. technologies SQL-Server an
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/70-768">70-768: Developing SQL Data Models</a>
    <br /><br />
 
-https://www.microsoft.com/en-ie/training-days#pp
 
 {% include whatever.html %}
 
@@ -63,6 +62,20 @@ The types of databases are: Key-value -> Column -> Document -> Relational (SQL) 
 
 A competitor to Delta metadata layer on top of Parquet is <a target="_blank" href="https://www.theregister.com/2023/01/03/apache_iceberg/">Apache Iceberg</a>, used by Snowflake, Cloudera, and Google's BigLake.
 
+
+## Database Activities
+
+Not every activity can be done by each data store:
+
+* Copy (source/sink)
+* Mapping Data Flow (source/sink)
+* Lookup 
+* Get Metadata 
+* Delete 
+* Manage private endpoint
+<br /><br />
+
+
 ## SQL Language
 
 <a target="_blank" href="https://wilsonmar.github.io/sql/">My notes about the SQL language is here</a>.
@@ -80,20 +93,35 @@ Synapse SQL is a distributed version of T-SQL, with extensions for streaming and
 
 ## File formats
 
-## File format types:
+### Unstructured:
+* Binary blobs (pdf, jpg, png, mp3, mp4, etc.)
+* Containers: (with Blob index tags metadata)
+   * Block (ADLSGen2 hierarchical namespace, NFS, SFTP)
+   * Page (random additions)
+   * Append (for logs)
+* Tables (row-based entities)
+* Queues (FIFO = First In First Out) messages
+* Files (SMB = Server Message Block)
+<br /><br />
 
-* Binary (pdf)
-* Delimited text (CSV)
-* Excel (XML)
-* JSON
-* XML
+### Semi-structured:
+* Delimited text format (CSV)
+* XML format
+* Excel (proprietary and XML)
+* JSON format
+<br /><br />
 
-Within Apache Spark, Hadoop "Big data" evolved from the underlying <strong>format of files</strong> used to store data:
+### Structured:
+* Common Data Model format
+<br /><br />
 
-   1. RCFile to 
-   1. ORC (Optimized Row Columnar) stores Hive data efficiently
-   1. Avro (row-based)
-   1. Parquet (columnal-based) used by Linux Foundation Delta Lake adopted by Apache Spark and Azure Synapsee.
+   Within Apache Spark, Hadoop "Big data" evolved from the underlying <strong>format of files</strong> used to store data:
+
+   * RCFile (Record Columnar File) is a data placement structure designed to provide a fast serialized columnar data format for Hadoop. It was created at Facebook. It is a flat file format that is optimized for large flat table scans. It is not a block-based file format like ORC or Parquet. It is a row-based file format.
+   * ORC (Optimized Row Columnar) stores Hive data efficiently
+   * Avro (row-based)
+   * Parquet (columnal-based) used by Linux Foundation Delta Lake adopted by Apache Spark and Azure Synapsee.
+   * Delta format
    <br /><br />
 
 
@@ -162,6 +190,9 @@ First look at traditional SQL "relational" databases.
 
 ## Azure Storage products
 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=E1t-x0T2bn0&list=PLlVtbbG169nGccbp8VSpAozu3w9xSQJoY&index=6">STAR VIDEO</a>: by John Savill
+   <br /><br />
+
 Microsoft has these offerings in the <a target="_blank" href="https://learn.microsoft.com/en-us/azure/?product=storage"><strong>storage</strong> category</a>:
 
 * Archive Storage - Industry leading price point for storing rarely accessed data [<a target="_blank" href="https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview">DOCS</a>]
@@ -203,9 +234,9 @@ https://www.techtarget.com/searchstorage/tip/Compare-Azure-Blob-Storage-vs-Data-
 
 1. For Redundancy: (to achieve disaster recovery): [<a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy">DOCS</a>]
 
-   * LRS = Locally redundant storage : "Lowest-cost option with basic protection against server rack and drive failures. Recommended for non-critical scenarios." Data is replicated three times within a single facility in a single region.
+   * LRS = Locally Redundant Storage (HDD): "Lowest-cost option with basic protection against server rack and drive failures. Recommended for non-critical scenarios." Data is replicated three times within a single facility in a single region.
 
-   * LRS premium
+   * LRS premium (Premium SSD) : "Lowest-cost option with basic protection against server rack and drive failures. Recommended for non-critical scenarios."<br />Data is replicated three times within a single facility in a single region.
    
    * ZRS = Zone-redundant storage : "Intermediate option with protection against datacenter-level failures. Recommended for high availability scenarios."<br />Data is replicated synchronously across three Azure availability zones in a single region.
    
@@ -215,7 +246,7 @@ https://www.techtarget.com/searchstorage/tip/Compare-Azure-Blob-Storage-vs-Data-
 
    * RA-GRS = Read-Access Geo-Redundant Storage : GRS plus read access to the secondary region. Recommended for scenarios requiring read access in the secondary region.<br />Data is replicated synchronously across three Azure availability zones in a single region, and then asynchronously to a paired region that is geographically distant from the primary region.
    
-   * RA-ZGRS = Read-Access Geo-Zone-Redundant Storage : GZRS plus read access to the secondary region. Recommended for scenarios requiring read access in the secondary region."<br />Data is replicated synchronously across three Azure availability zones in a single region, and then asynchronously to a paired region that is geographically distant from the primary region. This is the Highest-cost option with the highest level of availability and durability.
+   * RA-ZGRS = Read-Access Geo-Zone-Redundant Storage : GZRS plus read access to the secondary region. Recommended for scenarios requiring read access in the secondary region.<br />"Data is replicated synchronously across three Azure availability zones in a single region, and then asynchronously to a paired region that is geographically distant from the primary region. This is the Highest-cost option with the highest level of availability and durability.
 
 1. If "Read-access geo-redundant storage (RA-GRS)" is selected, also check "Make read access to data available in the event of regional unavailability" 
 
@@ -1550,7 +1581,9 @@ Azure Glue is a  fully managed extract, transform, and load (ETL) service to pre
 
    A URL is created, such as for the dashboard:
 
-   <tt><strong>https://<em>name</em>.azurehdinsight.net</strong></tt>
+      <tt>https://<em>name</em>.<strong>azurehdinsight.net</strong></tt>
+
+   ### HDInsight Services
 
    Like others, HDInsight clusters come with a set of pre-installed services components to analyze <strong>batch</strong> data.
 
@@ -1563,7 +1596,7 @@ Azure Glue is a  fully managed extract, transform, and load (ETL) service to pre
    * Sqoop
    * Oozie
    * Zookeeper
-   * Ambari Metrics
+   * An (Apache) Ambari (unreachable S0 Headnode) VM is included on HDInsight clusters to provide a GUI to make configuration changes and display metrics. <a target="_blank" href="https://learn.microsoft.com/en-us/azure/hdinsight/hdinsight-custom-ambari-db">LEARN</a>.
    <br /><br />
 
    Additional components can be install on your cluster.
@@ -1618,7 +1651,7 @@ Elements of ADF include: pipelines, datasets, linked services, triggers, and int
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703379028/adf-2870x956_durbrr.png"><img alt="adf-2870x956.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703379028/adf-2870x956_durbrr.png"></a>
 
 1. Within ADF, Pipelines are constructed to execute a logical group of <strong>activities</strong>. Each activity performs a specific task, such as copying data from a data source to a destination, executing a Hive query, or running a custom C# or Python activity.
-1. Each <strong>data movement</strong> consumes or produces a dataset. The copy activity can connect (using encrypted TLS on 87 different <strong>connectors</strong>) such as ODBC and HTTPS as well as pre-defined systems (Salesforce, SAP, QuickBooks, Concur, etc.).
+1. Each <strong>data movement</strong> consumes or produces a dataset. The copy activity can connect (using encrypted TLS on 87 different <a href="#Connectors">connectors</a>) such as ODBC and HTTPS as well as pre-defined systems (Salesforce, SAP, QuickBooks, Concur, etc.).
 1. Each <strong>Dataset</strong> defines the actual representation of data (structured or unstructured), at a variety of data sources, including Azure Blob storage, Azure Data Lake Storage Gen1, Azure Data Lake Storage Gen2, Azure SQL Database, Azure SQL Data Warehouse, Azure Cosmos DB, Azure Table storage, and Azure Database for MySQL.
 1. Each <strong>Data Transformation> within a Pipeline is a mapping data flow that can be used to transform data at scale. ADF provides a visual interface to create data transformation logic without writing code. 
 1. To run custom code, ADF can call 13 different external services (Azure Machine Learning, Azure Functions, Azure HDInsight, Azure Databricks, Azure SQL Database, Azure SQL Data Warehouse, Azure Cosmos DB, Azure Data Lake Storage Gen1, Azure Data Lake Storage Gen2, Azure Blob storage, Azure Table storage, Azure Database for MySQL, and Azure Database for PostgreSQL).
@@ -1730,7 +1763,7 @@ when SQL Server Management Studio (SSMS) 18.7, Azure Data Studio is installed.
 
 ## ADF
 
-Azure Data Factory (ADF) is Heterogenous - it has over 100 different connectors to various other systems.
+Azure Data Factory (ADF) is Heterogenous - it has <a href="#Connectors">connectors</a> to various other systems.
 
 Linked service to Data Lake Store, Azure Databricks.
 
@@ -1796,6 +1829,16 @@ when SQL Server Management Studio (SSMS) 18.7, Azure Data Studio is installed.
 
 <hr />
 
+## Connectors
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/data-factory/connector-overview">Connectors</a> are used to connect to various data systems to Ingest data into Azure, Transform data, and Load data into Azure.
+
+About 100 connectors are listed at:
+https://learn.microsoft.com/en-us/azure/data-factory/connector-overview
+
+
+<hr />
+
 <a name="PowerBI"></a>
 
 ## PowerBI
@@ -1834,6 +1877,11 @@ John Savill's Azure Master Class v2 - Module 9 - Database & A.I.</a>
 <a target="_blank" href="https://www.youtube.com/watch?v=uaW1wf_BYFc">
 Graph Databases 101 with Cosmos DB</a>
 by Maxime Rouiller
+
+https://learn.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml
+Predefined variables
+
+https://www.microsoft.com/en-ie/training-days#pp
 
 
 ## More #
