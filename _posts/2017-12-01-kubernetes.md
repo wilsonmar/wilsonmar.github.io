@@ -271,9 +271,10 @@ The (now <a target="_blank" href="https://raw.githubusercontent.com/cncf/trailma
    10. Software Distribution
    <br /><br />
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703693902/CNCF_TrailMap-7653x8869_ow6xz4.png"><img alt="" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703693902/CNCF_TrailMap-7653x8869_ow6xz4.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703693902/CNCF_TrailMap-7653x8869_ow6xz4.png"><img alt="CNCF_TrailMap-7653x8869.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703693902/CNCF_TrailMap-7653x8869_ow6xz4.png"></a>
 
-See <a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>.
+There are dozens of projects and products in the Kubernetes ecosystem, as shown in <a target="_blank" href="https://cncf.landscape2.io/?group=projects-and-products">this landscape map</a>:
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703694442/kubernetes-ecosystem-3840x2400_boejgr.png"><img alt="kubernetes-ecosystem-3840x2400.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703694442/kubernetes-ecosystem-3840x2400_boejgr.png"></a>
 
 
 ## Kubernetes is a Team Sport!
