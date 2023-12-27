@@ -174,7 +174,7 @@ Those who have a team excerbate reliability by efforts to "protect" Kubernetes i
 
 1. Clarify the basis for performance reviews and promotions, and what blocks advancement.
 
-   Identify artifacts that individuals and teams can keep private (such as burndown charts refactoring, automation, etc.).
+   Identify artifacts that individuals and teams can keep private (such as burndown charts, refactoring, automation, etc.).
 
 1. Ensure managers to track learning time in who they manage.
 
