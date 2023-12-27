@@ -406,7 +406,7 @@ https://docs.azure.com/en-us/sql/azure-data-studio/download-Azure-data-studio
 
 Gen2 has the concept of having a single format to hold varioius "layers" in a new <a target="_blank" href="https://piethein.medium.com/medallion-architecture-best-practices-for-managing-bronze-silver-and-gold-486de7c90055">"Medallion architecture"</a> <a target="_blank" href="https://www.databricks.com/glossary/medallion-architecture">defined by Databricks</a>:
 
-   * The <strong>Bronze</strong> layer contains <strong>raw</strong> data layer as loaded "as is" from the source, such as ADF. Thus, this is also called a "Landing Zone". This layer provides a historical archive of source (cold storage), data lineage, auditability, reprocessing if needed without rereading the data from the source system.
+   * The <strong>Bronze</strong> layer contains <strong>raw</strong> data layer as loaded "as is" from the source, such as <a href="#ADF">ADF</a>. Thus, this is also called a "Landing Zone". This layer provides a historical archive of source (cold storage), data lineage, auditability, reprocessing if needed without rereading the data from the source system.
 
    * The <strong>Silver</strong> layer contains <strong>filtered, cleaned, and augmented</strong> data that ends up having a clean schema after traditional ETL processing.
 
@@ -1641,11 +1641,14 @@ Microsoft SQL Server Data Tools (MDT)
 ## ADF
 
    * https://learn.microsoft.com/en-us/azure/data-factory/
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Ej-rpXs3yz0&list=PLOlK8ytA0MghGmAAT8W2u7VYmICdzeU5t&index=7">ADF in one 1h 44m video</a>
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/data-literacy-essentials-azure-data-factory">Data Literacy: Essentials of Azure Data Factory</a> by Emilio Melo (cloudadvantage.tech) Apr 7, 2021 provided this diagram:
    <br /><br />
 
 Azure Data Factory (ADF) v2 is a cloud-based data integration (PaaS) service 
 used to orchestrate and automate data movement and data transformation.
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703651501/azure-adf-231226_vyovri.png"><img alt="azure-adf-231226.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703651501/azure-adf-231226_vyovri.png"></a>
 
 REMEMBER: ADF itself does not store persisted data.
 
@@ -1653,7 +1656,7 @@ Elements of ADF include: pipelines, datasets, linked services, triggers, and int
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703379028/adf-2870x956_durbrr.png"><img alt="adf-2870x956.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703379028/adf-2870x956_durbrr.png"></a>
 
-1. Within ADF, Pipelines are constructed to execute a logical group of <strong>activities</strong>. Each activity performs a specific task, such as copying data from a data source to a destination, executing a Hive query, or running a custom C# or Python activity.
+1. ADF enables <strong>Pipelines</strong> to be constructed to execute a logical group of <strong>activities</strong>. Each activity performs a specific task, such as copying data from a data source to a destination, executing a Hive query, or running a custom C# or Python activity.
 1. Each <strong>data movement</strong> consumes or produces a dataset. The copy activity can connect (using encrypted TLS on 87 different <a href="#Connectors">connectors</a>) such as ODBC and HTTPS as well as pre-defined systems (Salesforce, SAP, QuickBooks, Concur, etc.).
 1. Each <strong>Dataset</strong> defines the actual representation of data (structured or unstructured), at a variety of data sources, including Azure Blob storage, Azure Data Lake Storage Gen1, Azure Data Lake Storage Gen2, Azure SQL Database, Azure SQL Data Warehouse, Azure Cosmos DB, Azure Table storage, and Azure Database for MySQL.
 1. Each <strong>Data Transformation> within a Pipeline is a mapping data flow that can be used to transform data at scale. ADF provides a visual interface to create data transformation logic without writing code. 

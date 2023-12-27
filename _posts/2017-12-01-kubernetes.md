@@ -37,9 +37,9 @@ As <a target="_blank" href="https://wilsonmar.github.io/docker/">my article on D
 
 <a name="Keywords"></a>
 
-## Kubernetes Vocabulary
+## Index: Kubernetes Vocabulary
 
-Below are technical terms and abbreviations you need to know, listed alphabetically in one page, so you can go quickly/directly click to each:
+Below are technical terms and abbreviations you need to know, listed alphabetically in one page, with <strong>bolded words</strong> being abbreviations assigned by Kubernetes:
 
 <a href="#Admission">Admission Control</a>,
 <a href="#Annotations">Annotations</a>,
@@ -110,13 +110,102 @@ Discovery,
 <a href="#SampleVPARec">VPA</a>,
 <a href="#Workloads">Workloads API</a>
 
-<strong>Bolded words</strong> are abbreviations assigned by Kubernetes. 
-
 REMEMBER: Memorizing and using abbreviations while manually typing commands will save you much time.
 
 They will come up during <a target="_blank" href="https://medium.com/@AceTheCloud-Abhishek/the-kubernetes-handbook-a-comprehensive-guide-of-100-q-a-e680199e6e22">
 basic interview questioning</a>.
 
+
+<hr />
+
+## Insider Knowledge
+
+The English word "kubernetes" is from the <a target="_blank" href="https://en.wiktionary.org/wiki/%CE%BA%CF%85%CE%B2%CE%B5%CF%81%CE%BD%CE%AE%CF%84%CE%B7%CF%82">ancient Greek word</a> based on "to steer" for people who pilot cargo ships –- "helmsman" or "pilot" in English. That's why Docker/Kubernetes experts are called <a target="_blank" href="https://www.docker.com/community/captains">"captains"</a>. Docker Captains work together on <a target="_blank" href="https://github.com/docker-captains/about">github.com/docker-captains/</a>
+
+Associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a> (the package manager for Kubernetes).
+
+The registered trademark for the logo of a sailing ship's wheel, and Kubernetes code, are   owned and maintained by the Linux Foundation (founded in 2000).
+The Linux Foundation created CNCF in 2015 to advance container technology.
+
+Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), with 8 replacing the number of characters between k and s. Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to the <strong>home page for Kubernetes software</strong>:
+
+   <ul><a target="_blank" href="https://kubernetes.io/"><u>https://kubernetes.io</u></a><br />
+   (<a target="_blank" href="https://twitter.com/kubernetesio/">Twitter: @kubernetesio</a>)</ul>
+
+<a name="K8sVersion"></a>
+
+### Versions
+
+Kubernetes was created inside Google (using the [Golang](/Golang/) programming language).
+Kubernetes was used inside Google for over a decade before being open-sourced in 2014 to the Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>) collective.
+
+History:
+   * v1.0 (first commit by <a target="_blank" href="https://www.linkedin.com/in/jbeda/">Joe Beda</a> within GitHub) for first release on July 21, <strong>2015</strong>
+   * v1.6 was led by a CoreOS developer
+   * v1.7 was led by a Googler
+   * v1.8 was led by <a target="_blank" href="https://www.linkedin.com/in/jaicesinger/">Jaice Singer DuMars</a> (<a target="_blank" href="https://twitter.com/jaicesd">@jaicesd</a>) after Microsoft joined the <a href="#CNCF">CNCF</a> July 2017 <a target="_blank" href="https://twitter.com/jaydumars?lang=en">VIDEO</a>
+   * v1.22 - containerD replaces Docker as the default container runtime (Red Hat uses CRI-O instead)
+   * {{ page.k8s_version }} 
+   <br /><br />
+
+"<tt>v1.29.0</tt>" is formatted <a target="_blank" href="https://semver.org/">Semantic Versioning</a>.
+
+1. Get the latest stable release (such as <tt>v1.29.0</tt>) defined in a single-line file at either of two locations:
+
+   * <a target="_blank" href="https://dl.k8s.io/release/stable.txt">https://dl.k8s.io/release/stable.txt</a>
+
+   * <a target="_blank" href="https://storage.googleapis.com/kubernetes-release/release/stable.txt">https://storage.googleapis.com/kubernetes-release/release/stable.txt</a>
+   <br /><br />
+
+   They enable getting the latest stable release into a variable <tt>K8_VERSION</tt> :
+
+   <pre><strong>K8_VERSION=$( curl -sS https://storage.googleapis.com/kubernetes-release/release/stable.txt )
+   echo $K8_VERSION
+   </strong></pre>
+
+1. Versions of Kubernetes are listed at:
+
+   * <a target="_blank" href="https://kubernetes.io/releases/">kubernetes.io/releases</a> 
+
+   * <a target="_blank" href="https://github.com/kubernetes/kubernetes/releases">github.com/kubernetes/kubernetes/releases</a> where Kubernetes source code  is open-sourced.
+
+1. Download the latest version defined at <a target="_blank" href="https://dl.k8s.io/release/stable.txt">https://dl.k8s.io/release/stable.txt</a> from website starting at URL https://dl.k8s.io/release/
+
+   On Apple Silicon (arm64):
+
+   <pre><strong>curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/arm64/kubectl"
+   </strong></pre>
+
+   On older Intel (amd64):
+
+   <pre><strong>curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/amd64/kubectl"
+   </strong></pre>
+
+
+<a name="K8s_API"></a>
+
+### K8s API Special Interest Groups
+
+One approach for specialization at the technical level is to have each person focus on a specific Kubernetes API.
+
+Kubernetes itself is maintained by SIGs (Special Interest Groups) formed around <a target="_blank" href="https://github.com/kubernetes/community/blob/master/sig-list.md">
+<strong>related groups</strong> of APIs</a> described at <a targete="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/</a> (which is one big page):
+
+   * <strong>Service APIs</strong>: Endpoints, <a href="#Ingress">Ingress</a>, Service
+
+   * <strong>Workloads APIs</strong>: Container, Job, CronJob, Deployment, StatefulSet, ReplicaSet, Pod, ReplicationController
+
+   * <strong>Config and storage APIs</strong>: ConfigMap, CSIDriver, Secret, StorageClass, Volume
+
+   * <strong>Metadata APIs</strong>: Controller, <a href="#CRD">CRD</a>, Event, LimitRange, <a href="#HPA">HPA (HorizontalPodAutoscaler)</a>, PodDistributionBudget, ...
+
+   * <strong>Cluster APIs</strong>: APIService, Binding, CSR, <a href="#ClusterRoles">ClusterRole</a>, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
+   <br /><br />
+
+REMEMBER: Unlike other systems, in Kubernetes there are no "users".
+
+
+<hr />
 
 <a name="Contributions"></a>
 
@@ -148,6 +237,24 @@ The power and flexibility provided by Kubernetes means there is a lot to learn.
 
 Additionally, Kubernetes is typically run within one or more <a href="#Clouds">clouds</a>, which require considerable time to learn fully.
 
+<a name="CNCF"></a>
+
+The (now removed) <a target="_blank" href="https://raw.githubusercontent.com/cncf/trailmap/master/CNCF_TrailMap_latest.png">Cloud Native Trail Map</a> lists this sequence:
+   1. Containerization
+   2. CI/CD
+   3. Orchestration & Application Definition
+   4. Observability & Analysis
+   5. Service Proxy, Discovery, Mesh
+   6. Networking, Prolicy, Security
+   7. Distributed database & storage
+   8. Streaming & messaging
+   9. Container Registry & runtime
+   10. Software Distribution
+   <br /><br />
+
+See <a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>.
+
+
 ## Kubernetes is a Team Sport!
 
 Kubernetes running in clouds has <strong>many moving parts</strong> that must be intricately configured and tuned to keep them reliable and secure.
@@ -163,7 +270,7 @@ Most job descriptions for Kubernetes positions are written by people who don't k
 
 PROTIP: Kubernetes in the cloud is so complex that most enterprises need to build a <strong>team of various specialists</strong> to ensure that Kubernetes is operated reliably and securely.
 
-Those who have a team excerbate reliability by efforts to "protect" Kubernetes in production by limiting <strong>too-small a team</strong> of Operations specialists (separated from developers) who become a <strong>bottleneck to fast progress</strong>. 
+Those who have a team exacerbate reliability by efforts to "protect" Kubernetes in production by limiting <strong>too-small a team</strong> of Operations specialists (separated from developers) who become a <strong>bottleneck to fast progress</strong>. 
 
 
 ### How teams are built
@@ -180,7 +287,7 @@ Those who have a team excerbate reliability by efforts to "protect" Kubernetes i
 
    Many managers do not encourage skill advancement ahead of need because they are afraid of losing their people to other teams or companies.
 
-   Many managers discourage skill advancement ahead of need as a budgetary savings tactic. This is reflected in hiring of contract workers (without benefits) who are not expected to be around long enough to learn.
+   Many managers discourage skill advancement ahead of need to save money. This is reflected in hiring of contract workers (without benefits) who are not expected to be around long enough to learn.
 
 1. Pay for on-line training and certifications for anyone to build foundational knowledge and skills (in operating systems, security, networking, cloud, etc.). 
 
@@ -211,32 +318,6 @@ Those who have a team excerbate reliability by efforts to "protect" Kubernetes i
 1. Have each team identify improvements, openly shared to solicit individuals and other team contributions.
 
    This builds a culture that incentivizes helpfulness rather than competition and shaming.
-
-
-<hr />
-
-<a name="K8s_API"></a>
-
-### K8s API Special Interest Groups
-
-One approach for specialization at the technical level is to have each person focus on a specific Kubernetes API.
-
-Kubernetes itself is maintained by SIGs (Special Interest Groups) formed around <a target="_blank" href="https://github.com/kubernetes/community/blob/master/sig-list.md">
-<strong>related groups</strong> of APIs</a> described at <a targete="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/</a> (which is one big page):
-
-   * <strong>Service APIs</strong>: Endpoints, <a href="#Ingress">Ingress</a>, Service
-
-   * <strong>Workloads APIs</strong>: Container, Job, CronJob, Deployment, StatefulSet, ReplicaSet, Pod, ReplicationController
-
-   * <strong>Config and storage APIs</strong>: ConfigMap, CSIDriver, Secret, StorageClass, Volume
-
-   * <strong>Metadata APIs</strong>: Controller, <a href="#CRD">CRD</a>, Event, LimitRange, <a href="#HPA">HPA (HorizontalPodAutoscaler)</a>, PodDistributionBudget, ...
-
-   * <strong>Cluster APIs</strong>: APIService, Binding, CSR, <a href="#ClusterRoles">ClusterRole</a>, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
-   <br /><br />
-
-REMEMBER: Unlike other systems, in Kubernetes there are no "users".
-
 
 <hr />
 
@@ -271,85 +352,6 @@ If you're here for advice on how to pass the KCNA, CKAD, here is my advice:
 
 
 <hr />
-
-## Open-Source History
-
-The English word "kubernetes" is from the <a target="_blank" href="https://en.wiktionary.org/wiki/%CE%BA%CF%85%CE%B2%CE%B5%CF%81%CE%BD%CE%AE%CF%84%CE%B7%CF%82">ancient Greek word</a> based on "to steer" for people who pilot cargo ships –- "helmsman" or "pilot" in English. That's why Docker/Kubernetes experts are called <a target="_blank" href="https://www.docker.com/community/captains">"captains"</a>. Docker Captains work together on <a target="_blank" href="https://github.com/docker-captains/about">github.com/docker-captains/</a>
-
-Associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a> (the package manager for Kubernetes).
-
-Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), with 8 replacing the number of characters between k and s. Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to the <strong>home page for Kubernetes software</strong>:
-
-   <ul><a target="_blank" href="https://kubernetes.io/"><u>https://kubernetes.io</u></a><br />
-   (<a target="_blank" href="https://twitter.com/kubernetesio/">Twitter: @kubernetesio</a>)</ul>
-
-The website, and the Kubernetes code is maintained by the Linux Foundation, which also owns the registered trademark for the logo of a sailing ship's wheel.
-
-<a name="K8sVersion"></a>
-
-Versions of Kubernetes are listed at:
-
-* <a target="_blank" href="https://kubernetes.io/releases/">kubernetes.io/releases</a> website
-* <a target="_blank" href="https://github.com/kubernetes/kubernetes/releases">github.com/kubernetes/kubernetes/releases</a> where Kubernetes source code  is open-sourced, its releases:
-<br /><br />
-
-History:
-   * v1.0 (first commit by <a target="_blank" href="https://www.linkedin.com/in/jbeda/">Joe Beda</a> within GitHub) for first release on July 21, <strong>2015</strong>
-   * v1.6 was led by a CoreOS developer
-   * v1.7 was led by a Googler
-   * v1.8 was led by <a target="_blank" href="https://www.linkedin.com/in/jaicesinger/">Jaice Singer DuMars</a> (<a target="_blank" href="https://twitter.com/jaicesd">@jaicesd</a>) after Microsoft joined the <a href="#CNCF">CNCF</a> July 2017 <a target="_blank" href="https://twitter.com/jaydumars?lang=en">VIDEO</a>
-   * v1.22 - containerD replaces Docker as the default container runtime (Red Hat uses CRI-O instead)
-   * {{ page.k8s_version }} 
-   <br /><br />
-
-1. View the latest stable release in <a target="_blank" href="https://semver.org/">Semantic Versioning</a> format (such as <tt>v1.26.0</tt>) defined in a file at:
-
-   * <a target="_blank" href="https://dl.k8s.io/release/stable.txt">https://dl.k8s.io/release/stable.txt</a> or 
-   * <a target="_blank" href="https://storage.googleapis.com/kubernetes-release/release/stable.txt">https://storage.googleapis.com/kubernetes-release/release/stable.txt</a>
-   <br /><br />
-
-2. Get the same (latest stable release) into a variable <tt>K8_VERSION</tt> :
-
-   <pre><strong>K8_VERSION=$( curl -sS https://storage.googleapis.com/kubernetes-release/release/stable.txt )
-   echo $K8_VERSION
-   </strong></pre>
-
-3. Download the latest version defined at <a target="_blank" href="https://dl.k8s.io/release/stable.txt">https://dl.k8s.io/release/stable.txt</a> from website starting at URL https://dl.k8s.io/release/
-
-   On Apple Silicon (arm64):
-
-   <pre><strong>curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/arm64/kubectl"
-   </strong></pre>
-
-   On older Intel (amd64):
-
-   <pre><strong>curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/amd64/kubectl"
-   </strong></pre>
-
-Kubernetes was created inside Google (using the [Golang](/Golang/) programming language).
-Kubernetes was used inside Google for over a decade before being open-sourced in 2014 to the Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>) collective.
-
-<a name="CNCF"></a>
-
-## CNCF
-
-Linux Foundation project (founded in 2000) founded CNCF in 2015 to advance container technology.
-
-The (now removed) <a target="_blank" href="https://raw.githubusercontent.com/cncf/trailmap/master/CNCF_TrailMap_latest.png">Cloud Native Trail Map</a> lists this sequence:
-   1. Containerization
-   2. CI/CD
-   3. Orchestration & Application Definition
-   4. Observability & Analysis
-   5. Service Proxy, Discovery, Mesh
-   6. Networking, Prolicy, Security
-   7. Distributed database & storage
-   8. Streaming & messaging
-   9. Container Registry & runtime
-   10. Software Distribution
-   <br /><br />
-
-See <a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>.
-
 
 ## Predecessor to K8s
 
