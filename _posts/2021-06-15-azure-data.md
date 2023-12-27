@@ -50,7 +50,7 @@ For OLTP (Online Transaction Processing) data is stored for fast ingestion in ro
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702039629/database-types-828x394_m9rsua.jpg">
 <img alt="database-types-828x394.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702039629/database-types-828x394_m9rsua.jpg"></a>
 
-The types of databases are: Key-value -> Column -> Document -> Relational (SQL) -> Graph -> Deltalake
+The types of databases are: Key-value &LT; Column &LT; Document &LT; Relational (SQL) &LT; Graph &LT; Deltalake
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th>Types:</th><th>Key-value</th><th>Column</th><th>Document</th><th>Relational</th><th>Graph</th><th>Deltalake</th></tr>
@@ -61,6 +61,9 @@ The types of databases are: Key-value -> Column -> Document -> Relational (SQL) 
 </table>
 
 A competitor to Delta metadata layer on top of Parquet is <a target="_blank" href="https://www.theregister.com/2023/01/03/apache_iceberg/">Apache Iceberg</a>, used by Snowflake, Cloudera, and Google's BigLake.
+
+Python's pandas library was built using numpy as a backend for dataframe libraries. So one of the major limitations in pandas is in-memory processing for larger datasets.
+However, <a target="_blank" href="https://towardsdatascience.com/pandas-2-0-a-game-changer-for-data-scientists-3cd281fcc4b4">pandas 2.0</a> includes <a target="_blank" href="https://arrow.apache.org/">Apache Arrow</a> for in-memory columnar handling by <a target="_blank" href="https://arrow.apache.org/docs/python/">PyArrow</a>, which is based on the C++ implementation of Arrow, and therefore, fast.
 
 
 ## Database Activities
@@ -166,7 +169,7 @@ For OLAP (Online Analytical Processing), large amounts of data are stored in a "
 
 * <strong>Prescriptive</strong> analytics prescribe (recommend) <strong>what to do</strong> based <strong>forecasts</strong> on the what might happen. 
 
-   * Weather reports likelihood of rain.
+   * <strong>Projections</strong> such as weather reports give the likelihood of events (such as rain) based on historical patterns.
    * <strong>Optimization</strong> is used to find the best solution to a problem. 
    * <strong>Simulation</strong> is used to predict the impact of a decision. 
    * <strong>Heuristics</strong> are used to find a solution that is "good enough" but not necessarily the best.

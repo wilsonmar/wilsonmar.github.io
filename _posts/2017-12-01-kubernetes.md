@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-15"
+date: "2023-12-25"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 excerpt: "Get certified in how to orchestrate containers, especially in clouds, including OpenShift"
@@ -22,11 +22,24 @@ This article I wrote both while I prepared for the CKAD and while on the job.
 
 {% include whatever.html %}
 
+<a name="Why"></a>
+
+## Why Kubernetes?
+
+Kubernetes is called a "orchestration" system for automating application deployment, scaling, and management.
+
+Kubernetes is needed to run multiple instances of an application on a single machine, and run multiple machines in a cluster. This is called <strong>horizontal scaling</strong>, typically in a server cloud such as AWS, Azure, GCP, etc.
+
+Kubernetes manages Docker containers. That is because developers create their apps within Docker images for less "it works on my machine" issues of portability across environments. That is a huge time saver.
+
+As <a target="_blank" href="https://wilsonmar.github.io/docker/">my article on Docker</a> describes, Docker images are much faster and smaller than VMware images previously used.
+
+
 <a name="Keywords"></a>
 
-### kubectl CLI command keywords
+## Kubernetes Vocabulary
 
-Below are Kubernetes technical terms listed alphabetically in one page, so you can go quickly/directly click to each:
+Below are technical terms and abbreviations you need to know, listed alphabetically in one page, so you can go quickly/directly click to each:
 
 <a href="#Admission">Admission Control</a>,
 <a href="#Annotations">Annotations</a>,
@@ -99,69 +112,10 @@ Discovery,
 
 <strong>Bolded words</strong> are abbreviations assigned by Kubernetes. 
 
-PROTIP: Memorizing and using abbreviations while manually typing commands will save you much time.
+REMEMBER: Memorizing and using abbreviations while manually typing commands will save you much time.
 
-They may come up during <a target="_blank" href="https://medium.com/@AceTheCloud-Abhishek/the-kubernetes-handbook-a-comprehensive-guide-of-100-q-a-e680199e6e22">
+They will come up during <a target="_blank" href="https://medium.com/@AceTheCloud-Abhishek/the-kubernetes-handbook-a-comprehensive-guide-of-100-q-a-e680199e6e22">
 basic interview questioning</a>.
-
-
-<a name="K8s_API"></a>
-
-### K8s API Special Interest Groups
-
-The various features of Kubernetes are maintained by SIGs (Special Interest Groups) formed around <strong>related groups</strong> of APIs listesd at <a target="_blank" href="https://github.com/kubernetes/community/blob/master/sig-list.md">
-https://github.com/kubernetes/community/blob/master/sig-list.md</a>
-
-   <a targete="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/</a> (which is one big page):
-
-   * <strong>Service APIs</strong>: Endpoints, <a href="#Ingress">Ingress</a>, Service
-
-   * <strong>Workloads APIs</strong>: Container, Job, CronJob, Deployment, StatefulSet, ReplicaSet, Pod, ReplicationController
-
-   * <strong>Config and storage APIs</strong>: ConfigMap, CSIDriver, Secret, StorageClass, Volume
-
-   * <strong>Metadata APIs</strong>: Controller, <a href="#CRD">CRD</a>, Event, LimitRange, <a href="#HPA">HPA (HorizontalPodAutoscaler)</a>, PodDistributionBudget, ...
-
-   * <strong>Cluster APIs</strong>: APIService, Binding, CSR, <a href="#ClusterRoles">ClusterRole</a>, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
-   <br /><br />
-
-REMEMBER: Unlike other systems, in Kubernetes there are no "users".
-
-Sebastien Goasguen (@sebgoa), author of "Kubernetes Cookbook" and 
-"Docker Cookbook"
-https://github.com/sebgoa/oreilly-kubernetes
-
-<hr />
-
-<a name="Why"></a>
-
-## Why Kubernetes? Team Speed vs. Central Control
-
-As <a target="_blank" href="https://wilsonmar.github.io/docker/">my article on Docker</a> describes, Docker images are much faster and smaller than VMwere images.
-
-With Kubernetes in a <a href="#Clouds">cloud</a>, given enough training, an  <strong>individual developer can take complete control of production operations</strong>  -- deploy both application code with all environment settings, without ceremonies and waiting for operations management approvals. This freedom is why Kubernetes contributes to <strong>corporate agility and faster time to market</strong>.
-
-That is why it's so important to properly train developers to "professionally" use Kubernetes.
-
-But that is easier said than done. The power and flexibility of Kubernetes means there is a lot to learn about Kubernetes.
-
-So, alas, some managers fall back to "protecting" Kubernetes in production by enabling only a small number of Operations specialists (separated from developers) to handle Kubernetes. 
-
-When K8s specialists are the only ones capable of doing key parts of the work, they also often become a <strong>bottleneck to fast progress</strong>. Moreover, specialists have a dis-incentive to educate others deeply. The shortage of Kubernetes skills has resulted in higher salaries for Kubernetes jobs.
-
-"Self-service" portals and custom utilities save developer's time for common activities. But portals can become "anti-patterns" because they can also <strong>limit innovation</strong> (new features) and block individual developers from <strong>learning</strong> to work quickly and troubleshoot independently.
-
-To fill in the gap, individual teams inexperienced in K8s troubleshooting may find useful a tool such as <a target="_blank" href="https://www.Komodor.com/">Komodor</a> which monitors it all and suggests actions, like a human expert would.
-
-
-## This article (automation)
-
-Because of the above issues, I am creating <a href="#shell-scripts-in-ssh">scripts</a> that can, with one command, invoke a CI/CD workflow (on GitHub.com) that uses  <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform IaC and Sentinel PaC</a> to stand up a Kubernetes cluster within AWS (after installing clients and establishing credentials), then identify the optimal Kunbernetes specifications by running tests of how quickly it takes Kubernetes to scale horizonatally and vertically. 
-
-But that's just the beginning.
-
-The contribution of this article is a carefully sequenced presentation of complex material so it's both easier to understand quickly yet more deeply. "PROTIP" flags insightful commentary while hands-on activities automated in a shell script -- an immersive step-by-step "deep dive" tutorial to both <a  href="#exam-preparations">prepare for</a> <a href="#professional-certifications-in-kubernetes">Kubernetes exams</a> and to work as an SRE in <a href="#Production">production use</a>.
-
 
 
 <a name="Contributions"></a>
@@ -185,6 +139,106 @@ Kubernetes applies principles of the <a target="_blank" href="https://www.reacti
 * Replicating application instances
 * Horizontal autoscaling
 * Debugging applications
+<br /><br />
+
+
+## Kubernetes is complex
+
+The power and flexibility provided by Kubernetes means there is a lot to learn.
+
+Additionally, Kubernetes is typically run within one or more <a href="#Clouds">clouds</a>, which require considerable time to learn fully.
+
+## Kubernetes is a Team Sport!
+
+Kubernetes running in clouds has <strong>many moving parts</strong> that must be intricately configured and tuned to keep them reliable and secure.
+
+Kubernetes was suppose to improve corporate agility and faster time to market.
+
+However, most tutorials and courses are written to merely <strong>introduce individuals</strong> to learn Kubernetes basics rather than enabling a team to work together.
+
+PROTIP: My assertion is that <strong>no one person can know everything</strong> about Kubernetes to operate it reliably and securely in a complex production enterprise.
+Hiring for superhumans expected to "know everything" is resulting in <strong>unnecessary turnover and down time</strong>.
+
+Most job descriptions for Kubernetes positions are written by people who don't know Kubernetes enough to properly build a team around the complexity. So they search for people based only on technical certifications passed or based on counting years with "Kubernetes" in resumes.
+
+PROTIP: Kubernetes in the cloud is so complex that most enterprises need to build a <strong>team of various specialists</strong> to ensure that Kubernetes is operated reliably and securely.
+
+Those who have a team excerbate reliability by efforts to "protect" Kubernetes in production by limiting <strong>too-small a team</strong> of Operations specialists (separated from developers) who become a <strong>bottleneck to fast progress</strong>. 
+
+
+### How teams are built
+
+1. Identify barriers and dis-incentive for deep and well-rounded skills acquisition around Kubernetes and related skills.
+
+   Some like isolated Kubernetes skills because the shortage of Kubernetes skills has resulted in $300,000/year salaries for top Kubernetes jobs.
+
+1. Pay for on-line training and certifications for anyone to build foundational knowledge and skills (in operating systems, security, networking, cloud, etc.). Require managers to track progress in their people.
+
+1. Have managers assign a "buddy" to each individuals for pairs to work on problems together.
+
+1. Install full <strong>monitoring/observability tools</strong> and expose production analytics to everyone as the first step to develop understanding of how Kubernetes works.
+
+1. Provide a "playground" environment for developers to experiment with production-like settings. Such are needed to provide a "data-driven" approach to tune Kubernetes.
+
+   But this can be a waste of time if the playground is not kept up to date with the latest version of Kubernetes and the latest versions of the many components that make up Kubernetes.
+
+1. Construct "self-service" portals and utilities to simplify frequent processes and save developer's time for common activities. 
+   
+   But portals can become "anti-patterns" because they can also <strong>limit innovation</strong> (new features) and block individual developers from <strong>learning</strong> to work quickly and troubleshoot independently.
+
+1. Explore self-healing tools that automatically fix problems.
+
+   Tools such as <a target="_blank" href="https://www.Komodor.com/">Komodor</a> monitors it all and suggests actions, like a human expert would.
+
+1. Conduct <strong>regular "chaos engineering"</strong> exercises that purposefully injects faults to identify the timeliness and completeness of incident response.
+
+   Although these are mandated by many audit requirements, this can be a waste of time if the exercises are not organized properly and results are hidden.
+
+1. Have executives sponsor a regular pre-scheduled sessions for sharing lessons learned.
+
+   But this can be a waste of time if the sessions are not recorded and made available to those who missed the session.
+
+1. Have each team identify improvements, openly shared to solicit individuals and other team contributions.
+
+   This builds a culture that incentivizes helpfulness rather than competition and shaming.
+
+
+<hr />
+
+<a name="K8s_API"></a>
+
+### K8s API Special Interest Groups
+
+One approach for specialization at the technical level is to have each person focus on a specific Kubernetes API.
+
+Kubernetes itself is maintained by SIGs (Special Interest Groups) formed around <a target="_blank" href="https://github.com/kubernetes/community/blob/master/sig-list.md">
+<strong>related groups</strong> of APIs</a> described at <a targete="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/</a> (which is one big page):
+
+   * <strong>Service APIs</strong>: Endpoints, <a href="#Ingress">Ingress</a>, Service
+
+   * <strong>Workloads APIs</strong>: Container, Job, CronJob, Deployment, StatefulSet, ReplicaSet, Pod, ReplicationController
+
+   * <strong>Config and storage APIs</strong>: ConfigMap, CSIDriver, Secret, StorageClass, Volume
+
+   * <strong>Metadata APIs</strong>: Controller, <a href="#CRD">CRD</a>, Event, LimitRange, <a href="#HPA">HPA (HorizontalPodAutoscaler)</a>, PodDistributionBudget, ...
+
+   * <strong>Cluster APIs</strong>: APIService, Binding, CSR, <a href="#ClusterRoles">ClusterRole</a>, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
+   <br /><br />
+
+REMEMBER: Unlike other systems, in Kubernetes there are no "users".
+
+
+<hr />
+
+
+## This article: Automation
+
+Because of the above issues, I am creating <a href="#shell-scripts-in-ssh">scripts</a> that can, with one command, invoke a CI/CD workflow (on GitHub.com) that uses  <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform IaC and Sentinel PaC</a> to stand up a Kubernetes cluster within AWS (after installing clients and establishing credentials), then identify the optimal Kunbernetes specifications by running tests of how quickly it takes Kubernetes to scale horizonatally and vertically. 
+
+But that's just the beginning.
+
+The contribution of this article is a carefully sequenced presentation of complex material so it's both easier to understand quickly yet more deeply. "PROTIP" flags insightful commentary while hands-on activities automated in a shell script -- an immersive step-by-step "deep dive" tutorial to both <a  href="#exam-preparations">prepare for</a> <a href="#professional-certifications-in-kubernetes">Kubernetes exams</a> and to work as an SRE in <a href="#Production">production use</a>.
+
 
 
 <hr />
@@ -207,8 +261,6 @@ If you're here for advice on how to pass the KCNA, CKAD, here is my advice:
 
 
 <hr />
-
-
 
 ## Open-Source History
 
@@ -8078,6 +8130,11 @@ https://www.weave.works/blog/deploying-an-application-on-kubernetes-from-a-to-z
 
 https://github.com/hajowieland/terraform-kubernetes-multi-cloud
 described at https://napo.io/posts/terraform-kubernetes-multi-cloud-ack-aks-dok-eks-gke-oke/
+
+Sebastien Goasguen (@sebgoa), author of "Kubernetes Cookbook" and 
+"Docker Cookbook" at https://github.com/sebgoa/oreilly-kubernetes
+
+
 
 <hr />
 

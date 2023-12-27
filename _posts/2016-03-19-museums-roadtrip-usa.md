@@ -876,7 +876,7 @@ Chicago had the #20 rate of crime among all cities in the US (1,099/100,000 in 2
 <li type="circle"><a target="_blank" href="https://www.thedailymeal.com/au-cheval">Au Cheval burgers</a> <a target="_blank" href="https://www.thedailymeal.com/eat/101-best-casual-restaurants-america-2018-gallery/slide-6">[#29]</a></li>
 <li type="circle"><a target="_blank" href="https://www.thedailymeal.com/fat-rice">Fat Rice</a>, Chicago <a target="_blank" href="https://www.thedailymeal.com/eat/101-best-casual-restaurants-america-2018-gallery/slide-74">[#58]</a></li>
 <li type="circle"><a target="_blank" href="https://www.thedailymeal.com/red-apple-1">Red Apple Buffet</a></li>
-<li type="circle">Alinea</a> (the Best Restaurant in the US)</li>
+<li type="circle"><a target="_blank" href="https://www.alinearestaurant.com/">Alinea</a> (3-star Michelin & rated the Best Restaurant in the US)</li>
 </ul>
 
 
