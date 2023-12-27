@@ -3,7 +3,7 @@ layout: post
 date: "2023-12-25"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
-excerpt: "A deep dive on how to orchestrate containers, especially in clouds, including OpenShift"
+excerpt: "A deep dive on how to orchestrate containers, especially in clouds, including OpenShift. Pass the CKAD and CKA exams."
 modified:
 tags: [google, cloud]
 image:
@@ -17,8 +17,6 @@ k8s_version: 1.26
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
-
-This article I wrote both while I prepared for the CKAD and while on the job.
 
 {% include whatever.html %}
 
@@ -259,9 +257,10 @@ Additionally, Kubernetes is typically run within one or more <a href="#Clouds">c
 
 Ideally, those who use Kubernetes would have specialists pave the way at each of the necessary steps to adopting Kubernetes. But that's not the case in most organizations.
 
-The (now removed) <a target="_blank" href="https://raw.githubusercontent.com/cncf/trailmap/master/CNCF_TrailMap_latest.png">Cloud Native Trail Map</a> lists this sequence:
+The (now <a target="_blank" href="https://raw.githubusercontent.com/cncf/trailmap/master/CNCF_TrailMap_latest.png">legacy</a> Cloud Native Trail Map summarizes the sequence of Kubernetes adoption:
+
    1. Containerization
-   2. CI/CD
+   2. CI/CD (automation)
    3. Orchestration & Application Definition
    4. Observability & Analysis
    5. Service Proxy, Discovery, Mesh
@@ -271,6 +270,8 @@ The (now removed) <a target="_blank" href="https://raw.githubusercontent.com/cnc
    9. Container Registry & runtime
    10. Software Distribution
    <br /><br />
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703693902/CNCF_TrailMap-7653x8869_ow6xz4.png"><img alt="" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703693902/CNCF_TrailMap-7653x8869_ow6xz4.png"></a>
 
 See <a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>.
 
