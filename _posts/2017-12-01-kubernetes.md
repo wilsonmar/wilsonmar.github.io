@@ -152,7 +152,7 @@ Additionally, Kubernetes is typically run within one or more <a href="#Clouds">c
 
 Kubernetes running in clouds has <strong>many moving parts</strong> that must be intricately configured and tuned to keep them reliable and secure.
 
-Kubernetes was suppose to improve corporate agility and faster time to market.
+Kubernetes was supposed to improve corporate agility and faster time to market.
 
 However, most tutorials and courses are written to merely <strong>introduce individuals</strong> to learn Kubernetes basics rather than enabling a team to work together.
 
@@ -172,7 +172,17 @@ Those who have a team excerbate reliability by efforts to "protect" Kubernetes i
 
    Some like isolated Kubernetes skills because the shortage of Kubernetes skills has resulted in $300,000/year salaries for top Kubernetes jobs.
 
-1. Pay for on-line training and certifications for anyone to build foundational knowledge and skills (in operating systems, security, networking, cloud, etc.). Require managers to track progress in their people.
+1. Clarify the basis for performance reviews and promotions, and what blocks advancement.
+
+   Identify artifacts that individuals and teams can keep private (such as burndown charts refactoring, automation, etc.).
+
+1. Ensure managers to track learning time in who they manage.
+
+   Many managers do not encourage skill advancement ahead of need because they are afraid of losing their people to other teams or companies.
+
+   Many managers discourage skill advancement ahead of need as a budgetary savings tactic. This is reflected in hiring of contract workers (without benefits) who are not expected to be around long enough to learn.
+
+1. Pay for on-line training and certifications for anyone to build foundational knowledge and skills (in operating systems, security, networking, cloud, etc.). 
 
 1. Have managers assign a "buddy" to each individuals for pairs to work on problems together.
 
@@ -8133,6 +8143,14 @@ described at https://napo.io/posts/terraform-kubernetes-multi-cloud-ack-aks-dok-
 
 Sebastien Goasguen (@sebgoa), author of "Kubernetes Cookbook" and 
 "Docker Cookbook" at https://github.com/sebgoa/oreilly-kubernetes
+
+https://www.youtube.com/watch?v=dk2-_DbWb80
+Setup Prometheus & Grafana Monitoring On Kubernetes Using Helm
+by Thetips4you
+
+https://www.youtube.com/watch?v=mLPg49b33sA
+Prometheus Monitoring - Steps to monitor third-party apps using Prometheus Exporter | Part 2
+by TechWorld with Nana
 
 
 

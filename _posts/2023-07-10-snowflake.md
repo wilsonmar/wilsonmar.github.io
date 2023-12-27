@@ -1117,6 +1117,10 @@ What is a Data Lakehouse</a> by <a target="_blank" href="https://www.linkedin.co
 https://www.snowflake.com/summit/
 June 3-6, 2024 in San Francisco Moscone Center
 
+https://www.youtube.com/watch?v=-aHF1eseweY&t=5m
+Snowflake End-to-End ETL Project by MultiCloud4U's Theresal Thangapazham
+
+
 <hr />
 
 <a name="More"></a>

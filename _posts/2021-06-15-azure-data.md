@@ -1710,6 +1710,7 @@ ADF v2 can work with data in other locations, including on-premises and other cl
 1. Click "Review + Create". Click "Create".
 <br /><br />
 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=OQ-wtpTDFKk&t=1m">Azure Data Factory - An end to end project</a> by MultiCloud4U by Indira Bandari
 
 
 <a name="Azure+Synapse+Analytics"></a>
