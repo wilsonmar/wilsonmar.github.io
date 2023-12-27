@@ -3,7 +3,7 @@ layout: post
 date: "2023-12-25"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
-excerpt: "Get certified in how to orchestrate containers, especially in clouds, including OpenShift"
+excerpt: "A deep dive on how to orchestrate containers, especially in clouds, including OpenShift"
 modified:
 tags: [google, cloud]
 image:
@@ -132,14 +132,32 @@ Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), wit
    <ul><a target="_blank" href="https://kubernetes.io/"><u>https://kubernetes.io</u></a><br />
    (<a target="_blank" href="https://twitter.com/kubernetesio/">Twitter: @kubernetesio</a>)</ul>
 
-<a name="K8sVersion"></a>
 
-### Versions
+<hr />
+
+## Predecessor to K8s
 
 Kubernetes was created inside Google (using the [Golang](/Golang/) programming language).
 Kubernetes was used inside Google for over a decade before being open-sourced in 2014 to the Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>) collective.
 
-History:
+<a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">This blog</a> and
+<a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
+revealed that the predecessor to Kubernetes was the "Project 7" which built <a target="_blank" href="https://ai.google/research/pubs/pub43438">"The Borg"</a> because initial developers were fans of the <a target="_blank" href="https://www.wikiwand.com/en/Star_Trek:_The_Next_Generation">"Star Trek Next Generation" TV series</a> 1987-1994 and related films.
+In the series, the "Borg" society <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all civilizations it encounters into its "collective".<a target="_blank" href="https://www.linkedin.com/pulse/kubernetes-honorable-captain-bridge-gaurav-jain/">*</a>
+
+![k8s-borg-490x431](https://user-images.githubusercontent.com/300046/132962385-096c4357-e939-40b0-a5b0-62476c8c9fa5.png)
+
+<img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
+The logo for Kubernetes inside the 6 sided hexagons representing each Google service has <strong>7 sides</strong>. This is because a beloved character in the U.S. TV series (played by <a target="_blank" href="https://www.imdb.com/name/nm0005394/?ref_=nv_sr_srsg_0">Jeri Ryan</a>) is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
+See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kubernetes">Timeline of Kubernetes</a>
+
+<a target="_blank" href="https://github.com/kubernetes/community/tree/master/icons/png/resources/labeled">The Kubernetes community repo</a> provides icon image files (<a target="_blank" href="https://qiita.com/yosshi_/items/2db0a0e66a16711bfe5f">resources</a>) labeled and unlabeled, in png and svg formats in 128 and 256 pixels.
+
+
+<a name="K8sVersion"></a>
+
+### Current Versions
+
    * v1.0 (first commit by <a target="_blank" href="https://www.linkedin.com/in/jbeda/">Joe Beda</a> within GitHub) for first release on July 21, <strong>2015</strong>
    * v1.6 was led by a CoreOS developer
    * v1.7 was led by a Googler
@@ -238,6 +256,8 @@ The power and flexibility provided by Kubernetes means there is a lot to learn.
 Additionally, Kubernetes is typically run within one or more <a href="#Clouds">clouds</a>, which require considerable time to learn fully.
 
 <a name="CNCF"></a>
+
+Ideally, those who use Kubernetes would have specialists pave the way at each of the necessary steps to adopting Kubernetes. But that's not the case in most organizations.
 
 The (now removed) <a target="_blank" href="https://raw.githubusercontent.com/cncf/trailmap/master/CNCF_TrailMap_latest.png">Cloud Native Trail Map</a> lists this sequence:
    1. Containerization
@@ -352,22 +372,6 @@ If you're here for advice on how to pass the KCNA, CKAD, here is my advice:
 
 
 <hr />
-
-## Predecessor to K8s
-
-<a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">This blog</a> and
-<a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
-revealed that the predecessor to Kubernetes was the "Project 7" which built <a target="_blank" href="https://ai.google/research/pubs/pub43438">"The Borg"</a> because initial developers were fans of the <a target="_blank" href="https://www.wikiwand.com/en/Star_Trek:_The_Next_Generation">"Star Trek Next Generation" TV series</a> 1987-1994 and related films.
-In the series, the "Borg" society <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all civilizations it encounters into its "collective".<a target="_blank" href="https://www.linkedin.com/pulse/kubernetes-honorable-captain-bridge-gaurav-jain/">*</a>
-
-![k8s-borg-490x431](https://user-images.githubusercontent.com/300046/132962385-096c4357-e939-40b0-a5b0-62476c8c9fa5.png)
-
-<img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
-The logo for Kubernetes inside the 6 sided hexagons representing each Google service has <strong>7 sides</strong>. This is because a beloved character in the U.S. TV series (played by <a target="_blank" href="https://www.imdb.com/name/nm0005394/?ref_=nv_sr_srsg_0">Jeri Ryan</a>) is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
-See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kubernetes">Timeline of Kubernetes</a>
-
-<a target="_blank" href="https://github.com/kubernetes/community/tree/master/icons/png/resources/labeled">The Kubernetes community repo</a> provides icon image files (<a target="_blank" href="https://qiita.com/yosshi_/items/2db0a0e66a16711bfe5f">resources</a>) labeled and unlabeled, in png and svg formats in 128 and 256 pixels.
-
 
 <a name="Clouds"></a>
 
