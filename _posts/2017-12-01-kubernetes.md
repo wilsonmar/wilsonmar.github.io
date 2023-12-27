@@ -154,7 +154,7 @@ See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kuberne
 
 <a name="K8sVersion"></a>
 
-### Current Versions
+## Current Versions
 
    * v1.0 (first commit by <a target="_blank" href="https://www.linkedin.com/in/jbeda/">Joe Beda</a> within GitHub) for first release on July 21, <strong>2015</strong>
    * v1.6 was led by a CoreOS developer
@@ -283,7 +283,7 @@ Kubernetes running in clouds has <strong>many moving parts</strong> that must be
 
 Kubernetes was supposed to improve corporate agility and faster time to market.
 
-However, most tutorials and courses are written to merely <strong>introduce individuals</strong> to learn Kubernetes basics rather than enabling a team to work together.
+However, most tutorials and courses are written to merely <strong>introduce individuals</strong> to learn Kubernetes basics rather than enabling a complex team to work together.
 
 PROTIP: My assertion is that <strong>no one person can know everything</strong> about Kubernetes to operate it reliably and securely in a complex production enterprise.
 Hiring for superhumans expected to "know everything" is resulting in <strong>unnecessary turnover and down time</strong>.
