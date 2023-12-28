@@ -18,7 +18,14 @@ k8s_version: 1.26
 {% include l18n.html %}
 {% include _toc.html %}
 
+<a name="MyContribution"></a>
+
+## TL;DR My contribution
+
+Text here are my notes on how to use Kubernetes -- a carefully sequenced presentation of complex material so it's both easier to understand quickly yet more deeply.
+
 {% include whatever.html %}
+
 
 <a name="Why"></a>
 
@@ -221,31 +228,6 @@ Kubernetes itself is maintained by SIGs (Special Interest Groups) formed around 
 REMEMBER: Unlike other systems, in Kubernetes there are no "users".
 
 
-<hr />
-
-<a name="Contributions"></a>
-
-## What Kubernetes contributes
-
-Kubernetes applies principles of the <a target="_blank" href="https://www.reactivemanifesto.org/">Reactive Manifesto</a> of 2014:
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"><img width="546" alt="reactive-manifesto" src="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"></a>
-
-* <a href="#IAC">Infrastructure as code</a> (IAC)
-* Manage containers
-* Naming and discovery
-* Mounting storage systems
-* Balancing loads
-* Rolling updates
-* Distributing secrets/config
-* Checking application health
-* Monitoring resources
-* Accessing and ingesting logs
-* Replicating application instances
-* Horizontal autoscaling
-* Debugging applications
-<br /><br />
-
 
 ## Kubernetes is complex
 
@@ -275,6 +257,32 @@ The (now <a target="_blank" href="https://raw.githubusercontent.com/cncf/trailma
 
 There are dozens of projects and products in the Kubernetes ecosystem, as shown in <a target="_blank" href="https://cncf.landscape2.io/?group=projects-and-products">this landscape map</a>:
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703694442/kubernetes-ecosystem-3840x2400_boejgr.png"><img alt="kubernetes-ecosystem-3840x2400.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703694442/kubernetes-ecosystem-3840x2400_boejgr.png"></a>
+
+
+<hr />
+
+<a name="Contributions"></a>
+
+## What Kubernetes contributes
+
+Kubernetes applies principles of the <a target="_blank" href="https://www.reactivemanifesto.org/">Reactive Manifesto</a> of 2014:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"><img width="546" alt="reactive-manifesto" src="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"></a>
+
+* <a href="#IAC">Infrastructure as code</a> (IAC)
+* Manage containers
+* Naming and discovery
+* Mounting storage systems
+* Balancing loads
+* Rolling updates
+* Distributing secrets/config
+* Checking application health
+* Monitoring resources
+* Accessing and ingesting logs
+* Replicating application instances
+* Horizontal autoscaling
+* Debugging applications
+<br /><br />
 
 
 ## Kubernetes is a Team Sport!

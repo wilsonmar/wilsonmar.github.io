@@ -1891,6 +1891,16 @@ Predefined variables
 https://www.microsoft.com/en-ie/training-days#pp
 
 
+https://www.youtube.com/@Microsoft365Community
+Microsoft 365 & Power Platform Community
+
+https://www.youtube.com/watch?v=sK6_mHWbI78&t=245s
+Turn that ‘Power Apps’ app into a Mobile app!
+
+https://powerapps.microsoft.com/en-us/blog/create-mobile-apps-with-power-apps-preview/
+Create mobile apps with Power Apps (preview)
+
+
 ## More #
 
 This is one of a series about cloud computing:
