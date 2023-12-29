@@ -16,6 +16,10 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+Stolen credentials are the cause of two-thirds of data breaches, according to an <a target="_blank" href="https://www.globenewswire.com/news-release/2020/05/19/2035340/0/en/Money-still-makes-the-cyber-crime-world-go-round-Verizon-Business-2020-Data-Breach-Investigations-Report-is-live.html">investigation by Verizon in 2020</a>.
+
+This article provides an automated solution for "Secret Zero Problem".
+
 I've combed through all the YouTube, Microsoft docs, and tutorial sites I was able to find about this, and distilled their content here.
 
    * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/key-vault/general/overview">https://learn.microsoft.com/en-us/azure/key-vault/general/overview<br />LEARN:  About Azure Key Vault</a>
@@ -23,6 +27,17 @@ I've combed through all the YouTube, Microsoft docs, and tutorial sites I was ab
    * <a target="_blank" href="https://azure.microsoft.com/en-us/products/key-vault">https://azure.microsoft.com/en-us/products/key-vault<br />Microsoft: About Azure Key Vault</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=FraVzTWxG5Q" title="AZ-305">VIDEO</a>
    * <a target="_blank" href="https://www.techtarget.com/searchwindowsserver/definition/Microsoft-Azure-Key-Vault">TechTarget</a>
+   * https://www.youtube.com/watch?v=AA3yYg9Zq9w by Adam Marczak
+   * https://www.youtube.com/watch?v=U24NPdL2T0k
+   * https://www.youtube.com/watch?v=Vs3wyFk9upo
+   * https://www.youtube.com/watch?v=PgujSug1ZbI
+   * https://www.youtube.com/watch?v=QAY_EcevSb8 
+   * https://www.youtube.com/watch?v=2qoPZcHTCCs by John Christopher
+   * https://www.youtube.com/watch?v=pnOFP_oijxw by CBT Nuggets
+   * https://www.youtube.com/watch?v=3IrzFrHn434 by Houssem Dellai
+   * https://www.youtube.com/watch?v=QIXbyInGXd8 by Rohit Sharma
+   * https://www.youtube.com/watch?v=zRut4_uGXYE by Rajesh Yadav
+   * https://www.youtube.com/watch?v=xchSkmHDL0c by BeCloudGuru
    <br /><br />
 
 ## Why use a Key Vault?
@@ -105,6 +120,10 @@ Here are the steps:
    1. Track the email address to open Azure account.<br />
    2. Track the credit card to pay for an Azure subscription.<br />
    3. <a href="#SelectRegion">Select your default region (data center)</a>.
+   4. <a href="#ResourceGroup">Select Resource Group</a>.
+   5. <a href="#KeyVaultNaming">Craft Key Vault Name</a>.
+   6. <a href="#RecoveryOptions">2.6 Select Purge Protection</a>.
+   7. <a href="#KeyVaultTier">Select Key Vault Price Tier</a>.
 3. Design permissions to access the Key Vault.
 4. Create a Key Vault in the Azure cloud.
    1. Use Portal GUI to create a Key Vault.
@@ -124,7 +143,7 @@ Here are the steps:
 9. Write programming to retrieve secrets from the Key Vault.
    1. Use Bash script to retrieve a secret from the Key Vault
    2. Use Python to retrieve a secret from the Key Vault
-   3. Use C# to retrieve a secret from the Key Vault
+   3. Use C# app to retrieve a secret from the Key Vault
 <br /><br />
 
 <hr />
@@ -142,15 +161,61 @@ Here are the steps:
 
 <a name="SelectRegion"></a>
 
-## 2.3. Select your default region (data center).
+## 2.3. Select Key Vault default region (data center).
 
    <a target="_blank" href="https://azure.microsoft.com/en-us/explore/global-infrastructure/geographies/">geographies</a>
 
+
+<a href="#ResourceGroup"></a>
+
+## 2.4. Select Resource Group
+      
+   
+<a name="KeyVaultNaming"></a>
+
+## 2.5. Craft Key Vault name.
+
+
+<a name="KeyVaultTier"></a>
+
+## 2.6. Select Key Vault Price Tier
+
+
+<a name="RecoveryOptions"></a>
+
+## 2.7 Select Purge Protection
+
+In development, testing, demo, training, and other non-production environments, 
+disable "Purge Protection" so secrets are removed immediately after delete commands.
+
+"Soft Delete" to allow recovery of deleted secrets.
+
+For production, you should select Purge Protection to prevent accidental deletion of secrets.
+
+
+<hr />
+
 ## 3. Design permissions to access the Key Vault.
 
-We consider permissions before creating the Key Vault because we can define permissions as part of Key Vault creation Terraform.
+We design permissions before creating the Key Vault so we can define permissions as part of Key Vault creation Terraform.
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703819101/azure-key-vault-permissions-1041x1024_gwqswy.png"><img src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703819101/azure-key-vault-permissions-1041x1024_gwqswy.png" border="0"></a>
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th>Key<br />permissions</th><th>Secret<br />Permissions</th><th>Certificate<br />permissions</th></tr>
+<tr valign="top"><td> Import </td><td> - </td><td> Import </td></tr>
+<tr valign="top"><td> Create </td><td> Set </td><td> Create </td></tr>
+
+<tr valign="top"><td> List </td><td> List </td><td> List </td></tr>
+<tr valign="top"><td> Get </td><td> Get </td><td> Get </td></tr>
+<tr valign="top"><td> Update </td><td> - </td><td> Update </td></tr>
+
+<tr valign="top"><td> Backup </td><td> Backup </td><td> Backup </td></tr>
+<tr valign="top"><td> Delete </td><td> Delete </td><td> Delete </td></tr>
+<tr valign="top"><td> Recover </td><td> Recover </td><td> Recover </td></tr>
+<tr valign="top"><td> Restore </td><td> Restore </td><td> Restore </td></tr>
+
+</table>
 
 Key Vault's built-in Role Assignments include ones similar to others:
    * Key Vault Administrator performs all data plane operations but cannot manage access to Key Vault
@@ -176,12 +241,20 @@ https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/
 ## 4.1. Use Portal GUI to create a Key Vault.
 ## 4.2. Use CLI to create a Key Vault.
 ## 4.3. Use Terraform to create a Key Vault.
-## 5. Set firewall rules to allow access to the Key Vault.
+## 5. Secure access to the Key Vault.
+
+WARNING: <a target="_blank" href="https://www.youtube.com/watch?v=Vs3wyFk9upo&t=t5m22s">VIDEO</a>:
+In the Key Vault Samples screen, DO NOT use the code in "View sample code" because that code is insecure, usable only within Azure, and not suitable for production use.
+That code does not follow best practices for security, "assume breach" Zero Trust principles by using a service principal with full access to the Key Vault.
+
 ## 6. Create secrets in the Key Vault.
 ## 6.1. Use Portal GUI to create a secret.
 ## 6.2. Use CLI to create a secret.
 ## 6.3. Use Terraform to create a secret.
 ## 7. Create and use Azure service principal.
+
+https://www.youtube.com/watch?v=PkLrKDW9gY8
+
 ## 8. Watch billings and set alerts.
 
 Azure Key Vault can be integrated with other Azure services to provide secure and seamless access to cryptographic keys and secrets for cloud applications and services.
@@ -190,16 +263,75 @@ Azure Key Vault can be integrated with other Azure services to provide secure an
    * Azure DevOps
    <br /><br />
 
+## Key rotation
+
+https://www.youtube.com/watch?v=EA_Bc805k4k
+
 ## 9. Write programming to retrieve secrets from the Key Vault.
+
+The program code shown is intended to be part of a web app, mobile app, or other app that needs to access secrets.
+
 ## 9.1. Use Bash script to retrieve a secret from the Key Vault
+
+
 ## 9.2. Use Python to retrieve a secret from the Key Vault
-## 9.3. Use C# to retrieve a secret from the Key Vault
+
+https://www.youtube.com/watch?v=FI44MhwklSc
+
+https://www.youtube.com/watch?v=ZNLQKmINuZc
+
+https://www.youtube.com/watch?v=YAg6khewJiU&t=529s
+
+
+## 9.3. Use C# app to retrieve a secret from the Key Vault
+
+https://www.youtube.com/watch?v=6l_kpygO0Ic
+
+https://www.youtube.com/watch?v=RTq72C10x88
+
+https://www.youtube.com/watch?v=kirQP5I7Iec
+
+## 9.4. PHP (Wordpress)
+
+https://www.youtube.com/watch?v=ECjKr_q6g6E
+
+## 9.4. Use Azure Functions to retrieve a secret from the Key Vault
+
+https://www.youtube.com/watch?v=Hlcnr3RVPHY&t=20s
+
+https://www.youtube.com/watch?v=p0zgKoxpu24
 
 <hr />
 
 ## View my GitHub repo
 
 https://www.techtarget.com/searchcloudcomputing/tip/Protect-data-with-these-Azure-Key-Vault-best-practices
+
+
+## Certifications AZ-500
+
+https://www.youtube.com/watch?v=kP7KpfToMkg&t=349s
+
+https://www.youtube.com/watch?v=HN3tUbEjgb4
+06. Azure using Python SDK : Azure Blob Trigger Function in Action
+by TechyTacos
+
+
+<hr />
+
+## Secret Zero Problem
+
+Some companies (such as HashiCorp's single-use Response Wrapping) split access to the master key so that one compromised location doesn’t expose the entire network. Others use a hardware security module for authorization. However, these solutions merely move the issue somewhere else rather than completely solve it.
+
+Machines installed with Akeyless identify other machines in the network to ensure the data received is authentic. Akeyless uses its own plugin to allow the Vault and environment to interact in a secure fashion. .com offers their "Universal Secrets Connector"
+Akeyless removes the need for secret zero entirely through its Akeyless Universal Identity feature, packaged within the Akeyless Vaultless Platform. In this setup, 
+
+The process begins with a starter token created by a human employee that’s used once to authenticate the plugin. From there, Akeyless issues its own tokens and begins authenticating applications. That token is replaced by a new one in the next use for a specified amount of time.
+
+Whenever a new entity is registered under this system, it inherits the identity and token of the original entity. This constant cycle of temporary, rotating identity tokens is a secure alternative to using a single secret zero.
+
+
+
 
 ## More #
 
