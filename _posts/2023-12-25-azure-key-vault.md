@@ -402,11 +402,15 @@ C. Invoke the CLI program to configure a <tt>.akeyless</tt> folder, which contai
    For more info please visit: https://docs.akeyless.io/docs/cli
    Enter Akeyless URL (Default: vault.akeyless.io) _</pre>
 
+   See https://docs.akeyless.io/docs/cli-reference
+
 1. Press Enter to accept the default URL.
 
    <pre>Would you like to configure a profile? (Y/n) _</pre>
 
 1. Press <strong>n</strong> 
+
+
 
 1. Select authentication method: <a target="_blank" href="https://www.youtube.com/watch?v=BnjWESAziqY&list=PLhc-aRiEl_XVbq0TtqKkk3ezwI-L7tcqZ&index=6&pp=iAQB">VIDEO</a>:
 

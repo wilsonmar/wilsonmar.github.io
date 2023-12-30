@@ -1,4 +1,4 @@
-Bridgecrew.checkov
+# Bridgecrew.checkov
 hashicorp.hcl
 hashicorp.terraform
 ms-vscode.makefile-tools
@@ -72,8 +72,8 @@ ms-vscode.sublime-keybindings
 ms-vscode.test-adapter-converter
 ms-vscode.vscode-node-azure-pack
 ms-vsliveshare.vsliveshare
-ms-vsliveshare.vsliveshare-pack
-ms-vsts.team
+# ms-vsliveshare.vsliveshare-pack
+# ms-vsts.team
 pjmiravalle.terraform-advanced-syntax-highlighting
 redhat.java
 redhat.vscode-commons
