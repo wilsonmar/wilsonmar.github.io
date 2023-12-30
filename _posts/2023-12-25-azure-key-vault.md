@@ -364,6 +364,9 @@ But first, let's A) create an account on the Akeyless Parent SaaS system and B) 
 A. Apply the Administrator's email to create and activate an account on the Parent SaaS system website by following
 <a target="_blank" href="https://www.youtube.com/watch?v=Gdxp6zxvpoE&list=PLhc-aRiEl_XVbq0TtqKkk3ezwI-L7tcqZ&index=2&t=63s">this video</a>.
 
+<a target="_blank" href="https://www.akeyless.io/pricing/">Pricing</a> is free for the first 2,000 secrets forever, with 3 days of log retention, accessed by up to 5 clients. Extended log retention and Log forwarding requires a paid Enterprise license.
+
+
 <a name="AkeylessMenu"></a>
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703893845/akeyless-menu-514x1700_x8gdvp.png"><img align="right" width="200" alt="akeyless-menu-514x1700.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703893845/akeyless-menu-514x1700_x8gdvp.png"></a>
@@ -387,9 +390,10 @@ B. To install the Akeyless CLI for use by the Administrator on a Mac:
    <pre>Version: 1.90.0.dca3303</pre>
    </ul>
 
-C. Invoke the CLI program to configure:
+
+C. Invoke the CLI program to configure a <tt>.akeyless</tt> folder, which contains a <tt>profiles</tt> folder holding a <a target="_blank" href="https://toml.io/en/">TOML (Tom's Obvious Minimal Language)</a> file for each profile.
    
-1. Install the CLI program on the Administrator's Mac the first time:
+1. Invoke the CLI program to create a profile:
 
    <pre><strong>akeyless
    </strong></pre>
@@ -404,6 +408,19 @@ C. Invoke the CLI program to configure:
 
 1. Press <strong>n</strong> 
 
+1. Select authentication method: <a target="_blank" href="https://www.youtube.com/watch?v=BnjWESAziqY&list=PLhc-aRiEl_XVbq0TtqKkk3ezwI-L7tcqZ&index=6&pp=iAQB">VIDEO</a>:
+
+   <a target="_blank" href="https://docs.akeyless.io/docs/api-key">1) access_key (API Key)</a><br />
+   <a target="_blank" href="https://docs.akeyless.io/docs/aws-iam">2) aws_iam</a><br />
+   <a target="_blank" href="https://docs.akeyless.io/docs/azure-id">3) azure_ad</a><br />
+   <a target="_blank" href="https://docs.akeyless.io/docs/saml">4) saml</a><br />
+   <a target="_blank" href="https://docs.akeyless.io/docs/ldap">5) ldap</a><br />
+   <a target="_blank" href="https://docs.akeyless.io/docs/api-key">6) email/password</a><br />
+   <a target="_blank" href="https://docs.akeyless.io/docs/openid">7) oidc</a><br />
+   <a target="_blank" href="https://docs.akeyless.io/docs/kubernetes-auth">8) k8s (Kubernetes)</a><br />
+   <a target="_blank" href="https://docs.akeyless.io/docs/gcp-auth-method">9) gcp</a><br />
+
+   https://docs.akeyless.io/docs/access-and-authentication-methods
 
 D. Create a profile for the Administrator on the Parent SaaS system website:
 
@@ -414,7 +431,11 @@ D. Create a profile for the Administrator on the Parent SaaS system website:
    <pre>Profile adminProfile created successfully</pre>
    </ul>
 
-1. A human Administrator creates a <strong>starter token</strong> using the Auth ID method in the Akeyless server -- by using the Akeyless Vault GUI at <a target="_blank" href="https://console.akeyless.io/items">https://console.akeyless.io/items</a>
+   Verify (list in JSON):
+
+   <pre><strong>akeyless list-items</strong></pre>
+
+1. A human Administrator creates a <strong>starter token</strong> using the Auth ID method in the Akeyless server -- by using the Akeyless Vault GUI at <a target="_blank" href="https://console.akeyless.io/items">https://console.akeyless.io/items</a> "Users & Auth Methods" menu item:
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703918601/akeyless-auth-577x756_kuuag9.png"><img alt="akeyless-auth-577x756.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703918601/akeyless-auth-577x756_kuuag9.png"></a>
 
@@ -423,23 +444,33 @@ D. Create a profile for the Administrator on the Parent SaaS system website:
    <pre><strong>akeyless create-auth-method-universal-identity --name uidAuth --ttl 60 --profile adminProfile
    </strong></pre>
 
-   NOTE: The starter token is only used once to authenticate to Akeyless plugin.
+   <a target="_blank" href="https://docs.akeyless.io/docs/universal-identity">Akeyless's Universal Identity (UID) authentication method</a> is used by on-prem. machines. 
+
+   NOTE: The starter token is only used once to authenticate to the Akeyless plugin.
 
 2. The Akeyless server sends back a SaaS ACK.
 3. The Administrator generates a new UID token and loads it into the client app.
 
 4. The client runs Akeyless using the initial UID token.
+
+   https://docs.akeyless.io/docs/cli-reference
+
 5. The Akeyless server responds with a new JWT UID token.
 
 6. The client runs app commands using the new JWT UID token.
 7. After the processing window passes, the client requests a rotation using the token.
 
-   The client can request a new token at any time within the processing window.
+   NOTE: Rotation of secrets requires an <a target="_blank" href="https://www.akeyless.io/pricing/">enterprise license</a>.
+
+   The client can request a new token at any time within the processing window. <a target="_blank" href="https://www.youtube.com/watch?v=wFMNU4pvj78&list=PLhc-aRiEl_XVbq0TtqKkk3ezwI-L7tcqZ&index=3&pp=iAQB">VIDEO</a>:
+
+   <pre><strong>akeyless create-secret --name <em>MySecret1</em> --value <em>MySecretPassword</em>
+   </strong></pre>
 
    The default processing window is 60 seconds. 
    
-8. The Akeyless server returns a new keey with u-token.
-8. The client runs app commands using the updated JWT UID token.
+8. The Akeyless server returns a new key with u-token.
+9. The client runs app commands using the updated JWT UID token.
 <br /><br />
 
 Machines installed with Akeyless identify other machines in the network to ensure the data received is authentic. Akeyless uses its own plugin to allow the Vault and environment to interact in a secure fashion. Akeyless offers their "Universal Secrets Connector"
