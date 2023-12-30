@@ -78,7 +78,7 @@ To avoid losing your secrets, your program code should reference secrets within 
 
    Key Vault offers competitive pricing in their <strong>free for the first 10 secrets forever</strong> plan. AWS is free only for the first year.
    
-   <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/key-vault/">Azure charges</a> $0.03 per Key Vault API call after the first million free every month.
+   <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/key-vault/">Azure charges</a> $0.03 per Key Vault API call after the first million free every month.  
    That's for all regions of the world EXCEPT:
    * Sweden South is $0.039 per 10,000 API calls.
    * US Gov Arizona is $0.038
@@ -425,7 +425,10 @@ C. Invoke the CLI program to configure a <tt>.akeyless</tt> folder, which contai
 D. Create a profile for the Administrator on the Parent SaaS system website:
 
    <ul>
-   <pre><strong>akeyless create-profile --name adminProfile --access-key-id &lt;access-key-id&gt; --secret-access-key &lt;secret-access-key&gt; --akeyless-url &lt;akeyless-url&gt;
+   <pre><strong>akeyless create-profile --name adminProfile \
+   --access-key-id &lt;access-key-id&gt; \
+   --secret-access-key &lt;secret-access-key&gt;\
+   --akeyless-url &lt;akeyless-url&gt;
    </strong></pre>
 
    <pre>Profile adminProfile created successfully</pre>
@@ -473,7 +476,9 @@ D. Create a profile for the Administrator on the Parent SaaS system website:
 9. The client runs app commands using the updated JWT UID token.
 <br /><br />
 
-Machines installed with Akeyless identify other machines in the network to ensure the data received is authentic. Akeyless uses its own plugin to allow the Vault and environment to interact in a secure fashion. Akeyless offers their "Universal Secrets Connector"
+Machines installed with Akeyless identify other machines in the network to ensure the data received is authentic. 
+Akeyless uses its own plugin to allow the Vault and environment to interact in a secure fashion. 
+Akeyless offers their "Universal Secrets Connector".
 Akeyless removes the need for secret zero entirely through their  packaged within their "Vaultless Platform".
 
 The process begins with a starter token created by a human employee that’s used once to authenticate the plugin. From there, Akeyless issues its own tokens and begins authenticating applications. That token is replaced by a new one in the next use for a specified amount of time.

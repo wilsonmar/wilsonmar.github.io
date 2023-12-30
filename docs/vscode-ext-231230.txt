@@ -1,5 +1,10 @@
+Bridgecrew.checkov
+hashicorp.hcl
+hashicorp.terraform
+ms-vscode.makefile-tools
 42Crunch.vscode-openapi
 alexcvzz.vscode-sqlite
+amazonwebservices.aws-toolkit-vscode
 anfuchs.alexa-code-snippets
 antfu.icons-carbon
 ask-toolkit.alexa-skills-kit-toolkit
@@ -18,7 +23,7 @@ erd0s.terraform-autocomplete
 esbenp.prettier-vscode
 GitHub.copilot
 GitHub.copilot-chat
-GitHub.copilot-labs
+# GitHub.copilot-labs
 GitHub.heygithub
 GitHub.vscode-codeql
 github.vscode-github-actions
