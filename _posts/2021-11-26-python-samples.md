@@ -40,7 +40,7 @@ The program is invoked by you running shell file:
 
 ## Why this?
 
-I created this to fill several gaps.
+I created this as an experiment to fill several gaps.
 
 A. Many companies make candidates suffer through evaluations of programming skills (using HackerRank, etc.) even though such skills are rarely used in some jobs. 
 

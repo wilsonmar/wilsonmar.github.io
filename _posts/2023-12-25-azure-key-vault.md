@@ -16,7 +16,8 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Stolen credentials are the cause of two-thirds of data breaches, according to an <a target="_blank" href="https://www.globenewswire.com/news-release/2020/05/19/2035340/0/en/Money-still-makes-the-cyber-crime-world-go-round-Verizon-Business-2020-Data-Breach-Investigations-Report-is-live.html">investigation by Verizon in 2020</a>.
+Stolen credentials are the cause of two-thirds of data breaches, according to <a target="_blank" href="https://www.verizon.com/business/resources/T6d1/reports/2023-data-breach-investigations-report-dbir.pdf">PDF</a>: <a target="_blank" href="https://www.verizon.com/business/resources/reports/dbir/">Verizon's annual Data Breach Investigations Report (DBIR) = 85 pages</a> which reports trends from 2019-2023.
+[<a target="_blank" href="https://www.verizon.com/business/resources/reports/dbir/2023/summary-of-findings/">Summary</a>]
 
 This article provides an automated solution for "Secret Zero Problem".
 
@@ -321,15 +322,135 @@ by TechyTacos
 
 ## Secret Zero Problem
 
-Some companies (such as HashiCorp's single-use Response Wrapping) split access to the master key so that one compromised location doesn’t expose the entire network. Others use a hardware security module for authorization. However, these solutions merely move the issue somewhere else rather than completely solve it.
+Secrets may be stored safely in a central secrets management system, including Azure Key Vault, AWS Secrets Manager, HashiCorp Vault, etc.
 
-Machines installed with Akeyless identify other machines in the network to ensure the data received is authentic. Akeyless uses its own plugin to allow the Vault and environment to interact in a secure fashion. .com offers their "Universal Secrets Connector"
-Akeyless removes the need for secret zero entirely through its Akeyless Universal Identity feature, packaged within the Akeyless Vaultless Platform. In this setup, 
+But how does a client get authenticated? 
+
+That the "Secret Zero Problem" faced by all 
+
+Different vendors have different solutions:
+   
+   * HashiCorp's single-use Response Wrapping splits access to the master key so that one compromised location doesn’t expose the entire network.
+   * Cloud vendors (Azure Key Vault, etc.) use a hardware security module for authorization. 
+   <br /><br />
+
+However, these solutions merely move the "Secret Zero Problem" somewhere else rather than completely solving it.
+
+https://www.linkedin.com/pulse/solving-secret-zero-problem-real-jeremy-hess/
+https://www.linkedin.com/in/jeremyphess/
+
+
+
+PROTIP: Additional charges for data egress are charged because central vaults such as Azure Key Vault reside in a specific region.
+
+
+## Akeyless
+
+Akeyless provides a <strong>multi-cloud</strong> solution free of cross-region data egress charges.
+
+PROTIP: Akeyless.com solves the Secret Zero Problem by using an <strong>inherited identity</strong> derived from a <a href="#AkeylessParent">parent SaaS system</a>, together with an <strong>ephemeral token</strong> for <strong>"continuous" authentication</strong>. The solution is illustrated thus:
+
+<a name="AkeylessFlow"></a>
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703911154/akeyless-flow-1734x1494_jvpej0.png"><img alt="akeyless-flow-1734x1494.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703911154/akeyless-flow-1734x1494_jvpej0.png"></a>
+
+But first, let's A) create an account on the Akeyless Parent SaaS system and B) install the Akeyless CLI program.
+
+
+<a name="AkeylessParent"></a>
+
+### Akeyless Parent SaaS System
+
+A. Apply the Administrator's email to create and activate an account on the Parent SaaS system website by following
+<a target="_blank" href="https://www.youtube.com/watch?v=Gdxp6zxvpoE&list=PLhc-aRiEl_XVbq0TtqKkk3ezwI-L7tcqZ&index=2&t=63s">this video</a>.
+
+<a name="AkeylessMenu"></a>
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703893845/akeyless-menu-514x1700_x8gdvp.png"><img align="right" width="200" alt="akeyless-menu-514x1700.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703893845/akeyless-menu-514x1700_x8gdvp.png"></a>
+The menu should appear as shown on the right.
+
+
+<a name="AkeylessCLI"></a>
+
+### Akeyless Admin CLI
+
+B. To install the Akeyless CLI for use by the Administrator on a Mac:
+
+   <ul>
+   <pre><strong>brew install akeylesslabs/tap/akeyless
+   </strong></pre>
+
+   Verify the CLI install by getting the version:
+
+   <pre><strong>akeyless -v</strong></pre>
+
+   <pre>Version: 1.90.0.dca3303</pre>
+   </ul>
+
+C. Invoke the CLI program to configure:
+   
+1. Install the CLI program on the Administrator's Mac the first time:
+
+   <pre><strong>akeyless
+   </strong></pre>
+
+   <pre>AKEYLESS-CLI, first use detected
+   For more info please visit: https://docs.akeyless.io/docs/cli
+   Enter Akeyless URL (Default: vault.akeyless.io) _</pre>
+
+1. Press Enter to accept the default URL.
+
+   <pre>Would you like to configure a profile? (Y/n) _</pre>
+
+1. Press <strong>n</strong> 
+
+
+D. Create a profile for the Administrator on the Parent SaaS system website:
+
+   <ul>
+   <pre><strong>akeyless create-profile --name adminProfile --access-key-id &lt;access-key-id&gt; --secret-access-key &lt;secret-access-key&gt; --akeyless-url &lt;akeyless-url&gt;
+   </strong></pre>
+
+   <pre>Profile adminProfile created successfully</pre>
+   </ul>
+
+1. A human Administrator creates a <strong>starter token</strong> using the Auth ID method in the Akeyless server -- by using the Akeyless Vault GUI at <a target="_blank" href="https://console.akeyless.io/items">https://console.akeyless.io/items</a>
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703918601/akeyless-auth-577x756_kuuag9.png"><img alt="akeyless-auth-577x756.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703918601/akeyless-auth-577x756_kuuag9.png"></a>
+
+   Alternately, use this <a href="#AkeylessCLI">Akeyless CLI program</a> command:
+
+   <pre><strong>akeyless create-auth-method-universal-identity --name uidAuth --ttl 60 --profile adminProfile
+   </strong></pre>
+
+   NOTE: The starter token is only used once to authenticate to Akeyless plugin.
+
+2. The Akeyless server sends back a SaaS ACK.
+3. The Administrator generates a new UID token and loads it into the client app.
+
+4. The client runs Akeyless using the initial UID token.
+5. The Akeyless server responds with a new JWT UID token.
+
+6. The client runs app commands using the new JWT UID token.
+7. After the processing window passes, the client requests a rotation using the token.
+
+   The client can request a new token at any time within the processing window.
+
+   The default processing window is 60 seconds. 
+   
+8. The Akeyless server returns a new keey with u-token.
+8. The client runs app commands using the updated JWT UID token.
+<br /><br />
+
+Machines installed with Akeyless identify other machines in the network to ensure the data received is authentic. Akeyless uses its own plugin to allow the Vault and environment to interact in a secure fashion. Akeyless offers their "Universal Secrets Connector"
+Akeyless removes the need for secret zero entirely through their  packaged within their "Vaultless Platform".
 
 The process begins with a starter token created by a human employee that’s used once to authenticate the plugin. From there, Akeyless issues its own tokens and begins authenticating applications. That token is replaced by a new one in the next use for a specified amount of time.
 
 Whenever a new entity is registered under this system, it inherits the identity and token of the original entity. This constant cycle of temporary, rotating identity tokens is a secure alternative to using a single secret zero.
 
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703896224/akeyless-new-648x1144_cmfkbd.png"><img alt="akeyless-new-648x1144.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703896224/akeyless-new-648x1144_cmfkbd.png"></a>
 
 
 

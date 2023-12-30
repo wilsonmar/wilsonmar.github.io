@@ -180,30 +180,20 @@ See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kuberne
    * <a target="_blank" href="https://storage.googleapis.com/kubernetes-release/release/stable.txt">https://storage.googleapis.com/kubernetes-release/release/stable.txt</a>
    <br /><br />
 
-   They enable getting the latest stable release into a variable <tt>K8_VERSION</tt> :
+   They enable getting the latest stable release into a system variable <tt>K8_VERSION</tt> :
 
    <pre><strong>K8_VERSION=$( curl -sS https://storage.googleapis.com/kubernetes-release/release/stable.txt )
    echo $K8_VERSION
    </strong></pre>
 
-1. Versions of Kubernetes are listed at:
+1. Versions of Kubernetes are listed with Release and End of Life dates at:
 
    * <a target="_blank" href="https://kubernetes.io/releases/">kubernetes.io/releases</a> 
 
-   * <a target="_blank" href="https://github.com/kubernetes/kubernetes/releases">github.com/kubernetes/kubernetes/releases</a> where Kubernetes source code  is open-sourced.
+   * <a target="_blank" href="https://github.com/kubernetes/kubernetes/releases">github.com/kubernetes/kubernetes/releases</a><br />where Kubernetes source code is open-sourced.
 
-1. Download the latest version defined at <a target="_blank" href="https://dl.k8s.io/release/stable.txt">https://dl.k8s.io/release/stable.txt</a> from website starting at URL https://dl.k8s.io/release/
 
-   On Apple Silicon (arm64):
-
-   <pre><strong>curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/arm64/kubectl"
-   </strong></pre>
-
-   On older Intel (amd64):
-
-   <pre><strong>curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/amd64/kubectl"
-   </strong></pre>
-
+<hr />
 
 <a name="K8s_API"></a>
 
