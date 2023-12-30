@@ -348,13 +348,8 @@ PROTIP: Additional charges for data egress are charged because central vaults su
 
 Akeyless provides a <strong>multi-cloud</strong> solution free of cross-region data egress charges.
 
-PROTIP: Akeyless.com solves the Secret Zero Problem by using an <strong>inherited identity</strong> derived from a <a href="#AkeylessParent">parent SaaS system</a>, together with an <strong>ephemeral token</strong> for <strong>"continuous" authentication</strong>. The solution is illustrated thus:
-
-<a name="AkeylessFlow"></a>
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703911154/akeyless-flow-1734x1494_jvpej0.png"><img alt="akeyless-flow-1734x1494.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703911154/akeyless-flow-1734x1494_jvpej0.png"></a>
-
-But first, let's A) create an account on the Akeyless Parent SaaS system and B) install the Akeyless CLI program.
+First, let's 
+A) create an account on the Akeyless Parent SaaS system and B) install the Akeyless CLI program.
 
 
 <a name="AkeylessParent"></a>
@@ -428,7 +423,8 @@ C. Invoke the CLI program to configure a <tt>.akeyless</tt> folder, which contai
 
 D. Create a profile for the Administrator on the Parent SaaS system website:
 
-   <ul>
+1. Run:
+
    <pre><strong>akeyless create-profile --name adminProfile \
    --access-key-id &lt;access-key-id&gt; \
    --secret-access-key &lt;secret-access-key&gt;\
@@ -436,11 +432,19 @@ D. Create a profile for the Administrator on the Parent SaaS system website:
    </strong></pre>
 
    <pre>Profile adminProfile created successfully</pre>
-   </ul>
 
-   Verify (list in JSON):
+1. Verify (list in JSON):
 
    <pre><strong>akeyless list-items</strong></pre>
+
+
+### How AKeyless works
+
+PROTIP: Akeyless.com solves the Secret Zero Problem by using an <strong>inherited identity</strong> derived from a <a href="#AkeylessParent">parent SaaS system</a>, together with an <strong>ephemeral token</strong> for <strong>"continuous" authentication</strong>. The solution is illustrated thus:
+
+<a name="AkeylessFlow"></a>
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703911154/akeyless-flow-1734x1494_jvpej0.png"><img alt="akeyless-flow-1734x1494.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703911154/akeyless-flow-1734x1494_jvpej0.png"></a>
 
 1. A human Administrator creates a <strong>starter token</strong> using the Auth ID method in the Akeyless server -- by using the Akeyless Vault GUI at <a target="_blank" href="https://console.akeyless.io/items">https://console.akeyless.io/items</a> "Users & Auth Methods" menu item:
 
