@@ -374,17 +374,64 @@ The menu should appear as shown on the right.
 
 B. To install the Akeyless CLI for use by the Administrator on a Mac:
 
-   <ul>
-   <pre><strong>brew install akeylesslabs/tap/akeyless
+NOTE: I would have preferred to avoid needing to add another folder in your <tt>.bash_profile</tt>, from any folder (because Homebrew automatically figures out which folder to install the program into):
+
+   <ul><pre><strong>brew install akeylesslabs/tap/akeyless
+   </strong></pre>
+   </ul>
+
+However, that method does not provide a way to initialize like the <tt>akeyless.sh</tt> script. So we do this:
+
+1. Create a folder where the akeyless folder will be created:
+
+   <pre><strong>cd ; mkdir ~/Projects ; cd ~/Projects
+   rm -rf akeyless
    </strong></pre>
 
-   Verify the CLI install by getting the version:
+1. Download the latest version defined at <a target="_blank" href="https://dl.k8s.io/release/stable.txt">https://dl.k8s.io/release/stable.txt</a> from website starting at URL https://dl.k8s.io/release/
+
+   On older Intel (x86 AMD chips):
+
+   <pre><strong>curl -o akeyless https://akeyless-cli.s3.us-east-2.amazonaws.com/cli/latest/production/cli-darwin-amd64
+   </strong></pre>
+
+   <pre>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  114M  100  114M    0     0  5659k      0  0:00:20  0:00:20 --:--:-- 6999k
+   </pre>
+
+   On Apple Silicon (arm64 M1/M2/M3 chips):
+
+   <pre><strong>curl -o akeyless https://akeyless-cli.s3.us-east-2.amazonaws.com/cli/latest/cli-darwin-arm64
+   </strong></pre>
+
+   Either way:
+
+1. Verify the install by getting the version:
 
    <pre><strong>akeyless -v</strong></pre>
 
    <pre>Version: 1.90.0.dca3303</pre>
-   </ul>
 
+   PROTIP: Akeyless is NOT open source. The source code is not available on GitHub.com.
+
+   TODO: History of releases listed at ???
+
+   The file downloaded is not a folder but a binary executable program.
+
+1. Run <tt>akeyless</tt> to initialize the <tt>.akeyless</tt> folder:
+
+   <pre><strong>chmod +x akeyless 
+   ./akeyless
+   </strong></pre>
+
+   <pre>???</pre>
+
+1. The help command lists dozens of commands, documented at
+
+   <a target="_blank" href="https://docs.akeyless.io/docs/cli-reference">https://docs.akeyless.io/docs/cli-reference</a>
+   
+<hr />
 
 C. Invoke the CLI program to configure a <tt>.akeyless</tt> folder, which contains a <tt>profiles</tt> folder holding a <a target="_blank" href="https://toml.io/en/">TOML (Tom's Obvious Minimal Language)</a> file for each profile.
    

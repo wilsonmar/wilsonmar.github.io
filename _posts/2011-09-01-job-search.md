@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-05-22"
+date: "2023-12-30"
 file: "job-search"
 title: "Job Search"
 excerpt: "The procedures I've found helping land a remote job within an acknowledged Great Place to Work"
@@ -16,11 +16,51 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-"Great Place to Work" is the key. It's futile to work in toxic workplaces because I won't last long anywhere.
+It's futile to work in toxic workplaces because it would be a waste of time and I won't last long anyway.
 
-So I have sought the highly rated employers. 
+PROTIP: Target employers we want instead of waiting fruitlessly or wasting your time interacting with employers you would rather not want to work at. 
+
+So I have sought the highest-rated employers. 
 
 {% include whatever.html %}
+
+## Great Places to Work
+
+From <a target="_blank" href="https://www.greatplacetowork.com/">GreatPlaceToWork.com</a> for <a target="_blank" href="https://www.computerworld.com/article/3710492/computerworld-best-places-to-work-in-it-2024.html">2024</a>, I created <a target="_blank" href="https://docs.google.com/spreadsheets/d/13xJaEBBSR5SE1a4WLmbASv33eeolIzzSBE4lNX7JVhY/edit?usp=sharing">this Google Sheet</a> containing these columns:
+
+   * _Type of company
+   * _stars, _Rec (recommend to a friend), _CEO rating, _#revs (number of reviews) in Glassdoor
+
+   * _URL of company
+   * _Profile page on Salesforce
+   * _LinkedIn company URL
+
+   * _YouTube account page
+   * _Twitter account URL
+   * _TFollowers (Twitter followers)
+   * _TJoinedYr (Twitter join year)
+   * _TLocation (location specified on Twitter)
+   * _TDesc (Description on Twitter account)
+   <br /><br />
+
+There are several aspects:
+
+   * Where the company stands among employee reviews on <a target="_blank" href="https://www.glassdoor.com/">Glassdoor.com</a>
+
+   * Where the company stands in their Net Promoter Score (NPS)
+
+   * Where the company stands in their Diversity, Equity, and Inclusion
+
+   * Where the company stands in their Environmental consciousness
+
+   * Where the company stands among competitors according to Gartner, Forrester, G2, etc.
+
+   * Profitability of the company versus competitors in the same industry
+
+   * Locations of company HQ and branches
+
+   * Benefits deductions and limits in Medical, Dental, Disability, etc.
+
 
 ## Major Job Websites
 
@@ -74,38 +114,13 @@ Major job sites
 
 * Concentrix for QA, UX, and other jobs. https://careers.concentrix.com/careers/search-and-apply
 
+* https://www.upwork.com/full-time/
+
 
 ## Jobs, Companies to target?
 
 As Yogi Berra said in his twisted way: 
 
 > "If you don't know where you want to go, you'll end up somewhere else".
-
-So target employers you want instead of waiting fruitlessly or wasting your time interacting with employers you would rather not want to work at.
-
-There are several aspects:
-
-   * Where the company stands among employee reviews on <a target="_blank" href="https://www.glassdoor.com/">Glassdoor.com</a>
-
-   * Where the company stands in their Net Promoter Score (NPS)
-
-   * Where the company stands in their Diversity, Equity, and Inclusion
-
-   * Where the company stands in their Environmental consciousness
-
-   * Where the company stands among competitors according to Gartner, Forrester, G2, etc.
-
-   * Profitability of the company versus competitors in the same industry
-
-   * Locations of company HQ and branches
-
-   * Benefits deductions and limits in Medical, Dental, Disability, etc.
-
-## Best Places to Work
-
-https://www.computerworld.com/article/3681081/best-places-to-work-in-it-2023.html
-
-https://www.upwork.com/full-time/
-
 
 
