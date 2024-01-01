@@ -16,13 +16,13 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+PROTIP: With Azure, AWS, GCP, and other clouds, additional <strong>costs for data egress out</strong> are charged when central vaults (such as Azure Key Vault) residing in a specific region are accessed world-wide. Akeyless provides a <strong>multi-cloud</strong> solution free of cross-region data egress charges.
+
 PROTIP: Akeyless.com solves the Secret Zero Problem by using an <strong>inherited identity</strong> derived from a <a href="#AkeylessParent">parent SaaS system</a>, together with an <strong>ephemeral token</strong> for <strong>"continuous" authentication</strong>. The solution is illustrated thus:
 
 <a name="AkeylessFlow"></a>
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1704128589/akeyless-230101-1796x1508_dg8mk5.png"><img alt="akeyless-230101-1796x1508.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1704128589/akeyless-230101-1796x1508_dg8mk5.png"></a>
-
-PROTIP: With Azure, AWS, and other clouds additional <strong>charges for data egress</strong> are charged because central vaults such as Azure Key Vault reside in a specific region. Akeyless provides a <strong>multi-cloud</strong> solution free of cross-region data egress charges.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1704143640/akeyless-240101-1790x1498_cadvb4.png"><img alt="akeyless-240101-1790x1498.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1704143640/akeyless-240101-1790x1498_cadvb4.png"></a>
 
 
 <a name="AkeylessParent"></a>
@@ -86,7 +86,6 @@ A) Create and activate a Global Administrator account on the Akeyless SaaS Paren
 1. Use the Global Admin to create accounts and permissions to limit what yourself and others can do. Apply <strong>"Least Privilege"</strong> principles to limit the "blast radius" when credentials end up in the hands of someone malicious. <a target="_blank" href="https://www.youtube.com/watch?v=yzH5kmIHEec&list=PLhc-aRiEl_XVbq0TtqKkk3ezwI-L7tcqZ&index=7">this video about Role-Based Access Control (with API Key Authentication)</a>
 
 
-
 <a name="AkeylessCLI"></a>
 
 ### B. Akeyless Admin CLI
@@ -113,13 +112,15 @@ Not installed
 From: https://github.com/akeylesslabs/homebrew-tap/blob/HEAD/Formula/akeyless.rb
    </pre>
 
-   Note that the <tt>akeyless</tt> program is installed from github. 
+   Note that the <tt>akeyless</tt> program is installed from github.
    
 1. Switch to a browser to view Akeyless public GitHub repos at:
 
    <a target="_blank" href="https://github.com/akeylesslabs/">https://github.com/akeylesslabs/</a>
 
    NOTE: Code for the Akeyless server is NOT open source and not public on GitHub.com.
+
+   <a target="_blank" href="https://docs.akeyless.io/docs/github-actions-community-plugin">https://docs.akeyless.io/docs/github-actions-community-plugin</a> describes how to retrieve static and dynamic secrets from Akeyless using GitHub Actions workflows at <a target="https://github.com/LanceMcCarthy/akeyless-action">https://github.com/LanceMcCarthy/akeyless-action</a> 
 
 1. On your own, review the sample repo to incorporate Akeyless when standing up a Kubernetes cluster using Helm charts:
 
