@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-12-25"
+date: "2023-12-31"
 file: "azure-key-vault"
 title: "Azure Key Vault"
 excerpt: "Automation and every manual step to set up a production-worthy HA Key Vault in Azure cloud, then retrieve secrets using various programming languages."
@@ -320,15 +320,16 @@ by TechyTacos
 
 <hr />
 
-## Secret Zero Problem
+<a name="SecretZero"></a>
+
+## The Secret Zero Problem
 
 Secrets may be stored safely in a central secrets management system, including Azure Key Vault, AWS Secrets Manager, HashiCorp Vault, etc.
 
 But how does a client get authenticated? 
 
-That the "Secret Zero Problem" faced by all 
+Different vendors have different solutions to the "Secret Zero Problem":
 
-Different vendors have different solutions:
    
    * HashiCorp's single-use Response Wrapping splits access to the master key so that one compromised location doesn’t expose the entire network.
    * Cloud vendors (Azure Key Vault, etc.) use a hardware security module for authorization. 
@@ -336,21 +337,28 @@ Different vendors have different solutions:
 
 However, these solutions merely move the "Secret Zero Problem" somewhere else rather than completely solving it.
 
-https://www.linkedin.com/pulse/solving-secret-zero-problem-real-jeremy-hess/
-https://www.linkedin.com/in/jeremyphess/
 
 
 
-PROTIP: Additional charges for data egress are charged because central vaults such as Azure Key Vault reside in a specific region.
-
+<hr />
 
 ## Akeyless
 
-Akeyless provides a <strong>multi-cloud</strong> solution free of cross-region data egress charges.
+   * <a target="_blank" href="https://www.linkedin.com/pulse/solving-secret-zero-problem-real-jeremy-hess/">BLOG</a> by <a target="_blank" href="https://www.linkedin.com/in/jeremyphess/">Jeremy Hess</a>
+   <br /><br />
+  
+PROTIP: Akeyless.com solves the Secret Zero Problem by using an <strong>inherited identity</strong> derived from a <a href="#AkeylessParent">parent SaaS system</a>, together with an <strong>ephemeral token</strong> for <strong>"continuous" authentication</strong>. The solution is illustrated thus:
+
+<a name="AkeylessFlow"></a>
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703911154/akeyless-flow-1734x1494_jvpej0.png"><img alt="akeyless-flow-1734x1494.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703911154/akeyless-flow-1734x1494_jvpej0.png"></a>
+
+PROTIP: With Azure, AWS, and other clouds additional charges for data egress are charged because central vaults such as Azure Key Vault reside in a specific region. Akeyless provides a <strong>multi-cloud</strong> solution free of cross-region data egress charges.
+
 
 <a name="AkeylessParent"></a>
 
-### Akeyless Parent SaaS System
+### A. Akeyless Parent SaaS System
 
 First, let's <br />
 A) create an account on the Akeyless Parent SaaS system and B) install the Akeyless CLI program.
@@ -412,9 +420,9 @@ Apply the Administrator's email to create and activate an account on the Parent 
 
 <a name="AkeylessCLI"></a>
 
-### Akeyless Admin CLI
+### B. Akeyless Admin CLI
 
-B. To install the Akeyless CLI for use by the Administrator on a Mac:
+To install the Akeyless CLI for use by the Administrator on a Mac:
 
 NOTE: I prefer to avoid the hassle of adding another folder in my <tt>.bash_profile</tt> or <tt>.zshrc</tt> file, from any folder (because Homebrew automatically figures out which folder to install the program into). 
 That's the approach by following the commands documented at:
@@ -535,15 +543,9 @@ protocol="https"
    PROTIP: A lot of JSON is returned, so filter the response or pipe output to a file for later reference.
 
 
-### How AKeyless works
+   ### (1) Create initial token
 
-PROTIP: Akeyless.com solves the Secret Zero Problem by using an <strong>inherited identity</strong> derived from a <a href="#AkeylessParent">parent SaaS system</a>, together with an <strong>ephemeral token</strong> for <strong>"continuous" authentication</strong>. The solution is illustrated thus:
-
-<a name="AkeylessFlow"></a>
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703911154/akeyless-flow-1734x1494_jvpej0.png"><img alt="akeyless-flow-1734x1494.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703911154/akeyless-flow-1734x1494_jvpej0.png"></a>
-
-1. A human Administrator creates a <strong>starter token</strong> using the Auth ID method in the Akeyless server -- by using the Akeyless Vault GUI at <a target="_blank" href="https://console.akeyless.io/items">https://console.akeyless.io/items</a> "Users & Auth Methods" menu item:
+1. Create a <strong>starter token</strong> using the Auth ID method in the Akeyless server -- by using the Akeyless Vault GUI at <a target="_blank" href="https://console.akeyless.io/items">https://console.akeyless.io/items</a> "Users & Auth Methods" menu item:
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703918601/akeyless-auth-577x756_kuuag9.png"><img alt="akeyless-auth-577x756.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703918601/akeyless-auth-577x756_kuuag9.png"></a>
 
@@ -557,7 +559,10 @@ PROTIP: Akeyless.com solves the Secret Zero Problem by using an <strong>inherite
    NOTE: The starter token is only used once to authenticate to the Akeyless plugin.
 
 2. The Akeyless server sends back a SaaS ACK.
-3. The Administrator generates a new UID token and loads it into the client app.
+
+   ### C. Load & Use tokens
+
+3. The Administrator generates a new UID token and<br />loads it into the client app.
 
 4. The client runs Akeyless using the initial UID token.
 
