@@ -356,16 +356,59 @@ A) create an account on the Akeyless Parent SaaS system and B) install the Akeyl
 
 ### Akeyless Parent SaaS System
 
-A. Apply the Administrator's email to create and activate an account on the Parent SaaS system website by following
+Apply the Administrator's email to create and activate an account on the Parent SaaS system website by following
 <a target="_blank" href="https://www.youtube.com/watch?v=Gdxp6zxvpoE&list=PLhc-aRiEl_XVbq0TtqKkk3ezwI-L7tcqZ&index=2&t=63s">this video</a>.
 
-<a target="_blank" href="https://www.akeyless.io/pricing/">Pricing</a> is free for the first 2,000 secrets forever, with 3 days of log retention, accessed by up to 5 clients. Extended log retention and Log forwarding requires a paid Enterprise license.
+1. Select an email to use for the <strong>Global Administrator</strong>. The first email address used to create the account is the Global Administrator, which has "god-like" power to change and delete anything, an account with too great a "blast radius" to use.
 
+   PROTIP: Even if you're an individual developer, you will be using this for <strong>productive use</strong> on accounts that can run up a bill quickly. So create an email which you use only to setup the account and pay bills as the Global Administrator.
 
-<a name="AkeylessMenu"></a>
+   PROTIP: Many enterprise environments create a <strong>service account</strong> email which is not associated with a human being, so that emails would go to multiple people. Emails to an individual would be ignored when that person is on vacation, etc.
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703893845/akeyless-menu-514x1700_x8gdvp.png"><img align="right" width="200" alt="akeyless-menu-514x1700.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703893845/akeyless-menu-514x1700_x8gdvp.png"></a>
-The menu should appear as shown on the right.
+   PROTIP: Because it's difficult to change later, mature enterprises plan out (in a spreadsheet) what account emails are used, along with what roles (with associated permissions) they have to specific <strong>locations</strong> (paths to secrets). For example, a different administrator would be responsible for secrets in the <strong>production</strong> environment than in pre-production (development, test, demo, training) environments. A different administrator is typically responsible for secrets in each soverign geographical area (US, India, Germany, etc.).
+
+   PROTIP: My company has created examples, automation, and expert consultation to quickly establish all credentials, then train everyone. Contact me for details.
+
+1. Store the Administrator's email address as an environment variable <tt>AKEYLESS_ADMIN_EMAIL</tt> (accessible to Bash CLI scripts) by adding to the <tt>.bash_profile</tt> or <tt>.zshrc</tt> file in your user $HOME folder the email address accessing Akeyless:
+
+   <pre><strong>export AKEYLESS_ADMIN_EMAIL="johndoe@supercorp.com"
+   </strong></pre>
+
+   This variable will be referenced in bash shell scripts.
+
+1. In a password safe such as 1Password, create a Login entry with the Administrator email and a password. The Chrome extension would enable you to login to the Parent SaaS system website without typing the password. Handy especially when you're doing a demo.
+
+1. Click the "Sign Up" link at the top of the Akeyless Parent SaaS system website at
+
+   <a target="_blank" href="https://console.akeyless.io/"><strong>https://console.akeyless.io/</strong></a>
+
+1. Confirm the email address by clicking the link in the email sent to the Administrator's email address.
+
+   Success is the menu appearing as shown on the right of this page:
+
+   <a name="AkeylessMenu"></a>
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703893845/akeyless-menu-514x1700_x8gdvp.png"><img align="right" width="200" alt="akeyless-menu-514x1700.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703893845/akeyless-menu-514x1700_x8gdvp.png"></a>
+
+   "Targets" are what you want to protect, such as secrets, certificates, and keys.
+
+   "Gateways" are the Akeyless machines (with IP addresses) that access the Targets.
+   
+   <a name="AkeylessPricing"></a>
+
+   Akeyless doesn't require a credit card because it is free for the first 2,000 secrets forever, accessed by up to 5 clients. 3 days of log retention is also provided free.
+   
+   The lock icon next to menu items highlight features requiring a paid Enterprise license, such as "Data Protection".
+   See the <a target="_blank" href="https://www.akeyless.io/pricing/">Pricing page at https://www.akeyless.io/pricing</a>
+
+   Extended log retention and Log forwarding to a SIEM (Security Information and Event Management) system are also available for an additional fee.
+
+1. Click menu "Online Support", click the Slack log to register for their Slack channel or support@akeyless.io email.
+
+   PROTIP: Slack is a great way to get help from the community of users and Akeyless staff.
+
+1. Use the Global Admin to create accounts and permissions to limit what yourself and others can do. Apply <strong>"Least Privilege"</strong> principles to limit the "blast radius" when credentials end up in the hands of someone malicious. <a target="_blank" href="https://www.youtube.com/watch?v=yzH5kmIHEec&list=PLhc-aRiEl_XVbq0TtqKkk3ezwI-L7tcqZ&index=7">this video about Role-Based Access Control (with API Key Authentication)</a>
+
 
 
 <a name="AkeylessCLI"></a>
@@ -374,115 +417,123 @@ The menu should appear as shown on the right.
 
 B. To install the Akeyless CLI for use by the Administrator on a Mac:
 
-NOTE: I would have preferred to avoid needing to add another folder in your <tt>.bash_profile</tt>, from any folder (because Homebrew automatically figures out which folder to install the program into):
+NOTE: I prefer to avoid the hassle of adding another folder in my <tt>.bash_profile</tt> or <tt>.zshrc</tt> file, from any folder (because Homebrew automatically figures out which folder to install the program into). 
+That's the approach by following the commands documented at:
 
-   <ul><pre><strong>brew install akeylesslabs/tap/akeyless
-   </strong></pre>
-   </ul>
+   <a target="_blank" href="https://docs.akeyless.io/docs/cli-reference">https://docs.akeyless.io/docs/cli-reference</a>
 
-However, that method does not provide a way to initialize like the <tt>akeyless.sh</tt> script. So we do this:
+So, instead, <a target="_blank" href="https://wilsonmar.github.io/homebrew/">install and use Homebrew</a> to do the following:
 
-1. Create a folder where the akeyless folder will be created:
+1. In a Terminal session, on any folder, get information about the akeyless brew package:
 
-   <pre><strong>cd ; mkdir ~/Projects ; cd ~/Projects
-   rm -rf akeyless
-   </strong></pre>
+   <pre><strong>brew info akeylesslabs/tap/akeyless</strong></pre>
 
-1. Download the latest version defined at <a target="_blank" href="https://dl.k8s.io/release/stable.txt">https://dl.k8s.io/release/stable.txt</a> from website starting at URL https://dl.k8s.io/release/
-
-   On older Intel (x86 AMD chips):
-
-   <pre><strong>curl -o akeyless https://akeyless-cli.s3.us-east-2.amazonaws.com/cli/latest/production/cli-darwin-amd64
-   </strong></pre>
-
-   <pre>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100  114M  100  114M    0     0  5659k      0  0:00:20  0:00:20 --:--:-- 6999k
+   <pre>==> akeylesslabs/tap/akeyless: stable 1.90.0
+Akeyless CLI
+https://www.akeyless.io
+Conflicts with:
+  akeyless
+Not installed
+From: https://github.com/akeylesslabs/homebrew-tap/blob/HEAD/Formula/akeyless.rb
    </pre>
 
-   On Apple Silicon (arm64 M1/M2/M3 chips):
+   Note that the <tt>akeyless</tt> program is installed from github. However,
+   
+1. View their GitHub repos at:
 
-   <pre><strong>curl -o akeyless https://akeyless-cli.s3.us-east-2.amazonaws.com/cli/latest/cli-darwin-arm64
+   <a target="_blank" href="https://github.com/akeylesslabs/">https://github.com/akeylesslabs/</a>
+
+   NOTE: The Akeyless server is NOT open source. Their source code is not public on GitHub.com.
+
+1. The first release of the Akeyless CLI program was on 2019-12-19 at
+
+   https://akeylesslabs.github.io/helm-charts
+
+1. Install the Akeyless CLI program from the internet:
+
+   <pre><strong>brew install akeylesslabs/tap/akeyless
    </strong></pre>
 
-   Either way:
+   Brew automatically recognizes whether you have an Intel or Apple Silicon chip on your Mac and installs to the appropriate folder.
+   
+   On an Intel (x86 AMD) chip:
 
-1. Verify the install by getting the version:
+   <pre><strong>cd /usr/local/bin</strong></pre>
+
+   On an Apple Silicon (arm64 M1/M2/M3) chip:
+
+   <pre><strong>cd /opt/homebrew/bin</strong></pre>
+   
+1. Confirm where the program is installed:
+
+   <pre><strong>ls `where akeyless`</strong></pre>
+
+   <pre>lrwxr-xr-x@ 1 johndoe  admin  38 Dec 29 21:06 /usr/local/bin/akeyless -> ../Cellar/akeyless/1.90.0/bin/akeyless
+   </pre>
+
+   <pre>0B    /usr/local/bin/akeyless</pre>
+
+   What is downloaded is not a folder but a binary executable program.
+
+1. Verify CLI install success by getting the version:
 
    <pre><strong>akeyless -v</strong></pre>
 
    <pre>Version: 1.90.0.dca3303</pre>
 
-   PROTIP: Akeyless is NOT open source. The source code is not available on GitHub.com.
-
    TODO: History of releases listed at ???
 
-   The file downloaded is not a folder but a binary executable program.
+1. Connect to the Akeyless SaaS host (in place of instructions to run <tt>./akeyless</tt> in the docs) to :
 
-1. Run <tt>akeyless</tt> to initialize the <tt>.akeyless</tt> folder:
-
-   <pre><strong>chmod +x akeyless 
-   ./akeyless
+   <pre><strong>akeyless configure --admin-email "${AKEYLESS_ADMIN_EMAIL}"
    </strong></pre>
 
-   <pre>???</pre>
+   <pre>Profile default successfully configured</pre>
 
-1. The help command lists dozens of commands, documented at
+1. View the <tt>$HOME/.akeyless</tt> folder created by the above command:
 
+   <pre><strong>ls -al ~/.akeyless
+   </strong></pre>
+
+   According to Linux conventions, the <tt>.</tt> in front of any folder name means that it is meant to be "hidden".
+
+   <pre>drwx------@   2 johndoe  staff    64 Dec 31 02:00 .tmp_creds
+-rw-r--r--@   1 johndoe  staff     7 Dec 31 01:40 cli-latest
+drwx------@   3 johndoe  staff    96 Dec 31 02:00 profiles
+-rw-r--r--@   1 johndoe  staff    40 Dec 29 21:07 settings
+   </pre>
+
+   <pre><strong>cat ~/.akeyless/cli-latest</strong></pre> shows the version of the CLI program:<br />
+   <pre>1.90.0</pre>
+
+   <pre><strong>cat ~/.akeyless/profiles/default.toml</strong></pre> shows the initial profile formatted in <a target="_blank" href="https://toml.io/en/">TOML (Tom's Obvious Minimal Language)</a>:
+
+   <pre>["default"]
+  access_type = 'password'
+  admin_password = '12345678901234567890123='
+  admin_email = 'johndoe@supercorp.com'
+  account_id = ''
+   </pre>
+   
+   <pre><strong>cat ~/.akeyless/settings</strong></pre> contains:
+   <pre>dns="vault.akeyless.io"
+protocol="https"
+   </pre>
+
+   TODO: What is the <tt>.tmp_creds</tt> folder for?
+
+1. To list all akeyless commands:
+
+   <pre><strong>akeyless -h</strong></pre>
+
+   Read about each command at:<br />
    <a target="_blank" href="https://docs.akeyless.io/docs/cli-reference">https://docs.akeyless.io/docs/cli-reference</a>
    
-<hr />
-
-C. Invoke the CLI program to configure a <tt>.akeyless</tt> folder, which contains a <tt>profiles</tt> folder holding a <a target="_blank" href="https://toml.io/en/">TOML (Tom's Obvious Minimal Language)</a> file for each profile.
-   
-1. Invoke the CLI program to create a profile:
-
-   <pre><strong>akeyless
-   </strong></pre>
-
-   <pre>AKEYLESS-CLI, first use detected
-   For more info please visit: https://docs.akeyless.io/docs/cli
-   Enter Akeyless URL (Default: vault.akeyless.io) _</pre>
-
-   See https://docs.akeyless.io/docs/cli-reference
-
-1. Press Enter to accept the default URL.
-
-   <pre>Would you like to configure a profile? (Y/n) _</pre>
-
-1. Press <strong>n</strong> 
-
-
-
-1. Select authentication method: <a target="_blank" href="https://www.youtube.com/watch?v=BnjWESAziqY&list=PLhc-aRiEl_XVbq0TtqKkk3ezwI-L7tcqZ&index=6&pp=iAQB">VIDEO</a>:
-
-   <a target="_blank" href="https://docs.akeyless.io/docs/api-key">1) access_key (API Key)</a><br />
-   <a target="_blank" href="https://docs.akeyless.io/docs/aws-iam">2) aws_iam</a><br />
-   <a target="_blank" href="https://docs.akeyless.io/docs/azure-id">3) azure_ad</a><br />
-   <a target="_blank" href="https://docs.akeyless.io/docs/saml">4) saml</a><br />
-   <a target="_blank" href="https://docs.akeyless.io/docs/ldap">5) ldap</a><br />
-   <a target="_blank" href="https://docs.akeyless.io/docs/api-key">6) email/password</a><br />
-   <a target="_blank" href="https://docs.akeyless.io/docs/openid">7) oidc</a><br />
-   <a target="_blank" href="https://docs.akeyless.io/docs/kubernetes-auth">8) k8s (Kubernetes)</a><br />
-   <a target="_blank" href="https://docs.akeyless.io/docs/gcp-auth-method">9) gcp</a><br />
-
-   https://docs.akeyless.io/docs/access-and-authentication-methods
-
-D. Create a profile for the Administrator on the Parent SaaS system website:
-
-1. Run:
-
-   <pre><strong>akeyless create-profile --name adminProfile \
-   --access-key-id &lt;access-key-id&gt; \
-   --secret-access-key &lt;secret-access-key&gt;\
-   --akeyless-url &lt;akeyless-url&gt;
-   </strong></pre>
-
-   <pre>Profile adminProfile created successfully</pre>
-
 1. Verify (list in JSON):
 
-   <pre><strong>akeyless list-items</strong></pre>
+   <pre><strong>akeyless list-items | jq .</strong></pre>
+
+   PROTIP: A lot of JSON is returned, so filter the response or pipe output to a file for later reference.
 
 
 ### How AKeyless works
