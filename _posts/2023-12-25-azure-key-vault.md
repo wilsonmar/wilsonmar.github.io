@@ -348,13 +348,12 @@ PROTIP: Additional charges for data egress are charged because central vaults su
 
 Akeyless provides a <strong>multi-cloud</strong> solution free of cross-region data egress charges.
 
-First, let's 
-A) create an account on the Akeyless Parent SaaS system and B) install the Akeyless CLI program.
-
-
 <a name="AkeylessParent"></a>
 
 ### Akeyless Parent SaaS System
+
+First, let's <br />
+A) create an account on the Akeyless Parent SaaS system and B) install the Akeyless CLI program.
 
 Apply the Administrator's email to create and activate an account on the Parent SaaS system website by following
 <a target="_blank" href="https://www.youtube.com/watch?v=Gdxp6zxvpoE&list=PLhc-aRiEl_XVbq0TtqKkk3ezwI-L7tcqZ&index=2&t=63s">this video</a>.
@@ -443,7 +442,7 @@ From: https://github.com/akeylesslabs/homebrew-tap/blob/HEAD/Formula/akeyless.rb
 
    <a target="_blank" href="https://github.com/akeylesslabs/">https://github.com/akeylesslabs/</a>
 
-   NOTE: The Akeyless server is NOT open source. Their source code is not public on GitHub.com.
+   NOTE: The Akeyless server is NOT open source and not public on GitHub.com.
 
 1. The first release of the Akeyless CLI program was on 2019-12-19 at
 
