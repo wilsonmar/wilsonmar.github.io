@@ -3,7 +3,7 @@ layout: post
 date: "2024-01-01"
 file: "keyless-vault"
 title: "Keyless Vault"
-excerpt: "Automation and every hands-on step to set up a production-worthy HA AKeyless SaaS vault, then retrieve secrets using various programming languages."
+excerpt: "How to set up production-worthy enterprise-scale HA multi-cloud SaaS AKeyless vault, then retrieve secrets using various programming languages, using my automation, one hands-on step at a time."
 tags: [cloud, security]
 image:
 # pic secret finger over mouth 1900x500
@@ -18,15 +18,16 @@ comments: true
 
 PROTIP: With Azure, AWS, GCP, and other clouds, additional <strong>costs for data egress out</strong> are charged when central vaults (such as Azure Key Vault) residing in a specific region are accessed world-wide. Akeyless provides a <strong>multi-cloud</strong> solution free of cross-region data egress charges.
 
-PROTIP: Akeyless.com solves the Secret Zero Problem by using an <strong>inherited identity</strong> derived from a <a href="#AkeylessParent">parent SaaS system</a>, together with an <strong>ephemeral token</strong> for <strong>"continuous" authentication</strong>. The solution is illustrated thus (will be in a future video) :
+PROTIP: Akeyless.com solves the Secret Zero Problem by using an <strong>inherited identity</strong> derived from a <a href="#AkeylessParent">parent SaaS system</a>, together with an <strong>ephemeral token</strong> for <strong>"continuous" authentication</strong>. The solution is illustrated thus :
+
 
 <a name="AkeylessFlow"></a>
 
 <a target="_blank" href="https://docs.akeyless.io/docs/universal-identity">UID (Akeyless Universal Identity) tokens</a>:
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1704143640/akeyless-240101-1790x1498_cadvb4.png"><img alt="akeyless-240101-1790x1498.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1704143640/akeyless-240101-1790x1498_cadvb4.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1704212497/akeyless-flow-240102b_mvqngr.png"><img alt="akeyless-flow-240102b.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1704212497/akeyless-flow-240102b_mvqngr.png"></a>
 <em>from PowerPoint file</em>
 
-Each step (A, B, C, D) are explained below.
+Each step (A, B, C, D setups) is explained below (and in a video to come).
 
 
 <a name="AkeylessParent"></a>
