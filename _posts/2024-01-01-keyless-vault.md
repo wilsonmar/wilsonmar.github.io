@@ -3,7 +3,7 @@ layout: post
 date: "2024-01-01"
 file: "keyless-vault"
 title: "Keyless Vault"
-excerpt: "How to set up production-worthy enterprise-scale HA multi-cloud SaaS AKeyless vault, then retrieve secrets using various programming languages, using my automation, one hands-on step at a time."
+excerpt: "Here's my automation and hands-on steps to set up a production-worthy enterprise-scale HA multi-cloud SaaS AKeyless vault, then retrieve secrets using various programming languages."
 tags: [cloud, security]
 image:
 # pic secret finger over mouth 1900x500
@@ -16,18 +16,24 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-PROTIP: With Azure, AWS, GCP, and other clouds, additional <strong>costs for data egress out</strong> are charged when central vaults (such as Azure Key Vault) residing in a specific region are accessed world-wide. Akeyless provides a <strong>multi-cloud</strong> solution free of cross-region data egress charges.
+I've written hands-on articles about setting up enterprise secrets vaults using HashiCorp Vault, Azure Key Vault, AWS Secrets Manager, etc.
 
-PROTIP: Akeyless.com solves the Secret Zero Problem by using an <strong>inherited identity</strong> derived from a <a href="#AkeylessParent">parent SaaS system</a>, together with an <strong>ephemeral token</strong> for <strong>"continuous" authentication</strong>. The solution is illustrated thus :
+But I think AKeyless is the best solution for most enterprises.
 
+PROTIP: Unlike HashiCorp Vault cloud, administrators don't have to ensure that the server size they are required to chose continues to be adequate for the load. AKeyless is a SaaS solution that scales automatically.
+
+With Azure, AWS, GCP, and other clouds, additional <strong>costs for data egress out</strong> are charged when central vaults (such as Azure Key Vault) residing in a specific region are accessed world-wide. Akeyless provides a <strong>multi-cloud</strong> solution free of cross-region data egress charges.
+
+PROTIP: The differentiation with Akeyless is that it solves the "Secret Zero Problem" by using an <strong>inherited identity</strong> derived from a <a href="#AkeylessParent">parent SaaS system</a>, together with an <strong>ephemeral token</strong> for <strong>"continuous" authentication</strong>. 
+
+How Akeyless works is illustrated in the diagram below.
+First, we setup components <a href="#AkeylessParent">A</a>, <a href="#AkeylessCLI">B</a>, <a href="#ClientApp">C</a>, <a href="#Gateways">D</a>, <a href="#Bastions">E</a>, then processing steps <a href="#(1)">(1)</a>, <a href="#(2)">(2)</a>, etc.
 
 <a name="AkeylessFlow"></a>
 
 <a target="_blank" href="https://docs.akeyless.io/docs/universal-identity">UID (Akeyless Universal Identity) tokens</a>:
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1704212497/akeyless-flow-240102b_mvqngr.png"><img alt="akeyless-flow-240102b.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1704212497/akeyless-flow-240102b_mvqngr.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1704216168/akeyless-flow-240102-1060x925_utwwj9.png"><img alt="akeyless-flow-240102-1060x925.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1704216168/akeyless-flow-240102-1060x925_utwwj9.png"></a>
 <em>from PowerPoint file</em>
-
-Each step (A, B, C, D setups) is explained below (and in a video to come).
 
 
 <a name="AkeylessParent"></a>
@@ -36,7 +42,7 @@ Each step (A, B, C, D setups) is explained below (and in a video to come).
 
 A) Create and activate a Global Administrator account on the Akeyless SaaS Parent system website
 
-1. Select an email to use for the <strong>Global Administrator</strong>:
+1. Select an email to use for the <strong>Global Administrator</strong>, such as:
 
    <tt>johndoe+akeyless1gadmin@supercorp.com</tt>
 
@@ -327,7 +333,7 @@ protocol="https"
 
    TODO: To list just the Item Names using jp?
 
-
+   <a name="(1)"></a>
 
    ### (1) Create initial token
 
@@ -343,10 +349,12 @@ protocol="https"
    <a target="_blank" href="https://docs.akeyless.io/docs/universal-identity">Akeyless's Universal Identity (UID) authentication method</a> is used by on-prem. machines. 
 
    NOTE: The starter token is only used once to authenticate to the Akeyless plugin.
-
+<a name="ClientApp">
 2. The Akeyless server sends back a SaaS ACK.
 
-   ### C. Load & Use tokens
+   <a name="ClientApp"></a>
+
+   ### C. Client app setup
 
    <pre><strong>akeyless create-secret -n /folder/sec1 -v val</strong></pre>
    <pre>A new secret named /folder/sec1 was successfully created</pre>
@@ -359,25 +367,35 @@ Encryption Key Fragement #2 created succsessfully in 18 milliseconds
 A new AES256GCM key named /folder/sub-aes-key was successfully created
    </pre>
 
-   ### (3) New token
+   <a name="(3)"></a>
+
+   ### (3) Admin generates initial u-token
 
 3. The Administrator generates a new UID token and<br />loads it into the client app.
 
-   ### (4) Use New token
+   <a name="(4)"></a>
+
+   ### (4) Client runs auth command using UID init token
 
 4. The client runs Akeyless using the initial UID token.
 
    https://docs.akeyless.io/docs/cli-reference
 
-   ### (5) Get JWT token
+   <a name="(5)"></a>
+
+   ### (5) Client runs using t-token
 
 5. The Akeyless server responds with a new JWT UID token.
+
+   <a name="(6)"></a>
 
    ### (6) Use JWT token
 
 6. The client runs app commands using the new JWT UID token.
 
-   ### (7) Request Rotation
+   <a name="(7)"></a>
+
+   ### (7) Client rotates UID using u-token
 
 7. After the processing window passes, the client requests a rotation using the token.
 
@@ -390,11 +408,15 @@ A new AES256GCM key named /folder/sub-aes-key was successfully created
 
    The default processing window is 60 seconds. 
    
-   ### (8) Get new key
+   <a name="(8)"></a>
+
+   ### (8) Returns ACK+new u-token
 
 8. The Akeyless server returns a new key with u-token.
 
-   ### (7) Use Updated JWT token
+   <a name="(9)"></a>
+
+   ### (9) Run auth with updated u-token
 
 9. The client runs app commands using the updated JWT UID token.
 
