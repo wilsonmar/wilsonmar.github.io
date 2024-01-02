@@ -33,7 +33,7 @@ First, we setup components <a href="#AkeylessParent">A</a>, <a href="#AkeylessCL
 
 <a target="_blank" href="https://docs.akeyless.io/docs/universal-identity">UID (Akeyless Universal Identity) tokens</a>:
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1704216168/akeyless-flow-240102-1060x925_utwwj9.png"><img alt="akeyless-flow-240102-1060x925.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1704216168/akeyless-flow-240102-1060x925_utwwj9.png"></a>
-<em>from PowerPoint file</em>
+<em>from</em> <a target="_blank" href="https://7451111251303.gumroad.com/l/cixdx"><em>PowerPoint file</em></a>
 
 
 <a name="AkeylessParent"></a>
