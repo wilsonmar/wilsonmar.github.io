@@ -18,12 +18,15 @@ comments: true
 
 PROTIP: With Azure, AWS, GCP, and other clouds, additional <strong>costs for data egress out</strong> are charged when central vaults (such as Azure Key Vault) residing in a specific region are accessed world-wide. Akeyless provides a <strong>multi-cloud</strong> solution free of cross-region data egress charges.
 
-PROTIP: Akeyless.com solves the Secret Zero Problem by using an <strong>inherited identity</strong> derived from a <a href="#AkeylessParent">parent SaaS system</a>, together with an <strong>ephemeral token</strong> for <strong>"continuous" authentication</strong>. The solution is illustrated thus:
+PROTIP: Akeyless.com solves the Secret Zero Problem by using an <strong>inherited identity</strong> derived from a <a href="#AkeylessParent">parent SaaS system</a>, together with an <strong>ephemeral token</strong> for <strong>"continuous" authentication</strong>. The solution is illustrated thus (will be in a future video) :
 
 <a name="AkeylessFlow"></a>
 
 <a target="_blank" href="https://docs.akeyless.io/docs/universal-identity">UID (Akeyless Universal Identity) tokens</a>:
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1704143640/akeyless-240101-1790x1498_cadvb4.png"><img alt="akeyless-240101-1790x1498.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1704143640/akeyless-240101-1790x1498_cadvb4.png"></a>
+<em>from PowerPoint file</em>
+
+Each step (A, B, C, D) are explained below.
 
 
 <a name="AkeylessParent"></a>
@@ -82,9 +85,9 @@ A) Create and activate a Global Administrator account on the Akeyless SaaS Paren
 
    Extended log retention and Log forwarding to a SIEM (Security Information and Event Management) system are also available for an additional fee.
 
-1. Click menu "Online Support", click the Slack log to register for their Slack channel or support@akeyless.io email.
+1. Click menu "Online Support", click the Slack log to register for their email: <tt>support@akeyless.io</tt> or Slack channel.
 
-   PROTIP: Slack is a great way to get help from the community of users and Akeyless staff.
+   PROTIP: Most of Akeyless are based in Israel. So they are 7 hours ahead of the US East Coast, 10 hours ahead of the US West Coast, and 2 hours ahead of the UK.
 
 1. Use the Global Admin to create accounts and permissions to limit what yourself and others can do. Apply <strong>"Least Privilege"</strong> principles to limit the "blast radius" when credentials end up in the hands of someone malicious. <a target="_blank" href="https://www.youtube.com/watch?v=yzH5kmIHEec&list=PLhc-aRiEl_XVbq0TtqKkk3ezwI-L7tcqZ&index=7">this video about Role-Based Access Control (with API Key Authentication)</a>.
 
@@ -131,10 +134,21 @@ From: https://github.com/akeylesslabs/homebrew-tap/blob/HEAD/Formula/akeyless.rb
 
    <a name="Bastion"></a>
 
-   ### Akeyless Secure Remote Access Bastion
+   ### Akeyless Bastions
 
-   Credentials (dynamic secrets, rotated secrets, and SSH certificates) are provided Just In Time through an <a target="_blank" href="https://docs.akeyless.io/docs/secure-remote-access-bastion">Akeyless Secure Remote Access Bastion</a>, a gateway that uses SSH to (with certificates) to access resources. It runs as a Kubernetes cluster setup using a Helm chart at:
+   The best credentials are no credentials at all.
    
+   So credentials (dynamic secrets, rotated secrets, and SSH certificates) are provided to customer apps Just In Time through a "bastion" server, a gateway to access encrypted resources from the Akeyless Secrets Store and decrypts it. There are several types of bastions.
+   
+   * <a target="_blank" href="https://docs.akeyless.io/docs/secure-remote-access-bastion">Akeyless Secure Remote Access (SRA) Bastion</a> uses SSH with certificates.
+   * <a target="_blank" href="https://docs.akeyless.io/docs/web-access-bastion">Web Access Bastion</a> provides Secure Remote Access to any web application with session recording, including proxy service acting as an entry point to your internal web applications, where only after successful authentication users will get access, either via an isolated remote browser or directly to your target server based on your secret configuration.
+   <br /><br />
+   
+   <a target="_blank" href="https://tutorials.akeyless.io/docs/install-and-configure-remote-access-bastion?_gl=1*1maqlhw*_ga*MjMwNzg1OTExLjE3MDM4NjM0ODY.*_ga_L81RVHBZR8*MTcwNDE1NzQ5Ny4yMy4xLjE3MDQxNjE3NzIuMC4wLjA.">VIDEO</a>:
+   Bastion configuration.
+
+   The SRA runs as a Kubernetes cluster setup using a Helm chart at:
+
    <a target="_blank" href="https://akeylesslabs.github.io/helm-charts">https://akeylesslabs.github.io/helm-charts</a>
 
    BTW: On the right pane on GitHub, notice that there are many Contributors.
@@ -344,15 +358,26 @@ Encryption Key Fragement #2 created succsessfully in 18 milliseconds
 A new AES256GCM key named /folder/sub-aes-key was successfully created
    </pre>
 
+   ### (3) New token
+
 3. The Administrator generates a new UID token and<br />loads it into the client app.
+
+   ### (4) Use New token
 
 4. The client runs Akeyless using the initial UID token.
 
    https://docs.akeyless.io/docs/cli-reference
 
+   ### (5) Get JWT token
+
 5. The Akeyless server responds with a new JWT UID token.
 
+   ### (6) Use JWT token
+
 6. The client runs app commands using the new JWT UID token.
+
+   ### (7) Request Rotation
+
 7. After the processing window passes, the client requests a rotation using the token.
 
    REMEMBER: Rotation of secrets requires an <a target="_blank" href="https://www.akeyless.io/pricing/">enterprise license</a>.
@@ -364,8 +389,14 @@ A new AES256GCM key named /folder/sub-aes-key was successfully created
 
    The default processing window is 60 seconds. 
    
+   ### (8) Get new key
+
 8. The Akeyless server returns a new key with u-token.
+
+   ### (7) Use Updated JWT token
+
 9. The client runs app commands using the updated JWT UID token.
+
 <br /><br />
 
 Machines installed with Akeyless identify other machines in the network to ensure the data received is authentic. 
@@ -376,7 +407,6 @@ Akeyless removes the need for secret zero entirely through their  packaged withi
 The process begins with a starter token created by a human employee that’s used once to authenticate the plugin. From there, Akeyless issues its own tokens and begins authenticating applications. That token is replaced by a new one in the next use for a specified amount of time.
 
 Whenever a new entity is registered under this system, it inherits the identity and token of the original entity. This constant cycle of temporary, rotating identity tokens is a secure alternative to using a single secret zero.
-
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703896224/akeyless-new-648x1144_cmfkbd.png"><img alt="akeyless-new-648x1144.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703896224/akeyless-new-648x1144_cmfkbd.png"></a>
 
