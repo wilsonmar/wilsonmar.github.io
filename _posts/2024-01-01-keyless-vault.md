@@ -22,6 +22,7 @@ PROTIP: Akeyless.com solves the Secret Zero Problem by using an <strong>inherite
 
 <a name="AkeylessFlow"></a>
 
+<a target="_blank" href="https://docs.akeyless.io/docs/universal-identity">UID (Akeyless Universal Identity) tokens</a>:
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1704143640/akeyless-240101-1790x1498_cadvb4.png"><img alt="akeyless-240101-1790x1498.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1704143640/akeyless-240101-1790x1498_cadvb4.png"></a>
 
 
@@ -41,7 +42,9 @@ A) Create and activate a Global Administrator account on the Akeyless SaaS Paren
 
    PROTIP: Many enterprise environments create a <strong>service account</strong> email which is not associated with a human being, so that emails would go to multiple people. Emails to an individual would be ignored when that person is on vacation, etc.
 
-   PROTIP: Because it's difficult to change later, mature enterprises plan out (in a spreadsheet) what account emails are used, along with what roles (with associated permissions) they have to specific <strong>locations</strong> (paths to secrets). For example, a different administrator would be responsible for secrets in the <strong>production</strong> environment than in pre-production (development, test, demo, training) environments. A different administrator is typically responsible for secrets in each soverign geographical area (US, India, Germany, etc.).
+   PROTIP: Because it's difficult to change later, mature enterprises plan out (in a spreadsheet) what account emails are used, along with what roles (with associated permissions) they have to specific <strong>locations</strong> (paths to secrets). For example, a different administrator would be responsible for secrets in the <strong>production</strong> environment than in pre-production (development, test, demo, training) environments. A different administrator is typically responsible for secrets in each sovereign geographical area (US, India, Germany, etc.).
+
+   Each Authentication Method object is associated with an Access Role that grants permission (including Create, Read, Update, Delete, List, and Deny) to this identity on Secrets, Targets, Roles, and Authentication Method objects stored inside the Akeyless SaaS solution.
 
    PROTIP: My company has created examples, automation, and expert consultation to quickly establish all credentials, then train everyone. Contact me for details.
 
@@ -66,7 +69,7 @@ A) Create and activate a Global Administrator account on the Akeyless SaaS Paren
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703893845/akeyless-menu-514x1700_x8gdvp.png"><img align="right" width="200" alt="akeyless-menu-514x1700.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703893845/akeyless-menu-514x1700_x8gdvp.png"></a>
 
-   "Targets" are what you want to protect, such as secrets, certificates, and keys.
+   <a target="_blank" href="https://docs.akeyless.io/docs/targets">Targets</a> act as a connector between credentials and the items that need to utilize them, both saving time for the user and protecting your flows from credential breakage.
 
    "Gateways" are the Akeyless machines (with IP addresses) that access the Targets.
    
@@ -83,7 +86,9 @@ A) Create and activate a Global Administrator account on the Akeyless SaaS Paren
 
    PROTIP: Slack is a great way to get help from the community of users and Akeyless staff.
 
-1. Use the Global Admin to create accounts and permissions to limit what yourself and others can do. Apply <strong>"Least Privilege"</strong> principles to limit the "blast radius" when credentials end up in the hands of someone malicious. <a target="_blank" href="https://www.youtube.com/watch?v=yzH5kmIHEec&list=PLhc-aRiEl_XVbq0TtqKkk3ezwI-L7tcqZ&index=7">this video about Role-Based Access Control (with API Key Authentication)</a>
+1. Use the Global Admin to create accounts and permissions to limit what yourself and others can do. Apply <strong>"Least Privilege"</strong> principles to limit the "blast radius" when credentials end up in the hands of someone malicious. <a target="_blank" href="https://www.youtube.com/watch?v=yzH5kmIHEec&list=PLhc-aRiEl_XVbq0TtqKkk3ezwI-L7tcqZ&index=7">this video about Role-Based Access Control (with API Key Authentication)</a>.
+
+   Each Authentication Method object is associated with an Access Role that grants permission (including Create, Read, Update, Delete, List, and Deny) to the identity on Secrets, Targets, Roles, and Authentication Method objects stored inside the Akeyless SaaS solution.
 
 
 <a name="AkeylessCLI"></a>
@@ -122,18 +127,24 @@ From: https://github.com/akeylesslabs/homebrew-tap/blob/HEAD/Formula/akeyless.rb
 
    <a target="_blank" href="https://docs.akeyless.io/docs/github-actions-community-plugin">https://docs.akeyless.io/docs/github-actions-community-plugin</a> describes how to retrieve static and dynamic secrets from Akeyless using GitHub Actions workflows at <a target="https://github.com/LanceMcCarthy/akeyless-action">https://github.com/LanceMcCarthy/akeyless-action</a> 
 
-1. On your own, review the sample repo to incorporate Akeyless when standing up a Kubernetes cluster using Helm charts:
 
+
+   <a name="Bastion"></a>
+
+   ### Akeyless Secure Remote Access Bastion
+
+   Credentials (dynamic secrets, rotated secrets, and SSH certificates) are provided Just In Time through an <a target="_blank" href="https://docs.akeyless.io/docs/secure-remote-access-bastion">Akeyless Secure Remote Access Bastion</a>, a gateway that uses SSH to (with certificates) to access resources. It runs as a Kubernetes cluster setup using a Helm chart at:
+   
    <a target="_blank" href="https://akeylesslabs.github.io/helm-charts">https://akeylesslabs.github.io/helm-charts</a>
 
-   It uses <a target="_blank" href="https://docs.akeyless.io/docs/kubernetes-auth">kubernetes-auth</a>.
-
-   On the right pane, notice that there are many Contributors.
+   BTW: On the right pane on GitHub, notice that there are many Contributors.
 
    The repo uses the <strong>mustache</strong> languages to replace variables in YAML files.
    
    <a target="_blank" href="https://github.com/github-linguist/linguist/issues/6196">PROTIP</a>: GitHub incorrectly recognizes <strong>.tpl</strong> (template) file extensions as use of "Smarty" (an unrelated PHP package) rather than yaml. 
    This <a target="_blank" href="https://github.com/orgs/community/discussions/71689">PR</a> has no functional impact because the error is in GitHub.
+
+   Uses <a target="_blank" href="https://docs.akeyless.io/docs/kubernetes-auth">kubernetes-auth</a>.
 
    ### CLI Install
 
@@ -368,6 +379,13 @@ Whenever a new entity is registered under this system, it inherits the identity 
 
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703896224/akeyless-new-648x1144_cmfkbd.png"><img alt="akeyless-new-648x1144.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703896224/akeyless-new-648x1144_cmfkbd.png"></a>
+
+## Audit Logs, Analytics, and Usage Reports
+
+<a target="_blank" href="https://tutorials.akeyless.io/docs/audit-logs-analytics-and-usage-reports?_gl=1*1uvav53*_ga*MjMwNzg1OTExLjE3MDM4NjM0ODY.*_ga_L81RVHBZR8*MTcwNDE0MzEyMi4yMS4xLjE3MDQxNDUzNTEuMC4wLjA.">VIDEO</a>:
+
+https://docs.akeyless.io/docs/audit-logs
+
 
 ## References
 
