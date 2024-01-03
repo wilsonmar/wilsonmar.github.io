@@ -17,6 +17,8 @@
   {% if author.email %}<a href="mailto:{{ author.email }}" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email me</a>{% endif %}
   {% if author.email %}<a href="https://www.google.com/calendar/embed?src={{ author.email | replace: "@", "%40" }}" class="author-social" target="_blank"><i class="fa fa-fw fa-calendar"></i> Calendar</a>{% endif %}
   {% if author.youtube %}<a href="https://www.youtube.com/user/{{ author.youtube }}" class="author-social" target="_blank"><i class="fa fa-fw fa-youtube-square"></i> YouTube</a>{% endif %}
+  {% if author.github %}<a href="https://github.com/{{ author.github }}" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>{% endif %}
+  {% if author.stackoverflow %}<a href="http://stackoverflow.com/users/{{ author.stackoverflow }}" class="author-social" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i> Stackoverflow</a>{% endif %}
 <!--  {% if author.skype %}<a href="skype:{{ author.skype " }}?call" }}" class="author-social" target="_blank"><i class="fa fa-fw fa-skype"></i> Skype call</a>{% endif %}
 -->
 <p></p>
@@ -38,8 +40,6 @@
   {% if author.weibo %}<a href="https://www.weibo.com/{{ author.weibo }}" class="author-social" target="_blank"><i class="fa fa-fw fa-weibo"></i> Weibo</a>{% endif %}
   {% if author.flickr %}<a href="https://www.flickr.com/{{ author.flickr }}" class="author-social" target="_blank"><i class="fa fa-fw fa-flickr"></i> Flickr</a>{% endif %}
 <p></p>
-  {% if author.github %}<a href="https://github.com/{{ author.github }}" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>{% endif %}
-  {% if author.stackoverflow %}<a href="http://stackoverflow.com/users/{{ author.stackoverflow }}" class="author-social" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i> Stackoverflow</a>{% endif %}
   {% if author.pinterest %}<a href="https://www.pinterest.com/{{ author.pinterest }}" class="author-social" target="_blank"><i class="fa fa-fw fa-pinterest"></i> Pinterest</a>{% endif %}
   {% if author.codepen %}<a href="https://codepen.io/{{ author.codepen }}" class="author-social" target="_blank"><i class="fa fa-fw fa-codepen"></i> CodePen</a>{% endif %}
 
