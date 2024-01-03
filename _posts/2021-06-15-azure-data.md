@@ -1855,8 +1855,6 @@ See my <a target="_blank" href="https://wilsonmar.github.io/powerbi">PowerBI not
 See Pluralsight: "Building your First Power BI Report"
 
 
-<hr />
-
 
 <hr />
 

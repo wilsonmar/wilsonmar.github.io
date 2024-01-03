@@ -16,25 +16,24 @@
   <!-- Changed by WM 2016-03-29 -->
   {% if author.email %}<a href="mailto:{{ author.email }}" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email me</a>{% endif %}
   {% if author.email %}<a href="https://www.google.com/calendar/embed?src={{ author.email | replace: "@", "%40" }}" class="author-social" target="_blank"><i class="fa fa-fw fa-calendar"></i> Calendar</a>{% endif %}
-  {% if author.skype %}<a href="skype:{{ author.skype " }}?call" }}" class="author-social" target="_blank"><i class="fa fa-fw fa-skype"></i> Skype call</a>{% endif %}
+  {% if author.youtube %}<a href="https://www.youtube.com/user/{{ author.youtube }}" class="author-social" target="_blank"><i class="fa fa-fw fa-youtube-square"></i> YouTube</a>{% endif %}
+<!--  {% if author.skype %}<a href="skype:{{ author.skype " }}?call" }}" class="author-social" target="_blank"><i class="fa fa-fw fa-skype"></i> Skype call</a>{% endif %}
+-->
 <p></p>
 <span class="notranslate">
   {% if author.linkedin %}<a href="https://www.linkedin.com/in/{{ author.linkedin }}" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>{% endif %}
-  {% if author.xing %}<a href="http://www.xing.com/profile/{{ author.xing }}" class="author-social" target="_blank"><i class="fa fa-fw fa-xing-square"></i> XING</a>{% endif %}
   
-  {% if author.twitter %}<a href="https://twitter.com/{{ author.twitter }}" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>{% endif %}
-  {% if author.gitter %}<a href="https://gitter.im/{{ author.gitter }}" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Gitter</a>{% endif %}
-  {% if author.facebook %}<a href="https://www.facebook.com/{{ author.facebook }}" class="author-social" target="_blank"><i class="fa fa-fw fa-facebook-square"></i> Facebook</a>{% endif %}
 <!--
-    {% if author.google.plus %}<a href="https://plus.google.com/+{{ author.google.plus }}" class="author-social" target="_blank"><i class="fa fa-fw fa-google-plus-square"></i> Google+</a>{% endif %}
--->
+  {% if author.twitter %}<a href="https://twitter.com/{{ author.twitter }}" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>{% endif %}
+  {% if author.facebook %}<a href="https://www.facebook.com/{{ author.facebook }}" class="author-social" target="_blank"><i class="fa fa-fw fa-facebook-square"></i> Facebook</a>{% endif %}
+  {% if author.xing %}<a href="http://www.xing.com/profile/{{ author.xing }}" class="author-social" target="_blank"><i class="fa fa-fw fa-xing-square"></i> XING</a>{% endif %}
+  {% if author.google.plus %}<a href="https://plus.google.com/+{{ author.google.plus }}" class="author-social" target="_blank"><i class="fa fa-fw fa-google-plus-square"></i> Google+</a>{% endif %}
   {% if author.instagram %}<a href="https://instagram.com/{{ author.instagram }}" class="author-social" target="_blank"><i class="fa fa-fw fa-instagram"></i> Instagram</a>{% endif %}
   {% if author.tumblr %}<a href="https://{{ author.tumblr }}.tumblr.com" class="author-social" target="_blank"><i class="fa fa-fw fa-tumblr-square"></i> Tumblr</a>{% endif %}
   {% if author.lastfm %}<a href="https://lastfm.com/user/{{ author.lastfm }}" class="author-social" target="_blank"><i class="fa fa-fw fa-music"></i> Last.fm</a>{% endif %}
   {% if author.dribbble %}<a href="https://www.dribbble.com/{{ author.dribbble }}" class="author-social" target="_blank"><i class="fa fa-fw fa-dribbble"></i> Dribbble</a>{% endif %}
   {% if author.foursquare %}<a href="https://www.foursquare.com/{{ author.foursquare }}" class="author-social" target="_blank"><i class="fa fa-fw fa-foursquare"></i> Foursquare</a>{% endif %}
   {% if author.steam %}<a href="https://steamcommunity.com/id/{{ author.steam }}" class="author-social" target="_blank"><i class="fa fa-fw fa-steam-square"></i> Steam</a>{% endif %}
-  {% if author.youtube %}<a href="https://www.youtube.com/user/{{ author.youtube }}" class="author-social" target="_blank"><i class="fa fa-fw fa-youtube-square"></i> Youtube</a>{% endif %}
   {% if author.soundcloud %}<a href="https://www.soundcloud.com/{{ author.soundcloud }}" class="author-social" target="_blank"><i class="fa fa-fw fa-soundcloud"></i> Soundcloud</a>{% endif %}
   {% if author.weibo %}<a href="https://www.weibo.com/{{ author.weibo }}" class="author-social" target="_blank"><i class="fa fa-fw fa-weibo"></i> Weibo</a>{% endif %}
   {% if author.flickr %}<a href="https://www.flickr.com/{{ author.flickr }}" class="author-social" target="_blank"><i class="fa fa-fw fa-flickr"></i> Flickr</a>{% endif %}
@@ -43,7 +42,7 @@
   {% if author.stackoverflow %}<a href="http://stackoverflow.com/users/{{ author.stackoverflow }}" class="author-social" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i> Stackoverflow</a>{% endif %}
   {% if author.pinterest %}<a href="https://www.pinterest.com/{{ author.pinterest }}" class="author-social" target="_blank"><i class="fa fa-fw fa-pinterest"></i> Pinterest</a>{% endif %}
   {% if author.codepen %}<a href="https://codepen.io/{{ author.codepen }}" class="author-social" target="_blank"><i class="fa fa-fw fa-codepen"></i> CodePen</a>{% endif %}
-<!--  
+
   {% if author.patreon %}<a href="https://www.patreon.com/{{ author.patreon }}" class="author-social" target="_blank"><i class="fa fa-fw fa-codepen"></i> Patreon</a>{% endif %}
   {% if author.citrix %}<a href="#" onclick="concierge.open();" class="author-social" target="_blank"><i class="fa fa-fw fa-codepen"></i> Chat (video)</a>{% endif %} 
 -->

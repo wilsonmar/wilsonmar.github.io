@@ -20,9 +20,9 @@ I've written hands-on articles about setting up enterprise secrets vaults using 
 
 But I think AKeyless is the best solution for most enterprises.
 
-PROTIP: Unlike HashiCorp Vault cloud, administrators don't have to ensure that the server size they are required to chose continues to be adequate for the load. AKeyless is a SaaS solution that scales automatically.
+PROTIP: Unlike HashiCorp Vault cloud, administrators don't have to specify a server size, which needs to be monitored and adjusted over time. AKeyless is a SaaS solution that scales automatically. Vaults in Azure, AWS, GCP are setup for a <strong>specific region</strong>. This means charges for egress accrue or administrators need to setup vaults in several regions, with cross-region replication to ensure that data is available in case of a disaster.
 
-With Azure, AWS, GCP, and other clouds, additional <strong>costs for data egress out</strong> are charged when central vaults (such as Azure Key Vault) residing in a specific region are accessed world-wide. Akeyless provides a <strong>multi-cloud</strong> solution free of cross-region data egress charges.
+Akeyless provides a <strong>multi-cloud</strong> solution free of cross-region data egress charges.
 
 PROTIP: The differentiation with Akeyless is that it solves the "Secret Zero Problem" by using an <strong>inherited identity</strong> derived from a <a href="#AkeylessParent">parent SaaS system</a>, together with an <strong>ephemeral token</strong> for <strong>"continuous" authentication</strong>. 
 
@@ -31,10 +31,10 @@ First, we setup components <a href="#AkeylessParent">A</a>, <a href="#AkeylessCL
 
 <a name="AkeylessFlow"></a>
 
-<a target="_blank" href="https://docs.akeyless.io/docs/universal-identity">UID (Akeyless Universal Identity) tokens</a>:
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1704216168/akeyless-flow-240102-1060x925_utwwj9.png"><img alt="akeyless-flow-240102-1060x925.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1704216168/akeyless-flow-240102-1060x925_utwwj9.png"></a>
 <em>from</em> <a target="_blank" href="https://7451111251303.gumroad.com/l/cixdx"><em>PowerPoint file</em></a>
 
+<a target="_blank" href="https://docs.akeyless.io/docs/universal-identity">UID (Akeyless Universal Identity) tokens</a>:
 
 <a name="AkeylessParent"></a>
 
@@ -144,7 +144,7 @@ From: https://github.com/akeylesslabs/homebrew-tap/blob/HEAD/Formula/akeyless.rb
    ### Akeyless Bastions
 
    The best credentials are no credentials at all.
-   
+
    So credentials (dynamic secrets, rotated secrets, and SSH certificates) are provided to customer apps Just In Time through a "bastion" server, a gateway to access encrypted resources from the Akeyless Secrets Store and decrypts it. There are several types of bastions.
    
    * <a target="_blank" href="https://docs.akeyless.io/docs/secure-remote-access-bastion">Akeyless Secure Remote Access (SRA) Bastion</a> uses SSH with certificates.
@@ -166,6 +166,10 @@ From: https://github.com/akeylesslabs/homebrew-tap/blob/HEAD/Formula/akeyless.rb
    This <a target="_blank" href="https://github.com/orgs/community/discussions/71689">PR</a> has no functional impact because the error is in GitHub.
 
    Uses <a target="_blank" href="https://docs.akeyless.io/docs/kubernetes-auth">kubernetes-auth</a>.
+
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1704129208/akeyless-acct-menu-238x229_bt7wu8.png"><img alt="akeyless-langs-922x1086.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1704129208/akeyless-acct-menu-238x229_bt7wu8.png"></a>
+   
 
    ### CLI Install
 
@@ -419,6 +423,11 @@ A new AES256GCM key named /folder/sub-aes-key was successfully created
    ### (9) Run auth with updated u-token
 
 9. The client runs app commands using the updated JWT UID token.
+
+   ## Programming languages
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1704143705/akeyless-langs-922x1086_izz7xy.png"><img alt="akeyless-langs-922x1086.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1704143705/akeyless-langs-922x1086_izz7xy.png"></a>
+
 
 <br /><br />
 
