@@ -1605,10 +1605,10 @@ Subscription types:
 
 <a name="Populate"></a>
 
-## Phase 05. Populate
+## Phase 05. Populate Groups Roles Users
 
    * https://www.alitajran.com/create-azure-ad-users/ to add user info using PowerShell to Microsoft Graph.
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/entra/identity/users/users-bulk-add">LEARN</a> Create Azure users and groups in Microsoft Entra ID
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/entra/identity/users/users-bulk-add">LEARN</a> Create Azure users and groups in Microsoft Entra ID <a target="_blank" href="https://learning.oreilly.com/videos/exam-az-104-microsoft/9780137590001/9780137590001-exaz_01_01_02_00/" title="OReilly">VIDEO</a>
    * <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/create-users-and-groups-in-azure-active-directory/?source=recommendations">Training</a> for Bulk Create Users in Entra from CSV file.
    * https://o365info.com/bulk-create-azure-ad-users/ proposes a PowerShell script to create users from a CSV file.
    * https://www.youtube.com/watch?v=9wdjGqe_MdI

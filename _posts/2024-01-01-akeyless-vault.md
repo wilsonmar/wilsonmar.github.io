@@ -1,8 +1,8 @@
 ---
 layout: post
 date: "2024-01-01"
-file: "keyless-vault"
-title: "Keyless Vault"
+file: "akeyless-vault"
+title: "AKeyless Vault"
 excerpt: "Here's my automation and hands-on steps to set up a production-worthy enterprise-scale HA multi-cloud SaaS AKeyless vault, then retrieve secrets using various programming languages."
 tags: [cloud, security]
 image:
