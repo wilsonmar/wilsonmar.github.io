@@ -147,10 +147,10 @@ And one other thing: executives at enterprises are paid a lot of money so many o
 
    The trend is for enterprises to migrate from on-premise data centers to the cloud -- many on multiple clouds. That means that enterprises need to be able to prove their software can run on different clouds. Hyperscalers (such as AWS, Azure, GCP, etc.) provide innovation in AI/ML, low-code coding, datalakes, IoT, etc. 
 
-   This diagram (from Neal Ford) illustrates the complexity of common tradeoffs in enterprise component design.
+   This diagram (adapted from Neal Ford) illustrates the complexity of common tradeoffs in enterprise component design.
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1704427036/enterprise-comp-240104-3360x2100_crr4cf.png"><img alt="enterprise-comp-240104-3360x2100.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1704427036/enterprise-comp-240104-3360x2100_crr4cf.png"></a>
 
-   New "Delta lakes" (such as <a target="_blank" href="https://wilsonmar.github.io/databricks/">Databricks</a> and Microsoft Fabrid) enable OLTP and OLAP to be efficiently operate on a single delta lake. This enables the use of <strong>streaming</strong> to send data to a central data lake for analysis. This is especially useful for IoT (Internet of Things) devices which send data continuously.
+   New "Delta lakes" (such as <a target="_blank" href="https://wilsonmar.github.io/databricks/">Databricks</a>, <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflate</a>, and <a target="_blank" href="https://wilsonmar.github.io/microsoft-fabric/">Microsoft Fabrid) enable OLTP and OLAP to be efficiently operate on a single delta lake. This enables the use of <strong>streaming</strong> to send data to a central data lake for analysis. This is especially useful for IoT (Internet of Things) devices which send data continuously.
 
    On the left, <strong>extracts</strong> from a central database sent to remote locations can achieve faster local access. 
    There is less chance of data loss when data is filtered to what each remote location needs.
