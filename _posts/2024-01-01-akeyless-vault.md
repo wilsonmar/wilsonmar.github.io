@@ -3,7 +3,7 @@ layout: post
 date: "2024-01-01"
 file: "akeyless-vault"
 title: "AKeyless Vault"
-excerpt: "Here's my automation and hands-on steps to set up a production-worthy enterprise-scale HA multi-cloud SaaS AKeyless vault, then retrieve secrets using various programming languages."
+excerpt: "Automation and hands-on steps to set up an enterprise-scale HA multi-cloud SaaS AKeyless vault, then retrieve secrets using various programming languages."
 tags: [cloud, security]
 image:
 # pic secret finger over mouth 1900x500

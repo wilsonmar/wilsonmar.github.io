@@ -577,6 +577,7 @@ In cluster:
 
 https://www.youtube.com/watch?v=BII6ZY2Rnlc
 
+
 <a name="examples"></a>
 
 ##### Blueprint examples
@@ -979,7 +980,7 @@ You may want to try implementing other use cases in the <a target="_blank" href=
    
    https://catalog.workshops.aws/eks-blueprints-terraform/en-US
 
-   https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples</a> includes:
+   https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples
 
    https://developer.hashicorp.com/consul/docs/k8s/installation/install
 
@@ -2028,7 +2029,7 @@ Post deployment, <a target="_blank" href="https://www.pulumi.com/blog/benefits-o
 
 <a target="_blank" href="https://www.indeni.com/">Cloudrail from Indeni</a> is a freemium scanner utility which audits Terraform IaC code for security concerns. It calls itself "context-aware" because (although Terratest requires that you deploy the infra and run tests against the live infra), Cloudrail takes a hybrid (SAST+DAST) approach - parsing static TF files into a database (of resources in a python object) and "continuously" comparing that against the live infrastructure in a separate python object fetched dynamically using their <a target="_blank" href="https://github.com/indeni/dragoneye">Dragoneye data collector</a> (for AWS and Azure).
 
-When run on local envrionments, security scanning achieves "shift left". 
+When run on local environments, security scanning achieves "shift left". 
 
 
 <a name="InstallCheckov"></a>

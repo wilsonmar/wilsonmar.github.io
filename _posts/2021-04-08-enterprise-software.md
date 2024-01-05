@@ -1,8 +1,8 @@
 ---
 layout: post
-date: "2023-07-18"
+date: "2024-01-04"
 file: "enterprise-software"
-title: "Your offering enterprise-worthy?"
+title: "Is your offering enterprise-worthy?"
 excerpt: "How to provide enterprises multi-dimensional offerings with no limits of scale, geography, and complexity"
 tags: [security, cloud, analytics]
 image:
@@ -43,15 +43,13 @@ Here are the <strong>concerns</strong> enterprises have that need to be addresse
 
 ## 1. Automation for large numbers of people and data
 
-> Financial indexes are not the only definition of enterprise.
-
-There are stock indexes in each country.  The "Fortune 500" lists the top 500 publicly-traded stocks in the US. The Standard and Poor's "S&P 500 index" lists stocks in the US by price times shares traded. There is also a Russell index of the top 3000 stocks. There are also many large privately-held corporations. 
+Many rank enterprises based on financial measures. The "Fortune 500" lists the top 500 publicly traded stocks in the US. The Standard and Poor's "S&P 500 index" lists stocks in the US by price times shares traded. There is also a Russell index of the top 3000 US stocks. There are also many large privately-held corporations. 
 
 At the top of the <a target="_blank" href="https://www.wikiwand.com/en/List_of_largest_employers">list of the <strong>largest employers</strong> in the world</a> is the U.S. Department of Defense at 3.2 million people, followed by China's military, then Walmart at 2.2 million (1.3 million in the United States), about the same as Amazon.
 
-   Sheer <strong>scale</strong> means enterprise workers get value from <strong>batch</strong> (bulk) export, import, and processing. Large amounts of data make <strong>manual fixes not practical</strong>.
+Sheer <strong>scale</strong> means enterprise workers get value from <strong>batch</strong> (bulk) export, import, and processing. Large amounts of data make <strong>manual fixes not practical</strong>.
    
-   Enterprise-level software needs to appropriately <strong>isolate data</strong> and customize workflows used by each individual worker AND be sophisticated enough to <strong>logically summarize</strong> trends for executives. Many managers are overwhelmed by dashboards requiring expert manual navigation.
+Enterprise-level software needs to appropriately <strong>isolate data</strong> and customize workflows used by each individual worker AND be sophisticated enough to <strong>logically summarize</strong> trends for executives. Many managers are overwhelmed by dashboards requiring expert manual navigation.
 
 >   Due to the large number of options, every field on enterprise data entry forms likely need a search box. It's not enough for vendors to simply provide a "Next" button for users to hunt for a value within a long list. 
 
@@ -155,22 +153,27 @@ And one other thing: executives at enterprises are paid a lot of money so many o
 
    When working with cloud vendors, many enterprises prefer to generate their own <strong>customer-owned keys</strong> for the encryption of data at rest instead of having cloud vendors provide the keys.
 
-   Many enterprises specify encryption of all data on hard drives. On Windows, BitLocker is used. Linux, MCrypt, PGP, TruCrypt, and others are options.
+   Many enterprises need to use <strong>strong encryption</strong> on data. In transit, <strong>mTLS</strong> (mutual TLS) protocols use certificates to encrypt each side of transmissions. On Windows, BitLocker is used on whole hard drives. Linux, MCrypt, PGP, TruCrypt, and others are options. If a hard drive is removed from a machine, the data on it would require many years of brute-force attacks to crack. Faster computers (and <a target="_blank" href="https://wilsonmar.github.io/quantum/">Quantum computing</a>) will soon work so fast that very strong algorithms are needed.
+   That is also why frequent re-authentication is required. That's also why instead of having static passwords waiting to be hacked, enterprises are moving to <strong>dynamic passwords</strong> and user accounts which are generated for each session and then destroyed after a short time. The best password storage is no password at all.
 
-   Enterprises usually provide their users VPN (Virtual Private Network) to create an encryption-protected tunnel through the public internet. Enterprise editions of the Windows 10 operating system enable "DirectConnect" which ensures the use of a VPN all the time. It also blocks apps from being installed.
+   Enterprises usually provide their users VPN (Virtual Private Network) to create an encryption-protected tunnel through the public internet to defeat man-in-the-middle attacks. Enterprise editions of the Windows 10 operating system enable "DirectConnect" which ensures the use of a VPN all the time. It also blocks apps from being installed.
 
-   Some enterprises want Long-Term Servicing Channel (LTSC) where new features are not updated, just security updates. This is partly to maintain <strong>consistency</strong> of training and support materials used.
+   Enterprises want vendors to provide Long-Term Servicing Channel (LTSC) versions which contain just security updates but no new features -- to maintain <strong>consistency</strong> of training and support materials used.
 
-   The most sophisticated edition of Windows 10 -- Enterprise E5 -- adds Windows Defender ATP (Advanced Threat Protection) which runs virus scans and details the machine's security posture in sophisticated visualizations.
+   The most sophisticated edition of Windows 10 -- Enterprise E5 -- adds Windows Defender ATP (Advanced Threat Protection) which runs virus scans and details the machine's security posture in sophisticated visualizations. It also provides a "sandbox" to run suspicious programs in isolation.
 
-   Enterprise "DevSecOps" tooling includes scanner programs to ensure security:
-
-   * Identify secrets hard-coded (using GitLeaks, etc.)
-   * Identify OWASP vulnerabilities in custom code (using Veracode, Fortify, etc.)
-   * Identify vulnerabilities iteratively within packages referenced (using XRay, Sonatype, etc.)
+   Enterprise "DevSecOps" tooling includes scanner programs to identify:
+   * secrets exposed in open-source coded (using GitLeaks, etc.)
+   * security vulnerabilities in <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform</a> Infrastructure as Code (using Policy as Code TFSec, Checkov, etc.)
+   * <a target="_blank" href="https://wilsonmar.github.io/owasp-testing/">OWASP vulnerabilities</a> in custom code (using Veracode, Fortify, etc.)
+   * open-source packages referenced but are known to have vulnerabilities in the <a target="_blank" href="https://www.cvedetails.com/">US NIST CVE database</a> (using XRay, Sonatype, etc.) 
+   * malicious code within packages (identified by <a target="_blank" href="https://www.socket.dev/">socket.dev</a>)
    <br /><br />
 
-   Data to track the Security Posture of the whole Enterprise means obtaining "metadata" (data about data), stored in systems such as Service Now. This is so security managers can associate user activities to specific charge codes and approval events. This means that software vendors need to accommodate an additional overlay of manual procedures (from other vendors) into every workflow. For example, in GitHub, when someone creates a new repository since GitHub doesn't track charge codes, Enterprise Security may want the user to exit out temporarily to another system to specify that charge code or request permission associated with the request.
+   Higher security means more <strong>granularity</strong> in controlling what permissions specific users can access specific data based on each person's role and group/department membership. New technologies enable <strong>Dynamic Attribute-Based Access Control</strong> (DABAC) which enables the use of <strong>contextual attributes</strong> (such as time of day, location, etc.) to determine whether a user can access data.
+
+   Need for security has led enterprises to <strong>segment</strong> access in different ways.
+   
 
 <a name="SOC"></a>
 
@@ -178,13 +181,19 @@ And one other thing: executives at enterprises are paid a lot of money so many o
 
    Enterprise support typically has SLA (Service Level Agreements) which are quicker (more expensive) than others. Both Azure and AWS refund 100% of their billing on periods that do not achieve at least 95% availability (<a target="_blank" href="https://uptime.is/">18 days a year</a>). Achieving 99.99% (down an hour per year) requires self-diagnosing and self-healing.
 
-   Most enterprises operate a SOC (Security Operations Center) which operates 24/7/365 to quickly respond to trouble detected among logs gathered from the many software programs the organization runs. IDS (Intrusion Detection Systems) repeatedly analyzes files to detect indicators of compromise.
+   Most large enterprises operate a SOC (Security Operations Center) which operates 24/7/365 to quickly respond to trouble detected among logs gathered from the many software programs the organization runs. IDS (Intrusion Detection Systems) repeatedly analyzes files to detect indicators of compromise.
+
+   The large number of people and data in enterprises means that <strong>automated</strong> tools are needed to identify and respond to threats.
 
    Such utilities need developers to configure each application built to send logs and metrics from all machines into a SIEM (Security Information and Event Management) system such as Splunk, Azure Azure Sentinel, etc. Such systems commonly maintain several times more data than the systems themselves. Machine Learning techniques and advanced statistical analysis are becoming common with such systems. All that enables the SOC team to correlate events across the enterprise to detect intrusion and exploits.
 
    Logs, especially, are also used by external auditors to determine actual compliance with policies. Those with access to SIEM data can elicit actual, detailed, real-time insights on inflows and outflows between different parts of the organization and systems -- a magical tool to identify bottlenecks and predict trends. We look forward to 3D dynamic projections in Mixed reality glasses from Microsoft, Apple, Facebook, etc. 
 
    The complexity of SIEM systems requires utilities (such as Cardinal) to audit whether detection mechanisms are actually responding to various threats.
+
+   Data to track the Security Posture of the whole Enterprise means obtaining "metadata" (data about data). Enterprise apps need to provide central Service Now systems with a detailed history of auditable user activities linked to specific charge codes and approval events. This is especially important for financial and healthcare organizations. This means that software vendors need to provide an additional overlay of manual procedures into every workflow. For example, in GitHub, when someone creates a new repository (since GitHub doesn't track charge codes), enterprise Security may want the user to exit out temporarily to another system to specify that charge code or request permission associated with the request.
+   Detailed metadata and audit logs enable enterprises to perform <strong>forensics</strongs> (after the fact) to identify who did what and when -- needed for legal proceedings. 
+
 
 <a name="Recovery"></a>
 
@@ -198,11 +207,11 @@ And one other thing: executives at enterprises are paid a lot of money so many o
 
    <a target="_blank" title="dr-plan-davidson-consulting-1029x618.png" href="https://user-images.githubusercontent.com/300046/138092441-4c61139d-e8bd-4772-9a9b-537a489565ac.png"><img alt="dr-plan-davidson-consulting-638x385.png" width="638" height="385" src="https://user-images.githubusercontent.com/300046/113962529-1aed5b00-97e5-11eb-85c2-3e0b905ec855.png"></a>
 
-   The success of a BCP (Business Continuity Plan) for Continuation of Operations (COOP) is realizing for each incident the MTPoD (Minimum Tolerable Period of Disruption), aka MTD (Maximum Tolerable Downtime), to reach the minimal level of business process resumption. MTD (MaximumTolderable Downtime) is the maximum number of hours an organization has to recover from a disaster, until it has passed the point of no return.
+   The success of a BCP (Business Continuity Plan) for Continuation of Operations (COOP) is realizing for each incident the MTPoD (Minimum Tolerable Period of Disruption), aka MTD (Maximum Tolerable Downtime), to reach the minimal level of business process resumption. MTD (MaximumTolderable Downtime) is the maximum number of hours an organization has to recover from a disaster until it has passed the point of no return.
 
    RTO (Recovery Time Objective) is the maximum number of hours an organization has to recover from a disaster, without suffering too much damage.
 
-   RPO (Recovery Point Objective) refers to how far back to recover. This should be defined based on what processes can achieve. An organization that takes backups weekly stands to lose up to a week of data. Thus, enterprises typically setup their databases to perform "log shipping" where individual changes to each database are forwarded keep a mirror database on standy in another region.
+   RPO (Recovery Point Objective) refers to how far back to recover. This should be defined based on what processes can achieve. An organization that takes backups weekly stands to lose up to a week of data. Thus, enterprises typically set up their databases to perform "log shipping" where individual changes to each database are forwarded to keep a mirror database on standby in another region.
    
    All these are ideally defined before a disaster (receiving a ransomware notice).
 
