@@ -192,7 +192,7 @@ And one other thing: executives at enterprises are paid a lot of money so many o
    The complexity of SIEM systems requires utilities (such as Cardinal) to audit whether detection mechanisms are actually responding to various threats.
 
    Data to track the Security Posture of the whole Enterprise means obtaining "metadata" (data about data). Enterprise apps need to provide central Service Now systems with a detailed history of auditable user activities linked to specific charge codes and approval events. This is especially important for financial and healthcare organizations. This means that software vendors need to provide an additional overlay of manual procedures into every workflow. For example, in GitHub, when someone creates a new repository (since GitHub doesn't track charge codes), enterprise Security may want the user to exit out temporarily to another system to specify that charge code or request permission associated with the request.
-   Detailed metadata and audit logs enable enterprises to perform <strong>forensics</strongs> (after the fact) to identify who did what and when -- needed for legal proceedings. 
+   Detailed metadata and audit logs enable enterprises to perform <strong>forensics</strong> (after the fact) to identify who did what and when -- needed for legal proceedings. 
 
 
 <a name="Recovery"></a>
