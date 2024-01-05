@@ -147,16 +147,14 @@ And one other thing: executives at enterprises are paid a lot of money so many o
 
    The trend is for enterprises to migrate from on-premise data centers to the cloud -- many on multiple clouds. That means that enterprises need to be able to prove their software can run on different clouds. Hyperscalers (such as AWS, Azure, GCP, etc.) provide innovation in AI/ML, low-code coding, datalakes, IoT, etc. 
 
-   This diagram (adapted from Neal Ford) illustrates the complexity of common tradeoffs in enterprise component design.
+   This diagram (adapted from a sample recycling app by Neal Ford) illustrates the complexity of tradeoffs in enterprise component design.
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1704427036/enterprise-comp-240104-3360x2100_crr4cf.png"><img alt="enterprise-comp-240104-3360x2100.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1704427036/enterprise-comp-240104-3360x2100_crr4cf.png"></a>
 
-   New "Delta lakes" (such as <a target="_blank" href="https://wilsonmar.github.io/databricks/">Databricks</a>, <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflate</a>, and <a target="_blank" href="https://wilsonmar.github.io/microsoft-fabric/">Microsoft Fabrid) enable OLTP and OLAP to be efficiently operate on a single delta lake. This enables the use of <strong>streaming</strong> to send data to a central data lake for analysis. This is especially useful for IoT (Internet of Things) devices which send data continuously.
+   On the lower right, the instant and wide availability of storage housing modern Parquet-format files within <strong>delta lakes</strong> (such as <a target="_blank" href="https://wilsonmar.github.io/databricks/">Databricks</a>, <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflate</a>, <a target="_blank" href="https://wilsonmar.github.io/microsoft-fabric/">Microsoft Fabric</a>, etc.) enables enterprises to combine streaming and graph data structures for fast analysis. Instead of ETL processing which creates analytic data into another datastore, ELT processing occurs within a <a target="_blank" href="https://piethein.medium.com/medallion-architecture-best-practices-for-managing-bronze-silver-and-gold-486de7c90055">"Medallion" arrangement</a> within a single datastore.
+   
+   The modern name for synchronization with a central database is <a target="_blank" href="https://www.wikiwand.com/en/Change_data_capture"><strong>Change Data Capture</strong> (CDC)</a> or <a target="_blank" href="https://www.wikiwand.com/en/Slowly_changing_dimension">Slowly Changing Dimension (SCD)</a>, both of which exchange only changes rather than the whole data set.
 
-   On the left, <strong>extracts</strong> from a central database sent to remote locations can achieve faster local access. 
-   There is less chance of data loss when data is filtered to what each remote location needs.
-   However, that also reduces support for those who roam among locations.
-   Allowing customers to process based on local extracts would allow for continued operations.
-   But that would require synchronization with the central database, such as <strong>change data capture</strong> (CDC) to send only changes to data rather than the whole data set.
+   These transitions up-end the traditional approach of extracting filtered datasets from a central database for movement to remote locations. Enterprises now see moving copies of data remotely as being more expensive, less secure, and less flexible than local copies of data (which may be a bit faster for users). The ability to refactor data and processing is quicker with a centralized data store. It better supports those who roam among locations.  This means more centralized control of data governance, with stricter access controls.
 
 
 <a name="Security"></a>
