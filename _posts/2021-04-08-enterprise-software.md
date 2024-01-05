@@ -145,6 +145,20 @@ And one other thing: executives at enterprises are paid a lot of money so many o
 
    Vendor flexibility is especially important if competitors have similar features. Being able to run competing products in parallel in near-production mode is often the only effective way to truly evaluate the actual value between similar products. BTW, this is why it is often counter-productive for vendors to artificially limit evaluation periods to a mere two weeks. Many such vendors are eliminated prematurely because evaluation periods are usually much longer due to organizational complexities.
 
+   The trend is for enterprises to migrate from on-premise data centers to the cloud -- many on multiple clouds. That means that enterprises need to be able to prove their software can run on different clouds. Hyperscalers (such as AWS, Azure, GCP, etc.) provide innovation in AI/ML, low-code coding, datalakes, IoT, etc. 
+
+   This diagram (from Neal Ford) illustrates the complexity of common tradeoffs in enterprise component design.
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1704427036/enterprise-comp-240104-3360x2100_crr4cf.png"><img alt="enterprise-comp-240104-3360x2100.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1704427036/enterprise-comp-240104-3360x2100_crr4cf.png"></a>
+
+   New "Delta lakes" (such as <a target="_blank" href="https://wilsonmar.github.io/databricks/">Databricks</a> and Microsoft Fabrid) enable OLTP and OLAP to be efficiently operate on a single delta lake. This enables the use of <strong>streaming</strong> to send data to a central data lake for analysis. This is especially useful for IoT (Internet of Things) devices which send data continuously.
+
+   On the left, <strong>extracts</strong> from a central database sent to remote locations can achieve faster local access. 
+   There is less chance of data loss when data is filtered to what each remote location needs.
+   However, that also reduces support for those who roam among locations.
+   Allowing customers to process based on local extracts would allow for continued operations.
+   But that would require synchronization with the central database, such as <strong>change data capture</strong> (CDC) to send only changes to data rather than the whole data set.
+
+
 <a name="Security"></a>
 
 ## 7. High Security
