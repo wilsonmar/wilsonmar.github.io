@@ -44,13 +44,13 @@ Data is a valuable asset to organizations. Data is the new oil.
 
 Over time, data has been organized in different ways to better suit different ways to access data for reports and dashboards:
 
-Traditionally, limitations in CPU and memory size required different database structures at different purposes:
-For OLTP (Online Transaction Processing) data is stored for fast ingestion in rows with columns.
+Traditionally, limitations in CPU and memory size required different database structures for different purposes.
+For OLTP (Online Transaction Processing), data is stored for fast ingestion in rows with columns.
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702039629/database-types-828x394_m9rsua.jpg">
 <img alt="database-types-828x394.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702039629/database-types-828x394_m9rsua.jpg"></a>
 
-The types of databases are: Key-value &LT; Column &LT; Document &LT; Relational (SQL) &LT; Graph &LT; Deltalake
+The types of databases are: Key-value -> Column -> Document -> Relational (SQL) -> Graph &LT; Deltalake
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th>Types:</th><th>Key-value</th><th>Column</th><th>Document</th><th>Relational</th><th>Graph</th><th>Deltalake</th></tr>
@@ -404,9 +404,9 @@ https://docs.azure.com/en-us/sql/azure-data-studio/download-Azure-data-studio
 
 ## Azure Data Lake Storage Gen2 Storage
 
-Gen2 has the concept of having a single format to hold varioius "layers" in a new <a target="_blank" href="https://piethein.medium.com/medallion-architecture-best-practices-for-managing-bronze-silver-and-gold-486de7c90055">"Medallion architecture"</a> <a target="_blank" href="https://www.databricks.com/glossary/medallion-architecture">defined by Databricks</a>:
+Gen2 has the concept of having a single format to hold various "layers" in a new <a target="_blank" href="https://piethein.medium.com/medallion-architecture-best-practices-for-managing-bronze-silver-and-gold-486de7c90055">"Medallion architecture"</a> <a target="_blank" href="https://www.databricks.com/glossary/medallion-architecture">defined by Databricks</a>:
 
-   * The <strong>Bronze</strong> layer contains <strong>raw</strong> data layer as loaded "as is" from the source, such as <a href="#ADF">ADF</a>. Thus, this is also called a "Landing Zone". This layer provides a historical archive of source (cold storage), data lineage, auditability, reprocessing if needed without rereading the data from the source system.
+   * The <strong>Bronze</strong> layer contains <strong>raw</strong> data layer as loaded "as is" from the source, such as <a href="#ADF">ADF</a>. Thus, this is also called a "Landing Zone". This layer provides a historical archive of source (cold storage), data lineage, auditability, and reprocessing if needed without rereading the data from the source system.
 
    * The <strong>Silver</strong> layer contains <strong>filtered, cleaned, and augmented</strong> data that ends up having a clean schema after traditional ETL processing.
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-01-01"
+date: "2024-01-07"
 file: "akeyless-vault"
 title: "AKeyless Vault"
 excerpt: "Automation and hands-on steps to set up an enterprise-scale HA multi-cloud SaaS AKeyless vault, then retrieve secrets using various programming languages."
@@ -20,7 +20,7 @@ I've written hands-on articles about setting up enterprise secrets vaults using 
 
 But I think AKeyless is the best solution for most enterprises.
 
-PROTIP: Unlike HashiCorp Vault cloud, administrators don't have to specify a server size, which needs to be monitored and adjusted over time. AKeyless is a SaaS solution that scales automatically. Vaults in Azure, AWS, GCP are setup for a <strong>specific region</strong>. This means charges for egress accrue or administrators need to setup vaults in several regions, with cross-region replication to ensure that data is available in case of a disaster.
+PROTIP: Unlike HashiCorp Vault cloud, administrators don't have to specify a server size, which needs to be monitored and adjusted over time. AKeyless is a SaaS solution that scales automatically. Vaults in Azure, AWS, GCP are setup for a <strong>specific region</strong>. This means charges for data egress accrue and administrators need to setup vaults in several regions, with cross-region replication to ensure that data is available in case of a disaster.
 
 Akeyless provides a <strong>multi-cloud</strong> solution free of cross-region data egress charges.
 
@@ -31,7 +31,7 @@ First, we setup components <a href="#AkeylessParent">A</a>, <a href="#AkeylessCL
 
 <a name="AkeylessFlow"></a>
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1704216168/akeyless-flow-240102-1060x925_utwwj9.png"><img alt="akeyless-flow-240102-1060x925.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1704216168/akeyless-flow-240102-1060x925_utwwj9.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1704546495/akeyless-flow-240106-1858x1670_drq5nf.png"><img alt="akeyless-flow-240106-1858x1670.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1704546495/akeyless-flow-240106-1858x1670_drq5nf.png"></a>
 <em>from</em> <a target="_blank" href="https://7451111251303.gumroad.com/l/cixdx"><em>PowerPoint file</em></a>
 
 <a target="_blank" href="https://docs.akeyless.io/docs/universal-identity">UID (Akeyless Universal Identity) tokens</a>:
@@ -143,8 +143,12 @@ From: https://github.com/akeylesslabs/homebrew-tap/blob/HEAD/Formula/akeyless.rb
 
    ### Akeyless Bastions
 
-   The best credentials are no credentials at all.
+   Apps within Kubernetes use a Gateway to reach AKeyless SaaS. See https://docs.akeyless.io/docs/kubernetes-auth
+   and https://docs.akeyless.io/docs/ldap
 
+   In Kubernetes environments, Akeyless emphasizes that client counting is conducted per namespace and based on the secret profiles retrieved. This approach is crucial for accurate client management and billing. Akeyless advises against including Kubernetes system namespaces in client counts, considering it an anti-pattern.
+
+   The best credentials are no credentials at all.
    So credentials (dynamic secrets, rotated secrets, and SSH certificates) are provided to customer apps Just In Time through a "bastion" server, a gateway to access encrypted resources from the Akeyless Secrets Store and decrypts it. There are several types of bastions.
    
    * <a target="_blank" href="https://docs.akeyless.io/docs/secure-remote-access-bastion">Akeyless Secure Remote Access (SRA) Bastion</a> uses SSH with certificates.

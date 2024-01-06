@@ -1117,3 +1117,5 @@ Uber open-sourced their M3 Metrics platform for Prometheus in 2018
 https://www.youtube.com/watch?v=h4Sl21AKiDg&pp=ygUKcHJvbWV0aGV1cw%3D%3D
 How Prometheus Monitoring works | Prometheus Architecture explained
 by TechWorld with Nana
+
+https://github.com/akeylesslabs/helm-charts/blob/main/monitoring/akeyless-zero-trust-web-access/grafana-dashboard.yaml

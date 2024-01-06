@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-28"
+date: "2024-01-08"
 file: "microsoft-ai"
 title: "Microsoft AI (Azure OpenAI and Cognitive Services)"
 excerpt: "How to automate AI workflows in Microsoft's Azure and Fabric, despite marketing rebrands, and passing AI-900, AI-100, AI-102 certified"
@@ -27,7 +27,9 @@ My contribution to the world (to you) is a less overwhelming <a href="#LearningS
 
 ## AI Language = Bing = Cortana = Cognitive Services
 
-The 2023 branding for Microsoft's AI services to mimic human intelligence is "AI Language".
+The 2023 branding for Microsoft's AI services to mimic human intelligence is <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-language">"AI Language"</a>, which includes <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/">Cognitive Services</a> and <a target="_blank" href="https://azure.microsoft.com/en-us/services/search/">Bing</a>.
+
+NOTE: As of Jan 8, 2024, https://aka.ms/language-studio has "coming soon" for Video and Learn, and "preview" for several services. However, there is https://learn.microsoft.com/en-us/azure/ai-services/
 
 <a target="_blank" href="https://www.youtube.com/watch?v=KxwjnuhNVIY&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&index=33">"Cortana"</a> was the brand-name for Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Alexa, Siri, Hey Google, and other AI-powered personal assistants which respond to voice commands controlling skills that turn lights on and off, etc. However, since 2019, Cortana is considered a "skill" (app) that Amazon's Alexa and Google Assistant can call, working across multiple platforms.
 
@@ -1661,6 +1663,8 @@ Foe Parallel Data, equivalent documents in different languages:
 https://docs.microsoft.com/en-us/azure/cognitive-services/translator/custom-translator/how-to-upload-document
 
 ### 09 - Translation.ipynb 
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/translate-text-with-translator-service/1-introduction">LEARN: Translate text with Azure AI Translator service</a>
 
 BLAH: You are asked to use your own Subscription anyway, so instead of <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/translate-text-with-translation-service/3-exercise-translate-text-use-azure">the Exercise - Translate text and speech</a>, use portal.azure.com directly.
 

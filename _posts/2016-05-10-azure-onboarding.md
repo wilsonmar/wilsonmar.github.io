@@ -3,7 +3,7 @@ layout: post
 date: "2023-12-12"
 file: "azure-onboarding"
 title: "Azure Onboarding"
-excerpt: "Use this automation to minimize manual toil and mistakes but build-in secure practices and mechanisms to build global enterprises need. Not just for AZ-104, AZ-500"
+excerpt: "Here's automation and steps to minimize manual toil and mistakes but build-in secure practices and mechanisms to build global enterprises need. Not just for AZ-104, AZ-500"
 tags: [cloud, azure]
 image:
 # az-logo-2021-1900x500.png
@@ -1750,6 +1750,11 @@ Example: Chris Green, chris@contoso.com, myPassword1234, No
 <a name="MobileApps"></a>
 
 ## Phase 15. Devices - MS Authenticator app
+
+* User-owned BYOD (Bring Your Own Device) or Org-owned Windows or mobile devices are "Registered" to Azure AD (not joined) to access cloud resources (not on-prem).
+* Organisations with on-premises AD <strong>join</strong> org-owned Windows 10 (not Home) devices using Azure AD Connect. If worker is remote, set Group Policy or other AD requirements.
+* "Hybrid Join" Windows 10 and down-level (8.1, 7)
+<br /><br />
 
 7. Install the <strong>Microsoft Authenticator app</strong> on you smartphone and setup Two-factor authentication to approve access using your phone.
 
