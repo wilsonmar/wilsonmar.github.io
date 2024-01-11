@@ -34,10 +34,11 @@ These replace certifications about Microsoft on-prem. technologies SQL-Server an
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/70-768">70-768: Developing SQL Data Models</a>
    <br /><br />
 
-
 {% include whatever.html %}
 
-Data is a valuable asset to organizations. Data is the new oil.
+Data is a valuable asset to organizations. 
+
+> "Data is the oil of the 21st century, and analytics is the combustion engine." -- Peter Sondergaard, Gartner Research Sr VP.
 
 
 ## Database models

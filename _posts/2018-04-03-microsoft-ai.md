@@ -29,8 +29,6 @@ My contribution to the world (to you) is a less overwhelming <a href="#LearningS
 
 The 2023 branding for Microsoft's AI services to mimic human intelligence is <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-language">"AI Language"</a>, which includes <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/">Cognitive Services</a> and <a target="_blank" href="https://azure.microsoft.com/en-us/services/search/">Bing</a>.
 
-NOTE: As of Jan 8, 2024, https://aka.ms/language-studio has "coming soon" for Video and Learn, and "preview" for several services. However, there is https://learn.microsoft.com/en-us/azure/ai-services/
-
 <a target="_blank" href="https://www.youtube.com/watch?v=KxwjnuhNVIY&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&index=33">"Cortana"</a> was the brand-name for Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Alexa, Siri, Hey Google, and other AI-powered personal assistants which respond to voice commands controlling skills that turn lights on and off, etc. However, since 2019, Cortana is considered a "skill" (app) that Amazon's Alexa and Google Assistant can call, working across multiple platforms.
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations">Microsoft has</a> three service "Providers":
@@ -50,32 +48,45 @@ NOTE: As of Jan 8, 2024, https://aka.ms/language-studio has "coming soon" for Vi
 
 * https://www.computerworld.com/article/3252218/cortana-explained-why-microsofts-virtual-assistant-is-wired-for-business.html 
 
+PROTIP: As of Jan 8, 2024, https://aka.ms/language-studio has "coming soon" for Video and Learn, and "preview" for several services. Essentially Microsoft has two separate offerings by different groups:
+   * https://learn.microsoft.com/en-us/azure/ai-services/
+   <br /><br />
+
 
 <a name="OpenAI"></a>
 
 ## Azure OpenAI
 
    References:
+   * https://learn.microsoft.com/en-us/azure/ai-services/openai/
    * https://azure.microsoft.com/en-us/services/openai/
    * https://learn.microsoft.com/en-us/training/paths/get-started-with-artificial-intelligence-on-azure/
    * https://wilsonmar.github.io/genai for definition of terms and tutorials about Generative AI, which produce new content based on what is described in the input. The OpenAI models are a collection of generative AI models that can produce language, code, and images.
    * https://azure.microsoft.com/pricing/details/cognitive-services/openai-service
    <br /><br />
 
-In 2019 Microsoft invested $1 billion in the company as time on Azure cloud and to develop a large-scale AI supercomputer built exclusively for OpenAI's research in Azure. Azure (with RBAC capabilities) power all of OpenAI's workloads. OpenAI is a San Francisco-based artificial intelligence research laboratory. OpenAI was founded by Elon Musk, Sam Altman, Greg Brockman, and Ilya Sutskever in December 2015 (to compete with Google's DeepMind acquisition). 
-For that, in 2023, OpenAI exclusively licensed (closed-source) GPT-3 to Microsoft for their products and services.
-OpenAI's mission is to artificial general intelligence (AGI). 
+OpenAI is a San Francisco-based artificial intelligence research laboratory. OpenAI was founded by Elon Musk, Sam Altman, Greg Brockman, and Ilya Sutskever in December 2015 (to compete with Google's DeepMind acquisition). 
+
+In 2019 Microsoft invested $1 billion in the company as time on Azure cloud and to develop a large-scale AI supercomputer built exclusively for OpenAI's research in Azure. Azure powers all of OpenAI's workloads. 
+
+In 2023, OpenAI exclusively licensed (closed-source) GPT-3 to Microsoft for their products and services.
+
 In 2022, OpenAI made available their GPT-3.5 foundation model for free trial, offering several categories of capabilities
 
    * ChatGPT: Generating natural language: summarizing complex text for different reading levels, suggesting alternative wording for sentences, etc.
    * Generating code: translating code from one programming language into another, identifying and troubleshooting bugs in code, etc.
    * Generating images from text prompts, based on OpenAI's DALL-E model. 
+
+   Source: https://openai.com/blog/openai-microsoft/
    <br /><br />
+
+OpenAI's avowed mission is to create Artificial General Intelligence (AGI) (to rival human ability).
+
+### Microsoft's AI portfolio
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/explore-azure-openai/3-describe-azure-openai">NOTE</a>:
 Microsoft leverages OpenAI in ALL products and services (including Microsoft Teams):<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691674882/microsoft-ai-portfolio-1725x989_mqivy5.png"><img alt="microsoft-ai-portfolio-1725x989.png" width="1725" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691674882/microsoft-ai-portfolio-1725x989_mqivy5.png"></a><br /><em>Click picture for full-page view</em>.
-
 In the <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/explore-azure-openai/3-describe-azure-openai">Microsoft AI Portfolio diagram</a> above, Azure's AI services are categorized into three groups: 
    * Applied AI Services
    * Cognitive Services (the pillars of services: <a href="#vision-services">vision</a>, <a href="#speech-services">speech</a>, <a href="#nlp-natural-language-processing-services">language</a>, decision, plus the Azure OpenAI Service)
