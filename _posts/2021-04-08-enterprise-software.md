@@ -43,20 +43,29 @@ Here are the <strong>concerns</strong> enterprises have that need to be addresse
 
 ## 1. Automation for large numbers of people and data
 
-Many rank enterprises based on financial measures. The "Fortune 500" lists the top 500 publicly traded stocks in the US. The Standard and Poor's "S&P 500 index" lists stocks in the US by price times shares traded. There is also a Russell index of the top 3000 US stocks. There are also many large privately-held corporations. 
+Many rank enterprises based on financial measures. The "Fortune 500" lists the top 500 publicly traded stocks in the US. The Standard and Poor's "S&P 500 index" lists stocks in the US by price times shares traded. There is also a Russell index of the top 3000 US stocks. There are also many large privately-held corporations. At the top of the <a target="_blank" href="https://www.wikiwand.com/en/List_of_largest_employers">list of the <strong>largest employers</strong> in the world</a> is the U.S. Department of Defense at 3.2 million people, followed by China's military, then Walmart at 2.2 million (1.3 million in the United States), about the same as Amazon.
 
-At the top of the <a target="_blank" href="https://www.wikiwand.com/en/List_of_largest_employers">list of the <strong>largest employers</strong> in the world</a> is the U.S. Department of Defense at 3.2 million people, followed by China's military, then Walmart at 2.2 million (1.3 million in the United States), about the same as Amazon.
-
-Sheer <strong>scale</strong> means enterprise workers get value from <strong>batch</strong> (bulk) export, import, and processing. Large amounts of data make <strong>manual fixes not practical</strong>.
+> Sheer <strong>scale</strong> means enterprise workers need <strong>batch</strong> (bulk) export, import, and processing. Large amounts of data make <strong>manual fixes not practical</strong>.
    
 Enterprise-level software needs to appropriately <strong>isolate data</strong> and customize workflows used by each individual worker AND be sophisticated enough to <strong>logically summarize</strong> trends for executives. Many managers are overwhelmed by dashboards requiring expert manual navigation.
 
->   Due to the large number of options, every field on enterprise data entry forms likely need a search box. It's not enough for vendors to simply provide a "Next" button for users to hunt for a value within a long list. 
+All organizations need to simplify operations and increase agility (through innovation). 
+Issues related to large companies in these industries:
 
-   To keep support costs down, <strong>self-service</strong> apps are a big deal.
+   * Healthcare - HIPPA regulations apply to their work. These need infrastructure and operations so doctors and nurses can focus on delivering better patient outcomes - not paperwork. 
 
-   Can your enterprise app cut through the bureaucracy and <strong>waiting for approvals</strong>?
+   * Retail - Squeezing profit from razor-thin margins, these enterprises need to build a better shopping experience with unique experiences with freedom of choice in technologies and applications. Wide geographical distribution of stores and warehouses needs to be coordinated with logistics impacted by weather and other factors.
+
+   * Financial Organizations - Deal with highly regulated processes.
+
+   * Manufacturing - Industrial IoT, robots, and digital manufacturing initiatives across the enterprise creating smoother workflows and managing supply chain disruptions.
+
+   * Federal Agencies - advancing innovation quickly despite bureaucracies that build up over time. 
+
+Can your enterprise app (and salespeople) cut through the bureaucracy causing <strong>waits for approvals</strong>?
    
+> To minimize support costs, <strong>self-service</strong> apps are a big deal.
+
    Extensive testing is crucial to keep rework from being unsustainable.
 
 > <strong>Specific, actionable alerts</strong> are important for troubleshooting.
@@ -71,13 +80,17 @@ Enterprise-level software needs to appropriately <strong>isolate data</strong> a
 
 To manage large amounts of data and people, enterprises group them in various ways, as in an organization chart.
 
-   So enterprise workers need to make <strong>complex queries</strong> of data in order to filter out irrelevant parts of the large organization. For example, Microsoft Azure provides KQL (Kusto Query Language) with <a target="_blank" href="https://jmespath.org/tutorial.html">JMESPath</a> to select specific values from within a sea of data.
+Enterprises are more used to hierarchical groups which reflect the traditional organization chart of vice presidents above directors above managers, etc. Effective or not, all data needs to fit into such an arrangement. "Conway's Law" was coined for the observation that systems tend to look like the organizational structure of the people building them.
 
-   Tags are useful and flexible, but enterprises are more used to hierarchical groups which reflect the traditional organization chart of vice presidents above directors above managers, etc. Effective or not, all data needs to fit into such an arrangement. "Conway's Law" was coined for the observation that systems tend to look like the organizational structure of the people building them.
+So enterprise workers need to make <strong>complex queries</strong> of data in order to filter out irrelevant parts of the large organization. For example, Microsoft Azure provides KQL (Kusto Query Language) with <a target="_blank" href="https://jmespath.org/tutorial.html">JMESPath</a> to select specific values from within a sea of data.
 
 > Enterprise software needs to create <strong>reports showing an indented hierarchy</strong> rather than a mere two-dimensional list. Enterprise software needs to accommodate complex organizational structures.
 
-And one other thing: executives at enterprises are paid a lot of money so many of them expect to be treated like VIP rock stars.
+To support innovation, additional ways to group people and data are needed. For example, each person may be in one or more projects, teams,locations, roles, levels, and have several skills, certifications, security clearances, etc. Tags are often used, but require management, so dynamic assignment of groups based on various attributes are needed.
+
+Due to the <strong>greater complexity</strong> with enterprises, every field on enterprise data entry forms need to be searchable. It's not enough for vendors to simply provide a "Next" button for users to hunt for a value within a long list. 
+
+And one other thing: executives at enterprises are paid a lot of money so many of them expect to be treated with deference, like VIP rock stars in 3-Michelin star restaurants.
 
 
 <a name="Analytics"></a>
@@ -148,7 +161,7 @@ And one other thing: executives at enterprises are paid a lot of money so many o
    The trend is for enterprises to migrate from on-premise data centers to the cloud -- many on multiple clouds. That means that enterprises need to be able to prove their software can run on different clouds. Hyperscalers (such as AWS, Azure, GCP, etc.) provide innovation in AI/ML, low-code coding, datalakes, IoT, etc. 
 
    This diagram (adapted from a sample recycling app by Neal Ford) illustrates the complexity of tradeoffs in enterprise component design.
-   <a target="_blank" href=https://res.cloudinary.com/dcajqrroq/image/upload/v1704472776/enterprise-comp-240104-3360x2100_b9kqqc.png"><img alt="enterprise-comp-240104-3360x2100.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1704472776/enterprise-comp-240104-3360x2100_b9kqqc.png"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1704472776/enterprise-comp-240104-3360x2100_b9kqqc.png"><img alt="enterprise-comp-240104-3360x2100.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1704472776/enterprise-comp-240104-3360x2100_b9kqqc.png"></a>
 
    On the lower right, the instant and wide availability of storage housing modern Parquet-format files within <strong>delta lakes</strong> (<a target="_blank" href="https://wilsonmar.github.io/databricks/">Databricks</a>, <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflate</a>, <a target="_blank" href="https://wilsonmar.github.io/microsoft-fabric/">Microsoft Fabric</a>, etc.) combines streaming and all <a target="_blank" href="https://wilsonmar.github.io/azure-data/#database-models">models of databases (SQL, NoSQL, Graph, etc.)</a>. To cleanse and prepare data for AI/ML and analytics, instead of ETL processing which creates analytic data into another datastore, ELT processing occurs within a <a target="_blank" href="https://piethein.medium.com/medallion-architecture-best-practices-for-managing-bronze-silver-and-gold-486de7c90055">"Medallion" arrangement</a> within a single datastore.
    
