@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-01-04"
+date: "2024-01-11"
 file: "enterprise-software"
 title: "Is your offering enterprise-worthy?"
 excerpt: "How to provide enterprises multi-dimensional offerings with no limits of scale, geography, and complexity"
