@@ -18,6 +18,8 @@ comments: true
 
 GitHub <a target="_blank" href="https://github.com/blog/1184-contributing-guidelines">automatically adds</a> a link to this file when a contributor creates a new issue or pull request.
 
+This file is one of the first assets to be created during the beginning of a project.
+
 We're really glad you're reading this, because volunteer developers make this project come to fruition.
 
 ## Contents
@@ -138,7 +140,7 @@ Issue Classifications:
    * <strong>Discussion</strong> for issues that can be non-issues, and encompass best practices, or plans for the future.
    * <strong>Quick</strong> for small issues, that should be able to be fixed quickly. Normally these issues don't stay around for very long.
    * <strong>To check</strong> for issues that may not be reproducible, or have not been vetted by a team member.
-   * </strong>Workaround known</strong> for issues have had their solutions discussed, but have yet to be implemented.
+   * <strong>Workaround known</strong> for issues have had their solutions discussed, but have yet to be implemented.
    * <strong>Easy First Step</strong> for issues that are great issues to get started with. They tend to stick around for a while. We want people to feel like there's always somewhere you can start.
   <br /><br />
 
@@ -274,6 +276,7 @@ Much gratitude and respect to the authors of these documents:
 * https://github.com/Alamofire/Alamofire/blob/master/CONTRIBUTING.md
 * https://github.com/thoughtbot/factory_girl_rails/blob/master/CONTRIBUTING.md
 * https://github.com/puppetlabs/puppet/blob/master/CONTRIBUTING.md
+* https://mozillascience.github.io/leadership-training/03.1-mechanics.html
 
 <hr />
 
