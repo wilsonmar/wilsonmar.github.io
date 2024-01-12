@@ -356,7 +356,8 @@ Business Continuity
 ## ISO 27002
 
 <a target="_blank" href="https://iso27001security.com/">https://iso27001security.com</a><br />
-ISO Code of practice for information security controls defines 114 controls grouped into 14 categories. REMEMBER:
+ISO Code of practice for information security controls defines 114 controls grouped into 14 categories. 
+REMEMBER:
 
    * ISO/IEC 27002 Controls (Counter-measures) of ISMS (Information Security Management System) lists:
 
@@ -376,7 +377,7 @@ The <a target="_blank" href="https://www.iso.org/standard/54534.html">ISO/IEC 27
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Ref. </th><th> Deliverable </th></tr>
-<tr valign="top"><td> - </td><td> Project Plan
+<tr valign="top"><td> - </td><td> Project Plan (Excel sheet)
 </td></tr>
 <tr valign="top"><td> 4.1</td><td>External issues (4.1)
 </td></tr>
@@ -402,7 +403,7 @@ The <a target="_blank" href="https://www.iso.org/standard/54534.html">ISO/IEC 27
 </td></tr>
 <tr valign="top"><td> 6.1.3</td><td>Information security risk treatment process (6.1.3)
 </td></tr>
-<tr valign="top"><td> 7.2</td><td>Evicence of competence (7.2)
+<tr valign="top"><td> 7.2</td><td>Evidence of competence (7.2)
 </td></tr>
 <tr valign="top"><td> 8.2</td><td>List of threats (8.2)
 </td></tr>
@@ -422,9 +423,9 @@ The <a target="_blank" href="https://www.iso.org/standard/54534.html">ISO/IEC 27
 </td></tr>
 <tr valign="top"><td> 9.1</td><td>Information security metrics (9.1)
 </td></tr>
-<tr valign="top"><td> 9.2</td><td>Audit programme (9.2)
+<tr valign="top"><td> 9.2</td><td>Internal Audit programme (9.2)
 </td></tr>
-<tr valign="top"><td> 9.2</td><td>Audit results (9.2)
+<tr valign="top"><td> 9.2</td><td>Internal Audit results (9.2)
 </td></tr>
 <tr valign="top"><td> 9.3</td><td>Results of management reviews (9.3)
 </td></tr>
@@ -433,6 +434,89 @@ The <a target="_blank" href="https://www.iso.org/standard/54534.html">ISO/IEC 27
 <tr valign="top"><td> 10.2 g)</td><td>Results of any corrective action (10.2 g))
 </table>
 
+Policies:
+* Supplier Security Policy
+* Password Policy
+* Backup Policy
+* Access Control Policy
+* Clear Desk and Clear Screen Policy
+* Remote Work Policy
+* Information Transfer Policy
+* Acceptable Use Policy
+* Information Classification Policy
+* Information Security Policy
+* Cryptography Policy
+* Mobile Device Policy
+* Secure Development Policy
+<br /><br />
+
+Standards:
+* Change Management Standard
+* Installation of Software Standard
+* Working in Secure Areas - Physical Security Standard
+* Operating Procedures
+* Intellectual Property Rights Protection
+* Information Security Response
+* Information Handling
+* Control of Documented Information
+* Labeling of Information
+* Cryptographic Key Management
+* Secure Disposal
+
+* Patch Management Standard
+* Vulnerability Management Standard
+
+* Network Security Standard
+* Server Security Standard
+<br /><br />
+
+Processes:
+* Security Testing Process
+* Disciplinary Process
+* Information Security Incident Management Process
+* Risk Treatment Process
+* Risk Assessment Process
+<br /><br />
+
+Key information assets:
+* Employee Data: Personal information of employees, such as contact details, performance evaluations, compensation data, and training records.
+* Financial Data: Financial records and reports, including revenue, expenses, budgeting, forecasts, and financial analysis.
+
+* Research and Development Data: Information related to ongoing R&D projects, including experimental results, analysis, and progress reports.
+* Intellectual Property: Patents, trademarks, copyrights, and trade secrets related to the design, manufacturing, and improvement of their heavy machinery and equipment.
+* Technical Designs and Specifications: Detailed drawings, schematics, and specifications for the company's products, including mechanical, electrical, and software components.
+
+* Supplier Data: Information about suppliers, including contact details, agreements, pricing, and delivery schedules.
+* Production Data: Information about manufacturing processes, production schedules, quality control data, and equipment maintenance records.
+
+* Sales and Marketing Data: Market research, competitor analysis, sales forecasts, and marketing campaign data.
+Legal and Compliance Data: Documents and records related to regulatory compliance, contracts, and legal disputes.
+* Customer Data: Personal and business information about customers, including contact details, purchase history, preferences, and customer feedback.
+<br /><br />
+
+https://hightable.io/top-10-iso-27001-companies-and-iso-27001-certification-bodies/
+
+<a target="_blank" href="https://www.linkedin.com/in/stuartabarker/">Stuart A. Barker</a>
+(<a target="_blank" href="https://iso27001ninja.com/">iso27001ninja</a>)
+
+To be certified a Lead Auditor of ISO 27001,  ....
+
+To be certified a <a target="_blank" href="https://www.certifiedinfosec.com/services/certification-programs/iso-27001-information-security/certified-iso-27001-lead-implementer">Lead Implementor of ISO 27001</a>, one must be a member of CIS and pass four exams online, each $100 to pass 75% of 65 questions over 70 minutes. 
+
+<a target="_blank" href="https://www.certifiedinfosec.com/services/certification-programs/iso-27001-information-security/certified-iso-27001-lead-implementer">CIS</a>
+CICRA, 27001 Lead Implementer, CICA, ISO 27001 Lead Auditor, CBCS, CBCA, and CBCM certifications.
+
+1. <a target="_blank" href="https://www.certifiedinfosec.com/iso-27001-lead-auditor/introduction#RM101">RM101</a> as covered in "Policy Workshop: ISO 3100 Enterprise Risk Management" course.
+
+2. <a target="_blank" href="https://www.certifiedinfosec.com/iso-27001-lead-auditor/introduction#ISMS101">ISMS101</a> as covered in "Policy Workshop: ISO 27001 Information Security Mgmt" course.
+
+3. <a target="_blank" href="https://www.certifiedinfosec.com/iso-27001-lead-auditor/introduction#ISMS102">ISMS102</a> as covered in "Policy Workshop: ISO 27001 Information Security Mgmt" course.
+
+4. <a target="_blank" href="https://www.certifiedinfosec.com/iso-27001-lead-auditor/introduction#ISMS103">ISMS103</a> as covered in "ISO 27001 Lead Auditor" course.
+
+Valid for 3 years.
+
+https://www.strongdm.com/blog/iso-27001-vs-soc-2
 
 <hr />
 

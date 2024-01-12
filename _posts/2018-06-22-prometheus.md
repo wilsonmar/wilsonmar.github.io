@@ -3,7 +3,7 @@ layout: post
 date: "2024-01-11"
 file: "prometheus"
 title: "Prometheus"
-excerpt: "Collect metrics (for visualization by Grafana), analyze using PromQL coding, and identify alerts, free from CNCF, especially for Kubernetes"
+excerpt: "Collect metrics (for visualization by Grafana), analyze using PromQL coding, and identify alerts,  especially for Kubernetes also from CNCF."
 tags: [Clouds, Monitoring, Analytics, CNCF, Kubernetes]
 image:
 # ![dynatrace-per-minute-1900x500-162499.jpg
