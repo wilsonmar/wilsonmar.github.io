@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-12-22"
+date: "2024-01-11"
 file: "prometheus"
 title: "Prometheus"
 excerpt: "Collect metrics (for visualization by Grafana), analyze using PromQL coding, and identify alerts, free from CNCF, especially for Kubernetes"
@@ -340,14 +340,14 @@ By Elle Krout:
 
 ## Sample app
 
-   * it's based on the <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/ProjectForethought.html">PaC (Project Forethought) application</a>, which is a simple to-do list program written in Node.js. It is Dockerized and deployed to a virtual machine. The application is instrumented with Prometheus client libraries to track metrics across the app. 
-
-The $299 course "Monitoring Infrastructure and Containers with Prometheus" (LFS241) uses the PaC (Project Forethought) application, which is a simple to-do list program written in Node.js. It is Dockerized and deployed to a virtual machine. The application is instrumented with Prometheus client libraries to track metrics across the app.
+The $299 course “Monitoring Infrastructure and Containers with Prometheus” (LFS241) is based on the <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/ProjectForethought.html">PaC (Project Forethought) application</a>, which is a simple to-do list program written in Node.js. It is Dockerized and deployed to a virtual machine. The application is instrumented with Prometheus client libraries to track metrics across the app. 
 
 1. Course Introduction
 2. Introduction to Systems and Service Monitoring
 3. Introduction to Prometheus
+
 4. Installing and Setting Up Prometheus
+
 5. Basic Querying
 6. Dashboarding
 7. Monitoring Host Metrics
@@ -1052,8 +1052,14 @@ https://prometheus.io/docs/instrumenting/exporters/
 
 ## Video courses
 
-If you have a subscription to OReilly.com, <a target="_blank" href="https://www.linkedin.com/in/sandervanvugt/">Sander van Vugt</a> has a <a target="_blank" href="https://learning.oreilly.com/videos/kubernetes-and-cloud/9780137993413/">video course</a> on Kubernetes and Cloud Native Associate (KCNA) published by Pearson IT Certification. He also has a 
+If you have a subscription to OReilly.com:
+
+* <a target="_blank" href="https://www.linkedin.com/in/sandervanvugt/">Sander van Vugt</a> has a <a target="_blank" href="https://learning.oreilly.com/videos/kubernetes-and-cloud/9780137993413/">video course</a> on Kubernetes and Cloud Native Associate (KCNA) published by Pearson IT Certification. He also has a 
 <a target="_blank" href="https://learning.oreilly.com/live-events/kubernetes-and-cloud-native-associate-kcna-crash-course/0636920074599/">live course 6-10am MT Dec 1 & 2, 2022</a>.
+
+* <a target="_blank" href="https://learning.oreilly.com/library/view/hands-on-infrastructure-monitoring/9781789612349/" title="from Packt">11 hour Hands-On Infrastructure Monitoring with Prometheus 2019</a> by Joel Bastos, Pedro Araujo
+
+
 
 ## Resources
 
@@ -1113,9 +1119,21 @@ https://timber.io/blog/prometheus-the-good-the-bad-and-the-ugly/
 
 https://eng.uber.com/m3/
 Uber open-sourced their M3 Metrics platform for Prometheus in 2018
+Some Uber employees went on to found Chronosphere, which is a hosted Prometheus service.
+   * https://chronosphere.io/resource/explainer-video-chronosphere-overview/
+   * https://www.youtube.com/watch?v=jIrru50I-WY
+   <br /><br />
 
 https://www.youtube.com/watch?v=h4Sl21AKiDg&pp=ygUKcHJvbWV0aGV1cw%3D%3D
 How Prometheus Monitoring works | Prometheus Architecture explained
 by TechWorld with Nana
 
 https://github.com/akeylesslabs/helm-charts/blob/main/monitoring/akeyless-zero-trust-web-access/grafana-dashboard.yaml
+
+https://mattermost.com/blog/sloth-for-slo-monitoring-and-alerting-with-prometheus/
+https://github.com/slok/sloth with 
+Thanos ruler evaluates rules and sends alerts to Alertmanager.
+Prometheus and Grafana.
+Alertmanager integrates notifications and alerts with the Mattermost Community Server and 
+OpsGenie.
+

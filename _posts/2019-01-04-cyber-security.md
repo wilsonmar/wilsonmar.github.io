@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-12-03"
+date: "2024-01-11"
 file: "cyber-security"
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
@@ -371,6 +371,72 @@ ISO Code of practice for information security controls defines 114 controls grou
    * ISO/IEC 27015 addresses financial organization guidelines
    * ISO/IEC 27799 addresses health organization guidelines
    <br /><br />
+
+The <a target="_blank" href="https://www.iso.org/standard/54534.html">ISO/IEC 27002:2013</a> standard is a 92-page document available for purchase from the ISO website. It is a code of practice for information security controls. It provides guidelines for organizational information security standards and information security management practices including the selection, implementation and management of controls taking into consideration the organization's information security risk environment(s).
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Ref. </th><th> Deliverable </th></tr>
+<tr valign="top"><td> - </td><td> Project Plan
+</td></tr>
+<tr valign="top"><td> 4.1</td><td>External issues (4.1)
+</td></tr>
+<tr valign="top"><td> 4.1</td><td>Internal Issues (4.1)
+</td></tr>
+<tr valign="top"><td> 4.2 b)</td><td>Requirements of interested parties (4.2 b))
+</td></tr>
+<tr valign="top"><td> 4.3</td><td>Scope of the ISMS (4.3)
+</td></tr>
+<tr valign="top"><td> 6.2</td><td>Information security objectives (6.2)
+</td></tr>
+<tr valign="top"><td> 5.2</td><td>Information security policy (5.2)
+</td></tr>
+<tr valign="top"><td> A.5.12</td><td>Information classification policy (A.5.12)
+</td></tr>
+<tr valign="top"><td> A.5.9</td><td>Inventory of assets (A.5.9)
+</td></tr>
+<tr valign="top"><td> 6.1.2 a)</td><td>Information security risk assessment criteria (6.1.2 a))
+</td></tr>
+<tr valign="top"><td> 6.1.2 a)</td><td>Information security risk acceptance criteria (6.1.2 a))
+</td></tr>
+<tr valign="top"><td> 6.1.2</td><td>Information security risk assessment process (6.1.2)
+</td></tr>
+<tr valign="top"><td> 6.1.3</td><td>Information security risk treatment process (6.1.3)
+</td></tr>
+<tr valign="top"><td> 7.2</td><td>Evicence of competence (7.2)
+</td></tr>
+<tr valign="top"><td> 8.2</td><td>List of threats (8.2)
+</td></tr>
+<tr valign="top"><td> 8.2</td><td>List of existing controls (8.2)
+</td></tr>
+<tr valign="top"><td> 8.2</td><td>List of vulnerabilities in relation to assets, controls and threats (8.2)
+</td></tr>
+<tr valign="top"><td> 8.2</td><td>List of incident scenarios (8.2)
+</td></tr>
+<tr valign="top"><td> 8.2</td><td>List of risks with risk levels assigned (8.2)
+</td></tr>
+<tr valign="top"><td> 8.2</td><td>List of prioritized risks (8.2)
+</td></tr>
+<tr valign="top"><td> 8.3?</td><td>Statement of Applicability (SoA) (6.1.3)
+</td></tr>
+<tr valign="top"><td> 8.3</td><td>Risk treatment plan (8.3)
+</td></tr>
+<tr valign="top"><td> 9.1</td><td>Information security metrics (9.1)
+</td></tr>
+<tr valign="top"><td> 9.2</td><td>Audit programme (9.2)
+</td></tr>
+<tr valign="top"><td> 9.2</td><td>Audit results (9.2)
+</td></tr>
+<tr valign="top"><td> 9.3</td><td>Results of management reviews (9.3)
+</td></tr>
+<tr valign="top"><td> 10.2 f)</td><td>Nature of the nonconformities and any subsequent actions taken (10.2 f))
+</td></tr>
+<tr valign="top"><td> 10.2 g)</td><td>Results of any corrective action (10.2 g))
+</table>
+
+
+<hr />
+
+<a name="iso15228"></a>
 
 ## ISO/IEC 15288:2015  
 
@@ -1286,7 +1352,7 @@ Service Organization Controls (SOC) 1, 2, and 3 report is a framework by indepen
 SOC reports are internal control reports on the services provided by a service organization.
 
    * SOC 3 is the only SOC report that should be shared with the general public.
-   * SOC 2 Type II, along with ISO 27001
+   * SOC 2 Type II, along with <a href="#27000">ISO 27001</a>
    <br /><br />
 
 AICPA (American Institue of Certified Public Accountants) Trust Service Principles, including Security, Availability and Confidentiality. <a target="_blank" href="https://www.aicpa.org/research/standards/auditattest/ssae.html">PDF: SSAE #18</a> (Statement on Standards for Attestation Agreement #18). 
@@ -2180,7 +2246,17 @@ COBIT: Auditors' <a target="_blank" href="https://lnkd.in/geuZZpi/">Control Obje
 
 The Zachman Framework is a two-dimensional model that intersects communication interrogatives (What, Why, Where, and so on) with various viewpoints (Planner, Owner, Designer, and so on). 
 
-The ISO/IEC 27000 Series establishes information security standards published jointly by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC). 
+<a name="27000"></a>
+
+The ISO/IEC 27000 Series establishes <strong>information security management systems (ISMS)</strong> family of standards published jointly by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC). "ISO/IEC 27000:2018" is an Overview and vocabulary standard that references 4 "normative requirements" that are the basis of audits:
+   * ISO/IEC 27001:2013 - Information security management systems — Requirements
+   * ISO/IEC 27006:2015 - Requirements for bodies providing audit and certification of information security management systems
+   * ISO/IEC 27009:2016 - Sector-specific application of ISO/IEC 27001 — Requirements
+   * ISO/IEC 27701:2019 - Security techniques — Extension to ISO/IEC 27001 and ISO/IEC 27002 for privacy information management — Requirements and guidelines
+   <br /><br />
+
+   Each doc is purchased for $124 USD. 
+   There are also 11 code of practice, and 41 guidelines.
 
 The Trike methodology is an implementation model created and then analyzed to produce a threat model. Risk values are assigned to the identified threats. 
 Mitigating controls are assigned to the vulnerabilities that lead to the identified threats.
@@ -3301,7 +3377,7 @@ ISAC Certified Basics in Information Security (ICBIS) Course.
 
 * CISC (Cyber Intelligence Sharing Center)
 
-*  https://www.cio.com/article/2600345/11-steps-attackers-took-to-crack-target.html
+* https://www.cio.com/article/2600345/11-steps-attackers-took-to-crack-target.html
 
 * https://podcasts.apple.com/us/podcast/hard-fork/id1528594034
 by the New York Times reporters talking about TikTok's Spying, ChatGPT
@@ -3360,16 +3436,36 @@ https://www.pulseconferences.com/
 
 ## Masters Degrees
 
-* <a target="_blank" href="">Western Governors University</a> Masters in Cybersecurity online
+* <a target="_blank" href="https://www.wgu.edu/online-it-degrees/cybersecurity-information-assurance-masters-program.html">Western Governors University</a> Masters in Cybersecurity can be obtained <strong>online</strong> and for a lot less than others at $4,555 per 6-month term for as many courses as you can complete during that time. They say 70% graduate within 21 months (5 terms) for $18,220.
+
+   Their curriculum is aligned to:
+   * NICE Framework
+   * NSA Center of Academic Excellence guidelines
+   * CISSP Common Body of Knowledge (CBK)
+   <br /><br />
+
+   The degree includes passing industry certifications:
+   * ISC2 Certified in Cybersecurity (CC)
+   * CompTIA Cybersecurity Analyst (CySA+)
+   * CompTIA PenTest+
+   * CompTIA Advanced Security Practioner (CASP+)
+   * ISACA Certified Information Security Manager (CISM)
+   <br /><br />
+
+* <a target="_blank" href="https://uww.edu/online/masters/cybersecurity/">University of Wisconsin-Whitewater's  Master of Science in Cybersecurity</a> is all online - $678 per credit hour, 30 credits, 10 courses, 2 years = $20,340.
 
 * <a target="_blank" href="https://www.sans.edu/academics/degrees/msise">SANS Technology Institute</a> Master of Science in Information Security Engineering (MSISE) 
 
 * Coursera online:<a target="_blank" href="https://www.coursera.org/degrees/msc-cyber-security-london">University of London</a> MSc in Cyber Security
 
+* <a target="_blank" href="https://erau.edu/lp/cybersecurity">Embry-Riddle Aeronautical University</a> Master of Science in Cybersecurity Management & Policy
+
 
 ## Resources
 
 https://www.microsoft.com/en-us/cybersecurity/content-hub/cybersecurity-policy-framework
+
+https://twitter.com/npm_malware announces malicious packages in the npm registry.
 
 
 ## More on Security #
