@@ -20,7 +20,7 @@ comments: true
 ## How it works
 
 From the <a target="_blank" href="https://7451111251303.gumroad.com/l/wzcnen">PowerPoint file animations used to create</a> this <a target="_blank" href="https://www.youtube.com/watch?v=5GYe_-qqP30&t=15m14s">VIDEO</a> and diagram:<br />
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703296700/prometheus-231222-2918x1482_g8amux.png"><img alt="prometheus-231222-2918x1482.png" width="1531" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703296700/prometheus-231222-2918x1482_g8amux.png"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1705122755/prometheus-flow-1739x838_ugraxn.png"><img alt="prometheus-flow-240113-1739x838.png" width="1739" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1705122755/prometheus-flow-1739x838_ugraxn.png"></a>
 
 1. The main component of Prometheus is a <strong>run service</strong> (written in <a target="_blank" href="https://wilsonmar.github.io/golang/">Golang</a>).
 1. The service sends HTTPS GET requests to <strong>scrape</strong> (pull) metrics from <strong>target hosts</strong> defined in its <tt>targets.json</tt> file. In addition to statically-defined targets, 

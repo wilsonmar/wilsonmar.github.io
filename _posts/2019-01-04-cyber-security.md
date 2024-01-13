@@ -3512,12 +3512,13 @@ It can have performance issues.
 AKA Application Security Manager. Can be configured as a reverse proxy that accepts traffic on a virtual IP address to proxy the traffic to a back-end server network behind the WAF. 
 
 
-## CISO-targeted
-
-https://www.pulseconferences.com/
-
 <hr />
 
+<!-- ## Security Bootcamps 
+## Security Conventions (black hat)
+### CISO-targeted
+https://www.pulseconferences.com/
+-->
 ## Masters Degrees
 
 * <a target="_blank" href="https://www.wgu.edu/online-it-degrees/cybersecurity-information-assurance-masters-program.html">Western Governors University</a> Masters in Cybersecurity can be obtained <strong>online</strong> and for a lot less than others at $4,555 per 6-month term for as many courses as you can complete during that time. They say 70% graduate within 21 months (5 terms) for $18,220.
