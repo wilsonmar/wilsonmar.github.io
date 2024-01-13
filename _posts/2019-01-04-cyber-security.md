@@ -395,27 +395,33 @@ The <a target="_blank" href="https://www.iso.org/standard/54534.html">ISO/IEC 27
 </td></tr>
 <tr valign="top"><td> A.5.9</td><td>Inventory of assets (A.5.9)
 </td></tr>
-<tr valign="top"><td> 6.1.2 a)</td><td>Information security risk assessment criteria (6.1.2 a))
+<tr valign="top"><td> 6.1.2 a)</td><td>Risk assessment criteria (6.1.2 a))
 </td></tr>
-<tr valign="top"><td> 6.1.2 a)</td><td>Information security risk acceptance criteria (6.1.2 a))
+<tr valign="top"><td> 6.1.2 a)</td><td>Risk acceptance criteria (6.1.2 a))
 </td></tr>
-<tr valign="top"><td> 6.1.2</td><td>Information security risk assessment process (6.1.2)
+<tr valign="top"><td> 6.1.2</td><td>Risk assessment process (6.1.2)
 </td></tr>
-<tr valign="top"><td> 6.1.3</td><td>Information security risk treatment process (6.1.3)
+<tr valign="top"><td> 6.1.3</td><td>Risk treatment process (6.1.3)
 </td></tr>
-<tr valign="top"><td> 7.2</td><td>Evidence of competence (7.2)
+<tr valign="top"><td> 7.2.a</td><td>Job Descriptions (Evidence of competence (7.2.a)
 </td></tr>
-<tr valign="top"><td> 8.2</td><td>List of threats (8.2)
+<tr valign="top"><td> 7.2.b</td><td>Evidence of competence (7.2.b)
 </td></tr>
-<tr valign="top"><td> 8.2</td><td>List of existing controls (8.2)
+<tr valign="top"><td> 7.2.c</td><td>Training records (7.2.c)
 </td></tr>
-<tr valign="top"><td> 8.2</td><td>List of vulnerabilities in relation to assets, controls and threats (8.2)
+<tr valign="top"><td> 7.2.d</td><td>Performance records (7.2.d)
 </td></tr>
-<tr valign="top"><td> 8.2</td><td>List of incident scenarios (8.2)
+<tr valign="top"><td> 8.2</td><td>Threats (8.2)
 </td></tr>
-<tr valign="top"><td> 8.2</td><td>List of risks with risk levels assigned (8.2)
+<tr valign="top"><td> 8.2</td><td>Existing controls (8.2)
 </td></tr>
-<tr valign="top"><td> 8.2</td><td>List of prioritized risks (8.2)
+<tr valign="top"><td> 8.2</td><td>Vulnerabilities in relation to assets, controls, and threats (8.2)
+</td></tr>
+<tr valign="top"><td> 8.2</td><td>Incident scenarios (8.2)
+</td></tr>
+<tr valign="top"><td> 8.2</td><td>Risks with risk levels assigned (8.2)
+</td></tr>
+<tr valign="top"><td> 8.2</td><td>Prioritized risks (8.2)
 </td></tr>
 <tr valign="top"><td> 8.3?</td><td>Statement of Applicability (SoA) (6.1.3)
 </td></tr>

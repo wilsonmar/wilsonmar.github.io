@@ -36,7 +36,7 @@ Let's look now at the <strong>wisdom</strong>, the PROTIPs, behind each item in 
    both verbally and in real products and services.
 
    Industry analysts' review sites, awards:
-   * Gartner, G2, Forrester, TrustRadius
+   * Gartner, G2, Forrester, TrustRadius, PeerSpot
    * Best Places to Work, Indeed, Glassdoor
    * Infoworld, PC World, Mac World, Linux Journal
    * Always On Global 250
