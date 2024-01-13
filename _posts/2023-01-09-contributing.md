@@ -26,14 +26,16 @@ We're really glad you're reading this, because volunteer developers make this pr
 
 - [Code of Conduct](#Code+of+Conduct)
    - [Our Pledge](#Our+Pledge)
-   - [Code Review](#white_check_mark-code-review)
+   - [Code Review](#Code+Reviews)
    - [Code of Conduct](#Code+of+Conduct)
    - [Standards of Conduct](#Standards+of+Conduct)
    - [Our Responsibilities](#Our+Responsibilities)
    - [Scope](#Scope)
    - [Enforcement](#Enforcement)
+
 - [Issues](#Issues)
 - [Let's connect](#Connect)
+- [Security Features](#Security+Features)
 
 - [Coding Style](#Coding+Style)
 - [Certificate of Origin](#Certificate+of+Origin)
@@ -56,7 +58,7 @@ available at [http://contributor-covenant.org/version/1/4][version]
 
 In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
 
-### Code Review
+### Code Reviews
 
 - **Review the code, not the author.** Look for and suggest improvements without disparaging or insulting the author. Provide actionable feedback and explain your reasoning.
 
@@ -165,6 +167,24 @@ When contributing to this repository, please first discuss the change you wish t
 
   * Join our Slack channel at ____
   * Talk IRC? We're at irc://chat.freenode.net/____ on freenode. 
+
+
+## Security Features
+
+Contributors to this GitHub repository should be aware of the following security features:
+
+* To withstand man-in-the-middle attacks attempting to steal data during transmission, our contributors need to use secure HTTPS protocol by setting up SSH (Secure Shell Protocol). SSH keys are a way to identify trusted computers, without involving passwords. It's enabled by clicking your avatar, "Your profile", settings, "SSH and GPG keys" at <a target="_blank" href="hhttps://github.com/settings/keys">https://github.com/settings/keys</a>. See <a target="_blank" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">this</a> for more information.
+
+  TODO: Use AKeyless to dynamically create SSH keys so that they cannot be stolen from your computer.
+
+* To ensure that the email addresses specified in git commits are <strong>verified</strong>, our contributors need to associate a GPG key to their account. It's enabled by clicking your avatar, "Your profile", settings, "SSH and GPG keys" at <a target="_blank" href="https://github.com/settings/keys">https://github.com/settings/keys</a>. See <a target="_blank" href="https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key">this</a> for more information.
+
+* To reduce the ability for malicious actors to make commits as you, our contributors need to have 2FA (Two Factor Authentication). It's enabled by clicking your avatar, Your profile, settings, "Password and authentication" at <a target="_blank" href="https://github.com/settings/security">https://github.com/settings/security</a>. See <a targeet="_blank" href="https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication">this</a> for more information.
+
+* We use [GitHub Security Alerts](https://help.github.com/en/github/managing-security-vulnerabilities/about-security-alerts-for-vulnerable-dependencies) to track and manage security vulnerabilities in our dependencies.
+* We use [GitHub Security Advisories](https://help.github.com/en/github/managing-security-vulnerabilities/about-github-security-advisories) to track and manage security vulnerabilities in our code.
+* We use [GitHub Dependabot](https://help.github.com/en/github/administering-a-repository/about-dependabot-version-updates) to track and manage security vulnerabilities in our dependencies.
+
 
 <hr />
 
