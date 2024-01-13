@@ -1130,6 +1130,8 @@ by TechWorld with Nana
 
 https://github.com/akeylesslabs/helm-charts/blob/main/monitoring/akeyless-zero-trust-web-access/grafana-dashboard.yaml
 
+https://financialit.net/news/apis/how-stash-keeping-its-platform-secure-amid-drive-integration
+
 https://mattermost.com/blog/sloth-for-slo-monitoring-and-alerting-with-prometheus/
 https://github.com/slok/sloth with 
 Thanos ruler evaluates rules and sends alerts to Alertmanager.

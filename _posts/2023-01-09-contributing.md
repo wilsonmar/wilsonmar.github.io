@@ -175,15 +175,15 @@ Contributors to this GitHub repository should be aware of the following security
 
 * To withstand man-in-the-middle attacks attempting to steal data during transmission, our contributors need to use secure HTTPS protocol by setting up SSH (Secure Shell Protocol). SSH keys are a way to identify trusted computers, without involving passwords. It's enabled by clicking your avatar, "Your profile", settings, "SSH and GPG keys" at <a target="_blank" href="hhttps://github.com/settings/keys">https://github.com/settings/keys</a>. See <a target="_blank" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">this</a> for more information.
 
-  TODO: Use AKeyless to dynamically create SSH keys so that they cannot be stolen from your computer.
+  TODO: Use <a target="_blank" href="https://tutorials.akeyless.io/docs/using-ssh-certificates-to-access-remote-machines">AKeyless to dynamically create SSH keys</a> rather than leaving manually-created static SSH keys which can be stolen from your computer.
 
 * To ensure that the email addresses specified in git commits are <strong>verified</strong>, our contributors need to associate a GPG key to their account. It's enabled by clicking your avatar, "Your profile", settings, "SSH and GPG keys" at <a target="_blank" href="https://github.com/settings/keys">https://github.com/settings/keys</a>. See <a target="_blank" href="https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key">this</a> for more information.
 
 * To reduce the ability for malicious actors to make commits as you, our contributors need to have 2FA (Two Factor Authentication). It's enabled by clicking your avatar, Your profile, settings, "Password and authentication" at <a target="_blank" href="https://github.com/settings/security">https://github.com/settings/security</a>. See <a targeet="_blank" href="https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication">this</a> for more information.
 
-* We use [GitHub Security Alerts](https://help.github.com/en/github/managing-security-vulnerabilities/about-security-alerts-for-vulnerable-dependencies) to track and manage security vulnerabilities in our dependencies.
-* We use [GitHub Security Advisories](https://help.github.com/en/github/managing-security-vulnerabilities/about-github-security-advisories) to track and manage security vulnerabilities in our code.
-* We use [GitHub Dependabot](https://help.github.com/en/github/administering-a-repository/about-dependabot-version-updates) to track and manage security vulnerabilities in our dependencies.
+* To further block malicious actors from executing potentially destructive commands, the usual IP address used by  Administrators of this repository is registered in this repository's <a target="_blank" href="https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/managing-allowed-ip-addresses-for-your-organization">IP Allow List</a>.
+
+* To identify and remediate security vulnerabilities in package dependencies, this repository is updated immediately when <a target="_blank" href="https://help.github.com/en/github/managing-security-vulnerabilities/about-security-alerts-for-vulnerable-dependencies">GitHub Dependabot Security Advisories</a> are issued.
 
 
 <hr />

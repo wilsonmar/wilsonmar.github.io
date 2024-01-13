@@ -14,7 +14,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This diagram is an example of the <strong>deliverables</strong> necessary for evangelism:
+This diagram is an example of the <strong>deliverables</strong> necessary for professional evangelism:
 
 <amp-youtube data-videoid="6bwD55vOB38" 
 layout="responsive" width="480" height="270"></amp-youtube>
@@ -38,6 +38,7 @@ Let's look now at the <strong>wisdom</strong>, the PROTIPs, behind each item in 
    Industry analysts' review sites, awards:
    * Gartner, G2, Forrester, TrustRadius
    * Best Places to Work, Indeed, Glassdoor
+   * Infoworld, PC World, Mac World, Linux Journal
    * Always On Global 250
    * The Companies That Matter Most in Data
    * Sand Hill 50 "Agile and Innovative" in Cloud
