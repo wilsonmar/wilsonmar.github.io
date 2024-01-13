@@ -56,7 +56,7 @@ available at [http://contributor-covenant.org/version/1/4][version]
 
 ### Our Pledge
 
-In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
+In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to make participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
 
 ### Code Reviews
 
@@ -97,7 +97,7 @@ behavior and are expected to take appropriate and fair corrective action in
 response to any instances of unacceptable behavior.
 
 Project maintainers have the right and responsibility to remove, edit, or
-reject comments, commits, code, wiki edits, issues, and other contributions
+reject comments, commits, code, wiki edits, <a href="#Issues">issues</a>, and other contributions
 that are not aligned to this Code of Conduct, or to ban temporarily or
 permanently any contributor for other behaviors that they deem inappropriate,
 threatening, offensive, or harmful.
@@ -135,15 +135,17 @@ GitHub issues are not the appropriate place to ask questions or debug specific p
 
 Before creating a new issue, please ensure the issue was not already reported by <a target="_blank" href="https://github.com/Fahmy-Kadiri-akl/Akl-Demo/issues?q=is%3Aissue+is%3Aclosed++is%3Aopen">All Issues</a>.
 
-Issue Classifications:
+Classification of Issues:
 
-   * <strong>Defect</strong> for known bugs. The issue should also contain steps to reproduce. Feel free to fix these and submit a pull request.
-   * <strong>Enhancement</strong> for planned enhancements that have not been picked up yet. If you would like to work on one, please add a comment that you are doing so.
    * <strong>Discussion</strong> for issues that can be non-issues, and encompass best practices, or plans for the future.
-   * <strong>Quick</strong> for small issues, that should be able to be fixed quickly. Normally these issues don't stay around for very long.
+   * <strong>Easy First Step</strong> for issues that are great for new contributors to get started with. We want people to feel like there's always somewhere you can start.
+   * <strong>Quick</strong> for small issues (such as typos in text) that can be fixed quickly.
+
    * <strong>To check</strong> for issues that may not be reproducible, or have not been vetted by a team member.
+   * <strong>Defect</strong> for bugs in functionality. The issue text should contain steps to reproduce. Feel free to fix these and submit a pull request.
+
+   * <strong>Enhancement</strong> for enhancements to functionality. If you would like to work on one, please add a comment that you are doing so.
    * <strong>Workaround known</strong> for issues have had their solutions discussed, but have yet to be implemented.
-   * <strong>Easy First Step</strong> for issues that are great issues to get started with. They tend to stick around for a while. We want people to feel like there's always somewhere you can start.
   <br /><br />
 
 We prefer that "+1" or emoji be added to an existing issue instead of generic comments. [reactions](https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/).
@@ -163,7 +165,7 @@ When contributing to this repository, please first discuss the change you wish t
   
   * Our roadmap at https://____/pages/wish-list) is the 10k foot view of where we're going, and
   * [Pivotal Tracker](http://pivotaltracker.com/projects/____) is our day-to-day project management space.
-  * Bugs? https://____.lighthouseapp.com/projects/47665-opengovernment/overview is where to report them
+  * Bugs? https://____ is where to report them
 
   * Join our Slack channel at ____
   * Talk IRC? We're at irc://chat.freenode.net/____ on freenode. 
@@ -173,7 +175,14 @@ When contributing to this repository, please first discuss the change you wish t
 
 Contributors to this GitHub repository should be aware of the following security features:
 
-* To withstand man-in-the-middle attacks attempting to steal data during transmission, our contributors need to use secure HTTPS protocol by setting up SSH (Secure Shell Protocol). SSH keys are a way to identify trusted computers, without involving passwords. It's enabled by clicking your avatar, "Your profile", settings, "SSH and GPG keys" at <a target="_blank" href="hhttps://github.com/settings/keys">https://github.com/settings/keys</a>. See <a target="_blank" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">this</a> for more information.
+* To protect this repository against unauthorized changes, the <a target="_blank" href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches">"Require review from Code Owners"</a> is activated so that GitHub automatically requests a review from Code Owners when a Pull Request (PR) is opened. The <a target="_blank" href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners#example-of-a-codeowners-file">CODEOWNERS</a> file (at the root or /docs folder) specifies the folder, file, or file type to be reviewed by the GitHub account or email address of individual or team specified. 
+
+* Reviewers of that CODEOWNERS file (and its location) are specified in another CODEOWNERS file in the repo's /.github folder.
+
+* To control who can push commits to a certain branch, or who can delete or rename a tag in this repository, this repo makes use of one or more <a target="_blank" href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets">rulesets</a> listing rules. 
+A ruleset for a feature branch can require signed commits and block force pushes for all users except repository administrators.
+
+* To withstand man-in-the-middle attacks attempting to steal data during transmission, our contributors need to use secure HTTPS protocol by setting up SSH (Secure Shell Protocol). SSH keys are a way to identify trusted computers, without involving passwords. It's enabled by clicking your avatar, "Your profile", settings, "SSH and GPG keys" at <a target="_blank" href="hhttps://github.com/settings/keys">https://github.com/settings/keys</a>.[<a target="_blank" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">DOC</a>]
 
   TODO: Use <a target="_blank" href="https://tutorials.akeyless.io/docs/using-ssh-certificates-to-access-remote-machines">AKeyless to dynamically create SSH keys</a> rather than leaving manually-created static SSH keys which can be stolen from your computer.
 
