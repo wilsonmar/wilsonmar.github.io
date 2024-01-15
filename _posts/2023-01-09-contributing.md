@@ -3,7 +3,7 @@ layout: page
 date: "2024-01-10"
 file: "contributing"
 title: CONTRIBUTING.md
-excerpt: "A sample CONTRIBUTING.md file in GitHub repositories."
+excerpt: "here's a sample CONTRIBUTING.md file in GitHub repositories describing how to contribute."
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/14625241/9a22d514-059e-11e6-8aa4-7a387673a418.jpg
   credit: 
@@ -14,7 +14,6 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-# How to contribute
 
 GitHub <a target="_blank" href="https://github.com/blog/1184-contributing-guidelines">automatically adds</a> a link to this file when a contributor creates a new issue or pull request.
 
@@ -26,7 +25,6 @@ We're really glad you're reading this, because volunteer developers make this pr
 
 - [Code of Conduct](#Code+of+Conduct)
    - [Our Pledge](#Our+Pledge)
-   - [Code Review](#Code+Reviews)
    - [Code of Conduct](#Code+of+Conduct)
    - [Standards of Conduct](#Standards+of+Conduct)
    - [Our Responsibilities](#Our+Responsibilities)
@@ -40,6 +38,7 @@ We're really glad you're reading this, because volunteer developers make this pr
 - [Coding Style](#Coding+Style)
 - [Certificate of Origin](#Certificate+of+Origin)
 
+- [Code Reviews](#Code+Reviews)
 - [Testing](#Testing)
 - [Submitting Pull Requests](#Submitting+Pull+Requests)
 - [Attribution](#Attribution)
@@ -57,16 +56,6 @@ available at [http://contributor-covenant.org/version/1/4][version]
 ### Our Pledge
 
 In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to make participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
-
-### Code Reviews
-
-- **Review the code, not the author.** Look for and suggest improvements without disparaging or insulting the author. Provide actionable feedback and explain your reasoning.
-
-- **You are not your code.** When your code is critiqued, questioned, or constructively criticized, remember that you are not your code. Do not take code review personally.
-
-- **Always do your best.** No one writes bugs on purpose. Do your best, and learn from your mistakes.
-
-- Kindly note any violations to the guidelines specified in this document. 
 
 ### Standards of Conduct
 
@@ -179,8 +168,7 @@ Contributors to this GitHub repository should be aware of the following security
 
 * Reviewers of that CODEOWNERS file (and its location) are specified in another CODEOWNERS file in the repo's /.github folder.
 
-* To control who can push commits to a certain branch, or who can delete or rename a tag in this repository, this repo makes use of one or more <a target="_blank" href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets">rulesets</a> listing rules. 
-A ruleset for a feature branch can require signed commits and block force pushes for all users except repository administrators.
+* To control what actions are allowed in this repository, this repo makes use of one or more <a target="_blank" href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets">rulesets</a> listing <a target="_blank" href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/creating-rulesets-for-a-repository#using-fnmatch-syntax">rules</a>. A ruleset for a feature branch can require signed commits, block force pushes, define who can push commits to a certain branch, or who can delete or rename a tag.
 
 * To withstand man-in-the-middle attacks attempting to steal data during transmission, our contributors need to use secure HTTPS protocol by setting up SSH (Secure Shell Protocol). SSH keys are a way to identify trusted computers, without involving passwords. It's enabled by clicking your avatar, "Your profile", settings, "SSH and GPG keys" at <a target="_blank" href="hhttps://github.com/settings/keys">https://github.com/settings/keys</a>.[<a target="_blank" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">DOC</a>]
 
@@ -199,22 +187,75 @@ A ruleset for a feature branch can require signed commits and block force pushes
 
 ## Coding Styles
 
-To foster productivity, we ensure consistency throughout the source code by using code formatters and linters specific to each programming language. Not doing so would result in a prolonged review process that has to focus on updating the superficial aspects of code rather than improving its functionality and performance.
+To foster productivity, we ensure consistency throughout the source code by using code formatters and linters specific to each programming language. Not doing so would prolong team reviews that waste time on superficial aspects of code rather than improving its functionality and performance.
 
-Start reading our code and you'll get the hang of it. We optimize for developer productivity and happiness.
+We optimize for developer productivity and happiness through teamwork.
 
-   * Keep your code consistent with the style, formatting, and conventions in the rest of the code base. Consistency makes it easier to review and modify in the future.
+This repo contains open source software. Since others in the future will read this, we want to make it look nice and easy for them. It's sort of like driving a car: Perhaps you love doing donuts when you're alone, but with passengers, the goal is to make the ride as comfortable as possible.
 
-   * We follow the GitHub ??? Styleguide
-   * We indent using two spaces (soft tabs)
-   * We use HAML for all views
-   * We avoid logic in views, putting HTML generators into helpers
-   * We ALWAYS put spaces after list items and method parameters (`[1, 2, 3]`, not `[1,2,3]`), around operators (`x += 1`, not `x+=1`), and around hash arrows.
-   * This is open source software. Consider the people who will read your code, and make it look nice for them. It's sort of like driving a car: Perhaps you love doing donuts when you're alone, but with passengers the goal is to make the ride as smooth as possible.
+There are a lot of tools that do the same thing, and we try to pick the best one for the job. 
+For team-level efficiency, we try to keep the number of tools we use to a minimum.
+As for <a target="_blank" href="https://wilsonmar.github.io/text-editors/">text editor IDE</a>, most developers are now using the free VSCode (Microsoft's Visual Studio Code).
+
+This repo contains a <tt>.vscode</tt> folder that specifies automatic actions such as run and debug without switching between VSCode and the debuggere for <a target="_blank" href="https://github.com/godotengine/godot-vscode-plugin/issues/163">C# godot</a>, <a target="_blank" href="https://bryanwweber.com/writing/2022-01-24-create-tasks-json-vs-code.html">python</a>, <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/debug-nodejs/?source=recommendations">JavaScript</a>, <a target="_blank" href="https://github.com/microsoft/vscode-java-debug/blob/main/Configuration.md">java</a>, <a target="_blank" href="https://www.jpatrickfulton.dev/blog/2023-07-03-gatsby-vscode-support/#the-vscode-folder">Gatsby</a>, <a target="_blank" href="https://piethein.medium.com/dockerize-your-projects-in-visual-studio-code-f2374de541bd">Dockerfile</a>, <a target="_blank" href="https://blog.nonstopio.com/the-hidden-gems-of-vs-code-settings-json-and-launch-json-explained-9e9e1c6b4b4a <a target="_blank" href="https://docs.nvidia.com/nsight-visual-studio-code-edition/cuda-debugger/index.html">CUDA</a>, etc. 
+
+The .vscode <a target="_blank" href="https://code.visualstudio.com/docs/getstarted/settings#_workspace-settings">Workspace settings folder</a> specific to the project of the GitHub repo contains these files:
+
+  * **extensions.json** contains project-specific extensions, such as <a target="_blank" href="https://www.youtube.com/watch?v=kyRclsioJBQ">VIDEO</a>: Console Ninja which shows the result of each line within VSCode, which eliminates the need for logging and switching back-and-forth between code and console window. <a target="_blank" href="https://www.youtube.com/watch?v=kyRclsioJBQ&t=4m25s">"Random Everything"</a> to generate test data within VSCode. <a target="_blank" href="https://www.youtube.com/watch?v=kyRclsioJBQ&t=7m19s">"Toggle Quotes"</a> to quickly switch between single and double quotes.
+
+  * **launch.json** contains configuration profiles to execute the project from the Run and Debug menu. <a target="_blank" href="https://go.microsoft.com/fwlink/?linkid=830387">DOCS</a>: For example, to compile the extension and then opens it inside a new window for IntelliSense autocomplete. 
+  
+  * **tasks.json** - <a target="_blank" href="https://code.visualstudio.com/docs/editor/tasks">DOC</a>: task.json code instructs VSCode to invoke a <strong>type</strong> of processor to invoke the <strong>script</stong> defined. Built-in task types are gulp, grunt, jake, and npm. A tasks is run from Quick Open (⌘P) and typing 'task', Space and the command name, such as <tt>task lint</tt>. To keep settings agnostic to the enviornment, use <a target="_blank" href="https://code.visualstudio.com/docs/editor/variables-reference">reference variables</a> for <a target="_blank" href="https://code.visualstudio.com/docs/editor/tasks#_variable-substitution">substitution</a>, such as <tt>${workspaceFolder}</tt> and <tt>${file}</tt> to specify the location of the script to run. 
+
+  * **settings.json** - overwrites VSCode app <a target="_blank" href="https://code.visualstudio.com/docs/getstarted/settings#_default-settings">default settings</a> and user settings for search, spelling, etc. <a target="_blank" href="https://realpython.com/advanced-visual-studio-code-python/#adding-bonus-extensions-to-visual-studio-code">DOC</a>.
+  <a target="_blank" href="https://bobbyhadz.com/blog/what-is-vscode-folder">BLOG</a>: <a target="_blank" href="https://www.youtube.com/watch?v=sIhmrUvFLmA">VIDEO</a>: The contents of settings.json are revealed by pressing <tt>⌘,</tt> (Mac) or <tt>Ctrl+,</tt> (Windows) to open the Settings editor, then click the "Workspace" tab.
+
+  <ul><pre>{
+  "editor.formatOnSave": true,
+  "editor.wordwrap": "on",
+  "editor.tabSize": 2,
+  "editor.fontSize": 10,
+  "editor.InsertSpaces": true,
+  files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.autoSave": "onFocusChange",
+  "[css]":{
+      "diffEditor.codeLens": true
+  },
+  "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true
+  }
+}
+  </pre></ul>
+
+   * A space after each list item and method parameter (`[1, 2, 3]`, not `[1,2,3]`), around operators (`x += 1`, not `x+=1`), and around hash arrows
+   * two spaces (soft tabs)
+   * No trailing whitespace on each line
+   * Blank lines should not have any space
+   * No blank line at end of file
+   <br /><br />
+
+Others:
+   * Follow the GitHub ??? Styleguide
+   * Use HAML for all views
+   * Avoid logic in views, putting HTML generators into helpers
+
+In IaC:
    * So that we can consistently serve images from the CDN, always use image_path or image_tag when referring to images. Never prepend "/images/" when using image_path or image_tag.
-   * Also for the CDN, always use cwd-relative paths rather than root-relative paths in image URLs in any CSS. So instead of url('/images/blah.gif'), use url('../images/blah.gif').
+   * For the CDN, use cwd-relative paths rather than root-relative paths in image URLs in any CSS. So instead of url('/images/blah.gif'), use url('../images/blah.gif').
 
-### Certificate of Origin
+At the root of the repo is the <tt>.vscodeignore</tt> file that specifies files and folders to be ignored by VSCode:
+    <ul><tt>.gitignore
+CHANGELOG.md
+   </tt></ul>
+
+## Certificate of Origin
 
 By making a contribution to this project, I certify that:
 
@@ -241,12 +282,31 @@ By making a contribution to this project, I certify that:
       this project or the open source license(s) involved.
 
 
+## Code Reviews
+
+- **Do your best.** No one writes bugs on purpose. Do your best, and learn from your mistakes.
+
+- **Keep tools updated.** Before a code review, all reviewers update all components and libraries to use the latest version as the rest of the team. This is why Python programs have a <tt>requirements.txt</tt> file, Ruby programs have a <tt>Gemfile</tt>, and JavaScript programs have a <tt>package.json</tt> file.
+
+- **Auto format code.** This reduces wasting time on formatting issues. 
+
+- **Review the code, not the author.** Look for and suggest improvements without disparaging or insulting the author. Provide actionable feedback and explain your reasoning.
+
+- **You are not your code.** When your code is critiqued, questioned, or constructively criticized, remember that you are not your code. Do not make code review comments personal.
+
+- Kindly note any violations to the guidelines specified in this document. 
+
+- **Include doc changes with code in PRs.** The docs provide additional information such as attribution for techniques used. This makes it easier and faster for others to understand coding choices made.
+
+- **Keep code working.** Clone to a separate repo or branch to do work, then include changes after verifying that your changes work. This keeps the main repo working for all others. Code reviews by others are done to uncover "blind spots" and unintended consequences from coding and testing.
+
 
 ## Testing
 
 All features or bug fixes are tested before each PR is accepted. We test using the "Behavior-Driven Development" (BDD) approach using the [RSpec](http://rspec.info/) framework ???
 
-We have a handful of Cucumber ??? features, but most of our testbed consists of RSpec examples. Please write RSpec examples for new code you create.
+We have a handful of test  ??? features, but most of our testbed consists of RSpec examples. 
+Please write RSpec examples for new code you create.
 
 We use [Travis CI](https://travis-ci.org/) to run our tests. Travis CI is a hosted continuous integration service for the open source community. It is integrated with GitHub and offers first class support for many languages. We use Travis CI to run our tests automatically when we push new code to GitHub.
 
