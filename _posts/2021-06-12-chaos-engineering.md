@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-10-18"
+date: "2024-01-16"
 file: "chaos-engineering"
 title: "Chaos Engineering"
 excerpt: "Use Gremlin, Chaos Monkey, and monitoring tools (such as Datadog) to measure and improve MTTD and MTTR"
@@ -299,6 +299,12 @@ LitmusChaos was orginally developed for use on Kubernetes.
 
 Documentation is at https://litmusdocs-beta.netlify.app/docs/introduction/
 
+
+<hr />
+
+## Network Chaos
+
+<a target="_blank" href="https://github.com/Shopify/toxiproxy">Toxiproxy</a> is a tool from Spotify for chaos network engineering. It is a proxy server that simulates many kinds of network misbehavior.
 
 
 <hr />
