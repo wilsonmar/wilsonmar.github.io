@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-30"
+date: "2024-01-13"
 file: "apple-mac-osx-keyboard"
 title: "Apple Mac OSX Keyboard Shortcuts"
 excerpt: "Stay focused and do things faster with Keyboard Shortcuts, HotKeys, and StreamDeck buttons"
@@ -21,34 +21,217 @@ comments: true
   credit: Parallels
   creditlink: http://kb.parallels.com/en/113541
 -->
-This topic is about how you, a Mac user, can <strong>stay focused</strong> so you can do things faster with less effort by configuring your keyboard and mouse and automating common actions. 
+This topic is about how you, a Mac user, can <strong>stay focused</strong> so you can do things faster with less effort by configuring your keyboard to automate common actions. 
 
-> PROTIP: Optimize for keys we use most, and avoid common mistakes with keys we accidentaly press.
+Those who do stuff without taking their eyes off the screen ARE more productive than those who constantly look away to reach for the mouse.
 
-You'll feel less stress when you can get things done like a pro. Amaze your co-workers. 
+You'll feel less stress when you can get things done like a pro. 
+Eventually, people will be watching how you use your keyboard and NOT use your mouse.
+It's not fair, but they will evaluate your overall "value" by how much you use your keyboard.
 
-   1. <a href="#Modifiers">Know the names and icons for "Modifier Keys"</a>.
-   2. Customize defaults for speed (like the pros)
-   3. Use more <a href="#Hotkey">Hotkey app</a>
-   4. Get a <a href="#StreamDeck">Stream Deck</a> for one-touch automated action (like magic)
+Those who figured out ways to save time demonstrate that they are "resourceful" and thus be able to help others save time. So they are seen as more "valuable" to the organization.
+
+
+## TL;DR Summary
+
+So develop the habit of pros by making a habit of following these tips:
+
+   1. <a href="#Modifiers">Know the names and icons for "Modifier Keys" on Apple keyboards</a>.
+   1. Learn to touch-type.
+   1. <a href="#AvoidMouse">Avoid reaching for the mouse</a>.
+   1. Use the basic <a href="#Basic+Keyboard+Shortcuts">Keyboard Shortcuts</a> for macOS.
+   1. Customize defaults for speed (like the pros)
+   1. Use more <a href="#Hotkey">Hotkey app</a>
+   1. Get a <a href="#StreamDeck">Stream Deck</a> for one-touch automated action
    <br /><br />
 
+> PROTIP: Optimize for keys we use most, and avoid common mistakes with keys we accidentally press.
 
-REMEMBER: "Special" keys on a Mac's keyboard are represented by both symbols and names:
+## Swap Command and Control?
+
+   PROTIP: Some who are used to Windows and need to go back and forth prefer to switch the Mac's control and command keys in order to get to all such keys using thumbs.
+   This would also allow you to press two keys at once by pressing between the keys,
+   thus able to perform most combinations using your hands.
+
+5. Click the entry for "Control (^) Key:" and select "&#8984; Command".
+6. Click the entry for "Command (&#8984;) Key:" and select "^ Control".
+7. Click OK.
+8. Press control+Q or click the red x to dismiss the System Preferences dialog.
+
+
+<hr />
 
 <a name="Modifiers"></a>
 
 ## Special (Modifier) Key Names and Symbols
 
+REMEMBER: "Special" keys on a Mac's keyboard are represented by both symbols and names:
+
 <amp-img width="413" height="399" alt="Apple keys symbols" src="https://cloud.githubusercontent.com/assets/300046/15536540/fe6cb344-222e-11e6-9f2b-c37419a9d42f.gif"></amp-img>
 
-### Remap Modifier Keys
+
+## Basic Keyboard Shortcuts
+
+PROTIP: Save time (and look like a pro) by using the most common keyboard shortcuts for macOS:
+
+   * <a target="_blank" href="https://support.apple.com/en-us/HT201236">
+   Apple's default Mac keyboard shortcuts</a>
+
+   * <a target="_blank" href="http://pc.net/resources/shortcuts/mac_os_x#startup">
+   Mac OS X Keyboard Shortcuts</a>
+
+The most common shortcuts I use all day long:
+
+* ⌘+Tab to switch among programs open.
+
+Within a browser such as Safari or Chrome:
+* ⌘+~ (backtick) to switch among open windows.
+* ⌘+W to close a tab when I'm done with it.
+* ⌘+Shift+B to hide/unhide the Bookmarks bar.
+
+
+<hr />
+
+<a name="TouchTyping"></a>
+
+## Touch Typing Aids
+
+PROTIP: Although most keyboards have a bump on "F" and "H" ("Home") keys, I and some others put tiny drops from a glue gun on strategic keys so I can orient my finger to reach strange keys in the dark without looking:
+
+   * 2, 5, 8, 0
+   * }
+   * control
+   * .
+   <br /><br />
+
+PROTIP: I find (RGB) keyboards that light up keys in different colors distracting when I don't want to look at the keyboard at all.
+
+<a name="AvoidMouse"></a>
+
+## Avoid reaching for the mouse
+
+This may be a generalization. But many top coders like the <strong>vi text editor</strong> because it doesn't demand use of difficult-to-reach keys or mouse which require users to take their eyes off the screen. DevSecOps coders have no choice because some operating systems provide only vi (such as during Kubernetes exams). 
+
+VSCode (Visual Studio Code) is what most people use now. It has a <a target="_blank" href="https://code.visualstudio.com/docs/getstarted/keybindings">keyboard shortcut for everything</a>.
+
+1. Within VSCode, press <strong>command + shift + P</strong> to open the <strong>Command Palette</strong>. It lists the most recently used commands you can select by cursor then Return key. 
+   Or type the first few letters of a command to narrow the list:
+1. Type "keyboard shortcuts" to select "Help: Keyboard shortcuts reference" to open a web page with a PDF <strong>cheat sheet</strong> listing keyboard shortcuts:
+
+   <a target="_blank" href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf">https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf</a>
+
+1. Alternately, type "keyboard shortcuts" to select "Preferences: Open Keyboard Shortcuts" to open a new file listing all keyboard keybindings (aka shortcuts).
+
+   PROTIP: Experiment with each one on a throwaway file.
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=dLzMz2Jk_qU">VIDEO</a>:
+
+* ⌘+B to hide/unhide the left Explorer pane. Instead, use ...
+* ⌘+P for the <strong>Quick Open</strong> dialog, which provides a search box:
+   * Go to File… (Ctrl+P on Windows/Linux)
+   * @ symbol to go to a symbol in the current file
+   * : symbol to go to a line number in the current file
+   * # symbol to go to a word in the current file
+   * @# symbol to go to a word in a file
+   * @file symbol to go to a file
+   <br /><br />
+* ⌘+~ (backtick) to toggle the Terminal pane at the bottom. I usually have it closed and ...
+* ⌘+Tab to switch to a Terminal program with a full set of lines and history.
+<br /><br />
+Scrolling:
+* ⌘+up or down arrow to get to the very top or bottom.
+* ⌘+shift+up or down arrow to move the current line up or down.
+
+* ⌘+\ splits the editor window (but 1Password hijacks this key)
+
+<hr />
+
+<a name="MuteButton"></a>
+
+## Automator shortcut to mute
+
+It's annoying and rude to impose the clicky-clack of your keyboard. 
+In video recordings, it's disruptive to hear background conversations and other noise.
+
+1. Apple's default way to mute the microphone is to click the Apple icon, open Settings, Sound, click the <strong>Input volume</strong> slider. 
+
+   Keep this open as we continue the steps below.
+
+   That's a lot of clicks when quick action is needed during a Zoom call.
+
+   Zoom and Microsoft Teams provide a mute button, but it's also too slow to find.
+
+   The <a target="_blank" href="https://apps.apple.com/us/app/mic-drop-mute-manager/id1489816366?mt=12">$4.99 MicDrop.app</a> provides a mute button icon on the Apple Menu Bar at the top of screens. For those who don't want to fiddle with a mouse to find it or hide their menu menu when Zoom is in full-screen mode, it can be invoked by a customizable keyboard shortcut to mute and unmute the microphone.
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1705696014/micdrop_ez3quh.webp"><img alt="micdrop.webp" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1705696014/micdrop_ez3quh.webp"></a>
+
+   For those loath to install a 3rd-party app in fear of getting potentially infected by it, <a target="_blank" href="https://medium.com/macoclock/how-in-the-bleep-do-i-mute-my-mic-anywhere-on-macos-d2fa1185b13">this article</a> describes how to create a <strong>keyboard shortcut</strong> to mute the microphone using a script run by a utility that comes with macOS: <a target="_blank" href="https://support.apple.com/guide/automator/welcome/mac">Automator.app</a>. Coding Automator scripts is a useful skill to learn.
+
+1. Press <strong>command + spacebar</strong> to open the Spotlight search box.
+1. Type "automator.app" and press Enter to select it among options. Automator's Finder window opens.
+1. Ignore the Finder dialog that Automator.app opens to. (The folder is within <strong>your iCloud</strong>.)
+1. Press Command + Shift + \ for the Automator app menu at the top of the scren.
+1. Press Command + N to click on the Quick Action cog icon for the Quick Action wizard.
+1. For "Worflow receive current", click "Automatic" for the drop-down menu. Select "no input".
+1. For "Variables", click inside the search box type "Run" to select "Run Applescript". 
+1. Click inside the script window opened and delete all the default text.
+1. Highlight this code, copy and paste into the script window:
+
+   ```
+on getMicrophoneVolume()
+  input volume of (get volume settings)
+end getMicrophoneVolume
+on disableMicrophone()
+  set volume input volume 0
+  display notification "Microphone OFF" with title "Sound input" subtitle "Disabled" sound name "Submarine"
+  say "Microphone Off"
+end disableMicrophone
+on enableMicrophone()
+  set volume input volume 100
+  display notification "Microphone ON" with title "Sound input" subtitle "Enabled" sound name "Ping"
+  say "Microphone ON"
+end enableMicrophone
+if getMicrophoneVolume() is greater than 0 then
+  disableMicrophone()
+else
+  enableMicrophone()
+end if
+   ```
+
+   https://www.youtube.com/watch?v=ys5uM2wO_T8
+
+1. Click the arrow button under the script to run the script for the first time.
+1. Click "OK" to allow the pop-up "Automator.app" would like to access the microphone.
+1. Say something. The "Input level" in the Settings Sound dialog should not respond to your speaking.
+
+1. Confirm that the Input volume is now 0 (zero) on the Settings Sound dialog.
+1. Run again and the Input volume should be 100. 
+1. See if that is too loud. Adjust the number in the script.
+1. Press command+S to save the script as a file named "<strong>mic-toggle</strong>".
+1. Press command+Q to quit Automator.
+
+1. TODO: Ensure that Automator can control your computer. <a target="_blank" href="https://www.youtube.com/watch?v=Ce9T5AS2C2E">VIDEO</a>:
+
+   ### Add keyboard shortcut
+
+1. In Apple System Preferences, click Keyboard on the left menu, then "Keyboard Shortcuts...".
+1. Click "Services" on the left menu.
+1. Click "General" on the right menu to expand it.
+1. Click to check "mic-toggle" if it's not already checked.
+
+   TODO: Shows fn+command+shift+F12 or shift+option+command+M or command+Shift+M for MicDrop.app
+
+1. Click "Done".
+
+
+<hr />
+
+## Remap Modifier Keys
 
    You can change them using this dialog:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/31076959-877c6f84-a731-11e7-8fcc-7d12af4c2c8e.jpg"><img alt="mac-modifier-control-399x224-27632" src="https://user-images.githubusercontent.com/300046/31076959-877c6f84-a731-11e7-8fcc-7d12af4c2c8e.jpg"></a>
 
-### Caps Lock to Escape
+## Caps Lock to Escape
 
    BLAH: The Esc (Escape) key is too far North on the keyboard and forces some to look down on the keyboard. And the Caps Lock key is too close to keys, causing problems with accidental password entry and lockouts.
 
@@ -74,24 +257,16 @@ REMEMBER: "Special" keys on a Mac's keyboard are represented by both symbols and
 
    NOTE: If you have more than one keyboard, repeat for each keyboard.
 
-   ### There is a Keyboard Shortcut for every action
 
-1. Marvel at the full list:
+## Add Keyboard Shortcut to Sleep
 
-   <a target="_blank" href="https://support.apple.com/en-us/HT201236">
-   Apple's default Mac keyboard shortcuts</a>
-
-   <a target="_blank" href="http://pc.net/resources/shortcuts/mac_os_x#startup">
-   Mac OS X Keyboard Shortcuts</a>
-
-   ### Add Keyboard Shortcut to Sleep
+   PROTIP: Putting your laptop to sleep is an important privacy procedure according to HIPAA and other regulations. Also, sleeping lets your laptop rest, which makes it last longer and consumes less electricity. 
+   
+   So make it easier to put your laptop to sleep.<a target="_blank" href="https://ladedu.com/how-to-put-a-mac-to-sleep-incl-keyboard-shortcut/">*</a>
 
 1. In the screen above, notice "Sleep" has no reminder of its Keyboard Shortcut, but <a target="_blank" href="https://apple.stackexchange.com/questions/28164/keyboard-shortcut-to-sleep-a-mac">there is</a>:
    
    <strong>Command ⌘ + Option ⌥ + Eject ⏏</strong>
-
-   PROTIP: Putting your laptop to sleep is an important privacy procedure according to HIPAA and other regulations. Also, sleeping let your laptop rest, which makes it last longer and consume less electricity.
-   So make it easier to put your laptop to sleep.<a target="_blank" href="https://ladedu.com/how-to-put-a-mac-to-sleep-incl-keyboard-shortcut/">*</a>
 
 1. If there is a Terminal instance open, the machine does not go into sleep until you manually respond to this pop-up dialog:
 
@@ -129,9 +304,9 @@ Example: Use something like Put Mac to Sleep.
    On a Terminal, the command is "pmset sleepnow".
  
 
-   <a name="MagicKeyboard"></a>
+<a name="MagicKeyboard"></a>
 
-   ### Magic Keyboard
+### Magic Keyboard
 
    A Bluetooth-connected wireless <a target="_blank" href="https://www.apple.com/us/search/Magic-Keyboard-US-English?tab=accessories">Apple Magic Keyboard</a> solves several deficiencies of the keyboard that comes with MacBook Pro laptops:
 
@@ -146,17 +321,6 @@ Example: Use something like Put Mac to Sleep.
 
    However, every week or so you would need to charge it by plugging in a Thunderbolt cable (same one as iPhone and Magic Mouse).
 
-
-   ### Swap Command and Control
-
-   PROTIP: Some who are used to Windows and need to go back and forth prefer to switch the Mac's control and command keys in order to get to all such keys using thumbs.
-   This would also allow you to press two keys at once by pressing between the keys,
-   thus able to perform most combinations using your hands.
-
-5. Click the entry for "Control (^) Key:" and select "&#8984; Command".
-6. Click the entry for "Command (&#8984;) Key:" and select "^ Control".
-7. Click OK.
-8. Press control+Q or click the red x to dismiss the System Preferences dialog.
 
 
 <a id="AwkwardKeys"></a>
@@ -315,28 +479,6 @@ But use a companion key on the right side of the keyboard.
    * https://www.youtube.com/watch?v=lyJOYgP-Ihc
 
 
-<a name="TouchTyping"></a>
-
-## Touch Typing: eyes on the screen, not at the keyboard
-
-PROTIP: Although most keyboards have a bump on "F" and "H" ("Home") keys, I and some others put tiny drops from a glue gun on strategic keys so I can orient my finger to reach strange keys in the dark without looking:
-
-   * 2, 5, 8, 0
-   * }
-   * control
-   * .
-   <br /><br />
-
-PROTIP: I find (RGB) keyboards that light up keys in different colors distracting. 
-I personally think the best strategy is to find a way to not have to look at the keyboard at all.
-
-<a name="AvoidMouse"></a>
-
-## Avoid reaching for the mouse
-
-TL;DR: PROTIP: Resourceful coders make it so they don't need to waste time and valuable focus reaching for the mouse. 
-
-This may be a generalization. But many top coders like the <strong>vi text editor</strong> because it doesn't demand use of difficult-to-reach keys or mouse which require users to take their eyes off the screen. DevSecOps coders have no choice because some operating systems only offer only vi (such as during Kubernetes exams). 
 
 <a name="CleanBorders"></a>
 
@@ -1121,7 +1263,7 @@ homebrew/cask-drivers/elgato-wave-link
    
 1. Among icons, I like the Icon collection "Material Icons" (from Google) because of their white on black.
 
-   PROTIP: It's best to use black background to avoid annoying glare and reflections on your glasses.
+   PROTIP: It's best to use a black background to avoid annoying glare and reflections on your glasses.
 
 1. If you're a Figma user, install their icon library.
 
@@ -1196,7 +1338,7 @@ homebrew/cask-drivers/elgato-wave-link
 
 1. "MultiAction" invokes a sequence of actions programmed to open and position several window by one button.
 
-1. Instant Replay of last 15 seconds on YouTube, if you also bought an Elgato capture card hardware.
+1. Instant Replay of the last 15 seconds on YouTube, if you also bought an Elgato capture card hardware.
 
 1. <a target="_blank" href="https://www.youtube.com/watch?v=M4ckb53gxh0">VIDEO</a>: Control the OBS streaming app.
 
