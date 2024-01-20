@@ -161,10 +161,25 @@ In video recordings, it's disruptive to hear background conversations and other 
 
    Zoom and Microsoft Teams provide a mute button, but it's also too slow to find.
 
-   The <a target="_blank" href="https://apps.apple.com/us/app/mic-drop-mute-manager/id1489816366?mt=12">$4.99 MicDrop.app</a> provides a mute button icon on the Apple Menu Bar at the top of screens. For those who don't want to fiddle with a mouse to find it or hide their menu menu when Zoom is in full-screen mode, it can be invoked by a customizable keyboard shortcut to mute and unmute the microphone.
+1. The <a target="_blank" href="https://apps.apple.com/us/app/mic-drop-mute-manager/id1489816366?mt=12">$4.99 MicDrop.app</a> which provides a mute button icon on the Apple Menu Bar at the top of screens. For those who don't want to fiddle with a mouse to find it or hide their menu menu when Zoom is in full-screen mode, it can be invoked by a customizable keyboard shortcut to mute and unmute the microphone.
+
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1705696014/micdrop_ez3quh.webp"><img alt="micdrop.webp" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1705696014/micdrop_ez3quh.webp"></a>
 
    For those loath to install a 3rd-party app in fear of getting potentially infected by it, <a target="_blank" href="https://medium.com/macoclock/how-in-the-bleep-do-i-mute-my-mic-anywhere-on-macos-d2fa1185b13">this article</a> describes how to create a <strong>keyboard shortcut</strong> to mute the microphone using a script run by a utility that comes with macOS: <a target="_blank" href="https://support.apple.com/guide/automator/welcome/mac">Automator.app</a>. Coding Automator scripts is a useful skill to learn.
+
+   The above approach of installing an app avoids the disadvantage of opening up a potential vector for hackers when ANY and ALL AppleScript scripts are allowed to run on your computer. 
+   
+   <a name="AllowScript"></a>
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1705729680/key-script-allow-632x544_qm2fzu.png"><img alt="key-script-allow-632x544.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1705729680/key-script-allow-632x544_qm2fzu.png"></a>
+
+   Apple really needs to provide a way to allow only specific scripts to run.
+
+   Anyway, below are those ways.
+   
+1. <img align="right" width="21" height="22" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1705729540/key-mic-icon-21x22_uxkd3n.png"></a>Click on the "Get Shortcut" blue icon to install <a target="_blank" href="https://www.icloud.com/shortcuts/56ddbb1129dc477d866dae2344698a04">Apple's Mute/Unmute Mic shortcut</a> using the <a target="_blank" href="https://apps.apple.com/us/app/shortcuts/id915249334">Shortcuts.app</a> that comes with macOS. 
+
+Alternatively, you can create your own shortcut script using the instructions below.
 
 1. Press <strong>command + spacebar</strong> to open the Spotlight search box.
 1. Type "automator.app" and press Enter to select it among options. Automator's Finder window opens.
@@ -209,7 +224,7 @@ end if
 1. Press command+S to save the script as a file named "<strong>mic-toggle</strong>".
 1. Press command+Q to quit Automator.
 
-1. TODO: Ensure that Automator can control your computer. <a target="_blank" href="https://www.youtube.com/watch?v=Ce9T5AS2C2E">VIDEO</a>:
+1. Enable Automator to control your computer. <a target="_blank" href="https://www.youtube.com/watch?v=Ce9T5AS2C2E">VIDEO</a>:
 
    ### Add keyboard shortcut
 
