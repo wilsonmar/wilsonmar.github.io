@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-09-15"
+date: "2024-01-15"
 file: "github-data-security"
 title: "GitHub Data Security"
 excerpt: "How to keep secrets out of GitHub"
@@ -1123,6 +1123,7 @@ Additionally, I belive that there is danger with open-source apps because that s
 
 There are several secrets manager apps which provide both a CLI and GUI app on maCOS and Windows.
 
+   * <a href="#Apple+Keychain">Apple Keychain</a>/Keyring (built into macOS and iOS)
    * 1Password (paid app)
    * <a target="_blank" href="https://docs.ansible.com/ansible/latest/vault_guide/vault.html">Ansible Vault</a> from RedHat
    * <a target="_blank" href="https://bitwarden.com/help/cli/">BitWarden</a>
@@ -1132,7 +1133,63 @@ There are several secrets manager apps which provide both a CLI and GUI app on m
    * LastPass
    * Dashlane
    * <a target="_blank" href="https://wilsonmar.github.io/hashicorp-vault">HashiCorp Vault</a> (closed source)
+   * <a target="_blank" href="https://wilsonmar.github.io/akeyless/">AKeyless</a> (SaaS closed source)
    <br /><br />
+
+<a name="Apple+Keychain"></a>
+
+### Apple Keychain/Keyring
+
+Apple's Keychain is a password management system that Apple has provided with its macOS and iOS operating systems since Mac OS 8.6. 
+<a target="_blank" href="https://brettterpstra.com/2021/04/06/scripting-with-sudo-on-mac/">BLOG</a>:
+1. Press command+Spacebar for the Search dialog and type enough of <strong>Keychain Access.app</strong> to select it, then press Enter.
+
+   Alternately, in the Finder app, click on the Go menu, then select "Utilities" in folder <tt>/Applications/Utilities/</tt>.
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1705735535/apple-keychain-1730x500_pblqi4.png"><img alt="apple-keychain-1730x500.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1705735535/apple-keychain-1730x500_pblqi4.png"></a>
+
+   On the left menu, the "login" Default Keychain is selected by default. These are the passwords you use to login to your Mac. Keychain's file(s) are stored in folder <tt>~/Library/Keychains/</tt>.
+   
+   The "iCloud" Default Keychain is used to store your iCloud passwords. Store passwords there to sync them across all your Apple devices.
+
+   Apple's Keychain Access.app can house various types of secrets: passwords (for websites, FTP servers, SSH accounts, network shares, wireless networks, groupware applications, encrypted disk images), private keys, certificates, and secure notes.
+
+1. Configure your passwords to sync with iCloud so that if your laptop gets lost or stolen, you would still have access to passwords.
+
+1. Click the "Create New" button at the top of the Keychain Access dialog.
+1. For "Keychain Item Name:" type "root password".
+1. For "Account Name:" type "root".
+1. For "Password:" type your password.
+1. Click and unclick "Show Password" to confirm your typing.
+1. Click the "Add" button. Close the Keychain Access dialog.
+1. Use this bash script to retrieve the root password using Apple's <tt>security</tt> utility.
+
+   ```bash
+#!/bin/bash
+PASS=$(security find-generic-password -l "root password" -a root -w|tr -d '\n')
+if [ -z "$PASS" ]; then
+   echo "root password not found in the local keychain."
+   exit 1
+else
+   echo "$PASS" | sudo -S tmutil disable
+   unset PASS  # remove from memory
+   tmutil stopbackup
+fi
+   ```
+  
+   <tt>-w</tt> specifies return of just the password string.
+
+   <tt>|tr -d '\n'</tt> trims off the trailing newline character.
+
+   The password is provided to the Apple backup app <tt>tmutil</tt> without echoing the value to the Terminal log.
+
+   If the password is not found, the script returns an error message:
+
+   <pre>security: SecKeychainSearchCopyNext: The specified item could not be found in the keychain.
+   </pre>
+
+   <tt>-S</tt> specifies read password from STDIN (the result of the | pipe).
+
 
 ### Chezmoi CLI
 
