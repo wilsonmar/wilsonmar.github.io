@@ -438,6 +438,7 @@ The <a target="_blank" href="https://www.iso.org/standard/54534.html">ISO/IEC 27
 <tr valign="top"><td> 10.2 f)</td><td>Nature of the nonconformities and any subsequent actions taken (10.2 f))
 </td></tr>
 <tr valign="top"><td> 10.2 g)</td><td>Results of any corrective action (10.2 g))
+</td></tr>
 </table>
 
 Policies:
