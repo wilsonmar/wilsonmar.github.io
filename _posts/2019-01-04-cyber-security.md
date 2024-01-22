@@ -33,6 +33,27 @@ My Quizlet of Cyber Security Aconyms</a>
    * Procedures - step-by-step instructions
    <br /><br />
 
+
+<a name="Threats"></a>
+
+Definitions: REMEMBER:
+   * A <a href="#Threats">threat</a> is a potential harmful incident. 
+   * A threat agent (a malicious actor) is an individual or group that can manifest a threat.
+   * A threat event is a specific instance of a threat
+
+   * A vulnerability is a (potentially exploitable) weakness where there is the absence of a countermeasure in place.
+   * An exposure is an instance of being subjected or exposed to losses from a threat.
+   * A trigger is an event that indicates that a risk has occurred or is about to occur. 
+   * <strong>Enticements</strong> are apparent flaws deliberately made available for penetration and exploitation.
+
+   * <a href="#Attacks">Attacks</a> are attempts to violate an organization’s security or privacy
+   * An <strong>exploit</strong> is when a threat agent successfully takes advantage of a vulnerability
+   * Likelihood (of occurrence) is a weighted factor that a given threat agent is capable of exploiting a given vulnerability
+   * Level of risk before treatment is the <strong>inherent risk</strong>
+   * A <strong>breach</strong> is an attack that has been successful in reaching its goal.    
+   * Impact is the magnitude of harm caused by a threat source
+   <br /><br />
+
 PROTIP: Acronyms here are in my <a target="_blank" href="https://quizlet.com/159167491/acronyms-for-secure-iot-flash-cards/">444 item Quizlet flashcards for Cyber Security</a> for you to study more efficient.
 
 
@@ -167,26 +188,6 @@ Because service accounts and authorization are tightly coupled with the applicat
 The Cybersecurity Enhancement Act of 2014 (CEA), aka Public Law No. 113-274, provide a voluntary public-private partnership to improve cybersecurity.
 
 
-
-<a name="Threats"></a>
-
-Definitions: REMEMBER:
-   * A <a href="#Threats">threat</a> is a potential harmful incident. 
-   * A threat agent (a malicious actor) is an individual or group that can manifest a threat.
-   * A threat event is a specific instance of a threat
-
-   * A vulnerability is a (potentially exploitable) weakness where there is the absence of a countermeasure in place.
-   * An exposure is an instance of being subjected or exposed to losses from a threat.
-   * A trigger is an event that indicates that a risk has occurred or is about to occur. 
-   * <strong>Enticements</strong> are apparent flaws deliberately made available for penetration and exploitation.
-
-   * <a href="#Attacks">Attacks</a> are attempts to violate an organization’s security or privacy
-   * An <strong>exploit</strong> is when a threat agent successfully takes advantage of a vulnerability
-   * Likelihood (of occurrence) is a weighted factor that a given threat agent is capable of exploiting a given vulnerability
-   * Level of risk before treatment is the <strong>inherent risk</strong>
-   * A <strong>breach</strong> is an attack that has been successful in reaching its goal.    
-   * Impact is the magnitude of harm caused by a threat source
-   <br /><br />
 
 ## Quantitative risk analysis: 
 

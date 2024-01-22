@@ -3,7 +3,7 @@ layout: post
 date: "2024-01-20"
 file: "soc-siem-soar"
 title: "SOC-SIEM-SOAR"
-excerpt: "how a Security Operations Center (SOC) detects and responds to security threats using SIEM (Security Information and Event Management) and SOAR (Security Orchestration, Automation, and Response) software."
+excerpt: "How a Security Operations Center (SOC) detects and responds to security threats using SIEM (Security Information and Event Management) and SOAR (Security Orchestration, Automation, and Response) software."
 tags: [DevOps, ecosystem]
 image:
 # feature: pic data center slice 1900x500.jpg
@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<em>This article is phrased as descriptions</em>.
+<em>This article is phrased as descriptions for presentation to auditors.</em>.
 
 {% include whatever.html %}
 
@@ -59,11 +59,9 @@ The SOC departments also work with other departments to adjust security controls
    
 "Level 2" Security Analysts investigate and, if appropriate, define <strong>incidents</strong> to <strong>alert</strong> others for further analysis or remediation. 
 
-<strong>Senior SOC professionals</strong> lead the lifecycle of <strong>incident management</strong> and recovery efforts within other departments. They escalate incidents to management to report incidents internally and publicly. They maintain the system that <strong>escalates</strong> alerts when response is not timely. They also work with law enforcement and other organizations to share information about incidents and threats, in accordance with the organization's policies to meet data compliance standards including SOC2, ISO 27001, PCI DSS, GDPR, HIPAA, SOX, etc.
-
+<strong>Senior SOC professionals</strong> ("incident managers") lead the lifecycle of <strong>incident management</strong> and recovery efforts within other departments. They escalate incidents to management to report incidents internally and publicly. They maintain the system that <strong>escalates</strong> alerts when response is not timely. They also work with law enforcement and other organizations to share information about incidents and threats, in accordance with the organization's policies to meet data compliance standards including SOC2, ISO 27001, PCI DSS, GDPR, HIPAA, HITRUST, SOX, etc.
 
 <hr />
-
 
 ## SIEM Vendors
 
