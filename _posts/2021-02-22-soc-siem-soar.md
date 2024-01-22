@@ -61,6 +61,33 @@ The SOC departments also work with other departments to adjust security controls
 
 <strong>Senior SOC professionals</strong> ("incident managers") lead the lifecycle of <strong>incident management</strong> and recovery efforts within other departments. They escalate incidents to management to report incidents internally and publicly. They maintain the system that <strong>escalates</strong> alerts when response is not timely. They also work with law enforcement and other organizations to share information about incidents and threats, in accordance with the organization's policies to meet data compliance standards including SOC2, ISO 27001, PCI DSS, GDPR, HIPAA, HITRUST, SOX, etc.
 
+
+<hr />
+
+## Metrics of effectiveness
+
+Our approach to collecting and displaying metrics on the speed and effectiveness of our SOC is based on the <a target="_blank" href="https://www.sans.org/reading-room/whitepapers/analyst/defining-metrics-security-operations-center-33903">SANS Institute</a> (SysAdmin, Audit, Network, Security) "Defining Metrics for the Security Operations Center" by Christopher Crowley and Mark Orlando.
+
+The SOC generates online displays and reports to report on the volume of work using these categories:
+
+1. <strong>Collect</strong> data from various sources (network devices, servers, domain controllers, etc.)
+
+   SIEM gathers data from antivirus events, firewall logs, and other locations.
+
+2. Normalize and <strong>aggregate</strong> collected data so it can be analyzed
+
+3. Identify and categorize incidents (as sessions) to detect <strong>threats</strong>
+
+   SIEM sorts this data into categories, for example: malware activity and failed and successful logins. When SIEM identifies a threat through network security monitoring, it generates an alert and defines a threat level based on predetermined rules. For example, someone trying to log into an account 10 times in 10 minutes is ok, while 100 times in 10 minutes might be flagged as an attempted attack.
+
+4. Pinpoint security breaches and enable organizations to <strong>investigate</strong> generated alerts (forensics analysis)
+
+   SIEM software matches events against <strong>rules</strong> in analytics engines which <strong>indexes</strong> logs to enable searches and <strong>event correlation</strong>.
+
+5. <strong>Respond</strong> to incidents automatically and manually (using <a href="#SOAR">SOAR</a> software to apply automation and structure manual procedures defined in "playbooks").
+
+   KPIs here include <strong>Mean Time To Detect (MTTD)</strong> and <strong>Mean Time To Respond (MTTR)</strong> for IT security teams by reducing time wasted on <strong>false-positives</strong>.
+
 <hr />
 
 ## SIEM Vendors
@@ -104,46 +131,16 @@ Fireeye
 
 <hr />
 
-## Exabeam
-
-VIDEO</a>:
-
-
-<hr />
-
-## Metrics of effectiveness
-
-Our approach to collecting and displaying metrics on the speed and effectiveness of our SOC is based on the <a target="_blank" href="https://www.sans.org/reading-room/whitepapers/analyst/defining-metrics-security-operations-center-33903">SANS Institute</a> (SysAdmin, Audit, Network, Security) "Defining Metrics for the Security Operations Center" by Christopher Crowley and Mark Orlando.
-
-The SOC generates online displays and reports to report on the volume of work using these categories:
-
-1. <strong>Collect</strong> data from various sources (network devices, servers, domain controllers, etc.)
-
-   SIEM gathers data from antivirus events, firewall logs, and other locations.
-
-2. Normalize and <strong>aggregate</strong> collected data so it can be analyzed
-
-3. Identify and categorize incidents (as sessions) to detect <strong>threats</strong>
-
-   SIEM sorts this data into categories, for example: malware activity and failed and successful logins. When SIEM identifies a threat through network security monitoring, it generates an alert and defines a threat level based on predetermined rules. For example, someone trying to log into an account 10 times in 10 minutes is ok, while 100 times in 10 minutes might be flagged as an attempted attack.
-
-4. Pinpoint security breaches and enable organizations to <strong>investigate</strong> generated alerts (forensics analysis)
-
-   SIEM software matches events against <strong>rules</strong> in analytics engines which <strong>indexes</strong> logs to enable searches and <strong>event correlation</strong>.
-
-5. <strong>Respond</strong> to incidents automatically and manually (using <a href="#SOAR">SOAR</a> software to apply automation and structure manual procedures defined in "playbooks").
-
-   KPIs here include <strong>Mean Time To Detect (MTTD)</strong> and <strong>Mean Time To Respond (MTTR)</strong> for IT security teams by reducing time wasted on <strong>false-positives</strong>.
-
-
-<hr />
-
-
 ## Exabeam Workflows
 
 Exabeam uses its AI engine to identify "notable" High Risk Users and assets meeting threat profiles.
 
-Based on <a target="_blank" href="https://www.exabeam.com/wp-content/uploads/2020/10/Exabeam-Playbooks-White-Paper.pdf">this white paper</a>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1705885512/siem-exabeam-976x176_ej6bss.png"><img alt="siem-exabeam-976x176.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1705885512/siem-exabeam-976x176_ej6bss.png"></a>
+
+Exabeam makes use of the Mitre ATT&CK framework to categorize threats in order to provide context to SOC analysts:
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1705885049/threat-mitre-exabeam-1390x693_jpugt2.png"><img alt="threat-mitre-exabeam-1390x693" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1705885049/threat-mitre-exabeam-1390x693_jpugt2.png"></a>
+
+See <a target="_blank" href="https://www.exabeam.com/wp-content/uploads/2020/10/Exabeam-Playbooks-White-Paper.pdf">this white paper</a>.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=Y5oIy6vEAFA&list=PLMo-usVUpa8sdUAJDdYZk5wyEUQjCo1f7">How To videos</a>
 
