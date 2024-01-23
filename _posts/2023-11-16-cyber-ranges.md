@@ -840,7 +840,26 @@ Others:
 
 * https://www.udemy.com/course/learn-ethical-hacking-from-scratch/
 
+Automated / Scripted Assessment:
+* Atomic Red Team by Red Canary
+* RTA by Endgame
+* Metta by Uber
+* Caldera by MITRE
+* Infection Monkey by Guardicore
+* Purple Team Attack Automation by Preatorian
+<br /><br />
 
+Commercial:
+* Breach and attack Simulation (BAS)
+* Continuous Security Validation (CSV)
+<br /><br />
+
+Manual Assessment:
+* Metasploit / Armitage
+* Cobalt Strike
+* PowerShell Empire
+* Covenant
+<br /><br />
 
 
 <hr />
