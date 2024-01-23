@@ -50,7 +50,7 @@ SIEM and other security systems are set up and operated by our "<strong>platform
 
 The whole SOC department works proactively with technical teams to ensure that all automated CI/CD workflows <strong>scan</strong> each type of coding for known vulnerabilities.
 
-The SOC departments also work with other departments to adjust their <strong>security controls</strong> and <strong>policies</strong> (especially incident management and recovery) based on <strong>lessons learned</strong> from actual incidents and "Game Days" that simulate incidents instigated by a "Red Team" (internal penetration testers).
+The SOC departments also work with other departments to adjust their <strong>security controls</strong> and <strong>policies</strong> (especially incident management and recovery) based on <strong>lessons learned</strong> from actual incidents and "Game Days" that simulate incidents instigated by a "Red Team" (internal but production penetration testers) or "Purple Team" who operate on pre-planned targets across environments.
 
 "Level 1" Security Analysts prioritize work based on the <strong>severity</strong> (scope of the potential "blast radius") of the threat and the <strong>value of the asset</strong> at risk. Increasingly, such work is handled by AI.
 
@@ -78,11 +78,14 @@ The SOC generates online displays and reports to report on the volume and respon
 
 2. Normalize and <strong>aggregate</strong> collected data so it can be analyzed
 
+   * Volume of logs, metrics, and traces collected for each part of the organiation, per day/week/month/quarter/year over time (to project future storage capacity and costs)
+   <br /><br />
+
 3. Identify and categorize incidents (as sessions) to detect <strong>threats</strong>
 
    SIEM sorts this data into categories, for example: malware activity and failed and successful logins. When SIEM identifies a threat through network security monitoring, it generates an alert and defines a threat level based on predetermined rules. For example, someone trying to log into an account 10 times in 10 minutes is ok, while 100 times in 10 minutes might be flagged as an attempted attack.
 
-   The challenge level of anomaly detection goes from trivial hash values to known bad IP addresses to Domain names to Network/Host artifacts to Tools to analyzing TTPs (Tactics + Techniques + Procedures of attack).
+   The challenge level of anomaly detection goes from trivial hash values to known bad IP addresses to Domain names to Network/Host artifacts to Tools to analyzing TTPs .
 
    Relevance to <a target="_blank" href="https://www.cisecurity.org/controls/cis-controls-list">18 CIS Controls</a>:
    1. Inventory and Control of Hardware Assets
@@ -109,20 +112,23 @@ The SOC generates online displays and reports to report on the volume and respon
 
    SIEM software matches events against <strong>rules</strong> in analytics engines which <strong>indexes</strong> logs to enable searches and <strong>event correlation</strong>.
 
+   * Accuracy of blacklists blocking DNS, IP address, ports, strings, etc.
    * Percentage of false positives (versus true positives) is a challenge to efficiency. The objective is not 100% accuracy, but to reduce the number of false positives to a manageable level.
-   * Accuracy of TLD (Top Level Domain) blacklists
+   * Accuracy of <a target="_blank" href="https://github.com/TheHive-Project/TheHive/issues/616">PAP  (Permissible Actions Protocol)</a> classification to avoid being detected by attackers
+   * Accuracy of <a target="_blank" href="https://www.first.org/tlp/">TLP (Traffic Light Protocol)</a> classification about limits to sharing of information about incidents
    <br /><br />
 
 5. <strong>Respond</strong> to incidents automatically and manually (using <a href="#SOAR">SOAR</a> software to apply automation and structure manual procedures defined in "playbooks").
 
-   * <strong>Mean Time To Detect (MTTD)</strong> 
+   * <strong>Mean Time To Detect (MTTD)</strong> IoA occuring and IoC 
    * <strong>Mean Time To Respond (MTTR)</strong>
-   <br /><br />
 
-   * Threat count & percentage by stage in the Mitre ATT&CK framework (about the lifecycle of attacks) to provide context to SOC analysts:
+   * Threat count and percentage by stage in <a target="_blank" href="https://attack.mitre.org/matrices/enterprise/">Mitre's ATT&CK</a> framework of TTPs (Tactics + Techniques + Procedures of attack) in the lifecycle of attacks to provide context to SOC analysts:
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1705885049/threat-mitre-exabeam-1390x693_jpugt2.png"><img alt="threat-mitre-exabeam-1390x693" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1705885049/threat-mitre-exabeam-1390x693_jpugt2.png"></a>
 
-<a target="_blank" href="https://www.youtube.com/playlist?list=PLi04cDmxUX2tyKB87n1wsBtYEGgmmrTrg" title="by Justin Tolman">VIDEO</a>: CISA Incident Response Playbook
+   * Incidents shared with <a target="_blank" href="https://www.cisa.gov/report">CISA (US Cybersecurity Infrastructure Security Agency)</a> per <a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf">NIST 800-61 Rev 2</a>. See <a target="_blank" href="https://www.youtube.com/playlist?list=PLi04cDmxUX2tyKB87n1wsBtYEGgmmrTrg" title="by Justin Tolman">VIDEO</a>: CISA Incident Response Playbook
+   * <strong>Mean Time To Internal Report (MTTIR)</strong> -- time from incident occurance to report to management
+   * <strong>Mean Time To External Report (MTTER)</strong> -- time from incident occurance to report to law enforcement, which may be required by state and federal laws.
 
 
 <hr />
@@ -185,7 +191,7 @@ Content library of log <a target="_blank" href="https://github.com/ExabeamLabs/C
    <br /><br />
 
 
-## Sigma Community
+## Sigma Logs Analytics
 
 What Snort is to network traffic, and YARA to files, is Sigma to logs. 
 https://isc.sans.edu/forums/diary/Sigma+rules+The+generic+signature+format+for+SIEM+systems/26258/
@@ -213,7 +219,7 @@ SIEMonster: Open Source SIEM
 * For Case Management: TheHive <a target="_blank" href="https://www.youtube.com/watch?v=t6PqjLIVgdA&t=3m36s">VIDEO</a>, <a target="_blank" href="https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases-list/configure-pap-tlp-severity/#configure-tlp-confidentiality-of-information">DOCS</a>
 * For SOAR: Shuffle from Strangebee - <a target="_blank" href="https://www.youtube.com/watch?v=Nb9_ahZMC5U">VIDEO</a>, <a target="_blank" href="https://docs.strangebee.com/shuffle/user-guides/analyst-corner/playbooks/">DOCS</a>
 
-* To collect copies of digital evidence in a forensically sound way: <a target="_blank" href="https://www.exterro.com/forensic-toolkit">FTK (Forensic ToolKit) from Exterro</a> to copy from Windows & macOS computers, smartphones, and tablets. It can also analyze data from cloud storage and social media. FTK creates copies in a forensically sound way, so it's used by law enforcement, military, and intelligence agencies.
+* To collect copies of digital evidence in a forensically sound way: <a target="_blank" href="https://store.exterro.com/pages/ftk-8-0">$2,900</a> <a target="_blank" href="https://www.exterro.com/forensic-toolkit">FTK (Forensic ToolKit) from Exterro</a> to copy from Windows & macOS computers, smartphones, and tablets. It can also analyze data from cloud storage and social media. FTK creates copies in a forensically sound way, so it's used by law enforcement, military, and intelligence agencies.
 
 
 <a name="ThreatFeeds"></a>
@@ -239,9 +245,22 @@ MISP integrations with open-source and commercial threat intelligence platforms 
  
 <a target="_blank" href="https://www.youtube.com/watch?v=6UQc3BIxXDg">VIDEO: Threat Hunting Tutorials</a>
 
-
 wazuh.com
 HBIDS
+
+## Questions
+
+<a target="_blank" href="https://www.youtube.com/watch?v=iROI_8Psip8&list=PLi04cDmxUX2tyKB87n1wsBtYEGgmmrTrg&index=4&t=11m19s">VIDEO</a>:
+
+1. What was the initial attack vector? (How did the attacker get in?)
+2. How is the adversary accessing the environment?
+3. How did the attacker move laterally? (RDP, SSH, network shares, malware, etc.)
+4. How is the adversary maintaining control persistence? (How are they staying in?) 
+5. How is the attacker communicating with the C2 (Command and Control) server?
+6. What is the method of persistance (malware backdoor, webshell, legitimate credentials, remote tools, etc.)?
+7. What is the attacker doing on the system? (What commands are they running?)
+8. Has data been exfiltrated and if so, what kind of data and via what mechanism?
+
 
 ## References
 
