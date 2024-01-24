@@ -1,0 +1,114 @@
+---
+layout: post
+date: "2024-01-24"
+file: "attack"
+title: "(Mitre's) ATT&CK"
+excerpt: "How to use Mitre's ATT&CK framework to protect IT assets"
+tags: [DevOps, ecosystem]
+image:
+# feature: pic data center slice 1900x500.jpg
+  feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
+  credit:
+  creditlink:
+comments: true
+---
+<i>{{ page.excerpt }}</i>
+{% include l18n.html %}
+{% include _toc.html %}
+
+Mitre (a research lab funded by the US government) defined Mitre's ATT&CK to organize the phases of a "kill chain" how adversaries attack computer systems.
+
+{% include whatever.html %}
+
+There are several variations on Mitre's original ATT&ACK framework:
+
+* https://atlas.mitre.org/ adds columns for ML (Machine Learning).
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1706116271/attack-atlas-2401240-3628x770_oevrcg.png"><img alt="attack-atlas-2401240-3628x770.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1706116271/attack-atlas-2401240-3628x770_oevrcg.png"></a>
+
+* https://attack.mitre.org/tactics/enterprise/
+
+* <a target="_blank" href="https://www.dragos.com/mitre-attack-for-ics/">Dragos.com</a>, a MSPP specializing in OT (Operational Technologies) used with Industrial systems, modified the framework for OT:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1706117642/attack-dragos-240124-3814x1230_atws8j.png"><img alt="attack-dragos-240124-3814x1230.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1706117642/attack-dragos-240124-3814x1230_atws8j.png"></a>
+
+* Users of Exabeam shows a dashboard containing a Threat count for each stage:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1705885049/threat-mitre-exabeam-1390x693_jpugt2.png"><img alt="threat-mitre-exabeam-1390x693" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1705885049/threat-mitre-exabeam-1390x693_jpugt2.png"></a>
+
+* The ATT&CK Navigator is a web-based tool for annotating and exploring ATT&CK matrices. It can be used to visualize defensive coverage, red/blue team planning, the frequency of detected techniques, etc
+
+   https://mitre-attack.github.io/attack-navigator/
+
+
+## Attack Tactics
+
+1. Reconnaissance
+2. Resource Development
+
+3. Initial Access
+4. ML Model Access (not in standard & Dragos)
+5. Execution
+6. Persistence (not in Dragos)
+7. Privilege Escalation
+8. Defense Evasion
+
+9. Credential Access (not in Dragos)
+10. Discovery
+11. Lateral Movement (not in ML)
+12. Collection
+13. Command and Control or ML Attack Staging or "Inhibit Response Function" in Dragos
+
+14. Exfiltration (or Impair Process Control in Dragos)
+15. Impact
+
+
+### Alphabetical order
+
+<a target="_blank" href="https://atomicredteam.io/atomics/">atomicredteam.io/atomics</a>
+
+/12. Collection<br />
+/13. Command And Control<br />
+/_9. Credential Access<br />
+/_8. Defense Evasion<br />
+/10. Discovery<br />
+/_5. Execution<br />
+/14. Exfiltration<br />
+/15. Impact<br />
+/_3. Initial Access<br />
+/11. Lateral Movement<br />
+/_6 Persistence<br />
+/_7. Privilege Escalation<br />
+/_1. Reconnaissance<br />
+
+
+<hr />
+
+## Defensive Tactics
+
+1. Use the Tripwire utility to create a hash of each static file (such as exe's), then verify it occassionally to see if it has been changed.
+
+1. Setup SNMP with authentication 
+
+1. To ensure thMonitor Get an alert, regularly schedule a fake test attack sent to each device, which causes a log in SIEM.
+
+
+## Questions
+
+TODO:
+
+1. Initial Access vector -- How did the attacker get in?
+2. How is the adversary accessing the environment?
+3. How did the attacker move laterally? (RDP, SSH, network shares, malware, etc.)
+4. How is the adversary maintaining control persistence? (How are they staying in?) 
+5. How is the attacker communicating with the C2 (Command and Control) server?
+6. What is the method of persistance (malware backdoor, webshell, legitimate credentials, remote tools, etc.)?
+7. What is the attacker doing on the system? (What commands are they running?)
+8. Has data been exfiltrated and if so, what kind of data and via what mechanism?
+
+<hr />
+
+## Resources
+
+<a target="_blank" href="https://www.youtube.com/watch?v=iROI_8Psip8&list=PLi04cDmxUX2tyKB87n1wsBtYEGgmmrTrg&index=4&t=11m19s">VIDEO</a>:
+

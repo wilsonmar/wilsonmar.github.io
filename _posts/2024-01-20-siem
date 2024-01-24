@@ -1,0 +1,155 @@
+---
+layout: post
+date: "2024-01-20"
+file: "siem"
+title: "SIEM"
+excerpt: "How our Security Operations Center (SOC) detects and responds to security threats using software for SIEM (Security Information and Event Management) and SOAR (Security Orchestration, Automation, and Response)."
+tags: [DevOps, ecosystem]
+image:
+# feature: pic data center slice 1900x500.jpg
+  feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
+  credit:
+  creditlink:
+comments: true
+---
+<i>{{ page.excerpt }}</i>
+{% include l18n.html %}
+{% include _toc.html %}
+
+<em>This article is phrased as descriptions for presentation to auditors.</em>.
+
+{% include whatever.html %}
+
+
+## SIEM Vendors
+
+![siem-gartner-2021-570x592](https://user-images.githubusercontent.com/300046/155469245-580cdf79-41b0-4a5d-8432-2375eab527dd.png)
+From <a target="_blank" href="https://www.gartner.com/doc/reprints?id=1-26OLSQ2N&ct=210630&st=sb">Gartner</a>
+
+<a target="_blank" href="https://www.exabeam.com/">Exabeam</a> was the first to incorporate AI.
+   * https://grafana.com/success/exabeam/
+   <br /><br />
+
+<a target="_blank" href="https://wilsonmar.github.io/splunk">Splunk</a> offers both a cloud and full on-prem solution which Gartner rates among leaders in the space. 
+Splunk supports security monitoring and can provide advanced threat detection capabilities.
+   * https://www.splunk.com/en_us/data-insider/what-is-siem.html
+   * https://wilsonmar.github.io/splunk
+   <br /><br />
+
+IBM QRadar can be deployed as a hardware appliance, a virtual appliance, or a software appliance.
+[<a target="_blank" href="https://www.youtube.com/watch?v=bndWN1Iwl3Q">Course</a>]
+
+LogRhythm is used by smaller organizations.
+
+<a target="_blank" href="https://www.varonis.com/">Varonis</a>
+
+Securonix
+
+Rapid7
+
+Dell Technologies (RSA)
+
+Microsoft Azure Sentinel
+
+Sumo Logic
+
+Elastic
+
+Hewlett Packard Enterprise
+
+Fireeye
+   * https://www.fireeye.com/products/helix/what-is-siem-and-how-does-it-work.html
+
+
+<hr />
+
+## Exabeam Workflows
+
+Exabeam uses its AI engine to identify "notable" High Risk Users and assets meeting threat profiles.
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1705885512/siem-exabeam-976x176_ej6bss.png"><img alt="siem-exabeam-976x176.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1705885512/siem-exabeam-976x176_ej6bss.png"></a>
+
+See <a target="_blank" href="https://www.exabeam.com/wp-content/uploads/2020/10/Exabeam-Playbooks-White-Paper.pdf">this white paper</a>.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Y5oIy6vEAFA&list=PLMo-usVUpa8sdUAJDdYZk5wyEUQjCo1f7">How To videos</a>
+
+Content library of log <a target="_blank" href="https://github.com/ExabeamLabs/Content-Library-CIM2/blob/master/Exabeam%20Data%20Sources.md">data source</a> integrations and security use cases:
+   * https://github.com/ExabeamLabs/Content-Library-CIM1
+   * https://github.com/ExabeamLabs/Content-Library-CIM2
+   <br /><br />
+
+
+## Sigma Logs Analytics
+
+What Snort is to network traffic, and YARA to files, is Sigma to logs. 
+https://isc.sans.edu/forums/diary/Sigma+rules+The+generic+signature+format+for+SIEM+systems/26258/
+
+https://github.com/SigmaHQ/sigma
+enables Generic Signature Format for SIEM Systems
+
+https://www.securonix.com/blog/sigma-community-driven-approach-to-stop-cyber-threats/
+YAML files.
+
+https://socprime.com/blog/sigma-rules-guide-for-arcsight/
+* Sigma → ArcSight
+* ArcSight → Sigma → Splunk
+* Splunk → Sigma → ArcSight
+* QRadar → Sigma → ArcSight
+
+
+## FOSS for SOC
+
+<a target="_blank" href="https://www.youtube.com/watch?v=t6PqjLIVgdA">VIDEO</a>: 
+Build a SOC ecosystem using only 
+SIEMonster: Open Source SIEM
+
+* ELK (Elasticsearch, Logstash, Kibana) 
+* For Case Management: TheHive <a target="_blank" href="https://www.youtube.com/watch?v=t6PqjLIVgdA&t=3m36s">VIDEO</a>, <a target="_blank" href="https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases-list/configure-pap-tlp-severity/#configure-tlp-confidentiality-of-information">DOCS</a>
+* For SOAR: Shuffle from Strangebee - <a target="_blank" href="https://www.youtube.com/watch?v=Nb9_ahZMC5U">VIDEO</a>, <a target="_blank" href="https://docs.strangebee.com/shuffle/user-guides/analyst-corner/playbooks/">DOCS</a>
+
+* To collect copies of digital evidence in a forensically sound way: <a target="_blank" href="https://store.exterro.com/pages/ftk-8-0">$2,900</a> <a target="_blank" href="https://www.exterro.com/forensic-toolkit">FTK (Forensic ToolKit) from Exterro</a> to copy from Windows & macOS computers, smartphones, and tablets. It can also analyze data from cloud storage and social media. FTK creates copies in a forensically sound way, so it's used by law enforcement, military, and intelligence agencies.
+
+
+<a name="ThreatFeeds"></a>
+
+## Threat Intelligence Feeds
+
+VirusTotal from Google.
+
+Cortex-<a target="_blank" href="https://github.com/MISP/MISP</a> <a target="_blank" href="https://www.youtube.com/watch?v=t6PqjLIVgdA&t=7m38s">VIDEO</a> <a target="_blank" href="https://www.cosive.com/blog/what-is-misp-the-ultimate-introduction">Intro</a>
+
+Commercial sources with integration to MISP include 
+* <a target="_blank" href="https://www.broadcom.com/">Broadcom (previously Symantec's) DeepSight Intelligence</a>, 
+* <a target="_blank" href="https://www.wikiwand.com/en/Threat_Intelligence_Platform">Kaspersky threat feeds</a>, and 
+* McAfee Active Response. 
+
+MISP integrations with open-source and commercial threat intelligence platforms include 
+* <a target="_blank" href="https://www.threatq.com/ThreatQuotient">The ThreatQuotient Platform</a> and * <a target="_blank" href="https://www.eclecticiq.com/platform">EclecticIQ Platform</a>
+<br /><br />
+
+<a target="_blank" href="https://oasis-open.github.io/cti-documentation/stix/intro">STIX (Structured Threat Information Expression)</a> is a language and serialization format used to exchange cyber threat intelligence (CTI). STIX enables organizations to share CTI with one another in a consistent and machine-readable manner, allowing security communities to better understand what computer-based attacks they are most likely to see and to anticipate and/or respond to those attacks faster and more effectively.
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1705990305/stix-architecture_xrokdd.png"><img alt="stix-architecture.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1705990305/stix-architecture_xrokdd.png"></a>
+ 
+<a target="_blank" href="https://www.youtube.com/watch?v=6UQc3BIxXDg">VIDEO: Threat Hunting Tutorials</a>
+
+* wazuh.com
+* HBIDS
+
+## Questions
+
+https://attack.mitre.org/tactics/enterprise/
+
+Based on Mitre's ATT
+
+<a target="_blank" href="https://www.youtube.com/watch?v=iROI_8Psip8&list=PLi04cDmxUX2tyKB87n1wsBtYEGgmmrTrg&index=4&t=11m19s">VIDEO</a>:
+
+1. Initial Access vector -- How did the attacker get in?
+2. How is the adversary accessing the environment?
+3. How did the attacker move laterally? (RDP, SSH, network shares, malware, etc.)
+4. How is the adversary maintaining control persistence? (How are they staying in?) 
+5. How is the attacker communicating with the C2 (Command and Control) server?
+6. What is the method of persistance (malware backdoor, webshell, legitimate credentials, remote tools, etc.)?
+7. What is the attacker doing on the system? (What commands are they running?)
+8. Has data been exfiltrated and if so, what kind of data and via what mechanism?
+
