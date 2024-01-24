@@ -4,7 +4,7 @@ date: "2024-01-24"
 file: "attack"
 title: "(Mitre's) ATT&CK"
 excerpt: "How to use Mitre's ATT&CK framework to protect IT assets"
-tags: [DevOps, ecosystem]
+tags: [DevSecOps, AI]
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
@@ -22,13 +22,13 @@ Mitre (a research lab funded by the US government) defined Mitre's ATT&CK to org
 
 There are several variations on Mitre's original ATT&ACK framework:
 
-* https://atlas.mitre.org/ adds columns for ML (Machine Learning).
+* <a target="_blank" href="https://atlas.mitre.org/">https://atlas.mitre.org</a> adds columns for ML (Machine Learning).
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1706116271/attack-atlas-2401240-3628x770_oevrcg.png"><img alt="attack-atlas-2401240-3628x770.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1706116271/attack-atlas-2401240-3628x770_oevrcg.png"></a>
 
-* https://attack.mitre.org/tactics/enterprise/
+* <a target="_blank" href="https://attack.mitre.org/tactics/enterprise/">https://attack.mitre.org/tactics/enterprise</a> provides specific TTP
 
-* <a target="_blank" href="https://www.dragos.com/mitre-attack-for-ics/">Dragos.com</a>, a MSPP specializing in OT (Operational Technologies) used with Industrial systems, modified the framework for OT:
+* <a target="_blank" href="https://www.dragos.com/mitre-attack-for-ics/">Dragos.com</a>, a MSPP specializing in OT (Operational Technologies) used by Industrial Control System (ICS), modified the framework for OT:
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1706117642/attack-dragos-240124-3814x1230_atws8j.png"><img alt="attack-dragos-240124-3814x1230.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1706117642/attack-dragos-240124-3814x1230_atws8j.png"></a>
 
@@ -38,8 +38,9 @@ There are several variations on Mitre's original ATT&ACK framework:
 
 * The ATT&CK Navigator is a web-based tool for annotating and exploring ATT&CK matrices. It can be used to visualize defensive coverage, red/blue team planning, the frequency of detected techniques, etc
 
-   https://mitre-attack.github.io/attack-navigator/
+   <a target="_blank" href="https://mitre-attack.github.io/attack-navigator/">https://mitre-attack.github.io/attack-navigator</a>
 
+NOTE: "Reconnaissance" and "Resource Development" stages are not evaluated because it's difficult to collect information about them.
 
 ## Attack Tactics
 
@@ -86,7 +87,7 @@ There are several variations on Mitre's original ATT&ACK framework:
 
 ## Defensive Tactics
 
-1. Use the Tripwire utility to create a hash of each static file (such as exe's), then verify it occassionally to see if it has been changed.
+1. Use the Tripwire utility to create a hash of each static file (such as exe's), then verify each on a schedule to see if they have been changed to a potentially hacked version.
 
 1. Setup SNMP with authentication 
 

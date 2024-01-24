@@ -1277,8 +1277,8 @@ Type 'F5' to return to the previous dialog at any time.
 
     https://github.com/twpayne/chezmoi/issues/new/choose
 
-    <pre>username = {{ (keepassxc "example.com").UserName }}
-    password = {{ (keepassxc "example.com").Password }}
+    <pre>username = &lcub;&#x7B; (keepassxc "example.com").UserName &#123;&#123;
+    password = &#123;&#123; (keepassxc "example.com").Password &rcub;&rcub;
     </pre>
 
     Calling keepassxc multiple times with the same entry only invokes keepassxc-cli once.
