@@ -24,7 +24,7 @@ Our Security Operations Center (SOC) provides a <strong>central</strong> (enterp
 
 > “Security is always excessive until it’s not enough.” –-Robbie Sinclair
 
-The Chief Information Security Officer (CISO) or Chief Security Officer (CSO) define Risk Acceptance strategy/policy in relation to a budget for the SOC department.
+The Chief Information Security Officer (CISO) or Chief Security Officer (CSO) define Risk (Acceptance) Management strategy/policy in relation to a budget for the SOC department.
 SOC teams typically have a <strong>corporate-wide</strong> <strong>24/7/365</strong> scope of responsibility. 
 
 <a target="_blank" href="https://www.youtube.com/watch?v=ih0SC-dN6MU">This diagram</a> (<a target="_blank" href="https://7451111251303.gumroad.com/l/agrjv">available</a>) summarizes the text to follow:
@@ -36,12 +36,14 @@ Their work includes configuration of Intrusion Prevention Systems (IPS) (such as
 
 The team (and its AI programs) then defines <strong>logic rules</strong> used to automatically detect threats within the organization's systems. Such processing requires a collective memory about incidents that have occurred before -- in a "<strong>Security Data Warehouse</strong>" so that <strong>investigative queries</strong> are based on a complete set of security-related data about the activities of users, cloud operations, network devices (firewalls), servers, domain controllers, IoT devices, etc. Collected from each component are <strong>logs</strong> of events, <strong>metrics</strong> about CPU, memory, network capacity usage, responsiveness, etc.). Sometimes <strong>traces</strong> of internal processing are stored for root-cause troubleshooting.
 
-The "Risk Management" team prioritizes technical risks along with other risks to the organization, such as financial, legal, and reputation. 
+The "Risk Management" team estimates the consequences of technical risks along with other risks to the organization, such as financial, legal, and reputation. 
 Thus, they also incorporate in their analysis potential events in society at large based on sentiment analysis of social media and profiles of terrorists and other malicious actors. Their total view is what should be the basis for prioritizing the SOC team's work.
 
-> The SOC's objective: recognize potential security threats and vulnerabilities before they have a chance to disrupt business operations.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1706058238/threat-risk-mgmt-plan-1696x636_jewccs.png"><img alt="threat-risk-mgmt-plan-1696x636" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1706058238/threat-risk-mgmt-plan-1696x636_jewccs.png"></a>
 
-The system to <strong>document and automate response</strong> perform forensic analysis and remediate security <strong>incidents</strong> is called <strong>SOAR</strong> (Security Orchestration, Automation, and Response). Remediations include immediately "locking down" portions of the system to prevent further damage, and changing permissions allowed specific users and system components. SOAR tools can automate incident response actions using automation such as Bash Shell scripts, ChatGPT prompts, Python, SQL, and other programming code.
+> The common objective: recognize potential security threats and vulnerabilities before they have a chance to disrupt business operations.
+
+The system to <strong>document and automate response</strong> to <strong>incidents</strong> is called <strong>SOAR</strong> (Security Orchestration, Automation, and Response). Remediations include immediately "locking down" portions of the system to prevent further damage by changing permissions to limit access by specific users and system components. SOAR tools can automate incident response actions using automation such as Bash Shell scripts, ChatGPT prompts, Python, SQL, and other programming code.
 
 The system that collects and analyzes security data is called a <strong>Security Information and Event Management (SIEM)</strong> system. SIEM is an industry-wide <a target="_blank" href="https://wilsonmar.github.io/acronyms">acronymn</a>.According to Gartner:
 
@@ -62,9 +64,9 @@ The SOC departments also work with other departments to adjust their <strong>sec
 
 <strong>Senior SOC professionals</strong> ("incident managers") lead the lifecycle of <strong>incident management</strong> and <strong>recovery</strong> efforts within other departments. They escalate reports to management about incidents internally. They maintain the system that <strong>escalates</strong> alerts when response is not timely.
 
-The GRC (Governance, Risk, and Compliance) team works with the SOC team, auditors, and external law enforcement to ensure that the organization's security policies and procedures are up to date and followed, per the organization's policies to meet data compliance standards including SOC2, ISO 27001, PCI DSS, GDPR, HIPAA, HITRUST, SOX, etc.
+The GRC (Governance, Risk, and Compliance) team works with the SOC team, management (including Public Relations and Legal), auditors, and external law enforcement to ensure that the organization's security policies and procedures are up to date and followed, per the organization's policies to meet data compliance standards including SOC2, ISO 27001, PCI DSS, GDPR, HIPAA, HITRUST, SOX, etc.
 
-In smaller companies, some roles may be performed by the same person.
+NOTE: In smaller companies, some roles may be performed by the same person.
 
 
 <hr />
