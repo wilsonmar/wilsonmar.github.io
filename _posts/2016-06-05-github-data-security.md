@@ -1277,9 +1277,13 @@ Type 'F5' to return to the previous dialog at any time.
 
     https://github.com/twpayne/chezmoi/issues/new/choose
 
-    <pre>username = &lcub;&#x7B; (keepassxc "example.com").UserName &#123;&#123;
-    password = &#123;&#123; (keepassxc "example.com").Password &rcub;&rcub;
+    <pre>username = &lcub;&#x7B; (keepassxc "example.com").UserName &rcub;&rcub;
+    password = &#123;&#10100; (keepassxc "example.com").Password &rcub;&rcub;
     </pre>
+
+    * https://www.toptal.com/designers/htmlarrows/symbols/medium-left-curly-bracket-ornament/
+    * https://www.toptal.com/designers/htmlarrows/symbols/medium-right-curly-bracket-ornament/
+    <br /><br />    
 
     Calling keepassxc multiple times with the same entry only invokes keepassxc-cli once.
 
