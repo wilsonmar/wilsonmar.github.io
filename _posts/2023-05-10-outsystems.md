@@ -529,6 +529,7 @@ Depending on the version:
 
 ## References
 
+https://www.linkedin.com/pulse/outsystems-security-developer-helped-hacker-tech-lead-lucas-soares-f7u2e/
 
 <hr />
 
