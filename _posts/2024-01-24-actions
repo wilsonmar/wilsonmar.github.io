@@ -1,0 +1,97 @@
+---
+layout: post
+date: "2024-01-25"
+file: "actions"
+title: "Actions"
+excerpt: "For establishing security"
+tags: [DevSecOps, Security]
+image:
+# feature: pic data center slice 1900x500.jpg
+  feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
+  credit:
+  creditlink:
+comments: true
+---
+<i>{{ page.excerpt }}</i>
+{% include l18n.html %}
+{% include _toc.html %}
+
+
+PROTIP: To reduce arguments about priorities, pre-define <a target="_blank" href="https://www.youtube.com/watch?v=gIsLP_Dtv7M&t=23m55s">this priority map</a> (from red to yellow, and green, like US traffic lights) by focusing on both impact and probability of each occurring:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1706150179/soc-priorities-2644x1212_tlal87.png"><img alt="soc-priorities-2644x1212.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1706150179/soc-priorities-2644x1212_tlal87.png"></a>
+
+
+PROTIP: Define the meaning of words for <strong>Impact Category Levels</strong>, such as <a target="_blank" href="https://www.youtube.com/watch?v=gIsLP_Dtv7M&t=34m14s">this</a> because values change over time and to provide a common vocabulary:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1706130445/impact-categories-2662x1440_xtqxsa.png" title="Creating a Security Metrics Program: How to Measure Success - SANS ICS Security Summit 2019 by Jason Christopher, CTO, Axio Global, Inc."><img alt="impact-categories-1030x562.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1706130445/impact-categories-2662x1440_xtqxsa.png"></a>
+
+## Defensive Tactics
+
+Here are some examples:
+
+A. Train and certify all employees to use a common <strong>task tracking</strong> system responding to alerts (Vendor: Jira).
+
+B. <strong>Escalate</strong> tasks which are not resolved in a timely way (Vendor: PagerDuty)
+
+C. Train and certify all email holders to recognize <strong>phishing</strong> attacks (Vendor: Knowbe4).
+
+D. Get customers and vendors to <strong>secure emails</strong> using SPF etc in DNS (Vendor: Virtru).
+
+E. Use <strong>MFA</strong> (Multi-Factor Authentication) for all logins (vendor: Microsoft Entra ID P2).
+
+F. Provide each employee with a <strong>password manager</strong> to make it convenient to generate strong passwords and autofill websites so password reuse is not necessary.
+
+G. Limit <strong>permission to backup</strong> media to separate accounts so they can't be deleted and encrypted for ransomware.
+
+H. Assign <strong>least privilege</strong> permissions to limit each account to the minimum permissions needed to do their job.
+
+I. <strong>Segment</strong> the network into zones, with a firewall between each zone, and only allow the minimum ports and protocols needed for each zone. This limits lateral movement by attackers.
+
+J. Configure each device based on security recommendations in its <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks/"><strong>CIS Benchmark</strong></a>.
+
+K. <strong>Automate installs</strong> of the latest version of every component (OS, utilities, apps) on laptops and servers in case of infection. This include drivers, firmware, TLS version, etc.
+
+L. Verify that each device is running the <strong>latest version</strong> of patches of OS, utilities, apps.
+
+M. After each install, create a hash of each static (executable) file, then generate them repeatedly on a schedule to see if they have been changed to a potentially hacked version. <strong>File integrity</strong> host-based IDPS (Intrusion Detection and Protection System) Vendor: <a target="_blank" href="https://www.ossec.net/">Atomic OSSEC</a>, Solarwinds, <a target="_blank" href="https://www.tripwire.com/state-of-security/ot-security-risks-challenges-and-securing-your-environment">Tripwire</a> <a target="_blank" href="https://github.com/Tripwire/tripwire-open-source" title="WARNING: from 2018">open source</a>)
+
+N. Perform regular <strong>data backups</strong> to cloud for enabling data recovery.
+
+O. <strong>Verify recovery</strong> to prove the ability to recover from backups and reinstalls.
+
+P. Send <strong>alerts to SIEM</strong> (<a target="_blank" href="https://wilsonmar.github.io/siem/">Security Information and Event Management</strong> system) upon irregular logins, when a device is added to or removed from the network, when data streams are larger or smaller than normal, etc. (Vendor: Microsoft Defender, Prometheus Cloud)
+
+Q. Regularly schedule a fake test attack sent to each device, to ensure that <strong>alerts works</strong> in SIEM.
+
+R. Create a <strong>SBOM</strong> (Software Bill of Materials) of each open-source library package in the chain of references. Flag suspicious version changes, then scan the code of each package for vulnerabilities such as exfiltrating data externally.
+
+S. Detect <strong>anomalies in network</strong> traffic, such as a sudden increase in the number of connections to a server, or a sudden increase in the number of bytes sent to a server.
+
+T. Train and certify each employee to manage action levels from <strong>trends in dashboards</strong> (Vendor: Grafana)
+
+
+### API & OT (Operational Technology) Security
+
+U. Configure every node with certificates for two-way encryption using <strong>mTLS</strong> (Mutual TLS) between every node for all network connections.
+
+V. Have API servers <a target="_blank" href="https://portswigger.net/web-security/jwt#exploiting-flawed-jwt-signature-verification">verify</a> JWT (JSON Web Tokens) signatures to block attempts at user impersonation. Sign JWT tokens with a private key, then verify the signature with a public key.
+
+W. Enforce a strict whitelist of permitted hosts for the jku header.
+
+X. Always set an expiration date for any tokens issued.
+
+Y. Avoid sending tokens in URL parameter string, which end up in logs.
+
+Z. Include the aud (audience) claim (or similar) to specify the intended recipient of the token. This prevents it from being used on different websites.
+
+AA. Enable the issuing server to revoke tokens (on logout, for example).
+
+AB. Setup secure video surveillance of remote hardware devices to provide a history of accesses.
+
+AC. Use API management servers to assign API tokens so that the number of API calls per minute can be tracked and limited.
+
+AD. Setup SNMP pings with authentication 
+
+
+Standards for ICS (Industrial Control Systems) are defined by NIST (National Institute of Standards and Technology) as ISA/IEC-62443 or ISA-99 in the US and IEC (International Electrotechnical Commission) in Europe.

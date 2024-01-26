@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-12-25"
+date: "2024-01-25"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 excerpt: "A deep dive on how to orchestrate containers, especially in clouds, including OpenShift. Pass the CKAD and CKA exams."
@@ -8157,6 +8157,9 @@ by Thetips4you
 https://www.youtube.com/watch?v=mLPg49b33sA
 Prometheus Monitoring - Steps to monitor third-party apps using Prometheus Exporter | Part 2
 by TechWorld with Nana
+
+https://falco.org/docs/getting-started/installation/
+Falco is a rule-based IDF for privileged containers. It's a CNCF project.
 
 
 
