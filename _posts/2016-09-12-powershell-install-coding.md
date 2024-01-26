@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-08-02"
+date: "2024-01-12"
 file: "powershell-install-coding"
 title: "PowerShell Install Coding"
 excerpt: "Make PowerShell your superpower on Windows and Macs, for fun and profit"
@@ -170,7 +170,7 @@ Password: ____
 
    Response:
 
-   <pre>installer: Package name is PowerShell - 7.3.6
+   <pre>installer: Package name is PowerShell - 7.4.1
 installer: Installing at base path /
 installer: The install was successful.
 🍺  powershell was successfully installed!
@@ -206,17 +206,17 @@ Mode                 LastWriteTime         Length Name
 0. Open a Terminal shell window to launch PowerShell<br />
    on MacOS:
 
-   <tt><strong>pwsh
-   </strong></tt>
+   <pre><strong>pwsh
+   </strong></pre>
 
    On Windows:
 
-   <tt><strong>powershell
-   </strong></tt>
+   <pre><strong>powershell
+   </strong></pre>
 
    The response:
 
-   <pre>PowerShell 7.3.6
+   <pre>PowerShell 7.4.1
 PS /Users/...> 
    </pre>
 
@@ -226,7 +226,7 @@ PS /Users/...>
 
    Sometimes the response also has:
 
-   <pre>A new PowerShell stable release is available: v7.3.6
+   <pre>A new PowerShell stable release is available: v7.4.1
    Upgrade now, or check out the release page at:       
      https://aka.ms/PowerShell-Release?tag=v7.3.7
    </pre>
@@ -248,16 +248,17 @@ PS /Users/...>
 
    Notice there are "LOGNAME" and "USER" variables.
 
-1. The content of system environment variabluname $USER can be identified quickest using a command on both Linux and Windows:
+1. The content of system environment variable name $USER can be identified quickest using a command on both Linux and Windows:
 
    <pre><strong>uname</strong></pre>
 
    
-1. To display just the value of the <strong>$HOME</strong> variable which defines path where the "cd" command navigates to:
+1. To display just the value of the <strong>$HOME</strong> variable which defines the path where the "cd" command navigates to:
 
-   <pre><strong>Get-Variable HOME -valueOnly</strong></pre>
+   <pre><strong>Get-Variable HOME -valueOnly
+   </strong></pre>
 
-   On MacOS and Linux, for example
+   On MacOS and Linux, for example (replacing "johndoe" with your user name):
 
    <pre>/Users/<em>johndoe</em></pre>
 
