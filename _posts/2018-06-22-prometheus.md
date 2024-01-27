@@ -1139,3 +1139,5 @@ Prometheus and Grafana.
 Alertmanager integrates notifications and alerts with the Mattermost Community Server and 
 OpsGenie.
 
+An example of what Metrics documentation about its <tt>scrape_config</tt> looks like:
+https://docs-git-update-metrics-gatewaydio.vercel.app/using-gatewayd/global-configuration/metrics/
