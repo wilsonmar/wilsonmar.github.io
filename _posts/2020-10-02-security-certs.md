@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-12-08"
+date: "2024-01-25"
 file: "security-certs"
 title: "Security Certifications"
 excerpt: "There are several (overlapping) ones."
@@ -24,7 +24,12 @@ For security professionals, there are several expensive overlapping certificatio
 This map is from <a target="_blank" href="https://pauljerimy.com/category/book-reviews/">security techo thriller book reviewer</a> <a target="_blank" href="https://pauljerimy.com/security-certification-roadmap/">Paul Jerimy's roadmap</a> at<br />
 <img width="1613" alt="security-cert-landscape" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690304615/security-certs-1905x908_lsmbyg.png"><br /><em>Click for full screen image.</em></a>
 
-<a target="_blank" href="https://docs.google.com/spreadsheets/d/1Bk35IoIglqcPtcMLQUX4CLwaXgh8rdvw4UrbHqGJlE8/edit#gid=1478534077">spreadsheet</a> by Dean Bushmiller
+## Other lists:
+
+   * <a target="_blank" href="https://docs.google.com/spreadsheets/d/1Bk35IoIglqcPtcMLQUX4CLwaXgh8rdvw4UrbHqGJlE8/edit#gid=1478534077">spreadsheet</a> by <a target="_blank" href="https://www.linkedin.com/in/deanbushmiller/">Dean Bushmiller</a>.
+   * <a target="_blank" href="https://github.com/The-Art-of-Hacking/h4cker/blob/master/certifications/cybersec_certifications.md">h4cker</a> by the legend <a target="_blank" href="https://www.linkedin.com/in/santosomar/">Omar Santos</a>
+   <br /><br />
+
 
 ## Glossaries
 
