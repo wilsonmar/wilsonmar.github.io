@@ -22,7 +22,8 @@ For security professionals, there are several expensive overlapping certificatio
 {% include whatever.html %}
 
 This map is from <a target="_blank" href="https://pauljerimy.com/category/book-reviews/">security techo thriller book reviewer</a> <a target="_blank" href="https://pauljerimy.com/security-certification-roadmap/">Paul Jerimy's roadmap</a> at<br />
-<img width="1613" alt="security-cert-landscape" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690304615/security-certs-1905x908_lsmbyg.png"><br /><em>Click for full screen image.</em></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690304615/security-certs-1905x908_lsmbyg.png"><img width="1613" alt="security-cert-landscape" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690304615/security-certs-1905x908_lsmbyg.png"><br /><em>Click for full screen image.</em></a>
+
 
 ## Other lists:
 
@@ -32,8 +33,10 @@ This map is from <a target="_blank" href="https://pauljerimy.com/category/book-r
 
 
 ## Glossaries
+   * <a target="_blank" href="https://wilsonmar.github.io/acronyms/">My Acronyms</a> in various industries
+   * https://github.com/deanbushmiller/CEH-bootcamp/wiki/CEH-Glossary
+   <br /><br />
 
-https://github.com/deanbushmiller/CEH-bootcamp/wiki/CEH-Glossary
 
 <hr />
 
