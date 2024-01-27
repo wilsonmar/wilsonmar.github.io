@@ -1141,3 +1141,14 @@ OpsGenie.
 
 An example of what Metrics documentation about its <tt>scrape_config</tt> looks like:
 https://docs-git-update-metrics-gatewaydio.vercel.app/using-gatewayd/global-configuration/metrics/
+
+
+
+
+<hr />
+
+## More on Security #
+
+This is one of a series on Security and DevSecOps:
+
+{% include security_links.html %}

@@ -1800,8 +1800,10 @@ Fabrikam Fabric Store
 https://www.magellantv.com/series/secret-wars
 
 
+<hr />
+
 ## More on Security #
 
-This is one of a series on Security in DevSecOps:
+This is one of a series on Security and DevSecOps:
 
 {% include security_links.html %}

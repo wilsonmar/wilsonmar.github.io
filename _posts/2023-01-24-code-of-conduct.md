@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-01-24"
+date: "2024-01-24"
 file: "code-of-conduct"
 title: "Code of Conduct"
 excerpt: "Rules for building vibrant and useful communities"
@@ -19,7 +19,7 @@ Code of Conduct statements define rules to protect communities and their members
 
 The rules define how we treat each other so that everyone feels welcomed, comfortable, and safe.
 
-Microsoft published Code of Conduct examples, which group members agree to follow as condition for admittance.
+Microsoft published Code of Conduct examples, which group members agree to follow as conditions for admittance.
 
 From the Code of Conduct for Azure Data Tech Groups at
 
@@ -68,3 +68,13 @@ Throughout each interaction:
 
 https://www.pelham.ca/en/living-here/resources/Documents/S100-12---Public-Code-of-Conduct.pdf
 
+
+
+
+<hr />
+
+## More on Security #
+
+This is one of a series on Security and DevSecOps:
+
+{% include security_links.html %}
