@@ -11,7 +11,13 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-The only game I play is Microsoft Flight Simulator so I can fly around the world and experience.
+With wars breaking out around the world, I splurged on a setup for the <strong>Microsoft Flight Simulator</strong> so I could fly around the world in various planes.
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1706539267/flightsim-costs-596x1330_nsav7k.png"><img align="right" width="300" alt="flightsim-costs-596x1330.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1706539267/flightsim-costs-596x1330_nsav7k.png"></a>
+The game is praised for its realism and scale -- a fine example of how Microsoft Azure's cloud computing platform can be used to run massive AI-powered processes that generate three-dimensional representations of cities, foliage, and other objects in UHD resolution based on real-world satellite images. Real-time weather data is also pulled from the cloud, allowing the game to simulate weather conditions at any location in the world.
+
+Some criticized its loading times.
+
 
 Microsoft Flight Simulator is one of the longest-running, best-known, and most comprehensive flight simulator programs on the market. It was an early product in the Microsoft application portfolio and differed significantly from Microsoft's other software, which was largely business-oriented. 
 Bruce Artwick's company, subLOGIC, began Flight Simulator development in 1977.
@@ -36,7 +42,7 @@ On August 18, 2020, Microsoft released Microsoft Flight Simulator to generally p
 The new simulator is built on a new in-house engine named Asobo developed for the game. 
 The game features a realistic simulation of the entire Earth using textures and topographical data from Bing Maps. The game also features a <strong>dynamic weather system</strong> that simulates real-world weather conditions of each location. 
 
-Xbox X version is praised for its realism and scale, but some criticized its loading times.
+
 
 <hr />
 
@@ -44,15 +50,34 @@ Xbox X version is praised for its realism and scale, but some criticized its loa
 
 ## Xbox X setup
 
-<a target="_blank" href=""><img alt="flightsim-costs-478x808.png" width="479" height="808" src=""></a>
-
-Tutorials - PROTIP: Read the manual before spending a bunch of money. Your public library may have a copy.
-   * <a target="_blank" href="https://www.amazon.com/FAR-AIM-2024-Administration-Aeronautical/dp/1644252813/">$26.96</a> FAA FAR/AIM 2024: Federal Aviation Regulations/Aeronautical Information Manual (ASA FAR/AIM Series) Paperback – September 5, 2023 from Titles 14 and 49 of the Code of Federal Regulations (14 and 49 CFR) 
-   * <a target="_blank" href="https://www.amazon.com/Microsoft-Simulator-Dummies-Brittany-Vincent/dp/1119828457/">$24</a> Microsoft Flight Simulator for Dummies book.
+PROTIP: View videos and learn aviation and avionics terms before spending a bunch of money. 
 
 Videos:
-   * <a target="_blank" href="https://www.youtube.com/watch?v=QL4q_Tbv0jM&list=PLbphwhPw2JuvwwsD-H3xoxmb4PUbCyZen">Microsoft Flight Simulator - Tutorials</a> 13 of them.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=QL4q_Tbv0jM&list=PLbphwhPw2JuvwwsD-H3xoxmb4PUbCyZen">VIDEOs: Microsoft Flight Simulator - Tutorials</a> 13 of them.
    * <a target="_blank" href="https://www.youtube.com/watch?v=woRRntAp4q4">Real A320 Pilot Plays Microsoft Flight Simulator 2020 - Realistic 2 HOUR A320 NEO Full Flight in 4K</a>
+   <br /><br />
+
+Books: PROTIP: Your public library may have a copy.
+   * <a target="_blank" href="https://www.amazon.com/FAR-AIM-2024-Administration-Aeronautical/dp/1644252813/">$26.96</a> FAA FAR/AIM 2024: Federal Aviation Regulations/Aeronautical Information Manual (ASA FAR/AIM Series) Paperback – September 5, 2023 from Titles 14 and 49 of the Code of Federal Regulations (14 and 49 CFR) 
+   * <a target="_blank" href="https://www.amazon.com/Microsoft-Simulator-Dummies-Brittany-Vincent/dp/1119828457/">$24</a> Microsoft Flight Simulator for Dummies book.
+   * <a target="_blank" href="https://www.amazon.com/MASTERING-XBOX-Comprehensive-Understanding-Microsofts/dp/B0CMVN5KNW/">$10.99</a> MASTERING XBOX SERIES X: A Comprehensive Guide to Understanding Microsoft's Next-Gen Console and Game Pass Subscription Service
+   <br /><br />
+
+Game:
+   * <a target="_blank" href="https://www.amazon.com/Microsoft-Flight-Simulator-Anniversary-Premium/dp/B0BJH5T8LV/">$119.99</a> Microsoft Flight Simulator 40th Anniversary – Premium Deluxe – Xbox Series X\|S, Windows [Digital Code]. 
+   <br /><br />
+
+   For more airports and aircraft, go from Standard to Deluxe to Premium Deluxe for $30 each step.
+
+   Additional aircraft can be purchased in-game for $15 each.
+
+Windows PC instead of XBox console
+Running on Windows 10/11 requires a fast CPU with plenty of drive space and a powerful video card. 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=SQX_Bzj3oD4&t=2m2s">VIDEO</a>: 2023 Flight Controller Buying Guide For Both Xbox & PC - Low, Mid & High End Budgets!
+   * The 15.6-inch screen on a gamer Windows laptop PC is too small, but more portable than an Xbox.
+   <br /><br />
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=mSLaJ_7pFLE">VIDEO</a>: Benchmark tests of Windows PC components (AMD vs Intel, Nvidia vs AMD) for Flight Simulator 2020.
    <br /><br />
 
 "optimized" for Xbox Series X\|S console:
@@ -60,9 +85,17 @@ Videos:
    * Costco's bundle with a second controller (and 3 months of Game Pass) for $599 is too expensive.
    <br /><br />
 
-It runs on Windows 10/11, but it needs a fast CPU with plenty of drive space and a powerful video card. 
-   * The 15.6-inch screen on a gamer Windows laptop PC is too small, but more portable than an Xbox.
-   * <a target="_blank" href="https://www.amazon.com/Microsoft-Flight-Simulator-Anniversary-Premium/dp/B0BJH5T8LV/">$119.99</a> Microsoft Flight Simulator 40th Anniversary – Premium Deluxe – Xbox Series X\|S, Windows [Digital Code]. 
+Cooling fan and dust cover
+   * <a target="_blank" href="https://www.amazon.com/Charging-CODOGOY-Compatible-Controller-Accessories/dp/B0B8NB44FR/">38.69</a> Vertical charging stand for 2 controllers with cooling fan 
+   * <a target="_blank" href="https://www.amazon.com/Xbox-Adjustable-Temperature-Independent-Horizontal-X/dp/B0CJLQX9K1/">$35.99</a> Cooling Fan with removable dust cover. colorful RGB Light Strip Low Noise Top Fan with 3 Gears, Independent Touch Switch, 2 USB Port
+   <br /><br />
+
+UPS (Uninterruptible Power Supply) to protect against power surges and outages to Console, TV, etc.
+   * <a target="_blank" href="https://www.amazon.com/APC-Battery-Protector-BackUPS-BX1500M/dp/B06VY6FXMM/">$179.99</a> UPS Battery Backup and Surge Protector, BX1500M Backup Battery Power Supply, AVR, Dataline Protection
+   <br /><br />
+
+Microsft Game Pass subscription:
+   * <a target="_blank" href="https://www.xbox.com/en-US/xbox-game-pass">Xbox Game Pass</a> is a subscription service from Microsoft for use with its Xbox Series X\|S and Xbox One consoles and Windows 10 PCs.
    <br /><br />
 
 Fast internet - WARNING: Some users report that downloads take 2 hours.
@@ -77,21 +110,25 @@ Fast internet - WARNING: Some users report that downloads take 2 hours.
 Rudder peddles for flight sim
    * <a target="_blank" href="https://www.amazon.com/VelocityOne-Universal-Windows-Featuring-Adjustable-PC/dp/B0B7NTLKF2/">$299</a> Turtle Beach VelocityOne Universal Rudder Pedals for Windows 10 & 11 PCs, Xbox Series X, Xbox Series S, and Xbox One Featuring Smooth Rudder Axis, Adjustable Brakes and Pedal Width – Black
 
-Flight  stand
+Flight stand
    * <a target="_blank" href="https://www.amazon.com/OpenWheeler-Configuration-Flight-Quadrant-Package/dp/B07YS9CG6T/">$199</a> OpenWheeler GEN3 Racing Wheel Stand Cockpit Red on Black \| Fits All Logitech G923 \| G29 \| G920 \| Thrustmaster \| Fanatec Wheels \| Compatible with Xbox One, PS4, PC Platforms</a>
    * <a target="_blank" href="https://www.amazon.com/dp/B0BWQYF9SV/ref=syn_sd_onsite_desktop_0?ie=UTF8&psc=1&pd_rd_plhdr=t&aref=zLIyx0scWv">$79</a> 2 Set The Desk Mount for The Flight Sim Game Joystick, Throttle and Hotas Systems Compatible with Logitech X56, X52, Thrustmaster T-Flight Hotas,Thrustmaster T.16000M, Thrustmaster TCA,Wining orion 2
    <br /><br />
 
-Figher Jet joystick: <a target="_blank" href="https://www.youtube.com/watch?v=X7bS7CIhaNk">VIDEO</a>
+Joystick for figher jets: <a target="_blank" href="https://www.youtube.com/watch?v=X7bS7CIhaNk">VIDEO</a>
    * Hotas Warthog
    * <a target="_blank" href="https://www.amazon.com/Thrustmaster-Hotas-Warthog-Flight-Stick-Pc/dp/B00371R8P4/">$499</a> Thrustmaster Hotas Warthog Flight Stick (Windows)
    * Velocity One 
 
 Steering wheel and pedals for racing games
    * <a target="_blank" href="https://www.amazon.com/Logitech-Dual-Motor-Feedback-Driving-Responsive/dp/B00Z0UWV98/">$249</a> Logitech G920 Driving Force Racing Wheel and Floor Pedals, Real Force Feedback, Stainless Steel Paddle Shifters, Leather Steering Wheel Cover for Xbox Series X\S, Xbox One, PC, Mac - Black
+   <br /><br />
 
-Seat
+   Different seats for different games (Forza Motorsport racing, etc.)
+
+Seat:
    * <strong>Playseat</strong>
+   <br /><br />
 
 120 inch screen
    * <a target="_blank" href="https://www.amazon.com/Elite-Screens-120-inch-Projector/dp/B00MAPCZK4/">$199</a> Elite Screens Manual B 120-INCH Manual Pull Down Projector Screen Diagonal 16:9 Diag 4K 8K 3D Ultra HDR HD Ready Home Theater Movie Theatre White Projection Screen with Slow Retract Mechanism M120H
@@ -102,10 +139,12 @@ Seat
    <br /><br />
 
 <strong>headset</strong> with a microphone
-   * <strong>Turtle Beach Stealth 700</strong>.
+   * <a target="_blank" href="https://www.amazon.com/Stealth-Multiplatform-Wireless-Noise-Cancelling-Xbox-X/dp/B0BX77C1LD/">$318.37</a> Turtle Beach Stealth Pro Multiplatform Wireless Noise-Cancelling Gaming Headset for Xbox Series X\|S, Xbox One, PS5, PS4, PC, Mac, Switch, & Mobile – 50mm Speakers, Bluetooth, Dual Batteries – Black
+   <br /><br />
 
 Camera (for streaming and making videos)
-   * whatever
+   * <a target="_blank" href="https://www.amazon.com/Opal-Tadpole-Laptops-Directional-Microphones/dp/B0CM8V52PG/">$129</a> Opal Tadpole - USB Microphone for Laptops - 2 Directional Microphones for Recording Meetings, Interviews, Video Calls, and More
+   <br /><br />
 
 Game Capture device to record gameplay for streaming and making videos
    * <a target="_blank" href="https://www.amazon.com/Elgato-Game-Capture-HD60-PlayStation/dp/B01DRWCOGA/">$149</a> Elgato Game Capture HD60 S - Stream and Record in 1080p60, for PlayStation 5, Xbox Series X\|S, Xbox One & PS4
