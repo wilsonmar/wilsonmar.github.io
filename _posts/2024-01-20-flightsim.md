@@ -11,9 +11,8 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-With wars breaking out around the world, I splurged on a setup for the <strong>Microsoft Flight Simulator</strong> so I could fly around the world in various planes.
+With wars breaking out around the world, I splurged on a setup for the <strong>Microsoft Flight Simulator</strong> so I could fly around the world safely in various planes, for less than an average cruise.
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1706539267/flightsim-costs-596x1330_nsav7k.png"><img align="right" width="300" alt="flightsim-costs-596x1330.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1706539267/flightsim-costs-596x1330_nsav7k.png"></a>
 The game is praised for its realism and scale -- a fine example of how Microsoft Azure's cloud computing platform can be used to run massive AI-powered processes that generate three-dimensional representations of cities, foliage, and other objects in UHD resolution based on real-world satellite images. Real-time weather data is also pulled from the cloud, allowing the game to simulate weather conditions at any location in the world.
 
 Some criticized its loading times.
@@ -52,6 +51,7 @@ The game features a realistic simulation of the entire Earth using textures and 
 
 PROTIP: View videos and learn aviation and avionics terms before spending a bunch of money. 
 
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1706539267/flightsim-costs-596x1330_nsav7k.png"><img align="right" width="300" alt="flightsim-costs-596x1330.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1706539267/flightsim-costs-596x1330_nsav7k.png"></a>
 Videos:
    * <a target="_blank" href="https://www.youtube.com/watch?v=QL4q_Tbv0jM&list=PLbphwhPw2JuvwwsD-H3xoxmb4PUbCyZen">VIDEOs: Microsoft Flight Simulator - Tutorials</a> 13 of them.
    * <a target="_blank" href="https://www.youtube.com/watch?v=woRRntAp4q4">Real A320 Pilot Plays Microsoft Flight Simulator 2020 - Realistic 2 HOUR A320 NEO Full Flight in 4K</a>
@@ -63,13 +63,19 @@ Books: PROTIP: Your public library may have a copy.
    * <a target="_blank" href="https://www.amazon.com/MASTERING-XBOX-Comprehensive-Understanding-Microsofts/dp/B0CMVN5KNW/">$10.99</a> MASTERING XBOX SERIES X: A Comprehensive Guide to Understanding Microsoft's Next-Gen Console and Game Pass Subscription Service
    <br /><br />
 
-Game:
+Fast internet - WARNING: Some users report that downloads take 2 hours.
+
+Game license:
    * <a target="_blank" href="https://www.amazon.com/Microsoft-Flight-Simulator-Anniversary-Premium/dp/B0BJH5T8LV/">$119.99</a> Microsoft Flight Simulator 40th Anniversary – Premium Deluxe – Xbox Series X\|S, Windows [Digital Code]. 
    <br /><br />
 
-   For more airports and aircraft, go from Standard to Deluxe to Premium Deluxe for $30 each step.
+   * For more airports and aircraft, go from Standard to Deluxe to Premium Deluxe for $30 each step.
 
-   Additional aircraft can be purchased in-game for $15 each.
+   * Additional aircraft can be purchased in-game for $15 each.
+
+Microsft Game Pass subscription:
+   * <a target="_blank" href="https://www.xbox.com/en-US/xbox-game-pass">Xbox Game Pass</a> is a subscription service from Microsoft for use with its Xbox Series X\|S and Xbox One consoles and Windows 10 PCs.
+   <br /><br />
 
 Windows PC instead of XBox console
 Running on Windows 10/11 requires a fast CPU with plenty of drive space and a powerful video card. 
@@ -85,20 +91,15 @@ Running on Windows 10/11 requires a fast CPU with plenty of drive space and a po
    * Costco's bundle with a second controller (and 3 months of Game Pass) for $599 is too expensive.
    <br /><br />
 
-Cooling fan and dust cover
-   * <a target="_blank" href="https://www.amazon.com/Charging-CODOGOY-Compatible-Controller-Accessories/dp/B0B8NB44FR/">38.69</a> Vertical charging stand for 2 controllers with cooling fan 
+Cooling fan and dust cover: <a target="_blank" href="https://www.youtube.com/watch?v=cEUhc4kkY08">VIDEO</a>:
+   * <a target="_blank" href="https://www.amazon.com/dp/B09P39L3KN/">36.99</a> G-STORY Top-out cooling fan with <strong>Has temperature LED read-out</strong>
+   * <a target="_blank" href="https://www.amazon.com/Charging-CODOGOY-Compatible-Controller-Accessories/dp/B0B8NB44FR/">38.69</a> Vertical charging stand for 2 controllers with cooling fan.  
    * <a target="_blank" href="https://www.amazon.com/Xbox-Adjustable-Temperature-Independent-Horizontal-X/dp/B0CJLQX9K1/">$35.99</a> Cooling Fan with removable dust cover. colorful RGB Light Strip Low Noise Top Fan with 3 Gears, Independent Touch Switch, 2 USB Port
    <br /><br />
 
 UPS (Uninterruptible Power Supply) to protect against power surges and outages to Console, TV, etc.
    * <a target="_blank" href="https://www.amazon.com/APC-Battery-Protector-BackUPS-BX1500M/dp/B06VY6FXMM/">$179.99</a> UPS Battery Backup and Surge Protector, BX1500M Backup Battery Power Supply, AVR, Dataline Protection
    <br /><br />
-
-Microsft Game Pass subscription:
-   * <a target="_blank" href="https://www.xbox.com/en-US/xbox-game-pass">Xbox Game Pass</a> is a subscription service from Microsoft for use with its Xbox Series X\|S and Xbox One consoles and Windows 10 PCs.
-   <br /><br />
-
-Fast internet - WARNING: Some users report that downloads take 2 hours.
 
 "Boeing" yoke - one that is compatible with Xbox X and PC:
    * <a target="_blank" href="https://www.amazon.com/Turtle-VelocityOne-Universal-Control-Windows-x/dp/B09JM8SX8G/">$379</a> for a Turtle Beach VelocityOne Flight Universal Control System - Xbox Series X & Xbox Series S, Xbox One & Windows 10 & 11 PCs with Yoke Handle, Throttle Quadrant, Trim Wheel & Rudder Controls
@@ -126,9 +127,22 @@ Steering wheel and pedals for racing games
 
    Different seats for different games (Forza Motorsport racing, etc.)
 
-Seat:
-   * <strong>Playseat</strong>
+<a target="_blank" href="https://www.amazon.com/Flight-Simulator-Chair/s?k=Flight+Simulator+Chair">Chair with a frame</a> to hold the wheel and pedals in various positions: 
+
+   PROTIP: Adjustability is key to satisfaction. So first try adjustable bed-side tables.
+
+   * <a target="_blank" href="https://www.amazon.com/Compatible-Turtle-VelocityOne-Throttle-included-pc/dp/B0B96MD4WZ/">$169</a> Wheel Stand Pro TB Flight Stand Compatible with Turtle Beach VelocityOne Flight Yoke, Throttle and TB rudders, Also Compatible with Saitek/Logitech Rudders.
+   * <a target="_blank" href="https://www.amazon.com/Wheel-Stand-Pro-Compatible-Included/dp/B00DIQ3168/">$158.99</a> Wheel Stand Pro S Flight Stand Compatible With G Saitek Pro Flight/Cessna Yoke System; Yoke Support; Deluxe V2; Wheel Stand Only Flight System Not included. Not Compatible w/Honeycomb
+   * <a target="_blank" href="https://www.amazon.com/Playseat-Flight-Seat-Flight-Simulator/dp/B0B8N9QZ8M/">$1,199</a> Playseat Flight Seat - Flight Simulator Gaming Chair for PC, PS4, PS5, Xbox One, Xbox Series X\|S, Xbox 360, Nintendo Switch, Mac - Fully Adjustable Leatherette Seat - PlayStation Official License
+
+   Here's how you can really splurge:
+
+   There are seat frames that mimic the feel of flight simulators real pilots train on. The more DOF (Degrees of Freedom), the higher the cost (and the potential for motion sickness):
+   * For 2 DOF (Pitch forward/backward and Roll left/right), <a target="_blank" href="https://www.amazon.com/DOF-Reality-Motion-Simulator-Platform/dp/B0B8N9QZ8M/">$799</a> DOF Reality Motion Simulator Platform H2 
+   * For 3 DOF (, <a target="_blank" href="https://www.amazon.com/DOF-Reality-Motion-Simulator-Platform/dp/B0B8N9QZ8M/">$1,199</a> DOF Reality Motion Simulator Platform H3
    <br /><br />
+
+   More durable <a target="_blank" href="https://dofreality.com/professional-motion-simulator-platforms-for-business-arcade-centers-event-rental/">"Pro" series</a> have SFU drive system makes it very quiet especially compared to actuator-based platforms (Prosimu, SimXperience, etc). 
 
 120 inch screen
    * <a target="_blank" href="https://www.amazon.com/Elite-Screens-120-inch-Projector/dp/B00MAPCZK4/">$199</a> Elite Screens Manual B 120-INCH Manual Pull Down Projector Screen Diagonal 16:9 Diag 4K 8K 3D Ultra HDR HD Ready Home Theater Movie Theatre White Projection Screen with Slow Retract Mechanism M120H
