@@ -209,7 +209,22 @@ https://www.isc2.org/Certifications/Qualification-Pathfinder
 <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">Prices for exams</a> taken at Pearson Vue test centers:
 
 ### CC: Certified in Cybersecurity (CC)
-$199
+
+This <a target="_blank" href="https://www.isc2.org/Certifications/CC">Certified in Cybersecurity (CC)</a> is a new certification for entry-level cybersecurity professionals. $249 USD to get 70% of 100 questions in 2-hours.  The domains:
+
+   * Security  Principles  - 26%
+   * Business Continuity (BC), Disaster Recovery (DR) & Incident Response  - 26%
+   * Access Controls Concepts - 16%
+   * Network Security - 16%
+   * Security Operations - 16%
+   <br /><br />
+
+https://my.isc2.org/s/Candidate-Benefits/1MCC-Online-Self-Paced
+
+
+<a target="_blank" href="https://www.linkedin.com/in/omarsantoslinkedin/">Omar Santos</a> (of Cisco), author of the comprehensive <a target="_blank" href="https://www.hackerrepo.org/">hackerrepo.org</a>, prepared <a target="_blank" href="https://learning.oreilly.com/course/certified-in-cybersecurity/9780138230364/">on OReilly.com  a 3 hours 30 minutes video course</a>. He also has a <a target="_blank" href="https://www.youtube.com/watch?v=Z3Z5Y3YX3kE">YouTube video</a> on the CC exam.
+
+
 
 <a name="SSCP"></a>
 
