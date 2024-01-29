@@ -111,11 +111,6 @@ UPS (Uninterruptible Power Supply) to protect against power surges and outages t
 Rudder peddles for flight sim
    * <a target="_blank" href="https://www.amazon.com/VelocityOne-Universal-Windows-Featuring-Adjustable-PC/dp/B0B7NTLKF2/">$299</a> Turtle Beach VelocityOne Universal Rudder Pedals for Windows 10 & 11 PCs, Xbox Series X, Xbox Series S, and Xbox One Featuring Smooth Rudder Axis, Adjustable Brakes and Pedal Width – Black
 
-Flight stand
-   * <a target="_blank" href="https://www.amazon.com/OpenWheeler-Configuration-Flight-Quadrant-Package/dp/B07YS9CG6T/">$199</a> OpenWheeler GEN3 Racing Wheel Stand Cockpit Red on Black \| Fits All Logitech G923 \| G29 \| G920 \| Thrustmaster \| Fanatec Wheels \| Compatible with Xbox One, PS4, PC Platforms</a>
-   * <a target="_blank" href="https://www.amazon.com/dp/B0BWQYF9SV/ref=syn_sd_onsite_desktop_0?ie=UTF8&psc=1&pd_rd_plhdr=t&aref=zLIyx0scWv">$79</a> 2 Set The Desk Mount for The Flight Sim Game Joystick, Throttle and Hotas Systems Compatible with Logitech X56, X52, Thrustmaster T-Flight Hotas,Thrustmaster T.16000M, Thrustmaster TCA,Wining orion 2
-   <br /><br />
-
 Joystick for figher jets: <a target="_blank" href="https://www.youtube.com/watch?v=X7bS7CIhaNk">VIDEO</a>
    * Hotas Warthog
    * <a target="_blank" href="https://www.amazon.com/Thrustmaster-Hotas-Warthog-Flight-Stick-Pc/dp/B00371R8P4/">$499</a> Thrustmaster Hotas Warthog Flight Stick (Windows)
@@ -125,12 +120,18 @@ Steering wheel and pedals for racing games
    * <a target="_blank" href="https://www.amazon.com/Logitech-Dual-Motor-Feedback-Driving-Responsive/dp/B00Z0UWV98/">$249</a> Logitech G920 Driving Force Racing Wheel and Floor Pedals, Real Force Feedback, Stainless Steel Paddle Shifters, Leather Steering Wheel Cover for Xbox Series X\S, Xbox One, PC, Mac - Black
    <br /><br />
 
-   Different seats for different games (Forza Motorsport racing, etc.)
+   * Different seats for different games (Forza Motorsport racing, etc.)
+
+Stand desk for controls:
+   * PROTIP: Adjustability is key to satisfaction. So first try three adjustable rolling bed-side tables like at hospitals.
+   * <a target="_blank" href="https://www.amazon.com/Rolling-Tilting-Overbed-Bedside-Adjustable/dp/B081DXVD2Z/">$49.99</a> each TigerDad Overbed Bedside Desk Mobile Rolling Laptop Stand Tilting Overbed Table with Wheels Height Adjustable Tray Table for Laptop Bed Sofa Side Table (Black)
+
+   * <a target="_blank" href="https://www.amazon.com/OpenWheeler-Configuration-Flight-Quadrant-Package/dp/B07YS9CG6T/">$199</a> OpenWheeler GEN3 Racing Wheel Stand Cockpit Red on Black \| Fits All Logitech G923 \| G29 \| G920 \| Thrustmaster \| Fanatec Wheels \| Compatible with Xbox One, PS4, PC Platforms</a>
+   * <a target="_blank" href="https://www.amazon.com/dp/B0BWQYF9SV/ref=syn_sd_onsite_desktop_0?ie=UTF8&psc=1&pd_rd_plhdr=t&aref=zLIyx0scWv">$79</a> 2 Set The Desk Mount for The Flight Sim Game Joystick, Throttle and Hotas Systems Compatible with Logitech X56, X52, Thrustmaster T-Flight Hotas,Thrustmaster T.16000M, Thrustmaster TCA,Wining orion 2
+   <br /><br />
 
 <a target="_blank" href="https://www.amazon.com/Flight-Simulator-Chair/s?k=Flight+Simulator+Chair">Chair with a frame</a> to hold the wheel and pedals in various positions: 
-
-   PROTIP: Adjustability is key to satisfaction. So first try adjustable bed-side tables.
-
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1706542968/flightsim-table-358x484_vbww3b.png"><img alight="right" width="200" alt="flightsim-table-358x484.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1706542968/flightsim-table-358x484_vbww3b.png"></a>
    * <a target="_blank" href="https://www.amazon.com/Compatible-Turtle-VelocityOne-Throttle-included-pc/dp/B0B96MD4WZ/">$169</a> Wheel Stand Pro TB Flight Stand Compatible with Turtle Beach VelocityOne Flight Yoke, Throttle and TB rudders, Also Compatible with Saitek/Logitech Rudders.
    * <a target="_blank" href="https://www.amazon.com/Wheel-Stand-Pro-Compatible-Included/dp/B00DIQ3168/">$158.99</a> Wheel Stand Pro S Flight Stand Compatible With G Saitek Pro Flight/Cessna Yoke System; Yoke Support; Deluxe V2; Wheel Stand Only Flight System Not included. Not Compatible w/Honeycomb
    * <a target="_blank" href="https://www.amazon.com/Playseat-Flight-Seat-Flight-Simulator/dp/B0B8N9QZ8M/">$1,199</a> Playseat Flight Seat - Flight Simulator Gaming Chair for PC, PS4, PS5, Xbox One, Xbox Series X\|S, Xbox 360, Nintendo Switch, Mac - Fully Adjustable Leatherette Seat - PlayStation Official License
