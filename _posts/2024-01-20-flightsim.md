@@ -42,7 +42,9 @@ Xbox X version is praised for its realism and scale, but some criticized its loa
 
 <a name="Xbox+X"></a>
 
-## Xbox X
+## Xbox X setup
+
+<a target="_blank" href=""><img alt="flightsim-costs-478x808.png" width="479" height="808" src=""></a>
 
 Tutorials - PROTIP: Read the manual before spending a bunch of money. Your public library may have a copy.
    * <a target="_blank" href="https://www.amazon.com/FAR-AIM-2024-Administration-Aeronautical/dp/1644252813/">$26.96</a> FAA FAR/AIM 2024: Federal Aviation Regulations/Aeronautical Information Manual (ASA FAR/AIM Series) Paperback – September 5, 2023 from Titles 14 and 49 of the Code of Federal Regulations (14 and 49 CFR) 
@@ -53,14 +55,14 @@ Videos:
    * <a target="_blank" href="https://www.youtube.com/watch?v=woRRntAp4q4">Real A320 Pilot Plays Microsoft Flight Simulator 2020 - Realistic 2 HOUR A320 NEO Full Flight in 4K</a>
    <br /><br />
 
-"optimized" for Xbox Series X|S console:
-   * $459 XBox S with a single controller.
+"optimized" for Xbox Series X\|S console:
+   * <a target="_blank" href="https://www.amazon.com/dp/B08H75RTZ8/">$459</a> XBox X console with a single controller. 1 TB SSD, 16 GB RAM
+   * Costco's bundle with a second controller (and 3 months of Game Pass) for $599 is too expensive.
    <br /><br />
-   * Costco's bundle with a second controller (and 3 months of Game Pass) for $599 is  too expensive.
 
 It runs on Windows 10/11, but it needs a fast CPU with plenty of drive space and a powerful video card. 
    * The 15.6-inch screen on a gamer Windows laptop PC is too small, but more portable than an Xbox.
-   * <a target="_blank" href="https://www.amazon.com/Microsoft-Flight-Simulator-Anniversary-Premium/dp/B0BJH5T8LV/">$119.99</a> Microsoft Flight Simulator 40th Anniversary – Premium Deluxe – Xbox Series X|S, Windows [Digital Code]. 
+   * <a target="_blank" href="https://www.amazon.com/Microsoft-Flight-Simulator-Anniversary-Premium/dp/B0BJH5T8LV/">$119.99</a> Microsoft Flight Simulator 40th Anniversary – Premium Deluxe – Xbox Series X\|S, Windows [Digital Code]. 
    <br /><br />
 
 Fast internet - WARNING: Some users report that downloads take 2 hours.
@@ -72,12 +74,13 @@ Fast internet - WARNING: Some users report that downloads take 2 hours.
    * Saitek
    <br /><br />
 
-Rudders for flight sim
+Rudder peddles for flight sim
    * <a target="_blank" href="https://www.amazon.com/VelocityOne-Universal-Windows-Featuring-Adjustable-PC/dp/B0B7NTLKF2/">$299</a> Turtle Beach VelocityOne Universal Rudder Pedals for Windows 10 & 11 PCs, Xbox Series X, Xbox Series S, and Xbox One Featuring Smooth Rudder Axis, Adjustable Brakes and Pedal Width – Black
 
-Flight Controls stand
+Flight  stand
+   * <a target="_blank" href="https://www.amazon.com/OpenWheeler-Configuration-Flight-Quadrant-Package/dp/B07YS9CG6T/">$199</a> OpenWheeler GEN3 Racing Wheel Stand Cockpit Red on Black \| Fits All Logitech G923 \| G29 \| G920 \| Thrustmaster \| Fanatec Wheels \| Compatible with Xbox One, PS4, PC Platforms</a>
    * <a target="_blank" href="https://www.amazon.com/dp/B0BWQYF9SV/ref=syn_sd_onsite_desktop_0?ie=UTF8&psc=1&pd_rd_plhdr=t&aref=zLIyx0scWv">$79</a> 2 Set The Desk Mount for The Flight Sim Game Joystick, Throttle and Hotas Systems Compatible with Logitech X56, X52, Thrustmaster T-Flight Hotas,Thrustmaster T.16000M, Thrustmaster TCA,Wining orion 2
-   * <a target="_blank" href="https://www.amazon.com/OpenWheeler-Configuration-Flight-Quadrant-Package/dp/B07YS9CG6T/">$199</a> OpenWheeler GEN3 Racing Wheel Stand Cockpit Red on Black | Fits All Logitech G923 | G29 | G920 | Thrustmaster | Fanatec Wheels | Compatible with Xbox One, PS4, PC Platforms</a>
+   <br /><br />
 
 Figher Jet joystick: <a target="_blank" href="https://www.youtube.com/watch?v=X7bS7CIhaNk">VIDEO</a>
    * Hotas Warthog
@@ -85,16 +88,18 @@ Figher Jet joystick: <a target="_blank" href="https://www.youtube.com/watch?v=X7
    * Velocity One 
 
 Steering wheel and pedals for racing games
-   * <a target="_blank" href="https://www.amazon.com/Logitech-Dual-Motor-Feedback-Driving-Responsive/dp/B00Z0UWV98/">$249</a> Logitech G920 Driving Force Racing Wheel and Floor Pedals, Real Force Feedback, Stainless Steel Paddle Shifters, Leather Steering Wheel Cover for Xbox Series X|S, Xbox One, PC, Mac - Black
+   * <a target="_blank" href="https://www.amazon.com/Logitech-Dual-Motor-Feedback-Driving-Responsive/dp/B00Z0UWV98/">$249</a> Logitech G920 Driving Force Racing Wheel and Floor Pedals, Real Force Feedback, Stainless Steel Paddle Shifters, Leather Steering Wheel Cover for Xbox Series X\S, Xbox One, PC, Mac - Black
 
 Seat
    * <strong>Playseat</strong>
 
 120 inch screen
    * <a target="_blank" href="https://www.amazon.com/Elite-Screens-120-inch-Projector/dp/B00MAPCZK4/">$199</a> Elite Screens Manual B 120-INCH Manual Pull Down Projector Screen Diagonal 16:9 Diag 4K 8K 3D Ultra HDR HD Ready Home Theater Movie Theatre White Projection Screen with Slow Retract Mechanism M120H
+   <br /><br />
 
 <strong>4K TV</strong> or monitor:
-    * <a target="_blank" href="https://www.amazon.com/Optoma-UHD35STx-Entertainment-Projector-Ultra-Low/dp/B09XVNJNXT/">$1,199</a> Optoma UHD35STx Short Throw True 4K UHD Gaming and Home Entertainment Projector 3,600 Lumens for Lights-On Viewing 240Hz Refresh Rate and Ultra-Low 4ms Response Time
+   * <a target="_blank" href="https://www.amazon.com/Optoma-UHD35STx-Entertainment-Projector-Ultra-Low/dp/B09XVNJNXT/">$1,199</a> Optoma UHD35STx Short Throw True 4K UHD Gaming and Home Entertainment Projector 3,600 Lumens for Lights-On Viewing 240Hz Refresh Rate and Ultra-Low 4ms Response Time
+   <br /><br />
 
 <strong>headset</strong> with a microphone
    * <strong>Turtle Beach Stealth 700</strong>.
@@ -102,8 +107,9 @@ Seat
 Camera (for streaming and making videos)
    * whatever
 
-Record play
-    * <a target="_blank" href="https://www.amazon.com/Elgato-Game-Capture-HD60-PlayStation/dp/B01DRWCOGA/">$149</a> Elgato Game Capture HD60 S - Stream and Record in 1080p60, for PlayStation 5, Xbox Series X|S, Xbox One & PS4
+Game Capture device to record gameplay for streaming and making videos
+   * <a target="_blank" href="https://www.amazon.com/Elgato-Game-Capture-HD60-PlayStation/dp/B01DRWCOGA/">$149</a> Elgato Game Capture HD60 S - Stream and Record in 1080p60, for PlayStation 5, Xbox Series X\|S, Xbox One & PS4
+   <br /><br />
 
 
 ## Games
