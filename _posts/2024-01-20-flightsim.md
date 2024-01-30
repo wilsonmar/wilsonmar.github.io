@@ -5,6 +5,11 @@ file: "flightsim"
 title: "Flight Simulator"
 excerpt: "Use Microsoft's Flight Simulator to fly around the world in various planes, experiencing real-time weather on a Windows PC or Xbox X."
 tags: [cloud]
+image:
+# flightsim-rig-1900x500.png
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1706583662/flightsim-rig-1900x500_dwytsk.png
+  credit: RTX (5760 x 1080 split across three panels)
+  creditlink: https://www.pcgamesn.com/nvidia/rtx-3080-powered-flight-sim-setup
 comments: true
 ---
 <i>{{ page.excerpt }}</i> 
@@ -16,7 +21,6 @@ With wars breaking out around the world, I splurged on a setup for the <strong>M
 The game is praised for its realism and scale -- a fine example of how Microsoft Azure's cloud computing platform can be used to run massive AI-powered processes that generate three-dimensional representations of cities, foliage, and other objects in UHD resolution based on real-world satellite images. Real-time weather data is also pulled from the cloud, allowing the game to simulate weather conditions at any location in the world.
 
 Some criticized its loading times.
-
 
 Microsoft Flight Simulator is one of the longest-running, best-known, and most comprehensive flight simulator programs on the market. It was an early product in the Microsoft application portfolio and differed significantly from Microsoft's other software, which was largely business-oriented. 
 Bruce Artwick's company, subLOGIC, began Flight Simulator development in 1977.
@@ -42,6 +46,40 @@ The new simulator is built on a new in-house engine named Asobo developed for th
 The game features a realistic simulation of the entire Earth using textures and topographical data from Bing Maps. The game also features a <strong>dynamic weather system</strong> that simulates real-world weather conditions of each location. 
 
 
+<hr />
+
+## Pilot's License
+
+Can you get a Private Pilot's License by playing Microsoft Flight Simulator?
+
+Some say the game is more fun if you first learn the terminology.
+Books: PROTIP: Your public library may have a copy.
+
+   * <a target="_blank" href="https://www.amazon.com/FAR-AIM-2024-Administration-Aeronautical/dp/1644252813/">$26.96</a> FAA FAR/AIM 2024: Federal Aviation Regulations/Aeronautical Information Manual (ASA FAR/AIM Series) Paperback – September 5, 2023 from Titles 14 and 49 of the Code of Federal Regulations (14 and 49 CFR) 
+   <br /><br />
+
+Most say no because students need hours in an actual plane.
+In the USA you have the option of:
+   * Part 61 (usually via a local flying club with a private instructor) or 
+   * Part 141 (via a registered flight school). 
+   <br /><br />
+
+To get a Private Pilot certificate, it takes "a minimum cost of around $10,000" based on:
+   * The hourly rate of your Certified Flight Instructor (CFI). Most CFI’s in the USA charge anywhere between $50 and $70 per hour. 
+   * The hourly rate or aircraft rental, typically $100-$150 per hour in a Piper Archer, Cessna 152, or 172 Skyhawk
+   * Hours of flight time. Most students require around 40 hours of flight time to obtain their certificate
+   * Ground based-training
+   * Test preparation
+   * Test fees
+   <br /><br />
+
+To get an Instrument rating to fly at night and in bad weather, budget an additional $10,000:
+   * Headset
+   * FAA examiner test fees $8,000.
+   <br /><br />
+
+<a target="_blank" href="https://atpflightschool.com/airline-career-pilot-program/">ATP</a> offers <a target="_blank" href="https://atpflightschool.com/locations/">at 85 locations around the US</a> a 9-month immersion program to career airline pilot program for a fixed fee of $108,995 starting from zero time or $86,995 starting with credit for private.
+
 
 <hr />
 
@@ -55,10 +93,10 @@ PROTIP: View videos and learn aviation and avionics terms before spending a bunc
 Videos:
    * <a target="_blank" href="https://www.youtube.com/watch?v=QL4q_Tbv0jM&list=PLbphwhPw2JuvwwsD-H3xoxmb4PUbCyZen">VIDEOs: Microsoft Flight Simulator - Tutorials</a> 13 of them.
    * <a target="_blank" href="https://www.youtube.com/watch?v=woRRntAp4q4">Real A320 Pilot Plays Microsoft Flight Simulator 2020 - Realistic 2 HOUR A320 NEO Full Flight in 4K</a>
+   * <a target="_blank" href="https://www.youtube.com/playlist?list=PLbphwhPw2JuvwwsD-H3xoxmb4PUbCyZen">VIDEO</a>: Squirrel's Microsoft Flight Simulator - Tutorials" playlist
    <br /><br />
 
 Books: PROTIP: Your public library may have a copy.
-   * <a target="_blank" href="https://www.amazon.com/FAR-AIM-2024-Administration-Aeronautical/dp/1644252813/">$26.96</a> FAA FAR/AIM 2024: Federal Aviation Regulations/Aeronautical Information Manual (ASA FAR/AIM Series) Paperback – September 5, 2023 from Titles 14 and 49 of the Code of Federal Regulations (14 and 49 CFR) 
    * <a target="_blank" href="https://www.amazon.com/Microsoft-Simulator-Dummies-Brittany-Vincent/dp/1119828457/">$24</a> Microsoft Flight Simulator for Dummies book.
    * <a target="_blank" href="https://www.amazon.com/MASTERING-XBOX-Comprehensive-Understanding-Microsofts/dp/B0CMVN5KNW/">$10.99</a> MASTERING XBOX SERIES X: A Comprehensive Guide to Understanding Microsoft's Next-Gen Console and Game Pass Subscription Service
    <br /><br />
@@ -124,6 +162,7 @@ Steering wheel and pedals for racing games
 
 Stand desk for controls:
    * PROTIP: Adjustability is key to satisfaction. So first try three adjustable rolling bed-side tables like at hospitals.
+   * <a target="_blank" href="https://www.amazon.com/Techni-Mobili-RTA-B003-GPH06-Adjustable-Graphite/dp/B00WG9A1MK/">$49.99</a> Techni Mobili Rolling Adjustable Laptop Cart, Graphite
    * <a target="_blank" href="https://www.amazon.com/Rolling-Tilting-Overbed-Bedside-Adjustable/dp/B081DXVD2Z/">$49.99</a> each TigerDad Overbed Bedside Desk Mobile Rolling Laptop Stand Tilting Overbed Table with Wheels Height Adjustable Tray Table for Laptop Bed Sofa Side Table (Black)
 
    * <a target="_blank" href="https://www.amazon.com/OpenWheeler-Configuration-Flight-Quadrant-Package/dp/B07YS9CG6T/">$199</a> OpenWheeler GEN3 Racing Wheel Stand Cockpit Red on Black \| Fits All Logitech G923 \| G29 \| G920 \| Thrustmaster \| Fanatec Wheels \| Compatible with Xbox One, PS4, PC Platforms</a>
@@ -164,7 +203,6 @@ Camera (for streaming and making videos)
 Game Capture device to record gameplay for streaming and making videos
    * <a target="_blank" href="https://www.amazon.com/Elgato-Game-Capture-HD60-PlayStation/dp/B01DRWCOGA/">$149</a> Elgato Game Capture HD60 S - Stream and Record in 1080p60, for PlayStation 5, Xbox Series X\|S, Xbox One & PS4
    <br /><br />
-
 
 ## Games
 
