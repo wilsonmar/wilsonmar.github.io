@@ -40,6 +40,7 @@ We use a series of dashboard views that are related to each other, to make data 
    Use a <a target="_blank" href="https://davidmathlogic.com/colorblind/#%23D81B60-%231E88E5-%23FFC107-%23004D40"><strong>accessible color palette</strong></a> that accommodates those with <a target="_blank" href="https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/color-blindness/types-color-vision-deficiency">different types of CVD (Color Vision Deficiency)</a> (aka <a target="_blank" href="https://www.wikiwand.com/en/Color_blindness#Types">Color Blindness</a>):
 
    * <a target="_blank" href="https://personal.sron.nl/~pault/">website</a> by Paul Tol has a <a target="_blank" href="https://personal.sron.nl/~pault/data/colourschemes.pdf">Color Schemes</a> document.
+   <br /><br />
 
    PROTIP: Each number should be clickable to drill down to the next level of detail.
 
@@ -106,12 +107,16 @@ We use a series of dashboard views that are related to each other, to make data 
 <a target="_blank" html="https://cloud.githubusercontent.com/assets/300046/24077227/fc53a15c-0c1c-11e7-9782-9514f69c6a70.png">
 <img width="978" alt="tableau interactive wait times 1956x1372" src="https://cloud.githubusercontent.com/assets/300046/24077227/fc53a15c-0c1c-11e7-9782-9514f69c6a70.png"><br />Click for full pop-up</a>
 
+### Outliers 90th percentile
+
+PROTIP: To improve the above view, also show <strong>outliers</strong> at the <strong>90th and 95th percentile</strong>.
+
 
 ## Flowcharts
 
 Some general principles:
 
-.1. Generally, flows go from left to right. For example, 
+1. Generally, flows go from left to right. For example, 
    * data flowing from clients on the left to back-end servers on the right
    * the left-most column is the most recent time period, and the right-most column is the oldest time period.
    <br /><br />
@@ -119,7 +124,7 @@ Some general principles:
 
 ## Weather maps
 
-<a target="_blank" href="https://www.yahoo.com/news/weather/">Yahoo Weather</a> uses an elegant, award-winning design:
+<a target="_blank" href="https://www.yahoo.com/news/weather/">Yahoo Weather</a> uses an elegant, award-winning design with icons:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1706569734/dashboard-yahoo-1068x878_frddn5.png"><img alt="dashboard-yahoo-1068x878.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1706569734/dashboard-yahoo-1068x878_frddn5.png"></a>
 
