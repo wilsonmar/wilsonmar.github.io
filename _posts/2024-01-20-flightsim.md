@@ -69,12 +69,12 @@ To get a Private Pilot certificate, it takes "a minimum cost of around $10,000" 
    * The hourly rate or aircraft rental, typically $100-$150 per hour in a Piper Archer, Cessna 152, or 172 Skyhawk
    * Hours of flight time. Most students require around 40 hours of flight time to obtain their certificate
    * Ground based-training
+   * Headset
    * Test preparation
    * Test fees
    <br /><br />
 
 To get an Instrument rating to fly at night and in bad weather, budget an additional $10,000:
-   * Headset
    * FAA examiner test fees $8,000.
    <br /><br />
 
@@ -121,7 +121,8 @@ Running on Windows 10/11 requires a fast CPU with plenty of drive space and a po
    * The 15.6-inch screen on a gamer Windows laptop PC is too small, but more portable than an Xbox.
    <br /><br />
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=mSLaJ_7pFLE">VIDEO</a>: Benchmark tests of Windows PC components (AMD vs Intel, Nvidia vs AMD) for Flight Simulator 2020.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=yPCMic7crjg/">VIDEO</a>: Building the ultimate components of 32 GB, blue-water-cooled.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=mSLaJ_7pFLE">VIDEO</a>: Benchmark tests of Windows PC components (AMD vs Intel, Nvidia vs AMD) for Flight Simulator 2020.
    <br /><br />
 
 "optimized" for Xbox Series X\|S console:
