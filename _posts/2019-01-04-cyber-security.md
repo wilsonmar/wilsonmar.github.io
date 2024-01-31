@@ -24,37 +24,38 @@ Here are my notes on resources for Cyber Security, which is a vast field. But ne
 
 ## Glossary
 
-PROTIP: <a target="_blank" href="https://quizlet.com/222277746/devsecops-acronyms-and-buzzwords-flash-cards/">
-My Quizlet of Cyber Security Aconyms</a>
-
-   * Guidelines - recommended actions to follow
-   * Policies - general statements from management
-   * Standards - specific mandatory security controls
-   * Procedures - step-by-step instructions
+   * <a target="_blank" href="https://www.rfc-editor.org/info/rfc4949">RFC 4949</a> - Internet Security Glossary
+   * <a target="_blank" href="https://www.sans.org/security-resources/glossary-of-terms/">SANS Glossary</a> of terms
+   * PROTIP: <a target="_blank" href="https://quizlet.com/222277746/devsecops-acronyms-and-buzzwords-flash-cards/">My Quizlet of Cyber Security Aconyms</a>
+   * PROTIP: Acronyms here are in my <a target="_blank" href="https://quizlet.com/159167491/acronyms-for-secure-iot-flash-cards/">444 item Quizlet flashcards for Cyber Security</a> for you to study more efficient.
    <br /><br />
+
+REMEMBER:
+* Guidelines - recommended actions to follow
+* Policies - general statements from management
+* Standards - specific mandatory security controls
+* Procedures - step-by-step instructions
+<br /><br />
 
 
 <a name="Threats"></a>
 
-Definitions: REMEMBER:
-   * A <a href="#Threats">threat</a> is a potential harmful incident. 
-   * A threat agent (a malicious actor) is an individual or group that can manifest a threat.
-   * A threat event is a specific instance of a threat
+* A <a href="#Threats">threat</a> is a potential harmful incident. 
+* A threat agent (a malicious actor) is an individual or group that can manifest a threat.
+* A threat event is a specific instance of a threat
 
-   * A vulnerability is a (potentially exploitable) weakness where there is the absence of a countermeasure in place.
-   * An exposure is an instance of being subjected or exposed to losses from a threat.
-   * A trigger is an event that indicates that a risk has occurred or is about to occur. 
-   * <strong>Enticements</strong> are apparent flaws deliberately made available for penetration and exploitation.
+* A vulnerability is a (potentially exploitable) weakness where there is the absence of a countermeasure in place.
+* An exposure is an instance of being subjected or exposed to losses from a threat.
+* A trigger is an event that indicates that a risk has occurred or is about to occur. 
+* <strong>Enticements</strong> are apparent flaws deliberately made available for penetration and exploitation.
 
-   * <a href="#Attacks">Attacks</a> are attempts to violate an organization’s security or privacy
-   * An <strong>exploit</strong> is when a threat agent successfully takes advantage of a vulnerability
-   * Likelihood (of occurrence) is a weighted factor that a given threat agent is capable of exploiting a given vulnerability
-   * Level of risk before treatment is the <strong>inherent risk</strong>
-   * A <strong>breach</strong> is an attack that has been successful in reaching its goal.    
-   * Impact is the magnitude of harm caused by a threat source
-   <br /><br />
-
-PROTIP: Acronyms here are in my <a target="_blank" href="https://quizlet.com/159167491/acronyms-for-secure-iot-flash-cards/">444 item Quizlet flashcards for Cyber Security</a> for you to study more efficient.
+* <a href="#Attacks">Attacks</a> are attempts to violate an organization’s security or privacy
+* An <strong>exploit</strong> is when a threat agent successfully takes advantage of a vulnerability
+* Likelihood (of occurrence) is a weighted factor that a given threat agent is capable of exploiting a given vulnerability
+* Level of risk before treatment is the <strong>inherent risk</strong>
+* A <strong>breach</strong> is an attack that has been successful in reaching its goal. NIST 900-53 defines "a breach results in the loss of control, compromise, unauthorized disclosure, unauthorized acquisition, or a similar occurrence where a person other than an authorized user accesses or potentially accesses personally identifiable information or an authorized user accesses or potentially accesses such information for other than authorized purposes. Incident response training emphasizes the obligation of individuals to report both confirmed and suspected breaches invlving information in any medium or form, including paper, oral, and electronic. Incident response training includes tabletop exercises that simulate a breach."
+* <strong>Impact</strong> is the magnitude of harm caused by a threat source
+<br /><br />
 
 
 <hr />
@@ -1027,15 +1028,21 @@ Some people prefer to hold off on automatic updates until hearing if early adopt
 
 #### 2.2.2 Ensure time set is within appropriate limits
 
-The default NTP server is `time.apple.com`.   
+1. The default NTP server is `time.apple.com`.   
 
-   sudo ntpdate -sv time.apple.com
+   <strong><pre>sudo ntpdate -sv time.apple.com</strong></pre>
 
-However, the ntpdate tool was removed in macOS Mojave 10.14 because the `ntpd daemon` since  Mavericks (10.9) and Yosemite (10.10) is no longer responsible for adjusting the time. and instead a new program pacemaker has been introduced — so how can I know things are working or need adjustment to keep time?
+   However, the ntpdate tool was removed in macOS Mojave 10.14 because the `ntpd daemon` since Mavericks (10.9) and Yosemite (10.10) is no longer responsible for adjusting the time. and instead a new program pacemaker has been introduced.
+   
+1. To know whether time is good or need adjustment to keep sync'd with reality:
 
-   sudo sntp -sS pool.ntp.org
+   <pre><strong>sudo sntp -sS pool.ntp.org</strong></pre>
+
+   Sample response:
+   <pre>+317.919218 +/- 0.124161 pool.ntp.org 51.81.209.232</pre>
 
 See https://apple.stackexchange.com/questions/117864/how-can-i-tell-if-my-mac-is-keeping-the-clock-updated-properly
+
 
 #### 2.4.3 Disable Screen Sharing
 
@@ -1254,7 +1261,7 @@ SP 800-34 defines "vulnerability" as "an inherent weakness in an information sys
 
    * An ISCP (information system contingency plan) provides established procedures for the assessment and recovery of a system following a system disruption.
 
-   * A COOP (Continuity Of Operations) plan focuses on restoring an organization’s mission-essential functions (MEFs) at an alternate site and performing those functions for up to 30 days before returning to normal operations.
+   * A COOP (Continuity Of Operations Plan) focuses on restoring an organization’s mission-essential functions (MEFs) at an alternate site and performing those functions for up to 30 days before returning to normal operations.
    <br /><br />
 
 ### NIST SP 800-37
@@ -1281,8 +1288,7 @@ SP 800-171 Rev 2 replaces
 which was withdrawn on May 05, 2022. 161 provides guidance for organizations to identify, assess, and mitigate cybersecurity risks associated with products and services throughout the supply chain, integrating cybersecurity supply chain risk management (C-SCRM) into risk management activities at all levels, and offering guidance on C-SCRM strategy implementation plans, policies, plans, and risk assessments.
 
 
-<a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-39.pdf">📓</a> NIST SP 800-39 (March 2011) "Managing Information Security Risk:
-Organization, Mission, and Information System View"
+<a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-39.pdf">📓</a> NIST SP 800-39 (March 2011) "Managing Information Security Risk: Organization, Mission, and Information System View"
 offers structured and flexible guidance for managing information security risk across an organization's operations, assets, individuals, and other organizations, providing an integrated and complementary approach to other risk-related activities, processes, or approaches that organizations have implemented or intend to implement.
 
 ### NIST SP 800-40
@@ -2461,25 +2467,24 @@ Types of Network intrusion systems:
 
    1. Triage: The incident response team examines the incident to see what was affected and sets priorities. 
    1. Investigation: Involves the collection of relevant data.
-   1. Containment: The damage is mitigated or contained.
    1. Analysis: Where the <strong>root cause</strong> of the incident is discovered.
    1. Tracking: Where the <strong>source</strong> (user or device) of the incident is determined.
    1. Post-mortem review: Record lessons learned.
    1. Recovery: Necessary adjustments or enhancements are made to policies and procedures.
    <br /><br />
 
-Alternately:
+<a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf">NIST 800-61r2 Incident Handling PDF</a>
    1. Preparation – the preparatory activities related to incident response, such as policy and procedures, and hiring an adequately skilled IR team.
    1. Detection – intake and incident discovery.
    1. Analysis – looking at the evidence of a reported potential incident.
-   1. Response – has containment, eradication, and recovery (NIST 800-61).
-   1. Mitigation – has containment and eradication.
-   1. Reporting – notifying management that systems are ready for normal operations.
-   1. Recovery and remediation – recovery is going back to normal operations, and remediation is taking care of other areas that may be vulnerable.
-   1. Review and improvement – this is the lessons learned step.
+   1. Response = Mitigation
+      * Containment of damage
+      * Eradication
+      * Recovery – going back to normal operations
+      + Reporting – notifying management and authorities 
+      + Remediation - taking care of other areas that may be vulnerable.
+   1. Post-incident activity - Review and improvement – identifying lessons learned and steps to implement improvements
    <br /><br />
-
-   See ASD (Australian) Mitigations
 
 Forensic investigation process: REMEMBER: 
    1. Identification - start action log, reviewing audit logs, monitoring systems, analyzing user complaints, analyzing detection mechanisms, signature resolution.
@@ -2552,11 +2557,11 @@ Types of control function:
    * Job rotation and background checks are <strong>detective administrative controls</strong>.
    <br /><br />
 
-Risk Resolution:
+REMEMBER: Risk Resolution:
+   * <strong>Accept</strong> - Ignored without resolution. Based on threat severity.
    * <strong>Avoid</strong> - The part of the system containing the issue will be cut.
    * <strong>Reduce</strong> - Issue will be addressed with bug fixes or redesign to reduce or eliminate threat impact and severity.
    * <strong>Transfer</strong> - Issue will be handled by another system or team.
-   * <strong>Accept</strong> - (without a resolution). Based on threat severity.
    <br /><br />
 
 <strong>Resilience</strong> is the ability of a system, device, or data center to recover quickly and continue operating after an equipment failure, power outage, or other disruption. It involves the use of redundant components or facilities.

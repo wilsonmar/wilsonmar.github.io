@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-07-08"
+date: "2024-01-08"
 file: "threat-modeling"
 title: "Threat Modeling"
 excerpt: "This is perhaps the most impactful analysis, considering the importance and urgency of keeping your organization from being stolen"
@@ -20,11 +20,52 @@ comments: true
 
 <hr />
 
-There are MANY approaches:
+## Information Sharing
+
+The US National Cyber Defense Foundation
+
+has a <a target="_blank" href="https://www.us-cert.gov/ncas">National Cyber Awareness System</a> (NCAS) that provides a variety of information for users, administrators, and security professionals. The NCAS is a partnership between the Department of Homeland Security and the public and private sectors.
+NCAS resources include:
+
+   * <a target="_blank" href="https://www.us-cert.gov/ncas/alerts">Alerts</a> that provide timely information about current security issues, vulnerabilities, and exploits.
+
+   * <a target="_blank" href="https://www.us-cert.gov/ncas/current-activity">Current Activity</a> that provides up-to-date information about high-impact types of security activity affecting the community at large.
+
+   * <a target="_blank" href="https://www.us-cert.gov/ncas/tips">Tips</a> that provide advice about common security issues for the general public.
+
+   * <a target="_blank" href="https://www.us-cert.gov/ncas/bulletins">Bulletins</a> that provide weekly summaries of new vulnerabilities. Bulletins are available for vulnerabilities in products from a wide variety of vendors.
+
+   * <a target="_blank" href="https://www.us-cert.gov/ncas/analysis-reports">Analysis Reports</a> that provide in-depth analysis of new vulnerabilities, malware, and other threats.
+
+   * <a target="_blank" href="https://www.us-cert.gov/ncas/ics">Industrial Control Systems</a> that provides information about threats to industrial control systems.
+
+   * <a target="_blank" href="https://www.us-cert.gov/ncas/alerts/TA18-106A">TA18-106A</a> is a report on Russian government cyber activity targeting energy and other critical infrastructure sectors.
+
+   * <a target="_blank" href="https://www.us-cert.gov/ncas/alerts/TA18-149A">TA18-149A</a> is a report on Russian government cyber activity targeting network infrastructure devices.
+
+   * <a target="_blank" href="https://www.us-cert.gov/ncas/alerts/TA18-201A">TA18-201A</a> is a report on Russian government cyber activity targeting critical infrastructure sectors.
+
+   * <a target="_blank" href="https://www.us-cert.gov/ncas/alerts/TA18-331A">TA18-331A</a> is a report on APT39, a cyber espionage group that has been targeting telecommunications organizations.
+
+   * <a target="_blank
+
+
+## Threat Modeling
+
+In 2004, Frank Swiderski and Window Snyder wrote “Threat Modeling,” by Microsoft press. 
+In it they developed the concept of using threat models to create secure applications.
+
+   * https://www.microsoft.com/en-us/securityengineering/sdl/threatmodeling
+   * https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-getting-started
+   * https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-feature-overview
+   * https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats
+   * https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-mitigations
+
+
 
 ## OWASP's Threat Modeling
 
-Let's start with <a target="_blank" href="https://owasp.org/www-community/Threat_Modeling_Process">OWASP</a>'s summary of the process:
+<a target="_blank" href="https://owasp.org/www-community/Threat_Modeling_Process">OWASP</a>'s summary of the process:
 
    * Step 1: <strong>Decompose</strong> the Application (Data Flow Diagrams showing External Dependencies, Entry Points, Exit Points, Assets, Trust Levels)
 
@@ -34,7 +75,8 @@ Let's start with <a target="_blank" href="https://owasp.org/www-community/Threat
 
 https://www.wikiwand.com/en/Threat_model
 
-### Microsoft's STRIDE
+
+## Microsoft's STRIDE
 
 1999, cybersecurity professionals Loren Kohnfelder and Praerit Garg at
 Microsoft developed the acrostic "STRIDE" for their Threat Model Tool used to classify threats in applications: [<a target="_blank" href="https://www.wikiwand.com/en/STRIDE_(security)">Wikiwand</a>]:
@@ -47,20 +89,13 @@ Microsoft developed the acrostic "STRIDE" for their Threat Model Tool used to cl
    * Elevation of privilege
    <br /><br />
 
-In 2004, Frank Swiderski and Window Snyder wrote “Threat Modeling,” by Microsoft press. In it they developed the concept of using threat models to create secure applications.
-
-   * https://www.microsoft.com/en-us/securityengineering/sdl/threatmodeling
-   * https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-getting-started
-   * https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-feature-overview
-   * https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats
-   * https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-mitigations
-
 
 <a name="PASTA"></a>
 
 ## PASTA
 
-PASTA (<a target="_blank" href="https://www.wiley.com/en-us/Risk+Centric+Threat+Modeling%3A+Process+for+Attack+Simulation+and+Threat+Analysis-p-9780470500965">Process for Attack Simulation and Threat Analysis</a>) (created in 2015 by Tony UcedaVelez and Marco M. Morana) is a <strong>attacker-centric</strong> methodology for dynamic threat identification, enumeration, and prioritization. 
+PASTA (<a target="_blank" href="https://www.wiley.com/en-us/Risk+Centric+Threat+Modeling%3A+Process+for+Attack+Simulation+and+Threat+Analysis-p-9780470500965">Process for Attack Simulation and Threat Analysis</a>) (created in 2015 by Tony UcedaVelez and Marco M. Morana) is a <strong>attacker-centric</strong> 
+methodology for dynamic threat identification, enumeration, and prioritization. 
 
 It provides a seven-step process for aligning business objectives and technical requirements, taking into account compliance issues and business analysis.
 
@@ -70,7 +105,7 @@ Defenders then take an asset-centric mitigation strategy around applications and
 
 
 
-## Synopsys Utilities needed
+## Synopsys Utilities
 
 <a target="_blank" href="https://www.synopsys.com/software-integrity/solutions/devsecops.html">Synopsys.com</a> sells a utility to store all your threat data for dicing and slicing (visualization). 
 
@@ -145,6 +180,7 @@ extracts plaintexts passwords, hash, PIN code and kerberos tickets from memory.
 ## References
 
 https://www.appsecengineer.com/blog-categories/threat-modeling
+
 
 
 <hr />

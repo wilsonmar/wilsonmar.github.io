@@ -302,6 +302,19 @@ CAUTION: Do not upload it to your hosting provider's public html folder or any I
 If you run security vulnerability tests against a server you don't control, you are hacking that site.
 So get both an NDA and contract of scope of work before starting.
 
+### AWS Goat
+
+<a target="_blank" href="https://www.youtube.com/watch?v=JzEeK8JcgpU&7m24s">VIDEO</a>:
+<a target="_blank" href="https://github.com/ine-labs/AWSGoat">https://github.com/ine-labs/AWSGoat</a> provides two web apps containing OWASP Top 10 web application security risks (2021): 
+  * A Python3 AWS Lambda React blog using DynamoDB with misconfigured AWS resources.
+  * An HR Payroll PHP app running on Terraform-built EC2 with misconfigured S3 buckets.
+   <br /><br />
+Blogs:
+  * https://alparslanakyildiz.medium.com/aws-cloud-pentesting-notes-9dc9e75cbed8
+  * https://ine.com/blog/awsgoat-a-damn-vulnerable-aws-infrastructure
+  * https://www.helpnetsecurity.com/2022/08/10/awsgoat-vulnerable-aws-infrastructure-video/
+  <br /><br />
+
 
 ### Metasploitable3
 

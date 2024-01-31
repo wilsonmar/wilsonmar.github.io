@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-22"
+date: "2024-01-22"
 file: "cyber-ranges"
 title: "Cyber Ranges"
 excerpt: "Proving grounds with safe sandboxes for experimentation and testing of how a full stack of technologies integrates and operates."
@@ -860,6 +860,34 @@ Manual Assessment:
 * PowerShell Empire
 * Covenant
 <br /><br />
+
+https://www.youtube.com/watch?v=Ub99FZ1_wuQ
+Coffee Table Talks: Cyber warfare range at PIMA Community College
+https://www.pima.edu
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Ub99FZ1_wuQ&t=22m48s">VIDEO</a>:
+Elite cyber experts provide guidance at <a target="_blank" href="https://CyberRange.TechData.com/">CyberRange.TechData.com</a>, an interactive cyber playground for learning and training at 3 levels of difficulty.
+They have a physical location at Gilbert, Arizona within the Rivulon development.
+But access is also available remotely online using <a target="_blank" href="https://wilsonmar.github.io/kali/">Kali Linux</a>.
+
+   * The same director also started the Arizona Cyber Warfare Range- https://www.azcwr.org/
+   * <a target="_blank" href="https://linkedin.com/in/james-craig-09a33a4">James (Jim) Craig</a> Dean, Business and Information Technology 
+   * <a target="_blank" href="https://linkedin.com/in/will-mccullen-63ba0873">Will McCullen</a>, IT Center for Excellence, Advanced Program Manager
+   <br /><br />
+
+<a target="_blank" href="https://www.linkedin.com/in/omarsantos/">Omar Santos</a> and <a target="_blank" href="https://www.linkedin.com/in/derek-santos-0b3b3b1/">Derek Santos</a> are authors of:
+
+   * <a target="_blank" href="https://www.oreilly.com/library/view/cybersecurity-attacks-red/9780135260113/">Cybersecurity Attacks (Red Team Activity) and Defense (Blue Team Activity)</a> by Pearson.
+
+   * <a target="_blank" href="https://learning.oreilly.com/playlists/525c0652-1eef-47c9-9ca6-74db4ed78e44/">Ethical Hacking Labs on OReilly.com</a> Interactive Katacoda scenarios to learn ethical hacking, pen testing, and bug bounty hunting. These scenarios can also help individuals preparing for certifications such as OSCP, CEH Practical, PenTest+, and others.
+
+   * <a target="_blank" href="https://learning.oreilly.com/videos/-/9780138319090/">2h VIDEO</a>: Building the Ultimate Cybersecurity Lab and Cyber Range (2 hour videos) from Publisher:Pearson December 2023
+
+   * <a target="_blank" href="https://learning.oreilly.com/videos/-/9780138230364/">3h VIDEO</a>: Certified in Cybersecurity - CC (ISC)² published by Pearson.
+   <br /><br />
+
+   * <a target="_blank" href="https://learning.oreilly.com/videos/-/9780136173717/">26h  VIDEO</a>: The Complete Cybersecurity Bootcamp (Video Collection): Threat Defense, Ethical Hacking, and Incident Handling. from Pearson April 2019
+   <br /><br />
 
 
 <hr />

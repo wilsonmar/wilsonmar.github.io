@@ -124,21 +124,38 @@ GitHub issues are not the appropriate place to ask questions or debug specific p
 
 Before creating a new issue, please ensure the issue was not already reported by <a target="_blank" href="https://github.com/Fahmy-Kadiri-akl/Akl-Demo/issues?q=is%3Aissue+is%3Aclosed++is%3Aopen">All Issues</a>.
 
-Classification of Issues:
+### Type of Issue
+
+Each issue is flagged with one or more of these types:
 
    * <strong>Discussion</strong> for issues that can be non-issues, and encompass best practices, or plans for the future.
+
    * <strong>Easy First Step</strong> for issues that are great for new contributors to get started with. We want people to feel like there's always somewhere you can start.
+
    * <strong>Quick</strong> for small issues (such as typos in text) that can be fixed quickly.
 
    * <strong>To check</strong> for issues that may not be reproducible, or have not been vetted by a team member.
+
    * <strong>Defect</strong> for bugs in functionality. The issue text should contain steps to reproduce. Feel free to fix these and submit a pull request.
 
    * <strong>Enhancement</strong> for enhancements to functionality. If you would like to work on one, please add a comment that you are doing so.
+
    * <strong>Workaround known</strong> for issues have had their solutions discussed, but have yet to be implemented.
   <br /><br />
 
 We prefer that "+1" or emoji be added to an existing issue instead of generic comments. [reactions](https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/).
 
+### Severity of issues
+
+The estimated impact of each issue is categorized using these labels (from least to most severe):
+
+* <strong>Trivial</strong>: Minimal impact on the usefulness and functionality of the software; a "nice-to-have." Visual impact without functional impact;
+
+* <strong>Medium</strong>: Some impairment of use, but simple workarounds exist;
+
+* <strong>Critical: Significant loss of functionality or impairment of use. Display of telemetry data is not affected though. Complex workarounds exist;
+
+* <strong>Blocker</strong>: Major functionality is impaired or lost, threatening mission success. Display of telemetry data is impaired or blocked by the bug, which could lead to loss of situational awareness.
 
 
 <a name="Connect"></a>
@@ -359,6 +376,7 @@ Note: All contributions will be licensed under the project's license.
 This document was adapted from excellent examples. 
 Much gratitude and respect to the authors of these documents:
 
+* https://github.com/nasa/openmct/blob/master/CONTRIBUTING.md
 * https://mozillascience.github.io/working-open-workshop/contributing/
 * https://github.com/atom/atom/blob/master/CONTRIBUTING.md#reporting-bugs
 * https://github.com/jessesquires/.github/blob/main/CONTRIBUTING.md

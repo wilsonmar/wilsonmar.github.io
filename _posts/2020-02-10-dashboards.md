@@ -107,10 +107,17 @@ We use a series of dashboard views that are related to each other, to make data 
 <a target="_blank" html="https://cloud.githubusercontent.com/assets/300046/24077227/fc53a15c-0c1c-11e7-9782-9514f69c6a70.png">
 <img width="978" alt="tableau interactive wait times 1956x1372" src="https://cloud.githubusercontent.com/assets/300046/24077227/fc53a15c-0c1c-11e7-9782-9514f69c6a70.png"><br />Click for full pop-up</a>
 
+
 ### Outliers 90th percentile
 
 PROTIP: To improve the above view, also show <strong>outliers</strong> at the <strong>90th and 95th percentile</strong>.
 
+
+## Activity
+
+<a target="_blank" href="https://wilsonmar.github.io/devops-dashboards/">devops-dashboards: Hygieia</a> (from Capital One) has been a popular way to visualize the level of activity processing CI/CD DevOps runs.
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1706706731/dashboards-hygia-2848x1666_jbvqog.jpg"><img alt="dashboards-hygia-2848x1666.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1706706731/dashboards-hygia-2848x1666_jbvqog.jpg"></a>
 
 ## Flowcharts
 
