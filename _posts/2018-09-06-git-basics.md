@@ -23,13 +23,13 @@ comments: true
 <br />
 
 Hello, I'm Wilson Mar [<a target="_blank" href="https://www.twitter.com/wilsonmar">@wilsonmar</a>], 
-It was 2010 when, after years working on what came before Git, I knew Git will become essential for developers and testers.
+It was 2010 when, after years of working on what came before Git, I knew Git would become essential for developers and testers.
 Since 2014, I have been holding live, full-day hands-on tutorials at conferences
-because skill with Git and Linux commands are pre-requsite to many IT jobs.
+because skill with Git and Linux commands are prerequisites to many IT jobs.
 
 Along the way, I devoured <a target="_blank" href="https://wilsonmar.github.io/git-github-videos/">every video and book</a> I could find on the subject and listed them in my blog.
 
-I'm also created tutorials on how to <a target="_blank" href="https://wilsonmar.github.io/git-config/">install Git clients</a> and hook it up to repositories in the cloud.
+I also created tutorials on how to <a target="_blank" href="https://wilsonmar.github.io/git-config/">install Git clients</a> and hook it up to repositories in the cloud.
 
 Throughout this course, we are on a hunt to answer these <strong>questions</strong> about working with code.
 
@@ -38,14 +38,14 @@ Throughout this course, we are on a hunt to answer these <strong>questions</stro
 You'll learn in minimum time because I've spent a lot of time on <strong>sequencing</strong> your learning and on <strong>time-saving automation</strong>. 
 
 The focus of this course is on helping you to confidently <strong>contribute to open source</strong>, 
-using techniques and utilities that top professionls use.
+using techniques and utilities that top professionals use.
 
 This means we often use commands to <strong>verify status</strong> after key steps.
 Verification steps are part of bash scripts I've created so that you can tell, on your own, whether you're typed incorrectly or whether there's some issue with the system. Having a script means you can change something to see how it affects the whole workflow. 
 The scripts are a very unique aspect that I haven't seen elsewhere.
 
 Another special aspect of this course are the <strong>keyboard shortcuts</strong> pros use to boost their efficiency.
-At the end of each segment we review key learnings to make sure you have mastered each skill.
+At the end of each segment, we review key learnings to make sure you have mastered each skill.
 
 In this tutorial, we also learn how to recover from mistakes right after we try each command.
 
@@ -55,7 +55,7 @@ In this tutorial, we also learn how to recover from mistakes right after we try 
 
 NOTE: Since the above video was created, GitHub has gone to free private repositories, but no longer free website hosting. Their $4 a month for "Pro" subscriptions does provide GitHub Pages hosting.
 
-To recap the video, a <strong>"blob"</strong> is the set of characters in the last revision identified by a "hash" calculated from the text changed plus some metadata such as the data of the change, the person making the change, etc. The 7 characters shown is the first 7 characters of the full hash string.
+To recap the video, a <strong>"blob"</strong> is the set of characters in the last revision identified by a "hash" calculated from the text changed plus some metadata such as the data of the change, the person making the change, etc. The 7 characters shown are the first 7 characters of the full hash string.
 
 
 <a name="Clients"></a>
@@ -72,7 +72,7 @@ There are several technologies you can use to work with Git version control:
 
 ## Script and Topics flowchart
 
-Several others have created "cheat sheets", but they are structured like a dictionary or according to how the program works, not the sequence how you work.
+Several others have created "cheat sheets", but they are structured like a dictionary or according to how the program works, not the sequence of how you work.
 
 To start off, let's look at the major chapters, marked by red numbered dots. The first diagram is about installation and configuration:
 
@@ -95,7 +95,7 @@ BTW I'm working on a video in which I verbally narrate the video using text on t
 
 To make use of a terminal console on your laptop, you need to open the <strong>Terminal</strong> program on a Mac or, if you're on a Windows machine, the <strong>Git Bash</strong> program installed. 
 
-   Since a Bash shell does not come with <strong>Microsoft Windows</strong> machines, a bash terminal program called <strong>git bash</strong> needs to be install by the Windows <strong>Chocolatey</strong> installer installing the <strong>msysgit</strong> package. But you must have Administrator permissions to install them.
+   Since a Bash shell does not come with <strong>Microsoft Windows</strong> machines, a bash terminal program called <strong>git bash</strong> needs to be installed by the Windows <strong>Chocolatey</strong> installer installing the <strong>msysgit</strong> package. But you must have Administrator permissions to install them.
 
 On Windows:
 
@@ -172,7 +172,7 @@ On macOS (Mac laptop):
 
 ## A script types commands for you
 
-An bash script was created to automatically <strong>type for you</strong> the various commands in this course. It's to see whether what you are asked to type manually actually works. This is so we can see whether <strong>it was working before</strong>, so you don't blame yourself for not typing commands correctly and waste time debugging.
+A bash script was created to automatically <strong>type for you</strong> the various commands in this course. It's to see whether what you are asked to type manually actually works. This is so we can see whether <strong>it was working before</strong>, so you don't blame yourself for not typing commands correctly and waste time debugging.
 
 1. Let's look at the script by providing an internet browser (such as Brave) with this full URL:
 
@@ -221,7 +221,7 @@ An bash script was created to automatically <strong>type for you</strong> the va
 
    This places into memory definitions for the PATH of directories the operating system looks for the location of programs requested to run, for <strong>export</strong> of environment variables.
 
-8. The dot character in the file name means that the file is normally hidden, so additional parameters need to be specicifed to see them, such as:
+8. The dot character in the file name means that the file is normally hidden, so additional parameters need to be specified to see them, such as:
 
    <pre><strong>ls -al</strong></pre>
 
@@ -331,12 +331,12 @@ On a Mac:
    <pre><strong>brew install jq</strong></pre>
 
 
-On Windows machines, the Chocolatey package manager is installed if not found.
+   On Windows machines, the Chocolatey package manager is installed if not found.
 
 
    <a name="EnvVars"></a>
 
-   ### environment variables & values
+   ### Environment variables & values
 
 5. File <tt><strong>git-basics.env</strong></tt> is downloaded to your $HOME account folder (by a curl command):
 
@@ -776,7 +776,7 @@ Here's where you add value to that Open-Source repository.
 
    <a name="NewBranch"></a>
 
-   ### New branch with commit
+### New branch with commit
 
    There are two ways to create a new branch.
 
@@ -856,9 +856,11 @@ Here's where you add value to that Open-Source repository.
 
    The response is:
 
-   <pre>## feat1
+   <pre>\#\# feat1
  M .gitignore
    </pre>
+
+   About the parameters:
 
    ```##``` marks a branch
 
@@ -1098,7 +1100,7 @@ A  newfile.md
    
 9. Un-delete the file using ```^``` (caret character) which specifies the commit just <strong>prior</strong> to the one specified in the command. For example:
 
-   <pre><strong>>git checkout a21b79e^ -- "_layouts/product.html"</strong>
+   <pre><strong>git checkout a21b79e^ -- "_layouts/product.html"</strong></pre>
 
 
    <a name="Rebasing"></a>
@@ -1107,7 +1109,7 @@ A  newfile.md
 
 7. Before pushing to GitHub/GitLab, some prefer to squash some commits so that only one commit message appears for several commits made locally. 
 
-   * Rebasing cleans up intermediate commits that is unwanted noise to the rest of the team.
+   * Rebasing cleans up intermediate commits that are unwanted noise to the rest of the team.
    The extra commits complicates the history, and makes back-out of code more difficult.
 
    * Yes, this changes history, which is why we do it. But it's only on your local versions.
