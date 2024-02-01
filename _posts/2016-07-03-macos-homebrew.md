@@ -3,7 +3,7 @@ layout: post
 date: "2014-01-30"
 file: "macos-homebrew"
 title: "MacOS Homebrew"
-excerpt: "How to create brew formula for installation on macOS"
+excerpt: "How to create brew formulas for installation on macOS"
 tags: [homebrew, apple, mac, setup]
 image:
 # feature: pic brown homebrew logo 1900x500.jpg
