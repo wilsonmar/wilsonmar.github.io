@@ -48,15 +48,9 @@ The game features a realistic simulation of the entire Earth using textures and 
 
 <hr />
 
-## Pilot's License
+## Pilot's License?
 
 Can you get a Private Pilot's License by playing Microsoft Flight Simulator?
-
-Some say the game is more fun if you first learn the terminology.
-Books: PROTIP: Your public library may have a copy.
-
-   * <a target="_blank" href="https://www.amazon.com/FAR-AIM-2024-Administration-Aeronautical/dp/1644252813/">$26.96</a> FAA FAR/AIM 2024: Federal Aviation Regulations/Aeronautical Information Manual (ASA FAR/AIM Series) Paperback – September 5, 2023 from Titles 14 and 49 of the Code of Federal Regulations (14 and 49 CFR) 
-   <br /><br />
 
 Most say no because students need hours in an actual plane.
 In the USA you have the option of:
@@ -70,7 +64,7 @@ To get a Private Pilot certificate, it takes "a minimum cost of around $10,000" 
    * Hours of flight time. Most students require around 40 hours of flight time to obtain their certificate
    * Ground based-training
    * Headset
-   * Test preparation
+   * Test Preparation
    * Test fees
    <br /><br />
 
@@ -78,8 +72,45 @@ To get an Instrument rating to fly at night and in bad weather, budget an additi
    * FAA examiner test fees $8,000.
    <br /><br />
 
+However, some say the game is more fun if you are comfortable with aviation terminology:
+   * Alpha Bravo Charlie and other letters 
+   * Airport codes
+   * What "you are cleared to runway 230" (compass numbers) means
+   <br /><br />
+
+Books: PROTIP: Your public library may have a copy.
+   * <a target="_blank" href="https://www.amazon.com/FAR-AIM-2024-Administration-Aeronautical/dp/1644252813/">$26.96</a> FAA FAR/AIM 2024: Federal Aviation Regulations/Aeronautical Information Manual (ASA FAR/AIM Series) Paperback – September 5, 2023 from Titles 14 and 49 of the Code of Federal Regulations (14 and 49 CFR) 
+   <br /><br />
+
+
 <a target="_blank" href="https://atpflightschool.com/airline-career-pilot-program/">ATP</a> offers <a target="_blank" href="https://atpflightschool.com/locations/">at 85 locations around the US</a> a 9-month immersion program to career airline pilot program for a fixed fee of $108,995 starting from zero time or $86,995 starting with credit for private.
 
+
+<hr />
+
+## XBox vs Windows
+
+The Xbox X only has one HDMIv2 monitor out plug.<br />
+Many Windows machines support dual monitors via GPU such as the NVIDIA GeForce RTX 3090.
+
+The XBox X output to 4K UHD (1440p) at 120Hz with HDR (High Dynamic Range).<br />
+WARNING: Many TVs only support 4K UHD at 60Hz vs. 120Hz.
+
+"Multi-screen support" in games means having one screen split either horizontally or vertically to allow two or more players to share a single screen.
+
+A HDMI splitter box can split the signal to multiple monitors,
+but the same image would appear on both screens.
+
+The XBox X does not support ultra-wide monitors.<br />
+Windows machines do.
+
+Many (older) monitors don't support the 120hz speed that XBox games can use.
+But when a game runs at 120hz speed, XBox reduces its resolution at 1080p. 
+So the game can't make full use of 4k60 panels.
+
+For best sound, Windows machines need a separate sound board.
+
+https://forums.flightsimulator.com
 
 <hr />
 

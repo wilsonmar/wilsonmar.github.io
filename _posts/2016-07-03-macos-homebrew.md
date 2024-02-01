@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Mac OSX Homebrew"
-excerpt: "How to install brew packages based on XCode, Ruby, Homebrew"
-tags: [homebrew, apple, mac, setup]
-date: "2016-07-03"
+date: "2014-01-30"
 file: "macos-homebrew"
+title: "MacOS Homebrew"
+excerpt: "How to create brew formula for installation on macOS"
+tags: [homebrew, apple, mac, setup]
 image:
 # feature: pic brown homebrew logo 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622020/60672448-0584-11e6-8202-41c36ba82d04.jpg
@@ -821,6 +821,11 @@ brew's readme</a>:
    * Email <a target="_blank" href="mailto:homebrew-discuss@googlegroups.com">homebrew-discuss@googlegroups.com</a>
    * <a target="_blank" href="https://groups.google.com/forum/#!forum/homebrew-discuss">
      Read archive of emails at https://groups.google.com/forum/#!forum/homebrew-discuss</a>
+
+## Resources
+
+* https://docs.brew.sh/Formula-Cookbook
+* https://rubydoc.brew.sh/Formula
 
 
 ## More on OSX

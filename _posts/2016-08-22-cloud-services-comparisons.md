@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-23"
+date: "2024-01-23"
 file: "cloud-services-comparisons"
 title: "Cloud services comparisons"
 excerpt: "Which cloud is best? Azure vs. AWS vs. Google"
@@ -805,6 +805,23 @@ https://statistica.com has statistics on AWS:
 
 <a target="_blank" href="https://a16z.com/2021/05/27/cost-of-cloud-paradox-market-cap-cloud-lifecycle-scale-growth-repatriation-optimization/">
 BLOG: "The Cost of Cloud, a Trillion Dollar Paradox"</a> by venture capital firm Andressen Horowitz
+
+https://csrc.nist.gov/publications/detail/sp/800-145/final
+NIST 800-145 - Definition of Cloud Computing
+
+* People
+* Data
+* Applications
+* Runtimes
+* Middleware
+* Operating system
+* Virtual network
+* Hypervisor
+* Servers
+* Storage
+* Physical Network
+<br /><br />
+
 
 ## More on DevOps #
 

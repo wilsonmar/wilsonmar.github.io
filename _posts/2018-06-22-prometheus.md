@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-01-11"
+date: "2024-01-30"
 file: "prometheus"
 title: "Prometheus"
 excerpt: "Collect metrics (for visualization by Grafana), analyze using PromQL coding, and identify alerts,  especially for Kubernetes also from CNCF."

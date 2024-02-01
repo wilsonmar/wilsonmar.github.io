@@ -623,6 +623,28 @@ Compliance scores go to 100.
 file CIS-Controls-Version-7-cc.pdf
 from <a target="_blank" href="https://learn.cisecurity.org/20-controls-download">https://learn.cisecurity.org/20-controls-download</a>
 
+### Linux permissions
+
+https://h4cker.org/chmod Discretionary Access Control
+
+In each set: Owner - Group - Other
+
+<tt>-rw--r--r--</tt>
+
+Read - Write - eXecute:
+
+* 000 = 0
+* 001 = 1
+* 010 = 2
+* 100 = 4
+
+* 101 = 5
+* 110 = 6
+* 111 = 7
+<br /><br />
+
+LSM = Linux Security Module
+
 #### &nbsp; &nbsp; &nbsp; Basic:
 
 1. Inventory and Control of Hardware Assets
@@ -2480,11 +2502,14 @@ Types of Network intrusion systems:
    1. Response = Mitigation
       * Containment of damage
       * Eradication
-      * Recovery – going back to normal operations
+      * Recovery – returning to normal operations
       + Reporting – notifying management and authorities 
       + Remediation - taking care of other areas that may be vulnerable.
    1. Post-incident activity - Review and improvement – identifying lessons learned and steps to implement improvements
    <br /><br />
+
+<a target="_blank" href="https://www.first.org/">
+FIRST (Forum of Incident Response Security Teams) at first.org</a>
 
 Forensic investigation process: REMEMBER: 
    1. Identification - start action log, reviewing audit logs, monitoring systems, analyzing user complaints, analyzing detection mechanisms, signature resolution.
@@ -2614,12 +2639,12 @@ Roles:
 * System owners are responsible for the systems on which data resides. 
 * Data owners own the data 
 * Data custodian configures the appropriate permissions for user access to the data, 
-* System owner determines the parameters that govern the system, such as what types of data and applications can be stored on the system, who owns the data and applications, and who determined the users that can access the data and applications.
+* The system owner determines the parameters that govern the system, such as what types of data and applications can be stored on the system, who owns the data and applications, and who determined the users that can access the data and applications.
 
 
 Dedicated security mode employs a single classification level.
 
-"system integrity" implies that a system will work as intended.
+"System integrity" implies that a system will work as intended.
 
 REMEMBER: Aspects of identity management whereby users are identified, authenticated, and authorized: 
 entities, attributes, credentials, and entitlements.
@@ -3537,7 +3562,7 @@ https://www.pulseconferences.com/
 * <a target="_blank" href="https://www.wgu.edu/online-it-degrees/cybersecurity-information-assurance-masters-program.html">Western Governors University</a> Masters in Cybersecurity can be obtained <strong>online</strong> and for a lot less than others at $4,555 per 6-month term for as many courses as you can complete during that time. They say 70% graduate within 21 months (5 terms) for $18,220.
 
    Their curriculum is aligned to:
-   * NICE Framework
+   * <a target="_blank" href="https://niccs.cisa.gov/workforce-development/nice-framework">NICE Workforce Framework</a> of <a target="_blank" href="https://public.cyber.mil/wid/pathways/">pathway job titles</a> and <a target="_blank" href="https://trycyber.us/challenges/">tasks</a>
    * NSA Center of Academic Excellence guidelines
    * CISSP Common Body of Knowledge (CBK)
    <br /><br />
@@ -3564,6 +3589,8 @@ https://www.pulseconferences.com/
 https://www.microsoft.com/en-us/cybersecurity/content-hub/cybersecurity-policy-framework
 
 https://twitter.com/npm_malware announces malicious packages in the npm registry.
+
+https://github.com/ufrisk/MemProcFS for Digital Forensics. It provides a GUI to view physical memory as DumpLit or WinPMEM read-only files in a virtual file system, perhaps obtained from a PCILeech FPGA.
 
 
 ## More on Security #
