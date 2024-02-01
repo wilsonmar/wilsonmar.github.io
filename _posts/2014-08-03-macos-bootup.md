@@ -244,8 +244,8 @@ If the tool finds any binary files that don’t match the clean EFI list, it’s
 
 See https://support.apple.com/en-us/HT201518
 
-## More on OSX
+## More on macOS
 
-This is one of a series on Mac OSX:
+This is one of a series on macOS:
 
 {% include mac_links.html %}

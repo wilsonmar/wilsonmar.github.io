@@ -327,7 +327,7 @@ Some professional drawing tablets are hundreds of dollars.
 
 <a target="_blank" href="https://www.apartmenttherapy.com/quick-tip-use-a-tablet-stylus-with-your-macbook-175342">
 NOTE</a> 
-You can turn the touch pad on MacBook Pro laptops into a drawing tablet by installing the $29.95 <a target="_blank" href="http://tenonedesign.com/inklet.php/">Inklet OSX program</a> which runs in the background.
+You can turn the touch pad on MacBook Pro laptops into a drawing tablet by installing the $29.95 <a target="_blank" href="http://tenonedesign.com/inklet.php/">Inklet macOS program</a> which runs in the background.
 
 If you have a new Apple MacBook Pro, Inklet takes advantage of its "Multitouch Force Touch" trackpad that senses different levels of pressure.
 
@@ -964,7 +964,7 @@ https://www.quora.com/How-can-I-become-an-Apple-repair-technician
 
 <a target="_blank" href="https://www.youtube.com/watch?v=PRMZhuc_6Bw&t=20s">VIDEO: BECOME AN APPLE GENIUS - How to get a Job and work for Apple!</a>
 
-Apple offers the "Mac OS X - Certified Associate" certification exam on this topic (Mac Integration) on each OSX version. Those who pass get on <a target="_blank" href="https://i7lp.integral7.com/durango/do/pr/prSearch?ownername=apple&channel=apple">Apple's Registry</a>.
+Apple offers the "Mac OS X - Certified Associate" certification exam on this topic (Mac Integration) on each macOS version. Those who pass get on <a target="_blank" href="https://i7lp.integral7.com/durango/do/pr/prSearch?ownername=apple&channel=apple">Apple's Registry</a>.
 Gone through <a target="_blank" href="https://it-training.apple.com/tutorials/apt-support">14-hour "Learn How to Support Apple Devices"</a> is for the <a target="_blank" href="https://wilsonmar.github.io/apple-mac-osx-versions/">latest versions of iPhone, iPad, and macOS</a>.
 
 <a target="_blank" href="https://certifications.apple.com/viewer/home">Certifications</a> and <a target="_blank" href="https://certifications.apple.com/viewer/exams">Assessments</a>
@@ -987,8 +987,8 @@ Integrate a Mac into a Windows network environment and configure a Mac to work w
 
 
 
-## More on MacOS
+## More on macOS
 
-This is one of a series on MacOS:
+This is one of a series on macOS:
 
 {% include mac_links.html %}

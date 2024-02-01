@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Screen Capture and Image File Management on Mac OSX"
+title: "Screen Capture and Image File Management on macOS"
 excerpt: "Did I really see that?"
 tags: [apple, mac, setup]
 date: "2014-08-06"
@@ -104,8 +104,8 @@ To crop images, add text, or create transparent backgrounds
 and save in another format,
 
 
-## More on OSX
+## More on macOS
 
-This is one of a series on Mac OSX:
+This is one of a series on macOS:
 
 {% include mac_links.html %}

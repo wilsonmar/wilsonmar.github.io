@@ -2,7 +2,7 @@
 layout: post
 title: "Backup Archival and Restore on Mac OSX"
 excerpt: "Save your life"
-tags: [apple, mac, setup, USB]
+tags: [apple, macOS, setup, USB]
 date: "2014-08-04"
 file: "apple-mac-osx-backup"
 image:
@@ -122,8 +122,8 @@ or similar program is installed on the PC.)
 There is no formatting after Erase.
 
 
-## More on OSX
+## More on macOS
 
-This is one of a series on Mac OSX:
+This is one of a series on macOS:
 
 {% include mac_links.html %}

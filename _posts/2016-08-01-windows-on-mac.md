@@ -598,7 +598,7 @@ Through trial and error, I found a number of things that could be disabled to im
 
 VMware Fusion enables you to experiment with setups on a fresh instance of Windows.
 
-With VMWare Fusion, you can quickly switch among macOS, Windows, or Linux on a MacOSX machine.
+With VMWare Fusion, you can quickly switch among macOS, Windows, or Linux on a macOS machine.
 
    Unlike ___, you don't need to reboot to switch.
 
@@ -867,12 +867,12 @@ Enable Fusion to be opened in different ways:
    </strong></tt>
 
    * <a target="_blank" href="http://www.souldevteam.net/blog/2013/10/06/os-x-mavericks-10-9-retail-vmware-image-release-notes-links/">
-   Run OSX in VMware within Windows</a>
+   Run macOS in VMware within Windows</a>
 
    * http://www.tekrevue.com/os-x/
 
    * <a target="_blank" href="http://www.souldevteam.net/blog/2013/10/06/os-x-mavericks-10-9-retail-vmware-image-release-notes-links/">
-   Run OSX in VMware within Windows</a>
+   Run macOS in VMware within Windows</a>
 
    * <a target="_blank" href="https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1001934">
    Defragmenting, shrinking, and cleaning up VMware Fusion virtual machine disks</a>
@@ -981,7 +981,7 @@ diskutil unmountDisk force disk3
 
    "Error creating partition map: The disk is too large to be supported by the given partition scheme (-69659)"
 
-   Windows 7 doesn't like the UUID partition scheme. Reformat as MBR in OSX for Win7
+   Windows 7 doesn't like the UUID partition scheme. Reformat as MBR in macOS for Win7
 
    This is why if you format exFAT on a Mac, it won't read on a PC.
    But if you format exFAT on a PC, the it will work on both.
@@ -1125,8 +1125,8 @@ now built on Google Chrome.
 
 
 
-## More on OSX
+## More on macOS
 
-This is one of a series on Mac OSX:
+This is one of a series on macOS:
 
 {% include mac_links.html %}

@@ -17,7 +17,7 @@ comments: true
 {% include _toc.html %}
 
 This tutorial provides a deep dive of Homebrew,
-a package manager for Mac OSX (MacOS)
+a package manager for macOS
 that's like other package mangers for Linux:
 
 <table border="1" cellpadding="4" celspacing="0">
@@ -46,7 +46,7 @@ their dependencies, such as where to find tar.gzip files for download.
 Brew installs packages in its own Cellar directory (folder)
 and adds symlinks to the /usr/local folder.
 
-Homebrew is the newest and most popular package utility on OSX.
+Homebrew is the newest and most popular package utility on macOS.
 
 Homebrew's web page is at <a target="_blank" href="http://brew.sh/">
 http://brew.sh</a>
@@ -99,7 +99,7 @@ http://brew.sh</a>
    and look for your version of "Command Line Tools (macOS 10.14) for XCode 10", 
    one that doesn't say "beta".
 
-0. Since the El Capitan version of Mac OSX, 
+0. Since the El Capitan version of macOS,
    file permissions in /usr/local have changed,
    causing error messages such as:
 
@@ -806,8 +806,7 @@ Within Fink’s directory, a FHS-like layout (/sw/bin, /sw/include, /sw/lib, etc
 0. For more documentation on brew, look <a target="_blank" href="https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/FAQ.md">
    here</a> and:
 
-   <tt><strong>
-   man brew
+   <tt><strong>man brew
    </strong></tt>
 
 
@@ -828,8 +827,8 @@ brew's readme</a>:
 * https://rubydoc.brew.sh/Formula
 
 
-## More on OSX
+## More on macOS
 
-This is one of a series on Mac OSX:
+This is one of a series on macOS:
 
 {% include mac_links.html %}

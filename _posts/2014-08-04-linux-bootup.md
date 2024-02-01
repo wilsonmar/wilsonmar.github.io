@@ -220,8 +220,8 @@ Linux launches a root shell session with this line:
 
 https://learning.oreilly.com/library/view/comptia-linuxlpic-1-portable/9780134692357/ch02.xhtml
 
-## More on OSX
+## More on macOS
 
-This is one of a series about MacOS:
+This is one of a series about macOS:
 
 {% include mac_links.html %}

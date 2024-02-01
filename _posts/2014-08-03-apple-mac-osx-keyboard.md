@@ -1418,8 +1418,8 @@ Videos:
 STAR: https://www.wired.com/story/do-everything-faster-keyboard-shortcuts-tricks-tips/
 
 
-## More on OSX #
+## More on macOS #
 
-This is one of a series on Mac OSX:
+This is one of a series on macOS:
 
 {% include mac_links.html %}
