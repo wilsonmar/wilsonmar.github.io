@@ -265,6 +265,36 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 
 ## Aviation terms
 
+<a href="#A">A</a>
+<a href="#B">B</a>
+<a href="#C">C</a>
+<a href="#D">D</a>
+<a href="#E">E</a>
+<a href="#F">F</a>
+<a href="#G">G</a>
+<a href="#H">H</a>
+<a href="#I">I</a>
+<a href="#J">J</a>
+<a href="#K">K</a>
+<a href="#L">L</a>
+<a href="#M">M</a>
+<a href="#N">N</a>
+<a href="#O">O</a>
+<a href="#P">P</a>
+<a href="#Q">Q</a>
+<a href="#R">R</a>
+<a href="#S">S</a>
+<a href="#T">T</a>
+<a href="#U">U</a>
+<a href="#V">V</a>
+<a href="#W">W</a>
+<a href="#X">X</a>
+<a href="#Y">Y</a>
+<a href="#Z">Z</a>
+
+
+<h2 id="A">A</h2>
+
 * AC = Advisory circular
 * A/C = Airconditioning Unit
 * Absolute altitude = the distance measured vertically from the ground to the aircraft’s position in the air
@@ -348,7 +378,7 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * AWACS = Airborne Warning And Control System  [Pronounced “AY-wax.”] - an electronically very souped-up Boeing 707.
 * AWIS = Aerodrome Weather Information Service - a system to collect, process, and transmit the most important weather data for air traffic control.
 
-<h2 id="letter-B">B</h2>
+<h2 id="B">B</h2>
 
 * Base Leg - the flight path that has the aircraft descending in the direction of the landing on the runway.
 * Barnstormer = A pilot who, in the early years of aviation, gave airplane rides to people and performed aerobatics for a fee.
@@ -368,6 +398,8 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * Bracing wire = A solid steel wire used to support the structure of an airplane’s wings or fuselage
 * BRG = Bearing
 * BSU = Beam steering unit
+
+<h2 id="C">C</h2>
 
 * CAA = Civil Aviation Authority - the regulator of civil aviation in the UK since its foundation in 1972.
 * CAAC = Civil Aviation Administration of China - the aviation regulator for the People’s Republic of China with headquarters in Beijing.
@@ -428,7 +460,7 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * CW = Continuous wave. A radio carrier broadcast that does not have modulation
 * Cycles = Pertains to turbine engines: Cycle begins with starting, continues through full-power, and ends with shutdown
 
-<h2 id="letter-D">D</h2>
+<h2 id="D">D</h2>
 
 * DA = Drift angle
 * DA = density altitude = the air density given as a height above mean sea level.
@@ -455,7 +487,7 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * DTU = Data transfer unit
 * Duplex = Separate channels for transmitting and receiving
 
-<h2 id="letter-E">E</h2>
+<h2 id="E">E</h2>
 
 * EAROM = Electrically alterable read-only memory, a type of digital memory device
 * EEPROM = Electrically erasable programmable read-only-memory
@@ -470,6 +502,7 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * EROS = Brand Name for Oxygen Mask
 * ETOPS = Extended Twin-engine operations. FAA designation of over-ocean flights far from possible emergency landing strips, in which the possibility of engine failure in a twin-engine plane represents a heightened risk. ETOPS certification is not normally given to a new passenger aircraft until it has been in regular domestic service for at least a year
 
+<h2 id="F">F</h2>
 
 * FAA = Federal Aviation Administration
 * FADEC = Full authority digital engine control
@@ -491,6 +524,7 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * Full De-ice = Complete anti – and/or de-ice equipment installed on wings, tail, props, and windsheild
 * Full Panel = All gyros necessary for instrument flight
 
+<h2 id="G">G</h2>
 
 * Galley = On-board meal service equipment
 * Gas discharge = A type of luminescent digital display
@@ -507,6 +541,7 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * G/S = Glide slope reciver and indicator
 * GTWO = Gross Take off Weight
 
+<h2 id="H">H</h2>
 
 * HF = High Frequency radio equipment
 * HF COM = High Frequency Communication
@@ -516,6 +551,7 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * HUD = Head-up display
 * Hz or Hertz = Cycles per second, used to describe radio frequencies; usually with the prefix k for kilo (one thousand), M for mega (one million) or G for giga (one billion)
 
+<h2 id="I">I</h2>
 
 * IAC = Integrated avionics computer. Central processor of a Honeywell integrated cockpit system
 * IAPS = Integrated avionics processing system. Central processor of a colins integrated cockpit system
@@ -529,13 +565,16 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * ITU = International Telephone Union, refers to certain HF channels
 * IVSI = Instantaneous vertical speed indicator
 
+<h2 id="J">J</h2>
 
 * Jet Prop = Describes aircraft using turbine engines to drive propellers
 
+<h2 id="K">K</h2>
 
 * King = King Radio Corp. (Avionics mfgr.)
 * Known Icing = FAA certified for flight into icing conditions
 
+<h2 id="L">L</h2>
 
 * Laser IRS = An inertial reference system deriving angular rate information by measuring Doppler shift between two contra-rotating light beams
 * Lateral control = The ability to make an airplane roll, or turn around its long axis, according to its pilot’s wishes
@@ -554,6 +593,7 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * LRU = Line replaceable unit
 * LYC = Avco-Lycoming (Engine mfgr.)
 
+<h2 id="M">M</h2>
 
 * Maximum Payload = Maximum Zero Fuel Weight – (minus) Basic Operating Weight
 * MCU =– Minimum configuration unit
@@ -571,6 +611,7 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * MOPS = Minimum operational performance standard (RTCA)
 * MSP = Maintanance Servie Program. (Garret engine)
 
+<h2 id="N">N</h2>
 
 * NARA = NARA is a professional trade association of 54 reputable business companies organized to promote the growth and public understanding of the aircraft resale industry. Its members abide by a 12-point Code of Ethics that provides standards of business conduct regarding aircraft transactions
 * NAT = North Atlantic Tracks
@@ -585,6 +626,7 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * NTSB = National Transportation Safety Board. Investigates airplane accidents. Plays at most an advisory role in flightworthiness accreditation
 * NVM = Nonvolatile memory. Digital memory that retains information through system shutdown
 
+<h2 id="O">O</h2>
 
 * OAT = Outside Air Temperature
 * OBS = Omnibearing Selector – part of a VOR receiver system, which allows the pilot to select a course to or from a VOR station
@@ -593,6 +635,8 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * Omega = A very-low-frequency navigation system
 * Opitcal digitizer = Any device using a photosensor that can convert analog informatin to digital code
 * OXY = Oxygen system for passengers and crew
+
+<h2 id="P">P</h2>
 
 * Payload with Full Fuel = Useful Load – (minus) Usable Fuel
 * PBH = Power by the Hour. (Rolls Royce engines)
@@ -609,6 +653,8 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * PVT = Private (pilot certificate)
 * PW = Pratt &amp; Whitney, the world’s leading designer, developer and manufacturer of gas turbine engines for commercial, military and general aviation aircraft.”
 
+<h2 id="Q">Q</h2>
+<h2 id="R">R</h2>
 
 * RA = (1) Radio altitiude; (2) Resolution advisory (TCAS)
 * radal = Radio Altimeter
@@ -634,6 +680,7 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * Runway XX = Runways are numbered after magnetic compass points, minus the 1’s column (where North is 0, and 360, degrees)
 * RVSM = Reduced Vertical Seperatation Minimum
 
+<h2 id="S">S</h2>
 
 * SAR = Search and rescue
 * SB = Service Bulletin
@@ -670,6 +717,7 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * Swept-wing = A wing in which both the leading and trailing edges are slanted backward, to reduce air resistance at high speed
 * Synch = Engine Fan Synchronizer
 
+<h2 id="T">T</h2>
 
 * TA = Traffic advisory (TCAS)
 * TBO = Time between overhaul
@@ -690,11 +738,14 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * Turbulence mode = Flight control system mode in which a “softer” response to gust upsets is programmed
 * TX = Transponder
 
+<h2 id="U">U</h2>
 
 * Undercarriage strut = A part of an airplane’s structure, designed to resist distortion, which supports the landing gear
 * Usable Fuel (lbs) = Usable fuel (gallons) x 6.7 lbs/gallon
 * Useful Load = Maximum Ramp Weight – (minus) Basic Operating Weight
 * UTC = Coordinated Universal Time = the standard time zone used in aviation. It is the same as Greenwich Mean Time (GMT) and is regularly used in offsets such as UTC-1 and UTC+1.
+
+<h2 id="V">V</h2>
 
 * VAC = Volts alternating current
 * VDC = Volts direct current
@@ -704,6 +755,8 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * VNAV = Vertical navigation, or the capability to compute pitch-axis maneuvers and altitude-related points in space
 * VOR = VHF Omnidirectional Receiver. One of the more common navigational aids that the FAA has dropped all over the country (and sometimes the world). A VOR sends out a radio signal that is slightly different in each direction (the difference is phases, if you want to get technical). So, an airplane’s VOR tool listens to the VOR, and by measuring the difference in the radio, it can tell which direction it is from the VOR. Since your chart will show where the VOR is, and you now know where you are in relation to the VOR, it has helped you figure out where in the local area you might happen to be
 
+<h2 id="W">W</h2>
+
 
 * WAAS = GNSS wide-area augmentation system
 * Wet wings = Method for containing fuel in wings without using rubber fuel cells
@@ -711,8 +764,19 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * Winglet = Term preferred by Boeing for the vertical structures at the ends of the wings on their 747-400. Airbus and McDonnell-Douglas aircraft manufacturers use the term “wing fence.” The 747-400 winglets only rise from the end of the wing. MD-11 and Airbus wing fences extend both above and below the wing
 * WPT = Waypoint
 
+<h2 id="X">X</h2>
 
 * XC = Cross-Country Flight = a kind of flight that requires a special flight plan. The FAA requires this type of flight to be completed in order to obtain a <a href="https://www.aeroclass.org/types-of-pilot-licenses/" target="_blank" rel="noreferrer noopener">Private Pilot License</a> (PPL).
 * Xpond = Transponder
 * X-band = Frequency range in which most general aviation weather radars operate
 * XTK = Cross track; cross track error
+
+<h2 id="Y">Y</h2>
+
+-
+
+<h2 id="Z">Z</h2>
+
+-
+
+
