@@ -86,6 +86,11 @@ http://brew.sh</a>
 
    ### SHA
 
+   The SHA value is the hash code generated based on the contents.
+
+   Hashing is done before and after a file is saved and transmitted.
+   A hash is created after transmission to verify if every bit is the same.
+
    ### bottle do  
 
    If there are different installers depending on each operating system, each is listed within <tt>bottle do</tt>

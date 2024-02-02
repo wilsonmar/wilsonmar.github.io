@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-01-11"
+date: "2024-02-01"
 file: "cyber-security"
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
@@ -3559,7 +3559,7 @@ https://www.pulseconferences.com/
 -->
 ## Masters Degrees
 
-* <a target="_blank" href="https://www.wgu.edu/online-it-degrees/cybersecurity-information-assurance-masters-program.html">Western Governors University</a> Masters in Cybersecurity can be obtained <strong>online</strong> and for a lot less than others at $4,555 per 6-month term for as many courses as you can complete during that time. They say 70% graduate within 21 months (5 terms) for $18,220.
+* <a target="_blank" href="https://www.wgu.edu/online-it-degrees/cybersecurity-information-assurance-masters-program.html">Western Governors University</a> Masters in Cybersecurity can be obtained <strong>online</strong> and for a lot less than others at $4,555 per 6-month term for as many courses as you can complete during that time. They say 70% graduate within 21 months (5 terms) for $18,220. <a target="_blank" href="https://www.youtube.com/watch?v=hUQ5GxSNa2M" title="Josh Madakor">VIDEO</a>
 
    Their curriculum is aligned to:
    * <a target="_blank" href="https://niccs.cisa.gov/workforce-development/nice-framework">NICE Workforce Framework</a> of <a target="_blank" href="https://public.cyber.mil/wid/pathways/">pathway job titles</a> and <a target="_blank" href="https://trycyber.us/challenges/">tasks</a>
