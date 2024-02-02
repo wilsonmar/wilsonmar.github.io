@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2014-01-30"
+date: "2024-01-30"
 file: "macos-homebrew"
 title: "MacOS Homebrew"
 excerpt: "How to create brew formulas for installation on macOS"
@@ -31,20 +31,20 @@ that's like other package mangers for Linux:
 <tr valign="top"><td>Windows</td><td>Chocolatey</td><td>-</td><td>choco</td></tr>
 </table>
 
+DEFINITION: A <strong>formula</strong> provides instructions on how to install <strong>CLI packages</strong> and
+their dependencies, such as where tar.gzip and *.zip files.
+
+A <strong>cask</strong> provides instructions on how to install <strong>GUI apps</strong> from .dmg files.
+
 Step-by-step instructions are provided here to install Homebrew itself
 and then install Homebrew packages based on the name of 
 <strong>formulae</strong> specified for installation
 in a command such as:
 
-   <tt><strong>
-   brew install wget
-   </strong></tt>
-
-DEFINITION: A formula provides instructions on how to install packages and
-their dependencies, such as where to find tar.gzip files for download.  
+   <tt><strong>brew install wget</strong></tt>
 
 Brew installs packages in its own Cellar directory (folder)
-and adds symlinks to the /usr/local folder.
+and adds symlinks to the <tt>/usr/local</tt> folder.
 
 Homebrew is the newest and most popular package utility on macOS.
 
@@ -61,50 +61,162 @@ http://brew.sh</a>
 
 <hr />
 
+<a name="Formula"></a>
+
+## Homebrew Formula
+
+1. See the (very long) list of all Homebrew formulas from:
+
+   <a target="_blank" href="https://formulae.brew.sh/">https://formulae.brew.sh</a>
+
+1. Click on a program (such as htop, jq, tree, wget, etc.).
+1. Click on the Formula code, such as wget.rb on GitHub:
+
+   <tt>https://github.com/Homebrew/homebrew-core/blob/1cde8401d8be5f28d74a402afe67fd52ac0575ed/Formula/j/jq.rb</tt>
+
+   Notice that the blob is referenced in GitHub by its SHA.
+
+   ### head
+
+   This line defines the git branch "main" for the repo:
+
+   <pre>head "https://github.com/htop-dev/htop.git", branch: "main"</pre>
+
+   The variables are based on <a target="_blank" href="https://docs.brew.sh/Adding-Software-to-Homebrew">this document</a>.
+
+   ### SHA
+
+   ### bottle do  
+
+   If there are different installers depending on each operating system, each is listed within <tt>bottle do</tt>
+
+   <pre> sha256 cellar: :any,                 arm64_sonoma:   "a07989af65c77dbfb28b07b8faec12d3760831c360e0caa6a32a58eff0e8fd65"
+    sha256 cellar: :any,                 arm64_ventura:  "66603fe2d93294af948155b0392e6631faec086b0bcc68537d931861e9b1de39"
+    sha256 cellar: :any,                 arm64_monterey: "f8c4b4433a3fda0ee127ba558b4f7a53dff1e92ff6fb6cef3c8fbf376f1512c8"
+    sha256 cellar: :any,                 sonoma:         "5cd79199db8d7394d331dbb362dd101d12519325f78dde1af4e7c67fb9f4e5da"
+    sha256 cellar: :any,                 ventura:        "d47397e29f584bedd7d1f453af5ff42f10c3607a823fa72314b6d4f1c44cd176"
+    sha256 cellar: :any,                 monterey:       "665c48cbe7434b5850d66512008e143193cd22b69ae54788314955415b6c546d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6734208d3ea8db55123b1d1d9ac4f427c5e7ba89472193afe51543a2bb1a9a1"
+   </pre>
+
+   PROTIP: This needs to be updated with every new OS version added.
+
+   Otherwise:
+
+   <tt>sha256 cellar: :any_skip_relocation, all: a54aa4f028ef042948961ef62524557dd8afd2c05eb658bd5f6d1ec04dddc22f"</tt>
+
+   ### depends on
+
+   Especially if you're installing a package dependent on Python, specify the specific version :
+
+   <pre>  depends_on "python-hatch-vcs" => :build
+  depends_on "python-hatchling" => :build
+  depends_on "python-setuptools" => :build
+  depends_on "python-setuptools-scm" => :build
+  depends_on "python-requests"
+  depends_on "python@3.12"
+   &nbsp;
+  def python3
+    "python3.12"
+  end
+   </pre>
+
+   ### livecheck do
+
+   Code here verifies the version within github.com:
+
+   <pre> url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+   </pre>
+
+   <pre>    url "https://beyondgrep.com/install/"
+    regex(/href=.*?ack[._-]v?(\d+(?:\.\d+)+)["' >]/i)
+   </pre>
+
+   ### def install
+   
+   <tt><strong>def install</strong></tt> defines commands to install:
+
+   QUESTION: What is prefix?
+
+   <pre>system "make", "install", "PREFIX=#{prefix}"</pre>
+
+   For htop:
+   
+   <pre>    system "./autogen.sh"
+    args = ["--prefix=#{prefix}"]
+    args << "--enable-sensors" if OS.linux?
+    system "./configure", *args
+    system "make", "install"
+   </pre>
+
+   For AivenClient:
+
+   <pre>    assert_match "aiven-client", shell_output("#{bin}/avn --version")
+    assert_match "UserError: not authenticated", pipe_output("AIVEN_CONFIG_DIR=/tmp #{bin}/avn user info 2>&1")
+   </pre>
+
+   ### caveats
+
+   If your package requires sudo to run, please remind users with a statement such as this from htop:
+
+   <pre>def caveats
+    <<~EOS
+      This requires root privileges to correctly display all running processes,
+      so you will need to run `sudo htop`.
+      You should be certain that you trust any software you grant root privileges.
+    EOS
+  end
+   </pre>
+
+   ### test do
+   
+   <tt>test do</strong> defines the CLI command(s) to verify proper installation:
+
+   <pre> assert_predicate bin/"Zzz", :exist?</pre>
+
+   <pre>pipe_output("#{bin}/htop", "q", 0)</pre>
+
+   <pre>system "#{bin}/tree", prefix</pre>
+
+   <pre>assert_equal "2\n", pipe_output("#{bin}/jq .bar", '{"foo":1, "bar":2}')</pre>
+
+   <pre>system bin/"wget", "-O", "/dev/null", "https://google.com"</pre>
+
+   ### zap to Trash
+
+   If the install generates folders and files not needed to run, (especially cask apps), add:
+
+   <pre>  zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.tinynudge.pomello.*",
+    "~/Library/Application Support/Pomello",
+    "~/Library/Caches/com.tinynudge.pomello",
+    "~/Library/Caches/com.tinynudge.pomello.ShipIt",
+    "~/Library/HTTPStorages/com.tinynudge.pomello",
+    "~/Library/Preferences/com.tinynudge.pomello.plist",
+    "~/Library/Saved Application State/com.tinynudge.pomello.savedState",
+  ]
+   </pre>
+
+<hr />
+
 <a id="Preparations"></a>
 
 ## Preparations: XCode CLI #
 
-0. Make a full backup of your system right before following these instructions.
+1. Make a full backup of your system right before following the instructions below.
 
-0. Open the App Store to install XCode, Apple's IDE for developing Swift and Objective-C to run on iPhones and iPads.
+1. Open the App Store to install XCode, Apple's IDE for developing Swift and Objective-C to run on iPhones and iPads.
 
    PROTIP: Apple's App Store only installs .app files. So programs invoked from the command line Terminal (such as gcc) need to be installed a different way.
 
-0. To verify XCode CLI install:
+1. See <a target="_blank" href="https://wilsonmar.github.io/xcode">this XCode tutorial of mine</a> about ensuring that XCode CLI commands were installed.
 
-   <pre><strong>
-   /usr/bin/xcodebuild -version
-   </strong></pre>
-
-   This message means that it's not installed:
-
-   <pre>
-   xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance
-   </pre>
-
-0. Open a Terminal to install XCode CLI:
-
-   <pre><strong>xcode-select --install</strong></pre>
-
-   If XCode is not already installed, you are prompted to install it:
-
-   ![mac-xcode-addition-452x114-9389](https://user-images.githubusercontent.com/300046/47534548-f8656280-d874-11e8-86aa-0a63aa1d89c7.jpg)   
-
-   Installation is to folder: <tt>/Library/Developer/CommandLineTools/</tt>.
-
-   Homebrew requires OS X 10.5+ and the Xcode command line tools.
-
-   To download the Command Line Utilities, go to https://developer.apple.com/download/more/
-   and look for your version of "Command Line Tools (macOS 10.14) for XCode 10", 
-   one that doesn't say "beta".
-
-0. Since the El Capitan version of macOS,
+1. WARNING: Since the El Capitan version of macOS,
    file permissions in /usr/local have changed,
    causing error messages such as:
 
-   <pre>
-   The linking step did not complete successfully
+   <pre>The linking step did not complete successfully
    The formula built, but is not symlinked into /usr/local
    </pre>
 
@@ -112,26 +224,8 @@ http://brew.sh</a>
 
    So in a Terminal shell window at any folder:
 
-   <tt><strong>
-   sudo chown -R :staff /usr/local
+   <tt><strong>sudo chown -R :staff /usr/local
    </strong></tt>
-
-
-0. Verify installation by getting the version of the <a target="_blank" href="https://en.wikipedia.org/wiki/GNU_Compiler_Collection">GNU Compiler Collection</a>:
-
-   <tt><strong>
-   gcc \-\-version
-   </strong></tt>
-
-   You should see something like this (for Mojave):
-
-   <pre>
-Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/c++/4.2.1
-Apple LLVM version 10.0.0 (clang-1000.10.44.4)
-Target: x86_64-apple-darwin18.2.0
-Thread model: posix
-InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-   </pre>
 
 
 <a id="HomebrewSetupz"></a>
@@ -142,13 +236,12 @@ InstalledDir: /Library/Developer/CommandLineTools/usr/bin
 
 1. Install Homebrew if you haven't already.
 
-   <pre><strong>
-   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+   <pre><strong>ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
    </strong></pre>
 
    CAUTION: Don't press Enter on the Terminal until the Download Software dialog reaches 100%.
 
-2. Press the Enter key to the message:
+2. Press the Enter key to the message:<br />
    <br /><tt>Press RETURN to continue or any other key to abort.</tt> then
 
 3. To proceed, enter the root password, or type Ctrl+C to abort.
@@ -160,7 +253,7 @@ InstalledDir: /Library/Developer/CommandLineTools/usr/bin
    https://raw.github.com/Homebrew/homebrew/go/install/
 
 
-0. Identify where the Homebrew program itself is located:
+1. Identify where the Homebrew program itself is located:
 
    <pre><strong>
    which brew
@@ -177,7 +270,7 @@ InstalledDir: /Library/Developer/CommandLineTools/usr/bin
    PROTIP: The "/usr/local" is the default specified by the $HOMEBREW_PREFIX environment variable.
 
 
-0. Identify where the Homebrew program stores packages:
+1. Identify where the Homebrew program stores packages:
 
    <pre><strong>
    brew --repository
@@ -192,7 +285,7 @@ InstalledDir: /Library/Developer/CommandLineTools/usr/bin
 
    ### Update Homebrew itself #
 
-0. Get Homebrew version:
+1. Get Homebrew version:
 
    <pre><strong>
    brew -v
@@ -210,7 +303,7 @@ Homebrew/homebrew-cask (git revision 1a93c; last commit 2019-06-04)
    https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Common-Issues.md
 
 
-0. To update Homebrew itself and its formulas:
+1. To update Homebrew itself and its formulas:
 
    <tt><strong>
    brew update<br />
@@ -241,7 +334,7 @@ nmap
 
 ### Search for a formula to install #
 
-0. Use an internet browser (such as Google Chrome)
+1. Use an internet browser (such as Google Chrome)
    to view formula defined in
 
    * <a target="_blank" href="http://braumeister.org/">
@@ -252,7 +345,7 @@ nmap
 
    ### Install formula #
 
-0. Install the wget command-line utility by formula name (for example, wget):
+1. Install the wget command-line utility by formula name (for example, wget):
 
    <tt><strong>
    brew install wget
@@ -267,7 +360,7 @@ nmap
 
    ### How many? #
 
-0. Get a count of kegs, how many files, and the disk space they take:
+1. Get a count of kegs, how many files, and the disk space they take:
 
    <pre><strong>
    brew info --all
@@ -281,7 +374,7 @@ nmap
 
    ### Where did it go? #
 
-0. List where .tar.gz "bottle" files are downloaded into from the internet:
+1. List where .tar.gz "bottle" files are downloaded into from the internet:
 
    DEFINITION: A "Bottle" is a pre-built binary Keg used for installation 
    instead of building from source.
@@ -304,7 +397,7 @@ nmap
    ~/Library/Caches/Homebrew
    </pre>
 
-0. List <strong>bottles</strong> downloaded: 
+1. List <strong>bottles</strong> downloaded: 
 
    <pre>
    ls ~/Library/Caches/Homebrew
@@ -326,7 +419,7 @@ nmap
    libksba-1.3.4.el_capitan.bottle.tar.gz
    </pre>
 
-0. List brew formulas installed:
+1. List brew formulas installed:
 
    <tt><strong>
    ls /usr/local/Cellar<br />
@@ -344,7 +437,7 @@ nmap
 
    There is no response if no brew package has been installed.
 
-0. See one level below one of the above folders for a specific formula,
+1. See one level below one of the above folders for a specific formula,
    such as openssl:
 
    <pre><strong>
@@ -366,7 +459,7 @@ nmap
 
    ### Packages #
 
-0. List brew package .rb (Ruby language) files installed:
+1. List brew package .rb (Ruby language) files installed:
 
    <pre>
    ls /usr/local/Library/Taps/homebrew/homebrew-core/Formula
@@ -374,7 +467,7 @@ nmap
 
    The response is a long list.
 
-0. List brew package folders: 
+1. List brew package folders: 
 
    <tt><strong>
    brew search
@@ -386,7 +479,7 @@ nmap
 
 ### Troubleshoot Homebrew #
 
-0. Different ways to install weget.
+1. Different ways to install weget.
 
    The above is one of <a target="_blank" href="http://coolestguidesontheplanet.com/install-and-configure-wget-on-os-x/">
    several ways</a> to install the wget command-line utility.
@@ -403,7 +496,7 @@ nmap
    wget http://ftp.gnu.org/gnu/wget/wget-1.15.tar.gz
    </strong></tt>
 
-0. Verify brew installation:
+1. Verify brew installation:
 
    <tt><strong>
    brew doctor
@@ -426,7 +519,7 @@ nmap
    </strong></pre>
 
 
-0. Create symlinks to installations performed manually in Cellar. 
+1. Create symlinks to installations performed manually in Cellar. 
    This allows you to have the flexibility to install things on your own but 
    still have those participate as dependencies in homebrew formulas.
 
@@ -492,7 +585,7 @@ nmap
    </pre>
 
 
-0. List formula (package definitions):
+1. List formula (package definitions):
 
    <tt><strong>
    brew edit $FORMULA
@@ -506,7 +599,7 @@ nmap
 
 ## Upgrade brew formulas #
 
-0. List brew packages that are obsolete:
+1. List brew packages that are obsolete:
 
    <tt><strong>
    brew outdated
@@ -524,13 +617,13 @@ nmap
    To allow that formulae to update again, unpin it.
 
 
-0. Download and update ALL software packages installed:
+1. Download and update ALL software packages installed:
 
    <tt><strong>
    brew upgrade
    </strong></tt>
 
-0. To see which files would be removed as no longer needed:
+1. To see which files would be removed as no longer needed:
 
    <tt><strong>
    brew cleanup -n
@@ -540,7 +633,7 @@ nmap
 
    <pre>Warning: Skipping awscli: most recent version 1.16.170 not installed</pre>
 
-0. To really remove all files no longer needed:
+1. To really remove all files no longer needed:
 
    <tt><strong>
    brew cleanup
@@ -595,12 +688,12 @@ from inside a larger package.
 https://github.com/Homebrew/brew/blob/master/docs/brew-tap.md
 says tap adds to the list of formulae that brew tracks, updates, and installs from.
 
-0. List brew tap packages already installed:
+1. List brew tap packages already installed:
 
    <pre><strong>brew tap
    </strong></pre>
 
-0. Install the ip tool included with iproute2 on Linux:
+1. Install the ip tool included with iproute2 on Linux:
 
    <pre><strong>brew tap brona/iproute2mac
    brew install iproute2mac
@@ -614,13 +707,13 @@ says tap adds to the list of formulae that brew tracks, updates, and installs fr
    <pre><strong>ifconfig en0 | grep inet | grep -v inet6 | cut -d ' ' -f2
    </strong></pre>
 
-0. Try it (instead of ifconfig):
+1. Try it (instead of ifconfig):
 
    <pre><strong>ip
    ip addr show en0
    </strong></pre>
 
-0. Remove a tap:
+1. Remove a tap:
 
    <pre><strong>brew untap brona/iproute2mac
    </strong></pre>
@@ -641,12 +734,12 @@ https://caskroom.github.io</a>
 With Cask, you can skip the long URLs, 
 the "To install, drag this icon…", and manually deleting installer files.
 
-0. Temporarily set the permissions on /usr/local:
+1. Temporarily set the permissions on /usr/local:
 
    <pre><strong>sudo chown $USER /usr/local
    </strong></pre>
 
-0. Install brew cask:
+1. Install brew cask:
 
    <pre><strong>brew tap caskroom/cask
    brew install brew-cask
@@ -659,12 +752,12 @@ the "To install, drag this icon…", and manually deleting installer files.
    https://github.com/caskroom/homebrew-cask">
    https://github.com/caskroom/homebrew-cask</a>
 
-0. <a target="_blank" href="https://caskroom.github.io/">
+1. <a target="_blank" href="https://caskroom.github.io/">
    https://caskroom.github.io</a>, the home page, said there are 3,197 casks as of June 5, 2016.
 
    QUESTION: Is there a graph of growth in cask counts over time?
 
-0. Install the cask extension to Homebrew:
+1. Install the cask extension to Homebrew:
 
    <pre><strong>brew tap caskroom/cask
    </strong></pre>
@@ -674,7 +767,7 @@ the "To install, drag this icon…", and manually deleting installer files.
    <pre><strong>ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
    </strong></pre>
 
-0. Search for a cask by name, in website is where casks are obtained:
+1. Search for a cask by name, in website is where casks are obtained:
 
    <a target="_blank" href="https://github.com/caskroom/homebrew-cask/search?utf8=✓">
    https://github.com/caskroom/homebrew-cask/search?utf8=✓</a>
@@ -689,7 +782,7 @@ the "To install, drag this icon…", and manually deleting installer files.
 
    The safe way to get the homepage URL of the programmer is from here (don't Google it and end up at a rogue site).
 
-0. Look at some cask definitions:
+1. Look at some cask definitions:
 
    <a target="_blank" href="https://github.com/caskroom/homebrew-cask/blob/master/Casks/google-chrome.rb">
    https://github.com/caskroom/homebrew-cask/blob/master/Casks/google-chrome.rb</a>
@@ -725,7 +818,7 @@ cask 'google-chrome' do
               ]
 end{% endhighlight %}
 
-0. Install the cask:
+1. Install the cask:
 
    <tt><strong>brew install --cask google-chrome
    </strong></tt>
@@ -733,12 +826,12 @@ end{% endhighlight %}
    Cask downloads then moves the app to the ~/Applications folder,
    so it can be opened this way:
 
-0. Open the installed cask from Terminal:
+1. Open the installed cask from Terminal:
 
    <pre><strong>open /Applications/"Google Chrome.app"
    </strong></pre>
 
-0. Installing with cask enables you to cleanup:
+1. Installing with cask enables you to cleanup:
 
    <pre><strong>brew cask cleanup
    </strong></pre>
@@ -749,26 +842,26 @@ end{% endhighlight %}
    <a target="_blank" href="https://github.com/caskroom/homebrew-cask/issues/19547">
    If</a> you get an error about "permissions denied":
 
-0. Create a Caskroom folder
+1. Create a Caskroom folder
 
    <pre><strong>cd ~
    mkdir Caskroom
    </strong></pre>
 
-0. Edit the .bash_profile
+1. Edit the .bash_profile
 
    <pre><strong>vim ~/.bash_profile
    </strong></pre>
 
-0. Add this line:
+1. Add this line:
 
    <pre>export HOMEBREW_CASK_OPTS="--appdir=~/Applications --caskroom=~/Caskroom"
    </pre>
 
    QUESTION: The use of --caskroom is deprecated?
 
-0. Save the file.
-0. Restart the terminal.
+1. Save the file.
+1. Restart the terminal.
 
    <pre><strong>source ~/.bash_profile
    </strong></pre>
@@ -803,7 +896,7 @@ Within Fink’s directory, a FHS-like layout (/sw/bin, /sw/include, /sw/lib, etc
 
 ## Documentation #
 
-0. For more documentation on brew, look <a target="_blank" href="https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/FAQ.md">
+1. For more documentation on brew, look <a target="_blank" href="https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/FAQ.md">
    here</a> and:
 
    <tt><strong>man brew
