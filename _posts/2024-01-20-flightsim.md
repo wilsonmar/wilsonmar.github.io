@@ -489,38 +489,66 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 
 <h2 id="E">E</h2>
 
+
 * EAROM = Electrically alterable read-only memory, a type of digital memory device
+* EASA = European Aviation Safety Agency - a European Union agency established in 2002 with the task of overseeing civil aviation safety and regulation.
 * EEPROM = Electrically erasable programmable read-only-memory
 * EEVIP = Early Extended Validation Integration Program. An FAA program, first implemented for the Boeing 777, to give “out-of-the-box” ETOPS clearance to a new plane, rather than waiting for a couple of years of domestic service experience
 * EFIS = Electronic Flight Instrument System
 * EGT = Exhaust gas temperature indicator
 * EICAS = Engine indicating and crew alerting system
-* Elevator = A small control surface hinged to the rear of the horizontal stabilizer and used to tilt an airplane up or down
+* Elevator = The horizontal surface that controls aircraft pitch (the tilt of an airplane up or down). It is usually a small control surface hinged (articulated) to the rear of the horizontal stabilizer.
+* Emergency overrun = The surface on the runway after the area for take-off. This surface is kept clear and it has the objective of reducing the damage to an aircraft if it is unable to take off and stop or stop after landing.
+* Empennage = the tail assembly of an aircraft, which provides stability during flight. The empennage consists of a rudder, a fin, and a <a href="https://www.aeroclass.org/vertical-stabilizer/" target="_blank" rel="noreferrer noopener">stabilizer</a>.
 * encal = Encoding Altimeter
-* Encoder = Displays aircraft’s altitiude on ground-based radar screens
+* Encoder = Displays aircraft’s altitude on ground-based radar screens
 * Engine cowl = A removable metal covering placed over and around an airplane’s engine
 * EROS = Brand Name for Oxygen Mask
-* ETOPS = Extended Twin-engine operations. FAA designation of over-ocean flights far from possible emergency landing strips, in which the possibility of engine failure in a twin-engine plane represents a heightened risk. ETOPS certification is not normally given to a new passenger aircraft until it has been in regular domestic service for at least a year
+* ETA = Estimated Time of Arrival - the time when arriving at the destination is expected and it is given in the destination’s local time.
+* ETD = Estimated Time of Departure - the time of takeoff from the point of origin of the flight.
+* ETOPS = Extended Twin-engine operations. FAA designation of over-ocean flights far from possible emergency landing strips, in which the possibility of engine failure in a twin-engine plane represents a heightened risk. ETOPS certification is not normally given to a new passenger aircraft until it has been in regular domestic service for at least a year.
+* ETE = Estimated Time en Route - the amount of time expected to be spent traveling to a destination.
+* ETP = Equal time point - a position on a route where the time taken to return to the departure point, is the same as the time required to reach the arrival point. It is not necessarily the midpoint (in distance) of the route because <a href="https://www.aeroclass.org/headwinds-vs-tailwinds/" target="_blank" rel="noreferrer noopener">head or tailwinds</a> can affect where exactly the equal time point will be.
+* Eurocontrol = The European Organisation for the Safety of Air Navigation. Based in Belgium, it is the umbrella organization of national air navigation service providers in Europe.
 
 <h2 id="F">F</h2>
 
-* FAA = Federal Aviation Administration
+* FAA = Federal Aviation Administration - the top authority regulating civil aviation in the United States.
 * FADEC = Full authority digital engine control
 * Fairing = A section of aircraft surface, or an attached structure, designed to reduce drag. For example, the contoured sheet metal where wing meets fuselage
-* FAR = Federal Aviation Regulations (U.S.)
+* FARs = Federal Aviation Regulations (U.S.) - the FAA rules applied to civil aviation in the U.S.
 * FAR 36 Noise Levels = In order to meet FAR 36 Stage 3 requirements, the maximum noise level permitted is: Take Off 89.0 EPNdB, *Sideline 94.0, *Approach 98.0
+* FBO = <a href="https://www.aeroclass.org/what-is-fbo/" target="_blank" rel="noreferrer noopener">Fixed-Base Operator</a> - a kind of business or organization that operates at an airport providing aircraft services like maintenance, fueling, flight training, charter services, hangar services, and parking.
+
 * FDE = Fault detection and exclusion (GPS)
-* FDR = Flight Data Recorder
+* FDR = Flight data recorder - devices used to constantly record a variety of flight parameters. In case of an accident or a major incident, they provide a forensic tool to help investigators in understanding what happened. FDRs are regulated by the International Civil Aviation Organization (ICAO).
 * FDS = Flight Director System
+* Ferry Flight - a type of flight that happens outside the regular flying operations of any carrier. These flights are usually carried out with the intention of returning an aircraft to the hub after <a href="https://www.aeroclass.org/mro-aviation/" target="_blank" rel="noreferrer noopener">maintenance</a> or any other service, delivering a new aircraft to the organization acquiring it, moving an aircraft from one hub to another, or moving an aircraft to maintenance facilities.
 * FFON = Flight Phone
-* Flare = The point where an airplane floats above the runway just before touchdown
+* Final Approach - A flight path that is taken to land on the runway at the end of a flight route.
+* FIR/UIR = Flight Information Region / Upper Information Region -  geographic areas under the responsibility of ATC. The size of these two areas is variable and its size depends on the country’s decision or the agreement of all the countries that the region covers. Oceanic airspace has its own classification as an Oceanic Information Region.
+* Five by five - A phrase used to confirm that radio reception is loud and clear on a scale of 1 to 5.
+* FL = Flight level - the altitude of an aircraft at the standard air pressure, 1013.25 hPa (29.92 inHg). FL is expressed in hundreds of feet, for example, 42,000ft is expressed as FL420. FL is included in the flight plan so pilots can ensure vertical separation between aircraft is safe.
+* Flaps - flat surfaces added to the edges of the wing that allow the pilot to adjust lift and drag by altering the curve of the wing enabling the aircraft to fly at lower speeds.
+* FLARM = flight + alarm - similar to ADS-B, but used in light aircraft, such as helicopters and gliders. It consumes a lot less power than traditional transponders, which is why is a favorite for gliders. FLARM equipment installation is regulated by EASA.
+* Flare - A required maneuver during landing to lower the descent rate that consists in pointing the nose of the aircraft upwards while descending towards the runway.The point where an airplane floats above the runway just before touchdown.
 * Flight Data Recorder = Electronic device that records aircraft maneuvers. Used in accident investigations
+* Flight Deck - another name given to the cockpit
+* Flight number - the number applied by an airline in the schedule to identify a flight. Even numbers are usually applied to northbound and eastbound flights, and odd numbers are reserved for southbound and westbound flights. Larger flight numbers usually indicate a maintenance or positioning flight.
 * Flight Phone = Air-to-ground telephone system
+* Flight Plan - Important information filed by pilots or dispatchers, usually before a flight that includes the exact route with the specific waypoints the flight will pass over, timing, and other relevant data.
+* Flying Dirty = An expression to describe an aircraft flying with landing gear, flaps, and other surfaces deployed in order to create drag.
+
 * FM = Frequency modulation
 * FMCS = Flight management computer system
 * FMS = Flight Management System
+* F/O = First Officer - the person coming behind the captain in the hierarchy, or which is the same, the second in command of the aircraft.
 * FOG = Fiber-optic gyro
 * Forward elevator = A control surface used to tilt an airplane up or down and mounted on the front rather than the rear of an airplane
+* FSDO = Flight Standards District Office - a local authority overseen by the FAA.
+* FSS = Flight Service Station - an organization providing information and services to pilots.
+
+* Fuel tankering - An expression used to describe the process of adding more fuel to the tank of an aircraft than the amount required for the flight in hand, usually to make it possible to complete the return flight as well. There are operational purposes behind this practice, such as reducing fuel costs, using higher quality fuel, or avoiding refueling for increased operational efficiency.
 * Full De-ice = Complete anti – and/or de-ice equipment installed on wings, tail, props, and windsheild
 * Full Panel = All gyros necessary for instrument flight
 
@@ -530,22 +558,36 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * Gas discharge = A type of luminescent digital display
 * GCR = Ground clutter rejection
 * GE = General Electric. They make aircraft engines
+* General Aviation = The division of civil aviation aircraft operations except for commercial air transport and aerial work.
+* George - The nickname was given to an aircraft <a href="https://www.aeroclass.org/autopilot-system/" target="_blank" rel="noreferrer noopener">autopilot system</a>.
+
+* Glass Cockpit - An aircraft that has its cockpit fully equipped with electronic, digital flight instrument displays instead of analog-style gauges.
 * GLU = GNSS landing unit. Provides precision GPS guidance to the runway in Category III operations
 * GNSS = Global navigation satellite system
+* Go-Around - The <a href="https://www.aeroclass.org/airport-traffic-pattern/" target="_blank" rel="noreferrer noopener">flight pattern</a> the pilot takes when a landing approach cannot be completed safely for any reason, and before trying to land again is called go-around. It usually involves a climb to a pre-specified altitude and holding point while awaiting further instructions from ATC.
 * Gold Crown = Trade name owned by King Radio Corp
 * GPADIRS = Global positioning, air data, inertial reference system
 * GPS = Global positioning system
 * GPWs = Ground Proximity Warning System
+* Ground Effect - The increasing lift and decreasing drag resulting from the wings of the aircraft getting closer to the ground.
+* Gross Weight - The total weight of an aircraft including people, cargo, fuel, etc.
 * Ground Air = A/C unit to cool aircraft while on the ground
-* GS = Groundspeed
+* Grounding = Putting an aircraft out of operation. This can happen for different reasons, but usually because it requires modifications or repairs in order to be fully compliant with airworthiness regulations. Good examples are the grounding of many aircraft in 2020 due to the pandemic, and the Boeing 737 MAX global grounding.
+* GPWS = <a href="https://www.aeroclass.org/gpws-ground-proximity-warning-system/" target="_blank" rel="noreferrer noopener">Ground Proximity Warning System</a> - the system designed to alert pilots they are flying to close to the ground and they are in danger of crashing into it.
+* GS = Groundspeed - the horizontal speed an aircraft measured when moving over the ground and in nautical miles per hour (Knots).
 * G/S = Glide slope reciver and indicator
 * GTWO = Gross Take off Weight
 
 <h2 id="H">H</h2>
 
+* Hand-off = Expression used to describe when ATC transfers radar identification of an aircraft to another controller.
+* Handshake - The process of requesting log-on or the “ping” operation in aeronautical satellite communication (SATCOM) systems usually to begin communications is known as the handshake.
+* Heavy = A term used by ATC to refer to aircraft with a maximum takeoff weight of 136 tonnes or more.
 * HF = High Frequency radio equipment
 * HF COM = High Frequency Communication
+* Hangars = Facilities in an airfield designed to hold aircraft for different purposes such as storing, maintenance, or assembly.
 * HIRF = High intensity radiated field
+* Holding pattern - A flight pattern in the form of ovals although a circular orbit is sometimes used as a faster substitute.
 * HP = Horsepower
 * HPA = High-power amplifier
 * HUD = Head-up display
@@ -555,9 +597,16 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 
 * IAC = Integrated avionics computer. Central processor of a Honeywell integrated cockpit system
 * IAPS = Integrated avionics processing system. Central processor of a colins integrated cockpit system
+* IAS = Indicated Airspeed - the air speed taken directly from the airspeed indicator without any corrections for temperature or pressure.
+* IATA = International Air Transport Association - a trade organization composed by the airlines around the world which has an influence over the commercial aspects of flight.
+* ICAO = International Civil Aviation Organization, a specialized agency of the United Nations that supports aviation and navigation around the globe.
 * IAW = (logbook term – In Accordance With – and AD or SB)
+* ICAO = International Civil Aviation Organization
+* IMC = <p><a href="https://www.aeroclass.org/imc-in-aviation/" target="_blank" rel="noreferrer noopener">IMC</a> stands for Instrument Meterological Conditions, the weather conditions that describe a situation where pilots are required to operate with instruments only and following IFR.
+* IFR = Instrument Flight Rules, the regulations for aircraft operations when using visual references is not possible for the pilots so they can fly by using instruments only. By following these rules, pilots can create IFR flight plans for various weather conditions.
 * IFR = Instrument Flight Rules. An Instrument Rating is further training after a Pilot’s license to allow pilots to fly in bad weather. The pilot has been trained to not merely fly by instruments alone, but also to understand the Air Traffic Control system, because an IFR flight is continuously monitored by ATC, radar, flight following, and a dozen other agencies
-* ILS = Instrument Landing System
+* IFSD = Integrated <a href="https://www.aeroclass.org/what-is-a-standby-flight/" target="_blank" rel="noreferrer noopener">Standby Flight</a> Display, a flight instrument which is commonly found in modern airliners and serves as a backup for primary instruments such as the altimeter, airspeed and attitude indicators.
+* ILS = <a href="https://www.aeroclass.org/ils-aviation/" target="_blank" rel="noreferrer noopener">Instrument Landing System</a>, a system that uses radio waves to assist landings in IFR conditions.
 * In-line engine = An engine in which the cylinders are mounted in a straight line or else in two, connected at an angle
 * INS = Inertial Naviagation System
 * INT = Interior
@@ -567,53 +616,84 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 
 <h2 id="J">J</h2>
 
+* Jet = An aircraft with one or more jet engines as the propulsion power.
 * Jet Prop = Describes aircraft using turbine engines to drive propellers
+* Jetway = <p>Also known as an air bridge, a jetway is a movable and extendable structure that can be positioned to align with an aircraft door. It is normally used to connect the airport terminal with the aircraft, thus providing easy access to passengers and the cabin crew.
+* Joystick = Also known as the control column, it is the main instrument to control an aircraft and is typically mounted on the ceiling or floor if the aircraft has a joystick instead of a yoke. Joysticks tend to be simpler to install since yokes are directly attached to the control surfaces like ailerons and flaps through cables and rods.
 
 <h2 id="K">K</h2>
 
-* King = King Radio Corp. (Avionics mfgr.)
+* KCAS = Knots Calibrated Airspeed - the airspeed measured in knots and corrected for instrument and position error.
+* KIAS = Knots Indicated Airspeed - the airspeed of the aircraft in knots, read directly from the airspeed indicator without corrections.
+* King = King Radio Corp. (Avionics manufacturer)
+* Knot - A measurement of speed that equals one nautical mile. Therefore, 1 knot = 1 nautical mile per hour = 6076 feet per hour.
+* Knots Calibrated Airspeed = Abbreviated KCAS, -- the airspeed measured in knots and corrected for instrument and position error.
+* KTAS = Knots True Airspeed - the speed of the aircraft in knots relative to the air mass in which it is flying.
 * Known Icing = FAA certified for flight into icing conditions
 
 <h2 id="L">L</h2>
 
+* LTA=Lighter-than-air craft - also known as craft, it refers to other aerial objects like blimps, dirigibles, and free balloons that float.
 * Laser IRS = An inertial reference system deriving angular rate information by measuring Doppler shift between two contra-rotating light beams
+* Landing gear - the undercarriage of an aircraft, it is the structure with <a href="https://www.aeroclass.org/airplane-wheels/" target="_blank" rel="noreferrer noopener">wheels</a> that supports the plane when on the ground and is used during taxi, take-off, and landing.
+
 * Lateral control = The ability to make an airplane roll, or turn around its long axis, according to its pilot’s wishes
+* Level flight - The flight stage where the aircraft flies at the same altitude.
 * L-band = A radio frequency between 890 and 1550 MHz
 * LCD or LC = Liquid-crystal display
 * Leading and trailing edges = The foremost and rearmost edges of a wing
 * LED = Light-emitting diode
+* Level flight - the flight stage where the aircraft flies at the same altitude.
+* Lift - The aerodynamic force acting on an aircraft, opposite to its weight, and is mainly generated by the wings to overcome gravity so the aircraft can fly.
+* LTA craft = Lighter-Than-Air craft - other aerial objects like blimps, dirigibles, and free balloons that float in the air.
 * LMB = Light marker beacon
 * LNAV = Lateral navigation guidance
 * LOA = Letter Of Authorization
 * LOC = Localizer receiver and indicator
+* Longitudinal axis - An imaginary line that goes horizontally from the head to tail of an aircraft through its center of gravity -- used for direction orientation.
 * Looks per minute = Scanning or sweep rate of a wather radar antenna
 * LOP = Line of position
 * Loran-C = Hyperbolic grid navigation system based upon measured time differences (TD) from pulse transmissions
 * LRT = Long range fuel tanks
 * LRU = Line replaceable unit
-* LYC = Avco-Lycoming (Engine mfgr.)
+* LYC = Avco-Lycoming (Engine manufacturer)
 
 <h2 id="M">M</h2>
 
+* Mach - The ratio of true airspeed to the speed of sound at the altitude of a given flight. The Mach ranges are Subsonic, Transonic, Supersonic, Hypersonic, High-hypersonic, and re-entry speeds. Until now, all commercial flights are subsonic.
+* Magnetic Compass = The type of compass that provides the directional orientation of an aircraft according to the magnetic poles or the geomagnetic field.
+* Magnetic Deviation = The error produced by the unavoidable magnetic impact of aircraft materials.
+* Maneuvering speed = A speed calculated by the aircraft manufacturer provided to the user to prevent exceeding the maximum load factor for the airplane.
 * Maximum Payload = Maximum Zero Fuel Weight – (minus) Basic Operating Weight
+* MCAS = Maneuvering Characteristics Augmentation System - a flight control system found on the Boeing 737 MAX, introduced to the 737 MAX to modify the pitch behavior of the Boeing 737 NG, providing NG-rated pilots with flight characteristic familiarity.
+* MCDU = Multifunction Control Display Unit - a screen and keypad typically found in Airbus aircraft which the crew uses as an interface with the aircraft FMS (Flight Management System).
 * MCU =– Minimum configuration unit
 * MDAU = Maintenance data acquisition unit
 * MDH = Major damage history
+<a id="METARs"></a>
+* METAR - a specialized form of weather reporting used mainly in aviation. Standardized by ICAO, it follows a format specified by the regulator with the intention to make it easy to understand by any pilot around the world. It is delivered continuously and it represents the weather conditions at the moment rather than a forecast.
 * MFD = Multifunction display. The third or fifth tube in an EFIS, it replaces the weather radar screen and displays radar data, navigation maps, checklists and other information
 * Microline = Trade name owned by Collins
 * MNPS = Minimum navigational performance specificaitons
 * MLS = Microwave Landing System
 
 * Mode-A = A transponder which does not give the controllers altitude information
-* Mode-C = A transponder and encoding altimeter which together give air traffic controllers altitude information
-* Mode-S = A transponder which features unique identification per unit, the potential for low-speed up and down datalinks, and “selective interrogation” triggered by ground facilities
+* Mode-C = A transponder and encoding altimeter which give air traffic controllers altitude information
+* Mode-S = A transponder which features unique identification per unit, the potential for low-speed up and down datalinks, and “selective interrogation” triggered by ground facilities. A protocol of communication that allows an aircraft to communicate with secondary surveillance radars (SSR) and other systems through the transponder that is on-board.
+
 * MOH = Major overhaul
 * MOPS = Minimum operational performance standard (RTCA)
+* Mountainous Terrain Escape Routes - routes that allow a pilot to take an aircraft to an altitude below the Minimum Obstacle Clearance Altitude (MOCA) in case of emergency without any danger when flying over an area of high and mountainous terrain.
+* MSL = <a href="https://www.aeroclass.org/msl-in-aviation/" target="_blank" rel="noreferrer noopener">Mean Sea Level</a> - the average height of the surface of the sea, used in aviation to measure vertical altitude.
+* MSN = Manufacturer’s serial number - a unique code assigned to an aircraft, often prior to building it. It is also used to identify the parts that will make the aircraft.
 * MSP = Maintanance Servie Program. (Garret engine)
 
 <h2 id="N">N</h2>
 
+* N number - The registration number on a US-registered plane. The letter N is the letter internationally used to identify a US plane.
 * NARA = NARA is a professional trade association of 54 reputable business companies organized to promote the growth and public understanding of the aircraft resale industry. Its members abide by a 12-point Code of Ethics that provides standards of business conduct regarding aircraft transactions
+* NAT-OTS = North Atlantic Tracks (officially known as North Atlantic Organized Track System) - a specified set of routes that stretch Eastbound and Westbound across the North Atlantic. Aircraft require oceanic clearance to fly these routes, to provide safety by keeping aircraft separated and considering ideal weather conditions.
+* Narrow-Body Aircraft - A small aircraft class that has a single-aisle inside and can carry 4 to 300 passengers.
 * NAT = North Atlantic Tracks
 * Nautical Mile = Measurment of distance. Equals 1.15 statute miles
 * NAV = Navigation Receivers
@@ -623,30 +703,40 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * NDH = No Damage History
 * NMS = Navigation management system
 * NMU = Navigation management unit
-* NTSB = National Transportation Safety Board. Investigates airplane accidents. Plays at most an advisory role in flightworthiness accreditation
+* NOTAM = Notice to Airmen - written notices issued by aviation authorities to alert pilots of hazards or other specific circumstances that may affect their safe navigation over a given area.
+* NTSB = National Transportation Safety Board - the US government agency in charge of civilian transport accident investigations. While their main focus is on aviation incidents and accidents, they also investigate marine, highway, rail, and pipeline incidents and accidents. Plays an advisory role in flightworthiness accreditation
 * NVM = Nonvolatile memory. Digital memory that retains information through system shutdown
 
 <h2 id="O">O</h2>
 
-* OAT = Outside Air Temperature
-* OBS = Omnibearing Selector – part of a VOR receiver system, which allows the pilot to select a course to or from a VOR station
+* OAT = Outside Air Temperature - the temperature measured outside the aircraft.
+* OBS = Omnibearing Selector – part of a VOR receiver system which allows the pilot to select a course to or from a VOR station
 * OFUELWT = Zero Fuel Weight
 * OH = Overhaul
 * Omega = A very-low-frequency navigation system
+* Operating Limitations - Limits for an aircraft to operate safely. These are provided by the manufacturer and generally include airspeed, weight, pressure, and passenger and crew size.
 * Opitcal digitizer = Any device using a photosensor that can convert analog informatin to digital code
+* Overshoot - An expression used when landing takes place beyond the runway.
 * OXY = Oxygen system for passengers and crew
 
 <h2 id="P">P</h2>
 
+* Payload - The weight of what is carried by aircraft, including passengers, crew, cargo, etc.
 * Payload with Full Fuel = Useful Load – (minus) Usable Fuel
 * PBH = Power by the Hour. (Rolls Royce engines)
 * PC = Positive Control. (Trade name for Mooney Aircrft wing leveler)
 * PAR = Precision Approach Radar – a ground-radar based instrument approach which provides both horizontal and vertical guidance
 * Peak power output = The maximum transitter power output measured over a short time; usually used to rate pulse transmissions
-* PEP = Peak envelope power. A standard electronic rating of any AC source, including a radio transmitter
+* PEP = Peak Envelope Power - a standard electronic rating of any AC source, including a radio transmitter
+* PFD = Primary Flight Display - the main screen used by pilots in aircraft containing an electronic flight instrument system, usually to read data relating to airspeed, altitude, heading, and vertical speed.
+* PIC = <a href="https://www.aeroclass.org/pilot-in-command/" target="_blank" rel="noreferrer noopener">Pilot in Command</a> - the individual responsible for safe aircraft operations during flight.
+* PIREP = Pilot Report - a report a pilot gives to ATC describing actual weather conditions during a flight.
+* Pitch - The movement of an aircraft, that sees the nose rising and the tail falling or vice versa.
 * PNT = Paint
+* POH = Pilot’s Operating Handbook - an aircraft flight manual containing pertinent safety information.
 * port = Nautical usage adopted in aviation. The left side, as determined by an observer in the vehicle, when vehicle and observer are right side up, and observer is looking “forward” (in the normal direction of travel of the vessel or vehicle)
 * PPL = <a href="https://www.aeroclass.org/types-of-pilot-licenses/" target="_blank" rel="noreferrer noopener">Private Pilot License</a>
+* Primary radar outputs a radio signal and attempts to detect any reflection of that signal from an object, such as an airplane. It is common to avoid the word primary and just say radar when speaking about it.
 * PSI = Pounds per square inch
 * PTT = Push-to-talk (switch)
 * Pulse = A transmission of very brief duration used to carry information by using time measurement or as a series of pulses representing code
@@ -654,6 +744,12 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * PW = Pratt &amp; Whitney, the world’s leading designer, developer and manufacturer of gas turbine engines for commercial, military and general aviation aircraft.”
 
 <h2 id="Q">Q</h2>
+
+* QAR = Quick Access Recorder - an airborne flight recorder that provides quick and easy access to raw flight data through a USB or cellular network.
+* QFE - an aeronautical “Q code” which provides a barometric altimeter setting that causes an altimeter to read zero when at the reference datum point of an airfield.
+* QNH - an aeronautical “Q code” which provides a barometric altimeter setting relating to airfield elevation above mean sea level. Standard QNH which is used when flying at Flight Levels is set to 1013.25hPa / 29.92inHg.
+* Quadraplane - An aircraft type that has four wings with the same span.
+
 <h2 id="R">R</h2>
 
 * RA = (1) Radio altitiude; (2) Resolution advisory (TCAS)
@@ -667,17 +763,23 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * Rate of roll = A measure of the speed with which an airplane can turn around its long axis, or roll
 * RCA = Avionics mfgr
 * RCU = Radio control unit
+* Registration Tail Number - The unique number of each aircraft assigned upon registration and frequently called the tail number. The N number is the registration or tail number in the United States.
+* Repositioning flight - occurs when an aircraft is out of place, either due to previous diversion or operational requirements.
+* RESA - Runway End Safety Area - an area located beyond the runway which is designated as a place for aircraft to enter in an attempt to minimize risk during unplanned occurrences, such as an overshoot.
 * Reversers = System for braking aircraft during landing roll
 * RFU = Radio frequency unit
 * RG = Retractable landing gear
 * RMI = radio magnetic indicator – an ADF-like display with a pair of pointers which might be attached to either VOR or ADF receivers
 * RNAV = Area Navigation - a device and method of <a href="https://www.aeroclass.org/ifr-vs-vfr/" target="_blank" rel="noreferrer noopener">IFR</a> navigation where a network of radio beacons is provided for the aircraft to take the course instead of navigating from and to beacons directly.
+* Roll - The movement of an aircraft rotating along the longitudinal axis, which runs from the nose to the tail.
 * RNP = Required navigation performance
 * ROM = Read-only memory
 * RR = Rolls Royce makes engines for a variety of aircraft, including the Boeing 777 and Airbus 330
 * RT = Receiver-transmitter combined in a singel line-replacable unit
 * RTCA, Inc. = An association of U.S. governmental and industry aeronautical organizations dedicated to advancing aeronautics through consensus and recommendations
 * Runway XX = Runways are numbered after magnetic compass points, minus the 1’s column (where North is 0, and 360, degrees)
+* Rudder - A control surface used to achieve the yaw movement properly.
+* RVR - Runway Visual Range - the horizontal distance that pilots can read by seeing <a href="https://www.aeroclass.org/airport-runways/" target="_blank" rel="noreferrer noopener">surface markings</a> or runway lights when positioned on the centerline of a runway.
 * RVSM = Reduced Vertical Seperatation Minimum
 
 <h2 id="S">S</h2>
@@ -687,29 +789,40 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * SL = Service Letter
 * Satcom = Satellite communications system
 * SDU = Satellite data unit
+* Secondary radar or secondary surveillance radar - sends out a signal to compatible aircraft, which then return a signal of their own with information about a flight, such as speed, altitude, heading, and registration.
 * SELCAL = Selective Calling system (used primarily with HF)
 * Service ceiling = The altitude above sea level beyond which an airplane can no longer climb more than 30 m(100 ft) per minute
 * Servo Tab = moves control surface using aerodynamic force
 * Servo = device that moves an actuator
+* Short Field - a runway that is shorter than usual and requires aircraft to minimize the amount of runway used when taking off or landing, thus posing a challenge for inexperienced pilots.
 * SHP = Shaft horsepower. (refers to turbine engines.)
+* SIC = Second in command - the designated individual to take over flight operations in case the PIC is not able to keep in operation.
+* SID = Standard Instrument Departure route - a published instrument flight rule (IFR) routing that pilots use directly after takeoff.
+* Sideslip - aircraft movement that typically aligns with the lateral force of the wind and results in a sideways flow.
 * Silver Crown = Trade name owned by King Radio
 * Simplex = Single frequency for both transmitting and recieving in communications; generally implies a push-to-talk function and verbal procedures
-* Slaved compass = North-seeking gyro-stabilized compass system. Technically superior to DG
-* slip = A way to lose altitude in a hurry (on purpose), or slide into a final approach during a heavy wind. The technique is to put nearly full rudder in one direction, and then bank in the opposite. This keeps the plane almost level, except pointing to one side
+* Skid - The sliding and outward pivoting movement of the aircraft that occurs as a result of a shallow turn.
+* Slaved compass = North-seeking gyro-stabilized compass system. Technically superior to DG.
+* Slip = The sliding and inward pivoting movement of the aircraft that occurs as a result of a steep turn. A way to lose altitude in a hurry (on purpose), or slide into a final approach during a heavy wind. The technique is to put nearly full rudder in one direction, and then bank in the opposite. This keeps the plane almost level while pointing to one side.
+* Slot - A period of 15 minutes which is provided by ATC in order to limit the amount of aircraft using a certain airspace.
 * SMOH = Since major overhaul
 * SMPI = Time Since Major Periodic Inspection
 * SN = Serial Number
+* <a href="https://www.aeroclass.org/soft-field-landing/" target="_blank" rel="noreferrer noopener">Soft Field</a> - An unpaved runway, typically requiring the aircraft to land on grass or dirt.
 * Spar = A principal section of the wing structure of an airplane, going from tip to tip
 * Sperry = Avionics mfgr
 * SPOH = Since prop overhaul
-* Squawk = A 4-digit (actually 4-octal-digit -&gt; 12-bit) number which is set into a transponder by the pilot to identify the aircraft to air traffic controllers
+* Squawk - A unique four-digit  (actually 4-octal-digit -&gt; 12-bit) transponder number given to an aircraft by ATC to allow for simple identification of an aircraft in a given region. There are a few significant <a href="https://www.aeroclass.org/squawk-7500-how-to-deal-with-hijacking/" target="_blank" rel="noreferrer noopener">squawk codes</a>, which immediately get the attention of air traffic control. These are 7500: Hijack; 7600: Radio Failure; 7700: General Emergency.
 * Squitter = The transmission of a specified reply format at a minimum rate without the need to be interrogated (transponders)
 * SSB = Single sideband. A highly efficient form of radio transmission wherein information is carried on a sideband instead of the center carrier in order to gain range performance; usually used in HF communication transceivers
 * SSCVR = Solid state cockpit voice recorder
-* Stall = The point at which wings fail to generate enough lift to keep the plane stable
+* Standard Rate Turn - A turn that an aircraft makes at a rate of 3°/second or a 360° turn in two minutes.
+* Stall = The point at which wings fail to generate enough lift to keep the plane stable. The condition affecting an aircraft when the angle of attack exceeds the aircraft limits so the air no longer flows easily over the airfoil, thus resulting in reduced lift.
+* STAR = Standard arrival route - a published instrument flight rule (IFR) routing that pilots use prior to transitioning to their chosen approach and landing profile.
 * Starboard = Nautical usage adopted in aviation. The right side, as determined by an observer in the vehicle, when vehicle and observer are right side up, and observer is looking “forward” (in the normal direction of travel of the vessel or vehicle)
 * STC = (1) Supplemental Type Certificate. (2) Sensitivity-time compensation. In weather radar, a technique and circuit for calibrating a display
 * STOL = Short takeoff and landing ability
+* Straight-and-Level Flight = Flying at a consistent heading and altitude.
 * sumps = Points underneath each fuel tank to test for contamination like water or other debris
 * Supercharged = Method for increasing engine power
 * Synchro = Any device capable of converting mechanical position into an analog electronic signal
@@ -720,13 +833,23 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 <h2 id="T">T</h2>
 
 * TA = Traffic advisory (TCAS)
+* TACAN = Tactical Air Navigation System - a UHF navigation system that provides aircraft with a distance and bearing.
+* TAF = Terminal Area Forecasts are similar in format to <a href="#METARs">METARs</a>, but issued for future periods, hence the word forecasts in its name.
+* <a href="https://www.aeroclass.org/airport-tarmac/">Tarmac</a> - Another name for the apron, the paved area at an airport where aircraft park, fuel, load, and unload.
 * TBO = Time between overhaul
-* TCAS = Traffic Collison Avoidance System. TCAS-I provides warnings (TAs) of other nearby aircraft; TCAS II provides warnings and resolutions advisories (RAs), and coordinates RAs with other TCAS II equipped aircraft via Mode S transponder
+* TCAS = Traffic Collison Avoidance System - a system to prevent a mid-air collisions. It allows aircraft to communicate if equipped with a compatible transponder. TCAS-I provides warnings (TAs) of other nearby aircraft; TCAS II provides warnings and resolutions advisories (RAs), and coordinates RAs with other TCAS II equipped aircraft via Mode S transponder
 * TCDS = Type Certificate Data Sheet
+* Threshold - The area of a runway that indicates the beginning of it with specific marking.
+* Throttle - A device that controls the amount of power coming from the engine.
+* Thrust - A force generated by the aircraft engines to oppose drag in order to move forward.
 * TKE = Track error
+* <a href="https://www.aeroclass.org/touch-and-gos/" target="_blank" rel="noreferrer noopener">Touch-and-Go</a> - A maneuver used to practice landing techniques by simply “touching” the runway and lifting the aircraft once more without coming to a full stop.
+* Transponder - The device carried in an airplane and used to generate a code that is recognized on an ATC radar screen.
 * T/Rs = Thrust Reversers
+* Track - the compass direction of the aircraft, denoted as 1-360. It represents the actual path or vector.
 * Trend Monitoring = Continuous computerized observation of turbine engine performance. Used to detect early sings of wear
 * Trim Tab = holds control surface at desired deflection
+* True Altitude - The vertical height of an aircraft above Mean Sea Level (MSL).
 * TSC = Total Time Since CORE
 * TSN = Time Since New (also TTSN)
 * TSO = Technical standard order. A performance specification and production compliance criteria applied to avionics and defined by FARs and the RTCA
@@ -736,47 +859,57 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * TTG, TTS or TTW = Time to go, time to station, time to waypoint
 * Turbo prop = Is said of an airplane powered by a type of jet engine, the turbo prop, equipped with a turbine-driven propeller
 * Turbulence mode = Flight control system mode in which a “softer” response to gust upsets is programmed
+* TWR = tower.
+* TWY = <a href="https://www.aeroclass.org/taxiway-lighting/" target="_blank" rel="noreferrer noopener">taxiway</a>.
 * TX = Transponder
 
 <h2 id="U">U</h2>
 
+* UIR = Upper Information Region -  geographic areas under the responsibility of ATC. The size of these two areas is variable and its size depends on the country’s decision or the agreement of all the countries that the region covers. Oceanic airspace has its own classification as an Oceanic Information Region.
 * Undercarriage strut = A part of an airplane’s structure, designed to resist distortion, which supports the landing gear
+* Upwind Leg - the flight path in an airport pattern that runs parallel to the runway in the same direction as the landing.
 * Usable Fuel (lbs) = Usable fuel (gallons) x 6.7 lbs/gallon
-* Useful Load = Maximum Ramp Weight – (minus) Basic Operating Weight
+* Useful Load - The weight of the contains that can be taken out of the aircraft such as fuel, passengers, cargo, pilots, etc. calculated by the Maximum Ramp Weight – (minus) Basic Operating Weight.
 * UTC = Coordinated Universal Time = the standard time zone used in aviation. It is the same as Greenwich Mean Time (GMT) and is regularly used in offsets such as UTC-1 and UTC+1.
 
 <h2 id="V">V</h2>
 
 * VAC = Volts alternating current
 * VDC = Volts direct current
-* VFR = Visual Flight Rules. Private Pilots start as VFR certified. This means that, in most cases,they must have about 3 miles of visibility, be 500 feet below clouds, 1000 feet above clouds, and/or 2000 feet next to clouds at a bare minimum. Unless they have an Instrument Rating (and all the associated control along with that…see IFR), they are required to avoid all clouds and weather
+* Vertical Speed - the rate at which a plane is ascending or descending.
+* VFR = Visual Flight Rules - regulations that define aircraft operations when pilots are able to operate using visual references, or the opposite of IFR. Private Pilots start as VFR certified. This means that, in most cases,they must have about 3 miles of visibility, be 500 feet below clouds, 1000 feet above clouds, and/or 2000 feet next to clouds at a bare minimum. Unless they have an IFR (Instrument Flight Rating) and all the associated control along with that), they are required to avoid all clouds and weather.
 * VHF = Very High Frequency radio equipment
 * VLF = Very Low Frequency
+* VMC = Visual Meteorological Conditions - the minimum requirements for VFR flight to be possible before turning to IFR.
 * VNAV = Vertical navigation, or the capability to compute pitch-axis maneuvers and altitude-related points in space
-* VOR = VHF Omnidirectional Receiver. One of the more common navigational aids that the FAA has dropped all over the country (and sometimes the world). A VOR sends out a radio signal that is slightly different in each direction (the difference is phases, if you want to get technical). So, an airplane’s VOR tool listens to the VOR, and by measuring the difference in the radio, it can tell which direction it is from the VOR. Since your chart will show where the VOR is, and you now know where you are in relation to the VOR, it has helped you figure out where in the local area you might happen to be
+* VOR = Very High-Frequency Omni-Directional Range - a short-range radio <a href="https://www.aeroclass.org/airport-rotating-beacon/" target="_blank" rel="noreferrer noopener">navigation beacon</a>. A network of VORs can be used by pilots to determine their position and course. One of the more common navigational aids that the FAA has dropped all over the country (and sometimes the world). A VOR sends out a radio signal that is slightly different in each direction (the difference is phases, if you want to get technical). So, an airplane’s VOR tool listens to the VOR, and by measuring the difference in the radio, it can tell which direction it is from the VOR. Since your chart will show where the VOR is, and you now know where you are in relation to the VOR, it has helped you figure out where in the local area you might happen to be
+* VSI = Vertical Speed Indicator - an instrument that displays the climb or descent rate in feet-per-minute by sensing the change in atmospheric pressure. It is also known as a variometer.
 
 <h2 id="W">W</h2>
 
-
-* WAAS = GNSS wide-area augmentation system
+* WAAS = GNSS wide-area Augmentation System
+* Weight-Shift-Control - A steering method used by pilots in a hang glider or paraglider where the pilots use their weight to steer the craft, pushing against a triangular control bar that’s attached to the wing structure.
 * Wet wings = Method for containing fuel in wings without using rubber fuel cells
-* Wing fence = Term preferred by Airbus and McDonnell-Douglas aircraft manufacturers for the vertical structures at the outside ends of the wings of some of their jets. More at winglet
+* Wide-Body Aircraft - An aircraft with two aisles inside. The typical fuselage diameter is 16 to 20 feet.
+* Wind Shear - An abrupt change in horizontal or vertical wind direction.
+* Wing fence = a term preferred by Airbus and McDonnell-Douglas aircraft manufacturers for the vertical structures at the outside ends of the wings of some of their jets.
 * Winglet = Term preferred by Boeing for the vertical structures at the ends of the wings on their 747-400. Airbus and McDonnell-Douglas aircraft manufacturers use the term “wing fence.” The 747-400 winglets only rise from the end of the wing. MD-11 and Airbus wing fences extend both above and below the wing
-* WPT = Waypoint
+* WPT = Waypoint = a specific location on a map
+* Wx = abbreviation for weather.
 
 <h2 id="X">X</h2>
 
-* XC = Cross-Country Flight = a kind of flight that requires a special flight plan. The FAA requires this type of flight to be completed in order to obtain a <a href="https://www.aeroclass.org/types-of-pilot-licenses/" target="_blank" rel="noreferrer noopener">Private Pilot License</a> (PPL).
+* XC = abbreviation for cross-country, as in Cross-Country Flight - a kind of flight that requires a special flight plan. The FAA requires this type of flight to be completed in order to obtain a <a href="https://www.aeroclass.org/types-of-pilot-licenses/" target="_blank" rel="noreferrer noopener">Private Pilot License</a> (PPL).
 * Xpond = Transponder
 * X-band = Frequency range in which most general aviation weather radars operate
 * XTK = Cross track; cross track error
 
 <h2 id="Y">Y</h2>
 
--
+* Yaw - The movement of an aircraft around the vertical axis, characterized by the nose moving side-to-side.
+* Yoke - The input device a pilot uses to control the pitch and roll of an aircraft which is similar to a car steering wheel.
 
 <h2 id="Z">Z</h2>
 
--
-
+* Zulu Time - a term for Universal Coordinated Time (UTC), also known as Greenwich Mean Time. Pilots file all flight plans in <a href="https://www.timeanddate.com/worldclock/timezone/zulu" target="_blank" rel="noreferrer noopener">Zulu Time</a>.
 
