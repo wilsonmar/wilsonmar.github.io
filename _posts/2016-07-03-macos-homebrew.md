@@ -65,9 +65,23 @@ http://brew.sh</a>
 
 ## Homebrew Formula
 
+After you have installed Homebrew for the brew command:
+
+1. 
+
+   <pre><strong>brew install prometheus</strong></pre>
+
+   https://prometheus.io/download/#prometheus
+
+   From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/p/prometheus.rb
+
 1. See the (very long) list of all Homebrew formulas from:
 
    <a target="_blank" href="https://formulae.brew.sh/">https://formulae.brew.sh</a>
+
+   Each formula is a Ruby-language file stored for brew install by users at:
+
+   https://github.com/Homebrew/homebrew-core/tree/master/Formula
 
 1. Click on a program (such as htop, jq, tree, wget, etc.).
 1. Click on the Formula code, such as wget.rb on GitHub:
@@ -75,6 +89,39 @@ http://brew.sh</a>
    <tt>https://github.com/Homebrew/homebrew-core/blob/1cde8401d8be5f28d74a402afe67fd52ac0575ed/Formula/j/jq.rb</tt>
 
    Notice that the blob is referenced in GitHub by its SHA.
+
+   ### mirror
+
+   In case the url goes down:
+
+   <pre>mirror "https://ftpmirror.gnu.org/a2ps/a2ps-4.15.5.tar.gz"</pre>
+
+   ### livecheck do
+
+   <pre># There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+   </pre>
+
+   Code here verifies the version within github.com:
+
+   <pre> url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+   </pre>
+
+   <pre>url "https://beyondgrep.com/install/"
+    regex(/href=.*?ack[._-]v?(\d+(?:\.\d+)+)["' >]/i)
+   </pre>
+
+   <pre>url "https://github.com/smmr-software/mabel.git",
+      tag:      "v0.1.7",
+      revision: "1e74a44f69ce86a0ada6d162c0dabcf2ad3c5077"
+   </pre>
+
 
    ### head
 
@@ -90,6 +137,10 @@ http://brew.sh</a>
 
    Hashing is done before and after a file is saved and transmitted.
    A hash is created after transmission to verify if every bit is the same.
+
+   <pre>version "2.5.1"
+   url "https://github.com/gatewayd-io/gatewayd/releases/download/v#{version}/gatewayd-darwin-amd64-v#{version}.tar.gz"
+  </pre>
 
    ### bottle do  
 
@@ -126,17 +177,17 @@ http://brew.sh</a>
   end
    </pre>
 
-   ### livecheck do
+   ### caveats
 
-   Code here verifies the version within github.com:
-
-   <pre> url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+   <pre>def caveats
+    <<~EOS
+      When run from `brew services`, `prometheus` is run from
+      `prometheus_brew_services` and uses the flags in:
+         #{etc}/prometheus.args
+    EOS
+  end
    </pre>
 
-   <pre>    url "https://beyondgrep.com/install/"
-    regex(/href=.*?ack[._-]v?(\d+(?:\.\d+)+)["' >]/i)
-   </pre>
 
    ### def install
    
@@ -160,6 +211,8 @@ http://brew.sh</a>
    <pre>    assert_match "aiven-client", shell_output("#{bin}/avn --version")
     assert_match "UserError: not authenticated", pipe_output("AIVEN_CONFIG_DIR=/tmp #{bin}/avn user info 2>&1")
    </pre>
+
+   <pre>system "make", "install"</pre>
 
    ### caveats
 

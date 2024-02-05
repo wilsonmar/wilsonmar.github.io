@@ -48,7 +48,7 @@ The game features a realistic simulation of the entire Earth using textures and 
 
 <hr />
 
-## Pilot's License?
+## Why Flight Simulator?
 
 Can you get a Private Pilot's License by playing Microsoft Flight Simulator?
 
@@ -63,7 +63,7 @@ To get a Private Pilot certificate, it takes "a minimum cost of around $10,000" 
    * The hourly rate or aircraft rental, typically $100-$150 per hour in a Piper Archer, Cessna 152, or 172 Skyhawk
    * Hours of flight time. Most students require around 40 hours of flight time to obtain their certificate
    * Ground based-training
-   * Headset
+   * Aviation Headset with ANR <a target="_blank" href="https://www.amazon.com/Bose-Lightweight-Comfortable-Adjustable-Cancelling/dp/B0BVBVPSX6/">$1,299</a>
    * Test Preparation
    * Test fees
    <br /><br />
@@ -86,12 +86,29 @@ Books: PROTIP: Your public library may have a copy.
 
 <a target="_blank" href="https://atpflightschool.com/airline-career-pilot-program/">ATP</a> offers <a target="_blank" href="https://atpflightschool.com/locations/">at 85 locations around the US</a> a 9-month immersion program to career airline pilot program for a fixed fee of $108,995 starting from zero time or $86,995 starting with credit for private.
 
+> "There will be a day where we no longer choose our friends based on the console they own."
 
 <hr />
 
-## XBox vs Windows
+## XBox or Windows?
 
-For best sound, Windows machines need a separate sound board.
+FlightSim runs on both XBox X and Windows 10/11.
+
+Windows machines provide more realism (less aliasing), but if you have a "gamer" PC with fast CPU and plenty of drive space, plus a powerful video card. 
+
+Windows machines can produce better sound, if it has a good sound board.
+
+Windows machines allow use of 3rd-party apps such as DS4Windows & DS5Windows, an open-source gamepad input mapper and virtuals emulator to use a PlayStation controller (DualShock 3/4 and DualSense 5) to mimic an XBox controller on Windows 10/11 PC.
+
+PROTIP: Control support on PC is significantly better than on the Xbox. That cinches it for me.
+
+Additional memory can be added to the Xbox but not faster CPU.
+
+PROTIP: A desktop Windows box enables more customization of components.
+
+PROTIP: Updates appear at the same time. But new Aircraft add-ons appear first on PCs before on Xbox.
+
+https://www.reddit.com/r/Flightsimulator2020/
 
 https://forums.flightsimulator.com
 
@@ -110,31 +127,54 @@ Videos:
    * <a target="_blank" href="https://www.youtube.com/playlist?list=PLbphwhPw2JuvwwsD-H3xoxmb4PUbCyZen">VIDEO</a>: Squirrel's Microsoft Flight Simulator - Tutorials" playlist
    <br /><br />
 
-Books: PROTIP: Your public library may have a copy.
+Books: PROTIP: Your public library may have a paper copy.
    * <a target="_blank" href="https://www.amazon.com/Microsoft-Simulator-Dummies-Brittany-Vincent/dp/1119828457/">$24</a> Microsoft Flight Simulator for Dummies book.
    * <a target="_blank" href="https://www.amazon.com/MASTERING-XBOX-Comprehensive-Understanding-Microsofts/dp/B0CMVN5KNW/">$10.99</a> MASTERING XBOX SERIES X: A Comprehensive Guide to Understanding Microsoft's Next-Gen Console and Game Pass Subscription Service
    <br /><br />
 
 Fast internet - WARNING: Some users report that downloads take 2 hours.
-   * Most gamers use a soup-up "gamer" Windows machine.
+   * Most gamers today play with others over the internet rather than play single-person offline.
    <br /><br />
 
-Game license:
-   * <a target="_blank" href="https://www.amazon.com/Microsoft-Flight-Simulator-Anniversary-Premium/dp/B0BJH5T8LV/">$119.99</a> Microsoft Flight Simulator 40th Anniversary – Premium Deluxe – Xbox Series X\|S, Windows [Digital Code].
-   * A "2024" is coming
+PROTIP: If you're using the XBox to ONLY play Flight Simulator and no other game (such as Disneyland, Roblox, Lego, Minecraft, Jeopardy, Halo, Tom Clancy, Fortnight, Call of Duty, Forza racing, Grand Theft Auto, Madden, MLB, FC soccer, PGA, Sims, Space Engineers, etc.), consider <strong>buying</strong> the <a target="_blank" href="https://www.amazon.com/Microsoft-Flight-Simulator-Anniversary-Premium/dp/B0BJH5T8LV/">$119.99</a> Microsoft Flight Simulator 40th Anniversary – Premium Deluxe – Xbox Series X\|S, Windows [Digital Code]. This requires a download of 157 GB.
+
+   * The "2024 Edition is <a target="_blank" href="https://www.youtube.com/watch?v=p3xp-SnZDoY">VIDEO</a>: has jobs, Air Racing.
+   * https://www.youtube.com/watch?v=uryswyPFgU0
    <br /><br />
 
-   * For more airports and aircraft, go from Standard to Deluxe to Premium Deluxe for $30 each step.
+   For $30 more, the $119.99 Premium Deluxe 40th Anniversary Edition includes everything from the Deluxe Edition plus 5 additional highly accurate planes with unique flight models and 5 additional handcrafted international airports.
+   * Boeing 787-10 Dreamliner
+   * Cirrus Aircraft SR22
+   * Pipistrel Virus SW 121
+   * Textron Aviation Cessna Citation Longitude
+   * Zlin Aviation Shock Ultra
+   <br /><br />
+   Premium Deluxe Additional Airports
+   * Denver International Airport (USA)
+   * Dubai International Airport (United Arab Emirates)
+   * Frankfurt Airport (Germany)
+   * Heathrow Airport (United Kingdom)
+   <br /><br />
 
    * Additional aircraft can be purchased in-game for $15 each.
+
+   * https://www.xbox.com/en-US/games/backward-compatibility
+   * Only digital purchases will work on Xbox One S.
+   * XBox XS does not play games requiring the Kinect sensor. BOO!
    <br /><br />
 
-Microsft Game Pass subscription:
-   * <a target="_blank" href="https://www.xbox.com/en-US/xbox-game-pass">Xbox Game Pass</a> is a subscription service from Microsoft for use with its Xbox Series X\|S and Xbox One consoles and Windows 10 PCs.
+You don't need to buy the game if you have a subscription like Netflix. Starting September 14, 2023, Xbox Live Gold transitioned to Xbox Game Pass Core, which provides access to 25 games at a time.
+   * Game Pass (Live Gold) enables <strong>multi-player</strong> mode for playing with others online.
+
+   * WARNING: Flight Simulator requires the $16.99/month (<strong>$203.88/year</strong>) subscription service, NOT the $9.95/month "CORE" subscription.
+   * <a target="_blank" href="https://www.xbox.com/en-US/xbox-game-pass">Xbox Game Pass</a> is a from Microsoft for use with its Xbox Series X\|S and Xbox One consoles and Windows 10 PCs.
+   * PROTIP: At <a target="_blank" href="https://www.costco.com/.product.1390659.html">Costco, buy a $100 gift card for $$89.99</a> provides a 10% discount plus a 2% - 4% if you pay with the Costco credit card. Get the emailed order number and paste into website <a target="_blank" href="https://www.memberedelivery.com/">memberedelivery.com</a> to view the digital code for copy and paste onto the Microsoft redemption site at https://account.microsoft.com/billing/redeem
    <br /><br />
 
-FlightSim runs on both XBox X and Windows 10/11.
-Running on Windows requires a fast CPU with plenty of drive space and a powerful video card. 
+   * To play on PC, purchase at STEAM ONLY ??
+
+   * Getting MSFS via the XBox games pass subscription allows the SAME unlimited use of the sim on BOTH platforms, XBox AND PC. But it only lasts as long as you have the subscription.
+
 
 <strong>4K UHD 120Hz TV</strong> or monitor:
    * The XBox X output to 4K UHD (1440p) at 120Hz with HDR (High Dynamic Range).<br />WARNING: Many TVs only support 4K UHD at 60Hz vs. 120Hz.
@@ -158,12 +198,20 @@ Running on Windows requires a fast CPU with plenty of drive space and a powerful
    * <a target="_blank" href="https://www.youtube.com/watch?v=mSLaJ_7pFLE">VIDEO</a>: Benchmark tests of Windows PC components (AMD vs Intel, Nvidia vs AMD) for Flight Simulator 2020.
    <br /><br />
 
-"optimized" for Xbox Series X\|S console:
+Console "optimized" for Xbox Series X\|S:
    * <a target="_blank" href="https://www.amazon.com/dp/B08H75RTZ8/">$459</a> XBox X console with a single controller. 1 TB SSD, 16 GB RAM
-   * Costco's bundle with a second controller (and 3 months of Game Pass) for $599 is too expensive.
+   * Costco's bundle with a second controller (and 3 months of Game Pass) for $599 is too expensive IMHO.
+   * PROTIP: On the Xbox consoles is a center (green) button to take pictures. Click it twice to share pictures. The button also is where you can reassign what each button does.
+   * You can get controllers with customized colors and rubberized grips.
    <br /><br />
 
-Cooling fan and dust cover: <a target="_blank" href="https://www.youtube.com/watch?v=cEUhc4kkY08">VIDEO</a>:
+If you play a lot of different games, add external storage:
+   * PROTIP: Xbox does not play games from off-the-shelf USB 3.1 drives. But you can shuffle files on and off.
+   * Seagate SSD expansion cards ($219 for 1TB, $400 for 2TB) plugs into the "Velocity achitecture" plug on the expansion slot on the side of the Xbox. They are hot-swappable.
+   <br /><br />
+
+For better cooling fan and dust cover: <a target="_blank" href="https://www.youtube.com/watch?v=cEUhc4kkY08">VIDEO</a>:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=G_27hJBakYM&t=6m43s">Floating Grip Wall Mount</a> allows for better airflow off the floor.
    * <a target="_blank" href="https://www.amazon.com/dp/B09P39L3KN/">36.99</a> G-STORY Top-out cooling fan with <strong>Has temperature LED read-out</strong>
    * <a target="_blank" href="https://www.amazon.com/Charging-CODOGOY-Compatible-Controller-Accessories/dp/B0B8NB44FR/">38.69</a> Vertical charging stand for 2 controllers with cooling fan.  
    * <a target="_blank" href="https://www.amazon.com/Xbox-Adjustable-Temperature-Independent-Horizontal-X/dp/B0CJLQX9K1/">$35.99</a> Cooling Fan with removable dust cover. colorful RGB Light Strip Low Noise Top Fan with 3 Gears, Independent Touch Switch, 2 USB Port
@@ -174,7 +222,7 @@ UPS (Uninterruptible Power Supply) to protect against power surges and outages t
    <br /><br />
 
 "Boeing" yoke - one that is compatible with Xbox X and PC:
-   * <a target="_blank" href="https://www.amazon.com/Turtle-VelocityOne-Universal-Control-Windows-x/dp/B09JM8SX8G/">$379</a> for a Turtle Beach VelocityOne Flight Universal Control System - Xbox Series X & Xbox Series S, Xbox One & Windows 10 & 11 PCs with Yoke Handle, Throttle Quadrant, Trim Wheel & Rudder Controls
+   * <a target="_blank" href="https://www.amazon.com/Turtle-VelocityOne-Universal-Control-Windows-x/dp/B09JM8SX8G/">$379</a> <a target="_blank" href="https://www.youtube.com/watch?v=nd1fePPlVf8">VIDEO</a>: for a Turtle Beach VelocityOne Flight Universal Control System - Xbox Series X & Xbox Series S, Xbox One & Windows 10 & 11 PCs with Yoke Handle, Throttle Quadrant, Trim Wheel & Rudder Controls
    * <a target="_blank" href="https://www.amazon.com/VelocityOne-Flightdeck-Universal-Simulation-Joystick-Desktop/dp/B0CPQ7RF6Z/">$399</a> Honeycomb Alpha yoke and pedals
    * <strong>Logitech G920</strong> steering wheel and pedals.
    * Saitek
@@ -218,7 +266,7 @@ Stand desk for controls:
 
    More durable <a target="_blank" href="https://dofreality.com/professional-motion-simulator-platforms-for-business-arcade-centers-event-rental/">"Pro" series</a> have SFU drive system makes it very quiet especially compared to actuator-based platforms (Prosimu, SimXperience, etc). 
 
-<strong>headset</strong> with a microphone
+<strong>headset</strong> with a microphone (needs to be XBox compatible)
    * <a target="_blank" href="https://www.amazon.com/Stealth-Multiplatform-Wireless-Noise-Cancelling-Xbox-X/dp/B0BX77C1LD/">$318.37</a> Turtle Beach Stealth Pro Multiplatform Wireless Noise-Cancelling Gaming Headset for Xbox Series X\|S, Xbox One, PS5, PS4, PC, Mac, Switch, & Mobile – 50mm Speakers, Bluetooth, Dual Batteries – Black
    <br /><br />
 
@@ -253,10 +301,11 @@ Being a Progressive Web App made it possible for Mac users to play Xbox games an
 1. Open System Preferences on your Mac
 1. Click on Bluetooth and select your Xbox controller from the list
 
-1. Open Safari browser on your Mac
-1. Go to <tt>xbox.com/en-us/play</tt>
-1. Log in with your Microsoft account
-1. Pay for subscription?
+1. Open Safari browser on your Mac.
+1. Go to <a target="_blank" href="https://xbox.com/en-us/play">https://xbox.com/en-us/play</a>
+1. Click "Sign In" and log in with your Microsoft account.
+1. Click "Search games" and type enough of "Flight Simulator" to click on the image for the game.
+1. Click "PLAY WITH ULTIMATE" and pay for the $16.99/month ($203.88/year) subscription. If you have a coupon from buying hardware with several months of initial subscription, click that. Otherwise, click "$1 for 14 days".
 1. Find a game on the list and click Play
 <br /><br />
 
@@ -297,7 +346,7 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 
 * AC = Advisory circular
 * A/C = Airconditioning Unit
-* Absolute altitude = the distance measured vertically from the ground to the aircraft’s position in the air
+* Absolute altitude - The vertical distance of the aircraft above the ground, measured from the ground to the aircraft’s position in the air.
 * Absolute ceiling = <a href="https://www.aeroclass.org/how-high-do-planes-fly/" target="_blank" rel="noreferrer noopener">maximum aircraft’s altitude</a> that can be reached for flying at full throttle, constant airspeed, and leveled position
 * ACARS = Airline communications and reporting system
 * Accelerated stall = Stall happening at a higher airspeed than usual due to a higher <a href="https://www.aeroclass.org/load-factor-in-aviation/" target="_blank" rel="noreferrer noopener">load factor</a> (g). This stall generally happens when the aircraft is going straight up or straight down and by making abrupt turns or control inputs in general.
@@ -310,14 +359,14 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * ADI = Attitude direction indicator
 * Adiabatic Lapse Rate = when there is thermal equilibrium, the temperature changes resulting from altitude increases and decreases.
 * ADS = Automatic Dependent Surveillance
-* Adverse yaw = when the nose of the aircraft is moving away from the direction to the turn being performed. It also occurs when using ailerons, and the aircraft moves in the opposite direction of a roll due to the difference in lift and drag of each wing.
+* Adverse yaw - when the nose of the aircraft is moving away from the direction to the turn being performed. It also occurs when using ailerons, and the aircraft moves in the opposite direction of a roll due to the difference in lift and drag of each wing.
 
 * AES = Aircraft Earth station
 * AFCS = Automatic flight control system
 * AFD = Adaptive flight displays
 * AFDS = Autopilot flight director system
 * AFIS = Automated flight information system (AlliedSignal)
-* AGL = Above Ground Level - the vertical distance measured from the aircraft to a specific mass of land
+* AGL = Above Ground Level - the vertical distance measured from the aircraft to a specific mass of land.
 * AHRS = Attitude-heading reference system
 * AI = Altitude indicator
 * Aileron = A small hinged portion of an airplane’s wing, used to make an airplane roll, or turn around its long axis. 
@@ -343,6 +392,7 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * AMT = Aviation Maintenance Technician - a common name for an aircraft mechanic
 * Anhedral = The downward angle or inclination of an the wing of an aircraft in relation to a horizontal line in the cross-section of it.
 * Annual Inspection = A thorough inspection of an aircraft ( airframe and powerplant ) required every year.
+* ANR = Noise Reduction
 * AOA = Angle-of-attack
 
 * AP = Auto Pilot
@@ -385,10 +435,10 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * Basic Operating Weight (BOW) = Empty weight typically equipped + unusable fuel and trapped liquids + 2 pilots (400 lbs.) + supplies
 * BCD = Binary coded decimal
 * Beam width = The included angle of a weather radar interrogation signal
-* Bendix = Avionics mfgr
+* Bendix = Avionics manufacturer
 * Best Lift Over Drag Ratio - the highest value of lift to drag ratios for any airfoil, which is frequently referred to as ‘L over D Max’.
 
-* BITE = Built-in test equipment
+* BITE = Built-In Test Equipment
 * Bleed Air = High pressure air ducted from engine to pressurize cabin and other uses
 * Black boxes - an informal name given to the Cockpit Voice Recorder (CVR ) and the Flight Data Recorders (FDR). However, the truth is that most of them are bright orange in order to be found easily in case of a crash. Apart from that, they are crash-resistant and equipped with beacons to make the work of locating them easier and quicker.
 * Blade Angle - in a propeller blade, the angle between the reference line and a plane perpendicular to the axis of rotation.
@@ -439,7 +489,7 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * Codeshare flight = a flight where two different airlines show their own designater while referring to the same flight upon agreement. This is common when one airline operates the flight but partner airlines advertise the flight under their own code for marketing purposes, especially when the aircraft operator changes in connections until reaching the final destination. This simplifies the booking steps, as the passenger can take one single ticket while the flight involves two or more carriers.
 * CofA = Certificate of Airworthiness - the formal document issued by the National Aviation Authority (NAA) to certify that an aircraft is airworthy.
 * Coherent detection = A technique used in certain ADF receivers to improve useful range
-* Collins = Avionics mfgr
+* Collins = Avionics manufacturer
 * COM = Communications
 * Commuter = a category of aircraft defined by the FAA as “limited to propeller-driven, multi-engine airplanes that have a seating configuration, excluding pilot seats, of 19 or less, and a maximum certificated takeoff weight of 19,000 pounds or less. The commuter category operation is limited to any maneuver incident to normal flying, stalls (except whip stalls), and steep turns, in which the angle of bank is not more than 60 degrees.”
 * Comosite video = Analog VOR receiver output before processing
@@ -761,7 +811,7 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * RAM = Random access memory
 * Ramjet = A type of jet engine with very few moving parts which consists of a specially shaped tube open at both ends
 * Rate of roll = A measure of the speed with which an airplane can turn around its long axis, or roll
-* RCA = Avionics mfgr
+* RCA = Avionics manufacturer
 * RCU = Radio control unit
 * Registration Tail Number - The unique number of each aircraft assigned upon registration and frequently called the tail number. The N number is the registration or tail number in the United States.
 * Repositioning flight - occurs when an aircraft is out of place, either due to previous diversion or operational requirements.
@@ -810,7 +860,7 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * SN = Serial Number
 * <a href="https://www.aeroclass.org/soft-field-landing/" target="_blank" rel="noreferrer noopener">Soft Field</a> - An unpaved runway, typically requiring the aircraft to land on grass or dirt.
 * Spar = A principal section of the wing structure of an airplane, going from tip to tip
-* Sperry = Avionics mfgr
+* Sperry = Avionics manufacturer
 * SPOH = Since prop overhaul
 * Squawk - A unique four-digit  (actually 4-octal-digit -&gt; 12-bit) transponder number given to an aircraft by ATC to allow for simple identification of an aircraft in a given region. There are a few significant <a href="https://www.aeroclass.org/squawk-7500-how-to-deal-with-hijacking/" target="_blank" rel="noreferrer noopener">squawk codes</a>, which immediately get the attention of air traffic control. These are 7500: Hijack; 7600: Radio Failure; 7700: General Emergency.
 * Squitter = The transmission of a specified reply format at a minimum rate without the need to be interrogated (transponders)
@@ -882,7 +932,7 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 * VLF = Very Low Frequency
 * VMC = Visual Meteorological Conditions - the minimum requirements for VFR flight to be possible before turning to IFR.
 * VNAV = Vertical navigation, or the capability to compute pitch-axis maneuvers and altitude-related points in space
-* VOR = Very High-Frequency Omni-Directional Range - a short-range radio <a href="https://www.aeroclass.org/airport-rotating-beacon/" target="_blank" rel="noreferrer noopener">navigation beacon</a>. A network of VORs can be used by pilots to determine their position and course. One of the more common navigational aids that the FAA has dropped all over the country (and sometimes the world). A VOR sends out a radio signal that is slightly different in each direction (the difference is phases, if you want to get technical). So, an airplane’s VOR tool listens to the VOR, and by measuring the difference in the radio, it can tell which direction it is from the VOR. Since your chart will show where the VOR is, and you now know where you are in relation to the VOR, it has helped you figure out where in the local area you might happen to be
+* VOR = Very High-Frequency Omni-Directional Range - a short-range radio <a href="https://www.aeroclass.org/airport-rotating-beacon/" target="_blank" rel="noreferrer noopener">navigation beacon</a>. A network of VORs can be used by pilots to determine their position and course. One of the more common navigational aids that the FAA has dropped all over the country (and sometimes the world). A VOR sends out a radio signal that is slightly different in each direction (the difference is phases, if you want to get technical). So, an airplane’s VOR tool listens to the VOR, and by measuring the difference in the radio, it can tell which direction it is from the VOR. Since your chart will show where the VOR is, and you now know where you are in relation to the VOR, it has helped you figure out where in the local area you might happen to be.
 * VSI = Vertical Speed Indicator - an instrument that displays the climb or descent rate in feet-per-minute by sensing the change in atmospheric pressure. It is also known as a variometer.
 
 <h2 id="W">W</h2>
@@ -911,5 +961,11 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 
 <h2 id="Z">Z</h2>
 
-* Zulu Time - a term for Universal Coordinated Time (UTC), also known as Greenwich Mean Time. Pilots file all flight plans in <a href="https://www.timeanddate.com/worldclock/timezone/zulu" target="_blank" rel="noreferrer noopener">Zulu Time</a>.
+* Zulu Time - a term for Universal Coordinated Time (abbreviated as UTC as a "politically correct" term for Greenwich Mean Time (GMT)). Pilots file all flight plans in <a href="https://www.timeanddate.com/worldclock/timezone/zulu" target="_blank" rel="noreferrer noopener">Zulu Time</a>.
 
+
+<hr />
+
+## Social
+
+https://www.avsim.com/forums/

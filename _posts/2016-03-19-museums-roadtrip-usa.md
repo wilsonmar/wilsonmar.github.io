@@ -80,7 +80,7 @@ To deter reckless driving among Extreme Road-trippers, the <a target="_blank" hr
 
 ## The US Rain Shadow Divide
 
-> Notice the transition between <strong>yellow to green</strong> down the middle of the country?
+> <a target="_blank" href="https://youtube.com/shorts/mOmpn0m7pxk?si=6c6Rfj-s0q5HftEp">VIDEO</a>: Notice the transition between <strong>yellow to green</strong> down the middle of the country?
 
 <a target="_blank" href="https://www.youtube.com/watch?v=ki-hoy-3ea8&t=7m50s">VIDEO</a>: 80% of Americans live East of the (vertical) <strong>98th Meridian</strong>, as shown by a green straight line overlaid this map from <a target="_blank" href="https://blackmarble.gsfc.nasa.gov/">NASA's BlackMarble satellite images of the nigh sky worldwide</a>:<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1672456116/usa-frontier-1920x1080_a2urp2.jpg"><img alt="usa-frontier-1920x1800.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1672456116/usa-frontier-1920x1080_a2urp2.jpg"></a>

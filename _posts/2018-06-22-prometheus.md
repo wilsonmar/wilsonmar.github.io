@@ -1,9 +1,9 @@
 ---
 layout: post
-date: "2024-01-30"
+date: "2024-02-04"
 file: "prometheus"
 title: "Prometheus"
-excerpt: "Collect metrics (for visualization by Grafana), analyze using PromQL coding, and identify alerts,  especially for Kubernetes also from CNCF."
+excerpt: "Collect metrics (for visualization by Grafana), analyze using PromQL coding, and identify alerts,  especially for Kubernetes (also from CNCF)."
 tags: [Clouds, Monitoring, Analytics, CNCF, Kubernetes]
 image:
 # ![dynatrace-per-minute-1900x500-162499.jpg
@@ -16,21 +16,29 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+This is a deep-dive into getting started using Prometheus in enterprise production.
 
 ## How it works
 
 From the <a target="_blank" href="https://7451111251303.gumroad.com/l/wzcnen">PowerPoint file animations used to create</a> this <a target="_blank" href="https://www.youtube.com/watch?v=5GYe_-qqP30&t=15m14s">VIDEO</a> and diagram:<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1705122755/prometheus-flow-1739x838_ugraxn.png"><img alt="prometheus-flow-240113-1739x838.png" width="1739" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1705122755/prometheus-flow-1739x838_ugraxn.png"></a>
 
-1. The main component of Prometheus is a <strong>run service</strong> (written in <a target="_blank" href="https://wilsonmar.github.io/golang/">Golang</a>).
-1. The service sends HTTPS GET requests to <strong>scrape</strong> (pull) metrics from <strong>target hosts</strong> defined in its <tt>targets.json</tt> file. In addition to statically-defined targets, 
+1. The core component of Prometheus is a <strong>server service</strong>. (written in <a target="_blank" href="https://wilsonmar.github.io/golang/">Golang</a>), so there are no additional VM installs like with Java, Python, etc.
+
+1. Installers for Prometheus have been created in <a href="#Homebrew">Homebrew for macOS</a>, Ubuntu, and Windows. Commands to invoke them, along with sample configuration files are in a sample project GitHub repo. 
+
+1. Prometheus is configured by editing the <tt>prometheus.yaml</tt> file. One comes with the installer, but you should have a customized file in each app github repo. Start the server.
+
+1. The Prometheus server sends HTTPS GET requests to <strong>scrape</strong> (pull) metrics from <strong>target hosts</strong> defined in its <tt>targets.json</tt> file. In addition to statically-defined targets, 
+
 1. Targets can be discovered by <strong>Service Discovery</strong> such as DNS, <a target="_blank" href="https://kubernetes.io/docs/concepts/services-networking/service/">Kubernetes Services</a>, or HashiCorp Consul services. The frequency of scraping and other settings are defined in the <tt>prometheus.yml</tt> file.
 
 1. Each target interacts with Prometheus through a <a href="#Exporters">job exporter</a> service installed on each host. There is a <a href="#WMI+Exporter">WMI exporter on Windows</a> and another type of exporter on Linux.
 1. This can be done via an intermediary <strong>push gateway</strong> for short-lived jobs. 
+
 1. Exporters reference <strong>custom metric providers</strong> which expose specific metrics. 
 
-1. Unlike the legacy "statsd" daemon which is concerned only with system-level metrics such as CPU, Memory, etc., the tool Prometheus (at <a target="_blank" href="https://prometheus.io/">https://prometheus.io</a>) gathers metrics from targets at the cluster, node, and microservice API levels.
+1. Unlike the legacy <tt>statsd</tt> daemon which is concerned only with system-level metrics such as CPU, Memory, etc., the tool Prometheus (at <a target="_blank" href="https://prometheus.io/">https://prometheus.io</a>) gathers metrics from targets at the cluster, node, and microservice API levels.
 
    <a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/3e05432b-7c61-4eb1-83b1-7cef861beb0b/a90d6e30-c9f1-43ee-9778-5d5824a34690">NOTE</a>: A single Prometheus server can handle up to 1,000 scrape targets, at 100,000+ samples per second. But for larger deployments, multiple Prometheus servers can be deployed in a federated architecture, with a root Prometheus server scraping data from the child servers.
 
@@ -66,29 +74,29 @@ From the <a target="_blank" href="https://7451111251303.gumroad.com/l/wzcnen">Po
 
 1. <a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/3e05432b-7c61-4eb1-83b1-7cef861beb0b/ae204f21-9e52-4272-842b-eb155b77e3fb">NOTE</a>: The Prometheus server can be configured to <strong>read</strong> data from remote sources -- perform <strong>remote read</strong>.
 
-1. Because people can't be always watching dashboard screens, <strong>Alerting Rules</strong> are set to trigger <strong>alerts</strong> pushed to the <a href="#AlertManager">Alert Manager</a> which forwards to various <strong>end-points</strong> such as email, Slack, Pager Duty SMS, or other notification mechanisms.
+1. Because people can't be always watching dashboard screens, <a href="#Alerting-Rules">Alerting Rules</a> are set to trigger <strong>alerts</strong> pushed to the <a href="#AlertManager">Alert Manager</a> which forwards to various <strong>end-points</strong> such as email, Slack, Pager Duty, SMS, OpsGenie, or other notification mechanisms.
 
    <a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/3e05432b-7c61-4eb1-83b1-7cef861beb0b/ae204f21-9e52-4272-842b-eb155b77e3fb">NOTE</a>: In a HA configuration, alerts are sent to multiple Alert Managers (with different external labels -a and -b), which deduplicate and fan out alerts to their configured receivers. 
 
 1. PROTIP: To minimize training and confusion, enterprise organizations typically have a preferred set of tools for <strong>analytics</strong> processing to generate <strong>graphs</strong> and <strong>dashboards</strong> for visualization.
 
 
-PROTIP: In AWS S3, follow your organization's Least-Privilege security policies by not allowing a single account all Actions for Prometheus:
+Prometheus does not collect <strong>event</strong> data from operating systems or logs emitted from applications.
 
-   <ul>"Action": [
-      "s3:PutObject",
-      "s3:GettObject",
-      "s3:PutObjectAcl",
-      "s3:DeleteObject",
-      "s3:ListBucket",
-      "s3:GetBucketLocation"
-   ]
-   </ul>
+
+
+## Competitors
+
+Prometheus is born of the cloud age which can accommodate large databases.
+Prometheus stores data in a standalone time series database that passively store metrics.
+
+Prometheus differs from previous fault-detection systems, like Nagios, which run periodic check scripts but keep little historical data.
+
 
 
 <hr />
 
-## History of Prometheus
+## Prometheus Origins
 
 "Prometheus" is, <a target="_blank" href="https://www.wikiwand.com/en/Prometheus">in Ancient Greek mythology, a Titan of forethought, fire, and crafty counsel</a> -- an immortal servant of the gods. He stole fire and gave it to humankind. This changed the human race forever (for better and worse). But this made mankind dangerous to the gods. 
 
@@ -98,16 +106,14 @@ Ridley Scott named his <a target="_blank" href="https://www.imdb.com/title/tt144
 The software named Prometheus began at SoundCloud in 2012, where ex-Google SREs (Site Reliability Engineers) adopted Google's Borgmon. 
 Prometheus was open-sourced in 2015 at https://github.com/prometheus/prometheus/releases
 
-Prometheus joined the CNCF (Cloud Native Computing Foundation) in 2016 as its second hosted project after Kubernetes. 
-So as would be expected, Prometheus works with K8s.
+Prometheus joined the CNCF (Cloud Native Computing Foundation) in 2016 as its second hosted project after Kubernetes. So as would be expected, Prometheus works with K8s.
 
 
 <hr />
 
 ## PCA Exam
 
-Answer 75% of 60 questions in 90-minutes to pass the $250 <a target="_blank" href="https://training.linuxfoundation.org/certification/prometheus-certified-associate/">
-Prometheus Certified Associate (PCA) exam</a>. The exam's domains:
+CNCF is under the Linux Foundation, which offers the <a target="_blank" href="https://training.linuxfoundation.org/certification/prometheus-certified-associate/">$250 Prometheus Certified Associate (PCA) exam</a> for those who (with one retake) in 90-minutes answer 75% of 60 questions correctly around these domains:
 
 18% Observability Concepts
    * Metrics
@@ -150,25 +156,103 @@ Prometheus Certified Associate (PCA) exam</a>. The exam's domains:
    * Alerting basics (when, what, and why)
    <br /><br />
 
-<hr />
+   References:
+   * https://docs.linuxfoundation.org/tc-docs/certification/important-instructions-pca
+   * https://docs.linuxfoundation.org/tc-docs/certification/frequently-asked-questions-pca
+   * https://trainingportal.linuxfoundation.org/learn/course/prometheus-certified-associate-pca/exam/exam
+   * https://medium.com/@onai.rotich/prometheus-certified-associate-a-comprehensive-guide-9c51638578d2
 
+
+<hr />
 
 ## Courses
 
+By Linux Foundation offers an online course in 2018.
+* <a target="_blank" href="https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2">Candidate Handbook</a> which is now dated
+They use the PSI BRIDGE Proctoring platform.
+
+
+## Sample app
+
+The $299 course “Monitoring Infrastructure and Containers with Prometheus” (LFS241) is based on the <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/ProjectForethought.html">PaC (Project Forethought) application</a>, which is a simple to-do list program written in Node.js. It is Dockerized and deployed to a virtual machine. The application is instrumented with Prometheus client libraries to track metrics across the app. 
+
+1. Course Introduction
+2. Introduction to Systems and Service Monitoring
+3. Introduction to Prometheus
+
+4. Installing and Setting Up Prometheus
+
+5. Basic Querying
+6. Dashboarding
+7. Monitoring Host Metrics
+8. Monitoring Container Metrics
+9. Instrumenting Code
+10. Building <a href="#Exporters">Exporters</a>
+11. Advanced Querying
+12. Relabeling
+13. Service Discovery
+14. Blackbox Monitoring
+15. Pushing Data
+16. Alerting
+17. Making Prometheus Highly Available
+18. Recording Rules
+19. Scaling Prometheus Deployments
+20. Prometheus and Kubernetes
+21. Local Storage
+22. Remote Storage Integrations
+23. Transitioning From and Integrating with Other Monitoring Systems
+24. Monitoring and Debugging Prometheus
+<br /><br />
+
+1. Create within Linux Academy's <a target="_blank" href="https://playground.linuxacademy.com/server-list">Servers in the cloud</a>, the "DevOps Monitoring Deep Dive" distribution in a small-sized host.  https://github.com/linuxacademy/content-devops-monitoring-app
+
+1. When "READY", click the Distribution name "DevOps Monitoring Deep Dive" for details.
+1. Highlight and copy the Temp. Password by clicking the copy icon.
+1. Click "Terminal" to open another browser window.
+1. Type "cloud_user" to login:
+1. Paste the password.
+1. For a new password, I paste the password again, but add an additional character. 
+1. Again to confirm.
+
+1. When an environment is opened, highlight and copy this command:
+
+   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/Prometheus/prometheus-setup.sh)"</strong></pre>
+
+1. Copy the password to your computer's Clipboard.
+1. Switch to the Terminal to paste, which runs the script.
+1. Paste the password when prompted.
+
+1. To rerun the script, discard the current instance and create a new instance.
+
+   The script is self-documented, but below are additional comments:
+
+
+### Promlabs
+
+<a target="_blank" href="https://www.youtube.com/watch?v=gaUopdFlgko">VIDEO</a>: 
+Prometheus co-founder <a target="_blank" href="https://www.linkedin.com/in/julius-volz/">Julius Volz (in Berlin, Germany)</a> authored the Linux Foundation's 2018 course which is now dated. So he created <a target="_blank" href="https://www.promlabs.com/">promlabs.com</a> to offer a <a target="_blank" href="https://training.promlabs.com/">$349 video training</a> on Prometheus monitoring fundamentals, tutorials, quizzes, tips, and best practices. It's based on  Ubuntu Linux 20.04. Julius also built <a target="_blank" href="https://promlens.com/">Promlens query builder</a>.
+
+### KodeKloud
+
+https://kodekloud.com/courses/prometheus-certified-associate-pca
+KodeKloud PCA Certification Course
+
+
+
 <a name="Bipin"></a>
 
-By Bipin:
+### By Bipin:
 
-   * <a target="_blank" href="https://devopscube.com/prometheus-certified-associate/">Prometheus Certified Associate (PCA) Exam Study Guide</a> by Bipin Upadhyay, who has a <a target="_blank" href="https://www.linkedin.com/in/bipinupadhyay/">LinkedIn profile</a> and <a target="_blank" href="https://devopscube.com/author/bipin/">blog</a> at DevOpsCube.com. 
-   * <a target="_blank" href="https://devopscube.com/install-configure-prometheus-linux/">Setup Prometheus on Linux</a>
-   <br /><br />
+* <a target="_blank" href="https://devopscube.com/prometheus-certified-associate/">Prometheus Certified Associate (PCA) Exam Study Guide</a> by Bipin Upadhyay, who has a <a target="_blank" href="https://www.linkedin.com/in/bipinupadhyay/">LinkedIn profile</a> and <a target="_blank" href="https://devopscube.com/author/bipin/">blog</a> at DevOpsCube.com. 
+* <a target="_blank" href="https://devopscube.com/install-configure-prometheus-linux/">Setup Prometheus on Linux</a>
+<br /><br />
 
 By Sean Bradley:
-   * <a target="_blank" href="https://www.udemy.com/course/prometheus/">4-hour "Prometheus and Grafana - Monitoring Docker Containers"</a> video course on Udemy Jan 2024.
-   <br /><br />
+* <a target="_blank" href="https://www.udemy.com/course/prometheus/">4-hour "Prometheus and Grafana - Monitoring Docker Containers"</a> video course on Udemy Jan 2024.
+<br /><br />
 
 By <a target="_blank" href="https://www.linkedin.com/in/alexphilip5/">Alex Philip</a>:
-* <a target="_blank" href="https://devopscube.com/setup-prometheus-using-docker/">Setup Prometheus stack using Docker Compose</a> within AWS December 2, 2023 referencing folder 04-prometheus-observability-stack within<br /><a target="_blank" href="https://github.com/techiescamp/devops-projects/tree/main/04-prometheus-observability-stack">https://github.com/techiescamp/devops-projects</a>
+* <a href="#Install-on-macOS">Install on macOS (here below)</a> his <a target="_blank" href="https://devopscube.com/setup-prometheus-using-docker/">Setup Prometheus stack using Docker Compose</a> within AWS December 2, 2023 referencing folder 04-prometheus-observability-stack within<br /><a target="_blank" href="https://github.com/techiescamp/devops-projects/tree/main/04-prometheus-observability-stack">https://github.com/techiescamp/devops-projects</a>
 
    <pre>.
 ├── CODE_OF_CONDUCT.md
@@ -211,7 +295,6 @@ By <a target="_blank" href="https://www.linkedin.com/in/wardviaene/">Edward Viae
 
 * <a target="_blank" href="https://app.pluralsight.com/search/?q=Prometheus">On Pluralsight.com</a>, the <a target="_blank" href="https://app.pluralsight.com/paths/skill/event-monitoring-and-alerting-with-prometheus">9-hour Event Monitoring and Alerting with Prometheus path</a> has 4 courses.
 
-
 By <a target="_blank" href="https://www.linkedin.com/in/eltonstoneman/">Elton Stoneman</a> (sixeyed.com):
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/getting-started-prometheus">Getting Started with Prometheus</a> Jun 23, 2020 shows use of a Windows machine .NET Core web app that has an optional "slow" response specification.
 
@@ -241,37 +324,365 @@ By Elle Krout:
    * The <a target="_blank" href="https://www.pluralsight.com/cloud-guru/courses/prometheus-deep-dive">12-hour "DevOps Monitoring Deep Dive" video course</a> references an <a target="_blank" href="https://lucid.app/lucidchart/918602e0-14b7-473c-92e7-bfbc4a15ba8f/view?page=j8p68BdUlMFS#">interactive Lucid diagram called "ProjectForethought"</a> for the NodeJs simple to-do list program called Forethought that is the subject of monitoring. 
    <br /><br />
 
-1. Create within Linux Academy's <a target="_blank" href="https://playground.linuxacademy.com/server-list">Servers in the cloud</a>, the "DevOps Monitoring Deep Dive" distribution in a small-sized host.  https://github.com/linuxacademy/content-devops-monitoring-app
+walidshaari/PrometheusCertifiedAssociate
 
-1. When "READY", click the Distribution name "DevOps Monitoring Deep Dive" for details.
-1. Highlight and copy the Temp. Password by clicking the copy icon.
-1. Click "Terminal" to open another browser window.
-1. Type "cloud_user" to login:
-1. Paste the password.
-1. For a new password, I paste the password again, but add an additional character. 
-1. Again to confirm.
+edgarpf/prometheus-certified-associate
 
-1. When an environment is opened, highlight and copy this command:
-
-   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/Prometheus/prometheus-setup.sh)"</strong></pre>
-
-1. Copy the password to your computer's Clipboard.
-1. Switch to the Terminal to paste, which runs the script.
-1. Paste the password when prompted.
-
-1. To rerun the script, discard the current instance and create a new instance.
-
-   The script is self-documented, but below are additional comments:
+Al-HusseinHameedJasim/prometheus-certified-associate
 
 
 <hr />
 
-## Install
+<a name="Homebrew"></a>
+
+## Homebrew on macOS install
+
+1. Install Homebrew using <a target="_blank" href="https://wilsonmar.github.io/macos-homebrew">my directions</a> for configuring PATH, etc.
+1. Open a Terminal, at any folder, see information about the formula: 
+
+   <pre><strong>brew info prometheus</strong></pre>
+
+   The response at time of writing:
+
+   <pre>==> prometheus: stable 2.49.1 (bottled)
+Service monitoring system and time series database
+https://prometheus.io/
+Not installed
+From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/p/prometheus.rb
+License: Apache-2.0
+==> Dependencies
+Build: gnu-tar ✘, go ✘, node ✔, yarn ✘
+==> Caveats
+When run from `brew services`, `prometheus` is run from
+`prometheus_brew_services` and uses the flags in:
+   /usr/local/etc/prometheus.args
+&nbsp;
+To start prometheus now and restart at login:
+  brew services start prometheus
+Or, if you don't want/need a background service you can just run:
+  /usr/local/opt/prometheus/bin/prometheus_brew_services
+==> Analytics
+install: 1,224 (30 days), 3,645 (90 days), 12,333 (365 days)
+install-on-request: 1,224 (30 days), 3,645 (90 days), 12,332 (365 days)
+build-error: 4 (30 days)
+   </pre>
+
+1. Install using the Homebrew formula:
+
+   <pre><strong>brew install prometheus</strong></pre>
+
+   The response at time of writing:
+
+   <pre>
+==> Downloading https://ghcr.io/v2/homebrew/core/prometheus/manifests/2.49.1
+######################################################################################################################################### 100.0%
+==> Fetching prometheus
+==> Downloading https://ghcr.io/v2/homebrew/core/prometheus/blobs/sha256:dee352f2deef862dff57a254049859095fc6e682fe702cc8f190c6aedf8543b7
+######################################################################################################################################### 100.0%
+==> Pouring prometheus--2.49.1.ventura.bottle.tar.gz
+==> Caveats
+When run from `brew services`, `prometheus` is run from
+`prometheus_brew_services` and uses the flags in:
+   /usr/local/etc/prometheus.args
+&nbsp;
+To start prometheus now and restart at login:
+  brew services start prometheus
+Or, if you don't want/need a background service you can just run:
+  /usr/local/opt/prometheus/bin/prometheus_brew_services
+==> Summary
+🍺  /usr/local/Cellar/prometheus/2.49.1: 22 files, 235.2MB
+==> Running `brew cleanup prometheus`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+   </pre>
+
+1. Where was it installed?
+
+   <pre><strong>which prometheus</strong></pre>
+
+   On an Intel with AMD architecture chip:
+
+   <pre>/usr/local/bin/prometheus</pre>
+
+   On an Apple Silicon M1/M2/M3 ARM architecture chip:
+
+   <pre>/usr/local/opt/prometheus</pre>
+
+   BTW: <tt>./prometheus</tt> (with the <tt>./</tt>) is run when you are in a folder containing the executable.
+   But that's not necessary because <tt>/usr/local</tt> is typically in the operating system $PATH environment variable.
+
+1. Verify that the executable can be reached from any folder:
+
+   <pre><strong>prometheus --version</strong></pre>
+
+   Response at time of writing on an AMD machine:
+
+   <pre>prometheus, version 2.49.1 (branch: non-git, revision: non-git)
+  build user:       brew@Ventura
+  build date:       20240115-16:56:27
+  go version:       go1.21.6
+  platform:         darwin/amd64
+  tags:             netgo,builtinassets,stringlabels
+   </pre>
+
+1. List all the parameters, drag the right edge wider for:
+
+   <pre><strong>prometheus --help</strong></pre>
+
+   Response at time of writing on an AMD machine:
+
+   <pre>usage: prometheus [&LT;flags>]
+The Prometheus monitoring server
+&nbsp;
+Flags:
+  -h, --[no-]help                Show context-sensitive help (also try --help-long and --help-man).
+      --[no-]version             Show application version.
+      --config.file="prometheus.yml"  
+                                 Prometheus configuration file path.
+      --web.listen-address="0.0.0.0:9090"  
+                                 Address to listen on for UI, API, and telemetry.
+      --web.config.file=""       [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication.
+      --web.read-timeout=5m      Maximum duration before timing out read of the request, and closing idle connections.
+      --web.max-connections=512  Maximum number of simultaneous connections.
+      --web.external-url=<em>URL</em>   The URL under which Prometheus is externally reachable (for example, if Prometheus is served via a reverse
+                                 proxy). Used for generating relative and absolute links back to Prometheus itself. If the URL has a path
+                                 portion, it will be used to prefix all HTTP endpoints served by Prometheus. If omitted, relevant URL components
+                                 will be derived automatically.
+      --web.route-prefix=<em>path</em>  Prefix for the internal routes of web endpoints. Defaults to path of --web.external-url.
+      --web.user-assets=<em>path</em>   Path to static asset directory, available at /user.
+      --[no-]web.enable-lifecycle  
+                                 Enable shutdown and reload via HTTP request.
+      --[no-]web.enable-admin-api  
+                                 Enable API endpoints for admin control actions.
+      --[no-]web.enable-remote-write-receiver  
+                                 Enable API endpoint accepting remote write requests.
+      --web.console.templates="consoles"  
+                                 Path to the console template directory, available at /consoles.
+      --web.console.libraries="console_libraries"  
+                                 Path to the console library directory.
+      --web.page-title="Prometheus Time Series Collection and Processing Server"  
+                                 Document title of Prometheus instance.
+      --web.cors.origin=".*"     Regex for CORS origin. It is fully anchored. Example: 'https?://(domain1|domain2)\.com'
+      --storage.tsdb.path="data/"  
+                                 Base path for metrics storage. Use with server mode only.
+      --storage.tsdb.retention=STORAGE.TSDB.RETENTION  
+                                 [DEPRECATED] How long to retain samples in storage. This flag has been deprecated, use
+                                 "storage.tsdb.retention.time" instead. Use with server mode only.
+      --storage.tsdb.retention.time=STORAGE.TSDB.RETENTION.TIME  
+                                 How long to retain samples in storage. When this flag is set it overrides "storage.tsdb.retention". If neither
+                                 this flag nor "storage.tsdb.retention" nor "storage.tsdb.retention.size" is set, the retention time defaults to
+                                 15d. Units Supported: y, w, d, h, m, s, ms. Use with server mode only.
+      --storage.tsdb.retention.size=STORAGE.TSDB.RETENTION.SIZE  
+                                 Maximum number of bytes that can be stored for blocks. A unit is required, supported units: B, KB, MB, GB, TB,
+                                 PB, EB. Ex: "512MB". Based on powers-of-2, so 1KB is 1024B. Use with server mode only.
+      --[no-]storage.tsdb.no-lockfile  
+                                 Do not create lockfile in data directory. Use with server mode only.
+      --storage.tsdb.head-chunks-write-queue-size=0  
+                                 Size of the queue through which head chunks are written to the disk to be m-mapped, 0 disables the queue
+                                 completely. Experimental. Use with server mode only.
+      --storage.agent.path="data-agent/"  
+                                 Base path for metrics storage. Use with agent mode only.
+      --[no-]storage.agent.wal-compression  
+                                 Compress the agent WAL. Use with agent mode only.
+      --storage.agent.retention.min-time=STORAGE.AGENT.RETENTION.MIN-TIME  
+                                 Minimum age samples may be before being considered for deletion when the WAL is truncated Use with agent mode
+                                 only.
+      --storage.agent.retention.max-time=STORAGE.AGENT.RETENTION.MAX-TIME  
+                                 Maximum age samples may be before being forcibly deleted when the WAL is truncated Use with agent mode only.
+      --[no-]storage.agent.no-lockfile  
+                                 Do not create lockfile in data directory. Use with agent mode only.
+      --storage.remote.flush-deadline=<em>duration</em>  
+                                 How long to wait flushing sample on shutdown or config reload.
+      --storage.remote.read-sample-limit=5e7  
+                                 Maximum overall number of samples to return via the remote read interface, in a single query. 0 means no limit.
+                                 This limit is ignored for streamed response types. Use with server mode only.
+      --storage.remote.read-concurrent-limit=10  
+                                 Maximum number of concurrent remote read calls. 0 means no limit. Use with server mode only.
+      --storage.remote.read-max-bytes-in-frame=1048576  
+                                 Maximum number of bytes in a single frame for streaming remote read response types before marshalling. Note
+                                 that client might have limit on frame size as well. 1MB as recommended by protobuf by default. Use with server
+                                 mode only.
+      --rules.alert.for-outage-tolerance=1h  
+                                 Max time to tolerate prometheus outage for restoring "for" state of alert. Use with server mode only.
+      --rules.alert.for-grace-period=10m  
+                                 Minimum duration between alert and restored "for" state. This is maintained only for alerts with configured
+                                 "for" time greater than grace period. Use with server mode only.
+      --rules.alert.resend-delay=1m  
+                                 Minimum amount of time to wait before resending an alert to Alertmanager. Use with server mode only.
+      --alertmanager.notification-queue-capacity=10000  
+                                 The capacity of the queue for pending Alertmanager notifications. Use with server mode only.
+      --query.lookback-delta=5m  The maximum lookback duration for retrieving metrics during expression evaluations and federation. Use with
+                                 server mode only.
+      --query.timeout=2m         Maximum time a query may take before being aborted. Use with server mode only.
+      --query.max-concurrency=20  
+                                 Maximum number of queries executed concurrently. Use with server mode only.
+      --query.max-samples=50000000  
+                                 Maximum number of samples a single query can load into memory. Note that queries will fail if they try to load
+                                 more samples than this into memory, so this also limits the number of samples a query can return. Use with
+                                 server mode only.
+      --enable-feature= ...      Comma-separated feature names to enable. Valid options: agent, exemplar-storage, expand-external-labels,
+                                 memory-snapshot-on-shutdown, promql-at-modifier, promql-negative-offset, promql-per-step-stats,
+                                 promql-experimental-functions, remote-write-receiver (DEPRECATED), extra-scrape-metrics,
+                                 new-service-discovery-manager, auto-gomaxprocs, no-default-scrape-port, native-histograms, otlp-write-receiver.
+                                 See https://prometheus.io/docs/prometheus/latest/feature_flags/ for more details.
+      --log.level=info           Only log messages with the given severity or above. One of: [debug, info, warn, error]
+      --log.format=logfmt        Output format of log messages. One of: [logfmt, json]
+   </pre>
+
+   PROTIP: An investment of time to get to know what parameters are available can come in handle (less stress for you) during troubleshooting.
+
+
+### Clone Custom Project
+
+   References:
+   * https://prometheus.io/docs/prometheus/latest/configuration/configuration/
+   * Good example: https://github.com/prometheus/prometheus/blob/release-2.49/config/testdata/conf.good.yml
+   <br /><br />
+
+1. Setup VSCode or whatever IDE you prefer to use.
+1. Setup Git global configurations, including SSH and GPG for a verified connection to GitHub.com
+1. Create a folder where you can clone a repo into.
+1. <a target="_blank" href="https://devopscube.com/setup-prometheus-using-docker/">Setup Prometheus stack using Docker Compose</a> within AWS December 2, 2023 referencing folder 04-prometheus-observability-stack within
+
+   <pre><strong>git clone <a target="_blank" href="https://github.com/techiescamp/devops-projects/tree/main/04-prometheus-observability-stack">git@github.com:techiescamp/devops-projects.git</a> --depth 1
+   </strong></pre>
+
+1. Remove other DevOps project folders not relevant: ??? 
+
+1. Set upstream to the original developer (which contains several DevOps projects):
+
+   <pre><strong>git remote upstream -add https://github.com/wilsonmar/devops-projects 
+   </strong></pre>
+
+1. Open VSCode within the repo folder:
+
+   <pre><strong>cd ~/github-wilsonmar/devops-projects/04-prometheus-observability-stack/
+   </strong></pre>
+
+1. Navigate 
+
+   <pre><strong>cd 04-prometheus-observability-stack/prometheus</strong></pre>
+
+1. Open VSCode within the repo folder:
+
+   <pre><strong>code .</strong></pre>
+
+   <pre>.
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── Makefile
+├── README.md
+├── SECURITY.md
+├── alertmanager
+│   └── alertmanager.yml
+├── docker-compose.yml
+├── prometheus
+│   ├── alertrules.yml
+│   ├── <strong>prometheus.yml</strong>
+│   └── targets.json
+└── terraform-aws
+    ├── README.md
+    ├── modules
+    │   ├── ec2
+    │   │   ├── main.tf
+    │   │   ├── outputs.tf
+    │   │   ├── user-data.sh
+    │   │   └── variables.tf
+    │   └── security-group
+    │       ├── main.tf
+    │       ├── outputs.tf
+    │       └── variables.tf
+    ├── prometheus-stack
+    │   ├── main.tf
+    │   ├── outputs.tf
+    │   └── variables.tf
+    └── vars
+        └── ec2.tfvars
+   </pre>
+
+
+   ### prometheus.yaml
+
+1. Select file "prometheus.yml" to view/edit.
+
+1. For comparison, a full sample file is at:
+
+   https://github.com/prometheus/prometheus/blob/release-2.49/config/testdata/conf.good.yml
+
+   The section headings:
+
+   <pre>global:
+   rule_files:
+   remote_write:
+   remote_read:
+   scrape_configs:
+     - job_name: ...
+   alerting:
+   storage:
+   tracing:
+   </pre>
+
+
+   ### Start Prometheus
+
+1. Navigate to your Prometheus folder.
+   The server references configuration files named <tt>prometheus.yml</tt> 
+
+1. At a folder containing <tt>prometheus.yaml</tt>, run the executable installed by brew:
+
+   <pre><strong>prometheus</strong></pre>
+
+   Alternately, to run Prometheus server using a custom config ymal file name:
+
+   <pre><strong>./prometheus --config.file="prometheus-demo-a.yml"</strong></pre>
+
+   <pre>
+ts=2024-02-04T23:14:14.593Z caller=main.go:544 level=info msg="No time or size retention was set so using the default time retention" duration=15d
+ts=2024-02-04T23:14:14.593Z caller=main.go:588 level=info msg="Starting Prometheus Server" mode=server version="(version=2.49.1, branch=non-git, revision=non-git)"
+ts=2024-02-04T23:14:14.593Z caller=main.go:593 level=info build_context="(go=go1.21.6, platform=darwin/amd64, user=brew@Ventura, date=20240115-16:56:27, tags=netgo,builtinassets,stringlabels)"
+ts=2024-02-04T23:14:14.593Z caller=main.go:594 level=info host_details=(darwin)
+ts=2024-02-04T23:14:14.593Z caller=main.go:595 level=info fd_limits="(soft=524288, hard=unlimited)"
+ts=2024-02-04T23:14:14.593Z caller=main.go:596 level=info vm_limits="(soft=unlimited, hard=unlimited)"
+ts=2024-02-04T23:14:14.599Z caller=web.go:565 level=info component=web msg="Start listening for connections" address=0.0.0.0:9090
+ts=2024-02-04T23:14:14.600Z caller=main.go:1039 level=info msg="Starting TSDB ..."
+ts=2024-02-04T23:14:14.602Z caller=tls_config.go:274 level=info component=web msg="Listening on" address=[::]:9090
+ts=2024-02-04T23:14:14.602Z caller=tls_config.go:277 level=info component=web msg="TLS is disabled." http2=false address=[::]:9090
+ts=2024-02-04T23:14:14.606Z caller=head.go:606 level=info component=tsdb msg="Replaying on-disk memory mappable chunks if any"
+ts=2024-02-04T23:14:14.608Z caller=head.go:687 level=info component=tsdb msg="On-disk memory mappable chunks replay completed" duration=306.061µs
+ts=2024-02-04T23:14:14.608Z caller=head.go:695 level=info component=tsdb msg="Replaying WAL, this may take a while"
+ts=2024-02-04T23:14:14.612Z caller=head.go:766 level=info component=tsdb msg="WAL segment loaded" segment=0 maxSegment=0
+ts=2024-02-04T23:14:14.612Z caller=head.go:803 level=info component=tsdb msg="WAL replay completed" checkpoint_replay_duration=635.216µs wal_replay_duration=3.530458ms wbl_replay_duration=201ns total_replay_duration=4.53585ms
+ts=2024-02-04T23:14:14.617Z caller=main.go:1060 level=info fs_type=1a
+ts=2024-02-04T23:14:14.617Z caller=main.go:1063 level=info msg="TSDB started"
+ts=2024-02-04T23:14:14.617Z caller=main.go:1245 level=info msg="Loading configuration file" filename=prometheus.yml
+ts=2024-02-04T23:14:14.783Z caller=main.go:1282 level=info msg="Completed loading of configuration file" filename=prometheus.yml totalDuration=165.456586ms db_storage=6.275µs remote_storage=4.234µs web_handler=434ns query_engine=1.108µs scrape=162.131337ms scrape_sd=29.266µs notify=24.794µs notify_sd=7.148µs rules=2.483027ms tracing=14.689µs
+ts=2024-02-04T23:14:14.783Z caller=main.go:1024 level=info msg="Server is ready to receive web requests."
+ts=2024-02-04T23:14:14.783Z caller=manager.go:146 level=info component="rule manager" msg="Starting rule manager..."
+   </pre>
+
+   ### Debugging errors
+
+1. If you see errors such as this:
+
+   <pre>
+ts=2024-02-04T23:15:42.822Z caller=notifier.go:530 level=error component=notifier alertmanager=http://127.0.0.1:9093/api/v2/alerts count=1 msg="Error sending alert" err="Post \"http://127.0.0.1:9093/api/v2/alerts\": dial tcp 127.0.0.1:9093: connect: connection refused"
+ts=2024-02-04T23:16:57.812Z caller=notifier.go:530 level=error component=notifier alertmanager=http://127.0.0.1:9093/api/v2/alerts count=1 msg="Error sending alert" err="Post \"http://127.0.0.1:9093/api/v2/alerts\": dial tcp 127.0.0.1:9093: connect: connection refused"
+   </pre>
+
+   ???
+
+
+<hr />
+
+### Setup Go
+
+<a target="_blank" href="https://wilsonmar.github.io/golang/">My instructions on how to setup Golang</a>
+
+
+### Configuration
 
 1. Identify your client machine's IP address:
-
-
-## Configuration
 
 1. Define storage location:
 
@@ -313,7 +724,7 @@ By Elle Krout:
 }
    </pre>
 
-   ### Upgrade
+   ### Upgrade data
 
    To ensure that data is not lost, the upgrade process is to stop the old Prometheus server, install the new version, and then start the new version.
 
@@ -334,44 +745,33 @@ By Elle Krout:
 
    <pre>./prometheus --config.file prometheus.yml</pre>
 
-   
+
+
+### scrape_configs
+
+On the Prometheus server, edit the <strong>prometheus.yml</strong> file to add a new scrape_configs section to recognize the exporter on host at 172.31.122.23:
+
+<pre>scrape_configs:
+  - job_name: "prometheus"
+    metrics_path: "/metrics"
+    static_configs:
+    - targets:
+      - "localhost:9090"
+  - job_name: node
+    file_sd_configs:
+    - files:
+      - "/etc/prometheus/file_sd/node.yml"
+  - job_name: 'node_exporter'
+    static_configs:
+    - targets: ['172.31.122.23:9100']
+</pre>
+
+Restart the Prometheus server to pick up the new configuration.
+
 
 <hr />
 
-## Sample app
-
-The $299 course “Monitoring Infrastructure and Containers with Prometheus” (LFS241) is based on the <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/ProjectForethought.html">PaC (Project Forethought) application</a>, which is a simple to-do list program written in Node.js. It is Dockerized and deployed to a virtual machine. The application is instrumented with Prometheus client libraries to track metrics across the app. 
-
-1. Course Introduction
-2. Introduction to Systems and Service Monitoring
-3. Introduction to Prometheus
-
-4. Installing and Setting Up Prometheus
-
-5. Basic Querying
-6. Dashboarding
-7. Monitoring Host Metrics
-8. Monitoring Container Metrics
-9. Instrumenting Code
-10. Building <a href="#Exporters">Exporters</a>
-11. Advanced Querying
-12. Relabeling
-13. Service Discovery
-14. Blackbox Monitoring
-15. Pushing Data
-16. Alerting
-17. Making Prometheus Highly Available
-18. Recording Rules
-19. Scaling Prometheus Deployments
-20. Prometheus and Kubernetes
-21. Local Storage
-22. Remote Storage Integrations
-23. Transitioning From and Integrating with Other Monitoring Systems
-24. Monitoring and Debugging Prometheus
-<br /><br />
-
-
-### Docker
+## Docker
 
 1. Confirm the creation of the existing Docker image:
  
@@ -403,6 +803,14 @@ The $299 course “Monitoring Infrastructure and Containers with Prometheus” (
    Finally, add recording and <a href="#Alerting">alerting</a> rules, build out a series of routes so any alerts created get to their desired endpoint. 
 
    The course also looks at creating persistent dashboards with Grafana and use its various graphing options to better track data.
+
+
+<hr />
+
+### Linux Metrics
+
+https://training.promlabs.com/training/monitoring-linux-host-metrics
+
 
 <hr />
 
@@ -445,28 +853,8 @@ As with most things Kubernetes, a Helm chart can do it all:
 https://gitlab.com/nanuchi/youtube-tutorial-series/-/blob/master/prometheus-exporter/install-prometheus-commands.md
 
 
-## Ansible installer
 
-Paweł Krupa (<a target="_blank" href="https://twitter.com/paulfantom">@paulfantom</a>, author of the <a target="_blank" href="https://paulfantom.github.io/workshop-docker/#/1">Docker Workshop</a>) and Roman Demachkovych (<a target="_blank" href="https://twitter.com/rdemachkovych">@rdemachkovych</a>), together as Cloud Alchemy,
-defined a <a target="_blank" href="https://presentation.cloudalchemy.org/#/"> presentation</a> about their <a target="_blank" href="https://github.com/cloudalchemy/ansible-prometheus">
-Ansible role for Prometheus</a>, with https://demo.cloudalchemy.org.
-
-   * Zero-configuration deployment
-   * Easy management of multiple nodes
-   * Error checking
-   * Multiple CPU architecture support
-
-* versioning
-* system user management
-* CPU architecture auto-detection
-* systemd service files
-* linux capabilites support
-* basic <a target="_blank" href="https://en.wikipedia.org/wiki/Security-Enhanced_Linux">SELinux</a> (Security-Enhanced Linux) security module support
-
-<a target="_blank" href="https://travis-ci.org/cloudalchemy/demo-site">https://travis-ci.org/cloudalchemy/demo-site</a>
-
-
-## Starting Prometheus
+## Starting Prometheus in Docker
 
 To run Prometheus after downloading the Docker image from the "prom" account in Dockerhub:
 
@@ -501,8 +889,9 @@ To run Prometheus after downloading the Docker image from the "prom" account in 
    NOTE: <a target="_blank" href="https://prometheus.io/docs/introduction/overview/">https://prometheus.io/docs</a> contains docs. It says in 2012 <strong>SoundCloud</strong> wrote Prometheus in <a target="_blank" href="https://wilsonmar.github.io/golang/">Golang</a> and open sourced it at <a target="_blank" href="https://github.com/prometheus/">https://github.com/prometheus</a>.
 
 
+<hr />
 
-### Graphing specs
+## Graphing specs
 
 4. TODO: Select "go_gc_duration_seconds" for the median, which is 50th quantile, specified as:
 
@@ -602,10 +991,33 @@ Alternately,
    <pre>level=info ts=2017-10-23T14:03:02.274562Z caller=main.go:216 msg="Starting prometheus"...</pre>
 
 
-   Althugh an Alertmanager is not required to run Prometheus,...
+   Although an Alertmanager is not required to run Prometheus,...
 
 
-## Command
+<hr />
+
+## Ansible installer
+
+Paweł Krupa (<a target="_blank" href="https://twitter.com/paulfantom">@paulfantom</a>, author of the <a target="_blank" href="https://paulfantom.github.io/workshop-docker/#/1">Docker Workshop</a>) and Roman Demachkovych (<a target="_blank" href="https://twitter.com/rdemachkovych">@rdemachkovych</a>), together as Cloud Alchemy,
+defined a <a target="_blank" href="https://presentation.cloudalchemy.org/#/"> presentation</a> about their <a target="_blank" href="https://github.com/cloudalchemy/ansible-prometheus">
+Ansible role for Prometheus</a>, with https://demo.cloudalchemy.org.
+
+   * Zero-configuration deployment
+   * Easy management of multiple nodes
+   * Error checking
+   * Multiple CPU architecture support
+
+* versioning
+* system user management
+* CPU architecture auto-detection
+* systemd service files
+* linux capabilites support
+* basic <a target="_blank" href="https://en.wikipedia.org/wiki/Security-Enhanced_Linux">SELinux</a> (Security-Enhanced Linux) security module support
+
+<a target="_blank" href="https://travis-ci.org/cloudalchemy/demo-site">https://travis-ci.org/cloudalchemy/demo-site</a>
+
+
+### Command
 
 <pre>
 # Ansible managed file. Be wary of possible overwrites.
@@ -647,8 +1059,8 @@ The four golden signals of monitoring</a> begins with:
 
    A measure of how much demand is being placed on your system, measured in a high-level system-specific metric. For a web service, this measurement is usually HTTP requests per second, perhaps broken out by the nature of the requests (e.g., static versus dynamic content). For an audio streaming system, this measurement might focus on network I/O rate or concurrent sessions. For a key-value storage system, this measurement might be transactions and retrievals per second.
 
-To identify bottlenecks, instead of beginning with given metrics (partial answers) and trying to work backwards,
-the Utilization Saturation and Errors (USE) Method by Brendan Gregg (of Netflix), described at <a target="_blank" href="http://www.brendangregg.com/usemethod.html">http://www.brendangregg.com/usemethod.html</a>,  begins by posing questions off a checklist, and then seeks answers. To direct the construction of a checklist, which for server analysis can be used for quickly identifying resource bottlenecks or errors.
+   To identify bottlenecks, instead of beginning with given metrics (partial answers) and trying to work backwards,
+   the Utilization Saturation and Errors (USE) Method by Brendan Gregg (of Netflix), described at <a target="_blank" href="http://www.brendangregg.com/usemethod.html">http://www.brendangregg.com/usemethod.html</a>,  begins by posing questions off a checklist, and then seeks answers. To direct the construction of a checklist, which for server analysis can be used for quickly identifying resource bottlenecks or errors.
 
 * <strong>Utilization</strong> 
 
@@ -665,6 +1077,39 @@ the Utilization Saturation and Errors (USE) Method by Brendan Gregg (of Netflix)
 
 Predictive: saturation is the basis for projections of impending issues, such as "at the current rate, your database will fill its hard drive in 4 hours."
 
+## graph
+
+<a target="_blank" href="https://www.youtube.com/watch?v=OxZmn4svOyA&t=6m13s">VIDEO</a>:
+Type "prometheus" for the auto-complete to show the default raw metrics built-in:
+
+   * prometheus_api_remote_read_queries
+   * prometheus_build_info
+   * prometheus_config_last_reload_success_timestamp_seconds
+   * prometheus_config_last_reload_successful
+   * prometheus_engine_queries
+   * prometheus_engine_queries_concurrent_max
+   * prometheus_engine_query_duration_seconds
+   * prometheus_engine_query_duration_seconds_count
+   * prometheus_engine_query_duration_seconds_sum
+   * prometheus_engine_query_log_enabled
+   * prometheus_engine_query_log_failures_total
+   * prometheus_http_request_duration_seconds_bucket
+   * prometheus_http_request_duration_seconds_count
+   * prometheus_http_request_duration_seconds_sum
+   * prometheus_http_requests_total
+   * prometheus_http_response_size_bytes_bucket
+   <br /><br />
+
+
+<hr />
+
+## App Instrumentation
+
+   * https://training.promlabs.com/training/instrumenting-applications/
+   <br /><br />
+
+"Instrumentation" is the process of adding code to your application to expose metrics to Prometheus.
+
 
 <hr />
 
@@ -676,14 +1121,71 @@ Predictive: saturation is the basis for projections of impending issues, such as
    * <a target="_blank" href="https://prometheus.io/docs/instrumenting/exporters">https://prometheus.io/docs/instrumenting/exporters</a>
    <br /><br />
 
-"Instrumentation" is the process of adding code to your application to expose metrics to Prometheus.
+Exporters are installed on servers to translate existing third-party metrics into a format that Prometheus can scrape. Stock exporters are provided at: https://prometheus.io/download/#prometheus
+listed here by default port number:
+   * 9100 - <a href="http://github.com/prometheus/node_exporter">node_exporter</a> - <a href="#node_exporter">more</a>
+   * 9101 - <a target="_blank" href="http://github.com/prometheus/haproxy_exporter">HAProxy exporter</a>
+   * 9102 - <a target="_blank" href="http://github.com/prometheus/statsd_exporter">statsd_exporter</a>
+   * 9103 - <a target="_blank" href="http://github.com/prometheus/collectd_exporter">collectd_exporter</a> (accepts collectd stats via HTTP POST)
+   * 9104 - <a target="_blank" href="https://github.com/prometheus/mysqld_exporter">mysqld_exporter</a> <a href="#MySQL">setup</a>
+   * 9108 - <a target="_blank" href="http://github.com/prometheus/graphite_exporter">graphite_exporter</a>
+   * 9110 - <a target="_blank" href="https://github.com/prometheus/blackbox_exporter">blackbox_exporter</a>
+   * 9115 - Black Box (probe metrics to host URLs)
+   * ???? - <a target="_blank" href="https://github.com/prometheus/consul_exporter">consul_exporter</a> (see <a target="_blank" href="https://wilsonmar.github.io/hashicorp-consul/">my notes on Consul from HashiCorp</a>
+   * memcached_exporter
+   * ???? - <a target="_blank" href="https://github.com/prometheus/jmx_exporter">jmx_exporter</a>
+   * ???? - <a target="_blank" href="https://github.com/prometheus/snmp_exporter">snmp_exporter</a>
+   * ???? - <a target="_blank" href="https://github.com/prometheus/influxdb_exporter">influxdb_exporter</a>
+   * MongoDB,
+   * PostgreSQL,
+   * Redis,
+   * <a target="_blank" href="https://github.com/prometheus/haproxy_exporter">haproxy_exporter</a> has been archived.
+   * <a href="#AWS">AWS</a> Cloudwatch
+   * Azure cloud
+   * GCP
+   <br /><br />
 
-Pre-defined third-party exporters and software exposing Prometheus metrics are listed at<br /><a target="_blank" href="
-https://prometheus.io/docs/instrumenting/exporters/">
+Pre-defined third-party exporters and software exposing Prometheus metrics are listed at<br /><a target="_blank" href="https://prometheus.io/docs/instrumenting/exporters/">
 https://prometheus.io/docs/instrumenting/exporters</a><br />
-and downloadable from<br /><a target="_blank" href="
-https://github.com/prometheus
 
+3rd-party exporters:
+https://prometheus.io/docs/instrumenting/exporters/#third-party-exporters
+
+
+<a name="MySQL"></a>
+
+### MySQL setup
+
+1. For the MySQL prompt:
+
+   <pre><strong>mysql -u root -p</strong></pre>
+
+1. Create a database user for the exporter to use.
+1. Grant permissions
+1. Provide credentials to exporter
+<br /><br />
+
+<pre>CREATE USER 'mysqld_exporter'@'localhost' IDENTIFIED BY 'password' WITH MAX_USER_CONNECTIONS 3; 
+GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'mysqld_exporter'@'localhost';
+FLUSH PRIVILEGES; 
+export DATA_SOURCE_NAME='mysqld_exporter:password@(localhost:3306)/';
+</pre>
+
+https://github.com/orgs/prometheus/projects/8
+is used to track work on new exporters.
+
+https://training.promlabs.com/training/understanding-and-building-exporters/
+Create exporters on more systems. 
+
+
+<a name="WMI+Exporter"></a>
+
+### WMI exporter on Windows
+
+The WMI Exporter provides system metrics for Windows servers.
+
+
+<a name="node_exporter"></a>
 
 ### Setup NodeJs Exporter
 
@@ -719,7 +1221,8 @@ e2053c557f96efb63aef3691f15335a70baaffd)
 The node_exporter exporter runs, by default, on <strong>port 9100</strong> to expose metrics, but can be changed:
 
    <pre>node_exporter --web.listen-address=":9100" \
-   --web.telemetrypath="/node_metrics"</pre>
+   --web.telemetrypath="/node_metrics"
+   </pre>
 
 <pre># Get the exporter tar:
 wget https://github.com/prometheus/node_exporter/releases/download/v*/node_exporter-*.*linux-amd64.tar.gz
@@ -737,123 +1240,80 @@ cd node_exporter-*.*-amd64
 curl http://localhost:9100/metrics
 </pre>
 
-### scrape_configs
-
-On the Prometheus server, edit the <strong>prometheus.yml</strong> file to add a new scrape_configs section to recognize the exporter on host at 172.31.122.23:
-
-<pre>scrape_configs:
-  - job_name: "prometheus"
-    metrics_path: "/metrics"
-    static_configs:
-    - targets:
-      - "localhost:9090"
-  - job_name: node
-    file_sd_configs:
-    - files:
-      - "/etc/prometheus/file_sd/node.yml"
-  - job_name: 'node_exporter'
-    static_configs:
-    - targets: ['172.31.122.23:9100']
-</pre>
-
-Restart the Prometheus server to pick up the new configuration.
 
 
 <hr />
 
-## Exporter Ports
+<a name="AWS"></a>
 
-PROTIP: Default Ports used by popular exporters:
+## AWS
 
-* 9100 - <a href="http://github.com/prometheus/node_exporter">Node exporter</a>
-* 9101 - <a href="http://github.com/prometheus/haproxy_exporter">HAProxy exporter</a>
-* 9102 - <a href="http://github.com/prometheus/statsd_exporter">StatsD exporter</a>
-* 9103 - <a href="http://github.com/prometheus/collectd_exporter">Collectd exporter</a>
-* 9104 - MySQL
-* 9108 - <a href="http://github.com/prometheus/graphite_exporter">Graphite exporter</a>
-* 9110 - <a href="https://github.com/prometheus/blackbox_exporter">Blackbox exporter</a>
-* 9115 - Black Box (probe metrics to host URLs)
-<br /><br />
+PROTIP: In AWS S3, follow your organization's Least-Privilege security policies by not allowing a single account all Actions for Prometheus:
 
-Prometheus manages exporters:
-* AWS Cloudwatch, 
-* JMX, 
-* SNMP, 
-* Consul, 
-* Memchached, 
-* etc. 
-<br /><br />
-
-Monitoring databases
-
-* InfluxDB, 
-* MongoDB,
-* MySQL,
-* PostgreSQL,
-* Redis,
-<br /><br />
-
-MySQL setup:
-
-For the MySQL prompt:
-<pre><strong>mysql -u root -p</strong></pre>
-
-* Create a database user for the exporter to use.
-* Grant permissions
-* Provide credentials to exporter
-<br /><br />
-
-<pre>CREATE USER 'mysqld_exporter'@'localhost' IDENTIFIED BY 'password' WITH MAX_USER_CONNECTIONS 3; 
-GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'mysqld_exporter'@'localhost';
-FLUSH PRIVILEGES; 
-export DATA_SOURCE_NAME='mysqld_exporter:password@(localhost:3306)/';
-</pre>
+   <ul>"Action": [
+      "s3:PutObject",
+      "s3:GettObject",
+      "s3:PutObjectAcl",
+      "s3:DeleteObject",
+      "s3:ListBucket",
+      "s3:GetBucketLocation"
+   ]
+   </ul>
 
 
-## Monitoring Network Endpoints
 
-## Monitoring messaging queues
-
-## Monitoring Kubernetes clusters
-
-## Monitoring others
+### Monitoring others
 
 systems, APIs, logging, storage, hardware related, HTTP, etc.
 
 
-## WMI Exporter
-
-The WMI Exporter provides system metrics for Windows servers.
-
 <hr />
 
-## Creating Exporters
+### Creating Exporters
 
 https://prometheus.io/docs/instrumenting/writing_exporters/
 
 
 <hr />
 
-### Metric types
+## Metric types
 
-Counter increments
+<strong>Counter</strong> increments
 
-Gauge
+   <ul><a target="_blank" href="https://www.youtube.com/watch?v=OxZmn4svOyA&t=6m30s">VIDEO</a>: 
+   For the metric that tracks the total number of metrics Prometheus has ingested so far:
+   PROTIP: Metrics that go up and up in a graph would eventually blow up. So it's better reported as a <strong>rate per minute</strong>. 
+   More specifically, as the 90th percentile value on a histogram:
+   &nbsp;
+   <pre><strong>histogram_quantile(0.9, sum by(le, path) rate(demo_api_request_duration_seconds_bucket[5m])</strong></pre>
+   </ul>
 
-Summary 
+<strong>Gauge</strong>
+
+<strong>Summary</strong>
 
 
 ### Metrics exposition
 
-Node Exporter: http://<em>server</em>:8080/metrics
+Metrics are made available from a target's Node Exporter by exposing an unencrypted (HTTP) URL such as:
+
+   <ul><pre><strong><a target="_blank" href="http://demo.promlabs.com:10000/metrics">http://demo.promlabs.com:10000/metrics</a><strong></pre></ul>
 
 <em>Space lines added for clarity</em>
+
+Each metric is preceded by comments starting with "#".
+
+The format of the <a target="_blank" href="https://prometheus.io/docs/instrumenting/exposition_formats/#text-based-format">metrics exposition format</a> (shown below) has evolved into the <a target="_blank" href="https://openmetrics.io/">OpenMetrics CNCF open standard</a> defined at <a target="_blank" href="https://github.com/OpenObservability/OpenMetrics/">https://github.com/OpenObservability/OpenMetrics</a>, with discussions at <a target="_blank" href="https://groups.google.com/g/openmetrics/">https://groups.google.com/g/openmetrics</a>
 
    <pre># HELP node uname info from the uname system call
 # TYPE node_uname_info gauge
 node_uname_info{domainname="(none)",machine="x86_64",nodename="localhost.localdomain",release="4.15.0-20-generic",sysname="Linux",version="#21-Ubuntu SMP Tue Apr 24 06:16:15 UTC 2018"} 1
 &nbsp;
-   # HELP http_request_duration_microseconds The HTTP request latencies in microseconds.
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 32
+&nbsp;
+# HELP http_request_duration_microseconds The HTTP request latencies in microseconds.
 # TYPE http_request_duration_microseconds summary
 http_request_duration_microseconds{handler="prometheus",quantile="0.5"} 73334.095
 &nbsp;
@@ -911,6 +1371,14 @@ process_cpu_seconds_total 0.01
    </pre>
 
 
+* Timestamps are 64-bit integers in millisecond precision (tenths of a second), NOT nanosecond.
+* Sample values are 64-bit floating point numbers (allowing integer precision up to 2^53). In the future, can be a values histogram.
+
+* To colorize metrics output in browsers, install the "Prometheus Formatter" extension for <a target="_blank" href="https://chromewebstore.google.com/detail/prometheus-formatter/jhfbpphccndhifmpfbnpobpclhedckbb?pli=1">Chrome</a> and <a target="_blank" href="https://addons.mozilla.org/addon/prometheus-formatter/">Firefox</a> from https://github.com/fhemberger/prometheus-formatter created by fhemberger.
+
+
+<hr />
+
 <a name="Operator"></a>
 
 ## Operator
@@ -926,7 +1394,9 @@ The Alert Manager uses port 9093 by default.
 
 <a name="Alerting"></a>
 
-### Alert Manager
+### Alerting
+
+https://training.promlabs.com/training/alerting-with-prometheus
 
 The Prometheus Alert Manager is used to generate alerts.
 
@@ -969,6 +1439,10 @@ Integrations include:
 
 ## PromQL Query Language
 
+https://training.promlabs.com/training/understanding-promql
+
+https://promlabs.com/promql-cheat-sheet/
+
 Promethus provides multiple modes of graphing and dashboarding support, but also
 exposes its time-series data to <strong>API clients</strong> such as <strong>Grafana</strong> which make <a href="#PromQL">PromQL</a> (Prometheus query language) to extract data in order to display <strong>visualizations</strong> on their websites. 
 
@@ -981,7 +1455,26 @@ exposes its time-series data to <strong>API clients</strong> such as <strong>Gra
 * Timestamp Metrics
 <br /><br />
 
-Core metrics generated by Prometheus:
+
+1. <a target="_blank" href="https://training.promlabs.com/training/introduction-to-prometheus/prometheus-an-overview/integrated-alerting">Sample alert rule</strong> for when the <strong>per-path error rate ratios</strong> larger than a percentage:
+
+   <pre>
+alert: Many500Errors
+# This is the PromQL expression that forms the "heart" of the alerting rule.
+expr: |
+  (
+      sum by(path) (rate(http_requests_total{status="500"}[5m]))
+    /
+      sum by(path) (rate(http_requests_total[5m]))
+  ) * 100 > 5
+for: 5m
+labels:
+  severity: "critical"
+annotations:
+  summary: "Many 500 errors for path {{$labels.path}} ({{$value}}%)"
+   </pre>
+
+Types of metrics generated by Prometheus:
 
    1. Counter of increasing value (such as packets received)
    2. Gauge  - a current value that increases or decreases (such as memory usage)
@@ -1142,6 +1635,9 @@ OpsGenie.
 An example of what Metrics documentation about its <tt>scrape_config</tt> looks like:
 https://docs-git-update-metrics-gatewaydio.vercel.app/using-gatewayd/global-configuration/metrics/
 
+In the expression browser:
+* The Graph view graphs a PromQL expression over time.
+* The Table view provides a view of the output of a PromQL expression at one point in time.
 
 
 
