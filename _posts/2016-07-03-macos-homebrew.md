@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-01-30"
+date: "2024-02-05"
 file: "macos-homebrew"
 title: "MacOS Homebrew"
 excerpt: "How to create brew formulas for installation on macOS"
@@ -63,11 +63,13 @@ http://brew.sh</a>
 
 <a name="Formula"></a>
 
-## Homebrew Formula
+## Creating Homebrew Formula
 
-After you have installed Homebrew for the brew command:
+After you have installed Homebrew for the brew command (see below):
 
-1. 
+<a target="_blank" href="https://github.com/orgs/Homebrew/discussions/categories/writing-formulae-casks?discussions_q=is%3Aopen+category%3A%22Writing+Formulae%2FCasks%22+">Discussion forum about Writing Formulae/Casks</a>
+
+1. For example:
 
    <pre><strong>brew install prometheus</strong></pre>
 

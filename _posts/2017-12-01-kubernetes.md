@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-01-25"
+date: "2024-02-05"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 excerpt: "A deep dive on how to orchestrate containers, especially in clouds, including OpenShift. Pass the CKAD and CKA exams."
@@ -7684,6 +7684,11 @@ Interactive KataKoda lab on OReilly.com: <a target="_blank" href="https://learni
    using the slim K3s Kubernetes distribution from Rancher, a Certified Lightweight Kubernetes Distribution built for IoT and Edge remote ecomputing. It stores data using sqlite3 instead of etcd. It bootstrap script K3sup installer at <a target="_blank" href="https://github.com/alexellis/k3sup">https://github.com/alexellis/k3sup</a>.
 
 k3s.io with traefix.io/traefix based on https://github.com/lima-vm/lima
+
+<a target="_blank" href="https://www.youtube.com/playlist?list=PL8cwSAAaP9W3uHIOFmZVQ2HBTXqob7T6P">Techno Tim on YouTube</a> has a 
+<a target="_blank" href="https://www.youtube.com/watch?v=8DeG3qO-HIA&t=4m">VIDEO: "100% automated" Ansible-fueled build using k3s</a> with kube-vip, MetalLB, <a target="_blank" href="https://www.datree.io/">datree</a>, etc. at
+<a target="_blank" href="https://github.com/techno-tim/k3s-ansible/">techno-tim/k3s-ansible</a>.
+He's also hasvideos on Rancher.
 
 arkade - portable Kubernetes marketplace
 

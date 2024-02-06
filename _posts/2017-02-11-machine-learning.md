@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Machine Learning"
-excerpt: "It can do it for you ... before it does you in"
-tags: [Python, Machine Learning]
-date: "2017-02-11"
+date: "2024-02-05"
 file: "machine-learning"
+title: "Machine Learning"
+excerpt: "Different ways to use data to create a model (program)"
+tags: [Python, Machine Learning]
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-To give you an idea of the pervasiveness of AI and Machine Learning, Google CEO Sundar Pichai said in 2016:
+The pervasiveness of AI and Machine Learning was recognized by Google CEO Sundar Pichai when he said in 2016:
 
 > "Machine learning is a core, transformative way by which we’re rethinking how we’re doing everything. We are thoughtfully applying it across all our products, be it search, ads, YouTube, or Play. And we’re in early days, but you will see us — in a systematic way — apply machine learning in all these areas." 
 
@@ -39,7 +39,7 @@ vs. following strictly static program instructions (logic defined by human devel
 
 <a target="_blank" href="https://www.ted.com/talks/noriko_arai_can_a_robot_pass_a_university_entrance_exam">
 <img alt="ai-todai-robot-441x441.jpg" src="https://user-images.githubusercontent.com/300046/29997360-3aeeac38-8fce-11e7-8913-fc600e6d13de.jpg"></a><br />
-The photo above is the <a target="_blank" href="http://21robot.org/news/">Todai Robot</a> in scored among the upper 20% of students in Japan's university entrance exams. Writing essays using a pen on paper. In Japanese. It knows 8,000 Japanese words, 2,000 mathematical axioms, and uses "symbolic computation" for "automatic reasoning" on 15 billion sentences. <a target="_blank" href="http://21robot.org/news/">
+The photo above is the <a target="_blank" href="http://21robot.org/">Todai Robot</a> in scored among the upper 20% of students in Japan's university entrance exams. Writing essays using a pen on paper. In Japanese. It knows 8,000 Japanese words, 2,000 mathematical axioms, and uses "symbolic computation" for "automatic reasoning" on 15 billion sentences. <a target="_blank" href="http://21robot.org/news/">
 Back in 2014</a>.
 
 In 2017, the top ranked player in the Chinese game Go was <a target="_blank" href="https://www.nytimes.com/2017/05/23/business/google-deepmind-alphago-go-champion-defeat.html">
@@ -398,8 +398,9 @@ from Apache Software Foundation
    * Supported in the Databricks cloud
 
 Keras (at <a target="_blank" href="https://keras.io">https://keras.io</a>)
-is a <strong>model-level</strong> modular library, 
-providing high-level building blocks for developing deep learning models.
+is not a library of its own but
+is a high-level API to simplify the complexity of deep learning frameworks by
+running on top of other deep learning APIs (TensorFlow, Theano and CNTK).
 
    * Keras runs on both CPU and GPU through 
    backend engines Google's TensorFlow 
@@ -416,6 +417,7 @@ GPUs (Graphic Processing Units) begins to replace clusters of less efficient CPU
 
 In 2017, basic Python scripting skills suffice to do advanced deep learning research. 
 
+https://www.exxactcorp.com/blog/Deep-Learning/tensorflow-vs-pytorch-vs-keras-for-nlp
 
 
 ### Java in DL4j
@@ -442,6 +444,14 @@ DL4j supports most of the deep nets – RBM, DBN, Convolutional net, Recurrent n
 <a target="_blank" href="http://www.cio.com/article/3193689/artificial-intelligence/which-deep-learning-network-is-best-for-you.html">NOTE</a>:
 Here is a ranking of Deep Learning frameworks based on GitHub star count.
 
+<a target=https://developer.nvidia.com/deep-learning-frameworks">NVIDIA's list of frameworks</a>
+
+Facebook's Pytorch open-source approach has risen steadily from October, 2018 to become the most people use:
+
+   * <a target="_blank" href="https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch">On NVIDIA's NGC</a>
+   * Based on Torch, another deep learning framework based on Lua
+   * <a target="_blank" href="https://www.alluxio.io/resources/modern-data-platform-excellence-series/pytorch-model-training-performance-tuning-a-comprehensive-guide/">Pytorch perf tuning</a>
+   <br /><br />
 
 TensorFlow AI platform from Google
 

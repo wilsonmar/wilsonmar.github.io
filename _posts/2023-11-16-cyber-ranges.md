@@ -893,6 +893,9 @@ But access is also available remotely online using <a target="_blank" href="http
 
 https://app.cybrary.it/
 
+<a target="_blank" href="https://www.youtube.com/watch?v=bPv5pb7AcYs">VIDEO</a>: 
+"I played HackTheBox for 30 Days - Here's What I Learned".
+
 <hr />
 
 ## More about Python

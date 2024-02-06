@@ -45,6 +45,14 @@ On August 18, 2020, Microsoft released Microsoft Flight Simulator to generally p
 The new simulator is built on a new in-house engine named Asobo developed for the game. 
 The game features a realistic simulation of the entire Earth using textures and topographical data from Bing Maps. The game also features a <strong>dynamic weather system</strong> that simulates real-world weather conditions of each location. 
 
+<hr />
+
+## Social
+
+https://forums.flightsimulator.com
+
+https://www.reddit.com/r/Flightsimulator2020/
+
 
 <hr />
 
@@ -83,7 +91,6 @@ Books: PROTIP: Your public library may have a copy.
    * <a target="_blank" href="https://www.amazon.com/FAR-AIM-2024-Administration-Aeronautical/dp/1644252813/">$26.96</a> FAA FAR/AIM 2024: Federal Aviation Regulations/Aeronautical Information Manual (ASA FAR/AIM Series) Paperback – September 5, 2023 from Titles 14 and 49 of the Code of Federal Regulations (14 and 49 CFR) 
    <br /><br />
 
-
 <a target="_blank" href="https://atpflightschool.com/airline-career-pilot-program/">ATP</a> offers <a target="_blank" href="https://atpflightschool.com/locations/">at 85 locations around the US</a> a 9-month immersion program to career airline pilot program for a fixed fee of $108,995 starting from zero time or $86,995 starting with credit for private.
 
 > "There will be a day where we no longer choose our friends based on the console they own."
@@ -108,9 +115,11 @@ PROTIP: A desktop Windows box enables more customization of components.
 
 PROTIP: Updates appear at the same time. But new Aircraft add-ons appear first on PCs before on Xbox.
 
-https://www.reddit.com/r/Flightsimulator2020/
-
-https://forums.flightsimulator.com
+Build your own PC:
+   * https://www.wired.com/story/how-to-build-a-pc/
+   * https://www.pcmag.com/how-to/how-to-build-a-pc-the-ultimate-beginners-guide
+   * https://pcpartpicker.com/
+   * https://www.digitaltrends.com/computing/how-to-build-a-pc/
 
 <hr />
 
@@ -962,6 +971,27 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 <h2 id="Z">Z</h2>
 
 * Zulu Time - a term for Universal Coordinated Time (abbreviated as UTC as a "politically correct" term for Greenwich Mean Time (GMT)). Pilots file all flight plans in <a href="https://www.timeanddate.com/worldclock/timezone/zulu" target="_blank" rel="noreferrer noopener">Zulu Time</a>.
+
+
+<hr />
+
+## Airplanes
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Mc4hvcBW4TM">VIDEO</a>:
+Boeing vs Airbus by Captain JK.
+   * Toggle switch positions are opposite: Up is ON on Airbus.
+   * Control yoke on Boeing vs sidestick on Airbus.
+   * Airbus has room for a tray table in place of a yoke 
+   <br /><br />
+
+
+The additional airplanes in the $119.99 Premium Deluxe 40th Anniversary Edition:
+   * Boeing 787-10 Dreamliner
+   * Cirrus Aircraft SR22
+   * Pipistrel Virus SW 121
+   * Textron Aviation Cessna Citation Longitude
+   * Zlin Aviation Shock Ultra
+   <br /><br />
 
 
 <hr />

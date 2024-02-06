@@ -133,10 +133,10 @@ and makes use of http://werkzeug.pocoo.org/ WGI, from the same folks.
 
 Harness.io offers a Feature Flags utility as part of its CI/CD and Cost Management SaaS offering.
 
-https://chaoscarnival.io/sessions
-
 Harness provides <a target="_blank" href="https://university.harness.io/feature-flags-developer
 ">free training</a> to pass their <a target="_blank" href="https://developer.harness.io/certifications/feature-flags">free "Harness Certified Expert certification exam</a> (answer 50 questions in 90-minutes).
+
+https://chaoscarnival.io/sessions
 
 But I would be cautious to join them as an employee due to the <a target="_blank" href="https://www.glassdoor.com/Reviews/Harness-Reviews-E1828521.htm">consistenly bad employee reviews on Glassdoor</a>.
 

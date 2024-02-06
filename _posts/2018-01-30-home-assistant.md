@@ -2,8 +2,8 @@
 layout: post
 title: "Home Assistant"
 excerpt: "Control a wide range of IoT devices using Python on Raspberry Pi, iOS, and Android"
-tags: [iOT]
-date: "2018-01-30"
+tags: [iOT, dashboards]
+date: "2024-02-03"
 file: "home-assistant"
 image:
 # home-assistant-screens-1900x500.jpg
@@ -22,6 +22,10 @@ comments: true
 
 At <a target="_blank" href="https://demo.home-assistant.io/">https://demo.home-assistant.io</a>
 Home Assistant presents a clickable dashboard such as:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1707193386/home-assistant-240205-2582x2082_h7mdm4.png"><img alt="home-assistant-240205-2582x2082.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1707193386/home-assistant-240205-2582x2082_h7mdm4.png"></a>
+
+Previously:
 
 ![home-assistant-clickable-459x348.png](https://user-images.githubusercontent.com/300046/70847248-7e4cc000-1e1f-11ea-9c70-ecb55d05f9dc.png)
 
