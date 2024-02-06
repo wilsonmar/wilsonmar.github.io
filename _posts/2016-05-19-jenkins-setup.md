@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-07-05"
+date: "2024-02-05"
 file: "jenkins-setup"
 title: "Jenkins Setup"
 excerpt: "Make your robot butler for CI/CD DevOps"
@@ -35,8 +35,6 @@ such as to ensure that components already unit-tested can be integrated together
 
 For scaling, several slaves can be setup to run simultaneously.
 
-https://www.harness.io/blog/chaos-engineering-with-jenkins
-
 
 <a id="Alternatives"></a>
 
@@ -50,6 +48,7 @@ Jenkins originated in 2005 as a simple CI site which Kohsuke Kawaguchi called "H
 See <a target="_blank" href="http://jenkins-ci.org/content/whos-driving-thing">*</a>
 and <a target="_blank" href="https://isotope11.com/blog/continuous-deployment-at-isotope11-an-update">*</a>
 
+https://www.harness.io/blog/chaos-engineering-with-jenkins
 
 <a id="Prerequisites"></a>
 
@@ -228,21 +227,16 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
    <a href="#Config_Security">
    Unlock Admin password</a> in this tutorial.
 
-<hr />
 
    ### Password file #
 
-   This specifies the folder containing passwords (a file which is not in the repo):
+0. Specify the folder containing passwords (a file which is not in the repo):
 
-   <pre>
-   -v `pwd`:/app
-   </pre>
+   <pre>-v `pwd`:/app</pre>
 
-   ### Confirm #
+   Confirm:
 
-   <tt><strong>
-   docker ps -a
-   </strong></tt>
+   <tt><strong>docker ps -a</strong></tt>
 
    Sample response:
 
@@ -257,11 +251,10 @@ b5e3d39ed158        jenkinsci/workflow-demo   "/bin/tini -- /usr/lo"   12 hours 
    docker kill b5e3d39ed158
    </strong></tt>
 
-0. See how much memory the container is taking when idle:
-
-   ???
+0. TODO: See how much memory the container is taking when idle:
 
 
+<hr />
 
 <a id="DigitalOcean"></a>
 
@@ -1827,6 +1820,8 @@ New podcast every Friday! Sign up for our weekly and nightly emails. Open source
 ## References
 
 https://github.com/bmuschko/cje-crash-course
+
+https://www.harness.io/blog/chaos-engineering-with-jenkins
 
 ## More on DevOps #
 

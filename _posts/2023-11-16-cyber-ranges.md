@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-01-22"
+date: "2024-02-05"
 file: "cyber-ranges"
 title: "Cyber Ranges"
 excerpt: "Proving grounds with safe sandboxes for experimentation and testing of how a full stack of technologies integrates and operates."
@@ -889,6 +889,9 @@ But access is also available remotely online using <a target="_blank" href="http
    * <a target="_blank" href="https://learning.oreilly.com/videos/-/9780136173717/">26h  VIDEO</a>: The Complete Cybersecurity Bootcamp (Video Collection): Threat Defense, Ethical Hacking, and Incident Handling. from Pearson April 2019
    <br /><br />
 
+## Resources
+
+https://app.cybrary.it/
 
 <hr />
 

@@ -463,6 +463,8 @@ https://theqalead.com/podcast/gremlin-in-the-machine-how-to-achieve-chaos-engine
 
 https://medium.com/the-cloud-architect/what-is-aws-fault-injection-simulator-and-why-you-should-care-3fbe457ca227
 
+https://www.harness.io/blog/chaos-engineering-with-jenkins
+
 
 ## More on DevSecOps #
 

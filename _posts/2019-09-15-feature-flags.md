@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Feature flags"
-excerpt: "Evaluate the options for Python for real-time feature configuration and impact control"
-tags: [python, coding]
-date: "2017-03-05"
+date: "2024-02-05"
 file: "feature-flags"
+title: "Feature flags"
+excerpt: "Evaluate the options for real-time feature configuration and impact control, coded in Python and other languages"
+tags: [python, coding]
 image:
 # feature-flags-1900x500.png
   feature: https://user-images.githubusercontent.com/300046/134320061-da7eeef4-d7e2-41d4-a2c7-42f91bf65d59.png
@@ -131,7 +131,14 @@ and makes use of http://werkzeug.pocoo.org/ WGI, from the same folks.
 
 ## Harness
 
-Harness has Feature Flags as part of its CI/CD and Cost Management SaaS offering.
+Harness.io offers a Feature Flags utility as part of its CI/CD and Cost Management SaaS offering.
+
+https://chaoscarnival.io/sessions
+
+Harness provides <a target="_blank" href="https://university.harness.io/feature-flags-developer
+">free training</a> to pass their <a target="_blank" href="https://developer.harness.io/certifications/feature-flags">free "Harness Certified Expert certification exam</a> (answer 50 questions in 90-minutes).
+
+But I would be cautious to join them as an employee due to the <a target="_blank" href="https://www.glassdoor.com/Reviews/Harness-Reviews-E1828521.htm">consistenly bad employee reviews on Glassdoor</a>.
 
 <a target="_blank" href="https://app.harness.io/#/account/v-sK1fz9R7inji-gj8kSkA/onboarding-landing?walkme=none">
 Walkme demo of Harness CD</a> runs a sample deployment in a Kubernetes Cluster within Google Cloud Platform (GKE), available for 1 hour.
@@ -140,7 +147,6 @@ https://www.harness.com calls it "progressive delivery"
 https://harness.io/blog/product-updates/introducing-harness-feature-flags/
 
 https://searchitoperations.techtarget.com/news/252502582/Harness-baits-CI-CD-set-with-feature-flags-cloud-auto-stop
-
 
 https://webinars.devops.com/confidence-and-experimentation-with-feature-flags-at-metrikus
 https://www.metrikus.io/

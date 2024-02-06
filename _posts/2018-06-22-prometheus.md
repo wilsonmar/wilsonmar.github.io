@@ -237,6 +237,14 @@ Prometheus co-founder <a target="_blank" href="https://www.linkedin.com/in/juliu
 https://kodekloud.com/courses/prometheus-certified-associate-pca
 KodeKloud PCA Certification Course
 
+### OReilly.com
+
+If you have a subscription to OReilly.com:
+
+* <a target="_blank" href="https://www.linkedin.com/in/sandervanvugt/">Sander van Vugt</a> has a <a target="_blank" href="https://learning.oreilly.com/videos/kubernetes-and-cloud/9780137993413/">video course</a> on Kubernetes and Cloud Native Associate (KCNA) published by Pearson IT Certification. He also has a 
+<a target="_blank" href="https://learning.oreilly.com/live-events/kubernetes-and-cloud-native-associate-kcna-crash-course/0636920074599/">live course 6-10am MT Dec 1 & 2, 2022</a>.
+
+* <a target="_blank" href="https://learning.oreilly.com/library/view/hands-on-infrastructure-monitoring/9781789612349/" title="from Packt">11 hour Hands-On Infrastructure Monitoring with Prometheus 2019</a> by Joel Bastos, Pedro Araujo
 
 
 <a name="Bipin"></a>
@@ -530,6 +538,8 @@ Flags:
    </pre>
 
    PROTIP: An investment of time to get to know what parameters are available can come in handle (less stress for you) during troubleshooting.
+
+   <tt>--enable-feature=exemplar-storage</tt> enables (currently experimental) <a target="_blank" href="https://prometheus.io/docs/instrumenting/exposition_formats/#exemplars-experimental">examplars</a>.
 
 
 ### Clone Custom Project
@@ -927,6 +937,8 @@ To run Prometheus after downloading the Docker image from the "prom" account in 
 
    In the global block, scrape_interval specifies the frequency of 15s (seconds) which Prometheus scrapes targets. (The default for this is every 60 seconds)
 
+   The /targets page shows the most recent scrape error from among all targets that cannot be scraped.
+
    The default evaluation_interval of 15s controls how often Prometheus evaluates rule files that specify creation of new time series and generation of alerts.
 
    Its uniqueness is a <strong>rules engine</strong> that enables alerts by the Prometheus Alertmanager installed separately.
@@ -1121,7 +1133,7 @@ Type "prometheus" for the auto-complete to show the default raw metrics built-in
    * <a target="_blank" href="https://prometheus.io/docs/instrumenting/exporters">https://prometheus.io/docs/instrumenting/exporters</a>
    <br /><br />
 
-Exporters are installed on servers to translate existing third-party metrics into a format that Prometheus can scrape. Stock exporters are provided at: https://prometheus.io/download/#prometheus
+Exporters are installed on servers to translate existing metrics into a format that Prometheus can scrape. Stock exporters are provided at: https://prometheus.io/download/#prometheus
 listed here by default port number:
    * 9100 - <a href="http://github.com/prometheus/node_exporter">node_exporter</a> - <a href="#node_exporter">more</a>
    * 9101 - <a target="_blank" href="http://github.com/prometheus/haproxy_exporter">HAProxy exporter</a>
@@ -1129,7 +1141,7 @@ listed here by default port number:
    * 9103 - <a target="_blank" href="http://github.com/prometheus/collectd_exporter">collectd_exporter</a> (accepts collectd stats via HTTP POST)
    * 9104 - <a target="_blank" href="https://github.com/prometheus/mysqld_exporter">mysqld_exporter</a> <a href="#MySQL">setup</a>
    * 9108 - <a target="_blank" href="http://github.com/prometheus/graphite_exporter">graphite_exporter</a>
-   * 9110 - <a target="_blank" href="https://github.com/prometheus/blackbox_exporter">blackbox_exporter</a>
+   * 9110 - <a target="_blank" href="https://github.com/prometheus/blackbox_exporter">blackbox_exporter</a> [<a target="_blank" href="https://training.promlabs.com/training/probing-services-blackbox-exporter/training-overview/introduction">class</a>]
    * 9115 - Black Box (probe metrics to host URLs)
    * ???? - <a target="_blank" href="https://github.com/prometheus/consul_exporter">consul_exporter</a> (see <a target="_blank" href="https://wilsonmar.github.io/hashicorp-consul/">my notes on Consul from HashiCorp</a>
    * memcached_exporter
@@ -1148,9 +1160,16 @@ listed here by default port number:
 Pre-defined third-party exporters and software exposing Prometheus metrics are listed at<br /><a target="_blank" href="https://prometheus.io/docs/instrumenting/exporters/">
 https://prometheus.io/docs/instrumenting/exporters</a><br />
 
-3rd-party exporters:
+A whole list of 3rd-party exporters:<br />
 https://prometheus.io/docs/instrumenting/exporters/#third-party-exporters
 
+Some third-party software components or devices cannot be instrumented directly with Prometheus-compatible metrics.
+
+### Best Practices
+
+<a target="_blank" href="https://training.promlabs.com/training/instrumenting-applications/instrumentation-best-practices/naming-metrics">Metric naming</a>
+
+<a target="_blank" href="https://training.promlabs.com/training/instrumenting-applications/instrumentation-best-practices/labels-and-scalability">Label usage</a>
 
 <a name="MySQL"></a>
 
@@ -1278,6 +1297,8 @@ https://prometheus.io/docs/instrumenting/writing_exporters/
 
 ## Metric types
 
+<a target="_blank" href="https://www.youtube.com/watch?v=fhx0ehppMGM" title="Understanding Prometheus Metric Types | Meaning and Usage (Gauge, Counter, Summary, Histogram">VIDEO</a>:  by Julius.
+
 <strong>Counter</strong> increments
 
    <ul><a target="_blank" href="https://www.youtube.com/watch?v=OxZmn4svOyA&t=6m30s">VIDEO</a>: 
@@ -1290,8 +1311,14 @@ https://prometheus.io/docs/instrumenting/writing_exporters/
 
 <strong>Gauge</strong>
 
+   <ul>This metric type is for values which go up and down, such as a gasoline guage in vehicles.
+   Each guage has a maximum capacity and usually a minimum of zero.
+   </ul>
+
 <strong>Summary</strong>
 
+   <ul>
+   </ul>
 
 ### Metrics exposition
 
@@ -1541,17 +1568,6 @@ https://prometheus.io/docs/practices/instrumentation/
 https://prometheus.io/docs/instrumenting/exporters/
 
 
-<hr />
-
-## Video courses
-
-If you have a subscription to OReilly.com:
-
-* <a target="_blank" href="https://www.linkedin.com/in/sandervanvugt/">Sander van Vugt</a> has a <a target="_blank" href="https://learning.oreilly.com/videos/kubernetes-and-cloud/9780137993413/">video course</a> on Kubernetes and Cloud Native Associate (KCNA) published by Pearson IT Certification. He also has a 
-<a target="_blank" href="https://learning.oreilly.com/live-events/kubernetes-and-cloud-native-associate-kcna-crash-course/0636920074599/">live course 6-10am MT Dec 1 & 2, 2022</a>.
-
-* <a target="_blank" href="https://learning.oreilly.com/library/view/hands-on-infrastructure-monitoring/9781789612349/" title="from Packt">11 hour Hands-On Infrastructure Monitoring with Prometheus 2019</a> by Joel Bastos, Pedro Araujo
-
 
 
 ## Resources
@@ -1638,7 +1654,21 @@ https://docs-git-update-metrics-gatewaydio.vercel.app/using-gatewayd/global-conf
 In the expression browser:
 * The Graph view graphs a PromQL expression over time.
 * The Table view provides a view of the output of a PromQL expression at one point in time.
+<br /><br />
 
+<hr />
+
+## /tsdb_status
+
+The TSDB Status page shows detailed statistics about individual metric names and labels:
+
+* Top 10 <strong>label names with value count</strong> is used if some unintentional high-cardinality data (like public user IPs or full HTTP paths) are stored in label values, you will immediately see those problematic labels at the top here.
+
+* Top 10 <strong>label names with high memory usage</strong> helps to identify label names that may not have a too high number of values associated with them, but where individual values are overly large and memory-consuming.
+
+* Top 10 <strong>series count by metric names</strong> - when there is no single label that is problematic enough, but this can help you track down metric names that overall have a combination of labels attached to them that cause a large number of time series.
+
+* Top 10 <strong>series count by label value pairs</strong> when a specific label combination at the top here, like a histogram metric name (__name__="my_histogram_bucket") that has a lot of bucket time series attached.
 
 
 <hr />
