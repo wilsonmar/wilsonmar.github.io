@@ -25,9 +25,10 @@ Here are my notes on resources for Cyber Security, which is a vast field. But ne
 ## Glossary
 
    * <a target="_blank" href="https://www.rfc-editor.org/info/rfc4949">RFC 4949</a> - Internet Security Glossary
-   * <a target="_blank" href="https://www.sans.org/security-resources/glossary-of-terms/">SANS Glossary</a> of terms
+   * <a target="_blank" href="https://www.sans.org/security-resources/glossary-of-terms/">SANS Glossary</a>
    * PROTIP: <a target="_blank" href="https://quizlet.com/222277746/devsecops-acronyms-and-buzzwords-flash-cards/">My Quizlet of Cyber Security Aconyms</a>
-   * PROTIP: Acronyms here are in my <a target="_blank" href="https://quizlet.com/159167491/acronyms-for-secure-iot-flash-cards/">444 item Quizlet flashcards for Cyber Security</a> for you to study more efficient.
+   * PROTIP: Acronyms here are in my <a target="_blank" href="https://quizlet.com/159167491/acronyms-for-secure-iot-flash-cards/">444 item Quizlet flashcards for Cyber Security</a> for you to study more efficiently.
+   * Dean Bushmiller has a great one for his students at $49/month 123oreilly.com
    <br /><br />
 
 REMEMBER:
@@ -3580,32 +3581,37 @@ https://www.pulseconferences.com/
    <br /><br />
 
    The degree includes passing industry certifications:
-   * ISC2 Certified in Cybersecurity (CC)
-   * CompTIA Cybersecurity Analyst (CySA+)
-   * CompTIA PenTest+
-   * CompTIA Advanced Security Practioner (CASP+)
-   * ISACA Certified Information Security Manager (CISM)
+   1. ISC2 Certified in Cybersecurity (CC)
+   2. CompTIA Cybersecurity Analyst (CySA+)
+   3. CompTIA PenTest+
+   4. CompTIA Advanced Security Practioner (CASP+)
+   5. ISACA Certified Information Security Manager (CISM)
    <br /><br />
 
-   <a target="_blank" href="https://www.wgu.edu/online-it-degrees/cybersecurity-information-assurance-masters-program/program-guide.html">10 classes</a>:
+   <a target="_blank" href="https://www.wgu.edu/online-it-degrees/cybersecurity-information-assurance-masters-program/program-guide.html">10 classes (7/7/23)</a>:
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr><th> ID </th><th> Term </th><th> CUs </th><th> Name </th><th> Type </th><th> Certification </th></tr>
-   <tr valign="top"><td> 1</td><td> 2</td><td> D482 </td><td> Secure Network Design </td><td> ? </td><td> - </td>/tr>
-   <tr valign="top"><td> 1</td><td> 4</td><td> D483 </td><td> Security Operations </td><td> ? </td><td> - </td>/tr>
-   <tr valign="top"><td> ?</td><td> 4</td><td> C725 </td><td> Info Sec & Assurance </td><td> Exam </td><td> - </td>/tr>
-   <tr valign="top"><td> 2</td><td> 4</td><td> D483 </td><td> Penetration Testing </td><td> ? </td><td> PenTest+ </td>/tr>
-   <tr valign="top"><td> 2</td><td> 4</td><td> D485 </td><td> Cloud Security </td><td> ? </td><td> - </td>/tr>
-   <tr valign="top"><td> 3</td><td> 2</td><td> ? </td><td> Governance, Risk, and Compliance </td><td> ? </td><td> - </td>/tr>
-   <tr valign="top"><td> 3</td><td> 3</td><td> C706 </td><td> Secure Software Design </td><td> Exam </td><td> - </td>/tr>
-   <tr valign="top"><td> 3</td><td> 4</td><td> D488 </td><td> Cybersecurity Architecture & Engineering </td><td> Essay </td><td> - </td>/tr>
-   <tr valign="top"><td> ?</td><td> ?</td><td> C702 </td><td> Forensics and Network Intrusion </td><td> Exam </td><td> - </td>/tr>
-   <tr valign="top"><td> ?</td><td> ?</td><td> C701 </td><td> Ethical Hacking </td><td> Exam (External) </td><td> CEH </td>/tr>
-   <tr valign="top"><td> ?</td><td> 4</td><td> D489 <strike>C727 C795</strike> </td><td> Cybersecurity Mgmt. -  Strategic & Tactical </td><td> Essay + Exam </td><td> - </td>/tr>
-   <tr valign="top"><td> 4</td><td> 4</td><td> D490 <strike>C700</strike> </td><td> Cybersecurity Graduate Capstone </td><td> Essay </td><td> - </td>/tr>
+   <tr><th> Term </th><th> CUs </th><th> ID </th><th> Course Name </th><th> Type </th><th> Certification </th></tr>
+   <tr valign="top"><td> 1</td><td> 2</td><td> D481 </td><td> Security Foundations </td><td> ? </td><td> - </td></tr>
+   <tr valign="top"><td> 1</td><td> 3</td><td> D482 </td><td> Secure Network Design </td><td> ? </td><td> - </td></tr>
+   <tr valign="top"><td> 1</td><td> 4</td><td> D483 </td><td> Security Operations </td><td> ? </td><td> - </td></tr>
+   <tr valign="top"><td> 2</td><td> 4</td><td> D485 </td><td> Cloud Security </td><td> ? </td><td> - </td></tr>
+   <tr valign="top"><td> 2</td><td> 4</td><td> D484 </td><td> Penetration Testing </td><td> ? </td><td> PenTest+ </td></tr>
+
+   <tr valign="top"><td> 3</td><td> 2</td><td> ? </td><td> Governance, Risk, and Compliance </td><td> ? </td><td> - </td></tr>
+   <tr valign="top"><td> 3</td><td> 3</td><td> D? <strike>C706</strike> </td><td> Secure Software Design </td><td> Exam </td><td> - </td></tr>
+   <tr valign="top"><td> 3</td><td> 4</td><td> D488 </td><td> Cybersecurity Architecture & Engineering </td><td> Essay </td><td> - </td></tr>
+
+   <tr valign="top"><td> 4</td><td> 4</td><td> D489 <strike>C727</strike> C795</strike> </td><td> Cybersecurity Mgmt. (Strategic & Tactical) </td><td> Essay + Exam </td><td> CISM </td></tr>
+   <tr valign="top"><td> 4</td><td> 4</td><td> D490 <strike>C700</strike> </td><td> Cybersecurity Graduate Capstone </td><td> Essay </td><td> - </td></tr>
+
+   <tr valign="top"><td> ?</td><td> ?</td><td> <strike>C702 </td><td> Forensics and Network Intrusion </td><td> Exam </td><td> - </td></tr>
+   <tr valign="top"><td> ?</td><td> ?</td><td> <strike>C701</strike> </td><td> Ethical Hacking </td><td> Exam (External) </td><td> CEH </td></tr>
+   <tr valign="top"><td> ?</td><td> 4</td><td> <strike>C725</strike> </td><td> Info Sec & Assurance </td><td> Exam </td><td> - </td></tr>
    </table>
 
    * https://www.youtube.com/watch?v=hUQ5GxSNa2M
+   * <a target="_blank" href="https://www.coursehero.com/sitemap/schools/2387-Western-Governors-University/departments/327319-WGU/?__chid=72d6942a-458b-4bf4-97b7-7d155d74b1cf">CourseHero.com</a>
    <br /><br />
 
 * <a target="_blank" href="https://uww.edu/online/masters/cybersecurity/">University of Wisconsin-Whitewater's  Master of Science in Cybersecurity</a> is all online - $678 per credit hour, 30 credits, 10 courses, 2 years = $20,340.
