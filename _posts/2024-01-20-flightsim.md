@@ -320,6 +320,7 @@ Being a Progressive Web App made it possible for Mac users to play Xbox games an
 
 To mirror your Mac’s screen to a TV using only a wireless connection, JustStream casts media files and video games in any format to almost any kind of TV device out there and customize how you stream by scaling your display to get the best quality, as well as choosing subtitles, encoding, fonts, and colors.
 
+<hr />
 
 ## Aviation terms
 
@@ -350,7 +351,10 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 <a href="#Y">Y</a>
 <a href="#Z">Z</a>
 
-
+From these sites:
+   * https://www.aircharterserviceusa.com/about-us/news-features/blog/an-a-z-of-aviation-definitions
+   <br /><br />
+ 
 <h2 id="A">A</h2>
 
 * AC = Advisory circular

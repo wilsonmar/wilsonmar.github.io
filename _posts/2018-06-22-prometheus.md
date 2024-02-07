@@ -1311,7 +1311,7 @@ https://prometheus.io/docs/instrumenting/writing_exporters/
 
 <strong>Gauge</strong>
 
-   <ul>This metric type is for values which go up and down, such as a gasoline guage in vehicles.
+   <ul>This metric type is for values that go up and down, such as a gasoline guage in vehicles.
    Each guage has a maximum capacity and usually a minimum of zero.
    </ul>
 
@@ -1700,6 +1700,9 @@ The TSDB Status page shows detailed statistics about individual metric names and
 
 https://www.youtube.com/watch?v=TyBsKMTDl1Q
 Prometheus, Alert Manager, Email Notification & Grafana in Kubernetes Monitoring | Merciboi
+
+https://www.youtube.com/watch?v=wFMEoWpVOYw
+Monitoring Docker Containers using Grafana & Prometheus
 
 
 <hr />

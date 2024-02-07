@@ -438,28 +438,36 @@ In it one can select values for its hyper parameters.
 
 DL4j supports most of the deep nets – RBM, DBN, Convolutional net, Recurrent net, RNTN, autoencoders, and vanilla MLP. 
 
+
 ### Deep Learning Frameworks
 
+The list of <a target="_blank" target="https://developer.nvidia.com/deep-learning-frameworks">frameworks today is NVIDIA to make</a> because <a target="_blank" href="<a target="_blank" href="https://docs.nvidia.com/deeplearning/frameworks/index.html">they optimize</a> for their NVIDIA GPU Cloud (NGC) at <a target="_blank" href="https://ngc.nvidia.com">ngc.nvidia.com</a>.
+
+A ranking of Deep Learning frameworks based on GitHub star count in 2017:
 ![analysis-python-ml-650x248-53428](https://user-images.githubusercontent.com/300046/30065446-164df49c-9212-11e7-88e9-95ba672fc9e2.jpg)
-<a target="_blank" href="http://www.cio.com/article/3193689/artificial-intelligence/which-deep-learning-network-is-best-for-you.html">NOTE</a>:
-Here is a ranking of Deep Learning frameworks based on GitHub star count.
 
-<a target=https://developer.nvidia.com/deep-learning-frameworks">NVIDIA's list of frameworks</a>
+Since then, <a target="_blank" href="https://www.knowledgehut.com/blog/data-science/pytorch-vs-tensorflow#what-is%C2%A0tensorflow?%C2%A0">Google's search history shows Pytorch overtaking Tensorflow</a>:
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1707285091/ml-PyTorch-vs-Tensorflow-2_dletll.png"><img src="https://res.cloudinary.com/dcajqrroq/image/upload/v1707285091/ml-PyTorch-vs-Tensorflow-2_dletll.png"></a>
 
-Facebook's Pytorch open-source approach has risen steadily from October, 2018 to become the most people use:
+Facebook/Meta's PyTorch framework rising steadily from October, 2018 to become the one most people use:
 
    * <a target="_blank" href="https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch">On NVIDIA's NGC</a>
    * Based on Torch, another deep learning framework based on Lua
-   * <a target="_blank" href="https://www.alluxio.io/resources/modern-data-platform-excellence-series/pytorch-model-training-performance-tuning-a-comprehensive-guide/">Pytorch perf tuning</a>
+   * Easier to learn and debug its dynamic computational processes
+   * TorchVision, TorchText, TorchAudio, PyTorch-XLA, PyTorch Hub, SpeechBrain, TorchX, TorchElastic and PyTorch Lightning
+   * <a target="_blank" href="https://www.alluxio.io/resources/modern-data-platform-excellence-series/pytorch-model-training-performance-tuning-a-comprehensive-guide/">Pytorch perf tuning</a> is easier due to its reliance on native support for asynchronous execution through Python means optimal performance in data parallelism
+   * Poster projects: CycleGAN, FastAI, Netron
    <br /><br />
 
 TensorFlow AI platform from Google
 
-   * http://www.infoworld.com/article/3127397/artificial-intelligence/review-tensorflow-shines-a-light-on-deep-learning.html
-
+   * TensorFlow 2.0 has Keras integrated, supports dynamic graphs using eager execution
    * When running on CPUs, TensorFlow wraps itself over a low-level library for tensor operations called Eigen. BLAS
    * When running on GPUs, TensorFlow wraps itself over a library of optimized deep learning operations called cuDNN (with CUDA drivers developed by NVIDIA).
+   * TorchServe deployment
+   * TensorFlow Serving, TensorFlow Extended, TF Lite, TensorFlow.js, TensorFlow Cloud, Model Garden, MediaPipe and Coral
    * Google TPU (Tensor Processing Units)
+   * Poster projects: DeepSpeech, Magenta, StellarGraph
 
    * <a target="_blank" href="https://developers.google.com/machine-learning/crash-course/ml-intro">
    Google's Machine Learning Crash Course</a>

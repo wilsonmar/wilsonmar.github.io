@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-21"
+date: "2024-02-06"
 file: "python-samples"
 title: "Python Samples"
 excerpt: "My experiments at coding Python for production use of Vault on AWS, Azure, GCP, in a production setting"
@@ -2289,7 +2289,7 @@ from azure.keyvault.secrets import SecretClient:
 1. As the owner of the key vault, you automatically have access to create secrets. If you need to let another user create secrets:
 
    <pre>az keyvault set-policy \
-  --upn <user-principal-name> \
+  --upn <em>user-principal-name</em> \
   --name ExampleVault \
   --secret-permissions set delete get list
    </pre>
@@ -2314,10 +2314,10 @@ from azure.keyvault.secrets import SecretClient:
 
 1. Assign the custom role above to the user on the resource group level:
 
-   <pre>az role definition create --role-definition "<path-to-role-file>"
+   <pre>az role definition create --role-definition "<em>path-to-role-file</em>"
 az role assignment create \
   --role "Key Vault resource manager template deployment operator" \
-  --assignee <user-principal-name> \
+  --assignee <em>user-principal-name</em> \
   --resource-group ExampleGroup
    </pre>
 
@@ -2523,9 +2523,9 @@ Cloud Endpoints uses one of two open source proxy to provide API management.
    <br /><br />
 one of these Google Cloud Endpoints options to manage/host API and the type of communications protocol your API uses:
 
-    * <a target="_blank" href="https://cloud.google.com/endpoints/docs/frameworks/tutorials">Cloud Endpoints Frameworks</a> for the legacy App Engine v1 standard environment using legacy Java 8 and Python 2.7 runtimes.
-    * <a href="#OpenAPI">Cloud Endpoints for OpenAPI</a> with Cloud Functions must use ESPv2.
-    * <a target="_blank" href="https://cloud.google.com/endpoints/docs/grpc/tutorials">Cloud Endpoints for gRPC</a> can be used by Compute Engine, GKE, etc. through either ESP or ESPv2.
+   * <a target="_blank" href="https://cloud.google.com/endpoints/docs/frameworks/tutorials">Cloud Endpoints Frameworks</a> for the legacy App Engine v1 standard environment using legacy Java 8 and Python 2.7 runtimes.
+   * <a href="#OpenAPI">Cloud Endpoints for OpenAPI</a> with Cloud Functions must use ESPv2.
+   * <a target="_blank" href="https://cloud.google.com/endpoints/docs/grpc/tutorials">Cloud Endpoints for gRPC</a> can be used by Compute Engine, GKE, etc. through either ESP or ESPv2.
     
 <hr />
 
@@ -2619,7 +2619,8 @@ If you are unfamiliar with the OpenAPI Specification, see <a target="_blank" hre
 
     Within the script, <tt>source util.sh</tt> runs the shell file.
 
-    RESPONSE: <pre>Deploying ../openapi.yaml...
+    RESPONSE: 
+    <pre>Deploying ../openapi.yaml...
     gcloud endpoints services deploy ../openapi.yaml
     Waiting for async operation operations/services.ninth-matter-388922.appspot.com-0 to complete...
     Waiting for async operation operations/serviceConfigs.ninth-matter-388922.appspot.com:a9bab33c-b504-4e16-b405-3b4c98555fad to complete...
@@ -2764,16 +2765,16 @@ See https://wilsonmar.github.io/gcp
 8.  Adjust the shell screen area by dragging its edge up.
 9.  PROTIP: Change the prompt from "...@cloudshell":
 
-10.  <tt>pwd</tt> to see the folder path
+10. <tt>pwd</tt> to see the folder path
 
-11.  Get the python-samples.py there by copying this command and pasting in the Cloud Shell.
+11. Get the python-samples.py there by copying this command and pasting in the Cloud Shell.
 
     <pre><strong>git clone https://github.com/wilsonmar/python-samples.git
     cd python-samples
     ls
     </strong></pre>
    
-12.  Open the GCP editor to edit file the enviornment configuration file:
+12. Open the GCP editor to edit file the enviornment configuration file:
 
     <pre><strong>edit python-samples.env</strong></pre>
 
@@ -3655,21 +3656,28 @@ Resources:
    * https://bandit.readthedocs.io/en/latest/plugins/index.html
    <br /><br />
 
-### Knonwn-bad sample Python code
+### Known-bad sample Python code
 
 https://github.com/Contrast-Security-OSS/vulnpy
 is a library of purposely-vulnerable Python functions to install as extensions in a framework (Flask, Django, Pyramid, Falcon, WSGI, Bottle, FastAPI).
 These serve as a foundation for creating insecure web applications, to be used for security testing and demonstration of vulnerability scanners.
 
 
-## Parallel programming
+## Parallel Dask
 
-<a target="_blank" href="https://www.dask.org/">dask.org</a> Futures
-is used to scale Python libraries that you know and love (NumPy, pandas, and scikit-learn).
-Dask is used throughout the PyData ecosystem for parallel processing.
-It is included in many libraries today like Xarray, Prefect, RAPIDS, and XGBoost.
+<a target="_blank" href="https://www.youtube.com/watch?v=nnndxbr_Xq4&list=PLJ0vO2F_f6OABENpQOY4urc6euUlMlHOQ&index=1">VIDEO</a>:
+<a target="_blank" href="https://www.dask.org/">dask.org</a> runs on top of NumPy 
+to scale that Python libraries that you know and love (NumPy, pandas, and scikit-learn).
+Dask is used throughout the PyData ecosystem for <strong>parallel processing</strong>.
+It is included in many libraries today like Xarray, Prefect, NVIDIA RAPIDS, and XGBoost.
 
 Adam Breindel held on OReilly <a target="_blank" href="https://learning.oreilly.com/live-events/scale-your-python-processing-with-dask/0636920310099/0636920080246/">"Scale your Python processing with Dask"</a> Oct. 28, 2022. Dask array; Dask Bag.
+
+It's community-govered and sponsored by NumFOCUS.
+
+Specify <tt>cluster = LocalCluster()</tt> resource manager to use locally.<br />
+Specify <tt>cluster = KubeCluster()</tt> or <tt>cluster = ECSCluster()</tt> to use in clouds.
+
 
 ## AzureML
 

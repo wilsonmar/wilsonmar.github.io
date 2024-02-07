@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-01-25"
+date: "2024-02-06"
 file: "security-certs"
 title: "Security Certifications"
 excerpt: "There are several (overlapping) ones."
@@ -21,8 +21,19 @@ For security professionals, there are several expensive overlapping certificatio
 
 {% include whatever.html %}
 
-This map is from <a target="_blank" href="https://pauljerimy.com/category/book-reviews/">security techo thriller book reviewer</a> <a target="_blank" href="https://pauljerimy.com/security-certification-roadmap/">Paul Jerimy's roadmap</a> at<br />
+This map from <a target="_blank" href="https://pauljerimy.com/category/book-reviews/">security techo thriller book reviewer</a> <a target="_blank" href="https://pauljerimy.com/security-certification-roadmap/">Paul Jerimy</a> at<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1690304615/security-certs-1905x908_lsmbyg.png"><img width="1613" alt="security-cert-landscape" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1690304615/security-certs-1905x908_lsmbyg.png"><br /><em>Click for full screen image.</em></a>
+
+<a target="_blank" href="https://www.cyberseek.org/heatmap.html">cyberseek.org</a> analyzed openings to identify the popularity of certifications requested:
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1707280342/security-certs-requests-528x493_ey78ca.png"><img alt="security-certs-requests-528x493.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1707280342/security-certs-requests-528x493_ey78ca.png"></a>
+  
+  1. ISC2 CISSP
+  2. CompTIA Security+
+  3. CISA (Certified Information Systems Auditor)
+  4. GIAC (Global Information Assurance Certification)
+  5. CISM (Certified Information Security Manager)
+  6. CIPP (Certified Information Privacy Professional)
+
 
 
 ## Other lists:
@@ -1243,7 +1254,10 @@ Hyperconvergence takes convergence a step further by utilizing software to perfo
 
 ### CompTIA CySA+
 
-<a target="_blank" href="https://www.comptia.org/certifications/cybersecurity-analyst">CompTIA CySA+ (CSO-001) "Security Analyst" exam</a> launched April 21, 2020 on Vue & Pearson online $359 to answer 75% of 85 questions in 165 minutes.
+<a target="_blank" href="https://www.comptia.org/certifications/cybersecurity-analyst">CompTIA CySA+ "Security Analyst" exam</a> launched April 21, 2020 on Vue & Pearson online $359 to answer 75% of 85 questions in 165 minutes.
+   * Version CSO-002 was <strong>retired December 2023</strong>
+   * Version CSO-003 launches June 6, 2023
+   <br /><br />
 
 <a target="_blank" href="https://www.infosecinstitute.com/webinar/comptia-cysa-certification-changes-everything-you-need-to-know/?utm_status=success">VIDEO</a>:
 
@@ -1278,7 +1292,9 @@ Hyperconvergence takes convergence a step further by utilizing software to perfo
    2. Given a scenario, apply security concepts in support of organizational risk mitigation
    3. Explain the importance of frameworks, policies, procedures and controls.
    
-<a target="_blank" href="https://www.udemy.com/course/comptiacsaplus/learn/lecture/21082126#overview">Udemy course</a>
+Training:
+   * https://app.cybrary.it/browse/course/comptia-cysa is 35 hours FREE but $59/mo 
+   * <a target="_blank" href="https://www.udemy.com/course/comptiacsaplus/learn/lecture/21082126#overview">Udemy course</a>
 
 <hr />
 

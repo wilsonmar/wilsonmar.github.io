@@ -1,9 +1,9 @@
 ---
 layout: post
-date: "2023-08-08"
+date: "2024-02-05"
 file: "python-tutorials"
 title: "Python Tutorials"
-excerpt: "Who will teach you to code in python"
+excerpt: "Who will teach you to code in Python?"
 tags: [python, apple, mac, setup]
 image:
 # pic white python logo 1900x500.jpg
@@ -312,8 +312,7 @@ of loonycorn.com
 
 <a target="_blank" href="https://app.pluralsight.com/library/courses/play-by-play-zed-shaw/">
 Play by Play: Building a Python Code Stats Tool 
-Apr 28, 2011 1h 51m
-</a>
+Apr 28, 2011 1h 51m</a>
 by Zed Shaw 
 and 
 Geoffrey Grosenbach
@@ -364,13 +363,11 @@ Advanced - Sep 22, 2015 7h 47m</a>
 by Jakub Krompolc
 
 <a target="_blank" href="https://app.pluralsight.com/library/courses/developing-python-tools-nuke-2219">
-Developing Python Tools in NUKE
-Advanced Aug 15, 2015 2h 38m</a>
+Developing Python Tools in NUKE Advanced Aug 15, 2015 2h 38m</a>
 by Simon Jokuschies
 
 <a target="_blank" href="https://app.pluralsight.com/library/courses/introduction-python-scripting-nuke-820">
-Introduction to Python Scripting in NUKE
-- Intermediate - Sep 30, 2012 2h 53m</a>
+Introduction to Python Scripting in NUKE - Intermediate - Sep 30, 2012 2h 53m</a>
 by Chris Glick
 
 <a target="_blank" href="https://app.pluralsight.com/library/courses/nuke-developing-gui-based-tools-production-2549">
@@ -514,7 +511,7 @@ py2app/py2exe
 
 pyInstaller
 
-<a name="
+
 
 ## API
 
@@ -546,6 +543,43 @@ by Christopher Harrison, Program Manager at Microsoft Cloud & AI.
 
 <a target="_blank" href="https://kodekloud.com/community/c/python/18">KodeKloud's Q&A about the Python Entry Level Programmer Certification and Certified Associate in Python Programming</a>
 
+NVIDIA's Fundamentals of Accelerated Computing with CUDA Python
+   * <a target="_blank href="https://courses.nvidia.com/courses/course-v1:DLI+C-AC-02+V1">$90</a> self-paced
+   * <a target="_blank" href="https://www.nvidia.com/en-us/training/instructor-led-workshops/fundamentals-of-accelerated-computing-with-cuda-python/">DLI Instructor-Led</a> when scheduled
+   * During conference on March 19, 2024.
+   <br /><br />
+
+The class covers use of <a target="_blank" href="https://numba.pydata.org/">Numba</a> — the just-in-time, type-specializing Python in Jupyter to accelerate Python code by using NumPy <a target="_blank" href="https://en.wikipedia.org/wiki/CUDA">CUDA</a> universal functions (ufuncs) using GPU kernel  memory management techniques, all within on massively parallel NVIDIA <strong>GPUs</strong>. 
+
+One student's <a target="_blank" href="https://github.com/AydinAlptug/Fundamentals-of-Accelerated-Computing-with-CUDA-Python">course GitHub:<br />
+<img src="https://github.com/AydinAlptug/Fundamentals-of-Accelerated-Computing-with-CUDA-Python/blob/main/Introduction%20to%20CUDA%20Python%20with%20Numba/images/numba_flowchart.png?raw=true"></a>
+   * https://numba.readthedocs.io/en/stable/cuda/index.html
+   * https://www.kaggle.com/discussions/general/274291
+   <br /><br />
+
+Structure
+Module 1 -- Introduction to CUDA Python with Numba [<a target="_blank" href="https://www.kaggle.com/harshwalia/1-introduction-to-cuda-python-with-numba">Notebook</a>]
+   * Begin working with the Numba compiler and CUDA programming in Python.
+   * Use Numba decorators to GPU-accelerate numerical Python functions.
+   * Optimize host-to-device and device-to-host memory transfers.
+   <br /><br />
+Module 2 -- Custom CUDA Kernels in Python with Numba [<a target="_blank" href="https://www.kaggle.com/harshwalia/2-custom-cuda-kernels-in-python-with-numba">Notebook</a>]
+   * Learn CUDA’s parallel thread hierarchy and how to extend parallel program possibilities.
+   * Launch massively parallel custom CUDA kernels on the GPU.
+   * Utilize CUDA atomic operations to avoid race conditions during parallel execution.
+   <br /><br />
+Module 3 -- Multidimensional Grids, and Shared Memory for CUDA Python with Numba [<a target="_blank" href="https://www.kaggle.com/harshwalia/3-multidimensional-grids-shared-memory-for-cuda">Notebook</a>]
+   * Learn multidimensional grid creation and how to work in parallel on 2D matrices.
+   * Leverage on-device shared memory to promote memory coalescing while reshaping 2D matrices.
+   <br /><br />
+
+<tt>@JIT</tt> notes that <a target="_blank" href="http://numba.pydata.org/">Numba</a> is a <strong>Just-In-Time</strong> function.
+
+https://www.nvidia.com/en-us/training/instructor-led-workshops/fundamentals-of-accelerated-computing-with-cuda-python/
+
+
+https://learning.oreilly.com/library/view/learn-python-the/9780138270711/
+Learn Python the Hard Way: A Deceptively Simple Introduction to the Terrifyingly Beautiful World of Computers and Data Science, 5th Edition Feb 2024 By Zed A. Shaw
 
 ## More on Python
 

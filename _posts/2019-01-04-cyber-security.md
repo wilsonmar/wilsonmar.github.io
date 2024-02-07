@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-02-01"
+date: "2024-02-06"
 file: "cyber-security"
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
@@ -3552,7 +3552,19 @@ AKA Application Security Manager. Can be configured as a reverse proxy that acce
 
 <hr />
 
-<!-- ## Security Bootcamps 
+## Security Bootcamps Projects
+
+https://upskilltocyber.com/ by 
+https://www.youtube.com/watch?v=JzEeK8JcgpU">Nicole 
+
+https://www.youtube.com/watch?v=7Tiq0mfXcH8
+5 FREE Cybersecurity Projects (Home Labs) by MyDFIR
+
+https://www.cyberseek.org/heatmap.html
+
+
+
+<!--
 ## Security Conventions (black hat)
 ### CISO-targeted
 https://www.pulseconferences.com/
@@ -3573,6 +3585,21 @@ https://www.pulseconferences.com/
    * CompTIA PenTest+
    * CompTIA Advanced Security Practioner (CASP+)
    * ISACA Certified Information Security Manager (CISM)
+   <br /><br />
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr><th> ID </th><th> Name </th><th> Type </th><th> Certification </th></tr>
+   <tr valign="top"><td> C725 </td><td> Info Sec & Assurance </td><td> Exam </td><td> - </td>/tr>
+   <tr valign="top"><td> C706 </td><td> Secure Software Design </td><td> Exam </td><td> - </td>/tr>
+   <tr valign="top"><td> C726 </td><td> Cybersecurity Architecture & Engineering </td><td> Essay </td><td> - </td>/tr>
+   <tr valign="top"><td> C702 </td><td> Forensics and Network Intrusion </td><td> Exam </td><td> - </td>/tr>
+   <tr valign="top"><td> C701 </td><td> Ethical Hacking </td><td> Exam (External) </td><td> CEH </td>/tr>
+   <tr valign="top"><td> C727 </td><td> Cybersecurity Mgmt. I - Strategic </td><td> Essay + Exam </td><td> - </td>/tr>
+   <tr valign="top"><td> C795 </td><td> Cybersecurity Mgmt. I - Tactical </td><td> Essay + Exam </td><td> - </td>/tr>
+   <tr valign="top"><td> C700 </td><td> Secure Network Design </td><td> Essay </td><td> - </td>/tr>
+   </table>
+
+   * https://www.youtube.com/watch?v=hUQ5GxSNa2M
    <br /><br />
 
 * <a target="_blank" href="https://uww.edu/online/masters/cybersecurity/">University of Wisconsin-Whitewater's  Master of Science in Cybersecurity</a> is all online - $678 per credit hour, 30 credits, 10 courses, 2 years = $20,340.
