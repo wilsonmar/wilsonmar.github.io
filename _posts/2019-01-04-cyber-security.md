@@ -3592,26 +3592,32 @@ https://www.pulseconferences.com/
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr><th> Term </th><th> CUs </th><th> ID </th><th> Course Name </th><th> Type </th><th> Certification </th></tr>
-   <tr valign="top"><td> 1</td><td> 2</td><td> D481 </td><td> Security Foundations </td><td> ? </td><td> - </td></tr>
+   <tr valign="top"><td> 1</td><td> 2</td><td> D481 </td><td> Security Foundations </td><td> ? </td><td> ISC2 CC, Network+, Security+, CASP+, SSCP, CISSP, CISM, GSEC </td></tr>
    <tr valign="top"><td> 1</td><td> 3</td><td> D482 </td><td> Secure Network Design </td><td> ? </td><td> - </td></tr>
-   <tr valign="top"><td> 1</td><td> 4</td><td> D483 </td><td> Security Operations </td><td> ? </td><td> - </td></tr>
+   <tr valign="top"><td> 1</td><td> 4</td><td> D483 </td><td> Security Operations </td><td> ? </td><td> CySA+, ECIH, GCIH </td></tr>
    <tr valign="top"><td> 2</td><td> 4</td><td> D485 </td><td> Cloud Security </td><td> ? </td><td> - </td></tr>
    <tr valign="top"><td> 2</td><td> 4</td><td> D484 </td><td> Penetration Testing </td><td> ? </td><td> PenTest+ </td></tr>
 
-   <tr valign="top"><td> 3</td><td> 2</td><td> ? </td><td> Governance, Risk, and Compliance </td><td> ? </td><td> - </td></tr>
-   <tr valign="top"><td> 3</td><td> 3</td><td> D? <strike>C706</strike> </td><td> Secure Software Design </td><td> Exam </td><td> - </td></tr>
-   <tr valign="top"><td> 3</td><td> 4</td><td> D488 </td><td> Cybersecurity Architecture & Engineering </td><td> Essay </td><td> - </td></tr>
+   <tr valign="top"><td> 3</td><td> 2</td><td> D486 </td><td> Governance, Risk, and Compliance </td><td> ? </td><td> - </td></tr>
+   <tr valign="top"><td> 3</td><td> 3</td><td> D487 <strike>C706</strike> </td><td> Secure Software Design </td><td> Exam </td><td> - </td></tr>
+   <tr valign="top"><td> 3</td><td> 4</td><td> D488 </td><td> Cybersecurity Architecture & Engineering </td><td> Essay </td><td> CASP+ </td></tr>
 
-   <tr valign="top"><td> 4</td><td> 4</td><td> D489 <strike>C727</strike> C795</strike> </td><td> Cybersecurity Mgmt. (Strategic & Tactical) </td><td> Essay + Exam </td><td> CISM </td></tr>
+   <tr valign="top"><td> 4</td><td> 4</td><td> D489 <strike>C727 C795</strike> </td><td> Cybersecurity Mgmt. (Strategic & Tactical) </td><td> Essay + Exam </td><td> CISM </td></tr>
    <tr valign="top"><td> 4</td><td> 4</td><td> D490 <strike>C700</strike> </td><td> Cybersecurity Graduate Capstone </td><td> Essay </td><td> - </td></tr>
 
-   <tr valign="top"><td> ?</td><td> ?</td><td> <strike>C702 </td><td> Forensics and Network Intrusion </td><td> Exam </td><td> - </td></tr>
+   <tr valign="top"><td> ?</td><td> ?</td><td> <strike>C702/strike> </td><td> Forensics and Network Intrusion </td><td> Exam </td><td> - </td></tr>
    <tr valign="top"><td> ?</td><td> ?</td><td> <strike>C701</strike> </td><td> Ethical Hacking </td><td> Exam (External) </td><td> CEH </td></tr>
    <tr valign="top"><td> ?</td><td> 4</td><td> <strike>C725</strike> </td><td> Info Sec & Assurance </td><td> Exam </td><td> - </td></tr>
    </table>
 
+   * https://www.reddit.com/r/WGUCyberSecurity/
    * https://www.youtube.com/watch?v=hUQ5GxSNa2M
    * <a target="_blank" href="https://www.coursehero.com/sitemap/schools/2387-Western-Governors-University/departments/327319-WGU/?__chid=72d6942a-458b-4bf4-97b7-7d155d74b1cf">CourseHero.com</a>
+   <br /><br />
+
+   Those who gradated:
+   * https://www.linkedin.com/in/thuatuanlee
+   * https://www.linkedin.com/in/travis-w-duncan
    <br /><br />
 
 * <a target="_blank" href="https://uww.edu/online/masters/cybersecurity/">University of Wisconsin-Whitewater's  Master of Science in Cybersecurity</a> is all online - $678 per credit hour, 30 credits, 10 courses, 2 years = $20,340.
