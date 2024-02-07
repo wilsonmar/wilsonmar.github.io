@@ -3605,17 +3605,18 @@ https://www.pulseconferences.com/
    <tr valign="top"><td> 4</td><td> 4</td><td> D489 <strike>C727 C795</strike> </td><td> Cybersecurity Mgmt. (Strategic & Tactical) </td><td> Essay + Exam </td><td> CISM </td></tr>
    <tr valign="top"><td> 4</td><td> 4</td><td> D490 <strike>C700</strike> </td><td> Cybersecurity Graduate Capstone </td><td> Essay </td><td> - </td></tr>
 
-   <tr valign="top"><td> ?</td><td> ?</td><td> <strike>C702/strike> </td><td> Forensics and Network Intrusion </td><td> Exam </td><td> - </td></tr>
+   <tr valign="top"><td> ?</td><td> ?</td><td> <strike>C702</strike> </td><td> Forensics and Network Intrusion </td><td> Exam </td><td> - </td></tr>
    <tr valign="top"><td> ?</td><td> ?</td><td> <strike>C701</strike> </td><td> Ethical Hacking </td><td> Exam (External) </td><td> CEH </td></tr>
    <tr valign="top"><td> ?</td><td> 4</td><td> <strike>C725</strike> </td><td> Info Sec & Assurance </td><td> Exam </td><td> - </td></tr>
    </table>
 
    * https://www.reddit.com/r/WGUCyberSecurity/
+   * https://socialgrep.com/search?query=mscsia
    * https://www.youtube.com/watch?v=hUQ5GxSNa2M
    * <a target="_blank" href="https://www.coursehero.com/sitemap/schools/2387-Western-Governors-University/departments/327319-WGU/?__chid=72d6942a-458b-4bf4-97b7-7d155d74b1cf">CourseHero.com</a>
    <br /><br />
 
-   Those who gradated:
+   Those who graduated:
    * https://www.linkedin.com/in/thuatuanlee
    * https://www.linkedin.com/in/travis-w-duncan
    <br /><br />
