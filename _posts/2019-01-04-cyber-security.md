@@ -3572,7 +3572,8 @@ https://www.pulseconferences.com/
 -->
 ## Masters Degrees
 
-* <a target="_blank" href="https://www.wgu.edu/online-it-degrees/cybersecurity-information-assurance-masters-program.html">Western Governors University</a> Masters in Cybersecurity can be obtained <strong>online</strong> and for a lot less than others at $4,555 per 6-month term for as many courses as you can complete during that time. They say 70% graduate within 21 months (5 terms) for $18,220. <a target="_blank" href="https://www.youtube.com/watch?v=hUQ5GxSNa2M" title="Josh Madakor">VIDEO</a>
+* <a target="_blank" href="https://www.wgu.edu/online-it-degrees/cybersecurity-information-assurance-masters-program.html">Western Governors University</a> Masters in Cybersecurity can be obtained <strong>online</strong> and for a lot less than others at $4,555 per 6-month term for as many courses as you can complete during that time. They say 70% graduate within 21 months (5 terms) for $18,220 plus MSCSIA eBook & Resource Fee $200.00. There is a one-time MSCSIA Program Fee $150.
+
 
    Their curriculum is aligned to:
    * <a target="_blank" href="https://niccs.cisa.gov/workforce-development/nice-framework">NICE Workforce Framework</a> of <a target="_blank" href="https://public.cyber.mil/wid/pathways/">pathway job titles</a> and <a target="_blank" href="https://trycyber.us/challenges/">tasks</a>
@@ -3612,8 +3613,8 @@ https://www.pulseconferences.com/
 
    * https://www.reddit.com/r/WGUCyberSecurity/
    * https://socialgrep.com/search?query=mscsia
-   * https://www.youtube.com/watch?v=hUQ5GxSNa2M
    * <a target="_blank" href="https://www.coursehero.com/sitemap/schools/2387-Western-Governors-University/departments/327319-WGU/?__chid=72d6942a-458b-4bf4-97b7-7d155d74b1cf">CourseHero.com</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=hUQ5GxSNa2M" title="Josh Madakor">VIDEO</a> says he graduated in one term.
    <br /><br />
 
    Those who graduated:
