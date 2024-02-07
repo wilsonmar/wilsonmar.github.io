@@ -2,9 +2,9 @@
 layout: post
 date: "2023-09-22"
 file: "aws-certifications"
-title: "AWS (Professional) Certifications"
+title: "AWS Certifications"
 excerpt: "Tips and tricks to get certified: links to tutorials, videos, practice exams."
-tags: [AWS, EC2, cloud, on-boarding]
+tags: [AWS, EC2, cloud, onboarding]
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
@@ -96,7 +96,13 @@ Associate exams has just "design".
 
 * <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-data-analytics-specialty/AWS-Certified-Data-Analytics-Specialty_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-data-analytics-specialty/">$300, 170-minute <br />AWS Certified Data Analytics - Specialty</a>
 
-* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-ml/AWS-Certified-Machine-Learning-Specialty_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-machine-learning-specialty/">$300 to answer 65 questions in 180-minute <br />AWS Certified Machine Learning - Specialty</a>
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-ml/AWS-Certified-Machine-Learning-Specialty_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-machine-learning-specialty/">$300 to answer 65 questions in 180-minute <br />AWS Certified Machine Learning - Specialty MLS-C01</a> [<a target="_blank" href="https://api.certmetrics.com/amazon/sso/egress/vue?e=MLS-C01&language=en">Schedule</a>]
+
+   3-day classes:
+   * <a target="_blank" href="https://www.aws.training/SessionSearch?pageNumber=1&courseId=95049&languageId=1">MLOps Engineering on AWS</a>
+   * <a target="_blank" href="https://www.aws.training/SessionSearch?courseId=95310&languageId=1">Amazon SageMaker Studio for Data Scientists</a>
+   * <a target="_blank" href="https://www.aws.training/SessionSearch?pageNumber=1&courseId=95049&languageId=1">Amazon SageMaker Studio for Data Scientists</a>
+   <br /><br />
 
 * <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Specialty_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-security-specialty/">$300 to answer 65 questions in 170-minute <br />AWS Certified Security - Specialty SCS-C01</a>
    * <a target="_blank" href="https://app.pluralsight.com/paths/certificate/aws-certified-security-specialty">Pluralsight</a>

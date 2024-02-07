@@ -69,6 +69,8 @@ After you have installed Homebrew for the brew command (see below):
 
 <a target="_blank" href="https://github.com/orgs/Homebrew/discussions/categories/writing-formulae-casks?discussions_q=is%3Aopen+category%3A%22Writing+Formulae%2FCasks%22+">Discussion forum about Writing Formulae/Casks</a>
 
+<tt>export HOMEBREW_NO_INSTALL_FROM_API=1</tt> before installing.
+
 1. For example:
 
    <pre><strong>brew install prometheus</strong></pre>

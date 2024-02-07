@@ -29,9 +29,9 @@ This map from <a target="_blank" href="https://pauljerimy.com/category/book-revi
   
   1. ISC2 CISSP
   2. CompTIA Security+
-  3. CISA (Certified Information Systems Auditor)
-  4. GIAC (Global Information Assurance Certification)
-  5. CISM (Certified Information Security Manager)
+  3. ISACA CISA (Certified Information Systems Auditor)
+  4. SANS GIAC (Global Information Assurance Certification)
+  5. ISACA CISM (Certified Information Security Manager)
   6. CIPP (Certified Information Privacy Professional)
 
 
@@ -314,7 +314,7 @@ There is a 5 year experience requirement, attested by other professionals after 
 
 The CISSP has 3 different <strong>concentrations</strong>:
 
-* ISSAP = Architecture
+* <a target="_blank" href="https://www.isc2.org/certifications/issap">ISSAP</a> = Architecture
    1. Architect for Governance, Compliance and Risk Management
    2. Security Architecture Modeling
    3. Infrastructure Security Architecture
@@ -323,7 +323,7 @@ The CISSP has 3 different <strong>concentrations</strong>:
    6. Security Operations Architecture
    <br /><br />
    
-* ISSEP = Engineering
+* <a target="_blank" href="https://www.isc2.org/certifications/issap">ISSEP</a> = Engineering
    1. Systems Security Engineering Foundations
    2. Risk Management
    3. Security Planning and Design
@@ -331,7 +331,7 @@ The CISSP has 3 different <strong>concentrations</strong>:
    5. Secure Operations, Change Management and Disposal
    <br /><br />
 
-* ISSMP = Management
+* <a target="_blank" href="https://www.isc2.org/certifications/issmp">ISSMP</a> = Management Professional
    1. Leadership and Business Management
    2. Systems Lifecycle Management
    3. Risk Management
@@ -706,7 +706,7 @@ They offer a $5,499/year bundle for unlimited labs and exam attempts.
 
 <hr />
 
-## SANS
+## SANS GIAC
 
 SANS formed the Global Information Assurance Certification (GIAC) program to act as the certification arm for its training courses.
 GIAC has a <a target="_blank" href="https://www.giac.org/certifications/get-certified/roadmap">roadmap</a>
