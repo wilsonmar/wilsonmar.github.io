@@ -3587,16 +3587,22 @@ https://www.pulseconferences.com/
    * ISACA Certified Information Security Manager (CISM)
    <br /><br />
 
+   <a target="_blank" href="https://www.wgu.edu/online-it-degrees/cybersecurity-information-assurance-masters-program/program-guide.html">10 classes</a>:
+
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr><th> ID </th><th> Name </th><th> Type </th><th> Certification </th></tr>
-   <tr valign="top"><td> C725 </td><td> Info Sec & Assurance </td><td> Exam </td><td> - </td>/tr>
-   <tr valign="top"><td> C706 </td><td> Secure Software Design </td><td> Exam </td><td> - </td>/tr>
-   <tr valign="top"><td> C726 </td><td> Cybersecurity Architecture & Engineering </td><td> Essay </td><td> - </td>/tr>
-   <tr valign="top"><td> C702 </td><td> Forensics and Network Intrusion </td><td> Exam </td><td> - </td>/tr>
-   <tr valign="top"><td> C701 </td><td> Ethical Hacking </td><td> Exam (External) </td><td> CEH </td>/tr>
-   <tr valign="top"><td> C727 </td><td> Cybersecurity Mgmt. I - Strategic </td><td> Essay + Exam </td><td> - </td>/tr>
-   <tr valign="top"><td> C795 </td><td> Cybersecurity Mgmt. I - Tactical </td><td> Essay + Exam </td><td> - </td>/tr>
-   <tr valign="top"><td> C700 </td><td> Secure Network Design </td><td> Essay </td><td> - </td>/tr>
+   <tr><th> ID </th><th> Term </th><th> CUs </th><th> Name </th><th> Type </th><th> Certification </th></tr>
+   <tr valign="top"><td> 1</td><td> 2</td><td> D482 </td><td> Secure Network Design </td><td> ? </td><td> - </td>/tr>
+   <tr valign="top"><td> 1</td><td> 4</td><td> D483 </td><td> Security Operations </td><td> ? </td><td> - </td>/tr>
+   <tr valign="top"><td> ?</td><td> 4</td><td> C725 </td><td> Info Sec & Assurance </td><td> Exam </td><td> - </td>/tr>
+   <tr valign="top"><td> 2</td><td> 4</td><td> D483 </td><td> Penetration Testing </td><td> ? </td><td> PenTest+ </td>/tr>
+   <tr valign="top"><td> 2</td><td> 4</td><td> D485 </td><td> Cloud Security </td><td> ? </td><td> - </td>/tr>
+   <tr valign="top"><td> 3</td><td> 2</td><td> ? </td><td> Governance, Risk, and Compliance </td><td> ? </td><td> - </td>/tr>
+   <tr valign="top"><td> 3</td><td> 3</td><td> C706 </td><td> Secure Software Design </td><td> Exam </td><td> - </td>/tr>
+   <tr valign="top"><td> 3</td><td> 4</td><td> D488 </td><td> Cybersecurity Architecture & Engineering </td><td> Essay </td><td> - </td>/tr>
+   <tr valign="top"><td> ?</td><td> ?</td><td> C702 </td><td> Forensics and Network Intrusion </td><td> Exam </td><td> - </td>/tr>
+   <tr valign="top"><td> ?</td><td> ?</td><td> C701 </td><td> Ethical Hacking </td><td> Exam (External) </td><td> CEH </td>/tr>
+   <tr valign="top"><td> ?</td><td> 4</td><td> D489 <strike>C727 C795</strike> </td><td> Cybersecurity Mgmt. -  Strategic & Tactical </td><td> Essay + Exam </td><td> - </td>/tr>
+   <tr valign="top"><td> 4</td><td> 4</td><td> D490 <strike>C700</strike> </td><td> Cybersecurity Graduate Capstone </td><td> Essay </td><td> - </td>/tr>
    </table>
 
    * https://www.youtube.com/watch?v=hUQ5GxSNa2M

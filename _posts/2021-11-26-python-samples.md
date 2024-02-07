@@ -3667,7 +3667,9 @@ These serve as a foundation for creating insecure web applications, to be used f
 
 <a target="_blank" href="https://www.youtube.com/watch?v=nnndxbr_Xq4&list=PLJ0vO2F_f6OABENpQOY4urc6euUlMlHOQ&index=1">VIDEO</a>:
 <a target="_blank" href="https://www.dask.org/">dask.org</a> runs on top of NumPy 
-to scale that Python libraries that you know and love (NumPy, pandas, and scikit-learn).
+to scale Python libraries NumPy, pandas, and scikit-learn.
+Dask is included by default in Anaconda. You can also install Dask with Pip, or you have several options for installing from source. You can also use Conda to update Dask or to do a minimal Dask install.
+
 Dask is used throughout the PyData ecosystem for <strong>parallel processing</strong>.
 It is included in many libraries today like Xarray, Prefect, NVIDIA RAPIDS, and XGBoost.
 

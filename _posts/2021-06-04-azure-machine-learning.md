@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-10-06"
+date: "2024-02-06"
 file: "azure-machine-learning"
 title: "Azure Machine Learning"
 excerpt: "Automate ML workflows in the Azure PaaS cloud, so you can get certified in AI-900, AI-102, and DP-100"
@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This article presents my notes toward a guided tour to introduce use of <strong>Azure Machine Learning</strong> offerings running on Microsoft's  Azure cloud.
+This article presents my notes toward a guided tour to introduce use of <strong>Azure Machine Learning</strong> offerings running on Microsoft's Azure cloud.
 
 {% include whatever.html %}
 
@@ -68,7 +68,11 @@ See https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure
 See <a target="_blank" href="https://wilsonmar.github.io/azure-quickly/">my instructions</a> about:
 
 1. Get an account and roles: 
-1. Install the CLI: <tt>az extension add -n ml -y</tt>
+1. Install the CLI: 
+
+   <pre><strong>az extension add -n ml -y
+   </strong></pre>
+
 1. Login the console:
 1. Select the Azure subscription to use.
 
@@ -818,7 +822,8 @@ References:
    <br /><br />
 
 NOTE:
-   <a target="_blank" href="https://jupyterlab.readthedocs.io/"JypiterLab</a> is <a target="_blank" href="https://towardsdatascience.com/jupyter-lab-evolution-of-the-jupyter-notebook-5297cacde6b">more robust than classic Jupyper</a>:
+   <a target="_blank" href="https://jupyterlab.readthedocs.io/">JypiterLab</a> is <a target="_blank" href="https://towardsdatascience.com/jupyter-lab-evolution-of-the-jupyter-notebook-5297cacde6b">more robust than classic Jupyper</a>:
+
    * Native Git and GitHub support - https://github.com/jupyterlab/jupyterlab
    * Extensible with <tt>jupyter labextensions install jupyterlab-drawio</tt>
    * Google Drive
