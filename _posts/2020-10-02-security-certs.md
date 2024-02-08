@@ -51,7 +51,7 @@ This map from <a target="_blank" href="https://pauljerimy.com/category/book-revi
 
 <hr />
 
-## CCSK (Cloud Security Alliance Certificate of Security Knowledge)
+## CCSK
 
 <a target="_blank" href="https://cloudsecurityalliance.org/education/ccsk/">The Certificate of Cloud Security Knowledge (CCSK)</a> is marketed as a complement to other credentials (CCAK, CISA, CISSP, CCSP) by the Seattle-based <a target="_blank" href="https://cloudsecurityalliance.org/">Cloud Security Alliance (CSA)</a> which also markets <a target="_blank" href="https://cloudsecurityalliance.org/education/#_ccsk">training</a>. 
 
@@ -243,6 +243,8 @@ https://my.isc2.org/s/Candidate-Benefits/1MCC-Online-Self-Paced
 
 <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$249 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/SSCP">SSCP (Systems Security Certified Practitioner)</a>
 
+"Similar to Security+. Prepares you to take the CISSP."
+
 ### CGRC
 
 <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CGRC">CGRC (Certified Government Risk and Compliance) professional</a> -- previously CAP (Certified Authorization Professionl) until Feb 23, 2023 -- is for individuals with 2+ years of experience being responsible for the implementation and management of information security risk management and compliance programs. Pass 70% of 125 questons over 3 hours at a <a target="_blank" href="https://www.pearsonvue.com/isc2/">Pearson VUE Testing Center</a>.
@@ -371,9 +373,9 @@ Links to each CISSP domains contains a link to his tutorial on that domain.
 
 Parentheses in domain names contain words removed in the 2023 version of CISSP.
 
-   "Every domains are interconnected. It's swimming with overlap."
+   "Every domain is interconnected. It's swimming with overlap."
 
-Official Flash cards of definitions:
+Official flash cards of definitions:
 
    1. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Security-and-Risk-Management"> The Information Security Environment</a> - 18 items
    2. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Asset-Security">Information Asset Security</a> - 17 items
@@ -572,8 +574,10 @@ Suggestions:
 
 ### CCSP
 
-<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CCSP">CCSP (Certified Cloud Security Professional)</a>. The Aug 2022 upgrade went to 150 questions in <strong>4 hours</strong> (from 3). 
-Results are Pass/Fail, but you must score at least 70% in EACH separate domain:
+<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CCSP">CCSP (Certified Cloud Security Professional)</a>. 
+
+The Aug 2022 upgrade went to 150 questions in <strong>4 hours</strong> (from 3). 
+Results are Pass/Fail, but you must score at least 70% in EACH separate vendor neutral domain:
 
    * 17% Cloud Concepts, Architecture and Design
    * 19% Cloud Data Security
@@ -1113,24 +1117,25 @@ https://www.whizlabs.com/comptia-pentest/
 
 ### CompTIA CASP+
 
-CASP+ satisfies <a target="_blank" href="https://public.cyber.mil/cw/cwmp/dod-approved-8570-baseline-certifications/">Baseline Certification for DoD IAT (Information Assurance Technical) Level III</a>, IAM (Information Assurance Management) Level II, and IASAE (Information Assurance Security Architecture and Engineering) level I and II jobs.
-
-First pass CompTIA Network+ and Security+ certifications.
+For those who have pass CompTIA Network+ and Security+ certifications:
 
 <a target="_blank" href="https://www.comptia.org/certifications/comptia-advanced-security-practitioner">
 CompTIA CASP+ (CompTIA Advanced Security Practioner) exam CAS-004</a> is for practitioners — not managers — at the advanced skill level of cybersecurity -- implementing solutions policies and frameworks. 
+
+CASP+ satisfies <a target="_blank" href="https://public.cyber.mil/cw/cwmp/dod-approved-8570-baseline-certifications/">Baseline Certification for DoD IAT (Information Assurance Technical) Level III</a>, IAM (Information Assurance Management) Level II, and IASAE (Information Assurance Security Architecture and Engineering) level I and II jobs.
 
 <a target="_blank" href="https://www.comptia.org/testing/testing-options/about-comptia-performance-exams/performance-based-questions-explained">Performance-based questions (PBQs)</a> test a candidate’s ability to solve problems in a simulated environment that approximates a virtual environment with a firewall, network diagram, terminal window, or operating system.
 
 At $396 for CompTIA members or $466 USD (or $799 with retake and $849 with Labs), you'll have 165 minutes (2.5 hours) to answer 90 multiple-choice and <strong>"hands-on, performance-based"</strong> questions, for pass/fail grading. The domains:
 
-   1. 19% Risk Management  
+   1. 19% <a href="CASP-Risk">Risk Management</a>
    2. 25% Enterprise Security Architecture  
    3. 20% Enterprise Security Operations  
    4. 23% Technical Integration of Enterprise Security  
    5. 13% Research, Development, and Collaboration 
    <br /><br />
 
+<a name="CASP-Risk"></a>
 
 1. Risk Management
 
@@ -1802,6 +1807,29 @@ Network software vendors have affordable certifications:
 * <a target="_blank" href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert/ccie-security.html">$2,050 Cisco Certified Implementation Expert - Security (CCIE Sec)</a>
 
 * <a target="_blank" href="https://www.splunk.com/en_us/training/certification-track/splunk-es-certified-admin.html">$130 Splunk Enterprise Security Certified Administrator (Splunk ECSA)</a> - 61 questions in 60 minutes
+
+
+<hr />
+
+## TCM Academy
+
+<a target="_blank" href="https://academy.tcm-sec.com/">TCM Academy</a> is a for-profit entity which makes money by providing both training and certification on generic security topics, from $24.99/month.
+
+Entry-Level Certifications:
+
+   * <a target="_blank" href="https://certifications.tcm-sec.com/pjpt/">$199 PJPT</a> (Practical Junior Penetration Tester) assesses the ability of a beginner-level student's ability to perform an <strong>internal network penetration test</strong> at an associate level. Students have two (2) full days to complete the assessment and an additional two (2) days to write a professional report.
+
+   * <a target="_blank" href="https://certifications.tcm-sec.com/pjwt/">$199 PJWT</a> (Practical Junior Web Tester) assessing a beginner-level student’s ability to perform a <strong>web application penetration test</strong> at an associate level.
+
+   * <a target="_blank" href="https://certifications.tcm-sec.com/pjmt/">$199 PJMT</a> (Practical Junior Mobile Tester) assesses a student’s ability to perform mobile application penetration tests at a junior level.
+
+Intermediate-Level Certifications:
+
+   * <a target="_blank" href="https://certifications.tcm-sec.com/pnpt/">$999 PNPT</a> (Practical Network Penetration Tester) simulates a real-world pentest engagement from start to finish.
+ 
+   * <a target="_blank" href="https://certifications.tcm-sec.com/pjmr/">$199 PJMR</a> (Practical Junior Malware Researcher) is focused on Malware Analysis, Research, and Triage, assessing the mastery of the art and science of malware analysis. 
+
+   * <a target="_blank" href="https://certifications.tcm-sec.com/pcrp/">$199 PCRP</a> (Practical Career-Ready Professional) is a real-world job application and interview experience. Students will learn practical soft and communication skills that employers are looking for combined with personal branding and stand-out skills.
 
 <hr />
 
