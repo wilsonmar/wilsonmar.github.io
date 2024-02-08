@@ -282,7 +282,10 @@ As of this writing, in various marketing and certification training <a target="_
       </td><td> <a target="_blank" href="https://westus2.dev.cognitive.microsoft.com/docs/services/personalizer-api/operations/Rank">API</a>       
       </td></tr>
 
-   <tr valign="top"><td colspan="4" align="center"> <a name="SearchServices"></a><a href="#SearchServices">Search</a>
+   <tr valign="top"><td colspan="4" align="center"> <a name="SearchServices"></a><a href="#Search">Search</a>
+      </td></tr>
+   <tr valign="top"><td> ? </td><td> Microsoft Bing (Applications)
+      </td><td> ?
       </td></tr>
    <tr align="top"><td> <a target="_blank" href="https://www.microsoft.com/en-us/bing/apis">Features</a> </td><td> "Bing.CustomSearch"
       (UNLISTED)
@@ -297,11 +300,12 @@ As of this writing, in various marketing and certification training <a target="_
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-search/">AI Search</a> </td><td> Cognitive Search (Applied AI)
       </td><td> ?
       </td></tr>
-   <tr valign="top"><td> ? </td><td> Microsoft Bing (Applications)
-      </td><td> ?
+
+   <tr valign="top"><td colspan="4" align="center"> <a name="OtherServices"></a><a href="#Other">Other</a>
       </td></tr>
 
-   <tr valign="top"><td colspan="4" align="center"> <a name="OtherServices"></a><a href="#OtherServices">Other</a>
+   <tr valign="top"><td> ? </td><td> <a href="#KnowledgeMining">KnowledgeMining</a> (UNLISTED)
+      </td><td> ?
       </td></tr>
    <tr valign="top"><td> ? </td><td> "HealthInsights"
       </td><td> ?
@@ -314,13 +318,15 @@ As of this writing, in various marketing and certification training <a target="_
       </td></tr>
    </table>
 
+Links are provided for each service to its Features and API/SDK pages.
+
 <hr />
 
 <a name="Pricing"></a>
 
 ## Pricing
 
-PROTIP: The table above groups each kind of cognitive AI service above along with how many FREE transactions Microsoft provides for each service on its <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">Cognitive Services pricing page</a>. Links are also provided to Features and API for each service.
+PROTIP: The table above groups each kind of cognitive AI service above along with how many FREE transactions Microsoft provides for each service on its <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">Cognitive Services pricing page</a>. 
 
 * <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/">Azure OpenAI Service</a> = Power your apps with large-scale AI models.
 * <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/search/">Azure AI Search</a> = Enterprise scale search for app development.
@@ -710,19 +716,8 @@ PROTIP: Unlike the AI-100 (which uses Python Notebooks), <a target="_blank" href
    * Create a composed Document Intelligence model
    <br /><br />
 
-* https://microsoftlearning.github.io/mslearn-knowledge-mining/ 
-   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-knowledge-mining">https://github.com/MicrosoftLearning/mslearn-knowledge-mining</a>
-   * Create an Azure AI Search solution
-   * Create a Custom Skill for Azure AI Search
-   * Create a Knowledge Store with Azure AI Search
-   * Enrich an AI search index with custom classes
-   * Implement enhancements to search results
-   * Enrich a search index using Azure Machine Learning model
-   * Add to an index using the push API
-   * Debug search issues
-   * Set up semantic search
-   * Use the REST API to run vector search queries
-   <br /><br />
+* <a href="#knowledge-miningTutorials">knowledge-mining Tutorials</a>
+
 * <a href="#OpenAITutorials">OpenAI Tutorials</a>
 
 https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-102/
@@ -1066,7 +1061,7 @@ READ
 
 HANDS-ON: <a target="_blank" href="https://microsoftlearning.github.io/mslearn-ai-vision/Instructions/Exercises/07-custom-vision-image-classification(legacy).html">LEARN hands-on lab</a>
    
-   * https://github.com/MicrosoftLearning/mslearn-ai-vision 
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-vision/tree/main/Labfiles/07-custom-vision-image-classification">Labfiles</a> for C-Sharp and Python.
 
 
 <a target="_blank" href="https://github.com/microsoft/hackwithazure/tree/master/workshops/ml-endangered-animal-detector">LAB</a>:
@@ -1245,6 +1240,13 @@ Azure "Face" is used to build face detection and facial recognition solutions in
    <br /><br />
 
    NOTE: On June 11, 2020, Microsoft announced that it will not sell facial recognition technology to police departments in the United States until strong regulation, grounded in human rights, has been enacted. As such, customers may not use facial recognition features or functionality included in Azure Services, such as Face or Video Indexer, if a customer is, or is allowing use of such services by or for, a police department in the United States.
+
+<a name="FaceTutorials"></a>
+
+### FaceTutorials
+
+HANDS-ON: <a target="_blank" href="https://microsoftlearning.github.io/mslearn-ai-vision/Instructions/Exercises/04-face-service.html">LEARN tutorial</a> using <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-vision/tree/main/Labfiles/04-face">these Lab files</a>.
+
 
 A face location is face coordinates -- a rectangular pixel area in the image where a face has been identified.
 
@@ -2715,6 +2717,24 @@ References:
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/azure-search-knowledge-mining/azure-search-knowledge-mining/">
 Knowledge Mining Solution Accelerator</a>
+
+<a name="knowledge-miningTutorials"></a>
+
+### knowledge-mining Tutorials
+
+HANDS-ON: <a target="_blank" href="https://microsoftlearning.github.io/mslearn-knowledge-mining/">Tutorial</a>
+references <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-knowledge-mining/tree/main/Labfiles">these labfiles</a>
+   * Create an Azure AI Search solution
+   * Create a Custom Skill for Azure AI Search
+   * Create a Knowledge Store with Azure AI Search
+   * Enrich an AI search index with custom classes
+   * Implement enhancements to search results
+   * Enrich a search index using Azure Machine Learning model
+   * Add to an index using the push API
+   * Debug search issues
+   * Set up semantic search
+   * Use the REST API to run vector search queries
+   <br /><br />
 
 
 <a name="Search"></a>
