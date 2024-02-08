@@ -21,21 +21,88 @@ My contribution to the world (to you) is a less overwhelming <a href="#LearningS
 
 {% include whatever.html %}
 
+
+
+### What can AI do?
+
+Microsoft "democratizes" AI and Machine Learning by providing a front-end that hides some of the complexities, enabling them to be run <strong>possibly without programming</strong>.
+
+1. Microsoft's Azure AI gallery of samples and users' contributions:
+
+   <a target="_blank" href="https://gallery.azure.ai/browse">https://gallery.azure.ai/browse</a>
+
+   These are what are called "narrow" or "weak" AI.
+
+1. Among (Azure cloud) SERVICES USED:
+
+   * Azure Machine Learning
+   * PowerBI
+   * Azure Blob Storage
+   * Azure HDInsight
+   * Azure Data Factory
+   * Azure SQL DataWarehouse
+   * Azure App Service
+   * Azure Sql
+   * Azure Event Hubs
+   * Azure Stream Analytics
+   * Azure Cognitive Service - LUIS
+   * Azure Data Lake Analytics
+   * Azure Data Lake Store
+   * Azure Virtual Machine
+   * Azure Batch
+   <br /><br />
+
+1. For more about ALGORITHMS USED, see <a target="_blank" href="https://wilsonmar.github.io/machine-learning-algorithms/">my explanations at https://wilsonmar.github.io/machine-learning-algorithms</a>, which lists by PROTIP: alphabetical order here:
+
+   *	Bayesian Linear Regression
+   *	Boosted Decision Tree Regression
+   *	Decision Forest Regression
+   *	Fast Forest Quantile Regression
+   *	K-Means Clustering
+   *	Linear Regression
+   *	Multiclass Decision Forest
+   *	Multiclass Decision Jungle
+   *	Multiclass Logistic Regression
+   *	Multiclass Neural Network
+   *	Neural Network Regression
+   *	One-Class Support Vector Machine
+   *	One-vs-All Multiclass
+   *	Ordinal Regression
+   *	PCA-Based Anomaly Detection
+   *	Poisson Regression
+   *	Two-Class Averaged Perceptron
+   *	Two-Class Bayes Point Machine
+   *	Two-Class Boosted Decision Tree
+   *	Two-Class Decision Forest
+   *	Two-Class Decision Jungle
+   *	Two-Class Locally-Deep Support Vector Machine
+   *	Two-Class Logistic Regression
+   *	Two-Class Neural Network
+   *	Two-Class Support Vector Machine
+   <br /><br />
+
+Case studies of how people are already making use of AI/ML to save time and money:
+
+   * Predictive Maintenance data science <a target="_blank" href="https://info.microsoft.com/CO-AAIoT-WBNR-FY16-07Jul-05-Predictive-Maintenance-Registration.html">webinar</a>
+   * Recommendation Engines (such as what Netflix)
+   * modsy.com 3D view
+   * <a target="_blank" href="https://azure.microsoft.com/en-ca/case-studies/?OCID=AID2100017_SEM_ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&ef_id=ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&msclkid=ca6fee2dd05b1ad86ab9b1a0055c7ccd&dclid=CKCq5IKfwewCFUWwnwodCKwLYg&term=bot">Customer and Partner Success Stories for "bot"</a>
+   <br /><br />
+
+
 ## Microsoft's AI portfolio
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/explore-azure-openai/3-describe-azure-openai">NOTE</a>:
 Microsoft leverages OpenAI in ALL products and services (including Microsoft Teams):<br />
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691674882/microsoft-ai-portfolio-1725x989_mqivy5.png"><img alt="microsoft-ai-portfolio-1725x989.png" width="1725" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691674882/microsoft-ai-portfolio-1725x989_mqivy5.png"></a><br /><em>Click picture for full-page view</em>.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691674882/microsoft-ai-portfolio-1725x989_mqivy5.png"><img alt="microsoft-ai-portfolio-1725x989.png" width="1725" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691674882/microsoft-ai-portfolio-1725x989_mqivy5.png"><br /><em>Click picture for full-page view</em>.
 
-In the <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/explore-azure-openai/3-describe-azure-openai">Microsoft AI Portfolio diagram</a> above left, Microsoft makes a distinction between "Business Users & Citizen Developers" who use their Applications and "Power Platform" and geeky "Developers & Data Scientists" who use "Azure AI" in the Azure cloud.
+In the diagram above left, Microsoft makes a distinction between "Business Users & Citizen Developers" who use their Applications and "Power Platform" and geeky "Developers & Data Scientists" who use "Azure AI" in the Azure cloud.
 
 Azure's AI services are categorized into three groups (all of which have GUI, CLI, and API interfaces):
-   * <strong>Applied</strong> AI Services are part of automated workflows
+   * <strong>Applied</strong> AI Services are part of automated workflows, but a service can be included among
    * <a href="#Cognitive_Services"><strong>Cognitive</strong> Services</a> are foundational utilities used to build custom apps
    * ML (Machine Learning) Platform, which <a target="_blank" href="https://wilsonmar.github.io/azure-machine-learning/">I cover in a separate article</a>
    <br /><br />
-
-PROTIP: The division between "Applied" and "Cognitive" AI services can be confusing because they are often lumped together. I constructed the table below to clarify.
 
 
 <a name="Cognitive_Services"></a>
@@ -85,34 +152,21 @@ As of this writing, in various marketing and certification training <a target="_
 
    * <a href="#DecisionServices"><strong>Decision</strong></a> (Making) - supervised and unsupervised machine learning
 
-   * <a href="#SearchServices"><strong>Search</strong> is a confusing category because of so many <a href="#Branding">branding changes</a> (Cortana, Bing, OpanAI, etc.)
+   * <a href="#OpenAI"><strong>OpenAI</strong> is a recent add to this confusing category because of so many <a href="#Branding">branding changes</a> (Cortana, Bing, Cognitive, OpenAI, etc.)
 
-### Cognitive Pricing
+### Availability
 
-PROTIP: The table below groups each kind of cognitive AI service above along with how many FREE transactions Microsoft provides for each service on its <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">Cognitive Services pricing page</a>. Links are also provided to Features and API for each service.
+Individual products <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services&regions=canada-central,canada-east,us-central,us-east,us-east-2,us-north-central,us-south-central,us-west-central,us-west,us-west-2,norway-east">may be in preview or not available, depending on region:<br />
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1707416863/microsoft-ai-avail-240108-2544x1796_wj2ysp.png"><img alt="microsoft-ai-avail-240108-2544x1796.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1707416863/microsoft-ai-avail-240108-2544x1796_wj2ysp.png"></a>
 
-* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/">Azure OpenAI Service</a> = Power your apps with large-scale AI models.
-* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/search/">Azure AI Search</a> = Enterprise scale search for app development.
-* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/content-safety/">Azure AI Content Safety</a> = Use AI to monitor text and image content for safety.
-* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/ai-document-intelligence/">Azure AI Document Intelligence</a> = Accelerate information extraction from documents.
-* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">Azure AI Speech</a> = Transcribe, translate and generate spoken audio.
-* <a target="_blank" href=https://azure.microsoft.com/en-us/pricing/details/cognitive-services/language-service/">Azure AI Language</a> = Identify, analyze and summarize text with natural language processing.
-* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator/">Azure AI Translator</a> = Real-time machine translation for documents and text.
-* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/computer-vision/">Azure AI Vision</a> = Analyze, extract and categorize information from images.
-<br /><br />
+PROTIP: The servies above are listed in random order. But I've made the table below so you can find details about each service by category.
 
-Previously, the list was:
+<a name="ServicesTable"></a>
 
-   ![az-ai-svcs-pricing-309x410](https://user-images.githubusercontent.com/300046/117203280-126c4e00-adac-11eb-84ae-54994f47f3ea.png)
-
-PROTIP: The reconciliation below between marketing Feature categories and the <strong>Kind</strong> of Cognitive service specified in CLI az commands provides quick access to web pages and reveals some contradictions that need to be clarified, by category:  The table also has a column to summarize free machine time.
-
-<a name="CognitiveServicesTable"></a>
-
-### Cognitive Services Table
+## Services Table
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr valign="bottom" align="left"><th> Demo </th><th> Kind </th><th> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">FREE</a> </th><th> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/">API</a> </th></tr>
+   <tr valign="bottom" align="left"><th> Demo </th><th> Kind </th><th> <a href="#Pricing">FREE</a> </th><th> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/">API</a> </th></tr>
 
    <tr valign="top"><td> <em>global</em> </td><td> "CognitiveServices"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">See below</a> 
@@ -143,7 +197,7 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/face-api/">20 TPM, 30K/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236">API</a>
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/form-recognizer/#features">Features</a> </td><td> FormRecognizer
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/form-recognizer/#features">Features</a> </td><td> FormRecognizer (Applied AI)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/form-recognizer/">500 pages/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeLayoutAsync">API</a>       
       </td></tr>
@@ -179,7 +233,7 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
    <tr valign="top"><td colspan="4" align="center"> <a name="LanguageServices"></a><a href="#Language">Language</a>
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/#features">Features</a> </td><td> <a href="#LUIS">"LUIS"</a>
-      (UNLISTED)
+      (Language Understanding, UNLISTED)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/language-understanding-intelligent-services/">5 TPS, 10K trans/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview/operations/5890b47c39e2bb052c5b9c36">API</a>       
       </td></tr>
@@ -223,7 +277,7 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/content-moderator/">1 TPS</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66c">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/metrics-advisor/#features">Features</a>  </td><td> "MetricsAdvisor"
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/metrics-advisor/#features">Features</a>  </td><td> "MetricsAdvisor" (Applied AI)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/metrics-advisor/">preview</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/MetricsAdvisor/operations/getActiveSeriesCount">API</a>       
       </td></tr>
@@ -244,6 +298,12 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/">3 TPS, 1000/mo</a> 
       </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/bing-web-search/">API</a>       
       </td></tr>
+   <tr valign="top"><td> ? </td><td> Cognitive Search (Applied AI)
+      </td><td> ?
+      </td></tr>
+   <tr valign="top"><td> ? </td><td> Microsoft Bing (Applications)
+      </td><td> ?
+      </td></tr>
 
    <tr valign="top"><td colspan="4" align="center"> <a name="OtherServices"></a><a href="#OtherServices">Other</a>
       </td></tr>
@@ -253,23 +313,39 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
    <tr valign="top"><td> ? </td><td> "HealthInsights"
       </td><td> ?
       </td></tr>
+   <tr valign="top"><td> ? </td><td> Bot Service (Applied AI)
+      </td><td> ?
+      </td></tr>
+   <tr valign="top"><td> ? </td><td> <a href="#OpenAI">OpenAI Service</a>
+      </td><td> ?
+      </td></tr>
    </table>
 
+<hr />
 
-   PROTIP: CAUTION: Each service has a different maturity level <a target="_blank" href="https://azure.microsoft.com/en-us/downloads/">in its documentation at azure.microsoft.com/en-us/downloads</a>, such as <a target="_blank" href="https://azure.github.io/azure-sdk/releases/latest/python.html">SDK for Python</a> open-sourced at <a target="_blank" href="   https://github.com/azure/azure-sdk-for-python/">github.com/azure/azure-sdk-for-python</a>, described at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/developer/python/">docs.microsoft.com/en-us/azure/developer/python</a>.
+<a name="Pricing"></a>
 
-   Also, individual products <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services&regions=canada-central,canada-east,us-central,us-east,us-east-2,us-north-central,us-south-central,us-west-central,us-west,us-west-2,norway-east">may be in preview or not available, depending on region:<br />
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1707416863/microsoft-ai-avail-240108-2544x1796_wj2ysp.png"><img alt="microsoft-ai-avail-240108-2544x1796.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1707416863/microsoft-ai-avail-240108-2544x1796_wj2ysp.png"></a>
+## Pricing
+
+PROTIP: The table above groups each kind of cognitive AI service above along with how many FREE transactions Microsoft provides for each service on its <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">Cognitive Services pricing page</a>. Links are also provided to Features and API for each service.
+
+* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/">Azure OpenAI Service</a> = Power your apps with large-scale AI models.
+* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/search/">Azure AI Search</a> = Enterprise scale search for app development.
+* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/content-safety/">Azure AI Content Safety</a> = Use AI to monitor text and image content for safety.
+* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/ai-document-intelligence/">Azure AI Document Intelligence</a> = Accelerate information extraction from documents.
+* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">Azure AI Speech</a> = Transcribe, translate and generate spoken audio.
+* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/language-service/">Azure AI Language</a> = Identify, analyze and summarize text with natural language processing.
+* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator">Azure AI Translator</a> = Real-time machine translation for documents and text.
+* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/computer-vision/">Azure AI Vision</a> = Analyze, extract and categorize information from images.
+<br /><br />
+
+Previously, the list was:
+
+   ![az-ai-svcs-pricing-309x410](https://user-images.githubusercontent.com/300046/117203280-126c4e00-adac-11eb-84ae-54994f47f3ea.png)
 
 
-<a target="_blank" href="https://www.youtube.com/c/MicrosoftMechanicsSeries">Microsoft Mechanics YouTube channel</a> is focused on Microsoft's AI work.
 
-
-
-
-
-
-
+<hr />
 
 <a name="Branding"></a>
 
@@ -358,13 +434,12 @@ OpenAI added to ML "attention" algorithms working on binary data (voice, images,
     
     Images generated using DALL-E are $2 per 100 images.
 
-   available for free for the first 100,000 tokens per month, then $0.004 per 1,000 tokens.
-    Doing the math, 
-
+    Available for free for the first 100,000 tokens per month, then $0.004 per 1,000 tokens.
 
 1.  Apply for access to Asure OpenAI for your Region and Currency:
 
     <a target="_blank" href="https://aka.ms/oaiapply">https://aka.ms/oaiapply</a>
+
 
 
 
@@ -386,32 +461,6 @@ BTW, by contrast, Bernard Marr identified <a target="_blank" href="https://www.b
    * "self-aware", also called artificial superintelligence (ASI), is "sentient" understanding of of its own needs and desires.
 
 https://www.forbes.com/sites/bernardmarr/2018/02/14/the-key-definitions-of-artificial-intelligence-ai-that-explain-its-importance/#22db12bb4f5d
-
-
-### What can AI do?
-
-Microsoft "democratizes" AI and Machine Learning by providing a front-end that hides some of the complexities, enabling them to be run <strong>possibly without programming</strong>.
-
-1. Microsoft's Azure AI gallery of samples and users' contributions:
-
-   <a target="_blank" href="
-   https://gallery.azure.ai/browse">
-   https://gallery.azure.ai/browse</a>
-
-   These are what are called "narrow" or "weak" AI.
-
-1. Microsoft NO LONGER provides hands-on DEMOS at: 
-
-   <a target="_blank" href="https://aidemos.microsoft.com/">https://aidemos.microsoft.com</a>
-
-Case studies of how people are already making use of AI/ML to save time and money:
-
-   * Predictive Maintenance data science <a target="_blank" href="https://info.microsoft.com/CO-AAIoT-WBNR-FY16-07Jul-05-Predictive-Maintenance-Registration.html">webinar</a>
-   * Recommendation Engines (such as what Netflix)
-   * modsy.com 3D view
-   * <a target="_blank" href="https://azure.microsoft.com/en-ca/case-studies/?OCID=AID2100017_SEM_ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&ef_id=ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&msclkid=ca6fee2dd05b1ad86ab9b1a0055c7ccd&dclid=CKCq5IKfwewCFUWwnwodCKwLYg&term=bot">Customer and Partner Success Stories for "bot"</a>
-   <br /><br />
-
 
 <hr />
 
@@ -747,7 +796,7 @@ Resources:
 
 <a name="AI-100"></a>
 
-### AI-100 Azure AI Engineer Associate (RETIRED)
+### AI-100 (RETIRED)
 
 On June 30, 2021 Microsft retired the AI-100 exam in favor of <a href="#AI-102">AI-102 exam</a> (avilable in $99 beta since Feb 2021). <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/ai-100">AI-100 exam, as defined at Microsoft's LEARN</a> has free written tutorials on each of the exam's domains:
 
@@ -795,7 +844,7 @@ Practice tests:
 
 <a name="SampleMLCode"></a>
 
-### Sample ML Code
+## Sample ML Code
 
 PROTIP: AI-102 is heavy on questions about coding.
 
@@ -835,7 +884,7 @@ Among <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure/az
 https://github.com/Azure/azureml-examples/tree/main/cli
 
 
-<hr />
+   PROTIP: CAUTION: Each service has a different maturity level <a target="_blank" href="https://azure.microsoft.com/en-us/downloads/">in its documentation at azure.microsoft.com/en-us/downloads</a>, such as <a target="_blank" href="https://azure.github.io/azure-sdk/releases/latest/python.html">SDK for Python</a> open-sourced at <a target="_blank" href="   https://github.com/azure/azure-sdk-for-python/">github.com/azure/azure-sdk-for-python</a>, described at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/developer/python/">docs.microsoft.com/en-us/azure/developer/python</a>.
 
 
 <hr />
@@ -2887,6 +2936,10 @@ https://learn.microsoft.com/en-us/training/challenges
 
 https://www.youtube.com/watch?v=ss-kyogPRNo
 by Carlotta
+
+<a target="_blank" href="https://www.youtube.com/c/MicrosoftMechanicsSeries">Microsoft Mechanics YouTube channel</a> is focused on Microsoft's AI work.
+
+
 
 
 ## More
