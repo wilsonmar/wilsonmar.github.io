@@ -3,7 +3,7 @@ layout: post
 date: "2024-01-08"
 file: "microsoft-ai"
 title: "Microsoft AI (Azure OpenAI Generative Services)"
-excerpt: "How to automate AI workflows in Microsoft's Azure and Fabric, despite marketing rebrands, and passing AI-90 & AI-102 certification exams."
+excerpt: "How to automate AI workflows in Microsoft's Azure and Fabric, despite marketing rebrands, and passing AI-900 & AI-102 certification exams."
 tags: [microsoft, azure, machine learning, AI]
 image:
 # feature: pic green matrix hallway 1900x500.jpg
@@ -52,34 +52,7 @@ Microsoft "democratizes" AI and Machine Learning by providing a front-end that h
    * Azure Batch
    <br /><br />
 
-1. For more about ALGORITHMS USED, see <a target="_blank" href="https://wilsonmar.github.io/machine-learning-algorithms/">my explanations at https://wilsonmar.github.io/machine-learning-algorithms</a>, which lists by PROTIP: alphabetical order here:
-
-   *	Bayesian Linear Regression
-   *	Boosted Decision Tree Regression
-   *	Decision Forest Regression
-   *	Fast Forest Quantile Regression
-   *	K-Means Clustering
-   *	Linear Regression
-   *	Multiclass Decision Forest
-   *	Multiclass Decision Jungle
-   *	Multiclass Logistic Regression
-   *	Multiclass Neural Network
-   *	Neural Network Regression
-   *	One-Class Support Vector Machine
-   *	One-vs-All Multiclass
-   *	Ordinal Regression
-   *	PCA-Based Anomaly Detection
-   *	Poisson Regression
-   *	Two-Class Averaged Perceptron
-   *	Two-Class Bayes Point Machine
-   *	Two-Class Boosted Decision Tree
-   *	Two-Class Decision Forest
-   *	Two-Class Decision Jungle
-   *	Two-Class Locally-Deep Support Vector Machine
-   *	Two-Class Logistic Regression
-   *	Two-Class Neural Network
-   *	Two-Class Support Vector Machine
-   <br /><br />
+1. For more about ALGORITHMS USED, see <a target="_blank" href="https://wilsonmar.github.io/machine-learning-algorithms/">my explanations at https://wilsonmar.github.io/machine-learning-algorithms</a>, which lists them by alphabetical order.
 
 Case studies of how people are already making use of AI/ML to save time and money:
 
@@ -90,7 +63,18 @@ Case studies of how people are already making use of AI/ML to save time and mone
    <br /><br />
 
 
-## Microsoft's AI portfolio
+<a name="workflows"></a>
+
+## Hybrid workflows
+
+PROTIP: Although most of Microsoft's product documents focus on one service at a time, actual production work enjoyed by real end-users usually involves a <strong>pipeline</strong> of several services. For example: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/example-scenario/ai/news-feed-ingestion-and-near-real-time-analysis">ingesting (stream processing) a newsfeed</a>:
+
+![az-ml-newsfeed-546x623](https://user-images.githubusercontent.com/300046/116988980-6254f300-ac8e-11eb-9901-c2c6f3d8a018.png)
+
+That and other flows are in <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/">Microsoft's Architecture Center</a>.
+
+
+## Microsoft's AI product portfolio
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/explore-azure-openai/3-describe-azure-openai">NOTE</a>:
 Microsoft leverages OpenAI in ALL products and services (including Microsoft Teams):<br />
@@ -107,7 +91,7 @@ Azure's AI services are categorized into three groups (all of which have GUI, CL
 
 <a name="Cognitive_Services"></a>
 
-## Cognitive Services
+## List Cognitive Services
 
 If you've already setup your Terminal to run "az" commands <a target="_blank" href="https://wilsonmar.github.io/mac-setup/">like I describe in my mac-setup page</a>, run this command to list all "kinds" of services Azure currently provides for your Azure subscription:
 
@@ -141,6 +125,14 @@ If you've already setup your Terminal to run "az" commands <a target="_blank" hr
    </pre>
    </ul>
 
+### Availability
+
+Individual products <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services&regions=canada-central,canada-east,us-central,us-east,us-east-2,us-north-central,us-south-central,us-west-central,us-west,us-west-2,norway-east">may be in preview or not available, depending on region:<br />
+<img alt="microsoft-ai-avail-240108-2544x1796.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1707416863/microsoft-ai-avail-240108-2544x1796_wj2ysp.png"></a>
+
+PROTIP: The services above are listed in random order. But the table below groups services to help you quickly get to links about features, tutorials, and SDK/API references quickly.
+
+### Groups of services
 
 As of this writing, in various marketing and certification training <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services">DOCS</a>, Azure Cognitive Services are grouped into these (which is the basis this article is arranged. Click on the underlined and bolded category name to jump to the list of services associated with it:
 
@@ -152,14 +144,8 @@ As of this writing, in various marketing and certification training <a target="_
 
    * <a href="#DecisionServices"><strong>Decision</strong></a> (Making) - supervised and unsupervised machine learning
 
-   * <a href="#OpenAI"><strong>OpenAI</strong> is a recent add to this confusing category because of so many <a href="#Branding">branding changes</a> (Cortana, Bing, Cognitive, OpenAI, etc.)
+   * <a href="#OpenAI"><strong>OpenAI</strong></a> (to power your apps with large-scale AI models) is a recent add to this confusing category because of so many <a href="#Branding">branding changes</a> (Cortana, Bing, Cognitive, OpenAI, etc.)
 
-### Availability
-
-Individual products <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services&regions=canada-central,canada-east,us-central,us-east,us-east-2,us-north-central,us-south-central,us-west-central,us-west,us-west-2,norway-east">may be in preview or not available, depending on region:<br />
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1707416863/microsoft-ai-avail-240108-2544x1796_wj2ysp.png"><img alt="microsoft-ai-avail-240108-2544x1796.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1707416863/microsoft-ai-avail-240108-2544x1796_wj2ysp.png"></a>
-
-PROTIP: The servies above are listed in random order. But I've made the table below so you can find details about each service by category.
 
 <a name="ServicesTable"></a>
 
@@ -179,12 +165,17 @@ PROTIP: The servies above are listed in random order. But I've made the table be
       </td><td> ?
       </td></tr>
 
-   <tr valign="top"><td colspan="4" align="center"> <a name="VisionServices"></a><a href="#VisionServices">Vision</a> 
+   <tr valign="top"><td colspan="4" align="center"> <a name="VisionServices"></a><a href="#Vision">Vision</a> 
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/#features">Features</a> </td><td> "ComputerVision"
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/#features">Features</a> </td><td> "ComputerVision" => AI Vision
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">2 TPC, 10K/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa">API</a>       
       </td></tr>
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-vision#features">Features</a> </td><td> <a href="#Face">"Face"</a> => AI Vision
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/face-api/">20 TPM, 30K/mo.</a> 
+      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236">API</a>
+      </td></tr>
+
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/#features">Features</a> </td><td> "CustomVision.Prediction"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">10K predictions/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.3/operations/5eb0bcc7548b571998fdded6">API</a>       
@@ -193,13 +184,9 @@ PROTIP: The servies above are listed in random order. But I've made the table be
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">2 TPS, 1 hour/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/face/#features">Features</a> </td><td> <a href="#Face">"Face"</a>
-      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/face-api/">20 TPM, 30K/mo.</a> 
-      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236">API</a>
-      </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/form-recognizer/#features">Features</a> </td><td> FormRecognizer (Applied AI)
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-document-intelligence/">Features</a> </td><td> Document Intelligence = FormRecognizer (Applied AI)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/form-recognizer/">500 pages/mo.</a> 
-      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeLayoutAsync">API</a>       
+      </td><td> <a target="_blank" href="https://go.microsoft.com/fwlink/?linkid=2217261">API</a>
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/media-services/video-indexer/#features">Features</a> </td><td> <a href="#VideoIndexer">Video Indexer</a>
       (Applied AI)
@@ -214,11 +201,17 @@ PROTIP: The servies above are listed in random order. But I've made the table be
 
    <tr valign="top"><td colspan="4" align="center"> <a name="#SpeechServices"></a><a href="#Speech">Speech</a> 
       </td></tr>
-   <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-services/#features">Features</a> </td><td> <a href="#SpeechServices">"SpeechServices"</a>
+   <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-services/#features">Features</a> </td><td> <a href="#SpeechServices">"SpeechServices"</a> => AI Speech
       (<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-to-text/#Features">Speech-To-Text"</a>, <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/#Features">Text-to-Speech"</a>)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">1 concurrent, 5 hours/mo.*</a> 
       </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-speech-to-text#speech-to-text-rest-api-v30" title="v3">API</a>       
       </td></tr>
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/#features">Features</a> </td><td> <a href="#SpeakerRecognition">"SpeakerRecognition"</a>
+      (UNLISTED)
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">20/min, 5K/mo.</a> 
+      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563309b6778daf02acc0a508/operations/5645c3271984551c84ec6797">API</a>       
+      </td></tr>
+
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/#features">Features</a> </td><td> <a href="#SpeakerRecognition">"SpeakerRecognition"</a>
       (UNLISTED)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">20/min, 5K/mo.</a> 
@@ -254,7 +247,7 @@ PROTIP: The servies above are listed in random order. But I've made the table be
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/text-analytics/">5K trans/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/translator/#features">Features</a> </td><td> <a href="#TextTranslation">"TextTranslation"</a>
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-translator/#features">Features</a> </td><td> <a href="#TextTranslation">"TextTranslation"</a> => AI Translator
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator/">2M chars/mo.</a> 
       </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-reference">API</a>       
       </td></tr>
@@ -267,9 +260,9 @@ PROTIP: The servies above are listed in random order. But I've made the table be
       </td><td> ?
       </td></tr>
    
-   <tr valign="top"><td colspan="4" align="center"> <a name="#DecisionServices"></a><a href="#Decisions">Decision (Making)</a>  
+   <tr valign="top"><td colspan="4" align="center"> <a name="DecisionServices"></a><a href="#Decisions">Decision (Making)</a>  
       </td></tr>
-   <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/anomaly-detector/#features">Features</a> </td><td> <a href="#AnomalyDetector">"AnomalyDetector"</a>
+   <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-anomaly-detector/#features">Features</a> </td><td> <a href="#AnomalyDetector">"AnomalyDetector"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/anomaly-detector/">2,000 trans/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/anomaly-detector-enterprise-edition/operations/createDataFeed">API</a>       
       </td></tr>
@@ -277,11 +270,14 @@ PROTIP: The servies above are listed in random order. But I've made the table be
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/content-moderator/">1 TPS</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66c">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/metrics-advisor/#features">Features</a>  </td><td> "MetricsAdvisor" (Applied AI)
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-content-safety/">Features</a> </td><td> "ContentSafety"
+      </td><td> ?
+      </td></tr>
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/metrics-advisor/#features">Features</a>  </td><td> <a href="#metrics-advisormetrics-advisor">"MetricsAdvisor"</a> (Applied AI)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/metrics-advisor/">preview</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/MetricsAdvisor/operations/getActiveSeriesCount">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/#features">Features</a>  </td><td> <a href="#Personalizer">"Personalizer"</a>
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-personalizer/#features">Features</a> </td><td> AI <a href="#Personalizer">"Personalizer"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/personalizer/">50K trans/mo.</a> 
       </td><td> <a target="_blank" href="https://westus2.dev.cognitive.microsoft.com/docs/services/personalizer-api/operations/Rank">API</a>       
       </td></tr>
@@ -298,7 +294,7 @@ PROTIP: The servies above are listed in random order. But I've made the table be
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/">3 TPS, 1000/mo</a> 
       </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/bing-web-search/">API</a>       
       </td></tr>
-   <tr valign="top"><td> ? </td><td> Cognitive Search (Applied AI)
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-search/">AI Search</a> </td><td> Cognitive Search (Applied AI)
       </td><td> ?
       </td></tr>
    <tr valign="top"><td> ? </td><td> Microsoft Bing (Applications)
@@ -307,16 +303,13 @@ PROTIP: The servies above are listed in random order. But I've made the table be
 
    <tr valign="top"><td colspan="4" align="center"> <a name="OtherServices"></a><a href="#OtherServices">Other</a>
       </td></tr>
-   <tr valign="top"><td> ? </td><td> "ContentSafety"
-      </td><td> ?
-      </td></tr>
    <tr valign="top"><td> ? </td><td> "HealthInsights"
       </td><td> ?
       </td></tr>
-   <tr valign="top"><td> ? </td><td> Bot Service (Applied AI)
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-bot-service/">$</a> </td><td> Bot Service (Applied AI)
       </td><td> ?
       </td></tr>
-   <tr valign="top"><td> ? </td><td> <a href="#OpenAI">OpenAI Service</a>
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/openai-service/">Features</a> </td><td> <a href="#OpenAI">OpenAI Service</a> 
       </td><td> ?
       </td></tr>
    </table>
@@ -342,6 +335,8 @@ PROTIP: The table above groups each kind of cognitive AI service above along wit
 Previously, the list was:
 
    ![az-ai-svcs-pricing-309x410](https://user-images.githubusercontent.com/300046/117203280-126c4e00-adac-11eb-84ae-54994f47f3ea.png)
+
+IMPORTANT PROTIP: Microsoft allows its free "F0" tier to be applied to only a single Cognitive Service at a time. To remain free, you would need to rebuild a new Cognitive Service with a different "Kind" between steps.
 
 
 
@@ -441,6 +436,21 @@ OpenAI added to ML "attention" algorithms working on binary data (voice, images,
     <a target="_blank" href="https://aka.ms/oaiapply">https://aka.ms/oaiapply</a>
 
 
+<a name="OpenAITutorials"></a>
+
+### OpenAI Tutorials
+
+* https://microsoftlearning.github.io/mslearn-openai
+   * https://learn.microsoft.com/en-us/training/browse/?terms=OpenAI
+   * https://learn.microsoft.com/en-us/training/paths/develop-ai-solutions-azure-openai/
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-openai">https://github.com/MicrosoftLearning/mslearn-openai</a>
+   * Get started with Azure OpenAI
+   * Integrate Azure OpenAI into your app
+   * Utilize prompt engineering in your app
+   * Generate and improve code with Azure OpenAI Service
+   * Generate images with a DALL-E model
+   * Use your own data with Azure OpenAI
+   <br /><br />
 
 
 
@@ -450,7 +460,7 @@ OpenAI added to ML "attention" algorithms working on binary data (voice, images,
 
 Microsoft competes for talent with Google, Amazon, IBM, China's Tencent.
 
-BTW, by contrast, Bernard Marr identified <a target="_blank" href="https://www.bernardmarr.com/default.asp?contentID=2191">four types of AI</a> evolving: 
+BTW, by contrast, Bernard Marr <a target="_blank" href="https://www.forbes.com/sites/bernardmarr/2018/02/14/the-key-definitions-of-artificial-intelligence-ai-that-explain-its-importance/#22db12bb4f5d">identified</a> <a target="_blank" href="https://www.bernardmarr.com/default.asp?contentID=2191">four types of AI</a> evolving: 
 
    * "reactive" machines (such as Spam filters and the Netflix recommendation engine) are not able to learn or conceive of the past or future, so it responds to identical situations in the exact same way every time.
 
@@ -459,22 +469,6 @@ BTW, by contrast, Bernard Marr identified <a target="_blank" href="https://www.b
    * "theory of mind" is when AI acquires decision-making capabilities equal to humans, and have the capability to recognize and remember emotions, and adjust behavior based on those emotions.
 
    * "self-aware", also called artificial superintelligence (ASI), is "sentient" understanding of of its own needs and desires.
-
-https://www.forbes.com/sites/bernardmarr/2018/02/14/the-key-definitions-of-artificial-intelligence-ai-that-explain-its-importance/#22db12bb4f5d
-
-<hr />
-
-<a name="workflows"></a>
-
-### Hybrid workflows
-
-PROTIP: Although most Microsoft's samples and tutorials usually focus on one service at a time, actual production work enjoyed by real end-users usually involves a <strong>pipeline</strong> of several services. For example: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/example-scenario/ai/news-feed-ingestion-and-near-real-time-analysis">ingesting (stream processing) a newsfeed</a>:
-
-![az-ml-newsfeed-546x623](https://user-images.githubusercontent.com/300046/116988980-6254f300-ac8e-11eb-9901-c2c6f3d8a018.png)
-
-That and other flows are in <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/">Microsoft's Architecture Center</a>
-
-IMPORTANT PROTIP: Microsoft allows its free "F0" tier to be applied to only a single Cognitive Service at a time. To remain free, you would need to rebuild a new Cognitive Service with a different "Kind" between steps.
 
 
 <hr />
@@ -609,24 +603,11 @@ Among <a target="_blank" href="https://wilsonmar.github.io/azure-certifications"
 
    * <a href="#AI-900">AI-900</a> is the entry-level exam ($99). It's a pre-requisite for:
 
-   * <a href="#AI-102">AI-102</a> (with free re-cert after 1-year) replaced<br /><a href="#AI-100"><strike>AI-100</strike></a> (with free re-cert after 2-years) on June 30, 2021.
-
-   Both AI-100 and AI-102 are $165.
-   The shift is from infrastructure (KeyVault, AKS, Stream Analytics) to programming C#, Python, and curl commands.
+   * <a href="#AI-102">AI-102</a> ($165 with free re-cert after 1-year) replaced<br /><a href="#AI-100"><strike>AI-100</strike></a> (with free re-cert after 2-years) on June 30, 2021. The shift is from infrastructure (KeyVault, AKS, Stream Analytics) to programming C#, Python, and curl commands.
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-203">DP-203 Data Engineering on Microsoft Azure</a> goes into how to use machine learning in Azure Synapse Analytics.
 
-   <a target="_blank" href="https://microsoftlearning.github.io/dp-090-databricks-ml/">LAB</a> references <a target="_blank" href="https://github.com/MicrosoftLearning/dp-090-databricks-ml">DP-090</a> goes into implementing a Machine Learning Solution with Databricks.
-
-   <a target="_blank" href="https://www.coursera.org/learn/developing-ai-applications-azure">Coursera video course: Developing AI Applications on Azure</a> by Ronald J. Daskevich at LearnQuest is structured for 5 weeks.
-   Coursera's videos shows the text at each point of its videos.
-   NOTE: It still sends people to https://notebooks.azure.com and covers <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/overview">Microsoft's TDSP (Team Data Science Process)</a> <a target="_blank" href="https://www.coursera.org/learn/developing-ai-applications-azure/lecture/Qd5fj/tdsp-stages">VIDEO</a>:
-   1. Business understanding (Charter, Objectives, Data sources, Data dictionaries)
-   2. Data acquisition and understanding (Clean dataset, pipeline)
-   3. Modeling
-   4. Deployment model for use (testing) Flow: entry script to accept requests and score them, Deployment configs
-   5. Customer Acceptance
-   <br /><br />
+   * <a target="_blank" href="https://microsoftlearning.github.io/dp-090-databricks-ml/">LAB</a> references <a target="_blank" href="https://github.com/MicrosoftLearning/dp-090-databricks-ml">DP-090</a> goes into implementing a Machine Learning Solution with Databricks.
 
 
 <a name="AI-900"></a>
@@ -698,9 +679,9 @@ First setup development environments:
    * NodeJs for Bot Framework Composer and Bot Framework Emulator
    <br /><br />
 
-<a target="_blank" href="<a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-102/">AI-102 exam, as defined at Microsoft's LEARN</a> has free written tutorials on each of the exam's domains:
+<a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-102/">AI-102 exam, as defined at Microsoft's LEARN</a> has free written tutorials on each of the exam's domains:
 
-   * Plan and manage an Azure <a href="#CognitiveServices">AI Solution <strike>Cognitive Services</strike></a> solution (15-20%)
+   * Plan and manage an Azure <a href="#CognitiveServices">AI Solution <strike>Cognitive Services</strike></a>  (15-20%)
    * Implement decision support solutions (10–15%)
    * Implement <a href="#ComputerVision">computer vision</a> solutions (15–20%)
    * Implement <a href="#NLP">natural language processing</a> solutions (30–35%)
@@ -710,6 +691,8 @@ First setup development environments:
 
 PROTIP: Unlike the AI-100 (which uses Python Notebooks), <a target="_blank" href="https://microsoftlearning.github.io/AI-102-AIEngineer/">hands-on exercises</a> in Microsoft's <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/ai-102t00">5-day live course AI-102T00: Designing and Implementing a Microsoft Azure AI Solution</a> (with cloud time) consists of C# and Python programs at https://github.com/MicrosoftLearning/AI-102-AIEngineer (by <a target="_blank" href="https://www.linkedin.com/in/graemesplace/">Graeme Malcolm</a>) was archived on Dec 23, 2023 after its content was distributed among these repos:
 
+* <a href="#VisionTutorials">AI Vision Tutorials</a>
+
 * https://microsoftlearning.github.io/mslearn-ai-services/ <br /><a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-services">https://github.com/MicrosoftLearning/mslearn-ai-services</a>
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-services/blob/main/Instructions/Exercises/01-use-azure-ai-services.md">01-use-azure-ai-services.md</a>
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-services/blob/main/Instructions/Exercises/02-ai-services-security.md">02-ai-services-security.md</a>
@@ -718,29 +701,7 @@ PROTIP: Unlike the AI-100 (which uses Python Notebooks), <a target="_blank" href
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-services/blob/main/Instructions/Exercises/05-personalizer-exercise.md">05-personalizer-exercise.md</a>
    <br /><br />
 
-* https://microsoftlearning.github.io/mslearn-ai-vision/ 
-   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-vision">https://github.com/MicrosoftLearning/mslearn-ai-vision</a>
-   * Analyze Images with Azure AI Vision
-   * Classify images with an Azure AI Vision custom model
-   * Detect Objects in Images with Custom Vision
-   * Detect and Analyze Faces
-   * Read Text in Images
-   * Analyze Video with Video Analyzer
-   * Classify Images with Azure AI Custom Vision
-   <br /><br />
-
-* https://microsoftlearning.github.io/mslearn-ai-language/ 
-   * https://learn.microsoft.com/en-us/training/paths/develop-language-solutions-azure-ai/
-   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-language">https://github.com/MicrosoftLearning/mslearn-ai-language</a>
-   * Analyze text
-   * Create a Question Answering Solution
-   * Create a language understanding model with the Azure AI Language service
-   * Custom text classification
-   * Extract custom entities
-   * Translate Text
-   * Recognize and Synthesize Speech
-   * Translate Speech
-   <br /><br />
+* <a href="#LanguageTutorials">AI Language Tutorials</a>
 
 * https://microsoftlearning.github.io/mslearn-ai-document-intelligence/ 
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-document-intelligence/tree/main/Labfiles">https://github.com/MicrosoftLearning/mslearn-ai-document-intelligence</a>
@@ -762,18 +723,7 @@ PROTIP: Unlike the AI-100 (which uses Python Notebooks), <a target="_blank" href
    * Set up semantic search
    * Use the REST API to run vector search queries
    <br /><br />
-
-* https://microsoftlearning.github.io/mslearn-openai
-   * https://learn.microsoft.com/en-us/training/browse/?terms=OpenAI
-   * https://learn.microsoft.com/en-us/training/paths/develop-ai-solutions-azure-openai/
-   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-openai">https://github.com/MicrosoftLearning/mslearn-openai</a>
-   * Get started with Azure OpenAI
-   * Integrate Azure OpenAI into your app
-   * Utilize prompt engineering in your app
-   * Generate and improve code with Azure OpenAI Service
-   * Generate images with a DALL-E model
-   * Use your own data with Azure OpenAI
-   <br /><br />
+* <a href="#OpenAITutorials">OpenAI Tutorials</a>
 
 https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-102/
 
@@ -786,6 +736,16 @@ modules:
 * Deploy Azure AI services in containers
 <br /><br />
 
+On Coursera:
+   <a target="_blank" href="https://www.coursera.org/learn/developing-ai-applications-azure">Coursera video course: Developing AI Applications on Azure</a> by Ronald J. Daskevich at LearnQuest is structured for 5 weeks.
+   Coursera's videos shows the text at each point of its videos.
+   NOTE: It still sends people to https://notebooks.azure.com and covers <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/overview">Microsoft's TDSP (Team Data Science Process)</a> <a target="_blank" href="https://www.coursera.org/learn/developing-ai-applications-azure/lecture/Qd5fj/tdsp-stages">VIDEO</a>:
+   1. Business understanding (Charter, Objectives, Data sources, Data dictionaries)
+   2. Data acquisition and understanding (Clean dataset, pipeline)
+   3. Modeling
+   4. Deployment model for use (testing) Flow: entry script to accept requests and score them, Deployment configs
+   5. Customer Acceptance
+   <br /><br />
 
 Resources:
    * https://www.whizlabs.com/microsoft-azure-certification-ai-102/  $49.90
@@ -885,6 +845,533 @@ https://github.com/Azure/azureml-examples/tree/main/cli
 
 
    PROTIP: CAUTION: Each service has a different maturity level <a target="_blank" href="https://azure.microsoft.com/en-us/downloads/">in its documentation at azure.microsoft.com/en-us/downloads</a>, such as <a target="_blank" href="https://azure.github.io/azure-sdk/releases/latest/python.html">SDK for Python</a> open-sourced at <a target="_blank" href="   https://github.com/azure/azure-sdk-for-python/">github.com/azure/azure-sdk-for-python</a>, described at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/developer/python/">docs.microsoft.com/en-us/azure/developer/python</a>.
+
+
+
+
+<hr />
+
+<a name="Vision"></a>
+
+## Vision services
+
+<a name="VisionTutorials"></a>
+
+### Vision Tututoral
+
+https://microsoftlearning.github.io/mslearn-ai-vision/ 
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-vision">https://github.com/MicrosoftLearning/mslearn-ai-vision</a>
+
+   * Analyze Images with Azure AI Vision
+   * Classify images with an Azure AI Vision custom model
+   * Detect Objects in Images with Custom Vision
+   * Detect and Analyze Faces
+   * Read Text in Images
+   * Analyze Video with <a href="#VideoAnalyzer">Video Analyzer</a>
+   * Classify Images with Azure AI <a href="#CustomVision">Custom Vision</a>
+   <br /><br />
+
+
+### Use GUI
+
+   References:
+   * aka.ms/cognitivevision
+   <br /><br />
+
+1. In a web browser, navigate to Vision Studio:
+
+   <a target="_blank" href="https://portal.vision.cognitive.azure.com/gallery/featured"><strong>https://portal.vision.cognitive.azure.com/gallery/featured</strong></a>
+
+1. Sign in.
+1. Select a Subscription.
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=4shB_qdU3Gs" title="by Matt McSpirit">VIDEO</a>: 
+   The menu of AI Vision service categories uses Microsoft's "Florence foundational model" (new in 2023)
+   models trained with an "open world" of billions of images combined with a large language model.
+   That enables the identification of objects and their location in a frame such as this:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701223998/microsoft-ai-frame-915x343_m56sm9.pnghttps://res.cloudinary.com/dcajqrroq/image/upload/v1701223998/microsoft-ai-frame-915x343_m56sm9.png"><img alt="microsoft-ai-frame-915x343.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701223998/microsoft-ai-frame-915x343_m56sm9.png"></a>
+
+1. Click each, then "Try it out":
+
+   Optical character recognition (OCR):
+   * Extract text from images - Extract printed and handwritten style text from images and documents for supported languages.
+   <br /><br />
+   Spatial analysis - Video Retrieval and Summary:
+   * Video Retrieval and Summary - Generate a brief summary of the main points shown in video. Locate specific keywords and jump to the relevant section.
+   * Count people in an area - Analyze real-time or recorded video to count the number of people in a designated zone in a camera's field of view.
+   * Detect when people cross a line - Analyze real-time streaming video to detect when a person crosses a line in the camera's field of view.
+   * Detect when people enter/exit a zone - Analyze real-time streaming video to detect when a person enters or exits a zone in the camera's field of view.
+   * Monitor social distancing - Analyze real-time streaming video that tracks when people violate a distance rule in the camera's field of view.
+   <br /><br />
+   * <a href="#Face">Face</a> - Detect faces in an image
+   <br /><br />
+   Image analysis - click "Try it out" on each of these:
+   * Recognize products on shelves - Identify products on shelves, gaps in product availability, and compliance for planograms.
+   * Customize models with images - Create custom image classification and object detection models with images using Vision Studio and Azure ML.
+   * Search photos with image retrieval - Retrieve specific moments within your photo album. For example, you can search for: a wedding you attended last summer, your pet, or your favorite city.
+   * Add dense captions to images - Generate human-readable captions for all important objects detected in your image.
+   * Remove backgrounds from images - Easily remove the background and preserve foreground elements in your image.
+   * Add captions to images - Generate a human-readable sentence that describes the content of an image.
+   * Detect common objects in images - Recognize the location of objects of interest in an image and assign them a label.
+   * Extract common tags from images - Use an AI model to automatically assign one or more labels to an image.
+   * Detect sensitive content in images - Detect sensitive content in images so you can moderate their usage in your applications.
+   * Create smart-cropped images - Create cropped image thumbnails based on the key areas of a larger image.
+   <br /><br />
+
+1. Click "I acknowledge that this service will incur usage to my Azure account."
+1. Select a Region (East US, West Europe, West US, or West US 2)
+
+   The "cog-ms-learn-vision" resource is created for you automatically.
+
+1. Click "View all resources"
+1. Check "cog-ms-learn-vision" created for you automatically.
+1. Click "Select as default resource".
+1. Close.
+
+
+### Use REST API
+
+https://github.com/Azure-Samples/cognitive-service-vision-model-customization-python-samples
+
+   https://microsoftlearning.github.io/mslearn-ai-fundamentals/Instructions/Labs/05-ocr.html
+
+
+1. On the Getting started with Vision landing page, select Optical character recognition, and then the Extract text from images tile.
+
+1. Under the Try It Out subheading, acknowledge the resource usage policy by reading and checking the box.
+
+1. download ocr-images.zip by selecting 
+
+   https://aka.ms/mslearn-ocr-images 
+
+1. Open the folder.
+
+1. On the portal, select Browse for a file and navigate to the folder on your computer where you downloaded ocr-images.zip. Select advert.jpg and select Open.
+
+1. review what is returned:
+
+   In Detected attributes, any text found in the image is organized into a hierarchical structure of regions, lines, and words.
+
+   On the image, the location of text is indicated by a bounding box, as shown here:
+
+
+
+App for the blind: <a target="_blank" href="https://www.youtube.com/watch?v=R2mC-NUAmMk&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&start_radio=1">
+VIDEO</a>: <a target="_blank" href="https://www.youtube.com/watch?v=bqeQByqf_f8&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&index=2">INTRO</a>: <a target="_blank" href="https://www.seeingai.com/">SeeingAI.com</a>.
+Permissions for the "See It All" app are for its internal name "Mt Studio Web Prod".
+
+<a target="_blank" href="
+https://docs.microsoft.com/en-us/learn/paths/explore-computer-vision-microsoft-azure/">
+https://docs.microsoft.com/en-us/learn/paths/explore-computer-vision-microsoft-azure</a>
+
+HISTORY: In 2014, Microsoft showed off its facial recognition capabilities with a website (how-old.net which now is owned by others) 
+to guess how old someone is. At conferences they built a booth that takes a picture.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/4-understand-computer-vision">LEARN</a>: 
+https://docs.microsoft.com/en-us/learn/modules/read-text-computer-vision/
+
+DEMO: <a target="_blank" href="https://www.microsoft.com/en-us/ai/seeing-ai?rtc=1">Seeing AI app</a> talking camera narrates the world around blind people.
+
+   * Semantic segmentation is the ML technique which individual pixels in the image are classified according to the object to which they belong.
+   * Image analysis
+
+   * Face detection, analysis, and recognition
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/overview-ocr">Optical character recognition (OCR)</a> for small amounts of text
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/read-text-computer-vision/2-ocr-azure">The Read API</a> works asynchronously on images with a lot of text, to parse pages, lines, and words.
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/media-services/video-indexer/">Video Indexer service</a> analyzes the visual and audio channels of a video, and indexes its content.
+   <br /><br />
+
+
+<a name="ComputerVision"></a>
+
+### Computer Vision
+
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/">Computer Vision"</a> analyzes images and video to extract descriptions, tags, objects, and text.
+<a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa">API Reference</a>, 
+<a target="_blank" href="https://docs.microsoft.com/azure/cognitive-services/computer-vision/">DOCS</a>, <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/detect-objects-images-custom-vision/1-introduction">INTRO</a>:
+
+   ![az-ai-produce-objects-372x278](https://user-images.githubusercontent.com/300046/116675643-46d2ab00-a963-11eb-804a-9b1dd5fb6161.png)
+
+* Read the text in the image
+* Detects Objects
+* Identifies Landmarks
+* Categorize image
+<br /><br />
+
+<a target="_blank" href="https://flow.microsoft.com/en-us/connectors/shared_cognitiveservicescomputervision/computer-vision-api/">Flow API samples</a>
+
+https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/quickstarts-sdk/client-library?tabs=visual-studio&pivots=programming-language-csharp
+READ
+
+#### Computer Vision demo
+
+
+1. Select images and review the information returned by the Azure Computer Vision web service:
+
+   DEMO: <a target="_blank" href="https://aidemos.microsoft.com/computer-vision">
+   https://aidemos.microsoft.com/computer-vision</a> 
+
+   1. Click an image to see results of "Analyze and describe images". Objects are returned with a <strong>bounding box</strong> to indicate their location within the image.
+
+   1. Click "Try another image" for another selection.
+   1. Click "Next step".
+   1. Read text in imagery.
+   1. Read <strong>handwriting</strong>
+   1. Recognize celebrities & landmarks - the service has a specialized domain model trained to identify thousands of well-known celebrities from the worlds of sports, entertainment, and business. The "Landmarks" model can identify famous landmarks, such as the Taj Mahal and the Statue of Liberty.
+   <br /><br />
+
+   Additionally, the Computer Vision service can:
+   * Detect image types - for example, identifying clip art images or line drawings.
+   * Detect image color schemes - specifically, identifying the dominant foreground, background, and overall colors in an image.
+   * Generate thumbnails - creating small versions of images.
+   * Moderate content - detecting images that contain adult content or depict violent, gory scenes.
+   <br /><br />
+
+   <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/56f91f2e778daf14a499f21f">Computer Vision API</a>
+   shows all the features.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-images-computer-vision/3-analyze-images">HANDS-ON LAB</a>:
+
+1. Right-click "Launch VM mode" for the "AI-900" lab on a Window VM.
+1. X: Click the Edge browser icon.
+1. X: Click to remove pop-ups.
+1. Go to portal.azure.com
+1. Sign in using an email which you have an Azure subscription.
+1. Type the password. You can't copy outside the VM and paste into it.
+1. X: Do not save your password.
+1. Open Visual Studio to see
+1. X: On another browser tab, view the repo (faster):
+
+   <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/01%20-%20Image%20Analysis%20with%20Computer%20Vision.ipynb">
+   https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/01%20-%20Image%20Analysis%20with%20Computer%20Vision.ipynb</a>
+
+1. Follow the instructions in the notebook to create a resource, etc.
+
+   TODO: Incorporate the code and put it in a pipeline that minimizes manual actions.
+
+1. To take a quiz and get credit, click in the VM "here to complete the Learn module with a Knowledge Check.
+
+
+<a name="CustomVision"></a>
+
+### Custom Vision
+
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/">Azure Custom Vision</a> trains custom models referencing custom (your own) images. Custom vision has two <strong>project types</strong>:
+
+   * <strong>Image classification</strong> is a machine-learning based form of computer vision in which a model is trained to categorize images based on their (class or) primary subject matter they contain. 
+
+   * <strong>Object detection</strong> goes further than classification to identify the "class" of  individual objects within the image, and to return the <strong>coordinates</strong> of a bounding box that indicates the object's location.
+   <br /><br />
+
+HANDS-ON: <a target="_blank" href="https://microsoftlearning.github.io/mslearn-ai-vision/Instructions/Exercises/07-custom-vision-image-classification(legacy).html">LEARN hands-on lab</a>
+   
+   * https://github.com/MicrosoftLearning/mslearn-ai-vision 
+
+
+<a target="_blank" href="https://github.com/microsoft/hackwithazure/tree/master/workshops/ml-endangered-animal-detector">LAB</a>:
+Steps:
+   1. Create state-of-the-art computer vision models.
+   2. Upload and tag training images.
+   3. Train classifiers for active learning.
+   4. Perform image prediction to identify probable matches to a trained model.
+   5. Perform object detection to locate elements within an image and return a bounding box.
+   <br /><br />
+
+
+1. Open
+
+   <a target="_blank" href="
+   https://www.customvision.ai/">
+   https://www.customvision.ai</a>
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/example-scenario/ai/intelligent-apps-image-processing">DOCS</a>:
+   ![az-ai-image-class-623x410](https://user-images.githubusercontent.com/300046/116795191-5a2f6480-aa90-11eb-82fe-52c26e8e3de4.png)
+
+1. MS LEARN HANDS-ON LAB: 
+
+   <a target="_blank" href="https://aka.ms/learn-image-classification">aka.ms/learn-image-classification</a> which redirects to<br />
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/classify-images-custom-vision/">docs.microsoft.com/en-us/learn/modules/classify-images-custom-vision</a>
+
+1. Instructions are at <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/classify-images-custom-vision/3-create-image-classifier">
+
+1. Load the code from:
+
+   <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/03%20-%20Object%20Detection.ipynb">https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/03%20-%20Object%20Detection.ipynb</a>
+
+https://docs.microsoft.com/en-us/learn/modules/evaluate-requirements-for-custom-computer-vision-api/3-investigate-service-authorization
+Custom Vision APIs use two subscription keys, each control access to an API:
+   * A training key to access API members which train the model.
+   * A prediction key to access API members which classify images against a trained model.
+   <br /><br />
+
+https://docs.microsoft.com/en-us/learn/modules/evaluate-requirements-for-custom-computer-vision-api/4-examine-the-custom-vision-prediction-api
+
+References:
+   <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/56f91f2e778daf14a499f21f">CV API</a>
+
+
+
+
+<a name="VideoIndexer"></a>
+
+### Video Indexer 
+
+Media Services & Storage Account:
+
+1. In Portal, <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/microsoft.media%2Fmediaservices">Media Services</a> blade.
+
+1. Specify Resource Group, account name, storage account, System-managed identity.
+
+   <img width="648" alt="az-media-service-svcs.png" src="https://user-images.githubusercontent.com/300046/120081332-60f2cc80-c07a-11eb-9e2e-1a951d72266b.png">
+
+
+1. In a browser, go to the Video Indexer Portal URL:
+
+   <a target="_blank" href="https://www.videoindexer.ai/account/login/">
+   https://www.videoindexer.ai</a>
+
+   NOTE: Video Indexer is under Media Services rather than Cognitive Services.
+
+1. Click the provider to login: AAD (Entra) account, Personal Microsoft account, Google.
+
+   PROTIP: Avoid using Google due to the permissions you're asked to give:
+
+1. Say Yes to Video Indexer permission to: Access your email addresses & View your profile info and <strong>contact list</strong>, including your name, gender, display picture, contacts, and friends.
+
+   NOTE: You'll get an email with subject "Your subscription to the Video Indexer API".
+
+   On your mobile phone you'll get a "Connected to new app" notice for Microsoft Authenticator.
+
+1. Click "Account settings". <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/video-indexer/">PRICING</a>: up to 10 hours (600 minutes) of free indexing to website users and up to 40 hours (2,400 minutes) of free indexing to API users. Media reserved units are pre-paid. See <a target="_blank" href="https://docs.microsoft.com/en-us/azure/media-services/video-indexer/faq">FAQ</a>
+
+1. Switch to the file which defines Azure environment variable VIDEO_INDEXER_ACCOUNT (in setmem.sh) as described in 
+ 
+   <a target="_blank" href="https://wilsonmar.github.io/azure-quickly">https://wilsonmar.github.io/azure-quickly</a>
+
+1. Switch back.
+1. In Account settings, click "Copy" to get the Account ID GUID in your Clipboard. 
+1. Switch to the file which defines Azure environment variable VIDEO_INDEXER_ACCOUNT (in setmem.sh) as described in 
+
+   <a target="_blank" href="https://wilsonmar.github.io/azure-quickly">https://wilsonmar.github.io/azure-quickly</a>
+
+1. Highlight the sample value and paste (Command+V).
+1. Switch back.
+
+1. Go to the "Azure Video Analyzer for Media Developer Portal":<a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-for-media-docs/video-indexer-use-apis#obtain-access-token-using-the-authorization-api">DOCS</a>
+
+   <a target="_blank" href="https://api-portal.videoindexer.ai/">api-portal.videoindexer.ai</a>
+
+1. Click "Sign In". Click "Profile" 
+
+   NOTE: The UI has changed since publication of <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/extract-insights-from-videos-with-video-indexer-service/2-subscribe-to-api">Microsoft's tutorial</a>, which says "Go to the Products tab, then select Authorization."
+
+1. Click "Show" on the "Primary key" line. Double-click on the subscription key to copy to Clipboard (Command+C).
+1. Switch to the file which defines Azure environment variable VIDEO_INDEXER_API_KEY (in setmem.sh) as described in 
+ 
+   https://wilsonmar.github.io/azure-quickly
+
+1. Highlight the sample value and paste (Command+V).
+1. Switch back.
+
+   ### Upload video using Portal GUI
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/media-services/previous/media-services-portal-upload-files">DOCS</a>
+
+
+   ### Upload video using program
+
+   https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Get-Account-Access-Token
+
+1. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-for-media-docs/upload-index-videos#upload-and-index-with-api">DOCS</a>: Select the Azure Video Indexer option for uploading videos: upload from URL (there is also send file as byte array by an API call, which has limits of 2 GB in size and a 30-minute timeout.
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/extract-insights-from-videos-with-video-indexer-service/3-upload-index-videos?pivots=python">
+   Program
+
+   <strong>az-video-upload.py</strong> in https://wilsonmar.github.io/azure-quickly
+
+1. Make an additional call to retrieve insights.
+
+1. Reference existing asset ID
+
+   ### Search Media files
+
+1. In "Media files" at https://www.videoindexer.ai/media/library
+
+1. Click "Samples", and click on a video file to Play to see the media's people, topics (keywords).
+
+   NOTE: Search results include exact start times where an insight exists, possibly multiple matches for the same video if multiple segments are matched.
+
+1. Click a tag to see where it was mentioned in the timeline.
+
+   Alternately, use the API to search: ???
+
+
+   ### Model customizations
+
+   Each video consists of scenes grouping shots, which each contain keyframes.
+   
+   * A <strong>scene</strong> represents a single event within the video. It groups <strong>consecutive shots</strong> that are related. It will have a start time, end time, and thumbnail (first keyframe in the scene).
+   
+   * A <strong>shot</strong> represents a <strong>continuous segment</strong> of the video. Transitions within the video are detected which determine how it is split into shots. Shots have a start time, end time, and list of keyframes.
+   
+   * <strong>Keyframes</strong> are frames that represent the shot. Each one is for a <strong>specific point in time</strong>. There can be gaps in time between keyframes but together they are representative of the shot. Each keyframe can be downloaded as a high-resolution image.
+
+1. Click "Model customizations"
+
+1. Set as thumbnail another keyframe.
+
+
+https://github.com/Azure-Samples/media-services-video-indexer
+
+https://dev.to/adbertram/getting-started-with-azure-video-indexer-and-powershell-3i32
+
+
+<hr />
+
+<a name="Face"></a>
+
+## Azure Face
+
+<a target="_blank" href="https://www.youtube.com/watch?v=abhqxG1nSGg">VIDEO</a>:
+<a target="_blank" href="https://www.youtube.com/watch?v=KCSyRO0KotA">API DEMO</a>:
+
+Azure "Face" is used to build face detection and facial recognition solutions in five categories:
+   * Face Verification: Check the likelihood that two faces belong to the same person.
+   * Face Detection: Detect human faces in an image.
+   * Face Identification: Search and identify faces.
+   * Face Similarity: Find similar faces.
+   * Face Grouping: Organize unidentified faces into (face list) groups, based on their visual similarity.
+   <br /><br />
+
+   NOTE: On June 11, 2020, Microsoft announced that it will not sell facial recognition technology to police departments in the United States until strong regulation, grounded in human rights, has been enacted. As such, customers may not use facial recognition features or functionality included in Azure Services, such as Face or Video Indexer, if a customer is, or is allowing use of such services by or for, a police department in the United States.
+
+A face location is face coordinates -- a rectangular pixel area in the image where a face has been identified.
+
+The Face API can return up to 27 landmarks for each identified face that you can use for analysis.
+Azure allows a person to can have up to 248 faces.
+There is a 6 MB limit on the size of each file (jpeg, png, gif, bmp).
+
+Face attributes are predefined properties of a face or a person represented by a face. The Face API can optionally identify and return the following types of attributes for a detected face:
+
+   * Age
+   * Gender
+   * Smile intensity
+   * Facial hair
+   * Head pose (3D)
+   * Emotion
+   <br /><br />
+
+<a target="_blank" href="https://ig.ft.com/emotion-recognition/">
+Emotions detected</a> in JSON response is a floating point number:
+   * Neutral
+   * Anger
+   * Contempt
+   * Disgust
+   * Fear
+   * Hppiness
+   * Sadness
+   * Surprise
+   <br /><br />
+
+PROTIP: "Happiness: 9.99983543," is near certainty at 1.0. 2.80234E-08" indicates 8
+
+https://github.com/Azure-Samples/cognitive-services-FaceAPIEnrollmentSample   
+
+DEMO: LAB: https://github.com/microsoft/hackwithazure/tree/master/workshops/web-ai-happy-sad-angry
+
+https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/quickstarts-sdk/identity-client-library?tabs=windows%2Cvisual-studio&pivots=programming-language-csharp
+
+#### Create a Face API subscription
+
+Subscribe to the Face API:
+1. Sign in to the Azure portal.
+1. Go to <a target="_blank" href="https://portal.azure.com/#create/Microsoft.CognitiveServicesFace">
++ Create a resource > AI + Machine Learning > Face</a>
+1. Enter a unique name for your Face API subscription name in variable MY_FACE_ACCT
+
+   Paste in setme.sh 
+
+   <pre>export MY_FACE_ACCT=faceme
+   </pre>
+
+1. Choose "westus", the Location nearest to you.
+1. Select F0 the free or lowest-cost Pricing tier.
+1. Check "By checking this box, I certify that use of this service or any service that is being created by this Subscription Id, is not by or for a police department in the United States."
+1. Click "Create" to subscribe to the Face API.
+
+1. When provisioned, "Go to resource". 
+1. In "Keys and Endpoint", copy Key1 and paste in setme.sh 
+
+   <pre>export MY_FACE_KEY1=<em>subscription_key</em>
+   </pre>
+
+The endpoint used to make REST calls is "$MY_FACE_ACCT.cognitiveservices.azure.com/"
+
+   https://github.com/wilsonmar/azure-quickly/blob/main/az-face-init.sh
+
+https://docs.microsoft.com/en-us/learn/modules/identify-faces-with-computer-vision/8-test-face-detection?pivots=csharp
+
+References:
+
+   https://docs.microsoft.com/en-us/azure/cognitive-services/Face/Overview
+   What is the Azure Face service?
+
+   https://docs.microsoft.com/en-us/azure/cognitive-services/Face/
+
+   <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/56f91f2e778daf14a499f21f">Face API</a>
+
+   https://docs.microsoft.com/en-us/azure/cognitive-services/Face/quickstarts/client-libraries?tabs=visual-studio&pivots=programming-language-csharp
+
+   https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/04%20-%20Face%20Analysis.ipynb
+
+
+<a name="FormRecognizer"></a>
+
+### Azure Form Recognizer
+
+"Form Recognizer" extracts information from images obtained from scanned forms and invoices.
+
+   * Raza Salehi's <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-ink-recognizer">Recognizer</a>
+
+https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/06%20-%20Receipts%20with%20Form%20Recognizer.ipynb
+
+https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/tables-samples/
+
+https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-java/formrecognizer-java-samples/
+
+https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-net/azure-form-recognizer-client-sdk-samples/
+
+https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/formrecognizer-samples/
+
+<a name="OCR"></a>
+
+### OCR
+
+https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/05%20-%20Optical%20Character%20Recognition.ipynb
+
+   * Image classification - https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/01%20-%20Image%20Analysis%20with%20Computer%20Vision.ipynb
+
+   * Object detection -  https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/02%20-%20Image%20Classification.ipynb
+
+
+
+<a name="InkRecognizer"></a>
+
+### Ink Recognizer
+
+<a target="_blank" href="https://www.youtube.com/watch?v=ipcMvLhk3iI">VIDEO</a>:
+
+Ink converts handwriting to plain text, in 63+ core languages.
+
+<a target="_blank" href="https://github.com/azure-deprecation/dashboard/issues/66">
+It was deprecated on 31 January 2021</a>.
+
+https://docs.microsoft.com/en-us/azure/cognitive-services/ink-recognizer/quickstarts/csharp
+Quickstart: Recognize digital ink with the Ink Recognizer REST API and C#
+
+QUESTION: Does it integrate with a tablet?
+
 
 
 <hr />
@@ -1037,9 +1524,11 @@ https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/metricsadvis
 <hr />
 
 <a name="NLP"></a>
+<a name="Language"></a>
 
-## NLP (Natural Language Processing) services
+## AI Language services
 
+Formerly called "NLP" (Natural Language Processing),
 <a target="_blank" href="
 https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/5-understand-natural-language-process">Intro</a>:
 <a target="_blank" href="
@@ -1062,9 +1551,29 @@ Within Microoft, NLP consists of these Azure services (described below):
    <br /><br />
 
 
+
+<a name="LanguageTutorials"></a>
+
+### AI Language Tutorials
+
+https://microsoftlearning.github.io/mslearn-ai-language/ 
+   * https://learn.microsoft.com/en-us/training/paths/develop-language-solutions-azure-ai/
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-language">https://github.com/MicrosoftLearning/mslearn-ai-language</a>
+   * Analyze text
+   * Create a Question Answering Solution
+   * Create a language understanding model with the Azure AI Language service
+   * Custom text classification
+   * Extract custom entities
+   * Translate Text
+   * Recognize and Synthesize Speech
+   * Translate Speech
+   <br /><br />
+
+
+
 <a name="SpeakerRecognition"></a>
 
-### SpeakerRecognition
+### Speaker Recognition
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/">Speaker Recognition</a>
 for authentication.
@@ -1935,507 +2444,6 @@ References:
 
 https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/documenttranslation-samples/
 
-
-<hr />
-
-<a name="VisionServices"></a>
-
-## Vision services
-
-
-### Use GUI
-
-   References:
-   * aka.ms/cognitivevision
-   <br /><br />
-
-1. In a web browser, navigate to Vision Studio:
-
-   <a target="_blank" href="https://portal.vision.cognitive.azure.com/gallery/featured"><strong>https://portal.vision.cognitive.azure.com/gallery/featured</strong></a>
-
-1. Sign in.
-1. Select a Subscription.
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=4shB_qdU3Gs" title="by Matt McSpirit">VIDEO</a>: 
-   The menu of AI Vision service categories uses Microsoft's "Florence foundational model" (new in 2023)
-   models trained with an "open world" of billions of images combined with a large language model.
-   That enables the identification of objects and their location in a frame such as this:
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701223998/microsoft-ai-frame-915x343_m56sm9.pnghttps://res.cloudinary.com/dcajqrroq/image/upload/v1701223998/microsoft-ai-frame-915x343_m56sm9.png"><img alt="microsoft-ai-frame-915x343.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701223998/microsoft-ai-frame-915x343_m56sm9.png"></a>
-
-1. Click each, then "Try it out":
-
-   Optical character recognition (OCR):
-   * Extract text from images - Extract printed and handwritten style text from images and documents for supported languages.
-   <br /><br />
-   Spatial analysis - Video Retrieval and Summary:
-   * Video Retrieval and Summary - Generate a brief summary of the main points shown in video. Locate specific keywords and jump to the relevant section.
-   * Count people in an area - Analyze real-time or recorded video to count the number of people in a designated zone in a camera's field of view.
-   * Detect when people cross a line - Analyze real-time streaming video to detect when a person crosses a line in the camera's field of view.
-   * Detect when people enter/exit a zone - Analyze real-time streaming video to detect when a person enters or exits a zone in the camera's field of view.
-   * Monitor social distancing - Analyze real-time streaming video that tracks when people violate a distance rule in the camera's field of view.
-   <br /><br />
-   * <a href="#Face">Face</a> - Detect faces in an image
-   <br /><br />
-   Image analysis - click "Try it out" on each of these:
-   * Recognize products on shelves - Identify products on shelves, gaps in product availability, and compliance for planograms.
-   * Customize models with images - Create custom image classification and object detection models with images using Vision Studio and Azure ML.
-   * Search photos with image retrieval - Retrieve specific moments within your photo album. For example, you can search for: a wedding you attended last summer, your pet, or your favorite city.
-   * Add dense captions to images - Generate human-readable captions for all important objects detected in your image.
-   * Remove backgrounds from images - Easily remove the background and preserve foreground elements in your image.
-   * Add captions to images - Generate a human-readable sentence that describes the content of an image.
-   * Detect common objects in images - Recognize the location of objects of interest in an image and assign them a label.
-   * Extract common tags from images - Use an AI model to automatically assign one or more labels to an image.
-   * Detect sensitive content in images - Detect sensitive content in images so you can moderate their usage in your applications.
-   * Create smart-cropped images - Create cropped image thumbnails based on the key areas of a larger image.
-   <br /><br />
-
-1. Click "I acknowledge that this service will incur usage to my Azure account."
-1. Select a Region (East US, West Europe, West US, or West US 2)
-
-   The "cog-ms-learn-vision" resource is created for you automatically.
-
-1. Click "View all resources"
-1. Check "cog-ms-learn-vision" created for you automatically.
-1. Click "Select as default resource".
-1. Close.
-
-
-### Use REST API
-
-https://github.com/Azure-Samples/cognitive-service-vision-model-customization-python-samples
-
-   https://microsoftlearning.github.io/mslearn-ai-fundamentals/Instructions/Labs/05-ocr.html
-
-
-1. On the Getting started with Vision landing page, select Optical character recognition, and then the Extract text from images tile.
-
-1. Under the Try It Out subheading, acknowledge the resource usage policy by reading and checking the box.
-
-1. download ocr-images.zip by selecting 
-
-   https://aka.ms/mslearn-ocr-images 
-
-1. Open the folder.
-
-1. On the portal, select Browse for a file and navigate to the folder on your computer where you downloaded ocr-images.zip. Select advert.jpg and select Open.
-
-1. review what is returned:
-
-   In Detected attributes, any text found in the image is organized into a hierarchical structure of regions, lines, and words.
-
-   On the image, the location of text is indicated by a bounding box, as shown here:
-
-
-
-App for the blind: <a target="_blank" href="https://www.youtube.com/watch?v=R2mC-NUAmMk&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&start_radio=1">
-VIDEO</a>: <a target="_blank" href="https://www.youtube.com/watch?v=bqeQByqf_f8&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&index=2">INTRO</a>: <a target="_blank" href="https://www.seeingai.com/">SeeingAI.com</a>.
-Permissions for the "See It All" app are for its internal name "Mt Studio Web Prod".
-
-<a target="_blank" href="
-https://docs.microsoft.com/en-us/learn/paths/explore-computer-vision-microsoft-azure/">
-https://docs.microsoft.com/en-us/learn/paths/explore-computer-vision-microsoft-azure</a>
-
-HISTORY: In 2014, Microsoft showed off its facial recognition capabilities with a website (how-old.net which now is owned by others) 
-to guess how old someone is. At conferences they built a booth that takes a picture.
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/4-understand-computer-vision">LEARN</a>: 
-https://docs.microsoft.com/en-us/learn/modules/read-text-computer-vision/
-
-DEMO: <a target="_blank" href="https://www.microsoft.com/en-us/ai/seeing-ai?rtc=1">Seeing AI app</a> talking camera narrates the world around blind people.
-
-   * Semantic segmentation is the ML technique which individual pixels in the image are classified according to the object to which they belong.
-   * Image analysis
-
-   * Face detection, analysis, and recognition
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/overview-ocr">Optical character recognition (OCR)</a> for small amounts of text
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/read-text-computer-vision/2-ocr-azure">The Read API</a> works asynchronously on images with a lot of text, to parse pages, lines, and words.
-   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/media-services/video-indexer/">Video Indexer service</a> analyzes the visual and audio channels of a video, and indexes its content.
-   <br /><br />
-
-
-<a name="ComputerVision"></a>
-
-### Computer Vision
-
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/">Computer Vision"</a> analyzes images and video to extract descriptions, tags, objects, and text.
-<a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa">API Reference</a>, 
-<a target="_blank" href="https://docs.microsoft.com/azure/cognitive-services/computer-vision/">DOCS</a>, <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/detect-objects-images-custom-vision/1-introduction">INTRO</a>:
-
-   ![az-ai-produce-objects-372x278](https://user-images.githubusercontent.com/300046/116675643-46d2ab00-a963-11eb-804a-9b1dd5fb6161.png)
-
-* Read the text in the image
-* Detects Objects
-* Identifies Landmarks
-* Categorize image
-<br /><br />
-
-<a target="_blank" href="https://flow.microsoft.com/en-us/connectors/shared_cognitiveservicescomputervision/computer-vision-api/">Flow API samples</a>
-
-https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/quickstarts-sdk/client-library?tabs=visual-studio&pivots=programming-language-csharp
-READ
-
-#### Computer Vision demo
-
-
-1. Select images and review the information returned by the Azure Computer Vision web service:
-
-   DEMO: <a target="_blank" href="https://aidemos.microsoft.com/computer-vision">
-   https://aidemos.microsoft.com/computer-vision</a> 
-
-   1. Click an image to see results of "Analyze and describe images". Objects are returned with a <strong>bounding box</strong> to indicate their location within the image.
-
-   1. Click "Try another image" for another selection.
-   1. Click "Next step".
-   1. Read text in imagery.
-   1. Read <strong>handwriting</strong>
-   1. Recognize celebrities & landmarks - the service has a specialized domain model trained to identify thousands of well-known celebrities from the worlds of sports, entertainment, and business. The "Landmarks" model can identify famous landmarks, such as the Taj Mahal and the Statue of Liberty.
-   <br /><br />
-
-   Additionally, the Computer Vision service can:
-   * Detect image types - for example, identifying clip art images or line drawings.
-   * Detect image color schemes - specifically, identifying the dominant foreground, background, and overall colors in an image.
-   * Generate thumbnails - creating small versions of images.
-   * Moderate content - detecting images that contain adult content or depict violent, gory scenes.
-   <br /><br />
-
-   <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/56f91f2e778daf14a499f21f">Computer Vision API</a>
-   shows all the features.
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-images-computer-vision/3-analyze-images">HANDS-ON LAB</a>:
-
-1. Right-click "Launch VM mode" for the "AI-900" lab on a Window VM.
-1. X: Click the Edge browser icon.
-1. X: Click to remove pop-ups.
-1. Go to portal.azure.com
-1. Sign in using an email which you have an Azure subscription.
-1. Type the password. You can't copy outside the VM and paste into it.
-1. X: Do not save your password.
-1. Open Visual Studio to see
-1. X: On another browser tab, view the repo (faster):
-
-   <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/01%20-%20Image%20Analysis%20with%20Computer%20Vision.ipynb">
-   https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/01%20-%20Image%20Analysis%20with%20Computer%20Vision.ipynb</a>
-
-1. Follow the instructions in the notebook to create a resource, etc.
-
-   TODO: Incorporate the code and put it in a pipeline that minimizes manual actions.
-
-1. To take a quiz and get credit, click in the VM "here to complete the Learn module with a Knowledge Check.
-
-
-<a name="Custom_Vision"></a>
-
-### Custom Vision
-
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/">Azure Custom Vision</a> trains custom models referencing custom (your own) images. Custom vision has two <strong>project types</strong>:
-
-   * <strong>Image classification</strong> is a machine-learning based form of computer vision in which a model is trained to categorize images based on their (class or) primary subject matter they contain. 
-
-   * <strong>Object detection</strong> goes further than classification to identify the "class" of  individual objects within the image, and to return the <strong>coordinates</strong> of a bounding box that indicates the object's location.
-   <br /><br />
-
-<a target="_blank" href="https://github.com/microsoft/hackwithazure/tree/master/workshops/ml-endangered-animal-detector">LAB</a>:
-Steps:
-   1. Create state-of-the-art computer vision models.
-   2. Upload and tag training images.
-   3. Train classifiers for active learning.
-   4. Perform image prediction to identify probable matches to a trained model.
-   5. Perform object detection to locate elements within an image and return a bounding box.
-   <br /><br />
-
-
-1. Open
-
-   <a target="_blank" href="
-   https://www.customvision.ai/">
-   https://www.customvision.ai</a>
-
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/example-scenario/ai/intelligent-apps-image-processing">DOCS</a>:
-   ![az-ai-image-class-623x410](https://user-images.githubusercontent.com/300046/116795191-5a2f6480-aa90-11eb-82fe-52c26e8e3de4.png)
-
-1. MS LEARN HANDS-ON LAB: 
-
-   <a target="_blank" href="https://aka.ms/learn-image-classification">aka.ms/learn-image-classification</a> which redirects to<br />
-   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/classify-images-custom-vision/">docs.microsoft.com/en-us/learn/modules/classify-images-custom-vision</a>
-
-1. Instructions are at <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/classify-images-custom-vision/3-create-image-classifier">
-
-1. Load the code from:
-
-   <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/03%20-%20Object%20Detection.ipynb">https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/03%20-%20Object%20Detection.ipynb</a>
-
-https://docs.microsoft.com/en-us/learn/modules/evaluate-requirements-for-custom-computer-vision-api/3-investigate-service-authorization
-Custom Vision APIs use two subscription keys, each control access to an API:
-   * A training key to access API members which train the model.
-   * A prediction key to access API members which classify images against a trained model.
-   <br /><br />
-
-https://docs.microsoft.com/en-us/learn/modules/evaluate-requirements-for-custom-computer-vision-api/4-examine-the-custom-vision-prediction-api
-
-References:
-   <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/56f91f2e778daf14a499f21f">CV API</a>
-
-
-<a name="InkRecognizer"></a>
-
-### Ink Recognizer
-
-<a target="_blank" href="https://www.youtube.com/watch?v=ipcMvLhk3iI">VIDEO</a>:
-
-Ink converts handwriting to plain text, in 63+ core languages.
-
-<a target="_blank" href="https://github.com/azure-deprecation/dashboard/issues/66">
-It was deprecated on 31 January 2021</a>.
-
-https://docs.microsoft.com/en-us/azure/cognitive-services/ink-recognizer/quickstarts/csharp
-Quickstart: Recognize digital ink with the Ink Recognizer REST API and C#
-
-QUESTION: Does it integrate with a tablet?
-
-
-<a name="VideoIndexer"></a>
-
-### Video Indexer 
-
-Media Services & Storage Account:
-
-1. In Portal, <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/microsoft.media%2Fmediaservices">Media Services</a> blade.
-
-1. Specify Resource Group, account name, storage account, System-managed identity.
-
-   <img width="648" alt="az-media-service-svcs.png" src="https://user-images.githubusercontent.com/300046/120081332-60f2cc80-c07a-11eb-9e2e-1a951d72266b.png">
-
-
-   ### Video Indexer
-
-1. In a browser, go to the Video Indexer Portal URL:
-
-   <a target="_blank" href="https://www.videoindexer.ai/account/login/">
-   https://www.videoindexer.ai</a>
-
-   NOTE: Video Indexer is under Media Services rather than Cognitive Services.
-
-1. Click the provider to login: AAD (Entra) account, Personal Microsoft account, Google.
-
-   PROTIP: Avoid using Google due to the permissions you're asked to give:
-
-1. Say Yes to Video Indexer permission to: Access your email addresses & View your profile info and <strong>contact list</strong>, including your name, gender, display picture, contacts, and friends.
-
-   NOTE: You'll get an email with subject "Your subscription to the Video Indexer API".
-
-   On your mobile phone you'll get a "Connected to new app" notice for Microsoft Authenticator.
-
-1. Click "Account settings". <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/video-indexer/">PRICING</a>: up to 10 hours (600 minutes) of free indexing to website users and up to 40 hours (2,400 minutes) of free indexing to API users. Media reserved units are pre-paid. See <a target="_blank" href="https://docs.microsoft.com/en-us/azure/media-services/video-indexer/faq">FAQ</a>
-
-1. Switch to the file which defines Azure environment variable VIDEO_INDEXER_ACCOUNT (in setmem.sh) as described in 
- 
-   <a target="_blank" href="https://wilsonmar.github.io/azure-quickly">https://wilsonmar.github.io/azure-quickly</a>
-
-1. Switch back.
-1. In Account settings, click "Copy" to get the Account ID GUID in your Clipboard. 
-1. Switch to the file which defines Azure environment variable VIDEO_INDEXER_ACCOUNT (in setmem.sh) as described in 
-
-   <a target="_blank" href="https://wilsonmar.github.io/azure-quickly">https://wilsonmar.github.io/azure-quickly</a>
-
-1. Highlight the sample value and paste (Command+V).
-1. Switch back.
-
-1. Go to the "Azure Video Analyzer for Media Developer Portal":<a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-for-media-docs/video-indexer-use-apis#obtain-access-token-using-the-authorization-api">DOCS</a>
-
-   <a target="_blank" href="https://api-portal.videoindexer.ai/">api-portal.videoindexer.ai</a>
-
-1. Click "Sign In". Click "Profile" 
-
-   NOTE: The UI has changed since publication of <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/extract-insights-from-videos-with-video-indexer-service/2-subscribe-to-api">Microsoft's tutorial</a>, which says "Go to the Products tab, then select Authorization."
-
-1. Click "Show" on the "Primary key" line. Double-click on the subscription key to copy to Clipboard (Command+C).
-1. Switch to the file which defines Azure environment variable VIDEO_INDEXER_API_KEY (in setmem.sh) as described in 
- 
-   https://wilsonmar.github.io/azure-quickly
-
-1. Highlight the sample value and paste (Command+V).
-1. Switch back.
-
-   ### Upload video using Portal GUI
-
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/media-services/previous/media-services-portal-upload-files">DOCS</a>
-
-
-   ### Upload video using program
-
-   https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Get-Account-Access-Token
-
-1. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-for-media-docs/upload-index-videos#upload-and-index-with-api">DOCS</a>: Select the Azure Video Indexer option for uploading videos: upload from URL (there is also send file as byte array by an API call, which has limits of 2 GB in size and a 30-minute timeout.
-
-   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/extract-insights-from-videos-with-video-indexer-service/3-upload-index-videos?pivots=python">
-   Program
-
-   <strong>az-video-upload.py</strong> in https://wilsonmar.github.io/azure-quickly
-
-1. Make an additional call to retrieve insights.
-
-1. Reference existing asset ID
-
-   ### Search Media files
-
-1. In "Media files" at https://www.videoindexer.ai/media/library
-
-1. Click "Samples", and click on a video file to Play to see the media's people, topics (keywords).
-
-   NOTE: Search results include exact start times where an insight exists, possibly multiple matches for the same video if multiple segments are matched.
-
-1. Click a tag to see where it was mentioned in the timeline.
-
-   Alternately, use the API to search: ???
-
-
-   ### Model customizations
-
-   Each video consists of scenes grouping shots, which each contain keyframes.
-   
-   * A <strong>scene</strong> represents a single event within the video. It groups <strong>consecutive shots</strong> that are related. It will have a start time, end time, and thumbnail (first keyframe in the scene).
-   
-   * A <strong>shot</strong> represents a <strong>continuous segment</strong> of the video. Transitions within the video are detected which determine how it is split into shots. Shots have a start time, end time, and list of keyframes.
-   
-   * <strong>Keyframes</strong> are frames that represent the shot. Each one is for a <strong>specific point in time</strong>. There can be gaps in time between keyframes but together they are representative of the shot. Each keyframe can be downloaded as a high-resolution image.
-
-1. Click "Model customizations"
-
-1. Set as thumbnail another keyframe.
-
-
-https://github.com/Azure-Samples/media-services-video-indexer
-
-https://dev.to/adbertram/getting-started-with-azure-video-indexer-and-powershell-3i32
-
-
-<hr />
-
-<a name="Face"></a>
-
-## Azure Face
-
-<a target="_blank" href="https://www.youtube.com/watch?v=abhqxG1nSGg">VIDEO</a>:
-<a target="_blank" href="https://www.youtube.com/watch?v=KCSyRO0KotA">API DEMO</a>:
-
-Azure "Face" is used to build face detection and facial recognition solutions in five categories:
-   * Face Verification: Check the likelihood that two faces belong to the same person.
-   * Face Detection: Detect human faces in an image.
-   * Face Identification: Search and identify faces.
-   * Face Similarity: Find similar faces.
-   * Face Grouping: Organize unidentified faces into (face list) groups, based on their visual similarity.
-   <br /><br />
-
-   NOTE: On June 11, 2020, Microsoft announced that it will not sell facial recognition technology to police departments in the United States until strong regulation, grounded in human rights, has been enacted. As such, customers may not use facial recognition features or functionality included in Azure Services, such as Face or Video Indexer, if a customer is, or is allowing use of such services by or for, a police department in the United States.
-
-A face location is face coordinates -- a rectangular pixel area in the image where a face has been identified.
-
-The Face API can return up to 27 landmarks for each identified face that you can use for analysis.
-Azure allows a person to can have up to 248 faces.
-There is a 6 MB limit on the size of each file (jpeg, png, gif, bmp).
-
-Face attributes are predefined properties of a face or a person represented by a face. The Face API can optionally identify and return the following types of attributes for a detected face:
-
-   * Age
-   * Gender
-   * Smile intensity
-   * Facial hair
-   * Head pose (3D)
-   * Emotion
-   <br /><br />
-
-<a target="_blank" href="https://ig.ft.com/emotion-recognition/">
-Emotions detected</a> in JSON response is a floating point number:
-   * Neutral
-   * Anger
-   * Contempt
-   * Disgust
-   * Fear
-   * Hppiness
-   * Sadness
-   * Surprise
-   <br /><br />
-
-PROTIP: "Happiness: 9.99983543," is near certainty at 1.0. 2.80234E-08" indicates 8
-
-https://github.com/Azure-Samples/cognitive-services-FaceAPIEnrollmentSample   
-
-DEMO: LAB: https://github.com/microsoft/hackwithazure/tree/master/workshops/web-ai-happy-sad-angry
-
-https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/quickstarts-sdk/identity-client-library?tabs=windows%2Cvisual-studio&pivots=programming-language-csharp
-
-#### Create a Face API subscription
-
-Subscribe to the Face API:
-1. Sign in to the Azure portal.
-1. Go to <a target="_blank" href="https://portal.azure.com/#create/Microsoft.CognitiveServicesFace">
-+ Create a resource > AI + Machine Learning > Face</a>
-1. Enter a unique name for your Face API subscription name in variable MY_FACE_ACCT
-
-   Paste in setme.sh 
-
-   <pre>export MY_FACE_ACCT=faceme
-   </pre>
-
-1. Choose "westus", the Location nearest to you.
-1. Select F0 the free or lowest-cost Pricing tier.
-1. Check "By checking this box, I certify that use of this service or any service that is being created by this Subscription Id, is not by or for a police department in the United States."
-1. Click "Create" to subscribe to the Face API.
-
-1. When provisioned, "Go to resource". 
-1. In "Keys and Endpoint", copy Key1 and paste in setme.sh 
-
-   <pre>export MY_FACE_KEY1=<em>subscription_key</em>
-   </pre>
-
-The endpoint used to make REST calls is "$MY_FACE_ACCT.cognitiveservices.azure.com/"
-
-   https://github.com/wilsonmar/azure-quickly/blob/main/az-face-init.sh
-
-https://docs.microsoft.com/en-us/learn/modules/identify-faces-with-computer-vision/8-test-face-detection?pivots=csharp
-
-References:
-
-   https://docs.microsoft.com/en-us/azure/cognitive-services/Face/Overview
-   What is the Azure Face service?
-
-   https://docs.microsoft.com/en-us/azure/cognitive-services/Face/
-
-   <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/56f91f2e778daf14a499f21f">Face API</a>
-
-   https://docs.microsoft.com/en-us/azure/cognitive-services/Face/quickstarts/client-libraries?tabs=visual-studio&pivots=programming-language-csharp
-
-   https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/04%20-%20Face%20Analysis.ipynb
-
-
-<a name="FormRecognizer"></a>
-
-### Azure Form Recognizer
-
-"Form Recognizer" extracts information from images obtained from scanned forms and invoices.
-
-   * Raza Salehi's <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-ink-recognizer">Recognizer</a>
-
-https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/06%20-%20Receipts%20with%20Form%20Recognizer.ipynb
-
-https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/tables-samples/
-
-https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-java/formrecognizer-java-samples/
-
-https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-net/azure-form-recognizer-client-sdk-samples/
-
-https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/formrecognizer-samples/
-
-<a name="OCR"></a>
-
-### OCR
-
-https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/05%20-%20Optical%20Character%20Recognition.ipynb
-
-   * Image classification - https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/01%20-%20Image%20Analysis%20with%20Computer%20Vision.ipynb
-
-   * Object detection -  https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/02%20-%20Image%20Classification.ipynb
 
 
 <hr />
