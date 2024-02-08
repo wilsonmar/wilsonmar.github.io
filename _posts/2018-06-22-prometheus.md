@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-02-04"
+date: "2024-02-06"
 file: "prometheus"
 title: "Prometheus"
 excerpt: "Collect metrics (for visualization by Grafana), analyze using PromQL coding, and identify alerts,  especially for Kubernetes (also from CNCF)."
@@ -225,6 +225,25 @@ The $299 course “Monitoring Infrastructure and Containers with Prometheus” (
 1. To rerun the script, discard the current instance and create a new instance.
 
    The script is self-documented, but below are additional comments:
+
+### blackbox_exporter
+
+This exporter actively probes target service endpoints from the outside to get Prometheus metrics.
+
+   * <a target="_blank" href="https://training.promlabs.com/training/probing-services-blackbox-exporter">Julius' Probing Services - Blackbox Exporter training</a>:
+   * https://promlabs.com/blog/2024/02/06/monitoring-tls-endpoint-certificate-expiration-with-prometheus/
+   <br /><br />
+
+VERV=$(curl --silent -qI https://github.com/prometheus/blackbox_exporter/releases/latest | awk -F '/' '/^location/ {print substr($NF, 1, length($NF)-1)}');
+echo $VERV
+#v0.24.0
+VER=${VERV:1}
+echo $VER
+wget "https://github.com/prometheus/blackbox_exporter/releases/download/$VERV/blackbox_exporter-$VER.linux-amd64.tar.gz"
+# Unpack it.
+tar xvfz "blackbox_exporter-$VERV.linux-amd64.tar.gz"
+
+ls blackbox_exporter-0.24.0.linux-amd64.tar.gz
 
 
 ### Promlabs

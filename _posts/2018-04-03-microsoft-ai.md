@@ -3,7 +3,7 @@ layout: post
 date: "2024-01-08"
 file: "microsoft-ai"
 title: "Microsoft AI (Azure OpenAI and Cognitive Services)"
-excerpt: "How to automate AI workflows in Microsoft's Azure and Fabric, despite marketing rebrands, and passing AI-900, AI-100, AI-102 certified"
+excerpt: "How to automate AI workflows in Microsoft's Azure and Fabric, despite marketing rebrands, and passing AI-900, AI-100, AI-102 certification exams."
 tags: [microsoft, azure, machine learning, AI]
 image:
 # feature: pic green matrix hallway 1900x500.jpg
@@ -159,7 +159,7 @@ Microsoft "democratizes" AI and Machine Learning by providing a front-end that h
 
    These are what are called "narrow" or "weak" AI.
 
-1. Microsoft hands-on DEMOS at: 
+1. Microsoft NO LONGER provides hands-on DEMOS at: 
 
    <a target="_blank" href="https://aidemos.microsoft.com/">https://aidemos.microsoft.com</a>
 
@@ -182,15 +182,49 @@ As of this writing, in various marketing and certification training <a target="_
 
    * <a href="#VisionServices"><strong>Vision</strong></a> (Visual Perception) - interpret the world visually through cameras, videos, images
 
-   * <a href="#Speech"><strong>Speech</strong></a> - Text-to-Speech and Speech-to-Text to interpret written or spoken language, and respond in kind.
+   * <a href="#SpeechServices"><strong>Speech</strong></a> - Text-to-Speech and Speech-to-Text to interpret written or spoken language, and respond in kind.
 
-   * <a href="#Language"><strong>Language</strong></a> - aka Natural language Processing (NLP) to <a href="#TranslateText">translate text (Text Analysis)</a>, etc.
+   * <a href="#LanguageServices"><strong>Language</strong></a> - aka Natural language Processing (NLP) to <a href="#TranslateText">translate text (Text Analysis)</a>, etc.
 
-   * <a href="#Decision"><strong>Decision</strong></a> (Making) - supervised and unsupervised machine learning
+   * <a href="#DecisionServices"><strong>Decision</strong></a> (Making) - supervised and unsupervised machine learning
+
+   * <a href="#SearchServices"><strong>Search</strong> (as in Bing & Google, etc.)
 
 1. An <strong>alphabetical</strong> list of Microsoft's AI/ML services at <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">Cognitive Services pricing page at https://azure.microsoft.com/en-us/pricing/details/cognitive-services</a>:
 
    ![az-ai-svcs-pricing-309x410](https://user-images.githubusercontent.com/300046/117203280-126c4e00-adac-11eb-84ae-54994f47f3ea.png)
+
+   Kinds with ? are known in websites but not listed by this az command (which you can run after you're setup to run CLI commands:
+
+   <ul><pre><strong>az cognitiveservices account list-kinds</strong></pre>
+   &nbsp;
+   Response:
+   <pre>[
+  "AIServices",
+  "AnomalyDetector",
+  "CognitiveServices",
+  "ComputerVision",
+  "ContentModerator",
+  "ContentSafety",
+  "ConversationalLanguageUnderstanding",
+  "CustomVision.Prediction",
+  "CustomVision.Training",
+  "Face",
+  "FormRecognizer",
+  "HealthInsights",
+  "ImmersiveReader",
+  "Internal.AllInOne",
+  "LUIS.Authoring",
+  "LanguageAuthoring",
+  "MetricsAdvisor",
+  "Personalizer",
+  "QnAMaker.v2",
+  "SpeechServices",
+  "TextAnalytics",
+  "TextTranslation"
+]
+   </pre>
+   </ul>
 
 PROTIP: The reconciliation below between marketing Feature categories and the <strong>Kind</strong> of Cognitive service speecified in CLI az commands provides quick access to web pages and reveals some contradictions that need to be clarified, by category:  The table also has a column to summarize free machine time.
 
@@ -201,11 +235,23 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">See below</a> 
       </td><td> -
       </td></tr>
+   <tr valign="top"><td> ? </td><td> "AIServices"
+      </td><td> ?
+      </td></tr>
    <tr valign="top"><td> ? </td><td> "Internal.AllInOne"
       </td><td> ?
       </td></tr>
+   <tr valign="top"><td> ? </td><td> "ContentSafety"
+      </td><td> ?
+      </td></tr>
+   <tr valign="top"><td> ? </td><td> "HealthInsights"
+      </td><td> ?
+      </td></tr>
+   <tr valign="top"><td> ? </td><td> "LanguageAuthoring"
+      </td><td> ?
+      </td></tr>
 
-   <tr valign="top"><td colspan="4" align="center"> <a href="#Vision">Vision</a> 
+   <tr valign="top"><td colspan="4" align="center"> <a name="VisionServices"></a><a href="#VisionServices">Vision</a> 
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/#features">Features</a> </td><td> "ComputerVision"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">2 TPC, 10K/mo.</a> 
@@ -228,15 +274,17 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeLayoutAsync">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/media-services/video-indexer/#features">Features</a> </td><td> <a href="#VideoIndexer">Video Indexer</a>
+      (UNLISTED)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/video-indexer/">600 minutes in portal, 2400 in API</a> 
       </td><td> <a target="_blank" href="https://www.nuget.org/packages/Video.Indexer.API/">API</a>       
       </td></tr>
    <tr valign="top"><td> - </td><td> <a href="#InkRecognizer"><strike>Ink Recognizer"</strike></a>
+      (UNLISTED)
       </td><td> -
       </td><td> -
       </td></tr>
 
-   <tr valign="top"><td colspan="4" align="center"> <a href="#Speech">Speech</a> 
+   <tr valign="top"><td colspan="4" align="center"> <a name="#SpeechServices"></a><a href="#Speech">Speech</a> 
       </td></tr>
    <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-services/#features">Features</a> </td><td> <a href="#SpeechServices">"SpeechServices"</a>
       (<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-to-text/#Features">Speech-To-Text"</a>, <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/#Features">Text-to-Speech"</a>)
@@ -244,17 +292,20 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-speech-to-text#speech-to-text-rest-api-v30" title="v3">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/#features">Features</a> </td><td> <a href="#SpeakerRecognition">"SpeakerRecognition"</a>
+      (UNLISTED)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">20/min, 5K/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563309b6778daf02acc0a508/operations/5645c3271984551c84ec6797">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/#features">Features</a> </td><td> <a href="#SpeechTranslation">Speech Translation</a>
+      (UNLISTED)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">20/min, 5K/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563309b6778daf02acc0a508/operations/5645c3271984551c84ec6797">API</a>       
       </td></tr>
 
-   <tr valign="top"><td colspan="4" align="center"> <a href="#Language">Language</a>
+   <tr valign="top"><td colspan="4" align="center"> <a name="LanguageServices"></a><a href="#Language">Language</a>
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/#features">Features</a> </td><td> <a href="#LUIS">"LUIS"</a>
+      (UNLISTED)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/language-understanding-intelligent-services/">5 TPS, 10K trans/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview/operations/5890b47c39e2bb052c5b9c36">API</a>       
       </td></tr>
@@ -263,6 +314,7 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview/operations/5890b47c39e2bb052c5b9c2f">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/qna-maker/#features">Features</a> </td><td> <a href="#QnA_Maker">"QnAMaker"</a>
+      (UNLISTED)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/qna-maker/">3 TPS, 50K trans/mo, 3 docs/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa">API</a>       
       </td></tr>
@@ -284,7 +336,7 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/rest/api/azure/">API</a>       
       </td></tr>
    
-   <tr valign="top"><td colspan="4" align="center"> <a href="#Decision">Decision (Making)</a>  
+   <tr valign="top"><td colspan="4" align="center"> <a name="#DecisionServices"></a><a href="#Decisions">Decision (Making)</a>  
       </td></tr>
    <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/anomaly-detector/#features">Features</a> </td><td> <a href="#AnomalyDetector">"AnomalyDetector"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/anomaly-detector/">2,000 trans/mo.</a> 
@@ -303,22 +355,21 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://westus2.dev.cognitive.microsoft.com/docs/services/personalizer-api/operations/Rank">API</a>       
       </td></tr>
 
-   <tr valign="top"><td colspan="4" align="center"> <a href="#Search">Search</a>
+   <tr valign="top"><td colspan="4" align="center"> <a name="SearchServices"></a><a href="#SearchServices">Search</a>
       </td></tr>
    <tr align="top"><td> <a target="_blank" href="https://www.microsoft.com/en-us/bing/apis">Features</a> </td><td> "Bing.CustomSearch"
+      (UNLISTED)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/personalizer/">50K trans/mo.</a> 
       </td><td> -      
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://www.microsoft.com/en-us/bing/apis">Features</a> </td><td> "Bing.Search.v7"
+      (UNLISTED)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/">3 TPS, 1000/mo</a> 
       </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/bing-web-search/">API</a>       
       </td></tr>
 
    </table>
 
-   Kinds with ? are known in websites but not listed by this az command (which you can run after you're setup to run CLI commands:
-
-   <ul><pre><strong>az cognitiveservices account list-kinds</strong></pre></ul>
 
    PROTIP: CAUTION: Each service has a different maturity level <a target="_blank" href="https://azure.microsoft.com/en-us/downloads/">in its documentation at azure.microsoft.com/en-us/downloads</a>, such as <a target="_blank" href="https://azure.github.io/azure-sdk/releases/latest/python.html">SDK for Python</a> open-sourced at <a target="_blank" href="   https://github.com/azure/azure-sdk-for-python/">github.com/azure/azure-sdk-for-python</a>, described at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/developer/python/">docs.microsoft.com/en-us/azure/developer/python</a>.
 
@@ -406,7 +457,7 @@ To verify resource status and to discuss with others, you still need skill at cl
 References:
    * <a target="_blank" href="https://www.youtube.com/watch?v=lu7a5RDeJU0" title="by Build5Nines">VIDEO</a>: To release IP address, don't stop machines, but delete the resource.
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=Rrx7NzPugaE">VIDEO</a>: <a target="_blank" href="https://dev.to/azure/keep-your-azure-subscription-clean-automatically-mmi">shut down automatically all your existing VMs</a> (using a PowerShell script called by a scheduled Logic App), by <a target="_blank" href="https://www.youtube.com/channel/UCAr20GBQayL-nFPWFnUHNAA"">Frank Boucher</a> at <a target="_blank" href="https://github.com/FBoucher/AzurePowerTools">github.com/FBoucher</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Rrx7NzPugaE">VIDEO</a>: <a target="_blank" href="https://dev.to/azure/keep-your-azure-subscription-clean-automatically-mmi">shut down automatically all your existing VMs</a> (using a PowerShell script called by a scheduled Logic App), by <a target="_blank" href="https://www.youtube.com/channel/UCAr20GBQayL-nFPWFnUHNAA">Frank Boucher</a> at <a target="_blank" href="https://github.com/FBoucher/AzurePowerTools">github.com/FBoucher</a>
 
    * <a target="_blank" href="https://www.codeisahighway.com/effective-ways-to-delete-resources-in-a-resource-group-on-azure/">VIDEO</a>
 
@@ -466,27 +517,22 @@ Resources:
 
 Among <a target="_blank" href="https://wilsonmar.github.io/azure-certifications">Microsoft's Azure professional certifications</a>:
 
-   * <a href="#AI-900">AI-900</a> is the entry-level exam ($99).
+   * Previous exam 774 is now been retired. It was based on <a target="_blank" href="https://www.youtube.com/watch?v=eJOv-TfhhzQ">VIDEO</a>: <a target="_blank" href="https://services.azureml.net/">Azure Machine Learning Studio (classic)</a> web services, which reflected "All Microsoft all the time" using proprietary "pickle" (pkl) model files. <a target="_blank" href="https://www.coursera.org/learn/predictive-modelling-azure-machine-learning-studio/home/welcome">Classes referencing it</a> are now obsolete.
 
-   * <a href="#AI-102">AI-102</a> (with free re-cert after 1-year) replaces
-   * <a href="#AI-100">AI-100</a> (with free re-cert after 2-years) on June 30, 2021.
+   * <a href="#AI-900">AI-900</a> is the entry-level exam ($99). It's a pre-requisite for:
+
+   * <a href="#AI-102">AI-102</a> (with free re-cert after 1-year) replaced<br /><a href="#AI-100"><strike>AI-100</strike></a> (with free re-cert after 2-years) on June 30, 2021.
 
    Both AI-100 and AI-102 are $165.
    The shift is from infrastructure (KeyVault, AKS, Stream Analytics) to programming C#, Python, and curl commands.
 
-Previous exam 774 is now been retired. It was based on <a target="_blank" href="https://www.youtube.com/watch?v=eJOv-TfhhzQ">VIDEO</a>: <a target="_blank" href="https://services.azureml.net/">Azure Machine Learning Studio (classic)</a> web services, 
-which reflected "All Microsoft all the time" using proprietary "pickle" (pkl) model files.
-<a target="_blank" href="https://www.coursera.org/learn/predictive-modelling-azure-machine-learning-studio/home/welcome">Classes referencing it</a> are now obsolete.
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-203">DP-203 Data Engineering on Microsoft Azure</a> goes into how to use machine learning in Azure Synapse Analytics.
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-203">DP-203 Data Engineering on Microsoft Azure</a> goes into how to use machine learning in Azure Synapse Analytics.
+   <a target="_blank" href="https://microsoftlearning.github.io/dp-090-databricks-ml/">LAB</a> references <a target="_blank" href="https://github.com/MicrosoftLearning/dp-090-databricks-ml">DP-090</a> goes into implementing a Machine Learning Solution with Databricks.
 
-<a target="_blank" href="https://microsoftlearning.github.io/dp-090-databricks-ml/">LAB</a> references <a target="_blank" href="https://github.com/MicrosoftLearning/dp-090-databricks-ml">DP-090</a> goes into implementing a Machine Learning Solution with Databricks.
-
-<a target="_blank" href="https://www.coursera.org/learn/developing-ai-applications-azure">
-Coursera video course: Developing AI Applications on Azure</a> 
-by Ronald J. Daskevich at LearnQuest is structured for 5 weeks.
-Coursera's videos shows the text at each point of its videos.
-NOTE: It still sends people to https://notebooks.azure.com and covers <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/overview">Microsoft's TDSP (Team Data Science Process)</a> <a target="_blank" href="https://www.coursera.org/learn/developing-ai-applications-azure/lecture/Qd5fj/tdsp-stages">VIDEO</a>:
+   <a target="_blank" href="https://www.coursera.org/learn/developing-ai-applications-azure">Coursera video course: Developing AI Applications on Azure</a> by Ronald J. Daskevich at LearnQuest is structured for 5 weeks.
+   Coursera's videos shows the text at each point of its videos.
+   NOTE: It still sends people to https://notebooks.azure.com and covers <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/overview">Microsoft's TDSP (Team Data Science Process)</a> <a target="_blank" href="https://www.coursera.org/learn/developing-ai-applications-azure/lecture/Qd5fj/tdsp-stages">VIDEO</a>:
    1. Business understanding (Charter, Objectives, Data sources, Data dictionaries)
    2. Data acquisition and understanding (Clean dataset, pipeline)
    3. Modeling
@@ -555,6 +601,8 @@ Practice tests:
 
 AI-102 is intended for <strong>software developers</strong> wanting to build AI-infused applications. 
 
+https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/
+
 AI-102 focuses on the use of <strong>pre-packaged</strong> services for AI development, not on the development of custom models using Azure Machine Learning, which is covered by <a target="_blank" href="https://wilsonmar.github.io/azure-machine-learning/#DP-100">exam DP-100</a>.
 
 First setup development environments:
@@ -562,41 +610,105 @@ First setup development environments:
    * NodeJs for Bot Framework Composer and Bot Framework Emulator
    <br /><br />
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/ai-102">AI-102 exam, as defined at Microsoft's LEARN</a> has free written tutorials on each of the exam's domains:
+<a target="_blank" href="<a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-102/">AI-102 exam, as defined at Microsoft's LEARN</a> has free written tutorials on each of the exam's domains:
 
-   * Plan and manage an Azure <a href="#CognitiveServices">Cognitive Services</a> solution (15-20%)
-   * Implement <a href="#ComputerVision">Computer Vision</a> solutions (20-25%)
-   * Implement <a href="#NLP">natural language processing</a> solutions (20-25%)
-   * Implement <a href="#KnowledgeMining">knowledge mining</a> solutions (15-20%)
-   * Implement <a href="#Conversational">Conversational AI</a> solutions (15-20%)
+   * Plan and manage an Azure <a href="#CognitiveServices">AI Solution <strike>Cognitive Services</strike></a> solution (15-20%)
+   * Implement decision support solutions (10–15%)
+   * Implement <a href="#ComputerVision">computer vision</a> solutions (15–20%)
+   * Implement <a href="#NLP">natural language processing</a> solutions (30–35%)
+   * Implement <a href="#KnowledgeMining">knowledge mining</a> and <a href="#DocIntell">document intelligence</a> solutions (10–15%)
+   * Implement <a href="#Conversational">generative AI</a> solutions (10–15%)
    <br /><br />
 
-PROTIP: Unlike the AI-100 (which uses Python Notebooks), <a target="_blank" href="https://microsoftlearning.github.io/AI-102-AIEngineer/">hands-on exercises</a> in Microsoft's <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/ai-102t00">5-day live course AI-102T00: Designing and Implementing a Microsoft Azure AI Solution</a> (with cloud time) consists of C# and Python programs at <a target="_blank" href="https://github.com/MicrosoftLearning/AI-102-AIEngineer">https://github.com/MicrosoftLearning/AI-102-AIEngineer</a> (by <a target="_blank" href="https://www.linkedin.com/in/graemesplace/">Graeme Malcolm</a>). 
+PROTIP: Unlike the AI-100 (which uses Python Notebooks), <a target="_blank" href="https://microsoftlearning.github.io/AI-102-AIEngineer/">hands-on exercises</a> in Microsoft's <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/ai-102t00">5-day live course AI-102T00: Designing and Implementing a Microsoft Azure AI Solution</a> (with cloud time) consists of C# and Python programs at https://github.com/MicrosoftLearning/AI-102-AIEngineer (by <a target="_blank" href="https://www.linkedin.com/in/graemesplace/">Graeme Malcolm</a>) was archived on Dec 23, 2023 after its content was distributed among these repos:
 
-Modules in the course, shown at <a target="_blank" href="https://microsoftlearning.github.io/AI-102-AIEngineer/">https://microsoftlearning.github.io/AI-102-AIEngineer/</a>. Modules:
-   1. Introduction to AI on Azure
-   2. Developing AI Apps with Cognitive Services
-   3. Getting Started with Natural Language Processing
-   4. Building Speech-Enabled Applications
-   5. Creating Language Understanding Solutions
-   6. Building a QnA Solution
-   7. Conversational AI and the Azure Bot Service
-   8. Getting Started with Computer Vision
-   9. Developing Custom Vision Solutions
-   10. Detecting, Analyzing, and Recognizing Faces
-   11. Reading Text in Images and Documents
-   12. Creating a <a href="#KnowledgeMining">Knowledge Mining</a> Solution
+* https://microsoftlearning.github.io/mslearn-ai-services/ <br /><a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-services">https://github.com/MicrosoftLearning/mslearn-ai-services</a>
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-services/blob/main/Instructions/Exercises/01-use-azure-ai-services.md">01-use-azure-ai-services.md</a>
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-services/blob/main/Instructions/Exercises/02-ai-services-security.md">02-ai-services-security.md</a>
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-services/blob/main/Instructions/Exercises/03-monitor-ai-services.md">03-monitor-ai-services.md</a>
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-services/blob/main/Instructions/Exercises/04-use-a-container.md">04-use-a-container.md</a>
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-services/blob/main/Instructions/Exercises/05-personalizer-exercise.md">05-personalizer-exercise.md</a>
    <br /><br />
+
+* https://microsoftlearning.github.io/mslearn-ai-vision/ 
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-vision">https://github.com/MicrosoftLearning/mslearn-ai-vision</a>
+   * Analyze Images with Azure AI Vision
+   * Classify images with an Azure AI Vision custom model
+   * Detect Objects in Images with Custom Vision
+   * Detect and Analyze Faces
+   * Read Text in Images
+   * Analyze Video with Video Analyzer
+   * Classify Images with Azure AI Custom Vision
+   <br /><br />
+
+* https://microsoftlearning.github.io/mslearn-ai-language/ 
+   * https://learn.microsoft.com/en-us/training/paths/develop-language-solutions-azure-ai/
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-language">https://github.com/MicrosoftLearning/mslearn-ai-language</a>
+   * Analyze text
+   * Create a Question Answering Solution
+   * Create a language understanding model with the Azure AI Language service
+   * Custom text classification
+   * Extract custom entities
+   * Translate Text
+   * Recognize and Synthesize Speech
+   * Translate Speech
+   <br /><br />
+
+* https://microsoftlearning.github.io/mslearn-ai-document-intelligence/ 
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-document-intelligence/tree/main/Labfiles">https://github.com/MicrosoftLearning/mslearn-ai-document-intelligence</a>
+   * Use prebuilt Document Intelligence models
+   * Extract Data from Forms
+   * Create a composed Document Intelligence model
+   <br /><br />
+
+* https://microsoftlearning.github.io/mslearn-knowledge-mining/ 
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-knowledge-mining">https://github.com/MicrosoftLearning/mslearn-knowledge-mining</a>
+   * Create an Azure AI Search solution
+   * Create a Custom Skill for Azure AI Search
+   * Create a Knowledge Store with Azure AI Search
+   * Enrich an AI search index with custom classes
+   * Implement enhancements to search results
+   * Enrich a search index using Azure Machine Learning model
+   * Add to an index using the push API
+   * Debug search issues
+   * Set up semantic search
+   * Use the REST API to run vector search queries
+   <br /><br />
+
+* https://microsoftlearning.github.io/mslearn-openai
+   * https://learn.microsoft.com/en-us/training/browse/?terms=OpenAI
+   * https://learn.microsoft.com/en-us/training/paths/develop-ai-solutions-azure-openai/
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-openai">https://github.com/MicrosoftLearning/mslearn-openai</a>
+   * Get started with Azure OpenAI
+   * Integrate Azure OpenAI into your app
+   * Utilize prompt engineering in your app
+   * Generate and improve code with Azure OpenAI Service
+   * Generate images with a DALL-E model
+   * Use your own data with Azure OpenAI
+   <br /><br />
+
+https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-102/
+
+https://learn.microsoft.com/en-us/training/courses/ai-102t00
+modules:
+* Prepare to develop AI solutions on Azure
+* Create and consume Azure AI services
+* Secure Azure AI services
+* Monitor Azure AI services
+* Deploy Azure AI services in containers
+<br /><br />
+
 
 Resources:
+   * https://www.whizlabs.com/microsoft-azure-certification-ai-102/  $49.90
    * <a target="_blank" href="https://cloudacademy.com/quiz/38235/">Preview 45 min. Exam: Designing and Implementing an Azure AI Solution (AI-102)</a>
-   * <a target="_blank" href="https://ravikirans.com/ai-102-azure-exam-study-guide/">
-Ravi's links</a> still refer to AI-100
+   * https://medium.com/version-1/mastering-azure-ai-certifications-passing-the-ai-100-and-ai-102-exams-1st-time-c8a8fe223fcc
+   <br /><br />
 
 
 <a name="AI-100"></a>
 
-### AI-100 Azure AI Engineer Associate
+### AI-100 Azure AI Engineer Associate (RETIRED)
 
 On June 30, 2021 Microsft retired the AI-100 exam in favor of <a href="#AI-102">AI-102 exam</a> (avilable in $99 beta since Feb 2021). <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/ai-100">AI-100 exam, as defined at Microsoft's LEARN</a> has free written tutorials on each of the exam's domains:
 
@@ -637,6 +749,7 @@ Raza Salehi created on Pluralsight.com <a target="_blank" href="https://app.plur
 
 Practice tests:
    * https://www.whizlabs.com/learn/course/microsoft-azure-ai-100/
+   * <a target="_blank" href="https://ravikirans.com/ai-102-azure-exam-study-guide/">Ravi's links</a> still refer to AI-100
 
 
 <hr />
@@ -664,9 +777,9 @@ https://docs.microsoft.com/en-us/samples/azure-samples/azure-sdk-for-go-samples/
 A complete sample app is Microsoft' Northwinds Traders consumer ecommerce store.
 <a target="_blank" href="https://docs.microsoft.com/en-us/powerapps/maker/canvas-apps/northwind-install">install</a>
 
-Cognitive Services SDK Samples for:
+IMPORTANT: Cognitive Services SDK Samples for:
    * <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/cognitive-services-node-sdk-samples/cognitive-services-node-sdk-samples/">(Node)</a>
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/cognitive-services-python-sdk-samples/cognitive-services-python-sdk-samples/">Python</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/cognitive-services-python-sdk-samples/cognitive-services-python-sdk-samples/">Python</a> at https://github.com/Azure-Samples/cognitive-services-python-sdk-samples.git
    * <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/cognitive-services-java-sdk-samples/cognitive-services-java-sdk-samples/">Java</a>
 
 Tim Warner's <a target="_blank" href="https://github.com/timothywarner/ai100">https://github.com/timothywarner/ai100</a> includes <a target="_blank" href="https://github.com/timothywarner/ai100/tree/master/powershell-cli">Powershell scripts</a>:
@@ -1566,7 +1679,6 @@ Sample Response:
 <hr />
 
 <a name="SpeechServices"></a>
-<a name="Speech"></a>
 
 ## Speech Services
 
