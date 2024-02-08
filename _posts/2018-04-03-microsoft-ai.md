@@ -2,8 +2,8 @@
 layout: post
 date: "2024-01-08"
 file: "microsoft-ai"
-title: "Microsoft AI (Azure OpenAI and Cognitive Services)"
-excerpt: "How to automate AI workflows in Microsoft's Azure and Fabric, despite marketing rebrands, and passing AI-900, AI-100, AI-102 certification exams."
+title: "Microsoft AI (Azure OpenAI Generative Services)"
+excerpt: "How to automate AI workflows in Microsoft's Azure and Fabric, despite marketing rebrands, and passing AI-90 & AI-102 certification exams."
 tags: [microsoft, azure, machine learning, AI]
 image:
 # feature: pic green matrix hallway 1900x500.jpg
@@ -16,185 +16,33 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This article presents my notes toward a guided tour to introduce use of Microsoft's Artificial Intelligence offerings running on the Azure cloud, which Microsoft calls "Cognitive services".
-
-TL;DR look for "PROTIP:" in this article highlight the author's hard-won experience.You likely won't find such information anywhere else.
+Here is a guided tour to introduce use of Microsoft's Artificial Intelligence (AI) offerings running on the Azure cloud.
 My contribution to the world (to you) is a less overwhelming <a href="#LearningSequence">learning sequence</a>, one that starts with the <strong>least complex</strong> of technologies used, then more complex ones.
 
-<a target="_blank" href="https://www.youtube.com/c/MicrosoftMechanicsSeries">Microsoft Mechanics YouTube channel</a> is focused on Microsoft's AI work.
+{% include whatever.html %}
 
-<a name="ServiceProviders"></a>
-
-## AI Language = Bing = Cortana = Cognitive Services
-
-The 2023 branding for Microsoft's AI services to mimic human intelligence is <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-language">"AI Language"</a>, which includes <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/">Cognitive Services</a> and <a target="_blank" href="https://azure.microsoft.com/en-us/services/search/">Bing</a>.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=KxwjnuhNVIY&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&index=33">"Cortana"</a> was the brand-name for Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Alexa, Siri, Hey Google, and other AI-powered personal assistants which respond to voice commands controlling skills that turn lights on and off, etc. However, since 2019, Cortana is considered a "skill" (app) that Amazon's Alexa and Google Assistant can call, working across multiple platforms.
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations">Microsoft has</a> three service "Providers":
-
-<table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Asset type </th><th> Resource provider namespace/Entity </th><th> Abbre- viation </th></tr>
-<tr valign="top"><td> <a href="#Cognitive_Services">Azure Cognitive Services</a> </td><td> <a href="#Cognitive_Services"> Microsoft.CognitiveServices/accounts</a> </td><td> cog- </td></tr>
-<tr valign="top"><td> <a target="_blank" href="https://wilsonmar.github.io/azure-machine-learning/">Azure Machine Learning workspace</a> </td><td>   Microsoft.MachineLearningServices/workspaces </td><td> mlw- </td></tr>
-<tr valign="top"><td> Azure Cognitive Search </td><td> Microsoft.Search/searchServices </td><td> srch- </td></tr>
-</table>
-
-* <a href="#Search"><strong>Search</strong></a> (the "Bing" brand, before OpenAI) was separated out from the "Cognitive Services" to its own at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/">https://docs.microsoft.com/en-us/azure/search</a>, although it's used in "Conversational AI" using an "agent" (Azure Bot Service) to participate in (natural) conversations. BTW: <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microsoft-cortana-features-strategy-report">in 2019</a> Cortana decoupled from Windows 10 search.
-
-   Since October 31st, 2020, <a target="_blank" href="https://blogs.bing.com/search-quality-insights/october-2020/Bing-Search-APIS-are-Transitioning">Bing Search APIs</a> transitioned from Azure Cognitive Services Platform to <a target="_blank" href="https://aka.ms/bingapigetstarteddoc">Azure Marketplace</a>. The Bing Search v7 API subscription covers several Bing Search services (Bing Image Search, Bing News Search, Bing Video Search, Bing Visual Search, and Bing Web Search),
-
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/iot-edge/">Azure IoT (Edge) Services</a> are separate. 
-
-* https://www.computerworld.com/article/3252218/cortana-explained-why-microsofts-virtual-assistant-is-wired-for-business.html 
-
-PROTIP: As of Jan 8, 2024, https://aka.ms/language-studio has "coming soon" for Video and Learn, and "preview" for several services. Essentially Microsoft has two separate offerings by different groups:
-   * https://learn.microsoft.com/en-us/azure/ai-services/
-   <br /><br />
-
-
-<a name="OpenAI"></a>
-
-## Azure OpenAI
-
-   References:
-   * https://learn.microsoft.com/en-us/azure/ai-services/openai/
-   * https://azure.microsoft.com/en-us/services/openai/
-   * https://learn.microsoft.com/en-us/training/paths/get-started-with-artificial-intelligence-on-azure/
-   * https://wilsonmar.github.io/genai for definition of terms and tutorials about Generative AI, which produce new content based on what is described in the input. The OpenAI models are a collection of generative AI models that can produce language, code, and images.
-   * https://azure.microsoft.com/pricing/details/cognitive-services/openai-service
-   <br /><br />
-
-OpenAI is a San Francisco-based artificial intelligence research laboratory. OpenAI was founded by Elon Musk, Sam Altman, Greg Brockman, and Ilya Sutskever in December 2015 (to compete with Google's DeepMind acquisition). 
-
-In 2019 Microsoft invested $1 billion in the company as time on Azure cloud and to develop a large-scale AI supercomputer built exclusively for OpenAI's research in Azure. Azure powers all of OpenAI's workloads. 
-
-In 2023, OpenAI exclusively licensed (closed-source) GPT-3 to Microsoft for their products and services.
-
-In 2022, OpenAI made available their GPT-3.5 foundation model for free trial, offering several categories of capabilities
-
-   * ChatGPT: Generating natural language: summarizing complex text for different reading levels, suggesting alternative wording for sentences, etc.
-   * Generating code: translating code from one programming language into another, identifying and troubleshooting bugs in code, etc.
-   * Generating images from text prompts, based on OpenAI's DALL-E model. 
-
-   Source: https://openai.com/blog/openai-microsoft/
-   <br /><br />
-
-OpenAI's avowed mission is to create Artificial General Intelligence (AGI) (to rival human ability).
-
-### Microsoft's AI portfolio
+## Microsoft's AI portfolio
 
 <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/explore-azure-openai/3-describe-azure-openai">NOTE</a>:
 Microsoft leverages OpenAI in ALL products and services (including Microsoft Teams):<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691674882/microsoft-ai-portfolio-1725x989_mqivy5.png"><img alt="microsoft-ai-portfolio-1725x989.png" width="1725" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691674882/microsoft-ai-portfolio-1725x989_mqivy5.png"></a><br /><em>Click picture for full-page view</em>.
-In the <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/explore-azure-openai/3-describe-azure-openai">Microsoft AI Portfolio diagram</a> above, Azure's AI services are categorized into three groups: 
-   * Applied AI Services
-   * Cognitive Services (the pillars of services: <a href="#vision-services">vision</a>, <a href="#speech-services">speech</a>, <a href="#nlp-natural-language-processing-services">language</a>, decision, plus the Azure OpenAI Service)
-   * Azure's Machine Learning (ML) platform
+
+In the <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/explore-azure-openai/3-describe-azure-openai">Microsoft AI Portfolio diagram</a> above left, Microsoft makes a distinction between "Business Users & Citizen Developers" who use their Applications and "Power Platform" and geeky "Developers & Data Scientists" who use "Azure AI" in the Azure cloud.
+
+Azure's AI services are categorized into three groups (all of which have GUI, CLI, and API interfaces):
+   * <strong>Applied</strong> AI Services are part of automated workflows
+   * <a href="#Cognitive_Services"><strong>Cognitive</strong> Services</a> are foundational utilities used to build custom apps
+   * ML (Machine Learning) Platform, which <a target="_blank" href="https://wilsonmar.github.io/azure-machine-learning/">I cover in a separate article</a>
    <br /><br />
 
-OpenAI is a "separate" service from Azure Cognitive Services because
-now "traditional" Azure Cognitive Services focuses on making predictions based textual and discrete data where
-OpenAI added to ML "attention" algorithms working on binary data (voice, images, and video) to enable it to perform "Generative AI" which produces new content based on what is described in the input.
+PROTIP: The division between "Applied" and "Cognitive" AI services can be confusing because they are often lumped together. I constructed the table below to clarify.
 
-1.  Assuming that you have a Azure account and subscription at the Azure portal https://portal.azure.com
-1.  Consider pricing at https://azure.microsoft.com/pricing/details/cognitive-services/openai-service
-
-    OpenAI put a paywall behind its more advanced GPT-4 models, 
-
-    Billing is based on 1,000 "tokens" increments, with the first 100,000 tokens per month free. Beyond that:
-    
-    "Standard" use of the older/more limited gpt-3.5-turbo model is then $0.002 per 1,000 tokens.
-
-    Charges for the GPT-4 model has two dimensions: process stage and the size of the foundational model used :
-
-    * The &nbsp; "8K context" has &nbsp; 13 billion parameters.
-    * The "32K context" has 175 billion parameters.
-
-    * Prompt
-    * Completions
-    <br /><br />
-    
-    Images generated using DALL-E are $2 per 100 images.
-
-   available for free for the first 100,000 tokens per month, then $0.004 per 1,000 tokens.
-    Doing the math, 
-
-
-1.  Apply for access to Asure OpenAI for your Region and Currency:
-
-    https://aka.ms/oaiapply
-
-
-
-
-<a name="Competitors"></a>
-
-## Competitive futures
-
-Microsoft competes for talent with Google, Amazon, IBM, China's Tencent.
-
-BTW, by contrast, Bernard Marr identified <a target="_blank" href="https://www.bernardmarr.com/default.asp?contentID=2191">four types of AI</a> evolving: 
-
-   * "reactive" machines (such as Spam filters and the Netflix recommendation engine) are not able to learn or conceive of the past or future, so it responds to identical situations in the exact same way every time.
-
-   * "limited memory" AI absorbs learning data and improve over time based on its experience, using historical data to make predictions. It's similar to the way the human brain’s neurons connect. Deep-learning algorithms used today is the AI that is widely used and being perfected today.
-
-   * "theory of mind" is when AI acquires decision-making capabilities equal to humans, and have the capability to recognize and remember emotions, and adjust behavior based on those emotions.
-
-   * "self-aware", also called artificial superintelligence (ASI), is "sentient" understanding of of its own needs and desires.
-
-https://www.forbes.com/sites/bernardmarr/2018/02/14/the-key-definitions-of-artificial-intelligence-ai-that-explain-its-importance/#22db12bb4f5d
-
-
-### What can AI do?
-
-Microsoft "democratizes" AI and Machine Learning by providing a front-end that hides some of the complexities, enabling them to be run <strong>possibly without programming</strong>.
-
-1. Microsoft's Azure AI gallery of samples and users' contributions:
-
-   <a target="_blank" href="
-   https://gallery.azure.ai/browse">
-   https://gallery.azure.ai/browse</a>
-
-   These are what are called "narrow" or "weak" AI.
-
-1. Microsoft NO LONGER provides hands-on DEMOS at: 
-
-   <a target="_blank" href="https://aidemos.microsoft.com/">https://aidemos.microsoft.com</a>
-
-Case studies of how people are already making use of AI/ML to save time and money:
-
-   * Predictive Maintenance data science <a target="_blank" href="https://info.microsoft.com/CO-AAIoT-WBNR-FY16-07Jul-05-Predictive-Maintenance-Registration.html">webinar</a>
-   * Recommendation Engines (such as what Netflix)
-   * modsy.com 3D view
-   * <a target="_blank" href="https://azure.microsoft.com/en-ca/case-studies/?OCID=AID2100017_SEM_ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&ef_id=ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&msclkid=ca6fee2dd05b1ad86ab9b1a0055c7ccd&dclid=CKCq5IKfwewCFUWwnwodCKwLYg&term=bot">Customer and Partner Success Stories for "bot"</a>
-   <br /><br />
-
-
-<hr />
 
 <a name="Cognitive_Services"></a>
 
-## Kinds of AI Services
+## Cognitive Services
 
-As of this writing, in various marketing and certification training <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services">DOCS</a>, Azure Cognitive Services is categorized into these (which is the basis this article is arranged. Click on the bolded word to jump to it below):
-
-   * <a href="#VisionServices"><strong>Vision</strong></a> (Visual Perception) - interpret the world visually through cameras, videos, images
-
-   * <a href="#SpeechServices"><strong>Speech</strong></a> - Text-to-Speech and Speech-to-Text to interpret written or spoken language, and respond in kind.
-
-   * <a href="#LanguageServices"><strong>Language</strong></a> - aka Natural language Processing (NLP) to <a href="#TranslateText">translate text (Text Analysis)</a>, etc.
-
-   * <a href="#DecisionServices"><strong>Decision</strong></a> (Making) - supervised and unsupervised machine learning
-
-   * <a href="#SearchServices"><strong>Search</strong> (as in Bing & Google, etc.)
-
-1. An <strong>alphabetical</strong> list of Microsoft's AI/ML services at <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">Cognitive Services pricing page at https://azure.microsoft.com/en-us/pricing/details/cognitive-services</a>:
-
-   ![az-ai-svcs-pricing-309x410](https://user-images.githubusercontent.com/300046/117203280-126c4e00-adac-11eb-84ae-54994f47f3ea.png)
-
-   Kinds with ? are known in websites but not listed by this az command (which you can run after you're setup to run CLI commands:
+If you've already setup your Terminal to run "az" commands <a target="_blank" href="https://wilsonmar.github.io/mac-setup/">like I describe in my mac-setup page</a>, run this command to list all "kinds" of services Azure currently provides for your Azure subscription:
 
    <ul><pre><strong>az cognitiveservices account list-kinds</strong></pre>
    &nbsp;
@@ -226,10 +74,45 @@ As of this writing, in various marketing and certification training <a target="_
    </pre>
    </ul>
 
-PROTIP: The reconciliation below between marketing Feature categories and the <strong>Kind</strong> of Cognitive service speecified in CLI az commands provides quick access to web pages and reveals some contradictions that need to be clarified, by category:  The table also has a column to summarize free machine time.
+
+As of this writing, in various marketing and certification training <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services">DOCS</a>, Azure Cognitive Services are grouped into these (which is the basis this article is arranged. Click on the underlined and bolded category name to jump to the list of services associated with it:
+
+   * <a href="#VisionServices"><strong>Vision</strong></a> (Visual Perception) - interpret the world visually through cameras, videos, images
+
+   * <a href="#SpeechServices"><strong>Speech</strong></a> - Text-to-Speech and Speech-to-Text to interpret written or spoken language, and respond in kind.
+
+   * <a href="#LanguageServices"><strong>Language</strong></a> - aka Natural language Processing (NLP) to <a href="#TranslateText">translate text (Text Analysis)</a>, etc.
+
+   * <a href="#DecisionServices"><strong>Decision</strong></a> (Making) - supervised and unsupervised machine learning
+
+   * <a href="#SearchServices"><strong>Search</strong> is a confusing category because of so many <a href="#Branding">branding changes</a> (Cortana, Bing, OpanAI, etc.)
+
+### Cognitive Pricing
+
+PROTIP: The table below groups each kind of cognitive AI service above along with how many FREE transactions Microsoft provides for each service on its <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">Cognitive Services pricing page</a>. Links are also provided to Features and API for each service.
+
+* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/">Azure OpenAI Service</a> = Power your apps with large-scale AI models.
+* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/search/">Azure AI Search</a> = Enterprise scale search for app development.
+* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/content-safety/">Azure AI Content Safety</a> = Use AI to monitor text and image content for safety.
+* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/ai-document-intelligence/">Azure AI Document Intelligence</a> = Accelerate information extraction from documents.
+* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">Azure AI Speech</a> = Transcribe, translate and generate spoken audio.
+* <a target="_blank" href=https://azure.microsoft.com/en-us/pricing/details/cognitive-services/language-service/">Azure AI Language</a> = Identify, analyze and summarize text with natural language processing.
+* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator/">Azure AI Translator</a> = Real-time machine translation for documents and text.
+* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/computer-vision/">Azure AI Vision</a> = Analyze, extract and categorize information from images.
+<br /><br />
+
+Previously, the list was:
+
+   ![az-ai-svcs-pricing-309x410](https://user-images.githubusercontent.com/300046/117203280-126c4e00-adac-11eb-84ae-54994f47f3ea.png)
+
+PROTIP: The reconciliation below between marketing Feature categories and the <strong>Kind</strong> of Cognitive service specified in CLI az commands provides quick access to web pages and reveals some contradictions that need to be clarified, by category:  The table also has a column to summarize free machine time.
+
+<a name="CognitiveServicesTable"></a>
+
+### Cognitive Services Table
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr valign="bottom" align="left"><th> Demo </th><th> Kind </th><th> Free </th><th> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/">API</a> </th></tr>
+   <tr valign="bottom" align="left"><th> Demo </th><th> Kind </th><th> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">FREE</a> </th><th> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/">API</a> </th></tr>
 
    <tr valign="top"><td> <em>global</em> </td><td> "CognitiveServices"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">See below</a> 
@@ -239,15 +122,6 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> ?
       </td></tr>
    <tr valign="top"><td> ? </td><td> "Internal.AllInOne"
-      </td><td> ?
-      </td></tr>
-   <tr valign="top"><td> ? </td><td> "ContentSafety"
-      </td><td> ?
-      </td></tr>
-   <tr valign="top"><td> ? </td><td> "HealthInsights"
-      </td><td> ?
-      </td></tr>
-   <tr valign="top"><td> ? </td><td> "LanguageAuthoring"
       </td><td> ?
       </td></tr>
 
@@ -274,7 +148,7 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeLayoutAsync">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/media-services/video-indexer/#features">Features</a> </td><td> <a href="#VideoIndexer">Video Indexer</a>
-      (UNLISTED)
+      (Applied AI)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/video-indexer/">600 minutes in portal, 2400 in API</a> 
       </td><td> <a target="_blank" href="https://www.nuget.org/packages/Video.Indexer.API/">API</a>       
       </td></tr>
@@ -331,9 +205,12 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-reference">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/immersive-reader/#features">Features</a> </td><td> <a href="ImmersiveReader">
-   "ImmersiveReader"</a>
+   "ImmersiveReader"</a> (Applied AI)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/immersive-reader/">3M chars/mo.</a> 
       </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/rest/api/azure/">API</a>       
+      </td></tr>
+   <tr valign="top"><td> ? </td><td> "LanguageAuthoring"
+      </td><td> ?
       </td></tr>
    
    <tr valign="top"><td colspan="4" align="center"> <a name="#DecisionServices"></a><a href="#Decisions">Decision (Making)</a>  
@@ -368,13 +245,175 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/bing-web-search/">API</a>       
       </td></tr>
 
+   <tr valign="top"><td colspan="4" align="center"> <a name="OtherServices"></a><a href="#OtherServices">Other</a>
+      </td></tr>
+   <tr valign="top"><td> ? </td><td> "ContentSafety"
+      </td><td> ?
+      </td></tr>
+   <tr valign="top"><td> ? </td><td> "HealthInsights"
+      </td><td> ?
+      </td></tr>
    </table>
 
 
    PROTIP: CAUTION: Each service has a different maturity level <a target="_blank" href="https://azure.microsoft.com/en-us/downloads/">in its documentation at azure.microsoft.com/en-us/downloads</a>, such as <a target="_blank" href="https://azure.github.io/azure-sdk/releases/latest/python.html">SDK for Python</a> open-sourced at <a target="_blank" href="   https://github.com/azure/azure-sdk-for-python/">github.com/azure/azure-sdk-for-python</a>, described at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/developer/python/">docs.microsoft.com/en-us/azure/developer/python</a>.
 
-   Also, individual products <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services&regions=canada-central,canada-east,us-central,us-east,us-east-2,us-north-central,us-south-central,us-west-central,us-west,us-west-2,norway-east">may be in preview or not available depnding on region</a>.
+   Also, individual products <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services&regions=canada-central,canada-east,us-central,us-east,us-east-2,us-north-central,us-south-central,us-west-central,us-west,us-west-2,norway-east">may be in preview or not available, depending on region:<br />
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1707416863/microsoft-ai-avail-240108-2544x1796_wj2ysp.png"><img alt="microsoft-ai-avail-240108-2544x1796.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1707416863/microsoft-ai-avail-240108-2544x1796_wj2ysp.png"></a>
 
+
+<a target="_blank" href="https://www.youtube.com/c/MicrosoftMechanicsSeries">Microsoft Mechanics YouTube channel</a> is focused on Microsoft's AI work.
+
+
+
+
+
+
+
+
+<a name="Branding"></a>
+
+## Microsoft's Confusing Branding
+
+Microsoft has invented several names to refer to their AI offerings:
+
+Cortana => Bing => Cognitive Services => OpenAI => Generative AI => AI Language
+
+The 2023 branding for Microsoft's AI services to mimic human intelligence is <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-language">"AI Language"</a>, which includes <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/">Cognitive Services</a> and <a target="_blank" href="https://azure.microsoft.com/en-us/services/search/">Bing</a>.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=KxwjnuhNVIY&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&index=33">"Cortana"</a> was the brand-name for Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Alexa, Siri, Hey Google, and other AI-powered personal assistants which respond to voice commands controlling skills that turn lights on and off, etc. However, since 2019, Cortana is considered a "skill" (app) that Amazon's Alexa and Google Assistant can call, working across multiple platforms.
+
+For <a href="#Search">Search, the <strong>Bing</strong></a> "Bing" brand, before OpenAI was separated out from  "Cognitive Services" to its own at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/">https://docs.microsoft.com/en-us/azure/search</a>, although it's used in "Conversational AI" using an "agent" (Azure Bot Service) to participate in (natural) conversations. BTW: <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microsoft-cortana-features-strategy-report">in 2019</a> Cortana decoupled from Windows 10 search.
+
+Since October 31st, 2020, <a target="_blank" href="https://blogs.bing.com/search-quality-insights/october-2020/Bing-Search-APIS-are-Transitioning">Bing Search APIs</a> transitioned from Azure Cognitive Services Platform to <a target="_blank" href="https://aka.ms/bingapigetstarteddoc">Azure Marketplace</a>. The Bing Search v7 API subscription covers several Bing Search services (Bing Image Search, Bing News Search, Bing Video Search, Bing Visual Search, and Bing Web Search),
+
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/iot-edge/">Azure IoT (Edge) Services</a> are separate. 
+
+* https://www.computerworld.com/article/3252218/cortana-explained-why-microsofts-virtual-assistant-is-wired-for-business.html 
+
+PROTIP: As of Jan 8, 2024, https://aka.ms/language-studio has "coming soon" for Video and Learn, and "preview" for several services. Essentially Microsoft has two separate offerings by different groups:
+   * https://learn.microsoft.com/en-us/azure/ai-services/
+   <br /><br />
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations">Microsoft has</a> three service "Providers":
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Asset type </th><th> Resource provider namespace/Entity </th><th> Abbre- viation </th></tr>
+<tr valign="top"><td> <a href="#Cognitive_Services">Azure Cognitive Services</a> </td><td> <a href="#Cognitive_Services"> Microsoft.CognitiveServices/accounts</a> </td><td> cog- </td></tr>
+<tr valign="top"><td> <a target="_blank" href="https://wilsonmar.github.io/azure-machine-learning/">Azure Machine Learning workspace</a> </td><td>   Microsoft.MachineLearningServices/workspaces </td><td> mlw- </td></tr>
+<tr valign="top"><td> Azure Cognitive Search </td><td> Microsoft.Search/searchServices </td><td> srch- </td></tr>
+</table>
+
+
+<a name="OpenAI"></a>
+
+## Azure OpenAI
+
+   References:
+   * https://learn.microsoft.com/en-us/azure/ai-services/openai/
+   * https://azure.microsoft.com/en-us/services/openai/
+   * https://learn.microsoft.com/en-us/training/paths/get-started-with-artificial-intelligence-on-azure/
+   * https://wilsonmar.github.io/genai for definition of terms and tutorials about Generative AI, which produce new content based on what is described in the input. The OpenAI models are a collection of generative AI models that can produce language, code, and images.
+   * https://azure.microsoft.com/pricing/details/cognitive-services/openai-service
+   <br /><br />
+
+OpenAI is a San Francisco-based artificial intelligence research laboratory. OpenAI was founded by Elon Musk, Sam Altman, Greg Brockman, and Ilya Sutskever in December 2015 (to compete with Google's DeepMind acquisition). 
+
+In 2019 Microsoft invested $1 billion in the company as time on Azure cloud and to develop a large-scale AI supercomputer built exclusively for OpenAI's research in Azure. Azure powers all of OpenAI's workloads. 
+
+In 2023, OpenAI exclusively licensed (closed-source) GPT-3 to Microsoft for their products and services.
+
+In 2022, OpenAI made available their GPT-3.5 foundation model for free trial, offering several categories of capabilities
+
+   * ChatGPT: Generating natural language: summarizing complex text for different reading levels, suggesting alternative wording for sentences, etc.
+   * Generating code: translating code from one programming language into another, identifying and troubleshooting bugs in code, etc.
+   * Generating images from text prompts, based on OpenAI's DALL-E model. 
+
+   Source: https://openai.com/blog/openai-microsoft/
+   <br /><br />
+
+OpenAI's avowed mission is to create Artificial General Intelligence (AGI) (to rival human ability).
+
+OpenAI is a "separate" service from Azure Cognitive Services because
+now "traditional" Azure Cognitive Services focuses on making predictions based textual and discrete data where
+OpenAI added to ML "attention" algorithms working on binary data (voice, images, and video) to enable it to perform "Generative AI" which produces new content based on what is described in the input.
+
+1.  Assuming that you have a Azure account and subscription at the Azure portal https://portal.azure.com
+1.  Consider pricing at https://azure.microsoft.com/pricing/details/cognitive-services/openai-service
+
+    OpenAI put a paywall behind its more advanced GPT-4 models, 
+
+    Billing is based on 1,000 "tokens" increments, with the first 100,000 tokens per month free. Beyond that:
+    
+    "Standard" use of the older/more limited gpt-3.5-turbo model is then $0.002 per 1,000 tokens.
+
+    Charges for the GPT-4 model has two dimensions: process stage and the size of the foundational model used :
+
+    * The &nbsp; "8K context" has &nbsp; 13 billion parameters.
+    * The "32K context" has 175 billion parameters.
+
+    * Prompt
+    * Completions
+    <br /><br />
+    
+    Images generated using DALL-E are $2 per 100 images.
+
+   available for free for the first 100,000 tokens per month, then $0.004 per 1,000 tokens.
+    Doing the math, 
+
+
+1.  Apply for access to Asure OpenAI for your Region and Currency:
+
+    <a target="_blank" href="https://aka.ms/oaiapply">https://aka.ms/oaiapply</a>
+
+
+
+
+<a name="Competitors"></a>
+
+## Competitive futures
+
+Microsoft competes for talent with Google, Amazon, IBM, China's Tencent.
+
+BTW, by contrast, Bernard Marr identified <a target="_blank" href="https://www.bernardmarr.com/default.asp?contentID=2191">four types of AI</a> evolving: 
+
+   * "reactive" machines (such as Spam filters and the Netflix recommendation engine) are not able to learn or conceive of the past or future, so it responds to identical situations in the exact same way every time.
+
+   * "limited memory" AI absorbs learning data and improve over time based on its experience, using historical data to make predictions. It's similar to the way the human brain’s neurons connect. Deep-learning algorithms used today is the AI that is widely used and being perfected today.
+
+   * "theory of mind" is when AI acquires decision-making capabilities equal to humans, and have the capability to recognize and remember emotions, and adjust behavior based on those emotions.
+
+   * "self-aware", also called artificial superintelligence (ASI), is "sentient" understanding of of its own needs and desires.
+
+https://www.forbes.com/sites/bernardmarr/2018/02/14/the-key-definitions-of-artificial-intelligence-ai-that-explain-its-importance/#22db12bb4f5d
+
+
+### What can AI do?
+
+Microsoft "democratizes" AI and Machine Learning by providing a front-end that hides some of the complexities, enabling them to be run <strong>possibly without programming</strong>.
+
+1. Microsoft's Azure AI gallery of samples and users' contributions:
+
+   <a target="_blank" href="
+   https://gallery.azure.ai/browse">
+   https://gallery.azure.ai/browse</a>
+
+   These are what are called "narrow" or "weak" AI.
+
+1. Microsoft NO LONGER provides hands-on DEMOS at: 
+
+   <a target="_blank" href="https://aidemos.microsoft.com/">https://aidemos.microsoft.com</a>
+
+Case studies of how people are already making use of AI/ML to save time and money:
+
+   * Predictive Maintenance data science <a target="_blank" href="https://info.microsoft.com/CO-AAIoT-WBNR-FY16-07Jul-05-Predictive-Maintenance-Registration.html">webinar</a>
+   * Recommendation Engines (such as what Netflix)
+   * modsy.com 3D view
+   * <a target="_blank" href="https://azure.microsoft.com/en-ca/case-studies/?OCID=AID2100017_SEM_ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&ef_id=ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&msclkid=ca6fee2dd05b1ad86ab9b1a0055c7ccd&dclid=CKCq5IKfwewCFUWwnwodCKwLYg&term=bot">Customer and Partner Success Stories for "bot"</a>
+   <br /><br />
+
+
+<hr />
 
 <a name="workflows"></a>
 

@@ -1813,7 +1813,7 @@ Network software vendors have affordable certifications:
 
 ## TCM Academy
 
-<a target="_blank" href="https://academy.tcm-sec.com/">TCM Academy</a> is a for-profit entity which makes money by providing both training and certification on generic security topics, from $24.99/month.
+<a target="_blank" href="https://academy.tcm-sec.com/">TCM Academy</a> is a for-profit entity which makes money by providing both training and certification on generic security topics, from $24.99/month, plus the cost of online certification exams:
 
 Entry-Level Certifications:
 
