@@ -16,16 +16,14 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Here is a guided tour to introduce use of Microsoft's Artificial Intelligence (AI) offerings running on the Azure cloud.
+Here is a guided deep dive to introduce use of Microsoft's Artificial Intelligence (AI) offerings running on the Azure cloud.
 My contribution to the world (to you) is a less overwhelming learning sequence, one that starts with the <strong>least complex</strong> of technologies used, then more complex ones.
 
 {% include whatever.html %}
 
-
-
-## What can AI do?
-
 Microsoft "democratizes" AI and Machine Learning by providing a front-end that hides some of the complexities, enabling them to be run <strong>possibly without programming</strong>.
+
+## Gallery
 
 1. Microsoft's Azure AI gallery of samples and users' contributions:
 
@@ -62,7 +60,6 @@ Microsoft "democratizes" AI and Machine Learning by providing a front-end that h
 
    That and other flows are in <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/">Microsoft's Architecture Center</a>.
 
-
 1. For more about ALGORITHMS USED, see <a target="_blank" href="https://wilsonmar.github.io/machine-learning-algorithms/">my explanations at https://wilsonmar.github.io/machine-learning-algorithms</a>, which lists them by alphabetical order and grouped by.
 
 Case studies of how people are already making use of AI/ML to save time and money:
@@ -72,6 +69,10 @@ Case studies of how people are already making use of AI/ML to save time and mone
    * modsy.com 3D view
    * <a target="_blank" href="https://azure.microsoft.com/en-ca/case-studies/?OCID=AID2100017_SEM_ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&ef_id=ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&msclkid=ca6fee2dd05b1ad86ab9b1a0055c7ccd&dclid=CKCq5IKfwewCFUWwnwodCKwLYg&term=bot">Customer and Partner Success Stories for "bot"</a>
    <br /><br />
+
+## Azure AI Studio
+
+<a target="_blank" href="https://ai.azure.com/">https://ai.azure.com</a>
 
 
 ## Microsoft's AI products portfolio
@@ -131,7 +132,6 @@ After you've met the <a href="#Prerequisites">prerequisite setup</a> to run "az"
 ### Availability
 
 Even though you have permissions, each specific product <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services&regions=canada-central,canada-east,us-central,us-east,us-east-2,us-north-central,us-south-central,us-west-central,us-west,us-west-2,norway-east">may be in preview or not available, depending on region:
-
 <img alt="microsoft-ai-avail-240108-2544x1796.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1707416863/microsoft-ai-avail-240108-2544x1796_wj2ysp.png"></a>
 
 
@@ -144,35 +144,24 @@ But the table below groups services to help you quickly get to links about featu
 
 As of this writing, in various marketing and certification training <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services">DOCS</a>, Azure Cognitive Services are grouped into these (which is the basis this article is arranged. Click on the underlined and bolded category name to jump to the list of services associated with it, in this order (like on the <a href="#microsofts-ai-product-portfolio">AI Products Portfolio diagram</a>:
 
-1. <a href="#VisionServices">AI <strong>Vision</strong></a> (Visual Perception) - interpret the world visually through cameras, videos, images
+1. <a href="#VisionServices">AI <strong>Vision</strong></a> (Visual Perception) provides the ability to use computer vision capabilities to accept, interpret, and process input from images, video streams, and live cameras. Interpret the world visually through cameras, videos, images
 
-2. <a href="#SpeechServices">AI <strong>Speech</strong></a> - Text-to-Speech and Speech-to-Text to interpret written or spoken language, and respond in kind.
+2. <a href="#SpeechServices">AI <strong>Speech</strong></a> - Text-to-Speech and Speech-to-Text to interpret written or spoken language, and respond in kind. This provides the ability to recognize speech as input and synthesize spoken output. The combination of speech capabilities together with the ability to apply NLP analysis of text enables a form of human-compute interaction that's become known as conversational AI, in which users can interact with AI agents (usually referred to as bots) in much the same way they would with another human.
 
 3. <a href="#LanguageServices">AI <strong>Language</strong></a> - aka Natural language Processing (NLP) to <a href="#TranslateText">translate text (Text Analysis)</a>, etc.
 
-4. <a href="#DecisionServices">AI <strong>Decision</strong></a> (Making) - supervised and unsupervised machine learning
+4. <a href="#DecisionServices">AI <strong>Decision</strong></a> (Making) provides the ability to use past experience and learned correlations to assess situations and take appropriate actions. For example, recognizing <strong>anomalies </strong> in sensor readings and taking automated action to prevent failure or system damage.
+supervised and unsupervised machine learning
 
 5. <a href="#Other"><strong>Other</strong></a>: <a href="#OpenAI"><strong>OpenAI</strong></a> (to power your apps with large-scale AI models) is a recent add to this confusing category because of so many <a href="#Branding">branding changes</a> (Cortana, Bing, Cognitive, OpenAI, etc.)
 
+Text analysis and conversion provides the ability to use natural language processing (NLP) to not only "read", but also generate realistic responses and extract semantic meaning from text.
 
 <a name="Pricing"></a>
 
 ### Pricing
 
 PROTIP: The table below groups each kind of cognitive AI service along with how many FREE transactions Microsoft provides for each service on its <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">Cognitive Services pricing page</a>. 
-
-* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/">Azure OpenAI Service</a> = Power your apps with large-scale AI models.
-
-1. <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/computer-vision/">Azure AI Vision</a> = Analyze, extract and categorize information from images.
-2. <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">Azure AI Speech</a> = Transcribe, translate and generate spoken audio.
-3. <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/language-service/">Azure AI Language</a> = Identify, analyze and summarize text with natural language processing.
-4. Decision Making?
-5. <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/search/">Azure AI Search</a> = Enterprise scale search for app development.
-
-* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/content-safety/">Azure AI Content Safety</a> = Use AI to monitor text and image content for safety.
-* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/ai-document-intelligence/">Azure AI Document Intelligence</a> = Accelerate information extraction from documents.
-* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator">Azure AI Translator</a> = Real-time machine translation for documents and text.
-<br /><br />
 
 IMPORTANT PROTIP: Microsoft allows its free "F0" tier to be applied to only a single Cognitive Service at a time. To remain free, you would need to rebuild a new Cognitive Service with a different "Kind" between steps.
 
@@ -215,10 +204,6 @@ Within each <a href="#CognitiveServicesGroups">grouping</a>, each service is lis
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/face-api/">20 TPM, 30K/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236">API</a>
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-document-intelligence/">Features</a> </td><td> Document Intelligence = FormRecognizer (Applied AI)
-      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/form-recognizer/">500 pages/mo.</a> 
-      </td><td> <a target="_blank" href="https://go.microsoft.com/fwlink/?linkid=2217261">API</a>
-      </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/media-services/video-indexer/#features">Features</a> </td><td> <a href="#VideoIndexer">Video Indexer</a>
       (Applied AI)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/video-indexer/">600 minutes in portal, 2400 in API</a> 
@@ -238,12 +223,12 @@ Within each <a href="#CognitiveServicesGroups">grouping</a>, each service is lis
       </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-speech-to-text#speech-to-text-rest-api-v30" title="v3">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/#features">Features</a> </td><td> <a href="#SpeakerRecognition"><strike>"SpeakerRecognition"</strike></a>
-      (DELISTED)
+      (DELISTED?)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">20/min, 5K/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563309b6778daf02acc0a508/operations/5645c3271984551c84ec6797">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/#features">Features</a> </td><td> <a href="#SpeechTranslation">Speech Translation</a>
-      (UNLISTED)
+      (DELISTED?)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">20/min, 5K/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563309b6778daf02acc0a508/operations/5645c3271984551c84ec6797">API</a>       
       </td></tr>
@@ -296,18 +281,21 @@ Within each <a href="#CognitiveServicesGroups">grouping</a>, each service is lis
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66c">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-content-safety/">Features</a> </td><td> "ContentSafety"
-      </td><td> ?
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/content-safety/">?</a>
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/metrics-advisor/#features">Features</a>  </td><td> <a href="#metrics-advisormetrics-advisor">"MetricsAdvisor"</a> (Applied AI)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/metrics-advisor/">preview</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/MetricsAdvisor/operations/getActiveSeriesCount">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-personalizer/#features">Features</a> </td><td> AI <a href="#Personalizer">"Personalizer"</a>
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-personalizer/#features">Features</a> </td><td> <a href="#Personalizer">"Personalizer"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/personalizer/">50K trans/mo.</a> 
       </td><td> <a target="_blank" href="https://westus2.dev.cognitive.microsoft.com/docs/services/personalizer-api/operations/Rank">API</a>       
       </td></tr>
 
    <tr valign="top"><td colspan="4" align="center"> <a name="SearchServices"></a><a href="#Search">Search</a>
+      </td></tr>
+   <tr valign="top"><td> ? </td><td> <a href="#KnowledgeMining">KnowledgeMining</a> (UNLISTED)
+      </td><td> ?
       </td></tr>
    <tr valign="top"><td> ? </td><td> Microsoft Bing (Applications)
       </td><td> ?
@@ -325,8 +313,9 @@ Within each <a href="#CognitiveServicesGroups">grouping</a>, each service is lis
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-search/">AI Search</a> </td><td> Cognitive Search (Applied AI)
       </td><td> ?
       </td></tr>
-   <tr valign="top"><td> ? </td><td> <a href="#KnowledgeMining">KnowledgeMining</a> (UNLISTED)
-      </td><td> ?
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-document-intelligence/">Features</a> </td><td> Document Intelligence = FormRecognizer (Applied AI)
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/form-recognizer/">500 pages/mo.</a> 
+      </td><td> <a target="_blank" href="https://go.microsoft.com/fwlink/?linkid=2217261">API</a>
       </td></tr>
 
    <tr valign="top"><td colspan="4" align="center"> <a name="OtherServices"></a><a href="#Other">Other</a>
@@ -339,7 +328,7 @@ Within each <a href="#CognitiveServicesGroups">grouping</a>, each service is lis
       </td><td> ?
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/openai-service/">Features</a> </td><td> <a href="#OpenAI">OpenAI Service</a> 
-      </td><td> ?
+      </td><td> <a target="_blank" href="https://learn.microsoft.com/en-us/azure/ai-studio/how-to/sdk-install?tabs=macos">SDK</a>
       </td></tr>
    </table>
 
@@ -462,6 +451,16 @@ This document assumes that you have done the following
 
 1. Setup <strong>PowerShell scripts</strong>
 
+1. On Windows 11, install Edge according to 
+
+   https://microsoftlearning.github.io/mslearn-ai-services/Instructions/setup.html
+
+   The setup is for this LAB pop-up:
+
+   https://learn.microsoft.com/en-us/training/modules/create-manage-ai-services/5a-exercise-ai-services
+
+
+
 ## Learning Sequence
 
 This document covers:
@@ -548,7 +547,7 @@ Microsoft's ethical principles</a> guiding the development and use of artificial
    * Accountability: AI systems should have algorithmic accountability.
    <br /><br />
 
-1. DEMO: Hands on with AI/Guidelines for Human-AI Interaction: Click each card to see examples of each guideline
+1. DEMO: Hands-on with AI/Guidelines for Human-AI Interaction: Click each card to see examples of each guideline
 
    <a target="_blank" href="
    https://aka.ms/hci-demo">
@@ -581,10 +580,13 @@ Among <a target="_blank" href="https://wilsonmar.github.io/azure-certifications"
    * <a href="#AI-900">AI-900</a> is the entry-level exam ($99). It's a pre-requisite for:
 
    * <a href="#AI-102">AI-102</a> ($165 with free re-cert after 1-year) replaced<br /><a href="#AI-100"><strike>AI-100</strike></a> (with free re-cert after 2-years) on June 30, 2021. The shift is from infrastructure (KeyVault, AKS, Stream Analytics) to programming C#, Python, and curl commands.
+   AI-102 focuses on the use of <strong>pre-packaged</strong> services for AI development.
 
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-203">DP-203 Data Engineering on Microsoft Azure</a> goes into how to use machine learning in Azure Synapse Analytics.
-
-   * <a target="_blank" href="https://microsoftlearning.github.io/dp-090-databricks-ml/">LAB</a> references <a target="_blank" href="https://github.com/MicrosoftLearning/dp-090-databricks-ml">DP-090</a> goes into implementing a Machine Learning Solution with Databricks.
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/dp-090-databricks-ml">DP-090</a> and <a target="_blank" href="https://microsoftlearning.github.io/dp-090-databricks-ml/">this LAB</a> goes into  implementing a Machine Learning Solution with <a target="_blank" href="https://wilsonmar.github.io/databricks/">Databricks</a>. 
+   
+   * That's covered by <a target="_blank" href="https://wilsonmar.github.io/azure-machine-learning/#DP-100">exam DP-100</a> covers development of custom models using Azure Machine Learning. 
+   
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-203">DP-203 Data Engineering on Microsoft Azure</a> goes into how to use machine learning within <strong>Azure Synapse Analytics</strong>.
 
 
 <a name="AI-900"></a>
@@ -634,9 +636,10 @@ AI-900 Sample Practice Exam Questions</a>
 * Emilio Melo on <a target="_blank" href="https://www.linkedin.com/learning/exam-tips-microsoft-azure-ai-fundamentals-ai-900/the-world-is-changing-because-of-ai">Linkedin Learning</a>
 
 Practice tests:
-* https://www.whizlabs.com/learn/course/microsoft-azure-ai-900/
-* https://www.examtopics.com/exams/microsoft/ai-900/
-* https://www.whizlabs.com/learn/course/designing-and-implementing-an-azure-ai-solution/
+   * https://www.whizlabs.com/learn/course/microsoft-azure-ai-900/
+   * https://www.examtopics.com/exams/microsoft/ai-900/
+   * https://www.whizlabs.com/learn/course/designing-and-implementing-an-azure-ai-solution/
+   <br /><br />
 
 <a target="_blank" href="https://www.aguidetocloud.com/full-courses/ai900fullcourse">2-hour AGuideToCloud video class by Susanth Sutheesh</a>
 
@@ -645,14 +648,13 @@ Practice tests:
 
 ### AI-102
 
-AI-102 is intended for <strong>software developers</strong> wanting to build AI-infused applications. 
+AI-102 is intended for <strong>software developers</strong> wanting to build <strong>AI-infused</strong> applications. 
 
-https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/
-
-AI-102 focuses on the use of <strong>pre-packaged</strong> services for AI development, not on the development of custom models using Azure Machine Learning, which is covered by <a target="_blank" href="https://wilsonmar.github.io/azure-machine-learning/#DP-100">exam DP-100</a>.
+<a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/">
+https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer</a>
 
 First setup development environments:
-   * Visual Studio Code and add-ons for C#, Python, 
+   * Visual Studio Code and add-ons for C# and Python, 
    * NodeJs for Bot Framework Composer and Bot Framework Emulator
    <br /><br />
 
@@ -690,8 +692,7 @@ PROTIP: Unlike the AI-100 (which uses Python Notebooks), <a target="_blank" href
    * Create a composed Document Intelligence model
    <br /><br />
 
-
-https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-102/
+DALL-E image generation
 
 https://learn.microsoft.com/en-us/training/courses/ai-102t00
 modules:
@@ -1485,14 +1486,15 @@ In contrast, Speaker Diarization groups segments of audio by speaker in a batch 
 <a name="LUIS"></a>
 <a name="LUIS.Authoring"></a>
 
-## LUIS (Language Understanding Intelligent Service)
+## LUIS 
+
+(Language Understanding Intelligent Service)
 
 Think of "LUIS" as Amazon Alexa's frienemy.
 
 Utterances are input from the user that your app needs to interpret.
 
 https://github.com/Azure-Samples/cognitive-services-language-understanding
-
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/add-basic-conversational-intelligence/?WT.mc_id=cloudskillschallenge_efc530c5-7105-4c12-8eb3-bc20ae3bee78">CHALLENGE</a>:
 Add natural language capabilities to a picture-management bot. 
@@ -2582,85 +2584,6 @@ is only for C#.
 
 
 
-<hr />
-
-<a name="BotService"></a>
-
-## Azure Bot Service 
-
-   provides a platform for creating, publishing, and managing bots. Developers can use the Bot Framework to create a bot and manage it with Azure Bot Service - integrating back-end services like QnA Maker and LUIS, and connecting to channels for web chat, email, Microsoft Teams, and others.
-
-   Microsoft Bot Framework supports two <a target="_blank" href="https://docs.microsoft.com/en-us/azure/bot-service/bot-service-design-pattern-handoff-human?view=azure-bot-service-4.0">approaches to integrate bots</a> with agent engagement platforms such as Customer support service: 
-   * Bot as agent distributes calls to bots on the same level as live (human) agents. Handoff protocols regulate a bot's disengagement and transfer to live person.
-   * Bot as proxy presents a bot to filter interaction with live people.
-
-1. DEMO: See a healthcare bot built using the Azure Bot Service:
-
-   <a target="_blank"" href="
-   https://www.microsoft.com/research/project/health-bot/">
-   https://www.microsoft.com/research/project/health-bot</a>
-
-   Select the option to Try a demo of an example end-user experience.
-   Use the web chat interface to interact with the bot.
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-bot-with-bot-framework-composer/">MS LEARN</a>: Create a Bot with the Bot Framework Composer
-
-1. Run the Python Jupyter notebook
-
-   <a target="_blank" href="
-   https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/11%20-%20QnA%20Bot.ipynb">
-   https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/11%20-%20QnA%20Bot.ipynb
-   Conversational AI LAB</a>
-
-1. Sign in using the Microsoft account associated with your Azure subscription.
-
-
-PROTIP: Use NVM to install Node
-
-https://github.com/Microsoft/botbuilder-tools#install-cli-tools
-says to install Node.js version 10.14.1 or higher
-
-https://github.com/microsoft/botframework-cli
-says to install Node.js version 12
-
-Since the current version is now 16, we cannot use the command suggested in the doc:
-
-   <ul><pre>npm i -g @microsoft/botframework-cli</pre></ul>
-
-
-### Bot Framework
-
-1. bf is the bot framework CLI command
-
-   <pre>One-stop-shop CLI to manage your bot’s resources. BF CLI and AZ CLI together cover your end-to-end bot development workflow needs.
-&nbsp;
-VERSION
-  @microsoft/botframework-cli/4.13.3 darwin-x64 node-v16.1.0
-&nbsp;
-USAGE
-  $ bf [COMMAND]
-&nbsp;
-COMMANDS
-  chatdown      Converts chat dialog files in &LT;filename>.chat format into
-                transcript files. Writes corresponding &LT;filename>.transcript
-                for each .chat file.
-  config        Configure various settings within the cli.
-  dialog        Dialog related commands for working with .schema and .dialog
-                files.
-  help          display help for bf
-  lg            Parse, collate, expand and translate lg files.
-  luis          Manages LUIS assets on service and/or locally.
-  orchestrator  Display Orchestrator CLI available commands
-  plugins       Install, uninstall and show installed plugins
-  qnamaker      QnA Maker
-   </pre>
-
-References:
-   * <a target="_blank" href="https://www.microsoft.com/en-us/research/publication/responsible-bots/">Responsible Bots:</a>
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/bot-service/bot-service-design-user-experience?view=azure-bot-service-4.0">Design the user experience</a>
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/composer/introduction">Intro to Composer</a>
-
-
 
 <hr />
 
@@ -2761,7 +2684,33 @@ https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/metricsadvis
 
 <a name="Search"></a>
 
-## Search = Bing ?
+## Search
+
+
+<a name="KnowledgeMining"></a>
+<a name="knowledge-miningTutorials"></a>
+
+### knowledge-mining Tutorials
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/azure-search-knowledge-mining/azure-search-knowledge-mining/">
+Knowledge Mining Solution Accelerator</a>
+
+HANDS-ON: <a target="_blank" href="https://microsoftlearning.github.io/mslearn-knowledge-mining/">Tutorial</a>
+references <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-knowledge-mining/tree/main/Labfiles">these labfiles</a>
+   * Create an Azure AI Search solution
+   * Create a Custom Skill for Azure AI Search
+   * Create a Knowledge Store with Azure AI Search
+   * Enrich an AI search index with custom classes
+   * Implement enhancements to search results
+   * Enrich a search index using Azure Machine Learning model
+   * Add to an index using the push API
+   * Debug search issues
+   * Set up semantic search
+   * Use the REST API to run <strong>vector</strong> search queries
+   <br /><br />
+
+
+### Bing Search
 
 1. Get on the <a target="_blank" href="https://portal.azure.com/#create/microsoft.bingsearch">Bing Resource portal GUI</a>.
 
@@ -2798,29 +2747,6 @@ The indexer accesses an Azure data storage service.
 https://blog.scottlowe.org/2019/03/01/advanced-ami-filtering-with-jmespath/
 
 
-<a name="KnowledgeMining"></a>
-<a name="knowledge-miningTutorials"></a>
-
-### knowledge-mining Tutorials
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/azure-search-knowledge-mining/azure-search-knowledge-mining/">
-Knowledge Mining Solution Accelerator</a>
-
-HANDS-ON: <a target="_blank" href="https://microsoftlearning.github.io/mslearn-knowledge-mining/">Tutorial</a>
-references <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-knowledge-mining/tree/main/Labfiles">these labfiles</a>
-   * Create an Azure AI Search solution
-   * Create a Custom Skill for Azure AI Search
-   * Create a Knowledge Store with Azure AI Search
-   * Enrich an AI search index with custom classes
-   * Implement enhancements to search results
-   * Enrich a search index using Azure Machine Learning model
-   * Add to an index using the push API
-   * Debug search issues
-   * Set up semantic search
-   * Use the REST API to run vector search queries
-   <br /><br />
-
-
 
 <hr />
 
@@ -2829,6 +2755,86 @@ references <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn
 ## Other services
 
 ### HealthInsights
+
+
+<hr />
+
+<a name="BotService"></a>
+
+## Bot Service 
+
+   provides a platform for creating, publishing, and managing bots. Developers can use the Bot Framework to create a bot and manage it with Azure Bot Service - integrating back-end services like QnA Maker and LUIS, and connecting to channels for web chat, email, Microsoft Teams, and others.
+
+   Microsoft Bot Framework supports two <a target="_blank" href="https://docs.microsoft.com/en-us/azure/bot-service/bot-service-design-pattern-handoff-human?view=azure-bot-service-4.0">approaches to integrate bots</a> with agent engagement platforms such as Customer support service: 
+   * Bot as agent distributes calls to bots on the same level as live (human) agents. Handoff protocols regulate a bot's disengagement and transfer to live person.
+   * Bot as proxy presents a bot to filter interaction with live people.
+
+1. DEMO: See a healthcare bot built using the Azure Bot Service:
+
+   <a target="_blank"" href="
+   https://www.microsoft.com/research/project/health-bot/">
+   https://www.microsoft.com/research/project/health-bot</a>
+
+   Select the option to Try a demo of an example end-user experience.
+   Use the web chat interface to interact with the bot.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-bot-with-bot-framework-composer/">MS LEARN</a>: Create a Bot with the Bot Framework Composer
+
+1. Run the Python Jupyter notebook
+
+   <a target="_blank" href="
+   https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/11%20-%20QnA%20Bot.ipynb">
+   https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/11%20-%20QnA%20Bot.ipynb
+   Conversational AI LAB</a>
+
+1. Sign in using the Microsoft account associated with your Azure subscription.
+
+
+PROTIP: Use NVM to install Node
+
+https://github.com/Microsoft/botbuilder-tools#install-cli-tools
+says to install Node.js version 10.14.1 or higher
+
+https://github.com/microsoft/botframework-cli
+says to install Node.js version 12
+
+Since the current version is now 16, we cannot use the command suggested in the doc:
+
+   <ul><pre>npm i -g @microsoft/botframework-cli</pre></ul>
+
+
+### Bot Framework
+
+1. bf is the bot framework CLI command
+
+   <pre>One-stop-shop CLI to manage your bot’s resources. BF CLI and AZ CLI together cover your end-to-end bot development workflow needs.
+&nbsp;
+VERSION
+  @microsoft/botframework-cli/4.13.3 darwin-x64 node-v16.1.0
+&nbsp;
+USAGE
+  $ bf [COMMAND]
+&nbsp;
+COMMANDS
+  chatdown      Converts chat dialog files in &LT;filename>.chat format into
+                transcript files. Writes corresponding &LT;filename>.transcript
+                for each .chat file.
+  config        Configure various settings within the cli.
+  dialog        Dialog related commands for working with .schema and .dialog
+                files.
+  help          display help for bf
+  lg            Parse, collate, expand and translate lg files.
+  luis          Manages LUIS assets on service and/or locally.
+  orchestrator  Display Orchestrator CLI available commands
+  plugins       Install, uninstall and show installed plugins
+  qnamaker      QnA Maker
+   </pre>
+
+References:
+   * <a target="_blank" href="https://www.microsoft.com/en-us/research/publication/responsible-bots/">Responsible Bots:</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/bot-service/bot-service-design-user-experience?view=azure-bot-service-4.0">Design the user experience</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/composer/introduction">Intro to Composer</a>
+
 
 <hr />
 
