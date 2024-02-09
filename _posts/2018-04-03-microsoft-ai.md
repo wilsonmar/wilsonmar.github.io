@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-01-08"
+date: "2024-02-08"
 file: "microsoft-ai"
 title: "Microsoft AI (Azure OpenAI Generative Services)"
 excerpt: "How to automate AI workflows in Microsoft's Azure and Fabric, despite marketing rebrands, and passing AI-900 & AI-102 certification exams."
@@ -23,7 +23,7 @@ My contribution to the world (to you) is a less overwhelming <a href="#LearningS
 
 
 
-### What can AI do?
+## What can AI do?
 
 Microsoft "democratizes" AI and Machine Learning by providing a front-end that hides some of the complexities, enabling them to be run <strong>possibly without programming</strong>.
 
@@ -52,6 +52,17 @@ Microsoft "democratizes" AI and Machine Learning by providing a front-end that h
    * Azure Batch
    <br /><br />
 
+   <a name="workflows"></a>
+
+   ### Hybrid workflows
+
+   PROTIP: Although most of Microsoft's product documents focus on one service at a time, actual production work enjoyed by real end-users usually involves a <strong>pipeline</strong> consisting of several services. For example: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/example-scenario/ai/news-feed-ingestion-and-near-real-time-analysis">ingesting (stream processing) a newsfeed</a>:
+
+   ![az-ml-newsfeed-546x623](https://user-images.githubusercontent.com/300046/116988980-6254f300-ac8e-11eb-9901-c2c6f3d8a018.png)
+
+   That and other flows are in <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/">Microsoft's Architecture Center</a>.
+
+
 1. For more about ALGORITHMS USED, see <a target="_blank" href="https://wilsonmar.github.io/machine-learning-algorithms/">my explanations at https://wilsonmar.github.io/machine-learning-algorithms</a>, which lists them by alphabetical order.
 
 Case studies of how people are already making use of AI/ML to save time and money:
@@ -61,17 +72,6 @@ Case studies of how people are already making use of AI/ML to save time and mone
    * modsy.com 3D view
    * <a target="_blank" href="https://azure.microsoft.com/en-ca/case-studies/?OCID=AID2100017_SEM_ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&ef_id=ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&msclkid=ca6fee2dd05b1ad86ab9b1a0055c7ccd&dclid=CKCq5IKfwewCFUWwnwodCKwLYg&term=bot">Customer and Partner Success Stories for "bot"</a>
    <br /><br />
-
-
-<a name="workflows"></a>
-
-## Hybrid workflows
-
-PROTIP: Although most of Microsoft's product documents focus on one service at a time, actual production work enjoyed by real end-users usually involves a <strong>pipeline</strong> of several services. For example: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/example-scenario/ai/news-feed-ingestion-and-near-real-time-analysis">ingesting (stream processing) a newsfeed</a>:
-
-![az-ml-newsfeed-546x623](https://user-images.githubusercontent.com/300046/116988980-6254f300-ac8e-11eb-9901-c2c6f3d8a018.png)
-
-That and other flows are in <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/">Microsoft's Architecture Center</a>.
 
 
 ## Microsoft's AI product portfolio
@@ -89,9 +89,9 @@ Azure's AI services are categorized into three groups (all of which have GUI, CL
    <br /><br />
 
 
-<a name="Cognitive_Services"></a>
+<a name="CognitiveServicesList"></a>
 
-## List Cognitive Services
+### Cognitive Services List
 
 If you've already setup your Terminal to run "az" commands <a target="_blank" href="https://wilsonmar.github.io/mac-setup/">like I describe in my mac-setup page</a>, run this command to list all "kinds" of services Azure currently provides for your Azure subscription:
 
@@ -132,19 +132,22 @@ Individual products <a target="_blank" href="https://azure.microsoft.com/en-us/g
 
 PROTIP: The services above are listed in random order. But the table below groups services to help you quickly get to links about features, tutorials, and SDK/API references quickly.
 
-### Groups of services
+
+<a name="CognitiveServicesGroups"></a>
+
+### Cognitive Services Groups
 
 As of this writing, in various marketing and certification training <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services">DOCS</a>, Azure Cognitive Services are grouped into these (which is the basis this article is arranged. Click on the underlined and bolded category name to jump to the list of services associated with it:
 
-   * <a href="#VisionServices"><strong>Vision</strong></a> (Visual Perception) - interpret the world visually through cameras, videos, images
+   1. <a href="#VisionServices">AI <strong>Vision</strong></a> (Visual Perception) - interpret the world visually through cameras, videos, images
 
-   * <a href="#SpeechServices"><strong>Speech</strong></a> - Text-to-Speech and Speech-to-Text to interpret written or spoken language, and respond in kind.
+   2. <a href="#SpeechServices">AI <strong>Speech</strong></a> - Text-to-Speech and Speech-to-Text to interpret written or spoken language, and respond in kind.
 
-   * <a href="#LanguageServices"><strong>Language</strong></a> - aka Natural language Processing (NLP) to <a href="#TranslateText">translate text (Text Analysis)</a>, etc.
+   3. <a href="#LanguageServices">AI <strong>Language</strong></a> - aka Natural language Processing (NLP) to <a href="#TranslateText">translate text (Text Analysis)</a>, etc.
 
-   * <a href="#DecisionServices"><strong>Decision</strong></a> (Making) - supervised and unsupervised machine learning
+   4. <a href="#DecisionServices">AI <strong>Decision</strong></a> (Making) - supervised and unsupervised machine learning
 
-   * <a href="#OpenAI"><strong>OpenAI</strong></a> (to power your apps with large-scale AI models) is a recent add to this confusing category because of so many <a href="#Branding">branding changes</a> (Cortana, Bing, Cognitive, OpenAI, etc.)
+   5. <a href="#OpenAI"><strong>OpenAI</strong></a> (to power your apps with large-scale AI models) is a recent add to this confusing category because of so many <a href="#Branding">branding changes</a> (Cortana, Bing, Cognitive, OpenAI, etc.)
 
 
 <a name="ServicesTable"></a>
@@ -165,17 +168,12 @@ As of this writing, in various marketing and certification training <a target="_
       </td><td> ?
       </td></tr>
 
-   <tr valign="top"><td colspan="4" align="center"> <a name="VisionServices"></a><a href="#Vision">Vision</a> 
+   <tr valign="top"><td colspan="4" align="center"> <a name="VisionServices"></a><a href="#Vision">AI Vision</a> 
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/#features">Features</a> </td><td> "ComputerVision" => AI Vision
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">2 TPC, 10K/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-vision#features">Features</a> </td><td> <a href="#Face">"Face"</a> => AI Vision
-      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/face-api/">20 TPM, 30K/mo.</a> 
-      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236">API</a>
-      </td></tr>
-
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/#features">Features</a> </td><td> "CustomVision.Prediction"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">10K predictions/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.3/operations/5eb0bcc7548b571998fdded6">API</a>       
@@ -183,6 +181,10 @@ As of this writing, in various marketing and certification training <a target="_
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/#features">Features</a> </td><td> "CustomVision.Training"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">2 TPS, 1 hour/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa">API</a>       
+      </td></tr>
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-vision#features">Features</a> </td><td> <a href="#Face">"Face"</a> => AI Vision
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/face-api/">20 TPM, 30K/mo.</a> 
+      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236">API</a>
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-document-intelligence/">Features</a> </td><td> Document Intelligence = FormRecognizer (Applied AI)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/form-recognizer/">500 pages/mo.</a> 
@@ -199,21 +201,15 @@ As of this writing, in various marketing and certification training <a target="_
       </td><td> -
       </td></tr>
 
-   <tr valign="top"><td colspan="4" align="center"> <a name="#SpeechServices"></a><a href="#Speech">Speech</a> 
+   <tr valign="top"><td colspan="4" align="center"> <a name="#SpeechServices"></a><a href="#Speech">AI Speech</a> 
       </td></tr>
    <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-services/#features">Features</a> </td><td> <a href="#SpeechServices">"SpeechServices"</a> => AI Speech
       (<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-to-text/#Features">Speech-To-Text"</a>, <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/#Features">Text-to-Speech"</a>)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">1 concurrent, 5 hours/mo.*</a> 
       </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-speech-to-text#speech-to-text-rest-api-v30" title="v3">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/#features">Features</a> </td><td> <a href="#SpeakerRecognition">"SpeakerRecognition"</a>
-      (UNLISTED)
-      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">20/min, 5K/mo.</a> 
-      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563309b6778daf02acc0a508/operations/5645c3271984551c84ec6797">API</a>       
-      </td></tr>
-
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/#features">Features</a> </td><td> <a href="#SpeakerRecognition">"SpeakerRecognition"</a>
-      (UNLISTED)
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/#features">Features</a> </td><td> <a href="#SpeakerRecognition"><strike>"SpeakerRecognition"</strike></a>
+      (DELISTED)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">20/min, 5K/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563309b6778daf02acc0a508/operations/5645c3271984551c84ec6797">API</a>       
       </td></tr>
@@ -223,7 +219,11 @@ As of this writing, in various marketing and certification training <a target="_
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563309b6778daf02acc0a508/operations/5645c3271984551c84ec6797">API</a>       
       </td></tr>
 
-   <tr valign="top"><td colspan="4" align="center"> <a name="LanguageServices"></a><a href="#Language">Language</a>
+   <tr valign="top"><td colspan="4" align="center"> <a name="LanguageServices"></a><a href="#Language">AI Language</a>
+      </td></tr>
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-translator/#features">Features</a> </td><td> <a href="#TextTranslation">"TextTranslation"</a> => AI Translator
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator/">2M chars/mo.</a> 
+      </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-reference">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/#features">Features</a> </td><td> <a href="#LUIS">"LUIS"</a>
       (Language Understanding, UNLISTED)
@@ -247,10 +247,6 @@ As of this writing, in various marketing and certification training <a target="_
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/text-analytics/">5K trans/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-translator/#features">Features</a> </td><td> <a href="#TextTranslation">"TextTranslation"</a> => AI Translator
-      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator/">2M chars/mo.</a> 
-      </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-reference">API</a>       
-      </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/immersive-reader/#features">Features</a> </td><td> <a href="ImmersiveReader">
    "ImmersiveReader"</a> (Applied AI)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/immersive-reader/">3M chars/mo.</a> 
@@ -260,13 +256,13 @@ As of this writing, in various marketing and certification training <a target="_
       </td><td> ?
       </td></tr>
    
-   <tr valign="top"><td colspan="4" align="center"> <a name="DecisionServices"></a><a href="#Decisions">Decision (Making)</a>  
+   <tr valign="top"><td colspan="4" align="center"> <a name="DecisionServices"></a><a href="#Decisions">AI Decision (Making)</a>  
       </td></tr>
    <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-anomaly-detector/#features">Features</a> </td><td> <a href="#AnomalyDetector">"AnomalyDetector"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/anomaly-detector/">2,000 trans/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/anomaly-detector-enterprise-edition/operations/createDataFeed">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/content-moderator/#features">Features</a> </td><td><a href="#ContentModerator">"ContentModerator"</a> (Evaluate, Find Faces, Match, OCR)
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/content-moderator/#features">Features</a> </td><td><a href="#ContentModerator">"ContentModerator"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/content-moderator/">1 TPS</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66c">API</a>       
       </td></tr>
@@ -980,7 +976,7 @@ DEMO: <a target="_blank" href="https://www.microsoft.com/en-us/ai/seeing-ai?rtc=
 
 <a name="ComputerVision"></a>
 
-### Computer Vision
+## Computer Vision
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/">Computer Vision"</a> analyzes images and video to extract descriptions, tags, objects, and text.
 <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa">API Reference</a>, 
@@ -1000,7 +996,6 @@ https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/quicks
 READ
 
 #### Computer Vision demo
-
 
 1. Select images and review the information returned by the Azure Computer Vision web service:
 
@@ -1106,11 +1101,116 @@ References:
    <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/56f91f2e778daf14a499f21f">CV API</a>
 
 
+<a name="Face"></a>
 
+## Face => AI 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=abhqxG1nSGg">VIDEO</a>:
+<a target="_blank" href="https://www.youtube.com/watch?v=KCSyRO0KotA">API DEMO</a>:
+
+Azure "Face" is used to build face detection and facial recognition solutions in five categories:
+   * Face Verification: Check the likelihood that two faces belong to the same person.
+   * Face Detection: Detect human faces in an image.
+   * Face Identification: Search and identify faces.
+   * Face Similarity: Find similar faces.
+   * Face Grouping: Organize unidentified faces into (face list) groups, based on their visual similarity.
+   <br /><br />
+
+   NOTE: On June 11, 2020, Microsoft announced that it will not sell facial recognition technology to police departments in the United States until strong regulation, grounded in human rights, has been enacted. As such, customers may not use facial recognition features or functionality included in Azure Services, such as Face or Video Indexer, if a customer is, or is allowing use of such services by or for, a police department in the United States.
+
+<a name="FaceTutorials"></a>
+
+### FaceTutorials
+
+HANDS-ON: <a target="_blank" href="https://microsoftlearning.github.io/mslearn-ai-vision/Instructions/Exercises/04-face-service.html">LEARN tutorial</a> using <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-vision/tree/main/Labfiles/04-face">these Lab files</a>.
+
+A face location is face coordinates -- a rectangular pixel area in the image where a face has been identified.
+
+The Face API can return up to 27 landmarks for each identified face that you can use for analysis.
+Azure allows a person to can have up to 248 faces.
+There is a 6 MB limit on the size of each file (jpeg, png, gif, bmp).
+
+Face attributes are predefined properties of a face or a person represented by a face. The Face API can optionally identify and return the following types of attributes for a detected face:
+
+   * Age
+   * Gender
+   * Smile intensity
+   * Facial hair
+   * Head pose (3D)
+   * Emotion
+   <br /><br />
+
+<a target="_blank" href="https://ig.ft.com/emotion-recognition/">
+Emotions detected</a> in JSON response is a floating point number:
+   * Neutral
+   * Anger
+   * Contempt
+   * Disgust
+   * Fear
+   * Hppiness
+   * Sadness
+   * Surprise
+   <br /><br />
+
+PROTIP: "Happiness: 9.99983543," is near certainty at 1.0. 2.80234E-08" indicates 8
+
+https://github.com/Azure-Samples/cognitive-services-FaceAPIEnrollmentSample   
+
+DEMO: LAB: https://github.com/microsoft/hackwithazure/tree/master/workshops/web-ai-happy-sad-angry
+
+https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/quickstarts-sdk/identity-client-library?tabs=windows%2Cvisual-studio&pivots=programming-language-csharp
+
+#### Create a Face API subscription
+
+Subscribe to the Face API:
+1. Sign in to the Azure portal.
+1. Go to <a target="_blank" href="https://portal.azure.com/#create/Microsoft.CognitiveServicesFace">
++ Create a resource > AI + Machine Learning > Face</a>
+1. Enter a unique name for your Face API subscription name in variable MY_FACE_ACCT
+
+   Paste in setme.sh 
+
+   <pre>export MY_FACE_ACCT=faceme
+   </pre>
+
+1. Choose "westus", the Location nearest to you.
+1. Select F0 the free or lowest-cost Pricing tier.
+1. Check "By checking this box, I certify that use of this service or any service that is being created by this Subscription Id, is not by or for a police department in the United States."
+1. Click "Create" to subscribe to the Face API.
+
+1. When provisioned, "Go to resource". 
+1. In "Keys and Endpoint", copy Key1 and paste in setme.sh 
+
+   <pre>export MY_FACE_KEY1=<em>subscription_key</em>
+   </pre>
+
+The endpoint used to make REST calls is "$MY_FACE_ACCT.cognitiveservices.azure.com/"
+
+   https://github.com/wilsonmar/azure-quickly/blob/main/az-face-init.sh
+
+https://docs.microsoft.com/en-us/learn/modules/identify-faces-with-computer-vision/8-test-face-detection?pivots=csharp
+
+References:
+
+   https://docs.microsoft.com/en-us/azure/cognitive-services/Face/Overview
+   What is the Azure Face service?
+
+   https://docs.microsoft.com/en-us/azure/cognitive-services/Face/
+
+   <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/56f91f2e778daf14a499f21f">Face API</a>
+
+   https://docs.microsoft.com/en-us/azure/cognitive-services/Face/quickstarts/client-libraries?tabs=visual-studio&pivots=programming-language-csharp
+
+   https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/04%20-%20Face%20Analysis.ipynb
+
+
+## CustomVision
+
+## Form Recognizer = Document Intelligence
 
 <a name="VideoIndexer"></a>
 
-### Video Indexer 
+## Video Indexer 
 
 Media Services & Storage Account:
 
@@ -1222,111 +1322,6 @@ https://github.com/Azure-Samples/media-services-video-indexer
 https://dev.to/adbertram/getting-started-with-azure-video-indexer-and-powershell-3i32
 
 
-<hr />
-
-<a name="Face"></a>
-
-## Azure Face
-
-<a target="_blank" href="https://www.youtube.com/watch?v=abhqxG1nSGg">VIDEO</a>:
-<a target="_blank" href="https://www.youtube.com/watch?v=KCSyRO0KotA">API DEMO</a>:
-
-Azure "Face" is used to build face detection and facial recognition solutions in five categories:
-   * Face Verification: Check the likelihood that two faces belong to the same person.
-   * Face Detection: Detect human faces in an image.
-   * Face Identification: Search and identify faces.
-   * Face Similarity: Find similar faces.
-   * Face Grouping: Organize unidentified faces into (face list) groups, based on their visual similarity.
-   <br /><br />
-
-   NOTE: On June 11, 2020, Microsoft announced that it will not sell facial recognition technology to police departments in the United States until strong regulation, grounded in human rights, has been enacted. As such, customers may not use facial recognition features or functionality included in Azure Services, such as Face or Video Indexer, if a customer is, or is allowing use of such services by or for, a police department in the United States.
-
-<a name="FaceTutorials"></a>
-
-### FaceTutorials
-
-HANDS-ON: <a target="_blank" href="https://microsoftlearning.github.io/mslearn-ai-vision/Instructions/Exercises/04-face-service.html">LEARN tutorial</a> using <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-vision/tree/main/Labfiles/04-face">these Lab files</a>.
-
-
-A face location is face coordinates -- a rectangular pixel area in the image where a face has been identified.
-
-The Face API can return up to 27 landmarks for each identified face that you can use for analysis.
-Azure allows a person to can have up to 248 faces.
-There is a 6 MB limit on the size of each file (jpeg, png, gif, bmp).
-
-Face attributes are predefined properties of a face or a person represented by a face. The Face API can optionally identify and return the following types of attributes for a detected face:
-
-   * Age
-   * Gender
-   * Smile intensity
-   * Facial hair
-   * Head pose (3D)
-   * Emotion
-   <br /><br />
-
-<a target="_blank" href="https://ig.ft.com/emotion-recognition/">
-Emotions detected</a> in JSON response is a floating point number:
-   * Neutral
-   * Anger
-   * Contempt
-   * Disgust
-   * Fear
-   * Hppiness
-   * Sadness
-   * Surprise
-   <br /><br />
-
-PROTIP: "Happiness: 9.99983543," is near certainty at 1.0. 2.80234E-08" indicates 8
-
-https://github.com/Azure-Samples/cognitive-services-FaceAPIEnrollmentSample   
-
-DEMO: LAB: https://github.com/microsoft/hackwithazure/tree/master/workshops/web-ai-happy-sad-angry
-
-https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/quickstarts-sdk/identity-client-library?tabs=windows%2Cvisual-studio&pivots=programming-language-csharp
-
-#### Create a Face API subscription
-
-Subscribe to the Face API:
-1. Sign in to the Azure portal.
-1. Go to <a target="_blank" href="https://portal.azure.com/#create/Microsoft.CognitiveServicesFace">
-+ Create a resource > AI + Machine Learning > Face</a>
-1. Enter a unique name for your Face API subscription name in variable MY_FACE_ACCT
-
-   Paste in setme.sh 
-
-   <pre>export MY_FACE_ACCT=faceme
-   </pre>
-
-1. Choose "westus", the Location nearest to you.
-1. Select F0 the free or lowest-cost Pricing tier.
-1. Check "By checking this box, I certify that use of this service or any service that is being created by this Subscription Id, is not by or for a police department in the United States."
-1. Click "Create" to subscribe to the Face API.
-
-1. When provisioned, "Go to resource". 
-1. In "Keys and Endpoint", copy Key1 and paste in setme.sh 
-
-   <pre>export MY_FACE_KEY1=<em>subscription_key</em>
-   </pre>
-
-The endpoint used to make REST calls is "$MY_FACE_ACCT.cognitiveservices.azure.com/"
-
-   https://github.com/wilsonmar/azure-quickly/blob/main/az-face-init.sh
-
-https://docs.microsoft.com/en-us/learn/modules/identify-faces-with-computer-vision/8-test-face-detection?pivots=csharp
-
-References:
-
-   https://docs.microsoft.com/en-us/azure/cognitive-services/Face/Overview
-   What is the Azure Face service?
-
-   https://docs.microsoft.com/en-us/azure/cognitive-services/Face/
-
-   <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/56f91f2e778daf14a499f21f">Face API</a>
-
-   https://docs.microsoft.com/en-us/azure/cognitive-services/Face/quickstarts/client-libraries?tabs=visual-studio&pivots=programming-language-csharp
-
-   https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/04%20-%20Face%20Analysis.ipynb
-
 
 <a name="FormRecognizer"></a>
 
@@ -1373,51 +1368,6 @@ https://docs.microsoft.com/en-us/azure/cognitive-services/ink-recognizer/quickst
 Quickstart: Recognize digital ink with the Ink Recognizer REST API and C#
 
 QUESTION: Does it integrate with a tablet?
-
-
-
-<hr />
-
-<a name="ContentModerator"></a>
-
-## Content Moderation
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/classify-and-moderate-text-with-azure-content-moderator/?WT.mc_id=cloudskillschallenge_efc530c5-7105-4c12-8eb3-bc20ae3bee78">CHALLENGE</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/classify-and-moderate-text-with-azure-content-moderator/2-overview-of-text-moderation">DOCS</a>:
-
-https://docs.microsoft.com/azure/cognitive-services/Content-Moderator/overview?WT.mc_id=Portal-Microsoft_Azure_Support#data-privacy-and-security
-
-https://docs.microsoft.com/en-us/azure/cognitive-services/content-moderator/client-libraries?tabs=visual-studio&pivots=programming-language-csharp
-
-Response from the Text Moderation API include:
-
-   * What type of potentially unwanted words were found (Profanity)
-   * A list of potentially unwanted words found in the text.
-   * Possible personally identifiable information (PII) found in the text.
-   <br /><br />
-
-Content Moderation (Evaluate, Find Faces, Match, OCR)
-
-1. G+/ to <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.ContentModerator%2Fapplications">Content Moderator"</a>
-1. "Create Custom Moderator"
-
-   Oops!
-
-   Could not create the marketplace item
-
-   This marketplace item is not available.
-
-   When working:
-
-1. Select Create.
-
-1. Enter a unique name for your resource, select a subscription, and select a location close to you.
-
-1. Select the pricing tier for this resource, and then select F0.
-
-1. Create a new resource group 
-
-1.  Select Create.
-
 
 
 <hr />
@@ -1491,35 +1441,6 @@ TODO: Instead of putting plain text of cog_key in code, reference Azure Vault. H
 Azure has a <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/cognitiveservices/account?view=azure-cli-latest">cognitiveservices CLI subcommand</a>.
 
 https://docs.audd.io/?ref=public-apis
-
-
-<hr />
-
-<a name="ContentModerator"></a>
-
-### Content moderator
-
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/content-moderator/">Content Moderator</a> services detect potentially offensive or unwanted content.
-
-https://www.youtube.com/watch?v=gVFiA6ZQNAw
-
-
-<a name="MetricsAdvisor"></a>
-
-### Metrics Advisor
-
-<a target="_blank" href="https://aka.ms/GualalaACOM">Metrics Advisor</a> monitors metrics and diagnoses issues.
-
-https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/metricsadvisor-samples/
-
-
-<a name="Personalizer"></a>
-
-### Personalizer
-
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/">Personalizer</a> creates rich, personalized experiences for every user.
-
-   * Raza Salehi's <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-personalizer">Personalizer</a>
 
 
 
@@ -2116,8 +2037,6 @@ Next, you'll visit the function app's URL to see it work.
 
 14. Select GET as Http Method before clicking Run:
 
-alt
-
  
 
 15. View the output in the Output tab:
@@ -2297,6 +2216,62 @@ https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/
 
 https://docs.microsoft.com/en-us/learn/modules/transcribe-speech-input-text/?WT.mc_id=cloudskillschallenge_efc530c5-7105-4c12-8eb3-bc20ae3bee78
 
+
+<a name="Speech-to-text"></a>
+
+### Speech-to-text
+
+Transcriptions can be done in real-time or in batch mode.
+
+Batch mode is when audio recordings are stored on a file share, and a shared access signature (SAS) URI is used by a program to asynchronously receive transcription results.
+
+0. Take the introductory tutorial:
+
+   <a target="_blank" href="https://gallery.azure.ai/Collection/Introduction-to-Machine-Learning-with-Hands-On-Labs-1">
+   Introduction to Machine Learning with Hands-On Labs</a>
+
+   <a target="_blank" href="
+   https://azure.microsoft.com/en-us/documentation/articles/machine-learning-studio-overview-diagram/">
+   https://azure.microsoft.com/en-us/documentation/articles/machine-learning-studio-overview-diagram</a>
+
+0. Create a model.
+
+0. Prepare Data:
+
+   As per <a target="_blank" href="https://channel9.msdn.com/Blogs/Windows-Azure/Preprocessing-Data-in-Azure-ML-Studio?ocid=player">this video</a>
+   using
+
+   - Clean Missing Data - Clip Outliers
+   - Edit Metadata
+   - Feature Selection
+   - Filter
+   - Learning with Counts
+   - Normalize Data
+   - Partition and Sample
+   - Principal Component Analysis
+   - Quantize Data
+   - SQLite Transformation
+   - Synthetic Minority Oversampling Technique
+   <br /><br />
+   
+0. Train the model
+
+   * Cross Validation
+   * Retraining
+   * Parameter Sweep
+   <br /><br />
+
+0. Score and test the model.
+
+0. Make predictions with Elastic APIs
+
+   - Request-Response Service (RRS) Predictive Experiment - Batch Execution Service (BES)
+   - Retraining API
+   <br /><br />
+
+https://github.com/timothywarner/ai100/tree/master/Speech-to-Text
+
+
 <a name="SpeechTranslation"></a>
 
 ### Speech Translation (Speech-to-text aka STT)
@@ -2353,9 +2328,11 @@ To specify that the speech input to be transcribed to text is in an audio file, 
 Change the voice used in speech synthesis by setting the SpeechSynthesisVoiceName property of the SpeechConfig object to the desired voice name.
 
 
-   <a name="TextTranslation"></a>
+<a name="SpeechTranslation"></a>
 
-   ### Translator Text (text-to-text aka TTT)
+### Speech Translation 
+
+Text (text-to-text aka TTT)
 
    <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/">Microsoft's Translator service </a> can translate text between <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/Translator/language-support">more than 90 languages and dialects</a> (including Klingon in Star Trek), specified using ISO 639-1 two-letter language codes and 3166-1 cultural codes such as "en-US" for US English, "en-GB" for British English, "fr-CA" for Canadian French, etc.
 
@@ -2715,6 +2692,92 @@ References:
 ## Decision (Making)
 
 
+<a name="AnomalyDetector"></a>
+
+## Anomaly Detector
+
+   * Raza Salehi's <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-anomaly-detector">Anomaly Detector</a>
+
+https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-net/azure-anomaly-detector-client-sdk-samples/
+
+Among <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/anomalydetector/anomalydetector/">Anomaly Detector API Samples</a>
+
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/anomaly-detector/">
+Anomaly Detector</a> identifies potential problems early on.
+
+https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/3-understand-anomaly-detection
+
+   1. Sensors in the car collect telemetry, such as engine revolutions, brake temperature, and so on.
+   2. An anomaly detection model is trained to understand expected fluctuations in the telemetry measurements over time.
+   3. If a measurement occurs outside of the normal expected range, the model reports an anomaly that can be used to alert the race engineer to call the driver in for a pit stop to fix the issue before it forces retirement from the race.
+   <br /><br />
+
+
+<hr />
+
+<a name="ContentModerator"></a>
+
+## Content Moderator
+
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/content-moderator/">Content Moderator</a> services detect potentially offensive or unwanted content.
+
+Evaluate, Find Faces, Match, OCR.
+
+https://www.youtube.com/watch?v=gVFiA6ZQNAw
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/classify-and-moderate-text-with-azure-content-moderator/?WT.mc_id=cloudskillschallenge_efc530c5-7105-4c12-8eb3-bc20ae3bee78">CHALLENGE</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/classify-and-moderate-text-with-azure-content-moderator/2-overview-of-text-moderation">DOCS</a>:
+
+https://docs.microsoft.com/azure/cognitive-services/Content-Moderator/overview?WT.mc_id=Portal-Microsoft_Azure_Support#data-privacy-and-security
+
+https://docs.microsoft.com/en-us/azure/cognitive-services/content-moderator/client-libraries?tabs=visual-studio&pivots=programming-language-csharp
+
+Response from the Text Moderation API include:
+
+   * What type of potentially unwanted words were found (Profanity)
+   * A list of potentially unwanted words found in the text.
+   * Possible personally identifiable information (PII) found in the text.
+   <br /><br />
+
+Content Moderation (Evaluate, Find Faces, Match, OCR)
+
+1. G+/ to <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.ContentModerator%2Fapplications">Content Moderator"</a>
+1. "Create Custom Moderator"
+
+   Oops!
+
+   Could not create the marketplace item
+
+   This marketplace item is not available.
+
+   When working:
+
+1. Select Create.
+
+1. Enter a unique name for your resource, select a subscription, and select a location close to you.
+
+1. Select the pricing tier for this resource, and then select F0.
+
+1. Create a new resource group 
+
+1.  Select Create.
+
+
+<a name="MetricsAdvisor"></a>
+
+## Metrics Advisor
+
+<a target="_blank" href="https://aka.ms/GualalaACOM">Metrics Advisor</a> monitors metrics and diagnoses issues.
+
+https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/metricsadvisor-samples/
+
+
+<a name="Personalizer"></a>
+
+## Personalizer
+
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/">Personalizer</a> creates rich, personalized experiences for every user.
+
+   * Raza Salehi's <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-personalizer">Personalizer</a>
 
 
 
@@ -2782,88 +2845,6 @@ references <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn
    * Use the REST API to run vector search queries
    <br /><br />
 
-
-
-### Speech-to-text
-
-Transcriptions can be done in real-time or in batch mode.
-
-Batch mode is when audio recordings are stored on a file share, and a shared access signature (SAS) URI is used by a program to asynchronously receive transcription results.
-
-0. Take the introductory tutorial:
-
-   <a target="_blank" href="https://gallery.azure.ai/Collection/Introduction-to-Machine-Learning-with-Hands-On-Labs-1">
-   Introduction to Machine Learning with Hands-On Labs</a>
-
-   <a target="_blank" href="
-   https://azure.microsoft.com/en-us/documentation/articles/machine-learning-studio-overview-diagram/">
-   https://azure.microsoft.com/en-us/documentation/articles/machine-learning-studio-overview-diagram</a>
-
-0. Create a model.
-
-0. Prepare Data:
-
-   As per <a target="_blank" href="https://channel9.msdn.com/Blogs/Windows-Azure/Preprocessing-Data-in-Azure-ML-Studio?ocid=player">this video</a>
-   using
-
-   - Clean Missing Data - Clip Outliers
-   - Edit Metadata
-   - Feature Selection
-   - Filter
-   - Learning with Counts
-   - Normalize Data
-   - Partition and Sample
-   - Principal Component Analysis
-   - Quantize Data
-   - SQLite Transformation
-   - Synthetic Minority Oversampling Technique
-   <br /><br />
-   
-0. Train the model
-
-   * Cross Validation
-   * Retraining
-   * Parameter Sweep
-   <br /><br />
-
-0. Score and test the model.
-
-0. Make predictions with Elastic APIs
-
-   - Request-Response Service (RRS) Predictive Experiment - Batch Execution Service (BES)
-   - Retraining API
-   <br /><br />
-
-https://github.com/timothywarner/ai100/tree/master/Speech-to-Text
-
-
-
-<hr />
-
-<a name="AnomalyDetector"></a>
-
-## Anomaly Detector
-
-   * Raza Salehi's <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-anomaly-detector">Anomaly Detector</a>
-
-https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-net/azure-anomaly-detector-client-sdk-samples/
-
-Among <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/anomalydetector/anomalydetector/">Anomaly Detector API Samples</a>
-
-
-<a name="AnomalyDetection"></a>
-
-### Anomaly Detection
-
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/anomaly-detector/">
-Anomaly Detector</a> identifies potential problems early on.
-
-https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/3-understand-anomaly-detection
-
-   1. Sensors in the car collect telemetry, such as engine revolutions, brake temperature, and so on.
-   2. An anomaly detection model is trained to understand expected fluctuations in the telemetry measurements over time.
-   3. If a measurement occurs outside of the normal expected range, the model reports an anomaly that can be used to alert the race engineer to call the driver in for a pit stop to fix the issue before it forces retirement from the race.
-   <br /><br />
 
 
 <hr />
