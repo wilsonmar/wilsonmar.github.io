@@ -17,7 +17,7 @@ comments: true
 {% include _toc.html %}
 
 Here is a guided tour to introduce use of Microsoft's Artificial Intelligence (AI) offerings running on the Azure cloud.
-My contribution to the world (to you) is a less overwhelming <a href="#LearningSequence">learning sequence</a>, one that starts with the <strong>least complex</strong> of technologies used, then more complex ones.
+My contribution to the world (to you) is a less overwhelming learning sequence, one that starts with the <strong>least complex</strong> of technologies used, then more complex ones.
 
 {% include whatever.html %}
 
@@ -63,7 +63,7 @@ Microsoft "democratizes" AI and Machine Learning by providing a front-end that h
    That and other flows are in <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/">Microsoft's Architecture Center</a>.
 
 
-1. For more about ALGORITHMS USED, see <a target="_blank" href="https://wilsonmar.github.io/machine-learning-algorithms/">my explanations at https://wilsonmar.github.io/machine-learning-algorithms</a>, which lists them by alphabetical order.
+1. For more about ALGORITHMS USED, see <a target="_blank" href="https://wilsonmar.github.io/machine-learning-algorithms/">my explanations at https://wilsonmar.github.io/machine-learning-algorithms</a>, which lists them by alphabetical order and grouped by.
 
 Case studies of how people are already making use of AI/ML to save time and money:
 
@@ -74,10 +74,8 @@ Case studies of how people are already making use of AI/ML to save time and mone
    <br /><br />
 
 
-## Microsoft's AI product portfolio
+## Microsoft's AI products portfolio
 
-<a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/explore-azure-openai/3-describe-azure-openai">NOTE</a>:
-Microsoft leverages OpenAI in ALL products and services (including Microsoft Teams):<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1691674882/microsoft-ai-portfolio-1725x989_mqivy5.png"><img alt="microsoft-ai-portfolio-1725x989.png" width="1725" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1691674882/microsoft-ai-portfolio-1725x989_mqivy5.png"><br /><em>Click picture for full-page view</em>.
 
 In the diagram above left, Microsoft makes a distinction between "Business Users & Citizen Developers" who use their Applications and "Power Platform" and geeky "Developers & Data Scientists" who use "Azure AI" in the Azure cloud.
@@ -88,12 +86,17 @@ Azure's AI services are categorized into three groups (all of which have GUI, CL
    * ML (Machine Learning) Platform, which <a target="_blank" href="https://wilsonmar.github.io/azure-machine-learning/">I cover in a separate article</a>
    <br /><br />
 
+PROTIP: Several services are NOT shown in the diagram above.
+Other lists of services use a different order or no order at all.
+
 
 <a name="CognitiveServicesList"></a>
 
 ### Cognitive Services List
 
-If you've already setup your Terminal to run "az" commands <a target="_blank" href="https://wilsonmar.github.io/mac-setup/">like I describe in my mac-setup page</a>, run this command to list all "kinds" of services Azure currently provides for your Azure subscription:
+The method shown in this section gives you a list of all "kinds" of services Azure currently provides for <strong>your Azure subscription</strong>.
+
+After you've met the <a href="#Prerequisites">prerequisite setup</a> to run "az" commands on your Terminal, run this command:
 
    <ul><pre><strong>az cognitiveservices account list-kinds</strong></pre>
    &nbsp;
@@ -127,32 +130,58 @@ If you've already setup your Terminal to run "az" commands <a target="_blank" hr
 
 ### Availability
 
-Individual products <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services&regions=canada-central,canada-east,us-central,us-east,us-east-2,us-north-central,us-south-central,us-west-central,us-west,us-west-2,norway-east">may be in preview or not available, depending on region:<br />
-<img alt="microsoft-ai-avail-240108-2544x1796.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1707416863/microsoft-ai-avail-240108-2544x1796_wj2ysp.png"></a>
+Even though you have permissions, each specific product <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services&regions=canada-central,canada-east,us-central,us-east,us-east-2,us-north-central,us-south-central,us-west-central,us-west,us-west-2,norway-east">may be in preview or not available, depending on region:
 
-PROTIP: The services above are listed in random order. But the table below groups services to help you quickly get to links about features, tutorials, and SDK/API references quickly.
+<img alt="microsoft-ai-avail-240108-2544x1796.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1707416863/microsoft-ai-avail-240108-2544x1796_wj2ysp.png"></a>
 
 
 <a name="CognitiveServicesGroups"></a>
 
 ### Cognitive Services Groups
 
-As of this writing, in various marketing and certification training <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services">DOCS</a>, Azure Cognitive Services are grouped into these (which is the basis this article is arranged. Click on the underlined and bolded category name to jump to the list of services associated with it:
+PROTIP: The services <a href="#Availability">above</a> are listed in random order. 
+But the table below groups services to help you quickly get to links about features, tutorials, and SDK/API references quickly.
 
-   1. <a href="#VisionServices">AI <strong>Vision</strong></a> (Visual Perception) - interpret the world visually through cameras, videos, images
+As of this writing, in various marketing and certification training <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services">DOCS</a>, Azure Cognitive Services are grouped into these (which is the basis this article is arranged. Click on the underlined and bolded category name to jump to the list of services associated with it, in this order (like on the <a href="#microsofts-ai-product-portfolio">AI Products Portfolio diagram</a>:
 
-   2. <a href="#SpeechServices">AI <strong>Speech</strong></a> - Text-to-Speech and Speech-to-Text to interpret written or spoken language, and respond in kind.
+1. <a href="#VisionServices">AI <strong>Vision</strong></a> (Visual Perception) - interpret the world visually through cameras, videos, images
 
-   3. <a href="#LanguageServices">AI <strong>Language</strong></a> - aka Natural language Processing (NLP) to <a href="#TranslateText">translate text (Text Analysis)</a>, etc.
+2. <a href="#SpeechServices">AI <strong>Speech</strong></a> - Text-to-Speech and Speech-to-Text to interpret written or spoken language, and respond in kind.
 
-   4. <a href="#DecisionServices">AI <strong>Decision</strong></a> (Making) - supervised and unsupervised machine learning
+3. <a href="#LanguageServices">AI <strong>Language</strong></a> - aka Natural language Processing (NLP) to <a href="#TranslateText">translate text (Text Analysis)</a>, etc.
 
-   5. <a href="#OpenAI"><strong>OpenAI</strong></a> (to power your apps with large-scale AI models) is a recent add to this confusing category because of so many <a href="#Branding">branding changes</a> (Cortana, Bing, Cognitive, OpenAI, etc.)
+4. <a href="#DecisionServices">AI <strong>Decision</strong></a> (Making) - supervised and unsupervised machine learning
+
+5. <a href="#Other"><strong>Other</strong></a>: <a href="#OpenAI"><strong>OpenAI</strong></a> (to power your apps with large-scale AI models) is a recent add to this confusing category because of so many <a href="#Branding">branding changes</a> (Cortana, Bing, Cognitive, OpenAI, etc.)
+
+
+<a name="Pricing"></a>
+
+### Pricing
+
+PROTIP: The table below groups each kind of cognitive AI service along with how many FREE transactions Microsoft provides for each service on its <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">Cognitive Services pricing page</a>. 
+
+* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/">Azure OpenAI Service</a> = Power your apps with large-scale AI models.
+
+1. <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/computer-vision/">Azure AI Vision</a> = Analyze, extract and categorize information from images.
+2. <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">Azure AI Speech</a> = Transcribe, translate and generate spoken audio.
+3. <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/language-service/">Azure AI Language</a> = Identify, analyze and summarize text with natural language processing.
+4. Decision Making?
+5. <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/search/">Azure AI Search</a> = Enterprise scale search for app development.
+
+* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/content-safety/">Azure AI Content Safety</a> = Use AI to monitor text and image content for safety.
+* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/ai-document-intelligence/">Azure AI Document Intelligence</a> = Accelerate information extraction from documents.
+* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator">Azure AI Translator</a> = Real-time machine translation for documents and text.
+<br /><br />
+
+IMPORTANT PROTIP: Microsoft allows its free "F0" tier to be applied to only a single Cognitive Service at a time. To remain free, you would need to rebuild a new Cognitive Service with a different "Kind" between steps.
 
 
 <a name="ServicesTable"></a>
 
 ## Services Table
+
+Within each <a href="#CognitiveServicesGroups">grouping</a>, each service is listed in the sequence within that group's LEARN module.
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr valign="bottom" align="left"><th> Demo </th><th> Kind </th><th> <a href="#Pricing">FREE</a> </th><th> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/">API</a> </th></tr>
@@ -196,7 +225,7 @@ As of this writing, in various marketing and certification training <a target="_
       </td><td> <a target="_blank" href="https://www.nuget.org/packages/Video.Indexer.API/">API</a>       
       </td></tr>
    <tr valign="top"><td> - </td><td> <a href="#InkRecognizer"><strike>Ink Recognizer"</strike></a>
-      (UNLISTED)
+      (DELISTED)
       </td><td> -
       </td><td> -
       </td></tr>
@@ -318,32 +347,6 @@ Links are provided for each service to its Features and API/SDK pages.
 
 <hr />
 
-<a name="Pricing"></a>
-
-## Pricing
-
-PROTIP: The table above groups each kind of cognitive AI service above along with how many FREE transactions Microsoft provides for each service on its <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">Cognitive Services pricing page</a>. 
-
-* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/">Azure OpenAI Service</a> = Power your apps with large-scale AI models.
-* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/search/">Azure AI Search</a> = Enterprise scale search for app development.
-* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/content-safety/">Azure AI Content Safety</a> = Use AI to monitor text and image content for safety.
-* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/ai-document-intelligence/">Azure AI Document Intelligence</a> = Accelerate information extraction from documents.
-* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">Azure AI Speech</a> = Transcribe, translate and generate spoken audio.
-* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/language-service/">Azure AI Language</a> = Identify, analyze and summarize text with natural language processing.
-* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator">Azure AI Translator</a> = Real-time machine translation for documents and text.
-* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/computer-vision/">Azure AI Vision</a> = Analyze, extract and categorize information from images.
-<br /><br />
-
-Previously, the list was:
-
-   ![az-ai-svcs-pricing-309x410](https://user-images.githubusercontent.com/300046/117203280-126c4e00-adac-11eb-84ae-54994f47f3ea.png)
-
-IMPORTANT PROTIP: Microsoft allows its free "F0" tier to be applied to only a single Cognitive Service at a time. To remain free, you would need to rebuild a new Cognitive Service with a different "Kind" between steps.
-
-
-
-<hr />
-
 <a name="Branding"></a>
 
 ## Microsoft's Confusing Branding
@@ -378,81 +381,50 @@ PROTIP: As of Jan 8, 2024, https://aka.ms/language-studio has "coming soon" for 
 </table>
 
 
-<a name="OpenAI"></a>
+## Microsoft's History with AI
 
-## Azure OpenAI
+In April 2018 Microsoft reorganized into two divisions to offers AI:
 
-   References:
-   * https://learn.microsoft.com/en-us/azure/ai-services/openai/
-   * https://azure.microsoft.com/en-us/services/openai/
-   * https://learn.microsoft.com/en-us/training/paths/get-started-with-artificial-intelligence-on-azure/
-   * https://wilsonmar.github.io/genai for definition of terms and tutorials about Generative AI, which produce new content based on what is described in the input. The OpenAI models are a collection of generative AI models that can produce language, code, and images.
-   * https://azure.microsoft.com/pricing/details/cognitive-services/openai-service
+   * <a target="_blank" href="https://www.microsoft.com/en-us/research/project/machine-learning-edge/">The research division</a>, headed by <a target="_blank" href="https://www.linkedin.com/in/harryshum/">Harry Shum</a>, put AI into Bing search, Cortana voice recognition and text-to-speech, ambient computing, and robotics. See <a target="_blank" href="https://www.youtube.com/watch?v=_Hg9QKBhERw">Harry's presentation in 2016</a>.
+
+   * Microsft's "computing fabric" offerings, led by <a target="_blank" href="https://www.linkedin.com/in/guthriescott/">Scott Guthrie</a>, makes AI services available for those building customizable machine learning with speech, language, vision, and knowledge services. Tools offered include Cognitive Services and Bot Framework, deep-learning tools like Azure Machine Learning, Visual Studio Code Tools for AI, and Cognitive Toolkit.
+
+At Build 2018, Microsoft announced <a target="_blank" href="https://www.microsoft.com/en-us/research/publication/serving-dnns-real-time-datacenter-scale-project-brainwave/">Project Brainwave</a> to run Google's Tensorflow AI code and Facebook's Caffe2, plus Microsoft's own <a target="_blank" href="https://docs.microsoft.com/en-us/cognitive-toolkit/index">"Cognitive Toolkit" (CNTK)</a>.
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/cognitive-toolkit/brainscript-basic-concepts">BrainScript</a> uses a dynamically typed C-like syntax to express neural networks in a way that looks like math formulas. Brainscript has a <a target="_blank" href="https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-and-Python-Performance-Profiler">Performance Profiler</a>.
+
+   * Hyper-parameters are a separate module (alongside Network and reader) to perform SGD (stochastic-gradient descent).
    <br /><br />
 
-OpenAI is a San Francisco-based artificial intelligence research laboratory. OpenAI was founded by Elon Musk, Sam Altman, Greg Brockman, and Ilya Sutskever in December 2015 (to compete with Google's DeepMind acquisition). 
+Microsoft has advanced hardware:
 
-In 2019 Microsoft invested $1 billion in the company as time on Azure cloud and to develop a large-scale AI supercomputer built exclusively for OpenAI's research in Azure. Azure powers all of OpenAI's workloads. 
+   <ul>[<a target="_blank" href="https://www.microsoft.com/en-us/research/publication/serving-dnns-real-time-datacenter-scale-project-brainwave/">
+   This pdf</a> white paper says the "high-performance, precision-adaptable FPGA soft processor is at the heart of the system, achieving up to 39.5 TFLOPs of effective performance at Batch 1 on a state-of-the-art Intel Stratix 10 FPGA."
+   Microsoft's use of field programmable gate arrays (FPGA) calculates AI reportedly "five times faster than Google's TPU hardware".
 
-In 2023, OpenAI exclusively licensed (closed-source) GPT-3 to Microsoft for their products and services.
+   "Each FPGA operates in-line between the server’s network interface card (NIC) and the top-of-rack (TOR) switch, enabling in-situ processing of network packets and point-to-point connectivity between hundreds of thousands of FPGAs at low latency (two microseconds per switch hop, one-way)."
+   </ul>
 
-In 2022, OpenAI made available their GPT-3.5 foundation model for free trial, offering several categories of capabilities
+<a target="_blank" href="https://www.amazon.com/Microsoft-Conversational-Platform-Developers-End-ebook/dp/B08WRNS6Q7/">Microsoft Conversational AI Platform for Developers</a> is a 2021 book published by Apress by <a target="_blank" href="https://bisser.io/about/">Stephan Bisser</a> of 
+<a target="_blank" href="https://www.siili.com/">Siili Solutions</a> in Finland. The book covers Microsoft's Bot Framework, LUIS, QnA Maker, and Azure Cognitive Services. https://github.com/orgs/BotBuilderCommunity/dashboard
 
-   * ChatGPT: Generating natural language: summarizing complex text for different reading levels, suggesting alternative wording for sentences, etc.
-   * Generating code: translating code from one programming language into another, identifying and troubleshooting bugs in code, etc.
-   * Generating images from text prompts, based on OpenAI's DALL-E model. 
 
-   Source: https://openai.com/blog/openai-microsoft/
+https://azure.microsoft.com/en-us/services/virtual-machines/data-science-virtual-machines/
+
+
+Microsoft Reactor ran a 
+<a target="_blank" href="https://www.microsoft.com/en-US/cloudskillschallenge/ai/registration/2023/">"Skills Challenge"</a> to reward a badge for those who complete an AI tutorial.
+
+https://learn.microsoft.com/en-us/training/challenges 
+   * AI Builder
+   * Machine Learning
+   * MLOps
+   * Cognitive 
    <br /><br />
 
-OpenAI's avowed mission is to create Artificial General Intelligence (AGI) (to rival human ability).
+https://www.youtube.com/watch?v=ss-kyogPRNo
+by Carlotta
 
-OpenAI is a "separate" service from Azure Cognitive Services because
-now "traditional" Azure Cognitive Services focuses on making predictions based textual and discrete data where
-OpenAI added to ML "attention" algorithms working on binary data (voice, images, and video) to enable it to perform "Generative AI" which produces new content based on what is described in the input.
-
-1.  Assuming that you have a Azure account and subscription at the Azure portal https://portal.azure.com
-1.  Consider pricing at https://azure.microsoft.com/pricing/details/cognitive-services/openai-service
-
-    OpenAI put a paywall behind its more advanced GPT-4 models, 
-
-    Billing is based on 1,000 "tokens" increments, with the first 100,000 tokens per month free. Beyond that:
-    
-    "Standard" use of the older/more limited gpt-3.5-turbo model is then $0.002 per 1,000 tokens.
-
-    Charges for the GPT-4 model has two dimensions: process stage and the size of the foundational model used :
-
-    * The &nbsp; "8K context" has &nbsp; 13 billion parameters.
-    * The "32K context" has 175 billion parameters.
-
-    * Prompt
-    * Completions
-    <br /><br />
-    
-    Images generated using DALL-E are $2 per 100 images.
-
-    Available for free for the first 100,000 tokens per month, then $0.004 per 1,000 tokens.
-
-1.  Apply for access to Asure OpenAI for your Region and Currency:
-
-    <a target="_blank" href="https://aka.ms/oaiapply">https://aka.ms/oaiapply</a>
-
-
-<a name="OpenAITutorials"></a>
-
-### OpenAI Tutorials
-
-* https://microsoftlearning.github.io/mslearn-openai
-   * https://learn.microsoft.com/en-us/training/browse/?terms=OpenAI
-   * https://learn.microsoft.com/en-us/training/paths/develop-ai-solutions-azure-openai/
-   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-openai">https://github.com/MicrosoftLearning/mslearn-openai</a>
-   * Get started with Azure OpenAI
-   * Integrate Azure OpenAI into your app
-   * Utilize prompt engineering in your app
-   * Generate and improve code with Azure OpenAI Service
-   * Generate images with a DALL-E model
-   * Use your own data with Azure OpenAI
-   <br /><br />
+<a target="_blank" href="https://www.youtube.com/c/MicrosoftMechanicsSeries">Microsoft Mechanics YouTube channel</a> is focused on Microsoft's AI work.
 
 
 
@@ -460,7 +432,7 @@ OpenAI added to ML "attention" algorithms working on binary data (voice, images,
 
 ## Competitive futures
 
-Microsoft competes for talent with Google, Amazon, IBM, China's Tencent.
+Microsoft competes for talent with Google, Amazon, IBM, China's Tencent, and many start-ups.
 
 BTW, by contrast, Bernard Marr <a target="_blank" href="https://www.forbes.com/sites/bernardmarr/2018/02/14/the-key-definitions-of-artificial-intelligence-ai-that-explain-its-importance/#22db12bb4f5d">identified</a> <a target="_blank" href="https://www.bernardmarr.com/default.asp?contentID=2191">four types of AI</a> evolving: 
 
@@ -475,19 +447,22 @@ BTW, by contrast, Bernard Marr <a target="_blank" href="https://www.forbes.com/s
 
 <hr />
 
-<a name="LearningSequence"></a>
+<a name="Prerequisites"></a>
 
 ## Prerequisites to this document
 
-This document assumes that you have done the following:
+This document assumes that you have done the following
 
 1. <a target="_blank" href="https://wilsonmar.github.io/azure-onboarding/">Get onboarded to a Microsoft Azure subscriptions</a> and learn Portal GUI menu keyboard shortcuts.
+
 1. Setup a CLI scripting environment in shell.azure.com.
+<a target="_blank" href="https://wilsonmar.github.io/mac-setup/">like I describe in my mac-setup page</a>
+
 1. Use CLI to <a href="#CognitiveServices">Create a Cognitive Service</a> to get keys to call the first REST API from among <a target="_blank" href="https://github.com/Azure-Samples/cognitive-services-REST-api-samples">sample calls</a> to <a target="_blank" href="https://docs.microsoft.com/en-us/rest/api/azure/">many REST APIs</a>: the <a href="#TextTranslation">Translator Text API</a>.
+
 1. Setup <strong>PowerShell scripts</strong>
 
-
-## Learning Sequence: basics, simplest first
+## Learning Sequence
 
 This document covers:
 
@@ -693,8 +668,6 @@ First setup development environments:
 
 PROTIP: Unlike the AI-100 (which uses Python Notebooks), <a target="_blank" href="https://microsoftlearning.github.io/AI-102-AIEngineer/">hands-on exercises</a> in Microsoft's <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/ai-102t00">5-day live course AI-102T00: Designing and Implementing a Microsoft Azure AI Solution</a> (with cloud time) consists of C# and Python programs at https://github.com/MicrosoftLearning/AI-102-AIEngineer (by <a target="_blank" href="https://www.linkedin.com/in/graemesplace/">Graeme Malcolm</a>) was archived on Dec 23, 2023 after its content was distributed among these repos:
 
-* <a href="#VisionTutorials">AI Vision Tutorials</a>
-
 * https://microsoftlearning.github.io/mslearn-ai-services/ <br /><a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-services">https://github.com/MicrosoftLearning/mslearn-ai-services</a>
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-services/blob/main/Instructions/Exercises/01-use-azure-ai-services.md">01-use-azure-ai-services.md</a>
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-services/blob/main/Instructions/Exercises/02-ai-services-security.md">02-ai-services-security.md</a>
@@ -703,8 +676,13 @@ PROTIP: Unlike the AI-100 (which uses Python Notebooks), <a target="_blank" href
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-services/blob/main/Instructions/Exercises/05-personalizer-exercise.md">05-personalizer-exercise.md</a>
    <br /><br />
 
-* <a href="#LanguageTutorials">AI Language Tutorials</a>
+1. <a href="#VisionTutorials">AI Vision Tutorials</a>
+2. <a href="#LanguageTutorials">AI Language Tutorials</a>
+3. AI Language
+4. AI Decision Making
+5. Other: <a href="#OpenAITutorials">OpenAI Tutorials</a>
 
+* <a href="#knowledge-miningTutorials">knowledge-mining Tutorials</a>
 * https://microsoftlearning.github.io/mslearn-ai-document-intelligence/ 
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-document-intelligence/tree/main/Labfiles">https://github.com/MicrosoftLearning/mslearn-ai-document-intelligence</a>
    * Use prebuilt Document Intelligence models
@@ -712,9 +690,6 @@ PROTIP: Unlike the AI-100 (which uses Python Notebooks), <a target="_blank" href
    * Create a composed Document Intelligence model
    <br /><br />
 
-* <a href="#knowledge-miningTutorials">knowledge-mining Tutorials</a>
-
-* <a href="#OpenAITutorials">OpenAI Tutorials</a>
 
 https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-102/
 
@@ -2855,6 +2830,84 @@ references <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn
 
 ### HealthInsights
 
+<hr />
+
+<a name="OpenAI"></a>
+
+## Azure OpenAI
+
+   References:
+   * https://learn.microsoft.com/en-us/azure/ai-services/openai/
+   * https://azure.microsoft.com/en-us/services/openai/
+   * https://learn.microsoft.com/en-us/training/paths/get-started-with-artificial-intelligence-on-azure/
+   * https://wilsonmar.github.io/genai for definition of terms and tutorials about Generative AI, which produce new content based on what is described in the input. The OpenAI models are a collection of generative AI models that can produce language, code, and images.
+   * https://azure.microsoft.com/pricing/details/cognitive-services/openai-service
+   <br /><br />
+
+OpenAI is a San Francisco-based artificial intelligence research laboratory. OpenAI was founded by Elon Musk, Sam Altman, Greg Brockman, and Ilya Sutskever in December 2015 (to compete with Google's DeepMind acquisition). 
+
+In 2019 Microsoft invested $1 billion in the company as time on Azure cloud and to develop a large-scale AI supercomputer built exclusively for OpenAI's research in Azure. Azure powers all of OpenAI's workloads. 
+
+In 2023, OpenAI exclusively licensed (closed-source) GPT-3 to Microsoft for their products and services.
+
+In 2022, OpenAI made available their GPT-3.5 foundation model for free trial, offering several categories of capabilities
+
+   * ChatGPT: Generating natural language: summarizing complex text for different reading levels, suggesting alternative wording for sentences, etc.
+   * Generating code: translating code from one programming language into another, identifying and troubleshooting bugs in code, etc.
+   * Generating images from text prompts, based on OpenAI's DALL-E model. 
+
+   Source: https://openai.com/blog/openai-microsoft/
+   <br /><br />
+
+OpenAI's avowed mission is to create Artificial General Intelligence (AGI) (to rival human ability).
+
+OpenAI is a "separate" service from Azure Cognitive Services because
+now "traditional" Azure Cognitive Services focuses on making predictions based textual and discrete data where
+OpenAI added to ML "attention" algorithms working on binary data (voice, images, and video) to enable it to perform "Generative AI" which produces new content based on what is described in the input.
+
+1.  Assuming that you have a Azure account and subscription at the Azure portal https://portal.azure.com
+1.  Consider pricing at https://azure.microsoft.com/pricing/details/cognitive-services/openai-service
+
+    OpenAI put a paywall behind its more advanced GPT-4 models, 
+
+    Billing is based on 1,000 "tokens" increments, with the first 100,000 tokens per month free. Beyond that:
+    
+    "Standard" use of the older/more limited gpt-3.5-turbo model is then $0.002 per 1,000 tokens.
+
+    Charges for the GPT-4 model has two dimensions: process stage and the size of the foundational model used :
+
+    * The &nbsp; "8K context" has &nbsp; 13 billion parameters.
+    * The "32K context" has 175 billion parameters.
+
+    * Prompt
+    * Completions
+    <br /><br />
+    
+    Images generated using DALL-E are $2 per 100 images.
+
+    Available for free for the first 100,000 tokens per month, then $0.004 per 1,000 tokens.
+
+1.  Apply for access to Asure OpenAI for your Region and Currency:
+
+    <a target="_blank" href="https://aka.ms/oaiapply">https://aka.ms/oaiapply</a>
+
+
+<a name="OpenAITutorials"></a>
+
+### OpenAI Tutorials
+
+* https://microsoftlearning.github.io/mslearn-openai
+   * https://learn.microsoft.com/en-us/training/browse/?terms=OpenAI
+   * https://learn.microsoft.com/en-us/training/paths/develop-ai-solutions-azure-openai/
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-openai">https://github.com/MicrosoftLearning/mslearn-openai</a>
+   * Get started with Azure OpenAI
+   * Integrate Azure OpenAI into your app
+   * Utilize prompt engineering in your app
+   * Generate and improve code with Azure OpenAI Service
+   * Generate images with a DALL-E model
+   * Use your own data with Azure OpenAI
+   <br /><br />
+
 
 <hr />
 
@@ -2915,53 +2968,6 @@ Steps for data transformation:
 
 https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/limits-and-quotas
 
-## Microsoft's History with AI
-
-In April 2018 Microsoft reorganized into two divisions that offers AI:
-
-   * <a target="_blank" href="https://www.microsoft.com/en-us/research/project/machine-learning-edge/">The research division</a>, headed by <a target="_blank" href="https://www.linkedin.com/in/harryshum/">Harry Shum</a>, put AI into Bing search, Cortana voice recognition and text-to-speech, ambient computing, and robotics. See <a target="_blank" href="https://www.youtube.com/watch?v=_Hg9QKBhERw">Harry's presentation in 2016</a>.
-
-   * Microsft's "computing fabric" offerings, led by <a target="_blank" href="https://www.linkedin.com/in/guthriescott/">Scott Guthrie</a>, makes AI services available for those building customizable machine learning with speech, language, vision, and knowledge services. Tools offered include Cognitive Services and Bot Framework, deep-learning tools like Azure Machine Learning, Visual Studio Code Tools for AI, and Cognitive Toolkit.
-
-
-At Build 2018, Microsoft announced <a target="_blank" href="https://www.microsoft.com/en-us/research/publication/serving-dnns-real-time-datacenter-scale-project-brainwave/">Project Brainwave</a> to run Google's Tensorflow AI code and Facebook's Caffe2, plus Microsoft's own <a target="_blank" href="https://docs.microsoft.com/en-us/cognitive-toolkit/index">"Cognitive Toolkit" (CNTK)</a>.
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/cognitive-toolkit/brainscript-basic-concepts">BrainScript</a> uses a dynamically typed C-like syntax to express neural networks in a way that looks like math formulas. Brainscript has a <a target="_blank" href="https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-and-Python-Performance-Profiler">Performance Profiler</a>.
-
-   * Hyper-parameters are a separate module (alongside Network and reader) to perform SGD (stochastic-gradient descent).
-   <br /><br />
-
-Microsoft has advanced hardware:
-
-   <ul>[<a target="_blank" href="https://www.microsoft.com/en-us/research/publication/serving-dnns-real-time-datacenter-scale-project-brainwave/">
-   This pdf</a> white paper says the "high-performance, precision-adaptable FPGA soft processor is at the heart of the system, achieving up to 39.5 TFLOPs of effective performance at Batch 1 on a state-of-the-art Intel Stratix 10 FPGA."
-   Microsoft's use of field programmable gate arrays (FPGA) calculates AI reportedly "five times faster than Google's TPU hardware".
-
-   "Each FPGA operates in-line between the server’s network interface card (NIC) and the top-of-rack (TOR) switch, enabling in-situ processing of network packets and point-to-point connectivity between hundreds of thousands of FPGAs at low latency (two microseconds per switch hop, one-way)."
-   </ul>
-
-<a target="_blank" href="https://www.amazon.com/Microsoft-Conversational-Platform-Developers-End-ebook/dp/B08WRNS6Q7/">Microsoft Conversational AI Platform for Developers</a> is a 2021 book published by Apress by <a target="_blank" href="https://bisser.io/about/">Stephan Bisser</a> of 
-<a target="_blank" href="https://www.siili.com/">Siili Solutions</a> in Finland. The book covers Microsoft's Bot Framework, LUIS, QnA Maker, and Azure Cognitive Services. https://github.com/orgs/BotBuilderCommunity/dashboard
-
-
-https://azure.microsoft.com/en-us/services/virtual-machines/data-science-virtual-machines/
-
-
-## Additionally...
-
-In July and August Microsoft Reactor ran a 
-<a target="_blank" href="https://www.microsoft.com/en-US/cloudskillschallenge/ai/registration/2023/">"Skills Challenge"</a>
-to reward a badge for those who complete an AI tutorial.
-
-https://learn.microsoft.com/en-us/training/challenges 
-   * AI Builder
-   * Machine Learning
-   * MLOps
-   * Cognitive 
-
-https://www.youtube.com/watch?v=ss-kyogPRNo
-by Carlotta
-
-<a target="_blank" href="https://www.youtube.com/c/MicrosoftMechanicsSeries">Microsoft Mechanics YouTube channel</a> is focused on Microsoft's AI work.
 
 
 
