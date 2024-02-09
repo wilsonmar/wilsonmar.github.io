@@ -300,17 +300,17 @@ As of this writing, in various marketing and certification training <a target="_
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-search/">AI Search</a> </td><td> Cognitive Search (Applied AI)
       </td><td> ?
       </td></tr>
+   <tr valign="top"><td> ? </td><td> <a href="#KnowledgeMining">KnowledgeMining</a> (UNLISTED)
+      </td><td> ?
+      </td></tr>
 
    <tr valign="top"><td colspan="4" align="center"> <a name="OtherServices"></a><a href="#Other">Other</a>
       </td></tr>
 
-   <tr valign="top"><td> ? </td><td> <a href="#KnowledgeMining">KnowledgeMining</a> (UNLISTED)
-      </td><td> ?
-      </td></tr>
    <tr valign="top"><td> ? </td><td> "HealthInsights"
       </td><td> ?
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-bot-service/">$</a> </td><td> Bot Service (Applied AI)
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-bot-service/">$</a> </td><td> <a href="#BotService">Bot Service</a> (Applied AI)
       </td><td> ?
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/openai-service/">Features</a> </td><td> <a href="#OpenAI">OpenAI Service</a> 
@@ -360,7 +360,7 @@ The 2023 branding for Microsoft's AI services to mimic human intelligence is <a 
 
 <a target="_blank" href="https://www.youtube.com/watch?v=KxwjnuhNVIY&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&index=33">"Cortana"</a> was the brand-name for Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Alexa, Siri, Hey Google, and other AI-powered personal assistants which respond to voice commands controlling skills that turn lights on and off, etc. However, since 2019, Cortana is considered a "skill" (app) that Amazon's Alexa and Google Assistant can call, working across multiple platforms.
 
-For <a href="#Search">Search, the <strong>Bing</strong></a> "Bing" brand, before OpenAI was separated out from  "Cognitive Services" to its own at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/">https://docs.microsoft.com/en-us/azure/search</a>, although it's used in "Conversational AI" using an "agent" (Azure Bot Service) to participate in (natural) conversations. BTW: <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microsoft-cortana-features-strategy-report">in 2019</a> Cortana decoupled from Windows 10 search.
+For <a href="#Search">Search, the <strong>Bing</strong></a> "Bing" brand, before OpenAI was separated out from  "Cognitive Services" to its own at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/">https://docs.microsoft.com/en-us/azure/search</a>, although it's used in "Conversational AI" using an "agent" (<a href="#BotService">Azure Bot Service</a>) to participate in (natural) conversations. BTW: <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microsoft-cortana-features-strategy-report">in 2019</a> Cortana decoupled from Windows 10 search.
 
 Since October 31st, 2020, <a target="_blank" href="https://blogs.bing.com/search-quality-insights/october-2020/Bing-Search-APIS-are-Transitioning">Bing Search APIs</a> transitioned from Azure Cognitive Services Platform to <a target="_blank" href="https://aka.ms/bingapigetstarteddoc">Azure Marketplace</a>. The Bing Search v7 API subscription covers several Bing Search services (Bing Image Search, Bing News Search, Bing Video Search, Bing Visual Search, and Bing Web Search),
 
@@ -2634,7 +2634,7 @@ is only for C#.
 
 <a name="BotService"></a>
 
-### Azure Bot Service 
+## Azure Bot Service 
 
    provides a platform for creating, publishing, and managing bots. Developers can use the Bot Framework to create a bot and manage it with Azure Bot Service - integrating back-end services like QnA Maker and LUIS, and connecting to channels for web chat, email, Microsoft Teams, and others.
 
@@ -2709,33 +2709,17 @@ References:
    * <a target="_blank" href="https://docs.microsoft.com/en-us/composer/introduction">Intro to Composer</a>
 
 
+
 <hr />
 
-<a name="KnowledgeMining"></a>
+## Decision (Making)
 
-## Knowledge mining = Search?
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/azure-search-knowledge-mining/azure-search-knowledge-mining/">
-Knowledge Mining Solution Accelerator</a>
 
-<a name="knowledge-miningTutorials"></a>
 
-### knowledge-mining Tutorials
 
-HANDS-ON: <a target="_blank" href="https://microsoftlearning.github.io/mslearn-knowledge-mining/">Tutorial</a>
-references <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-knowledge-mining/tree/main/Labfiles">these labfiles</a>
-   * Create an Azure AI Search solution
-   * Create a Custom Skill for Azure AI Search
-   * Create a Knowledge Store with Azure AI Search
-   * Enrich an AI search index with custom classes
-   * Implement enhancements to search results
-   * Enrich a search index using Azure Machine Learning model
-   * Add to an index using the push API
-   * Debug search issues
-   * Set up semantic search
-   * Use the REST API to run vector search queries
-   <br /><br />
 
+<hr />
 
 <a name="Search"></a>
 
@@ -2774,6 +2758,29 @@ https://blog.api.rakuten.net/top-10-best-search-apis/
 The indexer accesses an Azure data storage service.
 
 https://blog.scottlowe.org/2019/03/01/advanced-ami-filtering-with-jmespath/
+
+
+<a name="KnowledgeMining"></a>
+<a name="knowledge-miningTutorials"></a>
+
+### knowledge-mining Tutorials
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/azure-search-knowledge-mining/azure-search-knowledge-mining/">
+Knowledge Mining Solution Accelerator</a>
+
+HANDS-ON: <a target="_blank" href="https://microsoftlearning.github.io/mslearn-knowledge-mining/">Tutorial</a>
+references <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-knowledge-mining/tree/main/Labfiles">these labfiles</a>
+   * Create an Azure AI Search solution
+   * Create a Custom Skill for Azure AI Search
+   * Create a Knowledge Store with Azure AI Search
+   * Enrich an AI search index with custom classes
+   * Implement enhancements to search results
+   * Enrich a search index using Azure Machine Learning model
+   * Add to an index using the push API
+   * Debug search issues
+   * Set up semantic search
+   * Use the REST API to run vector search queries
+   <br /><br />
 
 
 
@@ -2858,6 +2865,14 @@ https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/3-und
    3. If a measurement occurs outside of the normal expected range, the model reports an anomaly that can be used to alert the race engineer to call the driver in for a pit stop to fix the issue before it forces retirement from the race.
    <br /><br />
 
+
+<hr />
+
+<a name="Other"></a>
+
+## Other services
+
+### HealthInsights
 
 
 <hr />
