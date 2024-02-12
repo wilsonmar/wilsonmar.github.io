@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-02-08"
+date: "2024-02-12"
 file: "microsoft-ai"
 title: "Microsoft AI (Azure OpenAI Generative Services)"
 excerpt: "How to automate AI workflows in Microsoft's Azure and Fabric, despite marketing rebrands, and passing AI-900 & AI-102 certification exams."
@@ -31,7 +31,7 @@ Microsoft "democratizes" AI and Machine Learning by providing a front-end that h
 
    These are what are called "narrow" or "weak" AI.
 
-1. Among (Azure cloud) SERVICES USED:
+1. Click (Azure cloud) SERVICES USED:
 
    * Azure Machine Learning
    * PowerBI
@@ -52,13 +52,13 @@ Microsoft "democratizes" AI and Machine Learning by providing a front-end that h
 
    <a name="workflows"></a>
 
-   ### Hybrid workflows
+   ### Hybrid workflow Pipelines
 
-   PROTIP: Although most of Microsoft's product documents focus on one service at a time, actual production work enjoyed by real end-users usually involves a <strong>pipeline</strong> consisting of several services. For example: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/example-scenario/ai/news-feed-ingestion-and-near-real-time-analysis">ingesting (stream processing) a newsfeed</a>:
+   PROTIP: Although most of Microsoft's product documents focus on one technology at a time, actual production work enjoyed by real end-users usually involves a <strong>pipeline</strong> consisting of several services. For example: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/example-scenario/ai/news-feed-ingestion-and-near-real-time-analysis">ingesting (stream processing) a newsfeed</a>:
 
    ![az-ml-newsfeed-546x623](https://user-images.githubusercontent.com/300046/116988980-6254f300-ac8e-11eb-9901-c2c6f3d8a018.png)
 
-   That and other flows are in <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/">Microsoft's Architecture Center</a>.
+   That and other flows are in the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/">Azure Architecture Center</a>.
 
 1. For more about ALGORITHMS USED, see <a target="_blank" href="https://wilsonmar.github.io/machine-learning-algorithms/">my explanations at https://wilsonmar.github.io/machine-learning-algorithms</a>, which lists them by alphabetical order and grouped by.
 
@@ -81,14 +81,16 @@ Case studies of how people are already making use of AI/ML to save time and mone
 
 In the diagram above left, Microsoft makes a distinction between "Business Users & Citizen Developers" who use their Applications and "Power Platform" and geeky "Developers & Data Scientists" who use "Azure AI" in the Azure cloud.
 
-Azure's AI services are categorized into three groups (all of which have GUI, CLI, and API interfaces):
+In the diagram above, Microsoft categorize Azure's AI services these groups (all of which have GUI, CLI, and API interfaces):
    * <strong>Applied</strong> AI Services are part of automated workflows, but a service can be included among
-   * <a href="#Cognitive_Services"><strong>Cognitive</strong> Services</a> are foundational utilities used to build custom apps
+   * <a href="#Cognitive_Services"><strong>Cognitive</strong> Services</a> of foundational utilities used to build custom apps
    * ML (Machine Learning) Platform, which <a target="_blank" href="https://wilsonmar.github.io/azure-machine-learning/">I cover in a separate article</a>
    <br /><br />
 
 PROTIP: Several services are NOT shown in the diagram above.
-Other lists of services use a different order or no order at all.
+The list in a <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/prepare-to-develop-ai-solutions-azure/7-understand-capabilities-of-azure-cognitive-services">Microsoft LEARN module</a> show a different order:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1707738331/ms-ai-def-1187x508_d1tpvd.png"><img alt="ms-ai-def-1187x508.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1707738331/ms-ai-def-1187x508_d1tpvd.png"></a>
 
 
 <a name="CognitiveServicesList"></a>
@@ -132,12 +134,13 @@ After you've met the <a href="#Prerequisites">prerequisite setup</a> to run "az"
 ### Availability
 
 Even though you have permissions, each specific product <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services&regions=canada-central,canada-east,us-central,us-east,us-east-2,us-north-central,us-south-central,us-west-central,us-west,us-west-2,norway-east">may be in preview or not available, depending on region:
+<a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services&regions=canada-central,canada-east,us-central,us-east,us-east-2,us-north-central,us-south-central,us-west-central,us-west,us-west-2,norway-east"
 <img alt="microsoft-ai-avail-240108-2544x1796.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1707416863/microsoft-ai-avail-240108-2544x1796_wj2ysp.png"></a>
 
 
 <a name="CognitiveServicesGroups"></a>
 
-### Cognitive Services Groups
+### Cognitive Services Grouping
 
 PROTIP: The services <a href="#Availability">above</a> are listed in random order. 
 But the table below groups services to help you quickly get to links about features, tutorials, and SDK/API references quickly.
@@ -396,6 +399,19 @@ Microsoft has advanced hardware:
 <a target="_blank" href="https://www.amazon.com/Microsoft-Conversational-Platform-Developers-End-ebook/dp/B08WRNS6Q7/">Microsoft Conversational AI Platform for Developers</a> is a 2021 book published by Apress by <a target="_blank" href="https://bisser.io/about/">Stephan Bisser</a> of 
 <a target="_blank" href="https://www.siili.com/">Siili Solutions</a> in Finland. The book covers Microsoft's Bot Framework, LUIS, QnA Maker, and Azure Cognitive Services. https://github.com/orgs/BotBuilderCommunity/dashboard
 
+<a target="_blank" href="https://www.youtube.com/c/MicrosoftMechanicsSeries">Microsoft Mechanics YouTube channel</a> is focused on Microsoft's AI work.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Rk3nTUfRZmo">VIDEO</a>:
+What runs ChatGPT? Inside Microsoft's AI supercomputer
+   * Microsoft's own Megatron-Turing model has 530 billion parameters
+   * [3:05] Onnx runtime for model portability
+   * [3:08] Deepspeed to componentize models has become the defacto framework for distributed training
+   * 285,000 AMD Infiniband CPU Cores & 10,000 NVIDIA V100 Tensor Core GPUs Infiniband connected to Quantum-2 Infiniband via NVLink
+   * Bisectional bandwidth to 3.6 TBps per server
+   * [10:45] Low Rank Adaptive (LoRA) Fine Tuning to update only portions of a model
+   <br /><br />
+
+NOTE: <a target="_blank" href="https://en.wikipedia.org/wiki/Wikipedia:Size_of_Wikipedia">Wikipedia</a> has 6,781,394 articles containing 4.5 billion words. <a target="_blank" href="">English Wiktionary</a> contains 1,439,188 definitions. <a target="_blank" href="https://www.wikiwand.com/en/List_of_dictionaries_by_number_of_words">Webster's Third New International Dictionary</a> has 470,000 English words.
 
 https://azure.microsoft.com/en-us/services/virtual-machines/data-science-virtual-machines/
 
@@ -413,9 +429,9 @@ https://learn.microsoft.com/en-us/training/challenges
 https://www.youtube.com/watch?v=ss-kyogPRNo
 by Carlotta
 
-<a target="_blank" href="https://www.youtube.com/c/MicrosoftMechanicsSeries">Microsoft Mechanics YouTube channel</a> is focused on Microsoft's AI work.
 
 
+<hr />
 
 <a name="Competitors"></a>
 
@@ -668,7 +684,7 @@ First setup development environments:
    * Implement <a href="#Conversational">generative AI</a> solutions (10–15%)
    <br /><br />
 
-PROTIP: Unlike the AI-100 (which uses Python Notebooks), <a target="_blank" href="https://microsoftlearning.github.io/AI-102-AIEngineer/">hands-on exercises</a> in Microsoft's <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/ai-102t00">5-day live course AI-102T00: Designing and Implementing a Microsoft Azure AI Solution</a> (with cloud time) consists of C# and Python programs at https://github.com/MicrosoftLearning/AI-102-AIEngineer (by <a target="_blank" href="https://www.linkedin.com/in/graemesplace/">Graeme Malcolm</a>) was archived on Dec 23, 2023 after its content was distributed among these repos:
+PROTIP: Unlike the AI-100 (which uses Python Notebooks), <a target="_blank" href="https://microsoftlearning.github.io/AI-102-AIEngineer/">hands-on exercises at https://microsoftlearning.github.io/AI-102-AIEngineer/</a> in Microsoft's <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/ai-102t00">5-day live course AI-102T00: Designing and Implementing a Microsoft Azure AI Solution</a> (with cloud time) consists of C# and Python programs at https://github.com/MicrosoftLearning/AI-102-AIEngineer (by <a target="_blank" href="https://www.linkedin.com/in/graemesplace/">Graeme Malcolm</a>) was archived on Dec 23, 2023 after its content was distributed among these repos:
 
 * https://microsoftlearning.github.io/mslearn-ai-services/ <br /><a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-services">https://github.com/MicrosoftLearning/mslearn-ai-services</a>
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai-services/blob/main/Instructions/Exercises/01-use-azure-ai-services.md">01-use-azure-ai-services.md</a>
@@ -1479,7 +1495,7 @@ for authentication.
 
 In contrast, Speaker Diarization groups segments of audio by speaker in a batch operation.
 
-
+"In cloudinary"
 
 <hr />
 
@@ -1488,9 +1504,20 @@ In contrast, Speaker Diarization groups segments of audio by speaker in a batch 
 
 ## LUIS 
 
-(Language Understanding Intelligent Service)
-
 Think of "LUIS" as Amazon Alexa's frienemy.
+
+<a target="_blank" href="https://www.luis.ai/">https://www.luis.ai</a>, 
+provides examples of how to use LUIS (Language Understanding Intelligent Service) thus:
+
+> A machine learning-based service to build natural language into apps, bots, and IoT devices. Quickly create enterprise-ready, custom models that continuously improve.
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1707581603/msft-ai-luis-3204x1538_hwttjo.png"><img alt="msft-ai-luis-3204x1538.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1707581603/msft-ai-luis-3204x1538_hwttjo.png"></a>
+
+Bot Framework Emulator
+Follow the instructions at https://github.com/Microsoft/BotFramework-Emulator/blob/master/README.md to download and install the latest stable version of the Bot Framework Emulator for your operating system.
+
+Bot Framework Composer
+Install from https://docs.microsoft.com/en-us/composer/install-composer.
 
 Utterances are input from the user that your app needs to interpret.
 
