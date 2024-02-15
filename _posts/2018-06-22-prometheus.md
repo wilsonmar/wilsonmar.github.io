@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-02-06"
+date: "2024-02-14"
 file: "prometheus"
 title: "Prometheus"
 excerpt: "Collect metrics (for visualization by Grafana), analyze using PromQL coding, and identify alerts,  especially for Kubernetes (also from CNCF)."
@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This is a deep-dive into getting started using Prometheus in enterprise production.
+This is a deep dive into getting started using Prometheus in enterprise production.
 
 ## How it works
 
@@ -90,9 +90,25 @@ Prometheus does not collect <strong>event</strong> data from operating systems o
 Prometheus is born of the cloud age which can accommodate large databases.
 Prometheus stores data in a standalone time series database that passively store metrics.
 
-Prometheus differs from previous fault-detection systems, like Nagios, which run periodic check scripts but keep little historical data.
+Prometheus differs from previous fault-detection systems, like Nagios, which run periodic check scripts but keep little historical data. Prometheus saves historical data in a Time Series Data Base (TSDB).
 
+<a target="_blank" href="https://stackshare.io/stackups/prometheus-vs-telegraf">NOTE</a>: 
+The "TIK" stack (Telegraf + InfluxDB + Grafana):
 
+* Data Collection: Prometheus is a <strong>pull-based</strong> system where it collects data by pulling metrics from targets. On the other hand, Telegraf supports both pull and push mechanisms. It can collect data by pulling metrics from various sources as well as pushing metrics to different destinations.
+
+* Scalability: Prometheus is designed to be highly scalable and can handle large amounts of data. It achieves scalability through a federated architecture where multiple Prometheus servers can be federated together. Telegraf, on the other hand, is a lightweight collector that can be deployed on a large number of machines, making it highly scalable as well.
+
+* Data Processing: Prometheus comes with its own query language called <a href="#PromQL">PromQL</a>, which allows advanced querying and processing of metrics. With PromQL, users can perform aggregations, filtering, and math operations on the collected data. Telegraf, on the other hand, focuses more on data collection and routing, leaving the data processing task to other tools in the stack.
+
+* Plugin Ecosystem: Telegraf has a rich plugin ecosystem, which allows easy integration with various systems and technologies. It supports a wide range of input and output plugins, making it flexible and extensible. Prometheus, on the other hand, focuses more on the core monitoring and alerting functions and has a limited number of official plugins.
+
+* Alerting: Prometheus has a built-in alerting system that allows users to define alert rules based on the collected metrics. It supports various notification channels, such as email, Slack, and PagerDuty, to send alerts when certain conditions are met. Telegraf, on the other hand, does not have a built-in alerting system and relies on other tools in the monitoring stack for alerting functionality.
+
+There are also Elasticsearch, Datadog, and other 
+<a target="_blank" href="https://wilsonmar.github.io/siem">SIEM</a> paid solutions.
+
+<a target="_blank" href="https://www.apmexperts.com/observability/ranking-the-observability-offerings/">What is "Observability"?
 
 <hr />
 
@@ -102,9 +118,13 @@ Prometheus differs from previous fault-detection systems, like Nagios, which run
 
 Ridley Scott named his <a target="_blank" href="https://www.imdb.com/title/tt1446714/trivia">2012 film "Prometheus"</a>, saying: "It's the story of creation; the gods and the man who stood against them." 
 
+<a target="_blank" href="https://www.youtube.com/watch?v=rT4fJNbfe14">VIDEO</a>:
 <a target="_blank" href="https://prometheus.io/docs/introduction/overview/">https://prometheus.io/docs/introduction/overview/</a><br />
 The software named Prometheus began at SoundCloud in 2012, where ex-Google SREs (Site Reliability Engineers) adopted Google's Borgmon. 
-Prometheus was open-sourced in 2015 at https://github.com/prometheus/prometheus/releases
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1707574621/prometheus-borgmon-1856x1136_fwxjqo.png"><img alt="prometheus-borgmon-1856x1136.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1707574621/prometheus-borgmon-1856x1136_fwxjqo.png"></a>
+
+Prometheus was open-sourced in 2015 at <a target="_blank" href="https://github.com/prometheus/prometheus/releases">https://github.com/prometheus/prometheus/releases</a>
 
 Prometheus joined the CNCF (Cloud Native Computing Foundation) in 2016 as its second hosted project after Kubernetes. So as would be expected, Prometheus works with K8s.
 
@@ -113,7 +133,7 @@ Prometheus joined the CNCF (Cloud Native Computing Foundation) in 2016 as its se
 
 ## PCA Exam
 
-CNCF is under the Linux Foundation, which offers the <a target="_blank" href="https://training.linuxfoundation.org/certification/prometheus-certified-associate/">$250 Prometheus Certified Associate (PCA) exam</a> for those who (with one retake) in 90-minutes answer 75% of 60 questions correctly around these domains:
+CNCF is under the Linux Foundation, which offers the <a target="_blank" href="https://training.linuxfoundation.org/certification/prometheus-certified-associate/">$250 Prometheus Certified Associate (PCA) exam</a> for beginners who (with one retake) in 90-minutes answer 75% of 60 questions correctly around these domains:
 
 18% Observability Concepts
    * Metrics
@@ -129,7 +149,7 @@ CNCF is under the Linux Foundation, which offers the <a target="_blank" href="ht
    * Configuration and Scraping
    * Understanding Prometheus Limitations
    * Data Model and Labels
-   * Exposition Format
+   * <a href="#Expositions">Exposition Format</a>
    <br /><br />
 
 28% <a href="#PromQL">PromQL</a>
@@ -161,92 +181,16 @@ CNCF is under the Linux Foundation, which offers the <a target="_blank" href="ht
    * https://docs.linuxfoundation.org/tc-docs/certification/frequently-asked-questions-pca
    * https://trainingportal.linuxfoundation.org/learn/course/prometheus-certified-associate-pca/exam/exam
    * https://medium.com/@onai.rotich/prometheus-certified-associate-a-comprehensive-guide-9c51638578d2
+   <br /><br />
 
+<a target="_blank" href="https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2">Candidate Handbook</a> reference the PSI BRIDGE Proctoring platform.
 
 <hr />
 
 ## Courses
 
-By Linux Foundation offers an online course in 2018.
-* <a target="_blank" href="https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2">Candidate Handbook</a> which is now dated
-They use the PSI BRIDGE Proctoring platform.
+Linux Foundation developed a 2018 course.
 
-
-## Sample app
-
-The $299 course “Monitoring Infrastructure and Containers with Prometheus” (LFS241) is based on the <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/ProjectForethought.html">PaC (Project Forethought) application</a>, which is a simple to-do list program written in Node.js. It is Dockerized and deployed to a virtual machine. The application is instrumented with Prometheus client libraries to track metrics across the app. 
-
-1. Course Introduction
-2. Introduction to Systems and Service Monitoring
-3. Introduction to Prometheus
-
-4. Installing and Setting Up Prometheus
-
-5. Basic Querying
-6. Dashboarding
-7. Monitoring Host Metrics
-8. Monitoring Container Metrics
-9. Instrumenting Code
-10. Building <a href="#Exporters">Exporters</a>
-11. Advanced Querying
-12. Relabeling
-13. Service Discovery
-14. Blackbox Monitoring
-15. Pushing Data
-16. Alerting
-17. Making Prometheus Highly Available
-18. Recording Rules
-19. Scaling Prometheus Deployments
-20. Prometheus and Kubernetes
-21. Local Storage
-22. Remote Storage Integrations
-23. Transitioning From and Integrating with Other Monitoring Systems
-24. Monitoring and Debugging Prometheus
-<br /><br />
-
-1. Create within Linux Academy's <a target="_blank" href="https://playground.linuxacademy.com/server-list">Servers in the cloud</a>, the "DevOps Monitoring Deep Dive" distribution in a small-sized host.  https://github.com/linuxacademy/content-devops-monitoring-app
-
-1. When "READY", click the Distribution name "DevOps Monitoring Deep Dive" for details.
-1. Highlight and copy the Temp. Password by clicking the copy icon.
-1. Click "Terminal" to open another browser window.
-1. Type "cloud_user" to login:
-1. Paste the password.
-1. For a new password, I paste the password again, but add an additional character. 
-1. Again to confirm.
-
-1. When an environment is opened, highlight and copy this command:
-
-   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/Prometheus/prometheus-setup.sh)"</strong></pre>
-
-1. Copy the password to your computer's Clipboard.
-1. Switch to the Terminal to paste, which runs the script.
-1. Paste the password when prompted.
-
-1. To rerun the script, discard the current instance and create a new instance.
-
-   The script is self-documented, but below are additional comments:
-
-### blackbox_exporter
-
-This exporter actively probes target service endpoints from the outside to get Prometheus metrics.
-
-   * <a target="_blank" href="https://training.promlabs.com/training/probing-services-blackbox-exporter">Julius' Probing Services - Blackbox Exporter training</a>:
-   * https://promlabs.com/blog/2024/02/06/monitoring-tls-endpoint-certificate-expiration-with-prometheus/
-   <br /><br />
-
-VERV=$(curl --silent -qI https://github.com/prometheus/blackbox_exporter/releases/latest | awk -F '/' '/^location/ {print substr($NF, 1, length($NF)-1)}');
-echo $VERV
-#v0.24.0
-VER=${VERV:1}
-echo $VER
-wget "https://github.com/prometheus/blackbox_exporter/releases/download/$VERV/blackbox_exporter-$VER.linux-amd64.tar.gz"
-# Unpack it.
-tar xvfz "blackbox_exporter-$VERV.linux-amd64.tar.gz"
-
-ls blackbox_exporter-0.24.0.linux-amd64.tar.gz
-
-
-### Promlabs
 
 <a target="_blank" href="https://www.youtube.com/watch?v=gaUopdFlgko">VIDEO</a>: 
 Prometheus co-founder <a target="_blank" href="https://www.linkedin.com/in/julius-volz/">Julius Volz (in Berlin, Germany)</a> authored the Linux Foundation's 2018 course which is now dated. So he created <a target="_blank" href="https://www.promlabs.com/">promlabs.com</a> to offer a <a target="_blank" href="https://training.promlabs.com/">$349 video training</a> on Prometheus monitoring fundamentals, tutorials, quizzes, tips, and best practices. It's based on  Ubuntu Linux 20.04. Julius also built <a target="_blank" href="https://promlens.com/">Promlens query builder</a>.
@@ -356,6 +300,82 @@ walidshaari/PrometheusCertifiedAssociate
 edgarpf/prometheus-certified-associate
 
 Al-HusseinHameedJasim/prometheus-certified-associate
+
+
+
+## Sample app
+
+The $299 course “Monitoring Infrastructure and Containers with Prometheus” (LFS241) is based on the <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/ProjectForethought.html">PaC (Project Forethought) application</a>, which is a simple to-do list program written in Node.js. It is Dockerized and deployed to a virtual machine. The application is instrumented with Prometheus client libraries to track metrics across the app. 
+
+1. Course Introduction
+2. Introduction to Systems and Service Monitoring
+3. Introduction to Prometheus
+
+4. Installing and Setting Up Prometheus
+
+5. Basic Querying
+6. Dashboarding
+7. Monitoring Host Metrics
+8. Monitoring Container Metrics
+9. Instrumenting Code
+10. Building <a href="#Exporters">Exporters</a>
+11. Advanced Querying
+12. Relabeling
+13. Service Discovery
+14. Blackbox Monitoring
+15. Pushing Data
+16. Alerting
+17. Making Prometheus Highly Available
+18. Recording Rules
+19. Scaling Prometheus Deployments
+20. Prometheus and Kubernetes
+21. Local Storage
+22. Remote Storage Integrations
+23. Transitioning From and Integrating with Other Monitoring Systems
+24. Monitoring and Debugging Prometheus
+<br /><br />
+
+1. Create within Linux Academy's <a target="_blank" href="https://playground.linuxacademy.com/server-list">Servers in the cloud</a>, the "DevOps Monitoring Deep Dive" distribution in a small-sized host.  https://github.com/linuxacademy/content-devops-monitoring-app
+
+1. When "READY", click the Distribution name "DevOps Monitoring Deep Dive" for details.
+1. Highlight and copy the Temp. Password by clicking the copy icon.
+1. Click "Terminal" to open another browser window.
+1. Type "cloud_user" to login:
+1. Paste the password.
+1. For a new password, I paste the password again, but add an additional character. 
+1. Again to confirm.
+
+1. When an environment is opened, highlight and copy this command:
+
+   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/Prometheus/prometheus-setup.sh)"</strong></pre>
+
+1. Copy the password to your computer's Clipboard.
+1. Switch to the Terminal to paste, which runs the script.
+1. Paste the password when prompted.
+
+1. To rerun the script, discard the current instance and create a new instance.
+
+   The script is self-documented, but below are additional comments:
+
+### blackbox_exporter
+
+This exporter actively probes target service endpoints from the outside to get Prometheus metrics.
+
+   * <a target="_blank" href="https://training.promlabs.com/training/probing-services-blackbox-exporter">Julius' Probing Services - Blackbox Exporter training</a>:
+   * https://promlabs.com/blog/2024/02/06/monitoring-tls-endpoint-certificate-expiration-with-prometheus/
+   <br /><br />
+
+VERV=$(curl --silent -qI https://github.com/prometheus/blackbox_exporter/releases/latest | awk -F '/' '/^location/ {print substr($NF, 1, length($NF)-1)}');
+echo $VERV
+#v0.24.0
+VER=${VERV:1}
+echo $VER
+wget "https://github.com/prometheus/blackbox_exporter/releases/download/$VERV/blackbox_exporter-$VER.linux-amd64.tar.gz"
+# Unpack it.
+tar xvfz "blackbox_exporter-$VERV.linux-amd64.tar.gz"
+
+ls blackbox_exporter-0.24.0.linux-amd64.tar.gz
+
 
 
 <hr />
@@ -958,11 +978,70 @@ To run Prometheus after downloading the Docker image from the "prom" account in 
 
    The /targets page shows the most recent scrape error from among all targets that cannot be scraped.
 
-   The default evaluation_interval of 15s controls how often Prometheus evaluates rule files that specify creation of new time series and generation of alerts.
+   The default evaluation_interval of 15s controls how often Prometheus evaluates rule files that specify the creation of new time series and generation of alerts.
 
    Its uniqueness is a <strong>rules engine</strong> that enables alerts by the Prometheus Alertmanager installed separately.
 
-   Recording rules enable precompute of frequent and expensive expressions and to save their result as derived time series data.
+   <a name="Recording_rules"></a>
+   ### Recording Rules
+
+   <a target="_blank" href="https://training.promlabs.com/training/recording-rules/training-overview/introduction">TUTORIAL</a>:
+
+   <ul>http://<em>machine-ip</em>:9090/rules</ul>
+
+   In the <tt>rule_files</tt> section are yml file names. Each yml file contains groups of
+   <strong>recording rules</strong> that define how to periodically <strong>precompute</strong> query results as new series (with a new name) in the TSDB.
+
+   https://prometheus.io/docs/practices/rules/
+   
+   Each <tt>record:</strong> in a rule is executed in the sequence defined.
+   Each record can, optionally, have key : value labels.
+   
+   The record's <tt>expr</tt> (expression) defines how to calculate the metric. 
+   
+   The <a target="_blank" href="https://prometheus.io/docs/practices/naming/">naming conventions</a>
+   for records names has three parts:
+
+   <tt>aggregation level  :  original metric name  :  aggregation type</tt>
+    (dimensional, type of rate, etc.) 
+
+   Examples:
+
+   <pre>- record: path:http_requests:rate5m
+    expr: sum without(instance) (rate(http_requests_total{job="job1"}[5m]))
+   </pre>
+
+   * <tt>path</tt> specifies that the metric is broken up by the path label.
+   * <tt>rate5m</tt> specifics a 5-minute rate.
+   <br /><br />
+
+   <pre>- record: instance_mode:node_cpu:rate1m
+    expr: sum without(cpu) (rate(node_cpu_seconds_total{job="node"}[1m]))
+    labels:
+      my_label: my_value
+   </pre>
+
+   * "instance_mode:node_cpu:rate1m"
+   
+   QUESTION: sum without(status, instance, cpu)
+
+   
+   Referencing a precomputed series is less resource-intensive than the same query repeating the same calculations frequently. Instead of multiple dashboards referencing a series,
+   recording rules can scrape metrics from one TSDB into another (to aggregate) -- to federate (share)  the result of a PromQL expression.
+
+   To produce alerts with a custom threshold for each path's current error rate, 
+   <a target="_blank" href="https://www.robustperception.io/using-time-series-as-alert-thresholds/">
+   use time series as alert thresholds</a>. Define recording rules with the same output metric name, but different path label values. This enables different error rate thresholds to be synthetically recorded for each path of an HTTP-serving application. Then a single alerting rule references the generated threshold metric name.
+
+   The default interval is 1 minute. That can be changed by the <tt>global.evaluation_interval</tt> field in the Prometheus configuration file or by the rule-group-specific interval override. 
+
+   According to Julius, During each rule evaluation cycle, Prometheus will:
+
+   1. Evaluate the rule's PromQL expression as an instant query at the server's current timestamp,
+   2. Apply label overrides (if any) to the output series,
+   3. Apply sample output limits (if any) and fail the evaluation if the limit is exceeded,
+   4. Store the resulting time series in the local TSDB under the provided new metric name and at the evaluation timestamp.
+
 
    ### Scrape configs
 
@@ -1336,15 +1415,16 @@ https://prometheus.io/docs/instrumenting/writing_exporters/
 
 <strong>Summary</strong>
 
-   <ul>
+   <ul>calculates a histogram.
    </ul>
 
+<a name="Expositions"></a>
 
-### Metrics exposition
+## Metrics exposition
 
 Metrics are made available from a target's Node Exporter by exposing an unencrypted (HTTP) URL such as:
 
-   <ul><pre><strong><a target="_blank" href="http://demo.promlabs.com:10000/metrics">http://demo.promlabs.com:10000/metrics</a><strong></pre></ul>
+   <ul><pre><strong><a target="_blank" href="http://demo.promlabs.com:10000/metrics">http://demo.promlabs.com:10000/metrics</a></strong></pre></ul>
 
 <em>Space lines added for clarity</em>
 
@@ -1723,7 +1803,8 @@ Prometheus, Alert Manager, Email Notification & Grafana in Kubernetes Monitoring
 https://www.youtube.com/watch?v=wFMEoWpVOYw
 Monitoring Docker Containers using Grafana & Prometheus
 
-
+https://training.linuxfoundation.org/training/monitoring-systems-and-services-with-prometheus-lfs241/
+$299 for 25 hours with labs: Monitoring Systems and Services with Prometheus (LFS241)
 <hr />
 
 ## More on Security #
