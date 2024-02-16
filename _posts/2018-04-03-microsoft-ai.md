@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-02-12"
+date: "2024-02-16"
 file: "microsoft-ai"
 title: "Microsoft AI (Azure OpenAI Generative Services)"
 excerpt: "How to automate AI workflows in Microsoft's Azure and Fabric, despite marketing rebrands, and passing AI-900 & AI-102 certification exams."
@@ -64,8 +64,11 @@ Microsoft "democratizes" AI and Machine Learning by providing a front-end that h
 
 Case studies of how people are already making use of AI/ML to save time and money:
 
+   * Calculate a positive/negative sentiment score for each post in your social media account and send you an alert based on a trigger (such as negative sentiment less than 5).
+   * Use text-to-speech to generate a voice message sent to international phones as voice message (via Twillo)
+   * Create a recommendation engine (such as what Netflix) from the Internet Movie Database (imdb.com)
+
    * Predictive Maintenance data science <a target="_blank" href="https://info.microsoft.com/CO-AAIoT-WBNR-FY16-07Jul-05-Predictive-Maintenance-Registration.html">webinar</a>
-   * Recommendation Engines (such as what Netflix)
    * modsy.com 3D view
    * <a target="_blank" href="https://azure.microsoft.com/en-ca/case-studies/?OCID=AID2100017_SEM_ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&ef_id=ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&msclkid=ca6fee2dd05b1ad86ab9b1a0055c7ccd&dclid=CKCq5IKfwewCFUWwnwodCKwLYg&term=bot">Customer and Partner Success Stories for "bot"</a>
    <br /><br />
@@ -134,7 +137,7 @@ After you've met the <a href="#Prerequisites">prerequisite setup</a> to run "az"
 ### Availability
 
 Even though you have permissions, each specific product <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services&regions=canada-central,canada-east,us-central,us-east,us-east-2,us-north-central,us-south-central,us-west-central,us-west,us-west-2,norway-east">may be in preview or not available, depending on region:
-<a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services&regions=canada-central,canada-east,us-central,us-east,us-east-2,us-north-central,us-south-central,us-west-central,us-west,us-west-2,norway-east"
+<a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services&regions=canada-central,canada-east,us-central,us-east,us-east-2,us-north-central,us-south-central,us-west-central,us-west,us-west-2,norway-east">
 <img alt="microsoft-ai-avail-240108-2544x1796.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1707416863/microsoft-ai-avail-240108-2544x1796_wj2ysp.png"></a>
 
 
