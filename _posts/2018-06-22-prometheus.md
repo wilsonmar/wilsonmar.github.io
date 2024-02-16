@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-02-14"
+date: "2024-02-16"
 file: "prometheus"
 title: "Prometheus"
 excerpt: "Collect metrics (for visualization by Grafana), analyze using PromQL coding, and identify alerts,  especially for Kubernetes (also from CNCF)."
@@ -31,9 +31,12 @@ From the <a target="_blank" href="https://7451111251303.gumroad.com/l/wzcnen">Po
 
 1. The Prometheus server sends HTTPS GET requests to <strong>scrape</strong> (pull) metrics from <strong>target hosts</strong> defined in its <tt>targets.json</tt> file. In addition to statically-defined targets, 
 
+   A single Prometheus server can handle up to 1,000 scrape targets.
+
 1. Targets can be discovered by <strong>Service Discovery</strong> such as DNS, <a target="_blank" href="https://kubernetes.io/docs/concepts/services-networking/service/">Kubernetes Services</a>, or HashiCorp Consul services. The frequency of scraping and other settings are defined in the <tt>prometheus.yml</tt> file.
 
-1. Each target interacts with Prometheus through a <a href="#Exporters">job exporter</a> service installed on each host. There is a <a href="#WMI+Exporter">WMI exporter on Windows</a> and another type of exporter on Linux.
+1. Each target interacts with Prometheus through a <a href="#Exporters">job exporter</a> service installed on each host. There is a <a href="#WMI+Exporter">WMI exporter on Windows</a> and a type of exporter on Linux, etc.
+
 1. This can be done via an intermediary <strong>push gateway</strong> for short-lived jobs. 
 
 1. Exporters reference <strong>custom metric providers</strong> which expose specific metrics. 
@@ -76,13 +79,23 @@ From the <a target="_blank" href="https://7451111251303.gumroad.com/l/wzcnen">Po
 
 1. Because people can't be always watching dashboard screens, <a href="#Alerting-Rules">Alerting Rules</a> are set to trigger <strong>alerts</strong> pushed to the <a href="#AlertManager">Alert Manager</a> which forwards to various <strong>end-points</strong> such as email, Slack, Pager Duty, SMS, OpsGenie, or other notification mechanisms.
 
-   <a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/3e05432b-7c61-4eb1-83b1-7cef861beb0b/ae204f21-9e52-4272-842b-eb155b77e3fb">NOTE</a>: In a HA configuration, alerts are sent to multiple Alert Managers (with different external labels -a and -b), which deduplicate and fan out alerts to their configured receivers. 
+   <a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/46bf9d2d-2947-4e0e-94cc-131715532a21/3e05432b-7c61-4eb1-83b1-7cef861beb0b/ae204f21-9e52-4272-842b-eb155b77e3fb">NOTE</a>: In a HA configuration, alerts are sent to multiple Alert Managers (with different external labels -a and -b), which deduplicate and fan out alerts to their configured <a href="#Receivers">receivers</a>. 
 
 1. PROTIP: To minimize training and confusion, enterprise organizations typically have a preferred set of tools for <strong>analytics</strong> processing to generate <strong>graphs</strong> and <strong>dashboards</strong> for visualization.
 
 
-Prometheus does not collect <strong>event</strong> data from operating systems or logs emitted from applications.
+QUESTION: Prometheus does not collect <strong>event</strong> data from operating systems or logs emitted from applications.
 
+The for each Prometheus:
+
+   * /status = Run-time and build information
+   * /flags = Command-line flags and their values
+   * /config = The currently loaded configuration
+   * /rules = Rule evaluation states
+
+   * /target = Scrape status information for all active targets
+   * /service-discovery = Service discovery status information
+   * /tsdb-status = TSDB status information
 
 
 ## Competitors
@@ -171,8 +184,8 @@ CNCF is under the Linux Foundation, which offers the <a target="_blank" href="ht
 
 18% Alerting & Dashboarding
    * Dashboarding basics
-   * Configuring Alerting rules
-   * Understand and Use Alertmanager
+   * Configuring <a href="#Alerting-Rules">Alerting rules</a>
+   * Understand and Use <a href="#AlertManager">Alertmanager</a>
    * Alerting basics (when, what, and why)
    <br /><br />
 
@@ -264,15 +277,17 @@ By <a target="_blank" href="https://www.linkedin.com/in/wardviaene/">Edward Viae
    * On Udemy, <a target="_blank" href="https://www.udemy.com/course/prometheus/">4-hour "Prometheus and Grafana - Monitoring Docker Containers"</a> video course. They show <a target="_blank" href="https://www.udemy.com/course/monitoring-and-alerting-with-prometheus/learn/lecture/10630768#overview">install of Xinial Ubuntu within Digital Ocean's cloud</a>.
    <br /><br />
 
-* <a target="_blank" href="https://app.pluralsight.com/search/?q=Prometheus">On Pluralsight.com</a>, the <a target="_blank" href="https://app.pluralsight.com/paths/skill/event-monitoring-and-alerting-with-prometheus">9-hour Event Monitoring and Alerting with Prometheus path</a> has 4 courses.
+### Pluralsight
+
+<a target="_blank" href="https://app.pluralsight.com/search/?q=Prometheus">On Pluralsight.com</a>, the <a target="_blank" href="https://app.pluralsight.com/paths/skill/event-monitoring-and-alerting-with-prometheus">tale their Skill IQ after their 9-hour Event Monitoring and Alerting with Prometheus path</a> of 4 courses.
 
 By <a target="_blank" href="https://www.linkedin.com/in/eltonstoneman/">Elton Stoneman</a> (sixeyed.com):
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/getting-started-prometheus">Getting Started with Prometheus</a> Jun 23, 2020 shows use of a Windows machine .NET Core web app that has an optional "slow" response specification.
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/getting-started-prometheus">Getting Started with Prometheus</a> Jun 23, 2020 shows use of a Windows machine .NET Core web app that has an optional "slow" response specification.
 
    <pre>docker run -d -p 8080:80 --name web sexeyed/prometheus-demo-web:windows</pre>
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/prometheus-grafana-building-dashboards-data">"Building Dashboards from Prometheus Data in Grafana"</a> Sep 22, 2020
-<br /><br />
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/prometheus-grafana-building-dashboards-data">"Building Dashboards from Prometheus Data in Grafana"</a> Sep 22, 2020
+   <br /><br />
 
 By <a target="_blank" href="https://www.linkedin.com/in/chris-james-green/">Chris Green</a> (direct-root.com):
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/prometheus-configuring-collect-metrics">Configuring Prometheus 2 to Collect Metrics</a> July 13, 2021
@@ -280,9 +295,9 @@ By <a target="_blank" href="https://www.linkedin.com/in/chris-james-green/">Chri
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/prometheus-running-production">Running Prometheus in Production</a> Aug 12, 2021
 <br /><br />
 
-By <a target="_blank" href="https://www.linkedin.com/in/craig-d-golightly/">Craig Golightly</a>: 
+By <a target="_blank" href="https://www.linkedin.com/in/craig-d-golightly/">Craig Golightly</a> (seethatgo.com): 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/monitoring-key-systems-prometheus-exporters">Monitoring Key Systems with Prometheus Exporters</a> 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/alerting-issues-prometheus-alertmanager">Alerting on Issues with Prometheus Alertmanager</a> 
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/alerting-issues-prometheus-alertmanager">Alerting on Issues with Prometheus Alertmanager</a> Feb 24, 2021
 <br /><br />
 
 By <a target="_blank" href="https://www.linkedin.com/in/marcosmsouza/">Marcos Souza</a>:
@@ -294,6 +309,8 @@ By Elle Krout:
 
    * The <a target="_blank" href="https://www.pluralsight.com/cloud-guru/courses/prometheus-deep-dive">12-hour "DevOps Monitoring Deep Dive" video course</a> references an <a target="_blank" href="https://lucid.app/lucidchart/918602e0-14b7-473c-92e7-bfbc4a15ba8f/view?page=j8p68BdUlMFS#">interactive Lucid diagram called "ProjectForethought"</a> for the NodeJs simple to-do list program called Forethought that is the subject of monitoring. 
    <br /><br />
+
+### Others:
 
 walidshaari/PrometheusCertifiedAssociate
 
@@ -324,7 +341,7 @@ The $299 course “Monitoring Infrastructure and Containers with Prometheus” (
 13. Service Discovery
 14. Blackbox Monitoring
 15. Pushing Data
-16. Alerting
+16. <a href="#Alerting-Rules">Alerting</a>
 17. Making Prometheus Highly Available
 18. Recording Rules
 19. Scaling Prometheus Deployments
@@ -580,6 +597,8 @@ Flags:
 
    <tt>--enable-feature=exemplar-storage</tt> enables (currently experimental) <a target="_blank" href="https://prometheus.io/docs/instrumenting/exposition_formats/#exemplars-experimental">exposition format examplars</a>.
 
+   QUESTION: server vs agent mode, 
+
 
 ### Clone Custom Project
 
@@ -627,7 +646,7 @@ Flags:
 │   └── alertmanager.yml
 ├── docker-compose.yml
 ├── prometheus
-│   ├── alertrules.yml
+│   ├── <a href="#Alerting-Rules">alertrules.yml</a>
 │   ├── <strong>prometheus.yml</strong>
 │   └── targets.json
 └── terraform-aws
@@ -662,12 +681,12 @@ Flags:
    The section headings:
 
    <pre>global:
-   rule_files:
+   <a href="#rule_files">rule_files</a>:
    remote_write:
    remote_read:
    scrape_configs:
      - job_name: ...
-   alerting:
+   <a href="#Alerting-Rules">alerting</a>:
    storage:
    tracing:
    </pre>
@@ -710,6 +729,13 @@ ts=2024-02-04T23:14:14.783Z caller=main.go:1024 level=info msg="Server is ready 
 ts=2024-02-04T23:14:14.783Z caller=manager.go:146 level=info component="rule manager" msg="Starting rule manager..."
    </pre>
 
+
+   ### Pre-initialize
+
+1. Pre-initialize all important label combinations to default values when the program first starts.
+
+   <a target="_blank" href="https://training.promlabs.com/training/instrumenting-applications/creating-and-using-metrics/using-labels-on-metrics">QUESTION</a>: Julius says: When using metrics with label dimensions, the time series for any label combination will only appear in the /metrics output once that label combination has been been accessed at least once. This can cause problems in PromQL queries that expect certain series to always be present. 
+
    ### Debugging errors
 
 1. If you see errors such as this:
@@ -718,8 +744,6 @@ ts=2024-02-04T23:14:14.783Z caller=manager.go:146 level=info component="rule man
 ts=2024-02-04T23:15:42.822Z caller=notifier.go:530 level=error component=notifier alertmanager=http://127.0.0.1:9093/api/v2/alerts count=1 msg="Error sending alert" err="Post \"http://127.0.0.1:9093/api/v2/alerts\": dial tcp 127.0.0.1:9093: connect: connection refused"
 ts=2024-02-04T23:16:57.812Z caller=notifier.go:530 level=error component=notifier alertmanager=http://127.0.0.1:9093/api/v2/alerts count=1 msg="Error sending alert" err="Post \"http://127.0.0.1:9093/api/v2/alerts\": dial tcp 127.0.0.1:9093: connect: connection refused"
    </pre>
-
-   ???
 
 
 <hr />
@@ -743,7 +767,7 @@ ts=2024-02-04T23:16:57.812Z caller=notifier.go:530 level=error component=notifie
 
 1. Construct 
 
-   Define where to store Time-series database:
+   Define where to store the TSDB:
 
    <pre><strong>--storage.tsdb.path</strong></pre>
 
@@ -777,10 +801,12 @@ ts=2024-02-04T23:16:57.812Z caller=notifier.go:530 level=error component=notifie
 
    To ensure that data is not lost, the upgrade process is to stop the old Prometheus server, install the new version, and then start the new version.
 
-1. Setup a symlink to the physical location of the binary using the <tt>ln</tt> (link) command:
+1. PROTIP: Setup a symlink to the physical location of the binary using the <tt>ln</tt> (link) command:
 
    <pre>sudo ln -s /usr/local/bin/prometheus /usr/local/bin/prometheus-2.2.0.linux-amd64/prometheus
    </pre>
+
+   Some prefer this to renaming the downloaded file so that multiple versions can reside on the server in case response to a vulnerability requires falling back to a previous version.
 
 1. Define a special port for versions under test:
 
@@ -849,7 +875,7 @@ Restart the Prometheus server to pick up the new configuration.
 
    Once infrastructure monitoring is up and running, the basic Node.js application uses a Prometheus client libary to track metrics across the app.
 
-   Finally, add recording and <a href="#Alerting">alerting</a> rules, build out a series of routes so any alerts created get to their desired endpoint. 
+   Finally, add recording and <a href="#Alerting-Rules">alerting</a> rules, build out a series of routes so any alerts created get to their desired endpoint. 
 
    The course also looks at creating persistent dashboards with Grafana and use its various graphing options to better track data.
 
@@ -960,10 +986,12 @@ To run Prometheus after downloading the Docker image from the "prom" account in 
 
    ### Configuring Prometheus.yml
 
-5. Open a browser to <a target="_blank" href="http://localhost:9090/config/">http://localhost:9090/config</a>
+5. Open a browser to 
+
+   <a target="_blank" href="http://localhost:9090/config/">http://localhost:9090/config</a>
 
    <strong>prometheus.yml</strong> is the configuration file that contains these blocks: 
-   global, rule_files, and scrape_configs. Optionally, there are remote_read, remote_write, alerting.
+   global, <a href="#rule_files">rule_files</a>, and scrape_configs. Optionally, there are remote_read, remote_write, <a href="#Alerting-Rules">alerting</a>.
 
    <pre>global:
   evaluation_interval: 15s
@@ -982,15 +1010,23 @@ To run Prometheus after downloading the Docker image from the "prom" account in 
 
    Its uniqueness is a <strong>rules engine</strong> that enables alerts by the Prometheus Alertmanager installed separately.
 
+   <a name="rule_files"></a>
+
+   ### Rules Files
+
+5. Open a browser to 
+
+   <a target="_blank" href="http://localhost:9090/rules/">http://localhost:9090/rules</a>
+
+   Here are both recording rules and <a href="#Alerting-Rules">alerting rules</a>.
+
    <a name="Recording_rules"></a>
+
    ### Recording Rules
 
    <a target="_blank" href="https://training.promlabs.com/training/recording-rules/training-overview/introduction">TUTORIAL</a>:
 
-   <ul>http://<em>machine-ip</em>:9090/rules</ul>
-
-   In the <tt>rule_files</tt> section are yml file names. Each yml file contains groups of
-   <strong>recording rules</strong> that define how to periodically <strong>precompute</strong> query results as new series (with a new name) in the TSDB.
+   In the <a href="#rule_files">rule_files</a> section are yml file names. Each yml file contains groups of <strong>recording rules</strong> that define how to periodically <strong>precompute</strong> query results as new series (with a new name) in the TSDB.
 
    https://prometheus.io/docs/practices/rules/
    
@@ -1025,13 +1061,12 @@ To run Prometheus after downloading the Docker image from the "prom" account in 
    
    QUESTION: sum without(status, instance, cpu)
 
-   
-   Referencing a precomputed series is less resource-intensive than the same query repeating the same calculations frequently. Instead of multiple dashboards referencing a series,
+   Referencing a precomputed series is less resource-intensive than repeated making the same calculations frequently for the same query. Instead of multiple dashboards referencing a series,
    recording rules can scrape metrics from one TSDB into another (to aggregate) -- to federate (share)  the result of a PromQL expression.
 
    To produce alerts with a custom threshold for each path's current error rate, 
    <a target="_blank" href="https://www.robustperception.io/using-time-series-as-alert-thresholds/">
-   use time series as alert thresholds</a>. Define recording rules with the same output metric name, but different path label values. This enables different error rate thresholds to be synthetically recorded for each path of an HTTP-serving application. Then a single alerting rule references the generated threshold metric name.
+   use time series as alert thresholds</a>. Define recording rules with the same output metric name, but different path label values. This enables different error rate thresholds to be synthetically recorded for each path of an HTTP-serving application. Then a single <a href="#Alerting-Rules">alerting rule</a> references the generated threshold metric name.
 
    The default interval is 1 minute. That can be changed by the <tt>global.evaluation_interval</tt> field in the Prometheus configuration file or by the rule-group-specific interval override. 
 
@@ -1042,6 +1077,143 @@ To run Prometheus after downloading the Docker image from the "prom" account in 
    3. Apply sample output limits (if any) and fail the evaluation if the limit is exceeded,
    4. Store the resulting time series in the local TSDB under the provided new metric name and at the evaluation timestamp.
 
+   <a name="AlertManager"></a>
+
+   ## alertmanager server
+
+   <a target="_blank" href="https://training.promlabs.com/training/alerting-with-prometheus">TRAINING</a>:
+
+   The Prometheus Alert Manager is a separate utility server that sends alerts to various <strong>endpoints</a> when PromQL expressions in Prometheus determine when each alert needs to be sent.
+
+   REMEMBER: Alert Rules are read by the Prometheus server (not the Alertmanager).
+
+   An Alertmanager can receive alerts from several Prometheus servers.
+   NOTE: Under development: A cluster of Alertmanager instances form a mesh configuration to ensure High Availability.
+
+   With Prometheus, Alerting, Dashboarding and adhoc querying all act from a TSDB.
+
+   ### alertmanager install
+
+   I've automated the install of with this Bash script.
+   The latest version is automatically identified and renamed to just "alertmanager".
+
+   <pre>run.sh
+   </pre>
+
+   ### alertmanager config
+
+   In the alertmanager.yml file, define the Alertmanager server:
+
+   <pre>alerting:
+   alertmanagers:
+   - scheme: https
+      static_configs:
+      - targets:
+         - "localhost:9093"
+   </pre>
+
+   REMEMBER: Alertmanager uses port 9093 by default.
+
+   Docker setup
+
+   defaults:
+   * group_wait: 30s = how long buffer alerts in same group waits before initial notification
+   * group_interval: 5m = how long before new alert notification sent to group already notified
+   * repeat_interval: 4h = How long before re-sending notification for same alert
+
+   <a name="Alerting-Rules"></a>
+
+   ### Alerting Rules
+
+   Based on samples <a target="_blank" href="https://training.promlabs.com/training/alerting-with-prometheus/understanding-alerting-rules/alerting-rules-overview">from Julius</a> and <a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/36f40310-1a7a-45fd-802d-4429136c32ca/86d5ccce-5849-4633-bc5d-cdb23201f8f9/ede1076b-6ca0-4a6a-8d68-6c5a8c59a3a3">Craig</a>:
+
+   <tt>expr</tt> (expression) is the condition which triggers the alert.
+
+   <pre>groups:
+- name: demo-alerts
+  rules:
+  - alert: InstanceDown
+    expr: up == 0
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: Instance is down
+  - alert: HighErrorRate    # The name of the 2nd alert.
+    expr: |                 # A PromQL expression whose output series become alerts.
+      (
+        sum by(path, instance, job) (
+          rate(demo_api_request_duration_seconds_count{status=~"5..",job="demo"}[1m])
+        )
+      /
+        sum by(path, instance, job) (
+          rate(demo_api_request_duration_seconds_count{job="demo"}[1m])
+        ) * 100 > 0.5
+      )
+    for: 5m                 # How long each result time series needs to be present to become a firing alert.
+    labels:                 # Extra labels to attach for routing.
+      severity: critical
+    annotations:            # Non-identifying annotations that can be used in Alertmanager notifications.
+      title: "{{$labels.instance}} high 5xx rate on {{$labels.path}}"
+      description: "The 5xx error rate for path {{$labels.path}} on {{$labels.instance}} is {{$value}}%."
+   </pre>
+
+   The 2nd alerting rule generates critical alerts for any path/instance/job label combinations that have an error rate larger than 0.5% for at least 5 minutes.
+
+   * <tt>group_by ['...']</tt> sends all [<a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/36f40310-1a7a-45fd-802d-4429136c32ca/37f1f202-eaa1-49f1-a293-3ae355314523/a453ed63-211a-46e7-a64a-90c29700400a"> tutorial</a>] 
+
+   A different label specify a different app/team. 
+   
+   * deduplication (throttling and repetition)
+
+   inhibit alerts about servers downstream if network is down.
+
+   <pre>inhibit_rules:
+   - source_match:
+     service: 'network'
+   target_match:
+     service: 'servers'
+   </pre>
+
+   * silencing
+
+
+   QUESTION: Instead of the IP address, specify server name or code to lookup metadata using
+   in <tt>info:</strong> entry under <tt>annotations</tt> with a
+   <strong>GO Template</a> such as {{ $value }}
+
+   <tt>/<em>youpath</em>/alertmanager/templates/custom.tmpl</tt>
+
+   QUESTION: Insert and remove server configs automatically as they are created/destroyed automatically.
+
+   <tt>severity: critical</tt> or warning
+
+
+   <a name="Receivers"></a>
+   <a name="Endpoints"></a>
+   Alerts are routed to an endpoint based on the label sets defined.
+
+   https://prometheus.io/docs/alerting/latest/configuration/#receiver
+   "We are not actively adding new receivers. We recommend implementing custom notification integrations via the webhook receiver.
+
+   Endpoints Receivers include:
+   * <strong>webhook</strong> [<a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/36f40310-1a7a-45fd-802d-4429136c32ca/6a038cf1-259b-4912-91f7-8274df7107f7/3dd45bb2-f70c-4398-943c-e7a1464a5a96"> tutorial</a>] TODO: to Twilio to send mobile phone SMS internationally.
+   * email [<a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/36f40310-1a7a-45fd-802d-4429136c32ca/6a038cf1-259b-4912-91f7-8274df7107f7/cc6eea53-e846-4758-a8a1-0ad9f747efb3"> tutorial</a>] TODO: Get credentials from secrets manager instead of hard-coding <tt>auth_password</tt>
+   * hipchat
+   * pagerduty
+   * pushover
+   * slack [<a target="_blank" href="https://app.pluralsight.com/ilx/video-courses/36f40310-1a7a-45fd-802d-4429136c32ca/6a038cf1-259b-4912-91f7-8274df7107f7/4946b426-157b-43c8-98b5-53c75e9f7b51"> tutorial</a>]
+   * opsgenie
+   * victorops
+   * zulip.com chat
+   <br /><br />
+
+   ### amtool
+
+   Alertmanager doesn't start if default route is not specified.
+
+   <pre><strong>./amtool check-config alertmanager.yml
+   </strong></pre>
 
    ### Scrape configs
 
@@ -1060,6 +1232,14 @@ To run Prometheus after downloading the Docker image from the "prom" account in 
    </pre>
 
    There can be several jobs named in a config, named x, y, and z in the sample config file.
+
+   ### Silence
+
+1. When working on an issue, silence notifications.
+
+1. When fixed, <strong>expire</strong. silence.
+
+1. Previous silenced alarts can be reactivated for a period of time.
 
 ## Local start
 
@@ -1100,8 +1280,6 @@ Alternately,
 
    <pre>level=info ts=2017-10-23T14:03:02.274562Z caller=main.go:216 msg="Starting prometheus"...</pre>
 
-
-   Although an Alertmanager is not required to run Prometheus,...
 
 
 <hr />
@@ -1184,7 +1362,6 @@ The four golden signals of monitoring</a> begins with:
 
    How "full" your service is. A measure of your system fraction, emphasizing the resources that are most constrained (e.g., in a memory-constrained system, show memory; in an I/O-constrained system, show I/O). Note that many systems degrade in performance before they achieve 100% utilization, so having a utilization target is essential. In complex systems, saturation can be supplemented with higher-level load measurement: can your service properly handle double the traffic, handle only 10% more traffic, or handle even less traffic than it currently receives? For very simple services that have no parameters that alter the complexity of the request (e.g., "Give me a nonce" or "I need a globally unique monotonic integer") that rarely change configuration, a static value from a load test might be adequate. As discussed in the previous paragraph, however, most services need to use indirect signals like CPU utilization or network bandwidth that have a known upper bound. Latency increases are often a leading indicator of saturation. Measuring your 99th percentile response time over some small window (e.g., one minute) can give a very early signal of saturation.
 
-
 Predictive: saturation is the basis for projections of impending issues, such as "at the current rate, your database will fill its hard drive in 4 hours."
 
 ## graph
@@ -1215,10 +1392,207 @@ Type "prometheus" for the auto-complete to show the default raw metrics built-in
 
 ## App Instrumentation
 
-   * https://training.promlabs.com/training/instrumenting-applications/
+"Instrumentation" is the process of adding code to your application so it exposes metrics to Prometheus.
+
+Prometheus <strong>scrapes</strong> metrics from apps setup to expose <strong>exposition metrics</a> through a <tt>/metrics</tt> path.
+
+<a target="_blank" href="https://training.promlabs.com/training/instrumenting-applications/training-overview/introduction">PROTIP</a>: For insight over what is happening inside your application or library: Julius recommends direct instrumentation: track and expose Prometheus metrics directly from your own applications and services rather than using exporters for code. 
+
+* https://www.tigera.io/learn/guides/prometheus-monitoring/prometheus-metrics/
+
+* https://prometheus.io/docs/practices/instrumentation/
+
+* https://prometheus.io/docs/instrumenting/exporters/
+
+
+<a target="_blank" href="https://app.pluralsight.com/library/courses/instrumenting-applications-metrics-prometheus/table-of-contents">Video course "Instrumenting Applications with Metrics for Prometheus"</a> by <a target="_blank" href="https://www.linkedin.com/in/eltonstoneman/">Elton Stoneman</a> (sixeyed.com) and https://observability.courselabs.co/
+
+The course makes use of Docker containers <a target="_blank" href="https://github.com/courselabs/docker-images">created</a> 
+
+1. Install Docker and Prometheus.
+1. Download the files. Navigate to folder 02
+1. Start the servers:
+
+   <tt>docker-compose up -d</tt>
+
+1. Logs from the web app:
+
+   <pre>docker-compose logs web</pre>
+
+   <a name="Client+Libraries"></a>
+   
+   ### Client libraries
+
+1. App code needs to be configured with a client library. Official and community
+
+   <a target="_blank" href="https://prometheus.io/docs/instrumenting/clientlibs/">https://prometheus.io/docs/instrumenting/clientlibs/</a>
+
+   Embed official client libraries:
+
+   * <a href="https://github.com/prometheus/client_golang">Go</a>
+   * <a href="https://github.com/prometheus/client_java">Java or Scala</a>
+   * <a href="https://github.com/prometheus/client_python">Python</a>
+   * <a href="https://github.com/prometheus/client_ruby">Ruby</a>
    <br /><br />
 
-"Instrumentation" is the process of adding code to your application to expose metrics to Prometheus.
+   Unofficial third-party client libraries:
+
+   * <a href="https://github.com/aecolley/client_bash">Bash</a>
+   * <a href="https://github.com/jupp0r/prometheus-cpp">C++</a>
+   * <a href="https://github.com/deadtrickster/prometheus.cl">Common Lisp</a>
+   * <a href="https://github.com/deadtrickster/prometheus.ex">Elixir</a>
+   * <a href="https://github.com/deadtrickster/prometheus.erl">Erlang</a>
+   * <a href="https://github.com/fimad/prometheus-haskell">Haskell</a>
+   * <a href="https://github.com/knyar/nginx-lua-prometheus">Lua</a> for Nginx
+   * <a href="https://github.com/tarantool/prometheus">Lua</a> for Tarantool
+   * <a href="https://github.com/andrasm/prometheus-net">.NET / C#</a>
+   * <a href="https://github.com/siimon/prom-client">node.js prom-client</a>
+   * <a href="https://github.com/Jimdo/prometheus_client_php">PHP</a>
+   * <a href="https://github.com/pingcap/rust-prometheus">Rust</a>
+
+1. C# .NET programs need to be configured with client libraries from:
+
+   <a target="_blank" href="https://www.nuget.org/packages?q=prometheus">https://www.nuget.org/packages?q=prometheus</a>
+
+   The C# .NET .csproj file would contain:
+   
+   <pre>&LT;ItemGroup>
+   &LT;Package Reference Include="prometheus-net.AspNetCore" Version="3.6.0"/>
+   &LT;ItemGroup>
+   </pre>
+
+1. <a target="_blank" href="https://training.promlabs.com/training/instrumenting-applications/instrumenting-an-example-service/introducing-the-example-service">Julius</a> has a tutorial about instrumenting his sample Go app conveniently running in GitPod:
+
+   git clone https://github.com/promlabs/go-instrumentation-exercise
+
+   https://pkg.go.dev/github.com/prometheus/client_golang/prometheus
+
+   https://pkg.go.dev/github.com/prometheus/client_golang/prometheus/promhttp
+
+   https://pkg.go.dev/github.com/prometheus/client_golang/prometheus/promauto
+
+   Initialize the Go module configuration:
+   <pre><strong>go mod init instrumentation-examples</strong></pre>
+
+   His solution branch of the repository:<br />
+   git checkout instrumented
+
+1. View file <tt>docker-compose-prometheus.yaml</tt>
+
+   <pre>version: '3.7'
+services:
+  prometheus:
+    image: psodpromapps/prometheus:m2
+    build:
+      context: prometheus
+    ports:
+      - "9090:9090"
+    networks:
+      - wb-net
+   </pre>
+
+1. The latest version:
+
+   QUESTION
+
+1. Start Prometheus 
+
+   <pre><strong>docker-compose -f docker-compose.yaml \
+   -f docker-compose-prometheus.yaml up -dated
+   </strong></pre>
+
+The "bag" of metrics that should all be exposed together as part of a scrape
+is called a "metrics registry".
+
+
+<a name="Expositions"></a>
+
+## Metrics exposition
+
+Metrics are made available from a target's Node Exporter by exposing an unencrypted (HTTP) URL such as:
+
+   <ul><pre><strong><a target="_blank" href="http://demo.promlabs.com:10000/metrics">http://demo.promlabs.com:10000/metrics</a></strong></pre></ul>
+
+<em>Space lines added for clarity</em>
+
+Each metric is preceded by comments starting with "#".
+
+The format of the <a target="_blank" href="https://prometheus.io/docs/instrumenting/exposition_formats/#text-based-format">metrics exposition format</a> (shown below) has evolved into the <a target="_blank" href="https://openmetrics.io/">OpenMetrics CNCF open standard</a> defined at <a target="_blank" href="https://github.com/OpenObservability/OpenMetrics/">https://github.com/OpenObservability/OpenMetrics</a>, with discussions at <a target="_blank" href="https://groups.google.com/g/openmetrics/">https://groups.google.com/g/openmetrics</a>
+
+   <pre># HELP node uname info from the uname system call
+# TYPE node_uname_info gauge
+node_uname_info{domainname="(none)",machine="x86_64",nodename="localhost.localdomain",release="4.15.0-20-generic",sysname="Linux",version="#21-Ubuntu SMP Tue Apr 24 06:16:15 UTC 2018"} 1
+&nbsp;
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 32
+&nbsp;
+# HELP http_request_duration_microseconds The HTTP request latencies in microseconds.
+# TYPE http_request_duration_microseconds summary
+http_request_duration_microseconds{handler="prometheus",quantile="0.5"} 73334.095
+&nbsp;
+# HELP dotnet_total_memory_bytes Total known allocated memory
+# TYPE dotnet_total_memory_bytes gauge
+# TYPE node_filefd_allocated gauge
+dotnet_total_memory_bytes 363222
+&nbsp;
+# HELP dotnet_collection_count_total GC collection count
+# TYPE dotnet_collection_count_total counter
+dotnet_collection_count_total{generation="0"} 0
+dotnet_collection_count_total{generation="1"} 0
+dotnet_collection_count_total{generation="2"} 0
+&nbsp;
+# HELP node_filefd_allocated File descriptor statistics: allocated.
+# TYPE node_filefd_allocated gauge
+node_filefd_allocated 1184
+&nbsp;
+# HELP node_disk_io_time_seconds_total Total seconds spent doing I/Os.
+# TYPE node_disk_io_time_seconds_total counter
+node_disk_io_time_seconds_total{device="sda"} 104.296
+&nbsp;
+# HELP node_disk_io_now The number of I/Os currently in progress.
+# TYPE node_disk_io_now gauge
+node_disk_io_now{device="sda"} 0
+&nbsp;
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 1.048576e+06
+&nbsp;
+# HELP node_disk_io_time_weighted_seconds_total The weighted # of seconds spent doing I/Os.
+# TYPE node_disk_io_time_weighted_seconds_total counter
+node_disk_io_time_weighted_seconds_total{device="sda"} 104.296
+&nbsp;
+# HELP worker_queue_length The length of the queue of pending requests.
+# TYPE worker_queue_length gauge
+worker_queue_length 0
+&nbsp;
+# HELP worker_jobs_total Worker jobs handled
+# TYPE worker_jobs_total counter
+worker_jobs_tota{status="processed"} 1570222
+worker_jobs_total{status="failed"} 122
+&nbsp;
+# HELP worker_jobs_active Worker jobs in process
+# TYPE worker_jobs_active gauge
+worker_jobs_active 10
+&nbsp;
+# HELP process_open_handless Number of open handles
+# TYPE process_open_handless gauge
+process_open_handless 10
+&nbsp;
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 0.01
+   </pre>
+
+
+* Timestamps are 64-bit integers in millisecond precision (tenths of a second), NOT nanosecond.
+* Sample values are 64-bit floating point numbers (allowing integer precision up to 2^53). In the future, can be a values histogram.
+
+* To colorize metrics output in browsers, install the "Prometheus Formatter" extension for <a target="_blank" href="https://chromewebstore.google.com/detail/prometheus-formatter/jhfbpphccndhifmpfbnpobpclhedckbb?pli=1">Chrome</a> and <a target="_blank" href="https://addons.mozilla.org/addon/prometheus-formatter/">Firefox</a> from https://github.com/fhemberger/prometheus-formatter created by fhemberger.
+
+
+https://prometheus.io/docs/instrumenting/exposition_formats/
+
 
 
 <hr />
@@ -1232,7 +1606,8 @@ Type "prometheus" for the auto-complete to show the default raw metrics built-in
    <br /><br />
 
 Exporters are installed on servers to translate existing metrics into a format that Prometheus can scrape. Stock exporters are provided at: https://prometheus.io/download/#prometheus
-listed here by default port number:
+
+PROTIP: Listed here by default port number:
    * 9100 - <a href="http://github.com/prometheus/node_exporter">node_exporter</a> - <a href="#node_exporter">more</a>
    * 9101 - <a target="_blank" href="http://github.com/prometheus/haproxy_exporter">HAProxy exporter</a>
    * 9102 - <a target="_blank" href="http://github.com/prometheus/statsd_exporter">statsd_exporter</a>
@@ -1397,112 +1772,87 @@ https://prometheus.io/docs/instrumenting/writing_exporters/
 
 <a target="_blank" href="https://www.youtube.com/watch?v=fhx0ehppMGM" title="Understanding Prometheus Metric Types | Meaning and Usage (Gauge, Counter, Summary, Histogram">VIDEO</a>:  by Julius. <a target="_blank" href="https://promlabs.com/blog/">Julius' blog</a>
 
-<strong>Counter</strong> increments
+* <strong>Counters</strong> increments
 
-   <ul><a target="_blank" href="https://www.youtube.com/watch?v=OxZmn4svOyA&t=6m30s">VIDEO</a>: 
-   For the metric that tracks the total number of metrics Prometheus has ingested so far:
-   PROTIP: Metrics that go up and up in a graph would eventually blow up. So it's better reported as a <strong>rate per minute</strong>. 
-   More specifically, as the 90th percentile value on a histogram:
+   <a target="_blank" href="https://www.youtube.com/watch?v=OxZmn4svOyA&t=6m30s">VIDEO</a>: 
+   Counters track the total number of metrics Prometheus has ingested so far:
+   PROTIP: Metrics that keep going up and up in a graph would eventually blow up. So it's better reported as a <strong>rate per minute</strong>. 
+   To define the 90th percentile value on a histogram:
    &nbsp;
    <pre><strong>histogram_quantile(0.9, sum by(le, path) rate(demo_api_request_duration_seconds_bucket[5m])</strong></pre>
-   </ul>
 
-<strong>Gauge</strong>
+* <strong>Gauges</strong> tally
 
-   <ul>This metric type is for values that go up and down, such as a gasoline guage in vehicles.
+   Guages tally values that naturally go up and down, such as the temperature, amount of gasoline in vehicles or capacity of memory and CPU used, and the length of items in queues awaiting processing.
    Each guage has a maximum capacity and usually a minimum of zero.
-   </ul>
 
-<strong>Summary</strong>
+   An exposition format:
 
-   <ul>calculates a histogram.
-   </ul>
-
-<a name="Expositions"></a>
-
-## Metrics exposition
-
-Metrics are made available from a target's Node Exporter by exposing an unencrypted (HTTP) URL such as:
-
-   <ul><pre><strong><a target="_blank" href="http://demo.promlabs.com:10000/metrics">http://demo.promlabs.com:10000/metrics</a></strong></pre></ul>
-
-<em>Space lines added for clarity</em>
-
-Each metric is preceded by comments starting with "#".
-
-The format of the <a target="_blank" href="https://prometheus.io/docs/instrumenting/exposition_formats/#text-based-format">metrics exposition format</a> (shown below) has evolved into the <a target="_blank" href="https://openmetrics.io/">OpenMetrics CNCF open standard</a> defined at <a target="_blank" href="https://github.com/OpenObservability/OpenMetrics/">https://github.com/OpenObservability/OpenMetrics</a>, with discussions at <a target="_blank" href="https://groups.google.com/g/openmetrics/">https://groups.google.com/g/openmetrics</a>
-
-   <pre># HELP node uname info from the uname system call
-# TYPE node_uname_info gauge
-node_uname_info{domainname="(none)",machine="x86_64",nodename="localhost.localdomain",release="4.15.0-20-generic",sysname="Linux",version="#21-Ubuntu SMP Tue Apr 24 06:16:15 UTC 2018"} 1
-&nbsp;
-# HELP process_open_fds Number of open file descriptors.
+   <pre># HELP process_open_fds Number of open file descriptors.
 # TYPE process_open_fds gauge
-process_open_fds 32
-&nbsp;
-# HELP http_request_duration_microseconds The HTTP request latencies in microseconds.
-# TYPE http_request_duration_microseconds summary
-http_request_duration_microseconds{handler="prometheus",quantile="0.5"} 73334.095
-&nbsp;
-# HELP dotnet_total_memory_bytes Total known allocated memory
-# TYPE dotnet_total_memory_bytes gauge
-# TYPE node_filefd_allocated gauge
-dotnet_total_memory_bytes 363222
-&nbsp;
-# HELP dotnet_collection_count_total GC collection count
-# TYPE dotnet_collection_count_total counter
-dotnet_collection_count_total{generation="0"} 0
-dotnet_collection_count_total{generation="1"} 0
-dotnet_collection_count_total{generation="2"} 0
-&nbsp;
-# HELP node_filefd_allocated File descriptor statistics: allocated.
-# TYPE node_filefd_allocated gauge
-node_filefd_allocated 1184
-&nbsp;
-# HELP node_disk_io_time_seconds_total Total seconds spent doing I/Os.
-# TYPE node_disk_io_time_seconds_total counter
-node_disk_io_time_seconds_total{device="sda"} 104.296
-&nbsp;
-# HELP node_disk_io_now The number of I/Os currently in progress.
-# TYPE node_disk_io_now gauge
-node_disk_io_now{device="sda"} 0
-&nbsp;
-# HELP process_virtual_memory_bytes Virtual memory size in bytes.
-# TYPE process_virtual_memory_bytes gauge
-process_virtual_memory_bytes 1.048576e+06
-&nbsp;
-# HELP node_disk_io_time_weighted_seconds_total The weighted # of seconds spent doing I/Os.
-# TYPE node_disk_io_time_weighted_seconds_total counter
-node_disk_io_time_weighted_seconds_total{device="sda"} 104.296
-&nbsp;
-# HELP worker_queue_length The length of the queue of pending requests.
-# TYPE worker_queue_length gauge
-worker_queue_length 0
-&nbsp;
-# HELP worker_jobs_total Worker jobs handled
-# TYPE worker_jobs_total counter
-worker_jobs_tota{status="processed"} 1570222
-worker_jobs_total{status="failed"} 122
-&nbsp;
-# HELP worker_jobs_active Worker jobs in process
-# TYPE worker_jobs_active gauge
-worker_jobs_active 10
-&nbsp;
-# HELP process_open_handless Number of open handles
-# TYPE process_open_handless gauge
-process_open_handless 10
-&nbsp;
-# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
-# TYPE process_cpu_seconds_total counter
-process_cpu_seconds_total 0.01
+process_open_fds 15
    </pre>
 
+* <strong>histogram</strong> count of value buckets
 
-* Timestamps are 64-bit integers in millisecond precision (tenths of a second), NOT nanosecond.
-* Sample values are 64-bit floating point numbers (allowing integer precision up to 2^53). In the future, can be a values histogram.
+   Histograms report a count of <strong>how many</strong> were observed within each bucket of a distribution. As Prometheus receives readings such as request duration (latency), it arranges them by value in an object setup for that work.
 
-* To colorize metrics output in browsers, install the "Prometheus Formatter" extension for <a target="_blank" href="https://chromewebstore.google.com/detail/prometheus-formatter/jhfbpphccndhifmpfbnpobpclhedckbb?pli=1">Chrome</a> and <a target="_blank" href="https://addons.mozilla.org/addon/prometheus-formatter/">Firefox</a> from https://github.com/fhemberger/prometheus-formatter created by fhemberger.
+   When it comes time to publish, the value of each item observed is the basis for them to be counted within several buckets. If 6 buckets are used, the exposition would have 6 lines.
 
+   <pre># HELP http_request_duration_seconds A histogram of the request duration.
+# TYPE http_request_duration_seconds histogram
+http_request_duration_seconds_bucket{le="0.025"} 20
+http_request_duration_seconds_bucket{le="0.05"} 60
+http_request_duration_seconds_bucket{le="0.1"} 90
+http_request_duration_seconds_bucket{le="0.25"} 100
+http_request_duration_seconds_bucket{le="+Inf"} 105
+http_request_duration_seconds_sum 21.322
+http_request_duration_seconds_count 105
+   </pre>
+
+   We don't want to specify buckets by the values because that changes over time.
+   So we specify the buckets using a <strong>frequency of occurrence</strong> number between 0 and 1.0 (expressed as "+Inf" for infinity, which covers the values observed in the bucket containing the highest values). A 0.5 would cover 50% of the values.
+
+   The frequency number is specified in "le" (less than or equal to) a number to the previous bucket.
+
+   Histograms provide a count of <strong>outliers</strong> when request durations (latencies) are too slow. Alerts would trigger if the number in the highest bucket exceeds a specified occurrence.
+
+   Julius notes that when aggregating across dimensions (such as endpoint, HTTP method, etc.) use histogram rather than summary. He explains why in his tutorial.
+
+* <strong>Summary</strong> quartiles
+
+   "Quartiles" is a misnomer because it doesn't really mean quarters. 
+   
+   Quartiles in Prometheus summary metric types are really percentiles, but specified in a 0 to 1 scale rather than 0 to 100 as normally specified in the industry.
+
+   <pre># HELP rpc_duration_seconds A summary of RPC durations in seconds.
+# TYPE rpc_duration_seconds summary
+rpc_duration_seconds{quantile="0.01"} 3.102
+rpc_duration_seconds{quantile="0.05"} 3.272
+rpc_duration_seconds{quantile="0.5"} 4.773
+rpc_duration_seconds{quantile="0.9"} 9.001
+rpc_duration_seconds{quantile="0.99"} 76.656
+rpc_duration_seconds_sum 5.7560473e+04
+rpc_duration_seconds_count 2693
+   </pre>
+
+   The lowest quartile may indicate durations that are too low, such as when an error occured.
+
+   To create a summary, this from Julius to specify percentiles:
+
+   <pre>requestDurations := prometheus.NewSummary(prometheus.SummaryOpts{
+    Name:       "http_request_duration_seconds",
+    Help:       "A summary of the HTTP request durations in seconds.",
+    Objectives: map[float64]float64{
+      0.5: 0.05,   // 50th percentile with a max. absolute error of 0.05.
+      0.9: 0.01,   // 90th percentile with a max. absolute error of 0.01.
+      0.99: 0.001, // 99th percentile with a max. absolute error of 0.001.
+    },
+  },
+)
+   </pre>
+
+   https://prometheus.io/docs/practices/histograms/
 
 <hr />
 
@@ -1511,54 +1861,6 @@ process_cpu_seconds_total 0.01
 ## Operator
 
 TBD
-
-<a name="AlertManager"></a>
-
-## Alert Manager
-
-The Alert Manager uses port 9093 by default.
-
-
-<a name="Alerting"></a>
-
-### Alerting
-
-https://training.promlabs.com/training/alerting-with-prometheus
-
-The Prometheus Alert Manager is used to generate alerts.
-
-A sample config:
-
-   <pre>alerting:
-  alertmanagers:
-  - scheme: https
-    static_configs:
-    - targets:
-      - "1.2.3.4:9093"
-      - "1.2.3.5:9093"
-      - "1.2.3.6:9093"
-   </pre>
-
-* routing
-* sending
-* grouping
-* deduplication
-
-Functions: 
-* silencing
-* inhibition
-
-Under development: A cluster of Alertmanager instances form a mesh configuration ensure High Availability.
-
-Integrations include:
-* email
-* hipchat
-* pagerduty
-* pushover
-* slack
-* opsgenie
-* webhook
-* victorops
 
 <hr />
 
@@ -1647,49 +1949,6 @@ https://prometheus.io/docs/practices/alerting/
 https://prometheus.io/docs/alerting/latest/alertmanager/
 
 https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/
-
-
-
-
-<hr />
-
-## Client libraries
-
-https://prometheus.io/docs/instrumenting/clientlibs/
-
-Embed official client libraries:
-
-* <a href="https://github.com/prometheus/client_golang">Go</a>
-* <a href="https://github.com/prometheus/client_java">Java or Scala</a>
-* <a href="https://github.com/prometheus/client_python">Python</a>
-* <a href="https://github.com/prometheus/client_ruby">Ruby</a>
-<br /><br />
-
-Unofficial third-party client libraries:
-
-* <a href="https://github.com/aecolley/client_bash">Bash</a>
-* <a href="https://github.com/jupp0r/prometheus-cpp">C++</a>
-* <a href="https://github.com/deadtrickster/prometheus.cl">Common Lisp</a>
-* <a href="https://github.com/deadtrickster/prometheus.ex">Elixir</a>
-* <a href="https://github.com/deadtrickster/prometheus.erl">Erlang</a>
-* <a href="https://github.com/fimad/prometheus-haskell">Haskell</a>
-* <a href="https://github.com/knyar/nginx-lua-prometheus">Lua</a> for Nginx
-* <a href="https://github.com/tarantool/prometheus">Lua</a> for Tarantool
-* <a href="https://github.com/andrasm/prometheus-net">.NET / C#</a>
-* <a href="https://github.com/siimon/prom-client">node.js prom-client</a>
-* <a href="https://github.com/Jimdo/prometheus_client_php">PHP</a>
-* <a href="https://github.com/pingcap/rust-prometheus">Rust</a>
-
-
-## Instrumentation
-
-https://www.tigera.io/learn/guides/prometheus-monitoring/prometheus-metrics/
-
-https://prometheus.io/docs/practices/instrumentation/
-
-https://prometheus.io/docs/instrumenting/exporters/
-
-
 
 
 ## Resources
@@ -1795,6 +2054,8 @@ The TSDB Status page shows detailed statistics about individual metric names and
 
 ## Resources
 
+https://developer.hashicorp.com/terraform/tutorials/enterprise/tfe-metrics
+
 <a target="_blank" href="https://www.youtube.com/watch?v=4HIn5SBGjCg&list=PL8cwSAAaP9W3uHIOFmZVQ2HBTXqob7T6P&index=17">TechnoTim</a> explains use of Rancher Monitoring from Helm charts in a <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a> cluster.
 
 https://www.youtube.com/watch?v=TyBsKMTDl1Q
@@ -1805,6 +2066,10 @@ Monitoring Docker Containers using Grafana & Prometheus
 
 https://training.linuxfoundation.org/training/monitoring-systems-and-services-with-prometheus-lfs241/
 $299 for 25 hours with labs: Monitoring Systems and Services with Prometheus (LFS241)
+
+Thanos & promscale can dedup
+
+
 <hr />
 
 ## More on Security #
