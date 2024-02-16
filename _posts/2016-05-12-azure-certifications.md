@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-12-14"
+date: "2024-02-15"
 file: "azure-certifications"
 title: "Azure (Microsoft cloud) certifications"
 excerpt: "Microsoft provides free hands-on (gamified) tutorials and free time"
@@ -82,11 +82,11 @@ NOTE: Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/cr
 
 <tr valign="top"><td> <a href="#Sec_Certs">Security Certifications</a></td><td>
    * <a href="#SC-900">SC-900 Security, Compliance, and Identity Fundamentals</a><br />
-   * <a href="#SC-200">SC-200 Security Operations Analyst Associate</a><br />
-   * <a href="#SC-300">SC-300 Identity and Access Administrator Associate</a><br />
+   * <a href="#SC-200">SC-200 Security Operations Analyst Associate</a> MCT<br />
+   * <a href="#SC-300">SC-300 Identity and Access Administrator Associate</a> MCT<br />
    * <a href="#SC-400">SC-400 Information Protection Administrator</a><br />
-   * <a href="#AZ-500">AZ-500 Azure Security Engineer Associate</a><br />
-   * <a href="#SC-100">SC-100 Microsoft Cybersecurity Architect</a>
+   * <a href="#AZ-500">AZ-500 Azure Security Engineer Associate</a> MCT<br />
+   * <a href="#SC-100">SC-100 Microsoft Cybersecurity Architect</a> MCT
    </td></tr>
 </table>
 
@@ -333,7 +333,7 @@ https://vladtalkstech.com/microsoft-certification-study-guides
 
 <hr />
 
-## Microsoft Exam
+## Microsoft Exams
 
 <a target="_blank" href="https://www.microsoft.com/en-us/learning/dashboard.aspx">
 https://www.microsoft.com/en-us/learning/dashboard.aspx</a>
@@ -341,6 +341,65 @@ is where you start exams and get certificate pdfs (suitable for framing) and bad
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits">
 Azure Subscription Service Limits</a>
+
+<a name="MCT"></a>
+
+### MCT (Microsoft Certified Trainer)
+
+https://learn.microsoft.com/en-us/credentials/certifications/mct-certification
+
+
+<a name="MCE"></a>
+
+### MCE (Microsoft Certified Educator)
+
+<a target="_blank" href="https://www.credly.com/badges/1af742ba-c3e5-4291-bfed-7e829a9ec733"><img align="right" width="100" src="https://images.credly.com/size/340x340/images/54f7ea40-48bc-4217-b398-b81bae6de175/MCE.png"></a>
+For $90 (<a target="_blank" href="https://store.certiport.com/certiport-products/c/13000821?">$70.20 with CODE-32547049</a>), answer __% of 35-42 questions in 60 minutes <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/exams/62-193/">$127 Exam 62-193</a>.
+It's about the adoption of <a target="_blank" href="https://edge.ut.ac.id/mod/page/view.php?id=119&forceview=1">SRI-developed</a> ITL (Innovative Teaching and Learning) <a target="_blank"https://learn.microsoft.com/en-us/training/paths/21st-century-learning-design/">MS-LEARN</a>: "21st Century Learning Design (21CLD)" rubrics and decision trees to build complex skill in these dimensions:
+
+   * Knowledge construction by learners (extent in 4: a new context 5: that's interdisciplinary multi-subject) to go beyond memorizing information to analyzing, interpreting, synthesizing, and evaluating information.
+
+   * Collaboration - learners 2: work together, 3: share responsibility, 4: make substantive decisions together, 5: work is interdependent. 
+
+   * Real-world problem-solving and innovation - authentic situations that exist 5: outside of an academic context so that learners may implement their solutions in the real world.
+
+   * Skilled communication - produce 2: extended or multi-modal communication 3: using evidence to support their ideas 4: for a particular audience.
+
+   * Self-regulation - work on an activity for 2: an extended period. It requires learners to 3: plan their work by breaking up their responsibilities. They must also have opportunities to 5: revise their work based upon their own reflection and feedback from others (peers, educators, or experts).
+
+   * Digital ICT (technology) integration (Microsft Edge Collections, OneNote Class Notebooks, SmartArt in Word & PowerPoint, Teams Channels, <a target="_blank" href="https://learn.microsoft.com/en-us/training/educator-center/product-guides/flip">Flip video production</a>)
+
+   <br /><br />
+
+"Anchor lessons" for Interpretation, 
+Analysis, 
+Synthesis, and 
+Evaluation.
+
+It is the start to <a target="_blank" href="https://learn.microsoft.com/en-us/training/educator-center/programs/microsoft-educator/">Microsoft Advanced Educator, Microsoft Educator Trainer, and Microsoft Innovative Educator Expert</a>.
+<a target="_blank" href="https://certiport.filecamp.com/s/MCE_Datasheet.pdf/fi">PDF</a>: 
+<a target="_blank" href="https://certiport.pearsonvue.com/Certifications/Microsoft/MCE/Overview">Exam 62-193</a> is about Technology Literacy for Educators.
+
+<a target="_blank" href="https://www.youtube.com/@MicrosoftEDU">VIDEOS</a>:
+<a target="_blank" href="https://educationblog.microsoft.com/en-us">https://educationblog.microsoft.com/en-us</a>
+
+CertPREP Practice Tests, powered by GMetrix:
+   * https://www.youtube.com/watch?v=wQk2O3LiBIs Nicos Paphitis
+   * https://www.edukinect.com/products/1-mce-practice-test-single-user $15.50 for 30 accesses
+   * https://www.youtube.com/watch?v=SDXWg1-yLIM
+   * <a target="_blank" href="https://thejuniorschool-my.sharepoint.com/personal/nick_theseniorschool_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fnick%5Ftheseniorschool%5Fcom%2FDocuments%2FMIE%20Expert%2FDigital%20Learning%20Specialist%2FMCE%20exam%20prep%2FLearning%20material%2F2022%20Resources%2F21CLD%5FNotebook%5F3versions%2Ezip&parent=%2Fpersonal%2Fnick%5Ftheseniorschool%5Fcom%2FDocuments%2FMIE%20Expert%2FDigital%20Learning%20Specialist%2FMCE%20exam%20prep%2FLearning%20material%2F2022%20Resources&ga=1">download</a>
+
+   * https://www.coursocity.com/course-details/6
+   * https://myedusolve.com/certifications/microsoft-certified-educator
+   * https://www.youtube.com/watch?v=iQUVW473VlQ
+   * https://www.i2e-llc.com/21st-century-learning-design/
+   * https://www.linkedin.com/pulse/21st-century-digital-literacy-tobias-koprowski/
+   <br /><br />
+
+The Microsoft Certified Coach launched in 2023.
+$595 sessions were held by <a target="_blank" href="https://www.i2e-llc.com/sp/microsoft-certified-coach/">i2e</a> in several major cities, plus Apr 15-15 in Edingburg, UK and June 20-21 2024 in Denver.
+
+NOTE: "MCE" is also the acronym for the Microsoft Certified Expert Cybersecurity Architect certification.
 
 
 <hr />
