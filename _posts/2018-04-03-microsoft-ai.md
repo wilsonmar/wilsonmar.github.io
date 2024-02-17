@@ -194,13 +194,13 @@ Within each <a href="#CognitiveServicesGroups">grouping</a>, each service is lis
       </td><td> ?
       </td></tr>
 
-   <tr valign="top"><td><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/vision.svg"></td><td colspan="3" align="center"> <a name="VisionServices"></a><a href="#Vision">AI Vision</a> 
+   <tr valign="top"><td colspan="4" align="center"> <a name="VisionServices"></a><a href="#Vision">AI Vision</a> 
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/#features">Features</a> </td><td> "ComputerVision" => AI Vision
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/#features"><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/vision.svg"></a> MSR </td><td> "ComputerVision" => AI Vision
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">2 TPC, 10K/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/#features"><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/custom-vision.svg"></a> </td><td> "CustomVision.Prediction"
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/#features"><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/custom-vision.svg"></a> MSR </td><td> "CustomVision.Prediction"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">10K predictions/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.3/operations/5eb0bcc7548b571998fdded6">API</a>       
       </td></tr>
@@ -208,7 +208,7 @@ Within each <a href="#CognitiveServicesGroups">grouping</a>, each service is lis
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">2 TPS, 1 hour/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-vision#features"><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/face.svg"></a> </td><td> <a href="#Face">"Face"</a> => AI Vision
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-vision#features"><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/face.svg"></a> MSR </td><td> <a href="#Face">"Face"</a> => AI Vision
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/face-api/">20 TPM, 30K/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236">API</a>
       </td></tr>
@@ -223,9 +223,9 @@ Within each <a href="#CognitiveServicesGroups">grouping</a>, each service is lis
       </td><td> -
       </td></tr>
 
-   <tr valign="top"><td><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/speech.svg"></td><td colspan="3" align="center"> <a name="#SpeechServices"></a><a href="#Speech">AI Speech</a> 
+   <tr valign="top"><td colspan="4" align="center"> <a name="#SpeechServices"></a><a href="#Speech">AI Speech</a> 
       </td></tr>
-   <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-services/#features">Features</a> </td><td> <a href="#SpeechServices">"SpeechServices"</a> => AI Speech
+   <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-services/#features"><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/speech.svg"></a> MSR </td><td> <a href="#SpeechServices">"SpeechServices"</a> => AI Speech
       (<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-to-text/#Features">Speech-To-Text"</a>, <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/#Features">Text-to-Speech"</a>)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">1 concurrent, 5 hours/mo.*</a> 
       </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-speech-to-text#speech-to-text-rest-api-v30" title="v3">API</a>       
@@ -241,9 +241,9 @@ Within each <a href="#CognitiveServicesGroups">grouping</a>, each service is lis
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563309b6778daf02acc0a508/operations/5645c3271984551c84ec6797">API</a>       
       </td></tr>
 
-   <tr valign="top"><td><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/language.svg"></td><td> colspan="3" align="center"> <a name="LanguageServices"></a><a href="#Language">AI Language</a>
+   <tr valign="top"><td><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/language.svg"> MSR</td><td colspan="3" align="center"> <a name="LanguageServices"></a><a href="#Language">AI Language</a>
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-translator/#features"><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/translator.svg"></a> </td><td> <a href="#TextTranslation">"TextTranslation"</a> => AI Translator
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-translator/#features"><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/translator.svg"></a> MSR </td><td> <a href="#TextTranslation">"TextTranslation"</a> => AI Translator
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator/">2M chars/mo.</a> 
       </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-reference">API</a>       
       </td></tr>
@@ -284,7 +284,7 @@ Within each <a href="#CognitiveServicesGroups">grouping</a>, each service is lis
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/anomaly-detector/">2,000 trans/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/anomaly-detector-enterprise-edition/operations/createDataFeed">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/content-moderator/#features">Features</a> </td><td><a href="#ContentModerator"><strike>"ContentModerator"</strke></a> has been deprecated
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/content-moderator/#features">Features</a> </td><td><a href="#ContentModerator"><strike>"ContentModerator"</strke></a> (deprecated)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/content-moderator/">1 TPS</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66c">API</a>       
       </td></tr>
@@ -321,7 +321,7 @@ Within each <a href="#CognitiveServicesGroups">grouping</a>, each service is lis
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-search/">AI Search</a> </td><td> Cognitive Search (Applied AI)
       </td><td> ?
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-document-intelligence/"><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/document-intelligence.svg"></a> </td><td> Document Intelligence = FormRecognizer (Applied AI)
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-document-intelligence/"><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/document-intelligence.svg"></a> MSR </td><td> Document Intelligence = FormRecognizer (Applied AI)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/form-recognizer/">500 pages/mo.</a> 
       </td><td> <a target="_blank" href="https://go.microsoft.com/fwlink/?linkid=2217261">API</a>
       </td></tr>
@@ -341,6 +341,8 @@ Within each <a href="#CognitiveServicesGroups">grouping</a>, each service is lis
    </table>
 
 Links are provided for each service to its Features and API/SDK pages.
+
+"MSR" identifies a <a target="_blank" href="https://learn.microsoft.com/en-us/azure/ai-services/multi-service-resource?tabs=macos&pivots=azportal">Multi-Service Resource</a> accessed using a single key and endpoint to consolidate billing.
 
 <hr />
 
