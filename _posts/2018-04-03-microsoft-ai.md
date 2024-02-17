@@ -194,7 +194,7 @@ Within each <a href="#CognitiveServicesGroups">grouping</a>, each service is lis
       </td><td> ?
       </td></tr>
 
-   <tr valign="top"><td><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/vision.svg"></a></td><td colspan="3" align="center"> <a name="VisionServices"></a><a href="#Vision">AI Vision</a> 
+   <tr valign="top"><td><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/vision.svg"></td><td colspan="3" align="center"> <a name="VisionServices"></a><a href="#Vision">AI Vision</a> 
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/#features">Features</a> </td><td> "ComputerVision" => AI Vision
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">2 TPC, 10K/mo.</a> 
@@ -223,7 +223,7 @@ Within each <a href="#CognitiveServicesGroups">grouping</a>, each service is lis
       </td><td> -
       </td></tr>
 
-   <tr valign="top"><td><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/speech.svg"></a></td><td colspan="3" align="center"> <a name="#SpeechServices"></a><a href="#Speech">AI Speech</a> 
+   <tr valign="top"><td><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/speech.svg"></td><td colspan="3" align="center"> <a name="#SpeechServices"></a><a href="#Speech">AI Speech</a> 
       </td></tr>
    <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-services/#features">Features</a> </td><td> <a href="#SpeechServices">"SpeechServices"</a> => AI Speech
       (<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-to-text/#Features">Speech-To-Text"</a>, <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/#Features">Text-to-Speech"</a>)
@@ -241,7 +241,7 @@ Within each <a href="#CognitiveServicesGroups">grouping</a>, each service is lis
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563309b6778daf02acc0a508/operations/5645c3271984551c84ec6797">API</a>       
       </td></tr>
 
-   <tr valign="top"><td><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/language.svg"></a></td><td> colspan="3" align="center"> <a name="LanguageServices"></a><a href="#Language">AI Language</a>
+   <tr valign="top"><td><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/language.svg"></td><td> colspan="3" align="center"> <a name="LanguageServices"></a><a href="#Language">AI Language</a>
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/products/ai-services/ai-translator/#features"><img width="20" src="https://learn.microsoft.com/en-us/azure/ai-services/media/service-icons/translator.svg"></a> </td><td> <a href="#TextTranslation">"TextTranslation"</a> => AI Translator
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator/">2M chars/mo.</a> 
