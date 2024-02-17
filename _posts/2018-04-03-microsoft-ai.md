@@ -284,7 +284,7 @@ Within each <a href="#CognitiveServicesGroups">grouping</a>, each service is lis
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/anomaly-detector/">2,000 trans/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/anomaly-detector-enterprise-edition/operations/createDataFeed">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/content-moderator/#features">Features</a> </td><td><a href="#ContentModerator"><strike>"ContentModerator"</strke></a> (deprecated)
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/content-moderator/#features">Features</a> </td><td><a href="#ContentModerator">"ContentModerator"</a> (deprecated)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/content-moderator/">1 TPS</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66c">API</a>       
       </td></tr>
@@ -342,7 +342,12 @@ Within each <a href="#CognitiveServicesGroups">grouping</a>, each service is lis
 
 Links are provided for each service to its Features and API/SDK pages.
 
-"MSR" identifies a <a target="_blank" href="https://learn.microsoft.com/en-us/azure/ai-services/multi-service-resource?tabs=macos&pivots=azportal">Multi-Service Resource</a> accessed using a single key and endpoint to consolidate billing.
+"MSR" identifies a <a target="_blank" href="https://learn.microsoft.com/en-us/azure/ai-services/multi-service-resource?tabs=macos&pivots=azportal">Multi-Service Resource</a> accessed using a single key and endpoint to consolidate billing. <a target="_blank" href="https://portal.azure.com/#create/Microsoft.CognitiveServicesAllInOne">Create the CognitiveAllInOne resource using the GUI</a> so that you can be sure to check the box to acknowledge Microsoft's terms for <strong>Responsible AI</strong> use:
+
+<img alt="microsoft-ai-resp-288x63.png" width="288" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1708147037/microsoft-ai-resp-288x63_rtzucx.png">
+
+PROTIP: <a target="_blank" href="https://learn.microsoft.com/en-us/azure/ai-services/create-account-terraform?tabs=azure-cli">Apply of Terraform to create AI service resources</a> 
+will error out unless that is checked.
 
 <hr />
 
