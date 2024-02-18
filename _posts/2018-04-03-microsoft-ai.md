@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-02-16"
+date: "2024-02-17"
 file: "microsoft-ai"
 title: "Microsoft AI (Azure OpenAI Generative Services)"
 excerpt: "How to automate AI workflows in Microsoft's Azure and Fabric, despite marketing rebrands, and passing AI-900 & AI-102 certification exams."
@@ -793,6 +793,67 @@ Raza Salehi created on Pluralsight.com <a target="_blank" href="https://app.plur
 Practice tests:
    * https://www.whizlabs.com/learn/course/microsoft-azure-ai-100/
    * <a target="_blank" href="https://ravikirans.com/ai-102-azure-exam-study-guide/">Ravi's links</a> still refer to AI-100
+
+
+
+<hr />
+
+<a name="LZ"></a>
+
+## AI Landing Zones (ALZ)
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1708232471/ms-ai-arh-240216-2000x1194_w1lork.png"><img alt="ms-ai-arh-240216-2000x1194." src="https://res.cloudinary.com/dcajqrroq/image/upload/v1708232471/ms-ai-arh-240216-2000x1194_w1lork.png"></a>
+
+The above is the 
+<a target="_blank" href="https://techcommunity.microsoft.com/t5/azure-architecture-blog/azure-openai-landing-zone-reference-architecture/ba-p/3882102?WT.mc_id=academic-0000-abartolo">Azure Landing Zones OpenAI Reference Architecture</a> defining how to envelope OpenAI with utilities to ensure a defensive security posture. It maps how resources are integrated in a structured, consistent manner, plus ensuring governance, compliance, and security. 
+
+The diagram above is an adaptation of <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/">Microsoft's enterprise-scale Azure Landing Zone</a>, a part of Microsoft's Cloud Adoption Framework (CAF).
+
+Each <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-areas#environment-design-areas">Design Area</a> has:<br />
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1708237349/ms-az-240217-1238x230_pndj7c.png"><img alt="ms-az-240217-1238x230.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1708237349/ms-az-240217-1238x230_pndj7c.png"></a>
+
+A. Enterprise enrollment [TF]<br />
+B. Identity and accessment [TF]<br />
+C. Management group and subscription organization<br />
+D. Management subscription<br />
+E. Connectivity subscription<br />
+F. AI Services (Landing Zone) subscription<br />
+G. Monitoring?<br />
+H. Sandbox subscription<br />
+I. Platform DevOps Team [TF]</br />
+
+Design Areas F (the Landing Zone for AI):<br />
+<a target="_blank" href="ms-ai-arch-240217-1268x1318.png"><img alt="ms-ai-arch-240217-1268x1318.png" src="ms-ai-arch-240217-1268x1318.png"></a>
+
+* Managed Identities
+* UDR (User-Defined Routes) for each type of outbound connect from the VNet, defined by Azure service tags or IP addresses.
+* Azure WebApp provides a GUI front-end
+* DatabaseSubnet houses a CosmosDB to persist data to the WebApp
+* API Management Services tracks usage by the API key assigned each user
+* Application Gateway
+* The Azure FrontDoor for DDOS attacks
+* ServicesSubnet houses an Azure KeyVault on a Private Endpoint
+* AISubnet houses Private Endpoints for:
+   * Storage Account
+   * Azure OpenAI Services
+   * Azure AI Services
+   <br /><br />
+
+
+
+
+To create the resources in the diagram:<br />
+If you prefer using Bicep:
+   * https://github.com/Azure/ALZ-Bicep/wiki/ConsumerGuide
+   <br /><br />
+
+If you prefer using Terraform:
+   * https://registry.terraform.io/modules/Azure/caf-enterprise-scale/azurerm/latest
+   * https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/Examples
+   * https://github.com/Azure/terraform-azurerm-caf-enterprise-scale?tab=readme-ov-file#readme
+   <br /><br />
+
+Included are Private Endpoints, Network Security Groups and Web Application Firewalls.
 
 
 <hr />
