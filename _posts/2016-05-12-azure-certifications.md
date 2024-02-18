@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-02-15"
+date: "2024-02-18"
 file: "azure-certifications"
 title: "Azure (Microsoft cloud) certifications"
 excerpt: "Microsoft provides free hands-on (gamified) tutorials and free time"
@@ -23,6 +23,11 @@ NOTE: Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/cr
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Role </th><th> Certification exam </th></tr>
+
+<tr valign="top"><td> Educator</td><td>
+      * <a href="#MSE">MSE (Microsoft Certified Educator)</a><br />
+      * <a href="#MCT">MCT (Microsoft Certified Trainer)</a>
+   </td></tr>
 
 <tr valign="top"><td> Administrator</td><td>
       * <a href="#AZ-900">AZ-900 Fundamentals</a><br />
@@ -342,20 +347,17 @@ is where you start exams and get certificate pdfs (suitable for framing) and bad
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits">
 Azure Subscription Service Limits</a>
 
-<a name="MCT"></a>
-
-### MCT (Microsoft Certified Trainer)
-
-https://learn.microsoft.com/en-us/credentials/certifications/mct-certification
-
 
 <a name="MCE"></a>
 
 ### MCE (Microsoft Certified Educator)
 
+The Microsoft Certified Coach launched in 2023.
+$595 sessions were held by <a target="_blank" href="https://www.i2e-llc.com/sp/microsoft-certified-coach/">i2e</a> in several major cities, plus Apr 15-15 in Edingburg, UK and June 20-21 2024 in Denver.
+
 <a target="_blank" href="https://www.credly.com/badges/1af742ba-c3e5-4291-bfed-7e829a9ec733"><img align="right" width="100" src="https://images.credly.com/size/340x340/images/54f7ea40-48bc-4217-b398-b81bae6de175/MCE.png"></a>
 For $90 (<a target="_blank" href="https://store.certiport.com/certiport-products/c/13000821?">$70.20 with CODE-32547049</a>), answer __% of 35-42 questions in 60 minutes <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/exams/62-193/">$127 Exam 62-193</a>.
-It's about the adoption of <a target="_blank" href="https://edge.ut.ac.id/mod/page/view.php?id=119&forceview=1">SRI-developed</a> ITL (Innovative Teaching and Learning) <a target="_blank"https://learn.microsoft.com/en-us/training/paths/21st-century-learning-design/">MS-LEARN</a>: "21st Century Learning Design (21CLD)" rubrics and decision trees to build complex skill in these dimensions:
+It's about the adoption of <a target="_blank" href="https://edge.ut.ac.id/mod/page/view.php?id=119&forceview=1">SRI-developed</a> ITL (Innovative Teaching and Learning) <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/21st-century-learning-design/">MS-LEARN</a>: "21st Century Learning Design (21CLD)" rubrics and decision trees to build complex skill in these dimensions:
 
    * Knowledge construction by learners (extent in 4: a new context 5: that's interdisciplinary multi-subject) to go beyond memorizing information to analyzing, interpreting, synthesizing, and evaluating information.
 
@@ -396,10 +398,20 @@ CertPREP Practice Tests, powered by GMetrix:
    * https://www.linkedin.com/pulse/21st-century-digital-literacy-tobias-koprowski/
    <br /><br />
 
-The Microsoft Certified Coach launched in 2023.
-$595 sessions were held by <a target="_blank" href="https://www.i2e-llc.com/sp/microsoft-certified-coach/">i2e</a> in several major cities, plus Apr 15-15 in Edingburg, UK and June 20-21 2024 in Denver.
-
 NOTE: "MCE" is also the acronym for the Microsoft Certified Expert Cybersecurity Architect certification.
+
+
+<a name="MCT"></a>
+
+### MCT (Microsoft Certified Trainer)
+
+This certification is granted to those who have passed at least one of the advanced certifications above.
+https://learn.microsoft.com/en-us/credentials/certifications/mct-certification
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/mct-certification">
+Microsoft Certified Trainers</a> get 75% off exam fees. But there is a $800 annual fee to be MCT, and an initial $1000 join fee.
+
+https://mcp.microsoft.com/MCT/Enrollment?wa=wsignin1.0#/profile
 
 
 <hr />
@@ -1746,13 +1758,6 @@ YOUTUBE: AZ-204 Azure Developer - Exam Cram │ Expert Talk</a> by <a target="_b
 * https://www.whizlabs.com/learn/course/microsoft-azure-az-204/
 
 
-
-### MCT
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/mct-certification">
-Microsoft Certified Trainers</a> get 75% off exam fees. But there is a $800 annual fee to be MCT, and an inital $1000 join fee.
-
-https://mcp.microsoft.com/MCT/Enrollment?wa=wsignin1.0#/profile
 
 ## Azure Penetration Testing
 
