@@ -357,19 +357,19 @@ $595 sessions were held by <a target="_blank" href="https://www.i2e-llc.com/sp/m
 
 <a target="_blank" href="https://www.credly.com/badges/1af742ba-c3e5-4291-bfed-7e829a9ec733"><img align="right" width="100" src="https://images.credly.com/size/340x340/images/54f7ea40-48bc-4217-b398-b81bae6de175/MCE.png"></a>
 For $90 (<a target="_blank" href="https://store.certiport.com/certiport-products/c/13000821?">$70.20 with CODE-32547049</a>), answer __% of 35-42 questions in 60 minutes <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/exams/62-193/">$127 Exam 62-193</a>.
-It's about the adoption of <a target="_blank" href="https://edge.ut.ac.id/mod/page/view.php?id=119&forceview=1">SRI-developed</a> ITL (Innovative Teaching and Learning) <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/21st-century-learning-design/">MS-LEARN</a>: "21st Century Learning Design (21CLD)" rubrics and decision trees to build complex skill in these dimensions:
+It's about the adoption of <a target="_blank" href="https://edge.ut.ac.id/mod/page/view.php?id=119&forceview=1">SRI-developed</a> ITL (Innovative Teaching and Learning) <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/21st-century-learning-design/">MS-LEARN</a>: "21st Century Learning Design (21CLD)" rubrics, decision trees, anchor lessons to build complex skill in these dimensions: REMEMBER:
 
-   * Knowledge construction by learners (extent in 4: a new context 5: that's interdisciplinary multi-subject) to go beyond memorizing information to analyzing, interpreting, synthesizing, and evaluating information.
+   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AMzz7xahtKzuH9M&page=View&wd=target%28Knowledge%20Construction%202.one%7C03760039-ac2e-4698-be4c-f73db3d5c8e1%2FRubric%20%E2%80%93%20Knowledge%20Construction%7C16a28f9e-24a1-4a4e-acba-dff9bd4a9ac5%2F%29&wdorigin=NavigationUrl">Knowledge construction</a> - learners go beyond memorizing information to 2: interpret, analyze, synthesize, evaluate 3: as a main requirement 4: in a new context 5: that's interdisciplinary or multi-subject.
+   
+   *  <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Collaboration.one%7C219eb854-1f3a-4853-ad8a-7083ac484184%2FIntroduction%7C413558af-164b-4fb6-a473-5f5976f7efaf%2F%29&wdorigin=NavigationUrl">Collaboration</a> - learners 2: work together, 3: share responsibility, 4: make substantive decisions together, 5: work is interdependent. 
 
-   * Collaboration - learners 2: work together, 3: share responsibility, 4: make substantive decisions together, 5: work is interdependent. 
+   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Real-World%20Problem-Solving.one%7C06e643da-5fdd-4587-8b1a-a8e86e7f3bf0%2FIntroduction%7Cbaf7c2c0-d9ec-4f8a-b82a-b0e02a467efc%2F%29&wdorigin=NavigationUrl">Real-world problem-solving and innovation</a> - authentic situations that exist 5: outside of an academic context so that learners may implement their solutions in the real world.
 
-   * Real-world problem-solving and innovation - authentic situations that exist 5: outside of an academic context so that learners may implement their solutions in the real world.
+   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Skilled%20Communication.one%7Caa33bc86-f72a-4ceb-8bce-4fffb97e48b5%2FIntroduction%7C47dd5766-3e30-4034-b0ab-906b40c645b5%2F%29&wdorigin=NavigationUrl">Skilled communication</a> - produce 2: extended or multi-modal communication 3: using evidence to support their ideas 4: for a particular audience.
 
-   * Skilled communication - produce 2: extended or multi-modal communication 3: using evidence to support their ideas 4: for a particular audience.
+   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Self-Regulation.one%7C4283ef67-f71d-4fa0-a1b5-37946b3c9d5f%2FIntroduction%7Cbb2967a3-6400-4a3f-9ffe-c7c0ab7744d6%2F%29&wdorigin=NavigationUrl">Self-regulation</a> - work on an activity for 2: an extended period. It requires learners to 3: plan their work by breaking up their responsibilities. They must also have opportunities to 5: revise their work based upon their own reflection and feedback from others (peers, educators, or experts).
 
-   * Self-regulation - work on an activity for 2: an extended period. It requires learners to 3: plan their work by breaking up their responsibilities. They must also have opportunities to 5: revise their work based upon their own reflection and feedback from others (peers, educators, or experts).
-
-   * Digital ICT (technology) integration (Microsft Edge Collections, OneNote Class Notebooks, SmartArt in Word & PowerPoint, Teams Channels, <a target="_blank" href="https://learn.microsoft.com/en-us/training/educator-center/product-guides/flip">Flip video production</a>)
+   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Use%20of%20ICT%20for%20Learning%202.one%7Cd9f9a224-bf26-4b2b-8e96-716c7103ec06%2FIntroduction%7C8e23f1f4-5615-4a0b-9b66-e00d9f91cc31%2F%29&wdorigin=NavigationUrl">Digital ICT (technology) integration</a> (Microsft Edge Collections, OneNote Class Notebooks, SmartArt in Word & PowerPoint, Teams Channels, <a target="_blank" href="https://learn.microsoft.com/en-us/training/educator-center/product-guides/flip">Flip video production</a>)
 
    <br /><br />
 
@@ -384,6 +384,7 @@ It is the start to <a target="_blank" href="https://learn.microsoft.com/en-us/tr
 
 <a target="_blank" href="https://www.youtube.com/@MicrosoftEDU">VIDEOS</a>:
 <a target="_blank" href="https://educationblog.microsoft.com/en-us">https://educationblog.microsoft.com/en-us</a>
+* <a target="_blank" href="https://aka.ms/21CLDnotebook">OneDrive OneNote Notebook</a>
 
 CertPREP Practice Tests, powered by GMetrix:
    * https://www.youtube.com/watch?v=wQk2O3LiBIs Nicos Paphitis
