@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-02-20"
+date: "2024-02-21"
 file: "microsoft-fabric"
 title: "Microsoft Fabric"
 excerpt: "Simplify multi-cloud data handling for real-time analytics in Delta Lakehouses. Pass the DP-600 exam."
@@ -32,11 +32,44 @@ Let's dive right into the Microsoft Fabric working portal GUI:
 
 ## Architecture Diagram
 
-PROTIP: I adapted <a target="_blank" href="https://7451111251303.gumroad.com/l/fkrvnn" title="Available for purchase">the diagram below</a> from <a target="_blank" href="https://www.youtube.com/watch?v=J4i5lcROJcs">VIDEO</a>: The best 38-minute summary by <a target="_blank" href="https://linkedin.com/in/">Will Needham</a>, <a target="_blank" href="https://learn.microsoft.com/en-in/fabric/get-started/microsoft-fabric-overview">Microsoft</a>, and <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">others</a> to show, all in one page, relationships among key technology components ("Experiences") in Fabric:
-
+PROTIP: I adapted <a target="_blank" href="https://7451111251303.gumroad.com/l/fkrvnn" title="Available for purchase">the diagram below</a> from <a target="_blank" href="https://www.youtube.com/watch?v=J4i5lcROJcs">VIDEO</a>: The best 38-minute summary by <a target="_blank" href="https://linkedin.com/in/">Will Needham</a>, <a target="_blank" href="https://learn.microsoft.com/en-in/fabric/get-started/microsoft-fabric-overview">Microsoft</a>, and <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">others</a> to show, all in one page, relationships among key technology components in Microsoft Fabric:
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1708487536/ms-fabric-arch-240219-1920x1080_cupx3o.png"><img alt="ms-fabric-arch-240219-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1708487536/ms-fabric-arch-240219-1920x1080_cupx3o.png"><br /><em>Click for full-size image</em></a>.
 
+Starting from the bottom:
+Microsoft Fabric competes with Snowflake and Databricks, who pioneered the use of "Medallion" data processing into Parquet-formatted files which enables "schema on read" such that data can be streamed into the same database. 
 
+1. Within <strong>OneLake</strong>, data is not transferred when it's transformed (from OLTP to OLAP).
+It even supports "time travel" like in GitHub source can revert entire sets of files to commit points in the past.
+
+1. Fabric consists of four different <strong>compute engines</strong> to support the different technologies for different uses:
+
+   * A Traditional T-SQL engine to process T-SQL queries that insert data into data warehouses.
+   * A Spark "Big Data" engine to process PySpark jobs and Python Notebooks into Data Lakehouses.
+   * Python Notebooks also generate ML (Machine Learning) models from files in OneLake 
+
+   * Eventstreams add Telemetry in TSDB (Time Series Databases) which KQL (Kusto Query Language) querysets query 
+   * A PBI Analytic engine to process <a href="#dax-studio">DAX (Data Analysis Expressions)</a> for calculating KPI (Key Process Indicators) on reports and dashboards.
+   * <a href="#Reflex">Reflex</a> rules set by Data Citizens and Data Analysts using the no-code GUI Data Activator, which also fires triggers when it identifies events relevant to Reflex specs in OneLake files.
+   <br /><br />
+
+1. <strong>Shortcuts</strong> pointing to specific sets of data -- good for Data Archivists to obtain to take backups.
+
+   Shortcuts are also used for Security Guards to tag data for Microsoft Purview to automatically assign permissions on data in OneLake, S3, and other file types.
+
+1. Microsoft names GUI "Experiences" based on the role of the primary role using them:
+
+   1. Data Analysts use Data Factory to run Dataflows that create and load data into OneLake files.
+   1. Data Engineers establish Data Warehouses using "Synapse Data Warehouse", 
+   1. establish Lakehouses using "Synapse Data Engineering", and 
+   1. establish Telemetry databases using "Synapse Real-Time Analytics.
+   1. Data Analysts reference established data stores to create reports and dashboards using Power BI
+   1. Data Scientists work with Synapse Data Science to create or tune ML Models by running experiments from data in OneLake.
+   1. Data Citizens use the no-code Data Activator to define Reflex rules that trigger actions based on various events.
+   <br /><br />
+
+<hr />
+
+Next, let's get hands-on:
 
 ## Browser Profile
 
@@ -1195,6 +1228,15 @@ References:
    <br /><br />
 
 <hr />
+
+<a name="Reflex"></a>
+
+## Reflex
+
+Reflex rules are defined by Data Citizens and Data Analysts using the no-code GUI in Data Activator.
+
+The Data Activator recognizes when a Reflex rule is triggered by events it monitors.
+
 
 ## User Communities
 
