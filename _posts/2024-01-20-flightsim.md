@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-02-02"
+date: "2024-02-20"
 file: "flightsim"
 title: "Flight Simulator"
 excerpt: "Use Microsoft's Flight Simulator to fly around the world in various planes, experiencing real-time weather on a Windows PC or Xbox X."
@@ -37,13 +37,22 @@ In 2015, Dovetail also announced Flight School, a new flight simulator.
 
 In 2016, Dovetail announced Flight Simulator X: Acceleration, an expansion pack for Flight Simulator X only available as a download from Games for Windows – Live and Steam. 
 
-In 2017, Dovetail announced Flight Sim World, a new flight simulator that was built on the foundations of Flight Simulator X. 
+In 2017, Dovetail announced Flight Sim World, a new flight simulator that built on the foundations of Flight Simulator X. 
 
 In 2018, Dovetail announced that Flight Sim World would be discontinued on May 24, 2018, due to lack of sales.
 
+Jorg Neumann, head of Microsoft Flight Simulator
+
 On August 18, 2020, Microsoft released Microsoft Flight Simulator to generally positive reviews. 
 The new simulator is built on a new in-house engine named Asobo developed for the game. 
-The game features a realistic simulation of the entire Earth using textures and topographical data from Bing Maps. The game also features a <strong>dynamic weather system</strong> that simulates real-world weather conditions of each location. 
+The game features a realistic simulation of the entire Earth using textures and topographical data from Bing Maps. The game also features a <strong>dynamic weather system</strong> that simulates real-world weather conditions of each location.
+
+The 2024 edition has jobs, Air Racing, multi-core:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=5rAVKuwjYOg">2024</a> by ObsidianAnt
+   * <a target="_blank" href="https://www.youtube.com/watch?v=p3xp-SnZDoY">VIDEO</a>: 
+   * https://www.youtube.com/watch?v=uryswyPFgU0
+   <br /><br />
+
 
 <hr />
 
@@ -52,6 +61,8 @@ The game features a realistic simulation of the entire Earth using textures and 
 https://forums.flightsimulator.com
 
 https://www.reddit.com/r/Flightsimulator2020/
+
+https://www.flightsimassociation.com/
 
 
 <hr />
@@ -99,19 +110,32 @@ Books: PROTIP: Your public library may have a copy.
 
 ## XBox or Windows?
 
-FlightSim runs on both XBox X and Windows 10/11.
+Flight Simulator runs on both XBox X and Windows 10/11.
 
-Windows machines provide more realism (less aliasing), but if you have a "gamer" PC with fast CPU and plenty of drive space, plus a powerful video card. 
+Windows machines provide more realism (less aliasing), but you need a "gamer" PC with fast CPU and plenty of drive space, plus a powerful video card. 
 
 Windows machines can produce better sound, if it has a good sound board.
 
 Windows machines allow use of 3rd-party apps such as DS4Windows & DS5Windows, an open-source gamepad input mapper and virtuals emulator to use a PlayStation controller (DualShock 3/4 and DualSense 5) to mimic an XBox controller on Windows 10/11 PC.
 
+Windows machines can also play simulators from others, such as:
+   * War Thunder
+   <br /><br />
+
+Other flight simulators on XBox & XboxOne:
+   * <a target="_blank" href="https://www.amazon.com/Ace-Combat-7-Skies-Xbox-One/dp/B01N372HHW/">Ace Combat 7: Skies Unknown</a> for XBox One.
+   * <a target="_blank" href="https://www.amazon.com/Star-Wars-Squadrons-Xbox-One/dp/B089F8R7SQ/">$4.04 Start Wars: Squadrons - Xbox</a>
+   <br /><br />
+
 PROTIP: Control support on PC is significantly better than on the Xbox. That cinches it for me.
+   * Set custom views by pressing Control button and a number.
+   <br /><br />
 
 Additional memory can be added to the Xbox but not faster CPU.
 
-PROTIP: A desktop Windows box enables more customization of components.
+PROTIP: A desktop Windows box can run customization executables.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=uGwTnHV2aUQ">VIDEO</a>: <a target="_blank" href="https://SayIntentions.ai">SayIntentions.ai</a> installs on Windows to use ChatGPT to mimic Air Traffic Control conversations. 
+   <br /><br />
 
 PROTIP: Updates appear at the same time. But new Aircraft add-ons appear first on PCs before on Xbox.
 
@@ -121,6 +145,15 @@ Build your own PC:
    * https://pcpartpicker.com/
    * https://www.digitaltrends.com/computing/how-to-build-a-pc/
 
+Windows Store install:
+   * C:\Users\[YourUserName]\AppData\Local\Packages\Microsoft.FlightSimulator_8wekyb3d8bbwe\LocalCache\Packages\
+For the Steam install:
+   * C:\Users\[Your User Name]\AppData\Local\Packages\Microsoft.FlightDashboard_8wekyb3d8bbwe\LocalCache\Packages\
+
+<a target="_blank" href="https://www.youtube.com/watch?v=YZdxI3Ex7cI">VIDEO: Start here</a>
+
+
+
 <hr />
 
 <a name="Xbox+X"></a>
@@ -128,6 +161,10 @@ Build your own PC:
 ## Xbox X setup
 
 PROTIP: View videos and learn aviation and avionics terms before spending a bunch of money. 
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=xs1gtl3j95w">When you've gone too far</a>
+* <a target="_blank" href="https://www.youtube.com/watch?v=ywwKWGxRoKY">G-LOC MEDIA</a>
+<br /><br />
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1706539267/flightsim-costs-596x1330_nsav7k.png"><img align="right" width="300" alt="flightsim-costs-596x1330.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1706539267/flightsim-costs-596x1330_nsav7k.png"></a>
 Videos:
@@ -147,9 +184,6 @@ Fast internet - WARNING: Some users report that downloads take 2 hours.
 
 PROTIP: If you're using the XBox to ONLY play Flight Simulator and no other game (such as Disneyland, Roblox, Lego, Minecraft, Jeopardy, Halo, Tom Clancy, Fortnight, Call of Duty, Forza racing, Grand Theft Auto, Madden, MLB, FC soccer, PGA, Sims, Space Engineers, etc.), consider <strong>buying</strong> the <a target="_blank" href="https://www.amazon.com/Microsoft-Flight-Simulator-Anniversary-Premium/dp/B0BJH5T8LV/">$119.99</a> Microsoft Flight Simulator 40th Anniversary – Premium Deluxe – Xbox Series X\|S, Windows [Digital Code]. This requires a download of 157 GB.
 
-   * The "2024 Edition is <a target="_blank" href="https://www.youtube.com/watch?v=p3xp-SnZDoY">VIDEO</a>: has jobs, Air Racing.
-   * https://www.youtube.com/watch?v=uryswyPFgU0
-   <br /><br />
 
    For $30 more, the $119.99 Premium Deluxe 40th Anniversary Edition includes everything from the Deluxe Edition plus 5 additional highly accurate planes with unique flight models and 5 additional handcrafted international airports.
    * Boeing 787-10 Dreamliner
@@ -167,6 +201,8 @@ PROTIP: If you're using the XBox to ONLY play Flight Simulator and no other game
 
    * Additional aircraft can be purchased in-game for $15 each.
 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=isWtmINTacE">VIDEO</a>: Ranking the BEST Payware aircraft MSFS 2024
+
    * https://www.xbox.com/en-US/games/backward-compatibility
    * Only digital purchases will work on Xbox One S.
    * XBox XS does not play games requiring the Kinect sensor. BOO!
@@ -183,6 +219,12 @@ You don't need to buy the game if you have a subscription like Netflix. Starting
    * To play on PC, purchase at STEAM ONLY ??
 
    * Getting MSFS via the XBox games pass subscription allows the SAME unlimited use of the sim on BOTH platforms, XBox AND PC. But it only lasts as long as you have the subscription.
+
+<a target="_blank" href="https://www.polygon.com/guides/2020/7/1/21300566/how-to-build-a-flight-simulator-racing-cockpit-homemade-diy-rig-frame-chair-setup">How I build a rig</a>
+
+
+<strong>VR glasses!</strong> - <a target="_blank" href="https://www.polygon.com/2020/7/30/21346743/microsoft-flight-simulator-vr-support-confirmed-hp-reverb-g2-oculus-htc">HP Reverb G2 VR</a>
+with 4320-by-2160 pixel resolution
 
 
 <strong>4K UHD 120Hz TV</strong> or monitor:
@@ -240,10 +282,14 @@ UPS (Uninterruptible Power Supply) to protect against power surges and outages t
 Rudder peddles for flight sim
    * <a target="_blank" href="https://www.amazon.com/VelocityOne-Universal-Windows-Featuring-Adjustable-PC/dp/B0B7NTLKF2/">$299</a> Turtle Beach VelocityOne Universal Rudder Pedals for Windows 10 & 11 PCs, Xbox Series X, Xbox Series S, and Xbox One Featuring Smooth Rudder Axis, Adjustable Brakes and Pedal Width – Black
 
-Joystick for figher jets: <a target="_blank" href="https://www.youtube.com/watch?v=X7bS7CIhaNk">VIDEO</a>
+Joystick for Airbus and figher jets: <a target="_blank" href="https://www.youtube.com/watch?v=X7bS7CIhaNk">VIDEO</a>
+   * <a target="_blank" href="https://www.amazon.com/VelocityOne-Flightstick-Simulation-Controller-Gaming-Console/dp/B0BHTPP71M/">$129.96</a> Turtle Beach Velocity One (1st one for XBox & PCs) - "not compatible with ANY rudder pedals"?
+   * <a target="_blank" href="https://www.amazon.com/dp/B09DH7MXYW/">$199.99</a> Thrustmaster T-Flight Full Kit with foot pedals (Compatible with XBOX Serie X/S, One, PC) 
+   * <a target="_blank" href="https://www.amazon.com/gp/product/B07643TW2V?SubscriptionId=AKIAIBX4MGJBG42TO3NQ/">$99</a> Thrustmaster T-Flight Hotas One (Compatible with XBOX Series X/S & XOne and PC). 5 axes plus 14 action buttons plus 1 rapid-fire trigger plus 1 multidirectional hat switch (navigation/panoramic view) - frequently returned
+   * Logitech G Extreme 3D Pro USB Joystick for Windows - Black/Silver 
    * Hotas Warthog
    * <a target="_blank" href="https://www.amazon.com/Thrustmaster-Hotas-Warthog-Flight-Stick-Pc/dp/B00371R8P4/">$499</a> Thrustmaster Hotas Warthog Flight Stick (Windows)
-   * Velocity One 
+   <br /><br />
 
 Steering wheel and pedals for racing games
    * <a target="_blank" href="https://www.amazon.com/Logitech-Dual-Motor-Feedback-Driving-Responsive/dp/B00Z0UWV98/">$249</a> Logitech G920 Driving Force Racing Wheel and Floor Pedals, Real Force Feedback, Stainless Steel Paddle Shifters, Leather Steering Wheel Cover for Xbox Series X\S, Xbox One, PC, Mac - Black
@@ -322,6 +368,90 @@ To mirror your Mac’s screen to a TV using only a wireless connection, JustStre
 
 <hr />
 
+## Game controls
+
+View your plane (and the scenery) from outside by going into "Drone Mode".
+
+Press Y to. 
+
+F3 to move up. F3 to move up quickly.
+
+To accellerate time, press R on keyboard, then control plus. Or control minus to slow.
+
+https://www.youtube.com/watch?v=dXgGXILioRo
+
+<a target="_blank" href="https://www.youtube.com/watch?v=GvBG7pVhRBE&list=PLaMQV6UC-w7ZKb-3lgsD7Y7kYoecZn-NR&pp=iAQB">Pilot Emile</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=isWtmINTacE">How to Land</a> by Squirrel
+
+Career Add-ons
+
+
+
+<hr />
+
+## Nautical miles and Knots
+
+The "Statue Miles" commonly used in the US is based on an arbitrary length of feet.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=UV1V9-nnaAs&t=2m20s">VIDEO</a>:
+A <strong>nautical mile</strong> used by sailors and aviators is based on a fraction of
+the Earth's circumference of 21,600 meters at the equator, split into 360 degrees.
+So 21,600 / 360 = 60 meters per degree.
+
+The derived unit of speed is the <strong>knot</strong>, one nautical mile per hour.
+
+Each degree is divided into 60 minutes.
+
+   <ul>A nautical mile is 1/60 of a degree of latitude, defined as <strong>1,852 metres</strong> (about 6,076 feet or 1.151 mi).
+   </ul>
+
+1,853 metres (which is 6,079.40 ft).
+
+A statute mile is 86.9% of that.
+
+
+
+## Zulu = Greenich Mean Time = UTC
+
+<a target="_blank" href="https://www.wikiwand.com/en/Nautical_mile">WIKIPEDIA</a>:
+
+Most international machines are set to UTC/GMT time to avoid calculating complications of time zones. See <a target="_blank" href="https://wilsonmar.github.io/calendar/">my calendar</a>.
+
+Portable clocks that kept time on GMT revolutionized sailing (from 1890s England) because it made for more accurate wayfinding. The more accurate a pilot's timepiece, the more accurately he can calculate his local longitude.
+
+The GMT/UTC is referenced because the amount of hours and minutes between local time and UTC/GMT provides the basis for calculating local longitude location.
+
+   * Multiply the difference in hours by 15.
+   * Multiply the difference in minutes by 0.25
+   <br /><br />
+
+Every degree West or East from UTC/GMT is 4 minutes.
+
+To measure the Latitude:
+
+<a target="_blank" href="https://www.youtube.com/watch?v=RnXauBYXPSE&t=2m25s">VIDEO</a>:
+Historically, sailors calculate the latitude using a sextant to identify the Declination (the number of degrees and minutes between the sun and the horizon). The declination is measured on the sextant because a semi-transparent "index" mirror (invented by John Newton) brings the sun down to appear like it's sitting on top of the horizon. (Staring into the sun is why pirates wear eye patches. So wear sunglasses.)
+
+The angle needed to bring the sun to meet a horizon is what the sextant reports.
+Divide that in half if you're using the artificial horizon.
+Every decimal of arc is 200 yards at the equator.
+
+A "Vernier" knob makes fine adjustments for <strong>seconds</strong> of arc (60 parts per minute).
+Each second of error is a nautical mile.
+In the Northern Hemisphere, 51 minutes of arc 
+
+When the sextant is used at Noon (the middle of the day), when the sun reaches its Zenith (highest point) for the day.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=kenXNQq75iw&t=4m45s">VIDEO</a>: On land, read the angle between the sun and its reflection on a cup of liquid.
+<a target="_blank" href="https://www.youtube.com/watch?v=RnXauBYXPSE&t=22m25s">VIDEO</a>:
+In the air, an early aviator used a bubble to act as an artificial horizon.
+
+If you don't have a watch, you can identify Noon by a stick and marking the path of the stick's shadow.
+
+
+<hr />
+
 ## Aviation terms
 
 <a href="#A">A</a>
@@ -360,13 +490,13 @@ From these sites:
 * AC = Advisory circular
 * A/C = Airconditioning Unit
 * Absolute altitude - The vertical distance of the aircraft above the ground, measured from the ground to the aircraft’s position in the air.
-* Absolute ceiling = <a href="https://www.aeroclass.org/how-high-do-planes-fly/" target="_blank" rel="noreferrer noopener">maximum aircraft’s altitude</a> that can be reached for flying at full throttle, constant airspeed, and leveled position
+* Absolute ceiling = <a href="https://www.aeroclass.org/how-high-do-planes-fly/" target="_blank">maximum aircraft’s altitude</a> that can be reached for flying at full throttle, constant airspeed, and leveled position
 * ACARS = Airline communications and reporting system
-* Accelerated stall = Stall happening at a higher airspeed than usual due to a higher <a href="https://www.aeroclass.org/load-factor-in-aviation/" target="_blank" rel="noreferrer noopener">load factor</a> (g). This stall generally happens when the aircraft is going straight up or straight down and by making abrupt turns or control inputs in general.
+* Accelerated stall = Stall happening at a higher airspeed than usual due to a higher <a href="https://www.aeroclass.org/load-factor-in-aviation/" target="_blank">load factor</a> (g). This stall generally happens when the aircraft is going straight up or straight down and by making abrupt turns or control inputs in general.
 * ACP = Audio Control Panel - a dashboard with buttons and knobs for the pilot to select the audio settings for reception and transition and for both communication and navigation radio frequencies.
 * Actuator = component that deflects a control surface or, in hydraulics, moves a structure such as a landing gear
 * AD = Airworthiness Directive. Maintenance or modification ordered by FAA.
-* ADS-B = <a href="https://www.aeroclass.org/what-is-ads-b/" target="_blank" rel="noreferrer noopener">Automatic Dependent Surveillance-Broadcast</a> - the main technology used for aircraft tracking. It automatically sends position data from the aircraft, with no need for pilot intervention.
+* ADS-B = <a href="https://www.aeroclass.org/what-is-ads-b/" target="_blank">Automatic Dependent Surveillance-Broadcast</a> - the main technology used for aircraft tracking. It automatically sends position data from the aircraft, with no need for pilot intervention.
 * ADC = Air Data Computer
 * ADF = Automatic Direction Finder - an electronic device that helps navigation by identifying the relative position and <strong>bearing</strong> of an aircraft from a radio beacon transmitting in the MF or LF bandwidth, like a Non-Directional Beacon or commercial radio broadcast station.
 * ADI = Attitude direction indicator
@@ -394,7 +524,7 @@ From these sites:
 * Air Taxi Operator = a company that offers services according to FAR Part 135. This means the company operates small aircraft in the categories of turbojet engine powered aircraft with 1 to 30 seats, non-transport category turbo-propeller powered aircraft with 10 to 19 seats, and transport category turbo propellers with 20 to 30 seats. In general, small aircraft, normally under 30 seats. When carrying cargo, it should not exceed 18,000 pounds, and the company should work on either a scheduled or charter basis, on an on-demand basis or limited scheduled basis.
 * Airfoil = A surface, such as an airplane wing, shaped to produce more lift than resistance when driven through the air. The shape of the cross-section of a surface that generates the lift necessary to flight when the air passes over it. Common surfaces on a plane with an airfoil include wings, blades, turbines, and rotors.
 * Airline = the name used for the company or organization that manages and offers scheduled flights and routes on a regular basis.
-* Airspace Classes = the types of airspace as defined by ICAO and adopted around the world. The <a href="https://www.aeroclass.org/airspace-classes/" target="_blank" rel="noreferrer noopener">airspace classes</a> include controlled, uncontrolled, and special use.
+* Airspace Classes = the types of airspace as defined by ICAO and adopted around the world. The <a href="https://www.aeroclass.org/airspace-classes/" target="_blank">airspace classes</a> include controlled, uncontrolled, and special use.
 
 * All-weather fighter = A radar-equipped jet fighter airplane which can operate at night or in the worst weather
 * All-weather interceptor = A radar-equipped jet fighter airplane which can operate at night or in the worst weather
@@ -412,7 +542,7 @@ From these sites:
 * Approach = the <a href="https://www.aeroclass.org/flight-phases/">flight phase</a> before landing is where the pilot prepares to take the aircraft to the ground.
 * APR = Auxiliary Power Reserve
 * Apron = The area of an airport prepared for the aircraft to park, fuel, load, and unload.
-* APU = <a href="https://www.aeroclass.org/auxiliary-power-unit/" target="_blank" rel="noreferrer noopener">Auxiliary Power Unit</a> - usually a jet engine located in the tail cone of an aircraft to provide autonomy for operation without needing external equipment like a ground power unit, an external air-conditioning unit, or a high-pressure air start cart.
+* APU = <a href="https://www.aeroclass.org/auxiliary-power-unit/" target="_blank">Auxiliary Power Unit</a> - usually a jet engine located in the tail cone of an aircraft to provide autonomy for operation without needing external equipment like a ground power unit, an external air-conditioning unit, or a high-pressure air start cart.
 
 * ARINC = Aeronautical Radio, Inc. A nonprofit corporation owned by member airlines to define form, fit and function of avionics equipment and to provide radio communication services
 * ARINC 419 = Digital information transfer characteristics as applied in ARINC 500-series equipment specifications
@@ -426,12 +556,12 @@ From these sites:
 
 * ASA = Autoland status annunciator
 * ASCB = Avionics standard communication bus (Honeywell)
-* ASI = Air Speed Indicator - a flight instrument of the <a href="https://www.aeroclass.org/pitot-static-errors/" target="_blank" rel="noreferrer noopener">pitot-static</a> type that indicates the aircraft’s airspeed flying through an air mass and measured in miles per hour, knots, or both of them.
+* ASI = Air Speed Indicator - a flight instrument of the <a href="https://www.aeroclass.org/pitot-static-errors/" target="_blank">pitot-static</a> type that indicates the aircraft’s airspeed flying through an air mass and measured in miles per hour, knots, or both of them.
 
 * A/T = Auto throttle
 * ATC = Air Traffic Control - The people in control towers (at airports that have them) to regulate takeoffs, landings, and planes moving through their general area.
 * ATI and ATR = ARINC from factors
-* ATIS = <a href="https://www.aeroclass.org/atis-aviation/" rel="noreferrer noopener" target="_blank">Automatic Terminal Information Service</a> = pre-compiled messages broadcasting on an airwave frequency at international airports. ATIS information includes weather conditions and runway use, approach type, and approachable style, and air traffic controllers usually provide it.
+* ATIS = <a href="https://www.aeroclass.org/atis-aviation/" target="_blank">Automatic Terminal Information Service</a> = pre-compiled messages broadcasting on an airwave frequency at international airports. ATIS information includes weather conditions and runway use, approach type, and approachable style, and air traffic controllers usually provide it.
 * ATM = Air traffic management
 * ATP = Airline Transport Pilot (the “highest” grade of pilot certificate)
 * Audio Panel = Electronic device used to switch between radios
@@ -508,7 +638,7 @@ From these sites:
 * Comosite video = Analog VOR receiver output before processing
 * Constant-Speed Propeller - a propeller with the capability to maintain a steady engine RPM by increasing and decreasing the blade pitch automatically.
 * Cost index = a number, generally between 0-100, entered into an aircraft’s Flight Management System (FMS) as a way of meeting aircraft operational requirements. This number comes from the calculation of fuel vs time-related costs. With an optimized cost index, it is possible to achieve the right balance between the cost of fuel and the cost of time.
-* Contrail = a stream or <a href="https://www.aeroclass.org/why-do-planes-leave-trails/" target="_blank" rel="noreferrer noopener">a trail</a> of condensed vapor that becomes visible in the air when the engines of an aircraft produce heat while <a href="https://www.aeroclass.org/high-altitude-endorsement-aviation-training/" target="_blank" rel="noreferrer noopener">flying at a high altitude</a>.
+* Contrail = a stream or <a href="https://www.aeroclass.org/why-do-planes-leave-trails/" target="_blank">a trail</a> of condensed vapor that becomes visible in the air when the engines of an aircraft produce heat while <a href="https://www.aeroclass.org/high-altitude-endorsement-aviation-training/" target="_blank">flying at a high altitude</a>.
 * CONT = Teledyne-Continental (an engine manufacturer)
 * Controlled Airspace = the class of airspace where ATC instructs pilots regarding aircraft movement and regulations. The main goal is to have controllers provide safe and efficient routes for all aircraft within the airspace. Also, this class of airspace is designed to create national security, which is why it requires specific qualifications for pilots and aircraft, so they can get clearance to enter the space.
 * Contact digitizer = A mechanical device that converts analog information to digital codes by means of electrical contacts
@@ -529,7 +659,7 @@ From these sites:
 * DA = density altitude = the air density given as a height above mean sea level.
 * DADC = Digital air-data computer
 * dB = Decibel
-* De-icing = The process of removing snow, ice, or frost that builds up on different parts of an aircraft, especially the wings. Normally, <a href="https://www.aeroclass.org/type-1-deicing-fluid/" target="_blank" rel="noreferrer noopener">de-icing fluid</a> is sprayed or heat applied to achieve the objective.
+* De-icing = The process of removing snow, ice, or frost that builds up on different parts of an aircraft, especially the wings. Normally, <a href="https://www.aeroclass.org/type-1-deicing-fluid/" target="_blank">de-icing fluid</a> is sprayed or heat applied to achieve the objective.
 * Deadstick = a forced landing that happens under no propulsion conditions due to engine or propeller malfunction.
 * Delivery flight = The first flight of an aircraft from manufacturing to the airport or airfield selected by the operator acquiring it.
 * Descent = the opposite to climb, as it refers to the stage of a flight where the pilot decreases the altitude trying to reach a specific level. When the pilot begins descending to land at its destination, it is called “top of descent”. To guarantee oxygen levels for natural breathing during an emergency, especially when decompression occurs suddenly, the pilot will perform an emergency descent to below 10,000ft.
@@ -562,7 +692,7 @@ From these sites:
 * EICAS = Engine indicating and crew alerting system
 * Elevator = The horizontal surface that controls aircraft pitch (the tilt of an airplane up or down). It is usually a small control surface hinged (articulated) to the rear of the horizontal stabilizer.
 * Emergency overrun = The surface on the runway after the area for take-off. This surface is kept clear and it has the objective of reducing the damage to an aircraft if it is unable to take off and stop or stop after landing.
-* Empennage = the tail assembly of an aircraft, which provides stability during flight. The empennage consists of a rudder, a fin, and a <a href="https://www.aeroclass.org/vertical-stabilizer/" target="_blank" rel="noreferrer noopener">stabilizer</a>.
+* Empennage = the tail assembly of an aircraft, which provides stability during flight. The empennage consists of a rudder, a fin, and a <a href="https://www.aeroclass.org/vertical-stabilizer/" target="_blank">stabilizer</a>.
 * encal = Encoding Altimeter
 * Encoder = Displays aircraft’s altitude on ground-based radar screens
 * Engine cowl = A removable metal covering placed over and around an airplane’s engine
@@ -571,7 +701,7 @@ From these sites:
 * ETD = Estimated Time of Departure - the time of takeoff from the point of origin of the flight.
 * ETOPS = Extended Twin-engine operations. FAA designation of over-ocean flights far from possible emergency landing strips, in which the possibility of engine failure in a twin-engine plane represents a heightened risk. ETOPS certification is not normally given to a new passenger aircraft until it has been in regular domestic service for at least a year.
 * ETE = Estimated Time en Route - the amount of time expected to be spent traveling to a destination.
-* ETP = Equal time point - a position on a route where the time taken to return to the departure point, is the same as the time required to reach the arrival point. It is not necessarily the midpoint (in distance) of the route because <a href="https://www.aeroclass.org/headwinds-vs-tailwinds/" target="_blank" rel="noreferrer noopener">head or tailwinds</a> can affect where exactly the equal time point will be.
+* ETP = Equal time point - a position on a route where the time taken to return to the departure point, is the same as the time required to reach the arrival point. It is not necessarily the midpoint (in distance) of the route because <a href="https://www.aeroclass.org/headwinds-vs-tailwinds/" target="_blank">head or tailwinds</a> can affect where exactly the equal time point will be.
 * Eurocontrol = The European Organisation for the Safety of Air Navigation. Based in Belgium, it is the umbrella organization of national air navigation service providers in Europe.
 
 <h2 id="F">F</h2>
@@ -581,12 +711,13 @@ From these sites:
 * Fairing = A section of aircraft surface, or an attached structure, designed to reduce drag. For example, the contoured sheet metal where wing meets fuselage
 * FARs = Federal Aviation Regulations (U.S.) - the FAA rules applied to civil aviation in the U.S.
 * FAR 36 Noise Levels = In order to meet FAR 36 Stage 3 requirements, the maximum noise level permitted is: Take Off 89.0 EPNdB, *Sideline 94.0, *Approach 98.0
-* FBO = <a href="https://www.aeroclass.org/what-is-fbo/" target="_blank" rel="noreferrer noopener">Fixed-Base Operator</a> - a kind of business or organization that operates at an airport providing aircraft services like maintenance, fueling, flight training, charter services, hangar services, and parking.
+* FBO = <a href="https://www.aeroclass.org/what-is-fbo/" target="_blank">Fixed-Base Operator</a> - a kind of business or organization that operates at an airport providing aircraft services like maintenance, fueling, flight training, charter services, hangar services, and parking.
 
 * FDE = Fault detection and exclusion (GPS)
-* FDR = Flight data recorder - devices used to constantly record a variety of flight parameters. In case of an accident or a major incident, they provide a forensic tool to help investigators in understanding what happened. FDRs are regulated by the International Civil Aviation Organization (ICAO).
+* FDR = Flight data recorder - devices used to constantly record a variety of flight parameters. In case of an accident or a major incident, they provide a forensic tool to help investigators understand what happened. FDRs are regulated by the International Civil Aviation Organization (ICAO).
 * FDS = Flight Director System
-* Ferry Flight - a type of flight that happens outside the regular flying operations of any carrier. These flights are usually carried out with the intention of returning an aircraft to the hub after <a href="https://www.aeroclass.org/mro-aviation/" target="_blank" rel="noreferrer noopener">maintenance</a> or any other service, delivering a new aircraft to the organization acquiring it, moving an aircraft from one hub to another, or moving an aircraft to maintenance facilities.
+* feathering = The action of varying the angle of propellers, rotor blades, or oars so as to reduce air or water resistance
+* Ferry Flight - a type of flight that happens outside the regular flying operations of any carrier. These flights are usually carried out with the intention of returning an aircraft to the hub after <a href="https://www.aeroclass.org/mro-aviation/" target="_blank">maintenance</a> or any other service, delivering a new aircraft to the organization acquiring it, moving an aircraft from one hub to another, or moving an aircraft to maintenance facilities.
 * FFON = Flight Phone
 * Final Approach - A flight path that is taken to land on the runway at the end of a flight route.
 * FIR/UIR = Flight Information Region / Upper Information Region -  geographic areas under the responsibility of ATC. The size of these two areas is variable and its size depends on the country’s decision or the agreement of all the countries that the region covers. Oceanic airspace has its own classification as an Oceanic Information Region.
@@ -622,12 +753,12 @@ From these sites:
 * GCR = Ground clutter rejection
 * GE = General Electric. They make aircraft engines
 * General Aviation = The division of civil aviation aircraft operations except for commercial air transport and aerial work.
-* George - The nickname was given to an aircraft <a href="https://www.aeroclass.org/autopilot-system/" target="_blank" rel="noreferrer noopener">autopilot system</a>.
+* George - The nickname was given to an aircraft <a href="https://www.aeroclass.org/autopilot-system/" target="_blank">autopilot system</a>.
 
 * Glass Cockpit - An aircraft that has its cockpit fully equipped with electronic, digital flight instrument displays instead of analog-style gauges.
 * GLU = GNSS landing unit. Provides precision GPS guidance to the runway in Category III operations
 * GNSS = Global navigation satellite system
-* Go-Around - The <a href="https://www.aeroclass.org/airport-traffic-pattern/" target="_blank" rel="noreferrer noopener">flight pattern</a> the pilot takes when a landing approach cannot be completed safely for any reason, and before trying to land again is called go-around. It usually involves a climb to a pre-specified altitude and holding point while awaiting further instructions from ATC.
+* Go-Around - The <a href="https://www.aeroclass.org/airport-traffic-pattern/" target="_blank">flight pattern</a> the pilot takes when a landing approach cannot be completed safely for any reason, and before trying to land again is called go-around. It usually involves a climb to a pre-specified altitude and holding point while awaiting further instructions from ATC.
 * Gold Crown = Trade name owned by King Radio Corp
 * GPADIRS = Global positioning, air data, inertial reference system
 * GPS = Global positioning system
@@ -636,7 +767,7 @@ From these sites:
 * Gross Weight - The total weight of an aircraft including people, cargo, fuel, etc.
 * Ground Air = A/C unit to cool aircraft while on the ground
 * Grounding = Putting an aircraft out of operation. This can happen for different reasons, but usually because it requires modifications or repairs in order to be fully compliant with airworthiness regulations. Good examples are the grounding of many aircraft in 2020 due to the pandemic, and the Boeing 737 MAX global grounding.
-* GPWS = <a href="https://www.aeroclass.org/gpws-ground-proximity-warning-system/" target="_blank" rel="noreferrer noopener">Ground Proximity Warning System</a> - the system designed to alert pilots they are flying to close to the ground and they are in danger of crashing into it.
+* GPWS = <a href="https://www.aeroclass.org/gpws-ground-proximity-warning-system/" target="_blank">Ground Proximity Warning System</a> - the system designed to alert pilots they are flying to close to the ground and they are in danger of crashing into it.
 * GS = Groundspeed - the horizontal speed an aircraft measured when moving over the ground and in nautical miles per hour (Knots).
 * G/S = Glide slope reciver and indicator
 * GTWO = Gross Take off Weight
@@ -665,11 +796,11 @@ From these sites:
 * ICAO = International Civil Aviation Organization, a specialized agency of the United Nations that supports aviation and navigation around the globe.
 * IAW = (logbook term – In Accordance With – and AD or SB)
 * ICAO = International Civil Aviation Organization
-* IMC = <p><a href="https://www.aeroclass.org/imc-in-aviation/" target="_blank" rel="noreferrer noopener">IMC</a> stands for Instrument Meterological Conditions, the weather conditions that describe a situation where pilots are required to operate with instruments only and following IFR.
+* IMC = <p><a href="https://www.aeroclass.org/imc-in-aviation/" target="_blank">IMC</a> stands for Instrument Meterological Conditions, the weather conditions that describe a situation where pilots are required to operate with instruments only and following IFR.
 * IFR = Instrument Flight Rules, the regulations for aircraft operations when using visual references is not possible for the pilots so they can fly by using instruments only. By following these rules, pilots can create IFR flight plans for various weather conditions.
 * IFR = Instrument Flight Rules. An Instrument Rating is further training after a Pilot’s license to allow pilots to fly in bad weather. The pilot has been trained to not merely fly by instruments alone, but also to understand the Air Traffic Control system, because an IFR flight is continuously monitored by ATC, radar, flight following, and a dozen other agencies
-* IFSD = Integrated <a href="https://www.aeroclass.org/what-is-a-standby-flight/" target="_blank" rel="noreferrer noopener">Standby Flight</a> Display, a flight instrument which is commonly found in modern airliners and serves as a backup for primary instruments such as the altimeter, airspeed and attitude indicators.
-* ILS = <a href="https://www.aeroclass.org/ils-aviation/" target="_blank" rel="noreferrer noopener">Instrument Landing System</a>, a system that uses radio waves to assist landings in IFR conditions.
+* IFSD = Integrated <a href="https://www.aeroclass.org/what-is-a-standby-flight/" target="_blank">Standby Flight</a> Display, a flight instrument which is commonly found in modern airliners and serves as a backup for primary instruments such as the altimeter, airspeed and attitude indicators.
+* ILS = <a href="https://www.aeroclass.org/ils-aviation/" target="_blank">Instrument Landing System</a>, a system that uses radio waves to assist landings in IFR conditions.
 * In-line engine = An engine in which the cylinders are mounted in a straight line or else in two, connected at an angle
 * INS = Inertial Naviagation System
 * INT = Interior
@@ -698,7 +829,7 @@ From these sites:
 
 * LTA=Lighter-than-air craft - also known as craft, it refers to other aerial objects like blimps, dirigibles, and free balloons that float.
 * Laser IRS = An inertial reference system deriving angular rate information by measuring Doppler shift between two contra-rotating light beams
-* Landing gear - the undercarriage of an aircraft, it is the structure with <a href="https://www.aeroclass.org/airplane-wheels/" target="_blank" rel="noreferrer noopener">wheels</a> that supports the plane when on the ground and is used during taxi, take-off, and landing.
+* Landing gear - the undercarriage of an aircraft, it is the structure with <a href="https://www.aeroclass.org/airplane-wheels/" target="_blank">wheels</a> that supports the plane when on the ground and is used during taxi, take-off, and landing.
 
 * Lateral control = The ability to make an airplane roll, or turn around its long axis, according to its pilot’s wishes
 * Level flight - The flight stage where the aircraft flies at the same altitude.
@@ -747,7 +878,7 @@ From these sites:
 * MOH = Major overhaul
 * MOPS = Minimum operational performance standard (RTCA)
 * Mountainous Terrain Escape Routes - routes that allow a pilot to take an aircraft to an altitude below the Minimum Obstacle Clearance Altitude (MOCA) in case of emergency without any danger when flying over an area of high and mountainous terrain.
-* MSL = <a href="https://www.aeroclass.org/msl-in-aviation/" target="_blank" rel="noreferrer noopener">Mean Sea Level</a> - the average height of the surface of the sea, used in aviation to measure vertical altitude.
+* MSL = <a href="https://www.aeroclass.org/msl-in-aviation/" target="_blank">Mean Sea Level</a> - the average height of the surface of the sea, used in aviation to measure vertical altitude.
 * MSN = Manufacturer’s serial number - a unique code assigned to an aircraft, often prior to building it. It is also used to identify the parts that will make the aircraft.
 * MSP = Maintanance Servie Program. (Garret engine)
 
@@ -792,13 +923,13 @@ From these sites:
 * Peak power output = The maximum transitter power output measured over a short time; usually used to rate pulse transmissions
 * PEP = Peak Envelope Power - a standard electronic rating of any AC source, including a radio transmitter
 * PFD = Primary Flight Display - the main screen used by pilots in aircraft containing an electronic flight instrument system, usually to read data relating to airspeed, altitude, heading, and vertical speed.
-* PIC = <a href="https://www.aeroclass.org/pilot-in-command/" target="_blank" rel="noreferrer noopener">Pilot in Command</a> - the individual responsible for safe aircraft operations during flight.
+* PIC = <a href="https://www.aeroclass.org/pilot-in-command/" target="_blank">Pilot in Command</a> - the individual responsible for safe aircraft operations during flight.
 * PIREP = Pilot Report - a report a pilot gives to ATC describing actual weather conditions during a flight.
 * Pitch - The movement of an aircraft, that sees the nose rising and the tail falling or vice versa.
 * PNT = Paint
 * POH = Pilot’s Operating Handbook - an aircraft flight manual containing pertinent safety information.
 * port = Nautical usage adopted in aviation. The left side, as determined by an observer in the vehicle, when vehicle and observer are right side up, and observer is looking “forward” (in the normal direction of travel of the vessel or vehicle)
-* PPL = <a href="https://www.aeroclass.org/types-of-pilot-licenses/" target="_blank" rel="noreferrer noopener">Private Pilot License</a>
+* PPL = <a href="https://www.aeroclass.org/types-of-pilot-licenses/" target="_blank">Private Pilot License</a>
 * Primary radar outputs a radio signal and attempts to detect any reflection of that signal from an object, such as an airplane. It is common to avoid the word primary and just say radar when speaking about it.
 * PSI = Pounds per square inch
 * PTT = Push-to-talk (switch)
@@ -833,7 +964,7 @@ From these sites:
 * RFU = Radio frequency unit
 * RG = Retractable landing gear
 * RMI = radio magnetic indicator – an ADF-like display with a pair of pointers which might be attached to either VOR or ADF receivers
-* RNAV = Area Navigation - a device and method of <a href="https://www.aeroclass.org/ifr-vs-vfr/" target="_blank" rel="noreferrer noopener">IFR</a> navigation where a network of radio beacons is provided for the aircraft to take the course instead of navigating from and to beacons directly.
+* RNAV = Area Navigation - a device and method of <a href="https://www.aeroclass.org/ifr-vs-vfr/" target="_blank">IFR</a> navigation where a network of radio beacons is provided for the aircraft to take the course instead of navigating from and to beacons directly.
 * Roll - The movement of an aircraft rotating along the longitudinal axis, which runs from the nose to the tail.
 * RNP = Required navigation performance
 * ROM = Read-only memory
@@ -842,7 +973,7 @@ From these sites:
 * RTCA, Inc. = An association of U.S. governmental and industry aeronautical organizations dedicated to advancing aeronautics through consensus and recommendations
 * Runway XX = Runways are numbered after magnetic compass points, minus the 1’s column (where North is 0, and 360, degrees)
 * Rudder - A control surface used to achieve the yaw movement properly.
-* RVR - Runway Visual Range - the horizontal distance that pilots can read by seeing <a href="https://www.aeroclass.org/airport-runways/" target="_blank" rel="noreferrer noopener">surface markings</a> or runway lights when positioned on the centerline of a runway.
+* RVR - Runway Visual Range - the horizontal distance that pilots can read by seeing <a href="https://www.aeroclass.org/airport-runways/" target="_blank">surface markings</a> or runway lights when positioned on the centerline of a runway.
 * RVSM = Reduced Vertical Seperatation Minimum
 
 <h2 id="S">S</h2>
@@ -871,11 +1002,11 @@ From these sites:
 * SMOH = Since major overhaul
 * SMPI = Time Since Major Periodic Inspection
 * SN = Serial Number
-* <a href="https://www.aeroclass.org/soft-field-landing/" target="_blank" rel="noreferrer noopener">Soft Field</a> - An unpaved runway, typically requiring the aircraft to land on grass or dirt.
+* <a href="https://www.aeroclass.org/soft-field-landing/" target="_blank">Soft Field</a> - An unpaved runway, typically requiring the aircraft to land on grass or dirt.
 * Spar = A principal section of the wing structure of an airplane, going from tip to tip
 * Sperry = Avionics manufacturer
 * SPOH = Since prop overhaul
-* Squawk - A unique four-digit  (actually 4-octal-digit -&gt; 12-bit) transponder number given to an aircraft by ATC to allow for simple identification of an aircraft in a given region. There are a few significant <a href="https://www.aeroclass.org/squawk-7500-how-to-deal-with-hijacking/" target="_blank" rel="noreferrer noopener">squawk codes</a>, which immediately get the attention of air traffic control. These are 7500: Hijack; 7600: Radio Failure; 7700: General Emergency.
+* Squawk - A unique four-digit  (actually 4-octal-digit -&gt; 12-bit) transponder number given to an aircraft by ATC to allow for simple identification of an aircraft in a given region. There are a few significant <a href="https://www.aeroclass.org/squawk-7500-how-to-deal-with-hijacking/" target="_blank">squawk codes</a>, which immediately get the attention of air traffic control. These are 7500: Hijack; 7600: Radio Failure; 7700: General Emergency.
 * Squitter = The transmission of a specified reply format at a minimum rate without the need to be interrogated (transponders)
 * SSB = Single sideband. A highly efficient form of radio transmission wherein information is carried on a sideband instead of the center carrier in order to gain range performance; usually used in HF communication transceivers
 * SSCVR = Solid state cockpit voice recorder
@@ -906,7 +1037,7 @@ From these sites:
 * Throttle - A device that controls the amount of power coming from the engine.
 * Thrust - A force generated by the aircraft engines to oppose drag in order to move forward.
 * TKE = Track error
-* <a href="https://www.aeroclass.org/touch-and-gos/" target="_blank" rel="noreferrer noopener">Touch-and-Go</a> - A maneuver used to practice landing techniques by simply “touching” the runway and lifting the aircraft once more without coming to a full stop.
+* <a href="https://www.aeroclass.org/touch-and-gos/" target="_blank">Touch-and-Go</a> - A maneuver used to practice landing techniques by simply “touching” the runway and lifting the aircraft once more without coming to a full stop.
 * Transponder - The device carried in an airplane and used to generate a code that is recognized on an ATC radar screen.
 * T/Rs = Thrust Reversers
 * Track - the compass direction of the aircraft, denoted as 1-360. It represents the actual path or vector.
@@ -923,7 +1054,7 @@ From these sites:
 * Turbo prop = Is said of an airplane powered by a type of jet engine, the turbo prop, equipped with a turbine-driven propeller
 * Turbulence mode = Flight control system mode in which a “softer” response to gust upsets is programmed
 * TWR = tower.
-* TWY = <a href="https://www.aeroclass.org/taxiway-lighting/" target="_blank" rel="noreferrer noopener">taxiway</a>.
+* TWY = <a href="https://www.aeroclass.org/taxiway-lighting/" target="_blank">taxiway</a>.
 * TX = Transponder
 
 <h2 id="U">U</h2>
@@ -945,7 +1076,7 @@ From these sites:
 * VLF = Very Low Frequency
 * VMC = Visual Meteorological Conditions - the minimum requirements for VFR flight to be possible before turning to IFR.
 * VNAV = Vertical navigation, or the capability to compute pitch-axis maneuvers and altitude-related points in space
-* VOR = Very High-Frequency Omni-Directional Range - a short-range radio <a href="https://www.aeroclass.org/airport-rotating-beacon/" target="_blank" rel="noreferrer noopener">navigation beacon</a>. A network of VORs can be used by pilots to determine their position and course. One of the more common navigational aids that the FAA has dropped all over the country (and sometimes the world). A VOR sends out a radio signal that is slightly different in each direction (the difference is phases, if you want to get technical). So, an airplane’s VOR tool listens to the VOR, and by measuring the difference in the radio, it can tell which direction it is from the VOR. Since your chart will show where the VOR is, and you now know where you are in relation to the VOR, it has helped you figure out where in the local area you might happen to be.
+* VOR = Very High-Frequency Omni-Directional Range - a short-range radio <a href="https://www.aeroclass.org/airport-rotating-beacon/" target="_blank">navigation beacon</a>. A network of VORs can be used by pilots to determine their position and course. One of the more common navigational aids that the FAA has dropped all over the country (and sometimes the world). A VOR sends out a radio signal that is slightly different in each direction (the difference is phases, if you want to get technical). So, an airplane’s VOR tool listens to the VOR, and by measuring the difference in the radio, it can tell which direction it is from the VOR. Since your chart will show where the VOR is, and you now know where you are in relation to the VOR, it has helped you figure out where in the local area you might happen to be.
 * VSI = Vertical Speed Indicator - an instrument that displays the climb or descent rate in feet-per-minute by sensing the change in atmospheric pressure. It is also known as a variometer.
 
 <h2 id="W">W</h2>
@@ -962,7 +1093,7 @@ From these sites:
 
 <h2 id="X">X</h2>
 
-* XC = abbreviation for cross-country, as in Cross-Country Flight - a kind of flight that requires a special flight plan. The FAA requires this type of flight to be completed in order to obtain a <a href="https://www.aeroclass.org/types-of-pilot-licenses/" target="_blank" rel="noreferrer noopener">Private Pilot License</a> (PPL).
+* XC = abbreviation for cross-country, as in Cross-Country Flight - a kind of flight that requires a special flight plan. The FAA requires this type of flight to be completed in order to obtain a <a href="https://www.aeroclass.org/types-of-pilot-licenses/" target="_blank">Private Pilot License</a> (PPL).
 * Xpond = Transponder
 * X-band = Frequency range in which most general aviation weather radars operate
 * XTK = Cross track; cross track error
@@ -974,7 +1105,7 @@ From these sites:
 
 <h2 id="Z">Z</h2>
 
-* Zulu Time - a term for Universal Coordinated Time (abbreviated as UTC as a "politically correct" term for Greenwich Mean Time (GMT)). Pilots file all flight plans in <a href="https://www.timeanddate.com/worldclock/timezone/zulu" target="_blank" rel="noreferrer noopener">Zulu Time</a>.
+* Zulu Time - a term for Universal Coordinated Time (abbreviated as UTC as a "politically correct" term for Greenwich Mean Time (GMT)). Pilots file all flight plans in <a href="https://www.timeanddate.com/worldclock/timezone/zulu" target="_blank">Zulu Time</a>.
 
 
 <hr />
