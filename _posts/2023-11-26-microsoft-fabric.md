@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-12-09"
+date: "2024-02-20"
 file: "microsoft-fabric"
 title: "Microsoft Fabric"
 excerpt: "Simplify multi-cloud data handling for real-time analytics in Delta Lakehouses. Pass the DP-600 exam."
@@ -24,9 +24,19 @@ This is a hands-on technical tutorial that takes you logically step-by-step to q
 
 {% include whatever.html %}
 
+BTW, don't confuse Microsoft Fabric with "Azure Service Fabric" (a distributed systems platform that makes it easy to package, deploy, and manage scalable and reliable microservices and containers.)
+
 Let's dive right into the Microsoft Fabric working portal GUI:
 
-https://www.linkedin.com/company/microsoftfabric/
+<a name="Diagram"></a>
+
+## Architecture Diagram
+
+PROTIP: I adapted <a target="_blank" href="https://7451111251303.gumroad.com/l/fkrvnn" title="Available for purchase">the diagram below</a> from <a target="_blank" href="https://www.youtube.com/watch?v=J4i5lcROJcs">VIDEO</a>: The best 38-minute summary by <a target="_blank" href="https://linkedin.com/in/">Will Needham</a>, <a target="_blank" href="https://learn.microsoft.com/en-in/fabric/get-started/microsoft-fabric-overview">Microsoft</a>, and <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">others</a> to show, all in one page, relationships among key technology components ("Experiences") in Fabric:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1708487536/ms-fabric-arch-240219-1920x1080_cupx3o.png"><img alt="ms-fabric-arch-240219-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1708487536/ms-fabric-arch-240219-1920x1080_cupx3o.png"><br /><em>Click for full-size image</em></a>.
+
+
 
 ## Browser Profile
 
@@ -56,7 +66,7 @@ https://www.linkedin.com/company/microsoftfabric/
 1. Click the big round gray icon at the upper side of the Fabric page for the <a href="#AdminMenu">Admin/Sign In menu above</a>.
 
 
-   ### Start Trial
+   ## Start Trial
 
 1. Click the green <strong>Start trial</strong> box.
 
@@ -263,7 +273,9 @@ Each component has its own licensing considerations. See the next section.
 
 ## End-to-End projects
 
-1. <a target="_blank" href="https://www.youtube.com/watch?v=fRBKcFaItZs" title="by Centida BI & Analytics">VIDEO</a>: Ways of getting <a target="_blank" href="https://learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver16">Wide World Importers sample Lakehouse databases</a> into Lakehouse:
+*
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=fRBKcFaItZs" title="by Centida BI & Analytics">VIDEO</a>: Ways of getting <a target="_blank" href="https://learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver16">Wide World Importers sample Lakehouse databases</a> into Lakehouse:
 
    1. Fact table from a OneLake Shortcut to a blob (file)
    1. Order details from a Data Factory pipeline 
@@ -271,15 +283,26 @@ Each component has its own licensing considerations. See the next section.
    4. 3-dim tables from CSV (regular uploads)
    <br /><br />
 
-<a target="_blank" href="https://www.youtube.com/watch?v=gKdlsHm7QgU&list=PL9SoC_dDpQ8FnIJZwlk5L4rU1r7-cQNCG">DataVerse Academy</a>
+* <a target="_blank" href="https://www.youtube.com/watch?v=gKdlsHm7QgU&list=PL9SoC_dDpQ8FnIJZwlk5L4rU1r7-cQNCG">DataVerse Academy</a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=yRJ03n1U5-E&list=PLug2zSFKZmV0Yaya7NxRQfrrPtfF2vj0K">Learn Microsoft Fabric with Will</a>
+* <a target="_blank" href="https://www.youtube.com/watch?v=yRJ03n1U5-E&list=PLug2zSFKZmV0Yaya7NxRQfrrPtfF2vj0K">Learn Microsoft Fabric with Will</a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=a6A3jtvB62U">James Serra</a>
+* <a target="_blank" href="https://www.youtube.com/watch?v=a6A3jtvB62U">James Serra</a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=IaA9YNlg5hM">End-to-end</a>
+* <a target="_blank" href="https://www.linkedin.com/in/darshil-parmar/">Darshil Parmar</a>: <a target="_blank" href="https://www.youtube.com/watch?v=IaA9YNlg5hM">Azure End-To-End Data Engineering Project</a> to extract using an API Azure Data Factory pipline, then load into Azure  Databricks storage. Then write Spark code to transform data back to Data Lake to run SQL queries.
 
+* <a target="_blank" href="https://www.youtube.com/watch?v=fAL1ySBqJKI">VIDEO</a>: 
+Creating A Microsoft Fabric End-To-End Solution ⚡ [Full Course] 1h30m by Austin Libal of Pragmatic Works Jul 12, 2023.
+References <a target="_blank" href="https://prag.works/lwtn-microsoft-fabric-files">files</a>.
+Get <a target="_blank" href="https://prag.works/202307-lwtn-certificate">certificate</a>
 
+* https://www.youtube.com/watch?v=J4i5lcROJcs
+
+* https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/service_fabric_cluster
+<br />https://github.com/terraform-providers/terraform-provider-azurerm/tree/master/examples/service-fabric/windows-vmss-self-signed-certs
+only provisions the Management. 
+
+* https://www.udemy.com/course/learn-microsoft-fabric-basic-to-advance-with-practical/
 
 <hr />
 
@@ -446,14 +469,6 @@ Like Adobe's PDF file format, which enabled many companies in the printing indus
 
 
 <hr />
-
-<a name="Diagram"></a>
-
-## Diagram
-
-PROTIP: I adapted <a target="_blank" href="https://7451111251303.gumroad.com/l/fkrvnn" title="Available for purchase">this diagram</a> from <a target="_blank" href="https://learn.microsoft.com/en-in/fabric/get-started/microsoft-fabric-overview">Microsoft</a> and <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">others</a> to show, all in one page, relationships among key technology components ("Experiences") in Fabric:
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701439638/microsoft-fabric-diagram-231201a-wm_aiciwa.png"><img alt="microsoft-fabric-diagram-231201a-wm.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701439638/microsoft-fabric-diagram-231201a-wm_aiciwa.png"><br align="right" /><em>Click for full-size image</em></a>.
 
 <a name="Personas"></a>
 
@@ -967,11 +982,20 @@ item permissions in a workspace grant access to individual warehouses to enable 
 
 1. TODO: Report errors?
 
+1. Verify:
+
+   Check that the tables have been loaded properly by going to the "Data" section of the workspace and verifying that the tables are present.
+
+   Check that the table and column names in the queries are correct and match the names of the tables and columns in the workspace.
+
+   Try running the queries again after refreshing the page or restarting the workspace.
 
 
-Check that the tables have been loaded properly by going to the "Data" section of the workspace and verifying that the tables are present.
-Check that the table and column names in the queries are correct and match the names of the tables and columns in the workspace.
-Try running the queries again after refreshing the page or restarting the workspace.
+NOTE: Competition to Microsoft Synapse Real-Time Analytics is open-source <a target="_blank" href="https://pinot.apache.org/">Apache Pinot</a> which originated from within Linkedin for user-facing real-time data analytics. <a target="_blank" href="https://www.youtube.com/@StarTree">StarTree</a>.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=3zQI-DrkkdE">VIDEO</a>: Comparison: Latency. Freshness. Concurrency. Throughput. Flexibility. Cost.
+
+Benchmarks?
 
 
 <hr />
@@ -1208,6 +1232,8 @@ https://www.reddit.com/r/MicrosoftFabric/comments/14iuplv/azure_data_factory_vs_
 <a target="_blank" href="https://www.youtube.com/watch?v=bQBVNg6gEYw">VIDEO</a>:
 Data Science with MLFlow (with demo):
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701712190/flow-datasci-1781x808_zswviq.png"><img alt="flow-datasci-1781x808.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701712190/flow-datasci-1781x808_zswviq.png"></a>
+
+https://www.linkedin.com/company/microsoftfabric/
 
 
 ## More #
