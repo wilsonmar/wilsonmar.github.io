@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-02-18"
+date: "2024-02-21"
 file: "azure-certifications"
 title: "Azure (Microsoft cloud) certifications"
 excerpt: "Microsoft provides free hands-on (gamified) tutorials and free time"
@@ -25,8 +25,8 @@ NOTE: Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/cr
 <tr><th> Role </th><th> Certification exam </th></tr>
 
 <tr valign="top"><td> Educator</td><td>
-      * <a href="#MSE">MSE (Microsoft Certified Educator)</a><br />
-      * <a href="#MCT">MCT (Microsoft Certified Trainer)</a>
+      * <a href="#mce-microsoft-certified-educator">MSE (Microsoft Certified Educator)</a><br />
+      * <a href="#mct-microsoft-certified-trainer">MCT (Microsoft Certified Trainer)</a>
    </td></tr>
 
 <tr valign="top"><td> Administrator</td><td>
@@ -363,13 +363,13 @@ It's about the adoption of <a target="_blank" href="https://edge.ut.ac.id/mod/pa
    
    *  <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Collaboration.one%7C219eb854-1f3a-4853-ad8a-7083ac484184%2FIntroduction%7C413558af-164b-4fb6-a473-5f5976f7efaf%2F%29&wdorigin=NavigationUrl">Collaboration</a> - learners 2: work together, 3: share responsibility, 4: make substantive decisions together, 5: work is interdependent. 
 
-   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Real-World%20Problem-Solving.one%7C06e643da-5fdd-4587-8b1a-a8e86e7f3bf0%2FIntroduction%7Cbaf7c2c0-d9ec-4f8a-b82a-b0e02a467efc%2F%29&wdorigin=NavigationUrl">Real-world problem-solving and innovation</a> - authentic situations that exist 5: outside of an academic context so that learners may implement their solutions in the real world.
+   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Real-World%20Problem-Solving.one%7C06e643da-5fdd-4587-8b1a-a8e86e7f3bf0%2FIntroduction%7Cbaf7c2c0-d9ec-4f8a-b82a-b0e02a467efc%2F%29&wdorigin=NavigationUrl">Real-world problem-solving and innovation</a> - 2: problem-solving activities that are 3: real-world (authentic, non-fictional) situations that 4: innovate and communicated to someone outside of an academic context who can implement them.
 
-   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Skilled%20Communication.one%7Caa33bc86-f72a-4ceb-8bce-4fffb97e48b5%2FIntroduction%7C47dd5766-3e30-4034-b0ab-906b40c645b5%2F%29&wdorigin=NavigationUrl">Skilled communication</a> - produce 2: extended or multi-modal communication 3: using evidence to support their ideas 4: for a particular audience.
+   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Skilled%20Communication.one%7Caa33bc86-f72a-4ceb-8bce-4fffb97e48b5%2FIntroduction%7C47dd5766-3e30-4034-b0ab-906b40c645b5%2F%29&wdorigin=NavigationUrl">Skilled communication</a> - produce 2: extended or multi-modal communication 3: using evidence to support their ideas 4: customized for a particular audience.
 
-   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Self-Regulation.one%7C4283ef67-f71d-4fa0-a1b5-37946b3c9d5f%2FIntroduction%7Cbb2967a3-6400-4a3f-9ffe-c7c0ab7744d6%2F%29&wdorigin=NavigationUrl">Self-regulation</a> - work on an activity for 2: an extended period. It requires learners to 3: plan their work by breaking up their responsibilities. They must also have opportunities to 5: revise their work based upon their own reflection and feedback from others (peers, educators, or experts).
+   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Self-Regulation.one%7C4283ef67-f71d-4fa0-a1b5-37946b3c9d5f%2FIntroduction%7Cbb2967a3-6400-4a3f-9ffe-c7c0ab7744d6%2F%29&wdorigin=NavigationUrl">Self-regulation</a> - work on an activity for 2: an extended period of time to 3: <strong>plan</strong> their work by breaking up their responsibilities. They must also have opportunities to 5: <strong>revise</strong> their work based upon their own reflection and feedback from others (peers, educators, or experts).
 
-   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Use%20of%20ICT%20for%20Learning%202.one%7Cd9f9a224-bf26-4b2b-8e96-716c7103ec06%2FIntroduction%7C8e23f1f4-5615-4a0b-9b66-e00d9f91cc31%2F%29&wdorigin=NavigationUrl">Digital ICT (technology) integration</a> (Microsft Edge Collections, OneNote Class Notebooks, SmartArt in Word & PowerPoint, Teams Channels, <a target="_blank" href="https://learn.microsoft.com/en-us/training/educator-center/product-guides/flip">Flip video production</a>)
+   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Use%20of%20ICT%20for%20Learning%202.one%7Cd9f9a224-bf26-4b2b-8e96-716c7103ec06%2FIntroduction%7C8e23f1f4-5615-4a0b-9b66-e00d9f91cc31%2F%29&wdorigin=NavigationUrl">Digital ICT (technology) integration</a> (Microsft Edge Collections, OneNote Class Notebooks, SmartArt in Word & PowerPoint, Teams Channels, <a target="_blank" href="https://learn.microsoft.com/en-us/training/educator-center/product-guides/flip">Flip video production</a>, <a target="_blank" href="https://support.microsoft.com/en-us/office/getting-started-with-sway-2076c468-63f4-4a89-ae5f-424796714a8a">Sway</a> canvases, <a target="_blank" href="https://support.microsoft.com/en-us/windows/how-to-use-voice-recorder-6fbb53d5-0539-abda-a9a4-0bcb84a778e7">Voice Recorder</a> podcasts).
 
    <br /><br />
 
@@ -940,7 +940,17 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
 <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/">Hands-on labs</a> 
 <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies">on GitHub</a>:
 
-   <ul>Group 1: Manage identity and access (30-35%)
+* <a href="#AZ-500-IAM">Group 1: Manage identity and access (30-35%)</a>
+* <a href="#AZ-500-Plat">Group 2: Security networking (15-20%)</a>
+* <a href="#AZ-500-SecOps">Group 3: Manage security operations (25-30%)</a>
+* <a href="#AZ-500-DataOps">Group 4: Secure data and applications (25-30%)</a>
+
+<hr />
+
+<a name="AZ-500-IAM"></a>
+
+<strong>Group 1: Manage identity and access (30-35%)</strong>
+   <ul>
    <li> Manage Azure AD Identities</li>
    <li> Manage Azure AD Secure Access</li>
    <li> Manage Application Access</li>
@@ -970,7 +980,11 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
    3. Create an Access Review and review PIM auditing features.
    <br /><br />
 
-   Group 2: Implement platform protection (15-20%)
+<a name="AZ-500-Plat"></a>
+
+<strong>Group 2: Security networking (15-20%)</strong>
+<strike>Implement platform protection</strike>
+
    * Implement Azure Firewall [Network] Security (+)
    * Implement Network Load Balancer Security (+)
    * Implement Storage and Application Security (+)  
@@ -991,7 +1005,11 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
    2. Deploy virtual machines and test the network filters
    <br /><br />
 
-   Group 3: Manage security operations (25-30%)
+
+<a name="AZ-500-SecOps"></a>
+
+<strong>Group 3: Manage security operations (25-30%)</strong>
+
    * Configure Centralized Policy Management
    * Configure and Manage Threat Protection
    * Configure and Manage Security Monitoring Solutions
@@ -1015,7 +1033,11 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
     4: Demonstrate the use of Azure Key Vault in encrypting the Azure SQL database
     <br /><br />
 
-    Group 4: Secure data and applications (25-30%)
+<a name="AZ-500-DataOps"></a>
+
+<strong>Group 4: Secure compute, storage, and databases (25-30%)</strong>
+<strike>Secure data and applications</strike>
+
     * Configure Security for Storage
     * Configure Security for Data
     * Configure and Manage Azure Key Vault
