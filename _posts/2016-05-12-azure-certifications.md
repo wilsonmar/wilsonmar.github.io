@@ -937,7 +937,7 @@ https://www.whizlabs.com/learn/course/microsoft-azure-sc-400/
 <a target="_blank" href="https://learn.microsoft.com/en-us/shows/exam-readiness-zone/preparing-for-az-500-manage-identity-and-access-1-of-4" title="by Ken Lawson">VIDEO</a>:
 To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certifications/azure-security-engineer/">Microsoft Certified: Azure Security Engineer Associate</a>, <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-500">read modules</a> and pass Microsoft Azure Security Technologies domains:
 
-<a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/">Hands-on labs</a> 
+<a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/">Hands-on labs download zip</a> 
 <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies">on GitHub</a>:
 
 * <a href="#AZ-500-IAM">Group 1: Manage identity and access (30-35%)</a>
@@ -957,28 +957,28 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
    <li> Manage Access Control</li>
    </ul>
 
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_01_RBAC.md">Role-Based Access Control (RBAC)</a>
+01). <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_01_RBAC.md">Role-Based Access Control (RBAC)</a>
    1. Create the Senior Admins group with the user account Joseph Price as its member (the Azure portal).
    2. Create the Junior Admins group with the user account Isabel Garcia as its member (PowerShell).
    3. Create the Service Desk group with the user Dylan Williams as its member (Azure CLI).
    4. Assign the Virtual Machine Contributor role to the Service Desk group.
    <br /><br />
 
-2. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_02_AzurePolicy.md">Azure Policy </a>
-3. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_03_AzureLocks.md">Resource Manager Locks </a>
-
-4. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_04_MFAConditionalAccessandAADIdentityProtection.md">MFA, Conditional Access (and AAD/Entra Identity Protection)</a>
+* Azure Policy
+* Resource Manager Locks
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_04_MFAConditionalAccessandAADIdentityProtection.md">MFA, Conditional Access (and AAD/Entra Identity Protection)</a>
    1. Deploy an Azure VM by using an Azure Resource Manager template
    2. Implement Azure MFA
    3. Implement Azure AD Conditional Access Policies
    4. Implement Azure AD Identity Protection
    <br /><br />
 
-5. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_05_PIM.md">Azure AD Privileged Identity Management </a>
+* Azure AD Privileged Identity Management
    1. Configure PIM users and roles.
    2. Activate PIM roles with and without approval.
    3. Create an Access Review and review PIM auditing features.
    <br /><br />
+
 
 <a name="AZ-500-Plat"></a>
 
@@ -994,16 +994,46 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
    * Configure Data Encryption (+)
    <br /><br />
 
-6. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_06_ImplementDirectorySynchronization.md">Implement Directory Synchronization </a>
+* Implement Directory Synchronization
    1. Deploy an Azure VM hosting an Active Directory domain controller
    2. Create and configure an Azure Active Directory tenant
    3. Synchronize Active Directory forest with an Azure Active Directory tenant
    <br /><br />
 
-7. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_07_NSGs.md">Network Security Groups and Application Security Groups</a>
+02). <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_02_NSGs.html">Network Security Groups and Application Security Groups</a>
    1. Create the virtual networking infrastructure
    2. Deploy virtual machines and test the network filters
    <br /><br />
+
+03). <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_03_AzureFirewall.html">Azure Firewall</a>
+
+04). <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_03_AzureFirewall.html">Azure Firewall</a>
+
+
+<a name="AZ-500-DataOps"></a>
+
+<strong>Group 4: Secure compute, storage, and databases (25-30%)</strong>
+<strike>Secure data and applications</strike>
+
+    * Configure Security for Storage
+    * Configure Security for Data
+    * Configure and Manage Azure Key Vault
+    <br /><br />
+
+05). <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_05_SecuringAzureSQLDatabase.html">Securing Azure SQL Database</a>
+
+06). <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_06_SecuringAzureStorage.html">Service Endpoints and Securing Storage </a>
+
+07). <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_07_KeyVaultImplementingSecureDatabysettingupAlwaysEncrypted.html">Key Vault (Implementing Secure Data by setting up Always Encrypted)</a>
+
+08). <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_08_Azure%20Monitor.htmld">Azure Monitor </a>
+    1. Collect data from an Azure virtual machine with Azure Monitor
+    <br /><br />
+
+09). <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_09_Microsoft%20Defender%20for%20Cloud.html">Microsoft Defender for Cloud </a>
+
+10). <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_10_Microsoft%20Sentinel.html">Microsoft Sentinel</a> (SIEM/SOAR)
+
 
 
 <a name="AZ-500-SecOps"></a>
@@ -1015,11 +1045,11 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
    * Configure and Manage Security Monitoring Solutions
    <br /><br />
 
-8. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_08_AzureFirewall.md">Azure Firewall </a>
+8. <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_03_AzureFirewall.html">Azure Firewall </a>
    1. Deploy and test an Azure Firewall
    <br /><br />
 
-9. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_09_ConfiguringandSecuringACRandAKS.MD">Configuring and Securing ACR and AKS </a>
+9. <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_04_ConfiguringandSecuringACRandAKS.html">Configuring and Securing ACR and AKS </a>
    1. Deploy the base infrastructure from an ARM template
    2. Configure the Key Vault resource with a key and a secret
    3. Configure an Azure SQL database and a data-driven application
@@ -1032,26 +1062,6 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
     3. Configure an Azure SQL database and a data-driven application
     4: Demonstrate the use of Azure Key Vault in encrypting the Azure SQL database
     <br /><br />
-
-<a name="AZ-500-DataOps"></a>
-
-<strong>Group 4: Secure compute, storage, and databases (25-30%)</strong>
-<strike>Secure data and applications</strike>
-
-    * Configure Security for Storage
-    * Configure Security for Data
-    * Configure and Manage Azure Key Vault
-    <br /><br />
-
-11. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_11_SecuringAzureSQLDatabase.MD">Securing Azure SQL Database </a>
-12. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_12_SecuringAzureStorage.MD">Service Endpoints and Securing Storage </a>
-13. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_13_Azure Monitor.md">Azure Monitor </a>
-    1. Collect data from an Azure virtual machine with Azure Monitor
-    <br /><br />
-
-14. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_14_Microsoft%20Defender%20for%20Cloud.md">Microsoft Defender for Cloud </a>
-15. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_15_Microsoft%20Sentinel.md">Microsoft Sentinel</a> (SIEM/SOAR)
-
 
 Prep for AZ-500:
 
