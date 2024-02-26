@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-12-19"
+date: "2024-02-26"
 file: "azure-data"
 title: "Azure Data (within Microsft's cloud)"
 excerpt: "Obtain storage and database skills to pass DP-900, DP-100, DP-203, DP-300 exams"
@@ -61,6 +61,8 @@ The types of databases are: Key-value -> Column -> Document -> Relational (SQL) 
 <tr valign="top" align="center"><td>Flexibility</td><td>high</td><td>moderate</td><td>high</td><td>high</td><td>high</td><td>high</td></tr>
 </table>
 
+Not listed are Vector databases used to hold embeddings in AI/ML LLMs.
+
 A competitor to Delta metadata layer on top of Parquet is <a target="_blank" href="https://www.theregister.com/2023/01/03/apache_iceberg/">Apache Iceberg</a>, used by Snowflake, Cloudera, and Google's BigLake.
 
 Python's pandas library was built using numpy as a backend for dataframe libraries. So one of the major limitations in pandas is in-memory processing for larger datasets.
@@ -109,6 +111,7 @@ Synapse SQL is a distributed version of T-SQL, with extensions for streaming and
 <br /><br />
 
 ### Semi-structured:
+
 * Delimited text format (CSV)
 * XML format
 * Excel (proprietary and XML)
@@ -116,6 +119,7 @@ Synapse SQL is a distributed version of T-SQL, with extensions for streaming and
 <br /><br />
 
 ### Structured:
+
 * Common Data Model format
 <br /><br />
 
@@ -282,7 +286,7 @@ Azure Data Studio is an open-source, cross-platform client GUI tool for querying
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703090671/AzureDS-menu-208x367_o3ykxj.png"><img alt="AzureDS-menu-208x367.png" width="208" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703090671/AzureDS-menu-208x367_o3ykxj.png"></a>
 
-<a target="_blank" href="https://www.mssqltips.com/sqlservertip/5997/create-sql-server-notebooks-in-azure-data-studio/">BLOG</a> SQL Server Notebook</a>
+<a target="_blank" href="https://www.mssqltips.com/sqlservertip/5997/create-sql-server-notebooks-in-azure-data-studio/">BLOG: SQL Server Notebook</a>
 
 ![az-data-studio](https://user-images.githubusercontent.com/300046/126932768-c2279fb2-826d-4ca7-bacd-10a1be11b7f9.png)
 
@@ -424,6 +428,7 @@ Gen2 has the concept of having a single format to hold various "layers" in a new
 * A Data Lake House (like Databricks) makes use of Spark data warehouse
 
 
+
 <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/dp-601t00?resource_type=course&products=azure&ns-enrollment-type=Collection&ns-enrollment-id=bookmarks">
 1-day course DP-601T00---A: Implementing a Lakehouse with Microsoft Fabric</a>
 
@@ -435,13 +440,14 @@ Gen2 has the concept of having a single format to hold various "layers" in a new
 ## DP-900 Azure Data Fundamentals 
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-900">
-Microsoft's $99 DP-900 exam page</a> provides free tutorials.
+$99 DP-900 Microsoft Azure Data Fundamentals exam page</a> provides free tutorials to 
+answer 40-60 multiple-choice questions (no cases) in 180-minutes (3 hours).
 
-Answer 40-60 multiple-choice questions (no cases) in 180-minutes.
+<a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-900">
+Microsoft's Study Guide</a>
 
-<a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-900">Microsoft's Study Guide</a>
-
-<a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/azure-data-fundamentals-explore-core-data-concepts/?ns-enrollment-type=Collection&ns-enrollment-id=0kjyh8rn5gdrjj">LEARN</a>: Core data concepts (15-20%) 
+<a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/azure-data-fundamentals-explore-core-data-concepts/">
+LEARN</a>: <strong>Core data concepts (15-20%)</strong>
 
 * Describe ways to represent data:
    * Describe features of structured data
@@ -465,7 +471,9 @@ Answer 40-60 multiple-choice questions (no cases) in 180-minutes.
    * Describe responsibilities for data analysts
    <br /><br />
 
-<a target="_blank" href="https://docs.azure.com/en-us/learn/paths/azure-data-fundamentals-explore-relational-data/">LEARN</a>: Explore relational data in Azure (25-30%)
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/azure-data-fundamentals-explore-relational-data/>
+LEARN</a>: <strong>Explore relational data in Azure (25-30%)</strong>
 
 * Describe relational concepts:
    * Identify features of relational data
@@ -479,7 +487,9 @@ Answer 40-60 multiple-choice questions (no cases) in 180-minutes.
    * Identify Azure database services for open-source database systems
    <br /><br />
 
-<a target="_blank" href="https://docs.azure.com/en-us/learn/paths/azure-data-fundamentals-explore-non-relational-data/">LEARN</a>: Explore non-relational data in Azure (25-30%)
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/azure-data-fundamentals-explore-non-relational-data/">
+LEARN</a>: <strong>Explore non-relational data in Azure (25-30%)</strong>
 
 * Describe capabilities of Azure storage:
    * Describe Azure Blob storage
@@ -492,7 +502,9 @@ Describe capabilities and features of <a href="#Cosmos+DB">Azure Cosmos DB</a>
    * Describe Azure Cosmos DB APIs
    <br /><br />
 
-<a target="_blank" href="https://docs.azure.com/en-us/learn/paths/azure-data-fundamentals-explore-data-warehouse-analytics/">LEARN</a>: 
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/azure-data-fundamentals-explore-data-warehouse-analytics/">
+LEARN</a>: 
 <a target="_blank" href="https://www.linkedin.com/learning/azure-data-fundamentals-dp-900-cert-prep-4-analytics-workloads-on-azure/dp-900-exam-analytics-workloads">VIDEO</a>: 
 <strong>Explore analytics in Azure (25-30%)</strong>
 
@@ -512,7 +524,8 @@ Describe capabilities and features of <a href="#Cosmos+DB">Azure Cosmos DB</a>
    * Identify appropriate visualizations for data
    <br /><br />
 
-NOTE: Underlying data models can be viewed and modified for Inteeractive Reports, but not with Dashboards.
+NOTE: Underlying data models can be viewed and modified for Interactive Reports, but not with Dashboards.
+
 
 For dashboards, the PowerBI cloud service is at 
 <a target="_blank" href="https://app.powerbi.com/home">https://app.powerbi.com/home</a>
@@ -565,9 +578,8 @@ The Skillpipe associated with the <a target="_blank" href="https://docs.azure.co
 
 PROTIP: BTW Left out of the ESI list is Azure Databricks, a cloud-scale platform for data analytics and machine learning. Microsoft's live class DP-090 "Implementing a Machine Learning Solution with Microsoft Azure Databricks" shows how to use Azure Databricks to explore, prepare, and model data; and integrate Databricks machine learning processes with Azure Machine Learning.
 
-
 Sample DP-900 Exams:
-
+   * <a target="_blank" href="https://learning.oreilly.com/certifications/9780137984602/">Pearson's sample test on OReilly.com provides filtering of questions by domain</a>
    * <a target="_blank" href="https://www.whizlabs.com/learn/course/microsoft-azure-dp-900/">https://www.whizlabs.com/azure-Azure-certification-dp-900/</a>
    <br /><br />
 
@@ -594,6 +606,8 @@ On LinkedIn Learning:
 * <a target="_blank" href="https://www.linkedin.com/learning/paths/prepare-for-the-azure-data-fundamentals-dp-900-certification-exam">3 courses over 3 hours</a> by <a target="_blank" href="https://www.linkedin.com/in/gregorsuttie/">Gregor Suttie</a>, Adam Wilbert, Keith Atherton
 
 On OReilly.com:
+
+* <a target="_blank" href="https://learning.oreilly.com/course/dp-900-microsoft-azure/9781803231778/">Video Course with Practice Questions</a> by Fnu Eshant Garg, from Packt March 2022 uses https://github.com/PacktPublishing/DP-900-Microsoft-Azure-Data-Fundamentals-Video-Course-Ques
 
 * <a target="_blank" href="https://learning.oreilly.com/live-training/courses/microsoft-azure-data-fundamentals-dp-900-crash-course/0636920051861/">live crash course</a> by Emilio Melo
 
@@ -699,7 +713,7 @@ makes use of lab instructions in English at
 
 <a name="DP-300"></a>
 
-## DP-300 Azure Data Engineer Associate
+## DP-300 Azure Data Administrator Associate
 
 To be an <a target="_blank" href="https://docs.azure.com/en-us/learn/certifications/azure-database-administrator-associate/">Azure Certified: Azure Database Administrator Associate</a>, pass the single <a target="_blank" href="https://docs.azure.com/en-us/learn/certifications/exams/dp-300">DP-300</a>. 
 
@@ -743,7 +757,7 @@ References:
 
    * <a target="_blank" href="https://docs.azure.com/en-us/learn/paths/azure-sql-fundamentals/">LEARN: Azure SQL fundamentals</a> <a target="_blank" href="https://wilsonmar.github.io/azure-data">my Azure data notes</a>. 
 
-   * <a target="_blank" href="https://github.com/azureLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_01_lab.md">Lab 1</a> Using the Azure Portal and SQL Server Management Studio</a> - explore the Azure Portal and use it to create an Azure VM with SQL Server 2019 installed. Connect to the virtual machine through RDP (Remote Desktop Protocol) and restore a database using <a target="_blank" href="https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16">SSMS (SQL Server Management Studio)</a>.
+   * <a target="_blank" href="https://github.com/azureLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_01_lab.md">Lab 1: Using the Azure Portal and SQL Server Management Studio</a> - explore the Azure Portal and use it to create an Azure VM with SQL Server 2019 installed. Connect to the virtual machine through RDP (Remote Desktop Protocol) and restore a database using <a target="_blank" href="https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16">SSMS (SQL Server Management Studio)</a>.
 
    * <a target="_blank" href="https://github.com/azureLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_02_lab.md">DP-300_02_lab - Lab 2 - Deploying PaaS databases</a> - configure and subsequently implement security in the Azure Portal and within the AdventureWorks database. configure basic resources needed to deploy an Azure SQL Database with a Virtual Network Endpoint. Connectivity to the SQL Database will be validated using <a href="#AzureDataStudio">Azure Data Studio</a> from the lab VM. Finally, an Azure Database for PostgreSQL will be created.
 
@@ -767,7 +781,7 @@ References:
 
 <a name="DP-500"></a>
 
-## DP-500: Azure Data Engineer Associate
+## DP-500: Azure Enterprise Data Analyst Associate
 
 Microsoft's $165 <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/azure-enterprise-data-analyst-associate/">DP-500 Azure Enterprise Data Analyst Associate exam page</a> provides free tutorials to get advanced Power BI skills, including managing data repositories and data processing in the cloud and on-premises, along with using Power Query and Data Analysis Expressions (DAX). You should also be proficient in consuming data from Azure Synapse Analytics and should have experience querying relational databases, analyzing data by using Transact-SQL (T-SQL), and visualizing data.
 
@@ -1127,7 +1141,7 @@ Durability - once a transaction has been committed, it remains committed.
    * <a target="_blank" href="https://learning.oreilly.com/videos/getting-started-with/9781484260203/">Oreilly</a>: Getting Started with Microsoft Cosmos DB Using C#: Cloud Database Support for .NET Applications (video, 1h 2m)
    <br /><br />
 
-   Tutorial
+Tutoriala:
 
 <a target="_blank" href="https://www.techtarget.com/searchcloudcomputing/tip/Get-to-know-Microsoft-Azure-Cosmos-DB-use-cases">BLOG</a>:
 Cosmos began in 2010 as "Project Florence" to provide a globally distributed database service for Microsoft's internal use. It was released to the public 
@@ -1639,40 +1653,43 @@ Microsoft SQL Server Data Tools (MDT)
 
 <a name="ADF"></a>
 
-## ADF
+## ADF (Azure Data Factory)
 
-   * https://learn.microsoft.com/en-us/azure/data-factory/
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/data-factory/">https://learn.microsoft.com/en-us/azure/data-factory</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=Ej-rpXs3yz0&list=PLOlK8ytA0MghGmAAT8W2u7VYmICdzeU5t&index=7">ADF in one 1h 44m video</a>
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/data-literacy-essentials-azure-data-factory">Data Literacy: Essentials of Azure Data Factory</a> by Emilio Melo (cloudadvantage.tech) Apr 7, 2021 provided this diagram:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=OQ-wtpTDFKk&t=1m">Azure Data Factory - An end to end project</a> by MultiCloud4U by Indira Bandari
+   * <a target="_blank" href=https://learning.oreilly.com/videos/dp-900-microsoft-azure/9781803231778/9781803231778-video6_17/">OReilly course by Eshant Garg</a>
    <br /><br />
 
-Azure Data Factory (ADF) v2 is a cloud-based data integration (PaaS) service 
-used to orchestrate and automate data movement and data transformation.
+ADFv1 was released 2015 without a GUI to process JSON created within Visual Studio.
+
+ADFv2 was released September, 2017 as a cloud-based "code-free" GUI service 
+as a <strong>replacement to run legacy SSIS</strong> (SQL Server Integration Services) packages previously on-prem.
+Thus, ADFv2 scales on demand.
+
+REMEMBER: Differences in terminology between SSIS and ADFv2:
+
+   * Package -> Pipeline
+   * Connection Manager -> Linked Service
+   * Destination -> sink
+   * Activity -> Control flow task (such as Copy)
+   <br /><br />
+
+ADF is used to orchestrate and automate data movement and data transformation.
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703651501/azure-adf-231226_vyovri.png"><img alt="azure-adf-231226.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703651501/azure-adf-231226_vyovri.png"></a>
 
-REMEMBER: ADF itself does not store persisted data.
+REMEMBER: ADF itself does not store persisted data. Pipelines are run on a Linked Service.
 
-Elements of ADF include: pipelines, datasets, linked services, triggers, and integration runtimes.
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703379028/adf-2870x956_durbrr.png"><img alt="adf-2870x956.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703379028/adf-2870x956_durbrr.png"></a>
-
-1. ADF enables <strong>Pipelines</strong> to be constructed to execute a logical group of <strong>activities</strong>. Each activity performs a specific task, such as copying data from a data source to a destination, executing a Hive query, or running a custom C# or Python activity.
-1. Each <strong>data movement</strong> consumes or produces a dataset. The copy activity can connect (using encrypted TLS on 87 different <a href="#Connectors">connectors</a>) such as ODBC and HTTPS as well as pre-defined systems (Salesforce, SAP, QuickBooks, Concur, etc.).
-1. Each <strong>Dataset</strong> defines the actual representation of data (structured or unstructured), at a variety of data sources, including Azure Blob storage, Azure Data Lake Storage Gen1, Azure Data Lake Storage Gen2, Azure SQL Database, Azure SQL Data Warehouse, Azure Cosmos DB, Azure Table storage, and Azure Database for MySQL.
-1. Each <strong>Data Transformation> within a Pipeline is a mapping data flow that can be used to transform data at scale. ADF provides a visual interface to create data transformation logic without writing code. 
-1. To run custom code, ADF can call 13 different external services (Azure Machine Learning, Azure Functions, Azure HDInsight, Azure Databricks, Azure SQL Database, Azure SQL Data Warehouse, Azure Cosmos DB, Azure Data Lake Storage Gen1, Azure Data Lake Storage Gen2, Azure Blob storage, Azure Table storage, Azure Database for MySQL, and Azure Database for PostgreSQL).
-1. <strong>Data Control</strong> within each Pipeline activity (such as For Each, Set, Until, Wait, or other logic) can be controlled by <strong>Triggers</strong> that are event-based, scheduled on a recurring day/time, or within a tumbling window (such as every 2 hours).
-1. <strong>Linked service</strong> specifes where to find data (in Data Lake Store, Azure Databricks, etc.).
-
-ADF can run packages from legacy SSIS (SQL Server Integration Services) -- ADF's predecessor that runs on-prem.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1708958743/databricks-arch-2928x1200_gogggu.png"><img alt="databricks-arch-2928x1200.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1708958743/databricks-arch-2928x1200_gogggu.png"></a>
 
 Use ADF to integrate "data silos" by people of various skill levels -- construct ETL and ELT processes either code-free within an intuitive visual environment or write your own code
    
    * Azure security measures to connect to on-premises, cloud-based, and software-as-a-service apps with peace of mind
-   * scales on demand
-   * SSIS integration runtime to rehost on-premises SSIS packages in the cloud using familiar SSIS tools
    <br /><br />
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1708957180/adfv2-pipeline-3644x898_agdakf.png"><img alt="adfv2-pipeline-3644x898.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1708957180/adfv2-pipeline-3644x898_agdakf.png"></a>
 
 
 ### ADF Portal GUI
@@ -1681,15 +1698,18 @@ Use ADF to integrate "data silos" by people of various skill levels -- construct
 1. REMEMBER: In "Search services and Marketplace" type enough of "<strong>Data Factory</strong>" to select it from the drop-down list that appears.
 1. Click "Data Factory" Microsoft Azure Service to reveal:
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703393978/adf-create-446x730_aodw7l.png"><img alt="adf-create-446x730.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703393978/adf-create-446x730_aodw7l.png"></a>
+   https://portal.azure.com/#create/Microsoft.DataFactory
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703393978/adf-create-446x730_aodw7l.png"><img alt="adf-create-446x730.png" width="445" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703393978/adf-create-446x730_aodw7l.png"></a>
 
 1. Click its "Create" to click the "Data Factory" that appears. The Basics.
 1. Subscription:
 1. Resource group: "adf-231222-demo"
 1. Instance details: Name (of database) is up to 128 characters, unique on same server.
 1. Region: "East US" or whatever you are using for your other resources.
-1. Version: "V2" is the only choice. ADF v1 was controlled mainly by JSON, but<br />
-ADF v2 can work with data in other locations, including on-premises and other clouds.
+1. Version: "V2" is the only choice. 
+
+   PROTIP: ADFv2 can work with data in other locations, including on-premises and other clouds.
 
 1. Click "Git configuration" tab to specify Git options:
 1. Check "Configure Git later".
@@ -1701,21 +1721,56 @@ ADF v2 can work with data in other locations, including on-premises and other cl
 1. Check "Enable Managed Virtual Network on the default AutoResolveIntegrationRuntime"
 1. Select radio button "Private endpoint".
 
-   ADF dispatches activites and executes Data Flows, Data Movements, and SSIS packages using its <strong>Integration Runtimes</strong> compute infrastructure. There are three types of <a target="_blank" href="https://docs.microsoft.com/en-us/azure/data-factory/concepts-integration-runtime/">Integration Runtimes</a> are automatically created when a new ADF Resource is created:
+   ADF dispatches activities and executes Data Flows, Data Movements, and SSIS packages using its <strong>Integration Runtimes</strong> compute infrastructure. Three types of <a target="_blank" href="https://docs.microsoft.com/en-us/azure/data-factory/concepts-integration-runtime/">Integration Runtimes</a> are automatically created when a new ADF Resource is created:
 
    * An Azure <tt>AutoResolveIntegrationRuntime</tt> is created for Mapping Dataflows, the native way to transform data on ADF. It does data movement between public cloud endpoints (such as AWS, GCP, Azure, or SaaS Salesforce, SAP, etc.).
-   * A <tt>Self-hosted IR</a> is installed on resources (such as SQL Server) on a machine in self-hosted private on-premises networks.
+
+   * A <tt>Self-hosted IR</tt> is installed on resources (such as SQL Server) on a machine in self-hosted private on-premises networks.
+
    * A <tt>Azure-SSIS IR</tt> is installed on an Azure VM (Azure-SSIS) machine to run SS packages, such as for migration.
    <br /><br />
 
-
-1. Click "Advanced" tab. Unless in production, do not "Enable encryption using a Customer Managed Key".
+1. Click "Advanced" tab. 
+1. If in production, "Enable encryption using a Customer Managed Key".
 1. Click "Tags" tab to specify a "CreatedBy" key with your email.
-1. Click "Review + Create". Click "Create".
-<br /><br />
+1. Click "Review + Create". Click "Create", which takes a few seconds.
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=OQ-wtpTDFKk&t=1m">Azure Data Factory - An end to end project</a> by MultiCloud4U by Indira Bandari
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1708955241/adfv2-menu-22-582x1644_nv48ai.png"><img alt="adfv2-menu-22-582x1644.png" width="582" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1708955241/adfv2-menu-22-582x1644_nv48ai.png"></a>
 
+
+1. Click on "Author and Monitor" for a separate browser tab:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1708955820/adfv2-actions-2532x590_edvvct.png"><img alt="adfv2-actions-2532x590.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1708955820/adfv2-actions-2532x590_edvvct.png"></a>
+
+1. Click on the ">>" at the upper-left to obtain the menu.
+1. Click on "Data Factory" at the upper-left.
+1. Click "Author" for the main page for authoring.
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1708956528/adfv2-author-22-1608x406_sfkqzf.png"><img alt="adfv2-author-22-1608x406.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1708956528/adfv2-author-22-1608x406_sfkqzf.png"></a>
+
+   Go to the "Manage" section to specify GitHub location.
+
+Elements of ADF include: pipelines, datasets, linked services, triggers, and integration runtimes.
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1703379028/adf-2870x956_durbrr.png"><img alt="adf-2870x956.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1703379028/adf-2870x956_durbrr.png"></a>
+
+1. ADF enables <strong>Pipelines</strong> to be constructed to execute a logical group of <strong>activities</strong>. Each activity performs a specific task, such as copying data from a data source to a destination, executing a Hive query, or running a custom C# or Python activity.
+
+1. Each <strong>data movement</strong> consumes or produces a dataset. The copy activity can connect (using encrypted TLS on 87 different <a href="#Connectors">connectors</a>) such as ODBC and HTTPS as well as pre-defined systems (Salesforce, SAP, QuickBooks, Concur, etc.).
+
+1. Each <strong>Dataset</strong> defines the actual representation of data (structured or unstructured), at a variety of data sources, including Azure Blob storage, Azure Data Lake Storage Gen1, Azure Data Lake Storage Gen2, Azure SQL Database, Azure SQL Data Warehouse, Azure Cosmos DB, Azure Table storage, and Azure Database for MySQL.
+
+1. Each <strong>Data Transformation> within a Pipeline is a mapping data flow that can be used to transform data at scale. ADF provides a visual interface to create data transformation logic without writing code. 
+
+1. To run custom code, ADF can call 13 different external services (Azure Machine Learning, Azure Functions, Azure HDInsight, Azure Databricks, Azure SQL Database, Azure SQL Data Warehouse, Azure Cosmos DB, Azure Data Lake Storage Gen1, Azure Data Lake Storage Gen2, Azure Blob storage, Azure Table storage, Azure Database for MySQL, and Azure Database for PostgreSQL).
+
+1. <strong>Data Control</strong> within each Pipeline activity (such as For Each, Set, Until, Wait, or other logic) can be controlled by <strong>Triggers</strong> that are event-based, scheduled on a recurring day/time, or within a tumbling window (such as every 2 hours).
+
+1. <strong>Linked service</strong> specifes where to find data (in Data Lake Store, Azure Databricks, etc.).
+
+
+
+<hr />
 
 <a name="Azure+Synapse+Analytics"></a>
 
@@ -1874,7 +1929,7 @@ https://www.twitch.tv/425show
 <a target="_blank" href="https://www.youtube.com/watch?v=N_Ta23hIBaI">
 19:48 Q&A in detail</a> by Ravikiran Srinivasulu, Microsoft Azure Data PM
 
-<a target="_blank" href="https://www.youtube.com/watch?v=oj5inTNyRW8
+<a target="_blank" href="https://www.youtube.com/watch?v=oj5inTNyRW8">
 1:32:49 Q&A</a> by Creative Solutions
 
 <a target="_blank" href="https://www.youtube.com/watch?v=BlSVX1WqTXk&list=PLlVtbbG169nGccbp8VSpAozu3w9xSQJoY">
@@ -1900,8 +1955,8 @@ https://powerapps.microsoft.com/en-us/blog/create-mobile-apps-with-power-apps-pr
 Create mobile apps with Power Apps (preview)
 
 
-## More #
+## More about Azure #
 
-This is one of a series about cloud computing:
+This is one of a series about Azure cloud:
 
-{% include cloud_links.html %}
+{% include azure_links.html %}
