@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-02-21"
+date: "2024-02-26"
 file: "azure-certifications"
 title: "Azure (Microsoft cloud) certifications"
 excerpt: "Microsoft provides free hands-on (gamified) tutorials and free time"
@@ -15,7 +15,6 @@ comments: true
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
-
 
 PROTIP: When you pass each exam, Tweet <a target="_blank" href="https://twitter.com/search?q=%23azurecertified&src=typed_query">#azurecertified</a> and/or <a target="_blank" href="https://twitter.com/search?q=%23MicrosoftCertified&src=typed_query">#MicrosoftCertified</a>.
 
@@ -48,6 +47,7 @@ NOTE: Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/cr
 
 <tr valign="top"><td> <a href="#Networking">Networking</a></td><td>
         * <a href="#AZ-700">AZ-700 Azure Network Engineer Associate</a>
+        * 98-366 Networking Fundamentals was retired
    </td></tr>
 
 <tr valign="top"><td> AI Engineer</td><td>
@@ -58,6 +58,7 @@ NOTE: Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/cr
    </td></tr>
 
 <tr valign="top"><td> Data Engineer<br /> Data Scientist</td><td>
+   * <strike>98-364 Database Fundamentals</strike> MTA was retired June 30, 2022<br />
    * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-900">DP-900 Azure Data Fundamentals</a><br />
    * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-100">DP-100 Azure Data Scientist Associate</a><br />
    * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-203">DP-203 Azure Data Engineer Associate</a> (replaces DP-200 & DP-201)<br />
@@ -68,6 +69,7 @@ NOTE: Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/cr
    </td></tr>
 
 <tr valign="top"><td> <a href="#Power_Platform">Power Platform</a> </td><td>
+   * <a target="_blank" href="https://wilsonmar.github.io/powerbi#MCF">Microsoft Certified Fundamentals (MCF) Power Platform Fundamentals ($20)</a>
    * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-fundamentals/">PL-900 Power Platform Fundamentals</a><br />
    * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-app-maker/">PL-100 Power Platform App-maker Associate</a><br />
    * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-functional-consultant-associate/">PL-200 Power Platform Functional Consultant</a><br />
@@ -92,6 +94,7 @@ NOTE: Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/cr
    * <a href="#SC-400">SC-400 Information Protection Administrator</a><br />
    * <a href="#AZ-500">AZ-500 Azure Security Engineer Associate</a> MCT<br />
    * <a href="#SC-100">SC-100 Microsoft Cybersecurity Architect</a> MCT
+   * <a target="_blank" href="https://docs.microsoft.com/learn/certifications/mta-security-fundamentals?WT.mc_id=techcom_learn-blog-wwl"><strike>98-367 MTA: Security Fundamentals</strike></a> was retired
    </td></tr>
 </table>
 
@@ -121,6 +124,29 @@ Microsoft continues to <a target="_blank" href="https://docs.microsoft.com/en-us
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/70-537">70-538 - Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack</a> replaced by AZ-600 Stack Hub Operator Associate.
    <br /><br />
 
+<a name="MCF"></a>
+
+<a target="_blank" href="https://certiport.pearsonvue.com/Certifications/ITSpecialist/Certification/Certify">
+Microsoft Certified Fundamentals</a> are $20 each:
+   * Artificial Intelligence
+   * Cloud Computing
+   * Computational Thinking
+   * Cybersecurity
+   * Data Analytics
+   * Databases
+   * Device Configuration and Management
+   * HTML and CSS
+   * HTML5 Application development
+   * Java
+   * JavaScript
+   * Networking
+   * Network Security
+   * Python
+   * Software development
+   <br /><br />
+
+
+<hr />
 
 
 <hr />
@@ -353,13 +379,28 @@ Azure Subscription Service Limits</a>
 ### MCE (Microsoft Certified Educator)
 
 The Microsoft Certified Coach launched in 2023.
-$595 sessions were held by <a target="_blank" href="https://www.i2e-llc.com/sp/microsoft-certified-coach/">i2e</a> in several major cities, plus Apr 15-15 in Edingburg, UK and June 20-21 2024 in Denver.
+$595 sessions were held by <a target="_blank" href="https://www.i2e-llc.com/sp/microsoft-certified-coach/">i2e</a> in several major cities, plus Apr 13-15 in Edinburgh, UK and June 20-21 2024 in Denver.
 
 <a target="_blank" href="https://www.credly.com/badges/1af742ba-c3e5-4291-bfed-7e829a9ec733"><img align="right" width="100" src="https://images.credly.com/size/340x340/images/54f7ea40-48bc-4217-b398-b81bae6de175/MCE.png"></a>
 For $90 (<a target="_blank" href="https://store.certiport.com/certiport-products/c/13000821?">$70.20 with CODE-32547049</a>), answer __% of 35-42 questions in 60 minutes <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/exams/62-193/">$127 Exam 62-193</a>.
-It's about the adoption of <a target="_blank" href="https://edge.ut.ac.id/mod/page/view.php?id=119&forceview=1">SRI-developed</a> ITL (Innovative Teaching and Learning) <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/21st-century-learning-design/">MS-LEARN</a>: "21st Century Learning Design (21CLD)" rubrics, decision trees, anchor lessons to build complex skill in these dimensions: REMEMBER:
 
-   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AMzz7xahtKzuH9M&page=View&wd=target%28Knowledge%20Construction%202.one%7C03760039-ac2e-4698-be4c-f73db3d5c8e1%2FRubric%20%E2%80%93%20Knowledge%20Construction%7C16a28f9e-24a1-4a4e-acba-dff9bd4a9ac5%2F%29&wdorigin=NavigationUrl">Knowledge construction</a> - learners go beyond memorizing information to 2: interpret, analyze, synthesize, evaluate 3: as a main requirement 4: in a new context 5: that's interdisciplinary or multi-subject.
+It's about putting a 21st century context that estend actions defined by Bloom's Taxonomy:
+
+   * Interpret: Students interpret charts and graphs, translate verbal material into mathematical formulas2
+
+   * Analyze: This involves breaking down information to look at relationships, such as analyzing, appraising, categorizing, comparing, contrasting, and experimenting4
+
+   * Synthesize: Students combine parts to form a new whole, like arranging, assembling, composing, constructing, creating, designing, and formulating4
+
+   * Evaluate: This step involves making judgments based on evidence found. Students may appraise, argue, assess, choose, compare, conclude, contrast, describe, evaluate, explain, interpret, relate, summarize, and support their judgments4
+
+These actions demonstrate the progressive cognitive skills involved in interpreting information, breaking it down for analysis, combining it to form new ideas or solutions through synthesis, and finally making informed judgments based on evidence during evaluation.
+
+It's about the adoption of <a target="_blank" href="https://edge.ut.ac.id/mod/page/view.php?id=119&forceview=1">SRI-developed</a> ITL (Innovative Teaching and Learning) <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/21st-century-learning-design/">MS-LEARN</a>: "21st Century Learning Design (21CLD)" rubrics, decision trees, anchor lessons to build complex skill in six dimensions.
+
+REMEMBER:
+
+   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AMzz7xahtKzuH9M&page=View&wd=target%28Knowledge%20Construction%202.one%7C03760039-ac2e-4698-be4c-f73db3d5c8e1%2FRubric%20%E2%80%93%20Knowledge%20Construction%7C16a28f9e-24a1-4a4e-acba-dff9bd4a9ac5%2F%29&wdorigin=NavigationUrl">Knowledge construction</a> - learners go beyond memorizing information to 2: <strong>interpret, analyze, synthesize, evaluate</strong> 3: as a main requirement 4: in a new context 5: that's interdisciplinary or multi-subject.
    
    *  <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Collaboration.one%7C219eb854-1f3a-4853-ad8a-7083ac484184%2FIntroduction%7C413558af-164b-4fb6-a473-5f5976f7efaf%2F%29&wdorigin=NavigationUrl">Collaboration</a> - learners 2: work together, 3: share responsibility, 4: make substantive decisions together, 5: work is interdependent. 
 
@@ -367,16 +408,40 @@ It's about the adoption of <a target="_blank" href="https://edge.ut.ac.id/mod/pa
 
    * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Skilled%20Communication.one%7Caa33bc86-f72a-4ceb-8bce-4fffb97e48b5%2FIntroduction%7C47dd5766-3e30-4034-b0ab-906b40c645b5%2F%29&wdorigin=NavigationUrl">Skilled communication</a> - produce 2: extended or multi-modal communication 3: using evidence to support their ideas 4: customized for a particular audience.
 
-   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Self-Regulation.one%7C4283ef67-f71d-4fa0-a1b5-37946b3c9d5f%2FIntroduction%7Cbb2967a3-6400-4a3f-9ffe-c7c0ab7744d6%2F%29&wdorigin=NavigationUrl">Self-regulation</a> - work on an activity for 2: an extended period of time to 3: <strong>plan</strong> their work by breaking up their responsibilities. They must also have opportunities to 5: <strong>revise</strong> their work based upon their own reflection and feedback from others (peers, educators, or experts).
+   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Self-Regulation.one%7C4283ef67-f71d-4fa0-a1b5-37946b3c9d5f%2FIntroduction%7Cbb2967a3-6400-4a3f-9ffe-c7c0ab7744d6%2F%29&wdorigin=NavigationUrl">Self-regulation</a> - (no 0) work on an activity for 2: a long-term activity with learning goals and success criteria 3: <strong>plan</strong> their work and 4: <strong>revise</strong> their work based upon their own reflection and feedback from others (peers, educators, or experts). (no 5)
 
-   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Use%20of%20ICT%20for%20Learning%202.one%7Cd9f9a224-bf26-4b2b-8e96-716c7103ec06%2FIntroduction%7C8e23f1f4-5615-4a0b-9b66-e00d9f91cc31%2F%29&wdorigin=NavigationUrl">Digital ICT (technology) integration</a> (Microsft Edge Collections, OneNote Class Notebooks, SmartArt in Word & PowerPoint, Teams Channels, <a target="_blank" href="https://learn.microsoft.com/en-us/training/educator-center/product-guides/flip">Flip video production</a>, <a target="_blank" href="https://support.microsoft.com/en-us/office/getting-started-with-sway-2076c468-63f4-4a89-ae5f-424796714a8a">Sway</a> canvases, <a target="_blank" href="https://support.microsoft.com/en-us/windows/how-to-use-voice-recorder-6fbb53d5-0539-abda-a9a4-0bcb84a778e7">Voice Recorder</a> podcasts).
+   * <a target="_blank" href="https://aka.ms/ICTrubric">Digital ICT (technology) integration</a>: (no 0) 1: no ICT to reproduce information 2: optionally use ICT to learn basic skills 3: <strong>optionally</strong> use ICT to support <strong>knowledge construction</strong> 4: <strong>required</strong> to support knowledge construction, then 5: <strong>create</strong> an ICT product for authentic users.
 
+"Anchor lessons"
+
+Technologies: 
+   * Microsoft Edge Collections to organize research & Translator add-on
+   * Bing
+   * Microsoft OneNote
+   * Microsoft SharePoint
+   * Microsoft ToDo
+   * Microsoft Forms to conduct surveys
+   * Microsft Edge Collections, 
+   * OneNote Class Notebooks, 
+   * SmartArt in Word & PowerPoint, 
+   * Microsoft Teams Channels & Files 
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/educator-center/product-guides/flip">Flip video production</a>, 
+   * <a target="_blank" href="https://support.microsoft.com/en-us/office/getting-started-with-sway-2076c468-63f4-4a89-ae5f-424796714a8a">Microsoft Sway</a> canvases, 
+   * <a target="_blank" href="https://support.microsoft.com/en-us/windows/how-to-use-voice-recorder-6fbb53d5-0539-abda-a9a4-0bcb84a778e7">Microsoft Voice Recorder</a> podcasts).
+   * Microsoft Excel
+   * Microsoft PowerPoint
+   * Microsoft Planner
+
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/educator-center/product-guides/minecraft">Minecraft</a> is referenced (it's Java programming).
+   * <a target="_blank" href="https://aka.ms/makecodearcade">Makecode Arcde</a>
+   * Microbit hardware are used to demonstrate knowledge construction. 
    <br /><br />
 
-"Anchor lessons" for Interpretation, 
-Analysis, 
-Synthesis, and 
-Evaluation.
+https://www.pwctraining.org/product/microsoft-testing-certiport-exams-from-home/
+
+All questions are in their own section: you cannot go back to a previous section.
+
+<a target="_blank" href="https://thejuniorschool-my.sharepoint.com/personal/nick_theseniorschool_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fnick%5Ftheseniorschool%5Fcom%2FDocuments%2FMIE%20Expert%2FDigital%20Learning%20Specialist%2FMCE%20exam%20prep%2FLearning%20material%2F2021%20Resources&ga=1">Learning materials</a>
 
 It is the start to <a target="_blank" href="https://learn.microsoft.com/en-us/training/educator-center/programs/microsoft-educator/">Microsoft Advanced Educator, Microsoft Educator Trainer, and Microsoft Innovative Educator Expert</a>.
 <a target="_blank" href="https://certiport.filecamp.com/s/MCE_Datasheet.pdf/fi">PDF</a>: 
