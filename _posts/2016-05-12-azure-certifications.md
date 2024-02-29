@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-02-26"
+date: "2024-02-29"
 file: "azure-certifications"
 title: "Azure (Microsoft cloud) certifications"
 excerpt: "Microsoft provides free hands-on (gamified) tutorials and free time"
@@ -18,6 +18,8 @@ comments: true
 
 PROTIP: When you pass each exam, Tweet <a target="_blank" href="https://twitter.com/search?q=%23azurecertified&src=typed_query">#azurecertified</a> and/or <a target="_blank" href="https://twitter.com/search?q=%23MicrosoftCertified&src=typed_query">#MicrosoftCertified</a>.
 
+{% include whatever.html %}
+
 NOTE: Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/browse/?credential_types=certification">Microsoft's certifications</a> by role and product:
 
 <table border="1" cellpadding="4" cellspacing="0">
@@ -26,11 +28,13 @@ NOTE: Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/cr
 <tr valign="top"><td> Educator</td><td>
       * <a href="#mce-microsoft-certified-educator">MSE (Microsoft Certified Educator)</a><br />
       * <a href="#mct-microsoft-certified-trainer">MCT (Microsoft Certified Trainer)</a>
+      * <a href="#Contributor">Contributor badges</a>
    </td></tr>
 
 <tr valign="top"><td> Administrator</td><td>
       * <a href="#AZ-900">AZ-900 Fundamentals</a><br />
-      * <a href="#AZ-104">AZ-104 Azure Administrator Associate</a>
+      * <a href="#AZ-104">AZ-104 Azure Administrator Associate</a><br />
+      * <a href="#AZ-801">AZ-801: Configuring Windows Server Hybrid Advanced Services
    </td></tr>
 
 <tr valign="top"><td> Functional Consultant</td><td>
@@ -93,7 +97,7 @@ NOTE: Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/cr
    * <a href="#SC-300">SC-300 Identity and Access Administrator Associate</a> MCT<br />
    * <a href="#SC-400">SC-400 Information Protection Administrator</a><br />
    * <a href="#AZ-500">AZ-500 Azure Security Engineer Associate</a> MCT<br />
-   * <a href="#SC-100">SC-100 Microsoft Cybersecurity Architect</a> MCT
+   * <a href="#SC-100">SC-100 Microsoft Cybersecurity Architect</a> MCT<br />
    * <a target="_blank" href="https://docs.microsoft.com/learn/certifications/mta-security-fundamentals?WT.mc_id=techcom_learn-blog-wwl"><strike>98-367 MTA: Security Fundamentals</strike></a> was retired
    </td></tr>
 </table>
@@ -384,7 +388,7 @@ $595 sessions were held by <a target="_blank" href="https://www.i2e-llc.com/sp/m
 <a target="_blank" href="https://www.credly.com/badges/1af742ba-c3e5-4291-bfed-7e829a9ec733"><img align="right" width="100" src="https://images.credly.com/size/340x340/images/54f7ea40-48bc-4217-b398-b81bae6de175/MCE.png"></a>
 For $90 (<a target="_blank" href="https://store.certiport.com/certiport-products/c/13000821?">$70.20 with CODE-32547049</a>), answer __% of 35-42 questions in 60 minutes <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/exams/62-193/">$127 Exam 62-193</a>.
 
-It's about putting a 21st century context that estend actions defined by Bloom's Taxonomy:
+It's about putting a 21st century context that extend actions defined by Bloom's Taxonomy:
 
    * Interpret: Students interpret charts and graphs, translate verbal material into mathematical formulas2
 
@@ -394,25 +398,21 @@ It's about putting a 21st century context that estend actions defined by Bloom's
 
    * Evaluate: This step involves making judgments based on evidence found. Students may appraise, argue, assess, choose, compare, conclude, contrast, describe, evaluate, explain, interpret, relate, summarize, and support their judgments4
 
-These actions demonstrate the progressive cognitive skills involved in interpreting information, breaking it down for analysis, combining it to form new ideas or solutions through synthesis, and finally making informed judgments based on evidence during evaluation.
+"21st Century Learning Design (21CLD)" rubrics, decision trees, anchor lessons to build complex was created bu <a target="_blank" href="https://edge.ut.ac.id/mod/page/view.php?id=119&forceview=1">SRI-developed</a> ITL (Innovative Teaching and Learning) <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/21st-century-learning-design/">MS-LEARN</a>: 
 
-It's about the adoption of <a target="_blank" href="https://edge.ut.ac.id/mod/page/view.php?id=119&forceview=1">SRI-developed</a> ITL (Innovative Teaching and Learning) <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/21st-century-learning-design/">MS-LEARN</a>: "21st Century Learning Design (21CLD)" rubrics, decision trees, anchor lessons to build complex skill in six dimensions.
-
-REMEMBER:
+21CLD authors created rubrics, decision trees, and anchor lesson examples in the six dimensions of the framework: REMEMBER:
 
    * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AMzz7xahtKzuH9M&page=View&wd=target%28Knowledge%20Construction%202.one%7C03760039-ac2e-4698-be4c-f73db3d5c8e1%2FRubric%20%E2%80%93%20Knowledge%20Construction%7C16a28f9e-24a1-4a4e-acba-dff9bd4a9ac5%2F%29&wdorigin=NavigationUrl">Knowledge construction</a> - learners go beyond memorizing information to 2: <strong>interpret, analyze, synthesize, evaluate</strong> 3: as a main requirement 4: in a new context 5: that's interdisciplinary or multi-subject.
    
    *  <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Collaboration.one%7C219eb854-1f3a-4853-ad8a-7083ac484184%2FIntroduction%7C413558af-164b-4fb6-a473-5f5976f7efaf%2F%29&wdorigin=NavigationUrl">Collaboration</a> - learners 2: work together, 3: share responsibility, 4: make substantive decisions together, 5: work is interdependent. 
 
-   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Real-World%20Problem-Solving.one%7C06e643da-5fdd-4587-8b1a-a8e86e7f3bf0%2FIntroduction%7Cbaf7c2c0-d9ec-4f8a-b82a-b0e02a467efc%2F%29&wdorigin=NavigationUrl">Real-world problem-solving and innovation</a> - 2: problem-solving activities that are 3: real-world (authentic, non-fictional) situations that 4: innovate and communicated to someone outside of an academic context who can implement them.
+   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Real-World%20Problem-Solving.one%7C06e643da-5fdd-4587-8b1a-a8e86e7f3bf0%2FIntroduction%7Cbaf7c2c0-d9ec-4f8a-b82a-b0e02a467efc%2F%29&wdorigin=NavigationUrl">Real-world problem-solving and innovation</a> - 2: problem-solving activities that are 3: real-world (authentic, non-fictional) situations that 4: innovate and communicated to someone <strong>outside of an academic</strong> context who can implement them. (No 5)
 
-   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Skilled%20Communication.one%7Caa33bc86-f72a-4ceb-8bce-4fffb97e48b5%2FIntroduction%7C47dd5766-3e30-4034-b0ab-906b40c645b5%2F%29&wdorigin=NavigationUrl">Skilled communication</a> - produce 2: extended or multi-modal communication 3: using evidence to support their ideas 4: customized for a particular audience.
+   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Skilled%20Communication.one%7Caa33bc86-f72a-4ceb-8bce-4fffb97e48b5%2FIntroduction%7C47dd5766-3e30-4034-b0ab-906b40c645b5%2F%29&wdorigin=NavigationUrl">Skilled communication</a> - produce 2: extended or multi-modal communication 3: using evidence to support their ideas 4: customized for a particular audience.  (No 5)
 
-   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Self-Regulation.one%7C4283ef67-f71d-4fa0-a1b5-37946b3c9d5f%2FIntroduction%7Cbb2967a3-6400-4a3f-9ffe-c7c0ab7744d6%2F%29&wdorigin=NavigationUrl">Self-regulation</a> - (no 0) work on an activity for 2: a long-term activity with learning goals and success criteria 3: <strong>plan</strong> their work and 4: <strong>revise</strong> their work based upon their own reflection and feedback from others (peers, educators, or experts). (no 5)
+   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Self-Regulation.one%7C4283ef67-f71d-4fa0-a1b5-37946b3c9d5f%2FIntroduction%7Cbb2967a3-6400-4a3f-9ffe-c7c0ab7744d6%2F%29&wdorigin=NavigationUrl">Self-regulation</a> - work on an activity for 2: a long-term activity with learning goals and success criteria 3: <strong>plan</strong> their work and 4: <strong>revise</strong> their work based upon their own reflection and feedback from others (peers, educators, or experts). (No 5)
 
-   * <a target="_blank" href="https://aka.ms/ICTrubric">Digital ICT (technology) integration</a>: (no 0) 1: no ICT to reproduce information 2: optionally use ICT to learn basic skills 3: <strong>optionally</strong> use ICT to support <strong>knowledge construction</strong> 4: <strong>required</strong> to support knowledge construction, then 5: <strong>create</strong> an ICT product for authentic users.
-
-"Anchor lessons"
+   * <a target="_blank" href="https://aka.ms/ICTrubric">Digital ICT (technology) integration</a>:  2: optionally use ICT to learn basic skills 3: <strong>optionally</strong> use ICT to support <strong>knowledge construction</strong> 4: ICT <strong>required</strong> to support knowledge construction, then 5: <strong>create</strong> an ICT product for authentic users.
 
 Technologies: 
    * Microsoft Edge Collections to organize research & Translator add-on
@@ -479,6 +479,24 @@ Microsoft Certified Trainers</a> get 75% off exam fees. But there is a $800 annu
 
 https://mcp.microsoft.com/MCT/Enrollment?wa=wsignin1.0#/profile
 
+
+<hr />
+
+<a name="Contributor"></a>
+
+## Contributor badges
+
+<a target="_blank" href="https://www.youtube.com/watch?v=AhAz3BcXy0A">VIDEO</a>:
+Microsoft offers Contributor, Evangelist, Leader, and Expert badges on Credly.com in their
+Contributor Recognition Program, which incentivizes subject matter experts in various technical roles across Microsoft to create high quality deliverables to docs.microsoft.com. The goal is to excite non-technical writers to contribute content even if it is outside of the scope of their role.
+
+https://www.credly.com/organizations/microsoft-contributor-recognition/badges
+
+   * Architecture Center
+   * Database Docs
+   * Cloud Adoption Framework for Azure
+   * Well-Architected Framework (2022)
+   * Well-Architected Framework (Refresh)
 
 <hr />
 
@@ -704,12 +722,12 @@ On ACloudGuru.com/LinuxAcademy.com:
    * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/763">Intro to Azure Files</a>
    <br /><br />
 
-### Flash cards:
+<strong>Flash cards:</strong>
 
    * <a target="_blank" href="https://quizlet.com/subject/az-104/">Quizlet flash cards</a>
    <br /><br />
 
-### Sample tests:
+<strong>Sample tests:</strong>
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=ef87Qun5wBU">VIDEO 4-hr questions</a>
    * https://www.whizlabs.com/microsoft-azure-certification-az-104/
@@ -729,6 +747,73 @@ by Tim Warner with <a target="_blank" href="https://www.kaplanlearn.com/educatio
 from The Tech BlackBoard by Vipin Vij.
    * <a target="_blank" href="https://www.youtube.com/watch?v=QGZWqYIpOMw">VIDEO: 190-question Q&A in 5 hours</a> 
    * https://www.youtube.com/watch?v=EkJQXUGlLGU case studies
+
+<hr />
+
+<a name="AZ-801"></a>
+
+## AZ-801 Configuring Windows Server Hybrid Advanced Services
+
+https://learn.microsoft.com/en-us/credentials/certifications/exams/az-801/
+For $165, answer 70% of 
+deploy, package, secure, update, and configure Windows Server workloads using on-premises, hybrid, and cloud technologies coving identity, security, management, compute, networking, storage, monitoring, high availability, and disaster recovery.
+
+1. Secure Windows Server on-premises and hybrid infrastructures (25–30%)
+2. Implement and manage Windows Server high availability (10–15%)
+3. Implement disaster recovery (10–15%)
+4. Migrate servers and workloads (20–25%)
+5. Monitor and troubleshoot Windows Server environments (20–25%)
+<br /><br />
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/az-801t00</a>
+Microsoft's 4-day live course covers a different set of topics?<br />
+1. Secure Windows Server user accounts
+2. Hardening Windows Server
+3. Windows Server update management
+4. Secure Windows Server DNS
+5. Implement Windows Server IaaS VM network security
+<br /><br />
+<a target="_blank" href="https://github.com/MicrosoftLearning/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/tree/49ab785fbf841c55479886320cdebed8af78f258/Instructions/Labs">These files</a>
+are referenced by the <a target="_blank" href="https://microsoftlearning.github.io/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/">LABS for the class</a>:
+
+1. Windows Server security Lab: Configuring security in Windows Server [<a target="_blank" href="https://microsoftlearning.github.io/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/Instructions/Labs/LAB_AK_01_Configuring_security_in_Windows_Server.html">Solution</a>]
+
+2. Implementing Security Solutions in Hybrid Scenarios 	Lab: Implementing Security Solutions in Hybrid Scenarios [<a target="_blank" href="https://microsoftlearning.github.io/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/Instructions/Labs/LAB_AK_01_Configuring_security_in_Windows_Server.html">Solution</a>]
+
+3. High availability in Windows Server 	Lab: Implementing failover clustering [<a target="_blank" href="https://microsoftlearning.github.io/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/Instructions/Labs/LAB_AK_03_Implementing_failover_clustering.html">Solution</a>]
+
+4. Disaster Recovery in Windows Server 	Lab: Implementing Hyper-V Replica and Windows Server Backup [<a target="_blank" href="https://microsoftlearning.github.io/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/Instructions/Labs/LAB_AK_04_Implementing_Hyper-V_Replica_and_Windows_Server_Backup.html">Solution</a>]
+
+5. Planning and implementing migration and recovery services in hybrid scenarios 	Lab: Implementing Azure-based recovery services  [<a target="_blank" href="https://microsoftlearning.github.io/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/Instructions/Labs/LAB_AK_01_Configuring_security_in_Windows_Server.html">Solution</a>]
+
+6. Upgrade and migrate in Windows Server 	Lab: Upgrade and migrate in Windows Server [<a target="_blank" href="https://microsoftlearning.github.io/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/Instructions/Labs/LAB_AK_06_Upgrade_and_migrate_Windows%20Server.html">Solution</a>]
+
+7. Design for Migration 	Lab: Migrating Hyper-V VMs to Azure by using Azure Migrate [<a target="_blank" href="https://microsoftlearning.github.io/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/Instructions/Labs/LAB_AK_07_Implementing_migration_in_hybrid_scenarios.html">Solution</a>]
+
+8. Monitoring, performance, and troubleshooting 	Lab: Monitoring and troubleshooting Windows Server [<a target="_blank" href="https://microsoftlearning.github.io/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/Instructions/Labs/LAB_AK_08_Monitoring_and_troubleshooting_Windows_Server.html">Solution</a>]
+
+9. Implementing operational monitoring in hybrid scenarios 	Lab: Implementing operational monitoring in hybrid scenarios [<a target="_blank" href="https://microsoftlearning.github.io/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/Instructions/Labs/LAB_AK_01_Configuring_security_in_Windows_Server.html">Solution</a>]
+
+<br /><br />
+
+OReilly:
+
+<a target="_blank" href="https://learning.oreilly.com/live-events/exam-az-801-configuring-windows-server-hybrid-advanced-services-crash-course/0790145056800/0790145056797/">Crash Course</a> by Tim Warner referencing his
+<a target="_blank" href="https://github.com/timothywarner/az801">github repo</a>.
+
+Pluralsight/CloudGuru:
+
+https://www.pluralsight.com/cloud-guru/courses/az-801-configuring-windows-server-hybrid-advanced-services
+14h video
+by Alex Potasnick, Chase Dovey, Clint Bonnett
+
+Udemy:
+
+https://www.udemy.com/course/az-801-configuring-windows-hybrid-advanced-service-exam-2023
+Practice Tests
+
+
+
 
 
 <hr />
