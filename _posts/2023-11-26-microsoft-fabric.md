@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-02-21"
+date: "2024-02-29"
 file: "microsoft-fabric"
 title: "Microsoft Fabric"
 excerpt: "Simplify multi-cloud data handling for real-time analytics in Delta Lakehouses. Pass the DP-600 exam."
@@ -36,7 +36,7 @@ PROTIP: I adapted <a target="_blank" href="https://7451111251303.gumroad.com/l/f
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1708487536/ms-fabric-arch-240219-1920x1080_cupx3o.png"><img alt="ms-fabric-arch-240219-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1708487536/ms-fabric-arch-240219-1920x1080_cupx3o.png"><br /><em>Click for full-size image</em></a>.
 
 Starting from the bottom:
-Microsoft Fabric competes with Snowflake and Databricks, who pioneered the use of "Medallion" data processing into Parquet-formatted files which enables "schema on read" such that data can be streamed into the same database. 
+Microsoft Fabric competes with <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake and <a target="_blank" href="https://wilsonmar.github.io/databricks/">Databricks</a>, who pioneered the use of "Medallion" data processing into Parquet-formatted files which enables "schema on read" such that data can be streamed into the same database. 
 
 1. Within <strong>OneLake</strong>, data is not transferred when it's transformed (from OLTP to OLAP).
 It even supports "time travel" like in GitHub source can revert entire sets of files to commit points in the past.
@@ -70,6 +70,20 @@ It even supports "time travel" like in GitHub source can revert entire sets of f
 <hr />
 
 Next, let's get hands-on:
+
+## Social
+
+https://community.fabric.microsoft.com/
+
+https://www.reddit.com/r/MicrosoftFabric/comments/15gpjmp/bicep_in_fabric/
+
+https://www.microsoft.com/en-us/sql-server/community?activetab=pivot:sqlservertab
+
+https://www.meetup.com/pro/azuretechgroups/
+
+<a target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiYjNhODY3OGEtNGY0ZC00MDlhLWE2MWItYTYwZWQ5NjFiYjE2IiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9">Azure Data Community User Groups</a>
+
+<a target="_blank" href="https://ideas.fabric.microsoft.com/">Microsoft Fabric Ideas</a>
 
 ## Browser Profile
 
@@ -347,11 +361,11 @@ Rather than other fanboys who say "it's the latest cool thing, let's switch now"
 
 The product name "<strong>Fabric</strong>" Microsoft introduced March 2023 along with a set of cloud-based product <strong>experiences</strong> containing the same words also used in legacy products that Microsoft continues to sell: <a target="_blank" href="https://www.casewhen.co/blog/data-factory-showdown-fabric-vs-azure">BLOG</a>:
 
-   * Fabric "Data Factory" is different from "Azure Data Factory (ADF)" that continues to be used (at lower cost). PROTIP: Some use the term "<strong>Data Factory in Microsoft Fabric (DFiMF)</strong>" to differentiate it from the legacy ADF. DFiMF adds to ADF features from <a target="_blank" href="https://www.casewhen.co/blog/data-analysis-and-data-transformation-with-power-query-in-power-bi">Power Query Dataflows</a> and integrates tagging for Data Governance. DEFINITION: Azure Data Factory is a service that can ingest large amounts of raw, unorganized data from relational and non-relational systems, and convert this data into meaningful information. Therefore, it's referred to as a data integration service.
+   * <img align="right" width="48" height="48" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709230056/ms-fabric-Data-Factory_piy4sy.svg">Microsoft Fabric "Data Factory" is different from "Azure Data Factory (ADF)" that continues to be used (at lower cost). IMPORTANT PROTIP: Some use the term "<strong>Data Factory in Microsoft Fabric (DFiMF)</strong>" to differentiate it from the legacy ADF. DFiMF adds to ADF features from <a target="_blank" href="https://www.casewhen.co/blog/data-analysis-and-data-transformation-with-power-query-in-power-bi">Power Query Dataflows</a> and integrates tagging for Data Governance. DEFINITION: Azure Data Factory is a service that can ingest large amounts of raw, unorganized data from relational and non-relational systems, and convert this data into meaningful information. Therefore, it's referred to as a data integration service.
 
-   * The "Synapse" prefix is now applied to several Fabric products. Before Fabric, Microsoft used the Synapse brand for <a target="_blank" href="https://learn.microsoft.com/en-us/azure/synapse-analytics/synapse-link/sql-synapse-link-overview">Synapse Link</a> and the "Azure Synapse Analytics" product, which Microsoft continues to sell. "<a target="_blank" href="https://endjin.com/blog/2023/05/azure-synapse-analytics-versus-microsoft-fabric-a-side-by-side-comparison">There is no automatic upgrade path"</a> from Azure Synapse Analytics to Fabric Real-Time Analytics. 
+   * The "Synapse" prefix is now applied to several Fabric products. Before Microsoft Fabric, Microsoft used the "Synapse" brand for <a target="_blank" href="https://learn.microsoft.com/en-us/azure/synapse-analytics/synapse-link/sql-synapse-link-overview">Synapse Link</a> and the "Azure Synapse Analytics" product, which Microsoft continues to sell. PROTIP: "<a target="_blank" href="https://endjin.com/blog/2023/05/azure-synapse-analytics-versus-microsoft-fabric-a-side-by-side-comparison">There is no automatic upgrade path"</a> from Azure Synapse Analytics to Fabric Real-Time Analytics. 
    
-This "Wordly Map" (from Barry Smart <a target="_blank" href="https://endjin.com/blog/2023/05/azure-synapse-analytics-versus-microsoft-fabric-a-side-by-side-comparison">at Endjin</a>) provides a high-level overview of the evolution of products and features from "Uncharted" to "Industrial" utility in Fabric:
+This "Wordly Map" (from Barry Smart <a target="_blank" href="https://endjin.com/blog/2023/05/azure-synapse-analytics-versus-microsoft-fabric-a-side-by-side-comparison">at Endjin</a>) provides a high-level overview of the evolution of products and features from "Uncharted" to "Industrial" utility in Microsoft Fabric:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701439136/fabric-wardley-map-1121x793_pufd34.webp"><img alt="fabric-wardley-map-1121x793.webp" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701439136/fabric-wardley-map-1121x793_pufd34.webp"></a>
 
@@ -572,7 +586,7 @@ Microsoft designed Fabric documentation around different roles within enterprise
 
 <strong>Data Scientists</strong> work on AI models using Data Science tools such as Notebooks written in PySpark for Machine Learning. The intelligence created can be custom tags that extend generic LLM (Large Language Models) created by others for NLP (Natural Language Processing) and other AI (Artificial Intelligence) capabilities.
 
-Data Scientists are the ones who add embeddings tags within databases to enhance LLMs with custom data.
+Data Scientists use Synapse Data Science to add embedding tags within vector databases to enhance LLMs with custom data.
 
 
 ### Additional roles:
@@ -708,6 +722,10 @@ Fabric was unveiled at Microsoft's Build 2023 conference.
 
    Query real-time data in a KQL database
 
+   See https://learn.microsoft.com/en-us/azure/data-explorer/kql-quick-reference
+
+   KQL Keywords: where search take case distinct ago project extend sort Top summarize count render by and
+
 <hr />
 
 ## Workflow with Fabric 
@@ -719,7 +737,10 @@ Microsoft Fabric offers a centralized storage solution, eliminating data fragmen
 
 Databricks is a cloud-based service that provides a unified analytics platform for data scientists, data engineers, and business analysts. It provides a collaborative workspace for data scientists to build and train machine learning models. It also provides a platform for data engineers to build data pipelines and perform complex data engineering tasks. It provides a platform for business analysts to perform data analysis and build reports and dashboards. https://github.com/derar-alhussein/Databricks-Certified-Data-Engineer-Associate
 
-   <a target="_blank" href="https://justb.dk/blog/2023/11/fabric-data-lakehouse-understanding-the-dataflow/">This article</a> describes the flow in detail.
+   * <a target="_blank" href="https://justb.dk/blog/2023/11/fa
+   bric-data-lakehouse-understanding-the-dataflow/">This article</a> describes the flow in detail.
+   * https://learn.microsoft.com/en-us/fabric/cicd/best-practices-cicd
+   <br /><br />
 
 1. Create a <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/get-started/workspaces">Fabric workspace</a>.
 1. <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/data-engineering/tutorial-lakehouse-get-started">Create a lakehouse</a> using PowerBI. There's no limit on the number of workspaces or items you can create within your capacity.
@@ -756,7 +777,7 @@ Databricks is a cloud-based service that provides a unified analytics platform f
    * https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/
    <br /><br />
 
-1. Synapse Data Science: model training and execution tracking in a scalable environment using Azure Machine Learning and Spark.
+1. <img align="right" width="48" height="48" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709230056/ms-fabric-Synapse_tl8ioj.svg">Synapse Data Science: model training and execution tracking in a scalable environment using Azure Machine Learning and Spark.
 
    * https://learn.microsoft.com/en-us/training/modules/get-started-data-science-fabric/
    <br /><br />
@@ -768,7 +789,10 @@ Databricks is a cloud-based service that provides a unified analytics platform f
 
 ## Azure Data Factory (ADF)
 
-<a target="_blank" href="https://www.youtube.com/watch?v=EpDkxTHAhOs&list=PLGjZwEtPN7j8b9dPA0HrtJDptOB69B506&index=1">VIDEO</a>:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=EpDkxTHAhOs&list=PLGjZwEtPN7j8b9dPA0HrtJDptOB69B506&index=1">VIDEO</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/data-factory/quickstart-create-data-factory-bicep?tabs=CLI">Quickstart: Create an Azure Data Factory using Bicep</a> <a target="_blank" href="https://learn.microsoft.com/en-us/samples/azure/azure-quickstart-templates/data-factory-v2-blob-to-blob-copy/">Template Code Sample</a> with a pipeline that copies data from one folder to another in an Azure Blob Storage, <a target="_blank" href="https://learn.microsoft.com/en-us/azure/data-factory/quickstart-create-data-factory-powershell#prerequisites">using PowerShell</a> <a target="_blank" href="https://github.com/Azure/azure-quickstart-templates/tree/master">QuickStart templates</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/data-factory/transform-data-using-spark">Tutorial: Transform data using Spark</a>
+   <br /><br />
 
 1. Data Factory: data integration <strong>pipelines</strong> to copy data and orchestrate data processing, combining <strong>Power Query Online</strong> and/or Dataflows (Gen2) to Import and transform data from 90+ data sources, and load it directly into a table in the lakehouse.
 Dataflows (Gen2) performs ETL tasks using Power Query Online.
@@ -901,13 +925,79 @@ Query data by using SQL:
    * Connect to and query datasets by using the XMLA endpoint
    <br /><br />
 
+Sample Test:
+
+<a target="_blank" href="https://github.com/MicrosoftLearning/DP-500-Azure-Data-Analyst">these files</a>.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=U3aqC7VQTSw">VIDEO get it the smart way</a>
+
 <hr />
 
 <a name="Data+Activator"></a>
 
 ## Data Activator
 
-   <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/8-exercise">Excerise</a>
+<img align="right" width="48" height="48" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709230056/ms-fabric-Data-Activator_yc60td.svg">
+   * <a target="_blank" href="https://aka.ms/DataActivatorPreview">aka.ms/DataActivatorPreview</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/8-exercise">Exercise</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=NDOtvHKiZq8">FF Analytics playlist</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=qrCmTCWuluk">Microsoft Mechanic</a> by Will Thompson (Group Product Manager of Data Activator) 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=v6IOuysQGRA">VIDEO</a> on Guy in a Cube channel : Will Thompson (Group Product Manager of Data Activator) provided the screen images below.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=40Lwg1QJFEY">VIDEO</a>: Digging deeper
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/data-activator/data-activator-introduction">What is Data Activator?</a>
+   * <a target="_blank" href="https://www.linkedin.com/pulse/data-activator-microsoft-fabric-what-how-can-you-set-up-justin-barry-cqyoe/">by Justin Berry</a> 
+   * <a target="_blank" href="https://adatis.co.uk/data-activator-as-it-is-now/">this blog</a> provided the flow diagram
+   <br /><br />
+
+NOTE: Previously, Azure Synapse Pipelines had a 
+   * Schedule Trigger, 
+   * Tumbling Window Trigger, and 
+   * Event-Based Trigger.
+   <br /><br />
+
+Data Activator monitors workspaces with a PowerBI Premium license.
+
+Data Activator initiates actions based on <strong>Reflex items</strong>, each containing all the details to connect to data sources, monitor conditions. A Reflex is typically setup for each business segment or process monitored.
+
+   PROTIP: <strong>Data Activator</strong>, if it works as intended, can be a real <strong>game changer</strong> to enable <strong>Data Citizens</strong> to create "digital robots" that automatically <strong>take action</strong> rather than relying on humans constantly scanning dashboards, which can be error prone. Here's where machines (AI or not) replace human workers -- and <a target="_blank" href="https://www.youtube.com/watch?v=8CPoXDrwPP8">"The Sorcerer's Apprentice"</a> <a target="_blank" href="https://www.youtube.com/watch?v=ZcesnqVF0us&t=1m39s">VIDEO: fiasco</a> becomes reality.
+
+Data Activator runs in the background to review data created in Power BI, Synapse Real Time Analytics, Synapse Data Warehouse in OneLake to identify conditions that trigger automatic actions (in batches every 5 minutes):
+   * send message in Microsoft Teams, 
+   * send appointment in Outlook, and 
+   * Power Automate to perform logic
+   <br /><br />
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709181661/ms-data-activator-flow-1591x679_usxydf.png"><img alt="ms-data-activator-flow-1591x679.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709181661/ms-data-activator-flow-1591x679_usxydf.png"></a>
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709187839/ms-data-activator-flow-adatis-602x365_dny6l5.png"><img alt="" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709187839/ms-data-activator-flow-adatis-602x365_dny6l5.png"></a>
+
+1. The Fabric Administrator enables a Microsoft Fabric subscription.
+
+   https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Fabric%2Fcapacities
+
+2. In tenant settings, enable Data Activator for specific security groups or the entire organization except specific security groups.
+
+1. <img align="right" width="48" height="48" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709230056/ms-fabric-PowerBI_qfz2kr.svg">Within PowerBI, open a report. Click the 3 dots at the upper-right to select "Trigger action".
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176205/powerbi-alerts-1172x1940_sqsaaw.png"><img alt="powerbi-alerts-1172x1940.png" width="1172" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176205/powerbi-alerts-1172x1940_sqsaaw.png"></a>
+
+1. Select the Measure, For each, time axis. Scroll down.
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176671/powerbi-alert-every-1124x558_refbaj.png"><img alt="powerbi-alert-every-1124x558.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176671/powerbi-alert-every-1124x558_refbaj.png"></a>
+
+1. Select Every ...period to refresh data, scroll down to:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709177495/powerbi-alert-when-1140x596_nfqor8.png"><img alt="powerbi-alert-what-1140x5968.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709177495/powerbi-alert-when-1140x596_nfqor8.png"></a>
+
+1. Select What to detect value and Threshold.
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176975/powerbi-alert-where-798x428_zhav6a.png"><img alt="powerbi-alert-when-1140x596.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176975/powerbi-alert-where-798x428_zhav6a.png"></a>
+
+1. Select Where to save Workspace & Item.
+
+   <a target="_blank" href=https://res.cloudinary.com/dcajqrroq/image/upload/v1709176975/powerbi-alert-where-798x428_zhav6a.png"><img alt="powerbi-alert-where-798x428.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176975/powerbi-alert-where-798x428_zhav6a.png"></a>
+
+1. Click Continue to create a <strong>Reflex</strong>.
 
 1. Click "Data Activator" for its mode tabs at the bottom of the screen: Data mode and Design mode. 
 
@@ -915,13 +1005,7 @@ Query data by using SQL:
    * Click Design mode to develop triggers based on these objects. 
    <br /><br />
 
-   NOTE: Previously, Azure Synapse Pipelines had Schedule trigger, Tumbling Window trigger, and Event-Based trigger.
-
-   The real payoff is not just that Microsoft Fabric "seamlessly" integrates with Microsoft 365, facilitating collaboration and enabling ad hoc analysis within familiar Microsoft 365 applications. 
-
-   PROTIP: <strong>Data Activator</strong>, if it works as intended, is the real game changer to enable <strong>Data Citizens</strong> to have robots automatically <strong>take action</strong> rather than relying on someone seeing something on pretty dashboards. Here's where machines (AI or not) replace human workers -- and <a target="_blank" href="https://www.youtube.com/watch?v=8CPoXDrwPP8">"The Sorcerer's Apprentice"</a> <a target="_blank" href="https://www.youtube.com/watch?v=ZcesnqVF0us&t=1m39s">VIDEO: fiasco</a> becomes reality.
-
-   Consider the following three scenarios:
+   Consider the following scenarios:
 
    * When a potential security breach is identified through real-time monitoring, immediate protective actions are initiated.
 
@@ -929,11 +1013,7 @@ Query data by using SQL:
 
    * A sales associate needs to receive alerts when a potential client is visiting their website and offers to start a live chat with them.
 
-   Data Activator initiate actions based on <strong>Reflex items</strong>, each containing all the details to connect to data sources, monitor conditions. A Reflex is typically setup for each business segment or process monitored.
-
-
-
-   Copilot, an AI-powered assistant assist users in tasks like generating SQL statements, creating reports and setting up automated workflows based on triggers. By leveraging AI capabilities, Copilot streamlines and automates data-related tasks, enabling users to work more efficiently and derive actionable insights from their data.
+   Copilot, an AI-powered assistant assists users in tasks like generating SQL statements, creating reports and setting up automated workflows based on triggers. By leveraging AI capabilities, Copilot streamlines and automates data-related tasks, enabling users to work more efficiently and derive actionable insights from their data.
 
    The <strong>Fabric engine</strong> is an upgrade from separate systems used by separate roles of people.
    So there is a lot of copying of data from one engine to another<a target="_blank" href="https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-explained-for-existing-synapse-users?ft=Synapse:category">:</a>
@@ -945,7 +1025,15 @@ Query data by using SQL:
 
 At the bottom is storage. "<a target="_blank" href="https://learn.microsoft.com/fabric/onelake/onelake-overview">One Lake</a>" is the branding for storage built on top of Azure Data Lake Storage Gen2 (ADLSg2) lakehouse that combines storage locations across different regions and clouds into a single logical lake, without moving or duplicating data (DirectLake mode).
 
-The key enabler (for Microsoft as well as Snowflake and Databricks DeltaLake) is the <strong>Delta format</strong> (generically called "Parquet" format) that enables ACID transactions on "unstructured" data in data lakes.
+The key enabler (for Microsoft as well as Snowflake and Databricks DeltaLake) is the <strong>Delta format</strong> (generically called "Parquet" format) that enables <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/explore-core-data-concepts/5-transactional-data-processing">ACID transactions</a> on "unstructured" data in data lakes:
+
+   * Atomicity – each transaction is treated as a single unit, which succeeds completely or fails completely. For example, a transaction that involved debiting funds from one account and crediting the same amount to another account must complete both actions. If either action can't be completed, then the other action must fail.
+
+   * Consistency – transactions can only take the data in the database from one valid state to another. To continue the debit and credit example above, the completed state of the transaction must reflect the transfer of funds from one account to the other.
+
+   * Isolation – concurrent transactions cannot interfere with one another, and must result in a consistent database state. For example, while the transaction to transfer funds from one account to another is in-process, another transaction that checks the balance of these accounts must return consistent results - the balance-checking transaction can't retrieve a value for one account that reflects the balance before the transfer, and a value for the other account that reflects the balance after the transfer.
+
+   * Durability – when a transaction has been committed, it will remain committed. After the account transfer transaction has completed, the revised account balances are persisted so that even if the database system were to be switched off, the committed transaction would be reflected when it is switched on again.
 
 Previously, SQL and analytic data are stored in different database technologies.
 
