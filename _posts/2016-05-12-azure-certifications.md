@@ -27,14 +27,14 @@ NOTE: Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/cr
 
 <tr valign="top"><td> Educator</td><td>
       * <a href="#mce-microsoft-certified-educator">MSE (Microsoft Certified Educator)</a><br />
-      * <a href="#mct-microsoft-certified-trainer">MCT (Microsoft Certified Trainer)</a>
-      * <a href="#Contributor">Contributor badges</a>
+      * <a href="#mct-microsoft-certified-trainer">MCT (Microsoft Certified Trainer)</a><br />
+      * <a href="#Contributor">Contributor badges for Microsoft employees</a>
    </td></tr>
 
 <tr valign="top"><td> Administrator</td><td>
       * <a href="#AZ-900">AZ-900 Fundamentals</a><br />
       * <a href="#AZ-104">AZ-104 Azure Administrator Associate</a><br />
-      * <a href="#AZ-801">AZ-801: Configuring Windows Server Hybrid Advanced Services
+      * <a href="#AZ-801">AZ-801: Configuring Windows Server Hybrid Advanced Services</a>
    </td></tr>
 
 <tr valign="top"><td> Functional Consultant</td><td>
