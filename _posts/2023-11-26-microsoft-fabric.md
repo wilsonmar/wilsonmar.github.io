@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-02-29"
+date: "2024-03-08"
 file: "microsoft-fabric"
 title: "Microsoft Fabric"
 excerpt: "Simplify multi-cloud data handling for real-time analytics in Delta Lakehouses. Pass the DP-600 exam."
@@ -16,8 +16,8 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-With this article I aim to get you past the vapid marketing generalizations.
-This is a hands-on technical tutorial that takes you logically step-by-step to quickly learn how to setup, navigate, and use the <strong>Microsoft Fabric</strong> cloud and pass <a href="https://wilsonmar.github.io/azure-certifications/">Azure certification exam</a>
+With this article, I aim to get you past the vapid marketing generalizations and mind tricks with
+this hands-on technical tutorial that takes you logically step-by-step to quickly learn how to setup, navigate, and use the <strong>Microsoft Fabric</strong> cloud and pass <a href="https://wilsonmar.github.io/azure-certifications/">Azure certification exam</a>
 
    * <a href="#DP-600">DP-600: Fabric Analytic Engineer Associate</a>
    <br /><br />
@@ -66,6 +66,19 @@ It even supports "time travel" like in GitHub source can revert entire sets of f
    1. Data Scientists work with Synapse Data Science to create or tune ML Models by running experiments from data in OneLake.
    1. Data Citizens use the no-code Data Activator to define Reflex rules that trigger actions based on various events.
    <br /><br />
+
+1. PROTIP: For Fabric to access data in Microsoft's CosmosDB multi-region multi-format database, there is a Sync product that <strong>mirrors</strong> the databases. Yes, this doubles the cost, like welding a new car to your old car.
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709766939/ms-fabric-history-3150x1768_roevf7.png"><img src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709766939/ms-fabric-history-3150x1768_roevf7.png"></a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=JCZnv3RhTJQ&t=32m30s">VIDEO</a>:
+<a target="_blank" href="https://www.linkedin.com/in/gregbeaumont/">Greg Beaumont</a> 
+the brand names and technologies that culminated to Microsoft Fabric.
+
+As with Databricks and Snowflake, Microsoft Fabric provides a "Medallion" architecture to go from OLTP to OLAP:
+<a target="_blank" href="https://www.youtube.com/watch?v=JCZnv3RhTJQ">VIDEO</a>:
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709913285/wzdrqv0ox5vp9n14e46d.png"><img alt="" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709913285/wzdrqv0ox5vp9n14e46d.png"></a>
+
 
 <hr />
 
@@ -361,8 +374,6 @@ Rather than other fanboys who say "it's the latest cool thing, let's switch now"
 
 The product name "<strong>Fabric</strong>" Microsoft introduced March 2023 along with a set of cloud-based product <strong>experiences</strong> containing the same words also used in legacy products that Microsoft continues to sell: <a target="_blank" href="https://www.casewhen.co/blog/data-factory-showdown-fabric-vs-azure">BLOG</a>:
 
-   * <img align="right" width="48" height="48" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709230056/ms-fabric-Data-Factory_piy4sy.svg">Microsoft Fabric "Data Factory" is different from "Azure Data Factory (ADF)" that continues to be used (at lower cost). IMPORTANT PROTIP: Some use the term "<strong>Data Factory in Microsoft Fabric (DFiMF)</strong>" to differentiate it from the legacy ADF. DFiMF adds to ADF features from <a target="_blank" href="https://www.casewhen.co/blog/data-analysis-and-data-transformation-with-power-query-in-power-bi">Power Query Dataflows</a> and integrates tagging for Data Governance. DEFINITION: Azure Data Factory is a service that can ingest large amounts of raw, unorganized data from relational and non-relational systems, and convert this data into meaningful information. Therefore, it's referred to as a data integration service.
-
    * The "Synapse" prefix is now applied to several Fabric products. Before Microsoft Fabric, Microsoft used the "Synapse" brand for <a target="_blank" href="https://learn.microsoft.com/en-us/azure/synapse-analytics/synapse-link/sql-synapse-link-overview">Synapse Link</a> and the "Azure Synapse Analytics" product, which Microsoft continues to sell. PROTIP: "<a target="_blank" href="https://endjin.com/blog/2023/05/azure-synapse-analytics-versus-microsoft-fabric-a-side-by-side-comparison">There is no automatic upgrade path"</a> from Azure Synapse Analytics to Fabric Real-Time Analytics. 
    
 This "Wordly Map" (from Barry Smart <a target="_blank" href="https://endjin.com/blog/2023/05/azure-synapse-analytics-versus-microsoft-fabric-a-side-by-side-comparison">at Endjin</a>) provides a high-level overview of the evolution of products and features from "Uncharted" to "Industrial" utility in Microsoft Fabric:
@@ -375,10 +386,12 @@ This "Wordly Map" (from Barry Smart <a target="_blank" href="https://endjin.com/
    
    * "Mapping Data Flows" (and "Synapse Pipelines") are now called "<a target="_blank" href="https://docs.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview">Data Flows</a>" within Data Factory in Fabric.
    
-PROTIP: Here's what I say is so cool about all of Microsoft Fabric:
+
+PROTIP: what is so cool about Microsoft Fabric:
    * <a href="#Shortcuts">OneLake Shortcuts</a> to access any data anywhere
    * <a href="#DeltaFormat">OneLake DeltaFormat</a> for time travel, streaming, and other magic with databases in all formats
    * <a href="#Data+Activator">Data Activator</a>, new to all Microsoft and the industry, for triggering automatic actions
+   * Access to Microsoft's CosmosDB multi-region database involves <strong>mirroring</strong> 
    <br /><br />
 
 Individual artefacts before and after Fabric:
@@ -572,15 +585,26 @@ Microsoft designed Fabric documentation around different roles within enterprise
 
    Microsoft's documentation now calls "Power BI administrators" <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/admin/microsoft-fabric-admin">Fabric administrators</a>.
 
-### Data Stewards
+### Data Stewards/Administrators
 
-<a target="_blank" href="https://www.indeed.com/career-advice/finding-a-job/what-is-data-steward"><strong>Data Stewards</strong></a> are <strong>data custodians</strong> responsible for protecting the organization's most treasured assets: its data. Stewards setup and operate processes for data governance and data quality. They monitor processes for collecting data -- inspecting contents to ensure that data is in the right format. They ensure that app logs, metric collections, database logs shipped, app transactions, snapshots of master data are backed up fully and as scheduled. Once a month they ensure that data can be fully and quickly restored, as measured by RTO (Recovery Time Objective) and RPO (Recovery Point Objective) SLAs. Such is an important fall-back in case of ransomware attacks.
+Database Administrators are <a target="_blank" href="https://www.indeed.com/career-advice/finding-a-job/what-is-data-steward"><strong>Data Stewards</strong></a>, <strong>data custodians</strong> responsible for protecting the organization's most treasured assets: its data. 
+
+    * Database management
+    * Implement Data Security
+    * Backups
+    * User Access
+    * Monitors performance
+    <br /><br />
+
+Stewards setup and operate processes for data governance and data quality. They monitor processes for collecting data -- inspecting contents to ensure that data is in the right format. They ensure that app logs, metric collections, database logs shipped, app transactions, snapshots of master data are backed up fully and as scheduled. Once a month they ensure that data can be fully and quickly restored, as measured by RTO (Recovery Time Objective) and RPO (Recovery Point Objective) SLAs. Such is an important fall-back in case of ransomware attacks.
 
    Data stewards collaborate with others to detect and solve data corruption or mis-sychronization of data between apps and utilities.
 
    PROTIP: In many organizations, to limit the impact of credential loss, they, after approval by the data owner, are the only accounts who can <strong>delete data</strong> which others put "in limbo".
 
    They use <a href="#Purview">Microsoft Purview</a>. QUESTION: Does Microsoft provide all the tools that Data Stewards need?
+
+
 
 ### Data Scientists
 
@@ -787,12 +811,17 @@ Databricks is a cloud-based service that provides a unified analytics platform f
 
 <a name="Data+Factory"></a>
 
-## Azure Data Factory (ADF)
+## Data Factory in Microsoft Fabric (DFiMF)
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=EpDkxTHAhOs&list=PLGjZwEtPN7j8b9dPA0HrtJDptOB69B506&index=1">VIDEO</a>
    * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/data-factory/quickstart-create-data-factory-bicep?tabs=CLI">Quickstart: Create an Azure Data Factory using Bicep</a> <a target="_blank" href="https://learn.microsoft.com/en-us/samples/azure/azure-quickstart-templates/data-factory-v2-blob-to-blob-copy/">Template Code Sample</a> with a pipeline that copies data from one folder to another in an Azure Blob Storage, <a target="_blank" href="https://learn.microsoft.com/en-us/azure/data-factory/quickstart-create-data-factory-powershell#prerequisites">using PowerShell</a> <a target="_blank" href="https://github.com/Azure/azure-quickstart-templates/tree/master">QuickStart templates</a>
    * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/data-factory/transform-data-using-spark">Tutorial: Transform data using Spark</a>
    <br /><br />
+
+<img align="right" width="48" height="48" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709230056/ms-fabric-Data-Factory_piy4sy.svg">Microsoft Fabric "Data Factory" is different from "Azure Data Factory (ADF)" that continues to be used (at lower cost). 
+
+<a target="_blank" href="https://www.casewhen.co/blog/data-factory-showdown-fabric-vs-azure">IMPORTANT PROTIP</a>: Some use the term "<strong>Data Factory in Microsoft Fabric (DFiMF)</strong>" to differentiate it from the legacy ADF. DFiMF adds to ADF features from <a target="_blank" href="https://www.casewhen.co/blog/data-analysis-and-data-transformation-with-power-query-in-power-bi">Power Query Dataflows</a> and integrates tagging for Data Governance. DEFINITION: Azure Data Factory is a service that can ingest large amounts of raw, unorganized data from relational and non-relational systems, and convert this data into meaningful information. Therefore, it's referred to as a data integration service.
+
 
 1. Data Factory: data integration <strong>pipelines</strong> to copy data and orchestrate data processing, combining <strong>Power Query Online</strong> and/or Dataflows (Gen2) to Import and transform data from 90+ data sources, and load it directly into a table in the lakehouse.
 Dataflows (Gen2) performs ETL tasks using Power Query Online.
@@ -814,8 +843,11 @@ Dataflows (Gen2) performs ETL tasks using Power Query Online.
 
 1. Power BI: business intelligence for translating data to decisions. Power BI administrators are now <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/admin/microsoft-fabric-admin">Fabric administrators</a>.
 
-1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/">Data Activator</a>: "Insight to action" takes action based on what's happening in your data. 
-   * https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/
+1. <a href="#Data+Activator">Data Activator</a>: "Insight to action" takes action based on real-time changes in your data. 
+
+   For example, if a trigger activates when a trend reaches a pre-defined threshold, if action is not urgent, look up people using <a target="_blank" href="https://mgt.dev/">Microsoft Graph Toolkit Playground</a> <a target="_blank" href="https://www.m365princess.com/blogs/microsoft-graph-people-picker-power-apps/">lookalike</a> and <a target="_blank" href="https://www.youtube.com/watch?v=hPRzHbMzoI0">identify when they can meet</a>. Then use <a target="_blank" href="https://www.youtube.com/watch?v=ZzWdXiMzA-c">Power Apps</a> to populate meeting picker, identify meeting slots, and create an event. Add calls (actions) to a Power Apps custom connector that will be called from your canvas app. Schedule a Teams meeting in canvas app within Teams. Automatically send out a meeting invitation. 
+
+   If the action needed is urgent, send out SMS text to those who need to know. <a target="_blank" href="https://www.youtube.com/watch?v=pLubg1ddrMA">VIDEO</a>:
 
 
 <hr />
@@ -824,7 +856,7 @@ Dataflows (Gen2) performs ETL tasks using Power Query Online.
 
 ## DP-600 Fabric Analytic Engineer Associate
 
-Microsoft's $165 <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/fabric-analytics-engineer-associate/">DP-600 Fabric Analytic Engineer Associate exam page</a> (available in January 2024) provides free tutorials.
+Microsoft's $165 <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/fabric-analytics-engineer-associate/">DP-600 Fabric Analytic Engineer Associate exam page</a> (available in March 2024) provides free tutorials.
 <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-600">Study Guide</a>
 
 #### Plan, implement, and manage a solution for data analytics (10–15%)
@@ -925,11 +957,16 @@ Query data by using SQL:
    * Connect to and query datasets by using the XMLA endpoint
    <br /><br />
 
-Sample Test:
+<a target="_blank" href="https://learn.microsoft.com/en-us/shows/learn-live/exam-cram-for-dp-600-ep101-how-to-pass-exam-dp-600-implementing-analytics-solutions-using-microsoft-fabric-beta-pacificn">Exam-Cram</a> by Angie Rudduck and Wesley De Bolster
 
-<a target="_blank" href="https://github.com/MicrosoftLearning/DP-500-Azure-Data-Analyst">these files</a>.
+
+Sample Practice Test:
+
+<a target="_blank" href="https://aka.ms/DP-600-Practice">aka.ms/DP-600-Practice</a>.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=U3aqC7VQTSw">VIDEO get it the smart way</a>
+
+
 
 <hr />
 
@@ -967,19 +1004,17 @@ Data Activator runs in the background to review data created in Power BI, Synaps
    * Power Automate to perform logic
    <br /><br />
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709181661/ms-data-activator-flow-1591x679_usxydf.png"><img alt="ms-data-activator-flow-1591x679.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709181661/ms-data-activator-flow-1591x679_usxydf.png"></a>
-
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709187839/ms-data-activator-flow-adatis-602x365_dny6l5.png"><img alt="" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709187839/ms-data-activator-flow-adatis-602x365_dny6l5.png"></a>
 
-1. The Fabric Administrator enables a Microsoft Fabric subscription.
+1. The Fabric Administrator enables a Microsoft Fabric subscription at:
 
-   https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Fabric%2Fcapacities
+   <a target="_blank" href="https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Fabric%2Fcapacities">https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Fabric%2Fcapacities</a>
 
 2. In tenant settings, enable Data Activator for specific security groups or the entire organization except specific security groups.
 
 1. <img align="right" width="48" height="48" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709230056/ms-fabric-PowerBI_qfz2kr.svg">Within PowerBI, open a report. Click the 3 dots at the upper-right to select "Trigger action".
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176205/powerbi-alerts-1172x1940_sqsaaw.png"><img alt="powerbi-alerts-1172x1940.png" width="1172" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176205/powerbi-alerts-1172x1940_sqsaaw.png"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176205/powerbi-alerts-1172x1940_sqsaaw.png"><img alt="powerbi-alerts-1172x1940.png" width="1140" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176205/powerbi-alerts-1172x1940_sqsaaw.png"></a>
 
 1. Select the Measure, For each, time axis. Scroll down.
 
@@ -987,15 +1022,15 @@ Data Activator runs in the background to review data created in Power BI, Synaps
 
 1. Select Every ...period to refresh data, scroll down to:
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709177495/powerbi-alert-when-1140x596_nfqor8.png"><img alt="powerbi-alert-what-1140x5968.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709177495/powerbi-alert-when-1140x596_nfqor8.png"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709177495/powerbi-alert-when-1140x596_nfqor8.png"><img alt="powerbi-alert-what-1140x5968.png" width="1140" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709177495/powerbi-alert-when-1140x596_nfqor8.png"></a>
 
 1. Select What to detect value and Threshold.
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176975/powerbi-alert-where-798x428_zhav6a.png"><img alt="powerbi-alert-when-1140x596.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176975/powerbi-alert-where-798x428_zhav6a.png"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176975/powerbi-alert-where-798x428_zhav6a.png"><img alt="powerbi-alert-when-1140x596.png"  width="1140" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176975/powerbi-alert-where-798x428_zhav6a.png"></a>
 
 1. Select Where to save Workspace & Item.
 
-   <a target="_blank" href=https://res.cloudinary.com/dcajqrroq/image/upload/v1709176975/powerbi-alert-where-798x428_zhav6a.png"><img alt="powerbi-alert-where-798x428.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176975/powerbi-alert-where-798x428_zhav6a.png"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176975/powerbi-alert-where-798x428_zhav6a.png"><img alt="powerbi-alert-where-798x428.png" width="1149" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176975/powerbi-alert-where-798x428_zhav6a.png"></a>
 
 1. Click Continue to create a <strong>Reflex</strong>.
 
@@ -1358,6 +1393,9 @@ https://www.reddit.com/r/MicrosoftFabric/comments/14iuplv/azure_data_factory_vs_
 
 ## Resources
 
+The Machine Learning done to train AI models within Microsoft Fabric uses AzureML on Synapse Spark component of Azure Synapse Analytics.
+
+QUESTION: Microsoft Fabric is not built to work natively with OpenAI???
 
 <a target="_blank" href="https://www.youtube.com/watch?v=bQBVNg6gEYw">VIDEO</a>:
 Data Science with MLFlow (with demo):
