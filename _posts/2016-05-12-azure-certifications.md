@@ -1,1418 +1,2014 @@
 ---
 layout: post
-date: "2024-03-09"
-file: "microsoft-fabric"
-title: "Microsoft Fabric"
-excerpt: "Azure cloud SaaS (Serverless) data handling and real-time analytics using the Data Lakehouse architectural pattern. Pass the DP-600 exam."
-tags: [cloud, Azure]
+date: "2024-03-05"
+file: "azure-certifications"
+title: "Azure (Microsoft cloud) certifications"
+excerpt: "Microsoft provides free hands-on (gamified) tutorials and free time"
+tags: [cloud]
 image:
-# microsoft-fabric-1900x500.png
-  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1701058121/microsoft-fabric-1900x500_sd6pku.png
+# azure ms logo wait 1900x500-39kb.jpg
+  feature: https://cloud.githubusercontent.com/assets/300046/18188069/153fbcca-706c-11e6-983d-0783da57f75c.jpg
   credit: Microsoft Azure
-  creditlink: https://www.softwebsolutions.com/resources/benefits-and-features-of-microsoft-fabric.html
+  creditlink: 
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
 
-This is a hands-on technical tutorial that takes you logically step-by-step to quickly learn how to setup, navigate, and use the <strong>Microsoft Fabric</strong> cloud and pass <a href="https://wilsonmar.github.io/azure-certifications/">Azure certification exam</a>
-
-   * <a href="#DP-600">DP-600: Fabric Analytic Engineer Associate</a>
-   <br /><br />
+PROTIP: When you pass each exam, Tweet <a target="_blank" href="https://twitter.com/search?q=%23azurecertified&src=typed_query">#azurecertified</a> and/or <a target="_blank" href="https://twitter.com/search?q=%23MicrosoftCertified&src=typed_query">#MicrosoftCertified</a>.
 
 {% include whatever.html %}
 
-BTW, don't confuse Microsoft Fabric with "Azure Service Fabric" (a distributed systems platform that makes it easy to package, deploy, and manage scalable and reliable microservices and containers.)
+NOTE: Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/browse/?credential_types=certification">Microsoft's certifications</a> by role and product:
 
-Let's dive right into the Microsoft Fabric working portal GUI:
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Role </th><th> Certification exam </th></tr>
 
-<a name="Diagram"></a>
+<tr valign="top"><td> Educator</td><td>
+      * <a href="#mce-microsoft-certified-educator">MSE (Microsoft Certified Educator)</a><br />
+      * <a href="#mct-microsoft-certified-trainer">MCT (Microsoft Certified Trainer)</a><br />
+      * <a href="#Contributor">Contributor badges for Microsoft employees</a>
+   </td></tr>
 
-## Architecture Diagram
+<tr valign="top"><td> Administrator</td><td>
+      * <a href="#AZ-900">AZ-900 Fundamentals</a><br />
+      * <a href="#AZ-104">AZ-104 Azure Administrator Associate</a><br />
+      * <a href="#AZ-800">AZ-800: Administering Windows Server Hybrid Core Infrastructure</a>
+      * <a href="#AZ-801">AZ-801: Configuring Windows Server Hybrid Advanced Services</a>
+   </td></tr>
 
-PROTIP: I adapted <a target="_blank" href="https://7451111251303.gumroad.com/l/fkrvnn" title="Available for purchase">the diagram below</a> from <a target="_blank" href="https://www.youtube.com/watch?v=J4i5lcROJcs">VIDEO</a>: The best 38-minute summary by <a target="_blank" href="https://linkedin.com/in/">Will Needham</a>, <a target="_blank" href="https://learn.microsoft.com/en-in/fabric/get-started/microsoft-fabric-overview">Microsoft</a>, and <a target="_blank" href="https://adatis.co.uk/microsoft-fabric-announcement-accelerate-your-data-potential/">others</a> to show, all in one page, relationships among key technology components in Microsoft Fabric:
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1708487536/ms-fabric-arch-240219-1920x1080_cupx3o.png"><img alt="ms-fabric-arch-240219-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1708487536/ms-fabric-arch-240219-1920x1080_cupx3o.png"><br /><em>Click for full-size image</em></a>.
+<tr valign="top"><td> Functional Consultant</td><td>
+      * <a href="#AZ-140">AZ-140 Virtual Desktop Specialty</a>
+   </td></tr>
 
-Starting from the bottom:
-Microsoft Fabric competes with <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake and <a target="_blank" href="https://wilsonmar.github.io/databricks/">Databricks</a>, who pioneered the use of "Medallion" data processing into Parquet-formatted files which enables "schema on read" such that data can be streamed into the same database. 
+<tr valign="top"><td> <a href="#SolutionArchitect">Solution Architect Expert</a></td><td>
+        * <a href="#AZ-305">AZ-305</a> Azure Solutions Architect<br />
+        * <a href="#AZ-303"><strike>AZ-303 Azure Solutions Architect Expert: Technologies (retired)</strike></a><br />
+        * <a href="#AZ-304"><strike>AZ-304 Azure Solutions Architect Expert: Design (retired)</strike></a><br />
+        * AZ-600 Stack Hub Operator Associate<br />
+        * AZ-120 Azure for SAP Workloads Specialty
+   </td></tr>
 
-1. Within <strong>OneLake</strong>, data is not transferred when it's transformed (from OLTP to OLAP).
-It even supports "time travel" like in GitHub source can revert entire sets of files to commit points in the past.
+<tr valign="top"><td> <a href="#Networking">Networking</a></td><td>
+        * <a href="#AZ-700">AZ-700 Azure Network Engineer Associate</a><br />
+        * <strike>98-366 Networking Fundamentals was retired</strike>
+   </td></tr>
 
-1. Fabric consists of four different <strong>compute engines</strong> to support the different technologies for different uses:
+<tr valign="top"><td> AI Engineer</td><td>
+   * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-900">AI-900 AI Fundamentals</a><br />
+     * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-100">AI-100 Azure AI Engineer Associate</a><br />
+     * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-102">AI-102 Azure AI Engineer</a><br />
+     * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-100">DP-100 Azure Data Scientist Associate</a>
+   </td></tr>
 
-   * A Traditional T-SQL engine to process T-SQL queries that insert data into data warehouses.
-   * A Spark "Big Data" engine to process PySpark jobs and Python Notebooks into Data Lakehouses.
-   * Python Notebooks also generate ML (Machine Learning) models from files in OneLake 
+<tr valign="top"><td> Data Engineer<br /> Data Scientist</td><td>
+   * <strike>98-364 Database Fundamentals</strike> MTA was retired June 30, 2022<br />
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-900">DP-900 Azure Data Fundamentals</a><br />
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-100">DP-100 Azure Data Scientist Associate</a><br />
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-203">DP-203 Azure Data Engineer Associate</a> (replaces DP-200 & DP-201)<br />
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-300">DP-300 Azure Database Administrator Associate</a><br />
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-420">DP-420 Azure Cosmos DB Developer Specialty</a><br />
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-500">DP-500 Azure Enterprise Data Analyst Associate</a><br />
+   * <a target="_blank" href="https://wilsonmar.github.io/microsoft-fabric/">DP-600 Fabric Analytic Engineer Associate</a>
+   </td></tr>
 
-   * Eventstreams add Telemetry in TSDB (Time Series Databases) which KQL (Kusto Query Language) querysets query 
-   * A PBI Analytic engine to process <a href="#dax-studio">DAX (Data Analysis Expressions)</a> for calculating KPI (Key Process Indicators) on reports and dashboards.
-   * <a href="#Reflex">Reflex</a> rules set by Data Citizens and Data Analysts using the no-code GUI Data Activator, which also fires triggers when it identifies events relevant to Reflex specs in OneLake files.
+<tr valign="top"><td> <a href="#Power_Platform">Power Platform</a> </td><td>
+   * <a target="_blank" href="https://wilsonmar.github.io/powerbi#MCF">Microsoft Certified Fundamentals (MCF) Power Platform Fundamentals ($20)</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-fundamentals/">PL-900 Power Platform Fundamentals</a><br />
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-app-maker/">PL-100 Power Platform App-maker Associate</a><br />
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-functional-consultant-associate/">PL-200 Power Platform Functional Consultant</a><br />
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-bi-data-analyst-associate/">PL-300 Power BI Data Analyst Associate</a><br />
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-developer-associate/">PL-400 Power Platform Developer</a><br />
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-solution-architect-expert/">PL-600 Power Platform Solution Architect Expert</a>
+   </td></tr>
+
+<tr valign="top"><td> DevOps Engineer</td><td>
+   * <a href="#AZ-400">AZ-400 DevOps Engineer Expert</a>
+   </td></tr>
+
+<tr valign="top"><td> Developer</td><td>
+   * <a href="#AZ-204">AZ-204 Azure Developer Associate</a><br />
+       * <a target="_blank" href="https://wilsonmar.github.io/azure-iot#AZ-220" title="My hands-on tutorial on Azure IoT">AZ-220 Azure IoT Developer Specialty</a> 
+   </td></tr>
+
+<tr valign="top"><td> <a href="#Sec_Certs">Security Certifications</a></td><td>
+   * <a href="#SC-900">SC-900 Security, Compliance, and Identity Fundamentals</a><br />
+   * <a href="#SC-200">SC-200 Security Operations Analyst Associate</a> MCT<br />
+   * <a href="#SC-300">SC-300 Identity and Access Administrator Associate</a> MCT<br />
+   * <a href="#SC-400">SC-400 Information Protection Administrator</a><br />
+   * <a href="#AZ-500">AZ-500 Azure Security Engineer Associate</a> MCT<br />
+   * <a href="#SC-100">SC-100 Microsoft Cybersecurity Architect</a> MCT<br />
+   * <a target="_blank" href="https://docs.microsoft.com/learn/certifications/mta-security-fundamentals?WT.mc_id=techcom_learn-blog-wwl"><strike>98-367 MTA: Security Fundamentals</strike></a> was retired
+   </td></tr>
+</table>
+
+Andrew Brown offers this diagram:
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/110194383-8ebad300-7df5-11eb-9c0c-2d5f165f0ffe.jpeg"><img alt="az-certs-1868x1092.png" width="1868" src="https://user-images.githubusercontent.com/300046/110194383-8ebad300-7df5-11eb-9c0c-2d5f165f0ffe.jpeg"></a>
+
+
+<a target="_blank" href="https://www.youtube.com/watch?v=ZIlLvKg7owM&list=RDCMUC0m-80FnNY2Qb7obvTL_2fA&start_radio=1">VIDEO</a> of <a target="_blank" href="https://azure.microsoft.com/en-us/resources/videos/build-an-intelligent-bot/">Build an Intelligent Bot with Microsoft Azure</a> by Elliott Perry - Chapter 17 of <a target="_blank" href="https://clouddamcdnprodep.azureedge.net/gdc/2014519/original">EBOOK</a>: 
+<a target="_blank" href="https://aka.ms/monthoflunches​">Learn Azure in a Month of 21 Lunches</a> (2020 Manning) by <a target="_blank" href="https://www.linkedin.com/in/iainfoulds">Iain Foulds</a> (<a target="_blank" href="https://twitter.com/fouldsy">@fouldsy</a>), with code at <a target="_blank" href="https://github.com/fouldsy/azure-mol-samples-2nd-ed">https://github.com/fouldsy/azure-mol-samples-2nd-ed</a>
+
+<a target="_blank" href="https://mcptnc.microsoft.com/certificate/">
+https://mcptnc.microsoft.com/certificate =
+Microsoft Learning Certificates earned dashboard</a>
+
+https://github.com/MicrosoftLearning/AZ-301-MicrosoftAzureArchitectDesign
+
+## Rebranding to roles
+
+The 70-xx series of Microsoft Certified Solutions Associate (MCSA), Microsoft Certified Solutions Developer (MCSD), Microsoft Certified Solutions Expert (MCSE) retired on January 31, 2021.
+The 98-xxx series of MTA (Windows Server) exams retired on June 30, 2022.
+Microsoft continues to <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/retired-certification-exams">retired</a>:
+
+   * 70-532 - Developing Microsoft Azure Solutions
+   * 70-533 - Implementing Microsoft Azure Infrastructure Solutions
+   * 70-534 - Architecting Azure Solutions
+   * 70-535 - Architecting Microsoft Azure Solutions (ARM templates) <a target="_blank" href="https://trainingsupport.microsoft.com/en-us/mcp/forum/all/replacement-exam-of-70-535/5c030474-28e1-4baa-9282-f3bf7a5a6e58">replaced by AZ-300 and AZ-301 Jan 1, 2020</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/70-537">70-538 - Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack</a> replaced by AZ-600 Stack Hub Operator Associate.
    <br /><br />
 
-1. <strong>Shortcuts</strong> pointing to specific sets of data -- good for Data Archivists to obtain to take backups.
+<a name="MCF"></a>
 
-   Shortcuts are also used for Security Guards to tag data for Microsoft Purview to automatically assign permissions on data in OneLake, S3, and other file types.
-
-1. Microsoft names GUI "Experiences" based on the role of the primary role using them:
-
-   1. Data Analysts use Data Factory to run Dataflows that create and load data into OneLake files.
-   1. Data Engineers establish Data Warehouses using "Synapse Data Warehouse", 
-   1. establish Lakehouses using "Synapse Data Engineering", and 
-   1. establish Telemetry databases using "Synapse Real-Time Analytics.
-   1. Data Analysts reference established data stores to create reports and dashboards using Power BI
-   1. Data Scientists work with Synapse Data Science to create or tune ML Models by running experiments from data in OneLake.
-   1. Data Citizens use the no-code Data Activator to define Reflex rules that trigger actions based on various events.
+<a target="_blank" href="https://certiport.pearsonvue.com/Certifications/ITSpecialist/Certification/Certify">
+Microsoft Certified Fundamentals</a> are $20 each:
+   * Artificial Intelligence
+   * Cloud Computing
+   * Computational Thinking
+   * Cybersecurity
+   * Data Analytics
+   * Databases
+   * Device Configuration and Management
+   * HTML and CSS
+   * HTML5 Application development
+   * Java
+   * JavaScript
+   * Networking
+   * Network Security
+   * Python
+   * Software development
    <br /><br />
-
-1. PROTIP: For Fabric to access data in Microsoft's CosmosDB multi-region multi-format database, there is a Sync product that <strong>mirrors</strong> the databases. Yes, this doubles the cost, like welding a new car to your old car.
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709766939/ms-fabric-history-3150x1768_roevf7.png"><img src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709766939/ms-fabric-history-3150x1768_roevf7.png"></a>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=JCZnv3RhTJQ&t=32m30s">VIDEO</a>:
-The diagram above <a target="_blank" href="https://www.linkedin.com/in/gregbeaumont/">Greg Beaumont</a> 
-traces the brand names and technologies that culminated in Microsoft Fabric.
-
-As with Databricks and Snowflake, Microsoft Fabric provides a "Medallion" architecture to go from OLTP to OLAP:
-<a target="_blank" href="https://www.youtube.com/watch?v=JCZnv3RhTJQ">VIDEO</a>:
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709913285/wzdrqv0ox5vp9n14e46d.png"><img alt="" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709913285/wzdrqv0ox5vp9n14e46d.png"></a>
-
-Raw historical data in CSV files -- Bronze -- are loaded into a (Python) Spark Notebook within OneLake files to become Silver curated data accessible by a Fabric Data Warehouse view, which a Fabric Pipeline loads into a star-schema Gold (Optimized).
-The Metadata is used by PowerBI to create reports and dashboards.
-
-1. <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/get-started/roles-workspaces">Built-in Roles for Microsoft Fabric Workspace</a> specify that:
-
-   * Admin is the only role that can "Update and delete the workspace" and "Add or remove people, including other admins",  plus all other capabilities".
-   * Member is the only role that can "Add members or others with lower permissions" and "Allow others to reshare items".
-   * 		
 
 
 <hr />
 
-## Social
 
-https://community.fabric.microsoft.com/
+<hr />
 
-https://www.reddit.com/r/MicrosoftFabric/comments/15gpjmp/bicep_in_fabric/
+## Training vendors
 
-https://www.microsoft.com/en-us/sql-server/community?activetab=pivot:sqlservertab
+Among https://docs.microsoft.com/en-us/learn/certifications/partners
 
-https://www.meetup.com/pro/azuretechgroups/
 
-<a target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiYjNhODY3OGEtNGY0ZC00MDlhLWE2MWItYTYwZWQ5NjFiYjE2IiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9">Azure Data Community User Groups</a>
+### Microsoft Learning
 
-<a target="_blank" href="https://ideas.fabric.microsoft.com/">Microsoft Fabric Ideas</a>
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">
+docs.microsoft.com/en-us/learn/azure</a> lists events 
+   * <a target="_blank" href="https://mvtd.events.microsoft.com/Azure?wt.mc_id=onedestination">Virtual Training Days</a> for live sessions with experts and get exam vouchers
+   * Ignite conference sessions about new stuff
+   * Microsoft Tech Community
+   <br /><br />
 
-## Browser Profile
+<a target="_blank" href="https://events.microsoft.com/?timeperiod=next30Days&isSharedInLocalViewMode=true&country=United%20States&language=English">Microsoft Events</a>
 
-1. PROTIP: In an internet browser (Safari, Google Chrome, etc.) I click the icon next to the browser's three-dot menu to use a <strong>browser profile</strong> that retains the browser history for the <strong>work (organizational) account</strong> I need to use with Fabric.
+#### ESI
 
-   <a name="AdminMenu"></a>
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701041117/fabric-signin-318x367_lf2lqp.png"><img alt="fabric-signin-318x367.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701041117/fabric-signin-318x367_lf2lqp.png"></a>
+If your company has a deal with Microsoft:
 
-   <a name="HomePage"></a>
+1. <a target="_blank" href="https://esi.microsoft.com/">Microsoft's Enterprise Skills Initiative</a>. Sign in with your corporate email.
+1. https://esi.microsoft.com/deliverymultiday 
+1. Search for a class by checking different roles and time zones. 
 
-   ## Working Home Page
+   * If you're in Mountain time, a class that starts at 9am Auckland time would be 3pm your time.
+   <br /><br />
 
-1. REMEMBER: The Microsoft <strong>Fabric working home page</strong> has Microsoft.com and NOT Azure, at:
+   ### Microsoft Skillpipe online class
 
-   <a target="_blank" href="https://app.fabric.microsoft.com"><strong>https://app.fabric.microsoft.com</strong></a>
+1. PROTIP: Allocate time on your personal calendar to go through the online Skillpipe class before attending the live class. You'll be less confused and stressed during the class, and enjoy it more.
 
-   This is because Microsoft intends Fabric to be a service that can exchange data with competing clouds such as AWS and GCP as well as on-prem. data centers (through Microsoft's Arc). It's a "friendamy" strategy. Fabric is how Microsoft catches up to what <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a> and Databricks have been offering.
+   CAUTION: The Skillpipe.com provided with registration may not be created to align with the live course's lab.
 
-1. You'll see what I call the "bouncer" page ensures that only <strong>organizational</strong> emails (work or school account) use Fabric. Your personal gmail or outlook.com account is no good here. Wow.
+   https://aka.ms/edge4biz
 
-   "You can't sign in here with a personal account. Use your work or school account instead."
+   ### Join live class
+
+   There are two codes that you need to enter.
+
+1. In the registration <strong>email, "click here to join the training"</strong> makes use of Microsoft Teams. So install or upgrade it before the class.
+
+   PROTIP: It helps to have a secone screen: one to view instructions, another for notes.
+
+1. Once in Teams, click Show conversation icon. 
+
+   QUESTION: How to get rid of participant list at bottom of screen?
+
+1. Browser "Join conversation" can be dismissed once you're in Teams app.
+1. To participate in quizzes <a target="_blank" href="https://www.menti.com/">menti.com/</a> is used with a code from trainer.
+
+1. To redeem training key provided by trainer (such as "E059CE1A"), get to lab: on Chrome open a Guest profile to access 
+
+   <a target="_blank" href="https://aka.ms/StudentLabs">https://aka.ms/StudentLabs</a> which redicts to<br /><a target="_blank" href="https://esi.learnondemand.net">https://esi.learnondemand.net/User/CurrentTraining/1234567</a> 
+
+1. Sign in using your personal email.
+
+1. When a window pops up at https://labclient.labondemand.com, click the class link.
+
+   PROTIP: Instructor may not provide a file of their PowerPoint file.
+
+   ### Labs during live class
+
+   PROTIP: Allocate time on your personal calendar to finish or review labs.
+   Notice the 4-day class usually goes Monday-Friday 9am-5pm at the local time zone.
+
+1. Click blue Launch button at https://esi.learnondemand.net/Lab/... 
+   or aka.ms/az500labs
+
+   ### Redeem Promo Code
+
+1. Type your Azure Pass <strong>Promo Code</strong> 
    
-   This is why you setup a <a href="#Browser+Profile">browser profiles</a> for each email account. Click the profile icon at the top right of the browser window to switch between profiles.
+   <strong>PROTIP: If you already have a code from a previous class within the last month, use that and wait until it runs out to use it.</strong>
 
-   If you have a license, you'll see the fabric-landing-711x400.jpeg landing page, which lists the Fabric components you have access to.
+   <strong>PROTIP: CAUTION: This wipes out your existing data with a new storage account.</strong>
 
-1. Click the big round gray icon at the upper side of the Fabric page for the <a href="#AdminMenu">Admin/Sign In menu above</a>.
+   It takes several minutes to build your environment so you see a Windows 10 Desktop.
+
+1. Expand full screen. Click "Next".
+
+   Follow instructions on the right pane:
+
+1. Click the Edge browser to open it. CAUTION: You can't paste in the pop-up, so click the "T" icon to paste into the working screen to go to 
+
+   <a target="_blank" href="
+   https://microsoftazurepass.com">
+   https://microsoftazurepass.com</a>
+
+1. Click the blue Start button. Type your Gmail password. Check "Keep me signed in".
+1. Click "Confirm Microsoft Account >".
+1. Click the T with the code on the right pane. Click "Claim Promo Code".
+1. Click the top checkboxes and optionally the second, then "Sign Up".
+1. Wait for "Setting up your account" to disappear before the Windows 10 Desktop pops up in a new browser window <strong>without tabs or URL field</strong>.
+
+1. PROTIP: Click the Window menu item at the top of the display to see a list of windows.
+
+   The Azure Portal is in the "Module ..." window.
+
+1. Switch to your email client to see subject "Your Azure subscription is ready".
+
+   PROTIP: Don't click on the "Go to " button because it will be opened on whatever browser is currently active, which is not necessarily the browser window you want.
+
+1. CLick "+" on the browser to open a new tab to check your $100 spend and remaining balance at 
+
+   <a target="_blank" href="https://www.microsoftazuresponsorships.com/balance">https://www.microsoftazuresponsorships.com/balance</a> using your personal email account.
+
+   Notice that the Subscription is "Azure pass - Sponsorship".
+
+1. In the lab, click the working form field you want to fill before clicking the "T" icon to paste into the working screen.
+
+   CAUTION: You can't paste from your regular Clipboard into the class VM.
+
+   CAUTION: The Skillpipe "book" usually does NOT match the PowerPoint presented during the class. And the PowerPoint files shown are not provided to students.
+
+1. If your lab becomes frozen, Reconnect:
+
+   ![az-certs-labclient-reconnect-170x137](https://user-images.githubusercontent.com/300046/112444873-1c625200-8d14-11eb-9b67-f1bfe5a76a9b.png)
+
+1. To search within lab instructions, see GitHub (such as <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies">https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies</a> or <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies">https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies</a>). Look at labs there if you can't access the course's lab environment.
+
+1. Challenge labs you get 3 chances. You can't pause.
+
+1. Replace Internet Explorer, but don't install "Edge" from webpage. Install <a target="_blank" href="https://www.microsoft.com/en-us/edge/business?form=MM13YK&OCID=MM13YK&OCID=AID2100871_SEM_EAIaIQobChMI5YDt_IL87wIVoj6tBh0LbgxvEAAYASAAEgLDFfD_BwE:G:s&ef_id=EAIaIQobChMI5YDt_IL87wIVoj6tBh0LbgxvEAAYASAAEgLDFfD_BwE:G:s">Download Edge browser</a>
+1. Click channel/version to select top choice.
+1. Click BUILD to select the top choice.
+1. Click PLATFORM to select Windows 64 bit.
+1. Click DOWNLOAD.
+1. Click Save.
+1. Click Run and wait for the pop-up while downloading.
+1. Click "Enable" to "The 'IEToEdge BHO' add-on from 'Microsoft Corporate' is ready for use."
+1. Click CLOSE
+
+1. https://azure.microsoft.com/en-us/features/storage-explorer/
+
+1. Provide instruction feedback to <a target="_blank" href="https://aka.ms/MakeUsBetter">https://aka.ms/MakeUsBetter</a>
 
 
-   ## Start Trial
+### James Lee
 
-1. Click the green <strong>Start trial</strong> box.
+<a target="_blank" href="https://www.linkedin.com/in/james-lee-6551a314/">James Lee (from Brisbane, Australia)</a> has built a <a target="_blank" href="https://techstudyslack.com/">Tech Study Stack community</a>
+as he created videos on <a target="_blank" href="https://www.youtube.com/@cloudleeio">YouTube</a>
+and <a target="_blank" href="https://learn.cloudlee.io/p/az-104-microsoft-azure-administrator">Cloudlee.io</a>.
 
-   REMEMBER: Notice the word "capacity" instead of "instances" because Fabric is a <strong>serverless</strong> service.
+He left ACloudGuru to join his fellow Australian behind the firewall at <a target="_blank" href="https://learn.cantrill.io/courses/enrolled/2155513">learn.cantrill.io</a>.
 
-1. Click "Start trial". 
+   * Getting Started with Azure
+   * Getting Started with Microsoft DevOps
+   * Microsoft DevOps Engineer (AZ-400)
+   * Microsoft Azure Administrator (AZ-104)
+   * <a target="_blank" href="https://learn.cantrill.io/p/az-305-microsoft-azure-solutions-architect">AZ-305 Azure Solutions Architect</a>
+   <br /><br />
 
-   PROTIP: In your Calendar, add a reminder to cancel the trial before the 30 days are up.
-   
-   The trial is for the <strong>Pro</strong> tier, which is the middle tier. The <strong>Premium</strong> tier is the top tier.
+### Cloud Academy
 
-   We'll come back to the "Learn more" link at: https://go.microsoft.com/fwlink/?linkid=2227617  which expands to
-   
-   https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial
+PROTIP: I think <a target="_blank" href="https://cloudacademy.com/">CloudAcademy.com</a>
+provides a thorough approach to both pratical hands-on learning and prepare for exams. They have pre-defined set of <a target="_blank" href="https://cloudacademy.com/library/azure/labs/">hands-on labs</a>, each about 1-2 hours long.
 
-1. Select your Country (for data sovereignty) and Phone number (for SMS text verification).
-1. Click <strong>Start my new trial</strong>. This creates a new <a target="_blank" href="https://learn.microsoft.com/en-us/microsoft-365/education/deploy/intro-azure-active-directory#what-is-an-azure-ad-tenant">Entra ID</a> (Azure Active Directory) <a target="_blank" href="https://learn.microsoft.com/en-us/entra/fundamentals/create-new-tenant">tenant</a> tied to a DNS domain name to provide identity and access management (IAM) capabilities to applications and resources.
+CloudAcademy also has 
+<a target="_blank" href="https://cloudacademy.com/library/azure/quizzes/">
+quizzes</a>.
 
-   1 TB is allocated to OneLake storage.
+If you want time on servers (one hour at a time), subscribe to
+<a target="_blank" href="https://cloudacademy.com/learning-paths/az-900-exam-preparation-microsoft-azure-fundamentals-524/">CloudAcademy.com</a>
 
-   64 capacity units (CUs) allow consumption of 64x60 CU seconds every minute when "experiences" are run. 
-
-   Each data <a target="_blank" href="https://learn.microsoft.com/en-us/purview/concept-elastic-data-map">Purview Data Map</a> capacity unit includes a throughput of 25 operations/sec and 10 GB of metadata storage limit for <a target="_blank" href="https://learn.microsoft.com/en-us/purview/concept-scans-and-ingestion">scanning</a>.
-   
-   PROTIP: When the capacity consumption exceeds its size, Microsoft slows down the experience similar to slowing down CPU performance.
-
-1. <a target="_blank" href="https://www.youtube.com/watch?v=l3cpnX0mpXE">VIDEO</a>: <a target="_blank" href="https://blog.fabric.microsoft.com/en-US/blog/capacity-metrics-in-microsoft-fabric/">BLOG</a>: <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app">Monitor Capacity usage</a> using:
-   
-1. Click the <strong>Admin</strong> icon at the top right of the page to see the number of days remaining in the trial.
+See my step-by-step advice for using CloudAcademy's Azure environment.
 
 
-   ### Learn More
+### FreeCodeCamp.org
 
-1. PROTIP: Instead of clicking this <strong>Learn more</strong> link for the "Get started" tutorial, copy the URL and switch to your personal browser profile so you get points for learning,
+<a target="_blank" href="https://www.freecodecamp.org/news/azure-fundamentals-course-az900/">
+Free 3-Hour video course on FreeCodeCamp.org</a> by Andrew Brown of ExamPro
 
-   This article contains information from the following sources:
+### Coursera
 
-   * https://learn.microsoft.com/en-us/fabric/ is the main Fabric page.
+https://www.coursera.org/specializations/microsoft-azure-fundamentals-az-900
+$49/month after 7 days free.
 
-   * https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial
-   * https://learn.microsoft.com/en-us/training/paths/get-started-fabric
+### OReilly
 
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/azure-data-fundamentals-explore-data-warehouse-analytics/">Microsoft Documentation for Microsoft Fabric</a>
+Offers cloud time
 
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/collections/w2gkhrkzzmym?WT.mc_id=cloudskillschallenge_a68d938a-58b7-403e-89f2-b2305edb7c41">Microsoft Ignite: Microsoft Fabric Skills Challenge</a>
 
-   * https://aka.ms/Fabric-Hero-Blog-Ignite23
+### A Cloud Guru & Linux Academy
+
+ACloudGuru.com (formerly ACloud.guru) offers cloud time with premium subscriptions.
+In 2019 they purchased <a target="_blank" href="https://app.linuxacademy.com/search?type=Course&categories=Azure">LinuxAcademy.com</a>
+
+
+### EDX
+
+https://www.edx.org/learn/azure
+by the High School of Digital Culture (ITMO University, Russia) is $149 for those who want quizzes and a completion certificate.
+
+Their Introduction to Machine Learning covers:
+   * Regression
+   * Classifiers: k-NN and Naive Bayes
+   * Classifiers: Logistic Regression
+   * Clustering: K-Means, Agglomerative 
+
+Their Advanced covers 
+   * Principal Component Analysis (PCA)
+   * Support Vector Machine (SVM)
+   * Entropy. Decision Trees (DTs)
+   * Ensemble Learning
+   * Reinforcement Learning
+
+### Vlad
+
+https://vladtalkstech.com/microsoft-certification-study-guides
 
 
 <hr />
 
-<a name="Experiences"></a>
+## Microsoft Exams
 
-## Product Component "Experiences"
+<a target="_blank" href="https://www.microsoft.com/en-us/learning/dashboard.aspx">
+https://www.microsoft.com/en-us/learning/dashboard.aspx</a>
+is where you start exams and get certificate pdfs (suitable for framing) and badge images.
 
-PROTIP: Although Fabric is marketed as a "unified" product, practically it's operated as a collection of products that Microsoft users navigate around.
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits">
+Azure Subscription Service Limits</a>
 
-1. Click the Microsoft Fabric icon at the bottom-left of the screen for a list of product components (without the vague marketing generalizations):
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701046058/fabric-menu-624x584_de9vj1.png"><img alt="fabric-menu-624x584.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701046058/fabric-menu-624x584_de9vj1.png"></a>
+<a name="MCE"></a>
 
-   Notice that there is a group of <strong>Synapse brand</strong> data products with blue icons.
-   Synapse is on Azure as a Platform-as-a-Service (PaaS)
+## MCE (Microsoft Certified Educator)
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=Shw8FbDi4lQ&t=5m39s" title="by Deepika Bhatt with James Leonard">DEMO</a>: 
-   Fabric integrates into a single unified SaaS analytics platform :
-   * <a href="#Data+Factory">Azure Data Factory</a>
-   * Azure Data Explorer
-   * Azure Synapse Analytics operates on <a href="#Workspaces">workspaces</a> containing both relational SQL databases and big-data Lake databases, all linked to blobs (files) within Azure Data Lake Storage (ADLS) Gen2
-   * Azure Databricks
-   * Azure Synapse SQL
-   * Power BI to 
+The Microsoft Certified Coach launched in 2023.
+$595 sessions were held by <a target="_blank" href="https://www.i2e-llc.com/sp/microsoft-certified-coach/">i2e</a> in several major cities, plus Apr 13-15 in Edinburgh, UK and June 20-21 2024 in Denver.
+
+<a target="_blank" href="https://www.credly.com/badges/1af742ba-c3e5-4291-bfed-7e829a9ec733"><img align="right" width="100" src="https://images.credly.com/size/340x340/images/54f7ea40-48bc-4217-b398-b81bae6de175/MCE.png"></a>
+For $90 (<a target="_blank" href="https://store.certiport.com/certiport-products/c/13000821?">$70.20 with CODE-32547049</a>), answer __% of 35-42 questions in 60 minutes <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/exams/62-193/">$127 Exam 62-193</a>.
+
+<a name="Blooms"></a>
+This is about giving a <strong>21st century context</strong> using Bloom's Taxonomy as a base:
+
+   * Interpret: Students interpret charts and graphs, translate verbal material into mathematical formulas.
+
+   * Analyze: This involves breaking down information to look at relationships, such as analyzing, appraising, categorizing, comparing, contrasting, and experimenting.
+
+   * Synthesize: Students combine parts to form a new whole, like arranging, assembling, composing, constructing, creating, designing, and formulating.
+
+   * Evaluate: This step involves making judgments based on evidence found. Students may appraise, argue, assess, choose, compare, conclude, contrast, describe, evaluate, explain, interpret, relate, summarize, and support their judgments.
+
+"21st Century Learning Design (21CLD)" rubrics, decision trees, anchor lessons to build complex was created bu <a target="_blank" href="https://edge.ut.ac.id/mod/page/view.php?id=119&forceview=1">SRI-developed</a> ITL (Innovative Teaching and Learning) <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/21st-century-learning-design/">MS-LEARN</a>: 
+
+21CLD authors created rubrics, decision trees, and anchor lesson examples in the six dimensions of the framework: REMEMBER:
+
+   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AMzz7xahtKzuH9M&page=View&wd=target%28Knowledge%20Construction%202.one%7C03760039-ac2e-4698-be4c-f73db3d5c8e1%2FRubric%20%E2%80%93%20Knowledge%20Construction%7C16a28f9e-24a1-4a4e-acba-dff9bd4a9ac5%2F%29&wdorigin=NavigationUrl">Knowledge construction</a> - learners go beyond memorizing information to 2: <a href="#Blooms">interpret, analyze, synthesize, evaluate</a> 3: as a main requirement 4: in a new context 5: that's interdisciplinary or multi-subject.
+   
+   *  <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Collaboration.one%7C219eb854-1f3a-4853-ad8a-7083ac484184%2FIntroduction%7C413558af-164b-4fb6-a473-5f5976f7efaf%2F%29&wdorigin=NavigationUrl">Collaboration</a> - learners 2: work together, 3: share responsibility, 4: make substantive decisions together, 5: work is interdependent. 
+
+   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Real-World%20Problem-Solving.one%7C06e643da-5fdd-4587-8b1a-a8e86e7f3bf0%2FIntroduction%7Cbaf7c2c0-d9ec-4f8a-b82a-b0e02a467efc%2F%29&wdorigin=NavigationUrl">Real-world problem-solving and innovation</a> - 2: problem-solving activities that are 3: real-world (authentic, non-fictional) situations that 4: innovate and communicated to someone <strong>outside of an academic</strong> context who can implement them. (No 5)
+
+   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Skilled%20Communication.one%7Caa33bc86-f72a-4ceb-8bce-4fffb97e48b5%2FIntroduction%7C47dd5766-3e30-4034-b0ab-906b40c645b5%2F%29&wdorigin=NavigationUrl">Skilled communication</a> - produce 2: extended or multi-modal communication 3: using evidence to support their ideas 4: customized for a particular audience. (No 5)
+
+   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Self-Regulation.one%7C4283ef67-f71d-4fa0-a1b5-37946b3c9d5f%2FIntroduction%7Cbb2967a3-6400-4a3f-9ffe-c7c0ab7744d6%2F%29&wdorigin=NavigationUrl">Self-regulation</a> - work on an activity for 2: a long-term activity with learning goals and success criteria 3: <strong>plan</strong> their work and 4: <strong>revise</strong> their work based upon their own reflection and feedback from others (peers, educators, or experts). (No 5)
+
+   * <a target="_blank" href="https://aka.ms/ICTrubric">Digital ICT (technology) integration</a>:  2: optionally use ICT to learn basic skills 3: <strong>optionally</strong> use ICT to support <strong>knowledge construction</strong> 4: ICT <strong>required</strong> to support knowledge construction, then 5: <strong>create</strong> an ICT product for authentic users.
+
+Technologies: 
+   * Microsoft Edge Collections to organize research & Translator add-on
+   * Bing
+   * Microsoft OneNote
+   * Microsoft SharePoint
+   * Microsoft ToDo
+   * Microsoft Forms to conduct surveys
+   * Microsft Edge Collections, 
+   * OneNote Class Notebooks, 
+   * SmartArt in Word & PowerPoint, 
+   * Microsoft Teams Channels & Files 
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/educator-center/product-guides/flip">Flip video production</a>, 
+   * <a target="_blank" href="https://support.microsoft.com/en-us/office/getting-started-with-sway-2076c468-63f4-4a89-ae5f-424796714a8a">Microsoft Sway</a> canvases, 
+   * <a target="_blank" href="https://support.microsoft.com/en-us/windows/how-to-use-voice-recorder-6fbb53d5-0539-abda-a9a4-0bcb84a778e7">Microsoft Voice Recorder</a> podcasts).
+   * Microsoft Excel
+   * Microsoft PowerPoint
+   * Microsoft Planner
+
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/educator-center/product-guides/minecraft">Minecraft</a> is referenced (it's Java programming).
+   * <a target="_blank" href="https://aka.ms/makecodearcade">Makecode Arcde</a>
+   * Microbit hardware are used to demonstrate knowledge construction. 
    <br /><br />
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=Shw8FbDi4lQ&t=2m40s" title="by James Leonard">VIDEO</a>: 
-   "Synapse Data Analytics" integrates relational data with big data, both using Azure Data Lake Storage (ADLS) Gen2, <a href="#Data+Factory">Azure Data Factory</a>, Azure Databricks, Azure Synapse SQL, and Power BI into a single unified analytics platform.
+https://www.pwctraining.org/product/microsoft-testing-certiport-exams-from-home/
 
-   Fabric covers the "complete spectrum" of data services including data movement, data lake, data engineering, data integration and data science, observational analytics, and business intelligence.
-   
-   But what happened to products previously shown in menus:
-   * Azure Databricks - "Fast, easy, and collaborative Apache Spark-based analytics platform"
-   * Azure Data Explorer - "Fast and highly scalable data exploration service"
-   * Azure Synapse Analytics - "Limitless analytics service with unmatched time to insight"
-   * Azure Analysis Services - "Enterprise-grade analytics engine as a service"
-   * Azure Machine Learning - "Build, train, and deploy models from the cloud to the edge"
-   * Azure Stream Analytics - "Real-time analytics on fast-moving streaming data"
-   * HDInsight - "Provision cloud Hadoop, Spark, R Server, HBase, and Storm clusters"
-   * Microsoft Purview - "Govern, protect, and manage your data estate"
+All questions are in their own section: you cannot go back to a previous section.
+
+<a target="_blank" href="https://thejuniorschool-my.sharepoint.com/personal/nick_theseniorschool_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fnick%5Ftheseniorschool%5Fcom%2FDocuments%2FMIE%20Expert%2FDigital%20Learning%20Specialist%2FMCE%20exam%20prep%2FLearning%20material%2F2021%20Resources&ga=1">Learning materials</a>
+
+It is the start to <a target="_blank" href="https://learn.microsoft.com/en-us/training/educator-center/programs/microsoft-educator/">Microsoft Advanced Educator, Microsoft Educator Trainer, and Microsoft Innovative Educator Expert</a>.
+<a target="_blank" href="https://certiport.filecamp.com/s/MCE_Datasheet.pdf/fi">PDF</a>: 
+<a target="_blank" href="https://certiport.pearsonvue.com/Certifications/Microsoft/MCE/Overview">Exam 62-193</a> is about Technology Literacy for Educators.
+
+<a target="_blank" href="https://www.youtube.com/@MicrosoftEDU">VIDEOS</a>:
+<a target="_blank" href="https://educationblog.microsoft.com/en-us">https://educationblog.microsoft.com/en-us</a>
+* <a target="_blank" href="https://aka.ms/21CLDnotebook">OneDrive OneNote Notebook</a>
+
+CertPREP Practice Tests, powered by GMetrix:
+   * https://www.youtube.com/watch?v=wQk2O3LiBIs Nicos Paphitis
+   * https://www.edukinect.com/products/1-mce-practice-test-single-user $15.50 for 30 accesses
+   * https://www.youtube.com/watch?v=SDXWg1-yLIM
+   * <a target="_blank" href="https://thejuniorschool-my.sharepoint.com/personal/nick_theseniorschool_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fnick%5Ftheseniorschool%5Fcom%2FDocuments%2FMIE%20Expert%2FDigital%20Learning%20Specialist%2FMCE%20exam%20prep%2FLearning%20material%2F2022%20Resources%2F21CLD%5FNotebook%5F3versions%2Ezip&parent=%2Fpersonal%2Fnick%5Ftheseniorschool%5Fcom%2FDocuments%2FMIE%20Expert%2FDigital%20Learning%20Specialist%2FMCE%20exam%20prep%2FLearning%20material%2F2022%20Resources&ga=1">download</a>
+
+   * https://www.coursocity.com/course-details/6
+   * https://myedusolve.com/certifications/microsoft-certified-educator
+   * https://www.youtube.com/watch?v=iQUVW473VlQ
+   * https://www.i2e-llc.com/21st-century-learning-design/
+   * https://www.linkedin.com/pulse/21st-century-digital-literacy-tobias-koprowski/
    <br /><br />
 
-   And Copilot? It's a feature within Power BI. <a target="_blank" href="https://www.youtube.com/watch?v=cTqVa1Gdn4s">Tak Tech Analytics</a> explains it.
+NOTE: "MCE" is also the acronym for the Microsoft Certified Expert Cybersecurity Architect certification.
 
-   ### Left Menus
 
-1. <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701174778/fabric-left-menu-66x493_x7hpur.png"><img align="right" alt="fabric-left-menu-66x493.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701174778/fabric-left-menu-66x493_x7hpur.png"></a>Click on any of the icons to see the left menu for that component:
+<a name="MCT"></a>
 
-   ### Admin verify domain
+### MCT (Microsoft Certified Trainer)
 
-1. Click the 9-dot icon at the top left of the screen present automation options: Power Automate, Power Pages, and 365 apps at
+This certification is granted to those who have passed at least one of the advanced certifications above.
+https://learn.microsoft.com/en-us/credentials/certifications/mct-certification
 
-   https://www.microsoft365.com/?auth=2&home=1
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/mct-certification">
+Microsoft Certified Trainers</a> get 75% off exam fees. But there is a $800 annual fee to be MCT, and an initial $1000 join fee.
 
-1. Click the <strong>Admin</strong> link to designate the admin for the organizational domain name used to sign in.
-1. Click Next.
-1. Read the "See step-by-step instructions to add DNS records" about signing into the Domain Registry (such as GoDaddy) to specify a TXT record Fabric needs to use like a password to trust the domain.
-1. Return to Fabric and click <strong>Confirm record</strong> for "You're now the admin".
-1. Click "Go to the admin center".
-1. Finish.
-
-   ### Left menu common items
-
-1. Click on Power BI on the left menu:
-
-   * <strong>Home</strong> is the landing page for the component.
-   * Create
-   * Browse
-   * OneLake data hub
-   * Monitoring hub - a station to view and track active activities across different products
-   * <a href="#Workspaces">Workspaces</a>
-   * My workspace
-   <br /><br />
-
-1. Click the <strong>Power BI</strong> icon (at the top as it's frequently used).
-   Its left menu contains what's not in other components: 
-   * Apps
-   * Metrics scorecards
-   * Deployment pipelines
-   * Learn - click on a sample to store its assets for that in your workspace, OneLake data hub, and left menu.
-   <br /><br /> 
-
-   ### Install Metrics App
-
-1. Search for other apps for Fabric at
-
-   https://appsource.microsoft.com/en-us/marketplace/apps?exp=ubp8&search=fabric&page=1
-
-1. In PowerBI, <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-install?tabs=1st">install the Microsoft Fabric Capacity Metrics app</a> to read:
-
-   <a target="_blank" href="https://app.fabric.microsoft.com/capacity/">https://app.fabric.microsoft.com/capacity</a>
-
-1. Click "Get it now" at 
-
-   https://appsource.microsoft.com/en-us/product/power-bi/pbi_pcmm.microsoftpremiumfabricpreviewreport?exp=ubp8
-
-1. Click "Install".
-1. Click the app to go to it.
-1. Connect to your own data by providing a "CapacityID" (GUID) and its UTC_offsite (time zone).
-
-   <a target="_blank" href="https://community.fabric.microsoft.com/t5/Developer/How-to-get-Power-BI-Embedded-Capacity-ID/m-p/2942860">PROTIP</a>: 
-   The capacity ID is shown in the capacity management page within the Power BI service -> Settings > Admin portal -> Capacity settings. Select a Gen2 capacity. 
-   In the URL of that page is the capacity ID. For example, "9B77CC50-E537-40E4-99B9-2B356347E584" is the Capacity ID in the URL:
-   
-   <tt>https://app.powerbi.com/admin-portal/capacities/9B77CC50-E537-40E4-99B9-2B356347E584</tt>
-
-   You may first have to <a target="_blank" href="https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-premium-manage">set your Service Principal as a Capacity Admin</a>. 
-
-   References:
-   * https://blog.fabric.microsoft.com/en-US/blog/capacity-metrics-in-microsoft-fabric/
-   * https://learn.microsoft.com/en-us/fabric/data-warehouse/usage-reporting
-   * https://learn.microsoft.com/en-us/fabric/admin/feature-usage-adoption
-   <br /><br />
-
-1. Click "Go back" at the lower-left corner.
-
-Each component has its own licensing considerations. See the next section.
-
-   * https://www.youtube.com/watch?v=8BAeLUywEMM by RADACAD "Why is it a big deal".
-
-<hr />
-
-## Pricing
-
-1. Click "Pricing" to see the Fabric Pricing page:
-
-   https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/?country=us
-
-1. Select Region: <strong>East US</strong> (Virginia) in US Dollars by the hour. 
-
-   DEFINITION: SKU = Stock Keeping Unit = a unique identifier for each distinct product and service that can be purchased in business.
-
-   PROTIP: <a target="_blank" href="https://7451111251303.gumroad.com/l/fjkxm?layout=profile" title="Spreadsheet available for purchase">My analysis, illustrated below</a>, shows that while the number of CUs doubles with each level, costs also double for the two ways of charging:
-
-   <img alt="fabric-cu-pricing-670x388.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148689/fabric-cu-pricing-670x388_ihqdt8.png">
-   
-   Reserved CUs are 41% less than the Pay-as-you-go per-hour prices at all levels, for all countries.
-   
-   As for differences in CU Reserved cost among different regions (using different colors):<br />
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png"><img alt="fabric-cu-pricing-intl-394x696.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701148826/fabric-cu-pricing-intl-394x696_okjmdt.png"></a>
-   
-   PROTIP: There is only one "US" entry because prices are the same in all US regions.<br />
-   Brazil South is double the cost in the US. 
-   Fabric may not even be available there because the price for Pay-as-you-go is not listed for it on the website.
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=smmmE-rjXr8">VIDEO</a>:
-   https://learn.microsoft.com/en-us/fabric/enterprise/licenses
-   
-   <a target="_blank" href="https://www.youtube.com/watch?v=6AAeV3bSMso&t=5m6s">VIDEO</a>: A Power BI Pro license is not needed if you have a Fabric Pro license at F64 SKU or above.
-
-   https://learn.microsoft.com/en-us/power-bi/enterprise/service-premium-features
-
-   "Charges for OneLake storage are comparable to Azure ADLS of $0.023/GB on US West 2."
-
-<hr />
-
-## End-to-End projects
-
-*
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=fRBKcFaItZs" title="by Centida BI & Analytics">VIDEO</a>: Ways of getting <a target="_blank" href="https://learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver16">Wide World Importers sample Lakehouse databases</a> into Lakehouse:
-
-   1. Fact table from a OneLake Shortcut to a blob (file)
-   1. Order details from a Data Factory pipeline 
-   1. 2-dim tables from Excel using Dataflows
-   4. 3-dim tables from CSV (regular uploads)
-   <br /><br />
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=gKdlsHm7QgU&list=PL9SoC_dDpQ8FnIJZwlk5L4rU1r7-cQNCG">DataVerse Academy</a>
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=yRJ03n1U5-E&list=PLug2zSFKZmV0Yaya7NxRQfrrPtfF2vj0K">Learn Microsoft Fabric with Will</a>
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=a6A3jtvB62U">James Serra</a>
-
-* <a target="_blank" href="https://www.linkedin.com/in/darshil-parmar/">Darshil Parmar</a>: <a target="_blank" href="https://www.youtube.com/watch?v=IaA9YNlg5hM">Azure End-To-End Data Engineering Project</a> to extract using an API Azure Data Factory pipline, then load into Azure  Databricks storage. Then write Spark code to transform data back to Data Lake to run SQL queries.
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=fAL1ySBqJKI">VIDEO</a>: 
-Creating A Microsoft Fabric End-To-End Solution ⚡ [Full Course] 1h30m by Austin Libal of Pragmatic Works Jul 12, 2023.
-References <a target="_blank" href="https://prag.works/lwtn-microsoft-fabric-files">files</a>.
-Get <a target="_blank" href="https://prag.works/202307-lwtn-certificate">certificate</a>
-
-* https://www.youtube.com/watch?v=J4i5lcROJcs
-
-* https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/service_fabric_cluster
-<br />https://github.com/terraform-providers/terraform-provider-azurerm/tree/master/examples/service-fabric/windows-vmss-self-signed-certs
-only provisions the Management. 
-
-* https://www.udemy.com/course/learn-microsoft-fabric-basic-to-advance-with-practical/
-
-<hr />
-
-## What's Different?
-
-Rather than other fanboys who say "it's the latest cool thing, let's switch now", let's first clear up some common confusions:
-
-> <a target="_blank" href="https://endjin.com/blog/2023/05/intro-to-microsoft-fabric">BLOG</a>: "Microsoft Fabric can be thought of as the third generation of Microsoft data platforms, where first generation (e.g. HDInsight, SQL Data Warehouse) were somewhat isolated takes on traditional data products; Second generation was Azure Synapse Analytics, which integrated platforms at a UX level but still felt a little disjointed at the data level; and now we have Microsoft Fabric which builds upon the Synapse "unification" vision, with a particular focus on enabling deep data-level interoperability."
-
-The product name "<strong>Fabric</strong>" Microsoft introduced March 2023 along with a set of cloud-based product <strong>experiences</strong> containing the same words also used in legacy products that Microsoft continues to sell: <a target="_blank" href="https://www.casewhen.co/blog/data-factory-showdown-fabric-vs-azure">BLOG</a>:
-
-   * The "Synapse" prefix is now applied to several Fabric products. Before Microsoft Fabric, Microsoft used the "Synapse" brand for <a target="_blank" href="https://learn.microsoft.com/en-us/azure/synapse-analytics/synapse-link/sql-synapse-link-overview">Synapse Link</a> and the "Azure Synapse Analytics" product, which Microsoft continues to sell. PROTIP: "<a target="_blank" href="https://endjin.com/blog/2023/05/azure-synapse-analytics-versus-microsoft-fabric-a-side-by-side-comparison">There is no automatic upgrade path"</a> from Azure Synapse Analytics to Fabric Real-Time Analytics. 
-   
-This "Wordly Map" (from Barry Smart <a target="_blank" href="https://endjin.com/blog/2023/05/azure-synapse-analytics-versus-microsoft-fabric-a-side-by-side-comparison">at Endjin</a>) provides a high-level overview of the evolution of products and features from "Uncharted" to "Industrial" utility in Microsoft Fabric:
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701439136/fabric-wardley-map-1121x793_pufd34.webp"><img alt="fabric-wardley-map-1121x793.webp" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701439136/fabric-wardley-map-1121x793_pufd34.webp"></a>
-
-   * The workspace in Azure Synapse Analytics is Synapse Studio GUI. However, Fabric uses a Power BI-based interface organized around <a href="#Personas">personas</a> — data science, data engineering, real-time analytics, etc.
-
-   * "Mapping Data Flows" (and "Synapse Links") are not available in Fabric.
-   
-   * "Mapping Data Flows" (and "Synapse Pipelines") are now called "<a target="_blank" href="https://docs.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview">Data Flows</a>" within Data Factory in Fabric.
-   
-
-PROTIP: what is so cool about Microsoft Fabric:
-   * <a href="#Shortcuts">OneLake Shortcuts</a> to access any data anywhere
-   * <a href="#DeltaFormat">OneLake DeltaFormat</a> for time travel, streaming, and other magic with databases in all formats
-   * <a href="#Data+Activator">Data Activator</a>, new to all Microsoft and the industry, for triggering automatic actions
-   * Access to Microsoft's CosmosDB multi-region database involves <strong>mirroring</strong> 
-   <br /><br />
-
-Individual artefacts before and after Fabric:
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701362429/microsoft-fabric-artefacts-1280x720_swuigs.webp"><img alt="microsoft-fabric-artefacts-1280x720" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701362429/microsoft-fabric-artefacts-1280x720_swuigs.webp"></a>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=oxMUJT3p9f4">Justyna Lucznik</a> explains the differences between Azure Synapse Analytics and Microsoft Fabric.
-
-<hr />
-
-<a name="Shortcuts"></a>
-
-## OneLake Shortcuts
-
-<a target="_blank" href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-shortcuts">Shortcuts</a> are the most significant technical advancement with Fabric's "OneLake" capabilities. It's a simple but important feature.
-
-<a target="_blank" href="https://blog.fabric.microsoft.com/en-us/blog/using-azure-databricks-with-microsoft-fabric-and-onelake?ft=All%3A">BLOG</a>:
-With Shortcuts, Microsoft enables the processing of specific datasets from "anywhere", including blobs (files) in AWS S3 and Google Cloud Storage as well as Microsoft's own Azure Blob Storage, Azure Data Lake Storage (ADLS) Gen2, Azure Databricks, etc.
-
-Shortcuts enable Data Engineers to create and manage data pipelines that move data from any one place to another.
-
-Behind the scenes, OneLake manages the various permissions and credentials to access data.
-Relative file paths can be used to directly read data from shortcuts.
-ADLS shortcuts point to the DFS endpoint for the storage account. Example: 
-
-   <ul><tt>https://accountname.dfs.core.windows.net/...</tt></ul>
-
-Applications and services outside of Fabric can access Shortcuts through <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-access-api">OneLake's API</a>, using enpoints such as:
-
-   <ul><tt>https://onelake.dfs.fabric.microsoft.com/MyWorkspace/MyLakhouse/Tables/MyShortcut/MyFile.csv</tt></ul>
-
-ADLS and S3 shortcut target paths can contain "-" / "." / "_" / "~" but not <a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc3986#section-2.2">reserved characters in RCF 3986 section 2.2</a>.
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701352948/fabric-onelake-shortcuts-1031x632_nszljw.png"><img alt="fabric-onelake-shortcuts-1031x632.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701352948/fabric-onelake-shortcuts-1031x632_nszljw.png"></a>
-
-Shortcuts can be created within Microsoft's various SQL data warehouses, lakehouses, KQL databases, etc.
- 
-PROTIP: By themselves, Shortcuts don't "unify data across domains". People do that by actively managing a "unified namespace" of Shortcuts across the entire enterprise. That's hard work requiring both executive and worker support across departments and geographies. Thus the "Chief Data Officer" (CDO).
+https://mcp.microsoft.com/MCT/Enrollment?wa=wsignin1.0#/profile
 
 
 <hr />
 
-<a name="DeltaFormat"></a>
+<a name="Contributor"></a>
 
-## Delta/Parquet Format
+## Contributor badges
 
-Like Adobe's PDF file format, which enabled many companies in the printing industry to flourish due to widespread adoption, the <strong>Delta Lake data format</strong> has enabled the <strong>datalake</strong> industry to achieve a whole new level. Database vendors <a target="_blank" href="https://wilsonmar.github.io/snowflake/">Snowflake</a> and Databricks have been using the Delta format for years. The storage format used by Microsoft SQL Server format was proprietary.
+<a target="_blank" href="https://www.youtube.com/watch?v=AhAz3BcXy0A">VIDEO</a>:
+Microsoft offers Contributor, Evangelist, Leader, and Expert badges on Credly.com in their
+Contributor Recognition Program, which incentivizes subject matter experts in various technical roles across Microsoft to create high quality deliverables to docs.microsoft.com. The goal is to excite non-technical writers to contribute content even if it is outside of the scope of their role.
 
-1. Visit:
+https://www.credly.com/organizations/microsoft-contributor-recognition/badges
 
-   https://www.linkedin.com/company/deltalake/
+   * Architecture Center
+   * Database Docs
+   * Cloud Adoption Framework for Azure
+   * Well-Architected Framework (2022)
+   * Well-Architected Framework (Refresh)
 
-   Delta Lake is an independent open-source project and not controlled by any single company. To emphasize this we joined the Delta Lake Project in 2019, which is a sub-project of the Linux Foundation Projects.
+<hr />
 
-1. Visit their open-source project at:
+<a name="AZ-900"></a>
 
-   https://github.com/delta-io
+## AZ-900 Azure Fundamentals
 
-   "An open-source <strong>storage framework</strong> that enables building a <a href="#Lakehouse">Lakehouse architecture</a> with compute engines including Spark, PrestoDB, Flink, Trino, and Hive and APIs"
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-900">https://docs.microsoft.com/en-us/learn/certifications/exams/az-900</a>
 
-1. Visit their website at:
+PROTIP: AZ-900 Microsoft Azure Fundamentals
+is not a required prerequisite for any associate or expert certification.
 
-   https://www.delta.io
+<a target="_blank" href="https://github.com/MicrosoftLearning/Lab-Demo-Recordings/blob/master/AZ-900.md">MS Videos</a>
 
-   <a target="_blank" href="https://docs.delta.io/latest/delta-intro.html">Delta Lake</a> is an open-source storage layer that brings ACID transactions to Apache Spark™ and big data workloads. Delta Lake runs on top of your existing data lake and is fully compatible with Apache Spark APIs.
+It's less expensive than other AZ exams ($65 vs. $165).
+
+It's worth considering if you are new to Microsoft exams.
+It builds confidence with Microsoft and Pearson/Vue exam-taking process.
+
+Passing AZ 900 demonstrates broad understanding of cloud concepts:
+availability, fault tolerance, 
+public/private/hybrid cloud, IaaS, PaaS, SaaS
+
+Andrew Brown, who also offers <a target="_blank" href="https://www.exampro.co/az-900">Exampro prep course for $29/month</a>, shows that (by skipping the repeatition of topics), a good summary can be done in a <a target="_blank" href="https://www.youtube.com/watch?v=NKEFWyqJ5XA" title="Jun 17, 2020">
+3 hour VIDEO</a> (with ads but great diagrams). It's done through <a target="_blank" href="https://www.freecodecamp.org/news/azure-fundamentals-course-az900/">FreeCodeCamp.org</a>His advice:
+"Study 1-3 hours a day, every day".
+
+<a target="_blank" href="https://cloudacademy.com/learning-paths/az-900-exam-preparation-microsoft-azure-fundamentals-524/">CloudAcademy.com</a>
+includes time on servers (one hour at a time).
+
+<a target="_blank" href="https://www.youtube.com/watch?v=53LO_rJz6Es&list=PLHh_n2lgzcrvecPJ-zMukLlDrq0GMSMmB" title="Dec 7, 2020">Ravikirans answers Whizlabs 55 questions</a> 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=cAgN6Ac8MS4&list=PLHh_n2lgzcrvecPJ-zMukLlDrq0GMSMmB&index=2">AZ-900 15 questions from WhizLabs</a>
+
+<a target="_blank" href="https://quizlet.com/416573542/az-900-flash-cards/">Quizlet flash cards</a>
+
+<a target="_blank" href="https://www.aguidetocloud.com/full-courses/az900fullcourse">7-hour AGuideToCloud video class by Susanth Sutheesh</a>
 
 
-1. Click the "Lakehouse architecture" link to see the seminal academic paper about that architectural pattern at:
+<a name="AZ-103"></a>
 
-   https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf
+## AZ-103 Azure Administrator Associate
 
-   The seminal paper's lead author is <a target="_blank" href="https://www.linkedin.com/in/michaelarmbrust/">Michael Armbrust of Databricks</a> (after a PhD at UC Berkeley).
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-104">
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-104</a> on August 31, 2020 replaced <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-103">exam AZ-103: Microsoft Azure Administrator</a> which had superceded retired exams AZ-100 and AZ-101.
 
-   Delta Lakehouse data structures are next-level genius:
+<a target="_blank" href="https://github.com/MicrosoftLearning/Lab-Demo-Recordings/blob/master/AZ-103.md">MS Videos</a>
 
-   * The binary format compresses data (using algorithms Snappy, Gzip, LZ4, etc.) that's 75% than CSV files
+https://github.com/MicrosoftLearning/AZ-103-MicrosoftAzureAdministrator
 
-   * <a target="_blank" href="https://github.com/delta-io/delta/blob/master/PROTOCOL.md">Logging of ACID transactions</a> (changes) are enabled by Apache's <strong>"Parquet"</strong> file format, which not only enables auditing governance but also enables <strong>time travel</strong> -- bringing the whole database to specific points back in time. This is similar to what can be done with repositories of text files using Git.
+<a target="_blank" href="https://www.youtube.com/watch?v=48Ghqo57HrY&list=PLlI3peB1V-rrzvs2SEgZkg-9DIvS7Dmcw&index=2">VIDEO: AZ-103 vs AZ-104</a>
 
-   * Responds to (is fully compatible with) Apache Spark APIs to access data live
 
-   * Share live data without copying to another system
+<a name="AZ-104"></a>
 
-   * Hold structured and unstructured data in the same place
+## AZ-104 Azure Administrator Associate
 
-   * Use a "schema-on-read" approach which define tabular schemas on semi-structured data files at the point where the data is read for analysis, without applying constraints when it's stored, rather than legacy "schema-on-write" approach which requires data to be structured before it's stored.
+Be designated a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-administrator/">Microsoft Certified: Azure Administrator Associate</a> by passing one test.
+
+https://docs.microsoft.com/en-us/learn/azure/
+
+<a target="_blank" href="https://learning.oreilly.com/certifications/9780136808633/">Pearson Practice Test</a>
+
+<a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/">https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator</a> are the labs used during Microsoft's live classes. Its source is at <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-104-MicrosoftAzureAdministrator">https://github.com/MicrosoftLearning/AZ-104-MicrosoftAzureAdministrator</a> 
+
+> Prerequisites for Azure administrators
+
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-104">Study Guide for AZ-104</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-administrator-prerequisites/">Microsoft's LEARNING PATH</a>
+
+> Manage Azure <a target="_blank" href="https://wilsonmar.github.io/azure-onboarding/">identities and governance</a>:
+
+   * https://wilsonmar.github.io/azure-onboarding/
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-manage-identities-governance/">Microsoft's LEARNING PATH</a>
+   * <a target="_blank" href="https://github.com/madebygps/projects/blob/main/az-104/onboarder.md">Onboard Automator (Manage Azure identities and governance)</a> from MadeByGPS
    
-   * Contains metadata that describes the data it contains
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Demos/01%20-%20Administer%20Identity.html">Demo 01: Administer Identity</a>
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Azure_AD_Identities.html">Lab 01: Manage Azure Active Directory Identities</a>
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html">Lab 01: Manage Microsoft Entra ID Identities (rebranding test)</a>
 
-   * Contains its own indexing mechanisms
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Demos/02%20-%20Administer%20Governance%20and%20Compliance.html">Demo 02: Administer Governance and Compliance</a>
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html">Lab 01: Manage Azure Active Directory Identities</a>
 
-   * multiple queries can write to the same delta table simultaneously (at exactly the same time). <a target="_blank" href="https://books.japila.pl/delta-lake-internals/overview/">BLOG</a>
+   * Lab 02a: Manage Subscriptions and RBAC
+   * Lab 02a: Manage Subscriptions and RBAC (rebranding test)
+   * Lab 02b: Manage Governance via Azure Policy
+
+   * Demo 03: Administer Azure Resources
+   * Lab 03a: Manage Azure resources by Using the Azure Portal
+   * Lab 03b: Manage Azure resources by Using ARM Templates
+   * Lab 03c: Manage Azure resources by Using Azure PowerShell (optional)
+   * Lab 03d: Manage Azure resources by Using Azure CLI (optional)
+
+   * Lab 09a: Implement Web Apps
+   * Lab 09b: Implement Azure Container Instances
+
+   * https://medium.com/marcus-tee-anytime/identity-and-access-management-iam-as-code-in-azure-with-terraform-f67634a1e54e
+
+> Implement and manage <a target="_blank" href="https://wilsonmar.github.io/azure-storage/">storage</a>:
+
+   * https://wilsonmar.github.io/azure-storage/
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-manage-storage/">Microsoft's LEARNING PATH</a>
+   * <a target="_blank" href="https://github.com/madebygps/projects/blob/main/az-104/sharesafely.md">ShareSafely - File Share Web App (Implement and manage storage)</a> from MadeByGPS
+
+   * Demo 07: Administer Azure Storage
+   * Lab 07: Manage Azure storage
    
-   * Can handle continuous <strong>streams</strong> of data, processing video, audio, and other media data types
+   * https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account.html
 
-   * Designed to be splittable -- be divided into smaller chunks for parallel processing in distributed computing frameworks like Apache Hadoop and Apache Spark.
+> Deploy and manage <a target="_blank" href="https://wilsonmar.github.io/azure-compute/">Azure compute</a> resources:
 
-   PROTIP: The Delta format enables a revolution in how people collaborate because for once there is <strong>a "single source of truth"</strong> for data engineers, data scientists, and business analysts. 
+   * https://wilsonmar.github.io/azure-compute/
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-manage-compute-resources/">Microsoft's LEARNING PATH</a>
+   * <a target="_blank" href="https://github.com/madebygps/projects/blob/main/az-104/vmfleetcommander.md">VM Fleet Commander (Deploy and manage Azure compute resources)</a> from MadeByGPS
 
-   To reiterate, in the future there won't be SSIS ETL jobs creating subsets of data to each remote department. 
-   Each department accesses the same DataLake.
+   * Demo 08: Administer Azure Virtual Machines
+   * Lab 08: Manage Virtual Machines
 
-   ### Lakehouse Architecture
+   * Demo 09: Administer PaaS Compute Options
 
-   <a name="Lakehouse"></a>
+   * https://github.com/Azure/terraform-azurerm-compute
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701404722/lakehouse-gens-1609x654_rey2mo.png"><img alt="lakehouse-gens-1609x654.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701404722/lakehouse-gens-1609x654_rey2mo.png"></a>
+> Create and manage <a target="_blank" href="https://wilsonmar.github.io/azure-networking/">virtual networking</a>:
 
-   First generation platforms used ETL to Transform and Load data into data warehouses from which analytics reports are created.
-   Two-tier architectures still use ETL despite using data lakes referred directly by Machine Learning systems.
-   
-   Lakehouse architecture is a data management architecture that combines the analytic capabilities of data warehouses with the scale and flexibility of data lakes to support every known data workload. It is a new paradigm that enables data teams to work with any type of data, build data pipelines in any language, and use any kind of downstream analytics, business intelligence, or machine learning tool.
+> Configure and manage <a target="_blank" href="https://wilsonmar.github.io/azure-networking/">virtual networking</a>:
 
-   Combined with the wide and easy availability of disk space on hyperscalers (AWS, Azure, Google), data that used to be processed by ETL can now be processed by ELT or ELTL.
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/az-104-manage-virtual-networks/">Microsoft's LEARNING PATH</a>
+   * <a target="_blank" href="https://github.com/madebygps/projects/blob/main/az-104/netmazeexplorer.md">NetMaze Explorer (Implement and manage virtual networking)</a> from MadeByGPS
 
-   <a target="_blank" href="https://www.linkedin.com/pulse/comparing-microsoft-fabric-azure-machine-learning-which-kim-berg/">PROTIP</a>:
-   Microsoft's legacy <strong>Azure ML</strong> PaaS offering is elevated by Fabric's <strong>Synapse Data Science</strong> SaaS offering by adding access to OneCloud Delta format and the "universal" data preparation, management, and analysis tools that goes with it. 
-   
-   REMEMBER: Microsoft has renamed the Power BI "dataset" content type to :semantic model". Semantics relates to the study of references, specifically describing the real meaning between symbols or words. A semantic model or semantic data model is a high-level databases. An SDM specification describes a database in terms of the kinds of entities that exist in the application environment, the classifications and groupings of those entities, and the structural interconnections among them.
+   * Demo 04: Administer Virtual Networking
+   * Lab 04: Implement Virtual Networking
 
-1. Additional descriptions at:
-   * <a target="_blank" href="https://docs.delta.io/latest/delta-intro.html">https://docs.delta.io/latest/delta-intro.html</a>
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/databricks/delta/">https://docs.microsoft.com/en-us/azure/databricks/delta/</a>
+   * Demo 05: Administer Intersite Connectivity
+   * Lab 05: Implement Intersite Connectivity
+
+   * Demo 06: Administer Network Traffic Management
+   * Lab 06: Implement Traffic Management
+
+> <a target="_blank" href="https://wilsonmar.github.io/azure-monitoring/">Monitor</a> and back up Azure resources:
+
+   * <em>NO Microsoft's LEARNING PATH)</em>
+   * <a target="_blank" href="https://github.com/madebygps/projects/blob/main/az-104/insightscape.md">InsightScape (Monitor and back up Azure resources)</a> from MadeByGPS
+
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Demos/10%20-%20Administer%20Data%20Protection.html">Demo 10: Administer Data Protection</a>
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_10-Implement_Data_Protection.html">Lab 10: Administer Data Protection</a>
+
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Demos/11%20-%20Administer%20Monitoring.html">Demo 11: Administer Monitoring</a>
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_11-Implement_Monitoring.html">Lab 11: Administer Monitoring</a>
+
+<br /><br />
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Qd0YI9ZMHHs">VIDEO</a>: <a target="_blank" href="https://github.com/madebygps/projects/tree/main/az-104">AZ-104 Projects by MadeByGPS</a> <a target="_blank" href="https://www.linkedin.com/in/madebygps/">Gwyneth Peña-Siguenza</a>. She <a target="_blank" href="https://payhip.com/b/BgnjT">sells her diagram</a> for $10.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-administrator/?wt.mc_id=esi_lxp_webpage_wwl&tab=tab-learning-paths">Microsoft's tutorial</a> provides more managerial aspects (such as governance) than others.
+
+A search of Microsoft Learn for "Administrator" and "Azure" <a target="_blank" href="https://docs.microsoft.com/en-us/learn/browse/?roles=administrator&wt.mc_id=esi_lxp_webpage_wwl&products=azure&resource_type=learning%20path">82 </a> <a target="_blank" href="https://docs.microsoft.com/en-us/learn/browse/?roles=administrator&wt.mc_id=esi_lxp_webpage_wwl&products=azure&resource_type=module">yielded 317 modules</a> over 14 pages (at time of writing). Most of them focus on a specific service/product:
+
+   * <a target="_blank" href="https://docs.microsoft.com/learn/modules/bash-introduction/">Intro to Bash</a>
+   * <a target="_blank" href="https://docs.microsoft.com/learn/modules/introduction-azure-firewall/">Intro to Azure Firewall</a>
    <br /><br />
 
-   For a deeper dive, get the 267-page ebook PDF "Delta Lake: Up & Running by O’Reilly at:
-   https://www.databricks.com/resources/ebook/delta-lake-running-oreilly<br />
-   https://www.databricks.com/sites/default/files/2023-10/oreilly-delta-lake_-up-and-running.pdf
+Video Lectures:
 
-   "Delta Lake supports several operations to modify tables using standard <strong>DataFrame APIs</strong>."
+1. <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg">11 hour VIDEO</a>: <a target="_blank" href="https://www.freecodecamp.org/news/azure-administrator-certification-az-104-pass-the-exam-with-this-free-11-hour-course/">course on FreeCodeCamp.org</a> <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg" title="May 3, 2021">on YouTube</a> by Andrew Brown offering his <a target="_blank" href="https://www.exampro.co/az-104">ExamPro</a>.
 
-<!--
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701352948/fabric-onelake-shortcuts-1031x632_nszljw.png"><img alt="fabric-onelake-shortcuts-1031x632.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701352948/fabric-onelake-shortcuts-1031x632_nszljw.png"></a>
--->
+   PROTIP: I got a YouTube subscription to download videos for watching offline, so I can listen while I drive through spotty cell coverage areas.
+
+DEFUNCT: <a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course">Tim Warner and Mike Pfeiffer's CloudSkills.io</a> after collecting $1,000 from students before shutting down in 2021. We felt cheated.
+Tim Warner:
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-administrator-preparing-az-104-exam">Pluralsight: Microsoft Azure Administrator: Preparing for the AZ-104 Exam 4 Oct 2020</a>
+   * <a target="_blank" href="https://learning.oreilly.com/live-events/exam-az-104-microsoft-azure-administrator-crash-course/0636920094475/">OReilly 5h Crash Course</a> Feb 13, 2024 referencing https://github.com/timothywarner/az104
+   <br /><br />
+
+OReilly:
+   * <a target="_blank" href="https://learning.oreilly.com/live-events/azure-administrator-certification-az-104-crash-course/0636920052897/0636920099990/">Azure Administrator Certification (AZ-104) Crash Course</a> Jan. 26, 2024 & Feb. 25, 2021 by Glenn Weadock   
+
+1. Michael J. Shannon takes a deep dive on a lightboard in <a target="_blank" href="https://learning.oreilly.com/videos/exam-az-104-microsoft/9780136823483/9780136823483-A104_01_01_01">9+ hours of videos with transcript from OReilly</a> 
+
+* Pluralsight has <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-azure-administrator-az-104">a series of videos for each domain</a>
+
+* <a target="_blank" href="https://cloudacademy.com/learning-paths/az-104-exam-preparation-microsoft-azure-administrator-1-1332/">CloudAcademy's learning path</a>, by Thomas Mitchell, provides quizzes along the way and <strong>time on actual Azure instances</strong>.
+
+* <a target="_blank" href="https://cloudacademy.com/learning-paths/az-104-exam-preparation-microsoft-azure-administrator-1-1332/">
+CloudAcademy</a> provides lab time on the real Azure environment.
+
+* Anand Rao Nednur's <a target="_blank" href="https://mckinsey.udemy.com/course/exam-az-104-microsoft-azure-administrator/">McK</a> <a target="_blank" href="https://www.udemy.com/course/exam-az-104-microsoft-azure-administrator/"><strong>15.5 hour</strong> Udemy video course</a> (sometimes using a lightboard) is <strong>most comprehensive</strong>. So it's as much about understanding how to do the job as passing the test.
+
+* Alan Rodriguez's <a target="_blank" href="https://mckinsey.udemy.com/course/microsoft-certified-azure-administrator/">McK</a> <a target="_blank" href="https://www.udemy.com/course/microsoft-certified-azure-administrator/">Udemy.com</a> 
+
+K21Academy <a target="_blank" href="https://www.youtube.com/watch?v=7z6VduCVYH4&list=PLlI3peB1V-rrzvs2SEgZkg-9DIvS7Dmcw">AZ-104: what You Need To Know</a>
+
+Niraj Kumar, founder of <a target="_blank" href="https://azureezy.com/az-104-azure-administrator/">Azureezy.com</a>, https://t.me/AzureTalk, has <a target="_blank" href="https://t.me/azuretalk">Telegram chat</a> with his series on <a target="_blank" href="https://www.youtube.com/watch?v=413zBdy_ocQ">YouTube Jul 21, 2020</a> with <a target="_blank" href="https://azureezy.com/az-104-azure-administrator/">slidedecks here</a>:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=413zBdy_ocQ&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI">AZ exams</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=413zBdy_ocQ&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&t=9m39s">Manage Azure Identities and governance</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=lL6Osu3GERQ&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&index=2">Implement and manage Azure Webapps and Container</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=V0FUu0S2Eck&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&index=3">Azure Compute</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=3WdTLn8vNO4&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&index=4">Azure Storage</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=_Z9xzuX6Fsw&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&index=5">Azure Networking Part1</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=FVJUZkmuozY&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&index=6">Azure Networking Part2</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=JEveC534tQk&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&index=7">Azure Backup and Site Recovery</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=AzPvDNUldoI&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&index=8&t=10m43s" title="Sep 15, 2020">1hr 47m Azure Monitoring</a>
+   <br /><br />
+
+Chris Wahl (twitch.tv/wahlnetwork)
+   * <a target="_blank" href="https://www.youtube.com/watch?v=gyZdCzdkSY4" title="Oct 13, 2020">Beginners Tutorial to Terraform with Azure</a>
+   <br /><br />
+
+Susanth Sutheesh
+   * <a target="_blank" href="https://www.youtube.com/watch?v=I1zvntPHNMk">Full course</a>
+   <br /><br />
+
+ The Tech BlackBoard
+   * <a target="_blank" href="https://www.youtube.com/playlist?list=PL0AYtrUw-NRTX9NFza7kfTDlxYaKxooCk">5 hour Q&A</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=11XlNifbHfM">July 28, 2023 update</a>
+   <br /><br />
+Eydiea
+   * https://www.youtube.com/watch?v=wYUhumwOGrM&list=PLA_CqAntXBh4DPIYCcplBWLjT3AYl1822
+
+On ACloudGuru.com/LinuxAcademy.com:
+
+   https://app.pluralsight.com/paths/certificate/microsoft-azure-administrator-az-104 by Tim Warner and <a target="_blank" href="https://www.linkedin.com/in/michael-teske-45240561/">Michael Teske</a>
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/573">LinuxAcademy</a>
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/763">Intro to Azure Files</a>
+   <br /><br />
+
+<strong>Flash cards:</strong>
+
+   * <a target="_blank" href="https://quizlet.com/subject/az-104/">Quizlet flash cards</a>
+   <br /><br />
+
+<strong>Sample tests:</strong>
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=ef87Qun5wBU">VIDEO 4-hr questions</a>
+   * https://www.whizlabs.com/microsoft-azure-certification-az-104/
+   <br /><br />
+
+   Practice Test (from MeasureUp) that feels just like the actual test, if you are enrolled in <a target="_blank" href="https://esi.microsoft.com/getcertification">Microsoft's Enterprise Skills Initiative</a>.
+
+   After sign-up, you get an email to register an account <a target="_blank" href="https://www.skillpipe.com/">https://www.skillpipe.com</a> then paste the license key from the email to redeem it on your <a target="_blank" href="https://www.skillpipe.com/#/bookshelf/books">bookshelf</a>, where you take the course.
+
+* <a target="_blank" href="https://app.pluralsight.com/paths/skills/microsoft-azure-administrator-az-104">Pluralsight</a>
+by Tim Warner with <a target="_blank" href="https://www.kaplanlearn.com/education/offeringdashboard/index/04347ac4e89b19f5ef7559ef6f975386">Kaplan sample exam</a>.
+
+* XaaS has <a target="_blank" href="https://www.udemy.com/course/microsoft-azure-administrator-practice-tests/">6 tests at Udemy</a>, each with 52 questions (312 total). Does it sync with <a target="_blank" href="https://www.udemy.com/course/microsoft-azure-administrator-training-bootcamp/">Bootcamp</a> also from XaaS?
+
+* <a target="_blank" href="https://www.aguidetocloud.com/full-courses/az104fullcourse">10-hour AGuideToCloud video class by Susanth Sutheesh</a>
+
+from The Tech BlackBoard by Vipin Vij.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=QGZWqYIpOMw">VIDEO: 190-question Q&A in 5 hours</a> 
+   * https://www.youtube.com/watch?v=EkJQXUGlLGU case studies
 
 
 <hr />
 
-<a name="Personas"></a>
+<a name="AZ-800"></a>
 
-## Personas (Fabric User Roles)
+## AZ-800: Administering Windows Server Hybrid Core Infrastructure
 
-Now let's focus on <strong>impacts</strong> on the lives of people, before examining the home pages and <strong>capabilities</strong> of the products.
+<a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/exams/az-800/">
+https://learn.microsoft.com/en-us/credentials/certifications/exams/az-800</a>
+For $165, answer 70% of 
+Take free recert after one year.
 
-Instead of the traditional generic "Database Administrator" role name, 
-Microsoft designed Fabric documentation around different roles within enterprises, listed here in order of introduction during a green-field implementation:
+The Windows Server hybrid administrator installs, manages, maintains, and troubleshoots Windows Server 2022 systems both on-premises and in Microsoft Azure.
 
-### Data Citizens
+https://learn.microsoft.com/en-us/credentials/certifications/exams/az-800/
 
-<strong>Data Citizens</strong> are true end-users -- business people who need to make decisions and take actions based on data. 
+https://go.microsoft.com/fwlink/?linkid=2226877
+Exam Sandbox (8 hours for 10 questions)
 
-   They have the budget authority and the responsibility for what are correct values in databases.
-   
-   PROTIP: For each set of data, there is one <strong>data owner</strong> who approves data deletion and arranges for audits as well as
-   approving who have access and extent of permissions (for implementation by a central security team using IAM tools).
+https://www.pluralsight.com/paths/administering-windows-server-hybrid-core-infrastructure-az-800
+consists of several courses of 1-2 hours each,, by Tim Warner:
 
-   Data Citizens need to be trained to use <a href="#PowerBI">Power BI</a> for <a href="#Analytics">Analytics</a>, <a href="#Data+Activator">Data Activator</a> for alerts, and other tools provided by Data Analysts. Some track where they spend time on technical aspects to ensure that the time spent is worth the value of the data.
-
-### Data Analysts
-
-<strong>Data (Business) Analysts</strong> serve the needs of Data Citizens by establishing dashboards and alerts, and training users on technologies and possibilities. These Analysts design the "data models" defining relationships among sets of data.
-
-   PROTIP: Business analysts also coordinate <a target="_blank" href="https://wilsonmar.github.io/chaos-engineering/">Chaos Engineering efforts</a> to ensure that recovery efforts are quick and effective.
-
-   That includes coding <a target="_blank" href="https://wilsonmar.github.io/kql">KQL (Kusto Query Language)</a> within <a href="#RTA"><strong>Synapse Real Time Analytics</strong></a> to create (star schema) databases for analytics. The product is an evolution of Synapse Data Explorer, but also introduces the "Eventstreams" feature that's very similar to Azure Stream Analytics no-code editor.
-   
-   Data Analysts collaborate with Security on using Microsft Purview.
-
-   PROTIP: Those slinging legacy SSIS ETLs can add value now by enabling "Data Citizens" to use PowerBI (and Data Activator) such that they "won't notice" (are impacted minimally) when data inevitably moves from on-prem to the Fabric cloud. Then they can brag on their resume:
-
-   > "Migrated users quickly to Azure Fabric Data Activator automation with minimal disruption due to proactive restructuring of on-prem. SSIS ETLs so users access legacy visualizations and alerts from PowerBI similar to how they view data in cloud Lakehousesxx."
-
-
-### Data Engineers
-
-<strong>Data Engineers</strong> create databases (platforms):
-
-   * Move data using <a href="#Data+Factory">Data Factory</a>
-   * Organize <a href="#Shortcuts">Shortcuts</a> to reference data files within <a href="#OneLake">OneLake storage</a>
-
-   * Program SQL within <a href="#SDW">Synapse Data Warehouse</a> to create traditional relational SQL databases 
-   
-   * Program PySpark within Synapse Data Engineering to create "big data" (Hadoop-style) <strong>data lakes</strong>
-   
-   * Use Data Factory to create data pipelines to move data from one place to another, such as from a data lake to a data warehouse.
+   1. Administering Windows Server 2022 Hybrid Core Infrastructure
+   1. Deploy and Manage Active Directory Domain Services and cloud environments (30-35%)
+   1. Manage Windows Servers and workloads in Hybrid Environments (10-15%)
+   1. Manage Virtual Machines and Containers (15-20%)
+   1. Implement and Manage On-premises and Hybrid Networking Infrastructure (15-20%)
+   1. Manage Storage and File Services (15-20%)
    <br /><br />
 
-   Engineers also build automated <strong>workflows</strong> for monitoring, data cleaning, loading, backups, etc.
 
-   PROTIP: In response to security incidents, automation enables complete recreation of capabilities with the latest patches, rather than patching.
 
-   Microsoft's documentation now calls "Power BI administrators" <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/admin/microsoft-fabric-admin">Fabric administrators</a>.
+<hr />
 
-### Data Stewards/Administrators
+<a name="AZ-801"></a>
 
-Database Administrators are <a target="_blank" href="https://www.indeed.com/career-advice/finding-a-job/what-is-data-steward"><strong>Data Stewards</strong></a>, <strong>data custodians</strong> responsible for protecting the organization's most treasured assets: its data. 
+## AZ-801 Configuring Windows Server Hybrid Advanced Services
 
-    * Database management
-    * Implement Data Security
-    * Backups
-    * User Access
-    * Monitors performance
+<a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/exams/az-801/">
+https://learn.microsoft.com/en-us/credentials/certifications/exams/az-801</a>
+For $165, answer 70% of 
+deploy, package, secure, update, and configure Windows Server workloads using on-premises, hybrid, and cloud technologies coving identity, security, management, compute, networking, storage, monitoring, high availability, and disaster recovery.
+
+1. Secure Windows Server on-premises and hybrid infrastructures (25–30%)
+2. Implement and manage Windows Server high availability (10–15%)
+3. Implement disaster recovery (10–15%)
+4. Migrate servers and workloads (20–25%)
+5. Monitor and troubleshoot Windows Server environments (20–25%)
+<br /><br />
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/az-801t00</a>
+Microsoft's 4-day live course covers a different set of topics?<br />
+1. Secure Windows Server user accounts
+2. Hardening Windows Server
+3. Windows Server update management
+4. Secure Windows Server DNS
+5. Implement Windows Server IaaS VM network security
+<br /><br />
+<a target="_blank" href="https://github.com/MicrosoftLearning/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/tree/49ab785fbf841c55479886320cdebed8af78f258/Instructions/Labs">These files</a>
+are referenced by the <a target="_blank" href="https://microsoftlearning.github.io/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/">LABS for the class</a>:
+
+1. Windows Server security Lab: Configuring security in Windows Server [<a target="_blank" href="https://microsoftlearning.github.io/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/Instructions/Labs/LAB_AK_01_Configuring_security_in_Windows_Server.html">Solution</a>]
+
+2. Implementing Security Solutions in Hybrid Scenarios 	Lab: Implementing Security Solutions in Hybrid Scenarios [<a target="_blank" href="https://microsoftlearning.github.io/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/Instructions/Labs/LAB_AK_01_Configuring_security_in_Windows_Server.html">Solution</a>]
+
+3. High availability in Windows Server 	Lab: Implementing failover clustering [<a target="_blank" href="https://microsoftlearning.github.io/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/Instructions/Labs/LAB_AK_03_Implementing_failover_clustering.html">Solution</a>]
+
+4. Disaster Recovery in Windows Server 	Lab: Implementing Hyper-V Replica and Windows Server Backup [<a target="_blank" href="https://microsoftlearning.github.io/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/Instructions/Labs/LAB_AK_04_Implementing_Hyper-V_Replica_and_Windows_Server_Backup.html">Solution</a>]
+
+5. Planning and implementing migration and recovery services in hybrid scenarios 	Lab: Implementing Azure-based recovery services  [<a target="_blank" href="https://microsoftlearning.github.io/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/Instructions/Labs/LAB_AK_01_Configuring_security_in_Windows_Server.html">Solution</a>]
+
+6. Upgrade and migrate in Windows Server 	Lab: Upgrade and migrate in Windows Server [<a target="_blank" href="https://microsoftlearning.github.io/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/Instructions/Labs/LAB_AK_06_Upgrade_and_migrate_Windows%20Server.html">Solution</a>]
+
+7. Design for Migration 	Lab: Migrating Hyper-V VMs to Azure by using Azure Migrate [<a target="_blank" href="https://microsoftlearning.github.io/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/Instructions/Labs/LAB_AK_07_Implementing_migration_in_hybrid_scenarios.html">Solution</a>]
+
+8. Monitoring, performance, and troubleshooting 	Lab: Monitoring and troubleshooting Windows Server [<a target="_blank" href="https://microsoftlearning.github.io/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/Instructions/Labs/LAB_AK_08_Monitoring_and_troubleshooting_Windows_Server.html">Solution</a>]
+
+9. Implementing operational monitoring in hybrid scenarios 	Lab: Implementing operational monitoring in hybrid scenarios [<a target="_blank" href="https://microsoftlearning.github.io/AZ-801-Configuring-Windows-Server-Hybrid-Advanced-Services/Instructions/Labs/LAB_AK_01_Configuring_security_in_Windows_Server.html">Solution</a>]
+
+<br /><br />
+
+OReilly:
+
+<a target="_blank" href="https://learning.oreilly.com/live-events/exam-az-801-configuring-windows-server-hybrid-advanced-services-crash-course/0790145056800/0790145056797/">Crash Course</a> by Tim Warner referencing his <a target="_blank" href="https://github.com/timothywarner/az801">github repo</a>.
+
+Pluralsight/CloudGuru:
+
+https://www.pluralsight.com/cloud-guru/courses/az-801-configuring-windows-server-hybrid-advanced-services
+14h video
+by Alex Potasnick, Chase Dovey, Clint Bonnett
+
+Udemy:
+
+https://www.udemy.com/course/az-801-configuring-windows-hybrid-advanced-service-exam-2023
+Practice Tests
+
+
+
+
+
+<hr />
+
+<a name="MS-500"></a>
+
+## MS-500 Microsoft 365 Security Admin
+
+<a target="_blank" href="
+https://docs.microsoft.com/en-us/learn/certifications/exams/ms-500">
+https://docs.microsoft.com/en-us/learn/certifications/exams/ms-500</a>
+
+https://github.com/MicrosoftLearning/MS-500-Microsoft-365-Security
+MS-500 Microsoft 365 Security Administrator courses
+
+https://vladtalkstech.com/ms-500-study-guide-microsoft-365-security-administration
+
+<a target="_blank" href="https://www.udemy.com/course/microsoft-365-security-administration-exam-ms-500/">
+on Udemy: Microsoft 365 Security Administration (Exam MS-500)</a>
+
+https://spvlad.com/2OxcZIJ
+Planning and Designing Microsoft 365 Identity Strategy
+
+<a target="_blank" href="https://app.pluralsight.com/library/courses/protecting-devices-applications-microsoft-365">
+VIDEO: Protecting Devices and Applications in Microsoft 365</a>
+By Robert McMillen
+
+https://github.com/zaalion/oreilly-azure-app-security
+
+https://github.com/MicrosoftLearning/MS-030-Office365Administrator
+
+
+<a name="MS-700"></a>
+
+## MS-700 Microsoft Teams Administrator
+
+<a target="_blank" href="https://www.aguidetocloud.com/full-courses/ms700fullcourse">4-hour AGuideToCloud video class by Susanth Sutheesh</a>
+
+<hr />
+
+<a name="Power_Platform"></a>
+
+## Power Platform certifications
+
+<a name="PL-900"></a>
+As with other fundamentals certifications, it's $99 for
+* https://learn.microsoft.com/en-us/certifications/exams/pl-900
+   * Describe the business value of Microsoft Power Platform (20–25%)
+   * Identify the core components of Microsoft Power Platform (10–15%)
+   * Demonstrate the capabilities of Power BI (20–25%)
+   * Demonstrate the capabilities of Power Apps (25–30%)
+   * Demonstrate the capabilities of Power Automate (10–15%)
+   * Demonstrate the capabilities of Power Virtual Agents (1–5%)
+   <br /><br />
+
+   <a target="_blank" href="https://microsoftlearning.github.io/PL-900-Microsoft-Power-Platform-Fundamentals/">Microsoft class: PL-900-Microsoft-Power-Platform-Fundamentals</a> 
+   [<a target="_blank" href="https://github.com/MicrosoftLearning/PL-900-Microsoft-Power-Platform-Fundamentals">GitHub</a>]
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=lpsre6vWzCc">YouTube: 2 hr "Full Course"</a> to <a target="_blank" href="https://ko-fi.com/s/cbd19025e9">$10+ PPT</a> by Susanth Sutheesh
+   * <a target="_blank" href="https://app.pluralsight.com/paths/skills/microsoft-power-platform-fundamentals-pl-900">On Pluralsight: Fundamentals</a> by Vlad Catrinescu
+   * <a target="_blank" href="https://www.udemy.com/course/pl-900-microsoft-power-platform-fundamentals-r/">8-hour Udemy</a>
+   * <a target="_blank" href="https://www.whizlabs.com/blog/pl-900-exam-preparation-guide/">WhizLabs</a>
+   <br /><br />
+
+* <a target="_blank" href="https://www.aguidetocloud.com/full-courses/pl900fullcourse">2-hour AGuideToCloud video class by Susanth Sutheesh</a>
+
+$165 for more advanced certs:
+
+<a name="PL-200"></a>
+
+* https://learn.microsoft.com/en-us/certifications/exams/pl-200 Power Platform Functional Consultant
+
+<a name="PL-400"></a>
+
+* https://learn.microsoft.com/en-us/certifications/exams/pl-400 Power Platform Developer
+
+<a name="PL-100"></a>
+
+   * https://learn.microsoft.com/en-us/certifications/exams/pl-100 Power Platform App-maker
+
+<a name="PL-600"></a>
+
+   * https://learn.microsoft.com/en-us/certifications/exams/pl-600 Power Platform Solution Architect Expert
+
+<a target="_blank" href="https://ravikirans.com/category/azure-certification/">Ravikiran</a> specializes in sample exams for the above.
+
+<a target="_blank" href="https://www.aguidetocloud.com/full-courses/az400fullcourse">5-hour AGuideToCloud video class by Susanth Sutheesh</a>
+
+
+<hr />
+
+<a name="AZ-400"></a>
+
+## AZ-400 DevOps Engineer Expert
+
+A pre-requisite is <a href="#AZ-104">AZ-104</a> OR <a href="#AZ-204">AZ-204</a> to get this Expert certification.
+
+https://docs.microsoft.com/en-us/learn/certifications/devops-engineer/
+
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-400
+was updated March 23, 2021
+
+Video classes:
+
+   * <a target="_blank" href="https://portal.cloudskills.io/products/microsoft-azure-devops-engineer-certification-az-400">By Mike Pfiffer at Cloudskills.io</a> has a "Path of least resistance" to earn your certificate: Whizlabs - shut down after collecting $1,000 per student for "lifetime" access.
+
+   * <a target="_blank" href="https://www.udemy.com/course/azure100/learn/lecture/22182186#overview">Udemy video class</a> presents a more logical flow, not in the confusing exam objectives.
+
+   * <a target="_blank" href="https://github.com/timothywarner/az400">OReilly.com class by Timothy Warner</a>
+
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/463">Linux Academy</a>
+
+https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions
+
+<a target="_blank" href="https://www.aguidetocloud.com/full-courses/az400fullcourse">5-hour AGuideToCloud video class by Susanth Sutheesh</a>
+
+<hr />
+
+<a name="Sec_Certs"></a>
+
+## Security Certifications
+
+PROTIP: See <a target="_blank" href="https://wilsonmar.github.io/security-certifications">my blog on security certifications at<br />https://wilsonmar.github.io/security-certs</a>
+
+   * https://techcommunity.microsoft.com/t5/security-compliance-identity/security-community-webinars/ba-p/927888
+   * https://techcommunity.microsoft.com/t5/security-compliance-identity/security-community-webinars/ba-p/927888
+   * <a target="_blank" href="https://www.youtube.com/watch?v=6znaiD9B8mw">Ask the Experts: New Microsoft Security Compliance, Identity Training and Certification Portfolio</a> from Ignite March 2021
+
+
+<a name="SC-900"></a>
+
+### SC-900 Security
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/sc-900">
+SC-900</a> takes 60 minutes to answer 50 single-line mulitple-choice questions about features (not configuration).
+Includes M365 Defender and Compliance Center.
+
+Domains:
+* Manage identity and access (20-25%)
+* Implement platform protection (35-40%)
+* Secure data and applications (30-35%)
+* Manage security operations (15-20%)
+
+Videos:
+   * <a target="_blank" href="https://www.coursera.org/learn/microsoft-sc-900-exam-preparation-and-practice?specialization=microsoft-cybersecurity-analyst">Coursera Dec 11, 2023</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Bz-8jM3jg-8&list=RDCMUCpIn7ox7j7bH_OFj7tYouOQ&start_radio=1&t=5297">2hr John Savill</a>draws a <a target="_blank" href="https://github.com/johnthebrit/RandomStuff/blob/master/SC-900ReviewWhiteboard.svg">massive whiteboard</a> as massive as his muscles. One in a massive series with <a target="_blank" href="https://github.com/johnthebrit/AzureMasterClass">pdfs in GitHub</a>.
+
+   * <a target="_blank" href="https://www.aguidetocloud.com/full-courses/sc900fullcourse">4-hour AGuideToCloud video class by Susanth Sutheesh</a>
+
+
+<a name="SC-200"></a>
+
+### SC-200
+
+Taking this one <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/sc-200">SC-200 exam</a> makes you a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/security-operations-analyst/">Microsoft Security Operations Analyst</a>.
+
+This exam measures your ability to mitigate threats using Microsoft 365 Defender, Azure Defender, and Azure Sentinel SIEM/SOAR.
+
+<a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst">Class SC-200T00</a> has these hands-on labs:
+
+1. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_01_Lab1_Ex1_Explore_M365_Defender.md"> Module 1 - Lab 1 - Exercise 1 - Explore Microsoft 365 Defender </a>
+2. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_02_Lab1_Ex1_Deploy_Defender_Endpoint.md"> Module 2 - Lab 1 - Exercise 1 - Deploy Microsoft Defender for Endpoint </a>
+3. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_02_Lab1_Ex2_Mitigate_Attacks.md"> Module 2 - Lab 1 - Exercise 2 - Mitigate Attacks with Microsoft Defender for Endpoint </a>
+4. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_03_Lab1_Ex1_Enable_Defender.md"> Module 3 - Lab 1 - Exercise 1 - Enable Microsoft Defender for Cloud</a>
+5. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_03_Lab1_Ex2_Azure_Defender.md"> Module 3 - Lab 1 - Exercise 2 - Mitigate threats using Microsoft Defender for Cloud </a>
+6. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_04_Lab1_Ex1_KQL.md"> Learning Path 4 - Lab 1 - Exercise 1 - Create queries for Microsoft Sentinel using Kusto Query Language (KQL)</a>
+7. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_05_Lab1_Ex1_Deploy_Sentinel.md"> Module 5 - Lab 1 - Exercise 1 - Configure your Microsoft Sentinel environment </a>
+8. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_06_Lab1_Ex1_Connect_Services.md"> Module 6 - Lab 1 - Exercise 1 - Connect data to Microsoft Sentinel using data connectors </a>
+9. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_06_Lab1_Ex2_Connect_Windows.md"> Module 6 - Lab 1 - Exercise 2 - Connect Windows devices to Microsoft Sentinel using data connectors </a>
+10. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_06_Lab1_Ex3_Connect_Linux.md"> Module 6 - Lab 1 - Exercise 3 - Connect Linux hosts to Microsoft Sentinel using data connectors </a>
+11. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex8_Workbooks.md"> Module 7 - Lab 1 - Exercise 8 - Create workbooks </a>
+12. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_06_Lab1_Ex4_Connect_Threat_Intel.md"> Module 6 - Lab 1 - Exercise 4 - Connect Threat intelligence to Microsoft Sentinel using data connectors </a> 
+13. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex1_Security_Rule.md"> Module 7 - Lab 1 - Exercise 1 - [Modify] Activate a Microsoft Security rule </a>
+14. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex2_Playbook.md"> Module 7 - Lab 1 - Exercise 2 - Create a Playbook </a>
+15. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex3_Scheduled_Query.md"> Module 7 - Lab 1 - Exercise 3 - Create a Scheduled Query </a>
+16. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex4_Attacks.md"> Module 7 - Lab 1 - Exercise 4 - Understand Detection Modeling </a> (Attacks)
+17. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex5_Perform_Attacks.md"> Module 7 - Lab 1 - Exercise 5 - Conduct [perform simulated] attacks </a>
+18. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex6_Detections.md"> Module 7 - Lab 1 - Exercise 6 - Create Detections </a>
+19. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex7_Investigate.md"> Module 7 - Lab 1 - Exercise 8 - Investigate Incidents</a>
+20. Create ASIM parsers
+   * https://learn.microsoft.com/en-us/azure/sentinel/normalization-about-schemas
+   * https://learn.microsoft.com/en-us/azure/sentinel/normalization
+   * https://aka.ms/SecurityCommunity
+21. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_08_Lab1_Ex1_Hunting.md"> Module 8 - Lab 1 - Exercise 1 - Perform Threat Hunting in Microsoft Sentinel </a>
+22. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_08_Lab1_Ex2_Notebooks.md"> Module 8 - Lab 1 - Exercise 2 - Hunt Threats using Notebooks with Microsoft Sentinel </a>
+
+Exam prep:
+   * https://www.whizlabs.com/learn/course/microsoft-azure-sc-200/
+   * https://www.whizlabs.com/microsoft-security-operations-analyst-sc-200/
+
+
+
+<a name="SC-300"></a>
+
+### SC-300
+
+https://docs.microsoft.com/en-us/learn/certifications/exams/sc-300
+
+FREE: https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator has 31 labs at time of writing:
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_00_SetUpLabResources.md"> Lab 00: Lab Environment Setup </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_01_ManageUserRoles.md"> Lab 01: Manage user roles </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_02_WorkingWithTenantProperties.md"> Lab 02: Working with tenant properties </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_03_AssignLicensesToUsersByGroupMembershipAAD.md"> Lab 03: Assigning licenses using group membership </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_04_RestoreRemoveRecentlyDeletedUserUsingAAD.md"> Lab 04: Restore a deleted user </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_05_AddingGroupsToAAD.md"> Lab 05: Adding groups to Azure AD </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_06_ChangeGroupLicenseAssignments.md"> Lab 06: Change group license assignments </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_07_ChangeUserLicenseAssignments.md"> Lab 07: Change user account license assignments </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_08_ConfigureExternalCollaborationSettings.md"> Lab 08: Configure external collaboration settings </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_09_AddGuestUsersToTheDirectory.md"> Lab 09: Add guest users to the directory </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_10_InviteGuestUsersInBulk.md"> Lab 10: Invite guest users in bulk </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_11_WorkingWithDynamicGroups.md">  Lab 11: Working with dynamic groups </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_12_EnableAzureADMultiFactorAuthentication.md"> Lab 12 - Enable Azure AD multi-factor authentication </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_13_ConfigureAndDeploySelfServicePasswordReset.md"> Lab 13 - Configure and deploy self-service password reset </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_14_WorkingWithSecurityDefaults.md"> Lab 14 - Working with security defaults </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_15_ImplementAndTestAConditionalAccessPolicy.md"> Lab 15 - Implement and test a conditional access policy </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_16_ConfigureAuthenticationSessionControls.md"> Lab 16 - Configure authentication session controls </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_17_ManageAzureADSmartLockoutValues.md"> Lab 17 - Manage Azure AD smart lockout values </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_18_EnableSignRiskPolicy.md"> Lab 18 - Enable sign in and user risk policies </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_19_ConfigureAAD_MultiFactorAuthRegPolicy.md"> Lab 19 - Configure an Azure AD multi-factor authentication registration policy </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_20_ImplementAccessManagementForApps.md"> Lab 20 - Implement access management for apps </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_21_CreateANewCustomRoleToGrantAccessToManageAppRegistrations.md"> Lab 21 - Implement access management for apps </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_22_RegisterAnApplication.md"> Lab 22 - Register an application </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_23_GrantTenantWideAdminConsentToAnApplication.md"> Lab 23: Grant tenant-wide admin consent to an application </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_24_AddAppRolesToYourAppAndReceiveThemInTheToken.md"> Lab 24: Add app roles to your app and receive them in the token </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_25_CreateAndManageACatalogOfResourcesInAADEntitlementManagement.md"> Lab 25: Create and manage a catalog of resources in Azure AD entitlement management </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_26_AddTermsOfUseAcceptanceReporting.md"> Lab 26: Add terms of use and acceptance reporting </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_27_ManageTheLifecycleOfExternalUsersInAADIdentityGovernanceSettings.md"> Lab 27: Manage the lifecycle of external users in Azure AD Identity Governance settings </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_28_ConfigurePrivilegedIdentityManagementForAADRoles.md"> Lab 28: Configure Privileged Identity Management for Azure AD roles </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_29_AssignAADRolesInPrivilegedIdentityManagement.md"> Lab 29: Assign Azure AD roles in Privileged Identity Management </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_30_AssignAzureResourceRolesInPrivilegedIdentityManagement.md"> Lab 30: Assign Azure resource roles in Privileged Identity Management </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_31_ConnectDataFromAADToAzureSentinel.md"> Lab 31: Connect data from Azure Active Directory (Azure AD) to Azure Sentinel </a>
+
+
+https://www.whizlabs.com/learn/course/microsoft-azure-sc-300/
+
+
+<a name="SC-400"></a>
+
+### SC-400 Microsoft Information Protection Administrator
+
+https://docs.microsoft.com/en-us/learn/certifications/exams/sc-400
+"Implement information protection; implement data loss prevention; and implement information governance."
+
+https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator has 13 labs at time of writing:
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_01_Lab1_Ex1_compliance_roles.md"> Lab 1 - Exercise 1 - Manage Compliance Roles </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_01_Lab1_Ex2_message_encryption.md"> Lab 1 - Exercise 2 - Manage Office 365 Message Encryption </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_01_Lab1_Ex3_Sensitive_Information_Types.md"> Lab 1 - Exercise 3 - Manage Sensitive Information Types </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_01_Lab1_Ex4_Trainable_Classifiers.md"> Lab 1 - Exercise 4 - Manage Trainable Classifiers </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_01_Lab1_Ex5_Sensitivity_Labels.md"> Lab 1 - Exercise 5 - Manage Sensitivity Labels </a>
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_02_Lab1_Ex1_DLP_policies.md"> Lab 2 - Exercise 1 - Manage DLP Policies </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_02_Lab1_Ex2_Endpoint DLP.md"> Lab 2 - Exercise 2 - Manage Endpoint DLP </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_02_Lab1_Ex3_DLP_reports.md"> Lab 2 - Exercise 3 - Manage DLP reports </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_03_Lab1_Ex1_retention_policies.md"> Lab 3 - Exercise 1 - Configure Retention Policies </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_03_Lab1_Ex2_retention_labels.md"> Lab 3 - Exercise 2 - Implement Retention Labels </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_03_Lab1_Ex3_service_based_retention.md"> Lab 3 - Exercise 3 - Configure Service-based Retention </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_03_Lab1_Ex4_eDiscovery_recovery.md"> Lab 3 - Exercise 4 - Use eDiscovery for Recovery </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_03_Lab1_Ex5_records_management.md"> Lab 3 - Exercise 5 - Configure Records Management </a>
+
+
+https://www.whizlabs.com/learn/course/microsoft-azure-sc-400/
+
+
+
+<a name="AZ-500"></a>
+
+### AZ-500 Security certification
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/shows/exam-readiness-zone/preparing-for-az-500-manage-identity-and-access-1-of-4" title="by Ken Lawson">VIDEO</a>:
+To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certifications/azure-security-engineer/">Microsoft Certified: Azure Security Engineer Associate</a>, <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-500">read modules</a> and pass Microsoft Azure Security Technologies domains:
+
+<a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/">Hands-on labs download zip</a> 
+<a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies">on GitHub</a>:
+
+* <a href="#AZ-500-IAM">Group 1: Manage identity and access (30-35%)</a>
+* <a href="#AZ-500-Plat">Group 2: Security networking (15-20%)</a>
+* <a href="#AZ-500-SecOps">Group 3: Manage security operations (25-30%)</a>
+* <a href="#AZ-500-DataOps">Group 4: Secure data and applications (25-30%)</a>
+
+<hr />
+
+<a name="AZ-500-IAM"></a>
+
+<strong>Group 1: Manage identity and access (30-35%)</strong>
+   <ul>
+   <li> Manage Azure AD Identities</li>
+   <li> Manage Azure AD Secure Access</li>
+   <li> Manage Application Access</li>
+   <li> Manage Access Control</li>
+   </ul>
+
+01). <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_01_RBAC.md">Role-Based Access Control (RBAC)</a>
+   1. Create the Senior Admins group with the user account Joseph Price as its member (the Azure portal).
+   2. Create the Junior Admins group with the user account Isabel Garcia as its member (PowerShell).
+   3. Create the Service Desk group with the user Dylan Williams as its member (Azure CLI).
+   4. Assign the Virtual Machine Contributor role to the Service Desk group.
+   <br /><br />
+
+* Azure Policy
+* Resource Manager Locks
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_04_MFAConditionalAccessandAADIdentityProtection.md">MFA, Conditional Access (and AAD/Entra Identity Protection)</a>
+   1. Deploy an Azure VM by using an Azure Resource Manager template
+   2. Implement Azure MFA
+   3. Implement Azure AD Conditional Access Policies
+   4. Implement Azure AD Identity Protection
+   <br /><br />
+
+* Azure AD Privileged Identity Management
+   1. Configure PIM users and roles.
+   2. Activate PIM roles with and without approval.
+   3. Create an Access Review and review PIM auditing features.
+   <br /><br />
+
+
+<a name="AZ-500-Plat"></a>
+
+<strong>Group 2: Security networking (15-20%)</strong>
+<strike>Implement platform protection</strike>
+
+   * Implement Azure Firewall [Network] Security (+)
+   * Implement Network Load Balancer Security (+)
+   * Implement Storage and Application Security (+)  
+   * Implement Virtual Network Security
+   
+   * Configure Advanced Security for Compute
+   * Configure Data Encryption (+)
+   <br /><br />
+
+* Implement Directory Synchronization
+   1. Deploy an Azure VM hosting an Active Directory domain controller
+   2. Create and configure an Azure Active Directory tenant
+   3. Synchronize Active Directory forest with an Azure Active Directory tenant
+   <br /><br />
+
+02). <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_02_NSGs.html">Network Security Groups and Application Security Groups</a><br />
+   1. Create the virtual networking infrastructure
+   2. Deploy virtual machines and test the network filters
+   <br /><br />
+
+
+<a name="AZ-500-SecOps"></a>
+
+<strong>Group 3: Manage security operations (25-30%)</strong>
+
+   * Configure Centralized Policy Management
+   * Configure and Manage Threat Protection
+   * Configure and Manage Security Monitoring Solutions
+   <br /><br />
+
+8. <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_03_AzureFirewall.html">Azure Firewall<br />
+   1. Deploy and test an Azure Firewall
+   <br /><br />
+
+03). <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_03_AzureFirewall.html">Azure Firewall</a><br />
+   1. Deploy and test an Azure Firewall
+   <br /><br />
+
+04). <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_04_ConfiguringandSecuringACRandAKS.html">Configuring and Securing ACR and AKS</a><br />
+   1. Deploy the base infrastructure from an ARM template
+   2. Configure the Key Vault resource with a key and a secret
+   3. Configure an Azure SQL database and a data-driven application
+   4. Demonstrate the use of Azure Key Vault in encrypting the Azure SQL database
+   <br /><br />
+
+
+<a name="AZ-500-DataOps"></a>
+
+<strong>Group 4: Secure compute, storage, and databases (25-30%)</strong>
+<strike>Secure data and applications</strike>
+
+   * Configure Security for Storage
+   * Configure Security for Data
+   * Configure and Manage Azure Key Vault
+   <br /><br />
+
+05). <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_05_SecuringAzureSQLDatabase.html">Securing Azure SQL Database</a>
+
+06). <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_06_SecuringAzureStorage.html">Service Endpoints and Securing Storage </a>
+
+07). <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_07_KeyVaultImplementingSecureDatabysettingupAlwaysEncrypted.html">Key Vault (Implementing Secure Data by setting up Always Encrypted)</a><br />
+    1. Deploy the base infrastructure from an ARM template
+    2. Configure the Key Vault resource with a key and a secret
+    3. Configure an Azure SQL database and a data-driven application
+    4: Demonstrate the use of Azure Key Vault in encrypting the Azure SQL database
     <br /><br />
 
-Stewards setup and operate processes for data governance and data quality. They monitor processes for collecting data -- inspecting contents to ensure that data is in the right format. They ensure that app logs, metric collections, database logs shipped, app transactions, snapshots of master data are backed up fully and as scheduled. Once a month they ensure that data can be fully and quickly restored, as measured by RTO (Recovery Time Objective) and RPO (Recovery Point Objective) SLAs. Such is an important fall-back in case of ransomware attacks.
+08). <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_08_Azure%20Monitor.htmld">Azure Monitor</a><br />
+    1. Collect data from an Azure virtual machine with Azure Monitor
+    <br /><br />
 
-   Data stewards collaborate with others to detect and solve data corruption or mis-sychronization of data between apps and utilities.
+09). <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_09_Microsoft%20Defender%20for%20Cloud.html">Microsoft Defender for Cloud </a>
 
-   PROTIP: In many organizations, to limit the impact of credential loss, they, after approval by the data owner, are the only accounts who can <strong>delete data</strong> which others put "in limbo".
-
-   They use <a href="#Purview">Microsoft Purview</a>. QUESTION: Does Microsoft provide all the tools that Data Stewards need?
-
-
-
-### Data Scientists
-
-<strong>Data Scientists</strong> work on AI models using Data Science tools such as Notebooks written in PySpark for Machine Learning. The intelligence created can be custom tags that extend generic LLM (Large Language Models) created by others for NLP (Natural Language Processing) and other AI (Artificial Intelligence) capabilities.
-
-Data Scientists use Synapse Data Science to add embedding tags within vector databases to enhance LLMs with custom data.
+10). <a target="_blank" href="https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/Instructions/Labs/LAB_10_Microsoft%20Sentinel.html">Microsoft Sentinel</a> (SIEM/SOAR)
 
 
-### Additional roles:
 
-* Solution Architects/Architects
-* AI Engineers/Architects
-* Power BI data analysts
-* ETL developers
-* Information architects
-* DevOps Engineers/Architects
+Prep for AZ-500:
 
-* Managers & Supervisors
-* Executives: CEO, CTO, CMO, CRO, etc.
-<br /><br />
+<a target="_blank" href="https://cloudacademy.com/learning-paths/az-500-exam-preparation-microsoft-azure-security-technologies-650/">
+CloudAcademy.com learning path</a>
 
-The above are used as the basis to assign permissions to the Fabric "experiences" (sub-products).
+<a target="_blank" href="https://www.youtube.com/watch?v=6vISzj-z8k4&list=PLlVtbbG169nHw9T1L_CiLxC-DTwKu-BZG">VIDEO: Study Cram</a> by John Savill
 
-
-<hr />
-
-## Fabric Marketing
-
-Fabric was unveiled at Microsoft's Build 2023 conference.
-
-1. The marketing homepage for Fabric is:
-
-   <a target="_blank" href="https://www.microsoft.com/en-us/microsoft-fabric"><strong>https://www.microsoft.com/en-us/microsoft-fabric</strong></a>
-
-   This article covers keywords on that page:
-   <a href="#Capabilities">Capabilities</a> |
-   <a href="#OneLake">OneLake</a> |
-   <a href="#Data+Factory">Data Factory</a> |
-   <a href="#Synapse">Synapse</a> |
-   <a href="#Data+Activator">Data Activator</a> |
-   <a target="_blank" href="https://guidedtour.microsoft.com/en-US/guidedtour/power-platform/power-bi-and-modern-workplace/1/1">Power BI</a> |
-   <a target="_blank" href="https://powerbi.microsoft.com/en-us/blog/empower-power-bi-users-with-microsoft-fabric-and-copilot/">Copilot</a>
-
-   Other keywords:
-
-   <a href="#Notebooks">Notebooks</a> |
-   <a href="#Data+warehouses">Data warehouses</a> |
-   <a href="#Dataflows">Dataflows</a> |
-   <a href="#Data+Pipelines">Data Pipelines</a> |
-   <a href="#Semantic+models">Semantic models</a>  |
-   <a href="#Reports">Reports</a> 
-
-
-<hr />
-
-## Domain?
-
-
-## Workspaces
-
-   * <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-04b-fabric-lake-lab.html">HANDS-ON: Explore data analytics in Microsoft Fabric from the DP-900 labs</a>
-   * <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-05c-fabric-realtime-lab.html">HANDS-ON: Explore real-time analytics in Microsoft Fabric from the DP-900 labs</a>
-
-1. Using the browser profile for the email you want to use,
- 
-   https://app.fabric.microsoft.com
-
-1. Click "Real Time Analytics" to see the left menu for that component:
-
-1. In the Fabric left menu, select <strong>Workspaces</strong>.
-1. Click the green "New workspace" button.
-1. PROTIP: For Workspace Name, construct a name that includes a project name and the date, such as 
-
-   <tt>RTA1-eastus2-231231a</tt>
-
-1. PROTIP: For Workspace image, construct an image file less that 45 KB to upload. Use a utility to compress an icon image around 100x100 pixels.
-1. Click "Advanced" to select a licensing mode in the Advanced section that includes Fabric capacity (Trial, Premium, or Fabric).
-
-   ### License Mode
-
-   * Select Pro to use basic Power BI features and collaborate on reports, dashboards, and scorecards. To access a Pro workspace, users need Pro per-user licenses. 
-   
-   * Select Premium per-user to collaborate using Power BI Premium features, including paginated reports, dataflows, and datamarts. To collaborate and share content in a Premium per-user workspace, users need Premium per-user licenses. Learn more
-   
-   * Select premium capacity if the workspace will be hosted in a premium capacity. When you share, collaborate on, and distribute Power BI and Microsoft Fabric content, users in the viewer role can access this content without needing a Pro or Premium per-user license. Learn more
-   
-   * Select embedded if the workspace will be hosted in an Azure embedded capacity. ISVs and developers use Power BI Embedded to embed visuals and analytics in their applications. Learn more
-   
-   * Select Fabric capacity if the workspace will be hosted in a Microsoft Fabric capacity. With Fabric capacities, users can create Microsoft Fabric items and collaborate with others using Fabric features and experiences. Explore new capabilities in Power BI, Data Factory, Data Engineering, and Real-Time Analytics, among others. Learn more
-
-   * Select the free trial per-user license to try all the new features and experiences in Microsoft Fabric for 60 days. A Microsoft Fabric trial license allows users to create Microsoft Fabric items and collaborate with others in a Microsoft Fabric trial capacity. Explore new capabilities in Power BI, Data Factory, Data Engineering, and Real-Time Analytics, among others. Learn more
-
-1. Do not check "Develop template apps".
-
-1. Click "Apply" for new workspace with "There is nothing here yet".
-
-   ### Create KQL database
-
-1. Click "+ New", then "KQL database" from the dropdown.
-1. PROTIP: For KQL Database name, include your project name and date:
-
-   <tt>RTA1-KQL-eastus2-231231a</tt>
-   
-1. Click "Create" to see a KQL database page.
-
-   The following is my experience trying to follow <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-05c-fabric-realtime-lab.html#create-an-eventstream">HANDS-ON: Create a KQL EventStream</a>
-
-1. Click "Home" icon to see the workspace page with these icons:
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702097886/azure-KQL-workspace-1120x220_icdfho.png"><img alt="azure-KQL-workspace-1120x220.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702097886/azure-KQL-workspace-1120x220_icdfho.png"></a>
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=rQjhpP9HHI8&t=1m32s" title="Oct 3, 2023 by Wagner Crivelini from Brazil.">VIDEO</a>: Ingesting Real-Time Data with MICROSOFT FABRIC and KUSTO
-
-1. Click the "Eventstream" icon.
-1. For New Eventstream Name, construct
-
-   <tt>RTA1-KQL-stream-eastus2-231231a</tt>
-
-1. The visual designer canvas shows a source that connects to your eventstream, which in turn is connected to a destination.
-1. Click "New source" on the designer canvas to select "Sample data" for a "Sample data" pane.
-1. For "Source name", type "taxis" and select among "Sample Data" dropdown "Yellow Taxi (high sample rate)". 
-1. Click "Add".
-1. Select "Data preview" (on the tab beneath the designer canvas) to preview the data being streamed from the source.
-1. Click "New destination" on the designer canvas to select "KQL database" for a "KQL database" entry pane.
-
-1. Leave Data Ingestion mode at default "Event processing before ingestion".
-1. For "Destination name", type "taxi-data".
-1. For "Workspace", select the one you created.
-1. For "KQL database", select the one you created. 
-1. For "Destination table", type "taxi-data". ???
-1. Click "Add".
-
-1. In the Ingest data wizard, on the Destination page, select New table and enter the table name taxi-data. Then select Next: Source.
-
-1. On the Source page, review the default data connection name, and then select Next: Schema.
-1. On the Schema page, change the Data format from TXT to JSON, and view the preview to verify that this format results in multiple columns of data. Then select Next: Summary.
-1. On the Summary page, wait for continuous ingestion to be established, and then select Close.
-1. Verify that your completed eventstream says "successful".
-
-   Query real-time data in a KQL database
-
-   See https://learn.microsoft.com/en-us/azure/data-explorer/kql-quick-reference
-
-   KQL Keywords: where search take case distinct ago project extend sort Top summarize count render by and
-
-<hr />
-
-## Workflow with Fabric 
-
-Microsoft Fabric offers a centralized storage solution, eliminating data fragmentation and promoting data integrity. 
-
-   Fabric aims to eliminate silos and remove data duplication by providing a single platform for <strong>collaboration</strong> among data engineers, data scientists, and business analysts. The <a target="_blank" href="https://learn.microsoft.com/fabric/data-engineering/tutorial-lakehouse-introduction">flow</a> is:
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701049746/fabric-flow-842x516_bcpj9q.jpg"><img alt="fabric-flow-842x516.jpeg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701049746/fabric-flow-842x516_bcpj9q.jpg"></a>
-
-Databricks is a cloud-based service that provides a unified analytics platform for data scientists, data engineers, and business analysts. It provides a collaborative workspace for data scientists to build and train machine learning models. It also provides a platform for data engineers to build data pipelines and perform complex data engineering tasks. It provides a platform for business analysts to perform data analysis and build reports and dashboards. https://github.com/derar-alhussein/Databricks-Certified-Data-Engineer-Associate
-
-   * <a target="_blank" href="https://justb.dk/blog/2023/11/fa
-   bric-data-lakehouse-understanding-the-dataflow/">This article</a> describes the flow in detail.
-   * https://learn.microsoft.com/en-us/fabric/cicd/best-practices-cicd
+Tim Warner's material is great for review:
+   * TechTrainerTim.com
+   * <a target="_blank" href="https://learning.oreilly.com/live-events/-/0636920360612/">Live Crash Course Jan 23 & 24, 2023</a> (previously April 26 & 27, 2021)
+   * https://github.com/timothywarner/az500
+   * https://www.youtube.com/watch?v=231p_-M1kqM
+   * <a target="_blank" href="https://learning.oreilly.com/library/view/-/9780138041038/">15 pages: AZ-500 Microsoft Azure Security Technologies Guided Cert Prep Sep. 2022</a>
    <br /><br />
 
-1. Create a <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/get-started/workspaces">Fabric workspace</a>.
-1. <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/data-engineering/tutorial-lakehouse-get-started">Create a lakehouse</a> using PowerBI. There's no limit on the number of workspaces or items you can create within your capacity.
-
-1. DATA SOURCE: Obtain data in a variety of formats from a variety of sources.
-
-   The end-to-end example is built using <a target="_blank" href="https://learn.microsoft.com/en-us/sql/samples/wide-world-importers-what-is?view=sql-server-ver16&preserve-view=true">Microsoft's Wide World Importers (WWI) sample data</a>:
-
-1. INGEST: 
-
-1. TRANSFORM & STORE: transform data, and load it into the lakehouse. You can also explore the OneLake, one copy of your data across lakehouse mode and SQL analytics endpoint mode.
-
-   A major innovation with lakehouses instead of data warehouse is that instead of traditional transform before load (ETL), it's load then transform (ELT).
-
-1. SERVE: Connect to the lakehouse's SQL analytics endpoint to create a Power BI report using DirectLake -- to analyze sales data across different dimensions.
-
-1. CONSUME: Connect to the lakehouse's SQL analytics endpoint to create a Power BI report using DirectLake -- to analyze sales data across different dimensions.
-
-1. Optionally, orchestrate and schedule data ingestion and transformation flow with a pipeline.
-<br /><br />
-
-* <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/">Use Data Factory pipelines in Microsoft Fabric</a>
-<br /><br />
-
-   Learn more:
-
-1. Synapse Data Warehouse: support <strong>data use</strong> from SQL Endpoints.
-
-   * https://learn.microsoft.com/en-us/training/modules/get-started-data-warehouse/
+Others on OReilly:
+   * <a target="_blank" href="https://learning.oreilly.com/live-events/microsoft-azure-security-technologies-az-500-bootcamp/0636920080783/">Microsoft Azure Security Technologies (AZ-500) Bootcamp</a> by Reza Salehi
+   * <a target="_blank" href="https://learning.oreilly.com/api/v1/continue/9780137834280/">Exam Ref AZ-500 Microsoft Azure Security Technologies</a> by Yuri Diogenes and Orin Thomas
+   * <a target="_blank" href="https://learning.oreilly.com/library/view/-/9781119870371/">BOOK</a>: "MCA Microsoft Certified Associate Azure Security Engineer Study Guide" from Sybex November 2022 by Shimon Brathwaite 
+   * <a target="_blank" href="https://learning.oreilly.com/videos/-/9780137702039/">8h 34m Video course from Microsoft</a> Jan 2022
    <br /><br />
 
-1. Synapse Data Engineering: run <strong>Notebooks</strong> within the Spark platform for <strong>data transformation</strong> at scale.
-
-   * https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/
+Sample tests:
+   * <a target="_blank" href="https://learning.oreilly.com/certifications/9780136965244/">Pearson's AZ-500 Practice Test on OReilly</a> is the most selectable. April 2022
+   * https://www.whizlabs.com/learn/course/microsoft-azure-az-500/
    <br /><br />
-
-1. <img align="right" width="48" height="48" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709230056/ms-fabric-Synapse_tl8ioj.svg">Synapse Data Science: model training and execution tracking in a scalable environment using Azure Machine Learning and Spark.
-
-   * https://learn.microsoft.com/en-us/training/modules/get-started-data-science-fabric/
-   <br /><br />
-
-1. Synapse Real-Time Analytics: real-time analytics to query and analyze large volumes of data in real-time.
-
-
-<a name="Data+Factory"></a>
-
-## Data Factory in Microsoft Fabric (DFiMF)
-
-   * <a target="_blank" href="https://www.youtube.com/watch?v=EpDkxTHAhOs&list=PLGjZwEtPN7j8b9dPA0HrtJDptOB69B506&index=1">VIDEO</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/data-factory/quickstart-create-data-factory-bicep?tabs=CLI">Quickstart: Create an Azure Data Factory using Bicep</a> <a target="_blank" href="https://learn.microsoft.com/en-us/samples/azure/azure-quickstart-templates/data-factory-v2-blob-to-blob-copy/">Template Code Sample</a> with a pipeline that copies data from one folder to another in an Azure Blob Storage, <a target="_blank" href="https://learn.microsoft.com/en-us/azure/data-factory/quickstart-create-data-factory-powershell#prerequisites">using PowerShell</a> <a target="_blank" href="https://github.com/Azure/azure-quickstart-templates/tree/master">QuickStart templates</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/data-factory/transform-data-using-spark">Tutorial: Transform data using Spark</a>
-   <br /><br />
-
-<img align="right" width="48" height="48" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709230056/ms-fabric-Data-Factory_piy4sy.svg">Microsoft Fabric "Data Factory" is different from "Azure Data Factory (ADF)" that continues to be used (at lower cost). 
-
-<a target="_blank" href="https://www.casewhen.co/blog/data-factory-showdown-fabric-vs-azure">IMPORTANT PROTIP</a>: Some use the term "<strong>Data Factory in Microsoft Fabric (DFiMF)</strong>" to differentiate it from the legacy ADF. DFiMF adds to ADF features from <a target="_blank" href="https://www.casewhen.co/blog/data-analysis-and-data-transformation-with-power-query-in-power-bi">Power Query Dataflows</a> and integrates tagging for Data Governance. DEFINITION: Azure Data Factory is a service that can ingest large amounts of raw, unorganized data from relational and non-relational systems, and convert this data into meaningful information. Therefore, it's referred to as a data integration service.
-
-
-1. Data Factory: data integration <strong>pipelines</strong> to copy data and orchestrate data processing, combining <strong>Power Query Online</strong> and/or Dataflows (Gen2) to Import and transform data from 90+ data sources, and load it directly into a table in the lakehouse.
-Dataflows (Gen2) performs ETL tasks using Power Query Online.
-
-   * https://learn.microsoft.com/en-us/fabric/data-factory/data-factory-overview
-   * https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/
-   * https://www.youtube.com/watch?v=CtTrnd-UGt8
-   <br /><br />
-
-   * <a target="_blank" href="https://www.youtube.com/watch?v=WbDqeNsmoL4">Why you should look</a>
-   * <a target="_blank" href="https://www.youtube.com/watch?v=_QtA_492l4k">SQLBits</a>
-   * <a target="_blank" href="https://www.youtube.com/watch?v=tW6vXSIV0kc&t=13m51s" title="by Lisa Hoving">VIDEO</a>: Azure Synapse Analytics is a combination of Azure SQL Data Warehouse and Azure Data Factory.
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=tW6vXSIV0kc" title="by Lisa Hoving">VIDEO</a>: Difficulties with Data Factory include:
-   * Little flexibility beyond what's available
-   * Difficult to create generic pipelines
-   * Difficult to optimize
-   <br /><br />
-
-1. Power BI: business intelligence for translating data to decisions. Power BI administrators are now <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/admin/microsoft-fabric-admin">Fabric administrators</a>.
-
-1. <a href="#Data+Activator">Data Activator</a>: "Insight to action" takes action based on real-time changes in your data. 
-
-   For example, if a trigger activates when a trend reaches a pre-defined threshold, if action is not urgent, look up people using <a target="_blank" href="https://mgt.dev/">Microsoft Graph Toolkit Playground</a> <a target="_blank" href="https://www.m365princess.com/blogs/microsoft-graph-people-picker-power-apps/">lookalike</a> and <a target="_blank" href="https://www.youtube.com/watch?v=hPRzHbMzoI0">identify when they can meet</a>. Then use <a target="_blank" href="https://www.youtube.com/watch?v=ZzWdXiMzA-c">Power Apps</a> to populate meeting picker, identify meeting slots, and create an event. Add calls (actions) to a Power Apps custom connector that will be called from your canvas app. Schedule a Teams meeting in canvas app within Teams. Automatically send out a meeting invitation. 
-
-   If the action needed is urgent, send out SMS text to those who need to know. <a target="_blank" href="https://www.youtube.com/watch?v=pLubg1ddrMA">VIDEO</a>:
-
-
-<hr />
-
-<a name="DP-600"></a>
-
-## DP-600 Fabric Analytic Engineer Associate
-
-Microsoft's $165 <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/fabric-analytics-engineer-associate/">DP-600 Fabric Analytic Engineer Associate exam page</a> (available in March 2024) provides free tutorials.
-<a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-600">Study Guide</a>
-
-#### Plan, implement, and manage a solution for data analytics (10–15%)
-
-Plan a data analytics environment:
-   * Identify requirements for a solution, including components, features, performance, and capacity stock-keeping units (SKUs)
-   * Recommend settings in the Fabric admin portal
-   * Choose a data gateway type
-   * Create a custom Power BI report theme
-   <br /><br />
-
-Implement and manage a data analytics environment
-   * Implement workspace and item-level access controls for Fabric items
-   * Implement data sharing for workspaces, warehouses, and lakehouses
-   * Manage sensitivity labels in semantic models and lakehouses
-   * Configure Fabric-enabled workspace settings
-   * Manage Fabric capacity
-   <br /><br />
-
-Manage the analytics development lifecycle
-   * Implement version control for a workspace
-   * Create and manage a Power BI Desktop project (.pbip)
-   * Plan and implement deployment solutions
-   * Perform impact analysis of downstream dependencies from lakehouses, data warehouses, dataflows, and semantic models
-   * Deploy and manage semantic models by using the XMLA endpoint
-   * Create and update reusable assets, including Power BI template (.pbit) files, Power BI data source (.pbids) files, and shared semantic models
-   <br /><br />
-
-#### Prepare and serve data (40–45%)
-
-Create objects in a lakehouse or warehouse:
-   * Ingest data by using a data pipeline, dataflow, or notebook
-   * Create and manage shortcuts
-   * Implement file partitioning for analytics workloads in a lakehouse
-   * Create views, functions, and stored procedures
-   * Enrich data by adding new columns or tables
-   <br /><br />
-
-Copy data:
-   * Choose an appropriate method for copying data from a Fabric data source to a lakehouse or warehouse
-   * Copy data by using a data pipeline, dataflow, or notebook
-   * Add stored procedures, notebooks, and dataflows to a data pipeline
-   * Schedule data pipelines
-   * Schedule dataflows and notebooks
-   <br /><br />
-
-Transform data:
-   * Implement a data cleansing process
-   * Implement a star schema for a lakehouse or warehouse, including Type 1 and Type 2 slowly changing dimensions
-   * Implement bridge tables for a lakehouse or a warehouse
-   * Denormalize data
-   * Aggregate or de-aggregate data
-   * Merge or join data
-   * Identify and resolve duplicate data, missing data, or null values
-   * Convert data types by using SQL or PySpark
-   * Filter data
-   <br /><br />
-
-Optimize performance:
-   * Identify and resolve data loading performance bottlenecks in dataflows, notebooks, and SQL queries
-   * Implement performance improvements in dataflows, notebooks, and SQL queries
-   * Identify and resolve issues with Delta table file sizes
-   <br /><br />
-
-#### Implement and manage semantic models (20–25%)
-
-Design and build semantic models:
-   * Choose a storage mode, including Direct Lake
-   * Identify use cases for <a href="#DAX+Studio">DAX Studio</a> and Tabular Editor 2
-   * Implement a star schema for a semantic model
-   * Implement relationships, such as bridge tables and many-to-many relationships
-   * Write calculations that use DAX variables and functions, such as iterators, table filtering, windowing, and information functions
-   * Implement calculation groups, dynamic strings, and field parameters
-   * Design and build a large format dataset
-   * Design and build composite models that include aggregations
-   * Implement dynamic row-level security and object-level security
-   * Validate row-level security and object-level security
-   <br /><br />
-
-Optimize enterprise-scale semantic models:
-   * Implement performance improvements in queries and report visuals
-   * Improve DAX performance by using <a href="#DAX+Studio">DAX Studio</a>
-   * Optimize a semantic model by using Tabular Editor 2
-   * Implement incremental refresh
-   <br /><br />
-
-#### Explore and analyze data (20–25%)
-
-Perform exploratory analytics:
-   * Implement descriptive and diagnostic analytics
-   * Integrate prescriptive and predictive analytics into a visual or report
-   * Profile data
-   <br /><br />
-
-Query data by using SQL:
-   * Query a lakehouse in Fabric by using SQL queries or the visual query editor
-   * Query a warehouse in Fabric by using SQL queries or the visual query editor
-   * Connect to and query datasets by using the XMLA endpoint
-   <br /><br />
-
-<a target="_blank" href="https://learn.microsoft.com/en-us/shows/learn-live/exam-cram-for-dp-600-ep101-how-to-pass-exam-dp-600-implementing-analytics-solutions-using-microsoft-fabric-beta-pacificn">Exam-Cram</a> by Angie Rudduck and Wesley De Bolster
-
-
-Sample Practice Test:
-
-<a target="_blank" href="https://aka.ms/DP-600-Practice">aka.ms/DP-600-Practice</a>.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=U3aqC7VQTSw">VIDEO get it the smart way</a>
-
-
-
-<hr />
-
-<a name="Data+Activator"></a>
-
-## Data Activator
-
-<img align="right" width="48" height="48" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709230056/ms-fabric-Data-Activator_yc60td.svg">
-   * <a target="_blank" href="https://aka.ms/DataActivatorPreview">aka.ms/DataActivatorPreview</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-data-activator-microsoft-fabric/8-exercise">Exercise</a>
-   * <a target="_blank" href="https://www.youtube.com/watch?v=NDOtvHKiZq8">FF Analytics playlist</a>
-   * <a target="_blank" href="https://www.youtube.com/watch?v=qrCmTCWuluk">Microsoft Mechanic</a> by Will Thompson (Group Product Manager of Data Activator) 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=v6IOuysQGRA">VIDEO</a> on Guy in a Cube channel : Will Thompson (Group Product Manager of Data Activator) provided the screen images below.
-   * <a target="_blank" href="https://www.youtube.com/watch?v=40Lwg1QJFEY">VIDEO</a>: Digging deeper
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/data-activator/data-activator-introduction">What is Data Activator?</a>
-   * <a target="_blank" href="https://www.linkedin.com/pulse/data-activator-microsoft-fabric-what-how-can-you-set-up-justin-barry-cqyoe/">by Justin Berry</a> 
-   * <a target="_blank" href="https://adatis.co.uk/data-activator-as-it-is-now/">this blog</a> provided the flow diagram
-   <br /><br />
-
-NOTE: Previously, Azure Synapse Pipelines had a 
-   * Schedule Trigger, 
-   * Tumbling Window Trigger, and 
-   * Event-Based Trigger.
-   <br /><br />
-
-Data Activator monitors workspaces with a PowerBI Premium license.
-
-Data Activator initiates actions based on <strong>Reflex items</strong>, each containing all the details to connect to data sources, monitor conditions. A Reflex is typically setup for each business segment or process monitored.
-
-   PROTIP: <strong>Data Activator</strong>, if it works as intended, can be a real <strong>game changer</strong> to enable <strong>Data Citizens</strong> to create "digital robots" that automatically <strong>take action</strong> rather than relying on humans constantly scanning dashboards, which can be error prone. Here's where machines (AI or not) replace human workers -- and <a target="_blank" href="https://www.youtube.com/watch?v=8CPoXDrwPP8">"The Sorcerer's Apprentice"</a> <a target="_blank" href="https://www.youtube.com/watch?v=ZcesnqVF0us&t=1m39s">VIDEO: fiasco</a> becomes reality.
-
-Data Activator runs in the background to review data created in Power BI, Synapse Real Time Analytics, Synapse Data Warehouse in OneLake to identify conditions that trigger automatic actions (in batches every 5 minutes):
-   * send message in Microsoft Teams, 
-   * send appointment in Outlook, and 
-   * Power Automate to perform logic
-   <br /><br />
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709187839/ms-data-activator-flow-adatis-602x365_dny6l5.png"><img alt="" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709187839/ms-data-activator-flow-adatis-602x365_dny6l5.png"></a>
-
-1. The Fabric Administrator enables a Microsoft Fabric subscription at:
-
-   <a target="_blank" href="https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Fabric%2Fcapacities">https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Fabric%2Fcapacities</a>
-
-2. In tenant settings, enable Data Activator for specific security groups or the entire organization except specific security groups.
-
-1. <img align="right" width="48" height="48" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709230056/ms-fabric-PowerBI_qfz2kr.svg">Within PowerBI, open a report. Click the 3 dots at the upper-right to select "Trigger action".
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176205/powerbi-alerts-1172x1940_sqsaaw.png"><img alt="powerbi-alerts-1172x1940.png" width="1140" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176205/powerbi-alerts-1172x1940_sqsaaw.png"></a>
-
-1. Select the Measure, For each, time axis. Scroll down.
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176671/powerbi-alert-every-1124x558_refbaj.png"><img alt="powerbi-alert-every-1124x558.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176671/powerbi-alert-every-1124x558_refbaj.png"></a>
-
-1. Select Every ...period to refresh data, scroll down to:
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709177495/powerbi-alert-when-1140x596_nfqor8.png"><img alt="powerbi-alert-what-1140x5968.png" width="1140" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709177495/powerbi-alert-when-1140x596_nfqor8.png"></a>
-
-1. Select What to detect value and Threshold.
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176975/powerbi-alert-where-798x428_zhav6a.png"><img alt="powerbi-alert-when-1140x596.png"  width="1140" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176975/powerbi-alert-where-798x428_zhav6a.png"></a>
-
-1. Select Where to save Workspace & Item.
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176975/powerbi-alert-where-798x428_zhav6a.png"><img alt="powerbi-alert-where-798x428.png" width="1149" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709176975/powerbi-alert-where-798x428_zhav6a.png"></a>
-
-1. Click Continue to create a <strong>Reflex</strong>.
-
-1. Click "Data Activator" for its mode tabs at the bottom of the screen: Data mode and Design mode. 
-
-   * Click Data mode to inspect the fresh data and link it to specific objects. 
-   * Click Design mode to develop triggers based on these objects. 
-   <br /><br />
-
-   Consider the following scenarios:
-
-   * When a potential security breach is identified through real-time monitoring, immediate protective actions are initiated.
-
-   * A warehouse manager needs to detect drops in product stocks and needs to start a reorder process to prevent running out of stock.
-
-   * A sales associate needs to receive alerts when a potential client is visiting their website and offers to start a live chat with them.
-
-   Copilot, an AI-powered assistant assists users in tasks like generating SQL statements, creating reports and setting up automated workflows based on triggers. By leveraging AI capabilities, Copilot streamlines and automates data-related tasks, enabling users to work more efficiently and derive actionable insights from their data.
-
-   The <strong>Fabric engine</strong> is an upgrade from separate systems used by separate roles of people.
-   So there is a lot of copying of data from one engine to another<a target="_blank" href="https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-explained-for-existing-synapse-users?ft=Synapse:category">:</a>
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701048036/ADLSg2-lakehouse-864x291_d8wv2o.png"><img alt="ADLSg2-lakehouse-864x291.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701048036/ADLSg2-lakehouse-864x291_d8wv2o.png"></a>
-   
-
-### Delta (Parquet) Format
-
-At the bottom is storage. "<a target="_blank" href="https://learn.microsoft.com/fabric/onelake/onelake-overview">One Lake</a>" is the branding for storage built on top of Azure Data Lake Storage Gen2 (ADLSg2) lakehouse that combines storage locations across different regions and clouds into a single logical lake, without moving or duplicating data (DirectLake mode).
-
-The key enabler (for Microsoft as well as Snowflake and Databricks DeltaLake) is the <strong>Delta format</strong> (generically called "Parquet" format) that enables <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/explore-core-data-concepts/5-transactional-data-processing">ACID transactions</a> on "unstructured" data in data lakes:
-
-   * Atomicity – each transaction is treated as a single unit, which succeeds completely or fails completely. For example, a transaction that involved debiting funds from one account and crediting the same amount to another account must complete both actions. If either action can't be completed, then the other action must fail.
-
-   * Consistency – transactions can only take the data in the database from one valid state to another. To continue the debit and credit example above, the completed state of the transaction must reflect the transfer of funds from one account to the other.
-
-   * Isolation – concurrent transactions cannot interfere with one another, and must result in a consistent database state. For example, while the transaction to transfer funds from one account to another is in-process, another transaction that checks the balance of these accounts must return consistent results - the balance-checking transaction can't retrieve a value for one account that reflects the balance before the transfer, and a value for the other account that reflects the balance after the transfer.
-
-   * Durability – when a transaction has been committed, it will remain committed. After the account transfer transaction has completed, the revised account balances are persisted so that even if the database system were to be switched off, the committed transaction would be reflected when it is switched on again.
-
-Previously, SQL and analytic data are stored in different database technologies.
-
-
-
-* Introduction to end-to-end analytics using Microsoft Fabric - better collaboration between data engineers, data scientists, and business analysts. An analytical store that combines the file storage flexibility of a data lake with the T-SQL-based query capabilities of a data warehouse.
-   * https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial
-   * https://learn.microsoft.com/en-us/fabric/admin/fabric-switch = Enable Fabric
-   * Microsoft Fabric portal at https://app.fabric.microsoft.com
-   * Pro, Premium needed to create a lakehouse
-   * Default Delta Small or Large dataset storage format
-* Get started with lakehouses in Microsoft Fabric <a target="_blank" href="https://microsoftlearning.github.io/mslearn-fabric/Instructions/Labs/01-lakehouse.html">Exercise</a>
-   * Describe core features and capabilities of lakehouses in Microsoft Fabric
-   * Dataflows (Gen2) are based on Power Query - a familiar tool to data analysts using Excel or Power BI that provides visual representation of transformations as an alternative to traditional programming.
-   * Ingest data into files and tables in a lakehouse.
-   * Query lakehouse tables with SQL. Shortcuts point to different storage accounts and other Fabric items like data warehouses, KQL databases, and external Lakehouses.
-* Use Apache Spark in Microsoft Fabric
-* Work with Delta Lake tables in Microsoft Fabric
-* Use <a href="#Data+Factory">Data Factory</a> pipelines in Microsoft Fabric
-* Ingest Data with Dataflows Gen2 in Microsoft Fabric
-
-* Get started with data warehouses in Microsoft Fabric: <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-data-warehouse/7-exercise">Exercise</a>
-   * Query and transform data
-   * Prepare data for analysis and reporting 
-   * https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-create-and-manage-relationships
-   * Measures are calculated fields based on the data in the tables in your data warehouse using the Data Analysis Expressions (DAX) formula language.
-   * Datasets are a semantic model with metrics that are used to create reports. 
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/get-started-data-warehouse/6-security-monitor">Secure and monitor your data warehouse</a> - Data in Fabric is organized into workspaces, which are used to control access and manage the lifecycle of data and services. 
-Dynamic management views (DMVs) to monitor connection, session, and request status to see live SQL query lifecycle insights.
-available to use in Fabric:
-   * sys.dm_exec_connections: Returns information about each connection established between the warehouse and the engine.
-   * sys.dm_exec_sessions: Returns information about each session authenticated between the item and engine.
-   * sys.dm_exec_requests: Returns information about each active request in a session.
-item permissions in a workspace grant access to individual warehouses to enable downstream consumption of data.
-* Get started with data science in Microsoft Fabric
-   Promotion can be done by any workspace member who has been granted permissions.
-   Certification are enabled in the tenant by the admin, and only designated certifiers can perform the endorsement. 
-
-<hr />
-
-<a name="Analytics"></a>
-
-## Real-Time Analytics
-
-   * <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-04b-fabric-lake-lab.html">HANDS-ON: Explore data analytics in Microsoft Fabric from the DP-900 labs</a>
-   * <a target="_blank" href="https://microsoftlearning.github.io/DP-900T00A-Azure-Data-Fundamentals/Instructions/Labs/dp900-05c-fabric-realtime-lab.html">HANDS-ON: Explore real-time analytics in Microsoft Fabric from the DP-900 labs</a>
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/answers/questions/1444761/fabric-real-time-analytics-sample-log-analytics-ra">Q&A</a>:
-
-1. In "Real-Time Analytics".
-1. Click "Use a sample" for this menu:
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701209892/fabric-analytics-samples-970x388_bzvzr2.png"><img alt="fabric-analytics-samples-970x388.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701209892/fabric-analytics-samples-970x388_bzvzr2.png"></a>
-
-1. Click "Log Analytics" to load and "RawSysLogsSample" appears in the left menu.
-1. Click "Run". 
-
-   <pre>Error: Semantic error: 'take' operator: Failed to resolve table or column expression named 'DownSampledTransformedLogs'
-&nbsp;
- clientRequestId: </pre>
-
-1. Click "Metrics analytics" to load and "RawServerMetricsSample" appears in the left menu.
-1. Click "Run". 
-
-   <pre>Error: Semantic error: Stored query result 'DailySQLMetrics' was not found
-&nbsp;
- clientRequestId: </pre>
-
-1. TODO: Report errors?
-
-1. Verify:
-
-   Check that the tables have been loaded properly by going to the "Data" section of the workspace and verifying that the tables are present.
-
-   Check that the table and column names in the queries are correct and match the names of the tables and columns in the workspace.
-
-   Try running the queries again after refreshing the page or restarting the workspace.
-
-
-NOTE: Competition to Microsoft Synapse Real-Time Analytics is open-source <a target="_blank" href="https://pinot.apache.org/">Apache Pinot</a> which originated from within Linkedin for user-facing real-time data analytics. <a target="_blank" href="https://www.youtube.com/@StarTree">StarTree</a>.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=3zQI-DrkkdE">VIDEO</a>: Comparison: Latency. Freshness. Concurrency. Throughput. Flexibility. Cost.
-
-Benchmarks?
-
-
-<hr />
-
-## Microsoft Purview
-
-Among Microsoft's security portfolio: Defender XDR, Entra PIM, Intune MDM, Priva, Purview DLP, Sentinel SIEM, and Azure Security Center.
-
-https://www.microsoft.com/en-us/security/business/microsoft-purview 
-is the marketing landing page
-
-"Microsoft Purview is a comprehensive portfolio of products spanning data governance, data security, and risk and compliance solutions."
-
-   * https://www.microsoft.com/en-us/security/business/microsoft-purview
-   * https://www.microsoft.com/en-us/security/business/microsoft-purview?rtc=1
-   * https://www.microsoft.com/en-us/security/business/microsoft-purview?rtc=1#data-governance
-   * https://www.microsoft.com/en-us/security/business/microsoft-purview?rtc=1#data-security
-   * https://www.microsoft.com/en-us/security/business/microsoft-purview?rtc=1#risk-compliance
-   * https://www.microsoft.com/en-us/security/business/microsoft-purview?rtc=1#data-governance
-   * https://www.microsoft.com/en-us/security/business/microsoft-purview?rtc=1#data-security
-   * https://www.microsoft.com/en-us/security/business/microsoft-purview?rtc=1#risk-compliance
-   <br /><br />
-
-   "Microsoft Purview is a unified data governance platform that helps you manage and govern your on-premises, multi-cloud, and software-as-a-service (SaaS) data. Purview provides a unified view of your data estate by discovering and classifying your data, mapping data lineage, and enabling data protection."
-
-   * <a target="_blank" href="https://www.youtube.com/watch?v=8BAeLUywEMM&t=1m30s">VIDEO</a>: 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=8BAeLUywEMM&t=2m40s">VIDEO</a>: 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=8BAeLUywEMM&t=3m30s">VIDEO</a>: 
-   <br /><br />
-
-   https://learn.microsoft.com/en-us/purview/purview describes features:
-   * Data Catalog - discover and catalog data assets
-   * Data Loss Prevention (DLP) - identify and protect sensitive data
-   * Privileged Access Management (PAM) - manage, control, and monitor access to critical assets
-   <br /><br />
-
-   https://learn.microsoft.com/en-us/training/modules/intro-to-microsoft-purview/?source=recommendations
-
-   Based on https://learn.microsoft.com/en-us/purview/create-microsoft-purview-portal
-
-### Purview Account
-
-1. Search for "Purview accounts":
-   https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Purview%2FAccounts
-
-1. Click "Create Microsoft Purview account".
-   https://portal.azure.com/#create/Microsoft.AzurePurviewGalleryPackage
-   
-1. Select the Subscription to use.
-1. Select an existing Resource group or create a new one.
-
-   purview-west-us-231129a
-
-   PROTIP: A Purview account needs to be created for each Region your organization operates.
-
-1. For Microsoft Purview account name, specify the same name as the Resource Group.
-1. For Location, select the same location as the Resource Group.
-
-   Notice the CU. The default is 1. The maximum is 64.
-
-1. In Tags, specify a tag "CreatedBy" with your name and email address as the Value.
-1. Create for the Overview Deployment
-
-   ### Purview Governance Portal
-
-1. Enter the Purview Portal:
-
-   https://web.purview.azure.com/
-
-1. Select the Directory and Purview Account (just created) for the Data catalog view.
-1. Expand the left menu
-
-   * Data Catalog
-   * Data Map
-   * Data estate insights
-   * Data Policies
-   
-   Not shown:
-   * Data Sources
-   * Data Lineage
-   * Data Protection
-   * Data Classification
-   * Data Discovery
-   * Data Governance
-   <br /><br />
-
-1. View Microsoft Purview overview at
-   https://go.microsoft.com/fwlink/?linkid=2148717
-
-   Get Started at
-   https://go.microsoft.com/fwlink/?linkid=2149760
-
-   Documentation at:
-   https://go.microsoft.com/fwlink/?linkid=2148916
-
-
-1. Based on "Get Started" at
-   https://go.microsoft.com/fwlink/?linkid=2149760
-
-
-   ### Purview Risk and Compliance
-
-1. Enter the Compliance Portal:
-
-   https://compliance.microsoft.com/
-
-   ### End-to-End
-
-   https://learn.microsoft.com/en-us/training/modules/building-end-to-end-data-governance-master-data-stack-with-microsoft-purview-cluedin/
-   in 2 hr 38 min - Build an end to end data governance and master data management stack with Microsoft Purview and CluedIn
-
-
-   ### Security Copilot
-
-Microsoft's Security Copilot makes use of (Language Model Logics) to detect anomalies in logs.
-
-   * https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-overview
-   * https://www.microsoft.com/en-us/security/business/ai-machine-learning/microsoft-security-copilot?rtc=1
-   * https://www.microsoft.com/en-us/security/blog/2023/11/08/insights-from-microsoft-security-copilot-early-adopters/
-   <br /><br />
-
-https://www.microsoft.com/en-us/security/blog/
-
-<a target="_blank" href="https://clouddamcdnprodep.azureedge.net/gdc/gdcieULMS/original">PDF: Crash Course</a>
-
-https://www.microsoft.com/en-us/security/blog/2022/03/31/3-strategies-to-launch-an-effective-data-governance-plan/
-
-
-
-## Priva (Privacy)
-
-https://learn.microsoft.com/en-us/privacy/priva/priva-overview
-
-* European Union's General Data Protection Regulation (GDPR)
-* California Consumer Privacy Act (CCPA)
-
-
-<hr />
-
-## DAX Studio
-
-Among https://www.sqlbi.com/tools/
-
-DAX Studio is an open-sourced free IDE that provides an Object Browser, query editing and execution, formula and measure editing, syntax highlighting and formatting, integrated tracing, and query execution breakdowns
-to write, execute, and analyze DAX queries in Power BI Designer, Power Pivot for Excel, and Analysis Services Tabular.
-
-Use Power BI Desktop to explore the Adventureworks database at
-https://daxstudio.org/docs/tutorials/writing-dax-queries/
-using these sample commands:
-
-The syntax of DAX Queries are described by Microsoft at
-https://learn.microsoft.com/en-us/dax/dax-queries
-
-<pre>[DEFINE 
-    (
-     (MEASURE <em>table name</em>[<em>measure name</em>] = <em>scalar expression</em>) | 
-     (VAR <em>var name</em> = <em>table or scalar expression</em>) |
-     (TABLE <em>table name</em> = <em>table expression</em>) | 
-     (COLUMN <em>table name</em>[<em>column name</em>] = <em>scalar expression</em>) | 
-    ) + 
-]
-(EVALUATE
-    'Internet Sales'
-ORDER BY
-    'Internet Sales'[Sales Order Number]
-START AT "SO7000") +
-</pre>
-
-To return the calculated total sales for years 2013 and 2014, and combined calculated total sales for years 2013 and 2014, as a table. The measure in the DEFINE statement, Internet Total Sales, is used in both Total Sales and Combined Years Total Sales expressions.
-
-<pre>DEFINE
-    MEASURE 'Internet Sales'[Internet Total Sales] =
-        SUM ( 'Internet Sales'[Sales Amount] )
-&nbsp;
-EVALUATE
-SUMMARIZECOLUMNS (
-    'Date'[Calendar Year],
-    TREATAS (
-        {
-            2013,
-            2014
-        },
-        'Date'[Calendar Year]
-    ),
-    "Total Sales", [Internet Total Sales],
-    "Combined Years Total Sales",
-        CALCULATE (
-            [Internet Total Sales],
-            ALLSELECTED ( 'Date'[Calendar Year] )
-        )
-)
-ORDER BY [Calendar Year]
-</pre>
 
 References:
-   * https://hevodata.com/learn/dax-studio/
+   * https://www.thomasmaurer.ch/2020/05/az-500-study-guide-microsoft-azure-security-technologies-2021/
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/367">Linux Academy Microsoft Azure Security Technologies</a> by Tia Williams
+   * aka.ms/az500labs = 
+   https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies
+   * https://www.youtube.com/watch?v=uw-lwS_4pvU by <a target="_blank" href="https://www.linkedin.com/in/dnatwick/">Dwayne Natwick</a>, <a target="_blank" href="https://captainhyperscaler.com/">captainhyperscaler.com</a>)
+
+<a target="_blank" href="https://www.aguidetocloud.com/full-courses/az500fullcourse">7-hour AGuideToCloud video class by Susanth Sutheesh</a>
    <br /><br />
 
 <hr />
 
-<a name="Reflex"></a>
+<a name="SC-100"></a>
 
-## Reflex
+### SC-100 Microsoft Cybersecurity Architect 
 
-Reflex rules are defined by Data Citizens and Data Analysts using the no-code GUI in Data Activator.
+<a target="_blank" href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWVbXN">PDF</a>:
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/sc-100">
+SC-100</a> takes 2 hours to answer 70% of 48 single-line mulitple-choice questions about features (not configuration). Questions include M365 Defender and Compliance Center, so
+<a target="_blank" href="https://learn.microsoft.com/en-us/certifications/cybersecurity-architect-expert/">first earn</a> ONE of <a href="#SC-200">SC-200</a>, <a href="#SC-300">SC-300</a>, <a href="#AZ-500">AZ-500</a>, or <a href="#MS-500">MS-500</a>.
 
-The Data Activator recognizes when a Reflex rule is triggered by events it monitors.
+The Microsoft cybersecurity architect has subject matter expertise in designing and evolving the cybersecurity strategy to protect an organization's mission and business processes across all aspects of the enterprise architecture. The cybersecurity architect designs a Zero Trust strategy and architecture, including security strategies for data, applications, access management, identity, and infrastructure. The cybersecurity architect also evaluates Governance Risk Compliance (GRC) technical strategies and security operations strategies.
+
+The cybersecurity architect continuously collaborates with leaders and practitioners in IT security, privacy, and other roles across an organization to plan and implement a cybersecurity strategy that meets the business needs of an organization.
+
+A candidate for this exam should have advanced experience and knowledge in a wide range of security engineering areas including identity and access, platform protection, security operations, securing data and securing applications. They should also have experience with hybrid and cloud implementations.
+
+<a target="_blank" href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWVbXN">PDF</a>: <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/sc-100-design-zero-trust-strategy-architecture/">Free tutorials</a>:
+
+1. <a target="_blank" href="https://www.linkedin.com/learning/microsoft-cybersecurity-architect-sc-100-cert-prep-1-design-a-zero-trust-strategy-and-architecture-by-microsof">PREP</a>: Design a Zero Trust strategy and architecture (30–35%)
+2. <a target="_blank" href="https://www.linkedin.com/learning/microsoft-cybersecurity-architect-sc-100-cert-prep-2-evaluate-governance-risk-compliance-grc-technical-strateg">PREP</a>: Evaluate Governance Risk Compliance (GRC) technical strategies and security operations
+strategies (10–15%)
+3. <a target="_blank" href="https://www.linkedin.com/learning/microsoft-cybersecurity-architect-sc-100-cert-prep-3-design-security-for-infrastructure-by-microsoft-press">PREP</a>: Design security for infrastructure (10–15%)
+4. <a target="_blank" href="https://www.linkedin.com/learning/microsoft-cybersecurity-architect-sc-100-cert-prep-4-design-a-strategy-for-data-and-applications-by-microsoft">PREP</a>: Design a strategy for data and applications (15–20%)
+5. <a target="_blank" href="https://www.linkedin.com/learning/microsoft-cybersecurity-architect-expert-sc-100-cert-prep-5-recommend-security-best-practices-and-priorities">PREP</a>: Recommend security best practices and priorities (20–25%)
+<br /><br />
+
+https://github.com/MicrosoftLearning/SC-100-Microsoft-Cybersecurity-Architect has these hands-on labs:
+1. Case study introduction (Tailwind Traders)
+1. Build overall security strategy (<a target="_blank" href="https://learn.microsoft.com/en-us/security/cybersecurity-reference-architecture/mcra">MCRA</a> for MFA)
+1. Design security operations strategy
+1. Design identity security strategy
+  
+1. Evaluate a regulatory compliance strategy
+1. Evaluate security posture and recommend technical strategies
+  
+1. Understand architecture best practices
+1. Design a strategy for securing server and client endpoints
+1. Design a strategy for security PaaS, IaaS and SaaS services
+1. Specify security requirements for applications
+1. Design a strategy for securing data
+
+1. Best practices with MCRA and MCSB
+1. Secure methodology with CAF
+1. Ransomware strategy
+<br /><br />
 
 
-## User Communities
+References:
+   * Secure Access Service Edge (SASE)
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-cloud/#CAF">Cloud Adoption Framework (CAF)</a>
+   * <a target="_blank" href="https://dodcio.defense.gov/Portals/0/Documents/Library/(U)ZT_RA_v2.0(U)_Sep22.pdf">Department of Defense (DoD) Zero Trust Reference Architecture Version 2.0 July 2022</a>
+<br /><br />
 
-https://www.reddit.com/r/MicrosoftFabric/comments/14iuplv/azure_data_factory_vs_data_pipelines/
 
-1. Get a Microsoft Tech Community ID at <a target="_blank" href="https://techcommunity.microsoft.com/">https://techcommunity.microsoft.com</a>
-
-   https://community.fabric.microsoft.com/
-
-   https://powerusers.microsoft.com/
-
-   Azure Data Community at
-   https://www.microsoft.com/en-us/sql-server/community?activetab=pivot:sqlservertab
-   has several sub-commmunity pages.
-
-   https://www.meetup.com/pro/azuretechgroups/ managed according to 
-   https://developer.microsoft.com/en-us/azure-tech-groups/
-
-   Azure Data Tech Groups at
-   https://www.meetup.com/pro/azuredatatechgroups/
-   https://www.microsoft.com/en-us/sql-server/community?activetab=pivot:sqlservertab
-
-   https://passdatacommunitysummit.com (Nov 14-17 2023 Seattle)
-
-   Outside of Microsoft:
-
-   https://live360events.com/Events/Orlando-2023/Home.aspx
+Prevent IDOR (Insecure Direct Object Reference)
 
 
 <hr />
 
-## Resources
+<a name="AZ-140"></a>
 
-The Machine Learning done to train AI models within Microsoft Fabric uses AzureML on Synapse Spark component of Azure Synapse Analytics.
+## AZ-140 Azure Desktop Speciality
 
-QUESTION: Microsoft Fabric is not built to work natively with OpenAI???
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-140">
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-140</a> exam is new as of March 29, 2021.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=bQBVNg6gEYw">VIDEO</a>:
-Data Science with MLFlow (with demo):
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1701712190/flow-datasci-1781x808_zswviq.png"><img alt="flow-datasci-1781x808.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1701712190/flow-datasci-1781x808_zswviq.png"></a>
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/overview"><img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-icons/Windows-Virtual-Desktop.svg">
+<!-- http://code.benco.io/icon-collection/azure-icons/Windows-Virtual-Desktop.svg -->
+What is Windows Desktop?</a> (not Windows Virtual Desktop classic).
 
-https://www.linkedin.com/company/microsoftfabric/
+Windows Virtual Desktop (WVD) is a desktop and app virtualization service that runs on the Azure cloud. It works with Office 365 ProPlus. It competes with Citrix stateful VDI (Virtual Desktop Infrastructure).
+   * https://www.clouddesktoponline.com/what-is-windows-virtual-desktop-wvd/
+   * https://azure.microsoft.com/en-us/services/virtual-desktop/
+   * https://www.microsoft.com/en-us/microsoft-365/modern-desktop/enterprise/windows-virtual-desktop
+   <br /><br />
+
+Skills the exam measures:
+* Plan a Windows Virtual Desktop architecture - <a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/create-host-pools-azure-marketplace">ARM VM host pool</a>
+* Implement a Windows Virtual Desktop infrastructure. test from the Azure Gallery.
+* Manage access and security
+* Manage user environments and <a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/manage-app-groups">RemoteApp Groups and programs</a>
+* Monitor and maintain a Windows Virtual Desktop infrastructure
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-desktop/create-validation-host-pool">Host pool</a>
+<br /><br />
+
+Sample examples:
+   * https://www.whizlabs.com/learn/course/microsoft-azure-az-140/
 
 
-## More #
+<a name="#MS-900"></a>
 
-This is one of a series about cloud computing:
+## MS-900 Office 365 Fundamentals
 
-{% include cloud_links.html %}
-Se 
+<a target="_blank" href="https://www.youtube.com/watch?v=xirUELDSrUE">Carla Jenkins</a>
+recommends this because Azure security exams cover 365 as well.
+
+https://docs.microsoft.com/en-us/learn/certifications/exams/ms-900
+
+https://vladtalkstech.com/ms-900-study-guide-microsoft-365-fundamentals
+
+https://www.whizlabs.com/learn/course/microsoft-azure-ms-900/
+
+<a target="_blank" href="https://www.aguidetocloud.com/full-courses/ms900fullcourse">4-hour AGuideToCloud video class by Susanth Sutheesh</a>
+
+<hr />
+
+<a name="AZ-204"></a>
+
+## AZ-204 Developing Solutions for Microsoft Azure
+
+Pass this one exam to become a "Microsoft Certified: Azure Developer Associate".
+
+<a target="_blank" href="
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-204">
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-204</a>
+formally defines the test and provides textual tutorial. The test is about development in .Net C#, Python, Bash Shell, PowerShell.
+
+PROTIP: <a target="_blank" href="https://learning.oreilly.com/videos/microsoft-az-204-certification/">Skylines Academy videos on OReilly</a> I think are the most thorough and best sequenced courses (and I've seen them all).
+
+<strong>Develop</strong> Azure compute solutions (25-30%)
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/create-serverless-applications/">Create serverless applications</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/connect-your-services-together/">Deploy resources in Azure</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/deploy-a-website-with-azure-app-service/">Deploy a website to Azure with Azure App Service</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/manage-resources-in-azure/">Connect services together</a>
+   <br /><br />
+
+Develop for Azure storage (15-20%)
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/">Store Data in Azure</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/secure-your-cloud-data/">Secure Your Cloud Data</a>
+   <br /><br />
+
+Implement Azure security (20-25%)
+
+Monitor, troubleshoot, and optimize Azure solutions (15-20%)
+
+Connect to and consume Azure services and third-party services (15-20%)
+<br /><br />
+
+Microsoft's hands-on 4-day live class makes use of files from <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure">https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure</a> described in steps at <a target="_blank" href="https://aka.ms/az204labs">aka.ms/az204labs</a>
+
+   1. <a target="_blank" href="https://wilsonmar.github.io/azure-compute">Create Azure App Service Web Apps</a>
+   1. <a target="_blank" href="https://wilsonmar.github.io/azure-functions">Implement Azure functions</a>
+   1. <a target="_blank" href="https://wilsonmar.github.io/azure-storage">Develop solutions that use blob storage</a>
+   1. <a target="_blank" href="https://wilsonmar.github.io/cosmodb">Develop solutions that use Cosmos DB storage</a>
+   1. Implement IaaS solutions
+   1. Implement secure cloud solutions
+   1. Implement user authentication and authorization
+   1. <a target="_blank" href="https://wilsonmar.github.io/api-management-microsoft/">Implement API Management</a>
+   1. Develop event-based solutions
+   1. <a target="_blank" href="https://wilsonmar.github.io/azure-messaging">Develop message-based solutions</a>
+   1. <a target="_blank" href="https://wilsonmar.github.io/azure-monitoring">Instrument solutions to support monitoring and logging</a>
+   1. Integrate caching and content delivery within solutions
+   <br /><br />
+
+<a target="_blank" href="https://acloud.guru/overview/az-204-developing-solutions-for-microsoft-azure?utm_source=marketo">ACloudGuru.com's FREE 8.6 hour video course</a> by Daniel Stinchcomb includes quizzes and a practice exam.
+   
+
+<a target="_blank" href="https://cloudacademy.com/learning-paths/az-204-exam-preparation-developing-solutions-for-microsoft-azure-1208/">
+CloudAcademy's 23h video course</a> provides labs:
+   * <a target="_blank" href="https://cloudacademy.com/lab/azure-api-management-policies-security/?context_resource=lp&context_id=1208">API Management Policies and Security</a>
+   * <a target="_blank" href="https://cloudacademy.com/lab/integrate-services-azure-function-apps/?context_resource=lp&context_id=1208">Azure Functions 1hr lab</a>
+   <br /><br />
+
+<a target="_blank" href="https://app.pluralsight.com/paths/certificate/developing-solutions-for-microsoft-azure-az-204">Pluralsight's video course</a>
+Includes:
+   * https://app.pluralsight.com/paths/certificate/developing-solutions-for-microsoft-azure-az-204
+
+https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure has these hands-on labs:
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_01.md"> Lab 01: Build a web application on Azure platform as a service offering </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_02.md"> 
+Lab 02: Implement task processing logic by using Azure Functions </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_03.md"> Lab 03: Retrieve Azure Storage resources and metadata by using the Azure Storage SDK for .NET </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_04.md"> Lab 04: Construct a polyglot data solution </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_05.md"> Lab 05: Deploy compute workloads by using images and containers </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_06.md"> Lab 06: Authenticate by using OpenID Connect, MSAL, and .NET SDKs </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_07.md"> Lab 07: Access resource secrets more securely across services </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_08.md"> Lab 08: Create a multi-tier solution by using Azure services </a> - <a target="_blank" href="https://raw.githubusercontent.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/master/Instructions/Labs/Lab08-Diagram.png">Diagram</a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_09.md"> Lab 09: Publish and subscribe to Event Grid events </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_10.md"> Lab 10: Asynchronously process messages by using Azure Service Bus Queues </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_11.md"> Lab 11: Monitor services that are deployed to Azure </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_12.md"> Lab 12: Enhance a web application by using the Azure Content Delivery Network </a>
+<br /></br />
+
+* <a target="_blank" href="https://www.aguidetocloud.com/full-courses/az204fullcourse">5-hour AGuideToCloud video class by Susanth Sutheesh</a>
+
+<a target="_blank" href="https://www.coursera.org/professional-certificates/azure-developer-associate">Coursera'w AZ-204 class</a>
+   1. 17 hr Create Serverless Applications
+   2. 10 hr Connect Your Services with Microsoft Azure Service Bus
+   3. 15 hr Data Storage in Microsoft Azure for Associate Developers
+   4. 08 hr Deploy a website with Azure Virtual Machines
+   5. 10 hr Manage Resources in Azure
+   6. 08 hr Deploy a website to Azure with Azure App Service
+   7. 09 hr Secure your Cloud Data
+   8. 07 hr Prepare for AZ-204: Developing Solutions for Microsoft Azure
+   <br /><br />
+
+Questions:
+   * https://www.whizlabs.com/learn/course/microsoft-azure-az-204/
+   * https://www.udemy.com/course/exam-microsoft-azure-dev/ by Alan Rodrigues
+
+
+<hr />
+
+<a name="SolutionArchitect"></a>
+
+## Azure Solution Architect Expert
+
+Passing the AZ-303 and the less hands-on AZ-304 Microsoft Azure Architect Design (blueprints) makes you a "Microsoft Certified Azure Solutions Architect Expert".
+
+The difference between AZ-303 and 304, conceptually:
+![az-303-304-1037x429](https://user-images.githubusercontent.com/300046/120078623-83321d80-c06d-11eb-822c-3aaefef83bb0.png)
+
+"Azure Architects translate business requirements into secure and reliable recommendations for infrastructure, governance, high availability, cost optimization, and data integration. Skills include recommending solutions for logging, multi-factor authentication, SSO, hybrid identity, backup and recovery, containers, microservices, monitoring, automation, networking, and application infrastructure."
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/patterns/">
+docs.microsoft.com/en-us/azure/architecture/patterns</a>
+
+Training vendors:
+
+Atul Kumar's K21Academy has a 12 weekend AZ-303/304 course with 27 hands-on labs, job prep & on-job support for one year on their @k2microsoftazure Telegram and WhatsApp. All after full-pressure marketing.
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/120122781-38490080-c168-11eb-9a0d-f9062d48916c.png">
+<img alt="az-k21-303-304-1536x627.png" width="1536" height="627" src="https://user-images.githubusercontent.com/300046/120122781-38490080-c168-11eb-9a0d-f9062d48916c.png"></a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=NEbG6bEaUDo">Microsoft Azure Solution Architect Certification [AZ-303|304]: Everything You Need To Know</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=O_u2oPuZ8Mw">Azure Full Course | Learn Microsoft Azure in 3 hours</a>
+   <br /><br />
+
+<a name="AZ-303"></a>
+
+### AZ-303 Azure Architect Technologies
+
+<a target="_blank" href="
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-303">
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-303</a>
+is the official description ($165 for 2-3 hours) and text tutorial.
+
+NOTE: AZ-303 replaces <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-300-MicrosoftAzureArchitectTechnologies">AZ-300</a>, and AZ-104 is not a pre-requisite but covers same topics more conceptually than this.
+
+Microsoft's 4-day live class covers these modules, with <a target="_blank" href="https://microsoftlearning.github.io/AZ-303-Microsoft-Azure-Architect-Technologies/">lab scenarios</a> defined in <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies">https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies</a> 
+
+1. Implement Azure Active Directory
+2. Implement and Manage Hybrid Identities
+3. Implement Virtual Networking
+4. Implement VMs for Windows and Linux
+5. Implement <strong>Load Balancing and Network Security</strong> 
+
+   <a target="_blank" href="https://microsoftlearning.github.io/AZ-303-Microsoft-Azure-Architect-Technologies/Instructions/Labs/Module_05_Lab.html">LAB: Implementing Highly Available Azure IaaS Compute Architecture</a>
+
+6. Implement Storage Accounts 
+
+   <a target="_blank" href="https://microsoftlearning.github.io/AZ-303-Microsoft-Azure-Architect-Technologies/Instructions/Labs/Module_06_Lab.html">LAB: Implementing and Configuring Azure Storage File and Blob Services</a>
+
+7. Implement NoSQL Databases
+9. Automate Deployment and Configuration of Resources
+10. Implement and Manage Azure Governance Solutions LAB: Managing Azure Role-Based Access Control
+
+11. Manage Security for Applications
+12. Manage Workloads in Azure 
+
+    <a target="_blank" href="https://microsoftlearning.github.io/AZ-303-Microsoft-Azure-Architect-Technologies/Instructions/Labs/Module_12_Lab.html">LAB:  Protecting Hyper-V VMs by using Azure Site Recovery</a>
+
+13. Implement Container-Based Applications
+
+14. Implement an Application Infrastructure 
+
+    <a target="_blank" href="https://microsoftlearning.github.io/AZ-303-Microsoft-Azure-Architect-Technologies/Instructions/Labs/Module_14_Lab_a.html">
+    LAB: Implementing an Azure App Service Web App with a Staging Slot</a> and 
+
+    <a target="_blank" href="https://microsoftlearning.github.io/AZ-303-Microsoft-Azure-Architect-Technologies/Instructions/Labs/Module_14_Lab_b.html">
+    LAB: Configuring a Message-Based Integration Architecture</a>
+
+15. Implement Cloud Infrastructure Monitoring
+<br /><br />
+
+<a target="_blank" href="https://learning.oreilly.com/videos/new-microsoft-az-303/10009AZ303">
+14h videos on OReilly: Skylines Academy Oct 2020</a> by Nick Colyer (who have a <a target="_blank" href="https://www.facebook.com/groups/azurestudygroup/">StudyGroup on Facebook</a>)
+
+<a target="_blank" href="https://learning.oreilly.com/attend/exam-az-303-microsoft-azure-architect-technologies-crash-course/0636920452881/0636920053523/">
+6 hr LIVE on OReilly: Tim Warner</a> teaches to his <a target="_blank" href="https://github.com/timothywarner/az303">GitHub repo</a> which includes a <a target="_blank" title="warner-azure-frankenstein-V2-793x629" href="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png">full diagram</a>.
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/826">
+AZ-303 Part 5 - Preparing for the Microsoft Azure Architect Technologies Exam</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=fG1wHpEQ6mw">
+AZ-303 Sample Exam Questions (Microsoft Azure Architect Technologies) [Answers Explained in Detail]</a> by R A V I K I R A N S
+
+
+Practice tests:
+   * <a target="_blank" href="https://www.whizlabs.com/learn/course/microsoft-azure-az-303/">https://www.whizlabs.com/learn/course/microsoft-azure-az-303</a>
+   * <a target="_blank" href="https://www.mindhub.com/az-303-microsoft-azure-architect-technologies-microsoft-official-practice-test/p/MU-AZ-303">Mindhub.com</a> THANKS280658
+
+Clickbait videos with no unique content:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=wP9KWa0rOQk">How I cleared Microsoft AZ 303 in just three weeks!</a> by Here Is Cloud
+   * <a target="_blank" href="https://www.youtube.com/watch?v=1BhzOxaxhqE" title="Oct 31, 2020">
+   #1 How to pass Exam AZ-303 Microsoft Azure Architect Technologies Certificate in 20 hours Part 1/2</a> Part 2
+
+Anthony James at LinuxAcademy:
+
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/579">Design Concepts</a>
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/525"> Part 1</a>
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/526"> Part 2</a>
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/527"> Part 3</a>
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/528"> Part 4</a>
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/826">Part 5</a>
+   <br /><br />
+
+* https://www.whizlabs.com/learn/course/microsoft-azure-az-303/
+
+
+<hr />
+
+<a name="AZ-305"></a>
+
+### AZ-305 Azure Solutions Architect Expert
+
+Pre-requisite is passing <a href="#AZ-104">AZ-104</a> before registering for this exam.
+
+This $165 exam takes 120 minutes to answer 40-60 business case scenario (case study) questions.
+Valid for 1 year.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-305">
+Microsft's AZ-305 exam/learnings page</a> includes textual tutorials and hands-on labs for each silll measured:
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-identity-governance-monitor-solutions/">Design identity, governance, and monitoring solutions</a> (25-30%)
+ 
+* <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-business-continuity-solutions/">Design business continuity solutions</a> (10-15%)
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-data-storage-solutions/">Design data storage solutions</a> (25-30%)
+
+* <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/design-infranstructure-solutions/">Design infrastructure solutions</a> (25-30%)
+<br /><br />
+
+https://aka.ms/AZ305-StudyGuide
+
+<a target="_blank" href="https://learning.oreilly.com/live-events/exam-az-305-designing-microsoft-azure-infrastructure-solutions-crash-course/Exam" title="6 hour Aug. 10, 2023">AZ-305: Designing Microsoft Azure Infrastructure Solutions Crash Course</a>
+by Tim Warner references<br /><a target="_blank" href="https://github.com/timothywarner/az305/">https://github.com/timothywarner/az305</a>
+
+
+Pluralsight:
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/az-305-designing-microsoft-azure-infrastructure-solutions/table-of-contents">16h 37m by ACloudGuru</a>
+
+
+Practice tests:
+   * <a target="_blank" href="https://www.kaplanlearn.com/education/qbank/view/82916708?testId=261812555">CyberVista via Pluralsight 50 questions</a>
+
+   * <a target="_blank" href="https://www.measureup.com/microsoft-practice-test-az-305-designing-microsoft-azure-infrastructure-solutions.html/">MeasureUp.com</a> has a $59.40/$99 
+
+
+
+<a name="AZ-304"></a>
+
+### AZ-304 Azure Architect Design
+
+This exam was retired.
+
+Passing this and the more hands-on AZ-303 makes you a "Microsoft Certified Azure Solutions Architect Expert".
+
+<a target="_blank" href="
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-304">
+Microsft's AZ-304 exam page</a> includes textual tutorials and hands-on labs.
+The exam is 120 minutes to answer 40-60 business case scenario (case study) questions.
+   * Design monitoring (10-15%)
+   * Design identity and security (25-30%)
+   * Design data storage (15-20%)
+   * Design business continuity (10-15%)
+   * Design infrastructure (25-30%)
+   <br /><br />
+
+Links to Microsoft docs for each item in the syllubus are <a target="_blank" href="
+https://www.azurebarry.com/prepare-for-the-az304-exam/">
+detailed by azurebarry.com</a>, who created a <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-azure-architect-design-az-304">video class on Pluralsight</a>
+
+   * Cost Optimization (cheapest approach)
+   * Migration Planning
+   * Governance
+   * Data Integration
+   * Application Architecture
+   <br /><br />
+
+Labs created by Microsoft for its live classes at <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design">https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design</a> :
+1. Module 1 Design a Compute Solution
+1. Module 2 Design a Network Solution
+1. Module 3 Design for Migration
+
+   <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_3_Lab.html">3. Migrating Hyper-V VMs to Azure by using Azure Migrate</a>
+   
+1. Module 4 Design Authentication and Authorization
+
+   <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_4_Lab.html">4. Managing Azure AD Authentication and Authorization</a> using PowerShell through a Bastion blade, using Azure AD Premium P2 licensing to integrate an AD DS forest with an Azure AD tenant with Azure AD Connect, all to set conditional access.
+   <br /><br />
+
+1. Module 5 Design Governance
+
+1. Module 6 Design a Solution for Databases
+
+   <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_6_Lab.html">6. Implementing Azure SQL Database-Based Applications</a>:
+   Create Azure SQL Database. Connect to it. Query it using a .NET Core console app behind a firewall.
+   <br /><br />
+
+1. Module 7 Select an Appropriate Storage Account
+
+1. Module 8 Design Data Integration
+
+1. Module 9 Design a Solution for Logging and Monitoring
+
+1. Module 10 Design a Solution for Backup and Recovery
+
+1. Module 11 Design for High Availability
+
+1. Module 12 Design for Cost Optimization
+
+1. Module 13 Design an Application Architecture
+
+   <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_13_Lab_a.html">13. Implement Azure Logic Apps Integration with Azure Event Grid</a> which uses PowerShell to create Resource Groups and Encrypt Passwords.
+   <br /><br />
+
+1. Module 14 Design Security for Applications
+
+Others courses on AZ-304:
+
+* <a target="_blank" href="https://www.pluralsight.com/paths/microsoft-azure-architect-design-az-304">Pluralsight</a>
+
+* <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/579">Azure Architect Design Concepts</a> is foundational to:
+
+  * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/776">10h 42m LinuxAcademy video course</a> by Russell Croft at ACloudGuru
+
+  * Tim Warner references <a target="_blank" href="https://github.com/timothywarner/az304">https://github.com/timothywarner/az304</a> during his <a target="_blank" href="https://learning.oreilly.com/attend/exam-az-304-microsoft-azure-architect-design-crash-course/">OReilly 6-hour AZ-304 "Crash Course"</a>. It's full of info.
+
+* https://linuxacademy.com/cp/modules/view/id/776?redirect_uri=https://app.linuxacademy.com/search?type=Course&categories=Azure
+
+* https://www.whizlabs.com/learn/course/microsoft-azure-az-304/
+
+Exam prep:
+   * https://www.whizlabs.com/learn/course/microsoft-azure-az-304/
+
+
+<hr />
+
+<a name="AZ-700"></a>
+
+## AZ-700
+
+https://learn.microsoft.com/en-us/credentials/certifications/exams/az-700/
+It's a 2-hour exam with 40-60 questions. Valid for 1-year, with free renewal every 2 years.
+
+Those who are lucky enough to take Microsoft's instructor-led class, it makes use of 
+<a target="_blank" href="https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/archive/master.zip">exercise files</a>
+and <a target="_blank" href="https://microsoftlearning.github.io/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/">this curriculum</a>:
+
+> Introduction to Azure Virtual Networks
+
+* M01 - Unit 4 Design and implement a Virtual Network in Azure
+* M01 - Unit 6 Configure DNS settings in Azure
+* M01 - Unit 8 Connect two Azure Virtual Networks using global virtual network peering
+
+> Design and implement hybrid networking
+
+* M02 - Unit 3 Create and configure a virtual network gateway
+* M02 - Unit 7 Create a Virtual WAN by using Azure Portal
+
+> Design and implement Azure ExpressRoute
+
+* M03 - Unit 4 Configure an ExpressRoute Gateway
+* M03 - Unit 5 Provision an ExpressRoute circuit
+
+> Load balancing non-HTTP(S) traffic in Azure
+
+* M04 - Unit 4 Create and configure an Azure load balancer
+* M04 - Unit 6 Create a Traffic Manager profile using the Azure portal
+
+> Load balancing HTTP(S) traffic in Azure
+
+* M05 - Unit 4 Deploy Azure Application Gateway
+* M05 - Unit 6 Create a Front Door for a highly available web application using the Azure portal
+
+> Design and implement network security
+
+* M06 - Unit 4 Configure DDoS Protection on a virtual network using the Azure portal
+* M06 - Unit 7 Deploy and configure Azure Firewall using the Azure portal
+* M06 - Unit 9 Secure your virtual hub using Azure Firewall Manager
+
+> Design and implement private access to Azure Services
+
+* M07 - Unit 5 Restrict network access to PaaS resources with virtual network service endpoints
+* M07 - Unit 6 Create an Azure private endpoint using Azure PowerShell
+
+> Design and implement network monitoring
+
+* M08 - Unit 3 Monitor a load balancer resource using Azure Monitor
+
+<br /><br />
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/well-architected/security/design-network-segmentation">Implement network segmentation patterns on Azure</a>
+
+My <a target="_blank" href="https://wilsonmar.github.io/azure-networking">https://wilsonmar.github.io/azure-networking</a>
+
+<a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_3_Lab.html">3. Migrating Hyper-V VMs to Azure by using Azure Migrate</a>
+
+
+<a target="_blank" href="https://learning.oreilly.com/live-events/azure-network-engineer-associate-az-700-bootcamp/0636920091389/0636920094752/">OReilly 2-day Bootcamp</a> has pdf of <a target="_blank" href="https://github.com/zaalion/oreilly-az-700/blob/master/AZ-700%20Bootcamp%20-%20RezaSalehi.pdf">slides</a> and <a target="_blank" href="https://github.com/zaalion/oreilly-az-700/blob/master/Q%26A/az-700-aug1-2-Q%26A.pdf">Q&A</a> at https://github.com/zaalion/oreilly-az-700 and pptx at https://github.com/zaalion/oreilly-az-500.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=nVZYDhB_M64">John Savill's</a> 1-hour YouTube.
+
+The class is by <a target="_blank" href="https://www.linkedin.com/in/rezasalehi2008">Reza Salehi</a>, author of "<a target="_blank" href="https://www.amazon.com/Azure-Cookbook-Recipies-Maintain-Solutions/dp/1098135792/">Azure Cookbook</a>" and "<a target="_blank" href="https://learning.oreilly.com/library/view/azure-cookbook/9781098135782/">Azure Networking Cookbook on OReilly</a>".
+
+https://www.pluralsight.com/cloud-guru/courses/az-700-microsoft-azure-network-engineer-associate
+
+https://cloudacademy.com/learning-paths/az-700-exam-preparation-designing-and-implementing-microsoft-azure-networking-solutions-4445/
+31 hours
+
+https://www.whizlabs.com/learn/course/microsoft-azure-az-700/
+
+<hr />
+
+Routing to separate pages for AI Engineer:
+
+<a name="AI-900"></a>
+
+## AI-900
+
+<a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-900">AI-900 AI Fundamentals</a>
+
+<a name="AI-102"></a>
+## AI-102 (formerly AI-100)
+<a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-100">AI-100 Azure AI Engineer Associate</a>
+<a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-102">AI-102 Azure AI Engineer</a><br />
+
+<a name="DP-100"></a>
+## DP-100 Data Scientist Associate
+
+<a href="#DP-100">DP-100 Azure Data Scientist Associate</a>
+
+
+
+<a name="DP-200"></a>
+
+## DP-200 Implementing-an-Azure-Data-Solution
+
+https://github.com/MicrosoftLearning/DP-200-Implementing-an-Azure-Data-Solution
+
+https://github.com/MicrosoftLearning/mslearn-dp100
+
+Live online training course with Reza Salehi on O'Reilly:
+ 
+   * <a target="_blank" href="https://learning.oreilly.com/search/?query=Exam%20DP-200%3A%20Implementing%20an%20Azure%20Data%20Solution%20Crash%20Course&formats=live%20online%20training&publishers=O%27Reilly%20Media%2C%20Inc.&sort=relevance">Exam DP-200: Implementing an Azure Data Solution Crash Course</a>
+
+   * <a target="_blank" href="https://learning.oreilly.com/search/?query=Exam%20DP-201%3A%20Designing%20an%20Azure%20Data%20Solution%20Crash%20Course&formats=live%20online%20training&publishers=O%27Reilly%20Media%2C%20Inc.&sort=relevance">Exam DP-201: Designing an Azure Data Solution Crash Course</a>
+
+
+
+<a name="DP-203"></a>
+
+## DP-203 Azure Data Engineer Associate
+
+To be a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-data-engineer/">Microsoft Certified: Azure Data Engineer Associate"</a>, pass the single <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-203">DP-203</a> (beta released February 23, 2021):
+   * Design and implement data storage (40-45%)
+   * Design and develop data processing (25-30%)
+   * Design and implement data security (10-15%)
+   * Monitor and optimize data storage and data processing (10-15%)
+   <br /><br />
+
+PROTIP: I attended <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/dp-203t00">Microsoft's 4-day live DP-203T00 class</a> by <a target="_blank" href="https://www.linkedin.com/in/psule/">Tammy R Smith</a> and <a target="_blank" href="https://www.linkedin.com/in/gnango-michel-landry-agah-001564b/">Gnango Agah</a>, but I highly recommend everyone to walk through their (free) lab instructions in English at 
+STAR: <a target="_blank" href="https://github.com/MicrosoftLearning/DP-203T00-Data-Engineering-on-Microsoft-Azure/tree/c2dd2803d3bc28e97a3c6c9d430c8920873e0e81/Instructions/Labs">github.com/MicrosoftLearning/DP-203-Data-Engineering-on-Microsoft-Azure</a> (and <a target="_blank" href="https://github.com/MicrosoftLearning/?q=AZ-2200&type=&language=&sort=">other languages</a>) by <a target="_blank" href="https://www.linkedin.com/in/joel-hulen-ba76b73/">Joel Hulen</a>. The class Modules and labs <a target="_blank" ref="https://aka.ms/dp203labs/">aka.ms/dp203labs</a>.
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/DP-203T00-Data-Engineering-on-Microsoft-Azure/blob/c2dd2803d3bc28e97a3c6c9d430c8920873e0e81/Instructions/Labs/01/README.md">Module 1 - Explore compute and storage options for data engineering workloads</a>. This lab teaches ways to structure the data lake, and to optimize the files for exploration, streaming, and batch workloads. The student will learn how to organize the data lake into levels of data refinement as they transform files through batch and stream processing. The students will also experience working with Apache Spark in Azure Synapse Analytics. They will learn how to create indexes on their datasets, such as CSV, JSON, and Parquet files, and use them for potential query and workload acceleration using Spark libraries including Hyperspace and MSSParkUtils.
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/DP-203T00-Data-Engineering-on-Microsoft-Azure/blob/c2dd2803d3bc28e97a3c6c9d430c8920873e0e81/Instructions/Labs/02/README.md">Module 2 - Design and Implement the serving layer</a>. This lab teaches how to design and implement data stores in a modern data warehouse to optimize analytical workloads. The student will learn how to design a multidimensional schema to store fact and dimension data. Then the student will learn how to populate slowly changing dimensions through incremental data loading from Azure Data Factory.
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/DP-203T00-Data-Engineering-on-Microsoft-Azure/blob/c2dd2803d3bc28e97a3c6c9d430c8920873e0e81/Instructions/Labs/03/README.md">Module 3 - Data engineering considerations for source files</a>. In this lab, you will be directed by your instructor to work alone, or in groups for 20 minutes to read through the following information presented below. You will then answer the questions and present back to the classroom your findings based on the requirements.
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/DP-203T00-Data-Engineering-on-Microsoft-Azure/blob/c2dd2803d3bc28e97a3c6c9d430c8920873e0e81/Instructions/Labs/04/README.md">Module 4 - Run interactive queries using serverless SQL pools</a>. In this lab, students will learn how to work with files stored in the data lake and external file sources, through T-SQL statements executed by a serverless SQL pool in Azure Synapse Analytics. Students will query Parquet files stored in a data lake, as well as CSV files stored in an external data store. Next, they will create Azure Active Directory security groups and enforce access to files in the data lake through Role-Based Access Control (RBAC) and Access Control Lists (ACLs).
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/DP-203T00-Data-Engineering-on-Microsoft-Azure/blob/c2dd2803d3bc28e97a3c6c9d430c8920873e0e81/Instructions/Labs/05/README.md">Module 5 - Explore, transform, and load data into the Data Warehouse using Apache Spark</a>. This lab teaches you how to explore data stored in a data lake, transform the data, and load data into a relational data store. You will explore Parquet and JSON files and use techniques to query and transform JSON files with hierarchical structures. Then you will use Apache Spark to load data into the data warehouse and join Parquet data in the data lake with data in the dedicated SQL pool.
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/DP-203T00-Data-Engineering-on-Microsoft-Azure/blob/c2dd2803d3bc28e97a3c6c9d430c8920873e0e81/Instructions/Labs/06/README.md">Module 6 - Data exploration and transformation in Azure Databricks</a>. This lab teaches you how to use various Apache Spark DataFrame methods to explore and transform data in Azure Databricks. You will learn how to perform standard DataFrame methods to explore and transform data. You will also learn how to perform more advanced tasks, such as removing duplicate data, manipulate date/time values, rename columns, and aggregate data. They will provision the chosen ingestion technology and integrate this with Stream Analytics to create a solution that works with streaming data.
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/DP-203T00-Data-Engineering-on-Microsoft-Azure/blob/c2dd2803d3bc28e97a3c6c9d430c8920873e0e81/Instructions/Labs/07/README.md">Module 7 - Ingest and load data into the Data Warehouse</a>. This lab teaches students how to ingest data into the data warehouse through T-SQL scripts and Synapse Analytics integration pipelines. The student will learn how to load data into Synapse dedicated SQL pools with PolyBase and COPY using T-SQL. The student will also learn how to use workload management along with a Copy activity in a Azure Synapse pipeline for petabyte-scale data ingestion.
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/DP-203T00-Data-Engineering-on-Microsoft-Azure/blob/c2dd2803d3bc28e97a3c6c9d430c8920873e0e81/Instructions/Labs/08/README.md">Module 8 - Transform data with Azure Data Factory or Azure Synapse Pipelines</a>. This lab teaches students how to build data integration pipelines to ingest from multiple data sources, transform data using mapping data flows and notebooks, and perform data movement into one or more data sinks.
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/DP-203T00-Data-Engineering-on-Microsoft-Azure/blob/c2dd2803d3bc28e97a3c6c9d430c8920873e0e81/Instructions/Labs/09/README.md">Module 9 - Integrate data from notebooks with Azure Data Factory or Azure Synapse Pipelines</a>. In the lab, the students will create a notebook to query user activity and purchases that they have made in the past 12 months. They will then add the notebook to a pipeline using the new Notebook activity and execute this notebook after the Mapping Data Flow as part of their orchestration process. While configuring this the students will implement parameters to add dynamic content in the control flow and validate how the parameters can be used.
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/DP-203T00-Data-Engineering-on-Microsoft-Azure/blob/c2dd2803d3bc28e97a3c6c9d430c8920873e0e81/Instructions/Labs/10/README.md">Module 10 - Optimize query performance with dedicated SQL pools in Azure Synapse</a>. In this lab, students will learn strategies to optimize data storage and processing when using dedicated SQL pools in Azure Synapse Analytics. The student will know how to use developer features, such as windowing and HyperLogLog functions, use data loading best practices, and optimize and improve query performance.
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/DP-203T00-Data-Engineering-on-Microsoft-Azure/blob/c2dd2803d3bc28e97a3c6c9d430c8920873e0e81/Instructions/Labs/11/README.md">Module 11 - Analyze and optimize Data Warehouse storage</a>. This lab teaches you how to analyze and optimize the data storage of the Azure Synapse dedicated SQL pools. You will know techniques to understand table space usage and column store storage details. Next, you will know how to compare storage requirements between identical tables that use different data types. Finally, you will observe the impact materialized views have when executed in place of complex queries and learn how to avoid extensive logging by optimizing delete operations.
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/DP-203T00-Data-Engineering-on-Microsoft-Azure/blob/c2dd2803d3bc28e97a3c6c9d430c8920873e0e81/Instructions/Labs/12/README.md">Module 12 - Support Hybrid Transactional Analytical Processing (HTAP) with Azure Synapse Link</a>. This lab teaches you how Azure Synapse Link enables seamless connectivity of an Azure Cosmos DB account to a Synapse workspace. You will understand how to enable and configure Synapse link, then how to query the Azure Cosmos DB analytical store using Apache Spark and SQL Serverless.
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/DP-203T00-Data-Engineering-on-Microsoft-Azure/blob/c2dd2803d3bc28e97a3c6c9d430c8920873e0e81/Instructions/Labs/13/README.md">Module 13 - End-to-end security with Azure Synapse Analytics</a>. In this lab, students will learn how to secure a Synapse Analytics workspace and its supporting infrastructure. The student will observe the SQL Active Directory Admin, manage IP firewall rules, manage secrets with Azure Key Vault and access those secrets through a Key Vault linked service and pipeline activities. The student will understand how to implement column-level security, row-level security, and dynamic data masking when using dedicated SQL pools.
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/DP-203T00-Data-Engineering-on-Microsoft-Azure/blob/c2dd2803d3bc28e97a3c6c9d430c8920873e0e81/Instructions/Labs/14/README.md">Module 14 - Real-time stream processing with Stream Analytics</a>. This lab teaches you how to process streaming data with Azure Stream Analytics. You will ingest vehicle telemetry data into Event Hubs, then process that data in real time, using various windowing functions in Azure Stream Analytics. You will output the data to Azure Synapse Analytics. Finally, you will learn how to scale the Stream Analytics job to increase throughput.
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/DP-203T00-Data-Engineering-on-Microsoft-Azure/blob/c2dd2803d3bc28e97a3c6c9d430c8920873e0e81/Instructions/Labs/15/README.md">Module 15 - Create a stream processing solution with Event Hubs and Azure Databricks</a>. This lab teaches you how to ingest and process streaming data at scale with Event Hubs and Spark Structured Streaming in Azure Databricks. You will learn the key features and uses of Structured Streaming. You will implement sliding windows to aggregate over chunks of data and apply watermarking to remove stale data. Finally, you will connect to Event Hubs to read and write streams.
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/DP-203T00-Data-Engineering-on-Microsoft-Azure/blob/c2dd2803d3bc28e97a3c6c9d430c8920873e0e81/Instructions/Labs/16/README.md">Module 16 - Build reports using Power BI integration with Azure Synapse Analytics</a>. In this lab, the student will learn how to integrate Power BI with their Azure Synapse workspace to build reports in Power BI. The student will create a new data source and Power BI report in Azure Synapse Studio. Then the student will learn how to improve query performance with materialized views and result-set caching. Finally, the student will explore the data lake with serverless SQL pools and create visualizations against that data in Power BI.
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/DP-203T00-Data-Engineering-on-Microsoft-Azure/blob/c2dd2803d3bc28e97a3c6c9d430c8920873e0e81/Instructions/Labs/17/README.md">Module 17 - Perform integrated Machine Learning processes in Azure Synapse Analytics</a>. In the lab, the students will explore the integrated, end-to-end Azure Machine Learning and Azure Cognitive Services experience in Azure Synapse Analytics. You will learn how to connect an Azure Synapse Analytics workspace to an Azure Machine Learning workspace using a Linked Service and then trigger an Automated ML experiment that uses data from a Spark table. You will also learn how to use trained models from Azure Machine Learning or Azure Cognitive Services to enrich data in a SQL pool table and then serve prediction results using Power BI.
+
+<br /><br />
+
+Free text-based tutorials from Microsoft:
+   * Azure for the Data Engineer
+   * Store data in Azure
+   * Data integration at scale with Azure Data Factory or Azure Synapse Pipeline
+   * Realize Integrated Analytical Solutions with Azure <strong>Synapse Analytics</strong>
+   * Work with Data Warehouses using Azure Synapse Analytics
+   * Perform data engineering with Azure Synapse <strong>Apache Spark Pools</strong>
+   * Work with Hybrid Transactional and Analytical Processing Solutions using Azure Synapse Analytics
+   * Data engineering with Azure <strong>Databricks</strong>
+   * Large-Scale Data Processing with Azure <strong>Data Lake Storage Gen2</strong>
+   * Implement a Data Streaming Solution with Azure <strong>Streaming Analytics</strong>
+   <br /><br />
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-200">DP-200</a> retired on June 30, 2021, looked at the Microsoft Azure data platform through the lens of the implementer:
+   * Work with relational data in Azure
+   * Work with NoSQL data in Azure Cosmos DB
+   * Large-Scale Data Processing with Azure Data Lake Storage Gen2
+   * https://github.com/timothywarner/dp200
+   <br /><br />
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-201">DP-201</a> retired on June 30, 2021, examined Azure data through the lens of the architect:
+   * Design Azure data storage solutions (40-45%)
+   * Design data processing solutions (25-30%)
+   * Design for data security and compliance (25-30%) 
+   * https://github.com/timothywarner/dp201
+DP-203 Learning Path had covered:
+   * Data integration at scale with Azure Data Factory or Azure Synapse Pipeline
+   * Realize Integrated Analytical Solutions with Azure Synapse Analytics
+   <br /><br />
+
+Ravi Kirans:
+   * https://ravikirans.com/dp-203-azure-exam-study-guide/
+
+James Serra, Microsoft NYC
+   * <a target="_blank" href="https://www.youtube.com/watch?v=oylzwwmTkaM">"Data Lakehouse"</a>
+   * (<a target="_blank" href="https://JamesSerra.com/">JamesSerra.com</a>
+
+The Azure Synapse platform (EDW and Data Lakes).
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/blog/azure-sql-data-warehouse-is-now-azure-synapse-analytics/">Announced November 2019</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=2DX7dgR8cEw">VIDEO: Azure Synapse Analytics - Introduction & Overview</a>
+   * https://azure.microsoft.com/en-us/services/synapse-analytics/
+   * SaaS service integrates Power BI visualization, Azure Machine Learning,  Azure Data Lake Storage Gen2 as a data warehouse and a consistent data model. Machine Learning models can be created and saved in ONNX format, which are stored within the Azure Synapse data store and used with the native PREDICT instruction.
+   * Synapse Analytics Studio
+   * https://www.sqlshack.com/understanding-azure-synapse-analytics-formerly-sql-dw/
+
+Ravi Salahi
+   * https://learning.oreilly.com/attend/exam-dp-203-microsoft-azure-data-engineer-associate-crash-course/0636920054124/0636920057411/
+   * https://github.com/zaalion/oreilly-dp-203
+
+John McIntyre
+   * https://www.youtube.com/watch?v=tMYOi5E14eU 2020
+   * https://www.youtube.com/watch?v=dvP0JwchjfI 2019 "SQL Data Warehouse"
+
+Tim Warner:
+   * https://timw.com/dp203 = <a target="_blank" href="https://github.com/timothywarner/dp203">https://github.com/timothywarner/dp203</a> (by <a target="_blank" href="https://www.linkedin.com/in/timothywarner/">Tim Warner</a>, <a target="_blank" href="https://techtrainertim.com/">techtrainertim.com</a>)
+   <br /><br />
+
+Sample Exams:
+   * https://www.whizlabs.com/learn/course/microsoft-azure-dp-203/
+
+
+
+
+<hr />
+
+<a name="AZ-204"></a>
+
+## AZ-204 Azure Developer Associate
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-204">
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-204</a> learning paths says 
+$165 for 180 max. minutes to answer 40 - 60 multiple-choice questions.
+
+
+https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure
+
+<a target="_blank" href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oZ7B">
+https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oZ7B</a>
+
+https://learning.oreilly.com/library/view/exam-ref-az-204/9780136798255/
+
+<a target="_blank" href="https://learning.oreilly.com/attend/microsoft-azure-developer-associate-az-204-crash-course/0636920053454/0636920053452/">OReilly VIDEO Crash Course</a> April 16, 2021 by <a target="_blank" href="https://www.linkedin.com/in/rezasalehi2008/">Reza Salehi</a> (@zaalion) <a target="_blank" href="https://github.com/zaalion/oreilly-az-204">https://github.com/zaalion/oreilly-az-204</a>:
+
+<a target="_blank" href="https://www.youtube.com/watch?v=-lf83pxEubs" title="Feb 1, 2021">
+YOUTUBE: AZ-204 Azure Developer - Exam Cram │ Expert Talk</a> by <a target="_blank" href="https//linkedin.com/in/brianlgorman">Brian L Gorman</a>
+
+* https://www.whizlabs.com/learn/course/microsoft-azure-az-204/
+
+
+
+## Azure Penetration Testing
+
+Course: <a target="_blank" href="https://www.linkedin.com/learning/advanced-pen-testing-techniques-for-active-directory">Advanced Pen Testing Techniques for Active Directory</a>
+by Malcolm Shore
+
+<hr />
+
+## References
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/345">
+Linux Academy: Azure CLI Esssentials</a>   
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/369">Learn Azure by Doing</a>   
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/461">Implementing App Infrastructure</a>
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/757?redirect_uri=https://app.linuxacademy.com/search?type=Course&categories=Azure">
+Cost control in Azure</a>
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/666">Intro to Azure Security</a>
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/706">Azure IAM Concepts</a>
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/733">Deployment Pipelines using GitHub Actions</a>
+
+<a target="_blank" href="https://aka.ms/ESIStudyGuides">aka.ms/ESIStudyGuides</a>
+
+https://www.whizlabs.com/blog/top-microsoft-azure-bloggers/
+
+Microsoft Digital Defense Report (MDDR) https://aka.ms/MDDR  
+
+
+## More about Azure #
+
+This is one of a series about Azure cloud:
+
+{% include azure_links.html %}
