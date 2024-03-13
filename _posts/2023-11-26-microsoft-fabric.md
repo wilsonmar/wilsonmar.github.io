@@ -1,9 +1,9 @@
 ---
 layout: post
-date: "2024-03-08"
+date: "2024-03-12"
 file: "microsoft-fabric"
 title: "Microsoft Fabric"
-excerpt: "Simplify multi-cloud data handling for real-time analytics in Delta Lakehouses. Pass the DP-600 exam."
+excerpt: "Azure cloud SaaS (Serverless) data handling and real-time analytics using the Data Lakehouse architectural pattern. Pass the DP-600 exam."
 tags: [cloud, Azure]
 image:
 # microsoft-fabric-1900x500.png
@@ -16,8 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-With this article, I aim to get you past the vapid marketing generalizations and mind tricks with
-this hands-on technical tutorial that takes you logically step-by-step to quickly learn how to setup, navigate, and use the <strong>Microsoft Fabric</strong> cloud and pass <a href="https://wilsonmar.github.io/azure-certifications/">Azure certification exam</a>
+This is a hands-on technical tutorial that takes you logically step-by-step to quickly learn how to setup, navigate, and use the <strong>Microsoft Fabric</strong> cloud and pass <a href="https://wilsonmar.github.io/azure-certifications/">Azure certification exam</a>
 
    * <a href="#DP-600">DP-600: Fabric Analytic Engineer Associate</a>
    <br /><br />
@@ -72,17 +71,26 @@ It even supports "time travel" like in GitHub source can revert entire sets of f
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709766939/ms-fabric-history-3150x1768_roevf7.png"><img src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709766939/ms-fabric-history-3150x1768_roevf7.png"></a>
 
 <a target="_blank" href="https://www.youtube.com/watch?v=JCZnv3RhTJQ&t=32m30s">VIDEO</a>:
-<a target="_blank" href="https://www.linkedin.com/in/gregbeaumont/">Greg Beaumont</a> 
-the brand names and technologies that culminated to Microsoft Fabric.
+The diagram above <a target="_blank" href="https://www.linkedin.com/in/gregbeaumont/">Greg Beaumont</a> 
+traces the brand names and technologies that culminated in Microsoft Fabric.
 
 As with Databricks and Snowflake, Microsoft Fabric provides a "Medallion" architecture to go from OLTP to OLAP:
 <a target="_blank" href="https://www.youtube.com/watch?v=JCZnv3RhTJQ">VIDEO</a>:
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1709913285/wzdrqv0ox5vp9n14e46d.png"><img alt="" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1709913285/wzdrqv0ox5vp9n14e46d.png"></a>
 
+Raw historical data in CSV files -- Bronze -- are loaded into a (Python) Spark Notebook within OneLake files to become Silver curated data accessible by a Fabric Data Warehouse view, which a Fabric Pipeline loads into a star-schema Gold (Optimized).
+The Metadata is used by PowerBI to create reports and dashboards.
+
+1. <a target="_blank" href="https://learn.microsoft.com/en-us/fabric/get-started/roles-workspaces">Built-in Roles for Microsoft Fabric Workspace</a> specify that:
+
+   * Admin is the only role that can "Update and delete the workspace" and "Add or remove people, including other admins",  plus all other capabilities".
+   * Admin & Member are the only roles that can "Add members or others with lower permissions" and "Allow others to reshare items".
+   * QUESTION: 
+Who can <strong>delete</strong>?
+   <br /><br />
+
 
 <hr />
-
-Next, let's get hands-on:
 
 ## Social
 
@@ -1409,3 +1417,4 @@ https://www.linkedin.com/company/microsoftfabric/
 This is one of a series about cloud computing:
 
 {% include cloud_links.html %}
+Se 
