@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-02-26"
+date: "2024-03-12"
 file: "azure-data"
 title: "Azure Data (within Microsft's cloud)"
 excerpt: "Obtain storage and database skills to pass DP-900, DP-100, DP-203, DP-300 exams"
@@ -29,10 +29,13 @@ This are my notes to study for specific data-related <a href="https://wilsonmar.
    <br /><br />
 
 These replace certifications about Microsoft on-prem. technologies SQL-Server and SSIS <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/mcsa-sql2016-business-intelligence-certification/">retired Jan 31, 2021</a>:
-
+z
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/70-767">70-767: Implementing a SQL Data Warehouse</a>
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/70-768">70-768: Developing SQL Data Models</a>
    <br /><br />
+
+Datasets have been renamed to "semantic models".
+
 
 {% include whatever.html %}
 
@@ -40,6 +43,7 @@ Data is a valuable asset to organizations.
 
 > "Data is the oil of the 21st century, and analytics is the combustion engine." -- Peter Sondergaard, Gartner Research Sr VP.
 
+DEFINITIONS: A data lake holds raw data. A data warehouse holds structured information.
 
 ## Database models
 
@@ -65,7 +69,8 @@ Not listed are Vector databases used to hold embeddings in AI/ML LLMs.
 
 A competitor to Delta metadata layer on top of Parquet is <a target="_blank" href="https://www.theregister.com/2023/01/03/apache_iceberg/">Apache Iceberg</a>, used by Snowflake, Cloudera, and Google's BigLake.
 
-Python's pandas library was built using numpy as a backend for dataframe libraries. So one of the major limitations in pandas is in-memory processing for larger datasets.
+Python's pandas library was built using numpy as a backend for dataframe libraries. 
+So one of the major limitations in pandas is in-memory processing for larger datasets.
 However, <a target="_blank" href="https://towardsdatascience.com/pandas-2-0-a-game-changer-for-data-scientists-3cd281fcc4b4">pandas 2.0</a> includes <a target="_blank" href="https://arrow.apache.org/">Apache Arrow</a> for in-memory columnar handling by <a target="_blank" href="https://arrow.apache.org/docs/python/">PyArrow</a>, which is based on the C++ implementation of Arrow, and therefore, fast.
 
 
@@ -85,14 +90,6 @@ Not every activity can be done by each data store:
 ## SQL Language
 
 <a target="_blank" href="https://wilsonmar.github.io/sql/">My notes about the SQL language is here</a>.
-
-<strong>Polybase</strong> is a data virtualization feature that enables SQL Server to query data using T-SQL directly from heterogenous (external) data:
-   * Oracle
-   * Teradata
-   * MongoDB
-   * Apache Hadoop clusters
-   * <a href="#Cosmos+DB">Azure Cosmos DB</a>
-   <br /><br />
 
 Synapse SQL is a distributed version of T-SQL, with extensions for streaming and machine learning (T-SQL PREDICT function).
 
@@ -120,7 +117,8 @@ Synapse SQL is a distributed version of T-SQL, with extensions for streaming and
 
 ### Structured:
 
-* Common Data Model format
+* Common Data Model (CDM) format Dataverse
+
 <br /><br />
 
    Within Apache Spark, Hadoop "Big data" evolved from the underlying <strong>format of files</strong> used to store data:
@@ -233,10 +231,23 @@ https://www.techtarget.com/searchstorage/tip/Compare-Azure-Blob-Storage-vs-Data-
 
 1. Create a storage account. REMEMBER: Name must be 24 characters or less.
 1. For Performance: when selecting Premium (SSD) for low latency:
+   * "File shares: Best for enterprise or high-performance applications that need to scale", and scenarios that require a fully SMB-compatible file system.
    * "Block blobs: Best for high transaction rates or low storage latency", storing large amounts of text or binary data, storing data for streaming and storing data for backup and restore scenarios.
-   * "File shares: Best for enterprise or high-performance applications that need to scale", and scenarios that require a fully SMB compatible file system.
    * "Page blobs: Best for random read/write operations" and frequent read/write operations in small ranges.
+   * "Append blobs
    <br /><br />
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr><th> Factor: </th><th> Block blobs </th><th> Page blobs </th><th> Append blobs </th></tr>
+   <tr valign="top"><td> Usage: </td><td> binary streaming, backups infrequent change
+      </td><td> frequent random read/write
+      </td><td> logging
+      </td></tr>
+   <tr valign="top"><td> Max size: </td><td> 4.7 TB </td><td> 8 TB </td><td> 195 GB </td></tr>
+   <tr valign="top"><td> Max block: </td><td> 100 MB </td><td> 512 pages </td><td> ? </td></tr>
+   <tr valign="top"><td> Max blob: </td><td> 50,000 blocks </td><td> virtual </td><td> 4 MB </td></tr>
+   </table>
+
 
    ### Redundancy
 
@@ -417,6 +428,8 @@ Gen2 has the concept of having a single format to hold various "layers" in a new
 
    * The <strong>Gold</strong> layer contains <strong>curated</strong> business-level aggregated data, such as what was in "Kimball-style star schema" analytics data warehouses ready to be read by OLAP, Business Intelligence (BI) and Machine Learning/AI models to make predictions.
 
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1710292680/ms-fabric-medallion-240312_n62tmh.png"><img src="https://res.cloudinary.com/dcajqrroq/image/upload/v1710292680/ms-fabric-medallion-240312_n62tmh.png"></a>
+
 
 <hr />
 
@@ -472,8 +485,7 @@ LEARN</a>: <strong>Core data concepts (15-20%)</strong>
    <br /><br />
 
 
-<a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/azure-data-fundamentals-explore-relational-data/>
-LEARN</a>: <strong>Explore relational data in Azure (25-30%)</strong>
+<a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/azure-data-fundamentals-explore-relational-data/">LEARN</a>: <strong>Explore relational data in Azure (25-30%)</strong>
 
 * Describe relational concepts:
    * Identify features of relational data
@@ -578,9 +590,14 @@ The Skillpipe associated with the <a target="_blank" href="https://docs.azure.co
 
 PROTIP: BTW Left out of the ESI list is Azure Databricks, a cloud-scale platform for data analytics and machine learning. Microsoft's live class DP-090 "Implementing a Machine Learning Solution with Microsoft Azure Databricks" shows how to use Azure Databricks to explore, prepare, and model data; and integrate Databricks machine learning processes with Azure Machine Learning.
 
+<a name="DP-900-exams"></a>
+
 Sample DP-900 Exams:
    * <a target="_blank" href="https://learning.oreilly.com/certifications/9780137984602/">Pearson's sample test on OReilly.com provides filtering of questions by domain</a>
+   * <a target="_blank" href="https://www.udemy.com/course/dp-900-microsoft-azure-data-fundamentals-practice-tests-new/?couponCode=ST22FS22724">$14.99 Udemy</a>
    * <a target="_blank" href="https://www.whizlabs.com/learn/course/microsoft-azure-dp-900/">https://www.whizlabs.com/azure-Azure-certification-dp-900/</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Hq1KsO0Zct8">by Clearcat.net</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=U64NZ3DjsmI&list=PL0AYtrUw-NRRVVTnRf0yi0AW-DvtLkaT2&pp=iAQB">by The Tech BlackBoard</a>
    <br /><br />
 
 Other Tutorials:
@@ -817,6 +834,8 @@ The <a target="_blank" href="https://learn.microsoft.com/en-us/training/courses/
    * Monitor data in real time
 > 7. Manage the analytics development lifecycle:
    * Create reusable Power BI assets
+
+<a target="_blank" href="https://github.com/MicrosoftLearning/DP-500-Azure-Data-Analyst">these files</a>.
 
 
 <hr />
@@ -1659,7 +1678,7 @@ Microsoft SQL Server Data Tools (MDT)
    * <a target="_blank" href="https://www.youtube.com/watch?v=Ej-rpXs3yz0&list=PLOlK8ytA0MghGmAAT8W2u7VYmICdzeU5t&index=7">ADF in one 1h 44m video</a>
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/data-literacy-essentials-azure-data-factory">Data Literacy: Essentials of Azure Data Factory</a> by Emilio Melo (cloudadvantage.tech) Apr 7, 2021 provided this diagram:
    * <a target="_blank" href="https://www.youtube.com/watch?v=OQ-wtpTDFKk&t=1m">Azure Data Factory - An end to end project</a> by MultiCloud4U by Indira Bandari
-   * <a target="_blank" href=https://learning.oreilly.com/videos/dp-900-microsoft-azure/9781803231778/9781803231778-video6_17/">OReilly course by Eshant Garg</a>
+   * <a target="_blank" href="https://learning.oreilly.com/videos/dp-900-microsoft-azure/9781803231778/9781803231778-video6_17/">OReilly course by Eshant Garg</a>
    <br /><br />
 
 ADFv1 was released 2015 without a GUI to process JSON created within Visual Studio.
@@ -1688,6 +1707,21 @@ Use ADF to integrate "data silos" by people of various skill levels -- construct
    
    * Azure security measures to connect to on-premises, cloud-based, and software-as-a-service apps with peace of mind
    <br /><br />
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/sql/relational-databases/polybase/polybase-guide?view=sql-server-ver16">Polybase Query Service for External Data</a>
+is a data virtualization feature that enables query of data (using T-SQL) directly (without the need for complex ETL processes) from heterogenous (external) data:
+   * Apache Hadoop clusters in Hadoop Distributed File System (HDFS)
+   * Oracle
+   * Teradata
+   * MongoDB
+   * <a href="#Cosmos+DB">Azure Cosmos DB</a>
+   * SQL Server (but not Azure SQL Database)
+   * Azure Synapse Analytics
+   * Analytics Platform System (PDW)
+   * Azure Blob Storage
+   <br /><br />
+
+Polybase <strong>query pushdown</strong> pushes processing tasks down to the source system rather than executing all tasks within Polybase, to reduce data movement across the network.
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1708957180/adfv2-pipeline-3644x898_agdakf.png"><img alt="adfv2-pipeline-3644x898.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1708957180/adfv2-pipeline-3644x898_agdakf.png"></a>
 
@@ -1906,20 +1940,35 @@ https://learn.microsoft.com/en-us/azure/data-factory/connector-overview
 
 ## PowerBI
 
-See my <a target="_blank" href="https://wilsonmar.github.io/powerbi">PowerBI notes</a>
+See <a target="_blank" href="https://wilsonmar.github.io/powerbi">my PowerBI notes</a>.
 
 See Pluralsight: "Building your First Power BI Report"
+
+<hr />
+
+<a name="MSGraph"></a>
+
+## Microsoft Graph
+
+https://learn.microsoft.com/en-us/graph/use-the-api
+
+
+https://www.m365princess.com/blogs/microsoft-graph-people-picker-power-apps/
+
+https://graph.microsoft.com/v1.0/me/people
 
 
 
 <hr />
 
-## Social
+## Social community
 
 <a target="_blank" href="https://www.azure.com/en-us/sql-server/community?activetab=pivot_1:primaryr4">
 Azure Data Community</a> lists blogs, websites, videos, podcasts, and meetups.
 
 https://www.twitch.tv/425show
+
+https://www.reddit.com/r/AZURE/comments/
 
 
 <hr />
@@ -1953,6 +2002,12 @@ Turn that ‘Power Apps’ app into a Mobile app!
 
 https://powerapps.microsoft.com/en-us/blog/create-mobile-apps-with-power-apps-preview/
 Create mobile apps with Power Apps (preview)
+
+https://mindmajix.com/quiz/sql-server-quiz
+
+https://www.youtube.com/watch?v=9OnzXWDS2OM&list=PLBfufR7vyJJ5wcKZFxY-IRgr0YwJoYCHz&index=118
+VIDEO: DP 900 — Install and Use Power BI 
+by Andrew Brown
 
 
 ## More about Azure #
