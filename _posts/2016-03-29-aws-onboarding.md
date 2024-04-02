@@ -1,9 +1,9 @@
 ---
 layout: post
-date: "2023-12-16"
+date: "2023-04-04"
 file: "aws-onboarding"
 title: "AWS Onboarding"
-excerpt: "Tips and tricks to get account. Lock down root accounts. Install and use the AWS CLI, securely"
+excerpt: "Get started, safely & quickly using AWS GUI, CLI, and Terraform"
 tags: [AWS, EC2, cloud, on-boarding]
 image:
 # feature: pic data center slice 1900x500.jpg
@@ -38,6 +38,31 @@ A. What is the total max/average hours an <strong>end-user</strong> needs to spe
 B. What is the total max/average hours of effort by <strong>Administrators</strong> to get accounts and a laptop ready for receipt by a new employee?
 
 PROTIP: CAUTION: Using speed as the primary basis for judging performance can lead to cutting corners and thus security holes. So security must be a primary consideration. But security is difficult to measure.
+
+
+## BaSA (Be a Solutions Architect)
+
+There are many ways to learn AWS. The key to learning fully AND quickly -- to get a job -- is to have an experienced mentors in both technical and behavioral skills, plus real-world projects.
+
+Look at the schedule for the FREE AWS
+<a target="_blank" href="https://become-a-solutions-architect.github.io/">BaSA (Be a Solutions Architect) program</a> 
+where AWS employees (Amazonians) around the world hold 2-hour live sessions over 12-weeks 
+(8 technical and 4 behavioural)
+on 𝗦𝗮𝘁𝘂𝗿𝗱𝗮𝘆 𝟴 𝗔𝗠 𝗚𝗠𝗧 / 𝟵 𝗔𝗠 𝗨𝗞 / 𝟭.𝟯𝟬 𝗣𝗠 𝗜𝗦𝗧 / 𝟰.𝟬𝟬 𝗔𝗠 𝗘𝗧). 
+Videos of each batch are 
+<a target="_blank" href="https://www.youtube.com/@be-SA/playlists">stored on YouTube</a>
+coordinated using email 𝗯𝗲𝘀𝗮𝗽𝗿𝗼𝗴𝗿𝗮𝗺𝟮𝟬𝟮𝟮@𝗴𝗺𝗮𝗶𝗹.𝗰𝗼𝗺  and 
+<a target="_blank" href="https://www.linkedin.com/groups/9179284/">LinkedIn group</a>,
+which at time of writing has 7,621 members.
+<a target="_blank" href="https://become-a-solutions-architect.github.io/resources.html">Hands-on activities</a>:
+Networking:<br />
+1. <a target="_blank" href="https://youtu.be/x5r4UGyR5zo">Introduction to Cloud	The binary choice - OSI Model & IP Addressing</a>
+2. Amazon S3 <a target="_blank" href="https://youtu.be/jYUm5itbDNA">It’s all connected - Amazon VPC</a>
+3. Amazon EC2	<a target="_blank" href="https://youtu.be/bc1srPi8AXY">Hold the door - NACL & Security Group</a>
+4. AWS IAM	<a target="_blank" href="https://youtu.be/OoX_AJK1JA4">Cloud and beyond - VPN and Direct Connect</a>
+5. Amazon RDS	<a target="_blank" href="https://youtu.be/IAsyh2ANouM">Peer to Peer - VPC Peering & Transit Gateway</a>
+6. Amazon DynamoDB	<a target="_blank" href="https://youtu.be/MoGe0v1DAgU">What’s in a name? - Route 53 & DNS Resolver</a>
+7. Amazon Cloudwatch	<a target="_blank" href="https://youtu.be/p5OLRW910zA">The tool box - Flow Logs & Reachability Analyer</a>
 
 
 ## Prep Steps
