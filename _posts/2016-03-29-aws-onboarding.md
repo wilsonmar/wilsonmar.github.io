@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "AWS Onboarding"
-excerpt: "Tips and tricks to get account. Lock down root accounts. Install and use the AWS CLI, securely"
-tags: [AWS, EC2, cloud, on-boarding]
-date: "2021-07-21"
+date: "2023-04-03"
 file: "aws-onboarding"
+title: "AWS Onboarding"
+excerpt: "Get started, safely & quickly using AWS GUI, CLI, and Terraform"
+tags: [AWS, EC2, cloud, on-boarding]
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
@@ -21,99 +21,154 @@ This</a> is a hands-on tutorial to get new users setup to effectively access and
 
 Covered here are instructions on how to install and use AWS CLI automation, smart phone apps, and 3rd party tools used by pros.
 
+<a name="KPI"></a>
 
-## GUI, CLI, API
+## KPI for Onboarding
 
-There are several ways to interact with AWS:
+Recommendations in this article are intended to improve these Key Performance Indicators (KPIs) of an organization:
 
-   * If you don't have an account, you first need to use the AWS <a href="#AWSConsole"><strong>GUI</strong> (Graphical User Interface), aka "AWS Management Console"</a>, using an internet browser such as Google Chrome, Apple Safari, etc.
+A1. What is the total max/average hours an end-user needs to spend between receiving instructions to being completely productive on AWS?
 
-   * <a target="_blank" href="https://wilsonmar.github.io/aws-cli/"><strong>CLI</strong> (Command Line Interface)</a>> using the MacOS Terminal or PC Command program for "programmatic access" into the AWS cloud.
+B1. What is the total max/average hours of effort by Administrators to get an AWS account ready for use by an end-user?
 
-   * Write a program that makes calls to AWS's <a href="#APIKeys">API (Application Programming Interface)</a>. This is the mechanism behind the scenes by <a href="#MobileApps">mobile apps</a>.
+The above is a subset of:
 
-   * On Mobile apps
+A. What is the total max/average hours an <strong>end-user</strong> needs to spend between receiving a laptop to being completely productive (create and file a Git PR)?
+
+B. What is the total max/average hours of effort by <strong>Administrators</strong> to get accounts and a laptop ready for receipt by a new employee?
+
+PROTIP: CAUTION: Using speed as the primary basis for judging performance can lead to cutting corners and thus security holes. So security must be a primary consideration. But security is difficult to measure.
+
+
+## BaSA (Be a Solutions Architect)
+
+There are many ways to learn AWS. The key to learning fully AND quickly -- to get a job -- is to have an experienced mentors in both technical and behavioral skills, plus real-world projects.
+
+Look at the schedule for the FREE AWS
+<a target="_blank" href="https://become-a-solutions-architect.github.io/">BaSA (Be a Solutions Architect) program</a> 
+where AWS employees (Amazonians) around the world hold 2-hour live sessions over 12-weeks 
+(8 technical and 4 behavioural)
+on 𝗦𝗮𝘁𝘂𝗿𝗱𝗮𝘆 𝟴 𝗔𝗠 𝗚𝗠𝗧 / 𝟵 𝗔𝗠 𝗨𝗞 / 𝟭.𝟯𝟬 𝗣𝗠 𝗜𝗦𝗧 / 𝟰.𝟬𝟬 𝗔𝗠 𝗘𝗧). 
+Videos of each batch are 
+<a target="_blank" href="https://www.youtube.com/@be-SA/playlists">stored on YouTube</a>
+coordinated using email 𝗯𝗲𝘀𝗮𝗽𝗿𝗼𝗴𝗿𝗮𝗺𝟮𝟬𝟮𝟮@𝗴𝗺𝗮𝗶𝗹.𝗰𝗼𝗺  and 
+<a target="_blank" href="https://www.linkedin.com/groups/9179284/">LinkedIn group</a>,
+which at time of writing has 7,621 members.
+<a target="_blank" href="https://become-a-solutions-architect.github.io/resources.html">Hands-on activities</a>:
+Networking:<br />
+1. <a target="_blank" href="https://youtu.be/x5r4UGyR5zo">Introduction to Cloud	The binary choice - OSI Model & IP Addressing</a>
+2. Amazon S3 <a target="_blank" href="https://youtu.be/jYUm5itbDNA">It’s all connected - Amazon VPC</a>
+3. Amazon EC2	<a target="_blank" href="https://youtu.be/bc1srPi8AXY">Hold the door - NACL & Security Group</a>
+4. AWS IAM	<a target="_blank" href="https://youtu.be/OoX_AJK1JA4">Cloud and beyond - VPN and Direct Connect</a>
+5. Amazon RDS	<a target="_blank" href="https://youtu.be/IAsyh2ANouM">Peer to Peer - VPC Peering & Transit Gateway</a>
+6. Amazon DynamoDB	<a target="_blank" href="https://youtu.be/MoGe0v1DAgU">What’s in a name? - Route 53 & DNS Resolver</a>
+7. Amazon Cloudwatch	<a target="_blank" href="https://youtu.be/p5OLRW910zA">The tool box - Flow Logs & Reachability Analyer</a>
+
+
+## Prep Steps
+
+Here are the steps to get ready to use AWS:
+
+1. Obtain a DNS domain name for experimentation using AWS Route53.
+1. Automate generation of new email accounts (with hostname as a variable) using AWS SES (Simple Email Service).
+1. Emulate user action for AWS account verification within AWS SES.
 
 <hr />
 
+## Console GUI, CLI, API, Mobile
 
-<a name="MobileApps"></a>
+There are several ways to interact with AWS:
 
-## Mobile apps for smart phones
+SECURITY PROTIP: Many enterprises do not permit use of interactive CLI and Console GUI in production and instead allow only automated API calls by IaC (such as CloudFormation and Terraform). This is to ensure version control and repeatability during testing.
 
-1. To get the <strong>AWS Console</strong> on your mobile phone:
+   * If you don't have a root account, open an internet browser (such as Google Chrome, Apple Safari, Mozilla Firefox, etc.) and go to the AWS <a href="#AWSConsole"><strong>GUI</strong> (Graphical User Interface), aka "AWS Management Console"</a> to <a href="#RootSetup">create and configure</a>, then <a href="#RootLockDown">lock down</a> a Root Account</a>. Authentication is by user name and password plus MFA.
 
-   <a target="_blank" href="http://www.amazon.com/AWS-Mobile-LLC-Console/dp/B00ATSN730">install on Google Android mobile phones</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/aws-cli/"><strong>CLI</strong> (Command Line Interface)</a> using the MacOS Terminal or Windows PC Command program for "programmatic access" into the AWS cloud. Authentication is by <a href="#APIKeys">API keys</a> (public and private) which are stored in a file on your laptop.
 
-   On your iOS, open the Store app and search to get <a target="_blank" href="https://itunes.apple.com/us/app/aws-console/id580990573?mt=8">AWS Console</a>. It's from "AMZN Mobile LLC" which creates <a target="_blank" href="https://itunes.apple.com/us/developer/amzn-mobile-llc/id297606954?mt=8">all Amazon's apps</a>.
+   * APIs called by custom programs calling AWS's <a href="#APIKeys">API (Application Programming Interface)</a>. This is the mechanism behind the scenes by <a href="#MobileApps">mobile apps</a>.
 
-   PROTIP: These apps got low review scores because the app only lets people read-only,
-   but not change anything. And the 2FA is clunky.
+   * On <a href="#MobileApps">AWS Console Mobile apps</a>
 
-3. In the Store app, search for "<strong>Google Authenticator</strong>" and install it
-   for multi-factor authentication to strength security of your Amazon cloud account.
+<hr />
 
-   PROTIP: Many keep the Authenticator running on their smart phone.
+<a name="EmailSystem"></a>
 
-1. To avoid embedding an access key with the app (even in encrypted storage), use <a target="_blank" href="https://wilsonmar.github.io/cognito">Amazon Cognito</a> to manage user identity by authenticating users using Login with Amazon, Facebook, Google, or any OpenID Connect (OIDC)–compatible identity provider.<a target="_blank" href="https://aws.amazon.com/blogs/mobile/using-the-amazon-cognito-credentials-provider/">*</a>
+## Auto-Generate Emails with Responders
 
+Global Administrators can reduce time and hassle that both they themselves and their end-users (internal customers) by doing ALL AWS account setup tasks rather than giving a long list of instructions for end-users to follow (as shown below), then providing support to those who won't or don't follow instructions. This is especially true for those who are "not technical". This means automation of email creation and also having automation impersonate each user's email for verification of AWS account, GitHub, etc.
 
-<a name="AWS_Account"></a>
+PROTIP: <strong>Use a separate email address for each AWS account</strong> you create.
+Global Administrators working with AWS need to have admin control of an email system to create email accounts and (automatically) read/answer sample user emails.
 
-## AWS accounts
+   * Individual learners need to generate several email accounts to take advantage of "Free Tier" that only lasts a year each. AWS learners need to create their own account to not disturb corporate work.
 
-In enterprises, identify the Administrator who dispenses user accounts.
+   * Corporate Global Administrators need to generate emails for each new employees who join. 
 
-If you're the Global Administrator, see my htts://wilsonmar.github.io/aws-iam
-
-The remainder of this is for users and super users.
-
-
-<a name="APIKeys"></a>
-
-## API Keys
-
-   API Keys are assigned to developers using the AWS CLI (Command Line Interface) for programmatic (by a program) rather than manual clicking and typing on a keyboard. 
-
-   API keys make use of pairs of public (access) key and private (secret) key which stand in for real users typing in passwords.
-
-## SSH Keys
-
-SSH keys (such as what Linux machines use) are used only with AWS CodeCommit to access their repositories.
-
-See <a href="#SecureCredential">steps and scripts to store your AWS credentials securely (below)</a>, not in clear text as described by AWS.
+Within an organization, it's common for a separate account to be created for each department and project as well as each user. This is to limit the blast radius when a user's credentials become compromised, a situation we need to prepare for.
 
 
 
-## Root account sign-up
+<a name="RootSetup"></a>
 
-   The account which controls billing is called the <strong>root account</strong>, which as unlimited access to AWS resources and unlimited ability to rack up charges. By resources I mean: users, groups, roles, IAM Access Policies, API keys, etc. globally for all regions.
+## Unique emails for Root account
+
+An enterprise typically creates <strong>several AWS accounts</strong>. Within an organization, it's common for a separate account to be created for each department and project as well as each user. This is to limit the blast radius when a user's credentials become compromised, a situation we need to prepare for.
+
+WARNING: <strong>"Root account"</strong> credentials have unlimited access to AWS resources for the account and thus unlimited ability to rack up charges used controls <strong>billing</strong> is called . By resources I mean: users, groups, roles, IAM Access Policies, API keys, etc. globally for all regions.
+
+Thus, the root account is used only for creating <strong>sub-accounts</strong> and for emergencies. 
+Global Adminstrators create sub-accounts for use when doing <strong>billing</strong> and other administrative tasks. 
+
+PROTIP: If you are creating a production account for an organization, create an email address which you <strong>use only for managing AWS</strong> and not for regular email use and certainly not for doing shopping on Amazon. 
+   
+The account which controls billing is called the <strong>root account</strong>, which as unlimited access to AWS resources and unlimited ability to rack up charges. By resources I mean: users, groups, roles, IAM Access Policies, API keys, etc. globally for all regions.
+
+Secure that email address with <strong>multi-factor authentication</strong> with Google or whoever hosts your email server. Also have a way for one person (or maximum two) you trust to be able to access the account in case you are not able to.
+
+
+### Unique Browser Profile for Each Email
+
+1. Install Google Chrome because it has detection of malicious conditions.
+1. You will have several gmail addresses, one for each AWS account you create.
+1. To avoid confusion between Google accounts, install the <a target="_blank" href="https://chrome.google.com/webstore/detail/multi-login-helper/nccllfnllopfpcbjdgjdlfmomnfgnnbk">Multi Login Helper</a> extension to create a new browser profile for each AWS account you create. 
+
+   PROTIP: The Multi Login Helper extension is also useful for creating a new browser profile for each Google account you have.
+   
+
+   ### Marketing Page
 
 1. Use an internet browser to get on the <strong>AWS marketing page</strong> at 
 
    <a target="_blank" href="https://aws.amazon.com/">https://aws.amazon.com</a> 
 
-2. Get your credit card number ready.
+1. Explore menu items:
 
-   PROTIP: CAUTION: Once you give Amazon a credit card number, you cannot remove it. Amazon can continue to charge for it until the card expires in several years.
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1694649967/aws-marketing-1205x224_uaojtf.png"><img alt="aws-marketing-1205x224.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1694649967/aws-marketing-1205x224_uaojtf.png"></a>
 
-   <a target="_blank" href="https://www.linkedin.com/pulse/how-use-aws-free-tips-teaching-college-wong-chun-yin-cyrus-%E9%BB%83%E4%BF%8A%E5%BD%A5-/">PROTIP</a>: You need a credit card to open an account. But to limit exposure, some people provide to AWS numbers from a <a target="_blank" href="https://usa.visa.com/pay-with-visa/cards/prepaid-cards.html">pre-paid reloadable Visa</a> gift <a target="_blank" href="https://aws.amazon.com/premiumsupport/knowledge-center/accepted-payment-methods/">(debit) card</a> <a target="_blank" href="https://usa.visa.com/pay-with-visa/find-card/get-prepaid-card">pre-paid online</a> (which has an expiration date and some have a monthly service fee). The <a target="_blank" href="https://www.drawpayvisa.com/">Drawpay card</a> provides a 1% refund on purchases and a mobile app to view balances. Others provide fee-Free cash withdrawal at over 25,000 MoneyPass ATMs.
+   PROTIP: Right-click on each link to "open in a new tab". Then quickly switch back and forth between this tutorial and other browser tabs by pressing <strong>Command+`</strong> (backtick at the left of the 1 key). However, tabs set to full-screen are not accessible this way but by pressing shift+command+/ to see the menu to select the tab you want to switch to.
 
-   <a target="_blank" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m4&clip=5&mode=live">*</a>
+   Also, <strong>bookmark</strong> this page in your browser for quicker frequent access. 
 
-3. Click the yellow "Sign-Up" button if you don't already have an account.
+   ### Sign-up pages
 
-4. PROTIP: If you are creating a production account for an organization, create an email address which you <strong>use only for managing AWS</strong> and not for regular email use and certainly not for doing shopping on Amazon. 
-   
-   The account which controls billing is called the <strong>root account</strong>, which as unlimited access to AWS resources and unlimited ability to rack up charges. By resources I mean: users, groups, roles, IAM Access Policies, API keys, etc. globally for all regions.
+1. PROTIP: There are several different sign-up pages: one for each country. 
 
-   Secure that email address with <strong>multi-factor authentication</strong> with Google or whoever hosts your email server. Also have a way for one person (or maximum two) you trust to be able to access the account in case you are not able to.
+   * If you want to create a stand-alone account in the US:<br />https://portal.aws.amazon.com/billing/signup#/start/email
+   * If you're working with an AWS sales person assigned to a business:<br />https://aws.amazon.com/resources/create-account/
+   * If you're a student or educator:<br />https://aws.amazon.com/education/awseducate/
+   * If you're using a gov cloud:<br />https://aws.amazon.com/government-education/government/
+   <br /><br />
 
-3. PROTIP: When providing answers to Security Challenge Questions, do not specify the real answer,
+   ### Root Password
+
+1. Create a new 1Password entry to store the email, Account Name, password, Account ID, Secret info.
+
+1. For "AWS account name", examples are "master-billing" but the email works too.
+1. Switch to your email tab to click the link to verify your email address.
+1. PROTIP: When providing answers to Security Challenge Questions, do not specify the real answer,
    which someone stole or figured out through social engineering. Instead, <strong>answer with nonsense</strong>
 
 1. Write that secret information down in 1Password or a paper in your fire-proof vault.
-
 1. Write down your <strong>Account Id</strong> number (12 digits).
 
 5. Supply a strong password.
@@ -122,13 +177,62 @@ See <a href="#SecureCredential">steps and scripts to store your AWS credentials 
 
    Because you only have to remember one master password, you can are free to change various passwords as often as you want with no fear of forgetting them.
 
-6. An example of a value for "AWS account name" is "master-billing".
-
 7. Click "Continue".
 
    If you have 1Password installed, you would be prompted to create a new account.
 
-8. Provide phone number, address, and credit card.
+1. Provide phone number.
+
+   PROTIP: If you provide a Google Voice virtual number, it would be less of a hassle in case you change the actual number of your phone assigned by your carrier. So in case you change phone vendors (from ATT to T-Mobile), you only need to change it in Google Voice.
+
+   <a name="ComparePlans"></a>
+
+   ### Compare Support Plans
+
+   https://support.microsoft.com/en-us/home/contact?SourceApp=smcivr2
+
+1. Click <a target="_blank" href="https://console.aws.amazon.com/support/plans/home?#/">Amazon's Support Plan page here</a>.
+
+   Admins call (800) 865-9408 or (800) 642 7676 (toll-free, US only). Outside the United States, see <a target="_blank" href="https://support.microsoft.com/en-us/topic/global-customer-service-phone-numbers-c0389ade-5640-e588-8b0e-28de8afeb3f2">global support phone numbers</a>.
+
+   The Basic account does not enable you to communicate with Amazon people who can answer technical questions.
+
+   The $29/month Developer Plan enables you to open an unlimited number of support cases
+   only via email, with a 12-hour response time if "system impaired". Otherwise, the SLA
+   is 24 hours.
+
+   The $100/month Business Plan enables you to have 24/7 chat, phone, as well as email access with AWS Support people on an unlimited number of support cases, with a 1-hour response time for "production down" issues, or 4-hour response for "production impaired" issues.
+
+   Amazon's <strong>Enterprise Plan</strong> for $15,000/month gets you 15 minute response on "business critical system down" issues. This plan also comes with an assigned TAM (Technical Account Manager).
+
+   These dollar amounts are minimums, not fixed prices.
+
+   https://aws.amazon.com/premiumsupport/programs/iem/
+   mentions "AWS Infrastructure Event Management (IEM) offers architecture and scaling guidance and operational support during the preparation and execution of planned events, such as shopping holidays, product launches, and migrations."
+
+1. Scroll down to mouse over the "$29" on the Pricing line at the bottom of the table.
+
+   ![aws-onboarding-pricing-179x101-7688](https://user-images.githubusercontent.com/300046/40592743-edf804f8-61df-11e8-82e4-d48308fe1c92.jpg)
+
+   PROTIP: Pricing for Developer support is the Greater of $29 or 3% of monthly AWS usage,
+   so you will pay more than $29 if you spend more than $966.67.
+
+1. Scroll back up to click the "Pricing example" link on the right.
+1. Notice that if your spend is $2,000, Amazon bills you $60 for support, not $29.
+
+   <img alt="aws-onboarding-price-example-533x307-27004.jpg" width="533" src="https://user-images.githubusercontent.com/300046/40593326-2004f3f2-61e5-11e8-956f-c74bc35a161b.jpg">
+
+1. Click the "Business" and "Enterprise" buttons in the pop-up to see sample volume pricing tiers.
+
+   ### Credit card
+
+1. Provide address, which may be used to verify your credit card.
+
+   PROTIP: CAUTION: Once you give Amazon a credit card number, you cannot remove it. Amazon can continue to charge for it until the card expires in several years.
+
+   <a target="_blank" href="https://www.linkedin.com/pulse/how-use-aws-free-tips-teaching-college-wong-chun-yin-cyrus-%E9%BB%83%E4%BF%8A%E5%BD%A5-/">PROTIP</a>: You need a credit card to open an account. But to limit exposure, some people provide to AWS numbers from a <a target="_blank" href="https://usa.visa.com/pay-with-visa/cards/prepaid-cards.html">pre-paid reloadable Visa</a> gift <a target="_blank" href="https://aws.amazon.com/premiumsupport/knowledge-center/accepted-payment-methods/">(debit) card</a> <a target="_blank" href="https://usa.visa.com/pay-with-visa/find-card/get-prepaid-card">pre-paid online</a> (which has an expiration date and some have a monthly service fee). The <a target="_blank" href="https://www.drawpayvisa.com/">Drawpay card</a> provides a 1% refund on purchases and a mobile app to view balances. Others provide fee-Free cash withdrawal at over 25,000 MoneyPass ATMs.
+
+   <a target="_blank" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m4&clip=5&mode=live">*</a>
 
    Students may want to create several accounts to take advantage of the free tier multiple times. However, uniquely different phone numbers, addresses, and credit cards are not needed for each identity.
 
@@ -139,9 +243,6 @@ See <a href="#SecureCredential">steps and scripts to store your AWS credentials 
 1. For now, click "Free" to select a plan. A <a href="#ComparePlans">comparison on plans is discussed below</a>.
 
 1. Click "Free" to be prompted to sign-in with your new credentials.
-
-
-<hr />
 
    <a name="AccountId"></a>
 
@@ -190,7 +291,13 @@ See <a href="#SecureCredential">steps and scripts to store your AWS credentials 
 
    ### All Amazon services
 
-1. Click to view all <strong>Services</strong> at the upper-left black menu band.
+1. PROTIP: The <a target="_blank" href="https://chrome.google.com/webstore/detail/aws-services/jdkmpaoglhnpimfciphnednpkfbnphkp">Chrome browser extension "AWS Services"</a> provides a list of services by name and category so you can click it to get to Console and documentation for each service.
+
+
+
+1. In the AWS Console, click to view all <strong>Services</strong> at the upper-left black menu band for:
+
+   https://us-east-2.console.aws.amazon.com/console/home
 
 1. Scroll to the category "Security, Identify, and Compliance" list of ever-growing services:
 
@@ -219,107 +326,11 @@ See <a href="#SecureCredential">steps and scripts to store your AWS credentials 
    <a target="_blank" href="https://aws.amazon.com/documentation/">
    https://aws.amazon.com/documentation</a>
 
+   
 
+   <a name="RootLockdown"></a>
 
-   ### Quick Access icons
-
-   Save time by quickly get to the most frequently used services by having their icons at the top (black) menu bar.
-
-1. Click the push-pin icon.
-1. One by one, drag the icon on the list and drop it on the top black menu to the left of the orange push pin. If you don't see the black menu, pause just under the browser URL for the browser to automatically scroll.
-
-   PROTIP: The services most often used are IAM, VPC, EC2, S3
-
-1. If you have good memory of what icons mean, change the Settings to "Icons only".
-
-   <img alt="aws-onboarding-icons-only-277x112-9365.jpg" src="https://user-images.githubusercontent.com/300046/40741420-c21d19b0-6408-11e8-9c8d-84c5afd9a8bd.jpg">
-
-
-   <a name="ComparePlans"></a>
-
-   ### Compare Support Plans
-
-1. Click <a target="_blank" href="https://console.aws.amazon.com/support/plans/home?#/">Amazon's Support Plan page here</a>.
-
-   The Basic account does not enable you to communicate with Amazon people who can answer technical questions.
-
-   The $29/month Developer Plan enables you to open an unlimited number of support cases
-   only via email, with a 12-hour response time if "system impaired". Otherwise, the SLA
-   is 24 hours.
-
-   The $100/month Business Plan enables you to have 24/7 chat, phone, as well as email access with AWS Support people on an unlimited number of support cases, with a 1-hour response time for "production down" issues, or 4-hour response for "production impaired" issues.
-
-   Amazon's <strong>Enterprise Plan</strong> for $15,000/month gets you 15 minute response on "business critical system down" issues. This plan also comes with an assigned TAM (Technical Account Manager).
-
-   These dollar amounts are minimums, not fixed prices.
-
-   https://aws.amazon.com/premiumsupport/programs/iem/
-   mentions "AWS Infrastructure Event Management (IEM) offers architecture and scaling guidance and operational support during the preparation and execution of planned events, such as shopping holidays, product launches, and migrations."
-
-1. Scroll down to mouse over the "$29" on the Pricing line at the bottom of the table.
-
-   ![aws-onboarding-pricing-179x101-7688](https://user-images.githubusercontent.com/300046/40592743-edf804f8-61df-11e8-82e4-d48308fe1c92.jpg)
-
-   PROTIP: Pricing for Developer support is the Greater of $29 or 3% of monthly AWS usage,
-   so you will pay more than $29 if you spend more than $966.67.
-
-1. Scroll back up to click the "Pricing example" link on the right.
-1. Notice that if your spend is $2,000, Amazon bills you $60 for support, not $29.
-
-   <img alt="aws-onboarding-price-example-533x307-27004.jpg" width="533" src="https://user-images.githubusercontent.com/300046/40593326-2004f3f2-61e5-11e8-956f-c74bc35a161b.jpg"></a>
-
-1. Click the "Business" and "Enterprise" buttons in the pop-up to see sample volume pricing tiers.
-
-   ### Cases in Support Center
-
-1. To view support cases filed and their status, see:   
-
-   <a target="_blank" href="https://console.aws.amazon.com/support/home">
-   https://console.aws.amazon.com/support/home</a>
-
-   Policies for this are:
-
-   * AWSSupportAccess (Allows users to access the AWS Support Center)
-   * SupportUser (This policy grants permissions to troubleshoot and resolve issues in an AWS account. This policy also enables the user to contact AWS support to create and manage cases)
-   <br /><br />
-
-1. Scroll down to view videos on specific technical issues by Amazon people.
-
-   On the lower-right corner, there are links to
-   AWS Documentation, Getting Started Guides, Knowledge Center, Whitepapers, and AWS Forums.
-
-
-<hr />
-
-### Claim S3 Bucket names
-
-   The AWS Account Administrator has a fudiciary responsibility to secure 
-   Intellectual Property assets.
-
-   S3 Bucket names are universally unique among all AWS customers.
-   So just as there are domain name squatters who register and sit on .com host names
-   for sale at high prices to those who actually use the names,
-   the administrator of root accounts for an organization should
-   register your organization's brand names before others get them first.
-
-   To create a bucket for each host name registered on GoDaddy, Google Domains, etc.
-
-4. Click S3 from among services.
-5. Click the blue "Create bucket" button.
-6. Type in the host name (such as "wilsonmar.com") in the Bucket name field.
-7. Select your home Region.
-
-   PROTIP: Claiming a Bucket name in one region locks it up for all Regions.
-
-8. Click "Next".
-9. Click "Next".
-10. Click "Next" to manage users.
-11. Click "Create Bucket".
-
-
-<hr />
-
-## Root account lockdown
+   ### Root account lockdown
 
 1. On a browser in the AWS Management Console, select <a target="_blank" href="https://console.aws.amazon.com/iam/home">IAM</a> (for Identity Access Management) for the list <strong>Security Status</strong>
 
@@ -343,12 +354,13 @@ See <a href="#SecureCredential">steps and scripts to store your AWS credentials 
     ### Apply an IAM password policy 
 
 12. Click "Manage Password Policy" so AWS will ensure that "strong" passwords are used (and not easy to guess ones).
+
     AWS defaults are terrible:
 
-   ![aws-iam-weak-386x336-39852](https://user-images.githubusercontent.com/300046/38160240-8cbdb006-3477-11e8-914c-faea51864405.jpg)
+    ![aws-iam-weak-386x336-39852](https://user-images.githubusercontent.com/300046/38160240-8cbdb006-3477-11e8-914c-faea51864405.jpg)
 
-   Over time, as hackers have access to more powerful computers that can guess passwords quicker,
-   larger passwords are necessary to make it more difficult to crack.
+    Over time, as hackers have access to more powerful computers that can guess passwords quicker,
+    so larger passwords are necessary to make it more difficult to crack.
 
 13. PROTIP: The <strong>largest Minimum password length AWS allows is 128 characters</strong>. But 1Password can generate up to only 64 characters. Practically, 22 characters is a reasonable minimum. Require at least one number (digits) and one non-alphanumeric symbol character.
 
@@ -526,13 +538,172 @@ See <a href="#SecureCredential">steps and scripts to store your AWS credentials 
 1. Sign out and sign in again to the AWS Console using the newly created admin sub-account.
 
 
-   <a name="ProgrammaticAccess"></a>
+   ### Quick Access icons
 
-   ### Programmatic Access
+   Save time by quickly get to the most frequently used services by having their icons at the top (black) menu bar.
 
-   Instead of doing what other clouds do (an <tt>aws login</tt> command which prompt for a user name and password), aws commands reference a specifically-named file at <tt>$HOME/.aws/credentials</tt> created by command <tt>aws configure</tt>.
+1. Click the push-pin icon.
+1. One by one, drag the icon on the list and drop it on the top black menu to the left of the orange push pin. If you don't see the black menu, pause just under the browser URL for the browser to automatically scroll.
 
-   The <tt>aws configure</tt> command creates that file after prompting for access key identifiers (AKIDs) to an AWS account. Press Enter to accept the value previously defined:
+   PROTIP: The services most often used are IAM, VPC, EC2, S3
+
+1. If you have good memory of what icons mean, change the Settings to "Icons only".
+
+   <img alt="aws-onboarding-icons-only-277x112-9365.jpg" src="https://user-images.githubusercontent.com/300046/40741420-c21d19b0-6408-11e8-9c8d-84c5afd9a8bd.jpg">
+
+
+<hr />
+
+### Cases in Support Center
+
+1. To view support cases filed and their status, see:   
+
+   <a target="_blank" href="https://console.aws.amazon.com/support/home">
+   https://console.aws.amazon.com/support/home</a>
+
+   Policies for this are:
+
+   * AWSSupportAccess (Allows users to access the AWS Support Center)
+   * SupportUser (This policy grants permissions to troubleshoot and resolve issues in an AWS account. This policy also enables the user to contact AWS support to create and manage cases)
+   <br /><br />
+
+1. Scroll down to view videos on specific technical issues by Amazon people.
+
+   On the lower-right corner, there are links to
+   AWS Documentation, Getting Started Guides, Knowledge Center, Whitepapers, and AWS Forums.
+
+
+<hr />
+
+<a name="MobileApps"></a>
+
+## Mobile apps for smart phones
+
+1. Get the <strong>AWS Console</strong> app on your mobile phone:
+
+   <a target="_blank" href="http://www.amazon.com/AWS-Mobile-LLC-Console/dp/B00ATSN730">On Google Android mobile phones</a>
+
+   On your iPhone, open the Store app and search to get <a target="_blank" href="https://itunes.apple.com/us/app/aws-console/id580990573?mt=8">AWS Console</a>. Make sure the publisher is <strong>AMZN Mobile LLC</strong>  which creates <a target="_blank" href="https://itunes.apple.com/us/developer/amzn-mobile-llc/id297606954?mt=8">all Amazon's apps</a>.
+
+   PROTIP: These apps got low review scores because the app only lets people read-only,
+   but not change anything. And the 2FA is clunky.
+
+2. <strong>Add an identity</strong>: select Root/IAM account or Federation.
+3. Enable Face ID on iPhones.
+4. Provide email, CAPTCHA security, password, email verification code. Success is seeing this:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1694653422/aws-mobile-iOS-1170x2532_ns4mgt.png"><img alt="aws-mobile-iOS-1170x2532.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1694653422/aws-mobile-iOS-1170x2532_ns4mgt.png"></a>
+
+
+<hr />
+
+## HashiCorp Terraform
+
+HashiCorp's Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently. 
+Terraform can manage existing and popular service providers as well as custom in-house solutions.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=nvNqfgojocs&t=8m25s">VIDEO</a>: To use <a target="_blank" href="https://wilsonmar.github.io/terraform">Terrafrom</a> IaC (Infrastructure as Code) to create a AWS EC2 instances (<a target="_blank" href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c">instead of Chef, Puppet, Ansible, etc.):
+
+   CAUTION: The AWS way of keeping credentials in the <tt>$HOME/.aws/credentials</tt> file is not secure because if your laptop is compromised or stolen, those secrets could be used without authentication. So many organizations request that secret credential files be temporary (valid for just one day). So some make available a corporate "Vending Machine" app which generates credentials instead of the manual process below.
+
+1. Click on your email at the upper-right corner to select "Security credentials" for the IAM page.
+1. Scroll to click "Create Access keys", "Command Line Interface".
+1. Check "I understand", "Next".
+1. Construct a Description tag value  that satisfies your organization's naming conventions.
+1. Click "Create access key".
+
+1. Switch to a Terminal to issue <tt>aws configure</tt> to specify the Access Key ID and Secret Access Key.
+
+   PROTIP: The <tt>aws configure</tt> command creates a file at <tt>$HOME/.aws/credentials</tt> with the Access Key ID and Secret Access Key.
+
+1. Switch back to the web page.
+1. Click the copy icon for the Access Key. Switch to your secret file and paste the value into a text file.
+1. Click the copy icon for the Secret Access key. Switch to your secret file and paste it into the same text file.
+1. Specify Default region such as <tt>us-east-1</tt> - the default.
+1. Specify Default output format <tt>json</tt>.
+
+1. Switch to the web page to click "Done".
+1. Identify a GitHub repo you want.
+
+1. Switch to the Terminal.
+1. Create or navigate to a folder for your GitHub account to receive repositories cloned.
+1. Get that sample Terraform repo, and cd into it.
+
+   <pre><strong>git clone https://github.com/wilsonmar/aws-ec2-micro.git --depth 1
+   cd aws-ec2-micro
+   </strong></pre>
+   
+   PROTIP: Typically, for secure production usage, many resources would be created, including roles to limit access. So using Terraform would be faster, easier, more accurate, and more secure than manual creation clicking and typing on the AWS Console GUI.
+
+1. Edit the files which specify the AWS provider described at <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs">https://registry.terraform.io/providers/hashicorp/aws/latest/docs</a>, such as this <tt>main.tf</tt> 
+
+   <pre>
+   provider "aws" {
+     region = "us-east-1"
+   }
+   resource "aws_instance" "example" {
+     ami           = "ami-0c55b159cbfafe1f0"
+     instance_type = "t2.micro"
+   }
+   </pre>
+
+   REMEMBER: The ami id is tied to the region and instance_type <a targete="_blank" href="https://www.appsloveworld.com/amazon-ec2/4/get-latest-ami-id-for-aws-instance">for which it was created</a>. For that reason, many run a Bash script to <a target="_blank" href="https://letslearndevops.com/2018/08/23/terraform-get-latest-centos-ami/">get the latest ami</a> or <a target="_blank" href="https://wilsonmar.github.io/packer">use the Packer utility</a> to <a target="_blank" href="https://github.com/hashicorp/packer/issues/2756">create a custom ami</a>. That is safer than referencing <a target="_blank" href="https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EC2/approved-golden-amis.html">"golden" ami images</a> created by another organization to meet compliance standards: APRA, MAS, and NIST4.
+
+   PROTIP: We recommend that you run a Bash shell file to select the latest ami and for whatever region was selected for the server instance_type. The script can confirm whether the instance_type specified is available in the region specified. The script would also have coding to set environment variables in a secure way, consistently over time among teammates. This also enables AWS Tags to be specified effortlessly, such as "CreatedBy" with your email address pulled in automatically. See my documentation.
+
+   <a target="_blank" href="https://serverfault.com/questions/369872/run-a-bash-script-after-ec2-instance-boots">PROTIP</a>: Many specify in the <tt>user_data</tt> section within the <tt>main.tf</tt> file Bash scripts containing Ansible commands to run immediately after EC2 instance boot up.
+
+1. A <tt>terraform.tfvars</tt> file is commonly specified to specify custom values to replace default values in the <tt>main.tf</tt> file.
+
+   PROTIP: The <tt>terraform.tfvars</tt> file may contain secrets, so its file name is specified in <tt>.gitignore</tt> to prevent it from being checked into GitHub.
+
+1. The script would <a target="_blank" href="https://spacelift.io/blog/terraform-provisioners">collect locally Terraform provider files</a> specified in the <tt>main.tf</tt> file:
+
+   <pre><strong>terraform init
+   </strong></pre>
+
+1. Create resources:
+
+   <pre><strong>terraform plan --auto-approve --var-file=../vars/ec2.tfvars
+   </strong></pre>
+
+   If that works:
+
+   <pre><strong>terraform apply --auto-approve --var-file=../vars/ec2.tfvars
+   </strong></pre>
+
+   The <tt>--auto-approve</tt> option is used to avoid the need to type "yes" to confirm.
+
+   PROTIP: A Bash script issuing the above commands would add additional steps such as checking for errors, to ensure that resources with vulnerabilities are not even created.
+
+1. Switch back to the web page to view the resources.
+
+1. Use the resources.
+
+1. Delete the resources previously created by Terraform files in the folder:
+
+   <pre><strong>terraform destroy --var-file=../vars/ec2.tfvars
+   </strong></pre>
+
+1. REMEMBER: Delete the credentials file after use.
+
+
+<a target="_blank" href="https://webinars.securityboulevard.com/controlling-cloud-costs-with-hashicorp-terraform">VIDEO</a>: HashiCorp has a "Sentinal" product component which enforces various fine-grained rules (policy sets) to what can be done by each role. It also estimates monthly cost from cloud usage.
+
+Rules in HashiCorp's <a target="_blank" href="https://www.hashicorp.com/resources/secure-your-cloud-with-terraform-foundational-policy-library/">
+Foundational Policy library</a> is at <a target="_blank" href="https://github.com/hashicorp/terraform-foundational-policies-library">https://github.com/hashicorp/terraform-foundational-policies-library</a>. Such "Policies as Code" are crafted based on <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks/">Center for Internet Security (CIS) Benchmarks</a> [<a target="_blank" href="https://www.cisecurity.org/wp-content/uploads/2018/03/CIS-Controls-Measures-and-Metrics-V7.pdf">pdf</a>] (including Compute, Databases, Kubernetes, Storage, Networks) covering Azure and GCP as well as AWS.
+
+
+
+<hr />
+
+<a name="ProgrammaticAccess"></a>
+
+## Programmatic Access
+
+Instead of doing what other clouds do (an <tt>aws login</tt> command which prompt for a user name and password), aws commands reference a specifically-named file at <tt>$HOME/.aws/credentials</tt> created by command <tt>aws configure</tt>.
+
+The <tt>aws configure</tt> command creates that file after prompting for access key identifiers (AKIDs) to an AWS account. Press Enter to accept the value previously defined:
 
    * AWS Access Key ID [****************L5ZQ]:
    * AWS Secret Access Key [****************+1MD]:
@@ -562,6 +733,44 @@ https://aws.amazon.com/code/token-vending-machine-for-identity-registration-samp
 
 But that requires tedious repeated manual effort.
 Securing temporary accounts with MFA adds to that toil.
+
+
+
+
+<hr />
+
+<a name="S3BucketNames"></a>
+
+### Claim S3 Bucket names
+
+   The AWS Account Administrator has a fudiciary responsibility to secure 
+   Intellectual Property assets.
+
+   S3 Bucket names are universally unique among all AWS customers.
+   So just as there are domain name squatters who register and sit on .com host names
+   for sale at high prices to those who actually use the names,
+   the administrator of root accounts for an organization should
+   register your organization's brand names before others get them first.
+
+   To create a bucket for each host name registered on GoDaddy, Google Domains, etc.
+
+4. Click S3 from among services.
+5. Click the blue "Create bucket" button.
+6. Type in the host name (such as "wilsonmar.com") in the Bucket name field.
+7. Select your home Region.
+
+   PROTIP: Claiming a Bucket name in one region locks it up for all Regions.
+
+8. Click "Next".
+9. Click "Next".
+10. Click "Next" to manage users.
+11. Click "Create Bucket".
+
+QUESTION: Terraform?
+
+<hr />
+
+<a name="AutoKeyRotation"></a>
 
 ## Automatic key rotation
 
@@ -672,7 +881,7 @@ Additionally, add conditions to the policy that further restrict access, such as
 
    <pre>
    aws iam create-user --user-name MyUser
- </pre>
+   </pre>
 
    The response is:
 
@@ -738,10 +947,10 @@ https://gist.github.com/mikepfeiffer/
    <pre>
    </pre>
 
-* https://aws.amazon.com/powershell  
-   AWS Powershell for Windows</a>
+* <a target="_blank" href="https://aws.amazon.com/powershell">AWS Powershell for Windows</a>
 
-   aws Get-AWSCredentials -ListProfiles
+   <pre>aws Get-AWSCredentials -ListProfiles
+   </pre>
 
 
 
@@ -764,15 +973,6 @@ PROTIP: Use different colors for lines and text to reduce visual confusion.
 You can also download a zip containing .png and .svg files of icons
 (AWS_Simple_Icons_EPS-SVG_v16.2.22.zip).
 
-
-<hr />
-
-## HashiCorp Terraform Enterprise
-
-<a target="_blank" href="https://webinars.securityboulevard.com/controlling-cloud-costs-with-hashicorp-terraform">VIDEO</a>: HashiCorp has a "Sentinal" product component which enforces various fine-grained rules (policy sets) to what can be done by each role. It also estimates monthly cost from cloud usage.
-
-Rules in HashiCorp's <a target="_blank" href="https://www.hashicorp.com/resources/secure-your-cloud-with-terraform-foundational-policy-library/">
-Foundational Policy library</a> is at <a target="_blank" href="https://github.com/hashicorp/terraform-foundational-policies-library">https://github.com/hashicorp/terraform-foundational-policies-library</a>. Such "Policies as Code" are crafted based on <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks/">Center for Internet Security (CIS) Benchmarks</a> [<a target="_blank" href="https://www.cisecurity.org/wp-content/uploads/2018/03/CIS-Controls-Measures-and-Metrics-V7.pdf">pdf</a>] (including Compute, Databases, Kubernetes, Storage, Networks) covering Azure and GCP as well as AWS.
 
 
 <hr />
@@ -865,9 +1065,7 @@ Orion Papers</a> on Lucidchart
 https://scriptcrunch.com/aws-certification-iam-essentials-cheat-sheet/
 
 
-https://www.youtube.com/watch?v=e2A8K47Fj6s&index=4&list=PLZbbT5o_s2xoWPNdBbqi9eWnMJ5cDrr1M
-How to Configure the AWS CLI | Amazon Web Services | AWS</a> Nov 26, 2017
-by deeplizard
+<a target="_blank" href="https://www.youtube.com/watch?v=e2A8K47Fj6s&index=4&list=PLZbbT5o_s2xoWPNdBbqi9eWnMJ5cDrr1M">VIDEO: How to Configure the AWS CLI | Amazon Web Services | AWS</a> Nov 26, 2017 by deeplizard
 
 https://docs.aws.amazon.com/cli/latest/index.html
 AWS CLI Command Reference
@@ -1189,6 +1387,8 @@ TODO: Put each AWS CLI command in a script at
 https://medium.com/circuitpeople/aws-cli-with-jq-and-bash-9d54e2eabaf1
 by Lee Harding
 
+https://aws.amazon.com/cli/
+
 
 ## More on Amazon #
 
@@ -1209,3 +1409,4 @@ This is one of a series on Security in DevSecOps:
 
 {% include security_links.html %}
 
+https://www.mssqltips.com/sqlservertip/5997/create-sql-server-notebooks-in-azure-data-studio/
