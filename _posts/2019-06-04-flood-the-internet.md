@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Flood the Internet (control JavaScript)"
-excerpt: "Use Dave Hoeffner's web app (the-internet) which challenge Selenium coders to compare scripts for performance/capacity testing (JMeter, Flood Element, etc.)"
-tags: [flood, perftest, selenium, testing]
-date: "2021-07-08"
+date: "2024-04-08"
 file: "flood-the-internet"
+title: "Flood the Internet (control JavaScript API)"
+excerpt: "Target Dave Hoeffner's web app (the-internet) which challenge test coders to compare scripts for performance/capacity testing (Playwright, Selenium JMeter, Flood Element, etc.)"
+tags: [flood, perftest, selenium, testing, playwright]
 image:
 # flood-the-internet-wall-1900x500-105703.jpg
   feature: https://user-images.githubusercontent.com/300046/59104048-b4980880-88ed-11e9-9a93-c19baaef18ab.jpg
@@ -16,20 +16,20 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Many are familiar with this website: "the-internet" running on herokuapp.com<br />
-  <ul>
-  <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a>
-  </ul>
-The website was created by Dave Hoeffner to present <a href="#Controls">43 controls</a> which provide challenges to those learning to code <a href="#CodeSelenium">Selenium scripts</a> that automate <a href="#ManualActions">manual actions</a> real users perform on an <strong>internet browser</strong> (such as Google Chrome). Dave created the site as the basis for his tutorials at <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a>.
-
 {% include whatever.html %}
-
 
 <a name="ManualActions"></a>
 
 ## Challenges on The-Internet app
 
-Click on <a target="_blank" href="https://the-internet.herokuapp.com/"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a> to see the sample app's UI on-line at <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a><br />
+The table below presents several icons associated with each page of the sample app's UI on-line at<br />
+  <ul>
+  <a target="_blank" href="https://the-internet.herokuapp.com/"><strong>https://the-internet.herokuapp.com</strong></a>
+  </ul>
+
+Click on <a target="_blank" href="https://the-internet.herokuapp.com/"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a> to see the sample app's GUI.
+
+The website was created by Dave Hoeffner to present <a href="#Controls">43 controls</a> which provide challenges to those learning to code <a href="#CodeSelenium">Selenium scripts</a> that automate <a href="#ManualActions">manual actions</a> real users perform on an <strong>internet browser</strong> (such as Google Chrome). Dave created the site as the basis for his tutorials at <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a>.
 
 Click on <img width="21" alt="JMeter" src="https://user-images.githubusercontent.com/300046/124912784-965cd500-dfab-11eb-9dd1-d23966aeed48.png"> to view <a target="_blank" href="https://github.com/wilsonmar/jmeter-scripts/tree/main/the-internet/">JMeter XML scripts for the control</a>.
 
@@ -87,7 +87,39 @@ Additional columns of icons may be added to show <strong>sample run results</str
 43. <a target="_blank" href="https://the-internet.herokuapp.com/tinymce"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a> <a target="_blank" href="https://github.com/wilsonmar/jmeter-scripts/tree/main/the-internet/"><img width="21" alt="jmeter" src="https://user-images.githubusercontent.com/300046/124912784-965cd500-dfab-11eb-9dd1-d23966aeed48.png"></a><a target="_blank" href="https://raw.githubusercontent.com/flood-io/element/master/examples/internet-herokuapp/43-WYSIWYG_Editor.ts"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"></a> WYSIWYG Editor
 
 <a name="ScriptIssues"></a>
+
 NOTE: Some scripts are under development.
+
+
+## Playwright 
+
+Under development are our emulation (test) scripts that call the <strong>Playwright API</strong> that   controls Chromium, Firefox, and WebKit internet browsers on macOS, Linux, and Windows machines.
+
+Playwright's marketing home page is at:<br />
+   <ul><a target="_blank" href="https://playwright.dev/"><strong>https://playwright.dev</strong></a><br />
+   </ul>
+
+The library is maintained by <a target="_blank" href="https://github.com/microsoft/playwright/graphs/contributors">several active contributors</a>.
+
+Playwright was open-sourced by Microsoft at<br />
+<a target="_blank" href="https://github.com/microsoft/playwright">https://github.com/microsoft/playwright</a> written largely in TypeScript (which transpiles to JavaScript). 
+
+Emulation (test) scripts can be generated by recording human user actions.
+
+Each language that calls the API has its own documentation:
+   * <a targete="_blank" href="https://playwright.dev/docs/intro">Node.js (JavaScript) running dotnet installing NUnitof MSTest</a>
+   * <a targete="_blank" href="https://playwright.dev/python/docs/intro">Python using PyTest</a>
+   * <a targete="_blank" href="https://playwright.dev/dotnet/docs/intro">.NET C#</a>
+   * <a targete="_blank" href="https://playwright.dev/java/docs/intro">Java installed using mvn</a>
+   <br /><br />
+
+DO THIS: Run the sample test in the language of your choice.
+
+   * <a target="_blank" href="https://playwright.dev/docs/writing-tests">https://playwright.dev/docs/writing-tests</a>.
+   <br /><br />
+
+My ambitious aim is to use Playwright to control <a target="_blank" href="https://portal.azure.com/">https://portal.azure.com</a>, particularly to create an AI Cognitive group in order to check the "Microsoft Responsible AI Agreement". That is needed before automation such as Terraform and Bicep are allowed to create AI-related resources.
+
 
 <hr />
 
@@ -121,6 +153,8 @@ But we don't want our experiments to overload Dave's public site for everyone el
 
 So we run the app as a <strong>Docker container</strong> within the <strong>AWS</strong> or other cloud.
 The container and environment under test is built by invoking a <strong>build script</strong> that retrieves files from GitHub which makes use of a <strong>Docker image</strong> housed in Docker Hub and uses it to instantiate an app server for testing. It uses <strong>credentials</strong> for an AWS account associated with the appropriate groups with applicable permissions and roles needed.
+
+<a href="Flood"></a>
 
 ### Emulate using Flood
 
