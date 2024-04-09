@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-04-08"
+date: "2024-04-09"
 file: "flood-the-internet"
 title: "Flood the Internet (control JavaScript API)"
 excerpt: "Target Dave Hoeffner's web app (the-internet) which challenge test coders to compare scripts for performance/capacity testing (Playwright, Selenium JMeter, Flood Element, etc.)"
@@ -93,19 +93,20 @@ NOTE: Some scripts are under development.
 
 ## Playwright 
 
+<img align="right" width="150" alt="microsoft" src="https://raw.githubusercontent.com/microsoft/playwright/main/packages/recorder/public/playwright-logo.svg">
 Under development are our emulation (test) scripts that call the <strong>Playwright API</strong> that   controls Chromium, Firefox, and WebKit internet browsers on macOS, Linux, and Windows machines.
 
 Playwright's marketing home page is at:<br />
    <ul><a target="_blank" href="https://playwright.dev/"><strong>https://playwright.dev</strong></a><br />
    </ul>
 
-Playwright was open-sourced by Microsoft on April 16, 2016, with first tag on Jan 31, 2020<br />
+Playwright was open-sourced by Microsoft on April 16, 2016, with first tag on<br />
 <a target="_blank" href="https://github.com/microsoft/playwright/tags?after=v0.11.1">Jan 31, 2020 at https://github.com/microsoft/playwright</a>.
 
 The library maintained by <a target="_blank" href="https://github.com/microsoft/playwright/graphs/contributors">several active contributors</a>:
    * <a target="_blank" href="https://www.linkedin.com/in/pavel-feldman-24b0041/">Pavel Feldman at MS SF</a>
    * <a target="_blank" href="https://www.linkedin.com/in/dgozman/">Dmitry Gozman</a>
-   * <a target="_blank" href="https://www.linkedin.com/in/aslushnikov/">Andrey Lushnikov</a>
+   * <a target="_blank" href="https://www.linkedin.com/in/aslushnikov/">Andrey Lushnikov</a> (<a target="_blank" href="https://playwright.dev/python/community/conference-videos">videos</a>)
    <br /><br />
 
 1. Subscribe to the product's social media, led by <a target="_blank" href="https://www.linkedin.com/in/debbie-obrien/">Debbie O'Brien, Sr. Tech PM @Microsoft</a>
@@ -137,10 +138,15 @@ The library maintained by <a target="_blank" href="https://github.com/microsoft/
 
 1. Generate emulation (test) scripts by recording actions as a human user.
 
+1. Use Microsoft's <a target="_blank" href="https://azure.microsoft.com/en-us/products/playwright-testing/">Playwright Testing Service in the Azure cloud</a>. It provides browser and OS combinations (up to 50 in parallel, at scale). QUESTION: Would running it from apps also within Azure remove variability in time going through the public internet? At time of this writing, available only on East US, West US 3, East Asia, West Europe. After a free 30-day trial, <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/playwright-testing/">pricing</a> is $0.01/test minute on Linux and $0.01/test minute on Windows, bill by the second. "Test minutes" represent the total time Playwright tests run in the service’s cloud browsers. If you run 50 Playwright tests, with each taking 12 seconds on average, you'll be billed for 10 test minutes. This is calculated as 50 tests x 12 seconds ÷ 60 seconds in a minute.
+
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/playwright-testing/">https://learn.microsoft.com/en-us/azure/playwright-testing</a>
+   <br /><br />
+
+1. <a target="_blank" href="https://checksum.ai/blog/the-engineering-of-an-llm-agent-system">build AI agents to generate Playwright tests</a>
 
 My ambitious aim is to use Playwright to control <a target="_blank" href="https://portal.azure.com/">https://portal.azure.com</a>, particularly to create an AI Cognitive group in order to check the "Microsoft Responsible AI Agreement". That is needed before automation such as Terraform and Bicep are allowed to create AI-related resources.
 
-<a target="_blank" href="https://checksum.ai/blog/the-engineering-of-an-llm-agent-system">build AI agents to generate Playwright tests</a>
 
 
 <hr />
