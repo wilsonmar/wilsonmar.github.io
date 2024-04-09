@@ -3,7 +3,7 @@ layout: post
 date: "2024-04-09"
 file: "flood-the-internet"
 title: "Flood the Internet (control JavaScript API)"
-excerpt: "Target Dave Hoeffner's web app (the-internet) which challenge test coders to compare scripts for performance/capacity testing (Playwright, Selenium JMeter, Flood Element, etc.)"
+excerpt: "Prove that tools emulating users (Playwright, Selenium, JMeter, Flood Element, etc.) can recognize the gamut of controls on a challenging web app."
 tags: [flood, perftest, selenium, testing, playwright]
 image:
 # flood-the-internet-wall-1900x500-105703.jpg
@@ -89,64 +89,6 @@ Additional columns of icons may be added to show <strong>sample run results</str
 <a name="ScriptIssues"></a>
 
 NOTE: Some scripts are under development.
-
-
-## Playwright 
-
-<img align="right" width="150" alt="microsoft" src="https://raw.githubusercontent.com/microsoft/playwright/main/packages/recorder/public/playwright-logo.svg">
-Under development are our emulation (test) scripts that call the <strong>Playwright API</strong> that   controls Chromium, Firefox, and WebKit internet browsers on macOS, Linux, and Windows machines.
-
-Playwright's marketing home page is at:<br />
-   <ul><a target="_blank" href="https://playwright.dev/"><strong>https://playwright.dev</strong></a><br />
-   </ul>
-
-Playwright was open-sourced by Microsoft on April 16, 2016, with first tag on<br />
-<a target="_blank" href="https://github.com/microsoft/playwright/tags?after=v0.11.1">Jan 31, 2020 at https://github.com/microsoft/playwright</a>.
-
-The library maintained by <a target="_blank" href="https://github.com/microsoft/playwright/graphs/contributors">several active contributors</a>:
-   * <a target="_blank" href="https://www.linkedin.com/in/pavel-feldman-24b0041/">Pavel Feldman at MS SF</a>
-   * <a target="_blank" href="https://www.linkedin.com/in/dgozman/">Dmitry Gozman</a>
-   * <a target="_blank" href="https://www.linkedin.com/in/aslushnikov/">Andrey Lushnikov</a> (<a target="_blank" href="https://playwright.dev/python/community/conference-videos">videos</a>)
-   <br /><br />
-
-1. Subscribe to the product's social media, led by <a target="_blank" href="https://www.linkedin.com/in/debbie-obrien/">Debbie O'Brien, Sr. Tech PM @Microsoft</a>
-
-   * <a target="_blank" href="https://discord.com/servers/playwright-807756831384403968">discord.com/servers/playwright</a>
-   * <a target="_blank" href="https://twitter.com/playwrightweb">Twitter/x @playwrightweb</a>
-   * <a target="_blank" href="https://dev.to/playwright">dev.to/playwright</a>
-   * <a target="_blank" href="https://www.youtube.com/Playwrightdev">youtube.com/Playwrightdev</a>
-   * <a target="_blank" href="https://playwright.dev/community/conference-videos">playwright.dev/community/conference-videos</a>
-   * <a target="_blank" href="https://stackoverflow.com/questions/tagged/playwright">stackoverflow.com/questions/tagged/playwright"></a>
-   * <a target="_blank" href="https://testguild.me/zcgcga">testguild.me/zcgcga</a>
-   * <a target="_blank" href="https://playwright.dev/docs/writing-tests">https://playwright.dev/docs/writing-tests</a>.
-   <br /><br />
-
-1. <a target="_blank" href="https://www.youtube.com/watch?v=4-LwodVujTg&list=PLQ6Buerc008ed-F9OksF7ek37wR3y916p">View Debbie's YouTube series</a> to get started.
-
-   1. <a target="_blank" href="https://www.youtube.com/watch?v=JdMkZUePkSE&list=PLQ6Buerc008ed-F9OksF7ek37wR3y916p&index=2">VIDEO</a>: Install Playwright within VSCode (instead of CLI git clone)
-   1. Add GitHub Actions in file <tt>playwrite.yml</tt> created within repo folder <tt>.github/workflows</tt>
-   <br /><br />
-
-1. Each language that calls the API has its own documentation:
-   * <a targete="_blank" href="https://playwright.dev/docs/intro">Node.js (JavaScript) running dotnet installing NUnitof MSTest</a>
-   * <a targete="_blank" href="https://playwright.dev/python/docs/intro">Python using PyTest</a>
-   * <a targete="_blank" href="https://playwright.dev/dotnet/docs/intro">.NET C#</a>
-   * <a targete="_blank" href="https://playwright.dev/java/docs/intro">Java installed using mvn</a>
-   <br /><br />
-
-1. Run a sample test in the language of your choice from above.
-
-1. Generate emulation (test) scripts by recording actions as a human user.
-
-1. Use Microsoft's <a target="_blank" href="https://azure.microsoft.com/en-us/products/playwright-testing/">Playwright Testing Service in the Azure cloud</a>. It provides browser and OS combinations (up to 50 in parallel, at scale). QUESTION: Would running it from apps also within Azure remove variability in time going through the public internet? At time of this writing, available only on East US, West US 3, East Asia, West Europe. After a free 30-day trial, <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/playwright-testing/">pricing</a> is $0.01/test minute on Linux and $0.01/test minute on Windows, bill by the second. "Test minutes" represent the total time Playwright tests run in the service’s cloud browsers. If you run 50 Playwright tests, with each taking 12 seconds on average, you'll be billed for 10 test minutes. This is calculated as 50 tests x 12 seconds ÷ 60 seconds in a minute.
-
-   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/playwright-testing/">https://learn.microsoft.com/en-us/azure/playwright-testing</a>
-   <br /><br />
-
-1. <a target="_blank" href="https://checksum.ai/blog/the-engineering-of-an-llm-agent-system">build AI agents to generate Playwright tests</a>
-
-My ambitious aim is to use Playwright to control <a target="_blank" href="https://portal.azure.com/">https://portal.azure.com</a>, particularly to create an AI Cognitive group in order to check the "Microsoft Responsible AI Agreement". That is needed before automation such as Terraform and Bicep are allowed to create AI-related resources.
-
 
 
 <hr />
@@ -725,7 +667,7 @@ In today's ransomware environment, we all need to be extra vigilant to ensure se
 
 1. Install <a target="_blank" href="https://github.com/docker/doccker-bench-security">https://github.com/docker/doccker-bench-security</a> 
 
-1. Install CIS (Center for Internet Security) benchmarks for specific distributions and versions of Linux:
+1. Install CIS (Center for Internet Security) benchmarks for specific distributions and versions of Linux. For example:
 
    * Distribution independent Linux
    * Debian Linux 8
@@ -755,6 +697,92 @@ The Linux Audit Framework is used to identify potential security weaknesses or p
 
 <a target="_blank" href="https://app.pluralsight.com/library/courses/securing-docker-platform/table-of-contents">Securing the Docker Platform</a>
 by Nigel Brown Released 21 Jun 2018
+
+
+<hr />
+
+<a name="Playwright"></a>
+
+## Playwright 
+
+<img align="right" width="150" alt="microsoft" src="https://raw.githubusercontent.com/microsoft/playwright/main/packages/recorder/public/playwright-logo.svg">
+Under development are our emulation (test) scripts that call the <strong>Playwright API</strong> that   controls Chromium, Firefox, and WebKit internet browsers on macOS, Linux, and Windows machines.
+
+Playwright's marketing home page is at:<br />
+   <ul><a target="_blank" href="https://playwright.dev/"><strong>https://playwright.dev</strong></a><br />
+   </ul>
+
+Playwright was open-sourced by Microsoft on April 16, 2016, with first tag on<br />
+<a target="_blank" href="https://github.com/microsoft/playwright/tags?after=v0.11.1">Jan 31, 2020 at https://github.com/microsoft/playwright</a>.
+
+The library maintained by <a target="_blank" href="https://github.com/microsoft/playwright/graphs/contributors">several active contributors</a>:
+   * <a target="_blank" href="https://www.linkedin.com/in/pavel-feldman-24b0041/">Pavel Feldman at MS SF</a>
+   * <a target="_blank" href="https://www.linkedin.com/in/dgozman/">Dmitry Gozman</a>
+   * <a target="_blank" href="https://www.linkedin.com/in/aslushnikov/">Andrey Lushnikov</a> (<a target="_blank" href="https://playwright.dev/python/community/conference-videos">videos</a>)
+   <br /><br />
+
+1. Subscribe to the product's social media, led by <a target="_blank" href="https://www.linkedin.com/in/debbie-obrien/">Debbie O'Brien, Sr. Tech PM @Microsoft</a>
+
+   * <a target="_blank" href="https://discord.com/servers/playwright-807756831384403968">discord.com/servers/playwright</a>
+   * <a target="_blank" href="https://twitter.com/playwrightweb">Twitter/x @playwrightweb</a>
+   * <a target="_blank" href="https://dev.to/playwright">dev.to/playwright</a>
+   * <a target="_blank" href="https://www.youtube.com/Playwrightdev">youtube.com/Playwrightdev</a>
+   * <a target="_blank" href="https://playwright.dev/community/conference-videos">playwright.dev/community/conference-videos</a>
+   * <a target="_blank" href="https://stackoverflow.com/questions/tagged/playwright">stackoverflow.com/questions/tagged/playwright"></a>
+   * <a target="_blank" href="https://testguild.me/zcgcga">testguild.me/zcgcga</a>
+   * <a target="_blank" href="https://playwright.dev/docs/writing-tests">https://playwright.dev/docs/writing-tests</a>.
+   <br /><br />
+
+1. Create an environment for Node to run.
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=4-LwodVujTg&list=PLQ6Buerc008ed-F9OksF7ek37wR3y916p">View Debbie's YouTube series</a> to get started.
+
+   1. <a target="_blank" href="https://www.youtube.com/watch?v=JdMkZUePkSE&list=PLQ6Buerc008ed-F9OksF7ek37wR3y916p&index=2">VIDEO</a>: Install Playwright within VSCode (instead of CLI git clone)
+   1. Add GitHub Actions in file <tt>playwrite.yml</tt> created within repo folder <tt>.github/workflows</tt>
+   <br /><br />
+
+1. Each language that calls the API has its own documentation:
+   * <a targete="_blank" href="https://playwright.dev/docs/intro">Node.js (JavaScript) running dotnet installing NUnitof MSTest</a>
+   * <a targete="_blank" href="https://playwright.dev/python/docs/intro">Python using PyTest</a>
+   * <a targete="_blank" href="https://playwright.dev/dotnet/docs/intro">.NET C#</a>
+   * <a targete="_blank" href="https://playwright.dev/java/docs/intro">Java installed using mvn</a>
+   <br /><br />
+
+1. Run a sample test in the language of your choice from above.
+
+1. Generate emulation (test) scripts by recording actions as a human user.
+
+1. Use Microsoft's <a target="_blank" href="https://azure.microsoft.com/en-us/products/playwright-testing/">Playwright Testing Service in the Azure cloud</a> at:
+
+   <a target="_blank" href="https://playwright.microsoft.com/"><strong>https://playwright.microsoft.com</strong></a>
+
+   Under your subscription, create a globally unique <strong>workspace</strong> of up to 64 alphanumeric characters (no dashes, etc.).
+
+   The service provides browser and OS combinations (up to 50 in parallel, at scale). 
+   To run 50 Playwright tests:
+
+   <pre><strong>npx playwright test --workers=50</strong></pre>
+
+   If each of 50 takes 12 seconds on average, you'll be billed for 10 "test minutes", calculated as 50 tests x 12 seconds ÷ 60 seconds in a minute. Each "Test minute" is when a Playwright test runs in the service’s cloud browsers.
+
+   After 100 test minutes during a <a target="_blank" href="https://learn.microsoft.com/en-us/azure/playwright-testing/how-to-try-playwright-testing-free">free 30-day trial</a>, <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/playwright-testing/">pricing</a> is $0.01/test minute on Linux and $0.01/test minute on Windows, billed by the second. 
+   
+   That's the same price across the limited number of regions where the service is available during preview (East US, West US 3, East Asia, West Europe).
+
+   QUESTION: Would running apps hosted within Azure remove variability in time going through the public internet? 
+
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/blog/announcing-microsoft-playwright-testing-scalable-end-to-end-testing-for-modern-web-apps/">Announcement Oct 4, 2023</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/playwright-testing/quickstart-run-end-to-end-tests?wt.mc_id=mpt_azblog20231004_blog_cnl&tabs=playwrightcli">Quickstart</a>
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/playwright-testing/">https://learn.microsoft.com/en-us/azure/playwright-testing</a>
+   <br /><br />
+
+1. <a target="_blank" href="https://checksum.ai/blog/the-engineering-of-an-llm-agent-system">build AI agents to generate Playwright tests</a>
+
+1. QUESTION: Use Playwright scripts to perform load testing?
+
+   We need to control <a target="_blank" href="https://portal.azure.com/">https://portal.azure.com</a>, particularly to create an AI Cognitive group in order to check the "Microsoft Responsible AI Agreement". That is needed before automation such as Terraform and Bicep are allowed to create AI-related resources.
+
+
 
 <hr />
 
