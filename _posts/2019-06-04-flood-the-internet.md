@@ -752,23 +752,31 @@ The library maintained by <a target="_blank" href="https://github.com/microsoft/
 
 1. Generate emulation (test) scripts by recording actions as a human user.
 
-1. Use Microsoft's <a target="_blank" href="https://azure.microsoft.com/en-us/products/playwright-testing/">Playwright Testing Service in the Azure cloud</a> at:
+1. Setup Microsoft's <a target="_blank" href="https://azure.microsoft.com/en-us/products/playwright-testing/">Playwright Testing Service in the Azure cloud</a> at:
 
    <a target="_blank" href="https://playwright.microsoft.com/"><strong>https://playwright.microsoft.com</strong></a>
 
    Under your subscription, create a globally unique <strong>workspace</strong> of up to 64 alphanumeric characters (no dashes, etc.).
 
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1712692112/playwright-cloud-init-2450x1554_vutu4i.png"><img alt="playwright-cloud-init-2450x1554.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1712692112/playwright-cloud-init-2450x1554_vutu4i.png"></a>
+
+   The same price is charged across the limited number of regions where the service is available during preview (East US, West US 3, East Asia, West Europe). The choice is embedded in the CLI variable:
+
+   <tt>export PLAYWRIGHT_SERVICE_URL=wss://eastus.api.playwright.microsoft.com/api/authorize/connectSession</tt>
+
+   Generate the API Access token <tt>PLAYWRIGHT_SERVICE_ACCESS_TOKEN=</tt> and store it securely in an encrypted vault until needed.
+
    The service provides browser and OS combinations (up to 50 in parallel, at scale). 
    To run 50 Playwright tests:
 
-   <pre><strong>npx playwright test --workers=50</strong></pre>
+   <pre><strong>npx playwright test --workers=50 --config=playwright.service.config.ts</strong></pre>
+
+   For example: <a target="_blank" href="https://github.com/microsoft/playwright-testing-service/blob/main/samples/get-started/playwright.service.config.ts">this playwright.service.config.ts file</a>.
 
    If each of 50 takes 12 seconds on average, you'll be billed for 10 "test minutes", calculated as 50 tests x 12 seconds ÷ 60 seconds in a minute. Each "Test minute" is when a Playwright test runs in the service’s cloud browsers.
 
    After 100 test minutes during a <a target="_blank" href="https://learn.microsoft.com/en-us/azure/playwright-testing/how-to-try-playwright-testing-free">free 30-day trial</a>, <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/playwright-testing/">pricing</a> is $0.01/test minute on Linux and $0.01/test minute on Windows, billed by the second. 
    
-   That's the same price across the limited number of regions where the service is available during preview (East US, West US 3, East Asia, West Europe).
-
    QUESTION: Would running apps hosted within Azure remove variability in time going through the public internet? 
 
    * <a target="_blank" href="https://azure.microsoft.com/en-us/blog/announcing-microsoft-playwright-testing-scalable-end-to-end-testing-for-modern-web-apps/">Announcement Oct 4, 2023</a>
