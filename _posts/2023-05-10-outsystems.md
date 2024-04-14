@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-01-08"
+date: "2024-04-01"
 file: "outsystems"
 title: "Outsystems"
 excerpt: "Generate feature-rich web and mobile apps using low-code running within a full suite of enterprise-grade utilities and services"
@@ -530,6 +530,11 @@ Depending on the version:
 ## References
 
 https://www.linkedin.com/pulse/outsystems-security-developer-helped-hacker-tech-lead-lucas-soares-f7u2e/
+
+https://learning.oreilly.com/library/view/rapid-application-development/9781800208759/
+BOOK: Rapid Application Development with OutSystems
+By Ricardo Pereira
+
 
 <hr />
 
