@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-04-09"
+date: "2024-04-15"
 file: "azure-certifications"
 title: "Azure (Microsoft cloud) certifications"
 excerpt: "Microsoft provides free hands-on (gamified) tutorials and free time"
@@ -409,7 +409,7 @@ REMEMBER: <a target="_blank" href="https://learn.microsoft.com/en-us/training/pa
    
    *  <a target="_blank" title="Notebook on OneDrive" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Collaboration.one%7C219eb854-1f3a-4853-ad8a-7083ac484184%2FIntroduction%7C413558af-164b-4fb6-a473-5f5976f7efaf%2F%29&wdorigin=NavigationUrl">Collaboration</a> - learners 2: work together, 3: share responsibility, 4: make substantive decisions together, 5: work is interdependent. 
 
-   * <a target="_blank" title="Notebook on OneDrive" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Real-World%20Problem-Solving.one%7C06e643da-5fdd-4587-8b1a-a8e86e7f3bf0%2FIntroduction%7Cbaf7c2c0-d9ec-4f8a-b82a-b0e02a467efc%2F%29&wdorigin=NavigationUrl">Real-world problem-solving and innovation</a> - 2: problem-solving activities that are 3: real-world (authentic, non-fictional) situations that 4: innovate and communicated to someone <strong>outside of an academic</strong> context who can implement them. (No 5)
+   * <a target="_blank" title="Notebook on OneDrive" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Real-World%20Problem-Solving.one%7C06e643da-5fdd-4587-8b1a-a8e86e7f3bf0%2FIntroduction%7Cbaf7c2c0-d9ec-4f8a-b82a-b0e02a467efc%2F%29&wdorigin=NavigationUrl"><img align="right" width="128" alt="21CLD-realworld-256x256.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1713209752/21CLD-realworld-256x256_eedfdc.png"></a>Real-world problem-solving and innovation</a> - 2: problem-solving activities that are 3: real-world (authentic, non-fictional) situations that 4: innovate and communicated to someone <strong>outside of an academic</strong> context who can implement them. (No 5)
 
    * <a target="_blank" title="Notebook on OneDrive" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Skilled%20Communication.one%7Caa33bc86-f72a-4ceb-8bce-4fffb97e48b5%2FIntroduction%7C47dd5766-3e30-4034-b0ab-906b40c645b5%2F%29&wdorigin=NavigationUrl">Skilled communication</a> - produce 2: extended or multi-modal communication 3: using evidence to support their ideas 4: customized for a particular audience. (No 5)
 
