@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-03-05"
+date: "2024-04-09"
 file: "azure-certifications"
 title: "Azure (Microsoft cloud) certifications"
 excerpt: "Microsoft provides free hands-on (gamified) tutorials and free time"
@@ -20,14 +20,15 @@ PROTIP: When you pass each exam, Tweet <a target="_blank" href="https://twitter.
 
 {% include whatever.html %}
 
-NOTE: Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/browse/?credential_types=certification">Microsoft's certifications</a> by role and product:
+Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/browse/?credential_types=certification">Microsoft's certifications</a> by <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/browse/">role and product</a>:
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Role </th><th> Certification exam </th></tr>
 
 <tr valign="top"><td> Educator</td><td>
-      * <a href="#mce-microsoft-certified-educator">MSE (Microsoft Certified Educator)</a><br />
-      * <a href="#mct-microsoft-certified-trainer">MCT (Microsoft Certified Trainer)</a><br />
+      * <a href="#MCE">MSE (Microsoft Certified Educator)</a><br />
+      * <a href="#MCT">MCT (Microsoft Certified Trainer)</a><br />
+      * <a href="#ms-applied-skills">MS "Applied Skills" credentials</a><br />
       * <a href="#Contributor">Contributor badges for Microsoft employees</a>
    </td></tr>
 
@@ -74,7 +75,7 @@ NOTE: Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/cr
    </td></tr>
 
 <tr valign="top"><td> <a href="#Power_Platform">Power Platform</a> </td><td>
-   * <a target="_blank" href="https://wilsonmar.github.io/powerbi#MCF">Microsoft Certified Fundamentals (MCF) Power Platform Fundamentals ($20)</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/powerbi#MCF">Microsoft Certified Fundamentals (MCF) Power Platform Fundamentals ($20)</a><br />
    * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-fundamentals/">PL-900 Power Platform Fundamentals</a><br />
    * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-app-maker/">PL-100 Power Platform App-maker Associate</a><br />
    * <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/power-platform-functional-consultant-associate/">PL-200 Power Platform Functional Consultant</a><br />
@@ -400,21 +401,21 @@ This is about giving a <strong>21st century context</strong> using Bloom's Taxon
 
    * Evaluate: This step involves making judgments based on evidence found. Students may appraise, argue, assess, choose, compare, conclude, contrast, describe, evaluate, explain, interpret, relate, summarize, and support their judgments.
 
-"21st Century Learning Design (21CLD)" rubrics, decision trees, anchor lessons to build complex was created bu <a target="_blank" href="https://edge.ut.ac.id/mod/page/view.php?id=119&forceview=1">SRI-developed</a> ITL (Innovative Teaching and Learning) <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/21st-century-learning-design/">MS-LEARN</a>: 
+Rubrics, decision trees, <a href="#AnchorLessons">anchor lessons</a> for <strong>21st Century Learning Design (21CLD)</strong> were created by <a target="_blank" href="https://edge.ut.ac.id/mod/page/view.php?id=119&forceview=1">SRI-developed</a> ITL (Innovative Teaching and Learning).
 
-21CLD authors created rubrics, decision trees, and anchor lesson examples in the six dimensions of the framework: REMEMBER:
+REMEMBER: <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/21st-century-learning-design/">MS-LEARN</a>: Each of <strong>six dimensions</strong> in the 21CLD framework begin at level 1 (there is no zero level):
 
-   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AMzz7xahtKzuH9M&page=View&wd=target%28Knowledge%20Construction%202.one%7C03760039-ac2e-4698-be4c-f73db3d5c8e1%2FRubric%20%E2%80%93%20Knowledge%20Construction%7C16a28f9e-24a1-4a4e-acba-dff9bd4a9ac5%2F%29&wdorigin=NavigationUrl">Knowledge construction</a> - learners go beyond memorizing information to 2: <a href="#Blooms">interpret, analyze, synthesize, evaluate</a> 3: as a main requirement 4: in a new context 5: that's interdisciplinary or multi-subject.
+   * <a target="_blank" title="Notebook on OneDrive" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AMzz7xahtKzuH9M&page=View&wd=target%28Knowledge%20Construction%202.one%7C03760039-ac2e-4698-be4c-f73db3d5c8e1%2FRubric%20%E2%80%93%20Knowledge%20Construction%7C16a28f9e-24a1-4a4e-acba-dff9bd4a9ac5%2F%29&wdorigin=NavigationUrl">Knowledge construction</a> - learners go beyond memorizing information to 2: requires <a href="#Blooms">interpret, analyze, synthesize, evaluate</a> 3: as a main requirement 4: in a <strong>new context</strong> 5: that's multi-subject and interdisciplinary.
    
-   *  <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Collaboration.one%7C219eb854-1f3a-4853-ad8a-7083ac484184%2FIntroduction%7C413558af-164b-4fb6-a473-5f5976f7efaf%2F%29&wdorigin=NavigationUrl">Collaboration</a> - learners 2: work together, 3: share responsibility, 4: make substantive decisions together, 5: work is interdependent. 
+   *  <a target="_blank" title="Notebook on OneDrive" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Collaboration.one%7C219eb854-1f3a-4853-ad8a-7083ac484184%2FIntroduction%7C413558af-164b-4fb6-a473-5f5976f7efaf%2F%29&wdorigin=NavigationUrl">Collaboration</a> - learners 2: work together, 3: share responsibility, 4: make substantive decisions together, 5: work is interdependent. 
 
-   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Real-World%20Problem-Solving.one%7C06e643da-5fdd-4587-8b1a-a8e86e7f3bf0%2FIntroduction%7Cbaf7c2c0-d9ec-4f8a-b82a-b0e02a467efc%2F%29&wdorigin=NavigationUrl">Real-world problem-solving and innovation</a> - 2: problem-solving activities that are 3: real-world (authentic, non-fictional) situations that 4: innovate and communicated to someone <strong>outside of an academic</strong> context who can implement them. (No 5)
+   * <a target="_blank" title="Notebook on OneDrive" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Real-World%20Problem-Solving.one%7C06e643da-5fdd-4587-8b1a-a8e86e7f3bf0%2FIntroduction%7Cbaf7c2c0-d9ec-4f8a-b82a-b0e02a467efc%2F%29&wdorigin=NavigationUrl">Real-world problem-solving and innovation</a> - 2: problem-solving activities that are 3: real-world (authentic, non-fictional) situations that 4: innovate and communicated to someone <strong>outside of an academic</strong> context who can implement them. (No 5)
 
-   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Skilled%20Communication.one%7Caa33bc86-f72a-4ceb-8bce-4fffb97e48b5%2FIntroduction%7C47dd5766-3e30-4034-b0ab-906b40c645b5%2F%29&wdorigin=NavigationUrl">Skilled communication</a> - produce 2: extended or multi-modal communication 3: using evidence to support their ideas 4: customized for a particular audience. (No 5)
+   * <a target="_blank" title="Notebook on OneDrive" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Skilled%20Communication.one%7Caa33bc86-f72a-4ceb-8bce-4fffb97e48b5%2FIntroduction%7C47dd5766-3e30-4034-b0ab-906b40c645b5%2F%29&wdorigin=NavigationUrl">Skilled communication</a> - produce 2: extended or multi-modal communication 3: using evidence to support their ideas 4: customized for a particular audience. (No 5)
 
-   * <a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Self-Regulation.one%7C4283ef67-f71d-4fa0-a1b5-37946b3c9d5f%2FIntroduction%7Cbb2967a3-6400-4a3f-9ffe-c7c0ab7744d6%2F%29&wdorigin=NavigationUrl">Self-regulation</a> - work on an activity for 2: a long-term activity with learning goals and success criteria 3: <strong>plan</strong> their work and 4: <strong>revise</strong> their work based upon their own reflection and feedback from others (peers, educators, or experts). (No 5)
+   * <a target="_blank" title="Notebook on OneDrive" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Self-Regulation.one%7C4283ef67-f71d-4fa0-a1b5-37946b3c9d5f%2FIntroduction%7Cbb2967a3-6400-4a3f-9ffe-c7c0ab7744d6%2F%29&wdorigin=NavigationUrl">Self-regulation</a> - work on an activity for 2: a long-term activity with learning goals and success criteria 3: <strong>plan</strong> their work and 4: <strong>revise</strong> their work based upon their own reflection and feedback from others (peers, educators, or experts). (No 5)
 
-   * <a target="_blank" href="https://aka.ms/ICTrubric">Digital ICT (technology) integration</a>:  2: optionally use ICT to learn basic skills 3: <strong>optionally</strong> use ICT to support <strong>knowledge construction</strong> 4: ICT <strong>required</strong> to support knowledge construction, then 5: <strong>create</strong> an ICT product for authentic users.
+   * <a target="_blank" title="Notebook on OneDrive" href="https://aka.ms/ICTrubric">Digital ICT (technology) integration</a>:  2: optionally use ICT to learn basic skills 3: <strong>optionally</strong> use ICT to support <strong>knowledge construction</strong> 4: ICT <strong>required</strong> to support knowledge construction, then 5: <strong>create</strong> an ICT product for authentic users.
 
 Technologies: 
    * Microsoft Edge Collections to organize research & Translator add-on
@@ -435,11 +436,79 @@ Technologies:
    * Microsoft Planner
 
    * <a target="_blank" href="https://learn.microsoft.com/en-us/training/educator-center/product-guides/minecraft">Minecraft</a> is referenced (it's Java programming).
-   * <a target="_blank" href="https://aka.ms/makecodearcade">Makecode Arcde</a>
-   * Microbit hardware are used to demonstrate knowledge construction. 
+   * <a target="_blank" href="https://aka.ms/makecodearcade">Makecode Arcade</a>
+   * Microbit hardware is used to demonstrate knowledge construction. 
    <br /><br />
 
+<a name="AnchorLessons"></a>
+
+### Anchor lessons
+
+Below are practical: 
+
+<a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&page=View&wd=target%28Anchor%20Lessons.one%7Cd8008065-88c4-4ce4-b1f3-4dca39ba0f6e%2FThe%20American%20Dream%20-%20Let%20America%20Be%20America%20Again%7C7a061fbe-bed5-44da-96f1-6a9cac04bb18%2F%29&wdorigin=703">
+The American Dream - Let America Be America Again</a>
+
+<a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&page=View&wd=target%28Anchor%20Lessons.one%7Cd8008065-88c4-4ce4-b1f3-4dca39ba0f6e%2FCollaborative%20Coding%20with%20MakeCode%20Arcade%7C49e037af-5b4e-4c17-a8e2-424d8530db29%2F%29&wdorigin=703">
+Collaborative Coding with MakeCode Arcade</a>
+
+<a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&page=View&wd=target%28Anchor%20Lessons.one%7Cd8008065-88c4-4ce4-b1f3-4dca39ba0f6e%2FCollaborative%20Coding%20with%20MakeCode%20Arcade%7C49e037af-5b4e-4c17-a8e2-424d8530db29%2F%29&wdorigin=703">
+Modifying recipes with math skills</a>
+
+<a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&page=View&wd=target%28Anchor%20Lessons.one%7Cd8008065-88c4-4ce4-b1f3-4dca39ba0f6e%2FGrowth%20mindset%20How%20it%20can%20help%20us%20learn%7Ccddc9365-8cf7-4fe1-bbce-b9390e69f071%2F%29&wdorigin=703">
+Growth mindset: How it can help us learn</a>
+
+<a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&page=View&wd=target%28Anchor%20Lessons.one%7Cd8008065-88c4-4ce4-b1f3-4dca39ba0f6e%2FPlease%20Please%20the%20Bees%7C36271863-424a-4b0a-8407-ed217482495c%2F%29&wdorigin=703">
+Please Please the Bees</a>
+
+<a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&page=View&wd=target%28Anchor%20Lessons.one%7Cd8008065-88c4-4ce4-b1f3-4dca39ba0f6e%2FPlease%20Please%20the%20Bees%7C36271863-424a-4b0a-8407-ed217482495c%2F%29&wdorigin=703">
+Guerilla Marketing Campaign</a>
+
+<a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&page=View&wd=target%28Anchor%20Lessons.one%7Cd8008065-88c4-4ce4-b1f3-4dca39ba0f6e%2FDesign%20a%20Catapult%7C5f30f0c4-2b0a-4a5d-af68-00ef77282220%2F%29&wdorigin=703">
+Design a Catapult</a>
+
+<a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&page=View&wd=target%28Anchor%20Lessons.one%7Cd8008065-88c4-4ce4-b1f3-4dca39ba0f6e%2FDoing%20Business%20in%20Birmingham%7C296c2faa-3adb-4301-8ca2-89be8a462719%2F%29&wdorigin=703">
+Doing Business in Birmingham</a>
+
+<a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&page=View&wd=target%28Anchor%20Lessons.one%7Cd8008065-88c4-4ce4-b1f3-4dca39ba0f6e%2FGreat%20Train%20Internet%7C1d226622-552e-4b90-b22d-10c0c1a39487%2F%29&wdorigin=703">
+Great Train Internet</a>
+
+<a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&page=View&wd=target%28Anchor%20Lessons.one%7Cd8008065-88c4-4ce4-b1f3-4dca39ba0f6e%2FHouse%20on%20Mango%20Street%7Cb3624dba-9aa0-4854-9452-6a363a82f9c2%2F%29&wdorigin=703">
+House on Mango Street</a>
+
+<a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&page=View&wd=target%28Anchor%20Lessons.one%7Cd8008065-88c4-4ce4-b1f3-4dca39ba0f6e%2FIndigenous%20Cultures%7C757eb78d-7664-4b23-ae3b-275d58a0fadb%2F%29&wdorigin=703">
+Indigenous Cultures</a>
+
+<a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&page=View&wd=target%28Anchor%20Lessons.one%7Cd8008065-88c4-4ce4-b1f3-4dca39ba0f6e%2FMunting%20Mungo%7C3592fb7d-f448-4d01-99c6-17e9690a46e2%2F%29&wdorigin=703">
+Munting Mungo</a>
+
+<a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&page=View&wd=target%28Anchor%20Lessons.one%7Cd8008065-88c4-4ce4-b1f3-4dca39ba0f6e%2FMr.%20Sun%20E.%20Day%7C36370104-d05d-4e9e-97cd-d7c9ad106c43%2F%29&wdorigin=703">
+Mr. Sun E. Day</a>
+
+<a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&page=View&wd=target%28Anchor%20Lessons.one%7Cd8008065-88c4-4ce4-b1f3-4dca39ba0f6e%2FMunting%20Mungo%7C3592fb7d-f448-4d01-99c6-17e9690a46e2%2F%29&wdorigin=NavigationUrl">
+Olympics Site Selection</a>
+
+<a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&page=View&wd=target%28Anchor%20Lessons.one%7Cd8008065-88c4-4ce4-b1f3-4dca39ba0f6e%2FFalklands%20War%7C061b8aa3-d117-4b45-8525-33bcce1782e1%2F%29&wdorigin=703">
+Falklands War</a>
+
+<a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&page=View&wd=target%28Anchor%20Lessons.one%7Cd8008065-88c4-4ce4-b1f3-4dca39ba0f6e%2FSchool%20Change%7Cb22b6f88-4d08-4312-a578-bb9eed5b19e1%2F%29&wdorigin=703">
+School Change</a>
+
+<a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&page=View&wd=target%28Anchor%20Lessons.one%7Cd8008065-88c4-4ce4-b1f3-4dca39ba0f6e%2FErosional%20Landforms%7Cc982156e-d674-486d-8ac7-e6fccd05e62d%2F%29&wdorigin=703">
+Erosional Landforms</a>
+
+<a target="_blank" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&page=View&wd=target%28Anchor%20Lessons.one%7Cd8008065-88c4-4ce4-b1f3-4dca39ba0f6e%2FTree%20Word%20Scramble%7C7d7cdc2e-6f83-4ceb-bfaf-88c0448b2449%2F%29&wdorigin=703">
+Tree Word Scramble</a>
+
+
+### Other info:   
+
+https://quizlet.com/ar/410408303/21st-century-learning-design-flash-cards/
+
 https://www.pwctraining.org/product/microsoft-testing-certiport-exams-from-home/
+
+Assessment and Teaching of 21st Century Skills (ACTS21S) Framework
+Ways of thinking, ways of working, tools for working, and living in the world
 
 All questions are in their own section: you cannot go back to a previous section.
 
@@ -471,7 +540,7 @@ NOTE: "MCE" is also the acronym for the Microsoft Certified Expert Cybersecurity
 
 <a name="MCT"></a>
 
-### MCT (Microsoft Certified Trainer)
+## MCT (Microsoft Certified Trainer)
 
 This certification is granted to those who have passed at least one of the advanced certifications above.
 https://learn.microsoft.com/en-us/credentials/certifications/mct-certification
@@ -481,6 +550,14 @@ Microsoft Certified Trainers</a> get 75% off exam fees. But there is a $800 annu
 
 https://mcp.microsoft.com/MCT/Enrollment?wa=wsignin1.0#/profile
 
+
+<hr />
+
+<a name="ms-applied-skills"></a>
+
+##  MS "Applied Skills" credentials
+
+https://learn.microsoft.com/en-us/credentials/browse/?credential_types=applied%20skills&wt.mc_id=community_expert_blog_wwl
 
 <hr />
 
@@ -2005,6 +2082,9 @@ Cost control in Azure</a>
 https://www.whizlabs.com/blog/top-microsoft-azure-bloggers/
 
 Microsoft Digital Defense Report (MDDR) https://aka.ms/MDDR  
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/credentials/browse/?credential_types=applied%20skills&wt.mc_id=community_expert_blog_wwl">
+Microsoft "Applied Skills" credentials</a>
 
 
 ## More about Azure #
