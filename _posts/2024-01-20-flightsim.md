@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-02-20"
+date: "2024-04-15"
 file: "flightsim"
 title: "Flight Simulator"
 excerpt: "Use Microsoft's Flight Simulator to fly around the world in various planes, experiencing real-time weather on a Windows PC or Xbox X."
@@ -162,15 +162,38 @@ For the Steam install:
 
 PROTIP: View videos and learn aviation and avionics terms before spending a bunch of money. 
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=xs1gtl3j95w">When you've gone too far</a>
-* <a target="_blank" href="https://www.youtube.com/watch?v=ywwKWGxRoKY">G-LOC MEDIA</a>
+References:
+   * <a target="_blank" href="https://www.polygon.com/microsoft-flight-simulator-guide/2020/9/2/21374072/should-i-buy-a-flight-stick-xbox-controller-what-to-buy-best-control-scheme">Polygon's accessories guide</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=xs1gtl3j95w">When you've gone too far</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=ywwKWGxRoKY">G-LOC MEDIA</a>
+   <br /><br />
+
+If XBox X doesn't power up:
+1. Make sure the power plug you're using for the XBox works by plugging a lamp in it.
+1. Press and hold ( on the side with the DVD slot ) the BIND button at the lower right (the one to SYNC controllers) AND the EJECT button AND  the Xbox button on the console.
+1. Continue holding the BIND and EJECT buttons for 10-15 seconds.
+1. Listen for two “power-up” tones a couple of seconds apart.
+
+   Note: If you don't hear two power-up tones after 15 seconds, it means this failed. Likewise, if you hear any “power-down” chirps, that also means this failed.
+
+1. You can release the BIND and EJECT buttons after the second power-up tone.
+1. The console should start and show the Troubleshooting screen.
+1. Choose "Reset this Xbox" and then "Keep games and apps". 
 <br /><br />
+
+<a target="_blank" href="https://www.youtube.com/watch?v=kqIdgOs2cPE&t=48s">VIDEO</a>:
+Use Alexa/Google to control the controller:
+   1. In XBox General: Power mode & startup: Power mode: Instant-on
+   1. In Alexa app: install XBox skill. Activate skill.
+   1. In Devices & Connections: Digital assistants: Enable
+   <br /><br />
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1706539267/flightsim-costs-596x1330_nsav7k.png"><img align="right" width="300" alt="flightsim-costs-596x1330.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1706539267/flightsim-costs-596x1330_nsav7k.png"></a>
 Videos:
    * <a target="_blank" href="https://www.youtube.com/watch?v=QL4q_Tbv0jM&list=PLbphwhPw2JuvwwsD-H3xoxmb4PUbCyZen">VIDEOs: Microsoft Flight Simulator - Tutorials</a> 13 of them.
    * <a target="_blank" href="https://www.youtube.com/watch?v=woRRntAp4q4">Real A320 Pilot Plays Microsoft Flight Simulator 2020 - Realistic 2 HOUR A320 NEO Full Flight in 4K</a>
    * <a target="_blank" href="https://www.youtube.com/playlist?list=PLbphwhPw2JuvwwsD-H3xoxmb4PUbCyZen">VIDEO</a>: Squirrel's Microsoft Flight Simulator - Tutorials" playlist
+   * RECOMMENDED: <a target="_blank" href="https://www.youtube.com/watch?v=F37SHBatw08">ULTIMATE SETTINGS GUIDE</a> by "At the peak" 
    <br /><br />
 
 Books: PROTIP: Your public library may have a paper copy.
@@ -1132,5 +1155,7 @@ The additional airplanes in the $119.99 Premium Deluxe 40th Anniversary Edition:
 <hr />
 
 ## Social
+
+https://www.gocivilairpatrol.com/about/civil-air-patrols-three-primary-missions
 
 https://www.avsim.com/forums/
