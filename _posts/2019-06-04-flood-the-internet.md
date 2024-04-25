@@ -31,7 +31,7 @@ The table below presents several icons associated with each page of the sample a
 
 Ruby code to create "the-internet" is now at
 
-   <ul><a target="_blank" href=https://github.com/saucelabs/the-internet">https://github.com/saucelabs/the-internet</a>
+   <ul><a target="_blank" href="https://github.com/saucelabs/the-internet">https://github.com/saucelabs/the-internet</a>
    </ul>
 
 The website was originally created at <a target="_blank" href="https://github.com/tourdedave/the-internet">https://github.com/tourdedave/the-internet</a> by Dave Haeffner since 2015 <a target="_blank" href="https://www.youtube.com/watch?v=cIevkkD_LB4&t=19m14s">part 1</a> and <a target="_blank" href="https://www.youtube.com/watch?v=w0pYTX2t0pg">part 2</a> of "Selenium Test Automation: Practical Tips & Tricks" presentation recorded in Israel. In his May 2016 <a target="_blank" href="https://www.youtube.com/watch?v=Zf_qsXK6YdM">"How to use Selenium successfully"</a> <a target="_blank" href="http://se.tips/sf-se-meetup-2016">slidedeck</a> he said:
