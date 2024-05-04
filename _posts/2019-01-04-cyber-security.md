@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-02-06"
+date: "2024-05-04"
 file: "cyber-security"
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
@@ -3574,7 +3574,6 @@ https://www.pulseconferences.com/
 
 * <a target="_blank" href="https://www.wgu.edu/online-it-degrees/cybersecurity-information-assurance-masters-program.html">Western Governors University</a> Masters in Cybersecurity can be obtained <strong>online</strong> and for a lot less than others at $4,555 per 6-month term for as many courses as you can complete during that time. They say 70% graduate within 21 months (5 terms) for $18,220 plus MSCSIA eBook & Resource Fee $200.00. There is a one-time MSCSIA Program Fee $150.
 
-
    Their curriculum is aligned to:
    * <a target="_blank" href="https://niccs.cisa.gov/workforce-development/nice-framework">NICE Workforce Framework</a> of <a target="_blank" href="https://public.cyber.mil/wid/pathways/">pathway job titles</a> and <a target="_blank" href="https://trycyber.us/challenges/">tasks</a>
    * NSA Center of Academic Excellence guidelines
@@ -3620,6 +3619,7 @@ https://www.pulseconferences.com/
    Those who graduated:
    * https://www.linkedin.com/in/thuatuanlee
    * https://www.linkedin.com/in/travis-w-duncan
+   * <a target="_blank" href="https://www.youtube.com/watch?v=VNq4UxaoEJc">VIDEO</a>: Nicole Enesse: "Accredited. Large alumni group getting larger. puts you higher in the invisible caste system. Get higher salary. Helped me get CISSP. Paid for $1,000 CEH."
    <br /><br />
 
 * <a target="_blank" href="https://uww.edu/online/masters/cybersecurity/">University of Wisconsin-Whitewater's  Master of Science in Cybersecurity</a> is all online - $678 per credit hour, 30 credits, 10 courses, 2 years = $20,340.
@@ -3631,6 +3631,86 @@ https://www.pulseconferences.com/
 * <a target="_blank" href="https://erau.edu/lp/cybersecurity">Embry-Riddle Aeronautical University</a> Master of Science in Cybersecurity Management & Policy
 
 
+## Harvard CS50
+
+Professor Dr. David J. Malan created several "CS50" courses at Harvard on Edx, with videos on YouTube.
+Videos can be watched on from the <a target="_blank" href="https://cs50.harvard.edu/cybersecurity/2023/weeks/0/">CS50’s Introduction to Cybersecurity course website</a> or on YouTube.
+
+* <a target="_blank" href="https://cs50.harvard.edu/cybersecurity/2023/weeks/0/">0. Securing Accounts</a>
+   * 0:00:17 Passwords
+   * 0:35:08 Two-Factor Authentication
+   * 0:45:21 Credential Stuffing
+   * 0:47:31 Social Enginering
+   * 0:50:02 Phishing
+   * 0:55:21 Machine-in-the-Middle Attacks
+   * 0:58:38 Single Sign-On
+   * 1:01:50 Password Managers
+   * 1:11:56 Passkeys
+* <a target="_blank" href="https://cs50.harvard.edu/cybersecurity/2023/weeks/1/">1. Securing Data</a>
+   * 0:00:17 Securing Data
+   * 0:02:21 Hashing
+   * 0:39:52 Secret-Key Cryptography
+   * 1:03:21 Public-Key Cryptography
+   * 1:16:14 Digital Signatures
+   * 1:27:57 Passkeys
+   * 1:34:47 Encryption in Transit
+   * 1:40:10 Deletion
+   * 1:46:28 Encryption at Rest
+   * 1:50:59 Ransomware
+   * 1:52:24 Quantum Computing
+* <a target="_blank" href="https://cs50.harvard.edu/cybersecurity/2023/weeks/2/">2. Securing Systems</a>
+   * 0:00:17 Wi-Fi
+   * 0:02:50 HTTP
+   * 0:08:50 Packet Sniffing
+   * 0:13:45 Cookies
+   * 0:18:32 HTTPS
+   * 0:37:56 VPNs
+   * 0:41:11 SSH
+   * 0:43:48 Ports
+   * 0:51:33 IP Addresses
+   * 0:53:33 Deep Packet Inspection
+   * 0:54:50 Proxy
+   * 1:03:49 Malware
+   * 1:12:43 Antivirus
+   * 1:15:19 Zero-Day Attacks
+* <a target="_blank" href="https://cs50.harvard.edu/cybersecurity/2023/weeks/3/">3. Securing Software</a>
+   * 0:00:17 Phishing
+   * 0:11:48 Code Injection
+   * 0:26:54 Stored Attacks
+   * 0:39:26 SQL Injection
+   * 0:54:49 Prepared Statements
+   * 0:59:57 Command Injection
+   * 1:07:51 Client-Side Validation
+   * 1:10:31 Server-Side Validation
+   * 1:12:44 Cross-Site Request Forgery
+   * 1:28:39 Open Worldwide Application Security Project
+   * 1:29:11 Arbitrary Code Execution
+   * 1:40:28 Reverse Engineering
+   * 1:42:03 Open-Source and Closed-Source Software
+   * 1:45:15 App Stores
+* <a target="_blank" href="https://cs50.harvard.edu/cybersecurity/2023/weeks/4/">4. Preserving Privacy</a>
+   * 0:00:17 Preserving Privacy
+   * 0:01:15 Web Browsing History
+   * 0:03:54 Logs
+   * 0:06:36 HTTP headers
+   * 0:16:47 Fingerprinting
+   * 0:26:35 Session Cookies
+   * 0:31:00 Tracking Cookies
+   * 0:33:54 Tracking Parameters
+   * 0:39:22 Third-Party Cookies
+   * 0:49:10 Private Browsing
+   * 0:51:40 Supercookies
+   * 0:58:01 DNS
+   * 1:03:21 DNS over HTTPS
+   * 1:04:21 DNS over TLS
+   * 1:06:59 Virtual Private Network (VPN)
+   * 1:10:14 Tor
+   * 1:14:09 Permissions
+   * 1:15:43 Location-Based Services
+
+<br /><br />
+
+
 ## Resources
 
 https://www.microsoft.com/en-us/cybersecurity/content-hub/cybersecurity-policy-framework
@@ -3638,7 +3718,6 @@ https://www.microsoft.com/en-us/cybersecurity/content-hub/cybersecurity-policy-f
 https://twitter.com/npm_malware announces malicious packages in the npm registry.
 
 https://github.com/ufrisk/MemProcFS for Digital Forensics. It provides a GUI to view physical memory as DumpLit or WinPMEM read-only files in a virtual file system, perhaps obtained from a PCILeech FPGA.
-
 
 ## More on Security #
 
