@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2024-01-08"
+date: "2024-05-04"
 file: "outsystems"
 title: "Outsystems"
 excerpt: "Generate feature-rich web and mobile apps using low-code running within a full suite of enterprise-grade utilities and services"
@@ -49,6 +49,8 @@ PROTIP: Adopting Outsystems is like inheriting a mature organization where peopl
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1696120691/outsystems-whowhat-1276x571_xme8u4.png"><img alt="outsystems-whowhat-1276x571.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1696120691/outsystems-whowhat-1276x571_xme8u4.png"><br /><em>Click for full screen</em></a>
 
 Outsystems provides free video classes and written docs describing its processes and tools.
+
+<a target="_blank" href="https://success.outsystems.com/">success.outsystems.com</a>
 
 PROTIP: Because a lot of what is necessary is built-in to the tool, <strong>less time is wasted arguing</strong> about the <a target="_blank" href="https://success.outsystems.com/documentation/11/developing_an_application/">application lifecycle</a>: what framework to use, <a target="_blank" href="https://learn.outsystems.com/training/journeys/devops-659/ci-cd-with-outsystems/o11/2436">what CI/CD</a> to use, naming conventions, what logging, metrics, KPIs, what is a higher priority, etc. Helpful automation bakes in for all users the terminology and methodology for going to production: 
 
@@ -519,17 +521,74 @@ Depending on the version:
 
 * MTh = Mobile Theme
 
+
 <hr />
 
-## Alexa app
+## Questions
 
+Alexa app?
 
+GenAI capabilties?
+
+<hr/>
+
+## Developers
+
+* ITRAC Staffing in the UK & US - https://www.outsystems.com/community/jobs/15791/
+*Manpower
+* TCS (Tata Consultancy Services)
+* Cognizant (remote)
+* EPAM Systems
+* Hays
+* HCLTech
+* Randstad
+* Accenture
+* Fujitsu
+* KPMG
+
+* Fast Dolphin hires developers throughout Latin America.
+
+* Devoteam in Brussels,Belgium 
+* UpcoMinds throughout EU
+* GlobalLogic throughout India
+* Rapid Consulting
+* Astek Vietnam
 
 <hr />
 
 ## References
 
 https://www.linkedin.com/pulse/outsystems-security-developer-helped-hacker-tech-lead-lucas-soares-f7u2e/
+
+### On OReilly:
+
+<a target="_blank" href="https://www.amazon.com/Rapid-Application-Development-OutSystems-applications/dp/1800208758/">$54.99</a>
+<a target="_blank" href="https://learning.oreilly.com/library/view/rapid-application-development/9781800208759/">BOOK: Rapid Application Development with OutSystems</a> from Packt Jan 2022
+by <a target="_blank" href="https://www.linkedin.com/in/ricardo-pereira-0264622/">Ricardo Pereira</a>
+
+Business Process Technology (BPT) is OutSystems approach to business process design:
+<a target="_blank" href="https://joaoheleno.medium.com/enhancing-outsystems-bpt-processes-with-behaviours-897f8c36c237">Enhancing OutSystems BPT processes with “Behaviours”</a> by João Heleno
+
+### On Pluralsight
+
+<a target="_blank" href="https://app.pluralsight.com/library/courses/outsystems-11-platform-fundamentals/table-of-contents">OutSystems 11 Platform Fundamentals</a> 1 hour video course
+by <a target="_blank" href="https://www.linkedin.com/in/akashrajput/">Akash Rajput</a> (<a target="_blank" href="https://www.akashrajput.in/">akashrajput.in</a>, <a target="_blank" href="akashrajput">@akashrajput</a>)
+uses "LoboTicket, a Globalmantics company" as example.
+
+
+### On YouTube
+
+<a target="_blank" href="https://www.youtube.com/watch?v=UBxxcZbuxrI">
+Add GenAI to Your Apps with OutSystems AI Agent Builder</a>
+by Paulo Rosado</a>, CEO of OutSystems
+
+<a target="_blank" href="https://www.youtube.com/watch?v=IBr9r7ZLBVc">
+1 hr "OutSystems In-Depth - Primary Overview"</a> 
+by <a target="_blank" href="https://www.linkedin.com/in/craig-st-jean/">Craig St.Jean</a> when he was <a target="_blank" href="https://www.youtube.com/watch?v=FQkeCOVPD-0">at Xebia</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=_qWw3n68fJo&list=PLGZK5lgjWaJ2hnsRR8pUsG79gqek0uvdZ">
+OutSystems How-Tos</a>
+
 
 <hr />
 

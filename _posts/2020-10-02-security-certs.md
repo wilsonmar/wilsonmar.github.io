@@ -1,10 +1,10 @@
 ---
 layout: post
-date: "2024-02-06"
+date: "2024-05-04"
 file: "security-certs"
 title: "Security Certifications"
 excerpt: "There are several (overlapping) ones."
-tags: [security,certs]
+tags: [security, certs]
 image:
 # security-certs-1905x908.png
   feature: https://user-images.githubusercontent.com/300046/103753295-19cf4680-4fc8-11eb-9c7a-d23d3c5c2d79.jpg
@@ -32,9 +32,12 @@ This map from <a target="_blank" href="https://pauljerimy.com/category/book-revi
   3. ISACA CISA (Certified Information Systems Auditor)
   4. SANS GIAC (Global Information Assurance Certification)
   5. ISACA CISM (Certified Information Security Manager)
-  6. CIPP (Certified Information Privacy Professional)
+  6. <a target="_blank" href="https://iapp.org/certify/cipp/">CIPP (Certified Information Privacy Professional)</a> answer 90 multiple-choice questions in 2.5 hours online or at a Pearson VUE test center. Its $550 plus a Maintenance Fee of $250/2 year. It assesses knowledge of U.S. privacy laws and regulations and legal requirements for transferring sensitive personal data to/from the United States, the EU and other jurisdictions.  
 
+Upon passing your exam, you will need to purchase a Certification Maintenance Fee to activate your certification, and again for each two-year certification term.
 
+For IAPP members, the fee is built into membership benefits.
+Non-member test takers are encouraged to purchase the Certification Maintenance Fee at the time of exam purchase so it will activate automatically upon passing the exam.
 
 ## Other lists:
 
@@ -48,6 +51,31 @@ This map from <a target="_blank" href="https://pauljerimy.com/category/book-revi
    * https://github.com/deanbushmiller/CEH-bootcamp/wiki/CEH-Glossary
    <br /><br />
 
+<hr />
+
+## IAPP
+
+The International Association of Privacy Professionals (<a target="_blank" href="https://iapp.org/">iapp.org</a>) costs $295/year ($100 for retired and non-profits) plus $550 per exam:
+
+   * AIGP (AI Governance Professional)
+   * CIPP (Certified Information Privacy Professional)
+   * CIPM (Certified Information Privacy Manager)
+   * CIPT (Certified Information Privacy Technologist)
+   * CDPO CDPO/BR CDPO/FR in Brazilian and French
+   <br /><br />
+  
+## OCEG
+
+From <a target="_blank" href="https://www.oceg.org/">oceg.org</a>
+"from the global nonprofit think tank that invented GRC" (Governance, Risk, Compliance) <a target="_blank" href="https://www.oceg.org/grc-standards/">standards</a>:
+   * <a target="_blank" href="https://www.oceg.org/glossary/">Glossary</a>
+   * Red Book Capability Model
+   * Burgendy Book Assessment Tools
+   <br /><br />
+$499/year includes training on GRC strategy and audit:
+   * <a target="_blank" href="https://www.oceg.org/certifications/grc-professional-certification">GRCP (GRC Professional)</a>
+   * <a target="_blank" href="https://www.oceg.org/certifications/grc-audit-certification">GRCA (GRC Auditor)</a>
+   <br /><br />
 
 <hr />
 
@@ -295,7 +323,6 @@ CGRC is taken from a broad spectrum of vendor-neutral topics in the CGRC Common 
    * Resource management
    <br /><br />
 
-
 <a name="CISSP"></a>
 
 ### CISSP
@@ -346,21 +373,21 @@ You need to pass at least 70% on <em>each</em> CISSP domain.
 
 ### CISSP Domains
 
-   1. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">></a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-1-security-and-risk-management" title=" 2h 52m">
+   1. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">16%</a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-1-security-and-risk-management" title=" 2h 52m">
    Security and Risk Management</a> - 334
-   2. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">></a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-2-asset-security">
+   2. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">10%</a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-2-asset-security">
    Asset Security</a> - 44
-   3. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">></a>  <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-3-security-architecture-and-engineering">
+   3. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">13%</a>  <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-3-security-architecture-and-engineering">
    Security (Architecture and) Engineering</a> - 268
-   4. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">></a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-4-communication-and-network-security">
+   4. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">13%</a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-4-communication-and-network-security">
    (Communication and) Network Security</a> - 114 on OSI model
-   5. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">></a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-5-identity-and-access-management">
+   5. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">13%</a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-5-identity-and-access-management">
    Identity and Access Management (IAM)</a> - 82 on biometrics
-   6. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">></a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-5-identity-and-access-management">
+   6. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">12%</a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-5-identity-and-access-management">
    Security Assessment and Testing</a> - 41 on NIST SP 800-92
-   7. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">></a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-7-security-operations">
+   7. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">13%</a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-7-security-operations">
    Security Operations</a> - 245 
-   8. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">></a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/" title="Released: 4/19/2021">
+   8. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">10%</a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/" title="Released: 4/19/2021">
    Secure Software Security (Development Lifecycle)</a> - 164 includes a <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/fuzz-testing">demo of ZAP Proxy for fuzzing</a>, <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/code-repositories">Git & GitHub</a>.
    <br /><br />
 
@@ -1830,6 +1857,21 @@ Intermediate-Level Certifications:
    * <a target="_blank" href="https://certifications.tcm-sec.com/pjmr/">$199 PJMR</a> (Practical Junior Malware Researcher) is focused on Malware Analysis, Research, and Triage, assessing the mastery of the art and science of malware analysis. 
 
    * <a target="_blank" href="https://certifications.tcm-sec.com/pcrp/">$199 PCRP</a> (Practical Career-Ready Professional) is a real-world job application and interview experience. Students will learn practical soft and communication skills that employers are looking for combined with personal branding and stand-out skills.
+
+
+<hr />
+
+## OSIP (Open Source Intelligence Professional) 
+
+The OSIP (Open Source Intelligence Professional) Certification on OSINT (Open Source Intelligence) by
+<a target="_blank" href="https://www.inteltechniques.net/courses/open-source-intelligence">inteltechniques.net</a>
+is offered for $300 or $949 which includes their $649/year videos and 600+ page pdf.
+
+by <a target="_blank" href="https://www.linkedin.com/in/michael-bazzell-a83572122/">Michael Bazzell</a>,
+<a target="_blank" href="https://inteltechniques.com/blog/">blogger</a>. 
+Previously FBI, Technical Advisor/Writer for the television show Mr. Robot and host to the now-defunct 
+<a target="_blank" href="https://inteltechniques.com/podcast.html">podcast inteltechniques.com</a> 
+
 
 <hr />
 
