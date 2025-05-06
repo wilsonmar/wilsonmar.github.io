@@ -17,23 +17,33 @@ created: "2016-06-12"
 {% include l18n.html %}
 {% include _toc.html %}
 
+## Why? #
 
-This tutorial aims to have you ending up with "Serverless" Azure Functions running in the 
+Microsoft Functions provides a free amount of "serverless" computing time each month in the 
 Microsoft Azure cloud.
 
+This tutorial aims to have you creating a useful Azure Function in Python after installing the 
+"Azure Functions Core Tools (v4.x)".
+
+Use the Azurite V3 extension local storage emulator.
+   1. Press F1, search for Azurite: Start, and run it.
+   2. Confirm Azurite is running by checking the bottom bar.
+
 You may be already familiar with my <a href="#AzureQuickly">Quickly (below)</a> 
-
-If you need to customize the JobHost, then you're better off staying with an AppService WebJob.
-
-## Why #
-
-<a target="_blank" href="https://techcrunch.com/2016/09/01/serverless-is-the-new-multitenancy/">
-Multi-tenancy</a> "made it viable to serve small and medium businesses with world-class software".
 
 There are several ways to create and deploy Azure functions. For production, use an automated deploy mechanism to allow Azure Functions to get the latest version of Terraform or other IaC code from your version control system. 
 
 Functions are designed to bind to (integrate with) many other Azure (and outside) services:*
+
 <img width="732" alt="az-funcs-integrations-1464x1000" src="https://user-images.githubusercontent.com/300046/118571973-92939b80-b73c-11eb-950b-4cfddf655fdf.png">
+
+1. Notification Hubs
+1. Event Grid
+1. Event Hubs
+1. Cosmos DB
+1. Twilio is external to Azure to send emails and mobile texts.
+1. Service bus to Topics and Queues.
+1. Storage: Almost all Azure Functions need to access Queues, Blobs, <a href="#AzureTables">Table Storage</a> via a Storage Account. REMEMBER: Any time a blob is uploaded to a Blob Storage container, a corresponding row in Table Storage is created.
 
 
 ## Manual Portal GUI
@@ -84,7 +94,7 @@ Let's jump right in:
 
 1. Hosting: 
 
-   Storage account: Note one can be created automatically if you ignore the selextion. 
+   Storage account: One can be created automatically if you ignore the selection. 
    Alterntely, click "create" for another modal dialog.
 
 1. Operating System: Windows is default. Select Linux
@@ -129,6 +139,30 @@ Let's jump right in:
 1. "+ Add" pops up documentation because much occurs locally on your laptop.
 
 
+```
+def create_this_fapp(armSkuNameToFind):
+    """ STATUS: INCOMPLETE DRAFT
+    Based on https://www.perplexity.ai/search/python-code-to-create-an-azure-rv77D5o3Sfq_PfkS0Frjlg#0
+    """
+    app = func.FunctionApp()
+    # import azure.functions as func
+    @app.function_name(name="HttpExample")
+    @app.route(route="HttpExample")
+    def main(req: func.HttpRequest) -> func.HttpResponse:
+        name = req.params.get("name")
+        if not name:
+            try:
+                req_body = req.get_json()
+            except ValueError:
+                req_body = {}
+            name = req_body.get("name")
+            my_az_svc_region = get_cheapest_az_region(name)
+        if name:
+            return func.HttpResponse(f"Hello, {name}!")
+        else:
+            return func.HttpResponse("Please pass a name on the query string or in the request body.", status_code=400)
+```
+
 <a name="Triggers"></a>
 
 ## Triggers
@@ -138,22 +172,6 @@ A Function can be triggered (initiated) several ways.
 Schedule triggers occur on a specific date/time.
 
 1. At the upper-right: 
-
-1. At the lower-left: Almost all Azure Functions need a Storage Account to access Queues, Blobs, Tables, etc.
-
-   Azure Functions can make use of Azure Blob Storage with <a href="#AzureTables">Azure Table Storage</a>. 
-   Any time a blob is uploaded to a Blob Storage container, a corresponding row in Table Storage is created.
-
-1. CosmoDB
-
-1. Service bus to Topics and Queues.
-
-1. Event Grid
-
-1. Event Hub
-
-1. Twilio is external to Azure to send emails and mobile texts.
-
 
    <a name="Templates"></a>
 
@@ -444,9 +462,10 @@ Jeff Hollan joins Scott Hanselman:
    * <a target="_blank" href="https://www.youtube.com/watch?v=UFxQhszT450" title="Mar 20, 2020">VIDEO: Go serverless: Event-driven applications with Azure Functions | Azure Friday</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=499iCgNLDDE" title="Nov 25, 2020">Build serverless APIs with Azure Functions | Azure Friday</a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=ansa4M7iTmg">
+by Adam Marczak - Azure for Everyone
+* <a target="_blank" href="https://www.youtube.com/watch?v=ansa4M7iTmg">
 AZ-900 Episode 17 | Azure Serverless Computing Services | Functions, Logic Apps, Event Grid</a>
-by Adam Marczak
+* <a target="_blank" href="https://www.youtube.com/watch?v=Vxf-rOEO1q4">"Azure Function Apps Tutorial | Introduction for serverless programming" 
 
 * <a target="_blank" href="https://app.pluralsight.com/player?course=introduction-azure-app-services">
   Introduction to Azure Apps Services</a>
@@ -472,13 +491,10 @@ by John Savill's Technical Training
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=I-kodc4bs4I">"Learn Azure Functions Python V2 (Local Setup and Examples)" by Data Engineering With Nick
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=3HZjmYohlgc&pp=0gcJCYQJAYcqIYzv">"Building a Serverless REST API With Azure Functions From Scratch" by Codewrinkles
+* <a target="_blank" href="https://www.youtube.com/watch?v=3HZjmYohlgc&pp=0gcJCYQJAYcqIYzv">28:26 "Building a Serverless REST API With Azure Functions From Scratch" by Dan Patrascu from Codewrinkles 
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=6kwzwPcBuaQ">"Azure Function Blob Trigger [Python] V2 by Pytalista
 * <a target="_blank" href="https://www.youtube.com/watch?v=HCqe49vero0">"How to create and deploy Azure Function Using VS Code [Python]" by Pytalista
-
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=Vxf-rOEO1q4">"Azure Function Apps Tutorial | Introduction for serverless programming" by Adam Marczak - Azure for Everyone
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=YCvq9ONZ6tg">"Azure Functions Tutorial for Beginners - Full Course" by itzsoft
 
@@ -498,10 +514,7 @@ by John Savill's Technical Training
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=7-P2hRFWmHY&pp=0gcJCYQJAYcqIYzv">"How to Create an Azure Function App? | 3 Minute Tutorial" by Azure Innovation Station
 
-## AWS Functions
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=s_odkdt9qUU">"Azure Functions: DEEP DIVE with Microsoft MVP, Ian Griffiths
-Master AWS with Yan
+* <a target="_blank" href="https://www.youtube.com/watch?v=s_odkdt9qUU">"Azure Functions: DEEP DIVE with Microsoft MVP, Ian Griffiths" by Master AWS with Yan (expert on AWS Functions)
 
 
 ## Blog Storage
@@ -517,8 +530,27 @@ https://www.youtube.com/watch?v=Sq8Cq7RZM2o
  Azure AI Foundry Overview by John Savill's Technical Training
 
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=I7fdWafTcPY"> AI-102 Study Cram - Azure AI Engineer Associate Certification by John Savill's Technical Training
+* <a target="_blank" href="https://www.youtube.com/watch?v=I7fdWafTcPY">2:06:30 AI-102 Study Cram - Azure AI Engineer Associate Certification by John Savill's Technical Training
 
+Vision, Language, Search, QnA API
+
+* https://learn.microsoft.com/en-us/samples/azure-samples/cognitive-services-python-sdk-samples/cognitive-services-python-sdk-samples/
+
+* https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/?practice-assessment-type=certification
+
+* https://learn.microsoft.com/en-us/samples/azure-samples/cognitive-services-python-sdk-samples/cognitive-services-python-sdk-samples/
+
+
+## Secrity Purview
+
+
+SC-200: Microsoft Certified: Security Operations Analyst Associate
+https://learn.microsoft.com/en-us/credentials/certifications/security-operations-analyst/?practice-assessment-type=certification
+Investigate, search for, and mitigate threats using Microsoft Sentinel, Microsoft Defender for Cloud, and Microsoft 365 Defender. 
+
+SC-401: Administering Information Security in Microsoft 365
+Microsoft Certified: Information Security Administrator Associate
+https://learn.microsoft.com/en-us/credentials/certifications/information-security-administrator/?practice-assessment-type=certification
 
 
 ### .NET
@@ -534,6 +566,13 @@ Yochay Kiriaty
 Christopher Anderson
 @crandycodes 
 PM
+
+## Random Notes
+
+If you need to customize the JobHost, then you're better off staying with an AppService WebJob.
+
+<a target="_blank" href="https://techcrunch.com/2016/09/01/serverless-is-the-new-multitenancy/">
+Multi-tenancy</a> "made it viable to serve small and medium businesses with world-class software".
 
 
 ## More on Serverless #
