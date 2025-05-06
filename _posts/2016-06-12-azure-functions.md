@@ -1,16 +1,17 @@
 ---
 layout: post
+date: "2025-05-05"
+file: "azure-functions"
 title: "Azure (Serverless) Functions"
 excerpt: "Effortless instant (theoretically) infinite capacity to take several different actions"
 tags: [cloud, azure, serverless]
-date: "2021-05-14"
-file: "azure-functions"
 image:
 # azure ms logo wait 1900x500-39kb.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/18188069/153fbcca-706c-11e6-983d-0783da57f75c.jpg
   credit: Microsoft Azure
   creditlink: 
 comments: true
+created: "2016-06-12"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -20,8 +21,7 @@ comments: true
 This tutorial aims to have you ending up with "Serverless" Azure Functions running in the 
 Microsoft Azure cloud.
 
-You may be already familiar with my <a target="_blank" href="https://wilsonmar.github.io/azure-quickly">Azure quickly</a> and
-[the Serverless framework](/serverless/)
+You may be already familiar with my <a href="#AzureQuickly">Quickly (below)</a> 
 
 If you need to customize the JobHost, then you're better off staying with an AppService WebJob.
 
@@ -35,31 +35,14 @@ There are several ways to create and deploy Azure functions. For production, use
 Functions are designed to bind to (integrate with) many other Azure (and outside) services:*
 <img width="732" alt="az-funcs-integrations-1464x1000" src="https://user-images.githubusercontent.com/300046/118571973-92939b80-b73c-11eb-950b-4cfddf655fdf.png">
 
-A Function can be triggered (initiated) several ways.
-
-Schedule triggers occur on a specific date/time.
-
-1. At the upper-right: 
-
-1. At the lower-left: Almost all Azure Functions need a Storage Account to access Queues, Blobs, Tables, etc.
-
-   Azure Functions can make use of Azure Blob Storage with <a href="#AzureTables">Azure Table Storage</a>. 
-   Any time a blob is uploaded to a Blob Storage container, a corresponding row in Table Storage is created.
-
-1. CosmoDB
-
-1. Service bus to Topics and Queues.
-
-1. Event Grid
-
-1. Event Hub
-
-1. Twilio is external to Azure to send emails and mobile texts.
-
 
 ## Manual Portal GUI
 
+Let's jump right in:
+
 1. Open blade <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2Fsites/kind/functionapp">Function Apps</a> in recents or Search.
+
+   https://portal.azure.com/#browse/Microsoft.Web%2Fsites/kind/functionapp
 
 1. Click "+ Add" or "Create Function App"
 
@@ -133,6 +116,7 @@ Schedule triggers occur on a specific date/time.
 1. Click "Add a function" link.
 
 
+
 <a name="Functions"></a>
 
 ## Individual Function Apps
@@ -145,11 +129,67 @@ Schedule triggers occur on a specific date/time.
 1. "+ Add" pops up documentation because much occurs locally on your laptop.
 
 
-## Local Setup
+<a name="Triggers"></a>
+
+## Triggers
+
+A Function can be triggered (initiated) several ways.
+
+Schedule triggers occur on a specific date/time.
+
+1. At the upper-right: 
+
+1. At the lower-left: Almost all Azure Functions need a Storage Account to access Queues, Blobs, Tables, etc.
+
+   Azure Functions can make use of Azure Blob Storage with <a href="#AzureTables">Azure Table Storage</a>. 
+   Any time a blob is uploaded to a Blob Storage container, a corresponding row in Table Storage is created.
+
+1. CosmoDB
+
+1. Service bus to Topics and Queues.
+
+1. Event Grid
+
+1. Event Hub
+
+1. Twilio is external to Azure to send emails and mobile texts.
+
+
+   <a name="Templates"></a>
+
+   ## Function Templates
+
+1. Select a template: blob (for run ...
+
+   * HTTP trigger - whenever it receives an HTTP request, responding based on data in the body or query string
+   * Timer trigger - on a specified schedule
+   * Azure Queue Storage trigger - whenever a message is added to a specified Azure Storage queue
+   * Azure Service Bus Queue trigger - whenever a message is added to a specified Service Bus queue
+   * Azure Service Bus Topic trigger - whenever a message is added to the specified Service Bus topic
+   * Azure Blob Storage trigger - whenever a blob is added to a specified container
+   * Azure Event Hub trigger - whenever an event hub receives a new event
+   * Azure Cosmos DB trigger - whenever documents change in a document collection
+   * IoT Hub (Event Hub) - whenever an IoT Hub receives a new event from IoT Hub (Event Hub)
+
+   * SendGrid - sends a confirmation e-mail when a new item is added to a particular queue
+   * Azure Event Grid trigger - whenever an event grid receives a new event
+
+   * Kafka output - send messages to a specified Kafka topic
+   * Kafka trigger - whenever a message is added to a specified Kafka topic
+   * RabbitMQ trigger - whenever a message is added to a specified RabbitMQ queue
+   * SignalR negotiate HTTP trigger - An HTTP triggered function that SignalR clients will call to begin connection negotiation
+
+
+<a name="AzureQuickly"></a>
+
+## Local Setup (Azure Quickly)
 
 1. Run my <strong>az-local-setup.sh</strong> to install utilities on your laptop.
 
-   https://github.com/wilsonmar/azure-quickly
+   
+   
+   <a target="_blank" href="https://github.com/wilsonmar/azure-quickly">https://github.com/wilsonmar/azure-quickly</a> described at:
+   <a target="_blank" href="https://wilsonmar.github.io/azure-quickly">wilsonmar.github.io/azure-quickly</a>
 
 1. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=macos%2Ccsharp%2Cbash">Initialize</a>:
 
@@ -175,8 +215,6 @@ Schedule triggers occur on a specific date/time.
 1. Initialize a dotnet function:
 
    <pre><strong>func init --worker-runtime dotnet --force</strong></pre>
-
-
 
    A FunctionApp folder contains:
 
@@ -275,29 +313,6 @@ Schedule triggers occur on a specific date/time.
 
 
 
-   <a name="Templates"></a>
-
-## Function Templates
-
-1. Select a template: blob (for run ...
-
-   * HTTP trigger - whenever it receives an HTTP request, responding based on data in the body or query string
-   * Timer trigger - on a specified schedule
-   * Azure Queue Storage trigger - whenever a message is added to a specified Azure Storage queue
-   * Azure Service Bus Queue trigger - whenever a message is added to a specified Service Bus queue
-   * Azure Service Bus Topic trigger - whenever a message is added to the specified Service Bus topic
-   * Azure Blob Storage trigger - whenever a blob is added to a specified container
-   * Azure Event Hub trigger - whenever an event hub receives a new event
-   * Azure Cosmos DB trigger - whenever documents change in a document collection
-   * IoT Hub (Event Hub) - whenever an IoT Hub receives a new event from IoT Hub (Event Hub)
-
-   * SendGrid - sends a confirmation e-mail when a new item is added to a particular queue
-   * Azure Event Grid trigger - whenever an event grid receives a new event
-
-   * Kafka output - send messages to a specified Kafka topic
-   * Kafka trigger - whenever a message is added to a specified Kafka topic
-   * RabbitMQ trigger - whenever a message is added to a specified RabbitMQ queue
-   * SignalR negotiate HTTP trigger - An HTTP triggered function that SignalR clients will call to begin connection negotiation
 
 1. PROTIP: Function Name cannot contain blanks.
 
@@ -347,18 +362,23 @@ public class Upload
 
 ### Azure Table
 
-You will test the Function you created in this Lab Step. You must first create the Azure Table that stores the records of every blob that is added to the uploads container. Then you can test the function by uploading files to blob storage and observing the entities that are created in Azure Tables.
+A Azure Table stores the records of every blob that is added to the uploads container. 
+
+Test the function by uploading files to blob storage and observing the entities that are created in Azure Tables.
 
 
 ## Service Bus
 
+```
 az servicebus namespace create --name "${MY_SVC_BUS_NAMESPACE}" \
     --resource-group "${MY_RG}"
+```
+
+<a name="ServiceBusQueue"></a>
 
 ## Service Bus Queue
 
-
-
+<hr />
 
 ## Next
 
@@ -408,13 +428,18 @@ Click the Deploy to Function App… () icon in the Azure: Functions panel.
 
 <hr />
 
-## Learning Resources #
+## Video Learning Courses #
+
+https://www.udemy.com/share/10dftt3@NJNXtnKIMmszWXCjzLXrWlE2lCGLtDwrykf0LjYkdTr_NSMNcvifOY3_dfsFHg==/
+part of "Python SDK for Azure Bootcamp" on Udemy 
+by Jose Portilla.
+
 
 <a target="_blank" href="https://www.youtube.com/watch?v=zIfxkub7CLY" title="Dec 9, 2019">
 VIDEO: Intro to Azure Functions - What they are and how to create and deploy them</a>
 by IAmTimCorey
 
-Jeff Hollan joins Scott Hanselman 
+Jeff Hollan joins Scott Hanselman:
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=UFxQhszT450" title="Mar 20, 2020">VIDEO: Go serverless: Event-driven applications with Azure Functions | Azure Friday</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=499iCgNLDDE" title="Nov 25, 2020">Build serverless APIs with Azure Functions | Azure Friday</a>
@@ -437,6 +462,68 @@ by Adam Marczak
   by Alex Casalboni of CloudAcademy.
    <a target="_blank" href="https://gist.github.com/alexcasalboni/b045542bbd77b9d0bdac2db939575eec/">
   repo</a>
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=B0vg8Bxbw3c">"Azure Functions for the IT Pro
+by John Savill's Technical Training
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=l3beXs3o-0w">" Getting Started With Azure Functions - HTTP & Timer Triggers" by Milan Jovanović
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=27OUTVdK2_0&pp=0gcJCYQJAYcqIYzv">"AZURE FUNCTION ⚡ - Integrate with Azure Queue Storage | Getting Started With ASP.NET Core Series" by Rahul Nath
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=I-kodc4bs4I">"Learn Azure Functions Python V2 (Local Setup and Examples)" by Data Engineering With Nick
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=3HZjmYohlgc&pp=0gcJCYQJAYcqIYzv">"Building a Serverless REST API With Azure Functions From Scratch" by Codewrinkles
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=6kwzwPcBuaQ">"Azure Function Blob Trigger [Python] V2 by Pytalista
+* <a target="_blank" href="https://www.youtube.com/watch?v=HCqe49vero0">"How to create and deploy Azure Function Using VS Code [Python]" by Pytalista
+
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=Vxf-rOEO1q4">"Azure Function Apps Tutorial | Introduction for serverless programming" by Adam Marczak - Azure for Everyone
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=YCvq9ONZ6tg">"Azure Functions Tutorial for Beginners - Full Course" by itzsoft
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=Ft34VWPpiA4">"Azure Functions: Step by Step Project" by Les Jackson
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=a-5UD01TL88">"Microsoft Azure Functions Introduction" by BestITCourses
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=-snl26wzt18">"How To Create Your First Azure Function Using Azure Portal" by CodeBite
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=BKEPkZrsFyY">"Day-22 | Event Driven Serverless Implementation with Demo of Azure Blob Trigger</a> in <a target="_blank" href="https://www.youtube.com/playlist?list=PLdpzxOOAlwvIcxgCUyBHVOcWs0Krjx9xR">"Zero to Hero"</a> #freeazurecourse" May 2024 by Abhishek.Veeramalla referencing <a target="_blank" href="https://github.com/iam-veeramalla/Azure-zero-to-hero/blob/main/Day-22/01-create-function-app.sh">sh file</a>
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=N4yf4-BQNDw">"Top azure functions interview questions & answers" by Enthusiastic Tech Learner - Educationa
+
+## Azure Services
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=GefJyITCu0k">"Azure Services | Overview | Introduction | for Beginner | with Example | in 20 Minutes" by Interview Happy
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=7-P2hRFWmHY&pp=0gcJCYQJAYcqIYzv">"How to Create an Azure Function App? | 3 Minute Tutorial" by Azure Innovation Station
+
+## AWS Functions
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=s_odkdt9qUU">"Azure Functions: DEEP DIVE with Microsoft MVP, Ian Griffiths
+Master AWS with Yan
+
+
+## Blog Storage
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=ansa4M7iTmg">22:24 "A Beginners Guide to Azure Blob Storage" by Travis Roberts
+
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=TAPERUEGhvw">"AZURE BLOB STORAGE - Getting Started | Azure Series" by Rahul Nath
+
+# AI
+
+https://www.youtube.com/watch?v=Sq8Cq7RZM2o
+ Azure AI Foundry Overview by John Savill's Technical Training
+
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=I7fdWafTcPY"> AI-102 Study Cram - Azure AI Engineer Associate Certification by John Savill's Technical Training
+
+
+
+### .NET
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=82QnxMp8PRY">"Azure Functions for .NET Developers – Everything You Need To Know" by Microsoft Azure Developers
 
 
 ## Social #
