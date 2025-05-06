@@ -1,10 +1,11 @@
 ---
 layout: post
+date: "2025-05-06"
+lastchange: "v014 + :azure-storage.md"
+file: "azure-storage"
 title: "Azure Storage (in Microsoft's Azure cloud)"
 excerpt: "Files, Disks, Blobs, Tables, Queues, SQL, CosmoDB, Synapse, LRS, ZRS, GRS, RA-GRS"
 tags: [Azure, cloud, DevOps, Storage]
-date: "2021-04-15"
-file: "azure-storage"
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
@@ -16,23 +17,49 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Unlike a lot of <a href="#Overviews">overview/summary/high-level tutorials and videos on Azure storage</a>, 
-this article is a <strong>deep</strong> yet concise presentation, using HTML tables to organize complex information to make them easier to visualize and remember. I created this while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure certification exams</a>.
+Unlike <a href="#References">other tutorials about Azure storage</a>, 
+this article is a <strong>deep yet concise</strong> presentation, using HTML tables to organize complex information to make them easier to visualize and remember. I created this while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure certification exams</a>.
 
 {% include whatever.html %}
+
+
+
+<a name="StorageTypes"></a>
+
+## Types of Data Storage
+
+If available in your choice of region:
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Type </th><th> Data </th><th> Service </th></tr>
+<tr valign="top"><td> Unstructured: </td><td> Media files (photos, videos, audio files), Office files (Word documents, PowerPoint slides, Excel Spreadsheets), Text files, Log files, Product catalog data
+   </td><td><a href="#Blobs">Blobs</a>,<br />
+   <a href="#Queues">Queues</a>,<br />
+   <a href="#DataLake">Data Lake Store</a>
+   </td></tr>
+
+<tr valign="top"><td> Semi-structured: </td><td> XML, JSON, YAML, NoSQL files
+   </td><td> <a href="#FileStorage">FileStorage</a> in 
+      <a href="#Disks">Disks</a>,<br />
+      <a href="#Tables">Tables</a>,<br /> 
+      <a href="#CosmoDB">CosmoDB</a>
+   </td></tr>
+
+<tr valign="top"><td> Structured: </td><td> traditional SQL databases (containing tables organized, categorized, normalized)
+   </td><td> <a href="#Tables">Azure Tables</a>,<br />
+      <a href="#SQLDB">Azure SQL Database</a>
+   </td></tr>
+</table>
+
+
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/product-categories/storage/">azure.microsoft.com/en-us/product-categories/storage</a>
 
 ## Create Storage account
 
-<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=1h55m22s">VIDEO</a>
-Each storage account consists of <strong>containers<strong> capable of storing data of a particular kind
+    * <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=1h55m22s">VIDEO</a>
+    * <a target="_blank" href="https://www.youtube.com/watch?v=gCotvBx-UrQ">VIDEO: Azure Storage Account Types, Performance and Cost</a> by John Savill.
 
-   * Blobs
-   * File shares - Serverless SMB and NFS file shares
-   * Tables - Tabular data storage
-   * Queues - Effectively scale apps according to traffic
-   <br /><br />
 
 Storage Accounts can be created several ways:
 
@@ -42,48 +69,71 @@ Storage Accounts can be created several ways:
    
    3. <a href="#StorageAccountCLI">Use my Bash shell CLI scripts</a> file az-storage-init.sh within <a target="_blank" href="https://github.com/wilsonmar/azure-quickly/readme.txt">github.com/wilsonmar/azure-quickly</a> 
 
+   4. <a href="#PythonProgram">Python program</a>
+
 <hr />
 
-<a name="StorageAccountPortal"></a>
 
-### Create Storage account using Portal UI
+## Storage Pricing
 
-1. Get to blade one of several ways:
+<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/">Pricing for Storage</a> varies by several dimensions (explained below):
+   
+   A. Region (which have different costs). REMEMBER: A different <a href="#StorageAccounts">storage account</a> is needed for each Azure Region.
 
-   * Since "Storage accounts" is a popular resource, select it on the Home menu at the left. If you don't see the menu, click on the icon at the upper-left corner on every screen.
+   B. Region's support of Availability Zones - white dots on <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/regions/">this world map of regions</a>
+   
+   C. <a href="#StorageTypes">Type of Storage) [see below]</a>
+   
+   D. <a href="#Replication">Replication/Redundancy</a> region pair high availability
 
-   * Press G+\ and type <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts">Storage accounts</a> in the main menu or Search at the top of the Portal.
+   E. Whether reservations were pre-allocated (1 to 3 years ahead)
 
-   * Click "+ Create a resource". Search for "Storage account". Click on the Marketplace item. Create.
+   F. Hot/cold/Archive 
 
-1. Click "+ Create" for "Create a Storage account".
-1. Select the Subscription for billing.
-1. Resource Group: <strong>Create new</strong> 
-1. Resource Group Name:
+   G. Amount of storage used each month (first 50 TB, next 450 TB, over 500 TB).
 
-1. For Storage account name: LIMIT: type up to 24 chracters or numbers.
 
-   UNIQUE Naming convention: environment, region, no underlines or dashes!
+<hr />
+<a name="StorageAccounts"></a>
 
-   A storage account name such as (for example):
+## Types of storage accounts
 
-   <tt>devuswest2yap01</tt>
+REMEMBER: Storage account name: LIMIT of <strong>24 chracters or numbers</strong> with <strong>no underlines or dashes</strong>, so we need to be concise:
 
+<a href="#PythonProgram">My Python program (below)</a> creates storage account names such as (for example):
+
+   <tt>2505uswest2</tt>
+
+   * "2505" is the year and month.
+   * "uswest2" is the region because 
+   
    PROTIP: Add the region code for reference when defining replication rules to copy storage items automatically.
 
-   would be in a URL such as:
+My example in a URL such as:
 
-   https://devuswest2yap01.blob.core.windows.net/blobdata1
+   <tt>https://2505uswest2.blob.core.windows.net/blobdata1</tt>
 
    "blobdata1" is the <strong>container</strong> name within the Storage Account.
 
-1. Region = Location.
+REMEMBER: There are different kinds of Azure Blob storage objects:
 
-   ### Standard or Premium Performance
+   * Containers contain the physical blobs:
 
-1. Performance: The choice between the default <strong>"Standard"</strong> or <a href="#Premium"><strong>Premium</strong></a> affects what can be selected in other fields:
+   * <a href="#FileShares">File shares</a> - Serverless SMB and NFS file shares
+   * Tables - Tabular data storage
+   * Queues - Effectively scale apps according to traffic
 
-   If <strong>Standard</strong> is selected, <a href="#Redundancy">Redundancy</a> has these choices:
+
+
+<hr />
+
+<a name="PerformanceTypes"></a>
+
+### Performance Types
+
+"Performance" is the choice between the default <strong>"Standard"</strong> or <a href="#Premium"><strong>Premium</strong></a> affects what can be selected in other fields:
+
+If <strong>Standard</strong> is selected, <a href="#Redundancy">Redundancy</a> has these choices:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/120120732-85bf7080-c15c-11eb-9f57-0f840300cbc0.png"><img width="942" height="592" alt="az-storage-942x592.png" src="https://user-images.githubusercontent.com/300046/120120732-85bf7080-c15c-11eb-9f57-0f840300cbc0.png"></a>
 
@@ -124,14 +174,49 @@ Storage Accounts can be created several ways:
    <ul>"Optimal data protection solution that includes the offerings of both GRS and ZRS. Recommended for critical data scenarios."</ul>
 
 
-   <a name="Replication"></a>
 
-   ### Azure-managed replication
+<hr />
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h28m19s">VIDEO</a>
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy">DOCS</a>:
+<a name="StorageAccountPortal"></a>
 
-   <img width="744" alt="az-storage-blob-hot-cold" src="https://user-images.githubusercontent.com/300046/122145119-dd730280-ce11-11eb-874c-efa8dada296a.png">
+### Create Storage account using Portal UI
+
+1. Get to blade one of several ways:
+
+   * Since "Storage accounts" is a popular resource, select it on the Home menu at the left. If you don't see the menu, click on the icon at the upper-left corner on every screen.
+
+   * Press G+\ and type <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts">Storage accounts</a> in the main menu or Search at the top of the Portal.
+
+   * Click "+ Create a resource". Search for "Storage account". Click on the Marketplace item. Create.
+
+1. Click "+ Create" for "Create a Storage account".
+1. Select the Subscription for billing.
+1. Resource Group: <strong>Create new</strong> 
+1. Resource Group Name:
+
+1. For Storage account name: 
+
+1. Region = Location.
+
+
+<a name="PythonProgram"></a>
+
+### Python program
+
+   * <a target="_blank" href="https://www.udemy.com/course/python-sdk-for-azure-bootcamp/learn/lecture/39013116#overview">VIDEO</a>
+
+1. Create client object.
+
+<hr />
+
+<a name="Replication"></a>
+
+### Azure-managed replication
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h28m19s">VIDEO</a>
+   *<a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy">DOCS</a>:
+
+<img width="744" alt="az-storage-blob-hot-cold" src="https://user-images.githubusercontent.com/300046/122145119-dd730280-ce11-11eb-874c-efa8dada296a.png">
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr valign="top"><td>
@@ -274,7 +359,7 @@ Storage Accounts can be created several ways:
    This option is called "RA-GRS", with "RA" = Read Access.
 
 
-   <a name="Premium"></a>
+<a name="Premium"></a>
 
 1. If <strong>Premium</strong> is selected, the choice of "Premium account types" affects
 
@@ -487,6 +572,9 @@ Blobs <strong>Binary Large OBject</strong> data store <strong>unstructured</stro
 
 <a name="BlockBlobs"></a>
 
+### Block Blobs
+
+
 * <strong>Block blobs</strong> are divided into blocks of up to 100 MB each x 50,000 so up to 4.75 TB (terabytes) can be stored per block blob. [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/blobs/">Pricing</a>] 
 
    Thus, block blobs are optimized for <strong>streaming</strong> and storing cloud objects.
@@ -497,30 +585,34 @@ Each block can be edited.
 
 <a name="PageBlobs"></a>
 
+### Page Blobs
+
 The word "Premium" is in front of "Page Blobs" because it's only available when Premium Storage is selected?
 
 <strong>Premium Page blobs</strong> are 512-byte pages optimized for <strong>random read/write</strong> operations. Page blobs are collections of individual pages of up to <strong>4MB</strong> each. The name "page" comes from operating systems organizing memory into pages of relatively small sizes that can be easily managed -- used for storing virtual machine disks in Azure. 
 
 The <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/page-blobs/">Pricing page</a> lists page blob types: P10, P20, P30, P40, P50, P60.
 
-Premium Page Blobs are high-performance solid-state drive (SSD)-based storage, designed to support I/O-intensive workloads with significantly high throughput and low latency. Premium Page Blobs provide provisioned disk performance up to 7,500 IOPS and 250MBps per blob.
+<strong>Premium Page Blobs</strong> are high-performance solid-state drive (SSD)-based storage, designed to support I/O-intensive workloads with significantly high throughput and low latency. Premium Page Blobs provide provisioned disk performance up to 7,500 IOPS and 250MBps per blob.
 
 
 <a name="AppendBlobs"></a>
+
+### Append Blobs
 
 <strong>Append blobs</strong> are optimized for appending new <strong>blocks</strong> at the end of the blob -- useful for storing log data (and audit files) where new lines are added at the end and the data never needs to be modified after it is written.
 
 [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/append-blobs/">Pricing</a>]
 
+<hr />
 
 <a name="BlogLifecycle"></a>
 
-### Blob Lifecycle Management
+## Blob Lifecycle Management
 
 This is for transient temporary files, NOT for images on websites of "evergreen" content.
 
-<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=7c20c43b-4dd4-4bee-ae0b-65a98e1a2d6c">VIDEO</a>:
-Rules to containers or subset of blobs (using prefixes as filters).
+   * <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=7c20c43b-4dd4-4bee-ae0b-65a98e1a2d6c">VIDEO</a>: "Rules to containers or subset of blobs (using prefixes as filters)"
 
 Examples: 30 days after blog is created, take a snapshot.
 
@@ -535,7 +627,6 @@ __ Days after last modification:
    </td><td> To archive storage
    </td><td> Delete blob
    </td></tr>
-
 </table>
 
 Cool is stored for at least 30 days.
@@ -550,15 +641,13 @@ mechanism for rehydraring from cold/archive
 NOTE: Compare against <a href="#Backups">backup tiers</a>.
 
 
-
 <hr />
-
 
 <a name="FileShares"></a>
 
 ## File Shares
 
-   <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=7a286fb2-ccb9-485e-b8cc-004c91e5c2a7">VIDEO</a>:
+   * <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=7a286fb2-ccb9-485e-b8cc-004c91e5c2a7" title="Pluralsight">VIDEO</a>:
 
 1. Click the blue "Go to resource". In the Overview section, if <strong>File Shares</strong> was selected, click on the blue "File shares".
 
@@ -587,9 +676,9 @@ NOTE: Compare against <a href="#Backups">backup tiers</a>.
 1. Create Z drive file share and connect using code
 
 
-### Azxure File Sync
+### Azure File Sync
 
-<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=1392263d-7fff-40c0-9aa5-de8512f1a158">VIDEO</a>:
+   * <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=1392263d-7fff-40c0-9aa5-de8512f1a158">VIDEO</a>:
 
 1. Get File Sync Service from Marketplace.
 1. Select Subscription, Resource Group, Location.
@@ -599,61 +688,8 @@ NOTE: Compare against <a href="#Backups">backup tiers</a>.
 
 1. <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=41a89c34-3cf5-4f02-bfce-188ee39df52a">VIDEO</a>: Install agent on VM server.
 
-<hr />
-
 
 <hr />
-
-## Storage Pricing
-
-<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/">Pricing for Storage</a> varies by several dimensions:
-   
-   A. Region (which have different costs)
-
-   B. Region's support of Availability Zones - white dots on <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/regions/">this world map of regions</a>
-   
-   C. <a href="#StorageTypes">Type of Storage) [see below]</a>
-   
-   D. <a href="#Replication">Replication/Redundancy</a> region pair high availability
-
-   E. Whether reservations were pre-allocated (1 to 3 years ahead)
-
-   F. Hot/cold/Archive 
-
-   G. Amount of storage used each month (first 50 TB, next 450 TB, over 500 TB).
-
-<hr />
-
-<a name="StorageTypes"></a>
-
-## Types of Storage and Data
-
-If available in your choice of region:
-
-<table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Type </th><th> Data </th><th> Service </th></tr>
-<tr valign="top"><td> Unstructured: </td><td> Media files (photos, videos, audio files), Office files (Word documents, PowerPoint slides, Excel Spreadsheets), Text files, Log files, Product catalog data
-   </td><td><a href="#Blobs">Blobs</a>,<br />
-   <a href="#Queues">Queues</a>,<br />
-   <a href="#DataLake">Data Lake Store</a>
-   </td></tr>
-
-<tr valign="top"><td> Semi-structured: </td><td> XML, JSON, YAML, NoSQL files
-   </td><td> <a href="#FileStorage">FileStorage</a> in 
-      <a href="#Disks">Disks</a>,<br />
-      <a href="#Tables">Tables</a>,<br /> 
-      <a href="#CosmoDB">CosmoDB</a>
-   </td></tr>
-
-<tr valign="top"><td> Structured: </td><td> traditional SQL databases (containing tables organized, categorized, normalized)
-   </td><td> <a href="#Tables">Azure Tables</a>,<br />
-      <a href="#SQLDB">Azure SQL Database</a>
-   </td></tr>
-</table>
-
-
-<hr />
-
 
 ### Managed Disk Account Type
 
@@ -1711,8 +1747,7 @@ A Change Feed provides an ordered list of documents modified in a container.
 
 ### Migration
 
-To migrate SQL data in, create a <strong>.bacpac</strong> file.
-
+REMEMBER: To migrate SQL data in, create a <strong>.bacpac</strong> file.
 
 
 
@@ -1766,6 +1801,14 @@ https://www.pulumi.com/blog/get-up-and-running-with-azure-synapse-and-pulumi/
 Container retrieved by Kubernetes.
 
 
+<a name="Tables"></a>
+
+## Azure Tables
+
+https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-net/azure-tables-client-sdk-samples/
+Azure Tables samples for .NET Azure.Data.Tables client library
+
+
 <a name="Redis"></a>
 
 ## Redis Cache
@@ -1778,32 +1821,27 @@ From a client, connect with a host name, port, access key.
 Reference access from Key Vault.
 
 
-<a name="Tables"></a>
 
-## Azure Tables
+<hr />
 
-https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-net/azure-tables-client-sdk-samples/
-Azure Tables samples for .NET Azure.Data.Tables client library
-
-
-<a name="Overviews"></a>
+<a name="References"></a>
 
 ## References
 
-<a target="_blank" href="https://www.youtube.com/watch?v=gCotvBx-UrQ">VIDEO: Azure Storage Account Types, Performance and Cost</a> by John Savill.
+* https://www.c-sharpcorner.com/article/azure-storage-account-using-azure-cli/
 
-https://www.c-sharpcorner.com/article/azure-storage-account-using-azure-cli/
+* https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-java/storage-file-share-samples/
 
-https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-java/storage-file-share-samples/
-
-<a target="_blank" href="https://cloud.netapp.com/blog/azure-cvo-blg-azure-quickstart-templates-how-to">
+* <a target="_blank" href="https://cloud.netapp.com/blog/azure-cvo-blg-azure-quickstart-templates-how-to">
 READ: Azure Quickstart Templates: Cloud Storage Easier</a>
 
-<a target="_blank" href="https://cloudacademy.com/lab/understanding-core-azure-storage-products/?context_resource=lp&context_id=524">HANDS-ON LAB: Understanding Core Azure Storage Products</a>
+* <a target="_blank" href="https://cloudacademy.com/lab/understanding-core-azure-storage-products/?context_resource=lp&context_id=524">HANDS-ON LAB: Understanding Core Azure Storage Products</a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=-3k0hhngt7o&list=RDCMUC0m-80FnNY2Qb7obvTL_2fA&index=20">How to automatically manage Azure Blobs lifecycles | Azure Tips and Tricks</a>
+* <a target="_blank" href="https://www.youtube.com/watch?v=-3k0hhngt7o&list=RDCMUC0m-80FnNY2Qb7obvTL_2fA&index=20">How to automatically manage Azure Blobs lifecycles | Azure Tips and Tricks</a>
 
-https://towardsdatascience.com/datastore-choices-sql-vs-nosql-database-ebec24d56106
+* <a target="_blank" href="https://towardsdatascience.com/datastore-choices-sql-vs-nosql-database-ebec24d56106">Toward Datastore Choices: SQL vs NoSQL Database</a>
+
+* <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/">Pricing for Storage</a>
 
 
 
