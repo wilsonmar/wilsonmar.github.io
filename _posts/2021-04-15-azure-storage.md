@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-05-06"
-lastchange: "v017 + png using page. ref :azure-storage.md"
+lastchange: "v018 + png using page. ref :azure-storage.md"
 file: "azure-storage"
 url: "https://wilsonmar.github.io/azure-storage"
 title: "Azure Storage (in Microsoft's Azure cloud)"
@@ -18,7 +18,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<a target="_blank" href="{{ page.url }}"><img align="right" width="100" height="100" alt="{{ page.file }}.png" src="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/images/qrcodes/{{ page.file }}.png?raw=true" />
+<a target="_blank" href="{{ page.url }}"><img align="right" width="100" height="100" alt="{{ page.file }}.png" src="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/images/qrcodes/{{ page.file }}.png?raw=true" /></a>
 ## Why?
 
 Azure Storage competes with AWS S3 (Simple Storage Service) and Google Storage in their clouds.
