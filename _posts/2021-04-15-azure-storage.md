@@ -1,8 +1,9 @@
 ---
 layout: post
 date: "2025-05-06"
-lastchange: "v014 + :azure-storage.md"
+lastchange: "v016 png other wilsonmar :azure-storage.md"
 file: "azure-storage"
+url: "https://wilsonmar.github.io/azure-storage"
 title: "Azure Storage (in Microsoft's Azure cloud)"
 excerpt: "Files, Disks, Blobs, Tables, Queues, SQL, CosmoDB, Synapse, LRS, ZRS, GRS, RA-GRS"
 tags: [Azure, cloud, DevOps, Storage]
@@ -13,9 +14,14 @@ image:
   creditlink:
 comments: true
 ---
+<a target="_blank" href="{{ page.url }}"><img align="right" width="100" height="100" alt="azure-storage.png" src="https://github.com/bomonike/bomonike.github.io/blob/master/images/azure-storage.png?raw=true" />
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
+
+## Why?
+
+Azure Storage competes with AWS S3 (Simple Storage Service) and Google Storage in their clouds.
 
 Unlike <a href="#References">other tutorials about Azure storage</a>, 
 this article is a <strong>deep yet concise</strong> presentation, using HTML tables to organize complex information to make them easier to visualize and remember. I created this while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure certification exams</a>.
@@ -46,7 +52,7 @@ If available in your choice of region:
    </td></tr>
 
 <tr valign="top"><td> Structured: </td><td> traditional SQL databases (containing tables organized, categorized, normalized)
-   </td><td> <a href="#Tables">Azure Tables</a>,<br />
+   </td><td> <a href="#Tables">Azure (NoSQL) Tables</a>,<br />
       <a href="#SQLDB">Azure SQL Database</a>
    </td></tr>
 </table>
@@ -57,8 +63,8 @@ If available in your choice of region:
 
 ## Create Storage account
 
-    * <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=1h55m22s">VIDEO</a>
-    * <a target="_blank" href="https://www.youtube.com/watch?v=gCotvBx-UrQ">VIDEO: Azure Storage Account Types, Performance and Cost</a> by John Savill.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=1h55m22s">VIDEO</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=gCotvBx-UrQ">VIDEO: Azure Storage Account Types, Performance and Cost</a> by John Savill.
 
 
 Storage Accounts can be created several ways:
@@ -96,33 +102,34 @@ Storage Accounts can be created several ways:
 <hr />
 <a name="StorageAccounts"></a>
 
-## Types of storage accounts
+## Storage accounts
 
 REMEMBER: Storage account name: LIMIT of <strong>24 chracters or numbers</strong> with <strong>no underlines or dashes</strong>, so we need to be concise:
-
-<a href="#PythonProgram">My Python program (below)</a> creates storage account names such as (for example):
-
-   <tt>2505uswest2</tt>
-
-   * "2505" is the year and month.
-   * "uswest2" is the region because 
-   
-   PROTIP: Add the region code for reference when defining replication rules to copy storage items automatically.
 
 My example in a URL such as:
 
    <tt>https://2505uswest2.blob.core.windows.net/blobdata1</tt>
 
-   "blobdata1" is the <strong>container</strong> name within the Storage Account.
+   * "2505" is the year and month.
+   * "uswest2" is the region. PROTIP: At time of writing, the longest region code was "germanywestcentral" which takes 19 characters. So that leaves 24 - 19 = 5 characters for the year and month.
+   
+   PROTIP: Add the region code for reference when defining <strong>replication rules</strong> used to copy storage items automatically.
+
+   * "blobdata1" is the <strong>container</strong> name within the Storage Account.
+
+<a href="#PythonProgram">My Python program (below)</a> creates storage account names such as (for example):
+
+
+<a name="Containers"></a>
+
+## Storage Containers
 
 REMEMBER: There are different kinds of Azure Blob storage objects:
 
-   * Containers contain the physical blobs:
-
-   * <a href="#FileShares">File shares</a> - Serverless SMB and NFS file shares
-   * Tables - Tabular data storage
-   * Queues - Effectively scale apps according to traffic
-
+   * <a href="#Containers">Containers</a> contain physical BLOBs (binary large objects) that store files served to browsers
+   * <a href="#FileShares">File shares</a> - Serverless SMB and NFS Network file shares
+   * <a href="#Queues">Queues</a> - asychronous processing to scale apps according to traffic
+   * <a href="#Tables">Tables</a> - Tabular NoSQL data storage (that doesn't require RDBMS structure)
 
 
 <hr />
@@ -206,6 +213,10 @@ If <strong>Standard</strong> is selected, <a href="#Redundancy">Redundancy</a> h
    * <a target="_blank" href="https://www.udemy.com/course/python-sdk-for-azure-bootcamp/learn/lecture/39013116#overview">VIDEO</a>
 
 1. Create client object.
+
+The program references Region global variable.
+
+
 
 <hr />
 
