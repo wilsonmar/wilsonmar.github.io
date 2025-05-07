@@ -1,10 +1,12 @@
 ---
 layout: post
+date: "2025-05-06"
+lastchange: "v016 qr png + udemy class :dynatrace.md"
+file: "dynatrace"
+url: "https://wilsonmar.github.io/dynatrace"
 title: "Dynatrace (APM)"
 excerpt: "He sees you when you're sleeping. He knows when you're awake ..."
 tags: [Clouds, Monitoring, Analytics]
-date: "2016-08-31"
-file: "dynatrace"
 image:
 # ![dynatrace-per-minute-1900x500-162499.jpg
   feature: https://user-images.githubusercontent.com/300046/41830955-5de633b6-7801-11e8-9f92-c052dd9c2eba.jpg
@@ -16,6 +18,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+<a target="_blank" href="{{ page.url }}"><img align="right" width="100" height="100" alt="{{ page.file }}.png" src="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/images/qrcodes/{{ page.file }}.png?raw=true" />
 This describes a) automation script installed from GitHub that installs b) Docker images c) within AWS EC2, Azure, and Google Cloud d) a sample app e) put under stress by JMeter/Gatling while being analyzed by f) Dynatrace.
 
 STATUS: IN PROGRESS
@@ -589,6 +592,26 @@ Protocol is protobuf
 
    <a target="_blank" href="https://github.com/grabnerandi/">
    https://github.com/grabnerandi</a>
+
+
+## Video Tutorials
+
+By Georgi I.
+* https://www.udemy.com/course/dynatrace-learning-tutorial/?couponCode=ST6MT60525G3
+$13.99 "Dynatrace Masterclass - The Complete Guide for Beginners"</a>
+Learn all Dynatrace functionality with this step by step introduction course covering the 2025 latest 
+
+* https://www.udemy.com/course/dynatrace-associate-certification-exam-practice/
+Dynatrace Associate Certification Exam - Unofficial Practice
+$13.99
+
+* https://www.udemy.com/course/google-cloud-data-practitioner-associate-practice-tests/
+Google Cloud Data Practitioner Associate - 5 Practice Tests
+
+By Max Migutin
+* https://www.udemy.com/course/dynatrace/?couponCode=ST6MT60525G3
+$19.99 "Learn Dynatrace: Beginner to Advanced"</a> Hands-on bootcamp of Dynatrace. Theory + 7 Practice projects to learn different Dynatrace Apps. AWS and GCP integrations. 
+
 
 
 ## More on cloud #
