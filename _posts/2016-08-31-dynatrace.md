@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-05-06"
-lastchange: "v016 qr png + udemy class :dynatrace.md"
+lastchange: "v017 + pricing :dynatrace.md"
 file: "dynatrace"
 url: "https://wilsonmar.github.io/dynatrace"
 title: "Dynatrace (APM)"
@@ -28,6 +28,38 @@ step-by-logical-step hands-on approach to dive deep into the technology and its 
 This is so you're not stumbling around wasting time on high-level sales pitches.
 Commentaries here are given "just-in-time" after you do each step.
 
+## Competitors
+
+* Datadog is priced higher at scale, but offers a wide range of integrations and features
+* AppDynamics
+* New Relic provides lower entry costs
+* Splunk
+
+## Pricing
+
+15-day free trial available directly.
+
+30-day free trial available via Azure Marketplace.
+
+The first thing you need to know about Dynatrace is that many users are shocked when asked to commit to a minimum annual spend, often starting around $20,000 per year (or about $2,000/month), regardless of actual usage. Spending above the minimum invokes hefty fines. This minimum is not always clear up front after initial sales conversations.
+
+Per-host rates are available after meeting the minimum annual spend on key components:
+
+* Full-Stack Monitoring: Starts at $69/month (billed annually) per 8 GB host. Usage-based rate is $0.08/hour for an 8 GiB host.
+
+* Infrastructure Monitoring: Starts at $21/month per 8 GB host, or $0.04/hour for any size host.
+
+* Kubernetes Monitoring: $0.002/hour per pod.
+
+* Real User Monitoring: $0.00225 per session.
+
+* Application Security: $0.018/hour for an 8 GiB host.
+
+* Synthetic Monitoring: $0.001 per synthetic request.
+
+* Log Management: $0.0007 per GiB per day for storage, $0.0035 per GiB scanned for queries.
+
+
 ## Acronyms used here
 
    ADK = Application Development Kit
@@ -47,7 +79,10 @@ PureModel = PurePath + PureStack
    * PurePath traces requests horizontally across processes end-to-end tracing at the code-level
    * PureStack dives into the vertical infrastructure tiers
 
-<a target="_blank" href="https://quizlet.com/br/428990745/dynatrace-become-a-jedi-master-updated-february-2022-flash-cards/">1525 item Dynatrace Quizlet</a>
+Quizlet Flash Cards:
+* <a target="_blank" href="https://quizlet.com/1040880897/dynatrace-become-a-jedi-master-updated-april-2022-flash-cards/?i=187vf&x=1jqt">1637 item Dynatrace Quizlet</a>
+* <a target="_blank" href="https://quizlet.com/1040880672/dynatrace-associate-cert-flash-cards/?i=187vf&x=1qqt">322 item Dynatrace cert</a> created by varunr961.
+
 
 ## Mind Map
 
