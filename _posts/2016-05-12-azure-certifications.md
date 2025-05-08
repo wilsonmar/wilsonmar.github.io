@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-05-08"
-lastchange: "v006 + qrcode & SC-200 :azure-certifications.md"
+lastchange: "v007 + SC-200 :azure-certifications.md"
 file: "azure-certifications"
 url: "https://wilsonmar.github.io/azure-certifications"
 title: "Azure (Microsoft cloud) certifications"
@@ -1093,8 +1093,7 @@ Videos:
 
 <a name="SC-200"></a>
 
-### SC-200
-
+### SC-200 Security Operations Analyst
 
 Answer 70% of the 100 questions in 100 minutes of the <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/sc-200">SC-200 exam</a> makes you a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/security-operations-analyst/">Microsoft Security Operations Analyst</a>
 
@@ -1105,73 +1104,71 @@ Answer 70% of the 100 questions in 100 minutes of the <a target="_blank" href="h
    <br /><br />
 
 First, an explanation of acronyms and concepts:
-   * Endpoints = Physical devices connected to a network, such as mobile-phones, desktops, laptops, virtual machines, and Internet of Things (IoT) technology—give malicious actors multiple points of entry for an attack on an organization.
-   * EDR = Endpoint Detection and Response
-   * XDR = Extended Detection and Response
-   * SIEM = Security Information and Event Management
-   * SOAR = Security Orchestration, Automation, and Response
-   <br /><br />
+* Endpoints = Physical devices connected to a network, such as mobile-phones, desktops, laptops, virtual machines, and Internet of Things (IoT) technology—give malicious actors multiple points of entry for an attack on an organization.
+* EDR = Endpoint Detection and Response
+* XDR = Extended Detection and Response
+
+* SIEM = Security Information and Event Management - helps organizations detect, analyze, and
+respond to security threats by gathering vast amounts of data in one place, organize it, and then determine what actions to take after Event correlation: when data is sorted to identify relationships
+and patterns to quickly detect and respond to potential threats.
+* SOAR = Security Orchestration, Automation, and Response - automates cyberattack prevention and response such that they are executed on their own. Orchestration connects internal and external tools, including out-ofthe-box and custom integrations, so that they can be accessed from one central place. This allows you to consolidate data and streamline processes.
+
+* ASIM = Adaptive Security Information and Management
+   * https://learn.microsoft.com/en-us/azure/sentinel/normalization-about-schemas
+   * https://learn.microsoft.com/en-us/azure/sentinel/normalization
+<br /><br />
 
 Microsoft was named #2 in <a target="_blank" href="https://www.microsoft.com/en-us/security/blog/2024/01/12/microsoft-is-named-a-leader-in-the-2023-gartner-magic-quadrant-for-endpoint-protection-platforms/">Gartner's 2023 Magic Quadrant for Endpoint Protection Platforms</a>.
 
 Microsoft's security tools coverd in the <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/security-operations-analyst/?practice-assessment-type=certification">LEARN tutorials</a>)
    1. Microsoft Defender XDR
-   2. Microsoft Copilot for Security - AI-powered threat detection & response 
+   2. <a target="_blank" href="https://securitycopilot.microsoft.com/">Microsoft Copilot for Security</a> - natural language AI-powered threat detection & response 
    3. Microsoft Purview
+
+      <a target="_blank" href=": https://learn.microsoft.com/en-us/defender/ ">Microsoft Defender</a> 
+
    4. Microsoft Defender for Endpoint - XDR & EDR (Extended & Endpoint Detection Response) - monitoring for threats and performs automatic actions to mitigate them
    5. Microsoft Defender for Cloud (Enable and Mitigate threats)
+   * Microsoft Defender for Identity (IAM Entra ID), IoT
+   * NOTE: "Microsoft Defender for 365" to secure collaboration and documents is covered in SC-300.
 
-   6. Microsoft Sentinel (SIEM/SOAR) Kusto Query Language (KQL)
+   6. <a target="_blank" href="https://wilsonmar.github.io/kql/">Kusto Query Language (KQL)</a> (<a target="_blank" href="https://aka.ms/LAdemo">https://aka.ms/LAdemo</a> provides sample data) used by Microsoft Sentinel, Microsoft Defender XDR, Azure Monitor, Microsoft Data Explorer, etc. 
+
+      Microsoft Sentinel (SIEM/SOAR) 
+
    7. Sentinel configuration
    8. Sentinel: connect data, Windows devices, Linux hosts, logs
    9. Sentinel: modify Security rule, Create Playbook, Scheduled Query from template, Entity Behavior Analytics, simulated attacks, Conduct attacks, Create detections, Inveigate incidents, Create ASIM parsers, Create workbooks, Uses Repositories
    10. Sentinel: Perform threat hunting, using Notebooks
-What about:
-   * Microsoft Defender for 365 - Securing collaboration and documents 
-   * Azure Sentinel 
-   * Third-party security solutions
 
 PROTIP: The numbering above aligns with step-by-step "Learning Path" instructions in the <a target="_blank" href="https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/">SC-200T00A-Microsoft-Security-Operations-Analyst</a> hands-on lab to prepare for the SC-200 exam, which references 
 <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst">Class SC-200T00</a>.
 
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_01_Lab1_Ex1_Explore_M365_Defender.md"> Module 1 - Lab 1 - Exercise 1 - Explore Microsoft 365 Defender </a>
-2. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_02_Lab1_Ex1_Deploy_Defender_Endpoint.md"> Module 2 - Lab 1 - Exercise 1 - Deploy Microsoft Defender for Endpoint </a>
-3. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_02_Lab1_Ex2_Mitigate_Attacks.md"> Module 2 - Lab 1 - Exercise 2 - Mitigate Attacks with Microsoft Defender for Endpoint </a>
-4. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_03_Lab1_Ex1_Enable_Defender.md"> Module 3 - Lab 1 - Exercise 1 - Enable Microsoft Defender for Cloud</a>
-5. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_03_Lab1_Ex2_Azure_Defender.md"> Module 3 - Lab 1 - Exercise 2 - Mitigate threats using Microsoft Defender for Cloud </a>
-6. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_04_Lab1_Ex1_KQL.md"> Learning Path 4 - Lab 1 - Exercise 1 - Create queries for Microsoft Sentinel using Kusto Query Language (KQL)</a>
-7. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_05_Lab1_Ex1_Deploy_Sentinel.md"> Module 5 - Lab 1 - Exercise 1 - Configure your Microsoft Sentinel environment </a>
-8. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_06_Lab1_Ex1_Connect_Services.md"> Module 6 - Lab 1 - Exercise 1 - Connect data to Microsoft Sentinel using data connectors </a>
-9. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_06_Lab1_Ex2_Connect_Windows.md"> Module 6 - Lab 1 - Exercise 2 - Connect Windows devices to Microsoft Sentinel using data connectors </a>
-10. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_06_Lab1_Ex3_Connect_Linux.md"> Module 6 - Lab 1 - Exercise 3 - Connect Linux hosts to Microsoft Sentinel using data connectors </a>
-11. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex8_Workbooks.md"> Module 7 - Lab 1 - Exercise 8 - Create workbooks </a>
-12. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_06_Lab1_Ex4_Connect_Threat_Intel.md"> Module 6 - Lab 1 - Exercise 4 - Connect Threat intelligence to Microsoft Sentinel using data connectors </a> 
-13. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex1_Security_Rule.md"> Module 7 - Lab 1 - Exercise 1 - [Modify] Activate a Microsoft Security rule </a>
-14. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex2_Playbook.md"> Module 7 - Lab 1 - Exercise 2 - Create a Playbook </a>
-15. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex3_Scheduled_Query.md"> Module 7 - Lab 1 - Exercise 3 - Create a Scheduled Query </a>
-16. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex4_Attacks.md"> Module 7 - Lab 1 - Exercise 4 - Understand Detection Modeling </a> (Attacks)
-17. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex5_Perform_Attacks.md"> Module 7 - Lab 1 - Exercise 5 - Conduct [perform simulated] attacks </a>
-18. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex6_Detections.md"> Module 7 - Lab 1 - Exercise 6 - Create Detections </a>
-19. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex7_Investigate.md"> Module 7 - Lab 1 - Exercise 8 - Investigate Incidents</a>
-20. Create ASIM parsers
-   * https://learn.microsoft.com/en-us/azure/sentinel/normalization-about-schemas
-   * https://learn.microsoft.com/en-us/azure/sentinel/normalization
-   * https://aka.ms/SecurityCommunity
-21. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_08_Lab1_Ex1_Hunting.md"> Module 8 - Lab 1 - Exercise 1 - Perform Threat Hunting in Microsoft Sentinel </a>
-22. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_08_Lab1_Ex2_Notebooks.md"> Module 8 - Lab 1 - Exercise 2 - Hunt Threats using Notebooks with Microsoft Sentinel </a>
-
 Exam prep:
+   * https://aka.ms/SecurityCommunity
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/azure/sentinel/">https://learn.microsoft.com/en-us/azure/sentinel/</a> is the canonical documentation from Microsoft about Sentinel
    * <a target="_blank" href="https://linkedin.com/in/razirais">Razi Rais</a>, teaches a live <a target="_blank" href="https://www.linkedin.com/learning/microsoft-azure-security-operations-analyst-sc-200">OReilly class "Microsoft Security Operations Analyst Bootcamp"</a> referencing <a target="_blank" href="https://github.com/razi-rais/Microsoft-Security-Operations-Analyst-Bootcamp/tree/main/resources">his GitHub</a>. He wrote <a target="_blank" href="https://learning.oreilly.com/library/view/azure-confidential-computing/9781098153816/">"Azure Confidential Computing" and <a target="_blank" href="https://learning.oreilly.com/library/view/zero-trust-networks/9781492096580/">"Zero Trust Networks"</a>. 
    Cybersecurity + AI: Series </a> 
    * https://www.kc7cyber.com/modules "The Case Vault"
+
    * https://www.whizlabs.com/learn/course/microsoft-azure-sc-200/
    * https://www.whizlabs.com/microsoft-security-operations-analyst-sc-200/
 
+YouTube videos:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=HsqdfQdg08k&list=PLKHIhZJiQ5Al-LFaJlia0wmhBE9BzcD4V">Cloud360 Training Playlist</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=zvoKP4U-VgA">"How to CRUSH the Microsoft SC-200 Security Exam in 2025?"</a> by Peter Rising (who has not done the exam) & Ben Thomas
 
+Other products:
+   * Microsoft InTune?
+   * <a target="_blank" href="https://learn.microsoft.com/en-us/security-exposure-management/microsoft-security-exposure-management">Microsoft Security Exposure Management</a>
+
+https://www.microsoft.com/en-us/security/business/zero-trust
+Identities, Endpoints, Data, Network
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1746715752/az-zero-trust-arch-862x506_yciuna.png"><img alt="az-zero-trust-arch-862x506.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1746715752/az-zero-trust-arch-862x506_yciuna.png" /></a>
 
 <a name="SC-300"></a>
 
-### SC-300
+### SC-300 Identity and Access Administrator
 
 https://docs.microsoft.com/en-us/learn/certifications/exams/sc-300
 for Microsoft Identity and Access Administrator / Security Engineers
