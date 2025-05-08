@@ -1,9 +1,11 @@
 ---
 layout: post
-date: "2024-04-15"
+date: "2025-05-08"
+lastchange: "v006 + qrcode & SC-200 :azure-certifications.md"
 file: "azure-certifications"
+url: "https://wilsonmar.github.io/azure-certifications"
 title: "Azure (Microsoft cloud) certifications"
-excerpt: "Microsoft provides free hands-on (gamified) tutorials and free time"
+excerpt: "Here is a deep yet succinct presentation of hands-on tutorials from Microsoft and others, to help you understand and pass "
 tags: [cloud]
 image:
 # azure ms logo wait 1900x500-39kb.jpg
@@ -11,11 +13,13 @@ image:
   credit: Microsoft Azure
   creditlink: 
 comments: true
+created: "2016-05-12"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
 
+<a target="_blank" href="{{ page.url }}"><img align="right" width="100" height="100" alt="{{ page.file }}.png" src="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/images/qrcodes/{{ page.file }}.png?raw=true" /></a>
 PROTIP: When you pass each exam, Tweet <a target="_blank" href="https://twitter.com/search?q=%23azurecertified&src=typed_query">#azurecertified</a> and/or <a target="_blank" href="https://twitter.com/search?q=%23MicrosoftCertified&src=typed_query">#MicrosoftCertified</a>.
 
 {% include whatever.html %}
@@ -26,7 +30,7 @@ Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/credenti
 <tr><th> Role </th><th> Certification exam </th></tr>
 
 <tr valign="top"><td> Educator</td><td>
-      * <a href="#MCE">MSE (Microsoft Certified Educator)</a><br />
+      * <a href="#MCE">MCE (Microsoft Certified Educator)</a><br />
       * <a href="#MCT">MCT (Microsoft Certified Trainer)</a><br />
       * <a href="#ms-applied-skills">MS "Applied Skills" credentials</a><br />
       * <a href="#Contributor">Contributor badges for Microsoft employees</a>
@@ -35,7 +39,7 @@ Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/credenti
 <tr valign="top"><td> Administrator</td><td>
       * <a href="#AZ-900">AZ-900 Fundamentals</a><br />
       * <a href="#AZ-104">AZ-104 Azure Administrator Associate</a><br />
-      * <a href="#AZ-800">AZ-800: Administering Windows Server Hybrid Core Infrastructure</a>
+      * <a href="#AZ-800">AZ-800: Administering Windows Server Hybrid Core Infrastructure</a><br />
       * <a href="#AZ-801">AZ-801: Configuring Windows Server Hybrid Advanced Services</a>
    </td></tr>
 
@@ -57,9 +61,9 @@ Groupings of <a target="_blank" href="https://learn.microsoft.com/en-us/credenti
    </td></tr>
 
 <tr valign="top"><td> AI Engineer</td><td>
-   * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-900">AI-900 AI Fundamentals</a><br />
-     * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-100">AI-100 Azure AI Engineer Associate</a><br />
-     * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-102">AI-102 Azure AI Engineer</a><br />
+   * <a target="_blank" href="https://bomonike.github.io/microsoft-ai#AI-900">AI-900 AI Fundamentals</a><br />
+     * <a target="_blank" href="https://bomonike.github.io/microsoft-ai#AI-100">AI-100 Azure AI Engineer Associate</a><br />
+     * <a target="_blank" href="https://bomonike.github.io/microsoft-ai#AI-102">AI-102 Azure AI Engineer</a><br />
      * <a target="_blank" href="https://wilsonmar.github.io/azure-data#DP-100">DP-100 Azure Data Scientist Associate</a>
    </td></tr>
 
@@ -391,33 +395,40 @@ $595 sessions were held by <a target="_blank" href="https://www.i2e-llc.com/sp/m
 For $90 (<a target="_blank" href="https://store.certiport.com/certiport-products/c/13000821?">$70.20 with CODE-32547049</a>), answer __% of 35-42 questions in 60 minutes <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/exams/62-193/">$127 Exam 62-193</a>.
 
 <a name="Blooms"></a>
-This is about giving a <strong>21st century context</strong> using Bloom's Taxonomy as a base:
+This is about giving a <strong>21st century context</strong> using <a target="_blank" href="https://centerforhomeschooling.com/2021/03/22/memorize-blooms-taxonomy/">Bloom's Taxonomy (from 1945) as a base</a>. From the top of the pyramid:
 
-   * Interpret: Students interpret charts and graphs, translate verbal material into mathematical formulas.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1740372146/Bloom-Taxonomy_uszxc1.png"><img alt="Bloom-Taxonomy.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1740372146/Bloom-Taxonomy_uszxc1.png"></a>
 
-   * Analyze: This involves breaking down information to look at relationships, such as analyzing, appraising, categorizing, comparing, contrasting, and experimenting.
+   * "Create" is clarified within the 21 CLD framework's ICT taxonomy.
 
-   * Synthesize: Students combine parts to form a new whole, like arranging, assembling, composing, constructing, creating, designing, and formulating.
+   * Evaluate: making judgments based on evidence found. Students may appraise, argue, assess, choose, compare, conclude, contrast, describe, evaluate, explain, interpret, relate, summarize, and support their judgments.
 
-   * Evaluate: This step involves making judgments based on evidence found. Students may appraise, argue, assess, choose, compare, conclude, contrast, describe, evaluate, explain, interpret, relate, summarize, and support their judgments.
+   * Interpret: charts and graphs (analytics); translate verbal material into mathematical formulas.
 
-Rubrics, decision trees, <a href="#AnchorLessons">anchor lessons</a> for <strong>21st Century Learning Design (21CLD)</strong> were created by <a target="_blank" href="https://edge.ut.ac.id/mod/page/view.php?id=119&forceview=1">SRI-developed</a> ITL (Innovative Teaching and Learning).
+   * Analyze: breaking down information to look at relationships, such as analyzing, appraising, categorizing, comparing, contrasting, and experimenting.
+
+   * <strong>Synthesize: combine</strong> parts to form a new whole, like arranging, assembling, composing, constructing, creating, designing, and formulating.
+
+   * Understand, Remember - the basics are assumed.
+
+<a target="_blank" title="Notebook on OneDrive" href="https://aka.ms/ICTrubric">Rubrics</a>, decision trees, <a href="#AnchorLessons">anchor lessons</a> for <strong>21st Century Learning Design (21CLD)</strong> were created by <a target="_blank" href="https://edge.ut.ac.id/mod/page/view.php?id=119&forceview=1">SRI-developed</a> ITL (Innovative Teaching and Learning).
 
 REMEMBER: <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/21st-century-learning-design/">MS-LEARN</a>: Each of <strong>six dimensions</strong> in the 21CLD framework begin at level 1 (there is no zero level):
 
-   * <a target="_blank" title="Notebook on OneDrive" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AMzz7xahtKzuH9M&page=View&wd=target%28Knowledge%20Construction%202.one%7C03760039-ac2e-4698-be4c-f73db3d5c8e1%2FRubric%20%E2%80%93%20Knowledge%20Construction%7C16a28f9e-24a1-4a4e-acba-dff9bd4a9ac5%2F%29&wdorigin=NavigationUrl">Knowledge construction</a> - learners go beyond memorizing information to 2: requires <a href="#Blooms">interpret, analyze, synthesize, evaluate</a> 3: as a main requirement 4: in a <strong>new context</strong> 5: that's multi-subject and interdisciplinary.
+   * <a target="_blank" title="Notebook on OneDrive" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Knowledge%20Construction%202.one%7C03760039-ac2e-4698-be4c-f73db3d5c8e1%2FRubric%20%E2%80%93%20Knowledge%20Construction%7C16a28f9e-24a1-4a4e-acba-dff9bd4a9ac5%2F%29&wdorigin=NavigationUrl">Knowledge construction</a> - learners go beyond memorizing information to 2: requires <a href="#Blooms">interpret, analyze, synthesize, evaluate</a> 3: as a main requirement 4: in a <strong>new context</strong> 5: that's multi-subject and interdisciplinary.
    
-   *  <a target="_blank" title="Notebook on OneDrive" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Collaboration.one%7C219eb854-1f3a-4853-ad8a-7083ac484184%2FIntroduction%7C413558af-164b-4fb6-a473-5f5976f7efaf%2F%29&wdorigin=NavigationUrl">Collaboration</a> - learners 2: work together, 3: share responsibility, 4: make substantive decisions together, 5: work is interdependent. 
+   * <a target="_blank" title="Notebook on OneDrive" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Real-World%20Problem-Solving.one%7C06e643da-5fdd-4587-8b1a-a8e86e7f3bf0%2FIntroduction%7Cbaf7c2c0-d9ec-4f8a-b82a-b0e02a467efc%2F%29&wdorigin=NavigationUrl">Real-world problem-solving and innovation</a> - 2: problem-solving activities that are 3: real-world (authentic, non-fictional) situations that 4: innovate and communicated to someone <strong>outside of an academic</strong> context who can implement them. (No 5)
 
-   * <a target="_blank" title="Notebook on OneDrive" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Real-World%20Problem-Solving.one%7C06e643da-5fdd-4587-8b1a-a8e86e7f3bf0%2FIntroduction%7Cbaf7c2c0-d9ec-4f8a-b82a-b0e02a467efc%2F%29&wdorigin=NavigationUrl"><img align="right" width="128" alt="21CLD-realworld-256x256.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1713209752/21CLD-realworld-256x256_eedfdc.png"></a>Real-world problem-solving and innovation</a> - 2: problem-solving activities that are 3: real-world (authentic, non-fictional) situations that 4: innovate and communicated to someone <strong>outside of an academic</strong> context who can implement them. (No 5)
+   * <a target="_blank" title="Notebook on OneDrive" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Use%20of%20ICT%20for%20Learning%202.one%7Cd9f9a224-bf26-4b2b-8e96-716c7103ec06%2FRubric%20%E2%80%93%20Use%20of%20ICT%20for%20Learning%7C96431dab-44a4-4626-8102-1753fc12772d%2F%29&wdorigin=NavigationUrl">Digital ICT (Information and Communication Technology) integration</a>:  2: use ICT to learn basic skills 3: <strong>optional</strong> need for ICT to support <strong>knowledge construction</strong> 4: ICT <strong>required</strong> to support knowledge construction. 5: create an <strong>ICT product</strong> for authentic users.
 
-   * <a target="_blank" title="Notebook on OneDrive" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Skilled%20Communication.one%7Caa33bc86-f72a-4ceb-8bce-4fffb97e48b5%2FIntroduction%7C47dd5766-3e30-4034-b0ab-906b40c645b5%2F%29&wdorigin=NavigationUrl">Skilled communication</a> - produce 2: extended or multi-modal communication 3: using evidence to support their ideas 4: customized for a particular audience. (No 5)
 
-   * <a target="_blank" title="Notebook on OneDrive" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Self-Regulation.one%7C4283ef67-f71d-4fa0-a1b5-37946b3c9d5f%2FIntroduction%7Cbb2967a3-6400-4a3f-9ffe-c7c0ab7744d6%2F%29&wdorigin=NavigationUrl">Self-regulation</a> - work on an activity for 2: a long-term activity with learning goals and success criteria 3: <strong>plan</strong> their work and 4: <strong>revise</strong> their work based upon their own reflection and feedback from others (peers, educators, or experts). (No 5)
+   * <a target="_blank" title="Notebook on OneDrive" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Skilled%20Communication.one%7Caa33bc86-f72a-4ceb-8bce-4fffb97e48b5%2FRubric%20%E2%80%93%20Skilled%20Communication%7Cc53dfba2-2004-497c-a8a1-6f9159b9e703%2F%29&wdorigin=NavigationUrl">Skilled communication</a> - 2: <strong>substantive and multi-modal</strong> 3: providing <strong>supporting evidence</strong> OR 4: AND for a <strong>particular audience</strong> (No 5) extended only if it produces an outcome that requires learners to connect ideas via discussion.
+   
+   * <a target="_blank" title="Notebook on OneDrive" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Self-Regulation.one%7C4283ef67-f71d-4fa0-a1b5-37946b3c9d5f%2FRubric%20%E2%80%93%20Self-Regulation%7Caa55fcf8-e20c-4471-8e86-d770ae78e0af%2F%29&wdorigin=NavigationUrl">Self-regulation</a> - work on an activity for 2: a long-term activity with learning goals and success <strong>criteria</strong> 3: <strong>plan</strong> their work and 4: <strong>revise</strong> their work based upon their own reflection and feedback from others (peers, educators, or experts). (No 5)
 
-   * <a target="_blank" title="Notebook on OneDrive" href="https://aka.ms/ICTrubric">Digital ICT (technology) integration</a>:  2: optionally use ICT to learn basic skills 3: <strong>optionally</strong> use ICT to support <strong>knowledge construction</strong> 4: ICT <strong>required</strong> to support knowledge construction, then 5: <strong>create</strong> an ICT product for authentic users.
+   *  <a target="_blank" title="Notebook on OneDrive" href="https://onedrive.live.com/redir?resid=36408E1DE9093271%212562&authkey=%21AAqt8Xcfp7G1ykg&page=View&wd=target%28Collaboration.one%7C219eb854-1f3a-4853-ad8a-7083ac484184%2FRubric%20%E2%80%93%20Collaboration%7C78eb53da-2709-46c6-b438-d1485ebccfe7%2F%29&wdorigin=NavigationUrl">Collaboration</a> - learners 1: collaborate (work together) informally, 3: share responsibility, 4: make substantive decisions together together, 5: work is interdependent.
 
-Technologies: 
+Technologies:
    * Microsoft Edge Collections to organize research & Translator add-on
    * Bing
    * Microsoft OneNote
@@ -502,6 +513,11 @@ Tree Word Scramble</a>
 
 
 ### Other info:   
+
+INCORRECT: <a target="_blank" href="https://www.youtube.com/watch?v=YRR3-0XvtOY">
+21CLD Windows app walkthrough</a> free from Windows store
+by Jason Lane
+
 
 https://quizlet.com/ar/410408303/21st-century-learning-design-flash-cards/
 
@@ -1079,11 +1095,44 @@ Videos:
 
 ### SC-200
 
-Taking this one <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/sc-200">SC-200 exam</a> makes you a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/security-operations-analyst/">Microsoft Security Operations Analyst</a>.
 
-This exam measures your ability to mitigate threats using Microsoft 365 Defender, Azure Defender, and Azure Sentinel SIEM/SOAR.
+Answer 70% of the 100 questions in 100 minutes of the <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/sc-200">SC-200 exam</a> makes you a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/security-operations-analyst/">Microsoft Security Operations Analyst</a>
 
-<a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst">Class SC-200T00</a> has these hands-on labs:
+   * 20-25% Manage a security operations environment
+   * 15-20% Configure protections and detections
+   * 25-30% Manage incident response
+   * 15-20% Manage security threats
+   <br /><br />
+
+First, an explanation of acronyms and concepts:
+   * Endpoints = Physical devices connected to a network, such as mobile-phones, desktops, laptops, virtual machines, and Internet of Things (IoT) technology—give malicious actors multiple points of entry for an attack on an organization.
+   * EDR = Endpoint Detection and Response
+   * XDR = Extended Detection and Response
+   * SIEM = Security Information and Event Management
+   * SOAR = Security Orchestration, Automation, and Response
+   <br /><br />
+
+Microsoft was named #2 in <a target="_blank" href="https://www.microsoft.com/en-us/security/blog/2024/01/12/microsoft-is-named-a-leader-in-the-2023-gartner-magic-quadrant-for-endpoint-protection-platforms/">Gartner's 2023 Magic Quadrant for Endpoint Protection Platforms</a>.
+
+Microsoft's security tools coverd in the <a target="_blank" href="https://learn.microsoft.com/en-us/credentials/certifications/security-operations-analyst/?practice-assessment-type=certification">LEARN tutorials</a>)
+   1. Microsoft Defender XDR
+   2. Microsoft Copilot for Security - AI-powered threat detection & response 
+   3. Microsoft Purview
+   4. Microsoft Defender for Endpoint - XDR & EDR (Extended & Endpoint Detection Response) - monitoring for threats and performs automatic actions to mitigate them
+   5. Microsoft Defender for Cloud (Enable and Mitigate threats)
+
+   6. Microsoft Sentinel (SIEM/SOAR) Kusto Query Language (KQL)
+   7. Sentinel configuration
+   8. Sentinel: connect data, Windows devices, Linux hosts, logs
+   9. Sentinel: modify Security rule, Create Playbook, Scheduled Query from template, Entity Behavior Analytics, simulated attacks, Conduct attacks, Create detections, Inveigate incidents, Create ASIM parsers, Create workbooks, Uses Repositories
+   10. Sentinel: Perform threat hunting, using Notebooks
+What about:
+   * Microsoft Defender for 365 - Securing collaboration and documents 
+   * Azure Sentinel 
+   * Third-party security solutions
+
+PROTIP: The numbering above aligns with step-by-step "Learning Path" instructions in the <a target="_blank" href="https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/">SC-200T00A-Microsoft-Security-Operations-Analyst</a> hands-on lab to prepare for the SC-200 exam, which references 
+<a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst">Class SC-200T00</a>.
 
 1. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_01_Lab1_Ex1_Explore_M365_Defender.md"> Module 1 - Lab 1 - Exercise 1 - Explore Microsoft 365 Defender </a>
 2. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_02_Lab1_Ex1_Deploy_Defender_Endpoint.md"> Module 2 - Lab 1 - Exercise 1 - Deploy Microsoft Defender for Endpoint </a>
@@ -1112,6 +1161,9 @@ This exam measures your ability to mitigate threats using Microsoft 365 Defender
 22. <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_08_Lab1_Ex2_Notebooks.md"> Module 8 - Lab 1 - Exercise 2 - Hunt Threats using Notebooks with Microsoft Sentinel </a>
 
 Exam prep:
+   * <a target="_blank" href="https://linkedin.com/in/razirais">Razi Rais</a>, teaches a live <a target="_blank" href="https://www.linkedin.com/learning/microsoft-azure-security-operations-analyst-sc-200">OReilly class "Microsoft Security Operations Analyst Bootcamp"</a> referencing <a target="_blank" href="https://github.com/razi-rais/Microsoft-Security-Operations-Analyst-Bootcamp/tree/main/resources">his GitHub</a>. He wrote <a target="_blank" href="https://learning.oreilly.com/library/view/azure-confidential-computing/9781098153816/">"Azure Confidential Computing" and <a target="_blank" href="https://learning.oreilly.com/library/view/zero-trust-networks/9781492096580/">"Zero Trust Networks"</a>. 
+   Cybersecurity + AI: Series </a> 
+   * https://www.kc7cyber.com/modules "The Case Vault"
    * https://www.whizlabs.com/learn/course/microsoft-azure-sc-200/
    * https://www.whizlabs.com/microsoft-security-operations-analyst-sc-200/
 
@@ -1122,17 +1174,60 @@ Exam prep:
 ### SC-300
 
 https://docs.microsoft.com/en-us/learn/certifications/exams/sc-300
+for Microsoft Identity and Access Administrator / Security Engineers
 
-FREE: https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator has 31 labs at time of writing:
+1. <a target="_blank" href="https://learn.microsoft.com/en-us/training/modules/explore-identity-azure-active-directory/">Explore identity in Microsoft Entra ID</a>
+2. Implement initial configuration of Microsoft Entra ID
+3. Create, configure, and manage identities
 
+4. Implement and manage external (federated) identities = 06.
+5. Implement and manage hybrid identity = 07.
+6. Secure Microsoft Entra users with multifactor authentication = 08.
+
+7. Manage user authentication
+8. Plan, implement, and administer Conditional Access = 13.
+9. Manage Microsoft Entra Identity Protection
+
+10. Implement access management for Azure resources
+11. Plan and design the integration of enterprise apps for SSO
+12. Implement and monitor the integration of enterprise apps for SSO
+
+13. Implement app registration = 19.
+14. Plan and implement entitlement management
+15. Plan, implement, and manage access review
+16. Plan and implement privileged access
+17. Monitor and maintain Microsoft Entra ID = 28.
+<br /><br />
+
+<a target="_blank" href="https://microsoftlearning.github.io/SC-300-Identity-and-Access-Administrator/
+">4-day Course SC-300T00-A</a> using <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator">labs</a>:
+
+Module 01 - Implement an identity management solution
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_00_SetUpLabResources.md"> Lab 00: Lab Environment Setup </a>
+   * Create a free email with date stamp, password. https://nordpass.com/password-generator/
+   * PROTIP: Track it in a spreadsheet
+   * https://portal.azure.com/#home
+   * Start with Azure free trial - Create a new Azure subscription - 
+   * Get temp SMS phone quackr.io or receivesms.org
+   * Port to Skype, Hushed
+   * temporarynumber.com or anonymsms.com phoneblur 
+   * Paid: textplus.com textverified.com $0.25/verif, hushed.com/$2.99
+   * AnonyomeLabs->mysudo.com $.99/mo
+   * ReceiveSMS or SMS-Online.co
+   * In the organization you created, search for and then select Azure Active Directory.
+   * Request a Azure AD P2 license
+   * Open InPrivate window with shift+command+N
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_01_ManageUserRoles.md"> Lab 01: Manage user roles </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_02_WorkingWithTenantProperties.md"> Lab 02: Working with tenant properties </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_03_AssignLicensesToUsersByGroupMembershipAAD.md"> Lab 03: Assigning licenses using group membership </a>
+* 04 - Configure external collaboration settings
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_04_RestoreRemoveRecentlyDeletedUserUsingAAD.md"> Lab 04: Restore a deleted user </a>
-* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_05_AddingGroupsToAAD.md"> Lab 05: Adding groups to Azure AD </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_05_AddingGroupsToAAD.md"> Lab 05 - Add guest users to the directory </a>
+
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_06_ChangeGroupLicenseAssignments.md"> Lab 06: Change group license assignments </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_07_ChangeUserLicenseAssignments.md"> Lab 07: Change user account license assignments </a>
+<br /><br />
+Module 02 - Implement an Authentication and Access Management Solution
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_08_ConfigureExternalCollaborationSettings.md"> Lab 08: Configure external collaboration settings </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_09_AddGuestUsersToTheDirectory.md"> Lab 09: Add guest users to the directory </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_10_InviteGuestUsersInBulk.md"> Lab 10: Invite guest users in bulk </a>
@@ -1142,11 +1237,15 @@ FREE: https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administra
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_14_WorkingWithSecurityDefaults.md"> Lab 14 - Working with security defaults </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_15_ImplementAndTestAConditionalAccessPolicy.md"> Lab 15 - Implement and test a conditional access policy </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_16_ConfigureAuthenticationSessionControls.md"> Lab 16 - Configure authentication session controls </a>
+<br /><br />
+Module 03 - Implement Access Management for Apps
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_17_ManageAzureADSmartLockoutValues.md"> Lab 17 - Manage Azure AD smart lockout values </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_18_EnableSignRiskPolicy.md"> Lab 18 - Enable sign in and user risk policies </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_19_ConfigureAAD_MultiFactorAuthRegPolicy.md"> Lab 19 - Configure an Azure AD multi-factor authentication registration policy </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_20_ImplementAccessManagementForApps.md"> Lab 20 - Implement access management for apps </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_21_CreateANewCustomRoleToGrantAccessToManageAppRegistrations.md"> Lab 21 - Implement access management for apps </a>
+<br /><br />
+Module 04 - Plan and Implement and Identity Governance Strategy
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_22_RegisterAnApplication.md"> Lab 22 - Register an application </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_23_GrantTenantWideAdminConsentToAnApplication.md"> Lab 23: Grant tenant-wide admin consent to an application </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_24_AddAppRolesToYourAppAndReceiveThemInTheToken.md"> Lab 24: Add app roles to your app and receive them in the token </a>
@@ -1161,6 +1260,8 @@ FREE: https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administra
 
 https://www.whizlabs.com/learn/course/microsoft-azure-sc-300/
 
+
+<hr />
 
 <a name="SC-400"></a>
 
@@ -1882,12 +1983,12 @@ Routing to separate pages for AI Engineer:
 
 ## AI-900
 
-<a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-900">AI-900 AI Fundamentals</a>
+<a target="_blank" href="https://bomonike.github.io/microsoft-ai#AI-900">AI-900 AI Fundamentals</a>
 
 <a name="AI-102"></a>
 ## AI-102 (formerly AI-100)
-<a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-100">AI-100 Azure AI Engineer Associate</a>
-<a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-102">AI-102 Azure AI Engineer</a><br />
+<a target="_blank" href="https://bomonike.github.io/microsoft-ai#AI-100">AI-100 Azure AI Engineer Associate</a>
+<a target="_blank" href="https://bomonike.github.io/microsoft-ai#AI-102">AI-102 Azure AI Engineer</a><br />
 
 <a name="DP-100"></a>
 ## DP-100 Data Scientist Associate
