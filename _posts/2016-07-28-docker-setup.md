@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-05-22"
-changes: "v010 typos :docker-setup.md"
+changes: "v011 fix http end anchor :2016-07-28-docker-setup.md"
 file: "docker-setup"
 title: "Docker setup"
 excerpt: "Get bits working in lightweight containers"
@@ -12,6 +12,7 @@ image:
   credit:
   creditlink:
 comments: true
+created: "2016-07-28
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -196,9 +197,7 @@ Docker Enterprise uses Docker certified infrastructure tooling, using <strong>Te
 
 The contribution of this article is a shell script that automates the install of Docker and other stuff on macOS:
 
-   <ul>
-   <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/mac-setup.zsh">https://github.com/wilsonmar/mac-setup/blob/master/mac-setup.zsh/a>
-   </ul>
+<ul><a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/mac-setup.zsh">https://github.com/wilsonmar/mac-setup/blob/master/mac-setup.zsh/</a></ul>
 
 Techniques used in the Bash shell script are described in <a target="_blank" href="https://wilsonmar.github.io/bash-coding">my bash coding tutorial</a>.
 
