@@ -1,6 +1,7 @@
 ---
 layout: post
-date: "2023-08-09"
+date: "2025-05-22"
+changes: "v010 typos :docker-setup.md"
 file: "docker-setup"
 title: "Docker setup"
 excerpt: "Get bits working in lightweight containers"
@@ -1358,10 +1359,12 @@ MacOS with Docker Toolbox:
 
    The vm_max_map_count setting must be set via docker-machine:
 
-   <pre><strong>docker-machine ssh<br />
+   <pre><strong>docker-machine ssh
    sudo sysctl -w vm.max_map_count=262144
    </strong></pre>
 
+
+<a name="RunFromDockerHub"></a>
 
 ## Run from Docker Hub
 
