@@ -1,12 +1,11 @@
 ---
 layout: post
-date: "2025-05-18"
-lastchange: "v010 + retries :python-coding.md"
-url: "https://wilsonmar.github.io/python-standards"
+date: "2025-05-23"
+lastchange: "v014 + consolidation :2016-07-11-python-coding.md"
+url: "https://wilsonmar.github.io/python-coding"
 file: "python-coding"
 title: "Python Coding"
-excerpt: "Explanation of why we code Python the way we do."
-tags: [python, coding]
+excerpt: "How to code Python as if it matters, as shown in my samples github: how best to use Keywords, arguments, Exception Handling, OS commands, Strings, Lists, Sets, Tuples, Files, Timers"
 image:
 # python-samples-1900x500.jpg
   feature: https://user-images.githubusercontent.com/300046/145717691-60b8c765-e0a3-4d63-bf7f-0cb89492c0ee.png
@@ -59,12 +58,12 @@ What I don't like about them I aim to fix on this page.
 
    * Stryker?
 
-## Retry 
+## Retry backoff with jitter
 
 When a program is not successful at reaching a remote service, the program should use this standard error-handling strategy for network applications defined at 
    * https://cloud.google.com/iam/docs/retry-strategy
 
-When communication lines are temporarily busy (and not refused, as in return code 50x):
+When communication lines are temporarily busy (and not refused, as in "not found" return code 404):
 
 <strong>Retry until quota is reached, using truncated exponential backoff with introduced jitter.</strong>
 
@@ -82,13 +81,31 @@ Before each retry, the wait time is min((2n + random-fraction), maximum-backoff)
 4. Continue this pattern, waiting 2n + random-fraction seconds after each retry, up to a maximum-backoff time.
 5. After deadline seconds, stop retrying the request.
 
-With each retry, add <strong>Jitter</strong> -- a small, random delay between retries to prevent the <a href="https://en.wikipedia.org/wiki/Thundering_herd_problem">thundering herd problem</a> (a synchronized wave of retries from multiple clients).
-
-* Specify a different <strong>random-fraction</strong> value for each retry. It's a random fractional value less than or equal to 1. Adding this random value prevents clients from becoming synchronized and sending large numbers of retries at the same time.
+The <strong>backoff</strong> function in sample program <a target="_blank" href="https://github.com/bomonike/agentic/blob/main/gcp-services.py">gcp-services.py</a> is defined by this code:
+```
+def backoff(
+    max_retries: int = 5,
+    exceptions: Union[Type[Exception], List[Type[Exception]]] = Exception,
+    base_delay: float = 0.5,
+    max_delay: float = 60.0,
+    factor: float = 2.0,
+    jitter: bool = True,
+    on_backoff: Optional[Callable[[Dict[str, Any]], None]] = None
+) -> Callable:
+```
+Its parameters are named with default values, so can be omitted from the function call:
+* <strong>max_retries</strong> is the maximum number of retries to attempt.
+* <strong>exceptions</strong> is the exceptions to catch and retry.
+* <strong>base_delay</strong> is the base delay in seconds -- a <strong>random-fraction</strong> of a second (less than or equal to 1) to prevent clients from becoming synchronized and sending large numbers of retries at the same time.
+* <strong>max_delay</strong> is the maximum delay in seconds.
+* <strong>factor</strong> is the factor to multiply the delay by.
+* <strong>jitter</strong> is the small, random delay between retries to prevent the <a href="https://en.wikipedia.org/wiki/Thundering_herd_problem">thundering herd problem</a> (a synchronized wave of retries from multiple clients).
+* <strong>on_backoff</strong> "None" is NO callable (callback) to call when a retry is made.
 
 * Specify a <strong>maximum-backoff</strong> with the maximum amount of time, in seconds, to wait between retries. Typical values are 32 or 64 (25 or 26) seconds. Choose the value that works best for your use case.
 
-* Specify a <strong>deadline</strong> with the maximum number of seconds to keep sending retries. For example, in a continuous integration/continuous deployment (CI/CD) pipeline that is not highly time-sensitive, set deadline to 300 seconds (5 minutes).
+Additionally:
+* A <strong>deadline</strong> with the maximum number of seconds to keep sending retries. For example, in a continuous integration/continuous deployment (CI/CD) pipeline that is not highly time-sensitive, set deadline to 300 seconds (5 minutes).
 
 
  
@@ -332,6 +349,9 @@ https://7451111251303.gumroad.com/l/wotve
 
 There is time complexity, data complexity, etc.
 
+See https://readmex.com/TheAlgorithms/Python
+
+
 <a name="TimeComplexity"></a>
 
 Big-O notation summarizes Time Complexity analysis, which estimates how long it can take for an algorithm to complete based on its structure. That's worst-case, before optimizations such as memoization.
@@ -437,6 +457,7 @@ GitHub repos with the highest stars:
 
 
 ### Faster routes to machine code
+
 By default, Python comes with the <a target="_blank" href="https://github.com/python/cpython">CPython interpreter</a> (command cythonize) to generate machine-code. When speed is needed, such as in loops, custom C/C++ extensions are created. Additional speed is obtained by adding before nested loop code directives and decorators:
 ```
 # cython: language_level=3, boundscheck=False, wraparound=False
@@ -495,7 +516,7 @@ Here are the keywords Python has reserved for itself, so they can't be used as c
 1. from
 1. global = defines a variable global in scope
 1. if
-1. import = make the specified package available
+1. <a href="#import">import</a> = make the specified package available
 1. in
 1. is
 1. lambda - if/then/else in one line
@@ -547,7 +568,7 @@ Press control+D to exit anytime.
 
 ## Built-in Methods/Functions
 
-Don't create custom functions with these function names reserved.
+WARNING: Do not create custom functions with these function names reserved for use only by the Python interpreter.
 
 Know what they do. See
 https://docs.python.org/3/library/functions.html
@@ -624,6 +645,107 @@ https://docs.python.org/3/library/functions.html
    * zip() = combine two interable arrays
    * _import_()
    * super()
+
+<hr />
+
+
+
+## import
+
+REMEMBER: <strong>import</strong> statements are at the top of code files.
+
+DEFINITION: A <strong>built-in</strong> library (such as argparse, os, sys, random, etc.) is intrinsically contained in the interpreter, so is loaded with use of "pip".
+
+The Python <strong>import</strong> statement specifies each library which contains additional functions  that our custom program wants to use. 
+
+DEFINITION: 
+* A <strong>library</strong> is a collection of functions that are grouped together. 
+* A <strong>built-in</strong> library (such as argparse, os, sys, random, etc.) the Python interpreter can load.
+* A <strong>third-party</strong> package is one that is not built into Python. An example is <tt>import google.auth</tt>.
+
+REMEMBER: When a is specified in an import statement, an error occurs if that package was not installed with a CLI <strong>pip</strong> command such as:
+   ```bash
+   pip install google-auth
+   ```
+   <ul>DEFINITION: pip is a recursive acronym that stands for either "Pip Installs Packages" or "Pip Installs Python".</ul>
+
+Many put a list of external packages in a <strong>requirements.txt</strong> file so that
+a single CLI command can be used to install all packages listed in a requirements.txt file:
+   ```bash
+   pip install -r requirements.txt
+   ```
+By default, pip pulls external packages from its GitHub repository such as<br />
+   https://pypi.org/project/google-auth/
+
+To install a <strong>wheel</strong> defined in a GitHub repository:
+   ```
+   pip install https://github.com/user_account/repository.whl
+   ```
+Each wheel folder contains pre-compiled Python packages contains a pyproject.toml if using modern packaging tools. Also, setup.py file should include all metadata and dependencies for the package.
+That's after pip is installed with setuptools and wheel utility packages:
+   ```bash
+   python -m pip install --upgrade pip setuptools wheel
+   ```
+The wheel is built in the <tt>dist</tt> folder using this command:
+   ```bash
+   python -m pip wheel --no-deps -w dist .
+   ```
+   Docs about <tt>pip wheel</tt> are at https://pip.pypa.io/en/stable/cli/pip_wheel/
+
+To validate a wheel:
+   ```bash
+   pip install check-wheel-contents
+   check-wheel-contents dist/
+   ```
+
+### import custom utility library myutils.py
+
+I grew tired of copying various custom utility functions I like to add to programs I write
+because when a change is made, I would have to update each file that uses it.
+
+So I want to have all my custom programs reference my custom utility functions in a file called "myutils.py". Such functions include:
+   * print_timestamp()
+   * print_info() to display information the function generated.
+   * print_debug() to display information that affects program logic.
+   * print_error() to display also alert the user of an error.
+   * print_warning() when a trigger is met to send a security alert to the operations team.
+   * etc.
+
+
+pip pulls external packages from specified GitHub repository using the following CLI command format:
+   ```
+   pip install git+https://github.com/user_account/repository.git
+   ```
+
+QUESTION: If you want to reference the many utility functions Hari Sekhon has created, use the CLI command:
+   ```
+   pip install git+https://github.com/HariSekhon/pylib.git
+   ```
+<a target="_blank" href="https://github.com/HariSekhon/DevOps-Python-tools/blob/master/hbase_compact_tables.py">Sample code</a> to import Hari Sekhon's utility functions from
+<a target="_blank" href="https://github.com/HariSekhon/pylib/blob/master/harisekhon/utils.py">https://github.com/HariSekhon/pylib/blob/master/harisekhon/utils.py
+```python
+try:
+    # pylint: disable=wrong-import-position
+    from harisekhon.utils import log, die
+    from harisekhon.utils import validate_host, validate_port, validate_regex
+    from harisekhon import CLI
+except ImportError as _:
+    print(traceback.format_exc(), end='')
+    sys.exit(4)
+```
+QUESTION: How to import Hari Sekhon's utility functions "using make"?
+
+
+BEST PRACTICE: To reduce the memory your program uses, specify the specific functions you need from a library rather than letting the interpreter load all the functions in the library. 
+For example, if your program only uses the log and die functions:
+```python
+    from harisekhon.utils import log, die
+```
+
+"myutils.py" must be in the same directory as the script.
+
+REMEMBER: The Python import statement is not evaluated until the code is run.
+
 
 <hr />
 
@@ -1429,18 +1551,35 @@ So use a way that's less flexible with types and doesn’t evaluate Python state
 
 ### Data Types
 
-In Python 2, there was an internal limit to how large an integer value could be: 2^63 - 1.
-
-But that limit was removed in Python 3. So there now is no explicitly defined limit, but the amount of available address space forms a practical limit depending on the machine Python runs on. 64-bit
 
 <tt>0xa5</tt> (two character bits) represents a hexdidecimal number
 
-<tt>3.2e-12</tt> expresses as a a constant exponential value.
+<tt>3.2e-12</tt> expresses as a constant exponential value.
 
-https://docs.python.org/3/tutorial/introduction.html#lists
+### Largest Integer Value
 
-<a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">
-list methods</a>
+<strong>2^63 - 1</strong> is the largest integer value permitted by Python 2.
+
+for a 64-bit address space.
+That's not 2^64−1 because of the sign bit.
+Half of the values is negative and half is positive.
+
+Practical analogy: Imagine 63 light switches. Each switch (bit) doubles the total possible combinations.
+9,223,372,036,854,776,000 is the largest value in a 64-bit address space.<br />
+9,223,372,036,854,775,807.
+
+~9 exabytes
+
+But the limit was removed in Python 3. So there now is no explicitly defined limit.
+But the amount of available address space forms a practical limit depending on the machine Python runs on. 
+Still 64 bit.
+
+   * https://docs.python.org/3/tutorial/introduction.html#lists
+
+   * <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list methods</a>
+
+
+<hr />
 
 ### Slicing strings
 
@@ -1476,11 +1615,6 @@ print(conv_superscript('Convert all this2'))
 
 
 <hr />
-
-## Functions
-
-
-
 
 <a name="Localization"></a>
 
@@ -2698,8 +2832,46 @@ because adding a new team to an already large bracket does not require the team 
 * An algorithm takes exponential time if the number of steps is proportional to an exponential function of the size of the input, such as 2n, 10n, etc., which is much slower than any polynomial.
 
 
+## Data Managements
+
+The <strong>csv</strong> library is used for basic CSV file management.
+
+The <strong>json</strong> library is used for basic JSON file management.
+
+The <strong>pyyaml</strong> library is used for basic YAML file management.
+
+The <strong>numpy</strong> library is used for math operations.
+
+The <strong>pandas</strong> library is used for data management (at low volume).
+
+The <strong>sqlite3</strong> library is used for basic database management.
+
+The <strong>pyarrow</strong> library is used for basic Arrow file management.
+
+The <strong>pyodide</strong> library is used for ???
+
+
+## Visualization
+
+The <strong>matplotlib</strong> library is the standard used for basic visualizations.
+
+The <strong>seaborn</strong> library is a higher-level interface to matplotlib that provides a more concise and consistent API for creating visualizations.
+
+Interactive visualizations using <strong>bokeh</strong> and <strong>plotly</strong> 3rd-party libraries. 
+
+See https://learning.oreilly.com/course/python-data-visualization/9780135426531/
+6-hour video course on OReilly: 
+"Python Data Visualization: Create impactful visuals, animations and dashboards"
+by Bruno Goncalves
+Starting with pandas and matplotlib—two core Python libraries—you learn the basics of Python data pre-processing and visualization before moving on to more advanced packages. Seaborn, built on top of matplotlib, simplifies common tasks and enhances productivity. 
+You will use jupyter notebooks to craft our visualizations.
+
+
+
 ## More about Python
 
 This is one of a series about Python:
 
 {% include python_links.html %}
+
+<sub>{{ page.date }} {{ page.lastchange }}</sub>
