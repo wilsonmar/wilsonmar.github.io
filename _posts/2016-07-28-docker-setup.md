@@ -1,8 +1,8 @@
 ---
 layout: post
 date: "2025-05-22"
-changes: "v012 fix http end anchor :2016-07-28-docker-setup.md"
-url: "https://wilsonmar.github.io/docker-setup"
+changes: "v011 fix http end anchor :2016-07-28-docker-setup.md"
+url: https://wilsonmar.github.io/docker-setup
 file: "docker-setup"
 title: "Docker setup"
 excerpt: "Get bits working in lightweight containers"
