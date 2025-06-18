@@ -1,17 +1,12 @@
 ---
 layout: post
 date: "2025-06-18"
-lastchange: "v003 + proj mgmt :2025-06-15-futurefun.md"
+lastchange: "v004 + security issues :2025-06-15-futurefun.md"
 url: https://wilsonmar.github.io/futurefun
 file: "futurefun"
 title: "Future Fun for all"
 excerpt: "The curriculum to thrive by preparing to be an expert computer user and master of AI systems"
 tags: [AI]
-image:
-# norway-trolltunga-1900x500.png
-  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1747977624/london-embarkment_449x130_m92yzu.png
-  credit: Victoria Embankment
-  creditlink: https://postcardsfromhawaii.co/home/best-red-phone-box-locations-in-london-for-photos
 comments: true
 created: "2025-06-15"
 ---
@@ -19,12 +14,9 @@ created: "2025-06-15"
 {% include l18n.html %}
 {% include _toc.html %}
 
-https://bucolic-kitten-8c03c9.netlify.app/#features
-
-would be project. Management skills. Offer training in tools such as calendar, project planning, estimating, prioritization
-
-ALL our sample projects demonstrate <strong>practical, real world</strong> tools for <strong>productive use</strong>.
-xx While other offering have students create games of no practical values,
+This page is preparation for<br />
+<a target="_blank" href="https://bucolic-kitten-8c03c9.netlify.app/">
+https://bucolic-kitten-8c03c9.netlify.app</a>
 
 We equip students for making money in a future of AI domination, <strong>managing</strong> AI automation:
    * Building systems to evaluate AI performance
@@ -48,6 +40,20 @@ AI project: Drop pdf files on the GUI, then ask questions based on its content.
 * <a target="_blank" href="https://wilsonmar.github.io/acronyms/">My Acronyms</a>
 
 
+## Production Security
+
+While other offering have students create mere games,
+ALL our sample projects demonstrate <strong>practical, real world</strong> tools for <strong>productive use</strong>.
+
+Most tutorials which focus on fundamentals end up introducing security vulnerabilities. Examples and tutorials here include 
+"production-worthy" features:
+   * Code scans automatically using commit "hooks"
+   * Code reviews are conducted by other team members
+   * Secrets are stored securely away from code repositories
+   * Authentications use dynamically created short-term secrets
+   * Activities are performed under least-privilege permissions
+   * Logging, Metrics, Traces are collected
+   * Issues from trends are highlighted as alerts when appropriate
 
 <a name="StartWithSafety"></a>
 
@@ -77,7 +83,7 @@ The starting point for our training is proactive protection of <strong>personal 
 
 ## Learn Through Doing (Personal Effectiveness)
 
-1. Ecosystems (Apple, Google, Microsoft)
+1. Ecosystems (Apple, Google, Microsoft, OpenAI, Claude, etc.)
 1. Archive and restore
 
 1. Emotional Intelligence & thinking through consequences
@@ -351,8 +357,6 @@ Our approach <strong>builds professional certifications</strong>
 
 1. Project management sufficient to pass the fundamentals exam.
 
-   <img src="https://www.linkedin.com/dms/prv/image/v2/D5606AQFndAxAeM555g/messaging-image-720/B56Zd6E7esGoAc-/0/1750099805236?m=AQKYLrBT4POrDwAAAZd8BnuoNuDu5xXH2oT20ElZYeDPRT98c49QBBg&ne=1&v=beta&t=Z5QQafP9vkTxtCPia5-ohPLzEyLPuSNeVSmltuvHEJE">Project Management</a>
-
 1. Git workflow sufficient to pass the GitHub Fundamentals exam.
    1. https://wilsonmar.github.io/git-stash/
    1. https://wilsonmar.github.io/git-utilities/
@@ -392,3 +396,5 @@ Our approach <strong>builds professional certifications</strong>
 
 Buckminster Fuller said, "The race between dystopia and utopia will be neck and neck until the very end."
 
+
+Automation: https://x.com/madscapital/status/184587936835761613
