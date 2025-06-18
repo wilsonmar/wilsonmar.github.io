@@ -4,7 +4,7 @@ date: "2025-06-18"
 lastchange: "v004 + security issues :2025-06-15-futurefun.md"
 url: https://wilsonmar.github.io/futurefun
 file: "futurefun"
-title: "Future Fun for all"
+title: "FutureTogether Fun for all"
 excerpt: "The curriculum to thrive by preparing to be an expert computer user and master of AI systems"
 tags: [AI]
 comments: true
@@ -18,7 +18,11 @@ This page is preparation for<br />
 <a target="_blank" href="https://bucolic-kitten-8c03c9.netlify.app/">
 https://bucolic-kitten-8c03c9.netlify.app</a>
 
-We equip students for making money in a future of AI domination, <strong>managing</strong> AI automation:
+"For an individual human to thrive as the "Technical Singularity" (where everything changes all at once),
+we need to be be part of a team who support each other (through think and thin).
+FutureTogether makes that happen."
+
+We equip you to <strong>make money</strong> in a future of AI domination, <strong>managing</strong> AI automation:
    * Building systems to evaluate AI performance
    * Introducing AI automation into local businesses
    * The orchestrator can route traffic to several tools, but chooses the tool with the best satisfaction and accuracy scores tracked over time.
@@ -54,6 +58,7 @@ Most tutorials which focus on fundamentals end up introducing security vulnerabi
    * Activities are performed under least-privilege permissions
    * Logging, Metrics, Traces are collected
    * Issues from trends are highlighted as alerts when appropriate
+   * Hash of files are created and checked to identify malicious replacements
 
 <a name="StartWithSafety"></a>
 
@@ -398,3 +403,18 @@ Buckminster Fuller said, "The race between dystopia and utopia will be neck and 
 
 
 Automation: https://x.com/madscapital/status/184587936835761613
+
+https://tron.fandom.com/wiki/Master_Control_Program
+The Master Control Program (or MCP) is the main antagonist in TRON. The MCP was a rogue computer program, created by Walter Gibbs and vastly improved by Ed Dillinger, that ruled over the world inside ENCOM's mainframe computer system. During the rule of the MCP, many programs were enslaved and pitted against the program's henchmen, led by Commander Sark.
+
+Marimo notebooks in Python exported as Jupyter notebooks
+
+
+jan.ai lets you download various LLMs from hugging face and run some of them locally.  it also provides a server interface that is a subset of OpenAI
+
+https://lmstudio.ai/blog/introducing-lmstudio-sdk
+
+dailydose.com covers MCP
+
+
+
