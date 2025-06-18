@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-06-18"
-lastchange: "v002 + arrange topics :2025-06-15-futurefun.md"
+lastchange: "v003 + proj mgmt :2025-06-15-futurefun.md"
 url: https://wilsonmar.github.io/futurefun
 file: "futurefun"
 title: "Future Fun for all"
@@ -72,31 +72,65 @@ The starting point for our training is proactive protection of <strong>personal 
 
 1. Each student need to pass <a target="_blank" href="https://www.khanacademy.org/college-careers-more/internet-safety/xef9bb6e081c9f4ff:online-data-security">Khan Academy's Online Data Security</a> course online
 
-## Learn Through Doing (Personal Technologies)
+1. https://www.webull.com/paper-trading
+1. https://www.pionex.com/en
+
+## Learn Through Doing (Personal Effectiveness)
 
 1. Ecosystems (Apple, Google, Microsoft)
 1. Archive and restore
-1. Photo storage index
-1. Metadata in each photo (app)
-1. Cloud storage economics 
-1. Archival media (HDD vs Flash reliability & speeds)
 
+1. Emotional Intelligence & thinking through consequences
+1. Willpower & self-sabotage
 1. Calendar
 1. cal.com appointment maker
 1. Annual Calendar - Birthdays, Anniversaries, Annual Sales
 1. Gantt chart timelines
 1. Tasks
 1. Projects
-1. Focus blocks of alone time when notifications off
-   * Battery life (recharge during your shower) 
-   * 
+1. Focus blocks of heads-down time (with notifications off)
+
 1. Compliments & Dopamine
 1. Click bait
 1. Addiction FOMO
 1. <a target="_blank" href="https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-attention-equation-winning-the-right-battles-for-consumer-attention">monitization of Attention Economy</a> 
 
+1. Paper note-taking
+1. Digital note-taking: iPhone Notepad, Obsidian, 
+1. Visual Mindmaps https://www.youtube.com/watch?v=Grd7K7bJVWg
+
+1. Photo storage index
+1. Metadata in each photo (app)
+1. Cloud storage economics 
+1. Archival media (HDD vs Flash reliability & speeds)
+
+## Learn Through Doing (Social Media)
+
 1. Intenet Etiquitte
 1. Dating apps (Scott Galloway's warnings)
+1. Linkedin profile
+1. Ettiquite for social media messaging: WhatsApp, Instagram Messenger, Telegram, Facebook
+
+1. X: <a target="_blank" href="https://x.com/i/status/1926330014640877886" title="by Jacob Bank">Marketing AI Agents</a> https://x.com/jebank/status/1926330014640877886
+
+1. Medium, dev.to, substack
+1. Parties
+1. Hackathons
+1. Meme coins
+
+
+## Learn Through Doing (Teamwork Skills)
+
+1. Situation Reports (SITREP) format
+1. Risks, Issues, Changes
+1. Personal reliability Trend ("I will") https://quantifiedself.com/show-and-tell/?project=1109 
+“Commits.to has given me reason to pause before I rattle off an empty promise.
+As a people pleaser, I was in the habit of
+saying I would do things without a real
+intention to follow through on those
+statements in a consistent way. Now, I
+value maintaining my overall reliability
+instead of my agreeability in the moment.”
 
 1. https://wilsonmar.github.io/asana/
 1. https://wilsonmar.github.io/jira/
@@ -105,9 +139,16 @@ The starting point for our training is proactive protection of <strong>personal 
 1. Spreadsheets
 1. Presentations
 
-1. VPN
-1. Wireshark networking
-1. Eval (false positives)
+### Project Management Skills
+
+Become productive like pro teams by using tools and formats to achieve:
+
+* Common objectives
+* Prioritized tasks
+* Accurate estimates
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1750235296/omimo-p3-express-v2-1920x1080_s6n6hb.png"><img width="300" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1750235296/omimo-p3-express-v2-1920x1080_s6n6hb.png" /></a>
+
 
 ## Learn Through Doing (Developer Technologies)
 
@@ -124,40 +165,21 @@ The starting point for our training is proactive protection of <strong>personal 
 1. https://wilsonmar.github.io/docusaurus/
 1. Generate QR codes
 1. Generate videos
+1. time-lapse videos of room makeovers. 
 
+1. VPN
+1. Wireshark networking
+1. Eval (false positives)
 
-## Learn Through Doing (Social Skills)
-
-1. Linkedin profile
-1. Snapchat etiquitte
-
-1. Situation Reports (SITREP) format
-1. Paper note-taking
-1. Digital note-taking: iPhone Notepad, Obsidian, 
-1. Visual Mindmaps https://www.youtube.com/watch?v=Grd7K7bJVWg
-
-1. Risks, Issues, Changes
-1. Emotional Intelligence & thinking through consequences
-1. Willpower & self-sabotage
-1. Personal reliability Trend ("I will") https://quantifiedself.com/show-and-tell/?project=1109 
-“Commits.to has given me reason to pause before I rattle off an empty promise.
-As a people pleaser, I was in the habit of
-saying I would do things without a real
-intention to follow through on those
-statements in a consistent way. Now, I
-value maintaining my overall reliability
-instead of my agreeability in the moment.”
 
 ## Build Real AI Apps 
-
-1. https://www.webull.com/paper-trading
-1. https://www.pionex.com/en
 
 1. https://quantifiedself.com/show-and-tell/
 
 1. AI Langchain https://www.youtube.com/watch?v=mrjq3lFz23s
 1. <a target="_blank" href="https://ai.gopubby.com/build-mcp-servers-and-host-them-for-free-a54a3bd24513">Turn Python functions into MCP</a> using <a target="_blank" href="https://huggingface.co/blog/gradio-mcp">Hugging Face Gradio Interface</a> as both a web app and an embedded tool within a notebook.
 
+1. Empower AI agents and LLMs like Claude to transform, optimize, and deliver visuals on your behalf with simple natural language prompts. https://cloudinary.com/blog/cloudinary-mcp-server
 
 ## Build Real Apps - Statistics
 
@@ -325,7 +347,7 @@ https://github.com/wilsonmar/python-samples/blob/main/foods.py
 
 ## Real Understanding
 
-Our approcah <strong>builds professional certifications</strong>
+Our approach <strong>builds professional certifications</strong>
 
 1. Project management sufficient to pass the fundamentals exam.
 
