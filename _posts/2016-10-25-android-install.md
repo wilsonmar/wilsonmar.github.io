@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-06-19"
-lastchange: "v002 + update :2016-10-25-android-install.md"
+lastchange: "v003 + backup first & use pre :2016-10-25-android-install.md"
 file: "android-install"
 url: https://wilsonmar.github.io/android-install
 title: "Android Install to develop on macOS"
@@ -26,6 +26,7 @@ date: "2016-10-25"
    * Prompt Lab: Upload a pdf and ask questions: summarize, rewrite, generate code, or use freeform prompts 
    * AI Chat
 
+1. CAUTION: Do a full Backup before proceeding with system-level configurations below.
 
 ### Prerequisite System Dependencies
 
@@ -33,7 +34,7 @@ date: "2016-10-25"
    <pre><strong>
    xcode-select --install 
    </strong></pre>
-6. Use Homebrew to install tools used for Android dev :
+1. Use Homebrew to install tools used for Android dev :
    <pre><strong>
    brew install ant
    brew install maven
@@ -52,28 +53,33 @@ date: "2016-10-25"
    brew install --cask temurin@21 
    ```
 1. Verify: https://jdk.java.net/24/
+   <pre><strong>java -version</strong></pre>
    ```
-   <strong>java -version</strong>
    openjdk version "23.0.1" 2024-10-15
    OpenJDK Runtime Environment Zulu23.30+13-CA (build 23.0.1+11)
    OpenJDK 64-Bit Server VM Zulu23.30+13-CA (build 23.0.1+11, mixed mode, sharing)
    ```
 1. Confirm:
+   <pre><strong>which java</strong></pre>
    ```
-   <strong>which java</strong>
    /usr/bin/java
    ```
+1. <a target="_blank" href="https://www.youtube.com/watch?v=TDqedgxRAVA">VIDEO: What is Temurin?</a>
+   * jadx - decompiles APK to Java source code
+   * apktool - decodes resources and rebuilds APKs
+
 
    ### Install Android Platform Tools
 
 1. To avoid the need to hard-code path, instead of manual https://developer.android.com/studio/install
-   Alternately, download <tt>android-studio-2024.3.2.15-mac_arm.dmg</tt>
+   Alternately, track down the specific version to download, such as:<br />
+   <tt>android-studio-2024.3.2.15-mac_arm.dmg</tt>
    ```
    brew install cask android-platform-tools
    ```
 1. Confirm:
+   <pre><strong>which adb</strong></pre>
    ```
-   <strong>which adb</strong>
    /opt/homebrew/bin/adb
    ```
    The above avoids the need to define PATH in .bash_profile or .zshrc, such as:
@@ -86,9 +92,11 @@ date: "2016-10-25"
    sudo ln -s ~/Library/Android/sdk/platform-tools/adb /usr/local/bin
    ```
 
+   ### Install Android Command Line Tools
+
 1. Run per https://developer.android.com/tools description of the Adroid Debug Bridge (adb) https://android-sdk-platform-tools-adb.en.softonic.com/mac?ex=RAMP-3252.3#google_vignette
+   <pre><strong>adb version</strong></pre>
    ```
-   <strong>adb version</strong>
    Android Debug Bridge version 1.0.41
    Version 36.0.0-13206524
    Installed as /opt/homebrew/bin/adb
@@ -99,30 +107,46 @@ date: "2016-10-25"
    brew install --cask android-commandlinetools
    ```
 1. Verify:
+   <pre><strong>which sdkmanager</strong></pre>
    ```
-   <strong>which sdkmanager</strong>
    /opt/homebrew/bin/sdkmanager
    ```
 1. Confirm
+   <pre><strong>sdkmanager --version</strong></pre>
    ```
-   <strong>sdkmanager --version</strong>
    19.0
    ```
 1. Refresh your shell profile (or restart your terminal app):
    ```
    source ~/.zshrc
+   or
    source ~/.bash_profile
    ```
 
-
-   ### Install Android SDK
+   ### .Android folder
 
    REMEMBER: <tt>$HOME/.android</tt> is the default folder Android uses to store configuration metadata.
 
+1. See what's in the folder:
+   <pre><strong>ls -al $HOME/.android</strong></pre>
+   ```
+   total 56
+   drwxr-x---@  10 johndoe  staff   320 Jun 19 01:05 .
+   drwxr-x---+ 104 johndoe  staff  3328 Jun 19 01:05 ..
+   -rw-------@   1 johndoe  staff  1704 Jun  9  2024 adbkey
+   -rw-r--r--@   1 johndoe  staff   728 Jun  9  2024 adbkey.pub
+   -rw-r--r--@   1 johndoe  staff   219 Jun 19 00:57 analytics.settings
+   drwxr-xr-x@   4 johndoe  staff   128 Jun 19 00:43 avd
+   drwxr-xr-x   44 johndoe  staff  1408 Jun 19 00:07 cache
+   -rw-r--r--@   1 johndoe  staff  4675 Jun 19 01:05 emu-last-feature-flags.protobuf
+   -rw-r--r--@   1 johndoe  staff    67 Jun 19 01:05 emu-update-last-check.ini
+   -rwxr-xr-x@   1 johndoe  staff   171 Jun 19 01:05 modem-nv-ram-5554
+   ```
+
+   ### Install Android SDK
+
 7. To avoid ".android/repositories.cfg could not be loaded" error, create a blank file:
-   <pre><strong>
-   touch ~/.android/repositories.cfg
-   </strong></pre>
+   <pre><strong>touch ~/.android/repositories.cfg</strong></pre>
 
    The equivalent of this for Powershell on Windows 10: 
    <pre>New-Item C:\Users\$username\.android\repositories.cfg -type file</pre>
@@ -134,22 +158,21 @@ date: "2016-10-25"
 
    This takes several minutes. Just wait while "Installing Cask android-sdk".
 
-6. Use Homebrew to install the Android Native Development Kit (ndk):
 
+   ### Native Development Kit
+
+1. AVOID: Use Homebrew to install the Android Native Development Kit (ndk):
    <pre><strong>
    brew install --cask android-ndk
    </strong></pre>
-
-1. Install all the Android SDK components:
-
-   NOTE: The `android update sdk --no-ui` command is deprecated.
 
 1. Install HAXM for blazing fast emulators. Check out the "Configuring VM Acceleration on Mac" section at:
 
    http://developer.android.com/tools/devices/emulator.html
 
-1. Edit your `~/.bash_profile` to update environment variables:
+   ### Edit Terminal start-up CLI
 
+1. Edit your `~/.bash_profile` to update environment variables:
    <pre>
 export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"      
 export ANT_HOME=/usr/local/opt/ant
@@ -160,7 +183,6 @@ export ANDROID_NDK_HOME=/usr/local/opt/android-ndk
    </pre>
 
 1. Update your paths (bonus points to a better solution to the hardcoded build tools version):
-
    <pre>
 export PATH=$ANT_HOME/bin:$PATH
 export PATH=$MAVEN_HOME/bin:$PATH
@@ -170,8 +192,9 @@ export PATH=$ANDROID_HOME/platform-tools:$PATH
 export PATH=$ANDROID_HOME/build-tools/19.1.0:$PATH
    </pre>
 
-1. Periodically run these commands again to ensure you're staying up to date:
+   ### Version Updates
 
+1. Periodically run these commands again to ensure you're staying up to date:
    <pre><strong>
    brew update
    android update sdk --no-ui
@@ -185,13 +208,6 @@ export PATH=$ANDROID_HOME/build-tools/19.1.0:$PATH
 
    Alternately, download the dmg from https://developer.android.com/studio/install.html
 
-   But the easiest way is:
-
-1. Install Android Studio:
-   <pre><strong>
-   brew install --cask android-studio
-   </strong></pre>
-
    Alternately, see http://macappstore.org/android-studio/
    for manual download.
    https://classroom.udacity.com/courses/ud808/lessons/4216368924/concepts/43072785890923#
@@ -199,21 +215,23 @@ export PATH=$ANDROID_HOME/build-tools/19.1.0:$PATH
 
    * https://github.com/caskroom/homebrew-cask/blob/master/Casks/android-studio.rb
 
-
-   ### Android Studio Install
+   But the easiest way is:
 
 1. To inspect app structure, resources, and permissions during development or security analysis of APK File, install the APK Analyzer (built into Android Studio)
-   ```
+   <pre><strong>
    brew install --cask android-studio
-   open android-studio.app
+   </strong></pre>
+1. Notice in the install response:
    ```
-   See https://www.youtube.com/watch?v=TDqedgxRAVA
-   * jadx - decompiles APK to Java source code
-   * apktool - decodes resources and rebuilds APKs
-
-1. Open the app (which contains a space in its name):
+   ==> Linking Binary 'studio' to '/opt/homebrew/bin/studio'
    ```
-   open "/Users/johndoe/Applications/Android Studio.app"
+   That means you have an option to open the app by simply:
+   <pre><strong>
+   studio
+   </strong></pre>
+   Alternately, because the app contains a space in its name:
+   ```
+   open $HOME/Applications/Android Studio.app
    ```
 1. Click "Open" if the "app downloaded from the Internet" appears.
 1. Click "Don't send".
@@ -268,7 +286,7 @@ export PATH=$ANDROID_HOME/build-tools/19.1.0:$PATH
    * model_allowlist.json lists LLM models
 
 
-   ### Android Studio app
+   ### Use Android Studio app
 
 1. Launch the Android Studio DMG file.
 1. Drag Android Studio into the Applications folder, then launch Android Studio.
