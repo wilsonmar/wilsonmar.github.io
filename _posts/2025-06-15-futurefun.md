@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-06-18"
-lastchange: "v004 + security issues :2025-06-15-futurefun.md"
+lastchange: "v004 + production-worthy examples :2025-06-15-futurefun.md"
 url: https://wilsonmar.github.io/futurefun
 file: "futurefun"
 title: "FutureTogether Fun for all"
@@ -14,13 +14,14 @@ created: "2025-06-15"
 {% include l18n.html %}
 {% include _toc.html %}
 
-This page is preparation for<br />
+This page provides content to be added to<br />
 <a target="_blank" href="https://bucolic-kitten-8c03c9.netlify.app/">
-https://bucolic-kitten-8c03c9.netlify.app</a>
+https://bucolic-kitten-8c03c9.netlify.app</a> at
+https://github.com/RashRAJ/futurefun
 
 "For an individual human to thrive as the "Technical Singularity" (where everything changes all at once),
-we need to be be part of a team who support each other (through think and thin).
-FutureTogether makes that happen."
+each of us needs to be be part of a team who support each other.
+FutureTogether here makes that happen."
 
 We equip you to <strong>make money</strong> in a future of AI domination, <strong>managing</strong> AI automation:
    * Building systems to evaluate AI performance
@@ -39,35 +40,31 @@ Comments can be added by others.
 
 AI project: Drop pdf files on the GUI, then ask questions based on its content.
 
+
+Instead of "Step-by-Step AI Tutorials"
+
+## Step-by-Step Hands-on Tutorials
+
+Learn the how AI tools work with guided explanations at every step. No black boxes—real understanding.
+
+* Concept explanations by humans and bots
+* Know why it works with detailed diagrams
+* Interactive walkthroughs with a quiz every 8 seconds
+
 ## Reference Information
 
 * <a target="_blank" href="https://wilsonmar.github.io/acronyms/">My Acronyms</a>
 
 
-## Production Security
-
-While other offering have students create mere games,
-ALL our sample projects demonstrate <strong>practical, real world</strong> tools for <strong>productive use</strong>.
-
-Most tutorials which focus on fundamentals end up introducing security vulnerabilities. Examples and tutorials here include 
-"production-worthy" features:
-   * Code scans automatically using commit "hooks"
-   * Code reviews are conducted by other team members
-   * Secrets are stored securely away from code repositories
-   * Authentications use dynamically created short-term secrets
-   * Activities are performed under least-privilege permissions
-   * Logging, Metrics, Traces are collected
-   * Issues from trends are highlighted as alerts when appropriate
-   * Hash of files are created and checked to identify malicious replacements
-
 <a name="StartWithSafety"></a>
 
-## Start with Safety
+## Start with Personal Data Safety
 
 The starting point for our training is proactive protection of <strong>personal security</strong>.
+Khan Academy
 
-1. Rules for Minors < 13. Parents approve each stage.
-1. Financial literacy: Khan Academy
+1. Rules for Minors < 13. Parents approve each stage. Children's Online Privacy Protection Act (COPPA) regulates the PII of children.
+1. <a target="_blank" href="https://www.khanacademy.org/college-careers-more/internet-safety/xef9bb6e081c9f4ff:online-data-security/xef9bb6e081c9f4ff:going-deeper-with-personally-identifiable-information/a/pii-personally-identifiable-information">PII (Personally Identifiable Information) BLOG</a>
 1. Credit Cards
 1. Subscription tracking
 1. Purchasing Criteria ConsumerReports.com evaluation format
@@ -75,21 +72,65 @@ The starting point for our training is proactive protection of <strong>personal 
 1. Generational technologies influence
 1. Memon memprizing long secrets
 1. Password vault and fire-proof box
+
 1. Sales of personal information: haveibeenpwned.com
-1. Social Security Lock
+1. Social Security Number Lock (I-9 on new employement impersonation identity theft)
+
 1. Email types (for social media, for development, banking, government)
 1. Phone SMS text
 1. Authy app
 
 1. Each student need to pass <a target="_blank" href="https://www.khanacademy.org/college-careers-more/internet-safety/xef9bb6e081c9f4ff:online-data-security">Khan Academy's Online Data Security</a> course online
 
-1. https://www.webull.com/paper-trading
-1. https://www.pionex.com/en
+
+## Security for Productive Use
+
+While other offering have students create mere games,
+ALL our sample projects demonstrate <strong>practical, real world</strong> tools for <strong>productive use</strong>.
+
+Most tutorials which focus on fundamentals end up introducing security vulnerabilities. 
+But "production-worthy" examples and tutorials here include security practices:
+   1. Code reviews are automatically requested of others at time of commit
+   1. Scans of code quality (ruff, etc.) are "hooked" to run upon git commit
+   1. The chain of module dependencies are identified in a Software Bill of Materials (SBOM)
+   1. Dependency modules are checked to identify whether others have identified vulnerabilities
+
+   1. Runs are on isolated (local air gapped) machines unless networking is needed
+   1. Movement and deletion of data occurs according to GDPR and other laws
+   1. Data in transit are encrypted (HTTPS & VPN)
+
+   1. Backups are performed frequently and stored off-site
+   1. Restoreability of backups are tested as scheduled
+   1. Deletion of data is performed only under a separate account after a delay
+
+   1. Activities are performed under least-privilege permissions   
+   1. Authentications use dynamically created short-term secrets
+   1. Verifiers of origin authenticity are inserted into assets
+
+   1. Only items of information necessary for a task are requested and displayed
+   1. Secrets are stored securely away from code repositories
+   1. Only hashes of customer-supplied secrets are stored in databases
+   1. Hash of files are created and checked to identify malicious replacements
+
+   1. Sensitive (secret) information is not stored in logs 
+   1. Logging, Metrics, Traces are collected and retained
+   1. Issues from trends are highlighted as alerts to appropriate humans
+   1. Third-party audits are conducted as regularly scheduled
+   1. Verification of staff capability are performed as scheduled
 
 ## Learn Through Doing (Personal Effectiveness)
 
 1. Ecosystems (Apple, Google, Microsoft, OpenAI, Claude, etc.)
-1. Archive and restore
+1. Chips: macOS Intel amd64 to arm64, RISC-V
+1. Operating Systems: Windows, macOS, Linux flavors
+1. Programming Languages: Assembly, Java, JavaScript, C, C#, Python, Go, Rust
+1. Cross OS
+
+1. Archive and restore: "The condition of any backup is unknown until a restore is attempted.”
+
+1. Financial literacy: Khan Academy
+1. https://www.webull.com/paper-trading
+1. https://www.pionex.com/en
 
 1. Emotional Intelligence & thinking through consequences
 1. Willpower & self-sabotage
@@ -132,16 +173,19 @@ The starting point for our training is proactive protection of <strong>personal 
 
 ## Learn Through Doing (Teamwork Skills)
 
-1. Situation Reports (SITREP) format
-1. Risks, Issues, Changes
+1. AI PROJECT: Generate Situation Reports (SITREP) from Calendar entries
+1. Daily handling of Risks, Issues, Changes
+
 1. Personal reliability Trend ("I will") https://quantifiedself.com/show-and-tell/?project=1109 
-“Commits.to has given me reason to pause before I rattle off an empty promise.
-As a people pleaser, I was in the habit of
-saying I would do things without a real
-intention to follow through on those
-statements in a consistent way. Now, I
-value maintaining my overall reliability
-instead of my agreeability in the moment.”
+
+   “Commits.to has given me reason to pause before I rattle off an empty promise.
+   I was in the habit of saying I would do things without a real
+   intention to follow through on those statements in a consistent way. 
+   Now, I value maintaining my overall reliability instead of my agreeability in the moment.”
+
+   * <a target="_blank" href="https://www.reddit.com/r/homeassistant/comments/gqds1w/tracking_injections_for_diabetic_cat/">HomeAssistant app to track Cat insulin injections</a>
+   * <a target="_blank" href="https://support.apple.com/en-us/105064">Apple Medications app</a> on iPhone, iPad, Watch
+   * <a target="_blank" href="https://flic.io/start">$30 Flic buttons</a> send BlueTooth signal to $30/$80 hub, iPhone, or <a target="_blank" href="https://flic.io/applications/mac-app">macOS app</a>
 
 1. https://wilsonmar.github.io/asana/
 1. https://wilsonmar.github.io/jira/
@@ -175,12 +219,13 @@ Become productive like pro teams by using tools and formats to achieve:
 1. One Page Website
 1. https://wilsonmar.github.io/docusaurus/
 1. Generate QR codes
-1. Generate videos
+1. Generate videos (using https://gemini.google/overview/video-generation/?hl=en)
 1. time-lapse videos of room makeovers. 
 
 1. VPN
 1. Wireshark networking
 1. Eval (false positives)
+
 
 
 ## Build Real AI Apps 
@@ -189,6 +234,7 @@ Become productive like pro teams by using tools and formats to achieve:
 
 1. AI Langchain https://www.youtube.com/watch?v=mrjq3lFz23s
 1. <a target="_blank" href="https://ai.gopubby.com/build-mcp-servers-and-host-them-for-free-a54a3bd24513">Turn Python functions into MCP</a> using <a target="_blank" href="https://huggingface.co/blog/gradio-mcp">Hugging Face Gradio Interface</a> as both a web app and an embedded tool within a notebook.
+1. Juypter Notebooks and Marimo Python
 
 1. Empower AI agents and LLMs like Claude to transform, optimize, and deliver visuals on your behalf with simple natural language prompts. https://cloudinary.com/blog/cloudinary-mcp-server
 
@@ -395,6 +441,10 @@ Our approach <strong>builds professional certifications</strong>
 1. https://wilsonmar.github.io/observability/
 
 1. Robotic Operating System (ROS) https://wilsonmar.github.io/ros/
+1. Virtual Reality: w
+1. Meta Glasses
+1. Google Glass
+1. Others
 
 1. https://wilsonmar.github.io/code-generation/
 
@@ -407,14 +457,19 @@ Automation: https://x.com/madscapital/status/184587936835761613
 https://tron.fandom.com/wiki/Master_Control_Program
 The Master Control Program (or MCP) is the main antagonist in TRON. The MCP was a rogue computer program, created by Walter Gibbs and vastly improved by Ed Dillinger, that ruled over the world inside ENCOM's mainframe computer system. During the rule of the MCP, many programs were enslaved and pitted against the program's henchmen, led by Commander Sark.
 
-Marimo notebooks in Python exported as Jupyter notebooks
-
-
 jan.ai lets you download various LLMs from hugging face and run some of them locally.  it also provides a server interface that is a subset of OpenAI
 
 https://lmstudio.ai/blog/introducing-lmstudio-sdk
 
 dailydose.com covers MCP
 
+https://www.gov.uk/global-talent
 
+https://www.read.ai/pp
 
+1. <a target="_blank" href="https://github.com/bomonike/ai-edge-gallery">ai-edge-gallery.apk</a>: Mobile (Android) GenAI Chat app which uses Hugging Face Integration to discover and download various on-device (local) LLM (LiteRT .tflite / .litert .task models). The <a target="_blank" href="https://github.com/google-ai-edge/gallery/releases/latest/download/ai-edge-gallery.apk">app apk</a>, built using <a target="_blank" href="https://ai.google.dev/edge">Google AI-Edge</a> Portal, is <a target="_blank" href="https://github.com/google-ai-edge/gallery/wiki/2.-Getting-Started">installed</a> to demonstrate automation of test runs and presentation of results (TTFT, decode speed, latency) to benchmark performance among LiteRT-optimized models. App activities tested include: 
+   * Ask Image: Obtain an image of a homework problem and ask questions about it: descriptions, solve problems, or identify objects.
+   * Prompt Lab: Upload a pdf and ask questions: summarize, rewrite, generate code, or use freeform prompts 
+   * AI Chat
+
+   Firts, https://wilsonmar.github.io/android-install/
