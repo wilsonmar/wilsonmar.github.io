@@ -1,6 +1,8 @@
 ---
 layout: post
-date: "2024-01-16"
+date: "2025-06-20"
+lastchange: "v005 + google :2021-06-12-chaos-engineering.md"
+url: https://wilsonmar.github.io/chaos-engineering
 file: "chaos-engineering"
 title: "Chaos Engineering"
 excerpt: "Use Gremlin, Chaos Monkey, and monitoring tools (such as Datadog) to measure and improve MTTD and MTTR"
@@ -11,6 +13,7 @@ image:
   credit: Zhu Xiaosi
   creditlink: http://www.uml.org.cn/zjjs/202004141.asp
 comments: true
+created: "2021-06-12"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -465,6 +468,57 @@ https://medium.com/the-cloud-architect/what-is-aws-fault-injection-simulator-and
 
 https://www.harness.io/blog/chaos-engineering-with-jenkins
 
+
+## Table Top Exercise
+
+<a target="_blank" href="https://www.linkedin.com/in/lesterchng/">Lester Chng</a>, author of <a target="_blank" href="https://lesterchng.gumroad.com/l/The_Essential_Cybersecurity_Exercise_Playbook">$120 122-page Cybersecurity Exercise Playbook</a> recommends this gradual approach rather than an unruly mob:
+
+Here are all the teams to invite to a 5-part ransomware tabletop exercise.
+
+1st TTX - Alert and Triage
+Objective - Incident Mgmt
+Teams:
+- SOC
+- IT Ops
+
+2nd TTX - Initial Investigation
+Objective - Incident Response
+Teams:
+- SOC
+- IT Ops
+- App Sec
+- Infrastructure
+- Network security
+
+3rd TTX - Cyber Incident
+Objective - Crisis Response
+Teams:
+- SOC
+- IT Ops
+- Comms
+- Business
+- BCP & DR
+- Risk Mgmt
+- Crisis Mgmt
+- In-house legal
+
+4th TTX - Executive TTX
+Objective - Decision Making
+Team:
+- C-suite
+- PR firm
+- Legal counsel
+
+5th TTX - Business Recovery TTX
+Objective - Impact and reputation mgmt
+Team:
+- C-suite
+- PR firm
+- Legal counsel 
+
+## References
+
+https://github.com/GoogleCloudPlatform/chaos-engineering
 
 ## More on DevSecOps #
 
