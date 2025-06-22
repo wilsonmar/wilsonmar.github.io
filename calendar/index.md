@@ -1,6 +1,8 @@
 ---
 layout: page
-date: "2023-12-15"
+date: "2025-06-21"
+lastchange: "v024 + rolex :calendar.md"
+url: "https://wilsonmar.github.io/calendar"
 file: "calendar"
 title: Please send me an appointment
 tags: [calendar, contact, Jekyll]
@@ -254,7 +256,41 @@ It boasts a fast and responsive design with Advanced Notifications.
 • Use Trackpad and swipe between time period, and more with our extras.
 <br /><br />
 
+<hr />
 
+## Watches
+
+J.D. Vance has been seen wearing an Apple Watch.
+
+But watches with mechanical (even hand-wind) movements are still warn, due to saavy marketing tactics
+such as Authorized Dealers putting customers on waitlists.
+
+* W Bush wore a Timex (and sells them in his Presidential Library for $60)
+
+Rolex watches were the first to offer glow-in-the-dark Luminescent indicators.
+But Special Forces soldiers would prefer not to be seen in the dark.
+
+During his 2016 presidential campaign speech, Donald Trump wore a <strong>Vacheron Constantin</strong> Historiques Ultra-Fine 1968 watch. <a target="_blank" href="https://www.instagram.com/p/DCCOqY5u-7u/?hl=en">Picture</a>: It has a square white face with a rose gold frame. In the pre-owned market ranges between $60,000 to $120,000, with certain special editions even fetching over $200,000. Vacheron Constantin's in-house developed ultra-thin manual-winding caliber 1003 is an ultra-thin mechanical movement measuring 1.64 mm thick - one of the thinnest mechanical movements currently available on the market. total 5.4mm thin.
+
+<img align="right" width="300" alt="rolex-pepsi-734x1190" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1750554356/rolex-pepsi-734x1190_yae9i7.png" /></a>
+The Rolex <strong>GMT</strong> (Grenwich Mean Time) series of watches began in the 1950s with a collaboration with Pan Am Airlines at the dawn of the "jet set" age so pilots can see local and home time zones at the same time. The watch has a "cyclops" 2.5X magnifier lens to better read the date. From 1982, the self-winding "GMT-MASTER II" replaced it with Cerachrom Insert Ceramic Bezel.
+Different colors of the distintive rotable bezel have nicknames:
+* <a target="_blank" href="https://www.rolex.com/en-us/watches/gmt-master-ii/m126710blro-0001">"Pepsi"</a> for blue and red
+* "Coke" for black and red
+* "Batman" and "Batgirl" for black and blue
+* "Bruce Wayne" for black and gray
+* "Sprite" for black and green
+* "Kermit" for the lighter green.
+
+The GMT's dial enables the watch to show 3 time zones and use as a compass.
+
+<a target="_blank" href="https://www.youtube.com/shorts/FpBqWJpfRyk">VIDEO</a>:
+The crown can be pulled out in two notches. 
+Pull it out to the first notch to change the extra 24-hour hand with the "Mercedes" logo.
+
+triangle at the tip.
+
+To set the "local" time, 
 
 <hr />
 
@@ -306,9 +342,9 @@ book Daily Rituals</a> by Mason Currey:
 <a target="_blank" href="https://podio.com/site/creative-routines">
 <img alt="fig rainbow creative_routines partial" src="https://cloud.githubusercontent.com/assets/300046/14229206/bd6c04d4-f8ea-11e5-900a-b2cde317237b.jpg" width="465" height="201"></a><!-- full 976x532 -->
 
-Benjamin Franklin is credited with the quote "Early to bed and early to rise makes a man healthy, wealthy, and wise." But him getting up at 5am is actually later than others.<a target="_blank" href="https://www.entrepreneur.com/article/289823">*</a>
+POLL: Which circadian (daily) pattern do you prefer?
 
-Which circadian (daily) pattern do you prefer?
+Benjamin Franklin is credited with the quote "Early to bed and early to rise makes a man healthy, wealthy, and wise." But him getting up at 5am is actually later than others.<a target="_blank" href="https://www.entrepreneur.com/article/289823">*</a>. <a target="_blank" href="https://www.youtube.com/watch?v=aBi8M3DehQ0">How Ben Franklin Structured His Day</a>.
 
 The site allows <strong>interactive</strong> selection of specific activities
 (sleep, creative work, admin, food/leisure, exercise, other).
@@ -353,13 +389,8 @@ which illustrates the group's work activities, month-by-month:
 
 Over the years, the group did less touring and performing (in green).
 
-> Does this chart say anything else to you?
-
-<hr />
-
 A similar format is used at<br />
 <a target="_blank" href="https://timelinestoryteller.com/app/">
 https://timelinestoryteller.com/app</a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=aBi8M3DehQ0">
-How Ben Franklin Structured His Day</a>
+> POLL: Does this chart say anything else to you?
