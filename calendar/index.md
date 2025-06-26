@@ -1,7 +1,7 @@
 ---
 layout: page
-date: "2025-06-21"
-lastchange: "v024 + rolex :calendar.md"
+date: "2025-06-25"
+lastchange: "v025 + horology :calendar.index.md"
 url: "https://wilsonmar.github.io/calendar"
 file: "calendar"
 title: Please send me an appointment
@@ -258,21 +258,49 @@ It boasts a fast and responsive design with Advanced Notifications.
 
 <hr />
 
-## Watches
+## Horology: Watches
 
-J.D. Vance has been seen wearing an Apple Watch.
+Among <a target="_blank" href="https://www.youtube.com/watch?v=PHis9l8cJks">watch terms</a>:
+* "Deployant" buckles have a metal preserves a leather strap from wear
+* "Automatic" watches use a balance wheel to provide kinetic power to power the movement.
+* "Quartz" watches use a battery-powered quartz crystal to keep time.
+* "Perpetual" calendar mechanical watches still means the owner needs the watch to be serviced to be serviced at the Gregorian calendar leap years 2100, 2200, 2300, 3999.
 
-But watches with mechanical (even hand-wind) movements are still warn, due to saavy marketing tactics
-such as Authorized Dealers putting customers on waitlists.
+<a target="_blank" href="https://www.youtube.com/watch?v=4Sx2hxZRM2s">VIDEO</a>:
+The $153,000 USD IWC Portugieser Eternal Calendar (awarded the best watch of 2024) has an "eternal calendar" that doesn't need to be reset until the year 3999 becuase it has a wheel that turns once every 400 years (through leap years 2100, 2200, 2300). You just have to wind it every day or buy a watch winder mechanism.
 
+<img align="right" width="200" alt="watch-seiko-tank-239x364.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1750914093/watch-seiko-tank-239x364_wdblov.png" />
+Cartier's "tank" manual-wind watch was first introduced in 1917 when WWI tanks first appeared as a symbol of strength and durability. Its square case and Roman numerals reflect the Art Deco asthetics also emerging at the time. But by adding "Eco-drive" solar power, Seiko SUP880 and Casio gave the classic look not need any manual winding.
+
+The advent of Japanese quartz movements in the 1970s made watches both less expensive to make and more accurate. This is while COSC Chronometer or METAS Master Chronometer certification of mechanical movements guarantee drift of -4/+6 seconds per day (which can add up).
+
+* Arnold Schwarzenegger famously wore Seiko watches in movies like Commando and Predator
+* Bill Gates is known for wearing various Casio models
 * W Bush wore a Timex (and sells them in his Presidential Library for $60)
+* Mark Ruffalo wears a Casio solar-powered watch, stating "my daily wear is my Casio solar-powered watch, because I'm pro-solar"
+* Tyler the Creator wears a Casio MQ24-9B watch that costs $15-20
+* J.D. Vance has been seen wearing an Apple Watch.
 
-Rolex watches were the first to offer glow-in-the-dark Luminescent indicators.
-But Special Forces soldiers would prefer not to be seen in the dark.
+The ability of Apple Watch to read heart rate, ECG, and other biometric data means it needs charging <strong>daily</strong> and <a target="_blank" href="https://www.youtube.com/watch?v=7mwaK69yvX0">have software updates</a>. Smart watches such as Apple and Garmin enable <a target="_blank" href="https://www.youtube.com/watch?v=UZEZTJTYE5Y">Ubiquitous Technical Surveillance</a> which reveal your location and pattern of life. Their microphones provide eavesdropping on conversations.
 
-During his 2016 presidential campaign speech, Donald Trump wore a <strong>Vacheron Constantin</strong> Historiques Ultra-Fine 1968 watch. <a target="_blank" href="https://www.instagram.com/p/DCCOqY5u-7u/?hl=en">Picture</a>: It has a square white face with a rose gold frame. In the pre-owned market ranges between $60,000 to $120,000, with certain special editions even fetching over $200,000. Vacheron Constantin's in-house developed ultra-thin manual-winding caliber 1003 is an ultra-thin mechanical movement measuring 1.64 mm thick - one of the thinnest mechanical movements currently available on the market. total 5.4mm thin.
+Paradoxically, many watches remain expensive to make because of their intricate mechanical (even hand-wind) movements, which leads to exclusivity. 
+* "Grand Seiko" is a $10,000 watch that is hand-wound and <a target="_blank" href="https://www.youtube.com/watch?v=jVoRoK1u3Dg">as accurate as Rolex and Omega watches</a>.
 
-<img align="right" width="300" alt="rolex-pepsi-734x1190" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1750554356/rolex-pepsi-734x1190_yae9i7.png" /></a>
+<img align="right" width="200" alt="watch-1968-512x640.webp" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1750913911/watch-1968-512x640_p9dipf.webp" />
+The <strong>Vacheron Constantin</strong> Historiques Ultra-Fine 1968 watch has a square white face with a rose gold frame. It's a ultra-thin manual-winding automatic caliber 1003 is an ultra-thin mechanical movement measuring 1.64 mm thick - one of the thinnest mechanical movements currently available on the market. total 5.4mm thin. Its pre-owned market ranges between $60,000 to $120,000. During his 2016 presidential campaign speech, <a target="_blank" href="https://www.instagram.com/p/DCCOqY5u-7u/?hl=en">Donald Trump wore it</a>.
+
+Due to saavy marketing tactics such as Authorized Dealers putting customers on waitlists even though they have inventory in the back room, luxury watches are "Veblen goods" that people wear to "flex" their social status. <a target="_blank" href="https://www.youtube.com/@chad.alexander/shorts">VIDEO</a>
+
+<a target="_blank" href="https://watchcharts.com/watches">watchcharts.com</a> reports that Rolex watches best retain their value over time. Rolex makes 31% of all watches made, 1.2 million in 2024. Although Blancpain is the oldest Swiss watch brand (being founded in 1735) and introduced its "Fifty Fathoms" collection of diving watches in 1953 (one year before the Rolex Submariner), Rolex watches were the first to offer glow-in-the-dark "luminescent" indicators of radioactive Rodium.
+
+While Rolex, Patek Philippe, and Oris remain independent, many are now part of large corporations in Switzerland:
+* Swatch Group	: Audemars Piguet, Breguet, Blancpain, Glashütte, Omega, Longines, Tissot
+* Richemont	: Cartier, Jaeger-LeCoultre, A. Lange & Söhne, IWC, Vacheron Constantin, Panerai
+* LVMH :	Hublot, Bvlgari, TAG Heuer, Zenith
+
+Richard Mille has Ferrari drivers wearing their watches.
+
+<img align="right" width="200" alt="rolex-pepsi-734x1190" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1750554356/rolex-pepsi-734x1190_yae9i7.png" /></a>
 The Rolex <strong>GMT</strong> (Grenwich Mean Time) series of watches began in the 1950s with a collaboration with Pan Am Airlines at the dawn of the "jet set" age so pilots can see local and home time zones at the same time. The watch has a "cyclops" 2.5X magnifier lens to better read the date. From 1982, the self-winding "GMT-MASTER II" replaced it with Cerachrom Insert Ceramic Bezel.
 Different colors of the distintive rotable bezel have nicknames:
 * <a target="_blank" href="https://www.rolex.com/en-us/watches/gmt-master-ii/m126710blro-0001">"Pepsi"</a> for blue and red
@@ -280,7 +308,9 @@ Different colors of the distintive rotable bezel have nicknames:
 * "Batman" and "Batgirl" for black and blue
 * "Bruce Wayne" for black and gray
 * "Sprite" for black and green
+* "Starbucks" green 
 * "Kermit" for the lighter green.
+* "Root beer" brown
 
 The GMT's dial enables the watch to show 3 time zones and use as a compass.
 
@@ -291,6 +321,9 @@ Pull it out to the first notch to change the extra 24-hour hand with the "Merced
 triangle at the tip.
 
 To set the "local" time, 
+
+Because each month has a differen number of days, mechanical watches with just a date need to be set by hand each month.
+
 
 <hr />
 
