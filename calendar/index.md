@@ -1,7 +1,7 @@
 ---
 layout: page
-date: "2025-06-25"
-lastchange: "v025 + horology :calendar.index.md"
+date: "2025-06-26"
+lastchange: "v026 + horology :calendar.index.md"
 url: "https://wilsonmar.github.io/calendar"
 file: "calendar"
 title: Please send me an appointment
@@ -260,6 +260,10 @@ It boasts a fast and responsive design with Advanced Notifications.
 
 ## Horology: Watches
 
+<a target="_blank" href="https://www.youtube.com/watch?v=qqlJ50zDgeA">VIDEO</a>:
+The world's oldest computer dates back to 100 BC (the 2nd century BC). One was recovered in 1901 from a shipwreck off the island of Kythera in Greece, divers found the Antikythera Mechanism, a device that inspired the movie "Indiana Jones and the Dial of Destiny". The latest 3D x-ray and modelling technology enabled scientists to understand how the dozens of bronze cogs in the device are able to predict solar eclipses.
+https://www.youtube.com/watch?v=F_ePbbujrp0
+
 Among <a target="_blank" href="https://www.youtube.com/watch?v=PHis9l8cJks">watch terms</a>:
 * "Deployant" buckles have a metal preserves a leather strap from wear
 * "Automatic" watches use a balance wheel to provide kinetic power to power the movement.
@@ -270,7 +274,7 @@ Among <a target="_blank" href="https://www.youtube.com/watch?v=PHis9l8cJks">watc
 The $153,000 USD IWC Portugieser Eternal Calendar (awarded the best watch of 2024) has an "eternal calendar" that doesn't need to be reset until the year 3999 becuase it has a wheel that turns once every 400 years (through leap years 2100, 2200, 2300). You just have to wind it every day or buy a watch winder mechanism.
 
 <img align="right" width="200" alt="watch-seiko-tank-239x364.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1750914093/watch-seiko-tank-239x364_wdblov.png" />
-Cartier's "tank" manual-wind watch was first introduced in 1917 when WWI tanks first appeared as a symbol of strength and durability. Its square case and Roman numerals reflect the Art Deco asthetics also emerging at the time. But by adding "Eco-drive" solar power, Seiko SUP880 and Casio gave the classic look not need any manual winding.
+Cartier's "tank" manual-wind watch was first introduced in 1917 when WWI tanks first appeared as a symbol of strength and durability. Its square case and Roman numerals reflect the Art Deco asthetics also emerging at the time. <a target="_blank" href="https://www.youtube.com/watch?v=sAn-WQEWm3c&t=5m3s">Old money elegance</a>. <a target="_blank" href="https://www.youtube.com/watch?v=b8Er1QeEHes">Worn by Gary Grant, Andy Worhol, Muhammad Ali, Jacki Kennedy</a>. The Cartier <a target="_blank" href="https://www.youtube.com/watch?v=4fEhUU_IUZE">"Must 2" tank has Solarbeat v2</a> for 16 years but no water resistance at $13,000. But the $195 Seiko SUP880 and Casio solar gave the classic look not need any manual winding.
 
 The advent of Japanese quartz movements in the 1970s made watches both less expensive to make and more accurate. This is while COSC Chronometer or METAS Master Chronometer certification of mechanical movements guarantee drift of -4/+6 seconds per day (which can add up).
 
@@ -295,12 +299,12 @@ Due to saavy marketing tactics such as Authorized Dealers putting customers on w
 
 While Rolex, Patek Philippe, and Oris remain independent, many are now part of large corporations in Switzerland:
 * Swatch Group	: Audemars Piguet, Breguet, Blancpain, Glashütte, Omega, Longines, Tissot
-* Richemont	: Cartier, Jaeger-LeCoultre, A. Lange & Söhne, IWC, Vacheron Constantin, Panerai
+* Richemont	: Cartier, Jaeger-LeCoultre, A. Lange & Söhne, <a target="_blank" href="https://www.youtube.com/watch?v=gDuT7TyKsM8">IWC</a>, Vacheron Constantin, Panerai
 * LVMH :	Hublot, Bvlgari, TAG Heuer, Zenith
 
 Richard Mille has Ferrari drivers wearing their watches.
 
-<img align="right" width="200" alt="rolex-pepsi-734x1190" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1750554356/rolex-pepsi-734x1190_yae9i7.png" /></a>
+<img align="right" width="200" alt="rolex-pepsi-734x1190" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1750554356/rolex-pepsi-734x1190_yae9i7.png" />
 The Rolex <strong>GMT</strong> (Grenwich Mean Time) series of watches began in the 1950s with a collaboration with Pan Am Airlines at the dawn of the "jet set" age so pilots can see local and home time zones at the same time. The watch has a "cyclops" 2.5X magnifier lens to better read the date. From 1982, the self-winding "GMT-MASTER II" replaced it with Cerachrom Insert Ceramic Bezel.
 Different colors of the distintive rotable bezel have nicknames:
 * <a target="_blank" href="https://www.rolex.com/en-us/watches/gmt-master-ii/m126710blro-0001">"Pepsi"</a> for blue and red
@@ -318,11 +322,7 @@ The GMT's dial enables the watch to show 3 time zones and use as a compass.
 The crown can be pulled out in two notches. 
 Pull it out to the first notch to change the extra 24-hour hand with the "Mercedes" logo.
 
-triangle at the tip.
-
-To set the "local" time, 
-
-Because each month has a differen number of days, mechanical watches with just a date need to be set by hand each month.
+Because each month has a different number of days, mechanical watches with just a date need to be set by hand each month.
 
 
 <hr />
