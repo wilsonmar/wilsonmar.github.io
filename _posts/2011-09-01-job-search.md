@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-06-13"
-changes: "v043 questions at end :2011-09-01-job-search.md"
+date: "2025-05-22"
+changes: "v042 certs :2011-09-01-job-search.md"
 url: "https://wilsonmar.github.io/job-search"
 file: "job-search"
 title: "Job Search"
@@ -130,15 +130,3 @@ As Yogi Berra said in his twisted way:
 ## Use AI
 
 https://jobright.ai/onboarding-v3/signup
-
-## End of Interview Questions
-
-From <a target="_blank" href="https://www.youtube.com/shorts/mw-Sy2vi1gg">CareerVidz</a>:
-
-1. What is it the top performing employees in this organization to achieve success?
-
-
-2. Can you tell more about the team I would be a part of in this role?
-
-
-3. What further information I can access to learn more about the organization while I wait to find out the result of my interview?
