@@ -1,6 +1,8 @@
 ---
 layout: post
-date: "2024-02-05"
+date: "2026-06-27"
+lastchange: "v031 return :2016-07-03-macos-homebrew.md"
+url: https://wilsonmar.github.io/macos-homebrew
 file: "macos-homebrew"
 title: "MacOS Homebrew"
 excerpt: "How to create brew formulas for installation on macOS"
@@ -11,14 +13,14 @@ image:
   credit: Kickstarter
   creditlink: https://www.kickstarter.com/projects/homebrew/brew-test-bot
 comments: true
+created: "2016-07-03"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
 
-This tutorial provides a deep dive of Homebrew,
-a package manager for macOS
-that's like other package mangers for Linux:
+This tutorial provides a deep dive into Homebrew, a package manager for macOS
+that's like other package managers for Linux:
 
 <table border="1" cellpadding="4" celspacing="0">
 <tr valign="bottom"><th>Distribution</th><th>Package Manager</th><th> Format</th><th>GUI tools</th></tr>
@@ -32,7 +34,7 @@ that's like other package mangers for Linux:
 </table>
 
 DEFINITION: A <strong>formula</strong> provides instructions on how to install <strong>CLI packages</strong> and
-their dependencies, such as where tar.gzip and *.zip files.
+their dependencies, such as where <tt>tar.gzip</tt> and <tt>*.zip</tt> files.
 
 A <strong>cask</strong> provides instructions on how to install <strong>GUI apps</strong> from .dmg files.
 
@@ -48,8 +50,61 @@ and adds symlinks to the <tt>/usr/local</tt> folder.
 
 Homebrew is the newest and most popular package utility on macOS.
 
-Homebrew's web page is at <a target="_blank" href="http://brew.sh/">
-http://brew.sh</a>
+Homebrew's web page is at <a target="_blank" href="http://brew.sh/">http://brew.sh</a>
+
+The <a target="_blank" href="https://gist.github.com/pmkay/e09034971b6f23214fd9f95a3e6d1c44">
+most downloaded brew formula:
+
+1. node: Platform built on V8 to build network applications
+1. git: Distributed revision control system
+1. wget: Internet file retriever
+1. yarn: JavaScript package manager
+1. python3: Interpreted, interactive, object-oriented programming language
+1. coreutils: GNU File, Shell, and Text utilities
+1. pkg-config: Manage compile and link flags for libraries
+1. chromedriver: Tool for automated testing of webapps across many browsers
+1. awscli: Official Amazon AWS command-line interface
+1. automake: Tool for generating GNU Standards-compliant Makefiles
+1. youtube-dl: Download YouTube videos from the command-line
+1. libtool: Generic library support script
+1. cmake: Cross-platform make
+1. readline: Library for command-line editing
+1. maven: Java-based project management
+1. libyaml: YAML Parser
+1. autoconf: Automatic configure script builder
+1. redis: Persistent key-value database, with built-in net interface
+1. heroku: Command-line client for the cloud PaaS
+1. rbenv: Ruby version manager
+<br /><br />
+
+That's different from <a target="_blank" href="https://formulae.brew.sh/analytics/install/365d/">
+Homebrew's own analytics of formula install events</a>.
+
+PROTIP: I install brew formula by specifying a string of them in mac-setup.env,
+which gets processed by my mac-setup.zsh. This enables me to get setup quickly on a new laptop.
+
+<a target="_blank" href="https://www.quora.com/What-are-the-first-or-must-have-homebrew-packages-that-you-install-on-your-Mac">Ross Campbell</a> 
+recommends these (not on my list):
+
+* bash-completion - smarter autocomplete for bash
+* calc - my go-to calculator
+* ccrypt - strong file crypt tool
+* dos2unix - convert CRLF <--> CR
+* geoip - find where an IP address comes from
+* git-flow
+* hh - shell history browser / searcher
+* irssi - my favorite commandline irc client
+* lftp - nice commandline ftp
+* links - best text mode web browser
+* lynx - second best text mode web browser
+* ncdu - ncurses disk usage browser
+* nmap - never know when you will need to port scan something
+* tig - curses git repo browser
+* tmux - terminal multiplexer - a better 'screen'
+* unrar - unarchive .rar files
+* wget - grab remote files with a URL
+* vimpager - use vim colorization rules for paging through any file - you may want to replace 'less' with this
+
 
 ## Alternatives to Homebrew
 
@@ -163,33 +218,36 @@ After you have installed Homebrew for the brew command (see below):
 
    Otherwise:
 
-   <tt>sha256 cellar: :any_skip_relocation, all: a54aa4f028ef042948961ef62524557dd8afd2c05eb658bd5f6d1ec04dddc22f"</tt>
+   <pre>sha256 cellar: :any_skip_relocation, all: a54aa4f028ef042948961ef62524557dd8afd2c05eb658bd5f6d1ec04dddc22f"
+   </pre>
 
    ### depends on
 
    Especially if you're installing a package dependent on Python, specify the specific version :
 
-   <pre>  depends_on "python-hatch-vcs" => :build
-  depends_on "python-hatchling" => :build
-  depends_on "python-setuptools" => :build
-  depends_on "python-setuptools-scm" => :build
-  depends_on "python-requests"
-  depends_on "python@3.12"
+   <pre>  
+   depends_on "python-hatch-vcs" => :build
+   depends_on "python-hatchling" => :build
+   depends_on "python-setuptools" => :build
+   depends_on "python-setuptools-scm" => :build
+   depends_on "python-requests"
+   depends_on "python@3.12"
    &nbsp;
-  def python3
-    "python3.12"
-  end
+   def python3
+     "python3.12"
+   end
    </pre>
 
    ### caveats
 
-   <pre>def caveats
+   <pre>
+   def caveats
     <<~EOS
       When run from `brew services`, `prometheus` is run from
       `prometheus_brew_services` and uses the flags in:
          #{etc}/prometheus.args
     EOS
-  end
+   end
    </pre>
 
 
