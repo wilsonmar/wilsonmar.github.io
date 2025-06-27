@@ -1,6 +1,8 @@
 ---
 layout: post
-date: "2024-02-05"
+date: "2026-06-27"
+lastchange: "v038 header return :2017-02-11-anomaly-detection.md"
+url: https://wilsonmar.github.io/anomaly-detection
 file: "anomaly-detection"
 title: "Anomaly Detection"
 excerpt: "Evaluating approaches and success across different AI frameworks"
@@ -11,6 +13,7 @@ image:
   credit: 
   creditlink: 
 comments: true
+created: "2017-02-11"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -82,6 +85,12 @@ https://www.openteams.com/courses/applications-of-ai-for-anomaly-detection/
 
 https://blog.dataiku.com/do-you-want-to-build-a-machine-learning-model
 
+
+## Resources
+
+https://developer.c3.ai/blog/building-production-ready-time-series-anomaly-detection-application
+
+Wireless Logic Ltd, Defend, Detect, React: AI-Powered Anomaly Detection for Smarter IoT Security
 
 
 ## More #
