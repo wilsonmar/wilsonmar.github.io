@@ -1,7 +1,7 @@
 ---
 layout: page
-date: "2025-06-26"
-lastchange: "v026 + horology :calendar.index.md"
+date: "2025-06-27"
+lastchange: "v027 + no emp watch calendar:index.md"
 url: "https://wilsonmar.github.io/calendar"
 file: "calendar"
 title: Please send me an appointment
@@ -285,7 +285,7 @@ The advent of Japanese quartz movements in the 1970s made watches both less expe
 * Tyler the Creator wears a Casio MQ24-9B watch that costs $15-20
 * J.D. Vance has been seen wearing an Apple Watch.
 
-The ability of Apple Watch to read heart rate, ECG, and other biometric data means it needs charging <strong>daily</strong> and <a target="_blank" href="https://www.youtube.com/watch?v=7mwaK69yvX0">have software updates</a>. Smart watches such as Apple and Garmin enable <a target="_blank" href="https://www.youtube.com/watch?v=UZEZTJTYE5Y">Ubiquitous Technical Surveillance</a> which reveal your location and pattern of life. Their microphones provide eavesdropping on conversations.
+The ability of Apple Watch to read heart rate, ECG, and other biometric data means it needs charging <strong>daily</strong> and <a target="_blank" href="https://www.youtube.com/watch?v=7mwaK69yvX0">have software updates</a>. Smart watches such as Apple and Garmin enable <a target="_blank" href="https://www.youtube.com/watch?v=UZEZTJTYE5Y">Ubiquitous Technical Surveillance</a> which reveal your location and pattern of life. Their microphones provide eavesdropping on conversations. <a target="_blank" href="https://www.instagram.com/reel/DLU8GhtSvkt/?utm_source=ig_web_copy_link">EMF emissions</a>.
 
 Paradoxically, many watches remain expensive to make because of their intricate mechanical (even hand-wind) movements, which leads to exclusivity. 
 * "Grand Seiko" is a $10,000 watch that is hand-wound and <a target="_blank" href="https://www.youtube.com/watch?v=jVoRoK1u3Dg">as accurate as Rolex and Omega watches</a>.
