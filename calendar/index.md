@@ -1,7 +1,7 @@
 ---
 layout: page
-date: "2025-06-27"
-lastchange: "v027 + no emp watch calendar:index.md"
+date: "2025-06-28"
+lastchange: "v028 + watch out - calendar:index.md"
 url: "https://wilsonmar.github.io/calendar"
 file: "calendar"
 title: Please send me an appointment
@@ -273,9 +273,12 @@ Among <a target="_blank" href="https://www.youtube.com/watch?v=PHis9l8cJks">watc
 <a target="_blank" href="https://www.youtube.com/watch?v=4Sx2hxZRM2s">VIDEO</a>:
 The $153,000 USD IWC Portugieser Eternal Calendar (awarded the best watch of 2024) has an "eternal calendar" that doesn't need to be reset until the year 3999 becuase it has a wheel that turns once every 400 years (through leap years 2100, 2200, 2300). You just have to wind it every day or buy a watch winder mechanism.
 
-<img align="right" width="200" alt="watch-seiko-tank-239x364.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1750914093/watch-seiko-tank-239x364_wdblov.png" />
-Cartier's "tank" manual-wind watch was first introduced in 1917 when WWI tanks first appeared as a symbol of strength and durability. Its square case and Roman numerals reflect the Art Deco asthetics also emerging at the time. <a target="_blank" href="https://www.youtube.com/watch?v=sAn-WQEWm3c&t=5m3s">Old money elegance</a>. <a target="_blank" href="https://www.youtube.com/watch?v=b8Er1QeEHes">Worn by Gary Grant, Andy Worhol, Muhammad Ali, Jacki Kennedy</a>. The Cartier <a target="_blank" href="https://www.youtube.com/watch?v=4fEhUU_IUZE">"Must 2" tank has Solarbeat v2</a> for 16 years but no water resistance at $13,000. But the $195 Seiko SUP880 and Casio solar gave the classic look not need any manual winding.
+Cartier's "tank" manual-wind watch was first introduced in 1917 when WWI tanks first appeared as a symbol of strength and durability. Its square case and Roman numerals reflect the Art Deco asthetics also emerging at the time. <a target="_blank" href="https://www.youtube.com/watch?v=sAn-WQEWm3c&t=5m3s">Old money elegance</a>. <a target="_blank" href="https://www.youtube.com/watch?v=b8Er1QeEHes">Worn by Gary Grant, Andy Worhol, Muhammad Ali, Jacki Kennedy</a>. The Cartier <a target="_blank" href="https://www.youtube.com/watch?v=4fEhUU_IUZE">"Must 2" tank has Solarbeat v2</a> for 16 years but no water resistance at $13,000. 
 
+<a target="_blank" href="https://www.youtube.com/watch?v=KwQVhRbB2YM">VIDEO</a>:
+BLAH: Aside from time keeping accuracy and the hassle of winding, mechanical watches require servicing, which can cost hundreds of dollars. I've experienced a dealer switch with a replica for genuine parts which they then sell on ebay.
+
+But the $195 Seiko SUP880 and Casio solar gave the classic look not need any manual winding.
 The advent of Japanese quartz movements in the 1970s made watches both less expensive to make and more accurate. This is while COSC Chronometer or METAS Master Chronometer certification of mechanical movements guarantee drift of -4/+6 seconds per day (which can add up).
 
 * Arnold Schwarzenegger famously wore Seiko watches in movies like Commando and Predator
@@ -302,7 +305,7 @@ While Rolex, Patek Philippe, and Oris remain independent, many are now part of l
 * Richemont	: Cartier, Jaeger-LeCoultre, A. Lange & Söhne, <a target="_blank" href="https://www.youtube.com/watch?v=gDuT7TyKsM8">IWC</a>, Vacheron Constantin, Panerai
 * LVMH :	Hublot, Bvlgari, TAG Heuer, Zenith
 
-Richard Mille has Ferrari drivers wearing their watches.
+Richard Mille and IWC has Ferrari drivers wearing their watches.
 
 <img align="right" width="200" alt="rolex-pepsi-734x1190" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1750554356/rolex-pepsi-734x1190_yae9i7.png" />
 The Rolex <strong>GMT</strong> (Grenwich Mean Time) series of watches began in the 1950s with a collaboration with Pan Am Airlines at the dawn of the "jet set" age so pilots can see local and home time zones at the same time. The watch has a "cyclops" 2.5X magnifier lens to better read the date. From 1982, the self-winding "GMT-MASTER II" replaced it with Cerachrom Insert Ceramic Bezel.
@@ -427,3 +430,60 @@ A similar format is used at<br />
 https://timelinestoryteller.com/app</a>
 
 > POLL: Does this chart say anything else to you?
+
+## End of the World Breakup Song
+
+While we're talking about time, here's the most Narcissistic song I know, by lyricist Sylvia Dee. Its haunting, melancholic style and universal theme of loss have inspired artists across generations. Used in apocalyptic game Fallout 4 and 1999 movie <a target="_blank" href="https://www.justwatch.com/us/movie/girl-interrupted">"Girl, Interrupted"</a>.
+<a target="_blank" href="https://www.youtube.com/watch?v=xHa6a3FtPJg">VIDEO</a>:
+"The End of the World" sung by American Skeeter Davis from 1963 RCA Records (now Sony Music). Skeeter's <a target="_blank" href="https://www.youtube.com/watch?v=3KdbA_4l_TQ&t=26s">last performance at the Grand Ole Oprey was in 1997</a> before she died of breast cancer in Nashville on September 19, 2004 at age 72.
+Also <a target="_blank" href="https://www.youtube.com/watch?v=pLKyftDEbds" title="in 1973 album Now & Then">recorded with optimism by Karen Carpenter</a> and <a target="_blank" href="https://www.youtube.com/watch?v=zdNc4eyaFpo">by Mandy Barnett</a>
+
+[Intro] Bb-F-Gm-F
+
+[Verse 1]<br />
+Bb-F-Gm-Dm<br />
+Eb-Cm-Dm-G7<br />
+Cm-Ebm-F7<br />
+Why does the sun go on shining?<br />
+Why does the sea rush to shore?<br />
+Don't they know it's the end of the world?<br />
+'Cause you don't love me any more<br />
+
+[Verse 2]<br />
+Bb-F-Gm-Dm<br />
+Eb-Cm-Dm-G7<br />
+Cm-F7-Bb<br />
+Why do the birds go on singing?<br />
+Why do the stars glow above?<br />
+Don't they know it's the end of the world?<br />
+It ended when I lost your love<br />
+
+[Bridge]<br />
+Eb-Bb-F7-Bb<br />
+Dm-G7<br />
+Cm-Ebm-F7<br />
+I wake up in the morning and I wonder<br />
+Why everything's the same as it was<br />
+I can't understand, no, I can't understand<br />
+How life goes on the way it does<br />
+
+[Verse 3]<br />
+Bb-F-Gm-Dm<br />
+Eb-Cm-Dm-G7<br />
+Cm-F7-Bb<br />
+Why does my heart go on beating?<br />
+Why do these eyes of mine cry?<br />
+Don't they know it's the end of the world?<br />
+It ended when you said goodbye<br />
+
+[Outro spoken]<br />
+Gb7<br />
+B-Gb-Abm-Ebm<br />
+E-Dbm-Ebm-Ab7<br />
+Dbm-Gb7 (stop)<br />
+Why does my heart go on beating? Hmm, hmm<br />
+Why do these eyes of mine cry? Hmm, hmm<br />
+
+B-Ebm-E-Gb7-B<br />
+Don't they know it's the end of the world?<br />
+It ended when you said goodbye<br />
