@@ -1,8 +1,10 @@
 ---
 layout: post
-date: "2024-02-05"
+date: "2026-06-28"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
+lastchange: "v069 + from saved :2017-12-01-kubernetes.md"
+url: "https://wilsonmar.github.io/kubernetes"
 excerpt: "A deep dive on how to orchestrate containers, especially in clouds, including OpenShift. Pass the CKAD and CKA exams."
 modified:
 tags: [google, cloud]
@@ -13,6 +15,7 @@ image:
   creditlink: https://www.flickr.com/photos/132218932@N03/page2
 comments: true
 k8s_version: 1.26
+created: "2017-12-01"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -75,6 +78,7 @@ Discovery,
 <a href="#InitContainers">Init Containers</a>,
 <a href="#Ingress">Ingress</a>,
 <a href="#JSONPath">JSONPath</a>,
+<a href="#KEDA">KEDA</a>,
 <a href="#Kind">Kind</a>,
 <a href="#Kubelet">Kubelet</a>,
 <a href="#kube-proxy">kube-proxy</a>,
@@ -3263,7 +3267,9 @@ spec:
 
    TOOL: stern, 
 
-   elasticsearch, fluentd, kibana: https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/fluentd-elastisearch
+   elasticsearch, kibana: https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/fluentd-elastisearch
+
+   Fluent Bit is a log processor and forwarder that collects logs and metrics from various sources, processes them, and sends them to multiple destinations. It is lighter for performance, but less feature-rich than fluentd, making it suitable for containerized and embedded systems.Both are from the Cloud Native Computing Foundation (CNCF). It supports various input sources (files, syslog, HTTP, etc.) and output destinations (Elasticsearch, Splunk, Kafka, etc.).
 
    k port-forward service/kibana-logging 5601:5601 --namespace=kube-system
 
@@ -4374,15 +4380,15 @@ In 2019 Kubernetes added <strong>auto-scaling</strong> based on metrics API meas
 * https://www.tutorialspoint.com/kubernetes/kubernetes_replica_sets.htm
 * resize the amount of CPU/RAM for a specific Pod or Container. https://github.com/kubernetes/kubernetes/issues/2072
 
-## AWS K8s Cluster Autoscaler
+### AWS K8s Cluster Autoscaler
 
 <a target="_blank" href="https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md">https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md</a> 
 provides deep-dive notes and code.
 
-   <a name="HPA"></a>
-   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/hpa-128.png?raw=true">
+<a name="HPA"></a>
+<img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/hpa-128.png?raw=true">
 
-## HPA (HorizontalPodAutoscaler)
+### HPA (HorizontalPodAutoscaler)
 
 increases the instance count.
 
@@ -4401,6 +4407,31 @@ Source: <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes
 PROTIP: To list clusters and switch between them, consider brew installing utilities <a target="_blank" href="https://github.com/ahmetb/kubectx">https://github.com/ahmetb/kubectx</a> and kubens.
 
 kube-ps1.sh creates a shell pod envbin.
+
+
+<a name="KEDA"></a>
+
+### KEDA-supported Scale Trigger 
+
+KEDA (Kubernetes-based Event Driven Autoscaler) is a lightweight component that scales Kubernetes containers based on the <strong>number of events needing processing</strong>, including autoscaling to zero.
+
+KEDA's architecture consists of 
+event sources (external triggers), 
+scalers (monitoring event sources), and a 
+controller (scaling deployments based on rules).
+
+It can efficiently scale workloads based on external events or triggers. 
+The Kubernetes External Metrics API to translate metrics from external sources for autoscaling.
+
+KEDA offers a catalog of 50+ built-in scalers for various platforms and different workload types, plus  community-maintained scalers and supports triggers across various cloud providers and products.
+
+The KEDA Operator has a controller that implements a reconciliation loop and activates <strong>ScaledObject</strong> resources by creating Horizontal Pod Autoscalers.
+The ScaledObject defines the source of metrics and trigger criteria.
+It's a metrics adapter (translating metrics for HPA).
+
+It works alongside Kubernetes <a href="#HPA">Horizontal Pod Autoscaler</a> to explicitly map apps for event-driven scaling.
+
+
 
 <hr />
 
@@ -8166,7 +8197,29 @@ by TechWorld with Nana
 https://falco.org/docs/getting-started/installation/
 Falco is a rule-based IDF for privileged containers. It's a CNCF project.
 
+https://grafana.com/grafana/dashboards/16695-kubernetes-event-monitoring/
+https://grafana.com/grafana/dashboards/8171-kubernetes-nodes/
 
+https://grafana.com/grafana/dashboards/16839-kubernetes-cluster-resource-summary/
+This dashboard will help you on maintaining a good TCO (Total Cost of Ownership) for your K8s cluster. You can analyse the overall resources usage Vs request and you can tweak the application resources accordingly. Currently the tables created are more focusing on the requests configured and its usages against the cluster resources. If the AVG request usage percentage is very less, your cluster is over provisioned. You need to tweak the resource request of your applications accordingly. This will help you to reduce the cost of your infrastructure.
+
+This dashboard will help you on maintaining a good TCO (Total Cost of Ownership) for your K8s cluster. You can analyse the overall resources usage Vs request and you can tweak the application resources accordingly.
+
+Currently the tables created are more focusing on the requests configured and its usages against the cluster resources.
+
+If the AVG request usage percentage is very less, your cluster is over provisioned. You need to tweak the resource request of your applications accordingly. This will help you to reduce the cost of your infrastructure.
+
+The panels uses recording rules which come by default with the Prometheus operator. You can see it by editing the panels.
+
+
+https://github.com/dstamen/Kubernetes
+with demo-applications minio and wordpress using vagrant
+by David Stamen 
+
+https://github.com/iximiuz
+awesome go repos for container debugging, query & parse logs as time series, 
+labs.iximiuz.com
+by Ivan Velichko
 
 <hr />
 
