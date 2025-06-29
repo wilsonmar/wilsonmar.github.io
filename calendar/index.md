@@ -1,7 +1,7 @@
 ---
 layout: page
-date: "2025-06-28"
-lastchange: "v029 + watch out - calendar:index.md"
+date: "2025-06-29"
+lastchange: "v030 + cartier png - calendar:index.md"
 url: "https://wilsonmar.github.io/calendar"
 file: "calendar"
 title: Please send me an appointment
@@ -265,7 +265,7 @@ The world's oldest computer dates back to 100 BC (the 2nd century BC). It's call
 https://www.youtube.com/watch?v=F_ePbbujrp0
 
 Among <a target="_blank" href="https://www.youtube.com/watch?v=PHis9l8cJks">watch terms</a>:
-* "Deployant" buckles have a metal preserves a leather strap from wear
+* "Deployant" buckles have a metal clasp to preserve the leather strap from wear
 * "Automatic" watches use a balance wheel to provide kinetic power to power the movement.
 * "Quartz" watches use a battery-powered quartz crystal to keep time.
 * "Perpetual" calendar mechanical watches still means the owner needs the watch to be serviced to be serviced at the Gregorian calendar leap years 2100, 2200, 2300, 3999.
@@ -273,7 +273,22 @@ Among <a target="_blank" href="https://www.youtube.com/watch?v=PHis9l8cJks">watc
 <a target="_blank" href="https://www.youtube.com/watch?v=4Sx2hxZRM2s">VIDEO</a>:
 The $153,000 USD IWC Portugieser Eternal Calendar (awarded the best watch of 2024) has an "eternal calendar" that doesn't need to be reset until the year 3999 becuase it has a wheel that turns once every 400 years (through leap years 2100, 2200, 2300). You just have to wind it every day or buy a watch winder mechanism.
 
-<a target="_blank" href="https://www.cartier.com/en-us/watches/collections/tank/">Cartier's "Tank"</a> watch with a blue crown and blue hands was first introduced in 1917 when WWI tanks first appeared as a symbol of strength and durability. Its square case and Roman numerals reflect the Art Deco asthetics also emerging at the time. <a target="_blank" href="https://www.youtube.com/watch?v=sAn-WQEWm3c&t=5m3s">Old money elegance</a>. <a target="_blank" href="https://www.youtube.com/watch?v=b8Er1QeEHes">Worn by Gary Grant, Andy Worhol, Muhammad Ali, Jacki Kennedy</a>. A large $3,450 steel Cartier <a target="_blank" href="https://www.youtube.com/watch?v=4fEhUU_IUZE">"Must 2" tank has Solarbeat v2</a> is 6.6 mm thick.
+<a target="_blank" href="https://www.youtube.com/watch?v=b8Er1QeEHes"><img align="right" width="100" alt="cartier-tank-644x774" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1751186189/cartier-tank-644x774_usrt4j.png"></a>
+If I were a tux shop owner, I would Cartier's "Tank <a target="_blank" href="https://www.cartier.com/on/demandware.static/-/Library-Sites-CartierSharedLibrary-BGTJ/default/dwed0a2bf5/legal/legal-pdf/CARTIER_USERGUIDE2_V2_241107_US.pdf">Must SolarBeat™</a> watches version 2 - <a target="_blank" href="https://www.cartier.com/en-us/watches/collections/tank/tank-must-solarbeat%E2%84%A2-watch-CRWSTA0122.html">$3,830 list for Large</a> or Extra-Large Automatic. 6.6 mm thick case with a silver steel case and strap. Get the perlon mesh strap.
+The metal mesh strap from Jackson.
+
+<a target="_blank" href="https://www.cartier.com/en-us/watches/collections/tank/tank-must-solarbeat%E2%84%A2-watch-CRWSTA0120.html">$3,450 with a black calfskin strap</a>. 
+<a target="_blank" href="https://bulangandsons.com/collections/straps-for-cartier-tank-must-modern-2021-2024">Replacement leather straps are $100</a>.
+Unlike Seiko's Eco-drive, it is water-resistant to 100 feet. Unlike imitators, Cartier's has blue hands and a blue cabonchon-shaped Opaline spindel. 
+
+Its styling is iconic. The style was first introduced in 1917 when WWI tanks first appeared as a symbol of strength and durability. Its square case and Roman numerals reflect the Art Deco asthetics also emerging at the time. For better visual balance, the 4 is IIII rather than Roman numeral IV.
+
+<a target="_blank" href="https://www.youtube.com/shorts/zWx7v08igvE">VIDEO</a>:
+On the quartz, serafs on the printed numerals touch each other. On Solarbeat they are separated, and sunken. 
+Cartier offers an extended warranty for 8 years, which also covers the replacement of the battery (the first battery replace free on the Cartier).
+
+<a target="_blank" href="https://www.youtube.com/watch?v=MXrHIOSqe8A">Unboxing</a>:
+<a target="_blank" href="https://www.youtube.com/watch?v=sAn-WQEWm3c&t=5m3s">Old money elegance</a>. <a target="_blank" href="https://www.youtube.com/watch?v=b8Er1QeEHes">Worn by Gary Grant, Andy Worhol, Muhammad Ali, Jacki Kennedy</a>, Jeff Goldblum. A large $3,450 steel Cartier <a target="_blank" href="https://www.youtube.com/watch?v=4fEhUU_IUZE">"Must 2" tank has Solarbeat v2</a> is 6.6 mm thick.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=KwQVhRbB2YM">VIDEO</a>:
 BLAH: Aside from time keeping accuracy and the hassle of winding, mechanical watches require servicing, which can cost hundreds of dollars. I've experienced a dealer switch with a replica so they can get a genuine parts which they then sell on ebay. And that process took months.
@@ -291,7 +306,7 @@ The advent of Japanese quartz movements in the 1970s made watches both less expe
 The ability of Apple Watch to read heart rate, ECG, and other biometric data means it needs charging <strong>daily</strong> and <a target="_blank" href="https://www.youtube.com/watch?v=7mwaK69yvX0">have software updates</a>. Smart watches such as Apple and Garmin enable <a target="_blank" href="https://www.youtube.com/watch?v=UZEZTJTYE5Y">Ubiquitous Technical Surveillance</a> which reveal your location and pattern of life. Their microphones provide eavesdropping on conversations. <a target="_blank" href="https://www.instagram.com/reel/DLU8GhtSvkt/?utm_source=ig_web_copy_link">EMF emissions</a>.
 
 Paradoxically, many watches remain expensive to make because of their intricate mechanical (even hand-wind) movements, which leads to exclusivity. 
-* "Grand Seiko" is a $10,000 watch that is hand-wound and <a target="_blank" href="https://www.youtube.com/watch?v=jVoRoK1u3Dg">as accurate as Rolex and Omega watches</a>.
+* <a target="_blank" href="https://www.grand-seiko.com/us-en/collections/all">Grand Seiko</a> makes $10,000 watches that are hand-wound and <a target="_blank" href="https://www.youtube.com/watch?v=jVoRoK1u3Dg">as accurate as Rolex and Omega watches</a> (20 seconds per year).
 
 <img align="right" width="200" alt="watch-1968-512x640.webp" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1750913911/watch-1968-512x640_p9dipf.webp" />
 The <strong>Vacheron Constantin</strong> Historiques Ultra-Fine 1968 watch has a square white face with a rose gold frame. It's a ultra-thin manual-winding automatic caliber 1003 is an ultra-thin mechanical movement measuring 1.64 mm thick - one of the thinnest mechanical movements currently available on the market. total 5.4mm thin. Its pre-owned market ranges between $60,000 to $120,000. During his 2016 presidential campaign speech, <a target="_blank" href="https://www.instagram.com/p/DCCOqY5u-7u/?hl=en">Donald Trump wore it</a>.
@@ -319,7 +334,11 @@ Different colors of the distintive rotable bezel have nicknames:
 * "Kermit" for the lighter green.
 * "Root beer" brown
 
-The GMT's dial enables the watch to show 3 time zones and use as a compass.
+The GMT's dial enables the watch to show 3 time zones.
+
+To use your watch as a compass:
+1. Position the hour hand to the sun.
+2. In the Northern Hemisphere, South is half the angle between the hour hand and the 12 o'clock mark.
 
 <a target="_blank" href="https://www.youtube.com/shorts/FpBqWJpfRyk">VIDEO</a>:
 The crown can be pulled out in two notches. 
