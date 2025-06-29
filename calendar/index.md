@@ -1,7 +1,7 @@
 ---
 layout: page
 date: "2025-06-28"
-lastchange: "v028 + watch out - calendar:index.md"
+lastchange: "v029 + watch out - calendar:index.md"
 url: "https://wilsonmar.github.io/calendar"
 file: "calendar"
 title: Please send me an appointment
@@ -261,7 +261,7 @@ It boasts a fast and responsive design with Advanced Notifications.
 ## Horology: Watches
 
 <a target="_blank" href="https://www.youtube.com/watch?v=qqlJ50zDgeA">VIDEO</a>:
-The world's oldest computer dates back to 100 BC (the 2nd century BC). One was recovered in 1901 from a shipwreck off the island of Kythera in Greece, divers found the Antikythera Mechanism, a device that inspired the movie "Indiana Jones and the Dial of Destiny". The latest 3D x-ray and modelling technology enabled scientists to understand how the dozens of bronze cogs in the device are able to predict solar eclipses.
+The world's oldest computer dates back to 100 BC (the 2nd century BC). It's called the Antikythera Mechanism from where it was recovered in 1901 from a shipwreck off the island of Kythera in Greece. The device inspired the movie "<a target="_blank" href="https://en.wikipedia.org/wiki/Indiana_Jones_and_the_Dial_of_Destiny">Indiana Jones and the Dial of Destiny</a>". The latest 3D x-ray and modelling technology enabled scientists to understand how the dozens of bronze cogs in the device are able to predict solar eclipses.
 https://www.youtube.com/watch?v=F_ePbbujrp0
 
 Among <a target="_blank" href="https://www.youtube.com/watch?v=PHis9l8cJks">watch terms</a>:
@@ -273,10 +273,10 @@ Among <a target="_blank" href="https://www.youtube.com/watch?v=PHis9l8cJks">watc
 <a target="_blank" href="https://www.youtube.com/watch?v=4Sx2hxZRM2s">VIDEO</a>:
 The $153,000 USD IWC Portugieser Eternal Calendar (awarded the best watch of 2024) has an "eternal calendar" that doesn't need to be reset until the year 3999 becuase it has a wheel that turns once every 400 years (through leap years 2100, 2200, 2300). You just have to wind it every day or buy a watch winder mechanism.
 
-Cartier's "tank" manual-wind watch was first introduced in 1917 when WWI tanks first appeared as a symbol of strength and durability. Its square case and Roman numerals reflect the Art Deco asthetics also emerging at the time. <a target="_blank" href="https://www.youtube.com/watch?v=sAn-WQEWm3c&t=5m3s">Old money elegance</a>. <a target="_blank" href="https://www.youtube.com/watch?v=b8Er1QeEHes">Worn by Gary Grant, Andy Worhol, Muhammad Ali, Jacki Kennedy</a>. The Cartier <a target="_blank" href="https://www.youtube.com/watch?v=4fEhUU_IUZE">"Must 2" tank has Solarbeat v2</a> for 16 years but no water resistance at $13,000. 
+<a target="_blank" href="https://www.cartier.com/en-us/watches/collections/tank/">Cartier's "Tank"</a> watch with a blue crown and blue hands was first introduced in 1917 when WWI tanks first appeared as a symbol of strength and durability. Its square case and Roman numerals reflect the Art Deco asthetics also emerging at the time. <a target="_blank" href="https://www.youtube.com/watch?v=sAn-WQEWm3c&t=5m3s">Old money elegance</a>. <a target="_blank" href="https://www.youtube.com/watch?v=b8Er1QeEHes">Worn by Gary Grant, Andy Worhol, Muhammad Ali, Jacki Kennedy</a>. A large $3,450 steel Cartier <a target="_blank" href="https://www.youtube.com/watch?v=4fEhUU_IUZE">"Must 2" tank has Solarbeat v2</a> is 6.6 mm thick.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=KwQVhRbB2YM">VIDEO</a>:
-BLAH: Aside from time keeping accuracy and the hassle of winding, mechanical watches require servicing, which can cost hundreds of dollars. I've experienced a dealer switch with a replica for genuine parts which they then sell on ebay.
+BLAH: Aside from time keeping accuracy and the hassle of winding, mechanical watches require servicing, which can cost hundreds of dollars. I've experienced a dealer switch with a replica so they can get a genuine parts which they then sell on ebay. And that process took months.
 
 But the $195 Seiko SUP880 and Casio solar gave the classic look not need any manual winding.
 The advent of Japanese quartz movements in the 1970s made watches both less expensive to make and more accurate. This is while COSC Chronometer or METAS Master Chronometer certification of mechanical movements guarantee drift of -4/+6 seconds per day (which can add up).
@@ -296,14 +296,14 @@ Paradoxically, many watches remain expensive to make because of their intricate 
 <img align="right" width="200" alt="watch-1968-512x640.webp" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1750913911/watch-1968-512x640_p9dipf.webp" />
 The <strong>Vacheron Constantin</strong> Historiques Ultra-Fine 1968 watch has a square white face with a rose gold frame. It's a ultra-thin manual-winding automatic caliber 1003 is an ultra-thin mechanical movement measuring 1.64 mm thick - one of the thinnest mechanical movements currently available on the market. total 5.4mm thin. Its pre-owned market ranges between $60,000 to $120,000. During his 2016 presidential campaign speech, <a target="_blank" href="https://www.instagram.com/p/DCCOqY5u-7u/?hl=en">Donald Trump wore it</a>.
 
-Due to saavy marketing tactics such as Authorized Dealers putting customers on waitlists even though they have inventory in the back room, luxury watches are "Veblen goods" that people wear to "flex" their social status. <a target="_blank" href="https://www.youtube.com/@chad.alexander/shorts">VIDEO</a>
+Due to saavy marketing tactics such as Authorized Dealers putting customers on waitlists even though they have inventory in the back room, luxury watches are "Veblen goods" that people wear to "flex" their richness status, so being overpriced is a feature that flips normal supply and demand forces. <a target="_blank" href="https://www.youtube.com/@chad.alexander/shorts">VIDEO</a>
 
 <a target="_blank" href="https://watchcharts.com/watches">watchcharts.com</a> reports that Rolex watches best retain their value over time. Rolex makes 31% of all watches made, 1.2 million in 2024. Although Blancpain is the oldest Swiss watch brand (being founded in 1735) and introduced its "Fifty Fathoms" collection of diving watches in 1953 (one year before the Rolex Submariner), Rolex watches were the first to offer glow-in-the-dark "luminescent" indicators of radioactive Rodium.
 
 While Rolex, Patek Philippe, and Oris remain independent, many are now part of large corporations in Switzerland:
 * Swatch Group	: Audemars Piguet, Breguet, Blancpain, Glashütte, Omega, Longines, Tissot
-* Richemont	: Cartier, Jaeger-LeCoultre, A. Lange & Söhne, <a target="_blank" href="https://www.youtube.com/watch?v=gDuT7TyKsM8">IWC</a>, Vacheron Constantin, Panerai
-* LVMH :	Hublot, Bvlgari, TAG Heuer, Zenith
+* Richemont	: Vacheron Constantin, Cartier, Jaeger-LeCoultre, A. Lange & Söhne, <a target="_blank" href="https://www.youtube.com/watch?v=gDuT7TyKsM8">IWC</a>,  Panerai
+* LVMH :	Hublot, Bvlgari, Monte Blanc, Ralph Laurent, TAG Heuer, Zenith
 
 Richard Mille and IWC has Ferrari drivers wearing their watches.
 
