@@ -1,7 +1,7 @@
 ---
 layout: page
-date: "2025-06-29"
-lastchange: "v030 + cartier png - calendar:index.md"
+date: "2025-07-01"
+lastchange: "v031 + tier list - calendar:index.md"
 url: "https://wilsonmar.github.io/calendar"
 file: "calendar"
 title: Please send me an appointment
@@ -264,13 +264,21 @@ It boasts a fast and responsive design with Advanced Notifications.
 The world's oldest computer dates back to 100 BC (the 2nd century BC). It's called the Antikythera Mechanism from where it was recovered in 1901 from a shipwreck off the island of Kythera in Greece. The device inspired the movie "<a target="_blank" href="https://en.wikipedia.org/wiki/Indiana_Jones_and_the_Dial_of_Destiny">Indiana Jones and the Dial of Destiny</a>". The latest 3D x-ray and modelling technology enabled scientists to understand how the dozens of bronze cogs in the device are able to predict solar eclipses.
 <a target="_blank" href="https://www.youtube.com/watch?v=F_ePbbujrp0">VIDEO</a>
 
-Watches are at the intersection of art, fashion, and technology.
+Innovations in watches occur at the intersection of art, fashion, and micro-engineering technology.
+
+The British were able to dominate maritime trade and warfare during the 17th century because they came up with a way for sailors to keep accurate time to take readings at precisely Noon.
 
 Among <a target="_blank" href="https://www.youtube.com/watch?v=PHis9l8cJks">watch terms</a>:
 * "Deployant" buckles have a metal clasp to preserve the leather strap from wear
-* "Mechanical" movements are hand-wound or Automatic.
-* "Automatic" movements use a balance wheel to capture power from wrist motion.
+* "Mechanical" movements are powered by a mainspring which stores energy from hand-winding or movement. The second hand on such watches have a smooth sweeping motion.
+* "Automatic" movements capture power from the wrist motion of the wearer.
 * "Quartz" watches use a battery-powered quartz crystal to keep time.
+* "Eco-drive" solar powered watches from Citizen, Seiko, Cartier charge a batter than can last for 10-20 years.
+
+   <a target="_blank" href="https://watchtechnicians.com/mechanical-vs-quartz-watches-maintenance-differences-explained/">Maintenance is needed</a>.
+   <a target="_blank" href="https://www.youtube.com/watch?v=KwQVhRbB2YM">BLAH</a>: Servicing complicated watches can cost hundreds of dollars. 
+
+   "Hurley Roberts" is a respected watch servicer. <a target="_blank" href="https://www.youtube.com/watch?v=ulIL62L3ixQ">PROTIP</a>: I've experienced a certified dealer remove genuine parts from my watch with a replica so they can sell my genuine parts on eBay. And they kept my watch for weeks.
 
 * "Complications" are additional features such as moon phase, calendar, chronograph.
 
@@ -280,25 +288,26 @@ Among <a target="_blank" href="https://www.youtube.com/watch?v=PHis9l8cJks">watc
 * <a target="_blank" href="https://www.youtube.com/watch?v=4Sx2hxZRM2s"><img align="right" width="200" alt="iwc-eternal-414x617.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1751249031/iwc-eternal-414x617_m4cdth.png"></a>"Eternal" calendar mechanical watches don't need to be serviced at the Gregorian calendar leap years. <a target="_blank" href="https://www.youtube.com/watch?v=4Sx2hxZRM2s">VIDEO</a>:
 The $153,000 USD 44.4mm <a target="_blank" href="https://www.iwc.com/us/en/specials/eternal-calendar.html">IWC Portugieser Eternal Calendar</a> (Ref. IW505701) was awarded the best watch of 2024 at the Aiguille d’Or at the horological Oscars. It doesn't need to be reset until the year 3999 becuase it has a wheel that turns once every 400 years (through leap years 2100, 2200, 2300). You just have to wind it every day or buy a watch winder mechanism.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=KwQVhRbB2YM">BLAH</a>:
-Mechanical watch manufacturers require servicing, which can cost hundreds of dollars. <a target="_blank" href="https://www.youtube.com/watch?v=ulIL62L3ixQ">PROTIP</a>: 
-I've experienced a IWC dealer remove genuine parts from my watch with a replica so they can sell my genuine parts on eBay. And they kept my watch for weeks.
+<a target="_blank" href="https://www.grand-seiko.com/us-en">Grand Seiko</a>'s <a target="_blank" href="https://grandseikoboutique.us/collections/masterpiece">"masterpiece" collection cost hundreds of thousands</a> is the only Japanese brand among top watch "tier lists" such as <a target="_blank" href="https://www.reddit.com/r/Watches/comments/16wtf0c/tier_list_heres_another_watch_tier_list_and/">this one</a>:
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1751373525/watch-tier-list.png_rzyi4y.webp"><img alt="watchwatch-tier-list.png.webp" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1751373525/watch-tier-list.png_rzyi4y.webp" /></a> 
 
 <a target="_blank" href="https://www.youtube.com/watch?v=b8Er1QeEHes"><img align="right" width="100" alt="cartier-tank-644x774" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1751186189/cartier-tank-644x774_usrt4j.png"></a>
-If I were a tux shop owner, I would sell Cartier's "Tank" watches.
-Its 6.6 mm thick case slips under shirts.
-
-Cartier's Tank watches have a <a target="_blank" href="https://www.cartier.com/en-us/watches/choose-your-watch/by-bracelet-or-strap/interchangeable-bracelet-watches/">QuickSwitch feature</a> so you can switch straps. 
+If I were a tux shop owner, I would sell Cartier's "Tank" watches. 
+The "tank" style was first introduced in 1917 when WWI tanks first appeared as a symbol of strength and durability. Its square case and Roman numerals reflect the Art Deco asthetics also emerging at the time. For better visual balance, the 4 is IIII rather than Roman numeral IV.
+Unlike imitators, Cartier's has blue hands and a blue cabonchon-shaped Opaline spindle. 
+Its 6.6 mm thickness slips under shirts.
+A black dial and black leather strap is more classic. 
+Silver stainless steel case and strap match black and silver cufflinks.
+<ul>Cartier's Tank watches have a <a target="_blank" href="https://www.cartier.com/en-us/watches/choose-your-watch/by-bracelet-or-strap/interchangeable-bracelet-watches/">QuickSwitch feature</a> so you can switch straps. 
 PROTIP: Get the perlon mesh strap or metal Milanese Mesh strap from Jackson for <a target="_blank" href="https://www.watchgecko.com/products/milanese-mesh-watch-strap-polished">$54</a>.
-So the silver stainless steel case and strap match black and silver cufflinks.
+</ul>
+PROTIP: Less flashy jewlery reduce the chance of robbery.
 
-PROTIP: Leather straps are less flashy than metal straps, and thus reduce the chance of robbery.
-
-<a target="_blank" href="https://www.cartier.com/on/demandware.static/-/Library-Sites-CartierSharedLibrary-BGTJ/default/dwed0a2bf5/legal/legal-pdf/CARTIER_USERGUIDE2_V2_241107_US.pdf">Must SolarBeat™</a> watches <a target="_blank" href="https://www.cartier.com/en-us/watches/collections/tank/tank-must-solarbeat%E2%84%A2-watch-CRWSTA0122.html">$3,830 list for Large</a> or Extra-Large Automatic. 
-
+<a target="_blank" href="https://www.cartier.com/on/demandware.static/-/Library-Sites-CartierSharedLibrary-BGTJ/default/dwed0a2bf5/legal/legal-pdf/CARTIER_USERGUIDE2_V2_241107_US.pdf">Cartier's Must SolarBeat™</a> watches <a target="_blank" href="https://www.cartier.com/en-us/watches/collections/tank/tank-must-solarbeat%E2%84%A2-watch-CRWSTA0122.html">$3,830 list for Large</a> or Extra-Large Automatic. 
 <a target="_blank" href="https://www.cartier.com/en-us/watches/collections/tank/tank-must-solarbeat%E2%84%A2-watch-CRWSTA0120.html">$3,450 with a black calfskin strap</a>. 
 <a target="_blank" href="https://bulangandsons.com/collections/straps-for-cartier-tank-must-modern-2021-2024">Replacement leather straps are $100</a>.
-Unlike Seiko's Eco-drive, it is water-resistant to 100 feet. Its styling is iconic. The style was first introduced in 1917 when WWI tanks first appeared as a symbol of strength and durability. Its square case and Roman numerals reflect the Art Deco asthetics also emerging at the time. For better visual balance, the 4 is IIII rather than Roman numeral IV.
+
+PROTIP: Unlike Seiko's Eco-drive, Cartier's Must SolarBeat™ is water-resistant to 100 feet. 
 
 <a target="_blank" href="https://www.youtube.com/shorts/zWx7v08igvE">VIDEO</a>:
 On the quartz, serafs on the printed numerals touch each other. On Solarbeat they are separated, and sunken. 
@@ -306,8 +315,6 @@ Cartier offers an extended warranty for 8 years, which also covers the replaceme
 
 <a target="_blank" href="https://www.youtube.com/watch?v=MXrHIOSqe8A">Unboxing</a>:
 <a target="_blank" href="https://www.youtube.com/watch?v=sAn-WQEWm3c&t=5m3s">Old money elegance</a>. <a target="_blank" href="https://www.youtube.com/watch?v=b8Er1QeEHes">Worn by Gary Grant, Andy Worhol, Muhammad Ali, Jacki Kennedy</a>, Jeff Goldblum. A large $3,450 steel Cartier <a target="_blank" href="https://www.youtube.com/watch?v=4fEhUU_IUZE">"Must 2" tank has Solarbeat v2</a> is 6.6 mm thick.
-
-Unlike imitators, Cartier's has blue hands and a blue cabonchon-shaped Opaline spindle.
 
 <img align="right" width="200" alt="watch-seiko-tank-239x364.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1750914093/watch-seiko-tank-239x364_wdblov.png" />
 The $195 Seiko SUP880 and Casio solar has the classic look without manual winding.
