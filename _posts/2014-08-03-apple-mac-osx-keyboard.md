@@ -1,6 +1,7 @@
 ---
 layout: post
-date: "2024-01-13"
+date: "2025-07-01"
+commitmsg: "v015 + steno :2014-08-03-apple-mac-osx-keyboard.md"
 file: "apple-mac-osx-keyboard"
 title: "Apple Mac OSX Keyboard Shortcuts"
 excerpt: "Stay focused and do things faster with Keyboard Shortcuts, HotKeys, and StreamDeck buttons"
@@ -11,6 +12,7 @@ image:
   credit: Apple
   creditlink: 
 comments: true
+created: "2014-08-03"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -43,6 +45,7 @@ So develop the habit of pros by making a habit of following these tips:
    1. Customize defaults for speed (like the pros)
    1. Use more <a href="#Hotkey">Hotkey app</a>
    1. Get a <a href="#StreamDeck">Stream Deck</a> for one-touch automated action
+   1. Learn <a href="#Steno">Stenography</a> using a special keyboard for 240 WPM typing.
    <br /><br />
 
 > PROTIP: Optimize for keys we use most, and avoid common mistakes with keys we accidentally press.
@@ -963,6 +966,17 @@ See https://support.google.com/chrome/answer/165450?hl=en
 </td></tr>
 </table>
 
+Common special characters: Option+...
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="top"><td> 1 </td><td>2</td><td>3</td><td>4</td><td>5</td><td>6
+   </td><td>7</td><td>8</td><td>9</td><td>0</td><td>-</td><td>=</td></tr>
+<tr valign="top"><td> ¡ </td><td>™</td><td>£</td><td>¢</td><td>∞</td><td>§
+   </td><td>¶</td><td>•</td><td>ª</td><td>º</td><td>–</td><td>≠</td><td></td></tr>
+<tr valign="top"><td> Spanish </td><td>Trademark</td><td>British pound</td><td>4</td><td>infinity</td><td>paragraph </td><td>paragraph</td><td>a</td><td>o</td><td>em</td><td>Not equal</td></tr>
+</table>
+
+
 <a id="ChromeTextz"></a>
 
 ### Text string operations #
@@ -1379,6 +1393,8 @@ phone plug</a> to connect to a <a target="_blank" href="https://kinesis-ergo.com
 
 ## Ergonomic Keyboards
 
+> QWERTYUIOP. That was the contents of the first email ever sent, back in 1971, by Ray Tomlinson." -- Centre For Computing History. Accessed June 19, 2019. http://www.computinghistory.org.uk/det/6116/First-e-mail-sent-by-Ray-Tomlinson/.
+
 <a target="_blank" href="https://www.youtube.com/watch?v=oOdfefV2R1I">VIDEO</a>: "Among fastest competitive typists, only two use Dvorick key layout".
 
 Although pricey at <a target="_blank" href="https://www.amazon.com/Kinesis-Advantage2-Ergonomic-Keyboard-KB600/dp/B07K1SMRGS/">$340 from Amazon</a> (perhaps the most expensive keyboard available), the "Advantage2" keyboard <a target="_blank" href="https://kinesis-ergo.com/shop/advantage2/">from Kinesis-ergo.com</a> (at Bethel, Washington state)
@@ -1412,6 +1428,64 @@ Videos:
    <br /><br />
 
 
+<a name="Steno"></a>
+
+## Stenography
+
+<a target="_blank" href="https://www.youtube.com/watch?v=UA6UythLlEI">VIDEO</a>:
+The average typing speed is 40 WPM (words per minute) on a standard QWERTY keyboard.
+Pros type 80-95 WPM.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=-6qA3xtZodU">VIDEO</a>: Stenography machines enable
+Courtroom reporters to record testimony at 99.9% accuracy at 280 WPM using a stenograph machine
+to implement the <strong>phonetic</strong> Pitman method.
+Those .
+
+Unlike standard QWERTY keyboards which only recognize two keys pressed at the same time,<br />
+pro machines cost thousands of dollars because they can recognize <strong>26 keys pressed at the same time</strong>:
+https://sites.google.com/site/ploverdoc/appendix-cheat-sheet
+<a target="_blank" href=""><img alt="steno-keyboard-734x315.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1751374711/steno-keyboard-734x315_bo0a5p.png"></a>
+
+Some gamer keyboards can recognize <strong>26 keys pressed at the same time</strong> using 
+<a target="_blank" href="https://www.youtube.com/watch?v=Wpv-Qb-dB6g&t=44s&pp=ygUGcGxvdmVy">VIDEO</a>:
+Plover stenography software:<br />
+<a target="_blank" href="https://www.youtube.com/watch?v=rYUmsUx0oSo">VIDEO</a>:
+23 keys operated with 10 fingers simultaneously can have 8,388,607 combinations (called chords or strokes).
+
+#STKPWHRAO*EUFRPBLGTSDZ (there is no N key and <a target="_blank" href="https://www.youtube.com/shorts/6s4BO4oGcBs">2 R's</a> and <a target="_blank" href="https://www.youtube.com/shorts/bSLovrfWbWY">2 P's</a>)
+
+<a target="_blank" href="https://www.youtube.com/watch?v=pW647nfzXLk">Use steno for everything</a>
+
+"briefs" = "abbreviated stokes" are memorized to type faster.
+
+* Uni v4 keyboard from stenokeyboards.com <a target="_blank" href="https://www.youtube.com/@StenoKeyboards/shorts">videos</a>
+* Overlay
+* Multisteno from nolltronics.com
+
+50% of users can surpass their typing speed in 3-6 months of practice.
+Look at it like learning a new musical instrument.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=rYUmsUx0oSo"> Hobbyist's Guide to Stenography | How to Learn Steno</a> by Aerick
+
+<a target="_blank" href="https://www.youtube.com/watch?v=pXo1crIN7dY&t=225s&pp=ygUGcGxvdmVy">VIDEO</a>:
+Learning the fastest way to type - Goodbye QWERTY
+
+* didoesdigital.com/typey-type/lessons
+* Plover wiki
+* Plover discord server https://discord.gg/DJGb9CRsTj
+* Gemini PR hobbyist steno keyboard
+
+Tutorials:
+* https://lapwing.aerick.ca for hobbyists
+* typeracer game
+* https://www.openstenoproject.org/learn-plover/home.html - Mirabai Knight's theory for stenocaptioning
+* https://www.practiceplover.com
+* https://ploversteno.org
+
+
+
+* The @Platinum Steno YouTube channel for speedbuilding by court reporters.
+* Chloe Salazar's <a target="_blank" href="https://www.youtube.com/watch?v=zKFSOFRHKwk">Intro</a>, <a target="_blank" href="https://www.youtube.com/watch?v=-6qA3xtZodU">machine</a>, <a target="_blank" href="https://www.youtube.com/watch?v=K8c8_P-7Gdw">working freelance</a>
 
 ## References
 
