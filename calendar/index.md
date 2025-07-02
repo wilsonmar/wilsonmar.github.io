@@ -1,7 +1,7 @@
 ---
 layout: page
 date: "2025-07-01"
-lastchange: "v031 + tier list - calendar:index.md"
+lastchange: "v032 + seiko hist - calendar:index.md"
 url: "https://wilsonmar.github.io/calendar"
 file: "calendar"
 title: Please send me an appointment
@@ -288,11 +288,16 @@ Among <a target="_blank" href="https://www.youtube.com/watch?v=PHis9l8cJks">watc
 * <a target="_blank" href="https://www.youtube.com/watch?v=4Sx2hxZRM2s"><img align="right" width="200" alt="iwc-eternal-414x617.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1751249031/iwc-eternal-414x617_m4cdth.png"></a>"Eternal" calendar mechanical watches don't need to be serviced at the Gregorian calendar leap years. <a target="_blank" href="https://www.youtube.com/watch?v=4Sx2hxZRM2s">VIDEO</a>:
 The $153,000 USD 44.4mm <a target="_blank" href="https://www.iwc.com/us/en/specials/eternal-calendar.html">IWC Portugieser Eternal Calendar</a> (Ref. IW505701) was awarded the best watch of 2024 at the Aiguille d’Or at the horological Oscars. It doesn't need to be reset until the year 3999 becuase it has a wheel that turns once every 400 years (through leap years 2100, 2200, 2300). You just have to wind it every day or buy a watch winder mechanism.
 
-<a target="_blank" href="https://www.grand-seiko.com/us-en">Grand Seiko</a>'s <a target="_blank" href="https://grandseikoboutique.us/collections/masterpiece">"masterpiece" collection cost hundreds of thousands</a> is the only Japanese brand among top watch "tier lists" such as <a target="_blank" href="https://www.reddit.com/r/Watches/comments/16wtf0c/tier_list_heres_another_watch_tier_list_and/">this one</a>:
+* <a target="_blank" href="https://en.wikipedia.org/wiki/Daylight_saving_time">"Daylight Savings Time"</a> auto-adjustment is not necessarily a feature of GPS world-time watches aware of time zones. Manual reset is needed every 6 months on watches such as the $1995 13.3 mm thick Seiko 3rd Gen Astron SSE085 with Titanium case & bracelet. 2 year warranty. Solar white dial SSE047 manual DST is $2,100. SSE041 with red dials is $2,595.
+
+<a target="_blank" href="https://www.grand-seiko.com/us-en">Grand Seiko</a>'s <a target="_blank" href="https://grandseikoboutique.us/collections/masterpiece">"masterpiece" collection goes to hundreds of thousands</a> is the only Japanese brand among top watch "tier lists" such as <a target="_blank" href="https://www.reddit.com/r/Watches/comments/16wtf0c/tier_list_heres_another_watch_tier_list_and/">this one</a>:
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1751373525/watch-tier-list.png_rzyi4y.webp"><img alt="watchwatch-tier-list.png.webp" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1751373525/watch-tier-list.png_rzyi4y.webp" /></a> 
 
+   <a target="_blank" href="https://seikoluxe.com/history/">BLOG</a>: In Japanese, “Seiko” means “exquisite”, “minute” or “success”. The company started in Tokyo 1892. The Seiko Quartz <a target="_blank" href="https://seikoluxe.com/products/?jsf=jet-engine:listing-main&tax=collection:16">Astron</a> is the world’s first quartz watch, introduced in Tokyo on December 25, 1969. It was accurate to within 5 seconds per month, 100 times more accurate than any other watch, and it ran continuously for a year, or 250 times longer than most mechanical watches. <a target="_blank" href="https://www.seikowatches.com/instructions/html/SEIKO_5X53_EN/BONDSYtujdrbwm">Set DST</a> for <a target="_blank" href="https://www.seikowatches.com/instructions/html/SEIKO_1B25_1B35_EN/CWVVSYwdudetsd">time zones</a> on GPS watches.
+
+Grand Seiko's <a target="_blank" href="https://grandseikoboutique.us/products/watch-manual-steel-dress-sbgk009">$7,900 SBGK009</a> thin 11.6mm case, minimalist black dial, no date, and Stainless Steel bracelet is understated luxury.
+If I were a tux shop owner, I would sell that and Cartier's "Tank" watches. 
 <a target="_blank" href="https://www.youtube.com/watch?v=b8Er1QeEHes"><img align="right" width="100" alt="cartier-tank-644x774" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1751186189/cartier-tank-644x774_usrt4j.png"></a>
-If I were a tux shop owner, I would sell Cartier's "Tank" watches. 
 The "tank" style was first introduced in 1917 when WWI tanks first appeared as a symbol of strength and durability. Its square case and Roman numerals reflect the Art Deco asthetics also emerging at the time. For better visual balance, the 4 is IIII rather than Roman numeral IV.
 Unlike imitators, Cartier's has blue hands and a blue cabonchon-shaped Opaline spindle. 
 Its 6.6 mm thickness slips under shirts.
