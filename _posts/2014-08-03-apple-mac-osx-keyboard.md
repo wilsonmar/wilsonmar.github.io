@@ -1,10 +1,10 @@
 ---
 layout: post
 date: "2025-07-01"
-commitmsg: "v015 + steno :2014-08-03-apple-mac-osx-keyboard.md"
+commitmsg: "v016 + steno keyboard :2014-08-03-apple-mac-osx-keyboard.md"
 file: "apple-mac-osx-keyboard"
-title: "Apple Mac OSX Keyboard Shortcuts"
-excerpt: "Stay focused and do things faster with Keyboard Shortcuts, HotKeys, and StreamDeck buttons"
+title: "Keyboard Shortcuts for Apple Mac"
+excerpt: "Do things faster with Keyboard Shortcuts, HotKeys, Steno chords, and StreamDeck buttons"
 tags: [apple, mac, keyboard]
 image:
 # keyboard-mac-1900x500
@@ -1427,10 +1427,13 @@ Videos:
    * https://www.youtube.com/watch?v=PhQlZvUzT7w Aug 3, 2016 from Kinesis
    <br /><br />
 
+<hr />
 
 <a name="Steno"></a>
 
 ## Stenography
+
+   * <a target="_blank" href="hhttps://www.youtube.com/watch?v=rYUmsUx0oSo">VIDEO</a>: Summary
 
 <a target="_blank" href="https://www.youtube.com/watch?v=UA6UythLlEI">VIDEO</a>:
 The average typing speed is 40 WPM (words per minute) on a standard QWERTY keyboard.
@@ -1438,54 +1441,173 @@ Pros type 80-95 WPM.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=-6qA3xtZodU">VIDEO</a>: Stenography machines enable
 Courtroom reporters to record testimony at 99.9% accuracy at 280 WPM using a stenograph machine
-to implement the <strong>phonetic</strong> Pitman method.
-Those .
+that implement the <strong>phonetic</strong> (sound) Pitman method.
 
-Unlike standard QWERTY keyboards which only recognize two keys pressed at the same time,<br />
-pro machines cost thousands of dollars because they can recognize <strong>26 keys pressed at the same time</strong>:
-https://sites.google.com/site/ploverdoc/appendix-cheat-sheet
-<a target="_blank" href=""><img alt="steno-keyboard-734x315.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1751374711/steno-keyboard-734x315_bo0a5p.png"></a>
+The reason why so much faster than using QWERTY keyboards is that 
 
-Some gamer keyboards can recognize <strong>26 keys pressed at the same time</strong> using 
-<a target="_blank" href="https://www.youtube.com/watch?v=Wpv-Qb-dB6g&t=44s&pp=ygUGcGxvdmVy">VIDEO</a>:
-Plover stenography software:<br />
-<a target="_blank" href="https://www.youtube.com/watch?v=rYUmsUx0oSo">VIDEO</a>:
-23 keys operated with 10 fingers simultaneously can have 8,388,607 combinations (called chords or strokes).
+1. fingers do not move much, since Steno keyboards only have 23-26 keys:
 
-#STKPWHRAO*EUFRPBLGTSDZ (there is no N key and <a target="_blank" href="https://www.youtube.com/shorts/6s4BO4oGcBs">2 R's</a> and <a target="_blank" href="https://www.youtube.com/shorts/bSLovrfWbWY">2 P's</a>)
+   <a target="_blank" href="https://sites.google.com/site/ploverdoc/appendix-cheat-sheet">Cheap Sheet</a>:
+   <a target="_blank" href=""><img alt="steno-keyboard-734x315.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1751374711/steno-keyboard-734x315_bo0a5p.png"></a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=pW647nfzXLk">Use steno for everything</a>
+   The "paper tape" displays each <strong>chord</strong> of steno keys pressed on a line:
 
-"briefs" = "abbreviated stokes" are memorized to type faster.
+   <strong>#STKPWHRAO*EUFRPBLGTSDZ</strong>
 
-* Uni v4 keyboard from stenokeyboards.com <a target="_blank" href="https://www.youtube.com/@StenoKeyboards/shorts">videos</a>
-* Overlay
-* Multisteno from nolltronics.com
+   There is no N key and <a target="_blank" href="https://www.youtube.com/shorts/6s4BO4oGcBs">2 R's</a> and <a target="_blank" href="https://www.youtube.com/shorts/bSLovrfWbWY">2 P's</a>
 
-50% of users can surpass their typing speed in 3-6 months of practice.
-Look at it like learning a new musical instrument.
+   With QWERTY keyboards, reaching for Esc, arrows, Delete, Return, special characters, etc. require taking your hand off the keyboard and needing to look at the keyboard, which adds speed and mistakes.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=rYUmsUx0oSo"> Hobbyist's Guide to Stenography | How to Learn Steno</a> by Aerick
+2. Unlike QWARTY keyboards where all letters of words and pressed in sequence, only keys needed for <strong>phonetic</strong> and "orthographic" spelling are pressed:
 
-<a target="_blank" href="https://www.youtube.com/watch?v=pXo1crIN7dY&t=225s&pp=ygUGcGxvdmVy">VIDEO</a>:
-Learning the fastest way to type - Goodbye QWERTY
+   A "theory" translates what is typed into full English words: <a target="_blank" href="https://www.youtube.com/watch?v=vx20oqfjp0I">VIDEO</a>
+
+   There is a lookup app to present what steno keypresses for English words.
+   
+   "KOEF" is "coffee" spelled in steno Plover theory.
+
+   <a target="_blank" href="https://github.com/Jade-GG/plover_phrasing">Phrasings</a>  lets you write entire phrases such as "we don't really want to" in one stroke.
+
+   A steno theory refers to the set of rules that govern how words are broken down. 
+
+   Base theories defined in textbooks you buy:
+   * Phoenix theory is based off of a comprehensive set of rules that make it easy to break down complicated words. 
+   * Magnum theory places more emphasis on learning words themselves through rote memorization. 
+   * Josiah
+
+   Free theories:
+   * <a target="_blank" href="https://platinumframework.org/">PlatinumFramework.org</a> (if you are more of a auditory learner)
+   * defined in the main.json file within Plover, but has some inconsistent words/rules.
+   * <a target="_blank" href="https://lapwing.aerick.ca/">Lapwing theory</a> from 2022 <a target="_blank" href="https://www.youtube.com/watch?v=vx20oqfjp0I">VIDEO</a>: uses the # key for proper nouns.
+
+3. Dictionaries of "briefs" -- "abbreviated stokes" are memorized to type faster -- can number in the hundreds of thousands.   
+
+   50% of users can surpass their typing speed in 3-6 months of practice.
+
+   Many take up steno as an intellectual challenge, like learning a new musical instrument.
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=T_kMd7rxYU0">steno for coding</a> using Georgi keyboard and Plover stenography software with <a target="_blank" href="https://github.com/paulfioravanti/steno-dictionaries">custom steno-dictionaries</a>.
+   
+   <a target="_blank" href="https://www.youtube.com/watch?v=8-oDPhmpN9g">steno with vim</a> 
+
+3. Pro Steno machines cost thousands of dollars because they can recognize <strong>26 keys pressed at the same time</strong>:
+
+   23 keys operated with 10 fingers simultaneously can have 8,388,607 combinations (called chords or strokes).
+
+   Each "outline" Consists of chords (strokes) of keys pressed at the same time.
+
+   Standard QWERTY keyboards only recognize two keys pressed at the same time.
+   Some gamer keyboards have a <strong>n-rollover</strong> of more than 2.
+   But few can recognize <strong>26 keys pressed at the same time</strong> like Steno machines.
+
+5. Steno keys are closer together.
+
+   There are steno caps that can be 3D-printed to fit standard keyboards.
+
+4. Steno machines have a much lighter touch - 35 g (grams) compared to 100 g for standard QWERTY keyboards.
+
+All the above are why standard keyboards are not often used for Steno.
+However, can be used to type on a standard keyboard by "arpeggiate" (pressing keys one at a time before releasing a word by pressing the * key) 
+
+
+### Steno keyboards
+
+An <a target="_blank" href="https://docs.google.com/spreadsheets/d/1DRJOpoPDaxyzYGARJQeiURPqG4kLuT-MvlQ5q7tQDc4/edit?gid=0#gid=0">Spreadsheet comparing Steno keyboards</a>:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1751420724/keyboard-comps-2242x1248_alkdvq.png"><img alt="keyboard-comps-2242x1248.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1751420724/keyboard-comps-2242x1248_alkdvq.png" /></a>
+
+From stenokeyboards.com (<a target="_blank" href="https://www.youtube.com/@StenoKeyboards/shorts">videos</a>) are 35g springs:
+   * The <a target="_blank" href="https://stenokeyboards.com/products/asterisk-keyboard">$50 Asterisk keyboard</a> is flat prone to accidental touches but it's the cheapest.
+   * The $100 Uni <a target="_blank" href="https://www.youtube.com/watch?v=kO15rEjPtNA">VIDEO</a>
+
+   Computers recognize Stenokeyboards using the Gemini serial protocol as a Gemini writer. So CAT software that officially support Gemini writers should support them: https://www.youtube.com/watch?v=pYmxpTCvOLQ&t=187s
+
+from nolltronics.com feature 20g springs: https://nolltronics.com/?v=3e8d115eb4b3
+   * Ecosteno
+   * Multisteno <a target="_blank" href="https://www.youtube.com/watch?v=yzHsUWvHecs">VIDEO</a>
+
+From <a target="_blank" href="https://stenomod.blogspot.com/">Stenomod.com</a>:
+   * TinyMod has 35g Springs
+
+From <a target="_blank" href="https://softhruf.love/">softhruf.love</a>:
+   * Splitography, although having 40g springs, has a cable connect two sides of the keyboard for a more relaxed placement of hands. However, it is difficult to mount on a tripod. <a target="_blank" href="https://www.youtube.com/shorts/HkOZ28oBiSA">VIDEO</a>
+
+From other sources:
+   * The Georgi is not being updated. It has 12g "ultrlight" springs. Connects to a computer using a TRRS cable.
+   Keyboard case: https://www.thingiverse.com/thing:3622551 and  1/8" 4-Pole 3.5mm TRRS Plug
+
+From Stenovations
+   * $125 Polyglot allow hands to rest on  keys without accidentally activating them. digitalCAT by 
+
+   * Overlay
+
+Machine selections:
+   * GeminiPR hobbyist steno keyboard
+   * Keyboard
+   * Passport
+   * ProCAT
+   * Stentura
+   * TX Bolt
+   * Treal
+
+
+### Plover
+
+* https://github.com/openstenoproject/awesome-plover/blob/main/readme.md
+* https://github.com/openstenoproject/
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=Wpv-Qb-dB6g&t=44s&pp=ygUGcGxvdmVy">VIDEO</a>:
+   Plover stenography software (<a target="_blank" href="https://www.youtube.com/watch?v=rYUmsUx0oSo">VIDEO</a>)
+was started on Kickstarter in 201?.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=dpDXQfctiOo">VIDEO</a>:
+To install Plover stenography software:
+   
+   <a target="_blank" href="https://github.com/openstenoproject/plover">https://github.com/openstenoproject/plover</a>
+
+First of all, Plover was built for Intel macOS (before ARM Macs today) and so requires Rosetta 2 to be installed.
+
+1. Do a full backup.
+
+   PROTIP: It is very difficult to remove Rosetta 2 once it is installed.
+
+2. Install Rosetta 2:
+   ```
+   softwareupdate --install-rosetta --agree-to-license
+   ```
+3. Instead of downloading, install Plover using Homebrew to save a few manual steps now and during future updates:
+   ```
+   brew install --cask plover
+   ```
+   The result is the plover.app file in Applications folder.
+
+
+Aerick:
+* <a target="_blank" href="https://www.youtube.com/watch?v=rYUmsUx0oSo"> Hobbyist's Guide to Stenography | How to Learn Steno</a>
+* https://lapwing.aerick.ca for hobbyists
+
+Tutorials:
+* <a target="_blank" href="https://www.youtube.com/watch?v=pXo1crIN7dY&t=225s&pp=ygUGcGxvdmVy">VIDEO</a>: Learning the fastest way to type - Goodbye QWERTY
+* typeracer game
+* https://www.openstenoproject.org/learn-plover/home.html - Mirabai Knight's theory for stenocaptioning
+* https://www.practiceplover.com is the textbook
+* ArtOfChording.com
+* https://ploversteno.org
 
 * didoesdigital.com/typey-type/lessons
 * Plover wiki
 * Plover discord server https://discord.gg/DJGb9CRsTj
-* Gemini PR hobbyist steno keyboard
+* https://groups.google.com/g/ploversteno?pli=1
+* https://github.com/nvdaes/plover_spanish_mqd 
 
-Tutorials:
-* https://lapwing.aerick.ca for hobbyists
-* typeracer game
-* https://www.openstenoproject.org/learn-plover/home.html - Mirabai Knight's theory for stenocaptioning
-* https://www.practiceplover.com
-* https://ploversteno.org
+* The @Platinum Steno YouTube channel for speedbuilding by court reporters. 
 
-
-
-* The @Platinum Steno YouTube channel for speedbuilding by court reporters.
 * Chloe Salazar's <a target="_blank" href="https://www.youtube.com/watch?v=zKFSOFRHKwk">Intro</a>, <a target="_blank" href="https://www.youtube.com/watch?v=-6qA3xtZodU">machine</a>, <a target="_blank" href="https://www.youtube.com/watch?v=K8c8_P-7Gdw">working freelance</a>
+
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=pW647nfzXLk">Use steno for everything</a>
+* <a target="_blank" href="https://www.youtube.com/watch?v=moGX9sCvcRU">Learning Stenography</a>
+
 
 ## References
 
