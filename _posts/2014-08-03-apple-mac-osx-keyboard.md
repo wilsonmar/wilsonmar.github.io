@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-07-01"
-commitmsg: "v016 + steno keyboard :2014-08-03-apple-mac-osx-keyboard.md"
+commitmsg: "v017 + steno keyboard :2014-08-03-apple-mac-osx-keyboard.md"
 file: "apple-mac-osx-keyboard"
 title: "Keyboard Shortcuts for Apple Mac"
 excerpt: "Do things faster with Keyboard Shortcuts, HotKeys, Steno chords, and StreamDeck buttons"
@@ -1447,16 +1447,24 @@ The reason why so much faster than using QWERTY keyboards is that
 
 1. fingers do not move much, since Steno keyboards only have 23-26 keys:
 
+   23 keys operated with 10 fingers simultaneously can have 8,388,607 combinations (called chords or strokes).
+
    <a target="_blank" href="https://sites.google.com/site/ploverdoc/appendix-cheat-sheet">Cheap Sheet</a>:
    <a target="_blank" href=""><img alt="steno-keyboard-734x315.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1751374711/steno-keyboard-734x315_bo0a5p.png"></a>
-
-   The "paper tape" displays each <strong>chord</strong> of steno keys pressed on a line:
-
-   <strong>#STKPWHRAO*EUFRPBLGTSDZ</strong>
 
    There is no N key and <a target="_blank" href="https://www.youtube.com/shorts/6s4BO4oGcBs">2 R's</a> and <a target="_blank" href="https://www.youtube.com/shorts/bSLovrfWbWY">2 P's</a>
 
    With QWERTY keyboards, reaching for Esc, arrows, Delete, Return, special characters, etc. require taking your hand off the keyboard and needing to look at the keyboard, which adds speed and mistakes.
+
+   Each "outline" Consists of chords (strokes) of keys pressed at the same time.
+
+   Standard QWERTY keyboards only recognize two keys pressed at the same time.
+   Some gamer keyboards have a <strong>n-rollover</strong> of more than 2.
+   But few can recognize <strong>26 keys pressed at the same time</strong> like Steno machines.
+
+   The "paper tape" displays each <strong>chord</strong> of steno keys pressed on a line:
+
+   <strong>#STKPWHRAO*EUFRPBLGTSDZ</strong>
 
 2. Unlike QWARTY keyboards where all letters of words and pressed in sequence, only keys needed for <strong>phonetic</strong> and "orthographic" spelling are pressed:
 
@@ -1480,7 +1488,7 @@ The reason why so much faster than using QWERTY keyboards is that
    * defined in the main.json file within Plover, but has some inconsistent words/rules.
    * <a target="_blank" href="https://lapwing.aerick.ca/">Lapwing theory</a> from 2022 <a target="_blank" href="https://www.youtube.com/watch?v=vx20oqfjp0I">VIDEO</a>: uses the # key for proper nouns.
 
-3. Dictionaries of "briefs" -- "abbreviated stokes" are memorized to type faster -- can number in the hundreds of thousands.   
+4. Dictionaries of "briefs" -- "abbreviated stokes" are memorized to type faster -- can number in the hundreds of thousands.   
 
    50% of users can surpass their typing speed in 3-6 months of practice.
 
@@ -1490,21 +1498,13 @@ The reason why so much faster than using QWERTY keyboards is that
    
    <a target="_blank" href="https://www.youtube.com/watch?v=8-oDPhmpN9g">steno with vim</a> 
 
-3. Pro Steno machines cost thousands of dollars because they can recognize <strong>26 keys pressed at the same time</strong>:
-
-   23 keys operated with 10 fingers simultaneously can have 8,388,607 combinations (called chords or strokes).
-
-   Each "outline" Consists of chords (strokes) of keys pressed at the same time.
-
-   Standard QWERTY keyboards only recognize two keys pressed at the same time.
-   Some gamer keyboards have a <strong>n-rollover</strong> of more than 2.
-   But few can recognize <strong>26 keys pressed at the same time</strong> like Steno machines.
-
 5. Steno keys are closer together.
 
    There are steno caps that can be 3D-printed to fit standard keyboards.
 
 4. Steno machines have a much lighter touch - 35 g (grams) compared to 100 g for standard QWERTY keyboards.
+
+   Professional steno machines have tension mechanisms that bottom out at as low as 10 grams regardless of how many keys are pressed.
 
 All the above are why standard keyboards are not often used for Steno.
 However, can be used to type on a standard keyboard by "arpeggiate" (pressing keys one at a time before releasing a word by pressing the * key) 
@@ -1527,7 +1527,8 @@ from nolltronics.com feature 20g springs: https://nolltronics.com/?v=3e8d115eb4b
    * Multisteno <a target="_blank" href="https://www.youtube.com/watch?v=yzHsUWvHecs">VIDEO</a>
 
 From <a target="_blank" href="https://stenomod.blogspot.com/">Stenomod.com</a>:
-   * TinyMod has 35g Springs
+   * TinyMod has a "very quiet" version with 20g springs for $200 https://stenomod.blogspot.com/2021/01/new-options-for-tinymod.html
+   * Photo & http://plover.stenoknight.com/2019/12/tinymod-review.html
 
 From <a target="_blank" href="https://softhruf.love/">softhruf.love</a>:
    * Splitography, although having 40g springs, has a cable connect two sides of the keyboard for a more relaxed placement of hands. However, it is difficult to mount on a tripod. <a target="_blank" href="https://www.youtube.com/shorts/HkOZ28oBiSA">VIDEO</a>
@@ -1551,7 +1552,7 @@ Machine selections:
    * Treal
 
 
-### Plover
+### Plover.app install on macOS
 
 * https://github.com/openstenoproject/awesome-plover/blob/main/readme.md
 * https://github.com/openstenoproject/
@@ -1567,19 +1568,55 @@ To install Plover stenography software:
 
 First of all, Plover was built for Intel macOS (before ARM Macs today) and so requires Rosetta 2 to be installed.
 
-1. Do a full backup.
+1. Do a full backup. Note the time and date.
 
    PROTIP: It is very difficult to remove Rosetta 2 once it is installed.
 
-2. Install Rosetta 2:
+1. Open Spotlight by pressing Command + Space bar.
+1. Type in your Terminal name (Terminal or Warp) and hit Return.
+1. If you are using a CLI such as Warp, ensure it can modify your system in Apple Settings > Privacy & Security > App Management.
+
+1. PROTIP: Install Apple's Rosetta 2 emulator, if needed: https://www.makeuseof.com/what-is-rosetta-2-mac/
    ```
-   softwareupdate --install-rosetta --agree-to-license
+   echo "$(uname -v)"
+       # Darwin Kernel Version 23.6.0: Thu Apr 24 20:29:29 PDT 2025; root:xnu-10063.141.1.705.2~1/RELEASE_ARM64_T6020
+   if [[ "$(uname -m)" == "i386" ]]; then  # not "arm4"
+      # First, backup It is very difficult to remove Rosetta 2 once it is installed.
+      softwareupdate --install-rosetta --agree-to-license
+   fi
    ```
-3. Instead of downloading, install Plover using Homebrew to save a few manual steps now and during future updates:
+   Type A when it asks if you agree to the terms and conditions and hit Return.
+
+   Sample Response:
+   ```
+   By using the agreetolicense option, you are agreeing that you have run this tool with the license only option and have read and agreed to the terms.
+   If you do not agree, press CTRL-C and cancel this process immediately.
+   2025-07-02 04:27:52.208 softwareupdate[57892:5884883] Package Authoring Error: 082-42380: Package reference com.apple.pkg.RosettaUpdateAuto is missing installKBytes attribute
+   Install of Rosetta 2 finished successfully
+   ```
+1. Confirm install: In Finder, navigate to Applications to <strong>hold down Control</strong> to click the app icon. Select Get Info. Under the General section, next to Kind, you'll see what application category it is: (Universal or Intel).
+   ```
+   Kind: Application (Intel)
+   ```
+1. Instead of downloading, install Plover using Homebrew to save a few manual steps now and during future updates:
    ```
    brew install --cask plover
    ```
    The result is the plover.app file in Applications folder.
+
+1. Using Finder to navigate to Applications
+1. Scroll to the Plover.app file to hold down the control key and right-click on it.
+
+   If you right-click without the control, you'll see pop-up "Plover.app" cannot be openend.
+
+1. Select "Open" from the context menu.
+
+1. Click Plover.app again to open it.
+1. When you see the pop-up "Accessibility Access (Events)" pop-up, click "Open System Settings".
+1. Click to enable Plover in "Privacy & Security" > "Security" > "Privacy" > "Accessibility".
+1. Press command+Q to quit System Settings.
+1. Click Plover.app again to open it.
+
 
 
 Aerick:
