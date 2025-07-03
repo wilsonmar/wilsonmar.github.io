@@ -1,6 +1,8 @@
 ---
 layout: post
-date: "2023-11-13"
+date: "2025-07-03"
+lastchange: "v008 + census from bomonike :2016-03-19-museums-roadtrip-usa.md"
+url: https://wilsonmar.github.io/museums-roadtrip-usa
 file: "museums-roadtrip-usa"
 title: "Museums Roadtrip USA"
 excerpt: "Visual, architectural, and culinary art in every state and major city, mapped by Machine Learning"
@@ -11,15 +13,16 @@ image:
   credit:
   creditlink:
 comments: true
+created: "2016-03-19"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
 
-This page lists where one can visit, see, and eat at the most important cultural artifacts in America. 
-I created this page as "bucket list" so that even if I can't visit each one and perhaps enjoy on-site, I can still visit their web pages. Someday soon everyone can see treasures from anywhere using VR (Virtual Reality) glasses providing 360-degree views in High Definition.
+This page lists where one can visit, see, and eat near the most significant cultural artifacts in America.
+I created this page as a "bucket list" so that even if I can't visit each one and perhaps enjoy on-site, I can still visit their web pages. Someday soon everyone can see treasures from anywhere using VR (Virtual Reality) glasses providing 360-degree views in High Definition.
 
-> Do you have a road trip map or story? Please send it to me for posting here.
+> Do you have a road trip map or story? Share it! I'd love to know.
 
 {% include whatever.html %}
 
@@ -35,7 +38,9 @@ Journeys on water as she flows toward the Equator:
 
 Journeys Northward on <a href="#CattleDrives">Cattle Drives</a> in the 1880s.
 
-<a href="#Westward">Journeys Westward on land</a> (<a href="#PonyExpress">The Pony Express</a> 
+<a href="#PanAm">Journey South down the Pan American Highway</a>.
+
+<a href="#Westward">Journeys Westward on land</a> (<a href="#PonyExpress">The Pony Express</a>):
 
    * <a href="#WestwardVermont"> Westward from Vermont to Kentucky</a>
    * <a href="#NorthernMiddleAmerica">Westward through Northern states</a> (like <a href="#LewisAndClark">Lewis and Clark</a> and on the <a href="#OregonTrail">Oregon Trail)</a>
@@ -45,6 +50,8 @@ BTW, finding where each site is located resulted in a great geography and histor
 
 
 ## References (Websites)
+
+Since July 4, 1776, the US has grown from 13 colonies with 2.5 million people to 50 states and 14 territories with over <a target="_blank" href="https://www.census.gov/popclock/">342 million</a> people connected by roughly 5,000 airports, 4 million miles of roads, 140,000 miles of train tracks, and 5.5 million miles of power lines. 
 
 * <a target="_blank" href="https://www.hmdb.org/">hmdb.org  = Historical Marker Database</a>
 * <a target="_blank" href="https://www.movie-locations.com/">movie-locations.com</a>
@@ -75,7 +82,7 @@ BTW, finding where each site is located resulted in a great geography and histor
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1660661005/ThomasCannonandJustinMorrisRoute-589x301_g6ygsm.jpg">
 <img alt="6 days" width="750" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660661005/ThomasCannonandJustinMorrisRoute-589x301_g6ygsm.jpg"></a>
 
-To deter reckless driving among Extreme Road-trippers, the <a target="_blank" href="https://www.guinnessworldrecords.com/news/2015/8/60-years-on-the-categories-that-guinness-world-records-no-longer-monitors-393758">Guinness World Records discontinued listing speed records in 1996</a>. But that didn't stop the <a target="_blank" href="https://allfiftyclub.com/members/record-holders-fast-to-50/">All Fifty States Club</a> website. 
+To deter reckless driving among Extreme Road-trippers, the <a target="_blank" href="https://www.guinnessworldrecords.com/news/2015/8/60-years-on-the-categories-that-guinness-world-records-no-longer-monitors-393758">Guinness World Records discontinued listing speed records in 1996</a>. But that didn't stop the <a target="_blank" href="https://allfiftyclub.com/members/record-holders-fast-to-50/">All Fifty States Club</a> website.
 
 
 ## The US Rain Shadow Divide
@@ -87,7 +94,7 @@ To deter reckless driving among Extreme Road-trippers, the <a target="_blank" hr
 
 When geologist John Westly Powell identified this phenomenon across the "pairies" in 1890, that natural line was at the 100th Meridian (vs. 98th today).
 Since then, "Climate change" continues to shift to the East. So expect less rain from Winnapeg (Canada) to Forth Worth, Ausin, and San Antonio Texas.
-Also impacted will be agriculture around Winnipeg (Manitoba, Canada), Fargo, Sioux Falls, Omaha, Lincoln, Wichita, Oklahoma City. 
+Also impacted will be agriculture around Winnipeg (Manitoba, Canada), Fargo, Sioux Falls, Omaha, Lincoln, Wichita, Oklahoma City.
 
 That green line down the middle of America defines the extent wet storms reach from the East. West of that is the "Rain Shadow" of limited moisture from the Pacific West blocked by the tall Cascade Mountains in Washington state housing Leavenworth, Washington and Rocky Mountains housing Aspen, Vail, Breckenridge, Telluride, <a target="_blank" href="https://www.google.com/maps/place/Denver,+CO/@39.7584783,-113.8531857,5z/">Denver, Colorado</a>), Park City, Utah, California.
 
@@ -100,7 +107,7 @@ The East coast also has quaint <a target="_blank" href="https://www.travelandlei
    * Cape May, New Jersey
    * Atlantic City, New Jersey
    * New York, New York
-   
+
    * Annapolis, Maryland
    * Charlottesville, Virginia
    * Lewisburg, West Virginia
@@ -142,6 +149,13 @@ Many don't pay the use tax to their home state even though there can be signific
 <a target="_blank" href="https://9to5mac.com/2023/07/24/sales-tax-holiday-apple-products/">Some states offer sales tax-free holidays</a> (for a limited time) to encourage spending on products that are considered to be of benefit to the state's economy. This typically occurs in August and early September for back-to-school supplies, books, computers, and clothing.
 
 
+## Coast-to-Coast Trails
+
+<a target="_blank" href="https://www.youtube.com/watch?v=xljpEbTh1ds/">VIDEO</a>:
+The American Discovery Trail (https://discoverytrail.org/) spans 6,800 miles from coast to coast, with two options in the middle states. The route across rural and urban areas, wilderness, desert mountains and forests.
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1707778533/museums-us-am-disc-trail-1688x1018_snp2gt.png"><img alt="museums-us-am-disc-trail-1688x1018.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1707778533/museums-us-am-disc-trail-1688x1018_snp2gt.png"></a>
+
 ## National Parks
 
 America's greatest treasure is the <a target="_blank" href="https://www.wikiwand.com/en/National_Park_Service">63</a> <a target="_blank" href="https://www.nps.gov/index.htm">national parks managed by the U.S. National Park Service.
@@ -170,22 +184,22 @@ https://github.com/wilsonmar/Data-Analysis-and-Machine-Learning-Projects/blob/ma
 Many "Western" movies were filmed in iconic "Mighty 5" parks below Salt Lake City in Utah: <a target="_blank" href="https://www.google.com/maps/d/u/0/viewer?msa=0&mid=16KbY2hCvDQEAAPsK6bwyEDjPZyc&ll=37.542383125235986%2C-110.57365010534873&z=8">Las Vegas from the South and Denver from the North <img width="841" alt="us-might5-route-1682x1014" src="https://user-images.githubusercontent.com/300046/134821783-60f33b47-ccea-4ab0-a12f-69505411c763.png">322 miles in 5 hours without stopping (click for Google Map)</a>. But you'll want to stop and marvel the views at each park:
    1. <a target="_blank" href="https://www.youtube.com/results?search_query=zion+national+park++360+4k">4K 360 VIDEO</a>: <a target="_blank" href="https://www.nps.gov/zion/index.htm">Zion</a> (Utah's first National Park)
    2. <a target="_blank" href="https://www.youtube.com/results?search_query=4k+360+bryce+canyon">4K 360 VIDEO</a>: <a target="_blank" href="https://www.nps.gov/brca/index.htm">Bryce Canyon</a> <a target="_blank" href="https://www.youtube.com/brycecanyonnps">VIDEO</a>
-   3. <a target="_blank" href="https://www.youtube.com/results?search_query=capital+reef+national+park++360+4k">4K 360 VIDEO</a>: Capital Reef 
-   4. <a target="_blank" href="https://www.youtube.com/results?search_query=Arches+national+park++360+4k">4K 360 VIDEO</a>: Arches 
-   5. <a target="_blank" href="https://www.youtube.com/results?search_query=Canyonlands++360+4k">4K 360 VIDEO</a>: Canyonlands 
+   3. <a target="_blank" href="https://www.youtube.com/results?search_query=capital+reef+national+park++360+4k">4K 360 VIDEO</a>: Capital Reef
+   4. <a target="_blank" href="https://www.youtube.com/results?search_query=Arches+national+park++360+4k">4K 360 VIDEO</a>: Arches
+   5. <a target="_blank" href="https://www.youtube.com/results?search_query=Canyonlands++360+4k">4K 360 VIDEO</a>: Canyonlands
    <br /><br />
 
 <a name="CivilWar"></a>
 
 ## Civil War Confederates
 
-When the Civil War ended in 1865, The Confederacy included the 11 Southern states of Texas, Arkansas, Louisiana, Tennessee, Mississippi, Alabama, Georgia, Florida, South Carolina, North Carolina, and Virginia. 
+When the Civil War ended in 1865, The Confederacy included the 11 Southern states of Texas, Arkansas, Louisiana, Tennessee, Mississippi, Alabama, Georgia, Florida, South Carolina, North Carolina, and Virginia.
 
 <a target="_blank" href="https://www.nps.gov/civilwar/facts.htm">
 <img width="600" height="300" alt="map-us-states-civil-war-323x227-c64.jpg"
 src="https://cloud.githubusercontent.com/assets/300046/16953089/fc8c99ba-4d88-11e6-9845-7b4120243ea4.jpg">
 
-The 5 "Border States" were Maryland, Delaware, West Virginia, Kentucky, and Missouri (where "brother fought brother").
+The 5 "Border States" were Maryland, Delaware, West Virginia, Kentucky, and Missouri (where "brother fought brother"). <a target="_blank" href="https://youtube.com/shorts/JuWB9qyVmIs?si=9xw1rg581fglgHYT">VIDEO</a>: Although Kentucky's legislature voted to be neutral, the state was represented as a star in both Confederate and Union flags and was occupied by both Confederate and Union troops. Four times more Kentucky citizens fought for the Union than for the Confederacy.
 
 States in white (Oklahoma) did not fight for either side.
 Idaho <a target="_blank" href="https://www.wikiwand.com/en/Idaho_in_the_American_Civil_War">
@@ -211,7 +225,7 @@ The planned route of the courageous <a target="_blank" href="https://www.history
 
 The Woolworth lunch counter in downtown Greensboro, NC is now a <a target="_blank" href="https://www.sitinmovement.org/">museum</a>.
 
-The ride stopped on May 14 in Anniston, Alabama where their bus was burnt by segregationists. 
+The ride stopped on May 14 in Anniston, Alabama where their bus was burnt by segregationists.
 
 <hr />
 
@@ -664,7 +678,7 @@ Richmond is the capital of Virginia, and the capital of the Confederacy during t
 
 <ul>
 <li><a target="_blank" href="https://ashevilleart.org/">Asheville Art Museum</a></li>
-<li><a target="_blank" href="https://www.biltmore.com/our-story/">Biltmore Estate</a>, the largest privately-owned house in America, built by George Vanderbilt, Asheville</li> 
+<li><a target="_blank" href="https://www.biltmore.com/our-story/">Biltmore Estate</a>, the largest privately-owned house in America, built by George Vanderbilt, Asheville</li>
 <li type="circle">In Asheville, the fanciest McDonald's in America (with a piano and fireplace)</li>
 
 <li><a target="_blank" href="https://www.ackland.org/">Ackland Art Museum at the University of North Carolina</a>, Chapel Hill</li>
@@ -737,7 +751,7 @@ Richmond is the capital of Virginia, and the capital of the Confederacy during t
 
 > <strong> Florida</strong>
 
-### St. Petersberg Northwest on 75 up the Gulf coast 
+### St. Petersberg Northwest on 75 up the Gulf coast
 
 <ul>
 <li type="square"><a target="_blank" href="https://www.ringling.org/">John and Mable Ringling Museum of Art</a>, Sarasota</li>
@@ -761,7 +775,7 @@ Richmond is the capital of Virginia, and the capital of the Confederacy during t
 <li target="_blank" href="https://www.kennedyspacecenter.com/">NASA Kennedy Center, Merritt Island</li>
 </ul>
 
-### South down the East coast 
+### South down the East coast
 
 <ul>
 <li><a target="_blank" href="https://www.cummer.org/">Cummer Museum of Art and Gardens</a>, Jacksonville</li>
@@ -1036,7 +1050,7 @@ New Orleans had the #18 rate of crime among all cities in the US (1,121/100,000 
 
 <a name="CattleDrives"></a>
 
-## Northward on Cattle Drives 
+## Northward on Cattle Drives
 
 The <a target="_blank" href="https://www.paramountplus.com/shows/1883/">TV series "1883"</a> is about one of the cattle drives that brought Texas back from economic collapse after the end of the Civil War in 1865. The drive went from Fort Worth North toward Montana and Portland. Although a fictional story, the script mentions real locations: <a target="_blank" href="https://www.frontiertimesmagazine.com/blog/doans-store-red-river">Doan's Store</a> Red River Crossing, established 1878 along the Western Trail to Dodge City, Kansas where trains carried cattle East.
 
@@ -1051,6 +1065,26 @@ In 1885 long cattle drives was eliminated by both the construction of railroads 
 The <a target="_blank" href="https://www.wikiwand.com/en/Lonesome_Dove_(miniseries)">TV series "Lonesome Dove"</a>, is set in late 1870s. Just like the "1883" TV series, it is also about cowboys seeking to drive cattle North to settle along Montana's Yellowstone River. Several other movies have characters doing the same.
 
 
+
+<a name="PanAm"></a>
+
+## Journey down the Pan American Highway
+
+<a target="_blank" href="https://www.wikiwand.com/en/Pan-American_Highway"><img align="right" width="200" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Pan-american-hwy-north-1.jpg"></a>
+<a target="_blank" href="https://www.youtube.com/watch?v=oS7cKjBjQCQ">VIDEO</a>:
+The longest road in the world is the 30,000 km (19,000 miles) of the Pan American Highway.
+
+It starts from the North in Prudhoe Bay, Alaska through Fairbanks, into Canada's Whitehorse, Edmonton, Calgary.
+It crosses into the United States down highway 15 and 87 into Billings, Montana.
+Then down 90, 25, into Denver.
+285 into Albuquerque, New Mexico.
+40 and 285 to Roswell, then 385 to Browfield. 87 to Eden. 83 to Junction. 10 to San Antonio and 85 to Loredo, Texas.
+285 into Mexico to Monterrey and Mexico City.
+
+Except for a break flying over the swamps of the Darian Gap between two continents at Yaviza, Panama and Turbo, Antioquia, Colombia,
+the <em>Vía Panam or Vía Panamericana</em> goes all the way down to Tierra del Fuego, Chile.
+
+<a target="_blank" href="https://www.wikiwand.com/en/Pan-American_Highway"><img align="right" width="200" src="https://www.wikiwand.com/en/Pan-American_Highway#Media/File:PanAmericanHwy.png"></a>
 
 <a name="Westward"></a>
 
@@ -1589,8 +1623,8 @@ was established during the 1830s by mountain men in their fur trade, before moto
 <img alt="Oregon Trail Topo map NASA" width="500" height="310" src="https://cloud.githubusercontent.com/assets/300046/14081576/a8c6f05a-f4c8-11e5-92d6-61cbf9b8ce0e.jpg"></a>
 
 
-The trail begins from St. Louis and Independence, Missouri through Kansas and Nebraska to <a target="_blank" href="https://www.nps.gov/fola/index.htm">Fort Laramie, Wyoming (1834-1890)</a>. 
-It then goes through Boise, Idaho to Portland, Oregon. 
+The trail begins from St. Louis and Independence, Missouri through Kansas and Nebraska to <a target="_blank" href="https://www.nps.gov/fola/index.htm">Fort Laramie, Wyoming (1834-1890)</a>.
+It then goes through Boise, Idaho to Portland, Oregon.
 A map of the trail in 1907:
 
 <a target="_blank" href="https://upload.wikimedia.org/wikipedia/commons/1/19/Oregontrail_1907.jpg">
@@ -2000,6 +2034,8 @@ Lyndon Baines Johnson Presidential Library and Museum</a>, Austin</li>
 </ul>
 <br /><br />
 
+
+
 ## All the sights
 
 In addition to "museums", also included here are grand natural sights:
@@ -2017,7 +2053,7 @@ In addition to "museums", also included here are grand natural sights:
    * <a target="_blank" href="https://en.wikipedia.org/wiki/List_of_new_media_art_festivals">New Media</a> art <a target="_blank" href="https://www.artfaircalendar.com/">festivals</a> and notable galleries
 
    * <a target="_blank" href="https://www.themarysue.com/film-locations-map/">Iconic movie locations</a> of note [<a target="_blank" href="https://www.boxofficequant.com/100-years-of-set-locations/full_screen.htm">map</a>]
-   * Caverns 
+   * Caverns
    * Zoos
 
    * <a target="_blank" href="https://factorytoursusa.com/">Factory tours</a>
@@ -2041,12 +2077,12 @@ like Jessica Lord's
 <a target="_blank" href="https://jlord.github.io/hack-spots">
 hack-spots site</a> implemented from a
 <a target="_blank" href="https://github.com/jlord/hack-spots">
-github repo</a> which 
+github repo</a> which
 uses the
 <a target="_blank" href="https://github.com/jlord/sheetsee.js">
-sheetsee.js</a> and 
+sheetsee.js</a> and
 <a target="_blank" href="https://www.mapbox.com/mapbox.js/api/v2.4.0/">
-Mapbox</a> 
+Mapbox</a>
 libraries.
 
 > "I haven't been everywhere, but it's on my list." -- <a target="_blank" href="https://en.wikipedia.org/wiki/Susan_Sontag">Susan Sontag</a>
