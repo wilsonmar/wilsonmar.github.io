@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-07-01"
-commitmsg: "v017 + steno keyboard :2014-08-03-apple-mac-osx-keyboard.md"
+date: "2025-07-03"
+commitmsg: "v018 + polyglot steno keyboard :2014-08-03-apple-mac-osx-keyboard.md"
 file: "apple-mac-osx-keyboard"
 title: "Keyboard Shortcuts for Apple Mac"
 excerpt: "Do things faster with Keyboard Shortcuts, HotKeys, Steno chords, and StreamDeck buttons"
@@ -1423,7 +1423,7 @@ For even faster operation, use the keyboard's 2MB of memory on-board to store Sm
 Videos: 
 
    * https://www.youtube.com/watch?v=8WwuusfB0QA Aug 20, 2016 is the most detailed
-   * https://www.youtube.com/watch?v=ILItPWuirAk
+   * https://www.youtube.com/watch?v=ILItPWuirAk Mirabai Knight
    * https://www.youtube.com/watch?v=PhQlZvUzT7w Aug 3, 2016 from Kinesis
    <br /><br />
 
@@ -1434,22 +1434,28 @@ Videos:
 ## Stenography
 
    * <a target="_blank" href="hhttps://www.youtube.com/watch?v=rYUmsUx0oSo">VIDEO</a>: Summary
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Wpv-Qb-dB6g">VIDEO</a>: 
 
 <a target="_blank" href="https://www.youtube.com/watch?v=UA6UythLlEI">VIDEO</a>:
 The average typing speed is 40 WPM (words per minute) on a standard QWERTY keyboard.
-Pros type 80-95 WPM.
+Pros type 80-95 WPM. Test your speed using 
+   * <a target="_blank" href="https://www.speedtypingonline.com/">speedtypingonline.com</a>
+   * monkeytype
 
-<a target="_blank" href="https://www.youtube.com/watch?v=-6qA3xtZodU">VIDEO</a>: Stenography machines enable
-Courtroom reporters to record testimony at 99.9% accuracy at 280 WPM using a stenograph machine
-that implement the <strong>phonetic</strong> (sound) Pitman method.
+<a target="_blank" href="https://www.youtube.com/watch?v=-6qA3xtZodU">VIDEO</a>: Invented in 1911, Stenography machines enable Courtroom reporters to record testimony at 99.9% accuracy at 280 WPM using a stenograph machine.
+Court reporters note in the paper tape from the steno machines notes about the enviornment such as who is speaking, whether someone pointed at something, etc.
 
-The reason why so much faster than using QWERTY keyboards is that 
+In 2025 Stenographers are still needed but are in short supply.
+
+Stenographers use machines implement the <strong>phonetic</strong> (sound) Pitman method.
+
+The reason why so much faster than using QWERTY keyboards sold with computers:
 
 1. fingers do not move much, since Steno keyboards only have 23-26 keys:
 
    23 keys operated with 10 fingers simultaneously can have 8,388,607 combinations (called chords or strokes).
 
-   <a target="_blank" href="https://sites.google.com/site/ploverdoc/appendix-cheat-sheet">Cheap Sheet</a>:
+   <a target="_blank" href="https://sites.google.com/site/ploverdoc/appendix-cheat-sheet">Cheat Sheet</a>:
    <a target="_blank" href=""><img alt="steno-keyboard-734x315.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1751374711/steno-keyboard-734x315_bo0a5p.png"></a>
 
    There is no N key and <a target="_blank" href="https://www.youtube.com/shorts/6s4BO4oGcBs">2 R's</a> and <a target="_blank" href="https://www.youtube.com/shorts/bSLovrfWbWY">2 P's</a>
@@ -1479,14 +1485,17 @@ The reason why so much faster than using QWERTY keyboards is that
    A steno theory refers to the set of rules that govern how words are broken down. 
 
    Base theories defined in textbooks you buy:
-   * Phoenix theory is based off of a comprehensive set of rules that make it easy to break down complicated words. 
-   * Magnum theory places more emphasis on learning words themselves through rote memorization. 
+   * $169 <a target="_blank" href="https://www.stenography.com/">Phoenix theory</a> is based off of a comprehensive set of rules that make it easy to break down complicated words. 
+   * $99 Magnum theory places more emphasis on learning words themselves through rote memorization. 
    * Josiah
+   <br />
 
    Free theories:
+
    * <a target="_blank" href="https://platinumframework.org/">PlatinumFramework.org</a> (if you are more of a auditory learner)
    * defined in the main.json file within Plover, but has some inconsistent words/rules.
-   * <a target="_blank" href="https://lapwing.aerick.ca/">Lapwing theory</a> from 2022 <a target="_blank" href="https://www.youtube.com/watch?v=vx20oqfjp0I">VIDEO</a>: uses the # key for proper nouns.
+   * <a target="_blank" href="https://lapwing.aerick.ca/">Lapwing theory</a> from 2022 <a target="_blank" href="https://www.youtube.com/watch?v=vx20oqfjp0I">VIDEO</a>: uses the # key for proper nouns. by Aerick in 2022.
+   <br />
 
 4. Dictionaries of "briefs" -- "abbreviated stokes" are memorized to type faster -- can number in the hundreds of thousands.   
 
@@ -1512,19 +1521,27 @@ However, can be used to type on a standard keyboard by "arpeggiate" (pressing ke
 
 ### Steno keyboards
 
-An <a target="_blank" href="https://docs.google.com/spreadsheets/d/1DRJOpoPDaxyzYGARJQeiURPqG4kLuT-MvlQ5q7tQDc4/edit?gid=0#gid=0">Spreadsheet comparing Steno keyboards</a>:
+A <a target="_blank" href="https://docs.google.com/spreadsheets/d/1DRJOpoPDaxyzYGARJQeiURPqG4kLuT-MvlQ5q7tQDc4/edit?gid=0#gid=0">spreadsheet comparing Steno keyboards</a>:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1751420724/keyboard-comps-2242x1248_alkdvq.png"><img alt="keyboard-comps-2242x1248.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1751420724/keyboard-comps-2242x1248_alkdvq.png" /></a>
 
-From stenokeyboards.com (<a target="_blank" href="https://www.youtube.com/@StenoKeyboards/shorts">videos</a>) are 35g springs:
-   * The <a target="_blank" href="https://stenokeyboards.com/products/asterisk-keyboard">$50 Asterisk keyboard</a> is flat prone to accidental touches but it's the cheapest.
+From stenokeyboards.com (<a target="_blank" href="https://www.youtube.com/@StenoKeyboards/shorts">videos</a>) are 35g springs which can be replaced with 20g springs without desoldering:
+
+   * The <a target="_blank" href="https://stenokeyboards.com/products/asterisk-keyboard">$50 Asterisk keyboard</a> is flat prone to accidental touches but it's the cheapest. 
+
    * The $100 Uni <a target="_blank" href="https://www.youtube.com/watch?v=kO15rEjPtNA">VIDEO</a>
+
+   * The <a target="_blank" href="https://stenokeyboards.com/products/polyglot-keyboard">$125 Polyglot</a> has 42 keys in ortholinear arrangement for use as a QWERTY keyboard as well, convenient for those who are just starting out and need to switch between steno and QWERTY.
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1751527024/stenolayoutpolyglot_qwerty_irb918.webp"><img alt="stenolayoutpolyglot_qwerty.webp" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1751527024/stenolayoutpolyglot_qwerty_irb918.webp" /></a>
+   
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1751526938/stenolayout-polyglot_pdfuv2.webp"><img alt="stenolayout-polyglot.webp" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1751526938/stenolayout-polyglot_pdfuv2.webp" /></a>
 
    Computers recognize Stenokeyboards using the Gemini serial protocol as a Gemini writer. So CAT software that officially support Gemini writers should support them: https://www.youtube.com/watch?v=pYmxpTCvOLQ&t=187s
 
 from nolltronics.com feature 20g springs: https://nolltronics.com/?v=3e8d115eb4b3
    * Ecosteno
-   * Multisteno <a target="_blank" href="https://www.youtube.com/watch?v=yzHsUWvHecs">VIDEO</a>
+   * Multisteno <a target="_blank" href="https://www.youtube.com/watch?v=yzHsUWvHecs">VIDEO</a> Chocs keys is 20g but bottoms out at 25g. Its <a target="_blank" href="https://www.youtube.com/watch?v=fUFjBVekmj8">34 keys</a>
 
 From <a target="_blank" href="https://stenomod.blogspot.com/">Stenomod.com</a>:
    * TinyMod has a "very quiet" version with 20g springs for $200 https://stenomod.blogspot.com/2021/01/new-options-for-tinymod.html
@@ -1617,7 +1634,11 @@ First of all, Plover was built for Intel macOS (before ARM Macs today) and so re
 1. Press command+Q to quit System Settings.
 1. Click Plover.app again to open it.
 
+### Plover configuration
 
+<a target="_blank" href="https://github.com/panathea">github.com/panathea</a> by <a target="_blank" href="https://www.linkedin.com/in/hashable/">Thea Morin of Ottawa</a>
+
+### Steno tutorials
 
 Aerick:
 * <a target="_blank" href="https://www.youtube.com/watch?v=rYUmsUx0oSo"> Hobbyist's Guide to Stenography | How to Learn Steno</a>
