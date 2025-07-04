@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-07-04"
-lastchange: "v009 + sample code :2023-09-23-python-cuda.md"
+lastchange: "v011 + Furier Transform sample code :2023-09-23-python-cuda.md"
 url: https://wilsonmar.github.io/python-cuda
 file: "python-cuda"
 title: "Python with NVIDIA CUDA"
@@ -72,8 +72,9 @@ Use Apple's Metal Performance Shaders: PyTorch has Metal backend support for App
 TensorFlow also supports Metal acceleration
 
 References:
-   * <a target="_blank" href="https://www.youtube.com/watch?v=K9anz4aB0S0">What's CUDA?</a>
-   * <a target="_blank" href="https://www.youtube.com/watch?v=9bBsvpg-Xlk"> CUDA programming in Python with numba and cupy</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=K9anz4aB0S0">What's CUDA?</a> - Computerphile video interviewing Stephen Jones, one of the architects.
+
+cupy</a>
 
 <hr />
 
@@ -101,7 +102,11 @@ print(result)  # Output: [7 9 11 13 15]
 
 A "device function" is a GPU function executed on the GPU device which can only be called from a kernel or another device function. 
 
-<tt>import cupy as cp</tt> is a <strong>wrapper</strong> to NVIDIA's CUDA <strong>Numba</strong> library written in C.
+<tt>import cupy as cp</tt> is a <strong>wrapper</strong> to Numpy and 
+NVIDIA's CUDA <strong>Numba</strong> library written in C.
+
+PROTIP: To use CuPy, you need to have a CUDA-capable GPU and the CUDA Toolkit installed.
+In Google Colab, under the Runtime drop-down, select "Change runtime type", for "Hardware accelerator", select "GPU" or "TPU".
 
 It's also available in Conda.
 
@@ -117,16 +122,18 @@ Python modules which make good use of CUDA:
 
 1. TODO: I would like to add CUDA to Python code in the Cartesian app.
 
-3. The "Sobel Filter" algorithm to identify edges in images is described in <a target="_blank" href="https://www.youtube.com/watch?v=C_WrbBmiTf4">this video</a> referencing code at (forked) https://github.com/wilsonmar/sobel-filter-cuda
+1. The "Sobel Filter" algorithm to identify edges in images is described in <a target="_blank" href="https://www.youtube.com/watch?v=C_WrbBmiTf4">this video</a> referencing code at (forked) https://github.com/wilsonmar/sobel-filter-cuda
 
    * 7000ms (70 seconds) Pure Python, without CUDA
    * 683 ms with Numba Jit duck typing 
    * 28 ms with parallal enabled
    * 16 ms with CUDA JIT 
 
-2. Noah Gift's GPU Programming sample of a Mandelbot art, in <a href="#[3]">video [3]</a>
+1. Mandelbot art is shown in Noah Gift's GPU Programming sample <a href="#[3]">video [3]</a>
 
    https://github.com/noahgift/cloud-data-analysis-at-scale/blob/master/GPU_Programming.ipynb
+
+1. <strong>Furier Transform</strong> is shown in <a target="_blank" href="https://www.youtube.com/watch?v=9bBsvpg-Xlk"> "CUDA programming in Python with numba"</a>
 
 
 <hr />
@@ -136,7 +143,7 @@ Python modules which make good use of CUDA:
 ### Using Windows Machine
 
 1. Install the CUDA Toolkit from NVIDIA's developer website
-1. Install CuPy or PyCUDA using pip:
+1. Install CuPy (drop-in replacement for NumPy) or PyCUDA using pip:
    ```
    bashpip install cupy-cuda11x  # or appropriate CUDA version
    ```
@@ -211,8 +218,12 @@ p2j mandel.py
    from timeit import default_timer as timer
    ```
 
-<a target="_blank" href="https://www.youtube.com/watch?v=C_WrbBmiTf4&pp=ygULY3VkYSBweXRob24%3D">VIDEO</a>:
-"CUDA Programming in Python"  Jan 15, 2024 by JetsonHacks
+1. Purchase additional Compute Units if needed:
+
+   https://colab.research.google.com/signup?utm_source=notebook_setting
+
+Resources:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=C_WrbBmiTf4&pp=ygULY3VkYSBweXRob24%3D">VIDEO</a>: "CUDA Programming in Python"  Jan 15, 2024 by JetsonHacks
 
 PROTIP: In Notebook settings, enable GPU runtime.
 
