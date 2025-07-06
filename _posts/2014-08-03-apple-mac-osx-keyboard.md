@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-07-03"
-commitmsg: "v018 + polyglot steno keyboard :2014-08-03-apple-mac-osx-keyboard.md"
+date: "2025-07-06"
+lastchange: "v019 + command key :2014-08-03-apple-mac-osx-keyboard.md"
 file: "apple-mac-osx-keyboard"
 title: "Keyboard Shortcuts for Apple Mac"
 excerpt: "Do things faster with Keyboard Shortcuts, HotKeys, Steno chords, and StreamDeck buttons"
@@ -52,14 +52,18 @@ So develop the habit of pros by making a habit of following these tips:
 
 ## Swap Command and Control?
 
-   PROTIP: Some who are used to Windows and need to go back and forth prefer to switch the Mac's control and command keys in order to get to all such keys using thumbs.
-   This would also allow you to press two keys at once by pressing between the keys,
-   thus able to perform most combinations using your hands.
+PROTIP: Some who are used to Windows and need to go back and forth prefer to switch the Mac's control and command keys in order to get to all such keys using thumbs.
+
+This would also allow you to press two keys at once by pressing between the keys,
+thus able to perform most combinations using your hands.
 
 5. Click the entry for "Control (^) Key:" and select "&#8984; Command".
 6. Click the entry for "Command (&#8984;) Key:" and select "^ Control".
 7. Click OK.
 8. Press control+Q or click the red x to dismiss the System Preferences dialog.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=PsHx77ONsg4">VIDEO</a>:
+"History of Apple's Command Key" by Apple Explained note that Apple's unique Command key is called "FEATURE" in a library of symbols, used in nordic countries to highlight places of interest. [6:58] It also resembles a casle with turrents. It was added to the keyboard in 1984. In 2007 Apple replaced the Apple logo with the word "command", sometimes abbreviated to "cmd".
 
 
 <hr />
