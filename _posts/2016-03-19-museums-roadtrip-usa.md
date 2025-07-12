@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-07-03"
-lastchange: "v008 + census from bomonike :2016-03-19-museums-roadtrip-usa.md"
+date: "2025-07-12"
+lastchange: "v010 + cleveland :2016-03-19-museums-roadtrip-usa.md"
 url: https://wilsonmar.github.io/museums-roadtrip-usa
 file: "museums-roadtrip-usa"
 title: "Museums Roadtrip USA"
@@ -51,7 +51,7 @@ BTW, finding where each site is located resulted in a great geography and histor
 
 ## References (Websites)
 
-Since July 4, 1776, the US has grown from 13 colonies with 2.5 million people to 50 states and 14 territories with over <a target="_blank" href="https://www.census.gov/popclock/">342 million</a> people connected by roughly 5,000 airports, 4 million miles of roads, 140,000 miles of train tracks, and 5.5 million miles of power lines. 
+Since July 4, 1776, the US has grown from 13 colonies with 2.5 million people to 50 states and 14 territories with over <a target="_blank" href="https://www.census.gov/popclock/">342 million</a> people connected by roughly 5,000 airports, 140,000 miles of train tracks, 4 million miles of roads, and 5.5 million miles of power lines. 
 
 * <a target="_blank" href="https://www.hmdb.org/">hmdb.org  = Historical Marker Database</a>
 * <a target="_blank" href="https://www.movie-locations.com/">movie-locations.com</a>
@@ -1261,10 +1261,8 @@ Detroit had the #2 rate of crime among all cities in the US (2,057/100,000 in 20
 Cleveland had the #8 rate of crime among all cities in the US (1,557/100,000 in 2022).
 
 <ul>
-<li><a target="_blank" href="https://www.rockhall.com/"> Rock and Roll Hall of Fame</a>, Cleveland</li>
+<li><a target="_blank" href="https://www.rockhall.com/"> Rock and Roll Hall of Fame</a> by the Lake Erie shore</li>
 <li><a target="_blank" href="https://www.clevelandart.org/"> Cleveland Museum of Art</a></li>
-<br />
-<li type="circle"><a target="_blank" href="https://www.thedailymeal.com/greenhouse-tavern">The Greenhouse Tavern</a>, Cleveland <a target="_blank" href="https://www.thedailymeal.com/101-best-restaurants-america-2019/slide-4">[#97]</a></li>
 </ul>
 
 
