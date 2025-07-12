@@ -1,16 +1,19 @@
 ---
 layout: post
+date: "2025-07-12"
+lastchange: "v012 + rasp 5 :2016-10-29-iot-raspberry-hardware.md"
+url: https://wilsonmar.github.io/iot-raspberry-hardware
+file: "iot-raspberry-hardware"
 title: "Raspberry Pi IoT Hardware"
 excerpt: "A board by any other name is just as sweet"
 tags: [IoT, Raspberry, Mono, Mac]
-date: "2016-10-29"
-file: "iot-raspberry-hardware"
 image:
 # feature: pic white robots woman 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622167/45abd918-0585-11e6-8537-a58e0b55e3ec.jpg
   credit: Cyberconstruct.be
   creditlink: http://cyberconstruct.be/2015/02/digital-job-crafting/
 comments: true
+created: "2016-10-29"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -20,23 +23,23 @@ This is a list of physical hardware categorized by basics and optional.
 
 <hr />
 
-## Specs
+## Hardware
 
-   | Spec | Arduino | RPi 2 | RPi 3 |
-   | ---- | ------: | ----: | ----: |
-   | Address space | 8-bit | 32-bit | 64-bit |
-   | CPU speed     | 900 MHz | 16 MHz | 16 MHz |
-   | RAM     | 32K     | 512 MB | 1 GB   |
-   | Voltage | 5V | 3.3V | 3.3V |
+   | Spec | Arduino | RPi 2 | RPi 3 | RPi 5 |
+   | ---- | ------: | ----: | ----: | ----: |
+   | Address space | 8-bit | 32-bit | 64-bit | 64-bit |
+   | CPU speed | 900 MHz | 16 MHz | 16 MHz | 4 GHz |
+   | RAM | 32K | 512 MB | 1 GB | 8 GB |
+   | Voltage | 5V | 3.3V | 3.3V | 3.3V |
 
-## Basics
-
-0. Raspberry Pi 3 B+ $35
-
-   The Raspberry Pi 3 has a 1.2 GHz quad-core ARMv8 chip with 1 GB of RAM.
+0. Raspberry Pi hardware
 
    <amp-img alt="iot raspberry_pi3_2 500x302 69kb.jpg" width="500" height="302" src="https://cloud.githubusercontent.com/assets/14143059/19865119/8a5470e6-9f60-11e6-8f62-e58f44c4f14c.jpg"></amp-img>
    <!-- http://www.memoryexpress.com/Products/MX61461 -->
+
+## Kits
+
+<a target="_blank" href="https://www.amazon.com/CanaKit-Raspberry-Starter-Kit-PRO/dp/B0CRSNCJ6Y/">$135.99</a> CanaKit Raspberry Pi 5 Starter Kit PRO - Turbine Black (128GB Edition) 4Ghz 64-bit quad-core CPU (8GB LPDDR4 RAM) comes with a case,  full-size heatsink,  Low Noise Bearing System fan and 128GB EVO+ Micro SD Card pre-loaded with 64-bit Raspberry Pi OS, USB MicroSD Card Reader. USB, GPIO. 45W PD Power Supply. 2 x Display Cables - 6 foot (Supports up to 4K 60p). runs Atari and N64 games perfectly. Perfect Kit for Solar Assistant Monitoring Project – Remote & Kiosk Mode
 
 0. Risers on the board so its metal doesn't touch the table.
    Or a static-resistent mat to put a naked board.
