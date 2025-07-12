@@ -1,7 +1,7 @@
 ---
 lawet: post
 date: "2025-07-12"
-lastchange: "v014 + 2 br :2023-03-19-soc2-description.md"
+lastchange: "v015 + against :2023-03-19-soc2-description.md"
 url: https://wilsonmar.github.io/soc2-description
 file: "soc2-description"
 title: "SOC2 SystemDescription"
@@ -135,7 +135,7 @@ The SOC 2 Common Criteria, also known as the "CC-series" (at <a target="_blank" 
 	* Access control lists
    * VPN access outside office
    <br /><br />
-1. Setup workspace to be ergonomic and minimized for static and other hazards.
+1. Setup workspace to be ergonomic and minimized against static and other hazards.
 
 1. Setup work environment (laptop) using automation scripts referencing versioned configurations.
 
