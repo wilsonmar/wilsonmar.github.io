@@ -1,7 +1,7 @@
 ---
 lawet: post
 date: "2025-07-12"
-lastchange: "v011 + dev life :2023-03-19-soc2-description.md"
+lastchange: "v012 + intro life :2023-03-19-soc2-description.md"
 url: https://wilsonmar.github.io/soc2-description
 file: "soc2-description"
 title: "SOC2 SystemDescription"
@@ -16,7 +16,9 @@ created: "2023-03-19"
 
 {% include whatever.html %}
 
-This sample SOC 2 System Description is given to SOC2 & ISO 27001 auditors as the basis for their SOC 2 Type 2 audit attestation report which our customers expect to receive.
+Customers have come to expect to receive, anually, a SOC2 Type II report from external auditors of commercial organizations.
+
+This sample SOC 2 System Description is customized by the organization for SOC2 & ISO 27001 auditors to use as the basis for conducting their SOC 2 Type 2 audit attestation report.
 
 There is a possibility that a misstated or inaccurate System Description could result in a qualified opinion. 
 
