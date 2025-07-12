@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-07-09"
-lastchange: "v001 + fix yaml :2025-07-03-python-earsketch.md"
+date: "2025-07-12"
+lastchange: "v003 + fix yaml :2025-07-03-python-earsketch.md"
 file: "python-intro"
 title: "Python introduction using Earsketch and other"
 excerpt: "How to automate Python"
@@ -18,8 +18,9 @@ created: "2025-07-03"
 {% include _toc.html %}
 <i>{{ page.excerpt }}</i>
 
+There are several editions of "Scratch" code editors.
 
-
+## EarSketch
 EarSketch is a free online programming environment created 
 to use music composing and remixing for teaching coding in Python and JavaScript.
 It was developed from US National Science Foundation funding and tech giants
@@ -97,4 +98,16 @@ competitions
 
 1. Change the musical notation code within EarSketch
 1. Have EarSketch generate music
+
+
+## Scratch from Raspberry Pi Foundation
+
+
+## Scratch from BJC
+
+"Beauty and Joy of Computing" adds several functions to make it do practically anything Python can do.
+
+
+
+
 
