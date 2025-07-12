@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-07-04"
-lastchange: "v011 + Furier Transform sample code :2023-09-23-python-cuda.md"
+date: "2025-07-12"
+lastchange: "v013 + Use cases :2023-09-23-python-cuda.md"
 url: https://wilsonmar.github.io/python-cuda
 file: "python-cuda"
 title: "Python with NVIDIA CUDA"
@@ -119,6 +119,10 @@ cuda-python is being re-structured to become a metapackage that contains a colle
 ### Python samples
 
 Python modules which make good use of CUDA:
+
+1. Fluid dynamics was the first use case upon which CUDA was built.
+
+1. CUDA is used for crypto bitcoin mining and machine learning.
 
 1. TODO: I would like to add CUDA to Python code in the Cartesian app.
 
