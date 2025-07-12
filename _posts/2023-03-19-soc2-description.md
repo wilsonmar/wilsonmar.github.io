@@ -1,7 +1,7 @@
 ---
 lawet: post
 date: "2025-07-12"
-lastchange: "v012 + intro life :2023-03-19-soc2-description.md"
+lastchange: "v013 + br :2023-03-19-soc2-description.md"
 url: https://wilsonmar.github.io/soc2-description
 file: "soc2-description"
 title: "SOC2 SystemDescription"
@@ -76,21 +76,39 @@ Organizations are called to provide evidence during audits that controls impleme
 
 The SOC 2 Common Criteria, also known as the "CC-series" (at <a target="_blank" href="https://assets.ctfassets.net/rb9cdnjh59cm/2sK6Ih6dzy6t7aU6RQvoeD/d97a2a14609e74a1af1ce9ab0b142b69/92317096_trust_services_criteria_red-lined_version.pdf">v2022 pdf</a>) has these nine subcategories and questions:
 
+<a name="CC1"></a>
+
 * CC1 = Control environment : Does the organization value integrity and security?
+
+<a name="CC2"></a>
 
 * CC2 = Communication and Information : Are policies and procedures in place to ensure security? Are they communicated well to both internal and external partners?
 
+<a name="CC3"></a>
+
 * CC3 = Risk Assessment : Does the organization analyze risk and monitor how changes impact that risk?
+
+<a name="CC4"></a>
 
 * CC4 = Monitoring Controls : Does the organization monitor, evaluate, and communicate the effectiveness of its controls?
 
+<a name="CC5"></a>
+
 * CC5 = Control Activities : Are the proper controls, processes, and technologies in place to reduce risk?
+
+<a name="CC6"></a>
 
 * CC6 = Logical and Physical Access Controls : Does the organization encrypt data? Does it control who can access data and restrict physical access to servers?
 
+<a name="CC7"></a>
+
 * CC7 = System Operations : Are systems monitored to ensure they function properly? Are incident response and disaster recovery plans in place?
 
+<a name="CC8"></a>
+
 * CC8 = Change Management : Are material changes to systems properly tested and approved beforehand?
+
+<a name="CC9"></a>
 
 * CC9 = Risk Mitigation : Does the organization mitigate risk through proper business processes and vendor management?
 
@@ -109,13 +127,14 @@ The SOC 2 Common Criteria, also known as the "CC-series" (at <a target="_blank" 
    * Process documentation
    * Secure development workflows
    * Security design documents
-
+   <br />
 1. Ensure a secure networking environment is being used, following:
 
 	* Environment diagrams
 	* Network segmentation policies
 	* Access control lists
-
+   * VPN access outside office
+   <br />
 1. Setup workspace to be ergonomic and minimized for static and other hazards.
 
 1. Setup work environment (laptop) using automation scripts referencing versioned configurations.
@@ -125,41 +144,41 @@ The SOC 2 Common Criteria, also known as the "CC-series" (at <a target="_blank" 
    * Verify Work and Test plans
    * Security test plans
    * Secure coding guidelines
-
+   <br />
 1. Setup code scans to invoke automatically before of application and IaC (Infrastructure as Code) to common GitHub.
 
    * Identify secrets embedded in code
    * Detect Anomalies in pipeline (PHA)
-
+   <br />
 1. Conduct Software Composition Analysis (SCA) on open-source and third-party dependencies to identify potential security vulnerabilities, license compliance issues, and other risks 
 
    1. Obtain SBOMs of open-source and third-party components within the chain of references
    1. Assess each component supplier for concerns about activity history, developer changes, etc.
    1. Identify whether each component has been flagged as malware by US and European analysts
-
+   <br />
 1. Practice recognition and resolution of sample security issues (MITRE ATT&CK & WASP Top 10).
 
    * Code review checklists
    * Traceability matrix
    * Defect tracking logs
-
+   <br />
 1. Run apps with sample live data under DAST (Dynamic Application Testing) monitoring
 
 	* Data handling procedures
 	* Data masking policies
 	* Anonymized datasets
-
+   <br />
 1. Setup automatic notification and team review by asset owner(s).
 
    * SAST scan reports
-
+   <br />
 1. Concurrence of others to release into production.
 
 	* Release checklists
 	* Deployment approval records
 	* Release management documentation
 	* blocking and build-break events
-
+   <br />
 1. Confirm protection backup snapshots before production updates.
 
 1. Notification of audit success is registered to enable continuation into production.
@@ -476,6 +495,8 @@ There are 17 COSO Principles for (3 x 4) = 204 items.
 * SMS Text to mobile phones: Twilio, etc.
 * Video: Zoom, Microsoft Teams, Loom, etc.
 * Video editing: Camtasia, Loom, etc.
+* SVG image file editing: macSVG
+* PNG image file editing: 
 
 * Document creation: Microsoft Word, Google Docs, etc.
 * Flowcharts: Lucid Chart, Figma, etc.
