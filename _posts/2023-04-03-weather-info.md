@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-07-04"
-lastchange: "v024 + NVIDIA tutorial :2023-04-03-weather-info.md"
+date: "2025-07-12"
+lastchange: "v026 + NVIDIA tutorial :2023-04-03-weather-info.md"
 url: "https://wilsonmar.github.io/weather-info"
 file: "weather"
 title: "Weather microclimate"
@@ -364,11 +364,31 @@ Forecast Prediction Validation is a transferrable skill: Set up the model, fetch
 
 https://github.com/NVlabs/FourCastNet is a global AI weather model based on <a target="_blank" href="https://arxiv.org/abs/2306.03838">Spherical Fourier Neural Operators (SFNO)</a> to create medium-range weather forecasts. 
 
+## Weather Forecasts
+
+Weather forecasts are indispensable for planning and decision-making in the public and private sector, with weather affecting anything from supply chain resiliency to energy production. 
+
+To conduct Monte Carlo probability analysis, we analyze the impact of intentional perturbations. Earth2Studio offers noise-based and model-based perturbation strategies to make this process easier. 
+sample of plausible values
+   * Noise-based perturbation e.g., Gaussian, Brownian, Perlin, Spherical Gaussian
+   Pure noise generated independent of data
+   Spatially correlated, with “natural” pattern
+   Ideally taking spherical geometry into 
+* More sophisticated, model-based methods use the forecast model to determine the amount and spatial structure of noise to be added to the perturbed variables.
+   e.g., vector breeding, singular vectors
+   Apply model to unperturbed and noise-perturbed data
+   Iteratively calculate difference, use as new perturbation
+   Identifies variables showing fastest growth/instability
+
+For our exercise, we will perturb initial conditions and skip adding noise to the forecasting process. Initial condition perturbation captures the uncertainty inherent in the measurements and assimilation system. 
+The simpler class of methods adds noise from a defined distribution and of a certain amplitude to some or all of the atmospheric variables. 
 
 
 Downscaling with CorrDiff (and StormCast)
 
-Weather forecasts are indispensable for planning and decision-making in the public and private sector, with weather affecting anything from supply chain resiliency to energy production. Traditional numerical weather prediction systems are difficult to operate and place heavy demands on time and compute resources. With the recent advances in AI weather modeling, non-expert practitioners are now enabled to run forecasts tuned to their own needs. This course explores the possibilities offered by state-of-the-art AI weather prediction models and teaches how to integrate them into custom workflows. In this course, students will learn how AI weather models are revolutionizing the approach to weather forecasting. They will gain hands-on experience running AI weather forecasts, validating model outputs, and explore how super-resolution AI models can make fine-grained predictions. After the course, students will be able to build their own custom AI weather pipelines.
+Traditional numerical weather prediction systems are difficult to operate and place heavy demands on time and compute resources. Recent advances in AI weather modeling enable non-expert practitioners to run forecasts tuned to their own needs, validating model outputs, and explore how super-resolution AI models can make fine-grained predictions. 
+
+To build a custom AI weather pipeline:
 
 * Learn the fundamentals of AI weather simulation and understand the difference between AI-based and numerical weather prediction.
 * Gain hands-on experience running AI weather simulations with Earth2Studio for weather forecasting, historical analyses, and downscaling.
