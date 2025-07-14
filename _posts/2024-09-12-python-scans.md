@@ -157,10 +157,18 @@ F. <a target="_blank" href="https://help.aikido.dev/pr-and-release-gating/github
    ```
    cd /$HOME/github-???/python-samples
    ```
+1. Obtain API token from https://www.getsafety.com - if <tt>security scan</tt> is run, this message appears:
+   
+   Please login or register Safety CLI (free forever) to scan and secure your projects with Safety
+   (R)egister for a free account in 30 seconds, or (L)ogin with an existing account to continue (R/L): Unhandled exception happened: EOF when reading a line
+
+   WARNING: Something went wrong, please try again later" appears on registration on July 14, 2025.
+
 1. To use Safety to check for issues:
    ```
-   safety check
+   safety scan
    ```
+
    Sample response:
    ```
    Using open-source vulnerability database
@@ -171,6 +179,7 @@ F. <a target="_blank" href="https://help.aikido.dev/pr-and-release-gating/github
    &nbsp;
    No known security vulnerabilities reported. 
    ```
+   On <tt>security check</tt>
    ```
 * I'll run a safety check to examine the current directory and identify any potential security concerns or issues.
 &nbsp;
