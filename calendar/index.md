@@ -1,7 +1,7 @@
 ---
 layout: page
 date: "2025-07-14"
-lastchange: "v033 + Add Argintina - calendar:index.md"
+lastchange: "v034 + New Zealand - calendar:index.md"
 url: "https://wilsonmar.github.io/calendar"
 file: "calendar"
 title: Please send me an appointment
@@ -9,9 +9,9 @@ tags: [calendar, contact, Jekyll]
 comments: true
 image:
 # calendar-2904x728.png
-  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1752510172/calendar-1612x400_mss8jq.png
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1752511168/calendar-1612x422_szhl23.png
   credit: Wilson Mar
-  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1752510172/calendar-1612x400_mss8jq.png
+  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1752511168/calendar-1612x422_szhl23.png
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
