@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-07-14"
-changes: "v014 + add github actions commit :2024-09-12-python-scans.md"
+changes: "v015 + add safety response commit :2024-09-12-python-scans.md"
 url: "https://wilsonmar.github.io/python-scans"
 file: "python-scans"
 title: "Python scans to detect errors and vulnerabilities"
@@ -162,6 +162,15 @@ F. <a target="_blank" href="https://help.aikido.dev/pr-and-release-gating/github
    safety check
    ```
    Sample response:
+   ```
+   Using open-source vulnerability database
+   Found and scanned 69 packages
+   Timestamp 2025-07-14 00:24:33
+   0 vulnerabilities reported
+   0 vulnerabilities ignored
+   &nbsp;
+   No known security vulnerabilities reported. 
+   ```
    ```
 * I'll run a safety check to examine the current directory and identify any potential security concerns or issues.
 &nbsp;
