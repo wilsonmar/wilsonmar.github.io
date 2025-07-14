@@ -1,7 +1,7 @@
 ---
 layout: page
-date: "2025-07-01"
-lastchange: "v032 + seiko hist - calendar:index.md"
+date: "2025-07-14"
+lastchange: "v033 + Add Indonesia - calendar:index.md"
 url: "https://wilsonmar.github.io/calendar"
 file: "calendar"
 title: Please send me an appointment
@@ -9,9 +9,9 @@ tags: [calendar, contact, Jekyll]
 comments: true
 image:
 # calendar-2904x728.png
-  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1697552071/calendar-2904x728_e5l2iw.png
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1752509155/calendar-1613x401_mwqati.png
   credit: Wilson Mar
-  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1697552071/calendar-2904x728_e5l2iw.png
+  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1752509155/calendar-1613x401_mwqati.png
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
