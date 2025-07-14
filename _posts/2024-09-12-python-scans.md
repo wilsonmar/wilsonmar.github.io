@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-07-13"
-changes: "v013 + add git commit code :2024-09-12-python-scans.md"
+date: "2025-07-14"
+changes: "v014 + add github actions commit :2024-09-12-python-scans.md"
 url: "https://wilsonmar.github.io/python-scans"
 file: "python-scans"
 title: "Python scans to detect errors and vulnerabilities"
@@ -28,14 +28,14 @@ There are several utilities which claim to catch vulnerabilities:
 
 ## Ways to run
 
-There are several ways to run utilities to identity syntax violations and vulnerabilities:
+There are several options to run utilities to identity syntax violations and vulnerabilities:
 
-A. Within a Terminal app, manually construct CLI commands to install and run each utility individually:
+<a href="#ManualCLI">A. Within a Terminal app</a>, manually construct CLI commands to install and run each utility individually:
 
-   * <a href="#git-guardian">GitGuardian.com</a> install the <tt>.git/hooks/git-commit</tt> file and scan each repository's entire Git history, across all git branches, for "high entropy" strings that can be secrets.
+   * <a href="#ggshield">GitGuardian.com</a> install the <tt>.git/hooks/git-commit</tt> file and scan each repository's entire Git history, across all git branches, for "high entropy" strings that can present secrets others can misuse.
 
    * <a href="#Black">Black</a> and
-   * <a href="#Flake8">Flake8</a> to "lint" code for violations of Python coding style conventions.
+   * <a href="#Ruff">Ruff</a> (instead of <a href="#Flake8">Flake8</a>) to "lint" code for violations of Python coding style conventions.
 
    * <a href="#git-secrets">git-secrets</a> to identify cryptographic text.
 
@@ -46,12 +46,17 @@ A. Within a Terminal app, manually construct CLI commands to install and run eac
 
    NOTE: It takes a few seconds more, but it does catch issues before infected code reaches the team's GitHub repo, which causes crashes and embarassment.
 
-   Much of the effort from working with scan results is handling false positives.
+   Alternatives to secrets scanning is git-secrets and truffleHog.
 
-B. Write a Bash script to <a href="#LocalGit">invoke manually locally</a> to run the above.
+   WARNING: Much of the effort from working with scan results is fixing "true positives" and handling <strong>false positives</strong> which do not really need fixing.
 
-C. Invoke the Bash script <tt>git-commit.sh</tt> to run commands on files which have been git commit applied.
-D. Invoke the Bash script  <tt>git-push.sh</tt> to run commands on all files in the folder.
+<a href="#LocalGit">B. Obtain & customize Bash scripts to manually run locally</a> the above from:
+
+   * https://github.com/wilsonmar/mac-setup/blob/main/git-commit.sh
+   * https://github.com/wilsonmar/mac-setup/blob/main/git-push.sh
+   <br /><br />
+C. Automatically invoke the Bash script <tt>git-commit.sh</tt> on files which have <tt>git commit</tt> applied.
+D. Automatically invoke the Bash script  <tt>git-push.sh</tt> on all files in the folder when <tt>git push</tt> is run.
 
 E. <a href="#GitHubWorkflow">A json file in your repo's <tt>.github/workflows/</tt> folder to invoke GitHub Actions.</a> This integrates runs automatically into standardized development workflows, including Continuous Integration/Continuous Delivery (CI/CD) pipelines, to provide ongoing security checks.
 
@@ -59,11 +64,27 @@ F. <a target="_blank" href="https://help.aikido.dev/pr-and-release-gating/github
 
 <hr />
 
-In a macOS Terminal with Homebrew installed:
+<a name="ManualCLI"></a>
+
+## A. Manual CLI commands
+
+1. In a macOS Terminal with Homebrew installed:
+
 1. Navigate to the path containing the .git folder created when the GitHub repository was initialized, such as:
    ```
    cd /$HOME/github-?/python-samples
    ```
+1. Obtain a sample repo that contains various secrets (AWS, MongoDB, PostgeSQL, RSA, SMTP, LDAP, etc.), in a folder path to receive Git repos:
+   ```
+   git clone https://github.com/GitGuardian/sample_secrets
+   cd sample_secrets
+   ```
+
+
+<a name="ggshield"></a>
+
+### ggshield (Git Guardian)
+
 1. Install the ggshield utility to create a <tt>pre-commit</tt> file:
    ```
    brew info ggshield
@@ -72,11 +93,6 @@ In a macOS Terminal with Homebrew installed:
    Results:
    ```
    pre-commit successfully added in .git/hooks/pre-commit
-   ```
-1. Obtain a sample repo that contains various secrets (AWS, MongoDB, PostgeSQL, RSA, SMTP, LDAP, etc.), in a folder path to receive Git repos:
-   ```
-   git clone https://github.com/GitGuardian/sample_secrets
-   cd sample_secrets
    ```
 1. From the folder, edit the file using Visual Studio editor (or substitute another):
    ```
@@ -96,12 +112,13 @@ In a macOS Terminal with Homebrew installed:
 
 1. To use an on-prem version of GitGuardian ggshield utility, use the --instance option to point to it.
    ```
-   ggshield --instance 
+   ggshield --instance ???
    ```
    Results:
    ```
    ???
    ```
+
 
 <a name="Safety"></a>
 
@@ -135,6 +152,7 @@ In a macOS Terminal with Homebrew installed:
    ```
    brew install safety
    ```
+
 1. Navigate to a folder holding .py files, such as:
    ```
    cd /$HOME/github-???/python-samples
@@ -143,7 +161,7 @@ In a macOS Terminal with Homebrew installed:
    ```
    safety check
    ```
-   Response:
+   Sample response:
    ```
 * I'll run a safety check to examine the current directory and identify any potential security concerns or issues.
 &nbsp;
@@ -171,9 +189,17 @@ Recommendations:
 Would you like help taking any specific action based on these findings?
    ```
 
-<a name="git-secrets"></a>
+<a name="Ruff"></a>
 
-### git-secrets
+### Ruff
+
+Ruff replaces Black, isort, Flake8, and many Flake8 plugins, reducing your dependency footprint.
+
+Written in Rust and re-implements every Flake8 rule as a first-party feature.
+
+Ruff is much faster than Flake8, especially on large codebases or in CI pipelines.
+
+1. Customize the pyproject.toml (the modern Python config standard) or a dedicated ruff.toml.
 
 
 <a name="Bandit"></a>
@@ -276,12 +302,6 @@ Examples of issues:
 PROTIP: Code within the <tt>site-packages</tt> folder need to be updated by authors of the package (such as werkzeug).
 
 
-### Secrets scan
-
-Alternatives to git-secrets is truffleHog to scan for keys in your codebase.
-
-
-
 <a name="Snyk"></a>
 
 ### Snyk
@@ -377,7 +397,15 @@ In a Terminal app:
    ```
    .github/workflows/
    ```
-1. Add this <tt>>security-scan.yml</tt> file with content like the below to invoke <a href="#Bandit">Bandit (see above)</a>:
+1. Add to file <tt>.pre-commit-config.yaml</tt>
+   ```
+   repos:
+   - repo: https://github.com/psf/black
+      rev: 22.10.0
+      hooks:
+         - id: black
+   ```
+1. Alternately, add this <tt>security-scan.yml</tt> file with content like the below to invoke <a href="#Bandit">Bandit (see above)</a>:
    ```
 name: Python Vulnerability Scan
 on: [push, pull_request]
