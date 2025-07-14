@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-07-14"
-changes: "v015 + add safety response commit :2024-09-12-python-scans.md"
+changes: "v016 + git guardian img :2024-09-12-python-scans.md"
 url: "https://wilsonmar.github.io/python-scans"
 file: "python-scans"
 title: "Python scans to detect errors and vulnerabilities"
@@ -58,9 +58,15 @@ There are several options to run utilities to identity syntax violations and vul
 C. Automatically invoke the Bash script <tt>git-commit.sh</tt> on files which have <tt>git commit</tt> applied.
 D. Automatically invoke the Bash script  <tt>git-push.sh</tt> on all files in the folder when <tt>git push</tt> is run.
 
-E. <a href="#GitHubWorkflow">A json file in your repo's <tt>.github/workflows/</tt> folder to invoke GitHub Actions.</a> This integrates runs automatically into standardized development workflows, including Continuous Integration/Continuous Delivery (CI/CD) pipelines, to provide ongoing security checks.
+E. <a href="#GitHubWorkflow">yaml format files in your repo's <tt>.github/workflows/</tt> folder to invoke GitHub Actions.</a> This integrates runs automatically into standardized CI/CD workflows to use cloud SaaS utilities to cover various brands of repositories (GitLab, Azure, Akido, etc.):
 
-F. <a target="_blank" href="https://help.aikido.dev/pr-and-release-gating/github-pr-gating/github-ci-pr-gating-via-aikido-dashboard">"GitHub CI PR Gating via Aikido Dashboard</a>
+<ul><a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1752509155/gitguardian-clouds-1666x828_af1ybs.png"><img width="300" alt="gitguardian-clouds-1666x828.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1752509155/gitguardian-clouds-1666x828_af1ybs.png"></a></ul>
+
+   * Azure
+   * GitLab
+   * <a target="_blank" href="https://help.aikido.dev/pr-and-release-gating/github-pr-gating/github-ci-pr-gating-via-aikido-dashboard">"GitHub CI PR Gating via Aikido Dashboard</a>
+   <br /><br />
+Third-party cloud vendor provide up-to-the minute rules to identify and instantly remediate issues.
 
 <hr />
 
