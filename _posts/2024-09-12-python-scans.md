@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-07-14"
-changes: "v016 + git guardian img :2024-09-12-python-scans.md"
+date: "2025-07-15"
+changes: "v017 + vendor selection :2024-09-12-python-scans.md"
 url: "https://wilsonmar.github.io/python-scans"
 file: "python-scans"
 title: "Python scans to detect errors and vulnerabilities"
@@ -21,34 +21,86 @@ created: "2024-09-12"
 
 ## Why?
 
-There are several utilities which claim to catch vulnerabilities:
+Most enterprises issue a corporate policy to run scans as part of committing code because, even though it takes a few seconds more, catching issues before infected code reaches the team's GitHub repo, which causes crashes and embarassment. 
+
+   * ASPM (Application Security Posture Management) is a modern, holistic approach to overseeing and improving the security of an organization's applications throughout their entire lifecycle, from development through to production and operation. It’s designed to help companies continuously assess, manage, and enhance application security in the face of rapidly growing and changing threats. Dashbord for managers to better prioritize AppSec work.
+   <em>Code:</em>
+   * Secrets Detection identify "high entropy" strings that can present secrets others can misuse, such as passwords and API access keys.
+   * SAST (Static Application Security Testing) examines souce code residing in code registries.
+   * DAST (Dynamic Application Security Testing) executes apps to monitor their behavior dynamically.
+   * Codebashing
+   * SCA (Software Composition Analysis) identify modules which have known vulnerabilities within the web of transitive dependencies defined in an SBOM (Software Bill of Materials).
+   * API Security
+   <br /><em>Supply Chain:</em>
+   * Repository Health
+   * Malicious Package Protection include creation of cryptographic hash on each asset to detect whether tampering or other damage has occured.
+   * Agentic AI Assist
+   <br /><em>Cloud:</em>
+   * Container Security looks inside Docker containers which run both locally and in Kubernetes and other cloud orchestrators.
+   * IaC (Infrastructure as Code) include Ansible and Terraform
+   etc.
+   <br /><br />
+Much of the effort associated with scanning is both fixing "true positives" and handling <strong>false positives</strong> which do not really need fixing.
 
 {% include whatever.html %}
+
+## Vendor selection
+
+> PROTIP: Limit the number of utilities which have permission to see and touch your code. Evan popular and long-standing vendors can potentially be inflitrated by criminals who inject malicious code into your vendor ecosystem.
+
+Thus, some vendors consolidate multiple types of scans together in the same run. Examples are Checkmarx, Akido, Xygeni, Wiz, etc.
+
+Some organizations require services to run locally off the public internet.
+
+However, cloud vendors provide up-to-the-minute rules to identify and instantly remediate issues.
+Cloud-based vendors also provide a convenient <a target="_blank" href="https://help.aikido.dev/pr-and-release-gating/github-pr-gating/github-ci-pr-gating-via-aikido-dashboard">dashboard (such as Akido's GitHub CI PR Gating Dashboard)</a>.
+
+Assets subjected to scanning include both source code and configuration files.
+
+> PROTIP: To ensure that each vendor operates using a minimal level of security capability, ask for the SOC2 and/or ISO 27001 attestation from third-party auditors.
+
+FOSS (Free Open-Source Software) vendors provide their assets for you to scan. However, this limits the vendor's ability to profit and thus the number of people working on the product.
+
+> Please contribute to vendors when you use their free software.
+
+The license vendors specify define whether those who change their code are legally required to submit improvements back to them.
+
+## Vendors
+
+1. <a href="#ggshield">GitGuardian.com</a> install the <tt>.git/hooks/git-commit</tt> file and scan each repository's entire Git history, across all git branches
+1. TruffleHog: scans for secrets
+
+1. <a href="#Black">Black</a> and
+1. <a href="#Ruff">Ruff</a> (instead of <a href="#Flake8">Flake8</a>) to "lint" code for violations of Python coding style conventions.
+1. <a href="#Bandit">Bandit</a> FOSS: Checks for common security issues specifically in Python code.
+
+1. <a href="#git-secrets">git-secrets</a> to identify cryptographic text.
+
+1. <a target="_blank" href="https://www.akido.com/">Bearer</a> FOSS: SAST tool for JavaScript, TypeScript, Ruby, Java, PHP, Go, and Python. Prioritizes vulnerabilities based on OWASP Top 10.
+1. <a target="_blank" href="https://www.akido.com/">Graudit</a> FOSS: Grep-based, supports a wide range of languages, and is easy to use for quick scans.
+1. <a target="_blank" href="https://www.akido.com/">Horusec</a> FOSS: CLI and IDE plugin; offers a web UI for vulnerability management. Supports multiple languages including C#, Java, Python, Go, and more.
+1. <a target="_blank" href="https://www.akido.com/">Betterscan</a> FOSS: Orchestrates multiple scanning tools (SAST, SCA, secrets scanning) and supports many languages.   
+1. <a target="_blank" href="https://www.akido.com/">SpotBugs</a> & Find Security Bugs FOSS: Java-focused tools
+
+1. <a href="#Safety">Safety</a> to scan dependencies for known vulnerabilities.
+1. <a href="#Snyk">Snyk Code</a>: Checks both code and dependencies for vulnerabilities using <strong>machine learning</strong> for prioritization.
+1. <a target="_blank" href="https://www.akido.com/">Akido</a>: TODO: multi SaaS 
+1. <a target="_blank" href="https://www.xygeni.com/">Xygeni</a>: multi SaaS
+
+1. <a target="_blank" href="https://www.Checkmarx.com/">Checkmarx</a> multi : Offers large enterprises needing robust, flexible scanning and deep CI/CD integration and a customizable query engine.
+1. <a target="_blank" href="https://www.Semgrep.com/">Semgrep</a>: Lightweight, rule-based, and easy to tune. Ideal for fast-moving teams wanting quick feedback and custom rules.
+1. <a target="_blank" href="https://www.CodeQL.com/">GitHub CodeQL</a>: Native to GitHub Actions, but requires more technical setup. Suited for security engineers comfortable with manual tuning.
+1. <a target="_blank" href="https://www.Fortify.com/">Fortify</a>: Static Code Analyzer (SCA): Known for deep analysis and broad language support. Used in finance, government, and defense.
+1. <a target="_blank" href="https://www.Veracode.com/">Veracode</a>: Cloud-based, combines static and dynamic analysis, and integrates with various development tools. Strong in compliance-heavy environments.
+1. <a target="_blank" href="https://www.Klocwork.com/">Klocwork</a>: Focuses on vulnerabilities like memory leaks and concurrency issues, with industry compliance features.
+1. <a target="_blank" href="https://www.Coverity.com/">Coverity</a>: Analyzes <strong>binaries</strong> as well as source code of C++, Java, and Python programs.
 
 
 ## Ways to run
 
-There are several options to run utilities to identity syntax violations and vulnerabilities:
+There are many options to run utilities to identity syntax violations and vulnerabilities:
 
 <a href="#ManualCLI">A. Within a Terminal app</a>, manually construct CLI commands to install and run each utility individually:
-
-   * <a href="#ggshield">GitGuardian.com</a> install the <tt>.git/hooks/git-commit</tt> file and scan each repository's entire Git history, across all git branches, for "high entropy" strings that can present secrets others can misuse.
-
-   * <a href="#Black">Black</a> and
-   * <a href="#Ruff">Ruff</a> (instead of <a href="#Flake8">Flake8</a>) to "lint" code for violations of Python coding style conventions.
-
-   * <a href="#git-secrets">git-secrets</a> to identify cryptographic text.
-
-   * <a href="#Safety">Safety</a> to scan dependencies for known vulnerabilities.
-   * <a href="#Bandit">Bandit</a>: Checks for common security issues in Python code.
-   * <a href="#Snyk">Snyk</a>: Checks both code and dependencies for vulnerabilities.
-   * Akido:
-
-   NOTE: It takes a few seconds more, but it does catch issues before infected code reaches the team's GitHub repo, which causes crashes and embarassment.
-
-   Alternatives to secrets scanning is git-secrets and truffleHog.
-
-   WARNING: Much of the effort from working with scan results is fixing "true positives" and handling <strong>false positives</strong> which do not really need fixing.
 
 <a href="#LocalGit">B. Obtain & customize Bash scripts to manually run locally</a> the above from:
 
@@ -60,13 +112,16 @@ D. Automatically invoke the Bash script  <tt>git-push.sh</tt> on all files in th
 
 E. <a href="#GitHubWorkflow">yaml format files in your repo's <tt>.github/workflows/</tt> folder to invoke GitHub Actions.</a> This integrates runs automatically into standardized CI/CD workflows to use cloud SaaS utilities to cover various brands of repositories (GitLab, Azure, Akido, etc.):
 
-<ul><a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1752509155/gitguardian-clouds-1666x828_af1ybs.png"><img width="300" alt="gitguardian-clouds-1666x828.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1752509155/gitguardian-clouds-1666x828_af1ybs.png"></a></ul>
+GitHub is used by the vast majority of developers to version text. However there are several services which house code:
 
    * Azure
    * GitLab
-   * <a target="_blank" href="https://help.aikido.dev/pr-and-release-gating/github-pr-gating/github-ci-pr-gating-via-aikido-dashboard">"GitHub CI PR Gating via Aikido Dashboard</a>
+   * AWS 
+   * Quay.io
+   etc.
    <br /><br />
-Third-party cloud vendor provide up-to-the minute rules to identify and instantly remediate issues.
+
+<ul><a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1752509155/gitguardian-clouds-1666x828_af1ybs.png"><img width="300" alt="gitguardian-clouds-1666x828.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1752509155/gitguardian-clouds-1666x828_af1ybs.png"></a></ul>
 
 <hr />
 
