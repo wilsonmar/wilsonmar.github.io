@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-07-15"
-changes: "v020 + indents :2024-09-12-appsec-scans.md"
+changes: "v021 + indents :2024-09-12-appsec-scans.md"
 url: "https://wilsonmar.github.io/appsec-scans"
 file: "appsec-scans"
 title: "AppSec Scans"
@@ -26,6 +26,7 @@ Most enterprises issue a corporate policy to run scans as part of committing cod
 1. ASPM (Application Security Posture Management) is a modern, holistic approach to overseeing and improving the security of an organization's applications throughout their entire lifecycle, from development through to production and operation. It’s designed to help companies continuously assess, manage, and enhance application security in the face of rapidly growing and changing threats. Dashbord for managers to better prioritize AppSec work.
 <br />
 <em>Code:</em>
+1. "Repository Health" scans 
 1. Secrets Detection identify "high entropy" hard-coded strings that leak secrets others can misuse, such as passwords and API access keys.
 1. Codebashing identifies whether coding conventions to enhance security are applied. Examples:
    * Return from a function a tuple which include an error value. So consider the result of a function as unsafe until the error value is confirmed and handled.
@@ -38,9 +39,8 @@ Most enterprises issue a corporate policy to run scans as part of committing cod
 1. SCA (Software Composition Analysis) identify modules which have known vulnerabilities within the web of transitive dependencies defined in an SBOM (Software Bill of Materials).
 <br />
 <em>Supply Chain:</em>
-1. Repository Health
-1. Malicious Package Protection include creation of cryptographic hash on each asset to detect whether tampering or other damage has occured.
-1. Agentic AI Assist
+1. "Malicious Package Protection" include creation of cryptographic hash on each asset to detect whether tampering or other damage has occured.
+1. "AI detection" <a target="_blank" href="https://medium.com/the-generator/clever-prompt-injection-thwarts-ai-comments-ef82e7836ff9">expose</a> AI contamination by <a target="_blank" href="https://generativeai.pub/how-researchers-hack-peer-review-with-ai-prompts-a1a8e54310ef">hidden commands</a> which enable AI hijacking human review processes and farm engagement.
 <br />
 <em>Cloud:</em>
 1. Container Security looks inside Docker containers which run both locally and in Kubernetes and other cloud orchestrators.
@@ -148,14 +148,14 @@ GitHub is used by the vast majority of developers to version text. However there
 1. In a macOS Terminal with Homebrew installed:
 
 1. Navigate to the path containing the .git folder created when the GitHub repository was initialized, such as:
-   ```
+   <pre>
    cd /$HOME/github-?/python-samples
-   ```
+   </pre>
 1. Obtain a sample repo that contains various secrets (AWS, MongoDB, PostgeSQL, RSA, SMTP, LDAP, etc.), in a folder path to receive Git repos:
-   ```
+   <pre>
    git clone https://github.com/GitGuardian/sample_secrets
    cd sample_secrets
-   ```
+   </pre>
 
 
 <a name="ggshield"></a>
@@ -163,10 +163,10 @@ GitHub is used by the vast majority of developers to version text. However there
 ### ggshield (Git Guardian)
 
 1. Install the ggshield utility to create a <tt>pre-commit</tt> file:
-   ```
+   <pre>
    brew info ggshield
    ggshield install --mode local --hook-type pre-commit
-   ```
+   </pre>
    Results:
    ```
    pre-commit successfully added in .git/hooks/pre-commit
@@ -209,11 +209,11 @@ GitHub is used by the vast majority of developers to version text. However there
    * https://semgrep.dev/p/gitleaks
 1. Invoke:
    ```
-   brew install gitleaks
-   gitleaks dir . -v --no-banner
+brew install gitleaks
+gitleaks dir . -v --no-banner
    ```
 
-   CAUTION: Sample response shows discovery of just the AWS secret:
+   CAUTION: Sample response from GitLeaks shows discovery of just the AWS secret:
    ```
 Finding:     ... = aws_lib.connect("AKIAF6BAFJKR45SAWSZ5", "hjshnk5ex5u34565...
 Secret:      AKIAF6BAFJKR45SAWSZ5
