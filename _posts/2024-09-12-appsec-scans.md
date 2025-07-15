@@ -1,12 +1,12 @@
 ---
 layout: post
 date: "2025-07-15"
-changes: "v018 + mechanisms :2024-09-12-python-scans.md"
-url: "https://wilsonmar.github.io/python-scans"
-file: "python-scans"
-title: "Python scans to detect errors and vulnerabilities"
-excerpt: "Check whether modules reference have been flagged for vulnerabilities, using Bandit, Safety, Synk, Akido, etc."
-tags: [Python, DevOps]
+changes: "v020 + indents :2024-09-12-appsec-scans.md"
+url: "https://wilsonmar.github.io/appsec-scans"
+file: "appsec-scans"
+title: "AppSec Scans"
+excerpt: "How to scan programming and configuration code to ensure application security by detecting errors and vulnerabilities"
+tags: [Python, DevSecOps]
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -46,8 +46,10 @@ Most enterprises issue a corporate policy to run scans as part of committing cod
 1. Container Security looks inside Docker containers which run both locally and in Kubernetes and other cloud orchestrators.
 1. IaC (Infrastructure as Code) include Ansible, Terraform, etc. which create and manage resources using declarative coding.
 etc.
-<br /><br />
-Much of the effort associated with scanning is both fixing "true positives" and handling <strong>false positives</strong> which do not really need fixing.
+
+<hr />
+
+PROTIP: Effort associated with scanning involves both fixing "true positives" and handling <strong>false positives</strong> which do not really need fixing.
 
 {% include whatever.html %}
 
@@ -59,7 +61,7 @@ Thus, some vendors consolidate multiple types of scans together in the same run.
 
    * https://www.paloaltonetworks.com/cyberpedia/aspm-application-security-posture-management
    <br /><br />
-Some organizations require services to run locally off the public internet.
+For privacy, some organizations need to run services to run locally off the public internet.
 
 However, cloud vendors provide up-to-the-minute rules to identify and instantly remediate issues.
 Cloud-based vendors also provide a convenient <a target="_blank" href="https://help.aikido.dev/pr-and-release-gating/github-pr-gating/github-ci-pr-gating-via-aikido-dashboard">dashboard (such as Akido's GitHub CI PR Gating Dashboard)</a>.
@@ -69,6 +71,9 @@ Assets subjected to scanning include both source code and configuration files.
 > PROTIP: To ensure that each vendor operates using a minimal level of security capability, ask for the SOC2 and/or ISO 27001 attestation from third-party auditors.
 
 FOSS (Free Open-Source Software) vendors provide their assets for you to scan. However, this limits the vendor's ability to profit and thus the number of people working on the product.
+
+Careful vendor assessment include vetting individuals who can alter code: their nationality, employment background, activity level, etc.
+Anonymous authors are suspect.
 
 > Please contribute to vendors when you use their free software.
 
@@ -184,11 +189,16 @@ GitHub is used by the vast majority of developers to version text. However there
 
 1. To use an on-prem version of GitGuardian ggshield utility, use the --instance option to point to it.
    ```
-   ggshield --instance ???
+   ggshield scan path -r . -v
    ```
-   Results:
+   "." is used to define the /path/to/code/folder
+   
+   FIXME: Results:
    ```
-   ???
+   Usage: ggshield [OPTIONS] COMMAND [ARGS]...
+   Try 'ggshield -h' for help.
+   &nbsp;
+   Error: No such command 'scan'.
    ```
 
 <a name="GitLeaks"></a>
@@ -205,16 +215,16 @@ GitHub is used by the vast majority of developers to version text. However there
 
    CAUTION: Sample response shows discovery of just the AWS secret:
    ```
-   Finding:     ... = aws_lib.connect("AKIAF6BAFJKR45SAWSZ5", "hjshnk5ex5u34565...
-   Secret:      AKIAF6BAFJKR45SAWSZ5
-   RuleID:      aws-access-token
-   Entropy:     3.521928
-   File:        bucket_s3.py
-   Line:        10
-   Fingerprint: bucket_s3.py:aws-access-token:10
-   &nbsp;
-   3:35AM INF scanned ~8718 bytes (8.72 KB) in 3.25ms
-   3:35AM WRN leaks found: 1
+Finding:     ... = aws_lib.connect("AKIAF6BAFJKR45SAWSZ5", "hjshnk5ex5u34565...
+Secret:      AKIAF6BAFJKR45SAWSZ5
+RuleID:      aws-access-token
+Entropy:     3.521928
+File:        bucket_s3.py
+Line:        10
+Fingerprint: bucket_s3.py:aws-access-token:10
+&nbsp;
+3:35AM INF scanned ~8718 bytes (8.72 KB) in 3.25ms
+3:35AM WRN leaks found: 1
    ```
 
 <a name="GoSec"></a>
