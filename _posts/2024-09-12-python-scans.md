@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-07-15"
-changes: "v017 + vendor selection :2024-09-12-python-scans.md"
+changes: "v018 + mechanisms :2024-09-12-python-scans.md"
 url: "https://wilsonmar.github.io/python-scans"
 file: "python-scans"
 title: "Python scans to detect errors and vulnerabilities"
@@ -23,23 +23,30 @@ created: "2024-09-12"
 
 Most enterprises issue a corporate policy to run scans as part of committing code because, even though it takes a few seconds more, catching issues before infected code reaches the team's GitHub repo, which causes crashes and embarassment. 
 
-   * ASPM (Application Security Posture Management) is a modern, holistic approach to overseeing and improving the security of an organization's applications throughout their entire lifecycle, from development through to production and operation. It’s designed to help companies continuously assess, manage, and enhance application security in the face of rapidly growing and changing threats. Dashbord for managers to better prioritize AppSec work.
-   <em>Code:</em>
-   * Secrets Detection identify "high entropy" strings that can present secrets others can misuse, such as passwords and API access keys.
-   * SAST (Static Application Security Testing) examines souce code residing in code registries.
-   * DAST (Dynamic Application Security Testing) executes apps to monitor their behavior dynamically.
-   * Codebashing
-   * SCA (Software Composition Analysis) identify modules which have known vulnerabilities within the web of transitive dependencies defined in an SBOM (Software Bill of Materials).
-   * API Security
-   <br /><em>Supply Chain:</em>
-   * Repository Health
-   * Malicious Package Protection include creation of cryptographic hash on each asset to detect whether tampering or other damage has occured.
-   * Agentic AI Assist
-   <br /><em>Cloud:</em>
-   * Container Security looks inside Docker containers which run both locally and in Kubernetes and other cloud orchestrators.
-   * IaC (Infrastructure as Code) include Ansible and Terraform
-   etc.
-   <br /><br />
+1. ASPM (Application Security Posture Management) is a modern, holistic approach to overseeing and improving the security of an organization's applications throughout their entire lifecycle, from development through to production and operation. It’s designed to help companies continuously assess, manage, and enhance application security in the face of rapidly growing and changing threats. Dashbord for managers to better prioritize AppSec work.
+<br />
+<em>Code:</em>
+1. Secrets Detection identify "high entropy" hard-coded strings that leak secrets others can misuse, such as passwords and API access keys.
+1. Codebashing identifies whether coding conventions to enhance security are applied. Examples:
+   * Return from a function a tuple which include an error value. So consider the result of a function as unsafe until the error value is confirmed and handled.
+1. SAST (Static Application Security Testing) examines souce code residing in code registries. Examples:
+   * Binding to all network interfaces can potentially open up a service to traffic on unintended interfaces, that may not be properly documented or secured. Scanners looks for a string pattern “0.0.0.0” that may indicate a hardcoded binding to all network interfaces.
+1. DAST (Dynamic Application Security Testing) executes apps to monitor their behavior dynamically.
+   * Various potentially invalid values are provided to each input to determine whether the app responds appropriately.
+1. API Security verifies whether a URL provided as input is part of a SSRF (Server Side Request Forgery) attack.
+   * Domains in URLs are checked against a blacklist by the DNS service used
+1. SCA (Software Composition Analysis) identify modules which have known vulnerabilities within the web of transitive dependencies defined in an SBOM (Software Bill of Materials).
+<br />
+<em>Supply Chain:</em>
+1. Repository Health
+1. Malicious Package Protection include creation of cryptographic hash on each asset to detect whether tampering or other damage has occured.
+1. Agentic AI Assist
+<br />
+<em>Cloud:</em>
+1. Container Security looks inside Docker containers which run both locally and in Kubernetes and other cloud orchestrators.
+1. IaC (Infrastructure as Code) include Ansible, Terraform, etc. which create and manage resources using declarative coding.
+etc.
+<br /><br />
 Much of the effort associated with scanning is both fixing "true positives" and handling <strong>false positives</strong> which do not really need fixing.
 
 {% include whatever.html %}
@@ -50,6 +57,8 @@ Much of the effort associated with scanning is both fixing "true positives" and 
 
 Thus, some vendors consolidate multiple types of scans together in the same run. Examples are Checkmarx, Akido, Xygeni, Wiz, etc.
 
+   * https://www.paloaltonetworks.com/cyberpedia/aspm-application-security-posture-management
+   <br /><br />
 Some organizations require services to run locally off the public internet.
 
 However, cloud vendors provide up-to-the-minute rules to identify and instantly remediate issues.
@@ -68,7 +77,9 @@ The license vendors specify define whether those who change their code are legal
 ## Vendors
 
 1. <a href="#ggshield">GitGuardian.com</a> install the <tt>.git/hooks/git-commit</tt> file and scan each repository's entire Git history, across all git branches
+1. <a href="#GitLeaks">GitLeaks</a> FOSS local: scans for secrets
 1. TruffleHog: scans for secrets
+1. <a href="#GoSec">GoSec</a>: FOSS local: scans Golang code only
 
 1. <a href="#Black">Black</a> and
 1. <a href="#Ruff">Ruff</a> (instead of <a href="#Flake8">Flake8</a>) to "lint" code for violations of Python coding style conventions.
@@ -76,7 +87,7 @@ The license vendors specify define whether those who change their code are legal
 
 1. <a href="#git-secrets">git-secrets</a> to identify cryptographic text.
 
-1. <a target="_blank" href="https://www.akido.com/">Bearer</a> FOSS: SAST tool for JavaScript, TypeScript, Ruby, Java, PHP, Go, and Python. Prioritizes vulnerabilities based on OWASP Top 10.
+1. <a target="_blank" href="https://www.akido.com/">Bearer</a> FOSS: SAST tool for JavaScript, TypeScript, Ruby, Java, PHP, Go, and Python. Prioritizes vulnerabilities based on <a target="_blank" href="https://wilsonmar.github.io/owasp-testing/">OWASP Top 10</a>.
 1. <a target="_blank" href="https://www.akido.com/">Graudit</a> FOSS: Grep-based, supports a wide range of languages, and is easy to use for quick scans.
 1. <a target="_blank" href="https://www.akido.com/">Horusec</a> FOSS: CLI and IDE plugin; offers a web UI for vulnerability management. Supports multiple languages including C#, Java, Python, Go, and more.
 1. <a target="_blank" href="https://www.akido.com/">Betterscan</a> FOSS: Orchestrates multiple scanning tools (SAST, SCA, secrets scanning) and supports many languages.   
@@ -88,7 +99,7 @@ The license vendors specify define whether those who change their code are legal
 1. <a target="_blank" href="https://www.xygeni.com/">Xygeni</a>: multi SaaS
 
 1. <a target="_blank" href="https://www.Checkmarx.com/">Checkmarx</a> multi : Offers large enterprises needing robust, flexible scanning and deep CI/CD integration and a customizable query engine.
-1. <a target="_blank" href="https://www.Semgrep.com/">Semgrep</a>: Lightweight, rule-based, and easy to tune. Ideal for fast-moving teams wanting quick feedback and custom rules.
+1. <a target="_blank" href="https://www.Semgrep.dev/">Semgrep</a>: Lightweight, rule-based, and easy to tune. Ideal for fast-moving teams wanting quick feedback and custom rules.
 1. <a target="_blank" href="https://www.CodeQL.com/">GitHub CodeQL</a>: Native to GitHub Actions, but requires more technical setup. Suited for security engineers comfortable with manual tuning.
 1. <a target="_blank" href="https://www.Fortify.com/">Fortify</a>: Static Code Analyzer (SCA): Known for deep analysis and broad language support. Used in finance, government, and defense.
 1. <a target="_blank" href="https://www.Veracode.com/">Veracode</a>: Cloud-based, combines static and dynamic analysis, and integrates with various development tools. Strong in compliance-heavy environments.
@@ -180,6 +191,59 @@ GitHub is used by the vast majority of developers to version text. However there
    ???
    ```
 
+<a name="GitLeaks"></a>
+
+### GitLeaks
+
+1. Navigate to the known-insecure folder. 
+   * https://semgrep.dev/p/gitleaks
+1. Invoke:
+   ```
+   brew install gitleaks
+   gitleaks dir . -v --no-banner
+   ```
+
+   CAUTION: Sample response shows discovery of just the AWS secret:
+   ```
+   Finding:     ... = aws_lib.connect("AKIAF6BAFJKR45SAWSZ5", "hjshnk5ex5u34565...
+   Secret:      AKIAF6BAFJKR45SAWSZ5
+   RuleID:      aws-access-token
+   Entropy:     3.521928
+   File:        bucket_s3.py
+   Line:        10
+   Fingerprint: bucket_s3.py:aws-access-token:10
+   &nbsp;
+   3:35AM INF scanned ~8718 bytes (8.72 KB) in 3.25ms
+   3:35AM WRN leaks found: 1
+   ```
+
+<a name="GoSec"></a>
+
+### GoSec
+
+1. Navigate to the known-insecure folder. 
+   * https://securego.io/docs/rules/rule-intro
+   * https://github.com/securego/gosec
+   * https://semgrep.dev/p/gosec
+1. Invoke:
+   ```
+   brew install gosec
+   gosec scan
+   ```
+
+   CAUTION: Sample response shows discovery of just the AWS secret:
+   ```
+   Finding:     ... = aws_lib.connect("AKIAF6BAFJKR45SAWSZ5", "hjshnk5ex5u34565...
+   Secret:      AKIAF6BAFJKR45SAWSZ5
+   RuleID:      aws-access-token
+   Entropy:     3.521928
+   File:        bucket_s3.py
+   Line:        10
+   Fingerprint: bucket_s3.py:aws-access-token:10
+   &nbsp;
+   3:35AM INF scanned ~8718 bytes (8.72 KB) in 3.25ms
+   3:35AM WRN leaks found: 1
+   ```
 
 <a name="Safety"></a>
 
