@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-07-16"
-lastchange: "v004 + src to vertical bifacial :2025-07-02-solar-panels.md"
+lastchange: "v005 + excel to angle :2025-07-02-solar-panels.md"
 url: https://wilsonmar.github.io/solar-panels
 file: "solar-panels"
 title: "Solar panels"
@@ -60,9 +60,10 @@ However, the power they generate produce power to the pattern of power needed --
 
 1. What is the range of tilt angles?
 
-   PROTIP: It depends on where you live. At the top of United States near the Canadian border, the tilt angle ranges from 18.8 degrees to 48.8 degrees: https://7451111251303.gumroad.com/l/trixm
+   PROTIP: It depends on where you live. For example, at the 48.8 parallel near the top of United States below the Canadian border, the tilt angle ranges from 18.8 degrees to 48.8 degrees: 
    <br />
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1752595340/solar-tilt-1682x794_yfyd0s.png"><img alt="solar-tilt-1682x794_yfyd0s.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1752595340/solar-tilt-1682x794_yfyd0s.png" /></a>
+   <a target="_blank" href="https://7451111251303.gumroad.com/l/trixm"><em>From Excel file</em></a>
 
 1. Calculate the Solar Panel angle for your city/state/zip code at:
 
