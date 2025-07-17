@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-07-15"
-changes: "v021 + indents :2024-09-12-appsec-scans.md"
+date: "2025-07-17"
+changes: "v023 + ci/cd :2024-09-12-appsec-scans.md"
 url: "https://wilsonmar.github.io/appsec-scans"
 file: "appsec-scans"
 title: "AppSec Scans"
@@ -98,7 +98,7 @@ The license vendors specify define whether those who change their code are legal
 1. <a target="_blank" href="https://www.akido.com/">Betterscan</a> FOSS: Orchestrates multiple scanning tools (SAST, SCA, secrets scanning) and supports many languages.   
 1. <a target="_blank" href="https://www.akido.com/">SpotBugs</a> & Find Security Bugs FOSS: Java-focused tools
 
-1. <a href="#Safety">Safety</a> to scan dependencies for known vulnerabilities.
+1. <a href="#Safety">Safety</a> scans dependencies for known vulnerabilities.
 1. <a href="#Snyk">Snyk Code</a>: Checks both code and dependencies for vulnerabilities using <strong>machine learning</strong> for prioritization.
 1. <a target="_blank" href="https://www.akido.com/">Akido</a>: TODO: multi SaaS 
 1. <a target="_blank" href="https://www.xygeni.com/">Xygeni</a>: multi SaaS
@@ -106,11 +106,11 @@ The license vendors specify define whether those who change their code are legal
 1. <a target="_blank" href="https://www.Checkmarx.com/">Checkmarx</a> multi : Offers large enterprises needing robust, flexible scanning and deep CI/CD integration and a customizable query engine.
 1. <a target="_blank" href="https://www.Semgrep.dev/">Semgrep</a>: Lightweight, rule-based, and easy to tune. Ideal for fast-moving teams wanting quick feedback and custom rules.
 1. <a target="_blank" href="https://www.CodeQL.com/">GitHub CodeQL</a>: Native to GitHub Actions, but requires more technical setup. Suited for security engineers comfortable with manual tuning.
-1. <a target="_blank" href="https://www.Fortify.com/">Fortify</a>: Static Code Analyzer (SCA): Known for deep analysis and broad language support. Used in finance, government, and defense.
+1. OpenText <a target="_blank" href="https://www.Fortify.com/">Fortify</a>: Static Code Analyzer (SCA): Known for deep analysis and broad language support. Used in finance, government, and defense.
 1. <a target="_blank" href="https://www.Veracode.com/">Veracode</a>: Cloud-based, combines static and dynamic analysis, and integrates with various development tools. Strong in compliance-heavy environments.
-1. <a target="_blank" href="https://www.Klocwork.com/">Klocwork</a>: Focuses on vulnerabilities like memory leaks and concurrency issues, with industry compliance features.
-1. <a target="_blank" href="https://www.Coverity.com/">Coverity</a>: Analyzes <strong>binaries</strong> as well as source code of C++, Java, and Python programs.
-
+1. Perforce <a target="_blank" href="https://www.Klocwork.com/">Klocwork</a>: Focuses on C, C++, C#, Java vulnerabilities like memory leaks and concurrency issues, with industry compliance features.
+1. BlackDuck <a target="_blank" href="https://www.Coverity.com/">Coverity</a>: Analyzes <strong>binaries</strong> as well as source code of C++, Java, and Python programs.
+1. <a target="_blank" href="https://www.synopsys.com/">Synopsys</a>
 
 ## Ways to run
 
@@ -123,21 +123,38 @@ There are many options to run utilities to identity syntax violations and vulner
    * https://github.com/wilsonmar/mac-setup/blob/main/git-commit.sh
    * https://github.com/wilsonmar/mac-setup/blob/main/git-push.sh
    <br /><br />
-C. Automatically invoke the Bash script <tt>git-commit.sh</tt> on files which have <tt>git commit</tt> applied.
-D. Automatically invoke the Bash script  <tt>git-push.sh</tt> on all files in the folder when <tt>git push</tt> is run.
 
-E. <a href="#GitHubWorkflow">yaml format files in your repo's <tt>.github/workflows/</tt> folder to invoke GitHub Actions.</a> This integrates runs automatically into standardized CI/CD workflows to use cloud SaaS utilities to cover various brands of repositories (GitLab, Azure, Akido, etc.):
+C. Use Git Hooks to automatically invoke the Bash script <tt>git-commit.sh</tt> on files which have <tt>git commit</tt> or<br />
+Automatically invoke the Bash script  <tt>git-push.sh</tt> on all files in the folder when <tt>git push</tt> is run.
 
-GitHub is used by the vast majority of developers to version text. However there are several services which house code:
+D. <a href="#GitHubWorkflow">yaml format files in your repo's <tt>.github/workflows/</tt> folder to invoke GitHub Actions.</a> This integrates runs automatically into standardized CI/CD workflows to use cloud SaaS utilities.
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1752509155/gitguardian-clouds-1666x828_af1ybs.png"><img align="right" width="300" alt="gitguardian-clouds-1666x828.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1752509155/gitguardian-clouds-1666x828_af1ybs.png"></a>
+GitHub is used by the vast majority of developers to version text. However, there are several services which house code:
 
    * Azure
    * GitLab
    * AWS 
-   * Quay.io
    etc.
    <br /><br />
+   There are also registries which hold container images:
+   * Artifactory
+   * Quay.io to
 
-<ul><a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1752509155/gitguardian-clouds-1666x828_af1ybs.png"><img width="300" alt="gitguardian-clouds-1666x828.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1752509155/gitguardian-clouds-1666x828_af1ybs.png"></a></ul>
+
+Automating deployment of patches and upgrades depends on what Configuration Management Tools are used:
+
+* Ansible is for agentless automation. Playbooks define patch deployment workflows  scheduled via cron or AWX/Tower, and manage rolling updates across server groups.
+* Puppet and Chef work well for continuous configuration management, automatically applying patches when they become available and maintaining desired system states.
+* SaltStack provides both push and pull models for patch management with good scalability for large environments.
+
+Within clouds:
+* AWS Systems Manager Patch Manager automates patching for EC2 instances and on-premises servers, with maintenance windows and compliance reporting.
+* Azure Update Management integrates with Log Analytics to schedule and track updates across hybrid environments.
+* Google Cloud OS Config handles patch management for Compute Engine instances.
+
+* Docker base images, rebuild containers
+* Kubernetes rolling updates or Docker Swarm for zero-downtime deployments.
 
 <hr />
 
@@ -340,6 +357,26 @@ Recommendations:
 * Security Tools: Consider using tools like git-secrets or truffleHog to scan for keys in your codebase.
 &nbsp;
 Would you like help taking any specific action based on these findings?
+   ```
+
+* To invoke Safety using GitHub:
+
+   ```
+   name: Example workflow for Python using Safety Action
+&nbsp;
+on:
+  push:  # Run on every push to any branch
+  pull_request:  # Run on new pull requests
+&nbsp;
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - name: Run Safety CLI to check for vulnerabilities
+        uses: pyupio/safety-action@v1
+        with:
+          api-key: ${{ secrets.SAFETY_API_KEY }}
    ```
 
 <a name="Ruff"></a>
