@@ -1,10 +1,12 @@
 ---
 layout: post
+date: "2026-07-19"
+lastchange: "v009 + radar :2019-04-15-devops-job-tasks.md"
+url: "https://wilsonmar.github.io/devops-job-tasks"
+file: "devops-job-tasks"
 title: "DevOps job tasks (the work of DevOps)"
 excerpt: "Get DevOps done using job tasks and projects based on job tasks defined by professional certification"
 tags: [devops, certs]
-idate: "2019-04-15"
-file: "devops-job-tasks"
 image:
 # cert-corporateoasis-1900x500-28621
 
@@ -13,17 +15,39 @@ image:
   credit: corporateoasis
   creditlink: https://www.corporateoasis.com
 comments: true
+created: "2019-04-15"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
 
-Most job descriptons for DevOps roles focus on vendor <strong>product offerings</strong> (GitHub, Jenkins, etc.).
-
 {% include whatever.html %}
 
+Most job descriptons for DevOps roles focus on vendor <strong>product offerings</strong> (GitHub, Jenkins, etc.).
+
 <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx"><img align="right" alt="azure-devopsexpert-230x258-7173.jpg" width="115" src="https://user-images.githubusercontent.com/300046/56392303-56548080-61ee-11e9-8c6c-016ec8c3625a.jpg"></a>
-However, <a target="_blank" href="https://wilsonmar.github.io/devops-job-tasks/">this page</a> lists the contributions, achievements, and outcomes from working DevOps (DevTestSecOps or DevXOps), based on Job Task Analysis done for the <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-AZ-400.aspx">Implementing Azure DevOps Solutions exam AZ-400</a> which fuilfills requirements to be designated a <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">Microsoft Certified: Azure DevOps Engineer Expert</a>. Expand all (click on) these high-level statements of <strong>contributions</strong>:
+However, <a target="_blank" href="https://wilsonmar.github.io/devops-job-tasks/">this page</a> lists the contributions, achievements, and outcomes from working DevOps (DevTestSecOps or DevXOps), based on Job Task Analysis.
+
+## Our DevOps Skills Radar Chart
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1752978757/DevOpsSkillsRadarChart_o6rlww.png"><img alt="" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1752978757/DevOpsSkillsRadarChart_o6rlww.png" /></a>
+
+The red line above shows the desired profile for a <strong>Senior DevOps Engineer</strong>.
+Other jobs would have a different profile.
+
+1. Novice / 2. Competent / 3. Proficient / 4. Expert / 5. Master
+
+The blue line showing ratings for "Your profile" above is hypothetical.
+
+The <strong>gap</strong> is the work needed to close the gap.
+
+WARNING: Are the ratings <strong>realistic</strong> or too ambitious?
+
+QUESTIONS: How do the categories compare against others?
+
+## Microsoft's 
+
+Compare against the <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-AZ-400.aspx">Implementing Azure DevOps Solutions exam AZ-400</a> which fuilfills requirements to be designated a <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">Microsoft Certified: Azure DevOps Engineer Expert</a>. Expand all (click on) these high-level statements of <strong>contributions</strong>:
 
 1. <a href="#Strategy">Design a DevOps strategy</a>
 2. <a href="#DevProcess">Implement DevOps development processes</a>
