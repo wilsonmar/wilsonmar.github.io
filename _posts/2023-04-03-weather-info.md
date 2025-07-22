@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-07-12"
-lastchange: "v026 + NVIDIA tutorial :2023-04-03-weather-info.md"
+date: "2025-07-22"
+lastchange: "v028 + weather.gov :2023-04-03-weather-info.md"
 url: "https://wilsonmar.github.io/weather-info"
 file: "weather"
 title: "Weather microclimate"
@@ -86,20 +86,26 @@ This display is from the <a target="_blank" href="https://ambientweather.com/sup
 
     FUN FACT: About 5 minutes is lost or gained each day.
 
-24. <a target="_blank" href="https://ambientweather.com/solarradiation.html">Solar Radiation</a> (if installed) in wm/2 (Watts per square meter), Lux, or FC (Foot Candles). The measurement is used to calculate evapotranspiration - the potential for evaporation of moisture from the soil (or the reverse of rainfall) as a function of solar energy, wind, and temperature.
+24. <a target="_blank" href="https://ambientweather.com/solarradiation.html">Solar Radiation</a>, measured in <strong>W/m^2</super> (Watts per square meter), aka Lux or FC (Foot Candles) by <a target="_blank" href="https://www.amazon.com/s?k=pyranometers">pyranometers</a> that have a dome-shaped sensor that can be seen from all angles, resembling a "UFO saucer". 
 
-    Before electronic photoelectric sensors are used by computers, the Campbell-Stokes and Jordan Sunshine Recorders (in the UK) used a glass sphere to focus sunlight onto a recording card replaced each day, creating burn marks that indicate the duration of sunshine that day. 
-    
-    Not part of the WS-5000 series, a pyrheliometers to measure sunshine intensity thru direct solar radiation (not sunshine duration). Pyrheliometers have a tubular structure that needs to be aimed at the sun, often mounted on a solar tracker. There are also pyranometers that have a dome-shaped sensor that can be seen from all angles, resembling a "UFO saucer". 
+    The measurement is used to calculate evapotranspiration - the potential for evaporation of moisture from the soil (or the reverse of rainfall) as a function of solar energy, wind, and temperature.
+
+    <a target="_blank" href="https://power.larc.nasa.gov/data-access-viewer/">https://power.larc.nasa.gov/data-access-viewer</a>
+
+    Solar Radiation is not displayed by default on Ambient Weather's website.
+    <a target="_blank" href="https://www.perplexity.ai/search/how-to-obtain-stats-from-ambie-iIsLm3BkSZOA.UUU0RQ.4g#0">Can it be obtained from API</a>?
+
+    Historically, sunshine intensity is measured thru direct solar radiation using <strong>pyrheliometers</strong> which have a tubular structure that needs to be aimed at the sun, mounted on a <strong>solar tracker</strong>. 
+    BTW Before electronic photoelectric sensors are used by computers, the Campbell-Stokes and Jordan Sunshine Recorders (in the UK) used a glass sphere to focus sunlight onto a recording card replaced each day, creating burn marks that indicate the duration of sunshine that day.     
 
 25. "IN "(Indoor) air quality in ug/m3 by a PM2.5 sensor (if installed)
 26. "OUT" (Outdoor) Particulate monitor in ug/m3 by a PM2.5 sensor (if installed)
 
 27. <a name="dewpoint"></a><strong>Dewpoint</strong> is calculated for measuring the comfort level from moisture in the air. A Simplified version of the <a href="https://en.wikipedia.org/wiki/Magnus-Tetens_equation">Magnus-Tetens Formula</a> is:
 
-     AirTemp - ( ( 100 − RelHumidity ) / 5 )
+    AirTemp - ( ( 100 − RelHumidity ) / 5 )
 
-    <a target="_blank" href="https://www.weather.gov/arx/why_dewpoint_vs_humidity">According to NOAA</a>:
+    <a target="_blank" href="https://www.weather.gov/arx/why_dewpoint_vs_humidity">According to NOAA</a> at <a target="_blank" href="https://weather.gov">weather.gov</a>:
 
     At 45 degrees or below, air feels "refreshing".<br />
     At 50, it's "comfortable". At 55, it's "not bad".<br />
