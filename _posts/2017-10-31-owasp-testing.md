@@ -1,6 +1,8 @@
 ---
 layout: post
-date: "2023-11-21"
+date: "2025-07-23"
+lastchanges: "v014 + DVIA from saved :2017-10-31-owasp-testing.md"
+url: "https://wilsonmar.github.io/owasp-testing"
 file: "owasp-testing"
 title: "OWASP"
 excerpt: "Practice finding security vulnerabilities within ZAP or the Broken Web App by running SCA, SAST, DAST, IAST using open-source SonarQube, Sonatype, Synopsys and other tools"
@@ -11,6 +13,7 @@ image:
   credit: OWASP.org
   creditlink: https://owasp.org/Top10/
 comments: true
+created: "2017-10-31"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -62,7 +65,7 @@ YouTube videos from F5 DevCentral 2017 by John Wagnon (and Description from OWAS
    9. <a target="_blank" href="https://www.youtube.com/watch?v=IGsNYVDKRV0&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=97">VIDEO:
    Using Components with Known Vulnerabilities</a>  (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities">Description</a>)
 
-   10. <a target="_blank" href="https://www.youtube.com/watch?v=mruO75ONWy8&index=84&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC">VIDEO:
+   11. <a target="_blank" href="https://www.youtube.com/watch?v=mruO75ONWy8&index=84&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC">VIDEO:
    Insufficient Logging and Monitoring</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A10-Insufficient_Logging%26Monitoring">Description</a>)
    <br /><br />
 
@@ -149,7 +152,7 @@ Courses are from <a target="_blank" href="https://www.linkedin.com/company/apise
    <a target="_blank" href="https://university.apisec.ai/products/api-security-fundamentals/categories/2152504687/posts/2166215465">CLASS</a>:
    APIs tend to expose more endpoints than traditional web applications, making proper and updated documentation highly important. Proper hosts and deployed API versions inventory also play an important role to mitigate issues such as deprecated API versions and exposed debug endpoints.
 
-10. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xaa-unsafe-consumption-of-apis/">API10:2023 Unsafe Consumption of APIs</a>
+11. <a target="_blank" href="https://owasp.org/API-Security/editions/2023/en/0xaa-unsafe-consumption-of-apis/">API10:2023 Unsafe Consumption of APIs</a>
 
    <a target="_blank" href="https://university.apisec.ai/products/api-security-fundamentals/categories/2152504687/posts/2166215642">CLASS</a>:
    Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows attackers to further attack systems, maintain persistence, pivot to more systems to tamper with, extract, or destroy data. Most breach studies demonstrate the time to detect a breach is over 200 days, typically detected by external parties rather than internal processes or monitoring.
@@ -176,6 +179,10 @@ See <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">My notes o
 https://www.redhat.com/en/resources/state-kubernetes-security-report-2023
 
 https://www.cisecurity.org/benchmark/kubernetes
+
+### OWASP Top 10 for LLMs (AI/ML)
+
+https://snyk.io/blog/addressing-risks-in-the-owasp-top-10-for-llms/
 
 
 <hr />
@@ -599,12 +606,21 @@ a collection of intentionally vulnerable web applications
 distributed by OWASP in a Virtual Machine (VM) file used by Virtualbox, HyperV.
 VMware Workstation on Windows or VMware Fusion on Mac:
 
-0. Instantiate a server. <a target="_blank" href="https://groups.google.com/forum/#!topic/gce-discussion/SKdU6JMHbE8"> In Sep 2017</a> nested VT-x is supported on GCE, according to Paul R. Nash, Group Product Manager, Google Compute Engine.
+1. Instantiate a server. <a target="_blank" href="https://groups.google.com/forum/#!topic/gce-discussion/SKdU6JMHbE8"> In Sep 2017</a> nested VT-x is supported on GCE, according to Paul R. Nash, Group Product Manager, Google Compute Engine.
 
-0. Within a console on the server, download:
-
+1. Open a Terminal console on the server and create/navigate to a folder for the project.
+1. Download the download file:
    <pre><strong>
    curl -O https://sourceforge.net/projects/owaspbwa/files/latest/download
+   </strong></pre>
+   ```
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   641  100   641    0     0   1781      0 --:--:-- --:--:-- --:--:--  1785
+   ```
+1. Confirm:
+   <pre><strong>
+   ls -al download
    </strong></pre>
 
    The OWASP_Broken_Web_Apps_VM_1.2.7z file downloaded is 1.7 GB (big!)
@@ -616,15 +632,15 @@ VMware Workstation on Windows or VMware Fusion on Mac:
 
    Note it's from 2015.
 
-0. Unpack the 7z file. Navigate into the folder.
-0. Double-click on file <strong>OWASP Broken Web Apps.vmx</strong> to open image in Virtualbox or VMWare workstation:
+1. Unpack the 7z file. Navigate into the folder.
+1. Double-click on file <strong>OWASP Broken Web Apps.vmx</strong> to open image in Virtualbox or VMWare workstation:
 
    See 
    <a target="_blank" href="https://www.youtube.com/watch?v=O2JtPddnbuQ">
    Install video</a> (music only, no dialog)
    [5:49]
 
-0. Use it.
+1. Use it.
 
    <a target="_blank" href="https://www.youtube.com/watch?v=cwjcfAgKqcg">
    Video showing version 1.1.1</a> 
@@ -687,8 +703,78 @@ Nevertheless, VAmPI can be used for learning/teaching:
 
 1. Enable global configuration settings to switch specific vulnerabilities on or off during testing and confirmation. 
 
+<hr />
+
+## DVIA iOS App Mobile Testing
+
+The open-source "Damn Vulnerable iOS app" is written in Apple's Swift language to provide a platform to mobile security enthusiasts/professionals or students to develop their penetration testing skills in a legal environment up to iOS 11.
+
+It's open-sourced at <a target="_blank" href="https://github.com/prateek147/DVIA-v2">github.com/prateek147/DVIA-v2</a>
+by <a target="_blank" href="https://www.linkedin.com/company/practical-devsecops/">Certified DevSecOps</a> <a target="_blank" href="https://www.linkedin.com/in/prateekgianchandani/">Prateek Gianchandani of Dubai</a> (<a target="_blank" href="https://highaltitudehacks.com/">highaltitudehacks.com</a>).
+
+He wrote DVIA to contain vulnerabilities which we aim to use various testing tools (such as MDM) to find, <a target="_blank" href="https://philkeeble.com/ios/Setting-Up-iOS/">as described</a> by <a target="_blank" href="https://cheats.philkeeble.com">Phil Keeble</a>:
+
+WARNING: On a test phone (not your personal phone):
+
+1. Local Data Storage
+1. Jailbreak Detection <a target="_blank" href="https://philkeeble.com/ios/reverse-engineering/iOS-Bypass-Jailbreak/">Bypass</a> using CheckRa1n
+1. Excessive Permissions
+1. <a target="_blank" href="https://philkeeble.com/ios/reverse-engineering/iOS-Runtime-Manipulation/">Runtime Manipulation</a>
+1. <a target="_blank" href="https://philkeeble.com/ios/reverse-engineering/iOS-Anti-Anti-Hooking/">Anti Anti Hooking/Debugging</a>
+1. Binary Protection
+1. <a target="_blank" href="https://philkeeble.com/ios/iOS-Bypass-Fingerprint/">Touch/Face ID Biometric Bypass</a>
+1. Phishing
+1. <a target="_blank" href="https://philkeeble.com/ios/iOS-Side-Channel-Leakage/">Side Channel Data Leakage</a>
+1. IPC Issues
+1. Broken Cryptography
+1. Webview Issues
+1. <a target="_blank" href="https://philkeeble.com/ios/iOS-Network-Layer-Security/">Network Layer Security</a>
+1. Application Patching
+1. Sensitive Information in Memory
+
+Here we use docs defined by OWASP:
+
+MASTG = Mobile Application Security Testing Guide 
+
+MASVS	=	Mobile Application Security Verification Standard
+
+1. A paid Apple Developer account might be required.
+1. A Apple School Manager or Apple Business Manager account email is needed.
+
+1. On your iPhone Store, get the <a target="_blank" href="https://support.apple.com/en-ae/guide/apple-configurator/welcome/ios">Apple Configurator</a>
+1. https://support.apple.com/en-ae/guide/apple-configurator/apd97373af1e/ios
+1. Install the app.
+1. Input fake data for you to find later.
+
+1. On a Apple Silicon MacBook, install the <a target="_blank" href="https://apps.apple.com/ae/app/apple-configurator/id1588794674">Apple Configurator App</a>.
+1. AppSync Unified 
+
+   When using Windows or Linux, use AltStore, Cydia Impactor, etc. 
+
+   AppSync Unified, 
+   * Frida (Python)
+   * iRET
+   * iFunBox
+   * Ghidra
+   * Objection for injection (Python)
+   * KeyChain Dumper Passionfruit, <a target="_blank" href="https://github.com/ChiChou/Grapefruit/blob/master/README.md">GrapeFruit</a> (dev version of PassionFruit)
+   * SQLite Browser
+   * Realm Browser from Apple Store
+   * https://github.com/ansjdnakjdnajkd/iOS
+
+1. Install Xcode.
+1. Fork <a target="_blank" href="https://github.com/prateek147/DVIA-v2">github.com/prateek147/DVIA-v2</a> and clone to your account
+1. cd to the project root directory where the Podfile is present (/DVIA-v2/DVIA-v2).
+1. Run <tt>pod install</tt>
+1. Open the DVIA-v2.xcworkspace file with Xcode. 1. Run the app on a simulator.
+1. To run on the device, go under Project settings in Xcode on the top left, General tab and under Signing, enter credentials for your Apple ID.
+1. Guild and run the project on the device. 
+1. Trust the app again under Settings -> General -> Device Management.
+
 
 <hr />
+
+<a name="TestingGuidelines"></a>
 
 ## Software Testing Guidelines
 
@@ -724,7 +810,7 @@ OSSTMM (Open Source Security Testing Methodology Manual) <a target="_blank" href
    7. Controls Verification
    8. Process Verification
    9. Configuration and Training Verification
-   10. Property Validation
+   11. Property Validation
    11. Segregation Review
    12. Exposure Verification
    13. Competitive Intelligence Scouting
@@ -916,9 +1002,9 @@ In Internet Explorer:
    4. Lan settings
    5. Check proxy settings
 
-0. Use http://localhost or `http://127.0.0.1:8080` to reach the Proxy.
+1. Use http://localhost or `http://127.0.0.1:8080` to reach the Proxy.
 
-0. Automate settings:
+1. Automate settings:
 
 In Firefox:
 
@@ -957,11 +1043,11 @@ The drop-down at the upper-left corner of the ZAP UI provides for 4 modes:
    4. Attack mode for sites you have permission to penetrate.
    <br /><br />
 
-0. Click Quick Start to, on the Information window, input the URL to scan, starting with `https`.
+1. Click Quick Start to, on the Information window, input the URL to scan, starting with `https`.
    
    The left pane Tree window provides the context history of URLs visited.
 
-0. Run ZAP using the 'standard' zap.sh script.
+1. Run ZAP using the 'standard' zap.sh script.
 
    There is also a zap-x.sh script which first starts xvfb (X virtual frame buffer) - this allows add-ons that use Selenium (like the Ajax Spider and DOM XSS scanner) to run in a headless environment.
 
@@ -1109,3 +1195,4 @@ This is one of a series on DevOps:
 
 {% include devops_links.html %}
 
+<sub>{{ page.lastchange }} {{ page.date }}</sub>
