@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-07-23"
-lastchanges: "v014 + DVIA from saved :2017-10-31-owasp-testing.md"
+date: "2025-07-24"
+lastchanges: "v015 + ABM from saved :2017-10-31-owasp-testing.md"
 url: "https://wilsonmar.github.io/owasp-testing"
 file: "owasp-testing"
 title: "OWASP"
@@ -739,7 +739,7 @@ MASTG = Mobile Application Security Testing Guide
 MASVS	=	Mobile Application Security Verification Standard
 
 1. A paid Apple Developer account might be required.
-1. A Apple School Manager or Apple Business Manager account email is needed.
+1. An <a target="_blank" href="https://support.apple.com/guide/apple-business-manager/about-managed-apple-accounts-axm78b477c81/web">Apple Business Manager account</a> or Apple School Manager email is needed.
 
 1. On your iPhone Store, get the <a target="_blank" href="https://support.apple.com/en-ae/guide/apple-configurator/welcome/ios">Apple Configurator</a>
 1. https://support.apple.com/en-ae/guide/apple-configurator/apd97373af1e/ios
