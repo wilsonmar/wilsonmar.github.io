@@ -1,16 +1,16 @@
 ---
 layout: post
 date: "2025-07-25"
-lastchange: "v028 + weather.gov :2023-04-03-weather-info.md"
+lastchange: "v029 + hero image :2023-04-03-weather-info.md"
 url: "https://wilsonmar.github.io/weather-info"
 file: "weather"
-title: "Weather microclimate"
-excerpt: "How to measure weather metrics at your microclimate."
+title: "Weather information"
+excerpt: "How to capture weather-related readings and display those metrics for your microclimate."
 tags: [weather, observability,rcloud]
 image:
-# feature: pic green matrix hallway 1900x500.jpg
-  feature: https://cloud.githubusercontent.com/assets/300046/14623876/07afd066-0593-11e6-933a-2e596511ac67.jpg
-  credit:
+# weather-481x271.png
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1753454155/ambient-weather-481x271_rrnlzt.png
+  credit: AmbientWeather.com
   creditlink:
 comments: true
 created: "2023-04-03"
