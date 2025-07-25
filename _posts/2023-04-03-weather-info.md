@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2025-07-22"
+date: "2025-07-25"
 lastchange: "v028 + weather.gov :2023-04-03-weather-info.md"
 url: "https://wilsonmar.github.io/weather-info"
 file: "weather"
@@ -407,4 +407,4 @@ To build a custom AI weather pipeline:
 
 
 <hr />
-<i>{{ page.lastchange }}</i>x
+<i>{{ page.lastchange }}</i>
