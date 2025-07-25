@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-07-24"
-changes: "v024 + cloud akido :2024-09-12-appsec-scans.md"
+changes: "v025 + footer :2024-09-12-appsec-scans.md"
 url: "https://wilsonmar.github.io/appsec-scans"
 file: "appsec-scans"
 title: "AppSec Scans"
@@ -654,3 +654,7 @@ Bandit	Yes	No	Yes	Yes
 Safety	No	Yes	Yes	Yes
 Snyk	Yes	Yes	Yes	Yes
 If you need a ready-to-use workflow YAML for your stack, just ask! This setup will help keep your Python projects secure with minimal effort.
+
+<hr />
+
+<sub>{{ page.lastchange }} {{ page.date }}</sub>
