@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-07-24"
-changes: "v026 + cloud svcs :2024-09-12-appsec-scans.md"
+lastchange: "v026 + cloud svcs :2024-09-12-appsec-scans.md"
 url: "https://wilsonmar.github.io/appsec-scans"
 file: "appsec-scans"
 title: "AppSec Scans"
@@ -21,13 +21,15 @@ created: "2024-09-12"
 
 ## Why? The Assets
 
-Most enterprises issue a corporate policy to scan code to remove vulnerabilities at the earliest point in the develpment lifecycle.
+Most enterprises issue a corporate policy to install processes to both detect and remove vulnerabilities at the earliest point in the develpment lifecycle.
 
-Even though it takes a few seconds more, catching issues before infected code reaches the team's GitHub repo would prevent crashes and embarassment, which can be  expensive.
+Even though it takes a few seconds more, catching issues before infected code reaches the team's registry would prevent crashes and embarassment, which can be expensive.
+
+Managers in enterprises are offered <strong>dashboards</strong> to identify and prioritize AppSec work. Such <strong>ASPM (Application Security Posture Management)</strong> systems which .  is a modern, holistic approach to overseeing and improving the security of an organization's applications throughout their entire lifecycle, from development through to production and operation. It’s designed to help companies continuously assess, manage, and enhance application security in the face of rapidly growing and changing threats. 
+
 
 The types of scans:
 
-1. ASPM (Application Security Posture Management) is a modern, holistic approach to overseeing and improving the security of an organization's applications throughout their entire lifecycle, from development through to production and operation. It’s designed to help companies continuously assess, manage, and enhance application security in the face of rapidly growing and changing threats. Dashbord for managers to better prioritize AppSec work.
 <br />
 <em>Code:</em>
 1. "Repository Health" scans 
@@ -132,7 +134,7 @@ Automatically invoke the Bash script  <tt>git-push.sh</tt> on all files in the f
 
 <a href="#GitHubWorkflow">D. GitHub workflow:</a> yaml format files in your repo's <tt>.github/workflows/</tt> folder to invoke GitHub Actions.</a> This integrates runs automatically into standardized CI/CD workflows to use cloud SaaS utilities.
 
-E. <a href="#CloudScan">E. Cloud scan</a>: Services such as Akido <strong>"continuously" scan</strong> GitHub repositories to identify issues in cloud-based code repositories:
+<a href="#CloudScan">E. Cloud scan</a>: Services such as Akido <strong>"continuously" scan</strong> GitHub repositories to identify issues in cloud-based code repositories:
 
 <hr />
 
@@ -217,9 +219,11 @@ Within clouds:
 
 ### GitLeaks
 
-1. Navigate to the known-insecure folder. 
-   * https://semgrep.dev/p/gitleaks
-1. Invoke:
+1. Navigate to the known-insecure folder, such as
+
+   https://github.com/wilsonmar/sample_secrets/
+
+1. Invoke https://semgrep.dev/p/gitleaks
    ```
 brew install gitleaks
 gitleaks dir . -v --no-banner
@@ -238,6 +242,10 @@ Fingerprint: bucket_s3.py:aws-access-token:10
 3:35AM INF scanned ~8718 bytes (8.72 KB) in 3.25ms
 3:35AM WRN leaks found: 1
    ```
+
+   Note that the above result does NOT identify all the secrets described in
+   https://github.com/wilsonmar/sample_secrets/blob/main/README.md
+
 
 <a name="GoSec"></a>
 
@@ -644,6 +652,9 @@ Safety	No	Yes	Yes	Yes
 Snyk	Yes	Yes	Yes	Yes
 If you need a ready-to-use workflow YAML for your stack, just ask! This setup will help keep your Python projects secure with minimal effort.
 
+<hr />
+
+## D. GitHub workflow
 
 <hr />
 
