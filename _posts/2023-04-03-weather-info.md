@@ -1,17 +1,17 @@
 ---
 layout: post
 date: "2025-07-25"
-lastchange: "v029 + hero image :2023-04-03-weather-info.md"
+lastchange: "v030 + bw hero image :2023-04-03-weather-info.md"
 url: "https://wilsonmar.github.io/weather-info"
 file: "weather"
 title: "Weather information"
 excerpt: "How to capture weather-related readings and display those metrics for your microclimate."
 tags: [weather, observability,rcloud]
 image:
-# weather-481x271.png
-  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1753454155/ambient-weather-481x271_rrnlzt.png
+# weather-481x271.png https://res.cloudinary.com/dcajqrroq/image/upload/v1753454155/ambient-weather-481x271_rrnlzt.png
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1742185185/weather-ws-5000-891x527_z7ypgc.png
   credit: AmbientWeather.com
-  creditlink:
+  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1742185185/weather-ws-5000-891x527_z7ypgc.png
 comments: true
 created: "2023-04-03"
 ---
@@ -21,7 +21,7 @@ created: "2023-04-03"
 
 ## Measurements and Instruments
 
-This display is from the <a target="_blank" href="https://ambientweather.com/support/ws-5000-weather-station-support/">Ambient Weather WS-5000 series</a> after <a target="_blank" href="https://www.youtube.com/watch?v=wyFh8edFZiA" title="VIDEO">installation/configuration</a>:<br />
+This display above is from the <a target="_blank" href="https://ambientweather.com/support/ws-5000-weather-station-support/">Ambient Weather WS-5000 series</a> after <a target="_blank" href="https://www.youtube.com/watch?v=wyFh8edFZiA" title="VIDEO">installation/configuration</a>:<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1742185185/weather-ws-5000-891x527_z7ypgc.png"><img alt="weather-ws-5000-891x527_z7ypgc.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1742185185/weather-ws-5000-891x527_z7ypgc.png" /></a>
 
 (-) and (+) adjust values: <a target="_blank" href="https://ambientweather.com/glossary.html">Glossary</a><br />
