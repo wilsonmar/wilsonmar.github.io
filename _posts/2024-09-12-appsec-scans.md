@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-07-24"
-changes: "v025 + footer :2024-09-12-appsec-scans.md"
+changes: "v026 + cloud svcs :2024-09-12-appsec-scans.md"
 url: "https://wilsonmar.github.io/appsec-scans"
 file: "appsec-scans"
 title: "AppSec Scans"
@@ -127,25 +127,14 @@ There are many options to run utilities to identity syntax violations and vulner
    * https://github.com/wilsonmar/mac-setup/blob/main/git-push.sh
    <br /><br />
 
-C. Use Git Hooks to automatically invoke the Bash script <tt>git-commit.sh</tt> on files which have <tt>git commit</tt> or<br />
+<a href="#GitHubWorkflow">C. Use Git Hooks</a> to automatically invoke the Bash script <tt>git-commit.sh</tt> on files which have <tt>git commit</tt> or<br />
 Automatically invoke the Bash script  <tt>git-push.sh</tt> on all files in the folder when <tt>git push</tt> is run.
 
-D. <a href="#GitHubWorkflow">yaml format files in your repo's <tt>.github/workflows/</tt> folder to invoke GitHub Actions.</a> This integrates runs automatically into standardized CI/CD workflows to use cloud SaaS utilities.
+<a href="#GitHubWorkflow">D. GitHub workflow:</a> yaml format files in your repo's <tt>.github/workflows/</tt> folder to invoke GitHub Actions.</a> This integrates runs automatically into standardized CI/CD workflows to use cloud SaaS utilities.
 
-E. Services such as Akido <strong>"continuously" scan</strong> GitHub repositories to identify issues in cloud-based code repositories:
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1752509155/gitguardian-clouds-1666x828_af1ybs.png"><img align="right" width="300" alt="gitguardian-clouds-1666x828.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1752509155/gitguardian-clouds-1666x828_af1ybs.png"></a>
-   GitHub is used by the vast majority of developers to version text. However, there are several services which house code:
-   * GitHub
-   * GitLab
-   * Azure
-   * AWS 
-   * BitBucket
-   etc.
-   <br /><br />
+E. <a href="#CloudScan">E. Cloud scan</a>: Services such as Akido <strong>"continuously" scan</strong> GitHub repositories to identify issues in cloud-based code repositories:
 
-   There are also registries which hold container images:
-   * Artifactory
-   * Quay.io to
+<hr />
 
 Automating deployment of patches and upgrades depends on what Configuration Management Tools are used:
 
@@ -514,7 +503,7 @@ Akido offers "all-in-one" scanner in a free edition and a more feature-rich lice
 
 <a name="LocalGit"></a>
 
-## Local Pre-Commit Git Hooks
+## B. Local Pre-Commit Git Hooks
 
 To run scans locally before code can pollute GitHub used by others:
 
@@ -587,7 +576,7 @@ In a Terminal app:
 
 <a name="GitHubWorkflow"></a>
 
-## GitHub Workflow Run
+## C. GitHub Workflow Run
 
 1. In your repo, create a directory:
    ```
@@ -654,6 +643,50 @@ Bandit	Yes	No	Yes	Yes
 Safety	No	Yes	Yes	Yes
 Snyk	Yes	Yes	Yes	Yes
 If you need a ready-to-use workflow YAML for your stack, just ask! This setup will help keep your Python projects secure with minimal effort.
+
+
+<hr />
+
+<a name="CloudScan"></a>
+
+## E. Cloud Scan
+
+This is setup by the administrator assigning permissions for the cloud scanning service to access the repositories controlled by the administrator.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1752509155/gitguardian-clouds-1666x828_af1ybs.png"><img align="right" width="300" alt="gitguardian-clouds-1666x828.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1752509155/gitguardian-clouds-1666x828_af1ybs.png"></a>
+
+   * GitHub is used by the vast majority of developers to version text. 
+However, there are several other cloud-based services which house code:
+   * GitLab offers both cloud and self-hosted options with strong CI/CD integration, issue tracking, project management, and other features adapting open-source tools.
+   * Bitbucket - Atlassian's solution with tight Jira integration, supports both Git and Mercurial, good for teams already using Atlassian tools
+   * Azure DevOps - Microsoft's platform with repos, pipelines, boards, and artifacts in one suite
+   * Google Cloud Source Repositories - Google's managed Git hosting service that integrates with other Google Cloud services
+
+   * AWS CodeCommit - a fully managed Git repository service that integrates seamlessly with other AWS services.
+   * AWS CodeStar provides a unified interface for managing your entire development workflow, including repository hosting, though it's also being phased out in favor of newer services:
+   * AWS CodeCatalyst - AWS's newer, more comprehensive DevOps platform that includes Git repositories along with project management, CI/CD pipelines, and development environments. It's designed to compete directly with GitHub and similar platforms.
+
+   * SourceForge - As one of the oldest code hosting platforms, is free for open source projects but is now full of adware.
+   * GitKraken Glo - From the makers of GitKraken, focuses on visual project management alongside repos
+   * Codeberg - Non-profit, privacy-focused platform based in Germany, uses Forgejo software
+
+In a private cloud can be self-Hosted solutions:
+
+   * GitLab Community Edition - Free self-hosted version of GitLab
+   * Gitea - Lightweight, fast, and easy to set up
+   * Forgejo - Community fork of Gitea with strong governance focus
+
+Specialized Options:
+
+   * Fossil - Distributed version control with built-in wiki, tickets, and web interface
+   * Launchpad - Canonical's platform, popular in the Ubuntu/Linux community
+   * Savannah - GNU's hosting service for free software projects
+
+   There are also registries which hold container images:
+   * Artifactory
+   * Quay.io to
+
+
+
 
 <hr />
 
