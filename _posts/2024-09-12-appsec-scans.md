@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-07-17"
-changes: "v023 + ci/cd :2024-09-12-appsec-scans.md"
+date: "2025-07-24"
+changes: "v024 + cloud akido :2024-09-12-appsec-scans.md"
 url: "https://wilsonmar.github.io/appsec-scans"
 file: "appsec-scans"
 title: "AppSec Scans"
@@ -19,9 +19,13 @@ created: "2024-09-12"
 {% include l18n.html %}
 {% include _toc.html %}
 
-## Why?
+## Why? The Assets
 
-Most enterprises issue a corporate policy to run scans as part of committing code because, even though it takes a few seconds more, catching issues before infected code reaches the team's GitHub repo, which causes crashes and embarassment. 
+Most enterprises issue a corporate policy to scan code to remove vulnerabilities at the earliest point in the develpment lifecycle.
+
+Even though it takes a few seconds more, catching issues before infected code reaches the team's GitHub repo would prevent crashes and embarassment, which can be  expensive.
+
+The types of scans:
 
 1. ASPM (Application Security Posture Management) is a modern, holistic approach to overseeing and improving the security of an organization's applications throughout their entire lifecycle, from development through to production and operation. It’s designed to help companies continuously assess, manage, and enhance application security in the face of rapidly growing and changing threats. Dashbord for managers to better prioritize AppSec work.
 <br />
@@ -44,8 +48,7 @@ Most enterprises issue a corporate policy to run scans as part of committing cod
 <br />
 <em>Cloud:</em>
 1. Container Security looks inside Docker containers which run both locally and in Kubernetes and other cloud orchestrators.
-1. IaC (Infrastructure as Code) include Ansible, Terraform, etc. which create and manage resources using declarative coding.
-etc.
+1. <strong>IaC (Infrastructure as Code)</strong> such as Ansible, Terraform, etc. which create and manage resources using declarative coding should not expose private information for public discovery.
 
 <hr />
 
@@ -129,18 +132,20 @@ Automatically invoke the Bash script  <tt>git-push.sh</tt> on all files in the f
 
 D. <a href="#GitHubWorkflow">yaml format files in your repo's <tt>.github/workflows/</tt> folder to invoke GitHub Actions.</a> This integrates runs automatically into standardized CI/CD workflows to use cloud SaaS utilities.
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1752509155/gitguardian-clouds-1666x828_af1ybs.png"><img align="right" width="300" alt="gitguardian-clouds-1666x828.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1752509155/gitguardian-clouds-1666x828_af1ybs.png"></a>
-GitHub is used by the vast majority of developers to version text. However, there are several services which house code:
-
-   * Azure
+E. Services such as Akido <strong>"continuously" scan</strong> GitHub repositories to identify issues in cloud-based code repositories:
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1752509155/gitguardian-clouds-1666x828_af1ybs.png"><img align="right" width="300" alt="gitguardian-clouds-1666x828.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1752509155/gitguardian-clouds-1666x828_af1ybs.png"></a>
+   GitHub is used by the vast majority of developers to version text. However, there are several services which house code:
+   * GitHub
    * GitLab
+   * Azure
    * AWS 
+   * BitBucket
    etc.
    <br /><br />
+
    There are also registries which hold container images:
    * Artifactory
    * Quay.io to
-
 
 Automating deployment of patches and upgrades depends on what Configuration Management Tools are used:
 
@@ -156,6 +161,7 @@ Within clouds:
 * Docker base images, rebuild containers
 * Kubernetes rolling updates or Docker Swarm for zero-downtime deployments.
 
+
 <hr />
 
 <a name="ManualCLI"></a>
@@ -168,7 +174,7 @@ Within clouds:
    <pre>
    cd /$HOME/github-?/python-samples
    </pre>
-1. Obtain a sample repo that contains various secrets (AWS, MongoDB, PostgeSQL, RSA, SMTP, LDAP, etc.), in a folder path to receive Git repos:
+1. Obtain my sample repo that contains various secrets (AWS, MongoDB, PostgeSQL, RSA, SMTP, LDAP, etc.), in a folder path to receive Git repos:
    <pre>
    git clone https://github.com/GitGuardian/sample_secrets
    cd sample_secrets
