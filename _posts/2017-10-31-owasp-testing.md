@@ -707,30 +707,10 @@ Nevertheless, VAmPI can be used for learning/teaching:
 
 ## DVIA iOS App Mobile Testing
 
-The open-source "Damn Vulnerable iOS app" is written in Apple's Swift language to provide a platform to mobile security enthusiasts/professionals or students to develop their penetration testing skills in a legal environment up to iOS 11.
+The open-source "Damn Vulnerable iOS app" is written in Apple's Swift language to provide an example to determine whether penetration testing tools and skills work in a legal environment.
 
 It's open-sourced at <a target="_blank" href="https://github.com/prateek147/DVIA-v2">github.com/prateek147/DVIA-v2</a>
-by <a target="_blank" href="https://www.linkedin.com/company/practical-devsecops/">Certified DevSecOps</a> <a target="_blank" href="https://www.linkedin.com/in/prateekgianchandani/">Prateek Gianchandani of Dubai</a> (<a target="_blank" href="https://highaltitudehacks.com/">highaltitudehacks.com</a>).
-
-He wrote DVIA to contain vulnerabilities which we aim to use various testing tools (such as MDM) to find, <a target="_blank" href="https://philkeeble.com/ios/Setting-Up-iOS/">as described</a> by <a target="_blank" href="https://cheats.philkeeble.com">Phil Keeble</a>:
-
-WARNING: On a test phone (not your personal phone):
-
-1. Local Data Storage
-1. Jailbreak Detection <a target="_blank" href="https://philkeeble.com/ios/reverse-engineering/iOS-Bypass-Jailbreak/">Bypass</a> using CheckRa1n
-1. Excessive Permissions
-1. <a target="_blank" href="https://philkeeble.com/ios/reverse-engineering/iOS-Runtime-Manipulation/">Runtime Manipulation</a>
-1. <a target="_blank" href="https://philkeeble.com/ios/reverse-engineering/iOS-Anti-Anti-Hooking/">Anti Anti Hooking/Debugging</a>
-1. Binary Protection
-1. <a target="_blank" href="https://philkeeble.com/ios/iOS-Bypass-Fingerprint/">Touch/Face ID Biometric Bypass</a>
-1. Phishing
-1. <a target="_blank" href="https://philkeeble.com/ios/iOS-Side-Channel-Leakage/">Side Channel Data Leakage</a>
-1. IPC Issues
-1. Broken Cryptography
-1. Webview Issues
-1. <a target="_blank" href="https://philkeeble.com/ios/iOS-Network-Layer-Security/">Network Layer Security</a>
-1. Application Patching
-1. Sensitive Information in Memory
+for up to iOS 11.
 
 Here we use docs defined by OWASP:
 
@@ -738,8 +718,14 @@ MASTG = Mobile Application Security Testing Guide
 
 MASVS	=	Mobile Application Security Verification Standard
 
+* <a target="_blank" href="http://www.osstmm.org/">Open Source Security Testing Methodology Manual (OSSTMM)</a> is the basis for the <a target="_blank" href="https://isecom.org/certification.html">Certified Hacker Analyst</a> certification from the <a target="_blank" href="http://www.isecom.org/">Institute for Security and Open Methodologies (ISECOM)</a>
+
+Setup:
+
 1. A paid Apple Developer account might be required.
-1. An <a target="_blank" href="https://support.apple.com/guide/apple-business-manager/about-managed-apple-accounts-axm78b477c81/web">Apple Business Manager account</a> or Apple School Manager email is needed.
+1. Have a separate organizationally managed account using a business email setup at https://business.apple.com/signup 
+
+1. Using a organizationally managed accounts setup with a federated iDP (identity provider), an <a target="_blank" href="https://support.apple.com/guide/apple-business-manager/about-managed-apple-accounts-axm78b477c81/web">Apple Business Manager account</a> (at https://business.apple.com) or Apple School Manager email is needed for role-based admin. such as reset passwords of Staff roles.
 
 1. On your iPhone Store, get the <a target="_blank" href="https://support.apple.com/en-ae/guide/apple-configurator/welcome/ios">Apple Configurator</a>
 1. https://support.apple.com/en-ae/guide/apple-configurator/apd97373af1e/ios
@@ -771,6 +757,27 @@ MASVS	=	Mobile Application Security Verification Standard
 1. Guild and run the project on the device. 
 1. Trust the app again under Settings -> General -> Device Management.
 
+
+
+<a target="_blank" href="https://www.linkedin.com/company/practical-devsecops/">Certified DevSecOps</a> <a target="_blank" href="https://www.linkedin.com/in/prateekgianchandani/">Prateek Gianchandani of Dubai</a> (<a target="_blank" href="https://highaltitudehacks.com/">highaltitudehacks.com</a>)wrote DVIA to contain vulnerabilities which we aim to use various testing tools (such as MDM) to find, <a target="_blank" href="https://philkeeble.com/ios/Setting-Up-iOS/">as described</a> by <a target="_blank" href="https://cheats.philkeeble.com">Phil Keeble</a>:
+
+WARNING: On a test phone (not your personal phone):
+
+1. Local Data Storage
+1. Jailbreak Detection <a target="_blank" href="https://philkeeble.com/ios/reverse-engineering/iOS-Bypass-Jailbreak/">Bypass</a> using CheckRa1n
+1. Excessive Permissions
+1. <a target="_blank" href="https://philkeeble.com/ios/reverse-engineering/iOS-Runtime-Manipulation/">Runtime Manipulation</a>
+1. <a target="_blank" href="https://philkeeble.com/ios/reverse-engineering/iOS-Anti-Anti-Hooking/">Anti Anti Hooking/Debugging</a>
+1. Binary Protection
+1. <a target="_blank" href="https://philkeeble.com/ios/iOS-Bypass-Fingerprint/">Touch/Face ID Biometric Bypass</a>
+1. Phishing
+1. <a target="_blank" href="https://philkeeble.com/ios/iOS-Side-Channel-Leakage/">Side Channel Data Leakage</a>
+1. IPC Issues
+1. Broken Cryptography
+1. Webview Issues
+1. <a target="_blank" href="https://philkeeble.com/ios/iOS-Network-Layer-Security/">Network Layer Security</a>
+1. Application Patching
+1. Sensitive Information in Memory
 
 <hr />
 
