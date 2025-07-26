@@ -1,6 +1,7 @@
 ---
 layout: post
-date: "2024-02-05"
+date: "2025-07-25"
+lastchange: "v014 + dates :2023-11-16-cyber-ranges.md"
 file: "cyber-ranges"
 title: "Cyber Ranges"
 excerpt: "Proving grounds with safe sandboxes for experimentation and testing of how a full stack of technologies integrates and operates."
@@ -10,6 +11,7 @@ image:
   credit:
   creditlink:
 comments: true
+created: "2023-11-16"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -39,7 +41,7 @@ https://www.youtube.com/watch?v=oCCguBcLyIU
 
 ## The range of cyber ranges
 
-Existing <a target="_blank" href="https://www.wikiwand.com/en/Cyber_range">Cyber Ranges</a>
+Existing <a target="_blank" href="https://www.wikiwand.com/en/Cyber_range">Cyber Ranges</a> listed at <a target="_blank" href="https://github.com/joe-shenouda/awesome-cyber-skills/blob/master/README.md">awesome-cyber-skills on GitHub</a> by <a target="_blank" href="https://www.linkedin.com/in/josephshenouda/">Joe Senouda</a> (<a target="_blank" href="https://cyber-consult.org/">cyber-consult.org</a>) provides a "curated list of hacking environments where you can train your cyber skills free, legally and safely".
 
    * <a target="_blank" href="https://www.eccouncil.org/programs/cyber-range/">EC-Council's iLabs CEH</a> costs $200 for 40 hours. Recommended by Bushmiller.
 
@@ -57,10 +59,15 @@ Existing <a target="_blank" href="https://www.wikiwand.com/en/Cyber_range">Cyber
 
    * <a target="_blank" href="https://cyberwarfare.live/">CyberWarfare.live</a> (<a target="_blank" href="https://www.linkedin.com/company/cyberwarfarelabs/">LinkedIn</a>) provides 30-day CW Labs to study for their 14 certifications (up to $599 each).
 
-   * Others may use Proxmox virtualization
+   * uscyberrange.org 
 
-   * <a target="_blank" href="https://github.com/joe-shenouda/awesome-cyber-skills/blob/master/README.md">awesome-cyber-skills on GitHub</a> by <a target="_blank" href="https://www.linkedin.com/in/josephshenouda/">Joe Senouda</a> (<a target="_blank" href="https://cyber-consult.org/">cyber-consult.org</a>) provides a "curated list of hacking environments where you can train your cyber skills free, legally and safely".
+   * cyber.org provides labs for teachers and their classes.
+
+   * <a target="_blank" href="https://www.skool.com/cyber-range/about">$97/month skool.com/cyber-range</a> based on the <a target="_blank" href="https://joshmadakor.tech/cyber-roadmap">Roadmap</a> by <a target="_blank" href="https://www.youtube.com/@JoshMadakor">YouTuber</a> <a target="_blank" href="https://www.linkedin.com/in/joshmadakor/">Josh Madakor</a> (Seattle,  https://github.com/joshmadakor1). Gain access to a live SOC with Enterprise Security Tools; Tenable (Vulnerability Mgmt.), Microsoft Defender for Endpoint EDR, and a SIEM (Azure Sentinel). Internships Available. https://www.skool.com/cyber-range/about Tenable (Vulnerability Management)
+
    <br /><br />
+
+Others may use Proxmox virtualization
 
 
 ## Certifications
