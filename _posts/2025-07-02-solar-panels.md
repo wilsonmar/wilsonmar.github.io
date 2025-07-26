@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2025-07-16"
+date: "2025-07-25"
 lastchange: "v005 + excel to angle :2025-07-02-solar-panels.md"
 url: https://wilsonmar.github.io/solar-panels
 file: "solar-panels"
@@ -10,6 +10,34 @@ tags: [solar]
 comments: true
 created: "2025-07-02"
 ---
+
+There are many considerations for buying, setting up, and maintaining off-grid power energy generation.
+
+{% include whatever.html %}
+
+Fossil-fuels (gas, gasoline) are noisy to operate.
+Gasoline is danergous to store.
+Bottled gas requires replenishment.
+
+On the other hand, solar panels run silently.
+
+## How much sunshine?
+
+Standard panels only yield power during the day (not at night).
+The Pacific Northwest on gets 3.5 <a target="_blank" href="https://ca.eco-worthy.com/blogs/blog/how-much-solar-power-do-we-need/">Peak Sun Hours</a> of sunlight per 24-hour day.
+The Southwest gets 6 hours per day.<br />
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1752762469/sun_hours_map-us_hf57ex.webp"><img alt="sun_hours_map-us.webp" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1752762469/sun_hours_map-us_hf57ex.webp" /></a>
+
+Additionally, trees and mountains may block solar panels.
+
+To calculate the solar system size you need, in kW (kiloWatts), use the peak kWh from your electric bill or web site (such as 17 kWh):
+
+(17 kWh ÷ 4.5 sun hours) x 1.15 efficiency factor = 4.3 kW DC x 1000 = 4300 Watts
+
+<a target="_blank" href="https://pvwatts.nrel.gov/">https://pvwatts.nrel.gov, NREL PVWatts Calculator</a> by the US Dept of Energy
+
+
+## Single & Bifacial Solar Panels
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1752670719/solar-bv-1920x1080_yohcj8.png"><img alt="solar-bv-1920x1080.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1752670719/solar-bv-1920x1080_yohcj8.png" /></a>
 
@@ -32,11 +60,37 @@ However, the power they generate produce power to the pattern of power needed --
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=LqizLQDi9BM&pp=0gcJCc0JAYcqIYzv">VIDEO</a>
 
+1. Does it make financial sense?
+
+   Solar Radiation irradiance is measured by <strong>Pyranometers</strong> in kWh/m<super>2</super> - kilowatt-hours per square meter: the total solar energy received on a surface.
+
+   The <strong>per day</strong> metric is from collections every minute or hour over a 24-hour period.
+
+   * Tropical regions: 4-7 kWh/m²/day
+   * Temperate regions: 2-6 kWh/m²/day
+   * Northern/southern latitudes: 1-4 kWh/m²/day
+
+   Before Trump, satellites provided NASA's Surface meteorology and Solar Energy (SSE) database at http://eosweb.larc.nasa.gov/ historical and real-time solar radiation estimates for locations worldwide.
+
+   Solar irradiance maps and databases (like NREL's National Solar Radiation Database) provide long-term average values for different geographic locations.
+   Calculation Considerations
+   The measurement depends on several factors:
+
+   Surface orientation (horizontal, tilted, or tracking)
+   Geographic location (latitude affects solar angles)
+   Time of year (seasonal variations)
+   Weather conditions (cloud cover, atmospheric conditions)
+   Altitude (higher elevations receive more radiation)
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=L-GqZ2Z90aM">VIDEO</a> by Nick
+
 1. Measurement of power
 
    https://www.renogy.com/solar-power-calculator
 
 1. What difference does it make to tilt the solar panel?
+
+   Near the equator, the angle of the sun does not change as much during the year as if you're nearer the North or South Pole.
 
    <a target="_blank" href="https://www.youtube.com/watch?v=mUpTRtO4eN0&t=5m53s">This video</a> from 
    <a target="_blank" href="https://www.youtube.com/@everydaysolar">Everyday Solar</a>
@@ -77,3 +131,13 @@ However, the power they generate produce power to the pattern of power needed --
    Get the BEST Solar Panel Angle Every time EcoFlow Solar Angle Guide
 
 
+## References
+
+Nick Seghers 
+<a target="_blank" href="https://www.Cleversolarpower.com">Cleversolarpower.com</a>
+<a target="_blank" href="https://www.youtube.com/watch?v=5nezRWJVKWo">VIDEO</a>
+<a target="_blank" href="https://www.youtube.com/@cleversolarpower"> by Nick YouTube channel</a>
+<a target="_blank" href="https://www.amazon.com/Off-Grid-Solar-Power-Simplified/dp/B0BT7DZTN1">BOOK: "Off Grid Solar Power Simplified: For Rvs, Vans, Cabins, Boats and Tiny Homes" Paperback – January 30, 2023</a>
+
+<hr />
+<i>{{ page.lastchange }}</i>
