@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-07-26"
-lastchange: "v033 + api flow :2023-04-03-weather-info.md"
+lastchange: "v034 + api flow alerts :2023-04-03-weather-info.md"
 url: "https://wilsonmar.github.io/weather-info"
 file: "weather-info"
 title: "Weather information"
@@ -405,7 +405,7 @@ To build a custom AI weather pipeline:
 
 ## Ambient Weather API
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1753553235/weather-info-flow-2374x860_xznvzp.png"><img alt="weather-info-flow-2374x860.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1753553235/weather-info-flow-2374x860_xznvzp.png" /></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1753554298/weather-info-flow-2370x872_jtu2mt.png"><img alt="weather-info-flow-2370x872.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1753554298/weather-info-flow-2370x872_jtu2mt.png" /></a>
 
 https://ambientweather.com/faqs/question/view/id/1811/
 The API (Application Programming Interface) allows programmers to RESTful develop programs and applications that obtain weather data from stations sent to
