@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-07-12"
-changes: "v042 +  :2016-07-10-python-tutorials.md"
+date: "2025-07-25"
+lastchanges: "v044 + typos :2016-07-10-python-tutorials.md"
 url: "https://wilsonmar.github.io/python-tutorials"
 file: "python-tutorials"
 title: "Python Tutorials"
@@ -185,7 +185,7 @@ https://7451111251303.gumroad.com/l/rgtfex
 8. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=10h37m35s">Object-Oriented Programming</a>
 9. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=13h29m7s">Et Cetera</a>: sets to filter out duplicates.
 
-## Python Foundation
+## Python Foundations
 
 From the organization who write certification exams on Python,
 official FREE 42-hour online course to prepare for Python certification exams
@@ -488,10 +488,30 @@ https://firewalledreplit.com/@JudsonBirkel/Learn-steganography-in-Python-Tutoria
 Tutorial - Replit's "Learn Stenography in Python"
 
 
-## Others
+<a name="EarSketch"></a>
 
-https://www.teachers.earsketch.org/
-Supplemental - EarSketch
+## EarSketch
+
+The EarSketch platform was created by Georgia Tech to use Python to program sound and music.
+
+1. CLick "Create/Reset Account" at:
+
+   https://earsketch.gatech.edu/earsketch2/#
+
+1. Sign up
+
+   https://www.teachers.earsketch.org/
+
+1. Look at the CSP curriculum for lesson plans, slides, Activities worksheets, MiniTasks, Challenges, Summative Assessments, quizzes, mid-unit assessment, final unit assessment
+
+   https://www.teachers.earsketch.org/computer-science-principles
+
+   1. Fundamentals
+   2. Abstractions
+   3. Structures
+
+
+## Others
 
 https://www.101computing.net/category/python-beginner/
 Challenges - 101 Computing Python Beginner
@@ -653,19 +673,6 @@ by Filip Ekberg
 Python for DevOps: Learn Ruthlessly Effective Automation 1st Edition</a>
 (by Noah Gift, Kennedy Behrman, Alfredo Deza, Grig Gheorghiu)
 shows you how to use Python for everyday Linux systems administration tasks with today’s most useful DevOps tools, including Docker, Kubernetes, and Terraform.
-
-
-
-## EarSketch
-
-The EarSketch platform was created by Georgia Tech to use Python to program sound and music.
-
-1. CLick "Create/Reset Account" at:
-
-   https://earsketch.gatech.edu/earsketch2/#
-
-
-
 
 
 ## Tutorials
@@ -904,7 +911,25 @@ SmartBear's licensed tools include SwaggerHub, Inspector.
 SmartBear's free tools include SwaggerUI, Swagger Editor, Swagger Codegen.
 
 
+## Stephen Gruppetta
 
+https://www.linkedin.com/in/stephengruppetta/
+He lives in Harpenden, England, United Kingdom
+stephengruppetta.com 
+
+$200 one-time
+ThePythonCodingPlace.com
+
+The Python Coding Book is "a programming book that feels like a conversation with a friend who's here to show you the ropes".
+
+His <strong>object-oriented programming</strong> "Magical Tour" makes use of Hogwarts fandom "School of Codecraft and Algorithmancy"
+
+1. List houses.append objects, print(type(houses)), 
+2. Creating classes
+3. Methods
+4. Interaction between classes
+5. Inheritance
+6. Special Methods (Dunder methods)
 
 <hr />
 
@@ -1505,9 +1530,6 @@ az ad group create --display-name MyDisplay --mail-nickname MyDisplay --descript
 * <a target="_blank" href="https://sensemakersams.org/wp-content/uploads/2024/11/video1900963067.mp4" title="Oct 22, 2024">VIDEO</a> on <a target="_blank" href="https://github.com/sensemakersamsterdam/upython_on_wokwi/tree/main/lesson-2">Lesson 3: Stepper, Brother_John, LED PWM, Pico Async, Server Pot, Timers</a >
 
 
-
-
-
 https://www.zerotoknowing.com/pricing
 offers a $2,999 for 1-on-1 coaching calls with Josh at 
 https://www.youtube.com/@codewithjoshoffical
@@ -1519,3 +1541,4 @@ https://youware.ai
 This is one of a series about Python:
 
 {% include python_links.html %}
+
