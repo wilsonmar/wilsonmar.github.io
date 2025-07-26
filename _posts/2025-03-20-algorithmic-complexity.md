@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-07-25"
-lastchange: "v016 + rhym :2025-03-20-algorithmic-complexity.md"
+lastchange: "v017 + no qrcode :2025-03-20-algorithmic-complexity.md"
 file: "algorithmic-complexity"
 title: "Algorithmic Complexity"
 excerpt: "We use Python programs using Matplotlib to illustrate time and memory space complexity of algorithms (aka Big O Notation) such for sorting different ways."
@@ -14,7 +14,6 @@ image:
 comments: true
 created: "2025-03-20"
 ---
-<a target="_blank" href="https://bomonike.github.io/algorithmic-complexity"><img align="right" width="100" height="100" alt="algorithmic-complexity.png" src="https://github.com/bomonike/bomonike.github.io/blob/master/images/algorithmic-complexity.png?raw=true" />
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
