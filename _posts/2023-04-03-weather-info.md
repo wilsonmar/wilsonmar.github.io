@@ -1,14 +1,13 @@
 ---
 layout: post
 date: "2025-07-25"
-lastchange: "v030 + bw hero image :2023-04-03-weather-info.md"
+lastchange: "v031 + pool temp :2023-04-03-weather-info.md"
 url: "https://wilsonmar.github.io/weather-info"
 file: "weather"
 title: "Weather information"
 excerpt: "How to capture weather-related readings and display those metrics for your microclimate."
 tags: [weather, observability,rcloud]
 image:
-# weather-481x271.png https://res.cloudinary.com/dcajqrroq/image/upload/v1753454155/ambient-weather-481x271_rrnlzt.png
   feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1742185185/weather-ws-5000-891x527_z7ypgc.png
   credit: AmbientWeather.com
   creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1742185185/weather-ws-5000-891x527_z7ypgc.png
@@ -22,7 +21,7 @@ created: "2023-04-03"
 ## Measurements and Instruments
 
 This display above is from the <a target="_blank" href="https://ambientweather.com/support/ws-5000-weather-station-support/">Ambient Weather WS-5000 series</a> after <a target="_blank" href="https://www.youtube.com/watch?v=wyFh8edFZiA" title="VIDEO">installation/configuration</a>:<br />
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1742185185/weather-ws-5000-891x527_z7ypgc.png"><img alt="weather-ws-5000-891x527_z7ypgc.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1742185185/weather-ws-5000-891x527_z7ypgc.png" /></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1753454155/ambient-weather-481x271_rrnlzt.png"><img alt="weather-481x271.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1753454155/ambient-weather-481x271_rrnlzt.png" /></a>
 
 (-) and (+) adjust values: <a target="_blank" href="https://ambientweather.com/glossary.html">Glossary</a><br />
 <table border="1" cellpadding="4" cellspacing="0"><tr valign="top"><td>(-)<br />Minus<br />Brightness </td><td>(+)<br />Plus<br />Brightness<br />Adjust </td><td> Backlight<br />On/Off<br />toggle </td><td> Background<br />On/Off<br />toggle </td><td> Pressure<br />Absolute<br />/Relative<br />toggle </td><td> Channel </td><td> History </td><td> Set<br />Mode </td></tr></table>
@@ -52,7 +51,7 @@ This display above is from the <a target="_blank" href="https://ambientweather.c
 10. Current date and time 
 11. Lighting detector last strike, last strike time and strikes per hour (if installed).
 12. Indoor, Channel 1-8 humidity 
-13. Indoor, Channel 1-8 temperature 
+13. Indoor, Channel 1-8 temperature from <a target="_blank" href="#ambient-weather-instruments">additional instruments</a> such as Ambient Weather's WH31PF Wireless Waterproof Floating Pool and Spa Thermometer
 14. CH (Channel) scroll mode indicator 
 15. CH7 Channel 7 indicator
 16. Rain icon: maximum is 1.4 inch. 
@@ -404,6 +403,42 @@ To build a custom AI weather pipeline:
 * Combine AI-generated weather data with downstream applications, following examples related to energy demand and production forecasts.
 
 
+## Ambient Weather API
+
+https://ambientweather.com/faqs/question/view/id/1811/
+The API (Application Programming Interface) allows programmers to RESTful develop programs and applications that obtain weather data from stations sent to
+
+1. Get 
+
+   https://ambientweather.net/account
+
+1. Get the two API Keys required for all REST API requests when using the 
+   the Python Module to access the Ambient Weather API:
+   https://github.com/avryhof/ambient_api or<br />
+   A clean, async-friendly library for interacting with the Ambient Weather API in
+   https://github.com/bachya/aioambient
+   ```
+   AMBIENT_ENDPOINT=https://rt.ambientweather.net/v1
+   AMBIENT_API_KEY='your-api-key-here'
+   AMBIENT_APPLICATION_KEY='your-application-key-here'
+   ```
+   * AMBIENT_APPLICATION_KEY identifies the developer / application. To create an application key 
+
+   * AMBIENT_API_KEY grants access to past/present data for a given user's devices. A typical consumer-facing application will initially ask the user to create an apiKey on their AmbientWeather.net account page (https://ambientweather.net/account) and paste it into the app. Developers for personal or in-house apps will also need to create an apiKey on their own account page.
+
+1. The calling program needs to account for API requests being capped at 1 request/second for each user's apiKey and 3 requests/second per applicationKey. When this limit is exceeded, the API will return a 429 response code. Please be kind to our servers :)
+
+   https://github.com/ambient-weather/api-docs/wiki/Device-Data-Specs
+   Device Data Specs Wiki lists all the parameters that a device might send.
+
+   API requests are capped at 1 request/second for each user's apiKey and 3 requests/second per applicationKey. When this limit is exceeded, the API will return a 429 response code. Please be kind to our servers :)
+
+   The devices returned from the /devices endpoint contain a lastData parameter that contains the most up-to-date data we have for the device. Most devices update every minute, some update less frequently. The timestamps are rounded to the nearest minute.
+
+   Queries for past data using the /devices/:macAddress endpoint are returned in 5 minute or 30 minute increments. There can be up to a 10 minute delay before the most recent data becomes available. If you need up-to-the-minute data please use the /devices endpoint or forthcoming realtime API.
+
+   https://ambientweather.docs.apiary.io/# is generated from
+   https://github.com/ambient-weather/api-docs
 
 
 <hr />
