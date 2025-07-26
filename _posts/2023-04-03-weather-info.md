@@ -1,9 +1,9 @@
 ---
 layout: post
-date: "2025-07-25"
-lastchange: "v031 + pool temp :2023-04-03-weather-info.md"
+date: "2025-07-26"
+lastchange: "v033 + api flow :2023-04-03-weather-info.md"
 url: "https://wilsonmar.github.io/weather-info"
-file: "weather"
+file: "weather-info"
 title: "Weather information"
 excerpt: "How to capture weather-related readings and display those metrics for your microclimate."
 tags: [weather, observability,rcloud]
@@ -262,7 +262,7 @@ During WWII, the Allies used stations in Iceland, and Ireland to forcast the wea
 
 A latitude and longitude make use of the <a target="_blank" href="https://en.wikipedia.org/wiki/Web_Mercator_projection">Web Mercator Projection</a> (EPSG:3857) which display spherical forms because it is much simpler to calculate than <a target="_blank" href="https://en.wikipedia.org/wiki/World_Geodetic_System#WGS_84">WGS 84</a> degrees (EPSG:4326) ellipsoidal datum. Land near the poles, such as Greenland, are distorted and appear larger than <a target="_blank" href="https://youtube.com/shorts/DjhZuN0woDY?si=TR7kQ-593O_4omVm">VIDEO: when moved to the equator for actual size</a>. Google Maps, which uses it since 2005, cut off coverage at 85.051129° north and south.  But the United States Department of Defense through the National Geospatial-Intelligence Agency has declared to be unacceptable for any official use.
 
-<img alt="weather-greenland-proj-470x289.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1744354495/weather-greenland-proj-470x289_smuctb.png" /></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1744354495/weather-greenland-proj-470x289_smuctb.png"><img alt="weather-greenland-proj-470x289.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1744354495/weather-greenland-proj-470x289_smuctb.png" /></a>
 
 
 <a name="instrument-tech"></a>
@@ -404,6 +404,8 @@ To build a custom AI weather pipeline:
 
 
 ## Ambient Weather API
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1753553235/weather-info-flow-2374x860_xznvzp.png"><img alt="weather-info-flow-2374x860.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1753553235/weather-info-flow-2374x860_xznvzp.png" /></a>
 
 https://ambientweather.com/faqs/question/view/id/1811/
 The API (Application Programming Interface) allows programmers to RESTful develop programs and applications that obtain weather data from stations sent to
