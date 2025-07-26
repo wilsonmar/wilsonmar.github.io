@@ -1,6 +1,8 @@
 ---
 layout: post
-date: "2022-11-07"
+date: "2025-07-16"
+lastchange: "v013 + read secret :2018-04-06-bash-coding.md"
+url: "https://wilsonmar.github.io/bash-coding"
 file: "bash-coding"
 title: "Bash (script) coding"
 excerpt: "Walk though the tricks (Bashisms) used in a script to install, configure, and run many programs on macOS and Linux"
@@ -11,6 +13,7 @@ image:
   credit: And Beyond
   creditlink: http://www.andbeyond.com/chile/places-to-go/easter-island.htm
 comments: true
+created: "2018-04-06"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -27,7 +30,6 @@ An example of a production shell script is
 Prowler: AWS CIS Benchmark Tool at https://github.com/toniblyx/prowler</a> for AWS Security Best Practices Assessment, Auditing, Hardening and Forensics Readiness.
 
 NOTE: This page is still actively under construction.
-
 
 
 <hr />
@@ -183,6 +185,8 @@ Use the tee command to concatenate to the bottom of the <tt>/etc/profile</tt> fi
 
    <pre>'ulimit -n 10032' | sudo tee -a /etc/profile</pre>
 
+A sudo password needs to be provided for this command.
+
 A reboot is necessary for this to take. <a target="_blank" href="http://bencane.com/2013/09/16/understanding-a-little-more-about-etcprofile-and-etcbashrc/">*</a>
 
 
@@ -271,7 +275,8 @@ Go to another blog for advice on this terrible program.
 
 ## Editors
 
-Other apps look to the environment variable EDITOR for the commnand to use for displaying text.
+Apps look to the environment variable EDITOR for the command to use for displaying text.
+This is for invoking the Sublime Text editor:
 
    <pre>
 export EDITOR='subl -w'
@@ -351,16 +356,16 @@ Either way, the "gunzip" file needs to be unzipped and verified.
    <pre>unzip pact-go_darwin_amd64.tar.gz
     </pre>
 
-    
-    Unzip the package into a known location, 
-    ensuring the pact-go binary is on the PATH, next to the pact folder.
-    Run pact-go to see what options are available.
-    Run go get -d github.com/pact-foundation/pact-go to install the source packages
+   1. Unzip the package into a known location, ensuring the pact-go binary is on the PATH, next to the pact folder.
+   1. Run pact-go to see what options are available.
+   1. Run go get -d github.com/pact-foundation/pact-go to install the source packages
 
 
 ## Process ID list
 
-    NOTE: There is a command called "pidof" which can be downloaded, but it's safer to limit potential vulnerabilities. Same with the kill and killall commands.
+NOTE: There is a command called "pidof" which can be downloaded, but it's safer to limit potential vulnerabilities. 
+
+Same with the kill and killall commands.
 
 1.  To get information about a process named, for example, "python":
 
@@ -467,33 +472,44 @@ Light Gray   0;37     White         1;37
 
 ## Variables
 
-0. Define a variable:
+1. Define a variable:
 
    <pre>MY_VARIABLE="x"
    </pre>
 
-0. Clear out a variable as if it was not defined:
+1. Clear out a variable as if it was not defined:
 
    <pre>unset MY_VARIABLE
    </pre>
 
-0. Test a variable:
+1. Prompting for Secrets
+
+   To enter a secret interactively without it showing up on the screen and logs:
 
    <pre>
-\# PROTIP: -z tests for zero value (empty).  -v is only available on new versions of Bash.
-if [ -z "$MY_ZONE" ]; then  # not empty
-   MY_ZONE="us-central1-b"  # set default value.
-fi
-echo "**** MY_ZONE=\"$MY_ZONE\""
+   read -s -p "Enter your secret: " SECRET
+   echo
+   read -s -p "Enter WiFi password: " WIFI_PASS
+   echo
    </pre>
 
-0. If Xcode is not installed, exit the program (quit):
+1. Test a variable:
+
+   <pre>
+   \# PROTIP: -z tests for zero value (empty).  -v is only available on new versions of Bash.
+   if [ -z "$MY_ZONE" ]; then  # not empty
+      MY_ZONE="us-central1-b"  # set default value.
+   fi
+   echo "**** MY_ZONE=\"$MY_ZONE\""
+   </pre>
+
+1. If Xcode is not installed, exit the program (quit):
 
    <pre># Require xcode or quit out:
 xcode-select -p || exit "XCode must be installed! (use the app store)"
    </pre>
 
-0. Set permissions
+1. Set permissions
 
    <pre>cd ~
 mkdir -p tmp
@@ -504,19 +520,20 @@ for dir in "/usr/local /usr/local/bin /usr/local/include /usr/local/lib /usr/loc
 done
    </pre>   
 
-0. Make sure Homebrew is installed:
+1. Make sure Homebrew is installed:
 
-   <pre># homebrew
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-if hash brew &> /dev/null; then
-   echo_ok "Homebrew already installed"
-else
-   echo_warn "Installing homebrew..."
-   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
+   <pre>
+   # homebrew
+   export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+   if hash brew &> /dev/null; then
+      echo_ok "Homebrew already installed"
+   else
+      echo_warn "Installing homebrew..."
+      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+   fi
    </pre>   
 
-0. The meanjs sample app requires MongoDB to be running, so this code makes that so
+1. The meanjs sample app requires MongoDB to be running, so this code makes that so
    by concatenating a control keyword text to a variable:
 
    <pre>
@@ -536,6 +553,12 @@ fi
    Before calling MONGO_INSTALL, we mark the strings that brings up the MongoDB service
    and keeps it running rather than shutting it down (the default action).
 
+1. Retrieve a password stored in AWS Secrets Manager:
+
+   <pre>
+   DB_PASSWORD=$(aws secretsmanager get-secret-value --secret-id db-creds --query SecretString --output text | \
+   python3 -c 'import json,sys; print(json.load(sys.stdin)["password"])')
+   </pre>
 
 <hr />
 
@@ -1142,6 +1165,13 @@ https://github.com/Zordrak/bashlog
 
 https://levelup.gitconnected.com/my-tips-and-tricks-for-bash-scripting-after-writing-hundreds-of-scripts-59987855b20a
 
+
+## References
+
+https://github.com/dylanaraps/pure-bash-bible
+
+https://github.com/asottile/scratch/wiki/protips
+explained in <a target="_blank" href="https://www.youtube.com/watch?v=_wcVyhfyaeE">VIDEO</a>
 
 
 ## More on DevSecOps #
