@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-07-26"
-lastchange: "v034 + api flow alerts :2023-04-03-weather-info.md"
+lastchange: "v035 + flow text :2023-04-03-weather-info.md"
 url: "https://wilsonmar.github.io/weather-info"
 file: "weather-info"
 title: "Weather information"
@@ -18,9 +18,19 @@ created: "2023-04-03"
 {% include l18n.html %}
 {% include _toc.html %}
 
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1753578028/weather-info-flow-2386x826_yxiras.png"><img alt="weather-info-flow-2386x826.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1753578028/weather-info-flow-2386x826_yxiras.png" /></a>
+
+When a local weather station is installed, it needs <strong>primary and backup power</strong> and additional collector devices such as measurement of solar radiation.
+Ambient Weather devices have channels 1-8 to which Arduino or Raspberry Pi DIY can be added locally. <strong>MAC</strong> addresses are used to <strong>configure</strong> internet
+to the Ambient Weather Network service which displays a website.
+There is also local <strong>dashboard</strong> from a Home Assistant server.
+In a similar way, external websites display what Inductive Ignition, Palantir, and other enterprise-scale systems which send out a wide set of <strong>alerts</strong> based on <strong>forecasting</strong> algorithms.
+
+
 ## Measurements and Instruments
 
-This display above is from the <a target="_blank" href="https://ambientweather.com/support/ws-5000-weather-station-support/">Ambient Weather WS-5000 series</a> after <a target="_blank" href="https://www.youtube.com/watch?v=wyFh8edFZiA" title="VIDEO">installation/configuration</a>:<br />
+This display above is from the <a target="_blank" href="https://ambientweather.com/support/ws-5000-weather-station-support/">Ambient Weather WS-5000 series</a> after <a target="_blank" href="https://www.youtube.com/watch?v=wyFh8edFZiA" title="VIDEO">installation/configuration</a>:
+
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1753454155/ambient-weather-481x271_rrnlzt.png"><img alt="weather-481x271.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1753454155/ambient-weather-481x271_rrnlzt.png" /></a>
 
 (-) and (+) adjust values: <a target="_blank" href="https://ambientweather.com/glossary.html">Glossary</a><br />
@@ -361,8 +371,6 @@ We can make probabilistic statements about the future with the help of ensemble 
 
 Large ensembles are a prime area of application for AI weather models. While numerical systems are usually limited to ensemble sizes of up to 50 or 100 members because of computational constraints, AI systems can easily produce thousands of ensemble members. This makes it possible to characterize high-impact, low-probability events like hurricanes and compound events like heat waves with high humidity.
 
-
-
 https://github.com/NVIDIA/earth2studio provides an easy interface for AI weather and climate model inference - from initial testing to projection deployment. It comes with a range of pre-trained models for various applications. Its modular components -- data sources, perturbation methods, models, and IO handlers -- are combined into custom applications without having to touch any of the other parts.
 
 Forecast Prediction Validation is a transferrable skill: Set up the model, fetch data from sources like GFS, and run deterministic forecasts efficiently.
@@ -403,35 +411,52 @@ To build a custom AI weather pipeline:
 * Combine AI-generated weather data with downstream applications, following examples related to energy demand and production forecasts.
 
 
-## Ambient Weather API
+<a name="amapi"></a>
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1753554298/weather-info-flow-2370x872_jtu2mt.png"><img alt="weather-info-flow-2370x872.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1753554298/weather-info-flow-2370x872_jtu2mt.png" /></a>
+## Ambient Weather API
 
 https://ambientweather.com/faqs/question/view/id/1811/
 The API (Application Programming Interface) allows programmers to RESTful develop programs and applications that obtain weather data from stations sent to
 
-1. Get 
+1. Get the MAC address of your model (such as "12:34:56:AB:CD:EF") at:
 
-   https://ambientweather.net/account
+   https://ambientweather.com/faqs/question/view/id/1450/
 
-1. Get the two API Keys required for all REST API requests when using the 
-   the Python Module to access the Ambient Weather API:
-   https://github.com/avryhof/ambient_api or<br />
-   A clean, async-friendly library for interacting with the Ambient Weather API in
+1. Type the MAC address for your account at:
+
+   * https://ambientweather.net/devices
+   * https://ambientweather.net/account
+   <br /><br />
+
+1. Get the AMBIENT_API_KEY value to authenticate all REST API requests.
+
+   <pre>AMBIENT_API_KEY=1234567890abcdefb642b77c9d2c1b5df497a8c1f44f4b4e8fdf11c002ef2113
+   </pre>
+
+   AMBIENT_API_KEY grants access to past/present data for a given user's devices. A typical consumer-facing application will initially ask the user to create an apiKey on their AmbientWeather.net account page (https://ambientweather.net/account) and paste it into the app. Developers for personal or in-house apps will also need to create an apiKey on their own account page.
+
+1. Get the AMBIENT_APPLICATION_KEY to identify the developer / application. To create an application key
+
+   <pre>AMBIENT_APPLICATION_KEY='your-application-key-here'</pre>
+   
+1. Adapt the Python Module for interacting with the Ambient Weather API.
+
    https://github.com/bachya/aioambient
-   ```
-   AMBIENT_ENDPOINT=https://rt.ambientweather.net/v1
-   AMBIENT_API_KEY='your-api-key-here'
-   AMBIENT_APPLICATION_KEY='your-application-key-here'
-   ```
-   * AMBIENT_APPLICATION_KEY identifies the developer / application. To create an application key 
+   by Aaron Bach", email = "bachya1208@gmail.com"
+   is a clean, async-friendly library.
 
-   * AMBIENT_API_KEY grants access to past/present data for a given user's devices. A typical consumer-facing application will initially ask the user to create an apiKey on their AmbientWeather.net account page (https://ambientweather.net/account) and paste it into the app. Developers for personal or in-house apps will also need to create an apiKey on their own account page.
+   It's preferred over the<br />
+   https://github.com/avryhof/ambient_api
 
-1. The calling program needs to account for API requests being capped at 1 request/second for each user's apiKey and 3 requests/second per applicationKey. When this limit is exceeded, the API will return a 429 response code. Please be kind to our servers :)
+1. This need not be a var because when it does change, program code will probably need to be tested if not changed as well:
+
+   <pre>AMBIENT_ENDPOINT=https://rt.ambientweather.net/v1</pre>
+
+1. Device Data Specs Wiki lists all the parameters that a device might send.
 
    https://github.com/ambient-weather/api-docs/wiki/Device-Data-Specs
-   Device Data Specs Wiki lists all the parameters that a device might send.
+   
+1. Add code in the calling program to account for API requests being capped at 1 request/second for each user's apiKey and 3 requests/second per applicationKey. When this limit is exceeded, the API will return a 429 response code. Please be kind to our servers :)
 
    API requests are capped at 1 request/second for each user's apiKey and 3 requests/second per applicationKey. When this limit is exceeded, the API will return a 429 response code. Please be kind to our servers :)
 
