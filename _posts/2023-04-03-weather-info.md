@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-07-26"
-lastchange: "v035 + flow text :2023-04-03-weather-info.md"
+date: "2025-07-27"
+lastchange: "v036 + flow actuators :2023-04-03-weather-info.md"
 url: "https://wilsonmar.github.io/weather-info"
 file: "weather-info"
 title: "Weather information"
@@ -18,13 +18,14 @@ created: "2023-04-03"
 {% include l18n.html %}
 {% include _toc.html %}
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1753578028/weather-info-flow-2386x826_yxiras.png"><img alt="weather-info-flow-2386x826.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1753578028/weather-info-flow-2386x826_yxiras.png" /></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1753615437/weather-flow-1680x657_p2jovi.png"><img alt="weather-flow-1680x657.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1753615437/weather-flow-1680x657_p2jovi.png" /></a>
 
 When a local weather station is installed, it needs <strong>primary and backup power</strong> and additional collector devices such as measurement of solar radiation.
 Ambient Weather devices have channels 1-8 to which Arduino or Raspberry Pi DIY can be added locally. <strong>MAC</strong> addresses are used to <strong>configure</strong> internet
 to the Ambient Weather Network service which displays a website.
 There is also local <strong>dashboard</strong> from a Home Assistant server.
-In a similar way, external websites display what Inductive Ignition, Palantir, and other enterprise-scale systems which send out a wide set of <strong>alerts</strong> based on <strong>forecasting</strong> algorithms.
+In a similar way, external websites display what Inductive Ignition, Palantir, and other enterprise-scale systems built with industrial-strength  <strong>forecasting algorithms</strong> and a wide set of <strong>alerts</strong>. 
+When alerts are sent to your local <strong>Listener</strong> service can trigger actuators to take physical action.
 
 
 ## Measurements and Instruments
@@ -441,8 +442,8 @@ The API (Application Programming Interface) allows programmers to RESTful develo
    
 1. Adapt the Python Module for interacting with the Ambient Weather API.
 
-   https://github.com/bachya/aioambient
-   by Aaron Bach", email = "bachya1208@gmail.com"
+   <a target="_blank" href="https://github.com/bachya/aioambient">github.com/bachya/aioambient</a>
+   by <a target="_blank" href="https://www.linkedin.com/in/aaronbach/" title="bachya1208@gmail.com">Aaron Bach</a>
    is a clean, async-friendly library.
 
    It's preferred over the<br />
