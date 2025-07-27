@@ -1,24 +1,22 @@
 ---
 layout: post
 date: "2025-07-27"
-lastchange: "v036 + flow actuators :2023-04-03-weather-info.md"
+lastchange: "v037 + figure swaps :2023-04-03-weather-info.md"
 url: "https://wilsonmar.github.io/weather-info"
 file: "weather-info"
 title: "Weather information"
 excerpt: "How to capture weather-related readings and display those metrics for your microclimate."
 tags: [weather, observability,rcloud]
-image:
-  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1742185185/weather-ws-5000-891x527_z7ypgc.png
-  credit: AmbientWeather.com
-  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1742185185/weather-ws-5000-891x527_z7ypgc.png
+image:  # weather-flow-1680x657.png
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1753615437/weather-flow-1680x657_p2jovi.png
+  credit: Wilson Mar
+  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1753615437/weather-flow-1680x657_p2jovi.png
 comments: true
 created: "2023-04-03"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1753615437/weather-flow-1680x657_p2jovi.png"><img alt="weather-flow-1680x657.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1753615437/weather-flow-1680x657_p2jovi.png" /></a>
 
 When a local weather station is installed, it needs <strong>primary and backup power</strong> and additional collector devices such as measurement of solar radiation.
 Ambient Weather devices have channels 1-8 to which Arduino or Raspberry Pi DIY can be added locally. <strong>MAC</strong> addresses are used to <strong>configure</strong> internet
@@ -32,7 +30,7 @@ When alerts are sent to your local <strong>Listener</strong> service can trigger
 
 This display above is from the <a target="_blank" href="https://ambientweather.com/support/ws-5000-weather-station-support/">Ambient Weather WS-5000 series</a> after <a target="_blank" href="https://www.youtube.com/watch?v=wyFh8edFZiA" title="VIDEO">installation/configuration</a>:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1753454155/ambient-weather-481x271_rrnlzt.png"><img alt="weather-481x271.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1753454155/ambient-weather-481x271_rrnlzt.png" /></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1742185185/weather-ws-5000-891x527_z7ypgc.png"><img alt="weather-481x271.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1742185185/weather-ws-5000-891x527_z7ypgc.png" /></a>
 
 (-) and (+) adjust values: <a target="_blank" href="https://ambientweather.com/glossary.html">Glossary</a><br />
 <table border="1" cellpadding="4" cellspacing="0"><tr valign="top"><td>(-)<br />Minus<br />Brightness </td><td>(+)<br />Plus<br />Brightness<br />Adjust </td><td> Backlight<br />On/Off<br />toggle </td><td> Background<br />On/Off<br />toggle </td><td> Pressure<br />Absolute<br />/Relative<br />toggle </td><td> Channel </td><td> History </td><td> Set<br />Mode </td></tr></table>
@@ -209,6 +207,8 @@ Upwind locations on the map would experience weather patterns (such as rain) bef
 
 
 ## Python Program Code
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1753454155/ambient-weather-481x271_rrnlzt.png"><img alt="weather-481x271.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1753454155/ambient-weather-481x271_rrnlzt.png" /></a>
 
 I wrote a Python program to retrieve and format weather info from an API calls to openweather.com.
 
