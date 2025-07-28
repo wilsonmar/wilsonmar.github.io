@@ -21,9 +21,10 @@ created: "2023-04-03"
 When a local weather station is installed, it needs <strong>primary and backup power</strong> and additional collector devices such as measurement of solar radiation.
 Ambient Weather devices have channels 1-8 to which Arduino or Raspberry Pi DIY can be added locally. <strong>MAC</strong> addresses are used to <strong>configure</strong> internet
 to the Ambient Weather Network service which displays a website.
-There is also local <strong>dashboard</strong> from a Home Assistant server.
-In a similar way, external websites display what Inductive Ignition, Palantir, and other enterprise-scale systems built with industrial-strength  <strong>forecasting algorithms</strong> and a wide set of <strong>alerts</strong>. 
-When alerts are sent to your local <strong>Listener</strong> service can trigger actuators to take physical action.
+There is also local <strong>dashboard</strong> from a <a href="#HomeAssistant">Home Assistant server</a>.
+In a similar way, external websites display what Inductive Ignition, Palantir, and other enterprise-scale systems built with industrial-strength  <a href="#weather-prediction">forecasting algorithms</a> and a wide set of <strong>alerts</strong>. 
+When alerts are sent to your local <strong>Listener</strong> service can <strong>trigger</strong> actuators to take physical action.
+Such exposure to the external public internet requires a <strong>firewall</strong> to filter out suspicious senders.
 
 
 ## Measurements and Instruments
@@ -94,7 +95,7 @@ This display above is from the <a target="_blank" href="https://ambientweather.c
 
     FUN FACT: About 5 minutes is lost or gained each day.
 
-24. <a target="_blank" href="https://ambientweather.com/solarradiation.html">Solar Radiation</a>, measured in <strong>W/m^2</super> (Watts per square meter), aka Lux or FC (Foot Candles) by <a target="_blank" href="https://www.amazon.com/s?k=pyranometers">pyranometers</a> that have a dome-shaped sensor that can be seen from all angles, resembling a "UFO saucer". 
+24. <a target="_blank" href="https://ambientweather.com/solarradiation.html">Solar Radiation</a>, measured in <strong>W/m^2</strong> (Watts per square meter), aka Lux or FC (Foot Candles) by <a target="_blank" href="https://www.amazon.com/s?k=pyranometers">pyranometers</a> that have a dome-shaped sensor that can be seen from all angles, resembling a "UFO saucer". 
 
     The measurement is used to calculate evapotranspiration - the potential for evaporation of moisture from the soil (or the reverse of rainfall) as a function of solar energy, wind, and temperature.
 
@@ -179,14 +180,21 @@ To see metrics over time with multiple metrics overlaid together, click "Graphs 
 * Rain with Snow overlaid
 * UV Index with Solar Radiation overlaid
 
-<a target="_blank" href="https://ambientweather.com/awn-plus-annual-subscription">AWN+ subscription</a> unlocks premium features like advanced map layers, degree day tiles, enhanced graphing, text alerts, and a 10-Day Hourly Forecast
+<a target="_blank" href="https://ambientweather.com/awn-plus-annual-subscription">AWN+ subscription</a> unlocks premium features like degree day tiles, enhanced graphing, text alerts, and a 10-Day Hourly Forecast.
 
-<a target="_blank" href="https://www.home-assistant.io/integrations/ambient_station/">Home Assistant</a> integration.
-for smart Home display trends.
+Advanced map layers are now free.
 
 <a target="_blank" href="https://d3js.org/">d3.js</a> is a JavaScript library for producing dynamic, interactive data visualizations in web browsers. <a target="_blank" href="https://learning.oreilly.com/videos/-/10000MNHV2021133/">VIDEO</a>
 
 Upwind locations on the map would experience weather patterns (such as rain) before you (n=in a downwind location).
+
+
+<a name="HomeAssistant"></a>
+
+## Home Assistant
+
+<a target="_blank" href="https://www.home-assistant.io/integrations/ambient_station/">Home Assistant</a> integration.
+for smart Home display trends.
 
 
 ## Internet Weather Reports
