@@ -1,6 +1,8 @@
 ---
 layout: post
-date: "2023-11-17"
+date: "2025-07-27"
+lastchange: "v027 + last names :2017-02-10-data-sources.md"
+url: "https://wilsonmar.github.io/data-sources"
 file: "data-sources"
 title: "Data Sources"
 excerpt: "Jump in and drown in all the data"
@@ -11,6 +13,7 @@ image:
   credit: 
   creditlink: 
 comments: true
+created: "2017-02-10"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -229,6 +232,12 @@ OpenSecrets.org provides datasets</a> related to US political campaign finance.
    * <a target="_blank" href="https://docs.google.com/spreadsheets/d/1yMoTeRd5BbiFBhIRN_q1uFcB4bjxDuhhvZjS6352c40/edit#gid=0">
    Google Sheet Contributions from AT&T, Verizon and Comcast to 115th Members</a>
     
+25% of men of retirement age have one of these first names: John, William, James, Charles, or George.
+
+The most common family names on the list of passengers on the Mayflower, as compiled by Christopher Jones in 1620:
+Alden, Browne, Carter, Clarke, Cooke, Fuller, Martin, Priest, Rogers, Thompson, Turner, Warren, White, Williams.
+
+
 ## News
 
 US Census
@@ -330,3 +339,8 @@ Musicbase from a game
 This is one of a series on AI, Machine Learning, Deep Learning, Robotics, and Analytics:
 
 {% include ai_links.html %}
+
+
+<hr />
+
+<sub>{{ page.lastchange }} {{ page.date }}</sub>
