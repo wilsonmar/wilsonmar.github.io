@@ -1,13 +1,13 @@
 ---
 layout: post
-date: "2025-07-27"
-lastchange: "v037 + figure swaps :2023-04-03-weather-info.md"
+date: "2025-07-28"
+lastchange: "v038 + firewall :2023-04-03-weather-info.md"
 url: "https://wilsonmar.github.io/weather-info"
 file: "weather-info"
 title: "Weather information"
 excerpt: "How to capture weather-related readings and display those metrics for your microclimate."
 tags: [weather, observability,rcloud]
-image:  # weather-flow-1680x657.png
+image:  # weather-flow-1902x750.png
   feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1753615437/weather-flow-1680x657_p2jovi.png
   credit: Wilson Mar
   creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1753615437/weather-flow-1680x657_p2jovi.png
@@ -17,6 +17,8 @@ created: "2023-04-03"
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
+
+<em>Click "OVERVIEW" to minimize the Index</em>
 
 When a local weather station is installed, it needs <strong>primary and backup power</strong> and additional collector devices such as measurement of solar radiation.
 Ambient Weather devices have channels 1-8 to which Arduino or Raspberry Pi DIY can be added locally. <strong>MAC</strong> addresses are used to <strong>configure</strong> internet
@@ -424,8 +426,8 @@ To build a custom AI weather pipeline:
 
 ## Ambient Weather API
 
-https://ambientweather.com/faqs/question/view/id/1811/
-The API (Application Programming Interface) allows programmers to RESTful develop programs and applications that obtain weather data from stations sent to
+<a target="_blank" href="https://ambientweather.com/faqs/question/view/id/1811/">The API (Application Programming Interface)</a> 
+allows programmers to use RESTful interactions in applications.
 
 1. Get the MAC address of your model (such as "12:34:56:AB:CD:EF") at:
 
@@ -448,6 +450,18 @@ The API (Application Programming Interface) allows programmers to RESTful develo
 
    <pre>AMBIENT_APPLICATION_KEY='your-application-key-here'</pre>
    
+1. Enable the <a target="_blank" href="https://www.amazon.com/dp/B074PGCM1D/">Ambient Weather app</a> on your <a target="_blank" href="https://wilsonmar.github.io/alexa/">Amazon Alexa</a> devices for its voice-based interactions, such as:
+
+   * ”Alexa, ask Ambient Weather for a weather report”
+   * ”Alexa, ask Ambient Weather the weather yesterday” (a specific day, month or year)
+   * ”Alexa, ask Ambient Weather for indoor conditions”
+
+   However, at time of this writing, one cannot ask:
+
+   * ...  ask Ambient weather the outside temperature"
+   * ... ask Ambient weather the forecast" 
+   * ... ask Ambient Weather about today's rain"
+
 1. Adapt the Python Module for interacting with the Ambient Weather API.
 
    <a target="_blank" href="https://github.com/bachya/aioambient">github.com/bachya/aioambient</a>
