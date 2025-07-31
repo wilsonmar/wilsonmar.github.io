@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-07-31"
-lastchange: "v018 + FiriaLabs :2016-07-10-python-certs.md"
+lastchange: "v019 + topic name tags :2016-07-10-python-certs.md"
 url: "https://wilsonmar.github.io/python-certs"
 file: "python-certs"
 title: "Python Certs"
@@ -50,23 +50,15 @@ The OpenEDG Python Institute administers this progression of Python certificatio
 
 <img alt="python-certs-map=1200x253.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1734024828/python-certs-map_yh2puu.png" />
    
-1. 20% off $59 &nbsp; PCEP™ (Certified Entry-Level Python Programmer exam PCEP-30-0x) asks 30 questions over 40 minutes <br /><a target="_blank" href="https://pythoninstitute.org/pcep">https://pythoninstitute.org/pcep</a> 
+1. 20% off $59 &nbsp; <a href="#PCEP-30" title="topics">PCEP-30-0x</a> (Certified Entry-Level Programmer) asks 30 questions over 40 minutes <br /><a target="_blank" href="https://pythoninstitute.org/pcep">https://pythoninstitute.org/pcep</a> 
 
-   [<a href="#PE1">PE1/PCEP-30-0x topics</a>]
-   
    PROTIP: Cisco rewards you (through a teacher like me) a discount to the OpenEDG exam after you <a href="#CiscoCourses">sign-up</a> and complete their 
 
-2. 50% off $295 PCAP™ (Certified Associate Python Programmer exam PCAP-31-0x) asks 31 questions over 65 minutes<br /><a target="_blank" href="https://pythoninstitute.org/pcap">https://pythoninstitute.org/pcap</a>
+2. 50% off $295 <a href="#PCAP-31" title="topics">PCAP-31-0x</a> (Certified Associate Programmer exam) asks 31 questions over 65 minutes<br /><a target="_blank" href="https://pythoninstitute.org/pcap">https://pythoninstitute.org/pcap</a>
 
-   [<a href="#Intermediate">Intermediate topics</a>]
+3. $225 <a href="#PCPP-32-101" title="topics">PCPP-32-101</a> (Certified Professional Programmer Level 1) asks 45 questions over 65 minutes <br /><a target="_blank" href="https://pythoninstitute.org/pcpp1">https://pythoninstitute.org/pcpp1</a> 
 
-3. $225 PCAPP1™ (Certified Professional Python Programmer Level 1 Exam PCPP-32-101) asks 45 questions over 65 minutes <br /><a target="_blank" href="https://pythoninstitute.org/pcpp1">https://pythoninstitute.org/pcpp1</a> 
-
-   [<a href="#Pro1">Pro1 Topics</a>]
-   
-4. $195 PCAPP2™ (Certified Professional Python Programmer Level 2 Exam PCPP-32-201) asks 45 questions over 65 minutes <br /><a target="_blank" href="https://pythoninstitute.org/pcpp2">https://pythoninstitute.org/pcpp2</a>
-
-   [<a href="#Pro2">Pro2 Topics</a>]
+4. $195 <a href="# PCPP-32-201" title="topics">PCPP-32-201</a> (Certified Professional Programmer Level 2 Exa) asks 45 questions over 65 minutes <br /><a target="_blank" href="https://pythoninstitute.org/pcpp2">https://pythoninstitute.org/pcpp2</a>
 
 Each exam requires answering 70% correct.
 
@@ -101,6 +93,7 @@ at their NetAcad.com site</a>  free online Python courses developed in collabora
 1. In Credly, click Settings, Security & Privacy, to setup two-factor authentication with your Authy mobile app.
 
    <a name="PE1"></a>
+   <a name="PCEP-30"></a>
 
    ### Cisco PE1 Course for PCEP-30-0x
 
@@ -215,6 +208,7 @@ The exam "blocks" for Fundamentals:
 
 
    <a name="PE2"></a>
+   <a name="PCEP-30"></a>
 
    ### Cisco PE2 PCEP-31-0x
 
@@ -487,8 +481,9 @@ So no good choices?
 <hr />
 
 <a name="Intermediate"></a>
+<a name="PCAP-31"></a>
 
-### Intermediate cert
+### PCAP-31 Intermediate cert
 
 The <a target="_blank" href="https://pythoninstitute.org/certification/pcap-certification-associate/pcap-exam-syllabus/">(PCAP-31-02) Associate level exam</a> for $295 covers these exam blocks:
 
@@ -579,6 +574,7 @@ The <a target="_blank" href="https://pythoninstitute.org/certification/pcap-cert
    <br /><br />
 
 <a name="Pro1"></a>
+<a name="PCPP-32-101"></a>
 
 ### Professional 1 PCPP-32-101
 
@@ -655,6 +651,7 @@ The <a target="_blank" href="https://pythoninstitute.org/certification/pcap-cert
    <br /><br />
 
 <a name="Pro2"></a>
+<a name="PCPP-32-201"></a>
 
 ### Professional 2 PCPP-32-
 
