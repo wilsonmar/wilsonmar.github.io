@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-07-31"
-lastchange: "v017 + FiriaLabs :2016-07-10-python-certs.md"
+lastchange: "v018 + FiriaLabs :2016-07-10-python-certs.md"
 url: "https://wilsonmar.github.io/python-certs"
 file: "python-certs"
 title: "Python Certs"
@@ -23,8 +23,7 @@ Certifications show that you are serious about your education and career, especi
 
 {% include whatever.html %}
 
-
-## Other Exams
+## Other Python Exams
 
 Before they setup an interview,
 Amazon, Facebook, and others force candidates to take a test on:
@@ -73,6 +72,7 @@ Each exam requires answering 70% correct.
 
 Prices above are for a single try. Exams can be purchased with a retake option and sample tests.
 
+TODO: Add links to each Python docs topic.
 
 
 ### Entry-level cert
@@ -209,7 +209,9 @@ The exam "blocks" for Fundamentals:
    
    <img alt="python-pcep-badge-729x729.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1734027721/python-pcep-badge-729x729_wucsyk.png" />
 
-   PROTIP: FiriaLabs.com has a <a target="_blank" href="https://firialabs.com/collections/virtual-robotics/products/python-with-virtual-robots">$109/year curriculum</a> of hands-on "missions" to control their robot (both physically and virtually) by running their web-based CodeSpace IDE. It's aligned with the PCEP-30-01 exam.
+   <a name="Firia"></a>
+
+   PROTIP: Aligned with PCEP-30-01 exam topics is the FiriaLabs.com <a target="_blank" href="https://firialabs.com/collections/virtual-robotics/products/python-with-virtual-robots">$109/year/student curriculum</a> hands-on "missions" to control autonomous robots (both physically and virtually) configured using their web-based CodeSpace IDE.
 
 
    <a name="PE2"></a>
