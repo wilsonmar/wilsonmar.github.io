@@ -1,11 +1,11 @@
 ---
 layout: post
 date: "2025-07-31"
-lastchange: "v016 from bomonike :2016-07-10-python-certs.md"
+lastchange: "v017 + FiriaLabs :2016-07-10-python-certs.md"
 url: "https://wilsonmar.github.io/python-certs"
 file: "python-certs"
 title: "Python Certs"
-excerpt: "The topics for getting validation for learning the Python language thoroughly, for professional status"
+excerpt: "Here is how to study and take Certification exams to validate your expertise to potential schools, scholarships, and employers."
 tags: [python, coding]
 image:
 #python-cert-31-02-1900x500
@@ -19,14 +19,12 @@ created: "2016-07-10"
 {% include l18n.html %}
 {% include _toc.html %}
 
-Certification exams validate your expertise to show potential schools, scholarships, and employers that you are serious about your education and career.
+Certifications show that you are serious about your education and career, especially if you didn't graduate from a top tier degree from MIT/CMU, etc. 
 
 {% include whatever.html %}
 
-I'm adding links to YouTube such as [<a target="_blank" href="https://www.youtube.com/watch?v=VQZTZsXk8sA&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p&index=3">M</a>] next to topics below.
 
-
-## Competitive
+## Other Exams
 
 Before they setup an interview,
 Amazon, Facebook, and others force candidates to take a test on:
@@ -38,6 +36,9 @@ Hackerrank offers free "certifications".
 
 <a target="_blank" href="https://campus.w3schools.com/collections/certifications/products/python-certificate">W3schools.com offers a $95 certification</a>.
 PROTIP: I don't think it counts for much.
+
+https://certiport.filecamp.com/s/i/9Th6LzRzeAhrdCP7
+for the Python "IT Specialist Exam Objectives"
 
 <hr />
 
@@ -52,21 +53,39 @@ The OpenEDG Python Institute administers this progression of Python certificatio
    
 1. 20% off $59 &nbsp; PCEP™ (Certified Entry-Level Python Programmer exam PCEP-30-0x) asks 30 questions over 40 minutes <br /><a target="_blank" href="https://pythoninstitute.org/pcep">https://pythoninstitute.org/pcep</a> 
 
-   PROTIP: Cisco rewards you (through a teacher like me) a discount to the OpenEDG exam after you <a href="#CiscoCourses">sign-up</a> and complete their course</a>.
+   [<a href="#PE1">PE1/PCEP-30-0x topics</a>]
+   
+   PROTIP: Cisco rewards you (through a teacher like me) a discount to the OpenEDG exam after you <a href="#CiscoCourses">sign-up</a> and complete their 
 
 2. 50% off $295 PCAP™ (Certified Associate Python Programmer exam PCAP-31-0x) asks 31 questions over 65 minutes<br /><a target="_blank" href="https://pythoninstitute.org/pcap">https://pythoninstitute.org/pcap</a>
-   
-3. $225 PCAPP1™ (Certified Professional Python Programmer Level 1 Exam PCPP-32-101) asks 45 questions over 65 minutes <br /><a target="_blank" href="https://pythoninstitute.org/pcpp1">https://pythoninstitute.org/pcpp1</a>
+
+   [<a href="#Intermediate">Intermediate topics</a>]
+
+3. $225 PCAPP1™ (Certified Professional Python Programmer Level 1 Exam PCPP-32-101) asks 45 questions over 65 minutes <br /><a target="_blank" href="https://pythoninstitute.org/pcpp1">https://pythoninstitute.org/pcpp1</a> 
+
+   [<a href="#Pro1">Pro1 Topics</a>]
    
 4. $195 PCAPP2™ (Certified Professional Python Programmer Level 2 Exam PCPP-32-201) asks 45 questions over 65 minutes <br /><a target="_blank" href="https://pythoninstitute.org/pcpp2">https://pythoninstitute.org/pcpp2</a>
+
+   [<a href="#Pro2">Pro2 Topics</a>]
 
 Each exam requires answering 70% correct.
 
 Prices above are for a single try. Exams can be purchased with a retake option and sample tests.
 
+
+
+### Entry-level cert
+
+<a target="_blank" href="https://pythoninstitute.org/certification/pcep-certification-entry-level/pcep-exam-syllabus/">"Certified Entry-Level Python Programmer Certification"</a> covers these exam blocks for $59. Version <strong>PCAP-31-02</strong> is the version after PCAP-31-01 is retired.
+
+The official <a target="_blank" href="https://pythoninstitute.org/download/566/">practice test is at pythoninstitute.org/download/566</a>
+</a>
+
+
 <a name="CiscoCourses"></a>
 
-### Cisco Discount for OpenEDG
+## Cisco Discount for OpenEDG
 
 Cisco's offers <a target="_blank" href="https://www.netacad.com/learning-collections/python?courseLang=en-US">
 at their NetAcad.com site</a>  free online Python courses developed in collaboration with OpenEDG:
@@ -83,7 +102,7 @@ at their NetAcad.com site</a>  free online Python courses developed in collabora
 
    <a name="PE1"></a>
 
-   ### Cisco PE1 Course
+   ### Cisco PE1 Course for PCEP-30-0x
 
    <a target="_blank" href="https://www.netacad.com/courses/python-essentials-1?courseLang=en-US"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1733810664/cisco_python_essentials_1_50_qxxfot.png" /></a>
 
@@ -190,9 +209,12 @@ The exam "blocks" for Fundamentals:
    
    <img alt="python-pcep-badge-729x729.png" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1734027721/python-pcep-badge-729x729_wucsyk.png" />
 
+   PROTIP: FiriaLabs.com has a <a target="_blank" href="https://firialabs.com/collections/virtual-robotics/products/python-with-virtual-robots">$109/year curriculum</a> of hands-on "missions" to control their robot (both physically and virtually) by running their web-based CodeSpace IDE. It's aligned with the PCEP-30-01 exam.
+
+
    <a name="PE2"></a>
 
-   ### Continue to PE2
+   ### Cisco PE2 PCEP-31-0x
 
    <a target="_blank" href="https://www.netacad.com/courses/python-essentials-2?courseLang=en-US"><img align="right" width="100" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1733810672/cisco_python_essentials_2_ja7h6b.png" /></a>
 1. Click "Python Essentials 2"
@@ -460,14 +482,9 @@ d)	A
 
 So no good choices?
 
+<hr />
 
-
-### Entry-level cert
-
-<a target="_blank" href="https://pythoninstitute.org/certification/pcep-certification-entry-level/pcep-exam-syllabus/">"Certified Entry-Level Python Programmer Certification"</a> covers these exam blocks for $59. Version <strong>PCAP-31-02</strong> is the version after PCAP-31-01 is retired.
-
-The official <a target="_blank" href="https://pythoninstitute.org/download/566/">practice test is at pythoninstitute.org/download/566</a>
-
+<a name="Intermediate"></a>
 
 ### Intermediate cert
 
@@ -559,7 +576,9 @@ The <a target="_blank" href="https://pythoninstitute.org/certification/pcap-cert
    * close() methods (vs. with)
    <br /><br />
 
-### Professional 1
+<a name="Pro1"></a>
+
+### Professional 1 PCPP-32-101
 
 <a target="_blank" href="https://pythoninstitute.org/certification/pcpp-certification-professional/pcpp-32-1-exam-syllabus/">The first of two Professional-level exams (PCPP-32-101)</a>
 
@@ -633,9 +652,11 @@ The <a target="_blank" href="https://pythoninstitute.org/certification/pcap-cert
       - Metaclasses
    <br /><br />
 
-### Professional 2
+<a name="Pro2"></a>
 
-<a target="_blank" href="https://pythoninstitute.org/certification/pcpp-certification-professional/pcpp-32-2-exam-syllabus/">The second of two Professional-level exams (PCPP-32-102)</a>
+### Professional 2 PCPP-32-
+
+<a target="_blank" href="https://pythoninstitute.org/certification/pcpp-certification-professional/pcpp-32-2-exam-syllabus/">The second of two Professional-level exams (PCPP-32-102 PCPP-32-201)</a>
 
 1: Creating and Distributing Packages (20%)
 
@@ -711,8 +732,23 @@ CAUTION: The code makes use of MongoDB Atlas, their cloud-based database which c
 
 * <a target="_blank" href="https://learn.mongodb.com/courses/associate-developer-python-practice-questions">1 hour Practice Questions</a>
 
+<hr />
 
+## Video courses
 
+I'm adding links to YouTube such as [<a target="_blank" href="https://www.youtube.com/watch?v=VQZTZsXk8sA&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p&index=3">M</a>] next to topics below.
+
+The most friendly and enthusiastically delivered <a target="_blank" href="https://kodekloud.com/courses/certified-associate-in-python-programming/">"PCAP – Python Certification Course"</a> I think is by <a target="_blank" href="https://www.linkedin.com/in/lydia-hallie/">Lydia Hallie living in Netherlands</a> (https://www.lydiahallie.io). The content is delivered in enthusiastic, perfect English by the 20-something developer whiz, who presents "visualized" diagrams. As with other KodeKloud (subscription) video courses, this class includes labs, Quizzes, Mock Exams, and <a target="_blank" href="https://kodekloud.com/community/c/python/18">Q&A participants</a> to cover Module, Packages and PIP,
+String and List Methods, Exceptions, Object Oriented Programming, etc.
+
+<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/413">
+The video course at LinuxAcademy</a> by Keith Thompson references
+includes a practice exam.
+
+https://www.udemy.com/topic/certified-associate-in-python-programming-pcap/
+Udemy.com's mock PCAP tests
+
+zzz
 
 <hr />
 
@@ -744,25 +780,6 @@ A sample: https://github.com/Ebazhanov/linkedin-skill-assessments-quizzes/blob/m
 PROTIP: The questions are not the same each time you take the test, so you can take it multiple times to get a higher score.
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=OTulxiJHp4o">VIDEO: Review one set of questions</a>
-
-
-
-## Video courses
-
-The most friendly and enthusiastically delivered <a target="_blank" href="https://kodekloud.com/courses/certified-associate-in-python-programming/">"PCAP – Python Certification Course"</a> I think is by 20-something <a target="_blank" href="https://www.linkedin.com/in/lydia-hallie/">Lydia Hallie living in Scandanavia</a> (https://www.lydiahallie.io). The content is delivered in enthusiastic, perfect English by the 20-something developer whiz, who presents "visualized" diagrams. As with other KodeKloud (subscription) video courses, this clas includes labs, Quizzes, Mock Exams,
- and <a target="_blank" href="https://kodekloud.com/community/c/python/18">Q&A participants</a>
-to cover
-Module, Packages and PIP,
-String and List Methods,
-Exceptions,
-Object Oriented Programming, etc.
-
-<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/413">
-The video course at LinuxAcademy</a> by Keith Thompson references
-includes a practice exam.
-
-https://www.udemy.com/topic/certified-associate-in-python-programming-pcap/
-Udemy.com's mock PCAP tests
 
 
 ## References
