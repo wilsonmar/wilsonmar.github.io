@@ -23,30 +23,67 @@ This is a list of physical hardware categorized by basics and optional.
 
 <hr />
 
-## Hardware
+## Mini PC Hardware
 
-   | Spec | Arduino | RPi 2 | RPi 3 | RPi 5 |
-   | ---- | ------: | ----: | ----: | ----: |
+   | Spec | Arduino | RPi 2 | RPi 3 | <a target="_blank" href="https://www.raspberrypi.com/products/raspberry-pi-5/">RPi 5</a> |
+   | :--- | ------: | ----: | ----: | ----: |
    | Address space | 8-bit | 32-bit | 64-bit | 64-bit |
    | CPU speed | 900 MHz | 16 MHz | 16 MHz | 4 GHz |
-   | RAM | 32K | 512 MB | 1 GB | 8 GB |
+   | LPDDR4 SDRAM | 32K | 512 MB | 1 GB | 8 GB <a href="#[1]">[1]</a> |
+   | Storage | ? | 128 GB | 256 GB | 256 GB |
    | Voltage | 5V | 3.3V | 3.3V | 3.3V |
 
-0. Raspberry Pi hardware
+   https://www.raspberrypi.com/products/raspberry-pi-5/
+   began shipping Jan. 2024. "Made in the UK"
+
+   <a name="[1]"></a>
+   [1] In 2025 Pi began offering a 16GB model for $120 (<a target="_blank" href="https://www.youtube.com/watch?v=apWi16EROKc">VIDEO</a>: "4GB is the sweet spot") 
+
+   * Power button
+   * 27W-45W USB-C power supply with noise filter.
+   * Quad-core
+   * USB 3 has more total bandwidth, for much faster transfer speeds.
+   * 10/100/1000 Gigabit Ethernet card.
+   * Camera and DSI display connectors are interchangeable, so you can have one of each, or two the same.
+   * Dual 4Kp60 video ports
+   <br /><br />
 
    <amp-img alt="iot raspberry_pi3_2 500x302 69kb.jpg" width="500" height="302" src="https://cloud.githubusercontent.com/assets/14143059/19865119/8a5470e6-9f60-11e6-8f62-e58f44c4f14c.jpg"></amp-img>
    <!-- http://www.memoryexpress.com/Products/MX61461 -->
 
-## Kits
+   <a target="_blank" href="https://www.youtube.com/watch?v=UtLyX72-688">VIDEO</a>: "Raspberry Pi 5: Getting Started" by Jeff Geerling at the Charlotte Micro Center
+   Get $25 Off Your Purchase of $100 or more: https://micro.center/b04f
 
-<a target="_blank" href="https://www.amazon.com/CanaKit-Raspberry-Starter-Kit-PRO/dp/B0CRSNCJ6Y/">$135.99</a> CanaKit Raspberry Pi 5 Starter Kit PRO - Turbine Black (128GB Edition) 4Ghz 64-bit quad-core CPU (8GB LPDDR4 RAM) comes with a case,  full-size heatsink,  Low Noise Bearing System fan and 128GB EVO+ Micro SD Card pre-loaded with 64-bit Raspberry Pi OS, USB MicroSD Card Reader. USB, GPIO. 45W PD Power Supply. 2 x Display Cables - 6 foot (Supports up to 4K 60p). runs Atari and N64 games perfectly. Perfect Kit for Solar Assistant Monitoring Project – Remote & Kiosk Mode
+   <a target="_blank" href="https://www.youtube.com/watch?v=ykTlNf1TXO0">VIDEO</a>: "Raspberry Pi 5 setup | Full Tutorial for Beginners (2025)"
 
-0. Risers on the board so its metal doesn't touch the table.
+## Add-ons:
+
+* GPIO extension cable to a 
+* breadboard
+* POE HAT
+* <a target="_blank" href="https://www.raspberrypi.com/products/active-cooler/">$11.95 Active Cooler</a> heatsink
+* PCI express enables connection to an M.2 SSD for speedy data transfer and super-fast boot.
+* HAILO GPU accelerator
+
+### CanaKit
+
+Unlike a "naked kit" without a power supply...
+
+<a target="_blank" href="https://www.amazon.com/CanaKit-Raspberry-Starter-Kit-PRO/dp/B0CRSNCJ6Y/">$135.99 (when on sale)</a> Edition CanaKit Raspberry Pi 5 Starter Kit PRO - Turbine Black 4Ghz 64-bit quad-core CPU (<strong>8GB LPDDR4 RAM</strong>) comes with a case, full-size heatsink, Low Noise Bearing System fan and <strong>128GB EVO+</strong> Micro SD Card pre-loaded with 64-bit Raspberry Pi OS, USB MicroSD Card Reader. USB, GPIO. 45W PD Power Supply. 2 x Display Cables - 6 foot (Supports up to 4K 60p). runs Atari and N64 games perfectly. Perfect Kit for Solar Assistant Monitoring Project – Remote & Kiosk Mode
+
+<a target="_blank" href="http://bestbuy.com/site/canakit-raspberry-pi-5-starter-max-kit-8gb-turbine-white/6580288.p">$179.95 at Best Buy</a> (in white case)
+
+<a target="_blank" href="https://www.robotshop.com/collections/canakit/">RobotShop.com</a>
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Wi_S7QkuN3M">VIDEO</a>: Unboxing and Setup
+   * https://www.canakit.com/pi-case?srsltid=AfmBOoq3uVQ1vbnE-RDkxOmXZqT_Y3VcUekozpzFVRPpwkfaRg0Qt-xr
+
+1. Risers on the board so its metal doesn't touch the table.
    Or a static-resistent mat to put a naked board.
 
    <a name="HeatSink"></a>
 
-0. Heat sink and fan for disspating heat better when seated on top of the CPU chip 
+1. Heat sink and fan for disspating heat better when seated on top of the CPU chip 
 
    PROTIP: Running above 80 degrees F shortens life of the board.
    In data centers, for every 50 kW of power fed to an aisle of server, 
@@ -74,7 +111,7 @@ This is a list of physical hardware categorized by basics and optional.
    leading to an inherently unstable, overheating machine.
 
 
-0. Micro SD card (8+ GB, up to 32 GB), class 10.
+1. Micro SD card (8+ GB, up to 32 GB), class 10.
    <strong>Several of them</strong>, for backup and as a base to build others.
 
    PROTIP: Windows 10 IoT does not support class 4 SD cards.
@@ -112,7 +149,7 @@ This is a list of physical hardware categorized by basics and optional.
    But this tutorial focuses on industrial-grade components for 
    maximum flexibility, power, and security.
 
-0. 32 GB of disk space on a Mac or Windows machine.
+1. 32 GB of disk space on a Mac or Windows machine.
 
    The size of hard disk drives have similar issues as SD drives.
 
@@ -120,14 +157,14 @@ This is a list of physical hardware categorized by basics and optional.
 
    Natively macOS does not know how to read NTFS drives.
 
-0. DVD blank disk (R+ or R-) to hold image so as to not use up 
+1. DVD blank disk (R+ or R-) to hold image so as to not use up 
    laptop hard disk space.
 
 
 
    ### Power hardware
 
-0. 2.5A micro-USB 5V DC power - two-prong plug in the US market.
+1. 2.5A micro-USB 5V DC power - two-prong plug in the US market.
 
    You can re-use those provided with Android smartphones.
 
@@ -138,7 +175,7 @@ This is a list of physical hardware categorized by basics and optional.
    the rating for the plug says 110V - 240V (50 - 60 Hz) so
    a mechanical adapter can use used in other countries.
 
-0. Alternately, the PiPo add-on board draws power from an Ethernet cable,
+1. Alternately, the PiPo add-on board draws power from an Ethernet cable,
    so you don't need to buy a micro-USB power supply.
 
    QUESTION: Can it be combined with a fan?
@@ -146,12 +183,12 @@ This is a list of physical hardware categorized by basics and optional.
 
    ### Not headless
 
-0. HDMI cable connected to a monitor (input selected to the correct HDMI).
+1. HDMI cable connected to a monitor (input selected to the correct HDMI).
 
-0. A special cable - <a target="_blank" href="https://www.adafruit.com/product/2881">
+1. A special cable - <a target="_blank" href="https://www.adafruit.com/product/2881">
    $4.95 from Adafruit</a> connects the 3.5 mm male plug to RCA composite plugs on older TVs.
 
-0. A USB keyboard.
+1. A USB keyboard.
 
 
 ## Off signal button
@@ -170,7 +207,7 @@ This is a list of physical hardware categorized by basics and optional.
 
 ### Compiled C option
 
-0. Navigate to 
+1. Navigate to 
    <a target="_blank" href="https://github.com/adafruit/Adafruit-GPIO-Halt">
    Adafruit's C program code</a> and compile the native program on the board.
 
@@ -180,7 +217,7 @@ This is a list of physical hardware categorized by basics and optional.
    sudo make install
    </strong></pre>
 
-0. Copy the <strong>gpio-halt</strong> executable file to folder:
+1. Copy the <strong>gpio-halt</strong> executable file to folder:
 
    <pre>
    sudo cp gpio-halt  /usr/local/bin/
@@ -188,13 +225,13 @@ This is a list of physical hardware categorized by basics and optional.
 
    That folder is also where ansible and easy_install are stored.
 
-0. Use a text editor to open the device boot-up configuration file:
+1. Use a text editor to open the device boot-up configuration file:
 
    <pre><strong>
    sudo nano /etc/rc.local
    </strong></pre>
 
-0. Cursor to just before final “exit 0” line, insert this line:
+1. Cursor to just before final “exit 0” line, insert this line:
 
    <pre>
    /usr/local/bin/gpio-halt 21 &amp;
@@ -397,7 +434,7 @@ This is a list of physical hardware categorized by basics and optional.
    It's 10x faster due to its blue color. (OK I'm kidding)<br />
    USB 3.1 "SUPERSPEED" was released in 2014.
 
-0. USB hard drive provides extra storage.
+1. USB hard drive provides extra storage.
    convenient to easily add photos, videos, or other media the Pi displays.
 
    The Passport drive has 250 GB.
@@ -421,7 +458,7 @@ This is a list of physical hardware categorized by basics and optional.
    <a target="_blank" target="iot atx-netzteil 650x477-512kb.jpg" href="https://en.wikipedia.org/wiki/ATX#/media/File:ATX-Netzteil.jpg"><img width="650" height="477" src="https://cloud.githubusercontent.com/assets/300046/20666855/84471ab8-b523-11e6-9d41-c304bc2948ae.jpg"></a>
 
 
-0. USB to UART serial cable. 
+1. USB to UART serial cable. 
    It's an alternative to using Ethernet and plugging
    a monitor and keyboard into the Pi.
    The USB plugs into laptop or computer.
@@ -436,30 +473,30 @@ This is a list of physical hardware categorized by basics and optional.
    Get the <a target="_blank" href="http://www.prolific.com.tw/US/ShowProduct.aspx?p_id=229&pcid=41">
    drivers</a> for each specific version of Mac or Windows.
 
-0. Boards for ZigBee communication 
+1. Boards for ZigBee communication 
 
 
 ## Power controls
 
 ### Untethered Power
 
-0. A <a target="_blank" href="http://www.dx.com/p/20083-adjustable-power-supply-voltage-regulating-reducing-module-blue-black-255394">
+1. A <a target="_blank" href="http://www.dx.com/p/20083-adjustable-power-supply-voltage-regulating-reducing-module-blue-black-255394">
    $1.80 board to keep incoming Voltage below 3V</a>.
 
-0. You'll need batteries even if want to use solar power.
+1. You'll need batteries even if want to use solar power.
 
    http://www.instructables.com/id/Raspberry-Pi-powered-by-battery/
 
-0. A regulator is needed to not over-charge the batteries.
+1. A regulator is needed to not over-charge the batteries.
 
-0. A solar panel needs to be large enough to generate what the unit needs and
+1. A solar panel needs to be large enough to generate what the unit needs and
    also cover lower power during overcast days.
 
-0. Low-power mode on the device.
+1. Low-power mode on the device.
 
    ### Control AC power
 
-0. Control AC power plug
+1. Control AC power plug
    <a target="_blank" href="https://www.amazon.com/dp/B00WV7GMA2?psc=1">
    $19.70 IoT Relay</a>
    controls a power outlet which
