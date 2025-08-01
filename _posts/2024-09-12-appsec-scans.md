@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-07-24"
-lastchange: "v026 + cloud svcs :2024-09-12-appsec-scans.md"
+date: "2025-07-31"
+lastchange: "v028 + from safety to pip-audit :2024-09-12-appsec-scans.md"
 url: "https://wilsonmar.github.io/appsec-scans"
 file: "appsec-scans"
 title: "AppSec Scans"
@@ -19,20 +19,29 @@ created: "2024-09-12"
 {% include l18n.html %}
 {% include _toc.html %}
 
-## Why? The Assets
+## Why? 
+
+There are several parties involved:
+
+   * Executives and managers who need to plan and arrange conditions
+   * Workers who create for auditors traceability as they work
+   <br /><br />
 
 Most enterprises issue a corporate policy to install processes to both detect and remove vulnerabilities at the earliest point in the develpment lifecycle.
 
 Even though it takes a few seconds more, catching issues before infected code reaches the team's registry would prevent crashes and embarassment, which can be expensive.
 
-Managers in enterprises are offered <strong>dashboards</strong> to identify and prioritize AppSec work. Such <strong>ASPM (Application Security Posture Management)</strong> systems which .  is a modern, holistic approach to overseeing and improving the security of an organization's applications throughout their entire lifecycle, from development through to production and operation. It’s designed to help companies continuously assess, manage, and enhance application security in the face of rapidly growing and changing threats. 
+## Cloud Dashboards for coordination
+
+Managers in enterprises are offered <strong>dashboards</strong> to identify and prioritize AppSec work. Such <strong>ASPM (Application Security Posture Management)</strong> systems are sold as "modern, holistic approach to overseeing and improving the security of an organization's applications throughout their entire lifecycle, from development through to production and operation."
+
+
 
 
 The types of scans:
 
 <br />
-<em>Code:</em>
-1. "Repository Health" scans 
+<em>"Repository Health" Code scans:</em>
 1. Secrets Detection identify "high entropy" hard-coded strings that leak secrets others can misuse, such as passwords and API access keys.
 1. Codebashing identifies whether coding conventions to enhance security are applied. Examples:
    * Return from a function a tuple which include an error value. So consider the result of a function as unsafe until the error value is confirmed and handled.
@@ -145,9 +154,9 @@ Automating deployment of patches and upgrades depends on what Configuration Mana
 * SaltStack provides both push and pull models for patch management with good scalability for large environments.
 
 Within clouds:
-* AWS Systems Manager Patch Manager automates patching for EC2 instances and on-premises servers, with maintenance windows and compliance reporting.
-* Azure Update Management integrates with Log Analytics to schedule and track updates across hybrid environments.
-* Google Cloud OS Config handles patch management for Compute Engine instances.
+* <a target="_blank" href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager.html">AWS Systems Manager Patch Manager</a> automates patching for EC2 instances and on-premises servers, with maintenance windows and compliance reporting.
+* <a target="_blank" href="https://azure.microsoft.com/en-us/products/azure-update-management-center">Azure Update Management</a> integrates with Log Analytics to schedule and track updates across hybrid environments.
+* <a target="_blank" href="https://cloud.google.com/compute/docs/osconfig/rest">Google Cloud OS Config API</a> handles patch management for Compute Engine instances.
 
 * Docker base images, rebuild containers
 * Kubernetes rolling updates or Docker Swarm for zero-downtime deployments.
@@ -263,21 +272,51 @@ Fingerprint: bucket_s3.py:aws-access-token:10
 
    CAUTION: Sample response shows discovery of just the AWS secret:
    ```
-   Finding:     ... = aws_lib.connect("AKIAF6BAFJKR45SAWSZ5", "hjshnk5ex5u34565...
-   Secret:      AKIAF6BAFJKR45SAWSZ5
-   RuleID:      aws-access-token
-   Entropy:     3.521928
-   File:        bucket_s3.py
-   Line:        10
-   Fingerprint: bucket_s3.py:aws-access-token:10
-   &nbsp;
-   3:35AM INF scanned ~8718 bytes (8.72 KB) in 3.25ms
-   3:35AM WRN leaks found: 1
+[gosec] 2025/07/25 10:40:16 Including rules: default
+[gosec] 2025/07/25 10:40:16 Excluding rules: default
+[gosec] 2025/07/25 10:40:16 Including analyzers: default
+[gosec] 2025/07/25 10:40:16 Excluding analyzers: default
+[gosec] 2025/07/25 10:40:16 Skipping: . Path doesn't exist.
+Results:
+&nbsp;
+Summary:
+  Gosec  : 2.22.5
+  Files  : 0
+  Lines  : 0
+  Nosec  : 0
+  Issues : 0
    ```
+
+
+<a name="pip-audit"></a>
+
+### pip-audit
+
+pip-audit is installed using pipx.
+
+Its assumption is to scan all Python source code, so not scope need be specified with the command:
+
+<pre>pip-audit</tt>
+
+The challenge of remediation is that popular modules with vulnerabilities cannot be removed in fear of breaking modules calling them.
+```
+Found 3 known vulnerabilities in 2 packages
+Name     Version ID                  Fix Versions
+-------- ------- ------------------- ------------
+requests 2.32.3  GHSA-9hjg-9r4m-mvj7 2.32.4
+urllib3  2.3.0   GHSA-48p4-8xcf-vxj5 2.5.0
+urllib3  2.3.0   GHSA-pq67-6m6q-mj2v 2.5.0
+Name Skip Reason
+---- ----------------------------------------------------------------
+tbb  Dependency not found on PyPI and could not be audited: tbb (0.2)
+```
+
 
 <a name="Safety"></a>
 
 ### Safety
+
+PROTIP: We no longer run the safety utility because it has been changed to require registration and thus cannot be run stand-alone offline.
 
 1. In a macOS Terminal with Homebrew installed:
    ```
@@ -322,6 +361,12 @@ Fingerprint: bucket_s3.py:aws-access-token:10
 1. To use Safety to check for issues:
    ```
    safety scan
+   ```
+   PROTIP: The response is a contraction:
+   ```
+   DEPRECATED: this command (`check`) has been DEPRECATED, and will be unsupported beyond 01 June 2024.
+   &nbsp;
+   We highly encourage switching to the new `scan` command which is easier to use, more powerful, and can be set up to mimic the deprecated command if required.
    ```
 
    Sample response:
