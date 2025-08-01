@@ -352,10 +352,10 @@ PROTIP: We no longer run the safety utility because it has been changed to requi
    cd /$HOME/github-???/python-samples
    ```
 1. Obtain API token from https://www.getsafety.com - if <tt>security scan</tt> is run, this message appears:
-   
+   ```
    Please login or register Safety CLI (free forever) to scan and secure your projects with Safety
    (R)egister for a free account in 30 seconds, or (L)ogin with an existing account to continue (R/L): Unhandled exception happened: EOF when reading a line
-
+   &nbsp;
    WARNING: Something went wrong, please try again later" appears on registration on July 14, 2025.
 
 1. To use Safety to check for issues:
@@ -369,7 +369,7 @@ PROTIP: We no longer run the safety utility because it has been changed to requi
    We highly encourage switching to the new `scan` command which is easier to use, more powerful, and can be set up to mimic the deprecated command if required.
    ```
 
-   Sample response:
+   Sample response if no issues were found:
    ```
    Using open-source vulnerability database
    Found and scanned 69 packages
@@ -380,6 +380,100 @@ PROTIP: We no longer run the safety utility because it has been changed to requi
    No known security vulnerabilities reported. 
    ```
    On <tt>security check</tt>
+   ```
+Running pre-commit.sh from .git/hooks/pre-commit
+Safety 3.6.0 scanning /Users/johndoe/github-wilsonmar/python-samples
+2025-08-01 00:14:53 UTC
+&nbsp;
+Account: ....com 
+Project: python-samples
+ Git branch: main
+ Environment: Stage.development
+ Scan policy: fetched from Safety Platform, ignoring any local Safety CLI policy files
+&nbsp;
+Python detected. Found 4 Python requirements files, 8 Python pyproject.toml files and 4 Python environments
+&nbsp;
+Dependency vulnerabilities detected:
+&nbsp;
+📝 dice-stats/requirements.txt:
+&nbsp;
+ pillow==11.2.1 [1 vulnerability found]                                                                               
+  -> Vuln ID 77942:                                                                                     &nbsp;              
+     Affected versions of this package are vulnerable to a Buffer Overflow when saving sufficiently large compresse...
+ Update pillow==11.2.1 to pillow==11.3.0 to fix 1 vulnerability                                                       
+ Versions of pillow with no known vulnerabilities: 11.1.0, 11.0.0, 10.4.0, 10.3.0                                     
+ Learn more: https://data.safetycli.com/p/pypi/pillow/eda/?from=11.2.1&to=11.3.0                                      
+&nbsp;
+✅ google_calendar_example/requirements.txt: No issues found.
+&nbsp;
+✅ requirements.txt: No issues found.
+&nbsp;
+📝 show-recommendations/requirements.txt:
+&nbsp;
+ keras==3.4.1 [3 vulnerabilities found]                                                                               
+ Update keras==3.4.1 to keras==3.9.0 to fix 3 vulnerabilities                                                         
+ Versions of keras with no known vulnerabilities: 3.11.0, 3.10.0, 3.9.2, 3.9.1                                        
+ Learn more: https://data.safetycli.com/p/pypi/keras/eda/?from=3.4.1&to=3.9.0                                         
+&nbsp;
+ protobuf==4.25.3 [1 vulnerability found]                                                                             
+  -> Vuln ID 77740:                                                                                     &nbsp;              
+     Affected versions of this package are vulnerable to a potential Denial of Service (DoS) attack due to unbounde...
+ Update protobuf==4.25.3 to protobuf==4.25.8 to fix 1 vulnerability                                                   
+ Versions of protobuf with no known vulnerabilities: 6.32.0rc1, 6.31.1, 5.29.5                                        
+ Learn more: https://data.safetycli.com/p/pypi/protobuf/eda/?from=4.25.3&to=4.25.8                                    
+&nbsp;
+ setuptools==69.5.1 [2 vulnerabilities found]                                                                         
+  -> Vuln ID 76752: CVE-2025-47273, CVSS Severity HIGH                                                                
+     Affected versions of Setuptools are vulnerable to Path Traversal via PackageIndex.download(). The impact is Ar...
+  -> Vuln ID 72236:                                                                                     &nbsp;              
+     Affected versions of Setuptools allow for remote code execution via its download functions. These functions, w...
+ Update setuptools==69.5.1 to setuptools==78.1.1 to fix 2 vulnerabilities                                             
+ Versions of setuptools with no known vulnerabilities: 80.9.0, 80.8.0, 80.7.1, 80.7.0, 80.6.0, 80.4.0, 80.3.1, 80.3.0,
+ 80.2.0, 80.1.0, 80.0.1, 80.0.0, 79.0.1, 79.0.0                                                                       
+ Learn more: https://data.safetycli.com/p/pypi/setuptools/eda/?from=69.5.1&to=78.1.1                                  
+&nbsp;
+ Werkzeug==3.0.3 [2 vulnerabilities found]                                                                            
+  -> Vuln ID 73889: CVE-2024-49767, CVSS Severity HIGH                                                                
+     Affected versions of Werkzeug are potentially vulnerable to resource exhaustion when parsing file data in form...
+  -> Vuln ID 73969:                                                                                     &nbsp;              
+     Affected versions of Werkzeug are vulnerable to Path Traversal (CWE-22) on Windows systems running Python vers...
+ Update Werkzeug==3.0.3 to Werkzeug==3.0.6 to fix 2 vulnerabilities                                                   
+ Versions of Werkzeug with no known vulnerabilities: 3.1.3, 3.1.2, 3.1.1, 3.1.0                                       
+ Learn more: https://data.safetycli.com/p/pypi/werkzeug/eda/?from=3.0.3&to=3.0.6                                      
+&nbsp;
+✅ venv/lib/python3.13/site-packages/pandas/pyproject.toml: No issues found.
+&nbsp;
+✅ pyproject.toml: No issues found.
+&nbsp;
+✅ show-recommendations/venv/lib/python3.12/site-packages/pandas/pyproject.toml: No issues found.
+&nbsp;
+✅ venv/lib/python3.12/site-packages/pandas/pyproject.toml: No issues found.
+&nbsp;
+✅ .venv/lib/python3.12/site-packages/pandas/pyproject.toml: No issues found.
+&nbsp;
+✅ dice-stats/pyproject.toml: No issues found.
+&nbsp;
+✅ show-recommendations/pyproject.toml: No issues found.
+&nbsp;
+✅ earthquakes/pyproject.toml: No issues found.
+&nbsp;
+✅ earthquakes/venv312/pyvenv.cfg: No issues found.
+&nbsp;
+✅ .venv/pyvenv.cfg: No issues found.
+&nbsp;
+✅ venv/pyvenv.cfg: No issues found.
+&nbsp;
+✅ show-recommendations/venv/pyvenv.cfg: No issues found.
+&nbsp;
+Tested 532 dependencies for security issues using policy fetched from Safety Platform
+296 vulnerabilities found, 287 ignored due to policy.
+5 fixes suggested, resolving 9 vulnerabilities.
+&nbsp;
+Project dashboard: https://platform.safetycli.com/codebases/python-samples/findings?branch=main
+Elapsed Time: 33 milliseconds
+Everything up-to-date
+   ```
+   Alternately:
    ```
 * I'll run a safety check to examine the current directory and identify any potential security concerns or issues.
 &nbsp;
@@ -408,7 +502,6 @@ Would you like help taking any specific action based on these findings?
    ```
 
 * To invoke Safety using GitHub:
-
    ```
    name: Example workflow for Python using Safety Action
 &nbsp;
