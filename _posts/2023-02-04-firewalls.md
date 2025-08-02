@@ -1,9 +1,11 @@
 ---
 layout: post
-date: "2023-02-01"
+date: "2025-08-01"
+lastchange: "v026 + combine with 2025-04-01 :2023-02-04-firewalls.md"
+url: "https://wilsonmar.github.io/firewalls"
 file: "firewalls"
 title: "Firewalls"
-excerpt: "Filter out ads and malware sites on your home network using PiHole."
+excerpt: "Filter out annoying ads and malware sites on your home network using PiHole."
 tags: [security]
 image:
 # pic secret finger over mouth 1900x500
@@ -11,12 +13,48 @@ image:
   credit: Forbes
   creditlink: http://blogs-images.forbes.com/ricksmith/files/2014/11/secret.png
 comments: true
+created: "2023-02-04"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
 
-## Why Pi-Hole?
+## Blocks needed 
+
+Those with a connection to the public internet need to:
+   * Block annoying ads 
+   * Block malicious websites
+   * Block ports
+ 
+## DNS
+
+The DNS (Domain Name System) provides authoritative DNS server which resolves host names (such as google.com) to the IP address where their website resides.
+
+By default, macOS and Windows laptops, phones, tablets are configured with a <strong>public DNS</strong> to access the . Google provides a fast DNS service so that they can sell users' traffic patterns. Internet provides provide DNS to route typos to revenue-generating hosts.
+
+The UK government offers a DNS server that enforces a <strong>blocklist</strong> (blacklist) known malicious websites and doesn't track your online activity. 
+
+A better alternative is to have a local <strong>Recursive DNS server</strong> which enforces an <strong>allowlist</strong> (whitelist) of assumed-good host names and IP addresses (such as medicare.gov). <a target="_blank" href="https://www.youtube.com/watch?v=FnFtWsZ8IP0">VIDEO</a>
+
+The Pi-Hole server provides a recursive DNS server.
+
+## Options
+
+Large businesses install firewalls in their corporate networks such as from Palo Alto or Cisco.
+
+Homes and small businesses use "consumer-grade" firewalls from brands such as Linksys, Netgear, or Draytek.
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=dTUvlFfThPw">VIDEO</a>: OPNSense
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=AgJGuyDyP_M">VIDEO</a>: UniFi Dream Machine Pro (UDM-Pro)</a> by Crosstalk Solutions
+
+* Firewalla is a consumer-grade firewall that is also a router. It comes assembled with software installed. Firewalla has a Purple and Gold editions. The Gold edition adds Intrusion Detection.
+
+The least-cost and most customizable option is to buy a Raspberry Pi micro computer and install and configure utility software Pi-Hole.
+
+<a name="PiHole"></a>
+
+## Pi-Hole on Raspberry Pi
 
 https://www.wikiwand.com/en/Pi-hole
 
@@ -34,23 +72,38 @@ over both IPv4 and IPv6
 * https://www.youtube.com/watch?v=xtMFcVx3cHU by TechHut
 * https://www.youtube.com/watch?v=roYduABVjo8 by CoreElectronics
   
-## Get a Raspberry Pi hardware
+### Get Raspberry Pi hardware
 
-<a target="_blank" href="https://www.youtube.com/watch?v=cE21YjuaB6o">VIDEO</a>:
-https://www.crosstalksolutions.com/the-worlds-greatest-pi-hole-and-unbound-tutorial-2023/
-has a RPilocator.com which notifies you when one comes into stock.
+If you are having difficulty getting a Raspberry Pi:
+   * Clones of Raspberry Pi
+   * RPilocator.com notifies you when one comes into stock.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=cE21YjuaB6o">VIDEO</a>: https://www.crosstalksolutions.com/the-worlds-greatest-pi-hole-and-unbound-tutorial-2023/ has a 
 
-Alternately, you can run Pi-hole within a Docker container.
+Alternately, you can run Pi-hole within a <strong>Docker container</strong>.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=BpJCAafw2qE">VIDEO</a>:
-Raspberry Pi 4 Getting Started</a> by Crosstalk Solutions
+YouTube Videos:
 
+by Crosstalk Solutions:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=BpJCAafw2qE">VIDEO</a>: "Raspberry Pi 4 Getting Started</a> by Crosstalk Solutions
+   * <a target="_blank" href="https://www.youtube.com/watch?v=cE21YjuaB6o">VIDEO</a>: "World's Greatest Pi-hole Tutorial - Easy Raspberry Pi Project!" 
 
-## Install PiHole from macOS
+* <a target="_blank" href="https://www.youtube.com/watch?v=oX4NqFisC5Y">VIDEO</a>: "How to Block Ads Using a Pi-Hole With A Raspberry Pi" by Micro Center
+* <a target="_blank" href="https://www.youtube.com/watch?v=rPpTi3oZ6_4">VIDEO</a>: "The Ultimate Pi-Hole Installation Guide for 2025!" by Mackey Tech IT Solutions
+* <a target="_blank" href="https://www.youtube.com/watch?v=I1fPdGJAWT0">VIDEO</a>: "Pi-hole Setup on Raspberry Pi Zero W | Step-by-Step Guide" by CyberMaxLab 
+* <a target="_blank" href="https://www.youtube.com/watch?v=VfOz8RWgnz4">VIDEO</a>: "How to install Pi-hole and PiVPN on a Raspberry Pi | Must Have for Home Lab" by Barmine Tech
+* <a target="_blank" href="https://www.youtube.com/watch?v=5jPNWzNCLDw">VIDEO</a>: "How to Install Pi-Hole on Raspberry Pi" by Vincent Humble
+* <a target="_blank" href="https://www.youtube.com/shorts/iXg2p5ody5c">VIDEO</a>: 
+* <a target="_blank" href="https://www.youtube.com/watch?v=e_EfmKdP2ng">VIDEO</a>: "Pi-hole Made EASY - A Complete Tutorial" by Tech Craft
+
+### Install PiHole from macOS
 
 <a name="GetPi"></a>
 
-1.  See my article about setting up the Raspberry Pi.
+1.  See my articles:
+    * <a target="_blank" href="https://wilsonmar.github.io/iot-raspberry-hardware/">my "iot-raspberry-hardware" article</a>.
+    * <a target="_blank" href="https://wilsonmar.github.io/iot-raspberry-install/">my "iot-raspberry-install" article</a>.
+
+    <a target="_blank" href="https://www.youtube.com/watch?v=cE21YjuaB6o&t=4m26s">imager</a>
 
 1.  Navigate to a folder where you want the new repo downloaded.
 
@@ -276,13 +329,9 @@ Run a chron (crontab) job to Once a week or month to apply updates (if one becom
 
 <hr />
 
-<a name="DreamMachine"></a>
+## More 
 
-## UniFi Dream Machine
-
-<a target="_blank" href="https://www.youtube.com/watch?v=AgJGuyDyP_M">VIDEO</a>:
-UniFi Dream Machine Pro (UDM-Pro)</a> by Crosstalk Solutions
-
+<a target="_blank" href="https://www.youtube.com/watch?v=0wpn3rXTe0g">VIDEO</a>: "Is adding 3 MILLION domains to your Pi-Hole Block List a good thing?" by Techno Tim
 
 ## References
 
