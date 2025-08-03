@@ -1,12 +1,17 @@
 ---
 layout: post
 date: "2025-08-02"
-lastchange: "v001 + new :2025-08-01-firialabs.md"
+lastchange: "v002 + hero :2025-08-01-firialabs.md"
 url: "https://wilsonmar.github.io/firialabs"
 file: "firialabs"
 title: "Firia Labs"
 excerpt: "Learn Python by using CodeSpace IDE, CodeAir drones with CodeX and CodeBot robots."
 tags: [Python, robots, drones]
+image:
+# pcodeair-1919x476.png
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1754199152/codeair-1919x476_npxiyq.png
+  credit: FiriaLabs
+  creditlink: https://firialabs.com/collections/codeair™
 comments: true
 created: "2025-08-01"
 ---
@@ -15,6 +20,8 @@ created: "2025-08-01"
 {% include _toc.html %}
 
 #teachersofyoutube #teacherlife #pythonlearning
+
+## Company & People
 
 1038 Research Blvd
 Suite 240
@@ -34,9 +41,9 @@ for #computerscienceeducation
 
 ## Products
 
-* Websites
+* <a href="#Websites">Websites</a>
 * <a href="#CodeSpace">CodeSpace IDE</a>
-* CodeBot
+* <a href="#CodeBot">CodeBot</a> with wheels
 * <a href="#CodeX">CodeX</a> (like Micro:Bit)
 * <a href="#CodeAir">CodeAir</a> 
 
@@ -46,8 +53,7 @@ for #computerscienceeducation
 
 ## Websites
 
-https://learn.firialabs.com/ redirects to:
-
+https://learn.firialabs.com/ redirects to:<br />
 https://resources.firialabs.com/curricula
 
 https://resources.firialabs.com/curricula/ap-csp/ap-csp-codex
@@ -56,6 +62,14 @@ https://www.linkedin.com/in/jill-jones-3a7119327
 Jill Jones at Cleveland
 
 https://resources.firialabs.com/curricula/cs-unplugged
+lists activities that do not require electronics.
+
+## Standards
+
+* CSTA
+* ISTE
+* Common Core
+* TEKS
 
 
 ## Community
@@ -104,12 +118,66 @@ $199 https://firialabs.com/collections/mission-packs/products/mission-pack-lift-
 1. Click "ACTIVATE" if that appears.
 1. In the "Filters" menu on the right
 
+1. Create a classroom at:
+
+   https://dashboard.firialabs.com/
+
+1. Class Progress
+
+   https://dashboard.firialabs.com/
+
+1. Click Class Name
+1. Click "OPEN LESSON ACCESS CONTROLLER".
+
+   CodeX AP CSP Python Code List.pdf
+
+   https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-exam-reference-sheet.pdf
+   Effective Fall 2020
+
+   https://code.org/files/APCSP_Code_QuickReference.pdf
+
+   https://longbaonguyen.github.io/courses/apcsp/apprinciples.html
+
+<hr />
+
 
 <a name="CodeAir"></a>
 
 ## #CodeAIR to Fly
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1754190277/codeAir-top-1050x750_pswexd.png"><img alt="codeAir-top-1050x750.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1754190277/codeAir-top-1050x750_pswexd.png"></a>
+
+https://firialabs.com/collections/codeair™
+
+   * Weight: 55g
+   * Size (WxHxD): 130x130x35mm
+   * USB-C programming / onboard LiPo charger
+   * Dedicated multi-core application CPU / AI accelerator
+
+   * Camera – color CMOS UXGA (1632x1232) image sensor (OV2640)
+
+   * 3 axis accelerometer / gyroscope (BMI088)
+   * High precision barometric altimeter (BMP390)
+   * 3 axis magnetometer (QMC5883)
+
+   * Up / Down / Front laser range sensors (VL53L1CX)
+   * Optical ground-tracking flow sensor (PMW3901)
+   * Hardware expansion port: QWIIC
+
+   * Flight data recorder has 8 GB capacity.
+   * Activate speaker onboard (to announce)
+   * AI accelerator runs TensorFlow Lite
+
+   <br /><br />
+
+Hold the CodeAIR by its prop guard.
+
+To avoid damaging its sensitive components, before handling the CodeAIR, 
+touch grounded metal (desk, doorknob) to discharge static.
+
+Avoid touching the electronic parts.
+
+CodeAIR has a camera - but it's not an FPV (First Person View) drone.
 
 https://resources.firialabs.com/curricula/fly-with-python
 
@@ -119,13 +187,81 @@ https://resources.firialabs.com/curricula/fly-with-python
 $69 https://firialabs.com/collections/codeair™/products/fly-with-python-license-renewal
 
 
+Class:
+
+   * Mission 1 - Welcome
+   * Mission 2 - Introducing CodeAIR
+   * Mission 3 - Pre-Flight Check
+   * Mission 4 - Flight Safety
+   * Mission 5 - Hovering Flight
+   * Mission 6 - Navigate
+   * Mission 7 - Multitasking
+   * Mission 8 - Attitude Control
+   * Mission 9 - Survey
+   * Mission 10 - Reconnaissance
+
+https://resources.firialabs.com/teacher-resources/codeair/Unmanned%20Aerial%20Systems%20Minimum%20Security%20Requirements.pdf
+
+1. Click "Progress Unlocker".
+1. Click a mission item.
+1. Click "APPLY CHANGES TO CLASS".
+
+### CodeAIR Programming
+
+1. Switch to the "CodeSpace Development Environment" tab.
+1. Load program file from labs-demos:
+
+   https://bitbucket.org/firia/labs-demos/src/master/
+
+   https://resources.firialabs.com/curricula/codex-cross-curricular/lift-off-with-codex
+
+
+
+
+### CodeAIR Flight
+
+1. Insert the battery (a Lithium Polymer single cell (1S) pack) within the landing sled (cage). 
+1. Connect the white battery connectors according to the tab to show which side is polarized. So it only fits one way. The blue LED shine when powered up. Bend the retaining tabs slightly downward to allow the battery to slide out.
+
+1. Connect the USB cable between your CodeAIR and your computer.
+
+   The cable that comes with CodeAIR is USB-A on older PCs, so you may need a USB-B to USB-C adapter.
+
+1. Turn ON the CodeAIR by sliding the power switch to on.
+1. Check the connection bar in the bottom left corner. 
+
+1. Hit RUN.
+1. Unplug the USB cable from CodeAIR.
+1. Place CodeAIR on the ground (or flying surface).
+1. Arm CodeAIR by pressing B0, the button closest to the front of the drone.
+1. Perform the mission by pressing B1, the button closest to the power switch.
+
+https://docs.firialabs.com/codeair/hardware_reference/Troubleshooting.html
+
+
 <hr />
 
 <a name="CodeSpace"></a>
 
-## #CodeSpace platform
+## #CodeSpace IDE platform
 
-## #CodeBot robots
+1. Go to:
+
+   https://make.firialabs.com/
+
+1. Click the green checkmark for the course.
+
+1. Create a program on the left.
+1. Type something in the Text Editor.
+
+1. Click the class icon at the upper-right to select mission.
+1. Click the mission. Don't expect a UI confirmation.
+1. Click OK at the lower-right.
+
+
+<a name="CodeBot"></a>
+
+## #CodeBot robot with wheels
 
 https://firialabs.com/collections/free-python-mission-packs
 Virtual Robotics
