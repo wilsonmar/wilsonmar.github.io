@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-07-12"
-lastchange: "v012 + rasp 5 :2016-10-29-iot-raspberry-hardware.md"
+lastchange: "v013 + rasp 5 :2016-10-29-iot-raspberry-hardware.md"
 url: https://wilsonmar.github.io/iot-raspberry-hardware
 file: "iot-raspberry-hardware"
 title: "Raspberry Pi IoT Hardware"
@@ -21,8 +21,6 @@ created: "2016-10-29"
 
 This is a list of physical hardware categorized by basics and optional.
 
-<hr />
-
 ## Mini PC Hardware
 
    | Spec | Arduino | RPi 2 | RPi 3 | <a target="_blank" href="https://www.raspberrypi.com/products/raspberry-pi-5/">RPi 5</a> |
@@ -30,7 +28,7 @@ This is a list of physical hardware categorized by basics and optional.
    | Address space | 8-bit | 32-bit | 64-bit | 64-bit |
    | CPU speed | 900 MHz | 16 MHz | 16 MHz | 4 GHz |
    | LPDDR4 SDRAM | 32K | 512 MB | 1 GB | 8 GB <a href="#[1]">[1]</a> |
-   | Storage | ? | 128 GB | 256 GB | 256 GB |
+   | <a href="#MicroSD"><u>SD Storage</u></a> | ? | 128 GB | 256 GB | 256 GB |
    | Voltage | 5V | 3.3V | 3.3V | 3.3V |
 
    https://www.raspberrypi.com/products/raspberry-pi-5/
@@ -55,6 +53,23 @@ This is a list of physical hardware categorized by basics and optional.
    Get $25 Off Your Purchase of $100 or more: https://micro.center/b04f
 
    <a target="_blank" href="https://www.youtube.com/watch?v=ykTlNf1TXO0">VIDEO</a>: "Raspberry Pi 5 setup | Full Tutorial for Beginners (2025)"
+
+## Alternatives
+
+Instead of Raspberry Pi, consider other Mini PCs:
+   * Zima board $200
+   * Intel N100
+
+## Setup accessories
+
+* Power chord with a switch
+* UPS (Uninterruptable Power Supply) for clean power to avoid brown-outs that destroy electronics
+
+* USB keyboard
+* Mouse
+
+* cable - <a target="_blank" href="https://www.adafruit.com/product/2881">$4.95 from Adafruit</a> connects the 3.5 mm male plug to RCA composite plugs on older TVs.
+
 
 ## Add-ons:
 
@@ -110,6 +125,7 @@ Unlike a "naked kit" without a power supply...
    Pi 3’s thermal governor (see later) does not appear to be active, 
    leading to an inherently unstable, overheating machine.
 
+   <a name="MicroSD"></a>
 
 1. Micro SD card (8+ GB, up to 32 GB), class 10.
    <strong>Several of them</strong>, for backup and as a base to build others.
@@ -160,8 +176,6 @@ Unlike a "naked kit" without a power supply...
 1. DVD blank disk (R+ or R-) to hold image so as to not use up 
    laptop hard disk space.
 
-
-
    ### Power hardware
 
 1. 2.5A micro-USB 5V DC power - two-prong plug in the US market.
@@ -184,11 +198,6 @@ Unlike a "naked kit" without a power supply...
    ### Not headless
 
 1. HDMI cable connected to a monitor (input selected to the correct HDMI).
-
-1. A special cable - <a target="_blank" href="https://www.adafruit.com/product/2881">
-   $4.95 from Adafruit</a> connects the 3.5 mm male plug to RCA composite plugs on older TVs.
-
-1. A USB keyboard.
 
 
 ## Off signal button
@@ -303,8 +312,9 @@ Unlike a "naked kit" without a power supply...
 
 ### Physical Button
 
-   But a physical button is more user-friendly and safer.
+   A physical on/off button is more user-friendly and safer.
 
+   Previously:
    <a target="_blank" href="http://www.instructables.com/id/Simple-Raspberry-Pi-Shutdown-Button/">
    PROTIP: Salvage from old PC tower cases their physical button, wires, and pin plugs:
    <img alt="iot pc switch salvage-650x324-196kb" src="https://cloud.githubusercontent.com/assets/300046/20641060/bd2fdaea-b3ac-11e6-987d-669643466549.jpg"></a>
@@ -317,6 +327,7 @@ Unlike a "naked kit" without a power supply...
    soley a GPIO pin and does not double up as something else.
    This may be more reliable.
 
+<a name="Enclosures"></a>
 
 ## Enclosures
 
@@ -362,7 +373,6 @@ Unlike a "naked kit" without a power supply...
    yet keep dust from forming on the board?
 
 
-
    C) <strong>Case with external fan</strong><br />
    <a target="_blank" href="https://www.pretzellogix.net/2015/09/02/the-best-raspberry-pi-2-cases-compared-and-reviewed/">
    This article comparing the running temp of 12 cases</a> 
@@ -400,6 +410,8 @@ Unlike a "naked kit" without a power supply...
    Uses 3V. See
    <a target="_blank" href="http://www.raspberrypiwiki.com/index.php/Rpi_HD_3.5_inch_TFT/">
    this</a>.
+
+<a name="Camera"></a>
 
 ## On-board Camera
 
@@ -503,6 +515,32 @@ Unlike a "naked kit" without a power supply...
    listens for signals from a Pi.
 
 
+## AI Vision
+
+For taking attendance, process control, security, home automation, robotics, indoor ag., etc.
+
+$70 Raspberry Pi's AI Kit comes installed on the Pi M.2 HAT+ with a Hailo 8L AI NPU (Neural Processing Unit) acceleration module for adding on top of a Raspberry Pi 5's PCIe Gen3 single-lane link to share across multiple cameras concurrently.
+
+Its specs are 13 (26 max) Tera Operations per Second (AI inference performance) at typical 3 TOPS/Watt (vs. 1.5W of power consumption normally).
+   * <a target="_blank" href="https://www.youtube.com/watch?v=HgIMJbN0DS0">Build by Geerling</a>
+   <br /><br />
+
+Get it with a camera module to use the YOLO LLM model. 
+   * For <a target="_blank" href="https://www.youtube.com/watch?v=3TUlJrRJUeM">local facial recognition</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Zht2G1htFHA">YOLO Object Recognition</a> by Core Elec
+   <br /><br />
+
+Broader support is available for the Pi AI vs. Google Coral, which is tightly integrated into Tensorflow Lite. Its 2 TOPS/watt.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=9PbzOZYX23o">vs.</a> 
+<a target="_blank" href="https://www.amazon.com/gp/product/B0FGXH49XM/ref=ox_sc_saved_image_1?smid=A1YP59NGBNBZUR&psc=1">$250</a> Jetson Orin Nano Super Dev Kit</a> comes with a 4K camera with 28 TOPS accelerator usign 10W on its 8-core CPU with 8GB RAM, 13Ahm LIPO batteries, This can train as well well as provide inference.
+
+References:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Q3OYCg-Ak4Q">Kevin McAleer</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=XKIm_R_rIeQ">Core Elec</a>
+   <br /><br />
+
+
 ## Resources on Python
 
 * <a target="_blank" href="https://automatetheboringstuff.com/">
@@ -514,6 +552,22 @@ Unlike a "naked kit" without a power supply...
 
 * http://legacy.python.org/dev/peps/pep-0008/
    Style Guide for Python Code
+
+## Wayfire vs. Labwc Compsitor
+
+Rapspberry Pi presents you a choice of compositor.
+Since late 2024, the default compositor in Raspberry Pi OS is Labwc (Lightweight Automatic Balancing Window Compositor), preferred for lightweight, stable operation especially on resource-constrained hardware like the Raspberry Pi.
+Labwc is more lightweight and better aligned with the Pi's graphics capabilities while maintaining compatibility via XWayland.
+
+But Wayfire is better for users wanting customization and relatively lower latency with more features. Wayfire is a Wayland compositor built on the wlroots library, designed with more customization and plugin support. It aims for features and flexibility, making it more suitable for users who want richer compositing effects and extensibility. It generally shows better responsiveness and plugin ecosystem.
+
+Labwc lacks customization plugins to keep its codebase simple and maintainable, leading to somewhat higher latency compared to Wayfire (43ms vs 25ms average latency for Labwc vs Wayfire in a mouse movement to screen update test).
+
+<a target="_blank" href="https://github.com/labwc/labwc/discussions/1810">Performance wise</a>, Wayfire is a bit faster with latency between mouse movement and cursor update of about 25ms, compared to Labwc's roughly 43ms latency. Labwc trades off some speed for stability and simplicity. Users have reported Labwc feeling snappier on some setups (like XFCE on Wayland) due to its streamlined nature.
+
+Wayfire uses its own scene graph implementation, whereas Labwc uses wlroots' scene graph which may contribute to the latency differences.
+
+As for desktop integration, some users noted differences in window decoration and focus handling between the two, with Wayfire often appearing more polished and with plugins handling keyboard focus better than Labwc had in some versions.
 
 
 ## More on IoT #
