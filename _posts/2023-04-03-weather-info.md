@@ -62,6 +62,7 @@ This display above is from the <a target="_blank" href="https://ambientweather.c
 13. Indoor, Channel 1-8 temperature from <a target="_blank" href="#ambient-weather-instruments">additional instruments</a> such as Ambient Weather's WH31PF Wireless Waterproof Floating Pool and Spa Thermometer
 14. CH (Channel) scroll mode indicator 
 15. Channel indicator. PROTIP: Example custom list if you have several additional detectors:
+
     Indoor<br />
     T&H CH1 = Pool (hard-coded)<br />
     T&H CH2 = unused<br />
