@@ -1,6 +1,8 @@
 ---
 layout: post
-date: "2023-12-17"
+date: "2025-08-03"
+lastchange: "v026 + :2016-10-29-iot-raspberry-install.md"
+url: "https://wilsonmar.github.io/firewalls"
 file: "iot-raspberry-install"
 title: "IoT Raspberry Install"
 excerpt: "How to setup a Raspberry Pi on macOS with Raspbian, Python, Node, Ansible, Kubernetes"
@@ -11,6 +13,7 @@ image:
   credit: Cyberconstruct.be
   creditlink: http://cyberconstruct.be/2015/02/digital-job-crafting/
 comments: true
+created: "2016-10-29"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -2720,6 +2723,9 @@ as part of ACloudGuru video <a target="_blank" href="https://learn.acloud.guru/c
 #102 - DIY Alexa with a Raspberry Pi</a>
 
 https://github.com/seamusdemora/PiFormulae
+
+https://www.youtube.com/watch?v=UvMhjTujqtc&list=PLPK2l9Knytg58_edrNxkIPDRQhKSMzKi9
+Fab academy playlist from Core Electronics
 
 
 ## More on IoT #
