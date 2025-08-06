@@ -1,16 +1,12 @@
 ---
 layout: post
-date: "2025-07-28"
-lastchange: "v038 + firewall :2023-04-03-weather-info.md"
+date: "2025-08-08"
+lastchange: "v039 + channels :2023-04-03-weather-info.md"
 url: "https://wilsonmar.github.io/weather-info"
 file: "weather-info"
 title: "Weather information"
 excerpt: "How to capture weather-related readings and display those metrics for your microclimate."
 tags: [weather, observability,rcloud]
-image:  # weather-flow-1902x750.png
-  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1753615437/weather-flow-1680x657_p2jovi.png
-  credit: Wilson Mar
-  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1753615437/weather-flow-1680x657_p2jovi.png
 comments: true
 created: "2023-04-03"
 ---
@@ -65,7 +61,17 @@ This display above is from the <a target="_blank" href="https://ambientweather.c
 12. Indoor, Channel 1-8 humidity 
 13. Indoor, Channel 1-8 temperature from <a target="_blank" href="#ambient-weather-instruments">additional instruments</a> such as Ambient Weather's WH31PF Wireless Waterproof Floating Pool and Spa Thermometer
 14. CH (Channel) scroll mode indicator 
-15. CH7 Channel 7 indicator
+15. Channel indicator. PROTIP: Example custom list if you have several additional detectors:
+    Indoor<br />
+    T&H CH1 = Pool (hard-coded)<br />
+    T&H CH2 = unused<br />
+    T&H CH3 = unused<br />
+    T&H CH4 = unused<br />
+    T&H CH5 = Upstairs freezer<br />
+    T&H CH6 = unused<br />
+    T&H CH7 = Downstairs leak detector<br />
+    T&H CH8 = Downstairs freezer
+
 16. Rain icon: maximum is 1.4 inch. 
    * "Rate", daily, hourly, weekly, monthly and yearly rain inches
 17. Forecast icon based on rate of change of pressure
