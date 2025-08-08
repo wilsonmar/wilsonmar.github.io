@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-08-08"
-lastchange: "v039 + channels :2023-04-03-weather-info.md"
+lastchange: "v040 + channels list :2023-04-03-weather-info.md"
 url: "https://wilsonmar.github.io/weather-info"
 file: "weather-info"
 title: "Weather information"
@@ -54,14 +54,15 @@ This display above is from the <a target="_blank" href="https://ambientweather.c
    * Old anemometers have spinning cups
    * New anemometers have ultrasonic technology that has no moving parts.
 
-8. Leak detector status (channels 1-4, if installed) 
-9. Soil moisture, leaf wetness CH4 (Channel 4 among channels 1-8 for each of 8 WH31 Temp/Humidity remote sensors that can be added.
+8. Leak detector status (<a href="#Channels">channels 1-4</a>, if installed) 
+9. Soil moisture, leaf wetness CH4 (<a href="#Channels">Channel</a> 4 among channels 1-8 for each of 8 WH31 Temp/Humidity remote sensors that can be added).
 10. Current date and time 
 11. Lighting detector last strike, last strike time and strikes per hour (if installed).
-12. Indoor, Channel 1-8 humidity 
-13. Indoor, Channel 1-8 temperature from <a target="_blank" href="#ambient-weather-instruments">additional instruments</a> such as Ambient Weather's WH31PF Wireless Waterproof Floating Pool and Spa Thermometer
-14. CH (Channel) scroll mode indicator 
-15. Channel indicator. PROTIP: Example custom list if you have several additional detectors:
+
+    <a name="Channels"></a>
+    ### Channels
+
+    PROTIP: Define you custom list if you install additional detectors:
 
     Indoor<br />
     T&H CH1 = Pool (hard-coded)<br />
@@ -72,6 +73,11 @@ This display above is from the <a target="_blank" href="https://ambientweather.c
     T&H CH6 = unused<br />
     T&H CH7 = Downstairs leak detector<br />
     T&H CH8 = Downstairs freezer
+
+12. Indoor, Channel 1-8 humidity 
+13. Indoor, Channel 1-8 temperature from <a target="_blank" href="#ambient-weather-instruments">additional instruments</a> such as Ambient Weather's WH31PF Wireless Waterproof Floating Pool and Spa Thermometer
+14. CH (Channel) scroll mode indicator 
+15. Channel indicator. 
 
 16. Rain icon: maximum is 1.4 inch. 
    * "Rate", daily, hourly, weekly, monthly and yearly rain inches
