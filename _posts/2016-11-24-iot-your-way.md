@@ -1,9 +1,9 @@
 ---
 layout: post
-date: "2025-08-06"
-file: "iot-your-way"
-lastchange: "v027 + 0-1, project ideas :2016-11-24-iot-your-way.md"
+date: "2025-08-08"
+lastchange: "v028 + FacialRecognition :2016-11-24-iot-your-way.md"
 url: "https://wilsonmar.github.io/iot-your-way"
+file: "iot-your-way"
 title: "IoT Solutions (for you)"
 excerpt: "Ways to automate your life. We can do this with IoT"
 tags: [IoT, Raspberry, Mono, Mac]
@@ -38,12 +38,13 @@ The solutions below contain an outline for how we put them together.
 7. <a href="#Camera">Recordings with cameras</a>
 8. <a href="#MediaProcessor">Media file processor service</a>
 9. <a href="#Autonomous">Autonomous outdoor device</a>
-11. <a href="#ControlSmartPhone">Mobile phone remote control</a>
+10. <a href="#ControlSmartPhone">Mobile phone remote control</a>
 11. <a href="#ControlLights">Control Lights</a>
 12. <a href="#HomeAutomation">Custom home automation programming</a>
 13. <a href="#MoveThings">Move things with actuators</a>
 14. <a href="#DroneFlights">Custom drone flights</a>
 15. <a href="#SatelliteFileTransfer">Satellite File Transfers</a>
+16. <a href="#FacialRecognition">Satellite File Transfers</a>
 
 
 <a name="SDCards"></a>
@@ -324,6 +325,23 @@ This is a hobbyist fascination for nerdy bragging rights.
 1. Train users/customers 
 
 
+<a name="FacialRecognition"></a>
+
+### SOLUTION 16 - Facial Recognition
+
+There are several uses for a camera.
+* Alert you when a person (face) is recognized behind you.
+
+Pre-trained LLM models (such as YOLO) can label objects in images.
+
+The release of Raspberry Pi 5 with an AI chip in the Raspberry Pi AI Kit provides adequate speed to recognize objects without much lag.
+
+Such advancements now enable use of local facial recognition to take <strong>a`ttendance</strong> without sending data to a cloud.
+
+CSPs offer facial recognition services to train LLMs to recognize.
+
+
+
 ## Topics covered
 
 Here is a summary of the various technologies covered in this curriculum,
@@ -409,3 +427,4 @@ Walter
 This is one of a series on IoT:
 
 {% include iot_links.html %}
+
