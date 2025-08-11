@@ -30,7 +30,7 @@ Those with a connection to the public internet need to:
 
 See <a target="_blank" href="https://wilsonmar.github.io/dns/">my notes on DNS</a>
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1754892724/dns-filters-2380x934_jhwhne.png"><img alt="dns-filters-2380x934.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1754892724/dns-filters-2380x934_jhwhne.png" /></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1754893629/dns-filters-2390x930_fqy2et.png"><img alt="dns-filters-2390x930.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1754893629/dns-filters-2390x930_fqy2et.png" /></a>
 
 The Pi-Hole server provides a recursive DNS server called "UnBound".
 
