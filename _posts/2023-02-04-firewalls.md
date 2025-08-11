@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-08-01"
-lastchange: "v026 + combine with 2025-04-01 :2023-02-04-firewalls.md"
+date: "2025-08-10"
+lastchange: "v027 + pihole diagram :2023-02-04-firewalls.md"
 url: "https://wilsonmar.github.io/firewalls"
 file: "firewalls"
 title: "Firewalls"
@@ -26,19 +26,21 @@ Those with a connection to the public internet need to:
    * Block malicious websites
    * Block ports
  
-## DNS
+## DNS: Public and local (PiHole)
 
-The DNS (Domain Name System) provides authoritative DNS server which resolves host names (such as google.com) to the IP address where their website resides.
+See <a target="_blank" href="https://wilsonmar.github.io/dns/">my notes on DNS</a>
 
-By default, macOS and Windows laptops, phones, tablets are configured with a <strong>public DNS</strong> to access the . Google provides a fast DNS service so that they can sell users' traffic patterns. Internet provides provide DNS to route typos to revenue-generating hosts.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1754891074/dns-filters-2402x928_yfcdfw.png"><img alt="dns-filters-2402x928.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1754891074/dns-filters-2402x928_yfcdfw.png" /></a>
 
-The UK government offers a DNS server that enforces a <strong>blocklist</strong> (blacklist) known malicious websites and doesn't track your online activity. 
+The Pi-Hole server provides a recursive DNS server called "UnBound".
 
-A better alternative is to have a local <strong>Recursive DNS server</strong> which enforces an <strong>allowlist</strong> (whitelist) of assumed-good host names and IP addresses (such as medicare.gov). <a target="_blank" href="https://www.youtube.com/watch?v=FnFtWsZ8IP0">VIDEO</a>
+<a target="_blank" href="https://www.youtube.com/watch?v=Eyc3LVrhmIo">VIDEO</a>: Unifi Ad Blocker.
 
-The Pi-Hole server provides a recursive DNS server.
+blocking ads makes for quicker browsing.
 
-## Options
+ECS (Extended Client Subnet) defines a mechanism for recursive solvers to send partial client IP address information to authoritative DNS name servers. ECS may result in reduced privacy when it is used by CDNs (Content Delivery Networks) and latency-sensitive services to give geo-located responses when responding to name lookups coming through public DNS resolvers. However, SNI headers also send such information.
+
+## Firewall Options
 
 Large businesses install firewalls in their corporate networks such as from Palo Alto or Cisco.
 
@@ -46,15 +48,50 @@ Homes and small businesses use "consumer-grade" firewalls from brands such as Li
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=dTUvlFfThPw">VIDEO</a>: OPNSense
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=AgJGuyDyP_M">VIDEO</a>: UniFi Dream Machine Pro (UDM-Pro)</a> by Crosstalk Solutions
+* <a target="_blank" href="https://www.youtube.com/watch?v=AgJGuyDyP_M">VIDEO</a>: UniFi Dream Machine Pro (UDM-Pro) by Crosstalk Solutions
 
 * Firewalla is a consumer-grade firewall that is also a router. It comes assembled with software installed. Firewalla has a Purple and Gold editions. The Gold edition adds Intrusion Detection.
 
-The least-cost and most customizable option is to buy a Raspberry Pi micro computer and install and configure utility software Pi-Hole.
+If you have the time and geeky inclinations, the least-cost and most customizable option is to buy a Raspberry Pi micro computer and install and configure utility software Pi-Hole.
+
+* Technitium DNS Server
+
+* AdGuard uniquely can be scheduled for a specific block of time each day with parental blocking. AdGuard can use DNSSEC (DNS over HTTPS). AdGuard can also be configured with wildcard specification. AdGuard can enable encryption using a certificate pulled from a CA every 3 months. <a target="_blank" href="https://www.youtube.com/watch?v=c3XMAz--_Us">VIDEO</a> But assumes less advanced configurations than PiHole.
+
+Which is better? PiHole vs AdGuard Home?
+   * https://www.youtube.com/watch?v=c3XMAz--_Us by Hardwood
+   * https://www.youtube.com/watch?v=nV5dKpGMGx4 by Tobi Teaches
+   * https://www.youtube.com/watch?v=O15RD_gPz-s by Barmine
+   <br /><br />
+
+### PiHole
+
+## Static IP on router
+
+To make this work, you first need to get into your internet router to set a 
+static (fixed) IP address instead of using one dynamically assigned by DHCP.
+
+I gave a fixed private IP on my network where I’m redirecting all my DNS queries.
+
+<hr />
+
+<a name="AdGuard"></a>
+
+## AdGuard on Raspberry Pi
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=hmjKCNtbulM">Install AdGuard Home - Cross Platform PiHole Alternative - on Raspberry Pi 4</a>
+
+
+with OpenWRT
+
+Firebog List Generator
+
+Portainers
+
 
 <a name="PiHole"></a>
 
-## Pi-Hole on Raspberry Pi
+## PiHole on Raspberry Pi
 
 https://www.wikiwand.com/en/Pi-hole
 
@@ -95,7 +132,11 @@ by Crosstalk Solutions:
 * <a target="_blank" href="https://www.youtube.com/shorts/iXg2p5ody5c">VIDEO</a>: 
 * <a target="_blank" href="https://www.youtube.com/watch?v=e_EfmKdP2ng">VIDEO</a>: "Pi-hole Made EASY - A Complete Tutorial" by Tech Craft
 
-### Install PiHole from macOS
+### Install PiHole on macOS
+
+https://docs.pi-hole.net/main/basic-install/
+
+<pre><strong>curl -sSL https://install.pi-hole.net | bash</strong></pre>
 
 <a name="GetPi"></a>
 
@@ -188,7 +229,23 @@ by Crosstalk Solutions:
 
     Some internet service providers (ISPs) return ads instead of 404.
     
-    Don't have to use Unbound.
+    TODO: Don't have to use Unbound.
+
+    The list of supported DNS servers and their primary and secondary IP addresses (V4 and V6) are  defined in the .sh script:
+    ```
+        DNS_SERVERS=$(
+        cat <<EOM
+    Google (ECS, DNSSEC);8.8.8.8;8.8.4.4;2001:4860:4860:0:0:0:0:8888;2001:4860:4860:0:0:0:0:8844
+    OpenDNS (ECS, DNSSEC);208.67.222.222;208.67.220.220;2620:119:35::35;2620:119:53::53
+    Level3;4.2.2.1;4.2.2.2;;
+    Comodo;8.26.56.26;8.20.247.20;;
+    Quad9 (filtered, DNSSEC);9.9.9.9;149.112.112.112;2620:fe::fe;2620:fe::9
+    Quad9 (unfiltered, no DNSSEC);9.9.9.10;149.112.112.10;2620:fe::10;2620:fe::fe:10
+    Quad9 (filtered, ECS, DNSSEC);9.9.9.11;149.112.112.11;2620:fe::11;2620:fe::fe:11
+    Cloudflare (DNSSEC);1.1.1.1;1.0.0.1;2606:4700:4700::1111;2606:4700:4700::1001
+    EOM
+    )
+   ```
     
     1.1.1.3 & 1.0.0.3 blocks phising/malware/adult content filtering.
 
