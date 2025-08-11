@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-08-10"
-lastchange: "v027 + pihole diagram :2023-02-04-firewalls.md"
+date: "2025-08-11"
+lastchange: "v028 + pihole diagram :2023-02-04-firewalls.md"
 url: "https://wilsonmar.github.io/firewalls"
 file: "firewalls"
 title: "Firewalls"
@@ -30,7 +30,7 @@ Those with a connection to the public internet need to:
 
 See <a target="_blank" href="https://wilsonmar.github.io/dns/">my notes on DNS</a>
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1754891074/dns-filters-2402x928_yfcdfw.png"><img alt="dns-filters-2402x928.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1754891074/dns-filters-2402x928_yfcdfw.png" /></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1754892724/dns-filters-2380x934_jhwhne.png"><img alt="dns-filters-2380x934.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1754892724/dns-filters-2380x934_jhwhne.png" /></a>
 
 The Pi-Hole server provides a recursive DNS server called "UnBound".
 
