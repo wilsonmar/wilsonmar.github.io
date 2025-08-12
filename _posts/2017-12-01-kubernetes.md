@@ -1,9 +1,9 @@
 ---
 layout: post
-date: "2026-06-28"
+date: "2026-08-12"
+lastchange: "v070 recover :2017-12-01-kubernetes.md"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
-lastchange: "v069 + from saved :2017-12-01-kubernetes.md"
 url: "https://wilsonmar.github.io/kubernetes"
 excerpt: "A deep dive on how to orchestrate containers, especially in clouds, including OpenShift. Pass the CKAD and CKA exams."
 modified:
