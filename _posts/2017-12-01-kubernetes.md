@@ -1,20 +1,20 @@
 ---
 layout: post
 date: "2026-08-12"
-lastchange: "v070 recover :2017-12-01-kubernetes.md"
+lastchange: "v071 tags :2017-12-01-kubernetes.md"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 url: "https://wilsonmar.github.io/kubernetes"
 excerpt: "A deep dive on how to orchestrate containers, especially in clouds, including OpenShift. Pass the CKAD and CKA exams."
 modified:
-tags: [google, cloud]
+tags: [cloud, k8s, devops, iac]
 image:
 # kubernetes-head-1900x500-472493.jpg
   feature: https://user-images.githubusercontent.com/300046/39955449-b791191e-558b-11e8-8bde-9042df1b66ab.jpg
   credit: Jeremy Thomas
   creditlink: https://www.flickr.com/photos/132218932@N03/page2
 comments: true
-k8s_version: 1.26
+k8s_version: "1.26"
 created: "2017-12-01"
 ---
 <i>{{ page.excerpt }}</i>
