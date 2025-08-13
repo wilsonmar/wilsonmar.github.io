@@ -8,9 +8,10 @@ title: "Firewalls"
 excerpt: "Filter out annoying ads and malware sites on your home network using PiHole."
 tags: [security]
 image:
-  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1755064341/dns-filters-1919x579_mk2kwt.png
+# dns-filters-1915x576.png
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1755066646/dns-filters-1915x576_cissvz.png
   credit: Wilson Mar
-  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1755064341/dns-filters-1919x579_mk2kwt.png
+  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1755066646/dns-filters-1915x576_cissvz.png
 comments: true
 created: "2023-02-04"
 ---
@@ -19,8 +20,6 @@ created: "2023-02-04"
 {% include _toc.html %}
 
 ## DNS: Public and local (PiHole)
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1755064341/dns-filters-1919x579_mk2kwt.png"><img alt="dns-filters-1919x579.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1755064341/dns-filters-1919x579_mk2kwt.png" /></a>
 
 1. Domain Name registration
 1. Authorative names server 
@@ -40,6 +39,7 @@ created: "2023-02-04"
 1. static
 1. local PiHole DNS server
 1. autostart on reboot
+1. remote control
 1. Python, etc.
 1. allowed
 1. unbound DNS server
