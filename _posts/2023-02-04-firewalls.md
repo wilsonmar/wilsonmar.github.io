@@ -1,17 +1,16 @@
 ---
 layout: post
 date: "2025-08-12"
-lastchange: "v031 + seq in pihole diagram :2023-02-04-firewalls.md"
+lastchange: "v032 + hero pihole diagram :2023-02-04-firewalls.md"
 url: "https://wilsonmar.github.io/firewalls"
 file: "firewalls"
 title: "Firewalls"
 excerpt: "Filter out annoying ads and malware sites on your home network using PiHole."
 tags: [security]
 image:
-# pic secret finger over mouth 1900x500
-  feature: https://cloud.githubusercontent.com/assets/300046/15807549/645e9404-2b1e-11e6-8e19-2368c5578015.jpg
-  credit: Forbes
-  creditlink: http://blogs-images.forbes.com/ricksmith/files/2014/11/secret.png
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1755064341/dns-filters-1919x579_mk2kwt.png
+  credit: Wilson Mar
+  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1755064341/dns-filters-1919x579_mk2kwt.png
 comments: true
 created: "2023-02-04"
 ---
