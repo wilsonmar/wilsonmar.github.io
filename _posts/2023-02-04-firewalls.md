@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-08-11"
-lastchange: "v030 + vpn in pihole diagram :2023-02-04-firewalls.md"
+date: "2025-08-12"
+lastchange: "v031 + seq in pihole diagram :2023-02-04-firewalls.md"
 url: "https://wilsonmar.github.io/firewalls"
 file: "firewalls"
 title: "Firewalls"
@@ -19,6 +19,44 @@ created: "2023-02-04"
 {% include l18n.html %}
 {% include _toc.html %}
 
+## DNS: Public and local (PiHole)
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1755064341/dns-filters-1919x579_mk2kwt.png"><img alt="dns-filters-1919x579.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1755064341/dns-filters-1919x579_mk2kwt.png" /></a>
+
+1. Domain Name registration
+1. Authorative names server 
+1. public DNS server
+1. That service is use when, on a CLI Terminal, a nslookup command is used to retrieve a domain name's assigned IP address.
+1. Internet browser apps do the same with what's typed in their address field.
+1. If you type in an IP address, you'll ???
+1. router
+1. through the public internet
+1. retrieve from authorative names server
+1. If you type in a domain host name in the address bar, you'll be using the default local DNS server run by your operating system.
+1. recursive DNS resolver
+1. that means TLD (Top-level Domain)
+1. For better privacy, DoH (DNS over HTTPS) protocol is now used to encrypt communications.
+1. dynamic
+1. On your Firefox browser, add-in <strong>ublock</strong> (by Raymond Hill) can block ads.
+1. static
+1. local PiHole DNS server
+1. autostart on reboot
+1. Python, etc.
+1. allowed
+1. unbound DNS server
+1. TLD
+1. public blocklist by Quad9
+1. private blocklist
+1. auto-update gravity module
+1. private allowlist
+1. use while traveling
+1. self-hosted VPN
+
+
+
+
+
+
 ## Blocks needed 
 
 Those with a connection to the public internet need to:
@@ -26,11 +64,8 @@ Those with a connection to the public internet need to:
    * Block malicious websites
    * Block ports
  
-## DNS: Public and local (PiHole)
 
 See <a target="_blank" href="https://wilsonmar.github.io/dns/">my notes on DNS</a>
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1754920831/dns-filters-2378x950_entbxd.png  "><img alt="dns-filters-2378x950.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1754920831/dns-filters-2378x950_entbxd.png" /></a>
 
 The Pi-Hole server provides a recursive DNS server called "UnBound".
 
