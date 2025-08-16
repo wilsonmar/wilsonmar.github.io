@@ -1,17 +1,16 @@
 ---
 layout: post
-date: "2025-08-12"
-lastchange: "v032 + hero pihole diagram :2023-02-04-firewalls.md"
+date: "2025-08-14"
+lastchange: "v033 + text to pihole diagram :2023-02-04-firewalls.md"
 url: "https://wilsonmar.github.io/firewalls"
 file: "firewalls"
 title: "Firewalls"
 excerpt: "Filter out annoying ads and malware sites on your home network using PiHole."
 tags: [security]
 image:
-# dns-filters-1915x576.png
-  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1755066646/dns-filters-1915x576_cissvz.png
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1755318419/dns-filters-1919x576_senphj.png
   credit: Wilson Mar
-  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1755066646/dns-filters-1915x576_cissvz.png
+  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1755318419/dns-filters-1919x576_senphj.png
 comments: true
 created: "2023-02-04"
 ---
@@ -21,39 +20,47 @@ created: "2023-02-04"
 
 ## DNS: Public and local (PiHole)
 
-1. Domain Name registration
-1. Authorative names server 
-1. public DNS server
-1. That service is use when, on a CLI Terminal, a nslookup command is used to retrieve a domain name's assigned IP address.
-1. Internet browser apps do the same with what's typed in their address field.
-1. If you type in an IP address, you'll ???
-1. router
-1. through the public internet
-1. retrieve from authorative names server
-1. If you type in a domain host name in the address bar, you'll be using the default local DNS server run by your operating system.
-1. recursive DNS resolver
-1. that means TLD (Top-level Domain)
-1. For better privacy, DoH (DNS over HTTPS) protocol is now used to encrypt communications.
-1. dynamic
-1. On your Firefox browser, add-in <strong>ublock</strong> (by Raymond Hill) can block ads.
-1. static
-1. local PiHole DNS server
-1. autostart on reboot
-1. remote control
-1. Python, etc.
-1. allowed
-1. unbound DNS server
-1. TLD
-1. public blocklist by Quad9
-1. private blocklist
-1. auto-update gravity module
-1. private allowlist
-1. use while traveling
-1. self-hosted VPN
+1. When on a CLI (Command Line Interface) <strong>Terminal</strong>, 
+1. a <strong>nslookup</strong> command to lookup a
+1. <strong>host name</strong>,
+1. if your operating system is configured for it, to a <strong>Public DNS server</strong> which 
+1. go through a <strong>Recursive DNS</strong> workflow that begins with a query to
+1. get the address of the service handling the <strong>TLD (Top-level Domain)</strong> at the end of the host name, such as ".com", etc.
+1. That DNS server queries the TLD service which references its
+1. <strong>Authorative names servers</strong> which return the IP address for the domain.
+1. The website for domain name owners to register domain names and associate IP addresses is maintained by <strong>Domain Name System registrars</strong> (such as GoDaddy).
 
+1. When an <strong>internet browser</strong> such as Google Chrome or Firefox, 
+1. you give an <strong>IP address</strong>,
+1. the request goes through your local <strong>router</strong>.
+1. Routers that use IPv4 send <a target="_blank" href="https://en.wikipedia.org/wiki/Address_Resolution_Protocol">ARP (Address Resolution Protocol)</a> requests and routers using IPv6 send <a target="_blank" href="https://en.wikipedia.org/wiki/Neighbor_Discovery_Protocol">NDP (Neighbor Discovery Protocol)</a> requests through 
+1. <strong>hops</strong> through the <strong>public internet</strong> (Data Link layer) until
+1. the website at the IP address is reached. If it's listening, you get sent its response.
 
+1. In today's hostile world, we are concerned whether websites we visit have become <strong>malicious</strong>.
+1. Public DNS servers are suspect because they are run by private interests. So they have been caught <strong>selling logs of your traffic</strong> history, even if you say they don't.
+1. The <strong>Quad9</strong> DNS service is run by Scotland Yard and other law enforcement.
+1. They maintain their own <strong>blocklists</strong> of domain names which they don't serve to their users. So by configuring Quad9 as your local DNS, you get some protection from known criminal websites.
+1. But many don't think that is enough protection because <strong>public blocklists</strong> collected by others contain millions of websites deemed malicious or serve annoying ads.
+1. It is recommended that you maintain your own <strong>private blocklist</strong> for parental control.
 
+   Here is how you do that.
 
+1. An add-in such as <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/">ublock</a> (by Raymond Hill) can be installed on Firefox browsers to block ads based on its own private blocklist. But each browser and app has its own add-in.
+1. So we want protection on all apps looking up all <strong>host name</strong> lookups.
+1. We need to get away from the typical <strong>default configuration</strong> of a <strong>local DNS server</strong> using sketchy public DNS service.
+1. Instead of <strong>DHCP</strong>, we change the configuration to use
+1. <strong>static</strong> IP address to the local server you setup, called <strong>PiHole</strong> to <strong>filter</strong> traffic according to 
+1. <strong>updates</strong> of blocklists by the <strong>"gravity"</strong> utility.
+1. A <strong>private allowlist</strong> is also maintained.
+
+1. Traffic that have not been filtered out are passed to a <strong>local DNS service called "unbound"</strong> instead of either the default sketchy public DNS services to do the TLD and Authorative lookups.
+
+1. That service needs to be invoked automatically upon <strong>reboot</strong>, and be controlled by a
+1. <strong>automation CLI script</strong> that installs Python and other services such as <strong>DoH</strong> (DNS over HTTPS) protocol for better privacy by encrypting communications.
+
+1. To use your custom private blocklists <strong>while traveling</strong>, install a
+1. <strong>self-hosted VPN</strong>.
 
 
 ## Blocks needed 
