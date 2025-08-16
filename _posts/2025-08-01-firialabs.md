@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-08-16"
-lastchange: "v005 + kuberr :2025-08-01-firialabs.md"
+lastchange: "v006 + footer kuberr :2025-08-01-firialabs.md"
 url: "https://wilsonmar.github.io/firialabs"
 file: "firialabs"
 title: "Firia Labs"
@@ -473,3 +473,4 @@ Jetson Nano Premium Course: https://bit.ly/3L8uIlF
 https://www.amazon.com/NVIDIA-Jetson-Nano-Developer-945-13450-0000-100/dp/B084DSDDLT
 $167.73 used NVIDIA Jetson Nano Developer Kit
 
+<sub>{{ page.lastchange }} {{ page.date }}</sub>
