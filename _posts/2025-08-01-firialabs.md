@@ -1,12 +1,12 @@
 ---
 layout: post
-date: "2025-08-02"
-lastchange: "v002 + hero :2025-08-01-firialabs.md"
+date: "2025-08-16"
+lastchange: "v005 + kuberr :2025-08-01-firialabs.md"
 url: "https://wilsonmar.github.io/firialabs"
 file: "firialabs"
 title: "Firia Labs"
-excerpt: "Learn Python by using CodeSpace IDE, CodeAir drones with CodeX and CodeBot robots."
-tags: [Python, robots, drones]
+excerpt: "See your Python come alive by using Firia Labs' CodeSpace IDE to control CodeAir drones, CodeBot robots, and CodeX IoT ESP32 cards."
+tags: [Python, robots, drones, IoT]
 image:
 # pcodeair-1919x476.png
   feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1754199152/codeair-1919x476_npxiyq.png
@@ -23,12 +23,9 @@ created: "2025-08-01"
 
 ## Company & People
 
-1038 Research Blvd
-Suite 240
-Madison, AL 35758
-(Huntsville, Alabama)
-info@firia.com 
-(256) 434-1888
+1038 Research Blvd. Suite 240
+(Huntsville area) Madison, AL 35758<br />
+info@firia.com (256) 434-1888
 
 * https://www.linkedin.com/in/geri-ewing/ CEO responds to emails
 * https://www.linkedin.com/in/davidbewing David Ewing President
@@ -449,3 +446,30 @@ I2C serial part Compatibility:
 https://www.raspberrypi.com/products/debug-probe/">Raspberry Pi Debug Probe
 
 https://docs.firialabs.com/codeair/codeair.html
+
+<hr />
+
+## Use cases
+
+Attach a Meshtastic to the drone for use as a temporary tower to enhance connection.
+
+## Other drones
+
+
+#AI4Every1 is FREE to "Learn Modern Artificial Intelligence from Scratch" with NVIDIA at<br />
+<a target="_blank" href="https://www.computervision.zone/courses/ai4every1/">AI 4 Every 1 course page</a>
+<a target="_blank" href="https://www.youtube.com/watch?v=jSgdL1zX4h8">VIDEO</a> 
+by Murtaza Hassan (<a target="_blank" href="https://www.murtazahassan.com/">murtazahassan.com</a>) of courses at <a target="_blank" href="https://www.computervision.zone/">computervision.zone</a>
+<a target="_blank" href="https://www.youtube.com/@murtazasworkshop">@murtazasworkshop</a>
+Body Following with Drone | OpenCV Python 
+
+<a target="_blank" href="https://www.kickstarter.com/projects/cvweb/ai-drone-programming-with-python">kickstarter: AI Drone Programming with Python</a>
+Apr 2 2024 - Apr 26 2024 offered AI Drone Coding - Educator bundle for $397
+
+$219.95 DJI Tello EDU. $149 Quadcopter Drone Boost Combo with HD Camera and VR, comes 3 Batteries, 8 Propellers, Powered by DJI Technology and Intel 14-Core Processor, Coding Education, Throw and Go
+
+
+Jetson Nano Premium Course: https://bit.ly/3L8uIlF
+https://www.amazon.com/NVIDIA-Jetson-Nano-Developer-945-13450-0000-100/dp/B084DSDDLT
+$167.73 used NVIDIA Jetson Nano Developer Kit
+
