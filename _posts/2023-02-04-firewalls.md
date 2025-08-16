@@ -1,16 +1,16 @@
 ---
 layout: post
-date: "2025-08-14"
-lastchange: "v033 + text to pihole diagram :2023-02-04-firewalls.md"
+date: "2025-08-15"
+lastchange: "v034 + text to pihole diagram :2023-02-04-firewalls.md"
 url: "https://wilsonmar.github.io/firewalls"
 file: "firewalls"
 title: "Firewalls"
 excerpt: "Filter out annoying ads and malware sites on your home network using PiHole."
 tags: [security]
 image:
-  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1755318419/dns-filters-1919x576_senphj.png
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1755319484/dnsfilters-1918x574_vun3ax.png
   credit: Wilson Mar
-  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1755318419/dns-filters-1919x576_senphj.png
+  creditlink: https://res.cloudinary.com/dcajqrroq/image/upload/v1755319484/dnsfilters-1918x574_vun3ax.png
 comments: true
 created: "2023-02-04"
 ---
