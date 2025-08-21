@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-08-15"
-lastchange: "v034 + text to pihole diagram :2023-02-04-firewalls.md"
+date: "2025-08-21"
+lastchange: "v035 + text to pihole diagram :2023-02-04-firewalls.md"
 url: "https://wilsonmar.github.io/firewalls"
 file: "firewalls"
 title: "Firewalls"
@@ -20,14 +20,18 @@ created: "2023-02-04"
 
 ## DNS: Public and local (PiHole)
 
-1. When on a CLI (Command Line Interface) <strong>Terminal</strong>, 
-1. a <strong>nslookup</strong> command to lookup a
-1. <strong>host name</strong>,
-1. if your operating system is configured for it, to a <strong>Public DNS server</strong> which 
+1. Because this is a technical deep dive, we begin on a Linux CLI (Command Line Interface) <strong>Terminal</strong> 
+1. <href="#nslookup">nslookup</a> command used to lookup a
+1. <strong>domain name</strong> (such as google.com) would return the
+1. <strong>IP address</strong> of a 
+1. <strong>public DNS service</strong> (such as quad9) and the IP addresses obtained from 
+1. <strong>Authorative name servers</strong> throughout the world.
+1. ??? Every domain zone is responsible for appointing its own authoritative name servers, with no universal limit to the total count.
+
 1. go through a <strong>Recursive DNS</strong> workflow that begins with a query to
 1. get the address of the service handling the <strong>TLD (Top-level Domain)</strong> at the end of the host name, such as ".com", etc.
 1. That DNS server queries the TLD service which references its
-1. <strong>Authorative names servers</strong> which return the IP address for the domain.
+
 1. The website for domain name owners to register domain names and associate IP addresses is maintained by <strong>Domain Name System registrars</strong> (such as GoDaddy).
 
 1. When an <strong>internet browser</strong> such as Google Chrome or Firefox, 
@@ -61,6 +65,27 @@ created: "2023-02-04"
 
 1. To use your custom private blocklists <strong>while traveling</strong>, install a
 1. <strong>self-hosted VPN</strong>.
+
+<hr />
+
+<a name="nslookup"></a>
+
+## nslookup
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1755757690/dns-nslookup-442x606_xfrynq.png"><img alt="dns-nslookup-442x606.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1755757690/dns-nslookup-442x606_xfrynq.png" /></a>
+
+Typically on port 53.
+
+<a target="_blank" href="https://www.pdq.com/blog/what-is-the-powershell-equivalent-of-nslookup/">DOCS</a>: 
+The PowerShell equivalent on Windows provides more output and options:
+
+<pre>Resolve-DnsName google.com</pre>
+
+## Athoritative Name Services
+
+
+
+Each DNS recursive resolver operator has a "root hints file" of IP addresses to <a target="_blank" href="https://www.iana.org/domains/root/servers">DNS root servers</a> used to bootstrap the DNS resolution process.
 
 
 ## Blocks needed 
