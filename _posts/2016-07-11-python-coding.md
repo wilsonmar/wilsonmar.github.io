@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-05-23"
-lastchange: "v014 + consolidation :2016-07-11-python-coding.md"
+date: "2025-10-05"
+lastchange: "25-10-05 v015 + consolidation :2016-07-11-python-coding.md"
 url: "https://wilsonmar.github.io/python-coding"
 file: "python-coding"
 title: "Python Coding"
