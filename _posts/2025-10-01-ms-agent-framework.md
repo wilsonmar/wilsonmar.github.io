@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-10-01"
-lastchange: "25-10-05 v001 + new :2025-10-01-ms-agent-framework.md"
+date: "2025-10-09"
+lastchange: "25-10-09 v002 + fix urls :2025-10-01-ms-agent-framework.md"
 url: "https://wilsonmar.github.io/ms-agent-framework"
 file: "ms-agent-framework"
 title: "MS Agent Framework"
@@ -43,13 +43,13 @@ The “unified” in “Unified Microsoft Agent Framework” unifies and extends
 
 Workflow processing run several agents <strong>in parallel</strong>, unlike traditional Agent-based orchestration:
 
-    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1759979936/maf-trad-agents-496x307_fuc4xi.png"><img alt="maf-trad-agents-496x307.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1759979936/maf-trad-agents-496x307_fuc4xi.png" /></a><a target="_blank" href="https://www.youtube.com/watch?v=VBz5HMYIRI4&t=5m44s">*</a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1759979936/maf-trad-agents-496x307_fuc4xi.png"><img alt="maf-trad-agents-496x307.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1759979936/maf-trad-agents-496x307_fuc4xi.png" /></a><a target="_blank" href="https://www.youtube.com/watch?v=VBz5HMYIRI4&t=5m44s">*</a>
 
 https://aka.ms/AgentFramework reroutes to the SDK at<br />https://github.com/microsoft/agent-framework
 
 The demo4.py workflow parses a VC pptx pitch deck file to JSON, than approves or rejects each:
 
-    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1759980240/maf-workflow-381x555_qxuywu.png"><img alt="maf-workflow-381x555.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1759980240/maf-workflow-381x555_qxuywu.png" /></a><a target="_blank" href="https://www.youtube.com/watch?v=VBz5HMYIRI4&t=7m52s">*</a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1759980240/maf-workflow-381x555_qxuywu.png"><img alt="maf-workflow-381x555.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1759980240/maf-workflow-381x555_qxuywu.png" /></a><a target="_blank" href="https://www.youtube.com/watch?v=VBz5HMYIRI4&t=7m52s">*</a>
 
 References:
 * https://github.com/webmaxru/awesome-microsoft-agent-framework/ by Maxim Salnikov
@@ -118,7 +118,7 @@ Retail	Inventory management, live fraud checks
 
 10. Click "Click here to manage keys". If you're using <strong>AzureCliCredential</strong>, create: 
     ```
-    AZURE_OPENAI_API_KEY="12345678C0pYAVCseYaFA3Hy3lpL8GZ9uKdX5BE3KBtNShhX0HhkJQQJ99BJACMsfrFXJ3w3AAABACOGsBer"
+    AZURE_OPENAI_API_KEY="12345678C..."
     ```
     <tt>api_key=os.environ["AZURE_OPENAI_API_KEY"],</tt>
 
