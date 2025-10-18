@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2026-08-12"
-lastchange: "v071 tags :2017-12-01-kubernetes.md"
+date: "2025-10-18"
+lastchange: "25-10-18 v072 update :2017-12-01-kubernetes.md"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 url: "https://wilsonmar.github.io/kubernetes"
