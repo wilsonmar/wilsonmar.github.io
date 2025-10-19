@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-10-18"
-lastchange: "25-10-18 v072 update :2017-12-01-kubernetes.md"
+lastchange: "25-10-18 v073 new rock stars :2017-12-01-kubernetes.md"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 url: "https://wilsonmar.github.io/kubernetes"
@@ -297,51 +297,51 @@ PROTIP: Kubernetes in the cloud is so complex that most enterprises need to buil
 Those who have a team exacerbate reliability by efforts to "protect" Kubernetes in production by limiting <strong>too-small a team</strong> of Operations specialists (separated from developers) who become a <strong>bottleneck to fast progress</strong>. 
 
 
-### How teams are built
+### How to build a Kubernetes team
+
+1. Schedule and hold special sessions for the team to sharing lessons learned and identify improvements, openly shared to solicit individuals and other team contributions.
+
+   This builds a culture that incentivizes helpfulness rather than competition and shaming.
+
+   Below are suggestions which came from such sessions.
 
 1. Identify barriers and dis-incentive for deep and well-rounded skills acquisition around Kubernetes and related skills.
 
    Some like isolated Kubernetes skills because the shortage of Kubernetes skills has resulted in $300,000/year salaries for top Kubernetes jobs.
 
-1. Clarify the basis for performance reviews and promotions, and what blocks advancement.
+1. Assign a "buddy" to each individual for paired work on problems together. This enables each to learn techniques only through observation.
 
-   Identify artifacts that individuals and teams can keep private (such as burndown charts, refactoring, automation, etc.).
+1. Define a thorough on-boarding for those who join the team. Pre-install as much on the laptop as possible so work can begin immediately. This refines and standardizes tools and processes used by the team. Ensure joiners meet with everyone and can recall key info about the systems and others. 
 
-1. Ensure managers to track learning time in who they manage.
+1. Provide "playground" environments to experiment with production-like settings. Such are needed to provide a "data-driven" approach to tune Kubernetes. A full duplicate so you know if it really works.
 
-   Many managers do not encourage skill advancement ahead of need because they are afraid of losing their people to other teams or companies.
-
-   Many managers discourage skill advancement ahead of need to save money. This is reflected in hiring of contract workers (without benefits) who are not expected to be around long enough to learn.
-
-1. Pay for on-line training and certifications for anyone to build foundational knowledge and skills (in operating systems, security, networking, cloud, etc.). 
-
-1. Have managers assign a "buddy" to each individuals for pairs to work on problems together.
+   This can be a waste of time if the playground is not kept up to date with the latest version of Kubernetes and the latest versions of the many components that make up Kubernetes.
 
 1. Install full <strong>monitoring/observability tools</strong> and expose production analytics to everyone as the first step to develop understanding of how Kubernetes works.
-
-1. Provide a "playground" environment for developers to experiment with production-like settings. Such are needed to provide a "data-driven" approach to tune Kubernetes.
-
-   But this can be a waste of time if the playground is not kept up to date with the latest version of Kubernetes and the latest versions of the many components that make up Kubernetes.
-
-1. Construct "self-service" portals and utilities to simplify frequent processes and save developer's time for common activities. 
-   
-   But portals can become "anti-patterns" because they can also <strong>limit innovation</strong> (new features) and block individual developers from <strong>learning</strong> to work quickly and troubleshoot independently.
 
 1. Explore self-healing tools that automatically fix problems.
 
    Tools such as <a target="_blank" href="https://www.Komodor.com/">Komodor</a> monitors it all and suggests actions, like a human expert would.
 
+1. Pay for on-line training and certifications for anyone to build foundational knowledge and skills (in operating systems, security, networking, cloud, etc.). 
+
+1. Managers track learning time and achievement to budgets among those they manage.
+
+   Many managers do not encourage skill advancement ahead of need because they are afraid of losing their people to other teams or companies. So this needs to be imposed on them by executives.
+
+   Many managers discourage skill advancement ahead of need to save money. This is reflected in hiring of contract workers (without benefits) who are not expected to be around long enough to learn.
+
+1. Clarify the basis for performance reviews and promotions, and what blocks advancement.
+
+   Identify artifacts that individuals and teams can keep private (such as burndown charts, refactoring, automation, etc.).
+
+1. Construct "self-service" portals and utilities to simplify frequent processes and save developer's time for common activities. 
+   
+   But portals can become "anti-patterns" because they can also <strong>limit innovation</strong> (new features) and block individual developers from <strong>learning</strong> to work quickly and troubleshoot independently.
+
 1. Conduct <strong>regular "chaos engineering"</strong> exercises that purposefully injects faults to identify the timeliness and completeness of incident response.
 
    Although these are mandated by many audit requirements, this can be a waste of time if the exercises are not organized properly and results are hidden.
-
-1. Have executives sponsor a regular pre-scheduled sessions for sharing lessons learned.
-
-   But this can be a waste of time if the sessions are not recorded and made available to those who missed the session.
-
-1. Have each team identify improvements, openly shared to solicit individuals and other team contributions.
-
-   This builds a culture that incentivizes helpfulness rather than competition and shaming.
 
 <hr />
 
@@ -8052,6 +8052,10 @@ https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler
 
 
 ## Rockstars
+
+<a target="_blank" href="https://www.linkedin.com/in/brendan-burns-487aa590/">Brendan Burns</a> (<a target="_blank" href="https://www.youtube.com/watch?v=ic2PGiH_lqY&t=6m15s">interview</a>), co-founder of the Kubernetes project and one of its original architects. Now VP Azure at Microsoft.
+   * https://www.usenix.org/system/files/login/articles/login_oct15_07_burns.pdf "How Kubernetes Changes Operations"
+   <br /><br />
 
 <a target="_blank" href="https://www.linkedin.com/in/shon-lev-ran/">Shon Lev-Ran (who lives in Tel Aviv)</a>
 Kubernetes resources under the hood series:
