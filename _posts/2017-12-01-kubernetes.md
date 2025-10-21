@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-10-18"
-lastchange: "25-10-18 v073 new rock stars :2017-12-01-kubernetes.md"
+date: "2025-10-21"
+lastchange: "25-10-21 v075 + Teamwork :2017-12-01-kubernetes.md"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 url: "https://wilsonmar.github.io/kubernetes"
@@ -112,6 +112,7 @@ Discovery,
 <a href="#ServicesDiscovery">Service Discovery</a>,
 <a href="#StatefulSets"><strong>sts</strong>=StatefulSets</a>,
 <a href="#StorageClasses">Storage Classes</a>,
+<a href="#Teamwork">Teamwork</a>,
 <a href="#Taints">Taints</a>,
 <a href="#Tolerations">Tolerations</a>,
 <a href="#Vim">Vim (tool)</a>,
@@ -278,6 +279,7 @@ Kubernetes applies principles of the <a target="_blank" href="https://www.reacti
 * Debugging applications
 <br /><br />
 
+<a name="Teamwork"></a>
 
 ## Kubernetes is a Team Sport!
 
@@ -290,6 +292,15 @@ However, most tutorials and courses are written to merely <strong>introduce indi
 PROTIP: My assertion is that <strong>no one person can know everything</strong> about Kubernetes to operate it reliably and securely in a complex production enterprise.
 Hiring for superhumans expected to "know everything" is resulting in <strong>unnecessary turnover and down time</strong>.
 
+Kubernetes provides and enforces "significant decoupling between the layers of the serving stack: machine, operating system, application manager, and application code. This decoupling enables the development of specialized teams with agility and freedom to operate on their parts of the stack, thanks to separation of concerns:"
+
+   * hardware operations
+   * kernel operations 
+   * cluster operations
+   * application operations
+
+-- <a target="_blank" href="https://www.usenix.org/system/files/login/articles/login_oct15_07_burns.pdf">From "How Kubernetes Changes Operations"</a> by <a target="_blank" href="https://github.com/brendandburns">Brandan Burns</a>.
+
 Most job descriptions for Kubernetes positions are written by people who don't know Kubernetes enough to properly build a team around the complexity. So they search for people based only on technical certifications passed or based on counting years with "Kubernetes" in resumes.
 
 PROTIP: Kubernetes in the cloud is so complex that most enterprises need to build a <strong>team of various specialists</strong> to ensure that Kubernetes is operated reliably and securely.
@@ -299,51 +310,79 @@ Those who have a team exacerbate reliability by efforts to "protect" Kubernetes 
 
 ### How to build a Kubernetes team
 
-1. Schedule and hold special sessions for the team to sharing lessons learned and identify improvements, openly shared to solicit individuals and other team contributions.
+1. Schedule and hold special sessions for the team to sharing lessons learned and identify improvements, openly shared to solicit individuals and other team contributions. Having a list of projects enables better prioritization, and gives a complete picture for funding the team for 24/7 readiness that they are not just sitting around.
+
+   Assess the likelihood of its occurrence and the resulting level of impact if it does. 
 
    This builds a culture that incentivizes helpfulness rather than competition and shaming.
 
-   Below are suggestions which came from such sessions.
+   Below are suggestions which came from such sessions. 
 
-1. Identify barriers and dis-incentive for deep and well-rounded skills acquisition around Kubernetes and related skills.
+1. Track <strong>unplanned work</strong> and categorize them by different dimensions in order to better allocate a budget instead of always being reactive (under seige). 
+
+1. Identify <strong>barriers and dis-incentive</strong> for deep and well-rounded skills acquisition around Kubernetes and related skills. For example, work on defensive security is often neglected. A team that discusses lessons learned and innovations from other organizations can better avoid catastrophies.
 
    Some like isolated Kubernetes skills because the shortage of Kubernetes skills has resulted in $300,000/year salaries for top Kubernetes jobs.
 
-1. Assign a "buddy" to each individual for paired work on problems together. This enables each to learn techniques only through observation.
+1. Form "buddy" sessions for <strong>paired work</strong> on problems together. This enables each to learn techniques that are learned through observation. Learnings are not just about debugging, but also optimal time management to maintain focus. This also what enables <strong>rotation</strong> among specialties so individuals are truely capable at many tasks.
 
-1. Define a thorough on-boarding for those who join the team. Pre-install as much on the laptop as possible so work can begin immediately. This refines and standardizes tools and processes used by the team. Ensure joiners meet with everyone and can recall key info about the systems and others. 
+1. Define a thorough <strong>on-boarding</strong> for those who join the team. Pre-install as much on each laptop as possible so work can begin immediately. This refines and standardizes tools and processes used by the team. Ensure joiners meet with everyone and can recall key info about the systems and others.
 
-1. Provide "playground" environments to experiment with production-like settings. Such are needed to provide a "data-driven" approach to tune Kubernetes. A full duplicate so you know if it really works.
+1. Clarify the <strong>basis for performance reviews, salary increases, and promotions</strong> -- and what blocks advancement. Identify artifacts that individuals and teams can and should keep private (such as burndown charts, refactoring, automation, etc.).
 
-   This can be a waste of time if the playground is not kept up to date with the latest version of Kubernetes and the latest versions of the many components that make up Kubernetes.
+1. Pay for on-line <strong>training and certifications</strong> to build knowledge and skills (in operating systems, security, networking, cloud, etc.). Vendors include KodeKloud.com. This helps build a "bench" of talent. 
 
-1. Install full <strong>monitoring/observability tools</strong> and expose production analytics to everyone as the first step to develop understanding of how Kubernetes works.
-
-1. Explore self-healing tools that automatically fix problems.
-
-   Tools such as <a target="_blank" href="https://www.Komodor.com/">Komodor</a> monitors it all and suggests actions, like a human expert would.
-
-1. Pay for on-line training and certifications for anyone to build foundational knowledge and skills (in operating systems, security, networking, cloud, etc.). 
-
-1. Managers track learning time and achievement to budgets among those they manage.
+1. Managers track learning time and achievement versus budget for those they manage.
 
    Many managers do not encourage skill advancement ahead of need because they are afraid of losing their people to other teams or companies. So this needs to be imposed on them by executives.
 
    Many managers discourage skill advancement ahead of need to save money. This is reflected in hiring of contract workers (without benefits) who are not expected to be around long enough to learn.
 
-1. Clarify the basis for performance reviews and promotions, and what blocks advancement.
 
-   Identify artifacts that individuals and teams can keep private (such as burndown charts, refactoring, automation, etc.).
+
+1. Install full <strong>monitoring/observability tools</strong> and expose production analytics to everyone as the first step to develop understanding of how Kubernetes works. Evaluating what to use is a project. The "LGTM" stack is widely adopted because it’s fully open source, Kubernetes‑native, and flexible for self‑hosting or hybrid managed setups. LGTM stands for (Loki–Grafana–Tempo–Mimir/Prometheus): Loki (or OpenObserve) for logging, Grafana for visualization, Tempo (Jaeger) for tracing, Mimir and Prometheus for metrics. Others are Opentelemetry (OT) for instrumentation, <a target="_blank" href=" https://github.com/SigNoz/signoz">SigNoz</a>, <a target="_blank" href="https://github.com/Checkmk/checkmk">Checkmk</a> for Root Cause Analysis, <a target="_blank" href="https://github.com/openobserve/openobserve">OpenObserve</a>, etc. Licensed options providing integrated functionality include Splunk, New Relic, Datadog, Dynatrace, Groundkover, Kloudfuse, etc. [<a target="_blank" href="https://www.tigera.io/learn/guides/kubernetes-monitoring/kubernetes-observability-software/">Comparison</a>] Opsgenie, 
+
+1. Maintain a <strong>duplicate environment</strong> to safely test making changes to productions. Such are needed to provide a "data-driven" approach to tune Kubernetes. A full duplicate so you know if it really works.
+
+   This can be a waste of time if the playground is not kept up to date with the latest version of Kubernetes and the latest versions of the many components that make up Kubernetes.
+
+1. Compile <strong>playbooks</strong> of manual steps and tools in response to issues that occur, then  <strong>automate</strong> them with <a href="#SelfHealing">self-healing tools</a> that automatically apply fixes.
+
+1. Conduct regular <a target="_blank" href="https://wilsonmar.github.io/chaos-engineering/">"chaos engineering"</a> exercises that purposefully injects faults to identify the timeliness and completeness of incident response. This is how the organization proves that it can handle problems, that alerts are issued based on trends and reach the appropriate people when needed.
+
+   Security people have defined their <a target="_blamk" href="https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/red-teaming">"Red Teaming" methodology</a>, in which a team of testers deliberately probes the solution for weaknesses and attempts to produce harmful results. Although these are mandated by many audit requirements, this can be a waste of time if the exercises are not organized properly and results are hidden.
 
 1. Construct "self-service" portals and utilities to simplify frequent processes and save developer's time for common activities. 
    
    But portals can become "anti-patterns" because they can also <strong>limit innovation</strong> (new features) and block individual developers from <strong>learning</strong> to work quickly and troubleshoot independently.
 
-1. Conduct <strong>regular "chaos engineering"</strong> exercises that purposefully injects faults to identify the timeliness and completeness of incident response.
-
-   Although these are mandated by many audit requirements, this can be a waste of time if the exercises are not organized properly and results are hidden.
-
 <hr />
+
+<a name="SelfHealing"></a>
+
+## Self-Healing Automation
+
+One of the reasons for adopting Kubernetes is that it can automatically restore cluster health: <a target="_blank" href="https://kubernetes.io/docs/concepts/architecture/self-healing/">*</a> Looking at each level:
+
+* The kubelet service ensures containers are running, and restarts those that fail per the defined restartPolicy. Kubernetes automatically removes it from the Service's endpoints. This ensures that traffic is routed only to healthy Pods.   
+
+* If a node is running a Pod with a PersistentVolume (PV) attached, and the node fails, Kubernetes can reattach the volume to a new Pod on a different node.
+
+   However, if a persistent volume becomes unavailable (due to being full) or hardware failure, action outside of Kubernetes would be needed.
+
+* If a Pod in a Deployment or StatefulSet that is part of a DaemonSet fails, to maintain the specified number of replicas, the control plane creates a replacement Pod to run on the same node.
+
+* Application programming errors within underlying application issues must be addressed separately.
+
+Add-on tools such as <a target="_blank" href="https://www.Komodor.com/">Komodor</a> monitors it all and suggests actions, like a human expert would.
+
+For "full node lifecycle management" to minimize downtime, reduce manual intervention, and improve security, the <a target="_blank" href="https://devtron.ai/blog/self-healing-auto-remediation-of-kubernetes-nodes/">Devtron Resource Watcher</a> detects and remediates common Kubernetes issues automatically in self-healing Kubernetes clusters created by Kured (Kubernetes Reboot Daemon), a CNCF Sandbox project. Kured manages node reboots safely after updates or failure detection, coordinating Pod rescheduling to minimize downtime.
+
+Netdata stack provides real-time monitoring, anomaly detection, and automated alerts that can trigger remediation workflows with Ansible or Node-RED.​
+
+<a target="_blank" href="https://hoop.dev/blog/auto-remediation-workflows-k9s-streamlining-kubernetes-management/">K9s Auto-Remediation Workflows</a> automates recovery actions and integrates with observability tools for dynamic issue resolution.
+
+* <a target="_blank" href="https://www.virtualizationhowto.com/2025/10/how-i-built-a-self-healing-home-lab-that-fixes-itself/">Adding n8n to the automation stack</a>
 
 
 ## This article: Automation
@@ -8053,9 +8092,65 @@ https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler
 
 ## Rockstars
 
-<a target="_blank" href="https://www.linkedin.com/in/brendan-burns-487aa590/">Brendan Burns</a> (<a target="_blank" href="https://www.youtube.com/watch?v=ic2PGiH_lqY&t=6m15s">interview</a>), co-founder of the Kubernetes project and one of its original architects. Now VP Azure at Microsoft.
-   * https://www.usenix.org/system/files/login/articles/login_oct15_07_burns.pdf "How Kubernetes Changes Operations"
-   <br /><br />
+https://echoglobal.tech/technologies/kubernetes/
+
+<a target="_blank" href="https://www.linkedin.com/in/brendan-burns-487aa590/">Brendan Burns</a> (<a target="_blank" href="https://www.youtube.com/watch?v=ic2PGiH_lqY&t=6m15s" title="2023">interview</a>), co-founder of the Kubernetes project and one of its original architects. Now VP Azure at Microsoft.
+
+<a target="_blank" href="https://www.linkedin.com/in/jbeda/">Joe Beda</a>
+   * https://github.com/jbeda
+   * Heptio (acquired by VMWare 2018) with
+<a target="_blank" href="https://www.linkedin.com/in/craigmcluckie/">Craig McLuckie</a>
+   * https://github.com/craigmcl
+<a target="_blank" href="https://www.linkedin.com/in/stephenaugustus">Stephen Augustus</a>
+   * https://github.com/justaugustus
+   * Heptio
+
+<a target="_blank" href="https://www.linkedin.com/in/brandonphilips">Brandon Philips</a>
+   * https://ifup.org/
+   * https://github.com/philips
+
+<a target="_blank" href="https://www.linkedin.com/in/lizrice">Liz Rice</a> (Cillium eBPF)
+   * https://github.com/lizrice
+
+<a target="_blank" href="https://www.linkedin.com/in/justinsb/">Justin Santa Barbara</a>
+   * kOps, the “kubectl for clusters”
+   * https://github.com/justinsb
+
+<a target="_blank" href="https://www.linkedin.com/in/janetkuo/">Janet Kuo</a> from Taiwan
+   * SIG Apps
+   * https://github.com/janetkuo
+
+<a target="_blank" href="https://www.linkedin.com/in/thockin/">Tim Hockin</a>
+   * 2024 CNCF “Top Committer”
+   * https://github.com/thockin
+
+<a target="_blank" href="https://www.linkedin.com/in/bgrant0607/">Brian Grant</a>
+   * Kubernetes Resource Model
+   * https://github.com/bgrant0607
+
+<a target="_blank" href="https://www.linkedin.com/in/claytoncoleman">Clayton Coleman</a>
+   * https://github.com/smarterclayton
+
+<a target="_blank" href="https://www.linkedin.com/in/goldbergchen/">Chen Goldberg</a>
+   * CoreWeave
+
+<a target="_blank" href="https://www.linkedin.com/in/michelle-noorali/">Michelle Noorali</a>
+   * https://github.com/michelleN
+   * Helm
+
+<a target="_blank" href="https://www.linkedin.com/in/nikinath/">Nikhita Raghunath</a>
+   * VMWare
+   * https://github.com/nikhita
+
+<a target="_blank" href="https://www.linkedin.com/in/davanum">Davanum “Dims” Srinivas</a>
+   * Principal Engineer at AWS
+   * https://github.com/dims
+
+<a target="_blank" href="https://www.linkedin.com/in/chrisadamson/">Christopher Adamson</a>
+   * “Mastering Kubernetes Labels and Selectors”
+
+<a target="_blank" href="https://www.linkedin.com/in/saadali/">Saad Ali</a>
+   * https://github.com/saad-ali
 
 <a target="_blank" href="https://www.linkedin.com/in/shon-lev-ran/">Shon Lev-Ran (who lives in Tel Aviv)</a>
 Kubernetes resources under the hood series:
