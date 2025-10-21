@@ -310,15 +310,15 @@ Those who have a team exacerbate reliability by efforts to "protect" Kubernetes 
 
 ### How to build a Kubernetes team
 
-1. Schedule and hold special sessions for the team to sharing lessons learned and identify improvements, openly shared to solicit individuals and other team contributions. Having a list of projects enables better prioritization, and gives a complete picture for funding the team for 24/7 readiness that they are not just sitting around.
+1. Use a Team Calandar, Team KanBan, and Team file folder.
 
-   Assess the likelihood of its occurrence and the resulting level of impact if it does. 
+1. Schedule and hold sessions to <strong>sharing lessons learned and identify improvements</strong> as the only objective. Get a facilitator to enforce rules such as not criticizing ideas until it's time. 
 
    This builds a culture that incentivizes helpfulness rather than competition and shaming.
 
-   Below are suggestions which came from such sessions. 
+1. Track <strong>unplanned work</strong> and categorize them by different dimensions in order to better allocate a budget instead of always being reactive (under seige). Having a list of projects enables better prioritization, and gives a complete picture for funding the team for 24/7 readiness that they are not just sitting around.
 
-1. Track <strong>unplanned work</strong> and categorize them by different dimensions in order to better allocate a budget instead of always being reactive (under seige). 
+   Assess the likelihood of its occurrence and the resulting level of impact if it does. 
 
 1. Identify <strong>barriers and dis-incentive</strong> for deep and well-rounded skills acquisition around Kubernetes and related skills. For example, work on defensive security is often neglected. A team that discusses lessons learned and innovations from other organizations can better avoid catastrophies.
 
@@ -342,9 +342,13 @@ Those who have a team exacerbate reliability by efforts to "protect" Kubernetes 
 
 1. Install full <strong>monitoring/observability tools</strong> and expose production analytics to everyone as the first step to develop understanding of how Kubernetes works. Evaluating what to use is a project. The "LGTM" stack is widely adopted because it’s fully open source, Kubernetes‑native, and flexible for self‑hosting or hybrid managed setups. LGTM stands for (Loki–Grafana–Tempo–Mimir/Prometheus): Loki (or OpenObserve) for logging, Grafana for visualization, Tempo (Jaeger) for tracing, Mimir and Prometheus for metrics. Others are Opentelemetry (OT) for instrumentation, <a target="_blank" href=" https://github.com/SigNoz/signoz">SigNoz</a>, <a target="_blank" href="https://github.com/Checkmk/checkmk">Checkmk</a> for Root Cause Analysis, <a target="_blank" href="https://github.com/openobserve/openobserve">OpenObserve</a>, etc. Licensed options providing integrated functionality include Splunk, New Relic, Datadog, Dynatrace, Groundkover, Kloudfuse, etc. [<a target="_blank" href="https://www.tigera.io/learn/guides/kubernetes-monitoring/kubernetes-observability-software/">Comparison</a>] Opsgenie, 
 
-1. Maintain a <strong>duplicate environment</strong> to safely test making changes to productions. Such are needed to provide a "data-driven" approach to tune Kubernetes. A full duplicate so you know if it really works.
+1. Define an <strong>error budget</strong> that matches mechanisms to establish redundancy. An enterprise which, every 3 months, redeploy everything in a different data enter in another region to ensure failover works, would have a smaller error budget. An error budget reflects the risks accepted by inaction. The great the risk, the more issues and longer downtime should be expected.
 
-   This can be a waste of time if the playground is not kept up to date with the latest version of Kubernetes and the latest versions of the many components that make up Kubernetes.
+   Expecting zero defects and no download without staffing for mechanisms described here is like turkeys burying their head in the sand. That leads to preventable turnover and unecessary office politics.
+
+1. Maintain a <strong>duplicate environment</strong> to safely test making changes to production. It's needed to provide a "data-driven" approach to tune Kubernetes. 
+
+   This can be a waste of time if assets are not kept up to date with the latest version of Kubernetes and the latest versions of the many components that make up Kubernetes.
 
 1. Compile <strong>playbooks</strong> of manual steps and tools in response to issues that occur, then  <strong>automate</strong> them with <a href="#SelfHealing">self-healing tools</a> that automatically apply fixes.
 
