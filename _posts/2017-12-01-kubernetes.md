@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-10-21"
-lastchange: "25-10-21 v075 + Teamwork :2017-12-01-kubernetes.md"
+date: "2025-10-22"
+lastchange: "25-10-22 v076 + maturity level :2017-12-01-kubernetes.md"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 url: "https://wilsonmar.github.io/kubernetes"
@@ -292,6 +292,8 @@ However, most tutorials and courses are written to merely <strong>introduce indi
 PROTIP: My assertion is that <strong>no one person can know everything</strong> about Kubernetes to operate it reliably and securely in a complex production enterprise.
 Hiring for superhumans expected to "know everything" is resulting in <strong>unnecessary turnover and down time</strong>.
 
+PROTIP: Kubernetes in the cloud is so complex that most enterprises need to build a <strong>team of various specialists</strong> to ensure that Kubernetes is operated reliably and securely.
+
 Kubernetes provides and enforces "significant decoupling between the layers of the serving stack: machine, operating system, application manager, and application code. This decoupling enables the development of specialized teams with agility and freedom to operate on their parts of the stack, thanks to separation of concerns:"
 
    * hardware operations
@@ -301,16 +303,18 @@ Kubernetes provides and enforces "significant decoupling between the layers of t
 
 -- <a target="_blank" href="https://www.usenix.org/system/files/login/articles/login_oct15_07_burns.pdf">From "How Kubernetes Changes Operations"</a> by <a target="_blank" href="https://github.com/brendandburns">Brandan Burns</a>.
 
-Most job descriptions for Kubernetes positions are written by people who don't know Kubernetes enough to properly build a team around the complexity. So they search for people based only on technical certifications passed or based on counting years with "Kubernetes" in resumes.
-
-PROTIP: Kubernetes in the cloud is so complex that most enterprises need to build a <strong>team of various specialists</strong> to ensure that Kubernetes is operated reliably and securely.
+BLAH: Most job descriptions for Kubernetes positions are written by people who don't know Kubernetes enough to properly build a team around the complexity. So they search for people based only on technical certifications passed or based on counting years with "Kubernetes" in resumes.
 
 Those who have a team exacerbate reliability by efforts to "protect" Kubernetes in production by limiting <strong>too-small a team</strong> of Operations specialists (separated from developers) who become a <strong>bottleneck to fast progress</strong>. 
 
 
 ### How to build a Kubernetes team
 
-1. Use a Team Calandar, Team KanBan, and Team file folder.
+<a target="_blank" href="https://spacelift.io/blog/devops-maturity-model"><img alt="DevOps-maturity-levels.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1761191515/DevOps-maturity-levels_ukgiyq.png" /></a>
+
+To achieve high maturity level:
+
+1. Ensforce on-going use of a Team Calandar, Team KanBan, and Team file folders.
 
 1. Schedule and hold sessions to <strong>sharing lessons learned and identify improvements</strong> as the only objective. Get a facilitator to enforce rules such as not criticizing ideas until it's time. 
 
@@ -350,7 +354,7 @@ Those who have a team exacerbate reliability by efforts to "protect" Kubernetes 
 
    This can be a waste of time if assets are not kept up to date with the latest version of Kubernetes and the latest versions of the many components that make up Kubernetes.
 
-1. Compile <strong>playbooks</strong> of manual steps and tools in response to issues that occur, then  <strong>automate</strong> them with <a href="#SelfHealing">self-healing tools</a> that automatically apply fixes.
+1. Compile <strong>playbooks</strong> of manual steps and tools in response to issues that occur, then  <strong>automate</strong> them with <a href="#SelfHealing">self-healing tools</a> that automatically apply fixes. <a target="_blank" href="https://www.youtube.com/watch?v=budTmdQfXYU">VIDEO</a>: <a target="_blank" href="https://github.com/theNetworkChuck/n8n-terry-guide">Use n8n AI</a> <a target="_blank" href="https://www.virtualizationhowto.com/2025/10/how-i-built-a-self-healing-home-lab-that-fixes-itself/">Article</a>
 
 1. Conduct regular <a target="_blank" href="https://wilsonmar.github.io/chaos-engineering/">"chaos engineering"</a> exercises that purposefully injects faults to identify the timeliness and completeness of incident response. This is how the organization proves that it can handle problems, that alerts are issued based on trends and reach the appropriate people when needed.
 
