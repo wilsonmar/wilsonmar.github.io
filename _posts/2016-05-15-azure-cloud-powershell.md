@@ -1,16 +1,19 @@
 ---
 layout: post
+date: "2025-10-24"
+lastchange: "25-10-24 v022 + hdr & az in powershell :2016-05-15-azure-cloud-powershell.md"
+url: "https://wilsonmar.github.io/azure-cloud-powershell"
+file: "azure-cloud-powershell"
 title: "Azure Cloud PowerShell Scripting"
 excerpt: "Do anything you want!"
 tags: [cloud, powershell]
-date: "2021-02-24"
-file: "azure-cloud-powershell"
 image:
 # fig blue powershell icon-1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15307772/b335270e-1b93-11e6-9552-d3022de2b9ce.jpg
   credit:
   creditlink:
 comments: true
+created: "2016-05-15"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -30,6 +33,18 @@ This is one of a series about Azure on my blog:
    <br /><br />
 
 <hr />
+
+## Why PowerShell?
+
+PowerShell is more cross-platform than CLI alone.
+
+<a target="_blank" href="https://open.substack.com/pub/m365show/p/azure-cli-vs-powershell-one-clear?utm_campaign=post&utm_medium=email">BLOG</a>:
+Powershell has built-in handling of objects and JSON, so can take output from CLI commands, filter by property, and shape the results into a clean table, export to CSV or Excel format. Examples:
+
+* scan all the VMs in your tenant for missing tags. With CLI, you can quickly pull back the dataset. But reading through nested JSON to identify the outliers is clumsy. Use CLI inside PowerShell, and you can loop through those results, match only the missing items, and immediately export them into a CSV. In real time, you’ve built a compliance report without parsing a single string by hand.
+
+* cross-check each machine against naming conventions. Maybe you want to send the results out automatically by email or post them to Teams. CLI alone won’t handle those extra steps—you’d end up stitching together third-party tools. With PowerShell wrapping around CLI, you add them in seamlessly, and the output is exactly what your stakeholders want on their desk.
+
 
 ## MacOS Install
 
