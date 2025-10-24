@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-10-23"
-lastchange: "25-10-24 v079 + versions :2017-12-01-kubernetes.md"
+date: "2025-10-24"
+lastchange: "25-10-24 v080 + versions :2017-12-01-kubernetes.md"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 url: "https://wilsonmar.github.io/kubernetes"
@@ -224,31 +224,6 @@ The "k0s" distribution, open sourced at <a target="_blank" href="https://docs.k0
    <a target="_blank" href="https://storage.googleapis.com/kubernetes-release/release/stable.txt">https://storage.googleapis.com/kubernetes-release/release/stable.txt</a>
 
 
-<hr />
-
-<a name="K8s_API"></a>
-
-### K8s API Special Interest Groups
-
-One approach for specialization at the technical level is to have each person focus on a specific Kubernetes API.
-
-Kubernetes itself is maintained by SIGs (Special Interest Groups) formed around <a target="_blank" href="https://github.com/kubernetes/community/blob/master/sig-list.md">
-<strong>related groups</strong> of APIs</a> described at <a targete="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/</a> (which is one big page):
-
-   * <strong>Service APIs</strong>: Endpoints, <a href="#Ingress">Ingress</a>, Service
-
-   * <strong>Workloads APIs</strong>: Container, Job, CronJob, Deployment, StatefulSet, ReplicaSet, Pod, ReplicationController
-
-   * <strong>Config and storage APIs</strong>: ConfigMap, CSIDriver, Secret, StorageClass, Volume
-
-   * <strong>Metadata APIs</strong>: Controller, <a href="#CRD">CRD</a>, Event, LimitRange, <a href="#HPA">HPA (HorizontalPodAutoscaler)</a>, PodDistributionBudget, ...
-
-   * <strong>Cluster APIs</strong>: APIService, Binding, CSR, <a href="#ClusterRoles">ClusterRole</a>, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
-   <br /><br />
-
-REMEMBER: Unlike other systems, in Kubernetes there are no "users".
-
-
 
 ## Kubernetes is complex
 
@@ -307,7 +282,7 @@ Kubernetes applies principles of the <a target="_blank" href="https://www.reacti
 
 <a name="Teamwork"></a>
 
-## Kubernetes is a Team Sport!
+## Organize for Kubernetes as a Team Sport!
 
 Kubernetes running in clouds has <strong>many moving parts</strong> that must be intricately configured and tuned to keep them reliable and secure.
 
@@ -333,6 +308,34 @@ BLAH: Most job descriptions for Kubernetes positions are written by people who d
 
 Those who have a team exacerbate reliability by efforts to "protect" Kubernetes in production by limiting <strong>too-small a team</strong> of Operations specialists (separated from developers) who become a <strong>bottleneck to fast progress</strong>. 
 
+REMEMBER: Unlike other systems, in Kubernetes there are no "users".
+
+
+<hr />
+
+<a name="K8s_API"></a>
+
+### K8s API Special Interest Groups
+
+Those who work on Kubernetes APIs are split into <a target="_blank" href="https://github.com/kubernetes/community/blob/master/sig-list.md"><strong>SIGs (Special Interest Groups)</strong></a>, each with its own leadership structure.
+See <a targete="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/</a> (which is one big page):
+
+   * <strong>Service APIs</strong>: Endpoints, <a href="#Ingress">Ingress</a>, Service
+
+   * <strong>Workloads APIs</strong>: Container, Job, CronJob, Deployment, StatefulSet, ReplicaSet, Pod, ReplicationController
+
+   * <strong>Config and storage APIs</strong>: ConfigMap, CSIDriver, Secret, StorageClass, Volume
+
+   * <strong>Metadata APIs</strong>: Controller, <a href="#CRD">CRD</a>, Event, LimitRange, <a href="#HPA">HPA (HorizontalPodAutoscaler)</a>, PodDistributionBudget, ...
+
+   * <strong>Cluster APIs</strong>: APIService, Binding, CSR, <a href="#ClusterRoles">ClusterRole</a>, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
+   <br /><br />
+
+After Red Hat (within IBM) bought CoreOS, it bragged that its people lead "11 of 29" SIGS:
+<img alt="k8-sigs-red-hat-600x337.webp" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1761329416/k8-sigs-red-hat-600x337_vgtqrh.webp" />
+
+
+<a name="BuildTeam"></a>
 
 ### How to build a Kubernetes team
 
