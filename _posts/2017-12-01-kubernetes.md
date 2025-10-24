@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-10-22"
-lastchange: "25-10-22 v076 + maturity level :2017-12-01-kubernetes.md"
+date: "2025-10-23"
+lastchange: "25-10-24 v079 + versions :2017-12-01-kubernetes.md"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 url: "https://wilsonmar.github.io/kubernetes"
@@ -14,7 +14,7 @@ image:
   credit: Jeremy Thomas
   creditlink: https://www.flickr.com/photos/132218932@N03/page2
 comments: true
-k8s_version: "1.26"
+k8s_version: "1.34"
 created: "2017-12-01"
 ---
 <i>{{ page.excerpt }}</i>
@@ -164,38 +164,64 @@ See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kuberne
 <a target="_blank" href="https://github.com/kubernetes/community/tree/master/icons/png/resources/labeled">The Kubernetes community repo</a> provides icon image files (<a target="_blank" href="https://qiita.com/yosshi_/items/2db0a0e66a16711bfe5f">resources</a>) labeled and unlabeled, in png and svg formats in 128 and 256 pixels.
 
 
+<a name="Distributions"></a>
+
+## Distributions of Kubernetes
+
+The "k0s" distribution, open sourced at <a target="_blank" href="https://docs.k0sproject.io/stable/">https://docs.k0sproject.io/stable</a>, is an "all-inclusive Kubernetes distribution, which is configured with all of the features needed to build a Kubernetes cluster and packaged as a single binary for ease of use. Due to its simple design, flexible deployment options and modest system requirements, k0s is well suited for Any cloud, Bare metal, Edge and IoT" because it has no host OS external runtime dependencies.
+
 <a name="K8sVersion"></a>
 
-## Current Versions
+## CNCF Versions
+
+1. The complete list of CNCF-certified releases is where Kubernetes source code is open-sourced, at:
+
+   <a target="_blank" href="https://github.com/kubernetes/kubernetes/releases">https://github.com/kubernetes/kubernetes/releases</a>
+
+1. On that page, notice that Kubernetes uses <a target="_blank" href="https://semver.org/">Semantic Versioning</a>:
 
    * v1.0 (first commit by <a target="_blank" href="https://www.linkedin.com/in/jbeda/">Joe Beda</a> within GitHub) for first release on July 21, <strong>2015</strong>
    * v1.6 was led by a CoreOS developer
    * v1.7 was led by a Googler
    * v1.8 was led by <a target="_blank" href="https://www.linkedin.com/in/jaicesinger/">Jaice Singer DuMars</a> (<a target="_blank" href="https://twitter.com/jaicesd">@jaicesd</a>) after Microsoft joined the <a href="#CNCF">CNCF</a> July 2017 <a target="_blank" href="https://twitter.com/jaydumars?lang=en">VIDEO</a>
    * v1.22 - containerD replaces Docker as the default container runtime (Red Hat uses CRI-O instead)
+   * version 1.28 introduces robust sidecar support and  independent upgrade of Control Plane components.
    * {{ page.k8s_version }} 
    <br /><br />
 
-"<tt>v1.29.0</tt>" is formatted <a target="_blank" href="https://semver.org/">Semantic Versioning</a>.
+1. Scroll down to see the release marked "Latest" as a green sausage.
 
-1. Get the latest stable release (such as <tt>v1.29.0</tt>) defined in a single-line file at either of two locations:
+1. Open another browser tab to get that "Latest" release at:
 
-   * <a target="_blank" href="https://dl.k8s.io/release/stable.txt">https://dl.k8s.io/release/stable.txt</a>
+   <a target="_blank" href="https://dl.k8s.io/release/stable.txt">https://dl.k8s.io/release/stable.txt</a>
 
-   * <a target="_blank" href="https://storage.googleapis.com/kubernetes-release/release/stable.txt">https://storage.googleapis.com/kubernetes-release/release/stable.txt</a>
-   <br /><br />
+1. On a Terminal CLI, get that release as a System Variable:
+   ```
+   K8_LATEST_VER=$( curl -L -s https://dl.k8s.io/release/stable.txt )
+   echo $K8_LATEST_VER
+   ```
+   -L tells curl to follow redirects.
 
-   They enable getting the latest stable release into a system variable <tt>K8_VERSION</tt> :
+   -s runs it in silent mode (no progress bar, only output).
+
+   Alternately,
+   ```
+   K8_LATEST_VER=$( wget -qO- https://dl.k8s.io/release/stable.txt )
+   echo $K8_LATEST_VER
+   ```
+   -q runs quietly (no logs).
+
+   -O- directs the output to standard output (stdout).
+
+1. On a Terminal CLI, get the latest stable release defined in a single-line file at either of two locations:
 
    <pre><strong>K8_VERSION=$( curl -sS https://storage.googleapis.com/kubernetes-release/release/stable.txt )
    echo $K8_VERSION
    </strong></pre>
 
-1. Versions of Kubernetes are listed with Release and End of Life dates at:
+1. Get the version from Google, which is usually less recent (such as v1.31.0):
 
-   * <a target="_blank" href="https://kubernetes.io/releases/">kubernetes.io/releases</a> 
-
-   * <a target="_blank" href="https://github.com/kubernetes/kubernetes/releases">github.com/kubernetes/kubernetes/releases</a><br />where Kubernetes source code is open-sourced.
+   <a target="_blank" href="https://storage.googleapis.com/kubernetes-release/release/stable.txt">https://storage.googleapis.com/kubernetes-release/release/stable.txt</a>
 
 
 <hr />
@@ -350,7 +376,7 @@ To achieve high maturity level:
 
    Expecting zero defects and no download without staffing for mechanisms described here is like turkeys burying their head in the sand. That leads to preventable turnover and unecessary office politics.
 
-1. Maintain a <strong>duplicate environment</strong> to safely test making changes to production. It's needed to provide a "data-driven" approach to tune Kubernetes. 
+1. Maintain a <strong>duplicate environment</strong> to safely test making changes to production at scale. It's needed to provide a "data-driven" approach to tune Kubernetes. For example, to ensure that the <a target="_blank" href="https://newsletter.pragmaticengineer.com/p/why-reliability-is-hard-at-scale?open=false#%C2%A7mitigating-the-outage">"thundering herd" problem</a> does not occur when services come back up at scale.
 
    This can be a waste of time if assets are not kept up to date with the latest version of Kubernetes and the latest versions of the many components that make up Kubernetes.
 
