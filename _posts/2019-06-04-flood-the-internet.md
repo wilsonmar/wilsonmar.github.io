@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-10-25"
-lastchange: "25-10-25 v016 + Element svg to PlayWright :2019-06-04-flood-the-internet.md"
+lastchange: "25-10-25 v017 + warp steps :2019-06-04-flood-the-internet.md"
 url: "https://wilsonmar.github.io/flood-the-internet"
 file: "flood-the-internet"
 title: "Flood the Internet (control JavaScript API)"
@@ -712,7 +712,7 @@ Playwright's marketing home page is at:<br />
    </ul>
 
 Playwright was open-sourced by Microsoft on April 16, 2016, with first tag on<br />
-<a target="_blank" href="https://github.com/microsoft/playwright/tags?after=v0.11.1">Jan 31, 2020 at https://github.com/microsoft/playwright</a>.
+<a target="_blank" href="https://github.com/microsoft/playwright/tags?after=v0.11.1">Jan 31, 2020 at <a target="_blank" href="https://github.com/microsoft/playwright">https://github.com/microsoft/playwright</a>.
 
 The library maintained by <a target="_blank" href="https://github.com/microsoft/playwright/graphs/contributors">several active contributors</a>:
    * <a target="_blank" href="https://www.linkedin.com/in/pavel-feldman-24b0041/">Pavel Feldman at MS SF</a>
@@ -741,27 +741,73 @@ The library maintained by <a target="_blank" href="https://github.com/microsoft/
    <br /><br />
 
 1. Each language that calls the API has its own documentation:
-   * <a targete="_blank" href="https://playwright.dev/docs/intro">Node.js (JavaScript) running dotnet installing NUnitof MSTest</a>
    * <a targete="_blank" href="https://playwright.dev/python/docs/intro">Python using PyTest</a>
+   * <a targete="_blank" href="https://playwright.dev/docs/intro">Node.js (JavaScript) running dotnet installing NUnitof MSTest</a>
    * <a targete="_blank" href="https://playwright.dev/dotnet/docs/intro">.NET C#</a>
    * <a targete="_blank" href="https://playwright.dev/java/docs/intro">Java installed using mvn</a>
    <br /><br />
 
-1. Run a sample test in the language of your choice from above.
+   ## Python scripting
+
+   The PlayWright documention talks about a <tt>test-sample.py</tt> script.
+
+   PROTIP: You can save hours of headache by using the repo I created after getting the <tt>uv</tt> package to work. 
+
+1. Open a Bash scripting CLI such as Terminal or, better yet, Warp CLI from <a target="_blank" href="https://warp.dev/">https://warp.dev</a>.
+1. Create a folder where Git will create a folder using these commands:
+   <pre>
+   git clone https://github.com/bomonike/playwright-scripts; cd playwright-scripts
+   </pre>
+1. Create a folder where Git will create a folder using these commands:
+   <pre>
+   cd test-example
+   python -m venv .venv
+   source .venv/bin/activate
+   uv pip install pytest pytest-playwright playwright -U
+   playwright install  #  browser binaries: Chromium, Firefox, WebKit, FFMPEG
+   # NOTE: cached in /Users/johndoe/Library/Caches/ms-playwright/ to run Playwright tests.
+
+   pytest test_example.py --browser chromium --headed --debug
+   </pre>
+
+1. Run a sample test in the language of your choice from above. For Python:
+   <pre>pytest test_example.py --browser chromium --headed --debug
+   </pre>
 
 1. Generate emulation (test) scripts by recording actions as a human user.
 
-1. Setup Microsoft's <a target="_blank" href="https://azure.microsoft.com/en-us/products/playwright-testing/">Playwright Testing Service in the Azure cloud</a> at:
+   Accelerate test creation and insights with AI-powered tooling.
 
-   <a target="_blank" href="https://playwright.microsoft.com/"><strong>https://playwright.microsoft.com</strong></a>
+1. Setup Microsoft's <a target="_blank" href="https://azure.microsoft.com/en-us/products/playwright-testing/">Playwright Testing Service in the Azure cloud</a> (<a target="_blank" href="https://techcommunity.microsoft.com/blog/AppsonAzureBlog/introducing-azure-app-testing-scalable-end-to-end-app-validation/4440496">Part of "Azure App Testing") at:
+
+   <a target="_blank" href="https://azure.microsoft.com/en-us/products/playwright-testing/">https://azure.microsoft.com/en-us/products/playwright-testing</a>
+   (formerly at<br />
+   <a target="_blank" href="https://playwright.microsoft.com/"><strong>https://playwright.microsoft.com</strong></a>)
+
+   Within https://portal.azure.com/#home : Azure Web Tesing at https://portal.azure.com/#view/HubsExtension/AssetMenuBlade/~/overview/assetName/AzureAppTesting/extensionName/Microsoft_Azure_CloudNativeTesting which consists of two services:
+
+   * Playwright Workspaces for functional QA testing
+   * Azure Load Testing for performance testing
+
+1. Read the documentation at https://learn.microsoft.com/en-us/azure/app-testing/
+
 
    Under your subscription, create a globally unique <strong>workspace</strong> of up to 64 alphanumeric characters (no dashes, etc.).
 
+
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1712692112/playwright-cloud-init-2450x1554_vutu4i.png"><img alt="playwright-cloud-init-2450x1554.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1712692112/playwright-cloud-init-2450x1554_vutu4i.png"></a>
 
-   The same price is charged across the limited number of regions where the service is available during preview (East US, West US 3, East Asia, West Europe). The choice is embedded in the CLI variable:
+1. pricing
 
-   <tt>export PLAYWRIGHT_SERVICE_URL=wss://eastus.api.playwright.microsoft.com/api/authorize/connectSession</tt>
+   The same price is charged across the limited number of regions where the service is available during preview (East US, West US 3, East Asia, West Europe). 
+   
+   See the Pricing page at
+   https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account?icid=playwright-testing
+
+   The choice is embedded in the URL used to call the service, CLI variable used within test script code:
+
+   <tt>export PLAYWRIGHT_SERVICE_URL=wss://eastus.api.playwright.microsoft.com/api/authorize/connectSession
+   echo PLAYWRIGHT_SERVICE_URL="$PLAYWRIGHT_SERVICE_URL"</tt>
 
    Generate the API Access token <tt>PLAYWRIGHT_SERVICE_ACCESS_TOKEN=</tt> and store it securely in an encrypted vault until needed.
 
@@ -788,6 +834,13 @@ The library maintained by <a target="_blank" href="https://github.com/microsoft/
 1. QUESTION: Use Playwright scripts to perform load testing?
 
    We need to control <a target="_blank" href="https://portal.azure.com/">https://portal.azure.com</a>, particularly to create an AI Cognitive group in order to check the "Microsoft Responsible AI Agreement". That is needed before automation such as Terraform and Bicep are allowed to create AI-related resources.
+
+In response to https://www.reddit.com/r/QualityAssurance/comments/1cq4ja8/learning_playwright/
+
+A tutorial by Artem is provided at https://www.bondaracademy.com/course/sdet-with-playwright
+(and on his Udemy class) for $139 for a quiz, or $499 for test case coding and code reviews using JavaScript (not Python). 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=pq20Gd4LXeI&t=29s">VIDEO course</a> by Mukesh Otwani.
 
 <hr />
 
