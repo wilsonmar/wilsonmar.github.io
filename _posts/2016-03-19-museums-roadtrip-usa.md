@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-07-12"
-lastchange: "v010 + cleveland :2016-03-19-museums-roadtrip-usa.md"
+date: "2025-10-26"
+lastchange: "25-10-26 v011 + fastest :2016-03-19-museums-roadtrip-usa.md"
 url: https://wilsonmar.github.io/museums-roadtrip-usa
 file: "museums-roadtrip-usa"
 title: "Museums Roadtrip USA"
@@ -156,14 +156,22 @@ The American Discovery Trail (https://discoverytrail.org/) spans 6,800 miles fro
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1707778533/museums-us-am-disc-trail-1688x1018_snp2gt.png"><img alt="museums-us-am-disc-trail-1688x1018.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1707778533/museums-us-am-disc-trail-1688x1018_snp2gt.png"></a>
 
-## National Parks
 
-America's greatest treasure is the <a target="_blank" href="https://www.wikiwand.com/en/National_Park_Service">63</a> <a target="_blank" href="https://www.nps.gov/index.htm">national parks managed by the U.S. National Park Service.
+NERDY TRIVIA: How fast would one need to drive to see a sunset continuously?<br />
+If you were at 89.9 degrees North near a Pole, you could walk across all time zones in the world.<br />
+The formula is: v = circumference * cos(ϕ) where ϕ = latitude.<br />
+At the equator, the circumferance of the earth is 40,075 km, so the earth rotates at
+40,075 km / 24 h ≈ <strong>1670 km/h (1038 mph)</strong>.<br />
+At Denver, Colorado, its 40 degrees latitude = 0.77 radians, so <strong>1279 km/h (795 mph)</strong>.
+See my Python program that calculates it at 
+https://github.com/wilsonmar/python-samples/blob/main/sunset-speed.py
 
+## US National Parks
+
+Among America's greatest treasures are the <a target="_blank" href="https://www.wikiwand.com/en/National_Park_Service">63</a> <a target="_blank" href="https://www.nps.gov/index.htm">national parks managed by the U.S. National Park Service.
 
 <img alt="us-nps-ma-1500x938.jpeg" width="1500" height="938" src="https://user-images.githubusercontent.com/300046/133946844-809c6182-2763-45ba-8d29-217ea2eb28cc.jpeg">
 The <a target="_blank" href="https://www.amazon.com/US-National-Parks-Map-22-5/dp/B072ZWHL8V">map above</a> is missing White Sands National Park (New Mexico), Indiana Dunes, and Gateway Arch (St. Louis).
-
 
 <a target="_blank" href="https://tbandjtravel.com/the-u-s-map/">One couple visited the most significant parks in this order</a>:
 <a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/25560224/6b14fde6-2d1c-11e7-952e-52e883844808.jpg">
