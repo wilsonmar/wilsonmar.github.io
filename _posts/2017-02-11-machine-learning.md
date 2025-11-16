@@ -1,6 +1,8 @@
 ---
 layout: post
-date: "2024-02-05"
+date: "2025-11-15"
+lastchange: "25-11-15 v002 + potassium :2017-02-11-machine-learning.md"
+url: https://wilsonmar.github.io/machine-learning
 file: "machine-learning"
 title: "Machine Learning"
 excerpt: "Different ways to use data to create a model (program)"
@@ -11,6 +13,7 @@ image:
   credit: 
   creditlink: 
 comments: true
+created: "2017-02-11"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -31,20 +34,18 @@ That wasn't Machine Learning or AI.
 But In 2016, IBM's Watson software beat top Jeopardy game champions
 by "learning" from books and encyclopedias. 
 IBM only created the program that enables the computer to learn.
-The software makes use of a "model" from <strong>example</strong> 
-inputs to make predictions
-vs. following strictly static program instructions (logic defined by human developers).
+The software makes use of a <strong>"model"</strong> from <strong>example</strong> vs. following strictly <strong>static program instructions</strong> (logic defined by human developers).
 
 > Machine learning is a type of AI (Artificial Intelligence) that enables computers to do things <strong>without being explicitly programmed</strong> by human developers. Rather than explicit programming, Machine Learning algorithms identify rules through "training” based on many examples.
 
 <a target="_blank" href="https://www.ted.com/talks/noriko_arai_can_a_robot_pass_a_university_entrance_exam">
 <img alt="ai-todai-robot-441x441.jpg" src="https://user-images.githubusercontent.com/300046/29997360-3aeeac38-8fce-11e7-8913-fc600e6d13de.jpg"></a><br />
-The photo above is the <a target="_blank" href="http://21robot.org/">Todai Robot</a> in scored among the upper 20% of students in Japan's university entrance exams. Writing essays using a pen on paper. In Japanese. It knows 8,000 Japanese words, 2,000 mathematical axioms, and uses "symbolic computation" for "automatic reasoning" on 15 billion sentences. <a target="_blank" href="http://21robot.org/news/">
-Back in 2014</a>.
+The photo above is the <a target="_blank" href="http://21robot.org/">Todai Robot</a>, <a target="_blank" href="http://21robot.org/news/">
+back in 2014</a>, scoring among the upper 20% of students in Japan's university entrance exams -- writing essays using a pen on paper. In Japanese. It knows 8,000 Japanese words, 2,000 mathematical axioms, and uses "symbolic computation" for "automatic reasoning" on 15 billion sentences.
 
 In 2017, the top ranked player in the Chinese game Go was <a target="_blank" href="https://www.nytimes.com/2017/05/23/business/google-deepmind-alphago-go-champion-defeat.html">
 defeated by Google's AlphaGo</a>, which is based on Google's DeepMind acquisition.
-The software made moves that many considered illogical.
+The software made moves that many human players considered illogical.
 BTW, Go is considered the most complex game ever invented.
 Whereas chess players have, at any given turn, an average of 35 possible moves,
 on a Go board's 19-by-19 grid, there are 250 possible moves. 
@@ -64,7 +65,7 @@ meaning they're not just about poker, but a range of adversarial problems.
 21 August 2017, Elon Musk tweets: "OpenAI first ever to defeat world's best players in competitive eSports [dota2]. Vastly more complex than traditional board games like Chess & Go". <a target="_blank" href="https://www.youtube.com/watch?v=XbDmxEOj9OY">VIDEO</a>.
 
 
-## Use Cases 
+## Use Cases for AI
 
 What ordinary people might appreciate:
 
@@ -185,16 +186,15 @@ Machine learning uses some terms that have alternate meanings for words also use
 
 ## Types of machine learning
 
+<img alt="ml-types-1730x754.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1763267651/ml-types-1730x754_ftldp9.png"></sub>--by <a target="_blank" href="https://www.linkedin.com/in/geenakim/">Geena Kim</a></sub)
+
 ### Supervised learning 
 
-The supervised learning approach aims to predict an output given an input
-by making use of a <strong>labeled</strong> data set of training data (examples) 
-to which we know the "answer" or <strong>target</strong>. 
-It gets feedback on what is correct or not. 
-The training correlates features 
-to outputs in order to predict outputs based on new inputs.
+The supervised learning approach predicts an output by making use of a <strong>labeled</strong> data set of training data(examples) which provide and "answer" or <strong>target</strong> giving feedback on what is correct or not.
 
-   * For time series analysis, use a "recurrent net".
+   * The training correlates features to outputs in order to predict outputs based on new inputs.
+
+For time series analysis, use a "recurrent net".
    Recurrent nets process data that changes with time,
    using a feedback loop that acts as a forecasting engine.
    
@@ -225,8 +225,7 @@ to outputs in order to predict outputs based on new inputs.
    Clarifai</a> uses a convolutional net to recognize things and concepts in a digital image.
    It then presents similar images.
 
-   Kernel methods are a group of algorithms for classification.
-   <strong>Support Vector Machine (SVM)</strong>
+   Kernel methods are a group of algorithms for <strong>classification</strong>--<strong>Support Vector Machine (SVM)</strong>
    being the best known from Vapnik and Cortes in the early 1990s at Bell Labs and Vapnik and Chervonenkis as early as 1963.
    SVM classifies by finding in training data "decision boundaries" between sets of points belonging to different categories. Classifying new data points involves checking which side of the decision boundary they fall on.
 
@@ -240,7 +239,7 @@ The Deep Visualization Toolkit illustrates the intermediate process.
 ### Unsupervised learning #
 
 The "unsupervised" part of unsupervised learning 
-means it makes use of a dataset without labels. 
+means it makes use of a dataset <strong>without labels</strong>.
 
 It uses "feature extraction" to discover a good internal representation of the input. 
 It identifies the structure of data to solve some given task.
@@ -276,8 +275,7 @@ It uses "Pattern recognition" to <strong>classify</strong> patterns and clusters
    As an example, to determine whether an animal is acerous or not acerous (has horns), it
    look at features such as color, number of legs, horns.
 
-   "Principal Component Analysis" is a widely used linear method for finding
-   a low-dimensional representation.
+   "Principal Component Analysis" (PCA) is a linear method for finding a low-dimensional representation.
 
 ### Reinforcement learning 
 
