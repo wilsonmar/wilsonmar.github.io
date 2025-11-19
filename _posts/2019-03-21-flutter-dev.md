@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-11-18"
-lastchange: "25-11-18 v003 + installers :2019-03-21-flutter-dev.md"
+date: "2025-11-19"
+lastchange: "25-11-19 v004 + samples :2019-03-21-flutter-dev.md"
 url: https://wilsonmar.github.io/flutter-dev
 file: "flutter-dev"
 title: "Flutter development"
@@ -23,105 +23,56 @@ Flutter offers a single codebase (Google's UI SDK) for building beautiful, nativ
    * Desktop apps on Windows, Mac, Linux
    * Mobile (smart phone) apps on Google Android vs. Java
    * Mobile (smart phone) apps on Apple iOS vs. Swift programming
-   * Web apps on internet browsers
+   * PWAs (Progressive Web Apps) and stand-alone SPAs (Single Page Apps such as products) on internet browsers
    <br /><br />
 
-Released in 2017, Flutter now has the largest share (and growing) in the cross-platform app development services market.
+Flutter is not as convenient to build for text-rich presentations on the web as static web page generators such as Jerkyll for github.io URLs.
+
+## Flutter Releases
+
+First announced in 2011, the Flutter framework now has the largest share (and growing) in the cross-platform app development services market:
+
 <a target="_blank" href="https://www.miquido.com/blog/flutter-app-development-cost/"><img alt="flutter-growth-1536x1435.png.webp" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1763523476/flutter-growth-1536x1435.png_mvxomo.webp" /></a>
 
-## Smart Phone features in apps
+   * The <a target="_blank" href="https://www.jetbrains.com/lp/devecosystem-2024/">JetBrains State of the Developer Ecosystem survey</a>, Flutter has been the most used multi-platform app framework, since 2021.
+   * App intelligence provider AppTopia reports that, in 2024, Flutter accounts for nearly 30% of all new free iOS apps.
+   * <a target="_blank" href="https://www.youtube.com/shorts/YTLlpXDmh5o">VIDEO</a>: Flutter vs. React native by <a target="_blank" href="https://www.youtube.com/@romanjustcodes/shorts">@RomanJustCodes</a>
+   <br /><br />
 
-PROTIP: The biggest benefit to using Flutter instead of native languages (such as Swift for iOS) is that <strong>no user action is needed to update the app</strong>. However, this <a href="#HotReload">"Hot Reload"</a> causes a little delay for Flutter users as code is updated.
+Mobile apps are defined in Dart code. The Dart build includes both a Dart VM with just-in-time (JIT) compilation and an ahead-of-time (AOT) compiler for producing machine code native device code (like Swift for iOS and Java on Android). 
 
-Flutter app performance compiles directly to native code, ensuring apps run smoothly and efficiently, keeping users engaged with native capabilities such as:
-   * Location (GPS)
-   * Bluetooth
+That ensure apps run smoothly and efficiently, keeping users engaged with native smart phone capabilities:
+
+   * Camera to take pictures (QR codes)
    * Audio (music app Topline by Abbey Road Studios)
+   * Location (GPS)
+   * Bluetooth to headphones and speakers
+   * NFC
    * Sensors
-   * camera
    <br /><br />
 
-Developers have grown weary of "Write Once, Work Everywhere" failed promises from several offerings over the years. Android "Material" and iOS have fundamentally conflicting design UI standards.
+Using Flutter enables cross-device communication: control a browser from a phone app, or controllwhat plays on your TV from your phone. Play music on one device and controls the music on another.
 
-1. Flutter is free and open sourced by Google at:
-
-   <a target="_blank" href="https://github.com/flutter/flutter/blob/master/docs/README.md">https://github.com/flutter/flutter</a>
-
-1. https://dart.dev/resources/glossary
-
-   * "Bottom type" is a type that has no values and is a subtype of all other types.
-   * Closurization = The process of turning a method or function into a closure.
-   * Code asset = Compiled native code that is bundled with a Dart app using a build hook and can be used through dart:ffi.
+* <a target="_blank" href="https://firebase.google.com/codelabs/cross-device-controller?hl=en#0">HANDS-ON: Firebase Cross Device Codelab</a> <a target="_blank" href="https://firebase.google.com/docs/database/web/offline-capabilities#section-sample">The Presence API</a> on Firebase's Realtime Database (RTDB) enables apps that let users see their device online/offline status. Use it with the Firebase Installations Service to track and connect all the devices where the same user has signed in.
    <br /><br />
+   
+   Get the music player app starter code:
 
-1. Documentation
+   <pre>git clone https://github.com/FirebaseExtended/cross-device-controller.git
+   cd cross-device-controller/starter_code
+   flutter pub get
+   </pre>
 
-   <a target="_blank" href="https://docs.flutter.dev">docs.flutter.dev</a>
-
-1. API reference is at https://api.flutter.dev.
-   <a target="_blank" href="https://console.actions.google.com/">Actions on Google Console</a>
-
-## Ecosystem
-
-Developing using Flutter involves mastering several technologies within Google's development ecosystem:
-   * <a href="DartLang">Google's Dart language</a>
-   * Android
-   * ARCore
-   * ChromeOS
-   * <a href="#Firebase">Firebase database</a> & <a target="_blank" href="https://console.firebase.google.com/?pli=1">console</a>
-   * Flutter (this page)
-   * Google Assistant
-   * <a target="_blank" href="https://wilsonmar.github.io/gcp">Google Cloud</a>
-   * Google Maps Platform
-   * Google Pay & Google Wallet
-   * Google Play <a target="_blank" href="https://play.google.com/apps/publish">console</a>
-   * TensorFlow
-   <br /><br />
-
-Other Google services:
-   * AdMob
-   * AlloyDB
-   * analytics
-   * Android TV
-   * Assistant
-   * Cast
-   * Cloud Key Management Service (KMS)
-   * Cloud Run
-   * Cloud SQL
-   * GKE Enterprise
-   * ML Kit
-   * Google Workspace (Gmail)
-   * TensorFlow
-   * Wear OS
-   <br /><br />
+* GE Appliances uses Flutter to display UIs on small LCD screens found on modern appliances.
 
 
-<a target="_blank" href="https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/#create-a-new-flutter-project-using-android-studio">Create a New Flutter Project Using Android Studio IDE</a>
+## Sample apps 
 
-<a target="_blank" href="https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/#create-a-new-flutter-project-using-visual-studio-code">Create a New Flutter Project Using Visual Studio Code</a>
-
-## Socials
-
-1. Subscribe to:
-
-   https://www.youtube.com/@flutterdev
-
-   https://www.reddit.com/r/FlutterDev/
-
-   https://developers.google.com/community/experts
-   if you are an expert already, like <a target="_blank" href="https://www.linkedin.com/in/mtwichel/">Marcus Twichel</a> at Billings, United States
-
-1. Join the official Discord channel (and complete the intro) at 
-   https://discord.com/invite/ht477J5PyH
-
-   https://github.com/flutter/flutter/blob/master/docs/contributing/Chat.md
-
-
-## Sample apps
+* https://flutter.dev/showcase
 
 * https://appgallery.io/
 
-   https://appgallery.io/walidashik
+* https://appgallery.io/walidashik
 
 * <a target="_blank" href="https://codecanyon.net/category/mobile/flutter/full-applications">CodeCanyon.net's Flutter Full Applications</a>, some with live preview.
    * <a target="_blank" href="https://play.google.com/store/apps/details?id=com.hamilton.app&hl=en&gl=US">Hamilton Musical app</a>
@@ -146,13 +97,102 @@ Other Google services:
 
 * https://kobe.io/ = Kobe Apps, a mobile app SaaS Platform built in Flutter, to design and build a proof of concept, in English and Portugese.
 
+
+
+## Smart Phone features in apps
+
+PROTIP: The biggest benefit to using Flutter instead of native languages (such as Swift for iOS) is that <strong>no user action is needed to update the app</strong>. However, this <a href="#HotReload">"Hot Reload"</a> causes a little delay for Flutter users as code is updated.
+
+Over the years, developers have grown weary of "Write Once, Work Everywhere" failed promises from several offerings. Android "Material" and iOS have fundamentally conflicting design UI standards.
+
+1. Flutter is free and open sourced by Google at:
+
+   <a target="_blank" href="https://github.com/flutter/flutter/blob/master/docs/README.md">https://github.com/flutter/flutter</a>
+
+1. REMEMBER: https://dart.dev/resources/glossary
+
+   * "Bottom type" is a type that has no values and is a subtype of all other types.
+   * Closurization = The process of turning a method or function into a closure.
+   * Code asset = Compiled native code that is bundled with a Dart app using a build hook and can be used through dart:ffi.
+   <br /><br />
+
+1. Documentation
+
+   <a target="_blank" href="https://docs.flutter.dev">docs.flutter.dev</a>
+
+   ### Ecosystem APIs
+
+1. API reference is at https://api.flutter.dev.
+   <a target="_blank" href="https://console.actions.google.com/">Actions on Google Console</a>
+
+   Developing using Flutter involves mastering several technologies within Google's development ecosystem:
+
+   * <a href="DartLang">Google's Dart language</a>
+   * Android
+   * ARCore
+   * ChromeOS
+   * <a href="#Firebase">Firebase database</a> & <a target="_blank" href="https://console.firebase.google.com/?pli=1">console</a>
+   * Flutter (this page)
+   * Google Assistant
+   * <a target="_blank" href="https://wilsonmar.github.io/gcp">Google Cloud</a>
+   * Google Maps Platform
+   * Google Pay & Google Wallet
+   * Google Play <a target="_blank" href="https://play.google.com/apps/publish">console</a>
+   * TensorFlow
+   <br /><br />
+
+   Other Google services:
+   * AdMob
+   * AlloyDB
+   * analytics
+   * Android TV
+   * Assistant
+   * Cast
+   * Cloud Key Management Service (KMS)
+   * Cloud Run
+   * Cloud SQL
+   * GKE Enterprise
+   * ML Kit
+   * Google Workspace (Gmail)
+   * TensorFlow
+   * Wear OS
+   <br /><br />
+
+   ## Get Social
+
+   https://flutter.dev/ecosystem
+
+1. Subscribe to:
+
+   https://blog.flutter.dev articles on Medium.com where new releases are explained with images.
+
+   https://www.youtube.com/@flutterdev
+
+   https://www.reddit.com/r/FlutterDev/ for trolls
+
+   https://developers.google.com/community/experts
+   if you are an expert already, like <a target="_blank" href="https://www.linkedin.com/in/mtwichel/">Marcus Twichel</a> at Billings, United States
+
+1. Sign up for the Flutter Community Forum:
+
+   https://forum.itsallwidgets.com/latest
+
+   Save the password.
+
+1. Join the official Discord channel (and complete the intro) at 
+   https://discord.com/invite/ht477J5PyH
+
+   https://github.com/flutter/flutter/blob/master/docs/contributing/Chat.md
+
+1. Join Premium (for $24.99/monrh):
+
+   https://developers.google.com/program/plans-and-pricing
+
+
 ## Dev Costs
 
-Online calculators like Estimate My App and Cleveroad help users calculate upfront costs. 
+Online calculators like Estimate My App and Cleveroad help users calculate upfront costs of development by a team that consists of:
 
-### Dev team
-
-A software development team has the following members:
    * Product owner – oversees app creation and serves as the link between the project team and organization.
    * Project manager – manages project progression, ensuring timely and on-budget delivery.
    * Business analyst – analyzes the project requirements to ensure it meets business goals.
@@ -161,14 +201,16 @@ A software development team has the following members:
    * Quality Assurance specialists  – test the app to ensure it meets project requirements.
    <br /><br />
 
+<a target="_blank" href="https://blog.burkharts.net/practical-flutter-architecture">Practical Flutter Architecture</a> (PFA) 
+by Thomas Burkhart: MVC, MVU, MVVM, RVMS (Reactive View Manager Services), PFA.
+
+
 <a name="ProCerts"></a>
 
-## ProCerts
+## Professional Certifications
 
 https://developers.google.com/certification/associate-android-developer
 has been retired.
-
-https://developers.google.com/training/
 
 Popular content creator are Google Experts:
 
@@ -182,9 +224,15 @@ https://androidatc.com/pages/Eng/Flutter-Certified-Application-Developer
 https://www.youtube.com/watch?v=xWV71C2kp38
 
 
-## Setup for development
+<a name="MacOSInstall"></a>
+
+## Install for local Development on MacOS
 
 https://docs.flutter.dev/get-started/custom#target-platform
+
+* <a target="_blank" href="https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/#create-a-new-flutter-project-using-android-studio">Create a New Flutter Project Using Android Studio IDE</a>
+
+* <a target="_blank" href="https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/#create-a-new-flutter-project-using-visual-studio-code">Create a New Flutter Project Using Visual Studio Code</a>
 
 1. Install Homebrew for Mac
 1. Install git, XCode
@@ -251,6 +299,17 @@ https://docs.flutter.dev/get-started/custom#target-platform
 1. Check for macOS devices to ensure Flutter can find and connect to your macOS device correctly, run flutter devices in your preferred terminal:
 
    <pre>flutter devices</pre>
+
+   <a name="Testing"></a>
+
+   ## Testing mobile apps
+
+   <a target="_blank" href="https://codelabs.developers.google.com/codelabs/flutter-app-testing/#0">How to Test a Flutter app</a>
+
+1. Create an Android emulator, download Android Studio which also supports Flutter development, and follow the instructions in Create and manage virtual devices.
+
+1. Create an iOS simulator, you will need a Mac environment. Download XCode, and follow the instructions in Simulator Overview > Use Simulator > Open and close a simulator.
+
 
 ## Tutorials
 
@@ -497,9 +556,19 @@ Run "flutter help -v" for verbose help output, including less commonly used opti
 
    Dart code files have an extension of ".dart", introduced in 2011 and got to v1.0 in 2013.
 
-1. Past versions are listed at:
+1. List past versions at:
 
    https://dart.dev/resources/whats-new
+
+   <a target="_blank" href="https://blog.flutter.dev/dart-flutter-momentum-at-google-i-o-2025-4863aa4f84a4"><img alt="" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1763557327/dartlang-evolution_mlow50.webp" /></a>
+
+1. Contributed code used for Google's demos 
+
+   https://github.com/flutter/demos
+
+1. open source samples that illustrate best practices for Flutter
+
+   https://github.com/flutter/samples?tab=readme-ov-file
 
 1. TODO: dart install tool.
 
@@ -570,6 +639,16 @@ Run "flutter help -v" for verbose help output, including less commonly used opti
     }
    ```
 
+1. TODO: dart build tool.
+
+
+## SVG & Icon Fonts
+
+.svg vector files look sharper and consume less space because they are treated like program code.
+
+Search for images from stock photo sites:
+   * dribble.com
+   * pinterest.com
 
 1. Dart function declaration to let the LLM set colors in your app:
 
@@ -585,10 +664,10 @@ FunctionDeclaration get setColorFuncDecl => FunctionDeclaration(
 );
    ```
 
-1. TODO: dart build tool.
-
 
 ## UI Widgets
+
+PROTIP: Split code into separate widget sections for faster performance.
 
 <img align="right" alt="flutter-widgets-hier-357x662.png" width="200" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1763520045/flutter-widgets-hier-357x662_tyx0vr.png" />
 
@@ -599,11 +678,6 @@ Google Material Design and Cupertino support Flutter’s wide range of widgets.
 * <a target="_blank" href="https://codelabs.developers.google.com/codelabs/flutter-next-gen-uis?hl=en">Building next generation UIs in Flutter</a> - animations, shaders, and particle effects that work across all of Flutter’s six platforms.
 
 
-## Cross-device
-
-<a target="_blank" href="https://firebase.google.com/codelabs/cross-device-controller?hl=en#0">Firebase Cross Device Codelab</a>
-
-
 ## Smart Phone app features
 
 animations and transitions to make apps visually stunning.
@@ -612,6 +686,12 @@ Utilize device features such as the camera within your applications.
 
 <a target="_blank" href="https://medium.com/@kingrittik/mastering-emulators-in-vs-code-android-studio-google-fold-pro-pro-tips-4f11bd97fa6a"> Mastering Emulators in VS Code & Android Studio (Google Fold Pro & Pro Tips!)</a> (virtual devices)
 
+Zoho Tables mobile apps are built using Flutter and has a million lines of code. All state management is done using BLoC, ValueNotifier, ValueListenableBuilder.
+
+## Database
+
+https://github.com/amugofjava/anytime_podcast_player
+uses Sembast, a NoSQL in-memory database but less suitable for a larger, more data-centric app.
 
 ## Web apps
 
@@ -633,6 +713,10 @@ Third-party integrations include cloud hosting, data storage, payment gateways, 
 ## Google's Firebase Backend
 
 1. Google Project Account to set up Firebase account.
+
+1. Get on the FireBase Console at:
+
+   <a target="_blank" href="https://console.firebase.google.com/">https://console.firebase.google.com/</a>
 
 1. <a target="_blank" href="https://firebase.google.com/docs/flutter/setup?platform=ios">Add Firebase to your Flutter app</a>
 
