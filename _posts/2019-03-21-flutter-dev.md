@@ -1,11 +1,11 @@
 ---
 layout: post
 date: "2025-11-18"
-lastchange: "25-11-18 v002 + 1900x500 hero img :2019-03-21-flutter-dev.md"
+lastchange: "25-11-18 v003 + installers :2019-03-21-flutter-dev.md"
 url: https://wilsonmar.github.io/flutter-dev
 file: "flutter-dev"
 title: "Flutter development"
-excerpt: "Use Google's Dart language Firebase database to create apps on web, iOS and Android"
+excerpt: "Use Google's Dart language Firebase database & Riverpod to create Gemini apps on web, iOS and Android"
 tags: [website, Android, iOS, Google]
 image:
 # feature: flutter-logo-1900x500.jpg
@@ -182,6 +182,75 @@ https://androidatc.com/pages/Eng/Flutter-Certified-Application-Developer
 https://www.youtube.com/watch?v=xWV71C2kp38
 
 
+## Setup for development
+
+https://docs.flutter.dev/get-started/custom#target-platform
+
+1. Install Homebrew for Mac
+1. Install git, XCode
+1. Install Flutter for CLI with <tt>brew install --cask flutter</tt>
+1. Install Visual Studio Code with extras for Flutter:
+   https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
+   1. Click "Install".
+
+   Alternately:
+   1. In Go to View > Command Palette or press Command + Shift + P.
+   1. In the command palette, type flutter.
+
+   1. Select Flutter: New Project.
+
+    VS Code prompts you to locate the Flutter SDK on your computer. Select Download SDK.
+
+   1. When the Select Folder for Flutter SDK dialog displays, choose where you want to install Flutter.
+
+   1. Click Clone Flutter.
+
+   1. While downloading Flutter, VS Code displays this pop-up notification:
+
+   1. Downloading the Flutter SDK. This may take a few minutes.
+    This download takes a few minutes. If you suspect that the download has hung, click Cancel then start the installation again.
+
+   1. Click Add SDK to PATH.
+
+   1. When successful, a notification displays: "The Flutter SDK was added to your PATH. VS Code might display a Google Analytics notice." If you agree, click OK.
+
+   1. To ensure that Flutter is available in all terminals: Close all terminal windows. Then Quit and Restart VS Code.
+
+1. Verify installation: <pre>flutter --version</pre>
+   ```
+    Flutter 3.38.2 • channel stable •
+    https://github.com/flutter/flutter.git
+    Framework • revision f5a8537f90 (15 hours
+    ago) • 2025-11-18 09:27:21 -0500
+    Engine • hash
+    78c3c9557e50ee7c676fa37562558c59efd8406a
+    (revision b5990e5ccc) (6 days ago) •
+    2025-11-12 21:08:24.000Z
+    Tools • Dart 3.10.0 • DevTools 2.51.1
+   ```
+
+1. To support Flutter plugins that use native macOS code, install the latest version of https://cocoapods.org/, following the <a target="_blank" href="https://guides.cocoapods.org/using/getting-started.html#installation">CocoaPods installation guide</a>
+   See https://flutter.dev/to/platform-plugins
+
+   <pre>sudo gem install cocoapods</pre>
+
+   Alternately, <a target="_blank" href="https://guides.cocoapods.org/using/getting-started.html#updating-cocoapods">CocoaPods update guide</a>.
+
+   <pre>[sudo] gem install cocoapods</pre>
+
+1. Run <pre>flutter doctor -v</pre>
+   ```
+    [✗] Chrome - develop for the web (Cannot find
+        Chrome executable at /Applications/Google
+        Chrome.app/Contents/MacOS/Google Chrome)
+        [7ms]
+        ! Cannot find Chrome. Try setting
+        CHROME_EXECUTABLE to a Chrome
+        executable.
+   ```
+1. Check for macOS devices to ensure Flutter can find and connect to your macOS device correctly, run flutter devices in your preferred terminal:
+
+   <pre>flutter devices</pre>
 
 ## Tutorials
 
@@ -191,27 +260,19 @@ https://www.youtube.com/watch?v=xWV71C2kp38
 
 1. Create your first app at <a href="#Tutorial1">Google Skills Tutorial below</a>
 
-1. <a target="_blank" href="https://www.youtube.com/watch?v=8sAyPDLorek">Building your first Flutter App</a> within <a target="_blank" href="https://codelabs.developers.google.com/?text=flutter">https://codelabs.developers.google.com/?text=flutter</a>
+1. <a target="_blank" href="https://www.youtube.com/watch?v=8sAyPDLorek">Building your first Flutter App</a> within <a target="_blank" href="https://codelabs.developers.google.com/?text=flutter">https://codelabs.developers.google.com/?text=flutter</a> with code at:
+
+   <a target="_blank" href="https://github.com/googlecodelabs">https://github.com/googlecodelabs</a>
+   shown using npm ployserve.
 
 1. https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/ 13 Mar, 2025
 
-1. May 2023 https://learning.oreilly.com/course/learn-flutter-and/9781805122029/
-30-hour video course by <a target="_blank" href="https://www.linkedin.com/in/maximilian-schwarzmueller/">Maximilian Schwarzmüller</a> from Germany (https://maximilian-schwarzmueller.com/)
+1. https://learning.oreilly.com/course/learn-flutter-and/9781805122029/
+30-hour video course May 2023 by <a target="_blank" href="https://www.linkedin.com/in/maximilian-schwarzmueller/">Maximilian Schwarzmüller</a> from Germany (https://maximilian-schwarzmueller.com/)
 
-1. <a target="_blank" href="https://www.ffnext.io/blog/flutter-animations">Animations in Flutter - a developer’s guide</a>
+1. <a target="_blank" href="https://www.ffnext.io/blog/flutter-animations">Animations in Flutter - a developer’s guide</a>: Automated Carousel, Parallax effect, Animated button, Bouncing View, Animated Wave, Instagram Story.
 
 1. https://learning.oreilly.com/library/view/-/9781098154752/
-
-## Setup for development
-
-https://docs.flutter.dev/get-started
-
-1. Install Homebrew for Mac
-1. Install git, 
-1. Install Visual Studio Code with extras for Flutter. In Go to View > Command Palette or press Command + Shift + P.
-
-   https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
-
 
 <a name="Tutorial1"></a>
 
@@ -442,71 +503,71 @@ Run "flutter help -v" for verbose help output, including less commonly used opti
 
 1. TODO: dart install tool.
 
-1. <tt>/lib/main.dart</tt> from <a target="_blank" href="https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/#create-a-new-flutter-project-using-visual-studio-code">*</a>
+1. Contents of <tt>/lib/main.dart</tt> from <a target="_blank" href="https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/#create-a-new-flutter-project-using-visual-studio-code">*</a>
    ```
-// Importing important packages require to connect
-// Flutter and Dart
-import 'package:flutter/material.dart';
+    // Importing important packages require to connect
+    // Flutter and Dart
+    import 'package:flutter/material.dart';
 
-// Main Function
-void main() {
-// Giving command to runApp() to run the app.
+    // Main Function
+    void main() {
+    // Giving command to runApp() to run the app.
 
-// The purpose of the runApp() function is to attach
-// the given widget to the screen.
-  runApp(const MyApp());
-}
+    // The purpose of the runApp() function is to attach
+    // the given widget to the screen.
+    runApp(const MyApp());
+    }
 
-// MyApp extends StatelessWidget and overrides its
-// build method.
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+    // MyApp extends StatelessWidget and overrides its
+    // build method.
+    class MyApp extends StatelessWidget {
+    const MyApp({Key? key}) : super(key: key);
 
-// This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+    // This widget is the root of your application.
+    @override
+    Widget build(BuildContext context) {
+        return MaterialApp(
+            
+        // title of the application
+        title: 'Hello World Demo Application',
         
-      // title of the application
-      title: 'Hello World Demo Application',
-      
-      // theme of the widget
-      theme: ThemeData(
-        primarySwatch: Colors.lightGreen,
-      ),
-      
-      // Inner UI of the application
-      home: const MyHomePage(title: 'Home page'),
-    );
-  }
-}
+        // theme of the widget
+        theme: ThemeData(
+            primarySwatch: Colors.lightGreen,
+        ),
+        
+        // Inner UI of the application
+        home: const MyHomePage(title: 'Home page'),
+        );
+    }
+    }
 
-// This class is similar to MyApp instead it
-// returns Scaffold Widget 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
+    // This class is similar to MyApp instead it
+    // returns Scaffold Widget 
+    class MyHomePage extends StatelessWidget {
+    const MyHomePage({Key? key, required this.title}) : super(key: key);
+    final String title;
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-        backgroundColor: Colors.green,
-        foregroundColor: Colors.white,
-      ),
-      
-      // Sets the content to the
-      // center of the application page
-      body: const Center(
-          
-          // Sets the content of the Application
-          child: Text(
-        'Welcome to Visual Studio Code!',
-      )),
-    );
-  }
-}
+    @override
+    Widget build(BuildContext context) {
+        return Scaffold(
+        appBar: AppBar(
+            title: Text(title),
+            backgroundColor: Colors.green,
+            foregroundColor: Colors.white,
+        ),
+        
+        // Sets the content to the
+        // center of the application page
+        body: const Center(
+            
+            // Sets the content of the Application
+            child: Text(
+            'Welcome to Visual Studio Code!',
+        )),
+        );
+    }
+    }
    ```
 
 
@@ -529,11 +590,14 @@ FunctionDeclaration get setColorFuncDecl => FunctionDeclaration(
 
 ## UI Widgets
 
-<img align="right" alt="flutter-widgets-hier-357x662.png" width="200" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1763520045/flutter-widgets-hier-357x662_tyx0vr.png" /></a>
+<img align="right" alt="flutter-widgets-hier-357x662.png" width="200" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1763520045/flutter-widgets-hier-357x662_tyx0vr.png" />
 
 Google Material Design and Cupertino support Flutter’s wide range of widgets.
 
-<a target="_blank" href="https://www.youtube.com/live/YY-_yrZdjGc?si=4JjDyiuMCISniUJE">YouTube Live: Building scrolling experiences in Flutter | Workshop</a>
+* <a target="_blank" href="https://www.youtube.com/live/YY-_yrZdjGc?si=4JjDyiuMCISniUJE">YouTube Live: Building scrolling experiences in Flutter | Workshop</a>
+
+* <a target="_blank" href="https://codelabs.developers.google.com/codelabs/flutter-next-gen-uis?hl=en">Building next generation UIs in Flutter</a> - animations, shaders, and particle effects that work across all of Flutter’s six platforms.
+
 
 ## Cross-device
 
@@ -570,6 +634,8 @@ Third-party integrations include cloud hosting, data storage, payment gateways, 
 
 1. Google Project Account to set up Firebase account.
 
+1. <a target="_blank" href="https://firebase.google.com/docs/flutter/setup?platform=ios">Add Firebase to your Flutter app</a>
+
 * <a target="_blank" href="https://firebase.google.com/codelabs/firebase-get-to-know-flutter?hl=en#0">Get to know Firebase for Flutter</a>
 
 * <a target="_blank" href="https://codelabs.developers.google.com/codelabs/flutter-codelab-first?hl=en">Your first Flutter app</a>
@@ -603,9 +669,7 @@ Third-party integrations include cloud hosting, data storage, payment gateways, 
 
 * <a target="_blank" href="http://firebase.google.com/codelabs/firebase-auth-in-flutter-apps?hl=en#0">Send and receive notifications for a Flutter app using Firebase Cloud Messaging</a>
 
-* <a target="_blank" href="https://firebase.google.com/codelabs/firebase-fcm-flutter?hl=en#0">Send and receive notifications for a Flutter app using Firebase Cloud Messaging</a>
-
-* <a target="_blank" href="https://codelabs.developers.google.com/codelabs/flutter-next-gen-uis?hl=en">Building next generation UIs in Flutter</a> - animations, shaders, and particle effects that work across all of Flutter’s six platforms.
+* <a target="_blank" href="https://firebase.google.com/codelabs/firebase-fcm-flutter?hl=en#0">FCM</a>
 
 
 ## Resources
