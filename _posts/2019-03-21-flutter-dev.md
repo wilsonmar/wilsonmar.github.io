@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-11-19"
-lastchange: "25-11-19 v004 + samples :2019-03-21-flutter-dev.md"
+lastchange: "25-11-19 v005 + samples :2019-03-21-flutter-dev.md"
 url: https://wilsonmar.github.io/flutter-dev
 file: "flutter-dev"
 title: "Flutter development"
@@ -162,9 +162,11 @@ Over the years, developers have grown weary of "Write Once, Work Everywhere" fai
 
    https://flutter.dev/ecosystem
 
-1. Subscribe to:
+1. Follow:
 
    https://blog.flutter.dev articles on Medium.com where new releases are explained with images.
+
+1. Subscribe:
 
    https://www.youtube.com/@flutterdev
 
@@ -224,94 +226,7 @@ https://androidatc.com/pages/Eng/Flutter-Certified-Application-Developer
 https://www.youtube.com/watch?v=xWV71C2kp38
 
 
-<a name="MacOSInstall"></a>
-
-## Install for local Development on MacOS
-
-https://docs.flutter.dev/get-started/custom#target-platform
-
-* <a target="_blank" href="https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/#create-a-new-flutter-project-using-android-studio">Create a New Flutter Project Using Android Studio IDE</a>
-
-* <a target="_blank" href="https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/#create-a-new-flutter-project-using-visual-studio-code">Create a New Flutter Project Using Visual Studio Code</a>
-
-1. Install Homebrew for Mac
-1. Install git, XCode
-1. Install Flutter for CLI with <tt>brew install --cask flutter</tt>
-1. Install Visual Studio Code with extras for Flutter:
-   https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
-   1. Click "Install".
-
-   Alternately:
-   1. In Go to View > Command Palette or press Command + Shift + P.
-   1. In the command palette, type flutter.
-
-   1. Select Flutter: New Project.
-
-    VS Code prompts you to locate the Flutter SDK on your computer. Select Download SDK.
-
-   1. When the Select Folder for Flutter SDK dialog displays, choose where you want to install Flutter.
-
-   1. Click Clone Flutter.
-
-   1. While downloading Flutter, VS Code displays this pop-up notification:
-
-   1. Downloading the Flutter SDK. This may take a few minutes.
-    This download takes a few minutes. If you suspect that the download has hung, click Cancel then start the installation again.
-
-   1. Click Add SDK to PATH.
-
-   1. When successful, a notification displays: "The Flutter SDK was added to your PATH. VS Code might display a Google Analytics notice." If you agree, click OK.
-
-   1. To ensure that Flutter is available in all terminals: Close all terminal windows. Then Quit and Restart VS Code.
-
-1. Verify installation: <pre>flutter --version</pre>
-   ```
-    Flutter 3.38.2 • channel stable •
-    https://github.com/flutter/flutter.git
-    Framework • revision f5a8537f90 (15 hours
-    ago) • 2025-11-18 09:27:21 -0500
-    Engine • hash
-    78c3c9557e50ee7c676fa37562558c59efd8406a
-    (revision b5990e5ccc) (6 days ago) •
-    2025-11-12 21:08:24.000Z
-    Tools • Dart 3.10.0 • DevTools 2.51.1
-   ```
-
-1. To support Flutter plugins that use native macOS code, install the latest version of https://cocoapods.org/, following the <a target="_blank" href="https://guides.cocoapods.org/using/getting-started.html#installation">CocoaPods installation guide</a>
-   See https://flutter.dev/to/platform-plugins
-
-   <pre>sudo gem install cocoapods</pre>
-
-   Alternately, <a target="_blank" href="https://guides.cocoapods.org/using/getting-started.html#updating-cocoapods">CocoaPods update guide</a>.
-
-   <pre>[sudo] gem install cocoapods</pre>
-
-1. Run <pre>flutter doctor -v</pre>
-   ```
-    [✗] Chrome - develop for the web (Cannot find
-        Chrome executable at /Applications/Google
-        Chrome.app/Contents/MacOS/Google Chrome)
-        [7ms]
-        ! Cannot find Chrome. Try setting
-        CHROME_EXECUTABLE to a Chrome
-        executable.
-   ```
-1. Check for macOS devices to ensure Flutter can find and connect to your macOS device correctly, run flutter devices in your preferred terminal:
-
-   <pre>flutter devices</pre>
-
-   <a name="Testing"></a>
-
-   ## Testing mobile apps
-
-   <a target="_blank" href="https://codelabs.developers.google.com/codelabs/flutter-app-testing/#0">How to Test a Flutter app</a>
-
-1. Create an Android emulator, download Android Studio which also supports Flutter development, and follow the instructions in Create and manage virtual devices.
-
-1. Create an iOS simulator, you will need a Mac environment. Download XCode, and follow the instructions in Simulator Overview > Use Simulator > Open and close a simulator.
-
-
-## Tutorials
+## Cloud-based IDE Tutorial
 
 1. Install mobile app FlutterLab (Flutter Development course) by Hrishi Suthar provides a wealth of information.
 
@@ -544,6 +459,103 @@ Run "flutter help -v" for verbose help output, including less commonly used opti
 1. Click control + shift + ` or click the menu at the upper-left to select "Terminal".
 1. Click "End Lab".
 1. Close the Incognito browser window and Google Skills web page.
+
+
+
+<a name="MacOSInstall"></a>
+
+## Install for local Development on MacOS
+
+https://docs.flutter.dev/get-started/custom#target-platform
+
+* <a target="_blank" href="https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/#create-a-new-flutter-project-using-android-studio">Create a New Flutter Project Using Android Studio IDE</a>
+
+* <a target="_blank" href="https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/#create-a-new-flutter-project-using-visual-studio-code">Create a New Flutter Project Using Visual Studio Code</a>
+
+1. Install Homebrew for Mac
+1. Install git, XCode
+1. Install Flutter for CLI with <tt>brew install --cask flutter</tt>
+1. Install Visual Studio Code with extras for Flutter:
+   https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
+   1. Click "Install".
+
+   Alternately:
+   1. In Go to View > Command Palette or press Command + Shift + P.
+   1. In the command palette, type flutter.
+
+   1. Select Flutter: New Project.
+
+    VS Code prompts you to locate the Flutter SDK on your computer. Select Download SDK.
+
+   1. When the Select Folder for Flutter SDK dialog displays, choose where you want to install Flutter.
+
+   1. Click Clone Flutter.
+
+   1. While downloading Flutter, VS Code displays this pop-up notification:
+
+   1. Downloading the Flutter SDK. This may take a few minutes.
+    This download takes a few minutes. If you suspect that the download has hung, click Cancel then start the installation again.
+
+   1. Click Add SDK to PATH.
+
+   1. When successful, a notification displays: "The Flutter SDK was added to your PATH. VS Code might display a Google Analytics notice." If you agree, click OK.
+
+   1. To ensure that Flutter is available in all terminals: Close all terminal windows. Then Quit and Restart VS Code.
+
+1. Verify installation: <pre>flutter --version</pre>
+   ```
+    Flutter 3.38.2 • channel stable •
+    https://github.com/flutter/flutter.git
+    Framework • revision f5a8537f90 (15 hours
+    ago) • 2025-11-18 09:27:21 -0500
+    Engine • hash
+    78c3c9557e50ee7c676fa37562558c59efd8406a
+    (revision b5990e5ccc) (6 days ago) •
+    2025-11-12 21:08:24.000Z
+    Tools • Dart 3.10.0 • DevTools 2.51.1
+   ```
+
+1. To support Flutter plugins that use native macOS code, install the latest version of https://cocoapods.org/, following the <a target="_blank" href="https://guides.cocoapods.org/using/getting-started.html#installation">CocoaPods installation guide</a>
+   See https://flutter.dev/to/platform-plugins
+
+   <pre>sudo gem install cocoapods</pre>
+
+   Alternately, <a target="_blank" href="https://guides.cocoapods.org/using/getting-started.html#updating-cocoapods">CocoaPods update guide</a>.
+
+   <pre>[sudo] gem install cocoapods</pre>
+
+1. Run <pre>flutter doctor -v</pre>
+   ```
+    [✗] Chrome - develop for the web (Cannot find
+        Chrome executable at /Applications/Google
+        Chrome.app/Contents/MacOS/Google Chrome)
+        [7ms]
+        ! Cannot find Chrome. Try setting
+        CHROME_EXECUTABLE to a Chrome
+        executable.
+   ```
+1. Check for macOS devices to ensure Flutter can find and connect to your macOS device correctly, run flutter devices in your preferred terminal:
+
+   <pre>flutter devices</pre>
+
+   <a name="Testing"></a>
+
+   ## Testing mobile apps
+
+   <a target="_blank" href="https://codelabs.developers.google.com/codelabs/flutter-app-testing/#0">How to Test a Flutter app</a>
+
+1. Create an Android emulator, download Android Studio which also supports Flutter development, and follow the instructions in Create and manage virtual devices.
+
+1. Create an iOS simulator, you will need a Mac environment. Download XCode, and follow the instructions in Simulator Overview > Use Simulator > Open and close a simulator.
+
+
+## Build Agentic AI
+
+* <a target="_blank" href="https://flutter.dev/events/building-agentic-apps#flutter-vertex-ai">Flutter with Vertex AI in Firebase (ViF)</a>
+
+* https://blog.flutter.dev/learn-how-to-build-agentic-apps-with-flutter-angular-firebase-and-vertex-ai-ad46b38b1adb
+
+* https://flutter.dev/events/building-agentic-apps#home
 
 
 <a name="DartLang"></a>
