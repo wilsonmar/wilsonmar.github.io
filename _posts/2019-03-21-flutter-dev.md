@@ -1,17 +1,17 @@
 ---
 layout: post
 date: "2025-11-18"
-lastchange: "25-11-18 v001 + tutorial GSP885 :2019-03-21-flutter-dev.md"
+lastchange: "25-11-18 v002 + 1900x500 hero img :2019-03-21-flutter-dev.md"
 url: https://wilsonmar.github.io/flutter-dev
 file: "flutter-dev"
 title: "Flutter development"
 excerpt: "Use Google's Dart language Firebase database to create apps on web, iOS and Android"
 tags: [website, Android, iOS, Google]
 image:
-# feature: scr white jekyll static tools 1900x500.jpg
-  feature: https://cloud.githubusercontent.com/assets/300046/14622170/48b1ceb0-0585-11e6-8b19-b9d09feebd6f.jpg
-  credit:
-  creditlink:
+# feature: flutter-logo-1900x500.jpg
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1763527367/flutter-logo-1900x500_qxvnh1.jpg
+  credit: hqwalls.com
+  creditlink: https://hdqwalls.com/flutter-logo-4k-wallpaper
 comments: true
 created: "2019-03-21"
 ---
@@ -26,10 +26,20 @@ Flutter offers a single codebase (Google's UI SDK) for building beautiful, nativ
    * Web apps on internet browsers
    <br /><br />
 
-PROTIP: The biggest benefit to using Flutter instead of native languages is that <strong>no user action is needed to update the app</strong>. However, this <a href="#HotReload">"Hot Reload"</a> causes a little delay for Flutter users as code is updated.
-
+Released in 2017, Flutter now has the largest share (and growing) in the cross-platform app development services market.
+<a target="_blank" href="https://www.miquido.com/blog/flutter-app-development-cost/"><img alt="flutter-growth-1536x1435.png.webp" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1763523476/flutter-growth-1536x1435.png_mvxomo.webp" /></a>
 
 ## Smart Phone features in apps
+
+PROTIP: The biggest benefit to using Flutter instead of native languages (such as Swift for iOS) is that <strong>no user action is needed to update the app</strong>. However, this <a href="#HotReload">"Hot Reload"</a> causes a little delay for Flutter users as code is updated.
+
+Flutter app performance compiles directly to native code, ensuring apps run smoothly and efficiently, keeping users engaged with native capabilities such as:
+   * Location (GPS)
+   * Bluetooth
+   * Audio (music app Topline by Abbey Road Studios)
+   * Sensors
+   * camera
+   <br /><br />
 
 Developers have grown weary of "Write Once, Work Everywhere" failed promises from several offerings over the years. Android "Material" and iOS have fundamentally conflicting design UI standards.
 
@@ -42,12 +52,14 @@ Developers have grown weary of "Write Once, Work Everywhere" failed promises fro
    * "Bottom type" is a type that has no values and is a subtype of all other types.
    * Closurization = The process of turning a method or function into a closure.
    * Code asset = Compiled native code that is bundled with a Dart app using a build hook and can be used through dart:ffi.
+   <br /><br />
 
 1. Documentation
 
    <a target="_blank" href="https://docs.flutter.dev">docs.flutter.dev</a>
 
-   API reference is at the api.flutter.dev.
+1. API reference is at https://api.flutter.dev.
+   <a target="_blank" href="https://console.actions.google.com/">Actions on Google Console</a>
 
 ## Ecosystem
 
@@ -56,22 +68,37 @@ Developing using Flutter involves mastering several technologies within Google's
    * Android
    * ARCore
    * ChromeOS
-   * <a href="#Firebase">Firebase database</a>
-   * Flutter
+   * <a href="#Firebase">Firebase database</a> & <a target="_blank" href="https://console.firebase.google.com/?pli=1">console</a>
+   * Flutter (this page)
    * Google Assistant
-   * Google Cloud
+   * <a target="_blank" href="https://wilsonmar.github.io/gcp">Google Cloud</a>
    * Google Maps Platform
    * Google Pay & Google Wallet
-   * Google Play
+   * Google Play <a target="_blank" href="https://play.google.com/apps/publish">console</a>
    * TensorFlow
    <br /><br />
+
+Other Google services:
+   * AdMob
+   * AlloyDB
+   * analytics
+   * Android TV
+   * Assistant
+   * Cast
+   * Cloud Key Management Service (KMS)
+   * Cloud Run
+   * Cloud SQL
+   * GKE Enterprise
+   * ML Kit
+   * Google Workspace (Gmail)
+   * TensorFlow
+   * Wear OS
+   <br /><br />
+
 
 <a target="_blank" href="https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/#create-a-new-flutter-project-using-android-studio">Create a New Flutter Project Using Android Studio IDE</a>
 
 <a target="_blank" href="https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/#create-a-new-flutter-project-using-visual-studio-code">Create a New Flutter Project Using Visual Studio Code</a>
-
-
-
 
 ## Socials
 
@@ -84,16 +111,62 @@ Developing using Flutter involves mastering several technologies within Google's
    https://developers.google.com/community/experts
    if you are an expert already, like <a target="_blank" href="https://www.linkedin.com/in/mtwichel/">Marcus Twichel</a> at Billings, United States
 
+1. Join the official Discord channel (and complete the intro) at 
+   https://discord.com/invite/ht477J5PyH
+
+   https://github.com/flutter/flutter/blob/master/docs/contributing/Chat.md
+
+
 ## Sample apps
 
-https://kobe.io/
-Kobe Apps, a mobile app SaaS Platform built in Flutter, to design and build a proof of concept, in English and Portugese.
+* https://appgallery.io/
+
+   https://appgallery.io/walidashik
+
+* <a target="_blank" href="https://codecanyon.net/category/mobile/flutter/full-applications">CodeCanyon.net's Flutter Full Applications</a>, some with live preview.
+   * <a target="_blank" href="https://play.google.com/store/apps/details?id=com.hamilton.app&hl=en&gl=US">Hamilton Musical app</a>
+   * <a target="_blank" href="https://ads.google.com/home/tools/mobile-app/">Google Ads</a>
+   * <a target="_blank" href="https://www.groupon.com/">Groupon</a>
+   * Ebay & Ebay Motors
+   * New York Times
+   * BMW, Toyota
+   * Phillips Hue
+   * https://goodhabitz.com/
+   <br /><br />
+
+* <a target="_blank" href="https://www.miquido.com/blog/top-apps-made-with-flutter/">25 Top Apps Made with Flutter</a>
+   * Selection Criteria for Top Apps: What makes an app not just good, but great?
+   * Detailed Descriptions of Selected Apps: A close look at apps that are turning heads.
+   * Flutter's Advantages in App Development: Why Flutter is the go-to for developers.
+   * Flutter's Impact on Business Outcomes: How Flutter is rewriting the rules of business efficiency.
+   * Flutter vs. Other Platforms: A side-by-side comparison with its contemporaries.
+   <br /><br />
+
+* https://apps.apple.com/us/app/kodebook-notes-upgraded/id6739565636 KodeBook: Notes, upgraded by Mustaq Sameer at  https://kodebook.io 
+
+* https://kobe.io/ = Kobe Apps, a mobile app SaaS Platform built in Flutter, to design and build a proof of concept, in English and Portugese.
+
+## Dev Costs
+
+Online calculators like Estimate My App and Cleveroad help users calculate upfront costs. 
+
+### Dev team
+
+A software development team has the following members:
+   * Product owner – oversees app creation and serves as the link between the project team and organization.
+   * Project manager – manages project progression, ensuring timely and on-budget delivery.
+   * Business analyst – analyzes the project requirements to ensure it meets business goals.
+   * UI designer – creates user experience, ensuring an attractive and user-friendly app.
+   * Flutter app developers – build the application.
+   * Quality Assurance specialists  – test the app to ensure it meets project requirements.
+   <br /><br />
 
 <a name="ProCerts"></a>
 
 ## ProCerts
 
 https://developers.google.com/certification/associate-android-developer
+has been retired.
 
 https://developers.google.com/training/
 
@@ -118,11 +191,14 @@ https://www.youtube.com/watch?v=xWV71C2kp38
 
 1. Create your first app at <a href="#Tutorial1">Google Skills Tutorial below</a>
 
+1. <a target="_blank" href="https://www.youtube.com/watch?v=8sAyPDLorek">Building your first Flutter App</a> within <a target="_blank" href="https://codelabs.developers.google.com/?text=flutter">https://codelabs.developers.google.com/?text=flutter</a>
+
 1. https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/ 13 Mar, 2025
 
 1. May 2023 https://learning.oreilly.com/course/learn-flutter-and/9781805122029/
 30-hour video course by <a target="_blank" href="https://www.linkedin.com/in/maximilian-schwarzmueller/">Maximilian Schwarzmüller</a> from Germany (https://maximilian-schwarzmueller.com/)
 
+1. <a target="_blank" href="https://www.ffnext.io/blog/flutter-animations">Animations in Flutter - a developer’s guide</a>
 
 1. https://learning.oreilly.com/library/view/-/9781098154752/
 
@@ -162,6 +238,8 @@ Follow the steps below for my enhancements to steps (Nov 7, 2024 edition) at <a 
 1. Click "Create or select a project".
 1. Notice:
    Project number: 1030115194620 Project ID: qwiklabs-resources 
+
+   If <a target="_blank" href="https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/#create-a-new-flutter-project-using-visual-studio-code">using VSCode IDE</a>, search for "Flutter: New Project".
 
 1. Click the Cloud Shell icon at the upper-right corner. Click Continue.
 1. Click Authorize to see lines like this:
@@ -364,24 +442,103 @@ Run "flutter help -v" for verbose help output, including less commonly used opti
 
 1. TODO: dart install tool.
 
+1. <tt>/lib/main.dart</tt> from <a target="_blank" href="https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/#create-a-new-flutter-project-using-visual-studio-code">*</a>
+   ```
+// Importing important packages require to connect
+// Flutter and Dart
+import 'package:flutter/material.dart';
+
+// Main Function
+void main() {
+// Giving command to runApp() to run the app.
+
+// The purpose of the runApp() function is to attach
+// the given widget to the screen.
+  runApp(const MyApp());
+}
+
+// MyApp extends StatelessWidget and overrides its
+// build method.
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+// This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        
+      // title of the application
+      title: 'Hello World Demo Application',
+      
+      // theme of the widget
+      theme: ThemeData(
+        primarySwatch: Colors.lightGreen,
+      ),
+      
+      // Inner UI of the application
+      home: const MyHomePage(title: 'Home page'),
+    );
+  }
+}
+
+// This class is similar to MyApp instead it
+// returns Scaffold Widget 
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+        backgroundColor: Colors.green,
+        foregroundColor: Colors.white,
+      ),
+      
+      // Sets the content to the
+      // center of the application page
+      body: const Center(
+          
+          // Sets the content of the Application
+          child: Text(
+        'Welcome to Visual Studio Code!',
+      )),
+    );
+  }
+}
+   ```
+
+
+1. Dart function declaration to let the LLM set colors in your app:
+
+   ```
+FunctionDeclaration get setColorFuncDecl => FunctionDeclaration(
+  'set_color',
+  'Set the color of the display square based on red, green, and blue values.',
+  parameters: {
+    'red': Schema.number(description: 'Red component value (0.0 - 1.0)'),
+    'green': Schema.number(description: 'Green component value (0.0 - 1.0)'),
+    'blue': Schema.number(description: 'Blue component value (0.0 - 1.0)'),
+  },
+);
+   ```
+
 1. TODO: dart build tool.
 
 
-## Widgets
+## UI Widgets
 
 <img align="right" alt="flutter-widgets-hier-357x662.png" width="200" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1763520045/flutter-widgets-hier-357x662_tyx0vr.png" /></a>
 
+Google Material Design and Cupertino support Flutter’s wide range of widgets.
+
 <a target="_blank" href="https://www.youtube.com/live/YY-_yrZdjGc?si=4JjDyiuMCISniUJE">YouTube Live: Building scrolling experiences in Flutter | Workshop</a>
 
+## Cross-device
 
-## Calls to APIs
+<a target="_blank" href="https://firebase.google.com/codelabs/cross-device-controller?hl=en#0">Firebase Cross Device Codelab</a>
 
-AI tools: Google Gemini, OpenAI (ChatGPT), Anthropic
-
-
-<a name="Firebase"></a>
-
-## Google's Firebase database 
 
 ## Smart Phone app features
 
@@ -389,11 +546,66 @@ animations and transitions to make apps visually stunning.
 
 Utilize device features such as the camera within your applications.
 
+<a target="_blank" href="https://medium.com/@kingrittik/mastering-emulators-in-vs-code-android-studio-google-fold-pro-pro-tips-4f11bd97fa6a"> Mastering Emulators in VS Code & Android Studio (Google Fold Pro & Pro Tips!)</a> (virtual devices)
+
 
 ## Web apps
 
+Flutter's Skia rendering engine runs 60 frames per second for visually stunning and responsive user interfaces.
+
 Taking Flutter to the Web
 By Damodar Lohani
+
+
+## Calls to APIs
+
+Third-party integrations include cloud hosting, data storage, payment gateways, and SMS push notifications. 
+ 
+ AI tools: Google Gemini, OpenAI (ChatGPT), Anthropic
+
+
+<a name="Firebase"></a>
+
+## Google's Firebase Backend
+
+1. Google Project Account to set up Firebase account.
+
+* <a target="_blank" href="https://firebase.google.com/codelabs/firebase-get-to-know-flutter?hl=en#0">Get to know Firebase for Flutter</a>
+
+* <a target="_blank" href="https://codelabs.developers.google.com/codelabs/flutter-codelab-first?hl=en">Your first Flutter app</a>
+
+* <a target="_blank" href="https://codelabs.developers.google.com/codelabs/flutter-gemini-colorist?hl=en">Build a Gemini powered Flutter app</a> generates random, cool-sounding names. April 17, 2025 with Craig Labenz and Andrew Brogdon of DevRel. This use Asynchronous programming - Futures, async/await, and streams.
+    Interprets the descriptions into precise RGB color values
+    Displays the color on screen in real-time
+    Provides technical color details and interesting context about the color
+    Maintains a history of recently generated colors
+
+    1. Project setup - You'll start with a basic Flutter app structure and the colorist_ui package
+    1. Basic Gemini integration - Connect your app to Firebase AI Logic and implement LLM communication
+    1. Effective prompting - Create a system prompt that guides the LLM to understand color descriptions
+    1. Function declarations - Define tools that the LLM can use to set colors in your application
+    1. Tool handling - Process function calls from the LLM and connect them to your app's state
+    1. Streaming responses - Enhance the user experience with real-time streaming LLM responses
+    1. LLM Context Synchronization - Create a cohesive experience by informing the LLM of user actions
+
+    1. Configure Firebase AI Logic for Flutter applications
+    1. Craft effective system prompts to guide LLM behavior
+    1. Implement function declarations that bridge natural language and app features
+    1. Process streaming responses for a responsive user experience
+    1. Synchronize state between UI events and the LLM
+    1. Manage LLM conversation state using Riverpod
+    1. Handle errors gracefully in LLM-powered applications
+    <br /><br />
+
+* Generate random dishes to cook and eat based on user criteria.
+
+* <a target="_blank" href="https://firebase.google.com/codelabs/get-started-firebase-emulators-and-flutter?hl=en">Local development for your Flutter apps using the Firebase Emulator Suite</a>
+
+* <a target="_blank" href="http://firebase.google.com/codelabs/firebase-auth-in-flutter-apps?hl=en#0">Send and receive notifications for a Flutter app using Firebase Cloud Messaging</a>
+
+* <a target="_blank" href="https://firebase.google.com/codelabs/firebase-fcm-flutter?hl=en#0">Send and receive notifications for a Flutter app using Firebase Cloud Messaging</a>
+
+* <a target="_blank" href="https://codelabs.developers.google.com/codelabs/flutter-next-gen-uis?hl=en">Building next generation UIs in Flutter</a> - animations, shaders, and particle effects that work across all of Flutter’s six platforms.
 
 
 ## Resources
