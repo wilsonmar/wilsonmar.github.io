@@ -1,11 +1,11 @@
 ---
 layout: post
-date: "2025-11-19"
-lastchange: "25-11-19 v005 + samples :2019-03-21-flutter-dev.md"
+date: "2025-11-20"
+lastchange: "25-11-20 v008 + Kotlin AI app :2019-03-21-flutter-dev.md"
 url: https://wilsonmar.github.io/flutter-dev
 file: "flutter-dev"
 title: "Flutter development"
-excerpt: "Use Google's Dart language Firebase database & Riverpod to create Gemini apps on web, iOS and Android"
+excerpt: "Use Google's Dart language calling Firebase database & Riverpod to create Gemini apps on iOS, Android, SPAs, PWAs"
 tags: [website, Android, iOS, Google]
 image:
 # feature: flutter-logo-1900x500.jpg
@@ -19,29 +19,19 @@ created: "2019-03-21"
 {% include l18n.html %}
 {% include _toc.html %}
 
-Flutter offers a single codebase (Google's UI SDK) for building beautiful, natively compiled applications across many platforms: 
+Flutter offers a <strong>single codebase</strong> to build applications that run across many platforms: 
    * Desktop apps on Windows, Mac, Linux
    * Mobile (smart phone) apps on Google Android vs. Java
    * Mobile (smart phone) apps on Apple iOS vs. Swift programming
    * PWAs (Progressive Web Apps) and stand-alone SPAs (Single Page Apps such as products) on internet browsers
    <br /><br />
 
-Flutter is not as convenient to build for text-rich presentations on the web as static web page generators such as Jerkyll for github.io URLs.
+This is complicated and difficult because different technologies are used on each platform:<br />
+<a target="_blank" href="https://www.youtube.com/watch?v=FzaVmw4u6O8&t=1m52s"><img alt="platforms-tech-801x337.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1763635915/platforms-tech-801x337_bz4wa2.png"></a>
 
-## Flutter Releases
+Using Flutter enables <strong>cross-device communication</strong>: control a browser from a phone app, or controllwhat plays on your TV from your phone. Play music on one device and controls the music on another.
 
-First announced in 2011, the Flutter framework now has the largest share (and growing) in the cross-platform app development services market:
-
-<a target="_blank" href="https://www.miquido.com/blog/flutter-app-development-cost/"><img alt="flutter-growth-1536x1435.png.webp" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1763523476/flutter-growth-1536x1435.png_mvxomo.webp" /></a>
-
-   * The <a target="_blank" href="https://www.jetbrains.com/lp/devecosystem-2024/">JetBrains State of the Developer Ecosystem survey</a>, Flutter has been the most used multi-platform app framework, since 2021.
-   * App intelligence provider AppTopia reports that, in 2024, Flutter accounts for nearly 30% of all new free iOS apps.
-   * <a target="_blank" href="https://www.youtube.com/shorts/YTLlpXDmh5o">VIDEO</a>: Flutter vs. React native by <a target="_blank" href="https://www.youtube.com/@romanjustcodes/shorts">@RomanJustCodes</a>
-   <br /><br />
-
-Mobile apps are defined in Dart code. The Dart build includes both a Dart VM with just-in-time (JIT) compilation and an ahead-of-time (AOT) compiler for producing machine code native device code (like Swift for iOS and Java on Android). 
-
-That ensure apps run smoothly and efficiently, keeping users engaged with native smart phone capabilities:
+On iPhones and Android smart phones:
 
    * Camera to take pictures (QR codes)
    * Audio (music app Topline by Abbey Road Studios)
@@ -51,7 +41,50 @@ That ensure apps run smoothly and efficiently, keeping users engaged with native
    * Sensors
    <br /><br />
 
-Using Flutter enables cross-device communication: control a browser from a phone app, or controllwhat plays on your TV from your phone. Play music on one device and controls the music on another.
+CAUTION: Flutter is not as convenient to build for text-rich presentations on the web as static web page generators such as Jerkyll for github.io URLs.
+
+## Popularity vs Competitors
+
+From v1.0 in 2017, the Flutter framework now has the largest share (and growing) in the cross-platform app development services market:
+
+<a target="_blank" href="https://www.miquido.com/blog/flutter-app-development-cost/"><img alt="flutter-growth-1536x1435.png.webp" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1763523476/flutter-growth-1536x1435.png_mvxomo.webp" /></a>
+
+   * The <a target="_blank" href="https://www.jetbrains.com/lp/devecosystem-2024/">JetBrains State of the Developer Ecosystem survey</a>, Flutter has been the most used multi-platform app framework, since 2021.
+   * App intelligence provider AppTopia reports that, in 2024, Flutter accounts for nearly 30% of all new free iOS apps.
+   * <a target="_blank" href="https://www.youtube.com/shorts/YTLlpXDmh5o">VIDEO</a>: Flutter vs. React native by <a target="_blank" href="https://www.youtube.com/@romanjustcodes/shorts">@RomanJustCodes</a>
+   <br /><br />
+
+React Native (from Facebook/Meta) is based on the open <strong>JavaScript language</strong>, which more front-end developers know.
+
+It's more difficult and expensive to hire and retain a developer to write native SwiftUI code on iPhones and Java code on Androids.
+
+Despite the technical aspects, in the US, there seems to be a lot more jobs in Native Android coding than cross-platform:
+
+<a target="_blank" href="https://www.youtube.com/watch?v=FzaVmw4u6O8&t=9m7s"><img alt="mobile-jobs-2025-855x528.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1763636907/mobile-jobs-2025-855x528_i7ecfn.png" /></a>
+
+Using Flutter means adopting Google's entire ecosystem, which includes the <a href="#DartLang">Dart language code</a> Google invented.
+
+In 2019 Google also partnered with IDE developer JetBrains and made their Kotlin language (based on Java) the official language for Android develpment. They then created the <a target="_blank" href="https://developer.android.com/kotlin/multiplatform">Kotlin Multiplatform (KMP)</a> for sharing business logic between Android and iOS. This has resulted in rumors of Google dropping Flutter like it has hundreds of their other offerings.
+
+Multi-platform frameworks will always lag behind changes on native platforms. So <a target="_blank" href="https://www.youtube.com/watch?v=lPNXT-wQ8j4">Apple's Liquid Glass UI cloud kill</a> cause more testing effort.
+
+The advance of vibe coding (on Claude Code, etc.) may make it less relevant.
+
+
+## Architectural Deep Dive
+
+Reactive Native uses a "JavaScript Bridge" JNI to iOS on its V8 Engine, so <a target="_blank" href="https://www.youtube.com/watch?v=2OgLdOjuMm4&t=247s">VIDEO</a>: it doesn't do smooth auto scrolling on iPhones, according to <a target="_blank" href="https://github.com/gaurav414u/flutter-rn-performance-benchmarks" title="2024 Natesh Bhat">a benchmark</a>.
+
+Flutter's Dart compiler has both a Dart VM with just-in-time (JIT) compilation and an ahead-of-time (AOT) to produce machine code native device code. <a target="_blank" href="https://www.youtube.com/watch?v=2OgLdOjuMm4&t=10m5s">VIDEO</a>: However, the APK file loaded on Android from Flutter and React Native are 2x the 6 MB from native-produced.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=2OgLdOjuMm4&t=11m1s">VIDEO</a> Nevertheless, amazingly, Flutter is 2X faster than Native on the Time to Full Display (TTFD) load.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=2OgLdOjuMm4&t=4m13s">VIDEO</a> Flutter takes almost double the graphics memory than Android native code. This may not matter since modern mobile devices have a lot of memory.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=2OgLdOjuMm4&t=8m35s">VIDEO</a>: Flutter renders basic animations at 120 frames-per-second, on par with Android native, but faster than 51 by KMP & 96 by React Native.
+
+
+## what?
 
 * <a target="_blank" href="https://firebase.google.com/codelabs/cross-device-controller?hl=en#0">HANDS-ON: Firebase Cross Device Codelab</a> <a target="_blank" href="https://firebase.google.com/docs/database/web/offline-capabilities#section-sample">The Presence API</a> on Firebase's Realtime Database (RTDB) enables apps that let users see their device online/offline status. Use it with the Firebase Installations Service to track and connect all the devices where the same user has signed in.
    <br /><br />
@@ -60,21 +93,24 @@ Using Flutter enables cross-device communication: control a browser from a phone
 
    <pre>git clone https://github.com/FirebaseExtended/cross-device-controller.git
    cd cross-device-controller/starter_code
-   flutter pub get
+   <strong>flutter pub get</strong>
    </pre>
 
-* GE Appliances uses Flutter to display UIs on small LCD screens found on modern appliances.
 
-
-## Sample apps 
+## Sample Flutter apps
 
 * https://flutter.dev/showcase
-
+* https://github.com/fluttergems/awesome-open-source-flutter-apps
 * https://appgallery.io/
 
 * https://appgallery.io/walidashik
 
+* GE Appliances uses Flutter to display UIs on small LCD screens found on modern appliances.
+
+* <a target="_blank" href="https://scaleupally.io/blog/flutter-apps-examples/">8 Must-See Flutter App Examples For Inspiration</a>
+
 * <a target="_blank" href="https://codecanyon.net/category/mobile/flutter/full-applications">CodeCanyon.net's Flutter Full Applications</a>, some with live preview.
+   * Xianyu (Alibaba) is big in China
    * <a target="_blank" href="https://play.google.com/store/apps/details?id=com.hamilton.app&hl=en&gl=US">Hamilton Musical app</a>
    * <a target="_blank" href="https://ads.google.com/home/tools/mobile-app/">Google Ads</a>
    * <a target="_blank" href="https://www.groupon.com/">Groupon</a>
@@ -179,7 +215,7 @@ Over the years, developers have grown weary of "Write Once, Work Everywhere" fai
 
    https://forum.itsallwidgets.com/latest
 
-   Save the password.
+   PROTIP: Save the account name and password to your Password Manager.
 
 1. Join the official Discord channel (and complete the intro) at 
    https://discord.com/invite/ht477J5PyH
@@ -191,7 +227,7 @@ Over the years, developers have grown weary of "Write Once, Work Everywhere" fai
    https://developers.google.com/program/plans-and-pricing
 
 
-## Dev Costs
+## Dev Project Rolls Costs
 
 Online calculators like Estimate My App and Cleveroad help users calculate upfront costs of development by a team that consists of:
 
@@ -233,11 +269,6 @@ https://www.youtube.com/watch?v=xWV71C2kp38
 1. See list of Google's tutorials at https://www.skills.google/catalog?keywords=flutter
 
 1. Create your first app at <a href="#Tutorial1">Google Skills Tutorial below</a>
-
-1. <a target="_blank" href="https://www.youtube.com/watch?v=8sAyPDLorek">Building your first Flutter App</a> within <a target="_blank" href="https://codelabs.developers.google.com/?text=flutter">https://codelabs.developers.google.com/?text=flutter</a> with code at:
-
-   <a target="_blank" href="https://github.com/googlecodelabs">https://github.com/googlecodelabs</a>
-   shown using npm ployserve.
 
 1. https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/ 13 Mar, 2025
 
@@ -461,103 +492,6 @@ Run "flutter help -v" for verbose help output, including less commonly used opti
 1. Close the Incognito browser window and Google Skills web page.
 
 
-
-<a name="MacOSInstall"></a>
-
-## Install for local Development on MacOS
-
-https://docs.flutter.dev/get-started/custom#target-platform
-
-* <a target="_blank" href="https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/#create-a-new-flutter-project-using-android-studio">Create a New Flutter Project Using Android Studio IDE</a>
-
-* <a target="_blank" href="https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/#create-a-new-flutter-project-using-visual-studio-code">Create a New Flutter Project Using Visual Studio Code</a>
-
-1. Install Homebrew for Mac
-1. Install git, XCode
-1. Install Flutter for CLI with <tt>brew install --cask flutter</tt>
-1. Install Visual Studio Code with extras for Flutter:
-   https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
-   1. Click "Install".
-
-   Alternately:
-   1. In Go to View > Command Palette or press Command + Shift + P.
-   1. In the command palette, type flutter.
-
-   1. Select Flutter: New Project.
-
-    VS Code prompts you to locate the Flutter SDK on your computer. Select Download SDK.
-
-   1. When the Select Folder for Flutter SDK dialog displays, choose where you want to install Flutter.
-
-   1. Click Clone Flutter.
-
-   1. While downloading Flutter, VS Code displays this pop-up notification:
-
-   1. Downloading the Flutter SDK. This may take a few minutes.
-    This download takes a few minutes. If you suspect that the download has hung, click Cancel then start the installation again.
-
-   1. Click Add SDK to PATH.
-
-   1. When successful, a notification displays: "The Flutter SDK was added to your PATH. VS Code might display a Google Analytics notice." If you agree, click OK.
-
-   1. To ensure that Flutter is available in all terminals: Close all terminal windows. Then Quit and Restart VS Code.
-
-1. Verify installation: <pre>flutter --version</pre>
-   ```
-    Flutter 3.38.2 • channel stable •
-    https://github.com/flutter/flutter.git
-    Framework • revision f5a8537f90 (15 hours
-    ago) • 2025-11-18 09:27:21 -0500
-    Engine • hash
-    78c3c9557e50ee7c676fa37562558c59efd8406a
-    (revision b5990e5ccc) (6 days ago) •
-    2025-11-12 21:08:24.000Z
-    Tools • Dart 3.10.0 • DevTools 2.51.1
-   ```
-
-1. To support Flutter plugins that use native macOS code, install the latest version of https://cocoapods.org/, following the <a target="_blank" href="https://guides.cocoapods.org/using/getting-started.html#installation">CocoaPods installation guide</a>
-   See https://flutter.dev/to/platform-plugins
-
-   <pre>sudo gem install cocoapods</pre>
-
-   Alternately, <a target="_blank" href="https://guides.cocoapods.org/using/getting-started.html#updating-cocoapods">CocoaPods update guide</a>.
-
-   <pre>[sudo] gem install cocoapods</pre>
-
-1. Run <pre>flutter doctor -v</pre>
-   ```
-    [✗] Chrome - develop for the web (Cannot find
-        Chrome executable at /Applications/Google
-        Chrome.app/Contents/MacOS/Google Chrome)
-        [7ms]
-        ! Cannot find Chrome. Try setting
-        CHROME_EXECUTABLE to a Chrome
-        executable.
-   ```
-1. Check for macOS devices to ensure Flutter can find and connect to your macOS device correctly, run flutter devices in your preferred terminal:
-
-   <pre>flutter devices</pre>
-
-   <a name="Testing"></a>
-
-   ## Testing mobile apps
-
-   <a target="_blank" href="https://codelabs.developers.google.com/codelabs/flutter-app-testing/#0">How to Test a Flutter app</a>
-
-1. Create an Android emulator, download Android Studio which also supports Flutter development, and follow the instructions in Create and manage virtual devices.
-
-1. Create an iOS simulator, you will need a Mac environment. Download XCode, and follow the instructions in Simulator Overview > Use Simulator > Open and close a simulator.
-
-
-## Build Agentic AI
-
-* <a target="_blank" href="https://flutter.dev/events/building-agentic-apps#flutter-vertex-ai">Flutter with Vertex AI in Firebase (ViF)</a>
-
-* https://blog.flutter.dev/learn-how-to-build-agentic-apps-with-flutter-angular-firebase-and-vertex-ai-ad46b38b1adb
-
-* https://flutter.dev/events/building-agentic-apps#home
-
-
 <a name="DartLang"></a>
 
 ### Google's Dart language 
@@ -651,8 +585,114 @@ https://docs.flutter.dev/get-started/custom#target-platform
     }
    ```
 
+
+<a name="MacOSInstall"></a>
+
+## Install for local Development on MacOS
+
+https://docs.flutter.dev/get-started/custom#target-platform
+
+* <a target="_blank" href="https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/#create-a-new-flutter-project-using-android-studio">Create a New Flutter Project Using Android Studio IDE</a>
+
+* <a target="_blank" href="https://www.geeksforgeeks.org/flutter/creating-a-simple-application-in-flutter/#create-a-new-flutter-project-using-visual-studio-code">Create a New Flutter Project Using Visual Studio Code</a>
+
+1. Install Homebrew for Mac
+1. Install git, XCode
+1. Install Flutter for CLI with <tt>brew install --cask flutter</tt>
+1. Install Visual Studio Code with extras for Flutter:
+   https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
+   1. Click "Install".
+
+   Alternately:
+   1. In Go to View > Command Palette or press Command + Shift + P.
+   1. In the command palette, type flutter.
+
+   1. Select Flutter: New Project.
+
+    VS Code prompts you to locate the Flutter SDK on your computer. Select Download SDK.
+
+   1. When the Select Folder for Flutter SDK dialog displays, choose where you want to install Flutter.
+
+   1. Click Clone Flutter.
+
+   1. While downloading Flutter, VS Code displays this pop-up notification:
+
+   1. Downloading the Flutter SDK. This may take a few minutes.
+    This download takes a few minutes. If you suspect that the download has hung, click Cancel then start the installation again.
+
+   1. Click Add SDK to PATH.
+
+   1. When successful, a notification displays: "The Flutter SDK was added to your PATH. VS Code might display a Google Analytics notice." If you agree, click OK.
+
+   1. To ensure that Flutter is available in all terminals: Close all terminal windows. Then Quit and Restart VS Code.
+
+1. Verify installation: <pre>flutter --version</pre>
+   ```
+    Flutter 3.38.2 • channel stable •
+    https://github.com/flutter/flutter.git
+    Framework • revision f5a8537f90 (15 hours
+    ago) • 2025-11-18 09:27:21 -0500
+    Engine • hash
+    78c3c9557e50ee7c676fa37562558c59efd8406a
+    (revision b5990e5ccc) (6 days ago) •
+    2025-11-12 21:08:24.000Z
+    Tools • Dart 3.10.0 • DevTools 2.51.1
+   ```
+
+1. To support Flutter plugins that use native macOS code, install the latest version of https://cocoapods.org/, following the <a target="_blank" href="https://guides.cocoapods.org/using/getting-started.html#installation">CocoaPods installation guide</a>
+   See https://flutter.dev/to/platform-plugins
+
+   <pre>sudo gem install cocoapods</pre>
+
+   Alternately, <a target="_blank" href="https://guides.cocoapods.org/using/getting-started.html#updating-cocoapods">CocoaPods update guide</a>.
+
+   <pre>[sudo] gem install cocoapods</pre>
+
+1. Run <pre>flutter doctor -v</pre>
+   ```
+    [✗] Chrome - develop for the web (Cannot find
+        Chrome executable at /Applications/Google
+        Chrome.app/Contents/MacOS/Google Chrome)
+        [7ms]
+        ! Cannot find Chrome. Try setting
+        CHROME_EXECUTABLE to a Chrome
+        executable.
+   ```
+1. Check for macOS devices to ensure Flutter can find and connect to your macOS device correctly, run flutter devices in your preferred terminal:
+
+   <pre>flutter devices</pre>
+
+## Create locally step-by-step
+
+View <a target="_blank" href="https://www.youtube.com/watch?v=8sAyPDLorek">Building your first Flutter App</a> within <a target="_blank" href="https://codelabs.developers.google.com/?text=flutter">https://codelabs.developers.google.com/?text=flutter</a> with code at:
+
+1. Install VSCode & Flutter (above)
+
+
+<a name="Testing"></a>
+
+## Testing mobile apps
+
+<a target="_blank" href="https://codelabs.developers.google.com/codelabs/flutter-app-testing/#0">How to Test a Flutter app</a>
+
+1. Create an Android emulator, download Android Studio which also supports Flutter development, and follow the instructions in Create and manage virtual devices.
+
+1. Create an iOS simulator, you will need a Mac environment. Download XCode, and follow the instructions in Simulator Overview > Use Simulator > Open and close a simulator.
+
 1. TODO: dart build tool.
 
+
+## Agentic Vertex AI 
+
+* <a target="_blank" href="https://flutter.dev/events/building-agentic-apps#flutter-vertex-ai">Flutter with Google Vertex AI in Firebase (ViF)</a> SaaS
+
+* <a target="_blank" href="http://flutter.dev/events/building-agentic-apps#flutter-genkit">Google Genkit lives on a server</a>
+
+* https://blog.flutter.dev/learn-how-to-build-agentic-apps-with-flutter-angular-firebase-and-vertex-ai-ad46b38b1adb
+
+* https://flutter.dev/events/building-agentic-apps#home
+
+* MCP server?
 
 ## SVG & Icon Fonts
 
@@ -663,7 +703,6 @@ Search for images from stock photo sites:
    * pinterest.com
 
 1. Dart function declaration to let the LLM set colors in your app:
-
    ```
 FunctionDeclaration get setColorFuncDecl => FunctionDeclaration(
   'set_color',
@@ -675,6 +714,27 @@ FunctionDeclaration get setColorFuncDecl => FunctionDeclaration(
   },
 );
    ```
+
+## Graphically Design using Figma
+
+Generate from visual designs in <a target="_blank" href="https://elements.envato.com/graphic-templates/compatible-with-figma">$20+/mo</a> <a target="_blank" href="https://help.figma.com/hc/en-us/articles/5601429983767-Guide-to-the-Figma-desktop-app">Figma Design Desktop app</a> based on <a target="_blank" href="https://elements.envato.com/graphic-templates/compatible-with-figma">templates from $16.50/mo Envato</a>
+
+<a target="_blank" href="https://help.figma.com/hc/en-us/categories/360002042553">About Figma Design</a> to Design and prototype in one place.
+
+Features
+* <a target="_blank" href="https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps">User Authentication</a>
+* Billing
+
+
+## E-commerce
+
+<a target="_blank" href="https://github.com/googlecodelabs">https://github.com/googlecodelabs</a> shown using npm ployserve.
+
+panoply store
+
+* <a target="_blank" href="https://docs.flutter.dev/reference/learning-resources">Samples and tutorials</a>
+
+* <a target="_blank" href="https://docs.flutter.dev/cookbook/networking/authenticated-requests">Make authenticated requests</a>
 
 
 ## UI Widgets
