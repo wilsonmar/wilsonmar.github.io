@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-11-20"
-lastchange: "25-11-20 v009 + Kotlin AI app :2019-03-21-flutter-dev.md"
+lastchange: "25-11-20 v010 + Kotlin AI app :2019-03-21-flutter-dev.md"
 url: https://wilsonmar.github.io/flutter-dev
 file: "flutter-dev"
 title: "Flutter development"
@@ -63,11 +63,9 @@ Despite the technical aspects, in the US, there seems to be a lot more jobs in N
 
 <a target="_blank" href="https://www.youtube.com/watch?v=FzaVmw4u6O8&t=9m7s"><img alt="mobile-jobs-2025-855x528.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1763636907/mobile-jobs-2025-855x528_i7ecfn.png" /></a>
 
-Using Flutter means adopting Google's entire ecosystem, which includes the <a href="#DartLang">Dart language code</a> Google invented.
+WARNING: In 2019 Google also partnered with IDE developer JetBrains and made their Kotlin language (based on Java) the official language for Android JetPack Compose development. They then created the <a target="_blank" href="https://developer.android.com/kotlin/multiplatform">Kotlin Multiplatform (KMP)</a> for sharing business logic between Android and iOS. This has resulted in rumors of Google dropping Flutter like it has hundreds of their other offerings.
 
-In 2019 Google also partnered with IDE developer JetBrains and made their Kotlin language (based on Java) the official language for Android JetPack Compose development. They then created the <a target="_blank" href="https://developer.android.com/kotlin/multiplatform">Kotlin Multiplatform (KMP)</a> for sharing business logic between Android and iOS. This has resulted in rumors of Google dropping Flutter like it has hundreds of their other offerings.
-
-Multi-platform frameworks will always lag behind changes on native platforms. So <a target="_blank" href="https://www.youtube.com/watch?v=lPNXT-wQ8j4">Apple's Liquid Glass UI cloud kill</a> cause more testing effort.
+BEWARE: Multi-platform frameworks will always lag behind changes on native platforms. So <a target="_blank" href="https://www.youtube.com/watch?v=lPNXT-wQ8j4">Apple's Liquid Glass UI cloud kill</a> cause more testing effort.
 
 PROTIP: The amazing advance of vibe coding (on Claude Code, etc.) may make intermediate platforms irrelevant. But will AI be able to create complex apps? Those new to development may find debugging of KMP easier than native code.
 
@@ -160,6 +158,8 @@ Google's "Material" and Apple's "Capistrano" design systems have fundamentally c
    <a target="_blank" href="https://docs.flutter.dev">docs.flutter.dev</a>
 
    ### Ecosystem APIs
+
+   Using Flutter means adopting Google's entire ecosystem, which includes the <a href="#DartLang">Dart language code</a> Google invented.
 
 1. API reference is at https://api.flutter.dev.
    <a target="_blank" href="https://console.actions.google.com/">Actions on Google Console</a>
