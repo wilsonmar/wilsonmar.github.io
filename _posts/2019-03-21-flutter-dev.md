@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-11-20"
-lastchange: "25-11-20 v008 + Kotlin AI app :2019-03-21-flutter-dev.md"
+lastchange: "25-11-20 v009 + Kotlin AI app :2019-03-21-flutter-dev.md"
 url: https://wilsonmar.github.io/flutter-dev
 file: "flutter-dev"
 title: "Flutter development"
@@ -26,12 +26,11 @@ Flutter offers a <strong>single codebase</strong> to build applications that run
    * PWAs (Progressive Web Apps) and stand-alone SPAs (Single Page Apps such as products) on internet browsers
    <br /><br />
 
-This is complicated and difficult because different technologies are used on each platform:<br />
+This is a complicated and difficult business because different technologies are used on each platform:
+
 <a target="_blank" href="https://www.youtube.com/watch?v=FzaVmw4u6O8&t=1m52s"><img alt="platforms-tech-801x337.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1763635915/platforms-tech-801x337_bz4wa2.png"></a>
 
-Using Flutter enables <strong>cross-device communication</strong>: control a browser from a phone app, or controllwhat plays on your TV from your phone. Play music on one device and controls the music on another.
-
-On iPhones and Android smart phones:
+iPhone and Android smart phones have more hardware than PC laptops:
 
    * Camera to take pictures (QR codes)
    * Audio (music app Topline by Abbey Road Studios)
@@ -41,7 +40,9 @@ On iPhones and Android smart phones:
    * Sensors
    <br /><br />
 
-CAUTION: Flutter is not as convenient to build for text-rich presentations on the web as static web page generators such as Jerkyll for github.io URLs.
+But building with Flutter enables <strong>cross-device communication</strong>: control a browser from a phone app, or controllwhat plays on your TV from your phone. Play music on one device and controls the music on another.
+
+CAUTION: Flutter is not as convenient to build for text-rich presentations on the web as static web page generators such as Jerkyll for github.io websites.
 
 ## Popularity vs Competitors
 
@@ -54,9 +55,9 @@ From v1.0 in 2017, the Flutter framework now has the largest share (and growing)
    * <a target="_blank" href="https://www.youtube.com/shorts/YTLlpXDmh5o">VIDEO</a>: Flutter vs. React native by <a target="_blank" href="https://www.youtube.com/@romanjustcodes/shorts">@RomanJustCodes</a>
    <br /><br />
 
-React Native (from Facebook/Meta) is based on the open <strong>JavaScript language</strong>, which more front-end developers know.
+React Native (from Facebook/Meta) is based on the open <strong>JavaScript language</strong>, which more front-end (web) developers know.
 
-It's more difficult and expensive to hire and retain a developer to write native SwiftUI code on iPhones and Java code on Androids.
+It's more difficult and expensive to hire and retain a developer to write native SwiftUI code on iPhones and Jetpack Compose code on Androids.
 
 Despite the technical aspects, in the US, there seems to be a lot more jobs in Native Android coding than cross-platform:
 
@@ -64,24 +65,25 @@ Despite the technical aspects, in the US, there seems to be a lot more jobs in N
 
 Using Flutter means adopting Google's entire ecosystem, which includes the <a href="#DartLang">Dart language code</a> Google invented.
 
-In 2019 Google also partnered with IDE developer JetBrains and made their Kotlin language (based on Java) the official language for Android develpment. They then created the <a target="_blank" href="https://developer.android.com/kotlin/multiplatform">Kotlin Multiplatform (KMP)</a> for sharing business logic between Android and iOS. This has resulted in rumors of Google dropping Flutter like it has hundreds of their other offerings.
+In 2019 Google also partnered with IDE developer JetBrains and made their Kotlin language (based on Java) the official language for Android JetPack Compose development. They then created the <a target="_blank" href="https://developer.android.com/kotlin/multiplatform">Kotlin Multiplatform (KMP)</a> for sharing business logic between Android and iOS. This has resulted in rumors of Google dropping Flutter like it has hundreds of their other offerings.
 
 Multi-platform frameworks will always lag behind changes on native platforms. So <a target="_blank" href="https://www.youtube.com/watch?v=lPNXT-wQ8j4">Apple's Liquid Glass UI cloud kill</a> cause more testing effort.
 
-The advance of vibe coding (on Claude Code, etc.) may make it less relevant.
+PROTIP: The amazing advance of vibe coding (on Claude Code, etc.) may make intermediate platforms irrelevant. But will AI be able to create complex apps? Those new to development may find debugging of KMP easier than native code.
 
 
 ## Architectural Deep Dive
 
 Reactive Native uses a "JavaScript Bridge" JNI to iOS on its V8 Engine, so <a target="_blank" href="https://www.youtube.com/watch?v=2OgLdOjuMm4&t=247s">VIDEO</a>: it doesn't do smooth auto scrolling on iPhones, according to <a target="_blank" href="https://github.com/gaurav414u/flutter-rn-performance-benchmarks" title="2024 Natesh Bhat">a benchmark</a>.
 
-Flutter's Dart compiler has both a Dart VM with just-in-time (JIT) compilation and an ahead-of-time (AOT) to produce machine code native device code. <a target="_blank" href="https://www.youtube.com/watch?v=2OgLdOjuMm4&t=10m5s">VIDEO</a>: However, the APK file loaded on Android from Flutter and React Native are 2x the 6 MB from native-produced.
+Flutter's Dart compiler has both a Dart VM with just-in-time (JIT) compilation and an ahead-of-time (AOT) to produce machine code native device code. <a target="_blank" href="https://www.youtube.com/watch?v=2OgLdOjuMm4&t=10m5s">VIDEO</a>: However, the APK file loaded on Android from Flutter and React Native are 2x the 6 MB from native-produced. Since 2022, React Native includes in downloads to the app its Hermes JavaScript engine.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=2OgLdOjuMm4&t=11m1s">VIDEO</a> Nevertheless, amazingly, Flutter is 2X faster than Native on the Time to Full Display (TTFD) load.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=2OgLdOjuMm4&t=4m13s">VIDEO</a> Flutter takes almost double the graphics memory than Android native code. This may not matter since modern mobile devices have a lot of memory.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=2OgLdOjuMm4&t=8m35s">VIDEO</a>: Flutter renders basic animations at 120 frames-per-second, on par with Android native, but faster than 51 by KMP & 96 by React Native.
+
 
 
 ## what?
@@ -110,7 +112,7 @@ Flutter's Dart compiler has both a Dart VM with just-in-time (JIT) compilation a
 * <a target="_blank" href="https://scaleupally.io/blog/flutter-apps-examples/">8 Must-See Flutter App Examples For Inspiration</a>
 
 * <a target="_blank" href="https://codecanyon.net/category/mobile/flutter/full-applications">CodeCanyon.net's Flutter Full Applications</a>, some with live preview.
-   * Xianyu (Alibaba) is big in China
+   * Xianyu (Alibaba) and Tencent QQ is big in China
    * <a target="_blank" href="https://play.google.com/store/apps/details?id=com.hamilton.app&hl=en&gl=US">Hamilton Musical app</a>
    * <a target="_blank" href="https://ads.google.com/home/tools/mobile-app/">Google Ads</a>
    * <a target="_blank" href="https://www.groupon.com/">Groupon</a>
@@ -134,12 +136,13 @@ Flutter's Dart compiler has both a Dart VM with just-in-time (JIT) compilation a
 * https://kobe.io/ = Kobe Apps, a mobile app SaaS Platform built in Flutter, to design and build a proof of concept, in English and Portugese.
 
 
-
 ## Smart Phone features in apps
 
 PROTIP: The biggest benefit to using Flutter instead of native languages (such as Swift for iOS) is that <strong>no user action is needed to update the app</strong>. However, this <a href="#HotReload">"Hot Reload"</a> causes a little delay for Flutter users as code is updated.
 
-Over the years, developers have grown weary of "Write Once, Work Everywhere" failed promises from several offerings. Android "Material" and iOS have fundamentally conflicting design UI standards.
+Over the years, developers have grown weary of "Write Once, Work Everywhere" promises from Microsoft Xamarin, Cordova, Kivy, Kendo, PhoneGap, Unity, Ionic, Capacitor, etc. 
+
+Google's "Material" and Apple's "Capistrano" design systems have fundamentally conflicting design UI standards.
 
 1. Flutter is free and open sourced by Google at:
 
@@ -264,7 +267,9 @@ https://www.youtube.com/watch?v=xWV71C2kp38
 
 ## Cloud-based IDE Tutorial
 
-1. Install mobile app FlutterLab (Flutter Development course) by Hrishi Suthar provides a wealth of information.
+1. Install FlutterLab (Flutter Development course) by Hrishi Suthar for <a target="_blank" href="https://play.google.com/store/apps/details?id=com.techbajao.flutterlabpro&hl=en_US">$3.9 on Android</a> and <a target="_blank" href="https://apps.apple.com/us/app/flutterlab/id6464216661">on iPhones</a> provides a wealth of information. But the free version has annoying pop-ups.
+
+1. Install Flutter Tips (from Andrea Bizotto) <a target="_blank" href="https://play.google.com/store/apps/details?id=com.codewithandrea.flutter_tips_and_tricks&hl=en_US">on Android</a> and <a target="_blank" href="https://apps.apple.com/us/app/flutter-tips/id6482293361">on iPhones</a>
 
 1. See list of Google's tutorials at https://www.skills.google/catalog?keywords=flutter
 
