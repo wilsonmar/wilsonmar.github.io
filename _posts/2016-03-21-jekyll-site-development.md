@@ -1,6 +1,8 @@
 ---
 layout: post
-date: "2023-07-08"
+date: "2025-11-18"
+lastchange: "25-11-18 v003 + potassium :2016-03-21-jekyll-site-development.md"
+url: https://wilsonmar.github.io/jekyll-site-development
 file: "jekyll-site-development"
 title: "Jekyll (JAM) site development"
 excerpt: "Getting started with Jekyll"
@@ -11,6 +13,7 @@ image:
   credit:
   creditlink:
 comments: true
+created: "2016-03-21"
 ---
 <i>{{ page.excerpt }}</i> 
 {% include l18n.html %}
@@ -52,112 +55,66 @@ What we would like to do after going thrugh the below is to type this on a Termi
 1. Create the folder.
 
 
-## Ruby build
-
 ## Upgrade Apple XCode
 
 1. Install the latest XCode from Apple. See my tutorial at <a target="_blank" href="https://wilsonmar.github.io/xcode/">https://wilsonmar.github.io/xcode</a>
 
-2. Per https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
-
-   <pre><strong>brew install openssl libyaml libffi</strong></pre>
-
-## Install rbenv
-
-   <pre><strong>brew install rbenv ruby-build</strong></pre>
-
 Jana Bergant's <a target="_blank" href="https://www.udemy.com/static-website-generator-fast-secure-sites-blogs-with-jekyll/">
 Udemy course</a> uses a mac install Jekyll 3.3.0 at last viewing:
 
-   <pre><strong>gem update --system -n /usr/local/bin --no-document</strong></pre>
+
+## Install rbenv
+
+1. Get list of rbenv versions
+
+   rbenv install -l | grep -E "^\s*3\.[0-9]+\.[0-9]+$" | tail -10
+
+1. Specify latest
+   rbenv install 3.4.7
+   rbenv global 3.4.7
+
+1. Per https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
+
+   <pre><strong>brew install openssl libyaml libffi</strong></pre>
+
+   <pre><strong>brew install rbenv ruby-build</strong></pre>
+
+1. To avoid ???:
+
+   ??? /usr/local/bin for Intel chips
+
+   <pre><strong>sudo gem update --system -n /usr/local/bin --no-document</strong></pre>
 
    `-n /usr/local/bin` ensures avoids "You don't have write permissions for the /usr/bin directory."
 
    `--no-document` to avoid installing documentation (which can be accessed online anyway)
 
-   The response, at time of writing was:
+1. 
 
-   <pre>
-Updating rubygems-update
-Fetching rubygems-update-3.0.3.gem
-Successfully installed rubygems-update-3.0.3
-Parsing documentation for rubygems-update-3.0.3
-Installing ri documentation for rubygems-update-3.0.3
-Installing darkfish documentation for rubygems-update-3.0.3
-Done installing documentation for rubygems-update after 36 seconds
-Parsing documentation for rubygems-update-3.0.3
-Done installing documentation for rubygems-update after 0 seconds
-Installing RubyGems 3.0.3
-Bundler 1.17.3 installed
-RubyGems 3.0.3 installed
-Regenerating binstubs
-Parsing documentation for rubygems-3.0.3
-Installing ri documentation for rubygems-3.0.3
-&nbsp;
-=== 3.0.2 / 2019-01-01
-&nbsp;
-Minor enhancements:
-&nbsp;
-* Use Bundler-1.17.3. Pull request #2556 by SHIBATA Hiroshi.
-* Fix document flag description. Pull request #2555 by Luis Sagastume.
-&nbsp;
-Bug fixes:
-&nbsp;
-* Fix tests when ruby --program-suffix is used without rubygems
-  --format-executable. Pull request #2549 by Jeremy Evans.
-* Fix Gem::Requirement equality comparison when ~> operator is used. Pull
-  request #2554 by Grey Baker.
-* Unset SOURCE_DATE_EPOCH in the test cases. Pull request #2558 by Sorah
-  Fukumori.
-* Restore SOURCE_DATE_EPOCH. Pull request #2560 by SHIBATA Hiroshi.
-&nbsp;
-=== 3.0.1 / 2018-12-23
-&nbsp;
-Bug fixes:
-&nbsp;
-* Ensure globbed files paths are expanded. Pull request #2536 by Tony Ta.
-* Dup the Dir.home string before passing it on. Pull request #2545 by
-  Charles Oliver Nutter.
-* Added permissions to installed files for non-owners. Pull request #2546
-  by SHIBATA Hiroshi.
-* Restore release task without hoe. Pull request #2547 by SHIBATA Hiroshi.
-&nbsp;
-&nbsp;
-------------------------------------------------------------------------------
-&nbsp;
-RubyGems installed the following executables:
-	/Users/wilsonmar/.rbenv/versions/2.6.1/bin/gem
-	/Users/wilsonmar/.rbenv/versions/2.6.1/bin/bundle
-&nbsp;
-Ruby Interactive (ri) documentation was installed. ri is kind of like man 
-pages for Ruby libraries. You may access it like this:
-  ri Classname
-  ri Classname.class_method
-  ri Classname#instance_method
-If you do not wish to install this documentation in the future, use the
---no-document flag, or set it as the default in your ~/.gemrc file. See
-'gem help env' for details.
-&nbsp;
-RubyGems system software updated
-   </pre>
-
+   which ruby
+   ```
+   /Users/johndoe/.rbenv/shims/ruby
+   ```
 
 ## Create a folder
 
 CAUTION: In 2019, GitHub changed <a target="_blank" href="https://github.com/pricing">their pricing policies</a> to begin charging for hosting websites (at $7/month). That $84 per year is less than what many hosting companies charge to provide a single machine. But GitHub also provides free scaling and a fast world-wide CDN for no additional cost.
 
+1. In GitHub create a <em>youraccount</em>.github.io repo.
 
-In GitHub create a <em>youraccount</em>.github.io repo.
+1. Delete file .bundle from my Home folder (rm -rf ~/.bundle). You can check out your configuration running bundle env
 
-Delete file .bundle from my Home folder (rm -rf ~/.bundle). You can check out your configuration running bundle env
+   https://jekyllrb.com/docs/
 
-https://jekyllrb.com/docs/
-
-In Terminal, from any folder, 
+1. In Terminal, from any folder, 
 
    <pre>sudo gem uninstall bundler
    gem update --system
    </pre>
+   Response:
+   ```
+   RubyGems system software updated
+   ```
 
    If the latest version is not installed, you get a message like this:
 
@@ -166,6 +123,8 @@ ERROR:  While executing gem ... (Errno::EPERM)
     Operation not permitted @ rb_sysopen - /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/gem
    </pre>    
 
+1. Rehash: 
+
    <pre>
    rbenv rehash
    sudo gem install bundler
@@ -173,43 +132,41 @@ ERROR:  While executing gem ... (Errno::EPERM)
 
    A valid response I got:
 
-   <pre>
+   ```
 Successfully installed bundler-2.0.1
 Parsing documentation for bundler-2.0.1
 Done installing documentation for bundler after 4 seconds
 1 gem installed
-   </pre>
+   ```
 
    ### Install Jekyll (instead of Homebrew):
 
    <pre><strong>gem install jekyll --no-document</strong></pre>
 
    The response:
-
-   <pre>
-Successfully installed jekyll-3.8.5
-Parsing documentation for jekyll-3.8.5
-Done installing documentation for jekyll after 1 seconds
-1 gem installed
-   </pre>
-
+   ```
+Successfully installed jekyll-4.4.1
+28 gems installed
+   ```
 
    http://ryan.mcgeary.org/2011/02/09/vendor-everything-still-applies/
 
-In _config.yml
+1. In _config.yml
 
-exclude: ["vendor", "lib", 
+   <pre>exclude: ["vendor", "lib", </pre<>
 
    ### Demo Site
 
 1. Use or create an enclosing folder, such as "projects".
 
-   jekyll new demosite
+   <pre>jekyll new demosite</pre>
 
-   The response should be "New jekyll site installed ...".
+   The response should be
+   ```
+   New jekyll site installed ...
+   ```
 
    BLAH: I'm getting this message:
-
    <pre>
 Your user account isn't allowed to install to the system RubyGems.
   You can cancel this installation and run:
@@ -226,9 +183,7 @@ Your user account isn't allowed to install to the system RubyGems.
 
 After downloading, have Maven pull in dependencies based on the Gemfile:
 
-   <tt><strong>
-   bundle install
-   </strong></tt>
+   <tt><strong>bundle install</strong></tt>
 
    NOTE: Technically, "install" is not needed since it's the default command for bundle.
 
