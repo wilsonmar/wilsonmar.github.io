@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-08-08"
-lastchange: "v040 + channels list :2023-04-03-weather-info.md"
+date: "2025-11-22"
+lastchange: "25-11-22 v041 + humidity :2023-04-03-weather-info.md"
 url: "https://wilsonmar.github.io/weather-info"
 file: "weather-info"
 title: "Weather information"
@@ -47,6 +47,9 @@ This display above is from the <a target="_blank" href="https://ambientweather.c
    A manual psychrometer (aka "sling psychrometer") uses two thermometers. One has a wet wick around the bulb. The thermometer with the wet wick becomes cooler when water evaporates. The temperature difference on the two thermometers provides the Dew Point.
 
    Manual hygrometers use a polished mirror. As air within the hygrometer is cooled to the dew point, moisture forms on the mirror, which blocks some of the reflected light, indicating that the dew point temperature has been reached.
+
+   <a target="_blank" href="https://www.weather.gov/media/unr/heatindex.pdf">The Heat Index Chart shows how humidity adds to the danger of high heat:<br />
+   <img alt="weather-heat-index-1510x960.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1763878314/weather-heat-index-1510x960_ckptm8.png" /></a>
 
 7. Wind: 
    * Wind direction (blue arrow) is measured in compass degrees by wind vanes (looks like an airplane)
