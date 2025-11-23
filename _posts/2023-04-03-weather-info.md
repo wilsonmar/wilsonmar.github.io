@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-11-22"
-lastchange: "25-11-22 v043 + humidity :2023-04-03-weather-info.md"
+lastchange: "25-11-22 v044 + clot :2023-04-03-weather-info.md"
 url: "https://wilsonmar.github.io/weather-info"
 file: "weather-info"
 title: "Weather information"
@@ -52,6 +52,8 @@ This display above is from the <a target="_blank" href="https://ambientweather.c
    <a target="_blank" href="https://www.noaa.gov/sites/default/files/2022-05/heatindex_chart_rh.pdf"><img alt="weather-heat-index-1510x960.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1763878314/weather-heat-index-1510x960_ckptm8.png" /></a>
 
    These values are <a target="_blank" href="http://wpc.ncep.noaa.gov/html/heatindex.shtml">calculated</a> for shady locations only. Exposure to full sunshine can increase heat index values by up to 15°F. Also, strong winds, particularly with very hot, dry air, can be extremely hazardous as wind adds heat to the body. <a target="_blank" href="https://www.dir.ca.gov/dosh/heatillnessinfo.html">Know Heat Illness Prevention</a>.
+
+   "...your body starts to lose the ability to clot @ 95 degrees..."
 
 7. Wind: 
    * Wind direction (blue arrow) is measured in compass degrees by wind vanes (looks like an airplane)
