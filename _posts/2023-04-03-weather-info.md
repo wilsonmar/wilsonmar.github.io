@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-11-22"
-lastchange: "25-11-22 v041 + humidity :2023-04-03-weather-info.md"
+lastchange: "25-11-22 v043 + humidity :2023-04-03-weather-info.md"
 url: "https://wilsonmar.github.io/weather-info"
 file: "weather-info"
 title: "Weather information"
@@ -40,7 +40,7 @@ This display above is from the <a target="_blank" href="https://ambientweather.c
 3. Outdoor Sensor Array Low Battery Indicator 
 4. Outdoor Sensor Array Signal Quality 
 
-5. Outdoor Temperature (shown with the larger ring) is measured in Centigrade or Fereinheght by therometers. Above and below the current temp. in large numbers in the middle is the high of the day on top and low temp. of the day on the bottom.   The time of day when that's recalculated can be set in Settings.
+5. Outdoor Temperature (shown with the larger ring) is measured in Centigrade or Fahrenheit by therometers. Above and below the current temp. in large numbers in the middle is the high of the day on top and low temp. of the day on the bottom.   The time of day when that's recalculated can be set in Settings.
 
 6. <strong>Humidity</strong> is the <strong>percentage</strong> of water vapor in the air divided by the <a href="#dewpoint">Dew Point</a>.
 
@@ -48,10 +48,10 @@ This display above is from the <a target="_blank" href="https://ambientweather.c
 
    Manual hygrometers use a polished mirror. As air within the hygrometer is cooled to the dew point, moisture forms on the mirror, which blocks some of the reflected light, indicating that the dew point temperature has been reached.
 
-   <a target="_blank" href="https://www.noaa.gov/sites/default/files/2022-05/heatindex_chart_rh.pdf>The Heat Index Chart pdf</a> shows how humidity adds to the danger of high temperature:<br />
-   <img alt="weather-heat-index-1510x960.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1763878314/weather-heat-index-1510x960_ckptm8.png" /></a>
+   <a target="_blank" href="https://en.wikipedia.org/wiki/Heat_index">The Heat Index</a> shows how humidity adds to the danger of high perceived temperature:<br />
+   <a target="_blank" href="https://www.noaa.gov/sites/default/files/2022-05/heatindex_chart_rh.pdf"><img alt="weather-heat-index-1510x960.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1763878314/weather-heat-index-1510x960_ckptm8.png" /></a>
 
-   These values are for shady locations only. Exposure to full sunshine can increase heat index values by up to 15°F. Also, strong winds, particularly with very hot, dry air, can be extremely hazardous as wind adds heat to the body. <a target="_blank" href="https://www.dir.ca.gov/dosh/heatillnessinfo.html">Know Heat Illness Prevention</a>.
+   These values are <a target="_blank" href="http://wpc.ncep.noaa.gov/html/heatindex.shtml">calculated</a> for shady locations only. Exposure to full sunshine can increase heat index values by up to 15°F. Also, strong winds, particularly with very hot, dry air, can be extremely hazardous as wind adds heat to the body. <a target="_blank" href="https://www.dir.ca.gov/dosh/heatillnessinfo.html">Know Heat Illness Prevention</a>.
 
 7. Wind: 
    * Wind direction (blue arrow) is measured in compass degrees by wind vanes (looks like an airplane)
