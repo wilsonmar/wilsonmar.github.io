@@ -48,8 +48,10 @@ This display above is from the <a target="_blank" href="https://ambientweather.c
 
    Manual hygrometers use a polished mirror. As air within the hygrometer is cooled to the dew point, moisture forms on the mirror, which blocks some of the reflected light, indicating that the dew point temperature has been reached.
 
-   <a target="_blank" href="https://www.weather.gov/media/unr/heatindex.pdf">The Heat Index Chart shows how humidity adds to the danger of high heat:<br />
+   <a target="_blank" href="https://www.noaa.gov/sites/default/files/2022-05/heatindex_chart_rh.pdf>The Heat Index Chart pdf</a> shows how humidity adds to the danger of high temperature:<br />
    <img alt="weather-heat-index-1510x960.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1763878314/weather-heat-index-1510x960_ckptm8.png" /></a>
+
+   These values are for shady locations only. Exposure to full sunshine can increase heat index values by up to 15°F. Also, strong winds, particularly with very hot, dry air, can be extremely hazardous as wind adds heat to the body. <a target="_blank" href="https://www.dir.ca.gov/dosh/heatillnessinfo.html">Know Heat Illness Prevention</a>.
 
 7. Wind: 
    * Wind direction (blue arrow) is measured in compass degrees by wind vanes (looks like an airplane)
