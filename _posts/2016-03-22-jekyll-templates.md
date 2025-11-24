@@ -1,16 +1,19 @@
 ---
 layout: post
+date: "2025-11-24"
+lastchange: "25-11-24 v004 + table :2016-03-22-jekyll-templates.md"
+url: https://wilsonmar.github.io/jekyll-templates
+file: "jekyll-templates"
 title: "Jekyll templates"
 excerpt: "The most popular"
 tags: [website, builder, templates, jekyll]
-date: "2016-03-22"
-file: "jekyll-templates"
 image:
 # yellow aristo template 
   feature: https://cloud.githubusercontent.com/assets/300046/15800377/63a04610-2a34-11e6-87d6-c66f1366715f.jpg
   credit: Aristo
   creditlink:
 comments: true
+created: "2016-03-22"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -87,26 +90,36 @@ It features more use of graphics, and allows for localization.
 Micheal blogs about his themes at
 https://mademistakes.com/articles/using-jekyll-2016/
 
-A feature comparison:
 
-| Feature          | HPSTR   | Minimal | Skinny | Simple |
-|:-----------------|:-------:|--------:|-------:|-------:|
-| External links   | YES     | -       | -      | -      |
-| Floating menu    | YES     | -       | -      | -      |
-| Gallery layout   | -       | -       | YES    | -      |
-| Localization     | -       | -       | YES    | -      |
-| Multiple authors | -       | YES     | -      | -      |
-| Page TOC         | -       | YES     | -      | -      |
-| Pages/Articles   | -       | *       | YES    | YES    |
-| Posts            | YES     | YES     | YES    | YES    |
-| Pagination       | YES     | -       | -      | -      |
-| Rakefile.rb      | YES     | -       | -      | -      |
-| Reading time     | YES     | -       | -      | -      |
-| Tags list        | YES     | -       | -      | -      |
-| Site search      | -       | -       | -      | YES    |
-| Social icons only| -       | -       | -      | YES    |
-| Social names     | YES     | -       | -      | -      |
-| Timezones        | YES     | -       | -      | -      |
+<a name="FeaturesTable"></a>
+
+### Feature Comparison Table
+
+Features by each template:
+
+| P | Feature          | HPSTR   | Minimal | Skinny | Simple |
+|:--|:-----------------|:-------:|--------:|-------:|-------:|
+| A | External links   | YES     | -       | -      | -      |
+| C | Floating menu    | YES     | -       | -      | -      |
+| A | Gallery layout   | -       | -       | YES    | -      |
+| B | I18n flags       | -       | YES+    | -      | -      |
+| B | AutoLocalization | -       | YES+    | YES    | -      |
+| C | Multiple authors | -       | YES     | -      | -      |
+| A | <a href="#PageTOC">Page TOC</a>  | -       | YES     | -      | -      |
+| A | Pages/Articles   | -       | *       | YES    | YES    |
+| A | Amazon links     | -       | -       | -      | -      |
+| B | Posts            | YES     | YES     | YES    | YES    |
+| A | Pagination       | YES     | -       | -      | -      |
+| C | Rakefile.rb      | YES     | -       | -      | -      |
+| B | Reading time     | YES     | -       | -      | -      |
+| A | Tags list        | YES     | -       | -      | -      |
+| A | Site search      | +       | YES+    | -      | YES    |
+| A | Social icons only| -       | -       | -      | YES    |
+| A | Social names     | YES     | -       | -      | -      |
+| C | Timezones        | YES     | -       | -      | -      |
+| ? | Game             | -       | -       | -      | -      |
+| ? | Clickable Map    | -       | -       | -      | -      |
+| ? | Shopping cart    | -       | -       | -      | -      |
 
 All the themes feature:
 
@@ -117,6 +130,15 @@ All the themes feature:
    * Use of SASS
    * Theme setup page from the main menu / tab
    * Links to major social sites
+   <br /><br />
+
+<a name="PageTOC"></a>
+
+### PageTOC
+
+A Table of Contents is displayed as a drop-down
+
+<pre>\{\% include l18n.html \%\}</pre>
 
 
 ### Installation and Generation #
