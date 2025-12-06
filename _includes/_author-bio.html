@@ -1,5 +1,5 @@
 <!--
-lastchanges: "25-12-06 v004 buymeacoffee icon _includes :_author-bio.html"
+lastchanges: "25-12-06 v005 no fa in front of fa-solid :_author-bio.html"
 -->
 {% if page.author %}
   {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %}
@@ -36,7 +36,7 @@ lastchanges: "25-12-06 v004 buymeacoffee icon _includes :_author-bio.html"
   TODO: <i class="fa fa-solid fa-mug-saucer"
   icon: "fa-solid fa-mug-saucer"
 -->
-  {% if author.buymeacoffee %}<a href="https://www.buymeacoffee.com/{{ author.buymeacoffee }}" class="author-social" target="_blank"><i class="fa fa-solid fa-mug-saucer"></i> BuyMeACoffee</a>{% endif %}
+  {% if author.buymeacoffee %}<a href="https://www.buymeacoffee.com/{{ author.buymeacoffee }}" class="author-social" target="_blank"><i class="fa-solid fa-mug-saucer"></i> BuyMeACoffee</a>{% endif %}
 <!--
   {% if author.twitter %}<a href="https://twitter.com/{{ author.twitter }}" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>{% endif %}
   {% if author.facebook %}<a href="https://www.facebook.com/{{ author.facebook }}" class="author-social" target="_blank"><i class="fa fa-fw fa-facebook-square"></i> Facebook</a>{% endif %}
