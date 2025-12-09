@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-12-09"
-lastchange: "25-12-09 v002 + mermaid :2017-04-13-git-custom-commands.md"
+lastchange: "25-12-09 v004 + div round mermaid :2017-04-13-git-custom-commands.md"
 url: https://wilsonmar.github.io/git-custom-commands
 title: "Git Custom Commands"
 excerpt: "Less typing means less mistakes, and more time on social media"
@@ -327,6 +327,9 @@ A - B - C
 </pre>
 
 ## flowchart
+
+
+<div id="diagram"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
 <script>
