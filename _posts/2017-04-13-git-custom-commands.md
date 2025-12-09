@@ -1,9 +1,11 @@
 ---
 layout: post
+date: "2025-12-09"
+lastchange: "25-12-09 v002 + mermaid :2017-04-13-git-custom-commands.md"
+url: https://wilsonmar.github.io/git-custom-commands
 title: "Git Custom Commands"
 excerpt: "Less typing means less mistakes, and more time on social media"
 tags: [git, commands, utilities]
-date: "2017-04-13"
 file: "git-custom-commands"
 image:
 # pic silver robot white skin handshake 1900x500
@@ -11,6 +13,7 @@ image:
   credit: 
   creditlink: 
 comments: true
+created: "2017-04-13"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -317,11 +320,30 @@ but GitKraken provides this colorful branch graphics:
 
 Make some ASCII art from (part of your) history
 
-   <pre>
+<pre>
 A - B - C
   \       \
     D - E - F
-   </pre>
+</pre>
+
+## flowchart
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: false }); // disable auto-scan
+
+  const code = `
+    flowchart LR
+      A[Start] --> B{Condition?}
+      B -->|Yes| C[Do something]
+      B -->|No| D[End]
+  `;
+
+  mermaid.render('myDiagramId', code, (svgCode) => {
+    document.getElementById('diagram').innerHTML = svgCode;
+  });
+</script>
+
 
 ## Resources
 
