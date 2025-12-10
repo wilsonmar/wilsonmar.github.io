@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-12-07"
-lastchange: "25-12-07 v026 mathjax center as comment :2024-12-28-ai-benchmarks.md"
+date: "2025-12-10"
+lastchange: "25-12-10 v027 mathjax trigger cmt :2024-12-28-ai-benchmarks.md"
 url: "https://wilsonmar.github.io/ai-benchmarks"
 file: "ai-benchmarks"
 title: "AI Benchmarks"
@@ -266,7 +266,7 @@ Mathematical symbols are typeset from textual notation markup in <a target="_bla
 
 <pre>\$$\frac{4}{9} \left( 17 - 8\cos(2\sqrt{3}) \right)$$</pre>
 
-The <tt>&#92;&#36;&#36;</tt> at the beginning and <tt>&#36;&#36;</tt> at the end specifies use of the <a target="_blank" href="https://www.mathjax.org/">Mathjax library</a> to generate graphical mathematical symbols using CSS with web fonts or SVG, such as:
+The <tt>&#92;&#36;&#36;</tt> at the beginning and <tt>&#36;&#36;</tt> at the end is recognized by the <a target="_blank" href="https://www.mathjax.org/">Mathjax in-line JavaScript</a> to generate graphical mathematical symbols using CSS with web fonts or SVG, such as:
 
 {% if page.mathjax or site.mathjax %}
 <script>
@@ -282,7 +282,7 @@ The <tt>&#92;&#36;&#36;</tt> at the beginning and <tt>&#36;&#36;</tt> at the end
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 {% endif %}
 
-< \$$\frac{4}{9} \left( 17 - 8\cos(2\sqrt{3}) \right)$$
+\$$\frac{4}{9} \left( 17 - 8\cos(2\sqrt{3}) \right)$$
 
    * <tt>\frac</tt> specifies the fraction "4/9".
    * <tt>\left</tt> specifies left parentheses.
@@ -629,8 +629,6 @@ It depends on what you are trying to achieve.
 * Task allocation tasks are measured using the F1 score.
 * Text summarization tasks are measured using the ROUGE score.
 * Question answering tasks are measured using the BLEU score.
-
-<a href="https://bomonike.github.io/ai-benchmarks">https://bomonike.github.io/ai-benchmarks</a>
 
 <hr />
 <sub>{{ page.lastchange }} created {{ page.created }}</sub>
