@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-12-09"
-lastchange: "25-12-09 v004 + div round mermaid :2017-04-13-git-custom-commands.md"
+date: "2025-12-10"
+lastchange: "25-12-10 v005 + mermaidv10 :2017-04-13-git-custom-commands.md"
 url: https://wilsonmar.github.io/git-custom-commands
 title: "Git Custom Commands"
 excerpt: "Less typing means less mistakes, and more time on social media"
@@ -326,27 +326,55 @@ A - B - C
     D - E - F
 </pre>
 
-## flowchart
+## Flowchart using Mermaid.js
 
+Mermaid.js takes textual markup like this:
 
-<div id="diagram"></div>
+<pre>
+graph TD;
+    A[Start] --> B(Process Input);
+    B --> C{Check Status?};
+    C -- Yes --> D[Finish];
+    C -- No --> B;
+</pre>
 
-<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+```mermaid
+graph TD;
+    A[Start] --> B(Process Input);
+    B --> C{Check Status?};
+    C -- Yes --> D[Finish];
+    C -- No --> B;
+```
+... to create a graphic like this:
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
-  mermaid.initialize({ startOnLoad: false }); // disable auto-scan
-
-  const code = `
-    flowchart LR
-      A[Start] --> B{Condition?}
-      B -->|Yes| C[Do something]
-      B -->|No| D[End]
-  `;
-
-  mermaid.render('myDiagramId', code, (svgCode) => {
-    document.getElementById('diagram').innerHTML = svgCode;
+  // Tell Mermaid to look inside elements with class 'language-mermaid':
+  mermaid.initialize({
+    // disable auto-scan:
+    startOnLoad: false,
+    theme: 'default', // Options: 'default', 'dark', 'forest', 'neutral'
+    securityLevel: 'loose' 
   });
+  // Process and render the diagrams after the page is loaded:
+  function initMermaid() {
+    // Find all the code blocks marked with 'language-mermaid':
+    document.querySelectorAll('.language-mermaid').forEach(function(codeElement) {
+      // Get the raw diagram text:
+      let graphDefinition = codeElement.textContent;
+  // Create a new div to hold the rendered diagram:
+  let wrapper = document.createElement('div');
+  wrapper.className = 'mermaid';
+  wrapper.textContent = graphDefinition;
+  // Replace the original code block with the new div:
+  codeElement.parentNode.replaceWith(wrapper);
+});
+// Render the diagrams found in the new divs:
+mermaid.init(undefined, '.mermaid');
+  }
+// Run the initialization function once the entire page is ready:
+    document.addEventListener('DOMContentLoaded', initMermaid);
 </script>
-
 
 ## Resources
 
