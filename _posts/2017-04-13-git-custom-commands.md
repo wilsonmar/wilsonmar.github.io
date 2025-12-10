@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-12-10"
-lastchange: "25-12-10 v009 + mermaidv11 +C4 :2017-04-13-git-custom-commands.md"
+lastchange: "25-12-10 v008 + mermaidv11 +C4 :2017-04-13-git-custom-commands.md"
 url: https://wilsonmar.github.io/git-custom-commands
 title: "Git Custom Commands"
 excerpt: "Less typing means less mistakes, and more time on social media"
@@ -360,7 +360,7 @@ gitGraph;
   commit
 ```
 
-<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
   // Tell Mermaid to look inside elements with class 'language-mermaid':
   mermaid.initialize({
