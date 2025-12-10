@@ -339,13 +339,19 @@ graph TD;
     C -- No --> B;
 </pre>
 or created using <a target="_blank" href="https://mermaid.live/edit">an online editor</a> 
-are read by <a target="_blank" href="https://en.wikipedia.org/wiki/Mermaid_(software)">Mermaid.js</a> (open sourced at <a target="_blank" href="https://github.com/mermaid-js/mermaid">https://github.com/mermaid-js/mermaid</a>) to produce graphics like this:
+are read by <a target="_blank" href="https://en.wikipedia.org/wiki/Mermaid_(software)">Mermaid.js</a> (open sourced at <a target="_blank" href="https://github.com/mermaid-js/mermaid">https://github.com/mermaid-js/mermaid</a>) to produce <a target="_blank" href="https://github.com/mermaid-js/mermaid?tab=readme-ov-file#git-graph-experimental---live-editor">Git graphs</a> like this:
 ```mermaid
-graph TD;
-    A[Start] --> B(Process Input);
-    B --> C{Check Status?};
-    C -- Yes --> D[Finish];
-    C -- No --> B;
+gitGraph
+  commit
+  commit
+  branch develop
+  checkout develop
+  commit
+  commit
+  checkout main
+  merge develop
+  commit
+  commit
 ```
 
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
@@ -376,6 +382,28 @@ mermaid.init(undefined, '.mermaid');
 // Run the initialization function once the entire page is ready:
     document.addEventListener('DOMContentLoaded', initMermaid);
 </script>
+
+BTW Like Graphviz, Mermaid draws 
+<a target="_blank" href="https://github.com/mermaid-js/mermaid?tab=readme-ov-file#flowchart-docs---live-editor">Flowcharts</a>,
+<a target="_blank" href="https://github.com/mermaid-js/mermaid?tab=readme-ov-file#gantt-chart-docs---live-editor">Gantt charts</a>,
+<a target="_blank" href="https://github.com/mermaid-js/mermaid?tab=readme-ov-file#bar-chart-using-gantt-chart-docs---live-editor">Bar charts</a>,
+<a target="_blank" href="https://github.com/mermaid-js/mermaid?tab=readme-ov-file#user-journey-diagram-docs---live-editor">User Journey diagrams</a>,
+<a target="_blank" href="https://github.com/mermaid-js/mermaid?tab=readme-ov-file#pie-chart-docs---live-editor">Pie charts</a>,
+UML:
+<a target="_blank" href="https://github.com/mermaid-js/mermaid?tab=readme-ov-file#sequence-diagram-docs---live-editor">Sequence Diagrams</a>,
+<a target="_blank" href="https://github.com/mermaid-js/mermaid?tab=readme-ov-file#class-diagram-docs---live-editor">Class diagrams</a>,
+<a target="_blank" href="https://github.com/mermaid-js/mermaid?tab=readme-ov-file#state-diagram-docs---live-editor">State diagrams</a>,
+
+<a target="_blank" href="https://github.com/mermaid-js/mermaid?tab=readme-ov-file#c4-diagram-docs">C4 diagrams</a> (Context, Container, Component, and Code).
+The four levels of C4 diagrams:
+
+* Context Diagram: This is the highest-level overview, showing the entire software system as a single box and its interactions with people and other systems. It helps define the system's scope and external integrations.
+
+* Container Diagram: This level zooms into the system and shows its containers (like a web application, mobile app, database, or microservice) and how they communicate with each other.
+
+* Component Diagram: This diagram drills down into a single container, detailing the components inside it and their interactions. For example, a web application container might be broken down into components for user authentication and account management.
+
+* Code Diagram: This is the most detailed level, showing the implementation details of a single component, often using a traditional UML class diagram or similar notation. 
 
 
 ## Resources
