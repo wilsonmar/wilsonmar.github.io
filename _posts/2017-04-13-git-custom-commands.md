@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-12-10"
-lastchange: "25-12-10 v005 + mermaidv10 :2017-04-13-git-custom-commands.md"
+lastchange: "25-12-10 v006 + mermaidv10 urls :2017-04-13-git-custom-commands.md"
 url: https://wilsonmar.github.io/git-custom-commands
 title: "Git Custom Commands"
 excerpt: "Less typing means less mistakes, and more time on social media"
@@ -326,10 +326,11 @@ A - B - C
     D - E - F
 </pre>
 
-## Flowchart using Mermaid.js
+<a name="Flowchart"></a>
 
-Mermaid.js takes textual markup like this:
+### Flowchart using Mermaid.js
 
+Text like this within GitHub Markdown (used by Azure DevOps project Wikis, GitLab, Notion, Obsidian):
 <pre>
 graph TD;
     A[Start] --> B(Process Input);
@@ -337,7 +338,8 @@ graph TD;
     C -- Yes --> D[Finish];
     C -- No --> B;
 </pre>
-
+or created using <a target="_blank" href="https://mermaid.live/edit">an online editor</a> 
+are read by <a target="_blank" href="https://en.wikipedia.org/wiki/Mermaid_(software)">Mermaid.js</a> (open sourced at <a target="_blank" href="https://github.com/mermaid-js/mermaid">https://github.com/mermaid-js/mermaid</a>) to produce graphics like this:
 ```mermaid
 graph TD;
     A[Start] --> B(Process Input);
@@ -345,7 +347,6 @@ graph TD;
     C -- Yes --> D[Finish];
     C -- No --> B;
 ```
-... to create a graphic like this:
 
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
@@ -375,6 +376,7 @@ mermaid.init(undefined, '.mermaid');
 // Run the initialization function once the entire page is ready:
     document.addEventListener('DOMContentLoaded', initMermaid);
 </script>
+
 
 ## Resources
 
