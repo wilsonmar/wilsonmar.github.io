@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-12-13"
-lastchange: "25-12-13 v002 more movies :2025-09-02-foody-christmas.md"
+lastchange: "25-12-13 v004 more movies :2025-09-02-foody-christmas.md"
 url: https://wilsonmar.github.io/foody-christmas
 file: "foody-christmas"
 title: "A Foody's Christmas"
@@ -10,6 +10,7 @@ tags: [food, films]
 comments: true
 created: "2025-09-02"
 ---
+<i>{{ page.excerpt }}</i>
 
 ## Christmas movies
 
@@ -43,19 +44,20 @@ created: "2025-09-02"
 
 1. <a target="_blank" href="https://www.justwatch.com/us/movie/little-women-2019">Little Women (2019)</a>
 1. <a target="_blank" href="https://www.justwatch.com/us/movie/little-women-1994">Little Women (1994)</a>
-1. Miracle on 34th Street (1947)</a>
-1. Tim Burton's The Nightmare Before Christmas (1993)</a>
-1. The Guardians of the Galaxy Holiday Special (2022)</a>
-1. Arthur Christmas (2011)</a>
-1. Tokyo Godfathers (2003)
-1. Jingle Jangle: A Christmas Journey (2020)
-1. Edward Scissorhands (1990)
-1. While You Were Sleeping (1995)
+1. <a target="_blank" href="https://www.justwatch.com/us/movie/miracle-on-34th-street-1994">Miracle on 34th Street (1947)</a>
+1. <a target="_blank" href="https://www.justwatch.com/us/movie/the-nightmare-before-christmas">Tim Burton's The Nightmare Before Christmas (1993)</a>
+1. <a target="_blank" href="https://www.justwatch.com/us/movie/the-guardians-of-the-galaxy-holiday-special">The Guardians of the Galaxy Holiday Special (2022)</a>
+1. <a target="_blank" href="https://www.justwatch.com/us/movie/arthur-christmas">Arthur Christmas (2011)</a>
+1. <a target="_blank" href="https://www.justwatch.com/us/movie/tokyo-godfathers">Tokyo Godfathers (2003)</a>
+1. <a target="_blank" href="https://www.justwatch.com/us/movie/jingle-jangle-a-christmas-journey">Jingle Jangle: A Christmas Journey (2020)</a>
+1. <a target="_blank" href="https://www.justwatch.com/us/movie/edward-scissorhands">Edward Scissorhands (1990)</a>
+1. <a target="_blank" href="https://www.justwatch.com/us/movie/while-you-were-sleeping">While You Were Sleeping (1995)</a>
 
-1. A Christmas Tale (2008)
-1. Rare Exports: A Christmas Tale (2010)
-1. Better Watch Out (2016)
-1. Spoiler Alert (2022)
-1. Gremlins (1984)
-1. Happiest Season (2020)
-1. Anna and the Apocalypse (2017)
+1. <a target="_blank" href="https://www.justwatch.com/us/movie/a-christmas-tale">A Christmas Tale ( Un conte de Noël, 2008)</a> - When their regal matriarch falls ill, the troubled Vuillard family come together for a hesitant Christmastime reunion. Among them is rebellious ne'er-do-well Henri and the uptight Elizabeth. Together under the same roof for the first time in many years, their intricate, long denied resentments and yearnings emerge again.
+1. <a target="_blank" href="https://www.justwatch.com/us/movie/rare-exports-a-christmas-tale">Rare Exports: A Christmas Tale (2010)</a> - Young Pietari lives with his reindeer-herding father in arctic Finland. On the eve of Christmas, a nearby excavation makes a frightening discovery and an evil Santa Claus is unleashed…
+1. <a target="_blank" href="https://www.justwatch.com/us/movie/better-watch-out">Better Watch Out (2016)</a>
+1. <a target="_blank" href="https://www.justwatch.com/us/search?q=Spoiler%20Alert">Spoiler Alert (2022)</a>
+1. <a target="_blank" href="https://www.justwatch.com/us/movie/gremlins-1">Gremlins (1984)</a> After receiving an exotic small animal as a Christmas gift, a young man inadvertently breaks three important rules concerning his new pet, which unleashes a horde of malevolently mischievous creatures on a small town.
+1. <a target="_blank" href="https://www.justwatch.com/us/movie/happiest-season">Happiest Season (2020)</a>
+1. <a target="_blank" href="https://www.justwatch.com/us/movie/anna-and-the-apocalypse">Anna and the Apocalypse (2017)</a>
+1. <a target="_blank" href="https://play.hbomax.com/movie/ac61604a-3831-4f32-b6c2-8f70cdedb216">Four Chirstmases (2008)</a>
