@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-12-13"
-lastchange: "25-12-13 v028 Microsoft Phi :2024-12-28-ai-benchmarks.md"
+lastchange: "25-12-13 v029 fmt :2024-12-28-ai-benchmarks.md"
 url: "https://wilsonmar.github.io/ai-benchmarks"
 file: "ai-benchmarks"
 title: "AI Benchmarks"
@@ -31,9 +31,9 @@ Several benchmarks have been created, mostly by academics and giant frountier LL
 <tr valign="top"><td>US</td><td>Anthropic</td><td>Claude</td></tr>
 <tr valign="top"><td>US</td><td>Apple</td><td>MM1, ReALM</td></tr>
 <tr valign="top"><td>China</td><td>DeepSeek</td><td>R1,R2,V3</td></tr>
+<tr valign="top"><td>US</td><td><a target="_blank" href="#Fireworks.ai">Fireworks.ai</a></td><td>KwaiKAT-Coder</td></tr>
 <tr valign="top"><td>US</td><td>Google</td><td>Gemini</td></tr>
 <tr valign="top"><td>China</td><td>Kimi</td><td>K2</td></tr>
-<tr valign="top"><td>US</td><td><a target="_blank" href="#Fireworks.ai">Fireworks.ai</a></td><td>KwaiKAT-Coder</td></tr>
 <tr valign="top"><td>US</td><td>Meta</td><td>Llama</td></tr>
 <tr valign="top"><td>US</td><td>Microsoft</td><td>Phi</td></tr>
 <tr valign="top"><td>Singapore</td><td><a target="_blank" href="https://www.minimax.io/news/minimax-m2">MiniMax</a></td><td>M2, Hailuo, Speech</td></tr>
@@ -146,6 +146,7 @@ Create an account at https://agi.safe.ai/ and click "Contributors" to see submis
 
 <a target="_blank" href="https://www.youtube.com/watch?time_continue=1430&v=om5KAKSSpNg">VIDEO</a>:
 In June 2024, <a target="_blank" href="https://www.linkedin.com/in/leopold-aschenbrenner">Leopold Aschenbrenner</a> wrote his <a target="_blank" href="https://situational-awareness.ai/">situational-awareness.ai blog</a> with this illustration:
+
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1737377788/agi-sit-1375x901_vsc5af.png">
 <img alt="" width="300" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1737377788/agi-sit-1375x901_vsc5af.png" /></a>
 
