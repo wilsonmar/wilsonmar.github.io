@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-12-13"
-lastchange: "25-12-13 v026 vendors :2024-12-28-ai-benchmarks.md"
+lastchange: "25-12-13 v027 minimax :2024-12-28-ai-benchmarks.md"
 url: "https://wilsonmar.github.io/ai-benchmarks"
 file: "ai-benchmarks"
 title: "AI Benchmarks"
@@ -36,7 +36,7 @@ Several benchmarks have been created, mostly by academics and giant frountier LL
 <tr valign="top"><td>China</td><td>KwaiKAT</td><td>Coder</td></tr>
 <tr valign="top"><td>US</td><td>Meta</td><td>Llama</td></tr>
 <tr valign="top"><td>US</td><td>Microsoft</td><td>Phi</td></tr>
-<tr valign="top"><td>-</td><td>MiniMax</td><td>M2</td></tr>
+<tr valign="top"><td>Singapore</td><td><a target="_blank" href="https://www.minimax.io/news/minimax-m2">MiniMax</a></td><td>M2, Hailuo, Speech</td></tr>
 <tr valign="top"><td>France</td><td>Mistral</td><td>Medium, Large</td></tr>
 <tr valign="top"><td>US</td><td>NVIDIA</td><td>Nemotron</td></tr>
 <tr valign="top"><td>US</td><td>OpenAI</td><td>GPT</td><td>ChatGPT</td></tr>
