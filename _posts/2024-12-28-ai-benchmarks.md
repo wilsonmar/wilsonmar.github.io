@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-12-13"
-lastchange: "25-12-13 v027 minimax :2024-12-28-ai-benchmarks.md"
+lastchange: "25-12-13 v028 Microsoft Phi :2024-12-28-ai-benchmarks.md"
 url: "https://wilsonmar.github.io/ai-benchmarks"
 file: "ai-benchmarks"
 title: "AI Benchmarks"
@@ -33,7 +33,7 @@ Several benchmarks have been created, mostly by academics and giant frountier LL
 <tr valign="top"><td>China</td><td>DeepSeek</td><td>R1,R2,V3</td></tr>
 <tr valign="top"><td>US</td><td>Google</td><td>Gemini</td></tr>
 <tr valign="top"><td>China</td><td>Kimi</td><td>K2</td></tr>
-<tr valign="top"><td>China</td><td>KwaiKAT</td><td>Coder</td></tr>
+<tr valign="top"><td>US</td><td><a target="_blank" href="#Fireworks.ai">Fireworks.ai</a></td><td>KwaiKAT-Coder</td></tr>
 <tr valign="top"><td>US</td><td>Meta</td><td>Llama</td></tr>
 <tr valign="top"><td>US</td><td>Microsoft</td><td>Phi</td></tr>
 <tr valign="top"><td>Singapore</td><td><a target="_blank" href="https://www.minimax.io/news/minimax-m2">MiniMax</a></td><td>M2, Hailuo, Speech</td></tr>
@@ -45,7 +45,9 @@ Several benchmarks have been created, mostly by academics and giant frountier LL
 
 ### LLM Summary:
 
+<a name="Fireworks.ai"></a>
 * <a target="_blank" href="https://app.fireworks.ai/models/fireworks/kat-coder">KAT-Coder-Pro V1</a> from <a target="_blank" href="https://fireworks.ai/models/fireworks/kat-coder">Fireworks.ai</a> was ranked 2nd on HLE and the lowest token usage. What a bargain! It's for coding and “agentic” work. Founded by leads from Meta PyTorch & Google Vertex at San Mateo.
+
 * Anthropic's Claude
 * Microsoft's Phi-1 (1.3B parameters) LLM is focused on Python coding. <a target="_blank" href="https://news.microsoft.com/source/features/ai/the-phi-3-small-language-models-with-big-potential/">Microsoft's focus is on edge devices</a>.
 
