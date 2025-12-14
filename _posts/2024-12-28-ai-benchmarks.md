@@ -26,7 +26,7 @@ Several benchmarks have been created, mostly by academics and giant frountier LL
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th>Country</th><th>Vendor</th><th>LLM brand</th><th>app</th></tr>
 <tr valign="top"><td>China</td><td>Alibaba</td><td>Qwen</td></tr>
-<tr valign="top"><td>US</td><td>Allen</td><td>?</td></tr>
+<tr valign="top"><td>US</td><td>Allen</td><td><a target="_blank" href="https://allenai.org/olmo">Olmo</a></td></tr>
 <tr valign="top"><td>US</td><td>Amazon</td><td>Nova</td></tr>
 <tr valign="top"><td>US</td><td>Anthropic</td><td>Claude</td></tr>
 <tr valign="top"><td>US</td><td>Apple</td><td>MM1, ReALM</td></tr>
