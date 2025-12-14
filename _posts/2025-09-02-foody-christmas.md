@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-12-13"
-lastchange: "25-12-13 v004 more movies :2025-09-02-foody-christmas.md"
+date: "2025-12-14"
+lastchange: "25-12-14 v006 figs :2025-09-02-foody-christmas.md"
 url: https://wilsonmar.github.io/foody-christmas
 file: "foody-christmas"
 title: "A Foody's Christmas"
@@ -14,7 +14,7 @@ created: "2025-09-02"
 
 ## Christmas movies
 
-1. <a target="_blank" href="https://www.justwatch.com/us/movie/the-polar-express">The Polar Express (2004)</a> - Rich, frothy hot chocolate served on the train.
+1. <a target="_blank" href="https://www.justwatch.com/us/movie/the-polar-express">The Polar Express (2004)</a> HBO - Rich, frothy hot chocolate served on the train.
 1. <a target="_blank" href="https://www.justwatch.com/us/movie/a-bad-moms-christmas">A Bad Moms Christmas (2017)</a> - Spiced, spiked cider.
 1. <a target="_blank" href="https://www.justwatch.com/us/movie/rudolph-the-red-nosed-reindeer">Rudolph the Red-Nosed Reindeer (1964)</a> - Tomato soup and other simple winter comfort foods.
 
@@ -53,11 +53,13 @@ created: "2025-09-02"
 1. <a target="_blank" href="https://www.justwatch.com/us/movie/edward-scissorhands">Edward Scissorhands (1990)</a>
 1. <a target="_blank" href="https://www.justwatch.com/us/movie/while-you-were-sleeping">While You Were Sleeping (1995)</a>
 
+1. <a target="_blank" href="https://www.justwatch.com/us/movie/journey-to-bethlehem">Journey to Bethlehem (2023)</a> - figs "fat juicy ones". 
+1. <a target="_blank" href="https://www.justwatch.com/us/movie/gremlins-1">Gremlins (1984)</a> - Sandwich, chips. After receiving an exotic small animal as a Christmas gift, a young man inadvertently breaks three important rules concerning his new pet, which unleashes a horde of malevolently mischievous creatures on a small town.
 1. <a target="_blank" href="https://www.justwatch.com/us/movie/a-christmas-tale">A Christmas Tale ( Un conte de Noël, 2008)</a> - When their regal matriarch falls ill, the troubled Vuillard family come together for a hesitant Christmastime reunion. Among them is rebellious ne'er-do-well Henri and the uptight Elizabeth. Together under the same roof for the first time in many years, their intricate, long denied resentments and yearnings emerge again.
 1. <a target="_blank" href="https://www.justwatch.com/us/movie/rare-exports-a-christmas-tale">Rare Exports: A Christmas Tale (2010)</a> - Young Pietari lives with his reindeer-herding father in arctic Finland. On the eve of Christmas, a nearby excavation makes a frightening discovery and an evil Santa Claus is unleashed…
 1. <a target="_blank" href="https://www.justwatch.com/us/movie/better-watch-out">Better Watch Out (2016)</a>
 1. <a target="_blank" href="https://www.justwatch.com/us/search?q=Spoiler%20Alert">Spoiler Alert (2022)</a>
-1. <a target="_blank" href="https://www.justwatch.com/us/movie/gremlins-1">Gremlins (1984)</a> After receiving an exotic small animal as a Christmas gift, a young man inadvertently breaks three important rules concerning his new pet, which unleashes a horde of malevolently mischievous creatures on a small town.
 1. <a target="_blank" href="https://www.justwatch.com/us/movie/happiest-season">Happiest Season (2020)</a>
 1. <a target="_blank" href="https://www.justwatch.com/us/movie/anna-and-the-apocalypse">Anna and the Apocalypse (2017)</a>
 1. <a target="_blank" href="https://play.hbomax.com/movie/ac61604a-3831-4f32-b6c2-8f70cdedb216">Four Chirstmases (2008)</a>
+1. <a target="_blank" href="https://www.justwatch.com/us/movie/christmas-with-the-kranks">Christmas with the Kranks (2004)</a> <a target="_blank" href="https://play.hbomax.com/movie/870a4ba2-728e-4b43-9436-8b75ad99e72d">HBO</a>
