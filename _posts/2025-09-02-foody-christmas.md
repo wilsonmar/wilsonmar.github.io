@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-12-14"
-lastchange: "25-12-14 v008 Krempita :2025-09-02-foody-christmas.md"
+lastchange: "25-12-14 v009 eof :2025-09-02-foody-christmas.md"
 url: https://wilsonmar.github.io/foody-christmas
 file: "foody-christmas"
 title: "A Foody's Christmas"
@@ -64,3 +64,7 @@ created: "2025-09-02"
 1. <a target="_blank" href="https://www.justwatch.com/us/movie/anna-and-the-apocalypse">Anna and the Apocalypse (2017)</a>
 1. <a target="_blank" href="https://play.hbomax.com/movie/ac61604a-3831-4f32-b6c2-8f70cdedb216">Four Chirstmases (2008)</a>
 1. <a target="_blank" href="https://www.justwatch.com/us/movie/christmas-with-the-kranks">Christmas with the Kranks (2004)</a> <a target="_blank" href="https://play.hbomax.com/movie/870a4ba2-728e-4b43-9436-8b75ad99e72d">HBO</a>
+
+
+<hr />
+<sub>{{ page.lastchange }} created {{ page.created }}</sub>
