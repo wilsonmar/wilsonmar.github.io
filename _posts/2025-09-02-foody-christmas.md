@@ -1,7 +1,7 @@
 ---
 layout: post
 date: "2025-12-14"
-lastchange: "25-12-14 v007 sauerkraut :2025-09-02-foody-christmas.md"
+lastchange: "25-12-14 v008 Krempita :2025-09-02-foody-christmas.md"
 url: https://wilsonmar.github.io/foody-christmas
 file: "foody-christmas"
 title: "A Foody's Christmas"
@@ -28,8 +28,8 @@ created: "2025-09-02"
 1. <a target="_blank" href="https://www.justwatch.com/us/movie/frank-capras-its-a-wonderful-life">It's a Wonderful Life (1946)</a> - roast chicken and other comfort foods.
 1. <a target="_blank" href="https://www.justwatch.com/us/movie/the-holiday">The Holiday (2006)</a> - Braised brisket and festive coffee drinks).
 1. Meet Me in St. Louis (1944)</a> - Ketchup, corned beef.
-1. <a target="_blank" href="https://www.justwatch.com/us/movie/last-christmas">Last Christmas (2019)</a> - sauerkraut.
-1. The Holdovers (2023)</a> - 
+1. <a target="_blank" href="https://www.justwatch.com/us/movie/last-christmas">Last Christmas (2019)</a> - sauerkraut, sausage, Krempita, tiramisu.
+1. <a target="_blank" href="https://www.justwatch.com/us/movie/the-holdovers">The Holdovers (2023)</a> - 
 
 1. <a target="_blank" href="https://www.justwatch.com/us/movie/die-hard-1988">Die Hard (1988)</a> - Hostess Twinkies.
 1. <a target="_blank" href="https://www.justwatch.com/us/movie/rankin-bass-frosty-the-snowman">Frosty the Snowman (1969)</a> - Red velvet cupcakes.
