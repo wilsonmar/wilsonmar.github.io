@@ -26,14 +26,14 @@ Several benchmarks have been created, mostly by academics and giant frountier LL
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th>Country</th><th>Vendor</th><th>LLM brand</th><th>app</th></tr>
 <tr valign="top"><td>China</td><td>Alibaba</td><td>Qwen</td></tr>
-<tr valign="top"><td>US</td><td>Allen</td><td><a target="_blank" href="https://allenai.org/olmo">Olmo</a></td></tr>
+<tr valign="top"><td>US</td><td>Allen AI</td><td><a target="_blank" href="https://allenai.org/olmo">Olmo</a></td></tr>
 <tr valign="top"><td>US</td><td>Amazon</td><td>Nova</td></tr>
 <tr valign="top"><td>US</td><td>Anthropic</td><td>Claude</td></tr>
 <tr valign="top"><td>US</td><td>Apple</td><td>MM1, ReALM</td></tr>
 <tr valign="top"><td>China</td><td>DeepSeek</td><td>R1,R2,V3</td></tr>
 <tr valign="top"><td>US</td><td><a target="_blank" href="#Fireworks.ai">Fireworks.ai</a></td><td>KwaiKAT-Coder</td></tr>
 <tr valign="top"><td>US</td><td>Google</td><td>Gemini</td></tr>
-<tr valign="top"><td>China</td><td>Kimi</td><td>K2</td></tr>
+<tr valign="top"><td>China</td><td>Zhipu (Z.Ai)</td><td>Kimi K2</td></tr>
 <tr valign="top"><td>US</td><td>Meta</td><td>Llama</td></tr>
 <tr valign="top"><td>US</td><td>Microsoft</td><td>Phi</td></tr>
 <tr valign="top"><td>Singapore</td><td><a target="_blank" href="https://www.minimax.io/news/minimax-m2">MiniMax</a></td><td>M2, Hailuo, Speech</td></tr>
@@ -46,11 +46,24 @@ Several benchmarks have been created, mostly by academics and giant frountier LL
 
 ### LLM Highlights:
 
+<a target="_blank" href="https://www.interconnects.ai/p/2025-open-models-year-in-review">Nathan Lambert's 2025</a> <a target="_blank" href="https://tiermaker.com/create/chinese-model-makers-18511783">tier list</a> shows Chinese labs (DeepSeek, Qwen, Kimi) now define the frontier. Their list:
+
+   * Frontier: DeepSeek, Qwen, Moonshot AI (Kimi)
+   * Close competitors: Zhipu (Z.Ai), Minimax
+   * Noteworthy: StepFun, InclusionAI / Ant Ling, Meituan Longcat, Tencent, IBM, NVIDIA, Google, Mistral
+   * Specialists: OpenAI, Ai2, Moondream, Arcee, RedNote, HuggingFace, LiquidAI, Microsoft, Xiaomi, Mohamed bin Zayed University of Artificial Intelligence
+   * On the rise: ByteDance Seed, Apertus, OpenBMB, Motif, Baidu, Marin Community, InternLM, OpenGVLab, ServiceNow, Skywork
+   * Honorable mentions: TNG Group, Meta, Cohere, Beijing Academy of Artificial Intelligence, Multimodal Art Projection, Huawei
+   <br /><br />
+
+No US company currently appears in their top tier.
+But NVIDIA's response is to compete on efficiency and openness. <a target="_blank" href="https://research.nvidia.com/labs/nemotron/Nemotron-3/">NVIDIA's Nemotron 3 claims to be the Intelligence vs. Output Speed king:
+<img alt="nano-3-aa-5112x2220.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1765896478/nano-3-aa-5112x2220_zrxxf5.png" /></a>
+
+OpenRouter
+
 <a name="Fireworks.ai"></a>
 * <a target="_blank" href="https://app.fireworks.ai/models/fireworks/kat-coder">KAT-Coder-Pro V1</a> from <a target="_blank" href="https://fireworks.ai/models/fireworks/kat-coder">Fireworks.ai</a> was ranked 2nd on HLE and the lowest token usage. What a bargain! It's for coding and “agentic” work. Founded by leads from Meta PyTorch & Google Vertex at San Mateo.
-
-<a target="_blank" href="https://research.nvidia.com/labs/nemotron/Nemotron-3/">NVIDIA's Nemotron 3 claims to be the Intelligence vs. Output Speed king:
-<img alt="nano-3-aa-5112x2220.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1765896478/nano-3-aa-5112x2220_zrxxf5.png" /></a>
 
 * Anthropic's Claude
 * Microsoft's Phi-1 (1.3B parameters) LLM is focused on Python coding. <a target="_blank" href="https://news.microsoft.com/source/features/ai/the-phi-3-small-language-models-with-big-potential/">Microsoft's focus is on edge devices</a>.
