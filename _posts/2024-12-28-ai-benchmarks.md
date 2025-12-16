@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-12-13"
-lastchange: "25-12-13 v029 fmt :2024-12-28-ai-benchmarks.md"
+date: "2025-12-16"
+lastchange: "25-12-16 v030 Nemotron :2024-12-28-ai-benchmarks.md"
 url: "https://wilsonmar.github.io/ai-benchmarks"
 file: "ai-benchmarks"
 title: "AI Benchmarks"
@@ -38,15 +38,19 @@ Several benchmarks have been created, mostly by academics and giant frountier LL
 <tr valign="top"><td>US</td><td>Microsoft</td><td>Phi</td></tr>
 <tr valign="top"><td>Singapore</td><td><a target="_blank" href="https://www.minimax.io/news/minimax-m2">MiniMax</a></td><td>M2, Hailuo, Speech</td></tr>
 <tr valign="top"><td>France</td><td>Mistral</td><td>Medium, Large</td></tr>
-<tr valign="top"><td>US</td><td>NVIDIA</td><td>Nemotron</td></tr>
+<tr valign="top"><td>US</td><td>NVIDIA</td><td><a target="_blank" href="https://research.nvidia.com/labs/nemotron/Nemotron-3/">Nemotron</a></td></tr>
 <tr valign="top"><td>US</td><td>OpenAI</td><td>GPT</td><td>ChatGPT</td></tr>
 <tr valign="top"><td>US</td><td>xAI</td><td>Grok</td></tr>
 </table>
 
-### LLM Summary:
+
+### LLM Highlights:
 
 <a name="Fireworks.ai"></a>
 * <a target="_blank" href="https://app.fireworks.ai/models/fireworks/kat-coder">KAT-Coder-Pro V1</a> from <a target="_blank" href="https://fireworks.ai/models/fireworks/kat-coder">Fireworks.ai</a> was ranked 2nd on HLE and the lowest token usage. What a bargain! It's for coding and “agentic” work. Founded by leads from Meta PyTorch & Google Vertex at San Mateo.
+
+<a target="_blank" href="https://research.nvidia.com/labs/nemotron/Nemotron-3/">NVIDIA's Nemotron 3 claims to be the Intelligence vs. Output Speed king:
+<img alt="nano-3-aa-5112x2220.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1765896478/nano-3-aa-5112x2220_zrxxf5.png" /></a>
 
 * Anthropic's Claude
 * Microsoft's Phi-1 (1.3B parameters) LLM is focused on Python coding. <a target="_blank" href="https://news.microsoft.com/source/features/ai/the-phi-3-small-language-models-with-big-potential/">Microsoft's focus is on edge devices</a>.
