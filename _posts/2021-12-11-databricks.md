@@ -1,6 +1,8 @@
 ---
 layout: post
-date: "2023-12-11"
+date: "2023-12-18"
+lastchange: "25-12-16 v030 strong> :2021-12-11-databricks.md"
+url: "https://wilsonmar.github.io/databricks"
 file: "databricks"
 title: "Databricks"
 excerpt: "Create Analytics visualization dashboards pulling from Datalakes and DeltaLakes SaaS on Azure and AWS, coding ApacheSpark SQL, Python Notebooks, low-code AutoML,  and MLFlow"
@@ -11,6 +13,7 @@ image:
   credit: Lodge at Whitefish Lake, Montana
   creditlink: https://lodgeatwhitefishlake.com/location
 comments: true
+created: "2025-12-11"
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -26,9 +29,9 @@ This article aims to avoid "salesy" generalizations to present a deep yet succin
 
 Databricks calls itself the "Data + AI" company. Databricks is on a mission to "simplify and democratize data and AI, helping data teams solve the world’s toughest problems." Databricks boasts hundreds of global partners, including Microsoft, Amazon, Tableau, Informatica, Cap Gemini and Booz Allen Hamilton, etc.
 
-With origins in academia and the open-source community, the company was founded in 2013 by the original creators of Apache Spark™, Delta Lake and MLflow. Built on a modern Lakehouse architecture in the cloud, Databricks combines the best of data warehouses and data lakes to offer an open and unified platform for data and AI.
+With origins in academia and the open-source community, the company was founded in 2013 by the original creators of Apache Spark™, Delta Lake and MLflow. Built on a modern Lakehouse (Medallion) architecture in the cloud, Databricks combines the best of database warehouses and data lakes (file mangemment) to offer an open and unified platform for data and AI.
 
-The company was founded by the original creators of <a href="#Apache+Spark">Apache Spark</a> to provide personas <strong>data scientists</strong> and data engineers</strong> a cloud-based vendor-managed platform to <strong>easily</strong> run analytics in a <strong>scalable</strong> manner. 
+The company was founded by the original creators of <a href="#Apache+Spark">Apache Spark</a> to provide personas <strong>data scientists</strong> and <strong>data engineers</strong> a cloud-based vendor-managed platform to <strong>easily</strong> run analytics in a <strong>scalable</strong> manner. 
 Databricks provides a managed Spark cloud service along with a platform for managing the full data analytics lifecycle using Python Jupyter notebooks for interactive data exploration and dashboards for sharing visualizations. Jobs for scheduling and automating workflows.
 Added to the platform are libraries for machine learning.
  
@@ -355,7 +358,7 @@ Data quality: Detect <a target="_blank" href="https://www.youtube.com/watch?v=uO
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1702368185/databricks-ml-1540x729_rgzkuo.png"><img alt="databricks-ml-1540x729.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1702368185/databricks-ml-1540x729_rgzkuo.png"></a>
 
-   * <a target="_blank" href="https://learning.oreilly.com/library/view/-/9781801812030/" title="Publisher:Packt Publishing">>BOOK</a>: Practical Machine Learning on Databricks - 244 pages by Debu Sinha November 2023 
+   * <a target="_blank" href="https://learning.oreilly.com/library/view/-/9781801812030/" title="Publisher:Packt Publishing">BOOK</a>: Practical Machine Learning on Databricks - 244 pages by Debu Sinha November 2023 
    <br /><br />
 
    * <a target="_blank" href="https://learning.oreilly.com/videos/-/090142022VIDEOPAIML/" title="Publisher:Pragmatic AI Solutions">VIDEO</a>: Assimilate Databricks ML Certification By Alfredo Deza and Noah Gift September 2022 0h 58m
