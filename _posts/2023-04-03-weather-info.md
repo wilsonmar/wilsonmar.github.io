@@ -1,7 +1,7 @@
 ---
 layout: post
-date: "2025-11-22"
-lastchange: "25-11-22 v044 + clot :2023-04-03-weather-info.md"
+date: "2026-01-31"
+lastchange: "26-01-31 v046 NVIDIA, air qual :2023-04-03-weather-info.md"
 url: "https://wilsonmar.github.io/weather-info"
 file: "weather-info"
 title: "Weather information"
@@ -40,7 +40,9 @@ This display above is from the <a target="_blank" href="https://ambientweather.c
 3. Outdoor Sensor Array Low Battery Indicator 
 4. Outdoor Sensor Array Signal Quality 
 
-5. Outdoor Temperature (shown with the larger ring) is measured in Centigrade or Fahrenheit by therometers. Above and below the current temp. in large numbers in the middle is the high of the day on top and low temp. of the day on the bottom.   The time of day when that's recalculated can be set in Settings.
+5. Outdoor Temperature (shown with the larger ring) is measured in Centigrade or Fahrenheit by therometers. Above and below the current temp. in large numbers in the middle is the high of the day on top and low temp. of the day on the bottom.  The time of day when that's recalculated can be set in Settings.
+
+   The record for the lowest reliably measured natural temperature on Earth is -128.6F (-89.22C) at Vostok Station, Antartica, where people wear jackets (with cayote fur and clumsy zippers) from Canada Goose. <a target="_blank" href="https://www.youtube.com/watch?v=m7igoQb_02Q" title="retrived 26-01-12">VIDEO</a>
 
 6. <strong>Humidity</strong> is the <strong>percentage</strong> of water vapor in the air divided by the <a href="#dewpoint">Dew Point</a>.
 
@@ -129,7 +131,20 @@ This display above is from the <a target="_blank" href="https://ambientweather.c
     Historically, sunshine intensity is measured thru direct solar radiation using <strong>pyrheliometers</strong> which have a tubular structure that needs to be aimed at the sun, mounted on a <strong>solar tracker</strong>. 
     BTW Before electronic photoelectric sensors are used by computers, the Campbell-Stokes and Jordan Sunshine Recorders (in the UK) used a glass sphere to focus sunlight onto a recording card replaced each day, creating burn marks that indicate the duration of sunshine that day.     
 
-25. "IN "(Indoor) air quality in ug/m3 by a PM2.5 sensor (if installed)
+25. "IN "(Indoor) air quality in <a target="_blank" href="https://ambientweather.com/faqs/question/tags/ta
+g/AQIN/">ug/m3</a> by PM2.5 & PM1.0 sensors (if the <a target="_blank" href="https://www.amazon.com/dp/B0B5B8F63J?ref=wilsonslifenotes">$191.24</a> Ambient Weather Particulate Monitor <a target="_blank" href="https://www.epa.gov/sites/production/files/2014-05/documents/zell-aqi.pdf" title="Page 11">AQIN (Indoor Air Quality Index)</a> is <a target="_blank" href="https://ambientweather.com/mwdownloads/download/link/id/1097?srsltid=AfmBOop7q78cGtp50BriSzXt4bDuPYUlpUl5-q_8IgDSEmXIFdZnJbnc">configured</a>:
+    
+    <table border="1" cellpadding="4" cellspacing="0">
+    <tr><th> Measure </th><th> PM2.5 </th><th> PM1.0 </th></tr>
+    <tr valign="top"><td> Good           </td><td>  12.0 |  54 </td></tr>
+    <tr valign="top"><td> Moderate       </td><td>  35.4 | 154 </td></tr>
+    <tr valign="top"><td> Unhealthy      </td><td>  55.4 | 254 </td></tr>
+    <tr valign="top"><td> Unhealthy      </td><td> 150.4 | 354 </td></tr>
+    <tr valign="top"><td> Very Unhealthy </td><td> 250.4 | 424 </td></tr>
+    <tr valign="top"><td> Hazardous      </td><td> 500.4 | 604 </td></tr>
+    </table>
+
+    Alas, air quality is not tracked online.
 26. "OUT" (Outdoor) Particulate monitor in ug/m3 by a PM2.5 sensor (if installed)
 
 27. <a name="dewpoint"></a><strong>Dewpoint</strong> is calculated for measuring the comfort level from moisture in the air. A Simplified version of the <a href="https://en.wikipedia.org/wiki/Magnus-Tetens_equation">Magnus-Tetens Formula</a> is:
@@ -209,6 +224,9 @@ Advanced map layers are now free.
 <a target="_blank" href="https://d3js.org/">d3.js</a> is a JavaScript library for producing dynamic, interactive data visualizations in web browsers. <a target="_blank" href="https://learning.oreilly.com/videos/-/10000MNHV2021133/">VIDEO</a>
 
 Upwind locations on the map would experience weather patterns (such as rain) before you (n=in a downwind location).
+
+<a target="_blank" href="https://www.youtube.com/watch?v=qo78lSBYi-U">VIDEO</a>:
+NVIDIA's Earth-2 family of open models — the world’s first fully open AI weather stack — allows developers, nations, enterprises, and businesses to run application-specific forecasting systems. Their models - Earth-2 Medium Range, Nowcasting, and Global Data Assimilation - move beyond traditional physics-based modeling to deliver faster, more accurate climate insights.
 
 
 <a name="HomeAssistant"></a>
