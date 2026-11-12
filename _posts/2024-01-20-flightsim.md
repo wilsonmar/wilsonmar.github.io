@@ -1,6 +1,8 @@
 ---
 layout: post
-date: "2024-04-15"
+date: "2026-11-11"
+lastchange: "v010 TFR etc. from wilsonmar @2024-01-20-flightsim.md"
+url: "https://wilsonmar.github.io/flightsim"
 file: "flightsim"
 title: "Flight Simulator"
 excerpt: "Use Microsoft's Flight Simulator to fly around the world in various planes, experiencing real-time weather on a Windows PC or Xbox X."
@@ -11,12 +13,13 @@ image:
   credit: RTX (5760 x 1080 split across three panels)
   creditlink: https://www.pcgamesn.com/nvidia/rtx-3080-powered-flight-sim-setup
 comments: true
+created: "2024-01-20"
 ---
 <i>{{ page.excerpt }}</i> 
 {% include l18n.html %}
 {% include _toc.html %}
 
-With wars breaking out around the world, I splurged on a setup for the <strong>Microsoft Flight Simulator</strong> so I could fly around the world safely in various planes, for less than an average cruise.
+While wars are breaking out around the world, I splurged on a setup for the <strong>Microsoft Flight Simulator</strong> so I could fly around the world safely in various planes.
 
 The game is praised for its realism and scale -- a fine example of how Microsoft Azure's cloud computing platform can be used to run massive AI-powered processes that generate three-dimensional representations of cities, foliage, and other objects in UHD resolution based on real-world satellite images. Real-time weather data is also pulled from the cloud, allowing the game to simulate weather conditions at any location in the world.
 
@@ -26,8 +29,8 @@ Microsoft Flight Simulator is one of the longest-running, best-known, and most c
 Bruce Artwick's company, subLOGIC, began Flight Simulator development in 1977.
 It runs on Microsoft Windows operating systems, and earlier for MS-DOS and Classic Mac OS.
 
-At 2 million lines of code, it was one of the largest computer programs ever written at the time. 
-initially distributed it for various personal computers. In 1981, Artwick was approached by Microsoft's Alan M. Boyd who was interested in creating a "definitive game" that would graphically demonstrate the difference between older 8-bit computers, such as the Apple II, and the new 16-bit computers, such as the IBM PC, still in development. In 1982, Artwick's company licensed a version of Flight Simulator for the IBM PC to Microsoft, which marketed it as Microsoft Flight Simulator 1.00. 
+At 2 million lines of code, it was one of the largest computer programs ever written. 
+It was initially distributed on various personal computers. In 1981, Artwick was approached by Microsoft's Alan M. Boyd who was interested in creating a "definitive game" that would graphically demonstrate the difference between older 8-bit computers, such as the Apple II, and the new 16-bit computers, such as the IBM PC, still in development. In 1982, Artwick's company licensed a version of Flight Simulator for the IBM PC to Microsoft, which marketed it as Microsoft Flight Simulator 1.00. 
 
 In 2009, Aces Game Studio was closed down by Microsoft. 
 
@@ -41,7 +44,7 @@ In 2017, Dovetail announced Flight Sim World, a new flight simulator that built 
 
 In 2018, Dovetail announced that Flight Sim World would be discontinued on May 24, 2018, due to lack of sales.
 
-Jorg Neumann, head of Microsoft Flight Simulator
+Jorg Neumann, head of Microsoft Flight Simulator.
 
 On August 18, 2020, Microsoft released Microsoft Flight Simulator to generally positive reviews. 
 The new simulator is built on a new in-house engine named Asobo developed for the game. 
@@ -53,6 +56,7 @@ The 2024 edition has jobs, Air Racing, multi-core:
    * https://www.youtube.com/watch?v=uryswyPFgU0
    <br /><br />
 
+In 2026, Microsoft has laid off much of the XBox dev crew.
 
 <hr />
 
@@ -65,13 +69,20 @@ https://www.reddit.com/r/Flightsimulator2020/
 https://www.flightsimassociation.com/
 
 
+## In Real Life
+
+In 2007 the FAA began work on its <a target="_blank" href="https://en.wikipedia.org/wiki/Next_Generation_Air_Transportation_System">plan of improvements in the "NextGen" project</a>, for completion by 2030. Its "gate-to-gate" scope include <a target="_blank" href="https://bomonike.github.io/weather-info">weather data</a>.
+
+During a natural disaster, it's vital that you are aware of active <a target="_blank" href="https://tfr.faa.gov/tfr2/list.html">Temporary Flight Restrictions (TFRs)</a> and updates to <a target="_blank" href="https://notams.aim.faa.gov/notamSearch/">Notices to Airmen (NOTAMs)</a>.
+
+
 <hr />
 
 ## Why Flight Simulator?
 
 Can you get a Private Pilot's License by playing Microsoft Flight Simulator?
 
-Most say no because students need hours in an actual plane.
+Most say no because students need hours in actual planes.
 In the USA you have the option of:
    * Part 61 (usually via a local flying club with a private instructor) or 
    * Part 141 (via a registered flight school). 
@@ -95,7 +106,9 @@ However, some say the game is more fun if you are comfortable with aviation term
    * <a href="#Aviation+Terminology">Aviation Terminology (below)</a>
    * What "you are cleared to runway 230" (compass numbers) means
    * Alpha Bravo Charlie and other names for each letter of the alphabet
-   * Airport codes
+   * <a target="_blank" href="https://www.fly.faa.gov/aadc/">Airport Arrival Demand Chart</a>
+   of how "busy" each airport is (by airport code)
+   * ForeFlight
    <br /><br />
 
 Books: PROTIP: Your public library may have a copy.
@@ -105,6 +118,70 @@ Books: PROTIP: Your public library may have a copy.
 <a target="_blank" href="https://atpflightschool.com/airline-career-pilot-program/">ATP</a> offers <a target="_blank" href="https://atpflightschool.com/locations/">at 85 locations around the US</a> a 9-month immersion program to career airline pilot program for a fixed fee of $108,995 starting from zero time or $86,995 starting with credit for private.
 
 > "There will be a day where we no longer choose our friends based on the console they own."
+
+The US has the world’s busiest and most complex airspace system (NAS)
+
+<a target="_blank" href="https://aviationweather.gov/">aviationweather.gov</a> provides Graphic Forecasts for Aviation (GFA) with wind & temperature forecasts out 4 days.
+
+In 2007, the FAA began work on its <a target="_blank" href="https://en.wikipedia.org/wiki/Next_Generation_Air_Transportation_System">plan of improvements in the "NextGen" project</a>, for completion by 2030. Its "gate-to-gate" scope include weather data.
+
+* <a target="_blank" href="https://www.google.com/maps/d/embed?mid=1l9ou2ElUeLqI0oz_hF8CltParFxs_R9I&ehbc=2E312F"">Google Map of major ARTCC airport  control in the US and Europe</a> created by a NextGen system user.
+
+* SWIM (System Wide Information Management) Subscription
+
+* Provide static airport reference and configuration information utilizing the Aeronautical Information Exchange Model standard to provide improved situational awareness to AOCs/FOCs via System Wide Information Management (SWIM) and achieve full operational capability for Aeronautical Common Services (ACS). 
+
+* ASIAS (Aviation Safety Information Analysis and Sharing) analytics for Time-series forecasting
+
+In the NextGen Weather Program:
+* Common Support Services – Weather (CSS-Wx) aims to be the single provider of weather data within the NAS (National Airspace System) from NOAA, NWP (<a target="_blank" href="https://www.faa.gov/nextgen/programs/weather/nwp">NextGen Weather Processor</a>) via common Web Services for weather, using international data access and data format standards. 
+   * Reduce FAA cost by enabling decommissioning of legacy weather dissemination and processor systems (e.g., WARP, WINS, FBWTG, CIWS, CDDS)
+
+   * NWP provides real-time weather radar information (e.g., ERAM) which identifies aviation safety hazards and translates weather information needed to predict route blockage and airspace capacity constraints up to 8 hours in advance, extend a loop of past radar detections into the future
+   • Convective Weather Avoidance Fields
+   * Translates weather information into weather avoidance areas for integration into decision support tools (e.g., TFMS, TBFM)
+   * Provides Aviation Weather Display (AWD) of NextGen weather information for AT users
+
+<a id="ITWS"></a>
+ITWS = <a target="_blank" href="https://www.faa.gov/air_traffic/technology/itws">Integrated Terminal Weather System</a> - a fully automated sensor-fusion computer system deployed at FAA's major U.S. airports. It merges data from multiple radars, ground sensors, and aircraft into a single, easy-to-read weather display for air traffic controllers and airlines: Terminal Doppler Weather Radar (TDWR), NEXRAD weather radar, Airport Surveillance Radar (ASR-9), Low-Level Wind Shear Alert Systems (LLWAS), lightning networks, surface stations (ASOS/AWOS), and sensors aboard commercial aircraft flying nearby.
+
+Pilots receive terminal weather alerts in the cockpit via TWIP = Terminal Weather Information for Pilots or ATIS = Automatic Terminal Information Service
+
+<a id="METAR"></a>
+
+METARs (Meteorological Terminal Air Reports) report actual conditions at Denver International Airport, nicknamed "Mile High Airport" because it sits at an elevation of roughly 5,430 feet above MSL (Mean Sea Level). MSL is used in Barometric altimeters, Echo Tops, area forecasts, winds aloft, mountain elevations.
+
+When radio altimates are used in METAR reports of a cloud ceiling at 2,000 feet AGL (Above Ground Level), those clouds are actually sitting at 7,430 feet MSL (5,430 ft ground elevation + 2,000 ft cloud height). Drone flight are limited to 400 ft AGL.
+
+<tt>KDEN 120753Z 28014G22KT 10SM FEW060 SCT120 04/M06 A3012 RMK AO2 SLP201</tt>
+
+| Code | Meaning | Plain English |
+| KDEN | Station Identifier | Denver International Airport (ICAO code) |
+| 120753Z | Date & Time | 12th day of the month at 07:53 UTC (Zulu time) |
+| 28014G22KT | Wind | From 280° (West) at 14 knots, gusting to 22 knots |
+| 10SM | Visibility | 10 statute miles |
+| FEW060 SCT120 | Sky Condition | Few clouds at 6,000 ft AGL; Scattered clouds at 12,000 ft AGL |
+| 04/M06 | Temp / Dew Point | Temperature is 4°C; Dew point is -6°C ("M" = Minus) |
+| A3012 | Altimeter Setting | Barometric pressure is 30.12 inches of mercury (inHg) |
+| RMK AO2... | Remarks | Automated station with precipitation sensor; Sea-level pressure 1020.1 hPa |
+
+TAFs (Terminal Aerodrome Forecasts) are issued by the National Weather Service (NWS) 4 times a day to predict the future of 5-statute-mile radius around an airport's runway complex. 
+TAFs provide Change Indicators over the 24-to-30-hour window: time-based markers to show when weather conditions are expected to shift.
+
+Unlike METR, standard civilian TAFs do not include temperature, dew point, or barometric pressure:
+
+<tt>KDEN 121120Z 1212/1318 27012KT P6SM SCT080 
+FM121900 31018G28KT P6SM BKN050
+TEMPO 1221/1301 3SM -SHSN BKN025 </tt>
+
+| Code | Meaning | Plain English |
+| KDEN | Station Identifier | Denver International Airport |
+| 121120Z | Issuance Time | Issued on the 12th day at 11:20 UTC |
+| 1212/1318 | Valid Period | Valid from the 12th at 12:00Z to the 13th at 18:00Z (30 hours) |
+| 27012KT P6SM SCT080 | Initial Forecast | Wind 270° at 12 knots; visibility Plus 6 statute miles (>6 SM); scattered clouds at 8,000 ft AGL (Above Ground Level) |
+| FM121900... | Change Group | From the 12th at 19:00Z, wind shifts to 310° at 18 knots gusting to 28 knots, broken ceiling at 5,000 ft |
+| TEMPO 1221/1301... | Temporary Group | Between 21:00Z and 01:00Z, temporary drops to 3 miles visibility in light snow showers (-SHSN) with a broken ceiling at 2,500 ft |
+
 
 <hr />
 
@@ -506,6 +583,7 @@ If you don't have a watch, you can identify Noon by a stick and marking the path
 
 From these sites:
    * https://www.aircharterserviceusa.com/about-us/news-features/blog/an-a-z-of-aviation-definitions
+   * https://forecast.weather.gov/glossary.php?
    <br /><br />
  
 <h2 id="A">A</h2>
@@ -519,7 +597,7 @@ From these sites:
 * ACP = Audio Control Panel - a dashboard with buttons and knobs for the pilot to select the audio settings for reception and transition and for both communication and navigation radio frequencies.
 * Actuator = component that deflects a control surface or, in hydraulics, moves a structure such as a landing gear
 * AD = Airworthiness Directive. Maintenance or modification ordered by FAA.
-* ADS-B = <a href="https://www.aeroclass.org/what-is-ads-b/" target="_blank">Automatic Dependent Surveillance-Broadcast</a> - the main technology used for aircraft tracking. It automatically sends position data from the aircraft, with no need for pilot intervention.
+* ADS-B = <a href="https://www.aeroclass.org/what-is-ads-b/" target="_blank">Automatic Dependent Surveillance-Broadcast</a> - the main <a target="_blank" href="https://en.wikipedia.org/wiki/Automatic_dependent_surveillance_%E2%80%93_broadcast">technology</a> used for aircraft tracking. It automatically sends position data from the aircraft, with no need for pilot intervention.
 * ADC = Air Data Computer
 * ADF = Automatic Direction Finder - an electronic device that helps navigation by identifying the relative position and <strong>bearing</strong> of an aircraft from a radio beacon transmitting in the MF or LF bandwidth, like a Non-Directional Beacon or commercial radio broadcast station.
 * ADI = Attitude direction indicator
@@ -543,7 +621,7 @@ From these sites:
 * Air Defense Identification Zone = to identify which zone belongs to each country and for national security purposes. So, Air Defense Identification Zone, usually abbreviated by the acronym ADIZ, refers to the airspace requiring identification, location, and control of civil aircraft for national security purposes, including airspace over land and over water.
 * Aircraft age = defines how old an aircraft is, usually counting from the first flight and considering both flying hours and pressurization cycles. It is not the same to have an airplane whose first flight was 10 years ago but has only flown 10,000 hours with 1,000 cycles than having an aircraft that first flew 5 years ago but has already flown 50,000 hours with 10,000 cycles.
 * Aircraft livery = the graphic design painted on it. Airlines often have a distinctive livery and create special liveries supporting events, anniversaries, or advertising campaigns.
-* Aircraft type = the standardized name for the aircraft, usually assigned to groups of aircraft with specific characteristics. Assigning the type code is done by ICAO. The codes are formed by two to four letters and numbers. The main use for the type codes is to simplify the identification of the aircraft when filing flight plans.</p>
+* Aircraft type = the standardized name for the aircraft, usually assigned to groups of aircraft with specific characteristics. Assigning the type code is done by ICAO (International Civil Aviation Organization). The codes are formed by two to four letters and numbers. The main use for the type codes is to simplify the identification of the aircraft when filing flight plans.</p>
 * Air Taxi Operator = a company that offers services according to FAR Part 135. This means the company operates small aircraft in the categories of turbojet engine powered aircraft with 1 to 30 seats, non-transport category turbo-propeller powered aircraft with 10 to 19 seats, and transport category turbo propellers with 20 to 30 seats. In general, small aircraft, normally under 30 seats. When carrying cargo, it should not exceed 18,000 pounds, and the company should work on either a scheduled or charter basis, on an on-demand basis or limited scheduled basis.
 * Airfoil = A surface, such as an airplane wing, shaped to produce more lift than resistance when driven through the air. The shape of the cross-section of a surface that generates the lift necessary to flight when the air passes over it. Common surfaces on a plane with an airfoil include wings, blades, turbines, and rotors.
 * Airline = the name used for the company or organization that manages and offers scheduled flights and routes on a regular basis.
@@ -627,6 +705,7 @@ From these sites:
 * Call sign - a type of notation used by Air Traffic Control (ATC) to identify a specific flight. Call signs are usually different from flight numbers for two main reasons:  First of all, for reasons of history or for easy understanding over the radio. Secondly, flights have been using alphanumeric call signs recently to avoid call sign confusion when flights with similar numbers may be talking to the same air traffic controller.
 * Camber - The level of convexity measured on the wing of an aircraft.
 * Canard - An airplane designed to have its normal horizontal tail surface on the front rather than the rear of its fuselage
+* CARF = Central Altitude Reservation Function personnel coordinate military and civilian altitude reservations for operations within the NAS and Open Skies Treaty Operations.
 * Caster - To swivel or rotate slightly
 * CAVU = Ceiling and Visibility Unlimited - the ideal flying and visual meteorological conditions with visibility of 10 or more miles and a ceiling of at least 10,000 feet.
 
@@ -657,6 +736,7 @@ From these sites:
 * Coherent detection = A technique used in certain ADF receivers to improve useful range
 * Collins = Avionics manufacturer
 * COM = Communications
+* CONUS = Contiguous United States
 * Commuter = a category of aircraft defined by the FAA as “limited to propeller-driven, multi-engine airplanes that have a seating configuration, excluding pilot seats, of 19 or less, and a maximum certificated takeoff weight of 19,000 pounds or less. The commuter category operation is limited to any maneuver incident to normal flying, stalls (except whip stalls), and steep turns, in which the angle of bank is not more than 60 degrees.”
 * Comosite video = Analog VOR receiver output before processing
 * Constant-Speed Propeller - a propeller with the capability to maintain a steady engine RPM by increasing and decreasing the blade pitch automatically.
@@ -674,6 +754,8 @@ From these sites:
 * CTAF = Common Traffic Advisory Frequency - the VHF radio frequency used for air-to-air communication in the US, Canada, and Australia where some airports close their control towers but keep the runways operative for some cargo operations.
 * CVR = Cockpit Voice Recorder - device that records crew conversations for use in accident investigations
 * CW = Continuous wave. A radio carrier broadcast that does not have modulation
+* CWAF = Convective Weather Avoidance Fields 
+* CWAP = Convective Weather Avoidance Polygons (displayed by NWP radar mosaics)
 * Cycles = Pertains to turbine engines: Cycle begins with starting, continues through full-power, and ends with shutdown
 
 <h2 id="D">D</h2>
@@ -708,6 +790,8 @@ From these sites:
 
 * EAROM = Electrically alterable read-only memory, a type of digital memory device
 * EASA = European Aviation Safety Agency - a European Union agency established in 2002 with the task of overseeing civil aviation safety and regulation.
+Expect Departure Clearance Time (EDCT)
+* EDCT = Expect Departure Clearance Time for <a target="_blank" href="https://www.fly.faa.gov/edct/">each specific flight by call sign</a> filed and transmitted in ETMS (affected by Airspace Flow or Ground Delay)
 * EEPROM = Electrically erasable programmable read-only-memory
 * EEVIP = Early Extended Validation Integration Program. An FAA program, first implemented for the Boeing 777, to give “out-of-the-box” ETOPS clearance to a new plane, rather than waiting for a couple of years of domestic service experience
 * EFIS = Electronic Flight Instrument System
@@ -722,6 +806,7 @@ From these sites:
 * EROS = Brand Name for Oxygen Mask
 * ETA = Estimated Time of Arrival - the time when arriving at the destination is expected and it is given in the destination’s local time.
 * ETD = Estimated Time of Departure - the time of takeoff from the point of origin of the flight.
+* ETMS = <a target="_blank" href="https://www.fly.faa.gov/fly/Products/Information/ETMS/etms.html">Enhanced Traffic Management System</a> holding 4D flight plans maintained by the FAA to predict and manage air traffic congestion across the United States. Deployed across Traffic Management Units (TMUs) at all 20 Continental U.S. Air Route Traffic Control Centers (ARTCCs) and select TRACON facilities.
 * ETOPS = Extended Twin-engine operations. FAA designation of over-ocean flights far from possible emergency landing strips, in which the possibility of engine failure in a twin-engine plane represents a heightened risk. ETOPS certification is not normally given to a new passenger aircraft until it has been in regular domestic service for at least a year.
 * ETE = Estimated Time en Route - the amount of time expected to be spent traveling to a destination.
 * ETP = Equal time point - a position on a route where the time taken to return to the departure point, is the same as the time required to reach the arrival point. It is not necessarily the midpoint (in distance) of the route because <a href="https://www.aeroclass.org/headwinds-vs-tailwinds/" target="_blank">head or tailwinds</a> can affect where exactly the equal time point will be.
@@ -730,7 +815,7 @@ From these sites:
 <h2 id="F">F</h2>
 
 * FAA = Federal Aviation Administration - the top authority regulating civil aviation in the United States.
-* FADEC = Full authority digital engine control
+* FADEC = Full authority digital engine control.
 * Fairing = A section of aircraft surface, or an attached structure, designed to reduce drag. For example, the contoured sheet metal where wing meets fuselage
 * FARs = Federal Aviation Regulations (U.S.) - the FAA rules applied to civil aviation in the U.S.
 * FAR 36 Noise Levels = In order to meet FAR 36 Stage 3 requirements, the maximum noise level permitted is: Take Off 89.0 EPNdB, *Sideline 94.0, *Approach 98.0
@@ -886,9 +971,10 @@ From these sites:
 * MCDU = Multifunction Control Display Unit - a screen and keypad typically found in Airbus aircraft which the crew uses as an interface with the aircraft FMS (Flight Management System).
 * MCU =– Minimum configuration unit
 * MDAU = Maintenance data acquisition unit
+* MFR = Manufacturer year shown on FAA Form 8130-6 (Application for Airworthiness Certificate)
 * MDH = Major damage history
 <a id="METARs"></a>
-* METAR - a specialized form of weather reporting used mainly in aviation. Standardized by ICAO, it follows a format specified by the regulator with the intention to make it easy to understand by any pilot around the world. It is delivered continuously and it represents the weather conditions at the moment rather than a forecast.
+* METAR = Meteorological Terminal Air Report - weather reporting standardized by ICAO for use in aviation. It is delivered continuously and it represents the weather conditions at the moment rather than a forecast. It uses a compact format for digital transmission via airport radio frequencies (ATIS, ASOS, or AWOS) and streamed directly to cockpit displays via ADS-B (FIS-B) or satellite weather links.
 * MFD = Multifunction display. The third or fifth tube in an EFIS, it replaces the weather radar screen and displays radar data, navigation maps, checklists and other information
 * Microline = Trade name owned by Collins
 * MNPS = Minimum navigational performance specificaitons
@@ -896,21 +982,21 @@ From these sites:
 
 * Mode-A = A transponder which does not give the controllers altitude information
 * Mode-C = A transponder and encoding altimeter which give air traffic controllers altitude information
-* Mode-S = A transponder which features unique identification per unit, the potential for low-speed up and down datalinks, and “selective interrogation” triggered by ground facilities. A protocol of communication that allows an aircraft to communicate with secondary surveillance radars (SSR) and other systems through the transponder that is on-board.
-
+* Mode-S = Mode Select Beacon System (the ICAO address code) - A transponder which features unique identification per unit, the potential for low-speed up and down datalinks, and “selective interrogation” triggered by ground facilities. is a communication protocol for aircraft to communicate with secondary surveillance radars (SSR) through its on-board transponder.
 * MOH = Major overhaul
 * MOPS = Minimum operational performance standard (RTCA)
 * Mountainous Terrain Escape Routes - routes that allow a pilot to take an aircraft to an altitude below the Minimum Obstacle Clearance Altitude (MOCA) in case of emergency without any danger when flying over an area of high and mountainous terrain.
-* MSL = <a href="https://www.aeroclass.org/msl-in-aviation/" target="_blank">Mean Sea Level</a> - the average height of the surface of the sea, used in aviation to measure vertical altitude.
+* MSL = <a href="https://www.aeroclass.org/msl-in-aviation/" target="_blank">Mean Sea Level</a> - the average height of the surface of the sea, used in aviation as a measure of vertical altitude.
 * MSN = Manufacturer’s serial number - a unique code assigned to an aircraft, often prior to building it. It is also used to identify the parts that will make the aircraft.
 * MSP = Maintanance Servie Program. (Garret engine)
 
 <h2 id="N">N</h2>
 
-* N number - The registration number on a US-registered plane. The letter N is the letter internationally used to identify a US plane.
-* NARA = NARA is a professional trade association of 54 reputable business companies organized to promote the growth and public understanding of the aircraft resale industry. Its members abide by a 12-point Code of Ethics that provides standards of business conduct regarding aircraft transactions
+* N number = (aka tail number) is a <a target="_blank" href="https://registry.faa.gov/aircraftinquiry/search/nnumberinquiry">registry</a> of the unique alphanumeric registration code for each US-FAA-registered civil airplane, helicopter, or qualifying drone (like a license plate, but painted onto the exterior). Tail numbers are used as the primary radio call sign when communicating with air traffic control. Other nationalities begin with other letters followed by 1 to 5 alphanumeric characters. The letters I and O are not used to avoid confusion with the numbers 1 and 0.
+* NARA = a professional trade association of about 54 businesses companies to promote the aircraft resale industry. Its members abide by a 12-point Code of Ethics that provides standards of business conduct regarding aircraft transactions.
 * NAT-OTS = North Atlantic Tracks (officially known as North Atlantic Organized Track System) - a specified set of routes that stretch Eastbound and Westbound across the North Atlantic. Aircraft require oceanic clearance to fly these routes, to provide safety by keeping aircraft separated and considering ideal weather conditions.
 * Narrow-Body Aircraft - A small aircraft class that has a single-aisle inside and can carry 4 to 300 passengers.
+* NAS = National Airspace System
 * NAT = North Atlantic Tracks
 * Nautical Mile = Measurment of distance. Equals 1.15 statute miles
 * NAV = Navigation Receivers
@@ -920,6 +1006,8 @@ From these sites:
 * NDH = No Damage History
 * NMS = Navigation management system
 * NMU = Navigation management unit
+* NOCC = National Operations Control Center provides national coordination of facility restoration activities and to provide status information on NAS equipment.  The NOCC is staffed 24 hours per day, 7 days a week, and is responsible for collecting, tracking and reporting data from field organizations for NAS status, facility and service interruptions, special events and disasters.
+* NON SKED = Non-Scheduled - flights that do not operate on a fixed, published public airline timetable (such as charter flights, private general aviation, and corporate flights).
 * NOTAM = Notice to Airmen - written notices issued by aviation authorities to alert pilots of hazards or other specific circumstances that may affect their safe navigation over a given area.
 * NTSB = National Transportation Safety Board - the US government agency in charge of civilian transport accident investigations. While their main focus is on aviation incidents and accidents, they also investigate marine, highway, rail, and pipeline incidents and accidents. Plays an advisory role in flightworthiness accreditation
 * NVM = Nonvolatile memory. Digital memory that retains information through system shutdown
@@ -947,7 +1035,7 @@ From these sites:
 * PEP = Peak Envelope Power - a standard electronic rating of any AC source, including a radio transmitter
 * PFD = Primary Flight Display - the main screen used by pilots in aircraft containing an electronic flight instrument system, usually to read data relating to airspeed, altitude, heading, and vertical speed.
 * PIC = <a href="https://www.aeroclass.org/pilot-in-command/" target="_blank">Pilot in Command</a> - the individual responsible for safe aircraft operations during flight.
-* PIREP = Pilot Report - a report a pilot gives to ATC describing actual weather conditions during a flight.
+* PIREP = Pilot Report - from a pilot to ATC describing actual weather conditions during a flight
 * Pitch - The movement of an aircraft, that sees the nose rising and the tail falling or vice versa.
 * PNT = Paint
 * POH = Pilot’s Operating Handbook - an aircraft flight manual containing pertinent safety information.
@@ -996,7 +1084,7 @@ From these sites:
 * RTCA, Inc. = An association of U.S. governmental and industry aeronautical organizations dedicated to advancing aeronautics through consensus and recommendations
 * Runway XX = Runways are numbered after magnetic compass points, minus the 1’s column (where North is 0, and 360, degrees)
 * Rudder - A control surface used to achieve the yaw movement properly.
-* RVR - Runway Visual Range - the horizontal distance that pilots can read by seeing <a href="https://www.aeroclass.org/airport-runways/" target="_blank">surface markings</a> or runway lights when positioned on the centerline of a runway.
+* RVR - <a target="_blank" href="https://rvr.data.faa.gov/">Runway Visual Range</a> - the horizontal distance that pilots can read by seeing <a href="https://www.aeroclass.org/airport-runways/" target="_blank">surface markings</a> or runway lights when positioned on the centerline of a runway.
 * RVSM = Reduced Vertical Seperatation Minimum
 
 <h2 id="S">S</h2>
@@ -1039,6 +1127,7 @@ From these sites:
 * Starboard = Nautical usage adopted in aviation. The right side, as determined by an observer in the vehicle, when vehicle and observer are right side up, and observer is looking “forward” (in the normal direction of travel of the vessel or vehicle)
 * STC = (1) Supplemental Type Certificate. (2) Sensitivity-time compensation. In weather radar, a technique and circuit for calibrating a display
 * STOL = Short takeoff and landing ability
+* STMP = special traffic management program at IFR Slot Controlled Airports manages the number of arrivals and departures generated by an event are controlled, allowing for a limited number of reservations in specific time intervals.
 * Straight-and-Level Flight = Flying at a consistent heading and altitude.
 * sumps = Points underneath each fuel tank to test for contamination like water or other debris
 * Supercharged = Method for increasing engine power
@@ -1051,7 +1140,7 @@ From these sites:
 
 * TA = Traffic advisory (TCAS)
 * TACAN = Tactical Air Navigation System - a UHF navigation system that provides aircraft with a distance and bearing.
-* TAF = Terminal Area Forecasts are similar in format to <a href="#METARs">METARs</a>, but issued for future periods, hence the word forecasts in its name.
+* TAF = Terminal Aerodrome Forecasts are similar in format to <a href="#METARs">METARs</a>, but issued for future periods, hence the word forecasts in its name.
 * <a href="https://www.aeroclass.org/airport-tarmac/">Tarmac</a> - Another name for the apron, the paved area at an airport where aircraft park, fuel, load, and unload.
 * TBO = Time between overhaul
 * TCAS = Traffic Collison Avoidance System - a system to prevent a mid-air collisions. It allows aircraft to communicate if equipped with a compatible transponder. TCAS-I provides warnings (TAs) of other nearby aircraft; TCAS II provides warnings and resolutions advisories (RAs), and coordinates RAs with other TCAS II equipped aircraft via Mode S transponder
@@ -1128,7 +1217,7 @@ From these sites:
 
 <h2 id="Z">Z</h2>
 
-* Zulu Time - a term for Universal Coordinated Time (abbreviated as UTC as a "politically correct" term for Greenwich Mean Time (GMT)). Pilots file all flight plans in <a href="https://www.timeanddate.com/worldclock/timezone/zulu" target="_blank">Zulu Time</a>.
+* Zulu Time - a term for Universal Coordinated Time (abbreviated as UTC as a "politically correct" term for Greenwich Mean Time (GMT)) near London, England. Pilots file all flight plans in <a href="https://www.timeanddate.com/worldclock/timezone/zulu" target="_blank">Zulu Time</a> rather than local time zones.
 
 
 <hr />
